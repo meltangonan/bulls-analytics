@@ -1,0 +1,16 @@
+# Bulls Analytics - Required Packages
+# Install with: pip install -r requirements.txt
+
+# Data fetching
+nba_api             # Gets data from NBA's stats API
+
+# Data manipulation
+pandas              # Work with data tables (like Excel but better)
+
+# Visualization
+matplotlib          # Create charts and graphs
+seaborn             # Makes matplotlib charts prettier
+
+# Notebooks
+ipykernel           # Lets Cursor/VS Code run Jupyter notebooks
+

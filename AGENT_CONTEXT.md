@@ -5,13 +5,20 @@
 
 ---
 
-## How to Use This File
+## Context File System
 
-When starting a new chat (on a new computer or new session), paste this entire file to give the agent context about:
-1. What this project is
-2. How we work together
-3. Where we left off
-4. Key decisions already made
+We have a tiered context system for onboarding new agents:
+
+| File | Use When |
+|------|----------|
+| `docs/QUICK_START.md` | New chat, need fast context (~30 lines) |
+| `AGENT_CONTEXT.md` | Full project understanding (this file) |
+| `docs/PHASE_X_CONTEXT.md` | Starting a specific phase |
+
+**Recommended workflow for new chats:**
+1. Paste `QUICK_START.md` first
+2. If agent needs more, paste `AGENT_CONTEXT.md`
+3. For phase-specific work, include that phase's context file
 
 ---
 
@@ -85,11 +92,14 @@ bulls-analytics/
 ├── PRD.md                 # Product requirements (READ THIS FIRST)
 ├── DATA_DICTIONARY.md     # All NBA stats explained
 ├── PROGRESS.md            # Learning journal (update each session)
-├── AGENT_CONTEXT.md       # This file
+├── AGENT_CONTEXT.md       # This file (full context)
 ├── README.md              # GitHub intro
 ├── explore.ipynb          # Data exploration notebook
 ├── requirements.txt       # Python dependencies
 ├── .gitignore
+├── docs/                  # Context files for new agents
+│   ├── QUICK_START.md     # Fast onboarding (~30 lines)
+│   └── PHASE_X_CONTEXT.md # Phase-specific deep dives
 ├── data/                  # Database files (Phase 2)
 ├── scripts/               # Automation scripts (Phase 2)
 ├── queries/               # SQL templates (Phase 2)
@@ -152,15 +162,34 @@ A: nba_api Python package connects to NBA's official stats API.
 
 ---
 
+## When to Start a New Chat/Agent
+
+**Start a new chat when:**
+- Starting a new phase (Phase 2, 3, 4)
+- Context is above ~70% (things start getting forgotten)
+- Switching focus (e.g., debugging vs. learning)
+- Working on a different computer
+
+**Keep current chat when:**
+- Wrapping up current phase
+- Quick follow-up questions
+- Still have context room
+
 ## Prompt to Start New Session
 
-Copy and paste this to quickly continue:
-
+**Quick version:**
 ```
-I'm continuing work on my Bulls Analytics project. I've attached AGENT_CONTEXT.md which has all the background.
+[Paste docs/QUICK_START.md]
+Continuing from Phase X. Let's go!
+```
 
-Current status: Phase 1 complete, starting Phase 2 (Database & SQL).
+**Full version:**
+```
+I'm continuing work on my Bulls Analytics project. Please read these files for context:
+1. docs/QUICK_START.md (working style)
+2. AGENT_CONTEXT.md (full project context)
+3. docs/PHASE_2_SQL_CONTEXT.md (current phase)
 
-Please read the context file and let's continue where we left off. Remember: I prefer learning step-by-step, with explanations, and I want to be hands-on (run commands myself, not have you do everything).
+Remember: I prefer learning step-by-step, with explanations, and I want to be hands-on (run commands myself).
 ```
 

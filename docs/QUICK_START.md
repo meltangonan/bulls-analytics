@@ -11,7 +11,14 @@ Instagram data viz project for Chicago Bulls. Learning SQL, Python, data analysi
 - I run commands myself
 - Always explain the "so what"
 - Update documentation as we go
-- **QA mindset:** Check work from PM, analyst, engineer, and learning perspectives
+
+## Agent Perspectives
+**Primary (deep dive):**
+- 🎯 **Product Manager** — User value, scope, prioritization, "so what?"
+- 📊 **Data Analyst** — Data accuracy, statistical rigor, insights over numbers
+
+**Secondary (light touch):**
+- Engineer (reproducibility), Professor (learning), UX (visuals), Career Coach (portfolio)
 
 ## Current Status
 - **Phase 1** ✅ Foundation (API, environment, exploration)

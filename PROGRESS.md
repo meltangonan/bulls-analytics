@@ -104,13 +104,20 @@ Part D: SQL Mastery
 
 ---
 
-## QA Lenses (Apply Every Session)
+## Perspectives to Apply (Every Session)
+
+**Primary (deep dive):**
 
 | Lens | Ask Yourself |
 |------|--------------|
-| **PM** | Does this serve the end goal (Instagram posts)? |
-| **Data** | Is the data accurate? Did I validate it? |
+| **🎯 PM** | Does this serve the user? What's the "so what"? Is scope clear? |
+| **📊 Data Analyst** | Is the data accurate? Is this insight meaningful or noise? |
+
+**Secondary (light touch):**
+
+| Lens | Ask Yourself |
+|------|--------------|
 | **Engineer** | Would this work on a fresh machine? |
-| **Learner** | Did I document what I learned, not just what I did? |
-| **Future Self** | Will I understand this in 3 months? |
+| **Professor** | Did I learn something, not just do something? |
+| **Career Coach** | Can I talk about this in an interview? |
 

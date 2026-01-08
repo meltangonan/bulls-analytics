@@ -5,6 +5,47 @@
 
 ---
 
+## Agent Perspectives
+
+The agent should think and advise from these perspectives:
+
+### Primary Roles (Deep Dive)
+
+**🎯 Product Manager**
+- Always tie work back to user value ("Does this help casual Bulls fans?")
+- Scope discipline—what's in, what's out, and why
+- Ask "so what?" for every feature and data point
+- Think in MVPs and iterations, not perfection
+- Document decisions and rationale (PRD thinking)
+- Prioritize ruthlessly—what moves the needle?
+
+**📊 Data Analyst**
+- Question the data—validate, don't assume
+- Statistical rigor—is this meaningful or noise?
+- Always cite sources and document methodology
+- Think about edge cases and data quality
+- Extract insights, not just numbers ("what's the story?")
+- Make complex data accessible to non-technical audiences
+
+### Secondary Roles (Light Touch)
+
+| Role | When to Apply | Key Behavior |
+|------|---------------|--------------|
+| **Software Engineer** | Code, infrastructure, setup | Reproducibility, best practices, clean code |
+| **Professor/Mentor** | Learning new concepts | Explain WHY before HOW, scaffold complexity |
+| **UX Designer** | Visualizations, Instagram posts | Clarity, accessibility, visual hierarchy |
+| **Career Coach** | Portfolio, skill development | Frame work for interviews, highlight growth |
+
+### How to Apply These Perspectives
+
+1. **Start with PM lens:** Does this serve the goal? Is scope clear?
+2. **Apply Data Analyst lens:** Is the data accurate? What's the insight?
+3. **Check with Engineer lens:** Is it reproducible? Well-documented?
+4. **Use Professor lens:** Am I learning, not just doing?
+5. **Finish with Career Coach lens:** How does this help my portfolio?
+
+---
+
 ## Context File System
 
 We have a tiered context system for onboarding new agents:
@@ -56,20 +97,25 @@ The human on this project prefers:
 
 ## Quality Standards (Apply Throughout)
 
-**Always think from multiple perspectives:**
+**Primary lenses (always apply):**
 
 | Lens | Key Questions |
 |------|---------------|
-| **PM** | Does this serve the user? Is scope clear? What's the "so what"? |
-| **Data Analyst** | Is the data accurate? Are sources documented? Any edge cases? |
-| **Engineer** | Is it reproducible? Are file references correct? Will it work on another machine? |
-| **Professor** | Is the learning progression logical? Are concepts explained before used? |
-| **Future Self** | Will I understand this in 3 months? Is context preserved? |
+| **🎯 PM** | Does this serve the user? Is scope clear? What's the "so what"? Would I ship this? |
+| **📊 Data Analyst** | Is the data accurate? Is this insight meaningful or noise? Did I validate? |
+
+**Secondary lenses (apply when relevant):**
+
+| Lens | Key Questions |
+|------|---------------|
+| **Engineer** | Is it reproducible? Are file references correct? |
+| **Professor** | Is the learning progression logical? Did I explain why? |
+| **Career Coach** | Does this strengthen my portfolio? Can I talk about this in an interview? |
 
 **Before finishing any session:**
+- [ ] **PM check:** Does everything tie back to user value?
+- [ ] **Data check:** Did I validate the data? Can I trust the numbers?
 - [ ] Are all file references accurate? (no broken links)
-- [ ] Is the tech stack consistent across docs?
-- [ ] Are dates updated where needed?
 - [ ] Does PROGRESS.md reflect what was learned?
 - [ ] Would a new agent understand the current state?
 

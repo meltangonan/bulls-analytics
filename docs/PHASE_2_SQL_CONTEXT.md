@@ -5,6 +5,22 @@
 
 ---
 
+## Apply These Perspectives in Phase 2
+
+**🎯 Product Manager Lens:**
+- Why PostgreSQL? → Because it's what jobs require (career value)
+- Why Docker? → Reproducibility matters for real products
+- Schema design = product decisions (what data matters?)
+- Every query should answer: "What story does this tell for fans?"
+
+**📊 Data Analyst Lens:**
+- Validate data at every step (row counts, spot checks)
+- Document data lineage (where did this number come from?)
+- Question outliers—bug or real?
+- Think about data freshness (when was this pulled?)
+
+---
+
 ## Phase 2 Vision
 
 We're not just "learning SQL"—we're building a **real-world data pipeline** like you'd use at an actual job:

@@ -1,7 +1,7 @@
 # Agent Context - Bulls Analytics Project
 
 > **Purpose:** Paste this into a new AI chat to quickly onboard a new agent on this project.
-> **Last Updated:** January 6, 2026
+> **Last Updated:** January 7, 2026
 
 ---
 
@@ -105,7 +105,7 @@ bulls-analytics/
 ├── PROGRESS.md            # Learning journal (update each session)
 ├── AGENT_CONTEXT.md       # This file (full context)
 ├── README.md              # GitHub intro
-├── explore.ipynb          # Data exploration notebook
+├── test_viz.ipynb         # Data exploration notebook
 ├── requirements.txt       # Python dependencies
 ├── .gitignore
 ├── docs/                  # Context files for new agents
@@ -157,8 +157,8 @@ A: Isolates project dependencies. Each project has its own "kitchen" with its ow
 Q: Why not just use Excel?
 A: Databases scale better, can be queried with SQL, and are reproducible.
 
-Q: Why SQLite specifically?
-A: Simple (file-based), no server needed, perfect for learning SQL.
+Q: Why PostgreSQL over SQLite?
+A: PostgreSQL is what real companies use. Running it in Docker gives production-grade experience.
 
 Q: How do we get NBA data?
 A: nba_api Python package connects to NBA's official stats API.
@@ -170,8 +170,8 @@ A: nba_api Python package connects to NBA's official stats API.
 1. Read `PRD.md` for product context
 2. Read `PROGRESS.md` to see what was learned
 3. Check `DATA_DICTIONARY.md` for available stats
-4. Open `explore.ipynb` to see working code
-5. Start where Phase 2 begins: creating the SQLite database
+4. Open `test_viz.ipynb` to see working code
+5. Start Phase 2: Docker + PostgreSQL setup
 
 ---
 

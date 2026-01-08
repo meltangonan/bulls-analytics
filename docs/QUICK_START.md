@@ -22,7 +22,7 @@ Instagram data viz project for Chicago Bulls. Learning SQL, Python, data analysi
 1. `AGENT_CONTEXT.md` - Full project context
 2. `PRD.md` - Product requirements
 3. `PROGRESS.md` - What I've learned
-4. `explore.ipynb` - Working code
+4. `test_viz.ipynb` - Working code
 
 ## Tech Quick Reference
 - Python 3.11 + venv

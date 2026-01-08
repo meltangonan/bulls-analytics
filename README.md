@@ -33,14 +33,14 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Open the exploration notebook
-# (In VS Code/Cursor, just open explore.ipynb)
+# (In VS Code/Cursor, just open test_viz.ipynb)
 ```
 
 ## Using GitHub Codespaces (Remote Dev)
 
 If you open this repo in **GitHub Codespaces**, it will auto-provision a Python 3.11 environment and install `requirements.txt` via `.devcontainer/devcontainer.json`.
 
-- Open a notebook like `explore.ipynb` or `test_viz.ipynb`
+- Open a notebook like `test_viz.ipynb`
 - Run cells (data is pulled from the NBA API; generated images save to `output/`)
 
 ## Project Structure
@@ -49,10 +49,13 @@ If you open this repo in **GitHub Codespaces**, it will auto-provision a Python 
 bulls-analytics/
 ├── PRD.md                 # Product Requirements Document
 ├── DATA_DICTIONARY.md     # Reference for all NBA stats
-├── explore.ipynb          # Data exploration notebook
+├── AGENT_CONTEXT.md       # AI agent onboarding context
+├── PROGRESS.md            # Learning journal
+├── test_viz.ipynb         # Data exploration notebook
 ├── requirements.txt       # Python dependencies
-├── data/                  # SQLite database (Phase 2)
-├── scripts/               # Data fetching scripts (Phase 2)
+├── docs/                  # Context files for new sessions
+├── data/                  # PostgreSQL data (Phase 2)
+├── scripts/               # ETL scripts (Phase 2)
 ├── queries/               # SQL query templates (Phase 2)
 ├── visualizations/        # Chart generation code (Phase 3)
 └── output/                # Generated images for Instagram (Phase 3)
@@ -68,10 +71,12 @@ bulls-analytics/
 
 | Tool | Purpose |
 |------|---------|
-| Python | Core language |
+| Python 3.11+ | Core language |
+| Docker | Run PostgreSQL locally |
+| PostgreSQL | Industry-standard database |
 | nba_api | Fetch NBA statistics |
 | pandas | Data manipulation |
-| SQLite | Local database (learning SQL) |
+| SQLAlchemy | Python ↔ Database connection |
 | matplotlib/seaborn | Visualizations |
 | Jupyter Notebooks | Exploration & analysis |
 

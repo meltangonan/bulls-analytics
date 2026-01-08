@@ -44,7 +44,7 @@ A record of what I've learned and built on this project.
 ### Key Files Created
 - `PRD.md` - Product requirements
 - `DATA_DICTIONARY.md` - Stats reference
-- `explore.ipynb` - Exploration notebook
+- `test_viz.ipynb` - Exploration notebook (originally explore.ipynb)
 - `requirements.txt` - Dependencies
 - `.gitignore` - Git ignore rules
 

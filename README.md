@@ -36,6 +36,13 @@ pip install -r requirements.txt
 # (In VS Code/Cursor, just open explore.ipynb)
 ```
 
+## Using GitHub Codespaces (Remote Dev)
+
+If you open this repo in **GitHub Codespaces**, it will auto-provision a Python 3.11 environment and install `requirements.txt` via `.devcontainer/devcontainer.json`.
+
+- Open a notebook like `explore.ipynb` or `test_viz.ipynb`
+- Run cells (data is pulled from the NBA API; generated images save to `output/`)
+
 ## Project Structure
 
 ```

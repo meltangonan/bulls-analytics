@@ -52,14 +52,19 @@ We have a tiered context system for onboarding new agents:
 
 | File | Use When |
 |------|----------|
-| `docs/QUICK_START.md` | New chat, need fast context (~30 lines) |
+| `docs/QUICK_START.md` | New Cursor chat, need fast context (~30 lines) |
 | `AGENT_CONTEXT.md` | Full project understanding (this file) |
 | `docs/PHASE_X_CONTEXT.md` | Starting a specific phase |
+| `docs/LLM_ADVISOR_CONTEXT.md` | **Non-coding LLM** (ChatGPT, etc.) for advisory questions |
 
-**Recommended workflow for new chats:**
+**Recommended workflow for new Cursor chats:**
 1. Paste `QUICK_START.md` first
 2. If agent needs more, paste `AGENT_CONTEXT.md`
 3. For phase-specific work, include that phase's context file
+
+**For ChatGPT/other LLMs (advisory, no code):**
+- Paste entire `docs/LLM_ADVISOR_CONTEXT.md` into a ChatGPT Project
+- Use for brainstorming, PM questions, data strategy discussions
 
 ---
 

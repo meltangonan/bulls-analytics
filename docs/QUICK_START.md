@@ -29,6 +29,8 @@ Instagram data viz project for Chicago Bulls. Learning SQL, Python, data analysi
 - NBA API (use V3 endpoints!)
 - Bulls Team ID: `1610612741`
 - Season: `'2025-26'`
+- **Phase 2+:** Docker, PostgreSQL, SQLAlchemy, ETL pipeline
+- **Goal:** Production-grade workflow, not just learning SQL
 
 ## Start Prompt
 ```

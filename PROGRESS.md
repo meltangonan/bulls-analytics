@@ -53,11 +53,25 @@ A record of what I've learned and built on this project.
 - What SQL queries will I need for post-game recaps?
 - How do I automate data fetching after each game?
 
-### Next Steps (Phase 2)
-- [ ] Create SQLite database
-- [ ] Design tables for games, players, stats
-- [ ] Write SQL queries
-- [ ] Learn JOINs, GROUP BY, aggregations
+### Next Steps (Phase 2 - Expanded Scope!)
+**Upgraded from "learn SQL" to "build production-grade data pipeline"**
+
+Part A: Environment Setup
+- [ ] Install Docker Desktop
+- [ ] Run PostgreSQL in Docker container
+- [ ] Install SQLAlchemy + psycopg2
+
+Part B: Database Design
+- [ ] Create database schema (tables, foreign keys)
+- [ ] Understand relationships and indexes
+
+Part C: ETL Pipeline
+- [ ] Write Python scripts: Extract → Transform → Load
+- [ ] Automate game data fetching
+
+Part D: SQL Mastery
+- [ ] Basic queries → Aggregations → JOINs
+- [ ] Create views for post-game analysis
 
 ---
 

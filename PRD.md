@@ -1,6 +1,6 @@
 # Product Requirements Document: Bulls Analytics Instagram
 
-> **Last Updated:** January 6, 2026
+> **Last Updated:** January 7, 2026
 > **Status:** Phase 1 Complete ✅ - Ready for Phase 2
 
 ## Overview
@@ -103,33 +103,48 @@ Explicitly NOT doing:
 
 ---
 
-## Technical Approach (High Level)
+## Technical Approach (Production-Grade)
+
+**Philosophy:** Learn tools by using them together on real problems, not in isolation.
 
 ### Data Source
 - **NBA API** (via `nba_api` Python library)
 - Free, comprehensive, includes box scores and player stats
 
 ### Storage
-- **SQLite database**
-- Simple, file-based, perfect for learning SQL
-- Tables: games, player stats, team stats
+- **PostgreSQL** (industry-standard database)
+- Runs locally via **Docker** (containerized, clean setup)
+- Tables: teams, games, player_game_stats
+
+### Data Pipeline (ETL)
+- **Extract:** Python scripts pull from NBA API
+- **Transform:** Clean, validate, format data
+- **Load:** SQLAlchemy + psycopg2 insert into PostgreSQL
 
 ### Analysis
-- **SQL** for querying and aggregations
-- **Python** for data manipulation when needed
+- **SQL** for querying, aggregations, joins
+- **Python/pandas** for complex manipulation
+- **Jupyter notebooks** for exploration
 
 ### Visualization
 - **matplotlib/seaborn** for chart generation
 - Clean, minimal style
 - Bulls red (#CE1141) and black (#000000) palette
 
-### Workflow
+### Infrastructure & Tools
+| Tool | Purpose |
+|------|---------|
+| Docker | Run PostgreSQL locally |
+| PostgreSQL | Production-grade database |
+| SQLAlchemy | Python ORM for database connection |
+| Git/GitHub | Version control |
+
+### Workflow (After Each Bulls Game)
 ```
-After each Bulls game:
-1. Run script to fetch new game data
-2. Data saves to SQLite database
-3. Write/run SQL query to find the story
-4. Generate visualization
+1. Run ETL script (fetch → transform → load)
+2. Data lands in PostgreSQL
+3. Query database for story/insights
+4. Generate visualization in Jupyter
 5. Export and post to Instagram
 ```
 
@@ -145,11 +160,13 @@ After each Bulls game:
 - [x] Pull first data
 - [x] Explore available stats (traditional, advanced, misc, scoring)
 
-### Phase 2: Data Pipeline (Week 2) ← CURRENT
-- [ ] Create SQLite database
-- [ ] Design tables
-- [ ] Automate game data fetching
-- [ ] Write core SQL queries
+### Phase 2: Data Pipeline (Week 2-3) ← CURRENT
+**Expanded scope: Production-grade workflow**
+- [ ] Set up Docker + PostgreSQL locally
+- [ ] Design database schema (tables, relationships)
+- [ ] Build ETL pipeline (Extract → Transform → Load)
+- [ ] Master SQL (queries, joins, aggregations)
+- [ ] Connect Jupyter → PostgreSQL for analysis
 
 ### Phase 3: Visualization (Week 3)
 - [ ] Create post-game template
@@ -189,6 +206,7 @@ After each Bulls game:
 
 | Date | Change |
 |------|--------|
+| 2026-01-07 | Expanded Phase 2 scope: Docker, PostgreSQL, ETL pipeline |
 | 2026-01-06 | Phase 1 complete, added DATA_DICTIONARY.md |
 | 2026-01-05 | Initial PRD created |
 

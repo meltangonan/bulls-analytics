@@ -190,6 +190,20 @@ Explicitly NOT doing:
 
 ---
 
+## Quality Standards
+
+Every piece of work should pass these lenses:
+
+| Lens | Question |
+|------|----------|
+| **User Value** | Does this help casual Bulls fans understand their team? |
+| **Data Integrity** | Is the data accurate and properly sourced? |
+| **Visual Clarity** | Would someone understand this in 3 seconds? |
+| **Technical Soundness** | Is it reproducible and well-documented? |
+| **Learning Outcome** | Did I grow my skills doing this? |
+
+---
+
 ## Learnings & Discoveries
 
 ### Phase 1 Learnings

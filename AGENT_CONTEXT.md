@@ -50,6 +50,34 @@ The human on this project prefers:
 
 6. **Document everything** - Keep PRD, PROGRESS.md, and other docs updated as we go.
 
+7. **QA mindset always** - Check work from multiple lenses (see below).
+
+---
+
+## Quality Standards (Apply Throughout)
+
+**Always think from multiple perspectives:**
+
+| Lens | Key Questions |
+|------|---------------|
+| **PM** | Does this serve the user? Is scope clear? What's the "so what"? |
+| **Data Analyst** | Is the data accurate? Are sources documented? Any edge cases? |
+| **Engineer** | Is it reproducible? Are file references correct? Will it work on another machine? |
+| **Professor** | Is the learning progression logical? Are concepts explained before used? |
+| **Future Self** | Will I understand this in 3 months? Is context preserved? |
+
+**Before finishing any session:**
+- [ ] Are all file references accurate? (no broken links)
+- [ ] Is the tech stack consistent across docs?
+- [ ] Are dates updated where needed?
+- [ ] Does PROGRESS.md reflect what was learned?
+- [ ] Would a new agent understand the current state?
+
+**When making changes:**
+- Update related docs (PRD, PROGRESS, etc.) in the same session
+- Verify code examples still work after API/library changes
+- Check that "Questions Already Answered" stays current
+
 ---
 
 ## Tech Stack

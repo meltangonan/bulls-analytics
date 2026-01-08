@@ -227,6 +227,36 @@ By the end of Phase 2, you should be able to:
 
 ---
 
+## QA Checkpoints for Phase 2
+
+**After Part A (Environment Setup):**
+- [ ] Can you run `docker ps` and see PostgreSQL running?
+- [ ] Can you connect to the database from Python?
+- [ ] Are connection details documented (not hardcoded)?
+
+**After Part B (Database Design):**
+- [ ] Do table relationships make sense? (draw it out)
+- [ ] Are foreign keys correctly defined?
+- [ ] Can you explain the schema to someone else?
+
+**After Part C (ETL Pipeline):**
+- [ ] Does the pipeline handle missing data gracefully?
+- [ ] Are API rate limits respected?
+- [ ] Can you re-run the pipeline without duplicating data?
+
+**After Part D (SQL Mastery):**
+- [ ] Do queries return expected results? (spot-check against source)
+- [ ] Are complex queries documented/commented?
+- [ ] Can you rebuild views if needed?
+
+**End of Phase 2:**
+- [ ] Update PROGRESS.md with learnings
+- [ ] Update PRD.md with any scope changes
+- [ ] Verify all file references in docs are still accurate
+- [ ] Commit everything to GitHub with meaningful message
+
+---
+
 ## Start Prompt for Phase 2
 
 ```

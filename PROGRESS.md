@@ -94,5 +94,23 @@ Part D: SQL Mastery
 
 ### Next Steps
 - 
+
+### End-of-Session QA ✓
+- [ ] PROGRESS.md updated
+- [ ] File references accurate across docs
+- [ ] Changes committed to GitHub
+- [ ] PRD updated if scope changed
 ```
+
+---
+
+## QA Lenses (Apply Every Session)
+
+| Lens | Ask Yourself |
+|------|--------------|
+| **PM** | Does this serve the end goal (Instagram posts)? |
+| **Data** | Is the data accurate? Did I validate it? |
+| **Engineer** | Would this work on a fresh machine? |
+| **Learner** | Did I document what I learned, not just what I did? |
+| **Future Self** | Will I understand this in 3 months? |
 

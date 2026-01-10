@@ -266,10 +266,10 @@ A task is **not done** unless:
 | Python 3.11+ | Core language | Using venv for isolation |
 | nba_api | NBA stats API | Use V3 endpoints (V2 deprecated) |
 | pandas | Data manipulation | |
-| **Docker** | Container runtime | Runs PostgreSQL locally |
+| **Postgres.app** | PostgreSQL for Mac | Native app, runs PostgreSQL locally |
 | **PostgreSQL** | Database | Industry standard (Phase 2) |
 | **SQLAlchemy** | Python ORM | Connects Python ↔ Database |
-| **psycopg2** | PostgreSQL adapter | PostgreSQL driver for Python |
+| **psycopg2-binary** | PostgreSQL adapter | PostgreSQL driver for Python |
 | matplotlib/seaborn | Visualization | Phase 3 |
 | Jupyter notebooks | Exploration | Using .ipynb in Cursor |
 | Git/GitHub | Version control | Already set up |
@@ -277,7 +277,7 @@ A task is **not done** unless:
 ### Why This Stack?
 We're building a **production-grade data pipeline**, not just a learning exercise:
 - PostgreSQL over SQLite = what real jobs use
-- Docker = industry-standard for local development
+- Postgres.app = same PostgreSQL, native Mac app (Docker had compatibility issues)
 - SQLAlchemy = how Python talks to databases professionally
 - ETL pattern = Extract → Transform → Load (core data engineering)
 
@@ -337,10 +337,11 @@ bulls-analytics/
 - Documentation complete
 - Pushed to GitHub
 
-**Phase 2: Database & Data Pipeline** ⏳ UP NEXT
+**Phase 2: Database & Data Pipeline** ⏳ IN PROGRESS
 *Expanded scope: Production-grade workflow*
-- Part A: Docker + PostgreSQL setup
-- Part B: Database design (schema, relationships)
+- Part A: Environment Setup ✅ (Postgres.app + Python packages)
+  - ⏳ Still need to create `bulls_analytics` database
+- Part B: Database design (schema, relationships) — UP NEXT
 - Part C: ETL pipeline (Python scripts)
 - Part D: SQL mastery (queries, joins, views)
 - See `docs/PHASE_2_SQL_CONTEXT.md` for full details

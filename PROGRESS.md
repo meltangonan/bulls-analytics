@@ -88,6 +88,13 @@ Part D: SQL Mastery
   - When Unsure (don't guess, show reasoning)
 - Updated `docs/QUICK_START.md` with "Who I Am" section
 - Updated `docs/LLM_ADVISOR_CONTEXT.md` with Modern AI PM context
+- **Started Phase 2 Part A: Environment Setup**
+  - Attempted Docker Desktop → incompatible with system
+  - Pivoted to **Postgres.app** (native Mac PostgreSQL)
+  - Installed Postgres.app v18.1 ✅
+  - Added psql to PATH ✅
+  - Installed sqlalchemy + psycopg2-binary ✅
+  - Updated requirements.txt ✅
 
 ### What I Learned
 
@@ -96,6 +103,13 @@ Part D: SQL Mastery
 - Explicit instructions for AI agents matter (mental models, response formats, boundaries)
 - Good agent context = better, more consistent outputs
 - The Modern AI PM workflow: figure out what to build → build with agents → evaluate → iterate → hand off
+- **Adaptability matters:** Docker didn't work, but Postgres.app achieves the same goal
+
+**Technical Skills:**
+- PostgreSQL can run via Postgres.app (native Mac) instead of Docker
+- PATH configuration: how terminal finds commands (`~/.zshrc`)
+- SQL commands need semicolons (`;`) to execute!
+- psycopg2-binary is the PostgreSQL adapter for Python
 
 **Meta-Learning:**
 - Using ChatGPT to help craft prompts for Cursor agents = effective meta-collaboration
@@ -105,19 +119,27 @@ Part D: SQL Mastery
 - `AGENT_CONTEXT.md` - Major additions (5 new sections)
 - `docs/QUICK_START.md` - Added Modern AI PM identity
 - `docs/LLM_ADVISOR_CONTEXT.md` - Added user context and mental model
+- `docs/PHASE_2_SQL_CONTEXT.md` - Updated for Postgres.app (no Docker)
+- `requirements.txt` - Added sqlalchemy, psycopg2-binary
 
 ### Questions/Blockers
-- None - ready to proceed to Phase 2
+- None - ready to continue Phase 2
 
-### Next Steps
-- Start Phase 2: Docker + PostgreSQL setup
-- See Phase 2 checklist below
+### Phase 2 Progress
+- [x] Part A: Environment Setup (mostly complete)
+  - [x] PostgreSQL running (Postgres.app)
+  - [x] psql CLI working
+  - [x] Python packages installed
+  - [ ] Create `bulls_analytics` database (forgot semicolon!)
+- [ ] Part B: Database Design
+- [ ] Part C: ETL Pipeline
+- [ ] Part D: SQL Mastery
 
 ### End-of-Session QA ✓
 - [x] PROGRESS.md updated
 - [x] File references accurate across docs
-- [x] Changes committed to GitHub
-- [ ] PRD updated if scope changed (no scope change this session)
+- [ ] Changes committed to GitHub (do this now)
+- [x] PRD updated if scope changed (updated for Postgres.app)
 
 ---
 

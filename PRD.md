@@ -1,7 +1,7 @@
 # Product Requirements Document: Bulls Analytics Instagram
 
-> **Last Updated:** January 7, 2026
-> **Status:** Phase 1 Complete ✅ - Ready for Phase 2
+> **Last Updated:** January 9, 2026
+> **Status:** Phase 2 In Progress ⏳ - Part A (Environment) nearly complete
 
 ## Overview
 
@@ -134,7 +134,7 @@ Explicitly NOT doing:
 ### Infrastructure & Tools
 | Tool | Purpose |
 |------|---------|
-| Docker | Run PostgreSQL locally |
+| Postgres.app | Run PostgreSQL locally (native Mac app) |
 | PostgreSQL | Production-grade database |
 | SQLAlchemy | Python ORM for database connection |
 | Git/GitHub | Version control |
@@ -162,7 +162,9 @@ Explicitly NOT doing:
 
 ### Phase 2: Data Pipeline (Week 2-3) ← CURRENT
 **Expanded scope: Production-grade workflow**
-- [ ] Set up Docker + PostgreSQL locally
+- [x] Set up PostgreSQL locally (Postgres.app)
+- [x] Install Python database packages (sqlalchemy, psycopg2-binary)
+- [ ] Create bulls_analytics database
 - [ ] Design database schema (tables, relationships)
 - [ ] Build ETL pipeline (Extract → Transform → Load)
 - [ ] Master SQL (queries, joins, aggregations)
@@ -220,6 +222,7 @@ Every piece of work should pass these lenses:
 
 | Date | Change |
 |------|--------|
+| 2026-01-09 | Phase 2 started; using Postgres.app instead of Docker (compatibility) |
 | 2026-01-07 | Expanded Phase 2 scope: Docker, PostgreSQL, ETL pipeline |
 | 2026-01-06 | Phase 1 complete, added DATA_DICTIONARY.md |
 | 2026-01-05 | Initial PRD created |

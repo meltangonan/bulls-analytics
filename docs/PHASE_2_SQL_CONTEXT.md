@@ -2,6 +2,24 @@
 
 > **Purpose:** Detailed context for learning SQL and building a real data pipeline.
 > **Philosophy:** Learn tools by using them together on real problems, not in isolation.
+> **Last Updated:** January 9, 2026
+
+---
+
+## Current Environment Status ✅
+
+| Component | Status | Details |
+|-----------|--------|---------|
+| **PostgreSQL** | ✅ Running | Postgres.app v18.1 |
+| **psql CLI** | ✅ Working | Added to PATH |
+| **Python packages** | ✅ Installed | sqlalchemy, psycopg2-binary |
+| **Database** | ⏳ Needs creation | `bulls_analytics` database |
+
+**Connection details:**
+- Host: `localhost`
+- Port: `5432`
+- User: `postgres`
+- Database: `bulls_analytics` (create this first!)
 
 ---
 
@@ -9,7 +27,7 @@
 
 **🎯 Product Manager Lens:**
 - Why PostgreSQL? → Because it's what jobs require (career value)
-- Why Docker? → Reproducibility matters for real products
+- Why Postgres.app? → Native Mac app, same PostgreSQL, simpler setup
 - Schema design = product decisions (what data matters?)
 - Every query should answer: "What story does this tell for fans?"
 
@@ -36,12 +54,12 @@ This is the **exact workflow** data analysts and engineers use every day.
 
 ---
 
-## Tools We're Adding
+## Tools We're Using
 
 | Tool | What It Is | Why We're Using It |
 |------|------------|-------------------|
 | **PostgreSQL** | Industry-standard database | What you'll use at most jobs |
-| **Docker** | Container to run Postgres locally | Clean, reproducible setup |
+| **Postgres.app** | Native Mac app for PostgreSQL | Simple setup, same PostgreSQL |
 | **SQLAlchemy** | Python library to talk to databases | Industry standard ORM |
 | **psycopg2** | PostgreSQL adapter for Python | Connects Python ↔ Postgres |
 
@@ -56,9 +74,19 @@ This is the **exact workflow** data analysts and engineers use every day.
 
 **We're using PostgreSQL** because:
 1. It's what you'll see on job descriptions
-2. It runs in Docker (clean local setup)
+2. Postgres.app gives us real PostgreSQL with simple setup
 3. Skills transfer directly to work
 4. Same SQL syntax works everywhere
+
+### Why Postgres.app instead of Docker?
+
+Docker had compatibility issues on this machine. Postgres.app provides:
+- ✅ Same PostgreSQL (production-grade)
+- ✅ Native macOS app (no compatibility issues)
+- ✅ One-click start/stop
+- ✅ Same learning outcomes
+
+**No learning is lost** — SQL is SQL, and SQLAlchemy connects the same way.
 
 ---
 
@@ -71,7 +99,7 @@ This is your repeatable workflow for ANY data project:
 - What: Game results, player stats
 
 ### Step 2: Local Database Setup
-- Spin up PostgreSQL in Docker
+- Run PostgreSQL locally (Postgres.app)
 - Create database and tables
 - Design proper schema (relationships, keys)
 
@@ -196,8 +224,8 @@ CREATE INDEX idx_games_date ON games(game_date);
 
 By the end of Phase 2, you should be able to:
 
-1. **Explain** what Docker is and why it's useful
-2. **Run** a PostgreSQL database locally via Docker
+1. **Explain** what PostgreSQL is and why it's industry-standard
+2. **Run** a PostgreSQL database locally (Postgres.app)
 3. **Design** a database schema with proper relationships
 4. **Write** Python ETL scripts that load data into PostgreSQL
 5. **Query** the database with increasingly complex SQL
@@ -207,11 +235,13 @@ By the end of Phase 2, you should be able to:
 
 ## Recommended Order of Work
 
-### Part A: Environment Setup
-1. Install Docker Desktop
-2. Run PostgreSQL container
-3. Connect to database (verify it works)
-4. Install Python packages (SQLAlchemy, psycopg2)
+### Part A: Environment Setup ✅ COMPLETE
+1. ~~Install Docker Desktop~~ → Using Postgres.app instead
+2. ~~Run PostgreSQL container~~ → Postgres.app running (🐘 in menu bar)
+3. ✅ Connect to database (verified: `psql -U postgres` works)
+4. ✅ Install Python packages (sqlalchemy, psycopg2-binary installed)
+
+**Remaining:** Create `bulls_analytics` database
 
 ### Part B: Database Design
 5. Create database schema (tables, keys)
@@ -235,7 +265,7 @@ By the end of Phase 2, you should be able to:
 
 ## Key Questions for This Phase
 
-1. What is Docker and why do data engineers use it?
+1. What is PostgreSQL and why is it industry-standard?
 2. What makes a good database schema?
 3. What is ETL and how does each step work?
 4. How do foreign keys maintain data integrity?
@@ -246,7 +276,9 @@ By the end of Phase 2, you should be able to:
 ## QA Checkpoints for Phase 2
 
 **After Part A (Environment Setup):**
-- [ ] Can you run `docker ps` and see PostgreSQL running?
+- [x] Is Postgres.app running? (🐘 in menu bar)
+- [x] Can you run `psql -U postgres` and connect?
+- [ ] Is `bulls_analytics` database created?
 - [ ] Can you connect to the database from Python?
 - [ ] Are connection details documented (not hardcoded)?
 
@@ -276,19 +308,30 @@ By the end of Phase 2, you should be able to:
 ## Start Prompt for Phase 2
 
 ```
-I'm starting Phase 2 of my Bulls Analytics project.
+I'm continuing Phase 2 of my Bulls Analytics project.
 
 Please read these files for context:
-1. docs/QUICK_START.md (my working style)
-2. docs/PHASE_2_SQL_CONTEXT.md (this phase's details)
-3. DATA_DICTIONARY.md (available NBA data)
+1. docs/QUICK_START.md (my working style + who I am)
+2. AGENT_CONTEXT.md (full project context, interaction protocol)
+3. docs/PHASE_2_SQL_CONTEXT.md (this phase's details)
+4. DATA_DICTIONARY.md (available NBA data)
 
-Key context:
-- Phase 1 complete (API connection, data exploration)
-- I want to learn the REAL workflow: Docker, PostgreSQL, SQLAlchemy, ETL
-- Not just "learn SQL"—I want end-to-end data pipeline experience
-- I'm new to these tools. Teach me step-by-step.
-- I run commands myself—guide me, don't do everything for me.
+Current status:
+- Phase 1 ✅ complete (API connection, data exploration)
+- Part A ✅ mostly complete:
+  - Postgres.app installed and running (🐘 in menu bar)
+  - psql CLI works (`psql -U postgres`)
+  - Python packages installed (sqlalchemy, psycopg2-binary)
+  - ⏳ NEED TO: Create `bulls_analytics` database (forgot semicolon last time!)
 
-Let's start with Part A: setting up Docker and PostgreSQL locally.
+I'm a Modern AI PM—non-technical background, AI-first. I want to:
+- Learn the real workflow: PostgreSQL, SQLAlchemy, ETL
+- Understand end-to-end data pipeline
+- Build something portfolio-ready
+
+Let's:
+1. Create the bulls_analytics database
+2. Then move to Part B: Database Design (schema, tables, relationships)
+
+Remember: teach me step-by-step, I run commands myself, challenge me constructively.
 ```

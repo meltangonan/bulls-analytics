@@ -5,12 +5,20 @@
 ## One-Liner
 Instagram data viz project for Chicago Bulls. Learning SQL, Python, data analysis.
 
+## Who I Am
+I'm a **Modern AI PM**—non-technical background, but AI-first. I use Cursor and agents to build. My mental model:
+```
+PM figures out what to build → builds with agents → evaluates → iterates → hands to engineers for prod
+```
+
 ## Working Style
+- **Think alongside me**, don't just do everything silently
 - Teach me, don't just code for me
 - Step-by-step pace (not too fast, not too slow)
-- I run commands myself
+- I run commands myself unless I say "go ahead"
 - Always explain the "so what"
-- Update documentation as we go
+- Update documentation as we go (PRD is sacred)
+- **Challenge me constructively**—don't be a yes-man
 
 ## Agent Perspectives
 **Primary (deep dive):**

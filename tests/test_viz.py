@@ -2,11 +2,10 @@
 import pytest
 import pandas as pd
 from pathlib import Path
-from PIL import Image
 import matplotlib.pyplot as plt
 
-from bulls.viz import bar_chart, line_chart, create_graphic
-from bulls.config import OUTPUT_DIR, INSTAGRAM_PORTRAIT
+from bulls.viz import bar_chart, line_chart
+from bulls.config import OUTPUT_DIR
 
 
 class TestBarChart:
@@ -155,123 +154,3 @@ class TestLineChart:
         plt.close(fig)
 
 
-class TestCreateGraphic:
-    """Tests for create_graphic function."""
-    
-    def test_returns_image(self):
-        """Should return a PIL Image object."""
-        img = create_graphic(title="TEST TITLE")
-        
-        assert isinstance(img, Image.Image)
-    
-    def test_creates_correct_size(self):
-        """Should create image with correct dimensions."""
-        img = create_graphic(title="TEST", size=INSTAGRAM_PORTRAIT)
-        
-        assert img.size == INSTAGRAM_PORTRAIT
-    
-    def test_handles_title_only(self):
-        """Should create graphic with just a title."""
-        img = create_graphic(title="TITLE ONLY")
-        
-        assert img is not None
-        assert img.size == INSTAGRAM_PORTRAIT
-    
-    def test_handles_subtitle(self):
-        """Should create graphic with title and subtitle."""
-        img = create_graphic(
-            title="MAIN TITLE",
-            subtitle="Subtitle text"
-        )
-        
-        assert img is not None
-    
-    def test_handles_stats(self):
-        """Should create graphic with stats."""
-        img = create_graphic(
-            title="PLAYER STATS",
-            stats={'PTS': 28, 'REB': 5, 'AST': 7}
-        )
-        
-        assert img is not None
-    
-    def test_handles_player_name(self):
-        """Should create graphic with player name."""
-        img = create_graphic(
-            title="PLAYER PERFORMANCE",
-            player_name="COBY WHITE"
-        )
-        
-        assert img is not None
-    
-    def test_handles_player_image(self):
-        """Should create graphic with player image."""
-        # Create a simple test image
-        test_img = Image.new('RGB', (100, 100), color='red')
-        
-        img = create_graphic(
-            title="PLAYER WITH IMAGE",
-            player_image=test_img
-        )
-        
-        assert img is not None
-    
-    def test_handles_all_parameters(self):
-        """Should create graphic with all parameters."""
-        test_img = Image.new('RGB', (100, 100), color='blue')
-        
-        img = create_graphic(
-            title="FULL GRAPHIC",
-            subtitle="Bulls vs Heat • Jan 10, 2026",
-            stats={'PTS': 28, 'REB': 5, 'AST': 7},
-            player_name="COBY WHITE",
-            player_image=test_img,
-            footer="@bullsanalytics"
-        )
-        
-        assert img is not None
-    
-    def test_saves_to_file(self, tmp_path):
-        """Should save graphic to file when save_path provided."""
-        save_path = tmp_path / "test_graphic.png"
-        img = create_graphic(
-            title="TEST",
-            save_path=str(save_path)
-        )
-        
-        assert save_path.exists()
-        assert save_path.suffix == '.png'
-    
-    def test_custom_size(self):
-        """Should create graphic with custom size."""
-        custom_size = (500, 500)
-        img = create_graphic(title="TEST", size=custom_size)
-        
-        assert img.size == custom_size
-    
-    def test_custom_footer(self):
-        """Should use custom footer text."""
-        img = create_graphic(
-            title="TEST",
-            footer="@customhandle"
-        )
-        
-        assert img is not None
-    
-    def test_handles_empty_stats(self):
-        """Should handle empty stats dict."""
-        img = create_graphic(
-            title="TEST",
-            stats={}
-        )
-        
-        assert img is not None
-    
-    def test_handles_none_stats(self):
-        """Should handle None stats."""
-        img = create_graphic(
-            title="TEST",
-            stats=None
-        )
-        
-        assert img is not None

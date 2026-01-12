@@ -14,10 +14,6 @@ GRAY = (102, 102, 102)         # #666666
 GREEN = (34, 197, 94)          # #22c55e (positive)
 RED = (239, 68, 68)            # #ef4444 (negative)
 
-# Instagram dimensions
-INSTAGRAM_PORTRAIT = (1080, 1350)
-INSTAGRAM_SQUARE = (1080, 1080)
-
 # NBA API
 NBA_HEADSHOT_URL = "https://cdn.nba.com/headshots/nba/latest/1040x760/{player_id}.png"
 API_DELAY = 0.6  # Seconds between API calls (rate limiting)

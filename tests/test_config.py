@@ -6,8 +6,6 @@ from bulls.config import (
     CURRENT_SEASON,
     BULLS_RED,
     BULLS_BLACK,
-    INSTAGRAM_PORTRAIT,
-    INSTAGRAM_SQUARE,
     OUTPUT_DIR,
 )
 
@@ -33,11 +31,6 @@ class TestConfig:
         assert isinstance(BULLS_BLACK, tuple)
         assert len(BULLS_RED) == 3
         assert len(BULLS_BLACK) == 3
-    
-    def test_instagram_dimensions(self):
-        """Instagram dimensions should be correct."""
-        assert INSTAGRAM_PORTRAIT == (1080, 1350)
-        assert INSTAGRAM_SQUARE == (1080, 1080)
     
     def test_output_dir_exists(self):
         """OUTPUT_DIR should be a Path object."""

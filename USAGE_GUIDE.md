@@ -22,7 +22,7 @@ The Bulls Analytics workspace is a Python library designed to help you:
 
 - **Fetch** Chicago Bulls game data and player statistics from the NBA API
 - **Analyze** player performance, trends, and patterns
-- **Visualize** data with charts and create Instagram-ready graphics
+- **Visualize** data with charts and create visualizations
 
 It's built as a collaborative tool - you explore data, find insights, and create visualizations. The workspace provides the tools; you provide the questions and creativity.
 
@@ -30,7 +30,7 @@ It's built as a collaborative tool - you explore data, find insights, and create
 
 - **Data Layer** (`bulls.data`): Fetches data from the NBA API
 - **Analysis Layer** (`bulls.analysis`): Calculates averages, trends, comparisons
-- **Visualization Layer** (`bulls.viz`): Creates charts and Instagram graphics
+- **Visualization Layer** (`bulls.viz`): Creates charts and visualizations
 
 All three layers work together, but you can use them independently based on what you need.
 
@@ -460,7 +460,7 @@ for i, player in enumerate(top[:3], 1):
 
 ### Module: `bulls.viz`
 
-Functions for creating charts and Instagram graphics.
+Functions for creating charts and visualizations.
 
 #### `bar_chart(data, x, y, title='', color=None, highlight_last=True, save_path=None, figsize=(10, 6))`
 
@@ -638,57 +638,6 @@ viz.win_loss_chart(
 
 ---
 
-#### `create_graphic(title, subtitle='', stats=None, player_name='', player_image=None, footer='@bullsanalytics', size=(1080, 1350), save_path=None, accent_line=True)`
-
-Create an Instagram-ready graphic.
-
-**Parameters:**
-- `title` (str): Main headline (e.g., "CLUTCH PERFORMANCE")
-- `subtitle` (str): Secondary text (e.g., "Bulls vs Heat • Jan 10, 2026")
-- `stats` (dict, optional): Stats to display (e.g., `{'PTS': 28, 'REB': 5, 'AST': 7}`)
-- `player_name` (str): Player's name to display
-- `player_image` (PIL.Image, optional): Player headshot image
-- `footer` (str): Attribution text (default: "@bullsanalytics")
-- `size` (tuple): Image dimensions (default: 1080x1350 for Instagram portrait)
-- `save_path` (str, optional): Path to save image
-- `accent_line` (bool): Add accent line for visual hierarchy (default: True)
-
-**Returns:** `PIL.Image` object
-
-**Example:**
-```python
-from bulls import data, analysis, viz
-
-# Get latest game info
-game = data.get_latest_game()
-box = data.get_box_score(game['game_id'])
-top = analysis.top_performers(box)[0]
-
-# Get player headshot (need player ID)
-player_img = data.get_player_headshot(top['player_id'])
-
-# Create graphic
-viz.create_graphic(
-    title="CLUTCH PERFORMANCE",
-    subtitle=f"{game['matchup']} • {game['date']}",
-    stats={
-        'PTS': top['points'],
-        'REB': top['rebounds'],
-        'AST': top['assists']
-    },
-    player_name=top['name'].upper(),
-    player_image=player_img,
-    save_path="output/latest_performance.png"
-)
-```
-
-**Notes:**
-- Uses Bulls branding (red/black colors)
-- Automatically handles layout for 1-4+ stats
-- Portrait orientation (1080x1350) is Instagram-friendly
-- Fonts are loaded from `assets/fonts/` if available, otherwise uses defaults
-- Saves to `output/` directory if `save_path` provided
-
 ---
 
 ## Common Workflows
@@ -789,38 +738,23 @@ print(f"  Assists: {diff['assists']:+.1f}")
 
 ---
 
-### Workflow 4: Create an Instagram Graphic
+### Workflow 4: Create Multiple Visualizations
 
-**Goal:** Create a polished graphic for social media.
+**Goal:** Create different types of charts to explore data from multiple angles.
 
 ```python
-from bulls import data, analysis, viz
+from bulls import data, viz
 
-# Step 1: Get game and player info
-game = data.get_latest_game()
-box = data.get_box_score(game['game_id'])
-top = analysis.top_performers(box)[0]
+# Get player data
+player = data.get_player_games("Coby White", last_n=15)
 
-# Step 2: Get player headshot
-player_img = data.get_player_headshot(top['player_id'], size=(400, 400))
-
-# Step 3: Create graphic
-viz.create_graphic(
-    title="CLUTCH PERFORMANCE",
-    subtitle=f"{game['matchup']} • {game['date']}",
-    stats={
-        'PTS': top['points'],
-        'REB': top['rebounds'],
-        'AST': top['assists']
-    },
-    player_name=top['name'].upper(),
-    player_image=player_img,
-    footer="@bullsanalytics",
-    save_path="output/latest_performance.png"
-)
+# Create different visualizations
+viz.bar_chart(player, x='date', y='points', title="Points Per Game")
+viz.line_chart(player, x='date', y='points', title="Scoring Trend")
+viz.scatter_plot(player, x='points', y='assists', title="Points vs Assists")
 ```
 
-**When to use:** When you've found an interesting insight worth sharing.
+**When to use:** When you want to explore data from different perspectives.
 
 ---
 
@@ -1026,14 +960,6 @@ The NBA API has rate limits. The workspace includes delays, but:
 - For JupyterLab: `%matplotlib widget` or `%matplotlib inline`
 - Try `plt.show()` after creating the chart
 
-### Problem: Fonts not loading for Instagram graphics
-
-**Solution:**
-- Fonts are optional - the function will use default fonts if custom fonts aren't found
-- To use custom fonts, download them to `assets/fonts/`:
-  - Bebas Neue: https://fonts.google.com/specimen/Bebas+Neue
-  - Inter: https://fonts.google.com/specimen/Inter
-- Graphics will still work without custom fonts
 
 ### Problem: Tests are failing
 
@@ -1079,7 +1005,7 @@ Now that you understand how to use the workspace:
 2. **Try different players:** Change `PLAYER_NAME` and see different data
 3. **Experiment with visualizations:** Modify chart parameters, try different chart types
 4. **Find insights:** Look for interesting patterns, trends, and stories
-5. **Create graphics:** When you find something interesting, make an Instagram graphic
+5. **Create visualizations:** When you find something interesting, create charts to visualize it
 6. **Iterate:** Use the workspace regularly and add features as needed
 
 Remember: This is a collaborative tool. You explore, ask questions, and create. The workspace provides the tools to make it easy.

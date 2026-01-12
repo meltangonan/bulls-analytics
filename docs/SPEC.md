@@ -169,7 +169,7 @@ bulls-analytics/
 │   └── viz/                 # Visualization
 │       ├── __init__.py
 │       ├── charts.py        # Basic charts
-│       └── instagram.py     # Instagram-ready graphics
+│       └── charts.py        # Chart visualizations
 │
 ├── tests/                   # Test suite (yes, we test!)
 │   ├── __init__.py
@@ -213,7 +213,7 @@ bulls-analytics/
 │                                                             │
 │   - Data displayed in chat/notebook                         │
 │   - Charts for exploration                                  │
-│   - Instagram graphics (when ready)                         │
+│   - Charts and visualizations                               │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -242,9 +242,6 @@ GRAY = (102, 102, 102)         # #666666
 GREEN = (34, 197, 94)          # #22c55e (positive)
 RED = (239, 68, 68)            # #ef4444 (negative)
 
-# Instagram dimensions
-INSTAGRAM_PORTRAIT = (1080, 1350)
-INSTAGRAM_SQUARE = (1080, 1080)
 
 # NBA API
 NBA_HEADSHOT_URL = "https://cdn.nba.com/headshots/nba/latest/1040x760/{player_id}.png"
@@ -678,7 +675,7 @@ def top_performers(box_score: pd.DataFrame) -> list:
 
 ## 5. Module: bulls.viz
 
-Visualization - charts and Instagram graphics.
+Visualization - charts and graphics.
 
 ### File: `bulls/viz/__init__.py`
 
@@ -687,9 +684,6 @@ Visualization - charts and Instagram graphics.
 from bulls.viz.charts import (
     bar_chart,
     line_chart,
-)
-from bulls.viz.instagram import (
-    create_graphic,
 )
 ```
 
@@ -833,159 +827,6 @@ def line_chart(
     return fig
 ```
 
-### File: `bulls/viz/instagram.py`
-
-```python
-"""Instagram-ready graphics using Pillow."""
-from PIL import Image, ImageDraw, ImageFont
-from pathlib import Path
-from typing import Optional
-
-from bulls.config import (
-    BULLS_RED, BULLS_BLACK, WHITE, DARK_BG, GRAY,
-    INSTAGRAM_PORTRAIT, OUTPUT_DIR, FONTS_DIR
-)
-
-
-def load_font(name: str, size: int) -> ImageFont.FreeTypeFont:
-    """Load a font, with fallback to default."""
-    font_paths = [
-        FONTS_DIR / f"{name}.ttf",
-        FONTS_DIR / f"{name}-Regular.ttf",
-    ]
-    
-    for path in font_paths:
-        if path.exists():
-            return ImageFont.truetype(str(path), size)
-    
-    # Fallback
-    return ImageFont.load_default()
-
-
-def create_graphic(
-    title: str,
-    subtitle: str = "",
-    stats: dict = None,
-    player_name: str = "",
-    player_image: Optional[Image.Image] = None,
-    footer: str = "@bullsanalytics",
-    size: tuple = INSTAGRAM_PORTRAIT,
-    save_path: Optional[str] = None,
-) -> Image.Image:
-    """
-    Create an Instagram-ready graphic.
-    
-    This is a flexible template - customize as needed.
-    
-    Args:
-        title: Main headline
-        subtitle: Secondary text
-        stats: Dict of stats to display (e.g., {'PTS': 28, 'REB': 5})
-        player_name: Player's name to display
-        player_image: PIL Image of player headshot
-        footer: Attribution text
-        size: Image dimensions
-        save_path: Path to save (optional)
-    
-    Returns:
-        PIL Image object
-    
-    Example:
-        >>> img = create_graphic(
-        ...     title="CLUTCH PERFORMANCE",
-        ...     subtitle="Bulls vs Heat • Jan 10, 2026",
-        ...     stats={'PTS': 28, 'REB': 5, 'AST': 7},
-        ...     player_name="COBY WHITE",
-        ...     save_path="output/coby_clutch.png"
-        ... )
-    """
-    # Create canvas
-    img = Image.new('RGB', size, DARK_BG)
-    draw = ImageDraw.Draw(img)
-    
-    # Load fonts
-    font_title = load_font("BebasNeue", 72)
-    font_subtitle = load_font("Inter", 28)
-    font_name = load_font("BebasNeue", 56)
-    font_stat_value = load_font("BebasNeue", 64)
-    font_stat_label = load_font("Inter", 20)
-    font_footer = load_font("Inter", 18)
-    
-    width, height = size
-    y_cursor = 80
-    
-    # Title
-    bbox = draw.textbbox((0, 0), title, font=font_title)
-    text_width = bbox[2] - bbox[0]
-    draw.text(((width - text_width) // 2, y_cursor), title, font=font_title, fill=WHITE)
-    y_cursor += 90
-    
-    # Subtitle
-    if subtitle:
-        bbox = draw.textbbox((0, 0), subtitle, font=font_subtitle)
-        text_width = bbox[2] - bbox[0]
-        draw.text(((width - text_width) // 2, y_cursor), subtitle, font=font_subtitle, fill=GRAY)
-        y_cursor += 60
-    
-    # Player section
-    if player_image or player_name:
-        y_cursor += 40
-        
-        # Player image (if provided)
-        if player_image:
-            # Resize and paste
-            img_size = 250
-            player_image = player_image.resize((img_size, img_size), Image.Resampling.LANCZOS)
-            paste_x = (width - img_size) // 2
-            
-            # Create circular mask
-            mask = Image.new('L', (img_size, img_size), 0)
-            mask_draw = ImageDraw.Draw(mask)
-            mask_draw.ellipse((0, 0, img_size, img_size), fill=255)
-            
-            img.paste(player_image, (paste_x, y_cursor), mask)
-            y_cursor += img_size + 30
-        
-        # Player name
-        if player_name:
-            bbox = draw.textbbox((0, 0), player_name, font=font_name)
-            text_width = bbox[2] - bbox[0]
-            draw.text(((width - text_width) // 2, y_cursor), player_name, font=font_name, fill=WHITE)
-            y_cursor += 70
-    
-    # Stats
-    if stats:
-        y_cursor += 30
-        stat_spacing = width // (len(stats) + 1)
-        
-        for i, (label, value) in enumerate(stats.items()):
-            x = stat_spacing * (i + 1)
-            
-            # Value
-            value_text = str(value)
-            bbox = draw.textbbox((0, 0), value_text, font=font_stat_value)
-            text_width = bbox[2] - bbox[0]
-            draw.text((x - text_width // 2, y_cursor), value_text, font=font_stat_value, fill=BULLS_RED)
-            
-            # Label
-            bbox = draw.textbbox((0, 0), label, font=font_stat_label)
-            text_width = bbox[2] - bbox[0]
-            draw.text((x - text_width // 2, y_cursor + 65), label, font=font_stat_label, fill=GRAY)
-    
-    # Footer
-    bbox = draw.textbbox((0, 0), footer, font=font_footer)
-    text_width = bbox[2] - bbox[0]
-    draw.text(((width - text_width) // 2, height - 50), footer, font=font_footer, fill=GRAY)
-    
-    # Save if path provided
-    if save_path:
-        OUTPUT_DIR.mkdir(exist_ok=True)
-        save_path = Path(save_path)
-        img.save(save_path, "PNG")
-        print(f"Saved to {save_path}")
-    
-    return img
-```
 
 ---
 
@@ -1253,14 +1094,14 @@ Build in this order. Each phase includes testing - this is how real software get
 
 ### Phase 3: Visualization
 1. Create `bulls/viz/charts.py` with `bar_chart()`
-2. Create `bulls/viz/instagram.py` with `create_graphic()`
+2. Add additional chart types as needed
 3. **Write tests:** Test that functions return expected types, test file saving
 4. **Verify:** `pytest` passes, can create a chart and save it
 
 ### Phase 4: Polish & Ship
 1. Create exploration notebook
 2. Add more chart types as needed
-3. Refine Instagram graphic template
+3. Refine chart templates and styling
 4. **Full test suite:** Run all tests, fix any issues
 5. **Use it!** See what's missing, iterate
 
@@ -1305,7 +1146,7 @@ Add these when you need them, not before:
 |------|----------|-----------|
 | 2026-01-11 | Compute averages from game logs | Simpler than PlayerDashboard API |
 | 2026-01-11 | Matplotlib for charts | Good enough, familiar, can upgrade later |
-| 2026-01-11 | Pillow for Instagram graphics | Python-native, simple, flexible |
+| 2026-01-11 | Matplotlib for charts | Good enough, familiar, can upgrade later |
 | 2026-01-11 | No CLI tool | Focus on exploration workflow |
 | 2026-01-11 | pytest for testing | Industry standard, simple, well-documented |
 | 2026-01-11 | Tests in separate `tests/` folder | Clean separation, standard Python convention |

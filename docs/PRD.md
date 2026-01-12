@@ -21,7 +21,7 @@ A **collaborative analysis workspace** for exploring Chicago Bulls data and crea
 - ❌ Just reformatting box scores into pretty pictures
 
 ### The Key Insight
-The **process** of exploring data and finding insights is as valuable as the **output** (Instagram graphics). The graphic emerges from collaborative exploration, not automation.
+The **process** of exploring data and finding insights is as valuable as the **output** (visualizations). The visualization emerges from collaborative exploration, not automation.
 
 ---
 
@@ -32,7 +32,7 @@ The **process** of exploring data and finding insights is as valuable as the **o
 | Goal | Description |
 |------|-------------|
 | **Portfolio Piece** | Demonstrate skills in data analysis, visualization, product management, and software engineering - from a PM/AI-builder perspective |
-| **Create Content** | Produce unique Bulls analytics content for Instagram |
+| **Create Content** | Produce unique Bulls analytics content and visualizations |
 | **Explore Interests** | Figure out what I enjoy by doing it - data, basketball, creating, building software |
 | **Learn Software Engineering** | Understand foundational concepts and first principles of how software actually works - not every line of code, but the concepts that make it tick |
 | **Learn Best Practices** | Experience the end-to-end lifecycle of building real-world software: planning, building, testing, iterating, shipping |
@@ -79,7 +79,7 @@ This project is explicitly about **building with AI**, not despite it:
 | Who | Role |
 |-----|------|
 | **Me** | Primary user - exploring data, creating content, learning software engineering |
-| **Bulls Fans** | Audience for the Instagram content I create |
+| **Bulls Fans** | Audience for the analytics content I create |
 | **AI (Cursor)** | Collaborator - thought partner for both coding and analysis |
 | **Future Employers/Portfolio Viewers** | See evidence of PM who can ship real software with AI |
 
@@ -117,7 +117,7 @@ This is **not** a tool you run and get output. It's a **collaborative process**:
 │                          ↓                                      │
 │                                                                 │
 │  4. POLISH (when ready)                                         │
-│     "Make it Instagram-ready"                                   │
+│     "Create a polished visualization"                            │
 │     Add Bulls branding, proper dimensions                       │
 │     Export final graphic                                        │
 │                                                                 │
@@ -174,13 +174,13 @@ You: "Nice. Let's also show the win/loss for each game -
 AI:  [updates chart]
 
 You: "This is great. When I'm ready, can you make this 
-      Instagram-ready with Bulls colors and proper sizing?"
+      polished with Bulls colors and proper sizing?"
 
 AI:  "Sure, just let me know. I can add:
        - Bulls red/black color scheme
        - Player headshot
        - Title and caption
-       - 1080x1350 dimensions for Instagram
+       - Proper dimensions for sharing
        - Your handle for attribution"
 
 You: "Let's do it."
@@ -222,7 +222,7 @@ quarters = analysis.quarter_breakdown(player)
 # Visualization
 viz.bar_chart(data, x="date", y="points")
 viz.trend_line(data, metric="fg_pct")
-viz.instagram_graphic(title="...", stats={...}, player_img=...)
+viz.bar_chart(data, x="date", y="points")
 ```
 
 ### What the Codebase Provides
@@ -231,7 +231,7 @@ viz.instagram_graphic(title="...", stats={...}, player_img=...)
 |-----------|---------|
 | `bulls.data` | Fetch games, players, box scores from NBA API |
 | `bulls.analysis` | Common calculations - averages, trends, comparisons |
-| `bulls.viz` | Create charts and Instagram-ready graphics |
+| `bulls.viz` | Create charts and visualizations |
 
 ### What the Codebase Does NOT Do
 
@@ -243,9 +243,9 @@ viz.instagram_graphic(title="...", stats={...}, player_img=...)
 
 ---
 
-## 5. Output: Instagram Graphics
+## 5. Output: Visualizations
 
-When you've found an interesting insight and are ready to share it, the end product is an Instagram graphic.
+When you've found an interesting insight and are ready to share it, the end product is a visualization.
 
 ### Specifications
 
@@ -336,9 +336,8 @@ Things we'll figure out as we go:
 |----------|--------|
 | What types of analysis are most interesting? | Will discover through use |
 | What visual style works best? | Will iterate |
-| How much polish do Instagram graphics need? | Will experiment |
+| How much polish do visualizations need? | Will experiment |
 | What's the right balance of chat vs notebook? | Will find out |
-| Instagram handle name? | TBD |
 | What level of code understanding is "enough"? | Will learn through building |
 | How much testing is practical vs overkill? | Will find balance |
 | What software concepts are most valuable to learn? | Will discover through doing |
@@ -361,7 +360,7 @@ Things we'll figure out as we go:
 
 ### For v0.3 (Visualization)
 - [ ] Can create Bulls-branded charts
-- [ ] Can generate Instagram-ready graphics
+- [ ] Can generate polished visualizations
 - [ ] Have created at least 3 graphics I'm proud of
 
 ### Software Engineering Goals

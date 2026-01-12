@@ -73,9 +73,8 @@ viz.bar_chart(coby, x='date', y='points', title="Coby's Scoring")
 viz.line_chart(coby, x='date', y='points', title="Coby's Scoring Trend")
 viz.scatter_plot(coby, x='points', y='assists', title="Points vs Assists")
 viz.win_loss_chart(games, x='GAME_DATE', y='PTS', result_col='WL', title="Bulls Scoring by Game")
-
-# Create additional visualizations
-viz.scatter_plot(coby, x='points', y='assists', title="Points vs Assists")
+# Note: comparison_chart requires data with a group_by column
+# Example: Compare multiple players' scoring over time
 ```
 
 ## Project Structure
@@ -104,7 +103,7 @@ bulls-analytics/
   - `get_box_score()` - Get box score for a game
   - `get_player_games()` - Get player's game-by-game stats
   - `get_player_headshot()` - Fetch player headshot
-- ✅ Tests written for config and data modules (31 tests)
+- ✅ Tests written for config and data modules (30 tests: 5 config + 25 data)
 
 ### Phase 2: Analysis ✅
 - ✅ Analysis module (`bulls/analysis/stats.py`)
@@ -122,8 +121,8 @@ bulls-analytics/
   - `scatter_plot()` - Compare two metrics (e.g., points vs assists)
   - `comparison_chart()` - Compare multiple groups side by side
   - `win_loss_chart()` - Bar chart with win/loss color coding
-- ✅ Comprehensive tests for visualization module (25 tests)
-- ✅ All 81 tests passing
+- ✅ Comprehensive tests for visualization module (12 tests)
+- ✅ All 67 tests passing
 
 ### Phase 4: Polish & Ship ✅
 - ✅ Exploration notebook (`notebooks/explore.ipynb`)
@@ -138,7 +137,7 @@ bulls-analytics/
   - Bulls branding and colors
   - Multiple chart types for different use cases
   - Customizable styling options
-- ✅ All 81 tests passing
+- ✅ All 67 tests passing
 
 ## Next Steps
 
@@ -148,10 +147,9 @@ bulls-analytics/
 
 ## Documentation
 
-- **USAGE_GUIDE.md** - Complete guide on how to use this workspace (start here!)
-- **PRD.md** - Product requirements and vision
-- **SPEC.md** - Technical specification and implementation details
-- **AGENT_PROMPT.md** - Context for AI collaborators
+- **docs/USAGE_GUIDE.md** - Complete guide on how to use this workspace (start here!)
+- **docs/PRD.md** - Product requirements and vision
+- **docs/SPEC.md** - Technical specification and implementation details
 
 ## Development
 

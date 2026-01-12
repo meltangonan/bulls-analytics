@@ -1,8 +1,8 @@
 # Product Requirements Document: Bulls Analytics Workspace
 
 > **Document Owner:** User  
-> **Last Updated:** January 11, 2026  
-> **Status:** v0.1 - Initial Direction  
+> **Last Updated:** January 12, 2026  
+> **Status:** v0.4 - Phase 4 Complete (Foundation, Analysis, Visualization)  
 > **Document Type:** Living document - will evolve with the project
 
 ---
@@ -212,17 +212,19 @@ from bulls import data, analysis, viz
 # Easy data access
 game = data.get_latest_game()
 games = data.get_games(last_n=20)
-player = data.get_player_stats("Coby White", last_n=15)
+player = data.get_player_games("Coby White", last_n=15)
 
 # Analysis helpers
 trends = analysis.scoring_trend(player)
-comparison = analysis.vs_season_average(player, game)
-quarters = analysis.quarter_breakdown(player)
+avgs = analysis.season_averages(player)
+comparison = analysis.vs_average(game_stats, avgs)
+top = analysis.top_performers(box_score)
 
 # Visualization
-viz.bar_chart(data, x="date", y="points")
-viz.trend_line(data, metric="fg_pct")
-viz.bar_chart(data, x="date", y="points")
+viz.bar_chart(player, x="date", y="points", title="Scoring")
+viz.line_chart(player, x="date", y="points", title="Trend")
+viz.scatter_plot(player, x="points", y="assists", title="Points vs Assists")
+viz.win_loss_chart(games, x="GAME_DATE", y="PTS", result_col="WL")
 ```
 
 ### What the Codebase Provides
@@ -290,20 +292,27 @@ We don't know exactly what this will become. That's okay.
 
 ### Phases
 
-**Phase 0: Foundation**
+**Phase 0: Foundation** ✅ Complete
 - Get Bulls data flowing
 - Basic exploration works
-- *Then use it. See what's missing.*
+- Data fetching module with 5 functions
+- 30 tests (5 config + 25 data)
 
-**Phase 1: Analysis**
+**Phase 2: Analysis** ✅ Complete
 - Add analysis helpers as questions arise
 - Trends, comparisons, breakdowns
-- *Then use it. See what questions are hard to answer.*
+- Analysis module with 4 functions
+- 25 tests
 
-**Phase 2: Visualization**
+**Phase 3: Visualization** ✅ Complete
 - Build viz capabilities as you have things to visualize
-- Start simple, add polish over time
-- *Then use it. Iterate on the visual style.*
+- 5 chart types: bar, line, scatter, comparison, win/loss
+- 12 tests
+
+**Phase 4: Polish & Ship** ✅ Complete
+- Exploration notebook
+- Enhanced chart styling
+- All 67 tests passing
 
 **Ongoing: Evolve**
 - The codebase grows with your needs
@@ -320,11 +329,18 @@ Track decisions so we can revisit them:
 |------|----------|-----------|
 | 2026-01-11 | Collaborative workspace, not auto-generation | Want to be involved in the creative process |
 | 2026-01-11 | Start with data layer, add viz later | Need to explore before we know what to visualize |
-| 2026-01-11 | Use Pillow for graphics (can revisit) | Simple, Python-native, good enough for v0.1 |
+| 2026-01-11 | Use matplotlib for charts (not Pillow) | Better for data visualization, familiar API, can create multiple chart types easily |
 | 2026-01-11 | No database, NBA API is source of truth | Keeps it simple, data is always fresh |
 | 2026-01-11 | Include testing from the start | Testing is what good engineers do - not optional |
 | 2026-01-11 | Focus on concepts over syntax | Goal is understanding how software works, not memorizing code |
 | 2026-01-11 | Frame as AI-driven PM building | Proves non-technical folks can ship real software with AI |
+| 2026-01-11 | Compute averages from game logs | Simpler than PlayerDashboard API, gives us control |
+| 2026-01-11 | pytest for testing | Industry standard, simple, well-documented |
+| 2026-01-11 | Tests in separate `tests/` folder | Clean separation, standard Python convention |
+| 2026-01-11 | Test each phase before moving on | Build confidence incrementally |
+| 2026-01-12 | Implement 5 chart types (bar, line, scatter, comparison, win/loss) | Covers most common visualization needs, can add more as needed |
+| 2026-01-12 | Use Bulls colors (red/black) as defaults | Brand consistency, but allow customization |
+| 2026-01-12 | Handle empty DataFrames gracefully | Better user experience, prevents crashes |
 
 ---
 
@@ -347,20 +363,20 @@ Things we'll figure out as we go:
 ## 9. Success Criteria
 
 ### For v0.1 (Foundation)
-- [ ] Can fetch Bulls game data through simple function calls
-- [ ] Can have a conversation with AI about Bulls stats
-- [ ] Can create a basic chart from the data
-- [ ] Tests exist and pass for core functionality
+- [x] Can fetch Bulls game data through simple function calls
+- [x] Can have a conversation with AI about Bulls stats
+- [x] Can create a basic chart from the data
+- [x] Tests exist and pass for core functionality (67 tests passing)
 
 ### For v0.2 (Analysis)
-- [ ] Can easily answer "how has player X performed lately?"
-- [ ] Can compare player/team stats to averages
-- [ ] Can identify interesting patterns in the data
-- [ ] Analysis functions are tested with known inputs/outputs
+- [x] Can easily answer "how has player X performed lately?"
+- [x] Can compare player/team stats to averages
+- [x] Can identify interesting patterns in the data
+- [x] Analysis functions are tested with known inputs/outputs (25 tests)
 
 ### For v0.3 (Visualization)
-- [ ] Can create Bulls-branded charts
-- [ ] Can generate polished visualizations
+- [x] Can create Bulls-branded charts
+- [x] Can generate polished visualizations (5 chart types: bar, line, scatter, comparison, win/loss)
 - [ ] Have created at least 3 graphics I'm proud of
 
 ### Software Engineering Goals
@@ -388,8 +404,8 @@ Quick reference:
 |------|-------|
 | Language | Python 3.10+ |
 | Data Source | NBA API (via `nba_api` library) |
-| Visualization | Pillow, matplotlib (may evolve) |
-| Key Libraries | nba_api, pandas, Pillow, requests |
+| Visualization | matplotlib (primary), Pillow (for headshots) |
+| Key Libraries | nba_api, pandas, matplotlib, Pillow, requests |
 | Testing | pytest |
 | Bulls Team ID | 1610612741 |
 | Season | 2025-26 |

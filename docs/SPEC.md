@@ -2,8 +2,8 @@
 
 > **Purpose:** Technical guide for building the Bulls Analytics workspace.  
 > **Audience:** Developer, AI agent, or future self implementing this project.  
-> **Last Updated:** January 11, 2026  
-> **Status:** v0.1 - Foundation  
+> **Last Updated:** January 12, 2026  
+> **Status:** v0.4 - Phase 4 Complete (67 tests passing)  
 > **Document Type:** Living document - will evolve with the project
 
 ---
@@ -168,8 +168,7 @@ bulls-analytics/
 │   │   └── stats.py         # Calculations, comparisons
 │   └── viz/                 # Visualization
 │       ├── __init__.py
-│       ├── charts.py        # Basic charts
-│       └── charts.py        # Chart visualizations
+│       └── charts.py        # Chart visualizations (bar, line, scatter, comparison, win/loss)
 │
 ├── tests/                   # Test suite (yes, we test!)
 │   ├── __init__.py
@@ -684,6 +683,9 @@ Visualization - charts and graphics.
 from bulls.viz.charts import (
     bar_chart,
     line_chart,
+    scatter_plot,
+    comparison_chart,
+    win_loss_chart,
 )
 ```
 
@@ -696,7 +698,7 @@ import pandas as pd
 from typing import Optional, List
 from pathlib import Path
 
-from bulls.config import BULLS_RED, BULLS_BLACK, WHITE, OUTPUT_DIR
+from bulls.config import BULLS_RED, BULLS_BLACK, WHITE, GREEN, RED as RED_COLOR, OUTPUT_DIR
 
 
 def bar_chart(
@@ -825,6 +827,196 @@ def line_chart(
         print(f"Saved to {save_path}")
     
     return fig
+
+
+def scatter_plot(
+    data: pd.DataFrame,
+    x: str,
+    y: str,
+    title: str = "",
+    color: tuple = BULLS_RED,
+    size: Optional[int] = None,
+    save_path: Optional[str] = None,
+    figsize: tuple = (10, 6)
+) -> plt.Figure:
+    """
+    Create a scatter plot comparing two metrics.
+    
+    Args:
+        data: DataFrame with the data
+        x: Column name for x-axis
+        y: Column name for y-axis
+        title: Chart title
+        color: Point color (RGB tuple)
+        size: Point size (optional, can use a column name for variable sizing)
+        save_path: Path to save image (optional)
+        figsize: Figure size
+    
+    Returns:
+        matplotlib Figure object
+    """
+    fig, ax = plt.subplots(figsize=figsize)
+    
+    x_vals = data[x].tolist()
+    y_vals = data[y].tolist()
+    
+    # Handle size parameter
+    if size is None:
+        sizes = 100
+    elif isinstance(size, str) and size in data.columns:
+        sizes = data[size].tolist()
+        sizes = [s * 10 for s in sizes]  # Scale for visibility
+    else:
+        sizes = size
+    
+    ax.scatter(x_vals, y_vals, c=[tuple(c/255 for c in color)], s=sizes, alpha=0.6, edgecolors='black', linewidth=0.5)
+    
+    ax.set_title(title, fontsize=16, fontweight='bold')
+    ax.set_xlabel(x.capitalize())
+    ax.set_ylabel(y.capitalize())
+    ax.grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    
+    if save_path:
+        OUTPUT_DIR.mkdir(exist_ok=True)
+        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
+        print(f"Saved to {save_path}")
+    
+    return fig
+
+
+def comparison_chart(
+    data: pd.DataFrame,
+    x: str,
+    y: str,
+    group_by: str,
+    title: str = "",
+    save_path: Optional[str] = None,
+    figsize: tuple = (10, 6)
+) -> plt.Figure:
+    """
+    Create a comparison chart showing multiple groups side by side.
+    
+    Args:
+        data: DataFrame with the data
+        x: Column name for x-axis (categories)
+        y: Column name for y-axis (values)
+        group_by: Column name to group by (creates multiple series)
+        title: Chart title
+        save_path: Path to save image (optional)
+        figsize: Figure size
+    
+    Returns:
+        matplotlib Figure object
+    """
+    fig, ax = plt.subplots(figsize=figsize)
+    
+    groups = data[group_by].unique()
+    colors = [BULLS_RED, BULLS_BLACK, GREEN, RED_COLOR]
+    
+    x_categories = sorted(data[x].unique())
+    x_pos = range(len(x_categories))
+    
+    width = 0.8 / len(groups)
+    
+    for i, group in enumerate(groups):
+        group_data = data[data[group_by] == group]
+        values = [group_data[group_data[x] == cat][y].values[0] if len(group_data[group_data[x] == cat]) > 0 else 0 
+                 for cat in x_categories]
+        
+        offset = (i - len(groups)/2 + 0.5) * width
+        ax.bar([p + offset for p in x_pos], values, width=width, 
+               label=group, color=tuple(c/255 for c in colors[i % len(colors)]), 
+               edgecolor='black', linewidth=0.5)
+    
+    ax.set_title(title, fontsize=16, fontweight='bold')
+    ax.set_xlabel(x.capitalize())
+    ax.set_ylabel(y.capitalize())
+    ax.set_xticks(x_pos)
+    ax.set_xticklabels(x_categories, rotation=45, ha='right')
+    ax.legend()
+    ax.grid(True, alpha=0.3, axis='y')
+    
+    plt.tight_layout()
+    
+    if save_path:
+        OUTPUT_DIR.mkdir(exist_ok=True)
+        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
+        print(f"Saved to {save_path}")
+    
+    return fig
+
+
+def win_loss_chart(
+    data: pd.DataFrame,
+    x: str,
+    y: str,
+    result_col: str = 'result',
+    title: str = "",
+    save_path: Optional[str] = None,
+    figsize: tuple = (10, 6)
+) -> plt.Figure:
+    """
+    Create a bar chart with different colors for wins and losses.
+    
+    Args:
+        data: DataFrame with the data
+        x: Column name for x-axis
+        y: Column name for y-axis (bar heights)
+        result_col: Column name containing 'W' or 'L' for win/loss
+        title: Chart title
+        save_path: Path to save image (optional)
+        figsize: Figure size
+    
+    Returns:
+        matplotlib Figure object
+    """
+    fig, ax = plt.subplots(figsize=figsize)
+    
+    # Reverse data so oldest is first
+    plot_data = data.iloc[::-1].copy()
+    
+    x_vals = range(len(plot_data))
+    y_vals = plot_data[y].tolist()
+    
+    # Color bars based on win/loss
+    colors = []
+    for _, row in plot_data.iterrows():
+        if result_col in row and str(row[result_col]).upper() == 'W':
+            colors.append(tuple(c/255 for c in GREEN))
+        else:
+            colors.append(tuple(c/255 for c in RED_COLOR))
+    
+    ax.bar(x_vals, y_vals, color=colors, edgecolor='black', linewidth=0.5)
+    
+    ax.set_title(title, fontsize=16, fontweight='bold')
+    ax.set_ylabel(y.capitalize())
+    
+    # X-axis labels
+    if x in plot_data.columns:
+        labels = plot_data[x].tolist()
+        if 'date' in x.lower():
+            labels = [str(l)[5:10] if len(str(l)) > 5 else l for l in labels]
+        ax.set_xticks(x_vals)
+        ax.set_xticklabels(labels, rotation=45, ha='right')
+    
+    # Add legend
+    from matplotlib.patches import Patch
+    legend_elements = [
+        Patch(facecolor=tuple(c/255 for c in GREEN), label='Win'),
+        Patch(facecolor=tuple(c/255 for c in RED_COLOR), label='Loss')
+    ]
+    ax.legend(handles=legend_elements)
+    
+    plt.tight_layout()
+    
+    if save_path:
+        OUTPUT_DIR.mkdir(exist_ok=True)
+        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
+        print(f"Saved to {save_path}")
+    
+    return fig
 ```
 
 
@@ -853,7 +1045,8 @@ Usage:
     
     # Visualize
     viz.bar_chart(coby, x='date', y='points', title="Coby's Scoring")
-    viz.create_graphic(title="...", stats={...})
+    viz.line_chart(coby, x='date', y='points', title="Coby's Scoring Trend")
+    viz.scatter_plot(coby, x='points', y='assists', title="Points vs Assists")
 """
 
 from bulls import data
@@ -882,7 +1075,8 @@ from bulls import data, analysis, viz
 import pandas as pd
 
 print("✅ Bulls Analytics loaded")
-print(f"Season: {from bulls.config import CURRENT_SEASON; CURRENT_SEASON}")
+from bulls.config import CURRENT_SEASON
+print(f"Season: {CURRENT_SEASON}")
 ```
 
 **Cell 2: Get Recent Games**
@@ -1144,10 +1338,16 @@ Add these when you need them, not before:
 
 | Date | Decision | Reasoning |
 |------|----------|-----------|
-| 2026-01-11 | Compute averages from game logs | Simpler than PlayerDashboard API |
-| 2026-01-11 | Matplotlib for charts | Good enough, familiar, can upgrade later |
-| 2026-01-11 | Matplotlib for charts | Good enough, familiar, can upgrade later |
-| 2026-01-11 | No CLI tool | Focus on exploration workflow |
+| 2026-01-11 | Compute averages from game logs | Simpler than PlayerDashboard API, gives us control |
+| 2026-01-11 | Matplotlib for charts | Good enough, familiar, can upgrade later, supports multiple chart types |
+| 2026-01-11 | No CLI tool | Focus on exploration workflow (notebook + chat) |
 | 2026-01-11 | pytest for testing | Industry standard, simple, well-documented |
 | 2026-01-11 | Tests in separate `tests/` folder | Clean separation, standard Python convention |
 | 2026-01-11 | Test each phase before moving on | Build confidence incrementally |
+| 2026-01-12 | Implement 5 chart types initially | Covers most use cases: bar, line, scatter, comparison, win/loss |
+| 2026-01-12 | Use RGB tuples for colors | Consistent with matplotlib, easy to customize |
+| 2026-01-12 | Add error handling for empty DataFrames | Better UX, prevents crashes, returns empty structures gracefully |
+| 2026-01-12 | Include average line in bar charts | Provides context, helps identify outliers |
+| 2026-01-12 | Reverse data for chronological display | Oldest to newest (left to right) feels natural |
+| 2026-01-12 | Highlight most recent bar in bar charts | Draws attention to latest data point |
+| 2026-01-12 | Support win/loss color coding | Visual distinction helps identify patterns quickly |

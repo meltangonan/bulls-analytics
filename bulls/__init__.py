@@ -16,7 +16,7 @@ Usage:
     
     # Visualize
     viz.bar_chart(coby, x='date', y='points', title="Coby's Scoring")
-    viz.create_graphic(title="...", stats={...})
+    viz.line_chart(coby, x='date', y='points', title="Coby's Scoring Trend")
 """
 
 from bulls import data

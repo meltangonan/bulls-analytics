@@ -68,6 +68,8 @@ print(f"Trending: {trend['direction']}")
 # Create visualizations
 viz.bar_chart(coby, x='date', y='points', title="Coby's Scoring")
 viz.line_chart(coby, x='date', y='points', title="Coby's Scoring Trend")
+viz.scatter_plot(coby, x='points', y='assists', title="Points vs Assists")
+viz.win_loss_chart(games, x='GAME_DATE', y='PTS', result_col='WL', title="Bulls Scoring by Game")
 
 # Create Instagram graphic
 viz.create_graphic(
@@ -94,7 +96,7 @@ bulls-analytics/
 └── requirements.txt   # Dependencies
 ```
 
-## Current Status: Phase 3 Complete ✅
+## Current Status: Phase 4 Complete ✅
 
 ### Phase 0: Foundation ✅
 - ✅ Project structure created
@@ -122,6 +124,21 @@ bulls-analytics/
 - ✅ Instagram graphics module (`bulls/viz/instagram.py`)
   - `create_graphic()` - Create Instagram-ready graphics with customizable stats, player info, and branding
 - ✅ Comprehensive tests for visualization module (25 tests)
+- ✅ All 81 tests passing
+
+### Phase 4: Polish & Ship ✅
+- ✅ Exploration notebook (`notebooks/explore.ipynb`)
+  - Starter cells for data exploration, analysis, and visualization
+  - Examples for getting games, analyzing players, creating charts
+  - Template for creating Instagram graphics
+- ✅ Additional chart types
+  - `scatter_plot()` - Compare two metrics (e.g., points vs assists)
+  - `comparison_chart()` - Compare multiple groups side by side
+  - `win_loss_chart()` - Bar chart with win/loss color coding
+- ✅ Enhanced Instagram graphic template
+  - Accent line option for better visual hierarchy
+  - Improved layout for 4+ stats (grid layout)
+  - Better spacing and typography
 - ✅ All 81 tests passing
 
 ## Next Steps

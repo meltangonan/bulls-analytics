@@ -33,6 +33,7 @@ def create_graphic(
     footer: str = "@bullsanalytics",
     size: tuple = INSTAGRAM_PORTRAIT,
     save_path: Optional[str] = None,
+    accent_line: bool = True,
 ) -> Image.Image:
     """
     Create an Instagram-ready graphic.
@@ -48,6 +49,7 @@ def create_graphic(
         footer: Attribution text
         size: Image dimensions
         save_path: Path to save (optional)
+        accent_line: Add a red accent line below title (default: True)
     
     Returns:
         PIL Image object
@@ -79,8 +81,16 @@ def create_graphic(
     # Title
     bbox = draw.textbbox((0, 0), title, font=font_title)
     text_width = bbox[2] - bbox[0]
-    draw.text(((width - text_width) // 2, y_cursor), title, font=font_title, fill=WHITE)
+    title_x = (width - text_width) // 2
+    draw.text((title_x, y_cursor), title, font=font_title, fill=WHITE)
     y_cursor += 90
+    
+    # Accent line below title
+    if accent_line:
+        line_y = y_cursor - 20
+        line_width = min(text_width + 40, width - 100)
+        line_x = (width - line_width) // 2
+        draw.rectangle([line_x, line_y, line_x + line_width, line_y + 4], fill=BULLS_RED)
     
     # Subtitle
     if subtitle:
@@ -118,21 +128,48 @@ def create_graphic(
     # Stats
     if stats:
         y_cursor += 30
-        stat_spacing = width // (len(stats) + 1)
+        num_stats = len(stats)
         
-        for i, (label, value) in enumerate(stats.items()):
-            x = stat_spacing * (i + 1)
+        # Handle different numbers of stats with better spacing
+        if num_stats <= 3:
+            stat_spacing = width // (num_stats + 1)
+            for i, (label, value) in enumerate(stats.items()):
+                x = stat_spacing * (i + 1)
+                
+                # Value
+                value_text = str(value)
+                bbox = draw.textbbox((0, 0), value_text, font=font_stat_value)
+                text_width = bbox[2] - bbox[0]
+                draw.text((x - text_width // 2, y_cursor), value_text, font=font_stat_value, fill=BULLS_RED)
+                
+                # Label
+                bbox = draw.textbbox((0, 0), label, font=font_stat_label)
+                text_width = bbox[2] - bbox[0]
+                draw.text((x - text_width // 2, y_cursor + 65), label, font=font_stat_label, fill=GRAY)
+        else:
+            # For 4+ stats, use a grid layout (2 rows)
+            stats_list = list(stats.items())
+            stats_per_row = (num_stats + 1) // 2
+            row_spacing = 120
             
-            # Value
-            value_text = str(value)
-            bbox = draw.textbbox((0, 0), value_text, font=font_stat_value)
-            text_width = bbox[2] - bbox[0]
-            draw.text((x - text_width // 2, y_cursor), value_text, font=font_stat_value, fill=BULLS_RED)
-            
-            # Label
-            bbox = draw.textbbox((0, 0), label, font=font_stat_label)
-            text_width = bbox[2] - bbox[0]
-            draw.text((x - text_width // 2, y_cursor + 65), label, font=font_stat_label, fill=GRAY)
+            for i, (label, value) in enumerate(stats_list):
+                row = i // stats_per_row
+                col = i % stats_per_row
+                
+                stat_spacing = width // (stats_per_row + 1)
+                x = stat_spacing * (col + 1)
+                stat_y = y_cursor + (row * row_spacing)
+                
+                # Value
+                value_text = str(value)
+                bbox = draw.textbbox((0, 0), value_text, font=font_stat_value)
+                text_width = bbox[2] - bbox[0]
+                draw.text((x - text_width // 2, stat_y), value_text, font=font_stat_value, fill=BULLS_RED)
+                
+                # Label
+                bbox = draw.textbbox((0, 0), label, font=font_stat_label)
+                text_width = bbox[2] - bbox[0]
+                draw.text((x - text_width // 2, stat_y + 65), label, font=font_stat_label, fill=GRAY)
     
     # Footer
     bbox = draw.textbbox((0, 0), footer, font=font_footer)

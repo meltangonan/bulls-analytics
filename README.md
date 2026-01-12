@@ -45,6 +45,9 @@ pytest tests/ -v
 
 ### 4. Start Exploring
 
+**📖 For detailed usage instructions, see [USAGE_GUIDE.md](USAGE_GUIDE.md)**
+
+Quick example:
 ```python
 from bulls import data, analysis, viz
 
@@ -149,6 +152,7 @@ bulls-analytics/
 
 ## Documentation
 
+- **USAGE_GUIDE.md** - Complete guide on how to use this workspace (start here!)
 - **PRD.md** - Product requirements and vision
 - **SPEC.md** - Technical specification and implementation details
 - **AGENT_PROMPT.md** - Context for AI collaborators

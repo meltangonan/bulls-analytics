@@ -27,9 +27,21 @@ python test_setup.py
 
 ### 3. Run Tests
 
+**Important:** Always use the virtual environment's Python to run tests. The tests use mocks to avoid real API calls.
+
 ```bash
-pytest
+# Option 1: Use the helper script (recommended)
+./run_tests.sh
+
+# Option 2: Use venv Python directly
+venv/bin/python -m pytest tests/ -v
+
+# Option 3: Activate venv first, then run
+source venv/bin/activate
+pytest tests/ -v
 ```
+
+**⚠️ Do NOT use `python -m pytest`** - this uses system Python and will hang or fail!
 
 ### 4. Start Exploring
 

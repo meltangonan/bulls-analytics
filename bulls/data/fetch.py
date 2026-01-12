@@ -1,5 +1,6 @@
 """Fetch Bulls data from NBA API."""
 import time
+import json
 import requests
 from io import BytesIO
 from typing import Optional
@@ -136,7 +137,7 @@ def get_box_score(game_id: str) -> pd.DataFrame:
         bulls_players['name'] = bulls_players['firstName'] + ' ' + bulls_players['familyName']
         
         return bulls_players
-    except (AttributeError, KeyError, IndexError, requests.RequestException) as e:
+    except (AttributeError, KeyError, IndexError, requests.RequestException, json.JSONDecodeError, ValueError) as e:
         print(f"Error fetching box score for game {game_id}: {e}")
         return pd.DataFrame()
 

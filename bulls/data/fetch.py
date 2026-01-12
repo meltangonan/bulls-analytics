@@ -2,7 +2,6 @@
 import time
 import requests
 from io import BytesIO
-from datetime import datetime
 from typing import Optional
 import pandas as pd
 from PIL import Image
@@ -43,7 +42,16 @@ def get_games(
         season_nullable=season,
         season_type_nullable='Regular Season'
     )
-    games = finder.get_data_frames()[0]
+    data_frames = finder.get_data_frames()
+    
+    if not data_frames or len(data_frames) == 0:
+        return pd.DataFrame()  # Return empty DataFrame if no data
+    
+    games = data_frames[0]
+    
+    if games.empty:
+        return pd.DataFrame()
+    
     games = games.sort_values('GAME_DATE', ascending=False)
     
     if last_n:
@@ -67,6 +75,10 @@ def get_latest_game() -> dict:
         >>> print(f"{game['matchup']} - {game['result']}")
     """
     games = get_games(last_n=1)
+    
+    if games.empty:
+        raise ValueError("No games found for the current season")
+    
     row = games.iloc[0]
     
     matchup = row['MATCHUP']
@@ -107,16 +119,26 @@ def get_box_score(game_id: str) -> pd.DataFrame:
     """
     time.sleep(API_DELAY)
     
-    box = boxscoretraditionalv3.BoxScoreTraditionalV3(game_id=game_id)
-    players = box.player_stats.get_data_frame()
-    
-    # Filter to Bulls players only
-    bulls_players = players[players['teamId'] == BULLS_TEAM_ID].copy()
-    
-    # Add full name column for convenience
-    bulls_players['name'] = bulls_players['firstName'] + ' ' + bulls_players['familyName']
-    
-    return bulls_players
+    try:
+        box = boxscoretraditionalv3.BoxScoreTraditionalV3(game_id=game_id)
+        players = box.player_stats.get_data_frame()
+        
+        if players.empty:
+            return pd.DataFrame()
+        
+        # Filter to Bulls players only
+        bulls_players = players[players['teamId'] == BULLS_TEAM_ID].copy()
+        
+        if bulls_players.empty:
+            return pd.DataFrame()
+        
+        # Add full name column for convenience
+        bulls_players['name'] = bulls_players['firstName'] + ' ' + bulls_players['familyName']
+        
+        return bulls_players
+    except (AttributeError, KeyError, IndexError, requests.RequestException) as e:
+        print(f"Error fetching box score for game {game_id}: {e}")
+        return pd.DataFrame()
 
 
 def get_player_games(
@@ -149,6 +171,9 @@ def get_player_games(
         try:
             box = get_box_score(game['GAME_ID'])
             
+            if box.empty:
+                continue
+            
             # Find player in box score (case-insensitive match)
             player_row = box[box['name'].str.lower() == player_name.lower()]
             
@@ -174,7 +199,7 @@ def get_player_games(
                 if len(player_stats) >= last_n:
                     break
                     
-        except Exception as e:
+        except (KeyError, ValueError, AttributeError, requests.RequestException) as e:
             print(f"Warning: Could not fetch {game['GAME_ID']}: {e}")
             continue
     
@@ -216,7 +241,7 @@ def get_player_headshot(
         img = img.convert('RGBA')
         img = img.resize(size, Image.Resampling.LANCZOS)
         return img
-    except Exception as e:
+    except (requests.RequestException, OSError, ValueError) as e:
         print(f"Could not fetch headshot for {player_id}: {e}")
         # Return placeholder
         return Image.new('RGBA', size, (100, 100, 100, 255))

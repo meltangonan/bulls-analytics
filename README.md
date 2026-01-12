@@ -46,7 +46,7 @@ pytest tests/ -v
 ### 4. Start Exploring
 
 ```python
-from bulls import data, analysis
+from bulls import data, analysis, viz
 
 # Get latest game
 game = data.get_latest_game()
@@ -64,6 +64,19 @@ print(f"Coby averages {avgs['points']:.1f} PPG")
 # Check scoring trend
 trend = analysis.scoring_trend(coby)
 print(f"Trending: {trend['direction']}")
+
+# Create visualizations
+viz.bar_chart(coby, x='date', y='points', title="Coby's Scoring")
+viz.line_chart(coby, x='date', y='points', title="Coby's Scoring Trend")
+
+# Create Instagram graphic
+viz.create_graphic(
+    title="CLUTCH PERFORMANCE",
+    subtitle="Bulls vs Heat • Jan 10, 2026",
+    stats={'PTS': 28, 'REB': 5, 'AST': 7},
+    player_name="COBY WHITE",
+    save_path="output/coby_clutch.png"
+)
 ```
 
 ## Project Structure
@@ -81,7 +94,7 @@ bulls-analytics/
 └── requirements.txt   # Dependencies
 ```
 
-## Current Status: Phase 2 Complete ✅
+## Current Status: Phase 3 Complete ✅
 
 ### Phase 0: Foundation ✅
 - ✅ Project structure created
@@ -101,7 +114,15 @@ bulls-analytics/
   - `scoring_trend()` - Analyze trend over recent games (up/down/stable)
   - `top_performers()` - Rank players by performance in a game
 - ✅ Comprehensive tests for analysis module (25 tests)
-- ✅ All 56 tests passing
+
+### Phase 3: Visualization ✅
+- ✅ Charts module (`bulls/viz/charts.py`)
+  - `bar_chart()` - Create bar charts with Bulls branding
+  - `line_chart()` - Create line charts showing trends over time
+- ✅ Instagram graphics module (`bulls/viz/instagram.py`)
+  - `create_graphic()` - Create Instagram-ready graphics with customizable stats, player info, and branding
+- ✅ Comprehensive tests for visualization module (25 tests)
+- ✅ All 81 tests passing
 
 ## Next Steps
 

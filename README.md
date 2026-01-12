@@ -46,7 +46,7 @@ pytest tests/ -v
 ### 4. Start Exploring
 
 ```python
-from bulls import data
+from bulls import data, analysis
 
 # Get latest game
 game = data.get_latest_game()
@@ -55,6 +55,15 @@ print(f"{game['matchup']} - {game['result']}")
 # Get recent games
 games = data.get_games(last_n=10)
 print(games[['GAME_DATE', 'MATCHUP', 'WL', 'PTS']])
+
+# Analyze player performance
+coby = data.get_player_games("Coby White", last_n=15)
+avgs = analysis.season_averages(coby)
+print(f"Coby averages {avgs['points']:.1f} PPG")
+
+# Check scoring trend
+trend = analysis.scoring_trend(coby)
+print(f"Trending: {trend['direction']}")
 ```
 
 ## Project Structure
@@ -72,8 +81,9 @@ bulls-analytics/
 └── requirements.txt   # Dependencies
 ```
 
-## Current Status: Phase 0 Complete ✅
+## Current Status: Phase 2 Complete ✅
 
+### Phase 0: Foundation ✅
 - ✅ Project structure created
 - ✅ Configuration module (`bulls/config.py`)
 - ✅ Data fetching module (`bulls/data/fetch.py`)
@@ -82,8 +92,16 @@ bulls-analytics/
   - `get_box_score()` - Get box score for a game
   - `get_player_games()` - Get player's game-by-game stats
   - `get_player_headshot()` - Fetch player headshot
-- ✅ Tests written for config and data modules
-- ✅ Package structure with proper `__init__.py` files
+- ✅ Tests written for config and data modules (31 tests)
+
+### Phase 2: Analysis ✅
+- ✅ Analysis module (`bulls/analysis/stats.py`)
+  - `season_averages()` - Calculate player averages from game log
+  - `vs_average()` - Compare game stats to season averages
+  - `scoring_trend()` - Analyze trend over recent games (up/down/stable)
+  - `top_performers()` - Rank players by performance in a game
+- ✅ Comprehensive tests for analysis module (25 tests)
+- ✅ All 56 tests passing
 
 ## Next Steps
 

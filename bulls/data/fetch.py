@@ -167,8 +167,6 @@ def get_player_games(
     player_stats = []
     
     for _, game in games.iterrows():
-        time.sleep(API_DELAY)
-        
         try:
             box = get_box_score(game['GAME_ID'])
             

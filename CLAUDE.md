@@ -78,13 +78,22 @@ VISUALIZATION LAYER (bulls/viz/charts.py)
 
 ## Testing
 
-Tests use mocked NBA API calls (defined in `tests/conftest.py`) to avoid network dependencies. Test suite has 67 tests across 4 modules:
+Tests use mocked NBA API calls (defined in `tests/conftest.py`) to avoid network dependencies. Test suite has 69 tests across 4 modules:
 - `test_config.py` - Config constants
 - `test_data.py` - Data fetching with mocks
 - `test_analysis.py` - Statistical analysis
 - `test_viz.py` - Chart creation
 
-When adding new data functions, use the `mock_nba_api` fixture from conftest.py.
+### Available Mock Fixtures
+
+When adding new data functions, use these fixtures from `tests/conftest.py`:
+
+- `mock_nba_api` - Mocks `LeagueGameFinder` with sample game data
+- `mock_empty_api` - Mocks `LeagueGameFinder` returning empty data
+- `mock_box_score_api` - Mocks `BoxScoreTraditionalV3` with sample player stats
+- `mock_empty_box_score_api` - Mocks `BoxScoreTraditionalV3` returning empty data
+- `mock_headshot_request` - Mocks `requests.get` for player headshot URLs
+- `mock_headshot_error` - Mocks `requests.get` to simulate network errors
 
 ## Usage Pattern
 

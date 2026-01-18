@@ -122,7 +122,7 @@ bulls-analytics/
   - `comparison_chart()` - Compare multiple groups side by side
   - `win_loss_chart()` - Bar chart with win/loss color coding
 - ✅ Comprehensive tests for visualization module (12 tests)
-- ✅ All 67 tests passing
+- ✅ All 69 tests passing
 
 ### Phase 4: Polish & Ship ✅
 - ✅ Exploration notebook (`notebooks/explore.ipynb`)
@@ -137,7 +137,7 @@ bulls-analytics/
   - Bulls branding and colors
   - Multiple chart types for different use cases
   - Customizable styling options
-- ✅ All 67 tests passing
+- ✅ All 69 tests passing
 
 ## Next Steps
 

@@ -315,3 +315,76 @@ def get_player_shots(
     except (AttributeError, KeyError, IndexError, requests.RequestException, json.JSONDecodeError, ValueError) as e:
         print(f"Error fetching shot chart for player {player_id}: {e}")
         return pd.DataFrame()
+
+
+def get_team_shots(
+    team_id: int = BULLS_TEAM_ID,
+    season: str = CURRENT_SEASON,
+    last_n_games: Optional[int] = None,
+) -> pd.DataFrame:
+    """
+    Get shot chart data for a team (all players combined).
+
+    Args:
+        team_id: NBA team ID (default: Bulls)
+        season: NBA season string (default: current season)
+        last_n_games: Limit to last N games (optional)
+
+    Returns:
+        DataFrame with shot data including:
+        - loc_x, loc_y: Court coordinates
+        - shot_made: Boolean (True = made, False = missed)
+        - shot_type: "2PT" or "3PT"
+        - shot_zone: Zone description
+        - shot_distance: Distance in feet
+        - player_id: Player who took the shot
+        - player_name: Player name (if available)
+
+    Example:
+        >>> shots = get_team_shots()
+        >>> makes = shots[shots['shot_made']]
+        >>> print(f"Team FG%: {len(makes) / len(shots) * 100:.1f}%")
+    """
+    time.sleep(API_DELAY)
+
+    try:
+        last_n = str(last_n_games) if last_n_games else '0'
+
+        # Use player_id=0 to get all team shots
+        shot_chart = shotchartdetail.ShotChartDetail(
+            team_id=team_id,
+            player_id=0,  # 0 means all players on the team
+            season_nullable=season,
+            season_type_all_star='Regular Season',
+            last_n_games=last_n,
+            context_measure_simple='FGA',
+        )
+
+        shots = shot_chart.get_data_frames()[0]
+
+        if shots.empty:
+            return pd.DataFrame()
+
+        # Create clean DataFrame with relevant columns
+        result = pd.DataFrame({
+            'loc_x': shots['LOC_X'],
+            'loc_y': shots['LOC_Y'],
+            'shot_made': shots['SHOT_MADE_FLAG'] == 1,
+            'shot_type': shots['SHOT_TYPE'].apply(lambda x: '3PT' if '3PT' in str(x) else '2PT'),
+            'shot_zone': shots['SHOT_ZONE_BASIC'],
+            'shot_distance': shots['SHOT_DISTANCE'],
+            'game_id': shots['GAME_ID'],
+            'game_date': shots['GAME_DATE'] if 'GAME_DATE' in shots.columns else None,
+        })
+
+        # Add player info if available
+        if 'PLAYER_ID' in shots.columns:
+            result['player_id'] = shots['PLAYER_ID']
+        if 'PLAYER_NAME' in shots.columns:
+            result['player_name'] = shots['PLAYER_NAME']
+
+        return result
+
+    except (AttributeError, KeyError, IndexError, requests.RequestException, json.JSONDecodeError, ValueError) as e:
+        print(f"Error fetching shot chart for team {team_id}: {e}")
+        return pd.DataFrame()

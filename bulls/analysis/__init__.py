@@ -8,5 +8,6 @@ from bulls.analysis.stats import (
     game_efficiency,
     rolling_averages,
     consistency_score,
+    points_per_shot,
     zone_leaders,
 )

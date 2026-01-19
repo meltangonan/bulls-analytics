@@ -10,6 +10,7 @@ from bulls.analysis import (
     game_efficiency,
     rolling_averages,
     consistency_score,
+    points_per_shot,
 )
 
 
@@ -658,3 +659,138 @@ class TestConsistencyScore:
         result = consistency_score(fake_games, metrics=['blocks'])
 
         assert result['blocks']['cv'] == 0.0
+
+
+class TestPointsPerShot:
+    """Tests for points_per_shot function."""
+
+    def test_returns_expected_keys(self):
+        """Should return dict with expected keys."""
+        fake_shots = pd.DataFrame({
+            'shot_made': [True, False, True],
+            'shot_type': ['2PT', '3PT', '3PT'],
+            'shot_zone': ['Restricted Area', 'Above the Break 3', 'Above the Break 3'],
+        })
+
+        result = points_per_shot(fake_shots)
+
+        assert 'pps' in result
+        assert 'total_points' in result
+        assert 'total_shots' in result
+        assert 'fg_pct' in result
+
+    def test_calculates_pps_correctly(self):
+        """Should calculate points per shot correctly."""
+        # 1 made 2PT (2 pts) + 1 made 3PT (3 pts) + 1 miss (0 pts) = 5 pts / 3 shots = 1.667
+        fake_shots = pd.DataFrame({
+            'shot_made': [True, True, False],
+            'shot_type': ['2PT', '3PT', '2PT'],
+        })
+
+        result = points_per_shot(fake_shots)
+
+        assert result['pps'] == pytest.approx(5 / 3, rel=0.01)
+        assert result['total_points'] == 5
+        assert result['total_shots'] == 3
+
+    def test_calculates_fg_pct_correctly(self):
+        """Should calculate field goal percentage correctly."""
+        fake_shots = pd.DataFrame({
+            'shot_made': [True, True, False, False],
+            'shot_type': ['2PT', '3PT', '2PT', '3PT'],
+        })
+
+        result = points_per_shot(fake_shots)
+
+        assert result['fg_pct'] == 50.0  # 2/4 = 50%
+
+    def test_by_zone_returns_zone_breakdown(self):
+        """Should return zone breakdown when by_zone=True."""
+        fake_shots = pd.DataFrame({
+            'shot_made': [True, True, False, True],
+            'shot_type': ['2PT', '3PT', '3PT', '2PT'],
+            'shot_zone': ['Restricted Area', 'Above the Break 3', 'Above the Break 3', 'Mid-Range'],
+        })
+
+        result = points_per_shot(fake_shots, by_zone=True)
+
+        assert 'overall' in result
+        assert 'by_zone' in result
+        assert 'Restricted Area' in result['by_zone']
+        assert 'Above the Break 3' in result['by_zone']
+        assert 'Mid-Range' in result['by_zone']
+
+    def test_by_zone_calculates_per_zone_pps(self):
+        """Should calculate PPS correctly per zone."""
+        fake_shots = pd.DataFrame({
+            'shot_made': [True, True, False],
+            'shot_type': ['2PT', '3PT', '3PT'],
+            'shot_zone': ['Restricted Area', 'Above the Break 3', 'Above the Break 3'],
+        })
+
+        result = points_per_shot(fake_shots, by_zone=True)
+
+        # Restricted Area: 1 made 2PT = 2 pts / 1 shot = 2.0 PPS
+        assert result['by_zone']['Restricted Area']['pps'] == 2.0
+        assert result['by_zone']['Restricted Area']['total_points'] == 2
+        assert result['by_zone']['Restricted Area']['total_shots'] == 1
+
+        # Above the Break 3: 1 made 3PT + 1 miss = 3 pts / 2 shots = 1.5 PPS
+        assert result['by_zone']['Above the Break 3']['pps'] == 1.5
+        assert result['by_zone']['Above the Break 3']['total_points'] == 3
+        assert result['by_zone']['Above the Break 3']['total_shots'] == 2
+
+    def test_handles_empty_dataframe(self):
+        """Should handle empty input gracefully."""
+        empty_df = pd.DataFrame()
+        result = points_per_shot(empty_df)
+        assert result == {}
+
+    def test_handles_all_misses(self):
+        """Should handle all missed shots."""
+        fake_shots = pd.DataFrame({
+            'shot_made': [False, False, False],
+            'shot_type': ['2PT', '3PT', '2PT'],
+        })
+
+        result = points_per_shot(fake_shots)
+
+        assert result['pps'] == 0.0
+        assert result['total_points'] == 0
+        assert result['total_shots'] == 3
+        assert result['fg_pct'] == 0.0
+
+    def test_handles_all_makes(self):
+        """Should handle all made shots."""
+        fake_shots = pd.DataFrame({
+            'shot_made': [True, True, True],
+            'shot_type': ['2PT', '3PT', '3PT'],
+        })
+
+        result = points_per_shot(fake_shots)
+
+        # 2 + 3 + 3 = 8 pts / 3 shots = 2.667 PPS
+        assert result['pps'] == pytest.approx(8 / 3, rel=0.01)
+        assert result['total_points'] == 8
+        assert result['fg_pct'] == 100.0
+
+    def test_handles_missing_columns(self):
+        """Should return empty dict if required columns missing."""
+        fake_shots = pd.DataFrame({
+            'shot_made': [True, False],
+            # Missing 'shot_type'
+        })
+
+        result = points_per_shot(fake_shots)
+        assert result == {}
+
+    def test_handles_missing_zone_column_with_by_zone(self):
+        """Should return empty dict if shot_zone missing when by_zone=True."""
+        fake_shots = pd.DataFrame({
+            'shot_made': [True, False],
+            'shot_type': ['2PT', '3PT'],
+            # Missing 'shot_zone'
+        })
+
+        result = points_per_shot(fake_shots, by_zone=True)
+        assert result == {}

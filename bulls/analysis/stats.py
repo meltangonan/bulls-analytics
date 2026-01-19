@@ -349,6 +349,89 @@ def consistency_score(
     return result
 
 
+def points_per_shot(
+    team_shots: pd.DataFrame,
+    by_zone: bool = False
+) -> dict:
+    """
+    Calculate points per shot (PPS) - average point value per shot taken.
+
+    Args:
+        team_shots: DataFrame from get_team_shots() with shot data
+        by_zone: If True, include breakdown by shot zone
+
+    Returns:
+        Dict with PPS stats. If by_zone=False:
+        {
+            'pps': float,
+            'total_points': int,
+            'total_shots': int,
+            'fg_pct': float
+        }
+
+        If by_zone=True, adds 'by_zone' dict with same structure per zone.
+
+    Example:
+        >>> shots = data.get_team_shots()
+        >>> pps = points_per_shot(shots)
+        >>> print(f"Season PPS: {pps['pps']:.3f}")
+        >>>
+        >>> pps_zones = points_per_shot(shots, by_zone=True)
+        >>> for zone, stats in pps_zones['by_zone'].items():
+        ...     print(f"{zone}: {stats['pps']:.3f}")
+    """
+    if team_shots.empty:
+        return {}
+
+    # Check required columns
+    required_cols = ['shot_made', 'shot_type']
+    if by_zone:
+        required_cols.append('shot_zone')
+    missing_cols = [col for col in required_cols if col not in team_shots.columns]
+    if missing_cols:
+        return {}
+
+    def calc_stats(shots_df: pd.DataFrame) -> dict:
+        """Calculate PPS stats for a group of shots."""
+        total_shots = len(shots_df)
+        if total_shots == 0:
+            return {'pps': 0.0, 'total_points': 0, 'total_shots': 0, 'fg_pct': 0.0}
+
+        # Calculate points: 3 for made 3PT, 2 for made 2PT, 0 for misses
+        points = shots_df.apply(
+            lambda row: 3 if row['shot_made'] and row['shot_type'] == '3PT'
+                       else 2 if row['shot_made'] else 0,
+            axis=1
+        ).sum()
+
+        made_shots = shots_df['shot_made'].sum()
+        fg_pct = (made_shots / total_shots) * 100
+
+        return {
+            'pps': round(points / total_shots, 3),
+            'total_points': int(points),
+            'total_shots': total_shots,
+            'fg_pct': round(fg_pct, 1)
+        }
+
+    # Calculate overall stats
+    overall = calc_stats(team_shots)
+
+    if not by_zone:
+        return overall
+
+    # Calculate per-zone stats
+    zone_stats = {}
+    for zone in team_shots['shot_zone'].dropna().unique():
+        zone_shots = team_shots[team_shots['shot_zone'] == zone]
+        zone_stats[zone] = calc_stats(zone_shots)
+
+    return {
+        'overall': overall,
+        'by_zone': zone_stats
+    }
+
+
 def zone_leaders(
     team_shots: pd.DataFrame,
     min_shots: int = 5

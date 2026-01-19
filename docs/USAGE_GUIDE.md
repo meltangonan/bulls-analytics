@@ -89,9 +89,9 @@ pip install jupyter
    jupyter notebook
    ```
 
-2. **Open the exploration notebook:**
-   - Navigate to `notebooks/explore.ipynb`
-   - This notebook has starter cells for common tasks
+2. **Open an exploration notebook:**
+   - Navigate to `notebooks/` directory
+   - Available notebooks: `zone_leaders.ipynb`, `points_per_shot.ipynb`, `points_per_shot_last_season.ipynb`
 
 3. **Run cells and explore:**
    - Each cell is self-contained
@@ -1050,12 +1050,12 @@ viz.scatter_plot(
 
 ## Tips & Best Practices
 
-### 1. Start with the Notebook
+### 1. Start with the Notebooks
 
-The `notebooks/explore.ipynb` file is your best starting point. It has:
-- Pre-written cells for common tasks
-- Examples you can modify
-- A logical workflow from data → analysis → visualization
+The `notebooks/` directory contains exploration notebooks. Start with any of:
+- `zone_leaders.ipynb` - Zone-based shot analysis
+- `points_per_shot.ipynb` - Scoring efficiency analysis
+- `points_per_shot_last_season.ipynb` - Historical efficiency comparison
 
 ### 2. Understand the Data Flow
 
@@ -1233,12 +1233,11 @@ The NBA API has rate limits. The workspace includes delays, but:
 
 Now that you understand how to use the workspace:
 
-1. **Start exploring:** Open `notebooks/explore.ipynb` and run the cells
-2. **Try different players:** Change `PLAYER_NAME` and see different data
+1. **Start exploring:** Open a notebook from `notebooks/` and run the cells
+2. **Try different players:** Change player names and see different data
 3. **Experiment with visualizations:** Modify chart parameters, try different chart types
 4. **Find insights:** Look for interesting patterns, trends, and stories
 5. **Create visualizations:** When you find something interesting, create charts to visualize it
-6. **Iterate:** Use the workspace regularly and add features as needed
 
 Remember: This is a collaborative tool. You explore, ask questions, and create. The workspace provides the tools to make it easy.
 
@@ -1247,11 +1246,5 @@ Remember: This is a collaborative tool. You explore, ask questions, and create. 
 ## Additional Resources
 
 - **README.md**: Quick start and project overview
-- **docs/PRD.md**: Product requirements and vision
-- **docs/SPEC.md**: Technical specification and implementation details
-- **notebooks/explore.ipynb**: Interactive exploration notebook
+- **notebooks/**: Jupyter notebooks for data exploration
 - **tests/**: Example usage in test files
-
----
-
-**Happy exploring! 🏀📊**

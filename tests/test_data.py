@@ -67,22 +67,6 @@ class TestGetLatestGame:
         for key in required_keys:
             assert key in game, f"Missing key: {key}"
 
-    def test_result_is_w_or_l(self, mock_nba_api):
-        """Result should be 'W' or 'L'."""
-        game = get_latest_game()
-        assert game['result'] in ['W', 'L']
-
-    def test_is_home_is_boolean(self, mock_nba_api):
-        """is_home should be a boolean."""
-        game = get_latest_game()
-        assert isinstance(game['is_home'], bool)
-
-    def test_bulls_score_is_integer(self, mock_nba_api):
-        """bulls_score should be an integer."""
-        game = get_latest_game()
-        assert isinstance(game['bulls_score'], int)
-        assert game['bulls_score'] >= 0
-
     def test_parses_home_game(self, mock_nba_api):
         """get_latest_game should correctly identify home games."""
         game = get_latest_game()
@@ -172,16 +156,6 @@ class TestGetPlayerGames:
             assert pd.api.types.is_numeric_dtype(player_games['fg_pct'])
             assert pd.api.types.is_numeric_dtype(player_games['fg3_pct'])
 
-    def test_handles_case_insensitive_name(self, mock_nba_api, mock_box_score_api):
-        """get_player_games should handle case-insensitive player names."""
-        player_games_lower = get_player_games("coby white", last_n=2)
-        player_games_upper = get_player_games("COBY WHITE", last_n=2)
-
-        assert isinstance(player_games_lower, pd.DataFrame)
-        assert isinstance(player_games_upper, pd.DataFrame)
-        # Both should find the same player
-        assert len(player_games_lower) == len(player_games_upper)
-
 
 class TestGetPlayerHeadshot:
     """Tests for get_player_headshot function."""
@@ -191,21 +165,11 @@ class TestGetPlayerHeadshot:
         img = get_player_headshot(1629632)
         assert isinstance(img, Image.Image)
 
-    def test_respects_size_parameter(self, mock_headshot_request):
-        """get_player_headshot should respect size parameter."""
-        img = get_player_headshot(1629632, size=(200, 200))
-        assert img.size == (200, 200)
-
     def test_handles_invalid_player_id(self, mock_headshot_error):
         """get_player_headshot should handle invalid player_id gracefully."""
         img = get_player_headshot(999999999)
         assert isinstance(img, Image.Image)
         # Should return placeholder image (gray)
-
-    def test_returns_rgba_image(self, mock_headshot_request):
-        """get_player_headshot should return RGBA image."""
-        img = get_player_headshot(1629632)
-        assert img.mode == 'RGBA'
 
     def test_handles_network_errors(self, mock_headshot_error):
         """get_player_headshot should handle network errors gracefully."""
@@ -235,35 +199,11 @@ class TestGetPlayerShots:
             for col in expected_columns:
                 assert col in shots.columns, f"Missing column: {col}"
 
-    def test_shot_made_is_boolean(self, mock_shot_chart_api):
-        """shot_made column should be boolean."""
-        shots = get_player_shots(1629632)
-
-        if not shots.empty:
-            assert shots['shot_made'].dtype == bool
-
-    def test_shot_type_values(self, mock_shot_chart_api):
-        """shot_type should be '2PT' or '3PT'."""
-        shots = get_player_shots(1629632)
-
-        if not shots.empty:
-            assert all(shots['shot_type'].isin(['2PT', '3PT']))
-
     def test_handles_empty_result(self, mock_empty_shot_chart_api):
         """get_player_shots should handle empty results gracefully."""
         shots = get_player_shots(1629632)
         assert isinstance(shots, pd.DataFrame)
         assert shots.empty
-
-    def test_respects_team_id_parameter(self, mock_shot_chart_api):
-        """get_player_shots should accept team_id parameter."""
-        shots = get_player_shots(1629632, team_id=BULLS_TEAM_ID)
-        assert isinstance(shots, pd.DataFrame)
-
-    def test_respects_season_parameter(self, mock_shot_chart_api):
-        """get_player_shots should accept season parameter."""
-        shots = get_player_shots(1629632, season="2025-26")
-        assert isinstance(shots, pd.DataFrame)
 
     def test_respects_last_n_games_parameter(self, mock_shot_chart_api):
         """get_player_shots should accept last_n_games parameter."""

@@ -38,7 +38,7 @@ python test_setup.py
 ### Interactive Exploration
 
 ```bash
-source venv/bin/activate && jupyter notebook notebooks/explore.ipynb
+source venv/bin/activate && jupyter notebook notebooks/
 ```
 
 ## Architecture
@@ -47,11 +47,11 @@ Three-layer architecture with clear data flow:
 
 ```
 DATA LAYER (bulls/data/fetch.py)
-    ↓ Returns DataFrames/dicts
+    | Returns DataFrames/dicts
 ANALYSIS LAYER (bulls/analysis/stats.py)
-    ↓ Returns analysis dicts
+    | Returns analysis dicts
 VISUALIZATION LAYER (bulls/viz/charts.py)
-    → Returns matplotlib Figures
+    -> Returns matplotlib Figures
 ```
 
 ### Data Layer (`bulls.data`)
@@ -82,11 +82,12 @@ VISUALIZATION LAYER (bulls/viz/charts.py)
 ### Configuration (`bulls/config.py`)
 - `BULLS_TEAM_ID = 1610612741`
 - `CURRENT_SEASON = "2025-26"`
+- `LAST_SEASON = "2024-25"`
 - `API_DELAY = 0.6` seconds between API calls
 
 ## Testing
 
-Tests use mocked NBA API calls (defined in `tests/conftest.py`) to avoid network dependencies. Test suite has 121 tests across 4 modules:
+Tests use mocked NBA API calls (defined in `tests/conftest.py`) to avoid network dependencies. Test suite has 97 tests across 4 modules:
 - `test_config.py` - Config constants
 - `test_data.py` - Data fetching with mocks
 - `test_analysis.py` - Statistical analysis
@@ -122,3 +123,10 @@ trend = analysis.scoring_trend(player_games)
 # Visualize
 fig = viz.bar_chart(player_games, x='date', y='points', title="Scoring")
 ```
+
+## Gotchas
+
+- Never use system Python for tests - always use `venv/bin/python` or `./run_tests.sh`
+- API calls have a 0.6s delay built in to respect rate limits
+- `get_player_games()` makes multiple API calls (one per game) so it can be slow
+- Shot chart coordinates use NBA court coordinate system (origin at basket)

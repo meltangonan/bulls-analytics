@@ -10,6 +10,7 @@ from PIL import Image
 from nba_api.stats.endpoints import (
     leaguegamefinder,
     boxscoretraditionalv3,
+    shotchartdetail,
 )
 
 from bulls.config import (
@@ -192,6 +193,9 @@ def get_player_games(
                     'fg_attempted': int(p.get('fieldGoalsAttempted', 0) or 0),
                     'fg3_made': int(p.get('threePointersMade', 0) or 0),
                     'fg3_attempted': int(p.get('threePointersAttempted', 0) or 0),
+                    'ft_made': int(p.get('freeThrowsMade', 0) or 0),
+                    'ft_attempted': int(p.get('freeThrowsAttempted', 0) or 0),
+                    'turnovers': int(p.get('turnovers', 0) or 0),
                     'minutes': p.get('minutes', '0'),
                 })
                 
@@ -208,7 +212,8 @@ def get_player_games(
     if not df.empty:
         df['fg_pct'] = (df['fg_made'] / df['fg_attempted'].replace(0, 1) * 100).round(1)
         df['fg3_pct'] = (df['fg3_made'] / df['fg3_attempted'].replace(0, 1) * 100).round(1)
-    
+        df['ft_pct'] = (df['ft_made'] / df['ft_attempted'].replace(0, 1) * 100).round(1)
+
     return df
 
 
@@ -244,3 +249,69 @@ def get_player_headshot(
         print(f"Could not fetch headshot for {player_id}: {e}")
         # Return placeholder
         return Image.new('RGBA', size, (100, 100, 100, 255))
+
+
+def get_player_shots(
+    player_id: int,
+    team_id: int = BULLS_TEAM_ID,
+    season: str = CURRENT_SEASON,
+    last_n_games: Optional[int] = None,
+) -> pd.DataFrame:
+    """
+    Get shot chart data for a player.
+
+    Args:
+        player_id: NBA player ID (e.g., 1629632 for Coby White)
+        team_id: NBA team ID (default: Bulls)
+        season: NBA season string (default: current season)
+        last_n_games: Limit to last N games (optional)
+
+    Returns:
+        DataFrame with shot data including:
+        - loc_x, loc_y: Court coordinates
+        - shot_made: Boolean (True = made, False = missed)
+        - shot_type: "2PT" or "3PT"
+        - shot_zone: Zone description
+        - shot_distance: Distance in feet
+
+    Example:
+        >>> shots = get_player_shots(1629632)  # Coby White
+        >>> makes = shots[shots['shot_made']]
+        >>> print(f"FG%: {len(makes) / len(shots) * 100:.1f}%")
+    """
+    time.sleep(API_DELAY)
+
+    try:
+        last_n = str(last_n_games) if last_n_games else '0'
+
+        shot_chart = shotchartdetail.ShotChartDetail(
+            team_id=team_id,
+            player_id=player_id,
+            season_nullable=season,
+            season_type_all_star='Regular Season',
+            last_n_games=last_n,
+            context_measure_simple='FGA',
+        )
+
+        shots = shot_chart.get_data_frames()[0]
+
+        if shots.empty:
+            return pd.DataFrame()
+
+        # Create clean DataFrame with relevant columns
+        result = pd.DataFrame({
+            'loc_x': shots['LOC_X'],
+            'loc_y': shots['LOC_Y'],
+            'shot_made': shots['SHOT_MADE_FLAG'] == 1,
+            'shot_type': shots['SHOT_TYPE'].apply(lambda x: '3PT' if '3PT' in str(x) else '2PT'),
+            'shot_zone': shots['SHOT_ZONE_BASIC'],
+            'shot_distance': shots['SHOT_DISTANCE'],
+            'game_id': shots['GAME_ID'],
+            'game_date': shots['GAME_DATE'] if 'GAME_DATE' in shots.columns else None,
+        })
+
+        return result
+
+    except (AttributeError, KeyError, IndexError, requests.RequestException, json.JSONDecodeError, ValueError) as e:
+        print(f"Error fetching shot chart for player {player_id}: {e}")
+        return pd.DataFrame()

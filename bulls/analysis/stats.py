@@ -1,6 +1,6 @@
 """Statistical analysis functions."""
 import pandas as pd
-from typing import Optional
+from typing import Optional, List
 
 
 def season_averages(player_games: pd.DataFrame) -> dict:
@@ -146,5 +146,204 @@ def top_performers(box_score: pd.DataFrame) -> list:
     
     # Sort by points, then assists, then rebounds
     performers.sort(key=lambda x: (x['points'], x['assists'], x['rebounds']), reverse=True)
-    
+
     return performers
+
+
+def efficiency_metrics(player_games: pd.DataFrame) -> dict:
+    """
+    Calculate advanced efficiency metrics for a player.
+
+    Args:
+        player_games: DataFrame from get_player_games()
+
+    Returns:
+        Dict with efficiency metrics:
+        - ts_pct: True Shooting % (accounts for FTs and 3s)
+        - efg_pct: Effective FG % (weights 3-pointers)
+        - games: Number of games analyzed
+
+    Example:
+        >>> coby = get_player_games("Coby White", last_n=20)
+        >>> eff = efficiency_metrics(coby)
+        >>> print(f"TS%: {eff['ts_pct']:.1f}%")
+    """
+    if player_games.empty:
+        return {}
+
+    total_pts = player_games['points'].sum()
+    total_fga = player_games['fg_attempted'].sum()
+    total_fta = player_games.get('ft_attempted', pd.Series([0])).sum()
+    total_fgm = player_games['fg_made'].sum()
+    total_fg3m = player_games['fg3_made'].sum()
+
+    # True Shooting %: pts / (2 * (fga + 0.44 * fta)) * 100
+    tsa = total_fga + 0.44 * total_fta
+    ts_pct = (total_pts / (2 * tsa) * 100) if tsa > 0 else 0.0
+
+    # Effective FG %: (fgm + 0.5 * fg3m) / fga * 100
+    efg_pct = ((total_fgm + 0.5 * total_fg3m) / total_fga * 100) if total_fga > 0 else 0.0
+
+    return {
+        'ts_pct': round(ts_pct, 1),
+        'efg_pct': round(efg_pct, 1),
+        'games': len(player_games),
+    }
+
+
+def game_efficiency(player_games: pd.DataFrame) -> pd.DataFrame:
+    """
+    Add per-game efficiency columns to player games DataFrame.
+
+    Args:
+        player_games: DataFrame from get_player_games()
+
+    Returns:
+        DataFrame with added columns:
+        - ts_pct: Per-game True Shooting %
+        - efg_pct: Per-game Effective FG %
+
+    Example:
+        >>> coby = get_player_games("Coby White", last_n=10)
+        >>> coby_eff = game_efficiency(coby)
+        >>> coby_eff[['date', 'points', 'ts_pct', 'efg_pct']]
+    """
+    if player_games.empty:
+        return player_games.copy()
+
+    df = player_games.copy()
+
+    # Get FT attempted, default to 0 if column doesn't exist
+    fta = df['ft_attempted'] if 'ft_attempted' in df.columns else 0
+
+    # True Shooting %: pts / (2 * (fga + 0.44 * fta)) * 100
+    tsa = df['fg_attempted'] + 0.44 * fta
+    df['ts_pct'] = (df['points'] / (2 * tsa.replace(0, 1)) * 100).round(1)
+
+    # Effective FG %: (fgm + 0.5 * fg3m) / fga * 100
+    df['efg_pct'] = ((df['fg_made'] + 0.5 * df['fg3_made']) / df['fg_attempted'].replace(0, 1) * 100).round(1)
+
+    return df
+
+
+def rolling_averages(
+    player_games: pd.DataFrame,
+    metrics: Optional[List[str]] = None,
+    windows: Optional[List[int]] = None,
+) -> pd.DataFrame:
+    """
+    Calculate rolling averages for specified metrics.
+
+    Args:
+        player_games: DataFrame from get_player_games()
+        metrics: List of column names to calculate rolling averages for
+                 (default: ['points', 'rebounds', 'assists'])
+        windows: List of window sizes (default: [3, 5, 10])
+
+    Returns:
+        DataFrame with added rolling average columns.
+        Column naming: {metric}_roll_{window}
+
+    Example:
+        >>> coby = get_player_games("Coby White", last_n=15)
+        >>> coby_roll = rolling_averages(coby, metrics=['points'], windows=[3, 5])
+        >>> coby_roll[['date', 'points', 'points_roll_3', 'points_roll_5']]
+    """
+    if player_games.empty:
+        return player_games.copy()
+
+    if metrics is None:
+        metrics = ['points', 'rebounds', 'assists']
+    if windows is None:
+        windows = [3, 5, 10]
+
+    df = player_games.copy()
+
+    # Data is most recent first, so we reverse for rolling calculation
+    # then reverse back to maintain original order
+    df_reversed = df.iloc[::-1].copy()
+
+    for metric in metrics:
+        if metric not in df.columns:
+            continue
+        for window in windows:
+            col_name = f'{metric}_roll_{window}'
+            df_reversed[col_name] = df_reversed[metric].rolling(window=window, min_periods=1).mean().round(1)
+
+    # Reverse back to original order (most recent first)
+    result = df_reversed.iloc[::-1].reset_index(drop=True)
+
+    return result
+
+
+def consistency_score(
+    player_games: pd.DataFrame,
+    metrics: Optional[List[str]] = None,
+) -> dict:
+    """
+    Analyze a player's consistency across metrics.
+
+    Uses coefficient of variation (CV = std/mean) to categorize consistency:
+    - very_consistent: CV < 20%
+    - consistent: CV 20-35%
+    - moderate: CV 35-50%
+    - volatile: CV > 50%
+
+    Args:
+        player_games: DataFrame from get_player_games()
+        metrics: List of metrics to analyze
+                 (default: ['points', 'rebounds', 'assists'])
+
+    Returns:
+        Dict with consistency analysis for each metric:
+        - mean: Average value
+        - std: Standard deviation
+        - cv: Coefficient of variation (%)
+        - category: Consistency category
+        - high: Maximum value
+        - low: Minimum value
+
+    Example:
+        >>> coby = get_player_games("Coby White", last_n=20)
+        >>> cons = consistency_score(coby)
+        >>> print(f"Scoring consistency: {cons['points']['category']}")
+    """
+    if player_games.empty:
+        return {}
+
+    if metrics is None:
+        metrics = ['points', 'rebounds', 'assists']
+
+    result = {}
+
+    for metric in metrics:
+        if metric not in player_games.columns:
+            continue
+
+        values = player_games[metric]
+        mean_val = values.mean()
+        std_val = values.std()
+
+        # Coefficient of variation (as percentage)
+        cv = (std_val / mean_val * 100) if mean_val > 0 else 0.0
+
+        # Categorize consistency
+        if cv < 20:
+            category = 'very_consistent'
+        elif cv < 35:
+            category = 'consistent'
+        elif cv < 50:
+            category = 'moderate'
+        else:
+            category = 'volatile'
+
+        result[metric] = {
+            'mean': round(mean_val, 1),
+            'std': round(std_val, 1),
+            'cv': round(cv, 1),
+            'category': category,
+            'high': int(values.max()),
+            'low': int(values.min()),
+        }
+
+    return result

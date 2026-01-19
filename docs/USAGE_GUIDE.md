@@ -306,6 +306,41 @@ img.save("coby_headshot.png")
 
 ---
 
+#### `get_player_shots(player_id, team_id=BULLS_TEAM_ID, season='2025-26', last_n_games=None)`
+
+Get shot chart data for a player.
+
+**Parameters:**
+- `player_id` (int): NBA player ID (e.g., 1629632 for Coby White)
+- `team_id` (int): NBA team ID (default: Bulls)
+- `season` (str): NBA season string
+- `last_n_games` (int, optional): Limit to last N games
+
+**Returns:** `pandas.DataFrame` with columns:
+- `loc_x`, `loc_y`: Court coordinates
+- `shot_made`: Boolean (True = made, False = missed)
+- `shot_type`: "2PT" or "3PT"
+- `shot_zone`: Zone description (e.g., "Restricted Area", "Mid-Range")
+- `shot_distance`: Distance in feet
+- `game_id`: Game identifier
+
+**Example:**
+```python
+from bulls import data
+
+# Get Coby White's shots
+shots = data.get_player_shots(1629632)
+makes = shots[shots['shot_made']]
+print(f"FG%: {len(makes) / len(shots) * 100:.1f}%")
+```
+
+**Notes:**
+- Requires player ID (not name)
+- Returns empty DataFrame if no shots found
+- Has built-in API delay for rate limiting
+
+---
+
 ### Module: `bulls.analysis`
 
 Functions for analyzing data and finding insights.
@@ -455,6 +490,111 @@ for i, player in enumerate(top[:3], 1):
 **Notes:**
 - Sorted by points, then assists, then rebounds
 - Returns all players from the box score
+
+---
+
+#### `efficiency_metrics(player_games)`
+
+Calculate advanced efficiency metrics for a player.
+
+**Parameters:**
+- `player_games` (DataFrame): DataFrame from `get_player_games()`
+
+**Returns:** `dict` with keys:
+- `ts_pct`: True Shooting % (accounts for FTs and 3s)
+- `efg_pct`: Effective FG % (weights 3-pointers)
+- `games`: Number of games analyzed
+
+**Example:**
+```python
+from bulls import data, analysis
+
+coby = data.get_player_games("Coby White", last_n=20)
+eff = analysis.efficiency_metrics(coby)
+print(f"TS%: {eff['ts_pct']:.1f}%")
+print(f"eFG%: {eff['efg_pct']:.1f}%")
+```
+
+**Notes:**
+- TS% formula: `pts / (2 * (fga + 0.44 * fta)) * 100`
+- eFG% formula: `(fgm + 0.5 * fg3m) / fga * 100`
+- Returns empty dict if input is empty
+
+---
+
+#### `game_efficiency(player_games)`
+
+Add per-game efficiency columns to player games DataFrame.
+
+**Parameters:**
+- `player_games` (DataFrame): DataFrame from `get_player_games()`
+
+**Returns:** `pandas.DataFrame` with added columns:
+- `ts_pct`: Per-game True Shooting %
+- `efg_pct`: Per-game Effective FG %
+
+**Example:**
+```python
+from bulls import data, analysis
+
+coby = data.get_player_games("Coby White", last_n=10)
+coby_eff = analysis.game_efficiency(coby)
+print(coby_eff[['date', 'points', 'ts_pct', 'efg_pct']])
+```
+
+---
+
+#### `rolling_averages(player_games, metrics=None, windows=None)`
+
+Calculate rolling averages for specified metrics.
+
+**Parameters:**
+- `player_games` (DataFrame): DataFrame from `get_player_games()`
+- `metrics` (list, optional): Columns to calculate (default: `['points', 'rebounds', 'assists']`)
+- `windows` (list, optional): Window sizes (default: `[3, 5, 10]`)
+
+**Returns:** `pandas.DataFrame` with added rolling columns named `{metric}_roll_{window}`
+
+**Example:**
+```python
+from bulls import data, analysis
+
+coby = data.get_player_games("Coby White", last_n=15)
+coby_roll = analysis.rolling_averages(coby, metrics=['points'], windows=[3, 5])
+print(coby_roll[['date', 'points', 'points_roll_3', 'points_roll_5']])
+```
+
+**Notes:**
+- Uses `min_periods=1` so early games still have values
+- Data is processed chronologically then returned in original order
+
+---
+
+#### `consistency_score(player_games, metrics=None)`
+
+Analyze a player's consistency using coefficient of variation.
+
+**Parameters:**
+- `player_games` (DataFrame): DataFrame from `get_player_games()`
+- `metrics` (list, optional): Metrics to analyze (default: `['points', 'rebounds', 'assists']`)
+
+**Returns:** `dict` with each metric containing:
+- `mean`: Average value
+- `std`: Standard deviation
+- `cv`: Coefficient of variation (%)
+- `category`: 'very_consistent' (<20%), 'consistent' (20-35%), 'moderate' (35-50%), 'volatile' (>50%)
+- `high`: Maximum value
+- `low`: Minimum value
+
+**Example:**
+```python
+from bulls import data, analysis
+
+coby = data.get_player_games("Coby White", last_n=20)
+cons = analysis.consistency_score(coby)
+print(f"Scoring consistency: {cons['points']['category']}")
+print(f"Range: {cons['points']['low']}-{cons['points']['high']} pts")
+```
 
 ---
 
@@ -637,6 +777,98 @@ viz.win_loss_chart(
 - Great for seeing team performance patterns
 
 ---
+
+#### `rolling_efficiency_chart(data, efficiency_col, result_col='result', title='', league_avg=57.0, save_path=None, figsize=(12, 6))`
+
+Create a line chart of rolling efficiency with win/loss markers.
+
+**Parameters:**
+- `data` (DataFrame): Data with efficiency and result columns
+- `efficiency_col` (str): Column name for efficiency metric (e.g., 'ts_pct_roll_5')
+- `result_col` (str): Column containing 'W' or 'L' (default: 'result')
+- `title` (str): Chart title
+- `league_avg` (float): Reference line value (default: 57% for TS%)
+- `save_path` (str, optional): Path to save image
+- `figsize` (tuple): Figure size
+
+**Returns:** `matplotlib.Figure` object
+
+**Example:**
+```python
+from bulls import data, analysis, viz
+
+coby = data.get_player_games("Coby White", last_n=15)
+coby_eff = analysis.game_efficiency(coby)
+coby_roll = analysis.rolling_averages(coby_eff, metrics=['ts_pct'], windows=[5])
+viz.rolling_efficiency_chart(coby_roll, efficiency_col='ts_pct_roll_5')
+```
+
+**Notes:**
+- Green triangle up = win, Red triangle down = loss
+- Includes league average reference line
+- Great for tracking efficiency trends over time
+
+---
+
+#### `radar_chart(players_data, metrics=None, normalize=True, title='', save_path=None, figsize=(8, 8))`
+
+Create a radar/spider chart comparing players across metrics.
+
+**Parameters:**
+- `players_data` (list): List of dicts, each with 'name' and metric values
+- `metrics` (list, optional): Metrics to include (default: `['points', 'rebounds', 'assists', 'steals', 'fg_pct']`)
+- `normalize` (bool): Scale values to 0-100 for fair comparison (default: True)
+- `title` (str): Chart title
+- `save_path` (str, optional): Path to save image
+- `figsize` (tuple): Figure size
+
+**Returns:** `matplotlib.Figure` object
+
+**Example:**
+```python
+from bulls import data, analysis, viz
+
+coby = data.get_player_games("Coby White", last_n=10)
+avgs = analysis.season_averages(coby)
+avgs['name'] = 'Coby White'
+viz.radar_chart([avgs], title="Coby White Stats")
+```
+
+**Notes:**
+- Can compare multiple players by passing multiple dicts
+- Normalization helps when metrics have different scales
+- Uses Bulls branding colors
+
+---
+
+#### `shot_chart(shots_data, show_zones=False, title='', save_path=None, figsize=(12, 11))`
+
+Create a shot chart visualization on a basketball court.
+
+**Parameters:**
+- `shots_data` (DataFrame): DataFrame with `loc_x`, `loc_y`, `shot_made` columns
+- `show_zones` (bool): If True, show hexbin heatmap; if False, show scatter (default: False)
+- `title` (str): Chart title
+- `save_path` (str, optional): Path to save image
+- `figsize` (tuple): Figure size
+
+**Returns:** `matplotlib.Figure` object
+
+**Example:**
+```python
+from bulls import data, viz
+
+shots = data.get_player_shots(1629632)  # Coby White
+viz.shot_chart(shots, title="Coby White Shot Chart")
+
+# Heatmap mode
+viz.shot_chart(shots, show_zones=True, title="Coby White Efficiency")
+```
+
+**Notes:**
+- Scatter mode: green circles = makes, red X = misses
+- Heatmap mode: color shows FG% by zone
+- Draws full half-court with 3-point line, paint, etc.
 
 ---
 

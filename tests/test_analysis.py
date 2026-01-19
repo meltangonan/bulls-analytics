@@ -6,6 +6,10 @@ from bulls.analysis import (
     vs_average,
     scoring_trend,
     top_performers,
+    efficiency_metrics,
+    game_efficiency,
+    rolling_averages,
+    consistency_score,
 )
 
 
@@ -392,9 +396,265 @@ class TestTopPerformers:
             'fieldGoalsMade': [8],
             'fieldGoalsAttempted': [15],
         })
-        
+
         result = top_performers(fake_box)
-        
+
         assert isinstance(result[0]['points'], int)
         assert isinstance(result[0]['rebounds'], int)
         assert isinstance(result[0]['assists'], int)
+
+
+class TestEfficiencyMetrics:
+    """Tests for efficiency_metrics function."""
+
+    def test_returns_expected_keys(self, sample_player_games):
+        """Should return dict with expected keys."""
+        result = efficiency_metrics(sample_player_games)
+
+        assert 'ts_pct' in result
+        assert 'efg_pct' in result
+        assert 'games' in result
+
+    def test_calculates_ts_pct_correctly(self):
+        """Should calculate true shooting % correctly."""
+        # 30 pts / (2 * (20 + 0.44 * 4)) = 30 / (2 * 21.76) = 30 / 43.52 = 68.93%
+        fake_games = pd.DataFrame({
+            'points': [30],
+            'fg_attempted': [20],
+            'ft_attempted': [4],
+            'fg_made': [12],
+            'fg3_made': [2],
+        })
+
+        result = efficiency_metrics(fake_games)
+
+        expected_ts = 30 / (2 * (20 + 0.44 * 4)) * 100
+        assert result['ts_pct'] == pytest.approx(expected_ts, rel=0.01)
+
+    def test_calculates_efg_pct_correctly(self):
+        """Should calculate effective FG % correctly."""
+        # (12 + 0.5 * 2) / 20 * 100 = 13 / 20 * 100 = 65%
+        fake_games = pd.DataFrame({
+            'points': [30],
+            'fg_attempted': [20],
+            'ft_attempted': [4],
+            'fg_made': [12],
+            'fg3_made': [2],
+        })
+
+        result = efficiency_metrics(fake_games)
+
+        expected_efg = (12 + 0.5 * 2) / 20 * 100
+        assert result['efg_pct'] == pytest.approx(expected_efg, rel=0.01)
+
+    def test_handles_empty_dataframe(self):
+        """Should handle empty input gracefully."""
+        empty_df = pd.DataFrame()
+        result = efficiency_metrics(empty_df)
+        assert result == {}
+
+    def test_handles_zero_attempts(self):
+        """Should handle zero attempts gracefully."""
+        fake_games = pd.DataFrame({
+            'points': [0],
+            'fg_attempted': [0],
+            'ft_attempted': [0],
+            'fg_made': [0],
+            'fg3_made': [0],
+        })
+
+        result = efficiency_metrics(fake_games)
+
+        assert result['ts_pct'] == 0.0
+        assert result['efg_pct'] == 0.0
+
+
+class TestGameEfficiency:
+    """Tests for game_efficiency function."""
+
+    def test_adds_ts_pct_column(self, sample_player_games):
+        """Should add ts_pct column to DataFrame."""
+        result = game_efficiency(sample_player_games)
+        assert 'ts_pct' in result.columns
+
+    def test_adds_efg_pct_column(self, sample_player_games):
+        """Should add efg_pct column to DataFrame."""
+        result = game_efficiency(sample_player_games)
+        assert 'efg_pct' in result.columns
+
+    def test_preserves_original_columns(self, sample_player_games):
+        """Should preserve all original columns."""
+        result = game_efficiency(sample_player_games)
+
+        for col in sample_player_games.columns:
+            assert col in result.columns
+
+    def test_handles_empty_dataframe(self):
+        """Should handle empty input gracefully."""
+        empty_df = pd.DataFrame()
+        result = game_efficiency(empty_df)
+        assert result.empty
+
+    def test_per_game_ts_calculation(self):
+        """Should calculate per-game TS% correctly."""
+        fake_games = pd.DataFrame({
+            'points': [20, 30],
+            'fg_attempted': [15, 20],
+            'ft_attempted': [4, 5],
+            'fg_made': [8, 12],
+            'fg3_made': [2, 3],
+        })
+
+        result = game_efficiency(fake_games)
+
+        # Game 1: 20 / (2 * (15 + 0.44 * 4)) = 20 / 33.52 = 59.7%
+        expected_ts_1 = 20 / (2 * (15 + 0.44 * 4)) * 100
+        assert result.iloc[0]['ts_pct'] == pytest.approx(expected_ts_1, rel=0.01)
+
+    def test_handles_missing_ft_attempted(self):
+        """Should handle missing ft_attempted column."""
+        fake_games = pd.DataFrame({
+            'points': [20],
+            'fg_attempted': [15],
+            'fg_made': [8],
+            'fg3_made': [2],
+        })
+
+        result = game_efficiency(fake_games)
+
+        assert 'ts_pct' in result.columns
+        assert 'efg_pct' in result.columns
+
+
+class TestRollingAverages:
+    """Tests for rolling_averages function."""
+
+    def test_adds_rolling_columns(self, sample_player_games):
+        """Should add rolling average columns."""
+        result = rolling_averages(sample_player_games, metrics=['points'], windows=[3])
+
+        assert 'points_roll_3' in result.columns
+
+    def test_default_metrics_and_windows(self, sample_player_games):
+        """Should use default metrics and windows."""
+        result = rolling_averages(sample_player_games)
+
+        # Default metrics: points, rebounds, assists
+        # Default windows: 3, 5, 10
+        assert 'points_roll_3' in result.columns
+        assert 'points_roll_5' in result.columns
+        assert 'rebounds_roll_3' in result.columns
+        assert 'assists_roll_3' in result.columns
+
+    def test_preserves_original_columns(self, sample_player_games):
+        """Should preserve all original columns."""
+        result = rolling_averages(sample_player_games, metrics=['points'], windows=[3])
+
+        for col in sample_player_games.columns:
+            assert col in result.columns
+
+    def test_handles_empty_dataframe(self):
+        """Should handle empty input gracefully."""
+        empty_df = pd.DataFrame()
+        result = rolling_averages(empty_df)
+        assert result.empty
+
+    def test_rolling_calculation_correctness(self):
+        """Should calculate rolling averages correctly."""
+        # Data is most recent first
+        fake_games = pd.DataFrame({
+            'points': [30, 20, 10],  # Most recent first
+        })
+
+        result = rolling_averages(fake_games, metrics=['points'], windows=[2])
+
+        # After reversal (oldest first): [10, 20, 30]
+        # Roll 2: [10, 15, 25] (min_periods=1)
+        # After re-reversal (most recent first): [25, 15, 10]
+        assert result.iloc[0]['points_roll_2'] == 25.0  # avg of 30, 20
+        assert result.iloc[1]['points_roll_2'] == 15.0  # avg of 20, 10
+        assert result.iloc[2]['points_roll_2'] == 10.0  # just 10
+
+    def test_skips_missing_metric(self):
+        """Should skip metrics not in DataFrame."""
+        fake_games = pd.DataFrame({
+            'points': [20, 25, 30],
+        })
+
+        result = rolling_averages(fake_games, metrics=['points', 'nonexistent'], windows=[3])
+
+        assert 'points_roll_3' in result.columns
+        assert 'nonexistent_roll_3' not in result.columns
+
+
+class TestConsistencyScore:
+    """Tests for consistency_score function."""
+
+    def test_returns_expected_keys(self, sample_player_games):
+        """Should return dict with expected structure."""
+        result = consistency_score(sample_player_games)
+
+        assert 'points' in result
+        assert 'rebounds' in result
+        assert 'assists' in result
+
+        assert 'mean' in result['points']
+        assert 'std' in result['points']
+        assert 'cv' in result['points']
+        assert 'category' in result['points']
+        assert 'high' in result['points']
+        assert 'low' in result['points']
+
+    def test_categorizes_very_consistent(self):
+        """Should categorize CV < 20% as very_consistent."""
+        fake_games = pd.DataFrame({
+            'points': [20, 21, 20, 19, 20],  # Low variation
+        })
+
+        result = consistency_score(fake_games, metrics=['points'])
+
+        assert result['points']['category'] == 'very_consistent'
+
+    def test_categorizes_volatile(self):
+        """Should categorize CV > 50% as volatile."""
+        fake_games = pd.DataFrame({
+            'points': [5, 40, 8, 35, 10],  # High variation
+        })
+
+        result = consistency_score(fake_games, metrics=['points'])
+
+        assert result['points']['category'] == 'volatile'
+
+    def test_calculates_high_and_low(self, sample_player_games):
+        """Should correctly identify high and low values."""
+        result = consistency_score(sample_player_games, metrics=['points'])
+
+        assert result['points']['high'] == 30
+        assert result['points']['low'] == 18
+
+    def test_handles_empty_dataframe(self):
+        """Should handle empty input gracefully."""
+        empty_df = pd.DataFrame()
+        result = consistency_score(empty_df)
+        assert result == {}
+
+    def test_skips_missing_metric(self):
+        """Should skip metrics not in DataFrame."""
+        fake_games = pd.DataFrame({
+            'points': [20, 25, 30],
+        })
+
+        result = consistency_score(fake_games, metrics=['points', 'nonexistent'])
+
+        assert 'points' in result
+        assert 'nonexistent' not in result
+
+    def test_handles_zero_mean(self):
+        """Should handle zero mean gracefully."""
+        fake_games = pd.DataFrame({
+            'blocks': [0, 0, 0, 0, 0],
+        })
+
+        result = consistency_score(fake_games, metrics=['blocks'])
+
+        assert result['blocks']['cv'] == 0.0

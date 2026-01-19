@@ -5,4 +5,7 @@ from bulls.viz.charts import (
     scatter_plot,
     comparison_chart,
     win_loss_chart,
+    rolling_efficiency_chart,
+    radar_chart,
+    shot_chart,
 )

@@ -4,4 +4,8 @@ from bulls.analysis.stats import (
     vs_average,
     scoring_trend,
     top_performers,
+    efficiency_metrics,
+    game_efficiency,
+    rolling_averages,
+    consistency_score,
 )

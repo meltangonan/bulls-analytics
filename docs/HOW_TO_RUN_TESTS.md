@@ -27,7 +27,7 @@ pytest tests/ -v
 - Tests use **mocked API calls** to avoid real network requests
 - System Python doesn't have the mocks configured correctly
 - Using system Python causes tests to hang waiting for real API calls
-- All 69 tests should complete in **under 20 seconds** when using venv Python
+- All 121 tests should complete in **under 30 seconds** when using venv Python
 
 ## Quick Test
 

@@ -8,6 +8,7 @@ from bulls.data import (
     get_box_score,
     get_player_games,
     get_player_headshot,
+    get_player_shots,
 )
 from bulls.config import BULLS_TEAM_ID, CURRENT_SEASON
 
@@ -212,3 +213,59 @@ class TestGetPlayerHeadshot:
         assert isinstance(img, Image.Image)
         # Should return placeholder image
         assert img.size == (300, 300)  # Default size
+
+
+class TestGetPlayerShots:
+    """Tests for get_player_shots function."""
+
+    def test_returns_dataframe(self, mock_shot_chart_api):
+        """get_player_shots should return a pandas DataFrame."""
+        shots = get_player_shots(1629632)
+        assert isinstance(shots, pd.DataFrame)
+
+    def test_returns_expected_columns(self, mock_shot_chart_api):
+        """get_player_shots should return expected columns."""
+        shots = get_player_shots(1629632)
+
+        if not shots.empty:
+            expected_columns = [
+                'loc_x', 'loc_y', 'shot_made', 'shot_type',
+                'shot_zone', 'shot_distance', 'game_id'
+            ]
+            for col in expected_columns:
+                assert col in shots.columns, f"Missing column: {col}"
+
+    def test_shot_made_is_boolean(self, mock_shot_chart_api):
+        """shot_made column should be boolean."""
+        shots = get_player_shots(1629632)
+
+        if not shots.empty:
+            assert shots['shot_made'].dtype == bool
+
+    def test_shot_type_values(self, mock_shot_chart_api):
+        """shot_type should be '2PT' or '3PT'."""
+        shots = get_player_shots(1629632)
+
+        if not shots.empty:
+            assert all(shots['shot_type'].isin(['2PT', '3PT']))
+
+    def test_handles_empty_result(self, mock_empty_shot_chart_api):
+        """get_player_shots should handle empty results gracefully."""
+        shots = get_player_shots(1629632)
+        assert isinstance(shots, pd.DataFrame)
+        assert shots.empty
+
+    def test_respects_team_id_parameter(self, mock_shot_chart_api):
+        """get_player_shots should accept team_id parameter."""
+        shots = get_player_shots(1629632, team_id=BULLS_TEAM_ID)
+        assert isinstance(shots, pd.DataFrame)
+
+    def test_respects_season_parameter(self, mock_shot_chart_api):
+        """get_player_shots should accept season parameter."""
+        shots = get_player_shots(1629632, season="2025-26")
+        assert isinstance(shots, pd.DataFrame)
+
+    def test_respects_last_n_games_parameter(self, mock_shot_chart_api):
+        """get_player_shots should accept last_n_games parameter."""
+        shots = get_player_shots(1629632, last_n_games=5)
+        assert isinstance(shots, pd.DataFrame)

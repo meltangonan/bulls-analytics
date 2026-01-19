@@ -101,9 +101,10 @@ bulls-analytics/
   - `get_games()` - Get Bulls games for a season
   - `get_latest_game()` - Get most recent game
   - `get_box_score()` - Get box score for a game
-  - `get_player_games()` - Get player's game-by-game stats
+  - `get_player_games()` - Get player's game-by-game stats (includes FT data)
   - `get_player_headshot()` - Fetch player headshot
-- ✅ Tests written for config and data modules (30 tests: 5 config + 25 data)
+  - `get_player_shots()` - Get shot chart data for a player
+- ✅ Tests written for config and data modules (38 tests: 5 config + 33 data)
 
 ### Phase 2: Analysis ✅
 - ✅ Analysis module (`bulls/analysis/stats.py`)
@@ -111,7 +112,11 @@ bulls-analytics/
   - `vs_average()` - Compare game stats to season averages
   - `scoring_trend()` - Analyze trend over recent games (up/down/stable)
   - `top_performers()` - Rank players by performance in a game
-- ✅ Comprehensive tests for analysis module (25 tests)
+  - `efficiency_metrics()` - Calculate TS% and eFG%
+  - `game_efficiency()` - Add per-game efficiency columns
+  - `rolling_averages()` - Calculate rolling averages for metrics
+  - `consistency_score()` - Analyze player consistency (CV-based)
+- ✅ Comprehensive tests for analysis module (50 tests)
 
 ### Phase 3: Visualization ✅
 - ✅ Charts module (`bulls/viz/charts.py`)
@@ -121,23 +126,22 @@ bulls-analytics/
   - `scatter_plot()` - Compare two metrics (e.g., points vs assists)
   - `comparison_chart()` - Compare multiple groups side by side
   - `win_loss_chart()` - Bar chart with win/loss color coding
-- ✅ Comprehensive tests for visualization module (12 tests)
-- ✅ All 69 tests passing
+  - `rolling_efficiency_chart()` - Efficiency trend with win/loss markers
+  - `radar_chart()` - Spider chart for player comparison
+  - `shot_chart()` - Court visualization (scatter or heatmap)
+- ✅ Comprehensive tests for visualization module (28 tests)
+- ✅ All 121 tests passing
 
 ### Phase 4: Polish & Ship ✅
 - ✅ Exploration notebook (`notebooks/explore.ipynb`)
   - Starter cells for data exploration, analysis, and visualization
   - Examples for getting games, analyzing players, creating charts
   - Examples for creating various chart types
-- ✅ Additional chart types
-  - `scatter_plot()` - Compare two metrics (e.g., points vs assists)
-  - `comparison_chart()` - Compare multiple groups side by side
-  - `win_loss_chart()` - Bar chart with win/loss color coding
 - ✅ Enhanced chart styling
   - Bulls branding and colors
   - Multiple chart types for different use cases
   - Customizable styling options
-- ✅ All 69 tests passing
+- ✅ All 121 tests passing
 
 ## Next Steps
 

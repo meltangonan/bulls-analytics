@@ -16,8 +16,10 @@ from nba_api.stats.endpoints import (
 from bulls.config import (
     BULLS_TEAM_ID,
     CURRENT_SEASON,
+    LAST_SEASON,
     API_DELAY,
     NBA_HEADSHOT_URL,
+    NBA_TEAMS,
 )
 
 
@@ -388,3 +390,70 @@ def get_team_shots(
     except (AttributeError, KeyError, IndexError, requests.RequestException, json.JSONDecodeError, ValueError) as e:
         print(f"Error fetching shot chart for team {team_id}: {e}")
         return pd.DataFrame()
+
+
+def get_league_shots(
+    season: str = LAST_SEASON,
+    teams: Optional[list] = None,
+) -> pd.DataFrame:
+    """
+    Get shot chart data for all NBA teams (or specified teams).
+
+    Args:
+        season: NBA season string (default: last season)
+        teams: List of team abbreviations to fetch (default: all 30 teams)
+               e.g., ["CHI", "BOS", "LAL"]
+
+    Returns:
+        DataFrame with shot data for all teams including:
+        - loc_x, loc_y: Court coordinates
+        - shot_made: Boolean (True = made, False = missed)
+        - shot_type: "2PT" or "3PT"
+        - shot_zone: Zone description
+        - shot_distance: Distance in feet
+        - team_id: Team ID
+        - team_abbr: Team abbreviation
+
+    Example:
+        >>> league_shots = get_league_shots(season="2024-25")
+        >>> print(f"Total shots: {len(league_shots):,}")
+    """
+    if teams is None:
+        teams = list(NBA_TEAMS.keys())
+
+    all_shots = []
+    total_teams = len(teams)
+
+    for i, abbr in enumerate(teams, 1):
+        if abbr not in NBA_TEAMS:
+            print(f"Warning: Unknown team abbreviation '{abbr}', skipping")
+            continue
+
+        team_info = NBA_TEAMS[abbr]
+        team_id = team_info["id"]
+        team_name = team_info["name"]
+
+        print(f"[{i}/{total_teams}] Fetching {team_name}...")
+
+        try:
+            shots = get_team_shots(team_id=team_id, season=season)
+
+            if not shots.empty:
+                shots["team_id"] = team_id
+                shots["team_abbr"] = abbr
+                shots["team_name"] = team_name
+                all_shots.append(shots)
+                print(f"    -> {len(shots):,} shots")
+            else:
+                print(f"    -> No shots found")
+
+        except Exception as e:
+            print(f"    -> Error: {e}")
+            continue
+
+    if not all_shots:
+        return pd.DataFrame()
+
+    result = pd.concat(all_shots, ignore_index=True)
+    print(f"\nTotal: {len(result):,} shots from {len(all_shots)} teams")
+    return result

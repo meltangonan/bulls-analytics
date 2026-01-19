@@ -7,4 +7,5 @@ from bulls.data.fetch import (
     get_player_headshot,
     get_player_shots,
     get_team_shots,
+    get_league_shots,
 )

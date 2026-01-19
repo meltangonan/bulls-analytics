@@ -1,5 +1,6 @@
 """Statistical analysis functions."""
 import pandas as pd
+import numpy as np
 from typing import Optional, List
 
 
@@ -530,5 +531,177 @@ def zone_leaders(
             'total_shots': leader['total_shots'],
             'games': leader['games']
         }
-    
+
     return leaders
+
+
+def league_pps_by_zone(league_shots: pd.DataFrame) -> dict:
+    """
+    Calculate league-wide points per shot by zone across all teams.
+
+    Args:
+        league_shots: DataFrame from get_league_shots() with shot data for all teams
+
+    Returns:
+        Dict with league-wide PPS analysis:
+        {
+            'league_overall': {'pps': float, 'total_points': int, 'total_shots': int, 'fg_pct': float},
+            'by_zone': {
+                'zone_name': {
+                    'pps': float, 'total_points': int, 'total_shots': int, 'fg_pct': float,
+                    'rank': int, 'pct_of_shots': float
+                }
+            },
+            'by_team': {
+                'team_abbr': {
+                    'overall': {...},
+                    'by_zone': {...}
+                }
+            }
+        }
+
+    Example:
+        >>> league_shots = data.get_league_shots(season="2024-25")
+        >>> league_pps = league_pps_by_zone(league_shots)
+        >>> print(f"League PPS: {league_pps['league_overall']['pps']:.3f}")
+    """
+    if league_shots.empty:
+        return {}
+
+    required_cols = ['shot_made', 'shot_type', 'shot_zone']
+    missing_cols = [col for col in required_cols if col not in league_shots.columns]
+    if missing_cols:
+        return {}
+
+    def calc_stats(shots_df: pd.DataFrame) -> dict:
+        """Calculate PPS stats for a group of shots."""
+        total_shots = len(shots_df)
+        if total_shots == 0:
+            return {'pps': 0.0, 'total_points': 0, 'total_shots': 0, 'fg_pct': 0.0}
+
+        points = shots_df.apply(
+            lambda row: 3 if row['shot_made'] and row['shot_type'] == '3PT'
+                       else 2 if row['shot_made'] else 0,
+            axis=1
+        ).sum()
+
+        made_shots = shots_df['shot_made'].sum()
+        fg_pct = (made_shots / total_shots) * 100
+
+        return {
+            'pps': round(points / total_shots, 3),
+            'total_points': int(points),
+            'total_shots': total_shots,
+            'fg_pct': round(fg_pct, 1)
+        }
+
+    # Calculate league-wide overall stats
+    league_overall = calc_stats(league_shots)
+
+    # Calculate league-wide by zone
+    zone_stats = {}
+    total_league_shots = len(league_shots)
+
+    for zone in league_shots['shot_zone'].dropna().unique():
+        zone_shots = league_shots[league_shots['shot_zone'] == zone]
+        stats = calc_stats(zone_shots)
+        stats['pct_of_shots'] = round(len(zone_shots) / total_league_shots * 100, 1)
+        zone_stats[zone] = stats
+
+    # Rank zones by PPS
+    sorted_zones = sorted(zone_stats.items(), key=lambda x: x[1]['pps'], reverse=True)
+    for rank, (zone, _) in enumerate(sorted_zones, 1):
+        zone_stats[zone]['rank'] = rank
+
+    # Calculate per-team stats
+    team_stats = {}
+    if 'team_abbr' in league_shots.columns:
+        for team_abbr in league_shots['team_abbr'].dropna().unique():
+            team_shots = league_shots[league_shots['team_abbr'] == team_abbr]
+            team_overall = calc_stats(team_shots)
+
+            team_zones = {}
+            for zone in team_shots['shot_zone'].dropna().unique():
+                zone_shots = team_shots[team_shots['shot_zone'] == zone]
+                team_zones[zone] = calc_stats(zone_shots)
+
+            team_stats[team_abbr] = {
+                'overall': team_overall,
+                'by_zone': team_zones
+            }
+
+    return {
+        'league_overall': league_overall,
+        'by_zone': zone_stats,
+        'by_team': team_stats
+    }
+
+
+def zone_value_ranking(league_pps: dict) -> pd.DataFrame:
+    """
+    Create a ranked DataFrame of shot zones by value (PPS).
+
+    Args:
+        league_pps: Dict from league_pps_by_zone()
+
+    Returns:
+        DataFrame with zones ranked by PPS, including volume and efficiency metrics.
+
+    Example:
+        >>> league_pps = league_pps_by_zone(league_shots)
+        >>> rankings = zone_value_ranking(league_pps)
+        >>> print(rankings)
+    """
+    if not league_pps or 'by_zone' not in league_pps:
+        return pd.DataFrame()
+
+    zones = []
+    for zone, stats in league_pps['by_zone'].items():
+        zones.append({
+            'Zone': zone,
+            'PPS': stats['pps'],
+            'FG%': stats['fg_pct'],
+            'Points': stats['total_points'],
+            'Shots': stats['total_shots'],
+            'Volume%': stats['pct_of_shots'],
+            'Rank': stats['rank']
+        })
+
+    df = pd.DataFrame(zones).sort_values('Rank')
+    return df.reset_index(drop=True)
+
+
+def team_zone_comparison(league_pps: dict, zones: Optional[List[str]] = None) -> pd.DataFrame:
+    """
+    Create a DataFrame comparing team PPS across zones.
+
+    Args:
+        league_pps: Dict from league_pps_by_zone()
+        zones: List of zones to include (default: all zones)
+
+    Returns:
+        DataFrame with teams as rows and zones as columns, values are PPS.
+
+    Example:
+        >>> league_pps = league_pps_by_zone(league_shots)
+        >>> comparison = team_zone_comparison(league_pps)
+        >>> print(comparison.head())
+    """
+    if not league_pps or 'by_team' not in league_pps:
+        return pd.DataFrame()
+
+    if zones is None:
+        zones = list(league_pps['by_zone'].keys())
+
+    rows = []
+    for team_abbr, team_data in league_pps['by_team'].items():
+        row = {'Team': team_abbr, 'Overall': team_data['overall']['pps']}
+        for zone in zones:
+            if zone in team_data['by_zone']:
+                row[zone] = team_data['by_zone'][zone]['pps']
+            else:
+                row[zone] = np.nan
+        rows.append(row)
+
+    df = pd.DataFrame(rows).sort_values('Overall', ascending=False)
+    return df.reset_index(drop=True)

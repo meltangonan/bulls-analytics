@@ -10,4 +10,7 @@ from bulls.analysis.stats import (
     consistency_score,
     points_per_shot,
     zone_leaders,
+    league_pps_by_zone,
+    zone_value_ranking,
+    team_zone_comparison,
 )

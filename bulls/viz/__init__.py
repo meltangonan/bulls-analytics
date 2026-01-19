@@ -8,4 +8,5 @@ from bulls.viz.charts import (
     rolling_efficiency_chart,
     radar_chart,
     shot_chart,
+    zone_leaders_chart,
 )

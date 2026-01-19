@@ -1,9 +1,10 @@
 """Basic chart functions using matplotlib."""
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, Rectangle, Arc, Patch
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 import numpy as np
 import pandas as pd
-from typing import Optional, List
+from typing import Optional, List, Dict
 from pathlib import Path
 
 from bulls.config import BULLS_RED, BULLS_BLACK, WHITE, GREEN, RED as RED_COLOR, OUTPUT_DIR
@@ -657,4 +658,200 @@ def shot_chart(
         fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
         print(f"Saved to {save_path}")
 
+    return fig
+
+
+def _draw_zone_boundaries(ax, color='gray', lw=1, alpha=0.3):
+    """
+    Draw approximate zone boundaries on the court.
+    
+    Args:
+        ax: matplotlib axes
+        color: Line color
+        lw: Line width
+        alpha: Transparency
+    """
+    # Restricted Area (already drawn as arc in _draw_court, but add circle for clarity)
+    restricted_circle = Circle((0, 0), radius=48, linewidth=lw, 
+                               color=color, fill=False, linestyle='--', alpha=alpha)
+    ax.add_patch(restricted_circle)
+    
+    # Paint boundary (free throw line at y=142.5)
+    # Draw lines to separate paint from mid-range
+    paint_left = Rectangle((-80, -47.5), 0, 190, linewidth=lw, 
+                           color=color, linestyle='--', alpha=alpha)
+    paint_right = Rectangle((80, -47.5), 0, 190, linewidth=lw, 
+                            color=color, linestyle='--', alpha=alpha)
+    ax.add_patch(paint_left)
+    ax.add_patch(paint_right)
+    
+    # Corner 3 boundaries (approximate at x = ±200)
+    corner_left = Rectangle((-200, -47.5), 0, 140, linewidth=lw, 
+                            color=color, linestyle='--', alpha=alpha)
+    corner_right = Rectangle((200, -47.5), 0, 140, linewidth=lw, 
+                             color=color, linestyle='--', alpha=alpha)
+    ax.add_patch(corner_left)
+    ax.add_patch(corner_right)
+    
+    return ax
+
+
+def _get_zone_center(zone_name: str) -> tuple:
+    """
+    Get approximate center coordinates for a shot zone.
+    
+    Args:
+        zone_name: Name of the shot zone
+    
+    Returns:
+        Tuple of (x, y) coordinates for zone center
+    """
+    zone_centers = {
+        'Restricted Area': (0, 0),
+        'In The Paint (Non-RA)': (0, 70),
+        'Mid-Range': (0, 200),
+        'Left Corner 3': (-180, 50),
+        'Right Corner 3': (180, 50),
+        'Above the Break 3': (0, 300),
+        'Backcourt': (0, 400),
+    }
+    
+    # Try exact match first
+    if zone_name in zone_centers:
+        return zone_centers[zone_name]
+    
+    # Try partial matches
+    zone_lower = zone_name.lower()
+    if 'restricted' in zone_lower:
+        return zone_centers['Restricted Area']
+    elif 'paint' in zone_lower and 'non' in zone_lower:
+        return zone_centers['In The Paint (Non-RA)']
+    elif 'mid' in zone_lower or 'range' in zone_lower:
+        return zone_centers['Mid-Range']
+    elif 'left' in zone_lower and 'corner' in zone_lower:
+        return zone_centers['Left Corner 3']
+    elif 'right' in zone_lower and 'corner' in zone_lower:
+        return zone_centers['Right Corner 3']
+    elif 'above' in zone_lower or 'break' in zone_lower:
+        return zone_centers['Above the Break 3']
+    elif 'backcourt' in zone_lower:
+        return zone_centers['Backcourt']
+    
+    # Default to center court
+    return (0, 200)
+
+
+def zone_leaders_chart(
+    zone_leaders_dict: Dict,
+    title: str = "Zone Leaders - Points Per Game",
+    save_path: Optional[str] = None,
+    figsize: tuple = (14, 12)
+) -> plt.Figure:
+    """
+    Create a shot chart visualization showing which player leads in PPG for each zone.
+    
+    Args:
+        zone_leaders_dict: Dict from zone_leaders() mapping zone names to leader info
+        title: Chart title
+        save_path: Path to save image (optional)
+        figsize: Figure size
+    
+    Returns:
+        matplotlib Figure object
+    
+    Example:
+        >>> shots = data.get_team_shots()
+        >>> leaders = analysis.zone_leaders(shots, min_shots=5)
+        >>> zone_leaders_chart(leaders, title="Bulls Zone Leaders")
+    """
+    from bulls import data
+    
+    fig, ax = plt.subplots(figsize=figsize)
+    
+    # Draw court
+    _draw_court(ax, color='black', lw=1.5)
+    
+    # Draw zone boundaries
+    _draw_zone_boundaries(ax, color='gray', lw=1, alpha=0.3)
+    
+    if not zone_leaders_dict:
+        ax.text(0, 200, 'No zone leaders data available', 
+                ha='center', va='center', fontsize=14)
+        ax.set_xlim(-250, 250)
+        ax.set_ylim(-47.5, 422.5)
+        ax.set_aspect('equal')
+        ax.set_title(title, fontsize=16, fontweight='bold')
+        ax.set_xticks([])
+        ax.set_yticks([])
+        plt.tight_layout()
+        return fig
+    
+    # Place player headshots/names in each zone
+    for zone_name, leader_info in zone_leaders_dict.items():
+        zone_center = _get_zone_center(zone_name)
+        x, y = zone_center
+        
+        player_id = leader_info.get('player_id')
+        player_name = leader_info.get('player_name', 'Unknown')
+        ppg = leader_info.get('ppg', 0)
+        
+        # Try to fetch headshot
+        headshot_img = None
+        if player_id:
+            try:
+                headshot_img = data.get_player_headshot(player_id, size=(80, 80))
+            except Exception:
+                pass
+        
+        # Place headshot or name
+        if headshot_img:
+            # Convert PIL image to numpy array for matplotlib
+            img_array = np.array(headshot_img)
+            im = OffsetImage(img_array, zoom=0.5)
+            ab = AnnotationBbox(im, (x, y), frameon=True, 
+                               bboxprops=dict(boxstyle='round,pad=2', 
+                                            facecolor='white', 
+                                            edgecolor=tuple(c/255 for c in BULLS_RED),
+                                            linewidth=2))
+            ax.add_artist(ab)
+        else:
+            # Use text if no headshot
+            ax.text(x, y, player_name, ha='center', va='center',
+                   fontsize=10, fontweight='bold',
+                   bbox=dict(boxstyle='round,pad=3', 
+                           facecolor='white', 
+                           edgecolor=tuple(c/255 for c in BULLS_RED),
+                           linewidth=2))
+        
+        # Add PPG label below headshot/name
+        label_y = y - 60
+        ax.text(x, label_y, f"{ppg:.1f} PPG", ha='center', va='center',
+               fontsize=9, fontweight='bold',
+               bbox=dict(boxstyle='round,pad=2', 
+                       facecolor=tuple(c/255 for c in BULLS_RED), 
+                       edgecolor='black',
+                       linewidth=1))
+        
+        # Add zone name label
+        zone_label_y = y + 60 if y < 200 else y - 80
+        ax.text(x, zone_label_y, zone_name, ha='center', va='center',
+               fontsize=8, style='italic', alpha=0.7)
+    
+    # Set court dimensions
+    ax.set_xlim(-250, 250)
+    ax.set_ylim(-47.5, 422.5)
+    ax.set_aspect('equal')
+    ax.set_title(title, fontsize=18, fontweight='bold', pad=20)
+    
+    # Remove axis labels for cleaner look
+    ax.set_xticks([])
+    ax.set_yticks([])
+    
+    plt.tight_layout()
+    
+    if save_path:
+        OUTPUT_DIR.mkdir(exist_ok=True)
+        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
+        print(f"Saved to {save_path}")
+    
     return fig

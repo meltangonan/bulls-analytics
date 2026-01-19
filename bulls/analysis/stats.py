@@ -347,3 +347,105 @@ def consistency_score(
         }
 
     return result
+
+
+def zone_leaders(
+    team_shots: pd.DataFrame,
+    min_shots: int = 5
+) -> dict:
+    """
+    Calculate which player leads in points per game for each shot zone.
+    
+    Args:
+        team_shots: DataFrame from get_team_shots() with shot data
+        min_shots: Minimum number of shots required in a zone to qualify (default: 5)
+    
+    Returns:
+        Dict mapping zone names to leader info:
+        {
+            'zone_name': {
+                'player_id': int,
+                'player_name': str,
+                'ppg': float,
+                'total_points': int,
+                'total_shots': int,
+                'games': int
+            }
+        }
+    
+    Example:
+        >>> shots = data.get_team_shots()
+        >>> leaders = zone_leaders(shots, min_shots=5)
+        >>> print(f"Left Corner 3 leader: {leaders['Left Corner 3']['player_name']}")
+    """
+    if team_shots.empty:
+        return {}
+    
+    # Check required columns
+    required_cols = ['player_id', 'player_name', 'shot_zone', 'shot_made', 'shot_type', 'game_id']
+    missing_cols = [col for col in required_cols if col not in team_shots.columns]
+    if missing_cols:
+        print(f"Warning: Missing required columns: {missing_cols}")
+        return {}
+    
+    # Calculate points per shot (2 for 2PT made, 3 for 3PT made, 0 for misses)
+    def calculate_points(row):
+        if row['shot_made']:
+            return 3 if row['shot_type'] == '3PT' else 2
+        return 0
+    
+    team_shots = team_shots.copy()
+    team_shots['points'] = team_shots.apply(calculate_points, axis=1)
+    
+    # Group by player, zone, and game to get points per game
+    # Then aggregate to get total points and unique games
+    player_zone_stats = []
+    
+    for (player_id, player_name, zone), group in team_shots.groupby(['player_id', 'player_name', 'shot_zone']):
+        if pd.isna(player_id) or pd.isna(zone):
+            continue
+        
+        total_shots = len(group)
+        if total_shots < min_shots:
+            continue
+        
+        total_points = group['points'].sum()
+        unique_games = group['game_id'].nunique()
+        
+        if unique_games == 0:
+            continue
+        
+        ppg = total_points / unique_games
+        
+        player_zone_stats.append({
+            'player_id': int(player_id),
+            'player_name': str(player_name),
+            'zone': str(zone),
+            'ppg': ppg,
+            'total_points': int(total_points),
+            'total_shots': total_shots,
+            'games': unique_games
+        })
+    
+    if not player_zone_stats:
+        return {}
+    
+    # Convert to DataFrame for easier processing
+    stats_df = pd.DataFrame(player_zone_stats)
+    
+    # Find leader for each zone (highest PPG)
+    leaders = {}
+    for zone in stats_df['zone'].unique():
+        zone_stats = stats_df[stats_df['zone'] == zone]
+        leader = zone_stats.loc[zone_stats['ppg'].idxmax()]
+        
+        leaders[zone] = {
+            'player_id': leader['player_id'],
+            'player_name': leader['player_name'],
+            'ppg': round(leader['ppg'], 2),
+            'total_points': leader['total_points'],
+            'total_shots': leader['total_shots'],
+            'games': leader['games']
+        }
+    
+    return leaders

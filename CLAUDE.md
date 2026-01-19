@@ -55,29 +55,41 @@ VISUALIZATION LAYER (bulls/viz/charts.py)
 ```
 
 ### Data Layer (`bulls.data`)
-- `get_games(last_n, season)` - Team games DataFrame
-- `get_latest_game()` - Most recent game dict
-- `get_box_score(game_id)` - Player stats DataFrame
-- `get_player_games(player_name, last_n)` - Player's game log DataFrame (includes FT data)
-- `get_player_headshot(player_id)` - PIL Image
-- `get_player_shots(player_id, team_id, season, last_n_games)` - Shot chart DataFrame
+- `get_games(last_n, season)` -> DataFrame with GAME_DATE, MATCHUP, WL, PTS, PLUS_MINUS, GAME_ID
+  - Returns empty DataFrame if no games found
+- `get_latest_game()` -> dict with game_id, date, matchup, is_home, result, bulls_score, opponent, plus_minus
+  - Raises ValueError if no games found
+- `get_box_score(game_id)` -> DataFrame with name, points, reboundsTotal, assists, steals, blocks, minutes
+  - Only returns Bulls players
+- `get_player_games(player_name, last_n)` -> DataFrame with game_id, date, matchup, result, points, rebounds, assists, fg_pct
+  - Makes multiple API calls (slow). Returns empty DataFrame if player not found.
+- `get_player_headshot(player_id)` -> PIL.Image
+  - Returns gray placeholder on network error
+- `get_player_shots(player_id, team_id, season, last_n_games)` -> DataFrame with loc_x, loc_y, shot_made, shot_type, shot_zone, shot_distance
 
 ### Analysis Layer (`bulls.analysis`)
-- `season_averages(player_games)` - Mean stats dict
-- `vs_average(game_stats, averages)` - Comparison dict
-- `scoring_trend(player_games)` - Trend direction dict
-- `top_performers(box_score)` - Ranked player list
-- `efficiency_metrics(player_games)` - TS% and eFG% dict
-- `game_efficiency(player_games)` - DataFrame with per-game TS%/eFG%
-- `rolling_averages(player_games, metrics, windows)` - DataFrame with rolling columns
-- `consistency_score(player_games, metrics)` - CV-based consistency analysis dict
+- `season_averages(player_games)` -> dict with games, points, rebounds, assists, steals, blocks, fg_pct, fg3_pct
+  - Returns empty dict if input empty
+- `vs_average(game_stats, averages)` -> dict with points, rebounds, assists differences
+  - Positive values = above average
+- `scoring_trend(player_games)` -> dict with direction (up/down/stable), average, recent_avg, high, low, last_game
+  - Compares last 5 games to previous 5
+- `top_performers(box_score)` -> list of dicts sorted by points, each with player_id, name, points, rebounds, assists
+- `efficiency_metrics(player_games)` -> dict with ts_pct, efg_pct, games
+- `game_efficiency(player_games)` -> DataFrame with ts_pct and efg_pct columns added
+- `rolling_averages(player_games, metrics, windows)` -> DataFrame with {metric}_roll_{window} columns
+- `consistency_score(player_games, metrics)` -> dict per metric with mean, std, cv, category (very_consistent/consistent/moderate/volatile)
 
 ### Visualization Layer (`bulls.viz`)
-- `bar_chart()`, `line_chart()`, `scatter_plot()`, `comparison_chart()`, `win_loss_chart()`
-- `rolling_efficiency_chart()` - Efficiency trend with win/loss markers
-- `radar_chart()` - Spider chart for player comparison
-- `shot_chart()` - Court visualization (scatter or heatmap mode)
-- All charts use Bulls branding (red: #CE1141, black)
+All return matplotlib.Figure. All support `save_path` parameter.
+- `bar_chart(data, x, y, title, highlight_last)` - Highlights most recent bar
+- `line_chart(data, x, y, title)` - Trend over time
+- `scatter_plot(data, x, y, title, size)` - size can be column name for variable sizing
+- `comparison_chart(data, x, y, group_by, title)` - Grouped bars
+- `win_loss_chart(data, x, y, result_col, title)` - Green=win, red=loss
+- `rolling_efficiency_chart(data, efficiency_col, result_col, league_avg)` - Line with win/loss markers
+- `radar_chart(players_data, metrics, normalize)` - Spider chart, players_data is list of dicts with 'name' key
+- `shot_chart(shots_data, show_zones)` - show_zones=True for heatmap, False for scatter
 
 ### Configuration (`bulls/config.py`)
 - `BULLS_TEAM_ID = 1610612741`
@@ -130,3 +142,4 @@ fig = viz.bar_chart(player_games, x='date', y='points', title="Scoring")
 - API calls have a 0.6s delay built in to respect rate limits
 - `get_player_games()` makes multiple API calls (one per game) so it can be slow
 - Shot chart coordinates use NBA court coordinate system (origin at basket)
+- Always check for empty DataFrames before passing to analysis functions: `if not df.empty:`

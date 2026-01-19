@@ -54,8 +54,6 @@ viz.bar_chart(player_games, x='date', y='points', title="Scoring")
 viz.line_chart(player_games, x='date', y='points', title="Trend")
 ```
 
-See [docs/USAGE_GUIDE.md](docs/USAGE_GUIDE.md) for complete function reference.
-
 ## Project Layout
 
 ```

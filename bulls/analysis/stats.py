@@ -352,7 +352,8 @@ def consistency_score(
 
 def points_per_shot(
     team_shots: pd.DataFrame,
-    by_zone: bool = False
+    by_zone: bool = False,
+    exclude_backcourt: bool = True
 ) -> dict:
     """
     Calculate points per shot (PPS) - average point value per shot taken.
@@ -360,6 +361,7 @@ def points_per_shot(
     Args:
         team_shots: DataFrame from get_team_shots() with shot data
         by_zone: If True, include breakdown by shot zone
+        exclude_backcourt: If True (default), exclude Backcourt shots from calculations
 
     Returns:
         Dict with PPS stats. If by_zone=False:
@@ -392,6 +394,11 @@ def points_per_shot(
     if missing_cols:
         return {}
 
+    # Filter out Backcourt shots if requested
+    shots_data = team_shots.copy()
+    if exclude_backcourt and 'shot_zone' in shots_data.columns:
+        shots_data = shots_data[shots_data['shot_zone'] != 'Backcourt']
+
     def calc_stats(shots_df: pd.DataFrame) -> dict:
         """Calculate PPS stats for a group of shots."""
         total_shots = len(shots_df)
@@ -416,15 +423,15 @@ def points_per_shot(
         }
 
     # Calculate overall stats
-    overall = calc_stats(team_shots)
+    overall = calc_stats(shots_data)
 
     if not by_zone:
         return overall
 
     # Calculate per-zone stats
     zone_stats = {}
-    for zone in team_shots['shot_zone'].dropna().unique():
-        zone_shots = team_shots[team_shots['shot_zone'] == zone]
+    for zone in shots_data['shot_zone'].dropna().unique():
+        zone_shots = shots_data[shots_data['shot_zone'] == zone]
         zone_stats[zone] = calc_stats(zone_shots)
 
     return {
@@ -435,15 +442,17 @@ def points_per_shot(
 
 def zone_leaders(
     team_shots: pd.DataFrame,
-    min_shots: int = 5
+    min_shots: int = 5,
+    exclude_backcourt: bool = True
 ) -> dict:
     """
     Calculate which player leads in points per game for each shot zone.
-    
+
     Args:
         team_shots: DataFrame from get_team_shots() with shot data
         min_shots: Minimum number of shots required in a zone to qualify (default: 5)
-    
+        exclude_backcourt: If True (default), exclude Backcourt shots from calculations
+
     Returns:
         Dict mapping zone names to leader info:
         {
@@ -456,7 +465,7 @@ def zone_leaders(
                 'games': int
             }
         }
-    
+
     Example:
         >>> shots = data.get_team_shots()
         >>> leaders = zone_leaders(shots, min_shots=5)
@@ -464,13 +473,17 @@ def zone_leaders(
     """
     if team_shots.empty:
         return {}
-    
+
     # Check required columns
     required_cols = ['player_id', 'player_name', 'shot_zone', 'shot_made', 'shot_type', 'game_id']
     missing_cols = [col for col in required_cols if col not in team_shots.columns]
     if missing_cols:
         print(f"Warning: Missing required columns: {missing_cols}")
         return {}
+
+    # Filter out Backcourt shots if requested
+    if exclude_backcourt:
+        team_shots = team_shots[team_shots['shot_zone'] != 'Backcourt']
     
     # Calculate points per shot (2 for 2PT made, 3 for 3PT made, 0 for misses)
     def calculate_points(row):
@@ -535,12 +548,16 @@ def zone_leaders(
     return leaders
 
 
-def league_pps_by_zone(league_shots: pd.DataFrame) -> dict:
+def league_pps_by_zone(
+    league_shots: pd.DataFrame,
+    exclude_backcourt: bool = True
+) -> dict:
     """
     Calculate league-wide points per shot by zone across all teams.
 
     Args:
         league_shots: DataFrame from get_league_shots() with shot data for all teams
+        exclude_backcourt: If True (default), exclude Backcourt shots from calculations
 
     Returns:
         Dict with league-wide PPS analysis:
@@ -572,6 +589,10 @@ def league_pps_by_zone(league_shots: pd.DataFrame) -> dict:
     missing_cols = [col for col in required_cols if col not in league_shots.columns]
     if missing_cols:
         return {}
+
+    # Filter out Backcourt shots if requested
+    if exclude_backcourt:
+        league_shots = league_shots[league_shots['shot_zone'] != 'Backcourt']
 
     def calc_stats(shots_df: pd.DataFrame) -> dict:
         """Calculate PPS stats for a group of shots."""
@@ -637,12 +658,16 @@ def league_pps_by_zone(league_shots: pd.DataFrame) -> dict:
     }
 
 
-def zone_value_ranking(league_pps: dict) -> pd.DataFrame:
+def zone_value_ranking(
+    league_pps: dict,
+    exclude_backcourt: bool = True
+) -> pd.DataFrame:
     """
     Create a ranked DataFrame of shot zones by value (PPS).
 
     Args:
         league_pps: Dict from league_pps_by_zone()
+        exclude_backcourt: If True (default), exclude Backcourt zone from rankings
 
     Returns:
         DataFrame with zones ranked by PPS, including volume and efficiency metrics.
@@ -657,6 +682,8 @@ def zone_value_ranking(league_pps: dict) -> pd.DataFrame:
 
     zones = []
     for zone, stats in league_pps['by_zone'].items():
+        if exclude_backcourt and zone == 'Backcourt':
+            continue
         zones.append({
             'Zone': zone,
             'PPS': stats['pps'],

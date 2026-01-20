@@ -610,3 +610,37 @@ class TestPointsPerShot:
 
         result = points_per_shot(fake_shots, by_zone=True)
         assert result == {}
+
+    def test_excludes_backcourt_by_default(self):
+        """Should exclude Backcourt zone by default."""
+        fake_shots = pd.DataFrame({
+            'shot_made': [True, True, False],
+            'shot_type': ['2PT', '3PT', '3PT'],
+            'shot_zone': ['Restricted Area', 'Above the Break 3', 'Backcourt'],
+        })
+
+        result = points_per_shot(fake_shots, by_zone=True)
+
+        # Backcourt should not be in the results
+        assert 'Backcourt' not in result['by_zone']
+        # Other zones should be present
+        assert 'Restricted Area' in result['by_zone']
+        assert 'Above the Break 3' in result['by_zone']
+        # Overall stats should exclude Backcourt shot
+        assert result['overall']['total_shots'] == 2
+
+    def test_includes_backcourt_when_disabled(self):
+        """Should include Backcourt zone when exclude_backcourt=False."""
+        fake_shots = pd.DataFrame({
+            'shot_made': [True, True, True],
+            'shot_type': ['2PT', '3PT', '3PT'],
+            'shot_zone': ['Restricted Area', 'Above the Break 3', 'Backcourt'],
+        })
+
+        result = points_per_shot(fake_shots, by_zone=True, exclude_backcourt=False)
+
+        # Backcourt should be in the results
+        assert 'Backcourt' in result['by_zone']
+        assert result['by_zone']['Backcourt']['pps'] == 3.0  # Made 3PT = 3 pts / 1 shot
+        # Overall stats should include all 3 shots
+        assert result['overall']['total_shots'] == 3

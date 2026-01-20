@@ -658,6 +658,104 @@ def league_pps_by_zone(
     }
 
 
+def high_value_zone_usage(
+    league_shots: pd.DataFrame,
+    high_value_zones: Optional[List[str]] = None,
+    exclude_backcourt: bool = True
+) -> pd.DataFrame:
+    """
+    Calculate % of shots from high-value zones for each team.
+
+    High-value zones are areas with the best expected point value per shot,
+    based on league-wide PPS data. By default, these are:
+    - Restricted Area (highest PPS at ~1.33)
+    - All 3-point zones (Corner 3s and Above the Break 3)
+
+    Args:
+        league_shots: DataFrame from get_league_shots() with shot data for all teams
+        high_value_zones: List of zone names to consider "high value"
+                         (default: Restricted Area + all 3-point zones)
+        exclude_backcourt: If True (default), exclude Backcourt shots from calculations
+
+    Returns:
+        DataFrame sorted by high-value usage % (best first):
+        - team_abbr: Team abbreviation
+        - high_value_pct: % of shots from high-value zones
+        - restricted_area_pct: % from Restricted Area
+        - three_point_pct: % from all 3-point zones combined
+        - low_value_pct: % from low-value zones (Mid-Range + Paint Non-RA)
+        - total_shots: Total shots taken
+        - rank: Ranking (1 = highest high-value usage)
+
+    Example:
+        >>> league_shots = data.get_league_shots(season="2024-25")
+        >>> usage = high_value_zone_usage(league_shots)
+        >>> print(usage.head())
+        >>> # Find Bulls ranking
+        >>> bulls_rank = usage[usage['team_abbr'] == 'CHI']['rank'].values[0]
+    """
+    if league_shots.empty:
+        return pd.DataFrame()
+
+    required_cols = ['shot_zone', 'team_abbr']
+    missing_cols = [col for col in required_cols if col not in league_shots.columns]
+    if missing_cols:
+        return pd.DataFrame()
+
+    # Filter out Backcourt shots if requested
+    shots_data = league_shots.copy()
+    if exclude_backcourt:
+        shots_data = shots_data[shots_data['shot_zone'] != 'Backcourt']
+
+    # Default high-value zones: Restricted Area + all 3-point zones
+    if high_value_zones is None:
+        high_value_zones = [
+            'Restricted Area',
+            'Right Corner 3',
+            'Left Corner 3',
+            'Above the Break 3',
+        ]
+
+    # Define 3-point zones for separate tracking
+    three_point_zones = ['Right Corner 3', 'Left Corner 3', 'Above the Break 3']
+
+    # Calculate per-team stats
+    team_stats = []
+    for team_abbr in shots_data['team_abbr'].dropna().unique():
+        team_shots = shots_data[shots_data['team_abbr'] == team_abbr]
+        total_shots = len(team_shots)
+
+        if total_shots == 0:
+            continue
+
+        # Calculate zone usage percentages
+        high_value_shots = team_shots[team_shots['shot_zone'].isin(high_value_zones)]
+        restricted_area_shots = team_shots[team_shots['shot_zone'] == 'Restricted Area']
+        three_point_shots = team_shots[team_shots['shot_zone'].isin(three_point_zones)]
+
+        # Low-value zones: everything not high-value (Mid-Range, In The Paint Non-RA)
+        low_value_shots = team_shots[~team_shots['shot_zone'].isin(high_value_zones)]
+
+        team_stats.append({
+            'team_abbr': team_abbr,
+            'high_value_pct': round(len(high_value_shots) / total_shots * 100, 1),
+            'restricted_area_pct': round(len(restricted_area_shots) / total_shots * 100, 1),
+            'three_point_pct': round(len(three_point_shots) / total_shots * 100, 1),
+            'low_value_pct': round(len(low_value_shots) / total_shots * 100, 1),
+            'total_shots': total_shots,
+        })
+
+    if not team_stats:
+        return pd.DataFrame()
+
+    # Create DataFrame and rank by high-value usage
+    df = pd.DataFrame(team_stats)
+    df = df.sort_values('high_value_pct', ascending=False).reset_index(drop=True)
+    df['rank'] = range(1, len(df) + 1)
+
+    return df
+
+
 def zone_value_ranking(
     league_pps: dict,
     exclude_backcourt: bool = True

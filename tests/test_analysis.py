@@ -11,6 +11,7 @@ from bulls.analysis import (
     rolling_averages,
     consistency_score,
     points_per_shot,
+    high_value_zone_usage,
 )
 
 
@@ -644,3 +645,117 @@ class TestPointsPerShot:
         assert result['by_zone']['Backcourt']['pps'] == 3.0  # Made 3PT = 3 pts / 1 shot
         # Overall stats should include all 3 shots
         assert result['overall']['total_shots'] == 3
+
+
+class TestHighValueZoneUsage:
+    """Tests for high_value_zone_usage function."""
+
+    def test_returns_expected_columns(self):
+        """Should return DataFrame with expected columns."""
+        fake_shots = pd.DataFrame({
+            'team_abbr': ['CHI', 'CHI', 'LAL', 'LAL', 'BOS', 'BOS'],
+            'shot_zone': ['Restricted Area', 'Mid-Range', 'Above the Break 3', 'Mid-Range', 'Left Corner 3', 'Restricted Area'],
+        })
+
+        result = high_value_zone_usage(fake_shots)
+
+        expected_cols = ['team_abbr', 'high_value_pct', 'restricted_area_pct', 'three_point_pct', 'low_value_pct', 'total_shots', 'rank']
+        for col in expected_cols:
+            assert col in result.columns, f"Missing column: {col}"
+
+    def test_calculates_percentages_correctly(self):
+        """Should calculate zone usage percentages correctly."""
+        # Team with 4 shots: 2 high-value (Restricted Area + Corner 3), 2 low-value (Mid-Range)
+        fake_shots = pd.DataFrame({
+            'team_abbr': ['CHI', 'CHI', 'CHI', 'CHI'],
+            'shot_zone': ['Restricted Area', 'Right Corner 3', 'Mid-Range', 'Mid-Range'],
+        })
+
+        result = high_value_zone_usage(fake_shots)
+
+        chi_row = result[result['team_abbr'] == 'CHI'].iloc[0]
+        assert chi_row['high_value_pct'] == 50.0  # 2/4 = 50%
+        assert chi_row['restricted_area_pct'] == 25.0  # 1/4 = 25%
+        assert chi_row['three_point_pct'] == 25.0  # 1/4 = 25%
+        assert chi_row['low_value_pct'] == 50.0  # 2/4 = 50%
+        assert chi_row['total_shots'] == 4
+
+    def test_ranks_teams_correctly(self):
+        """Should rank teams by high-value usage (highest first)."""
+        fake_shots = pd.DataFrame({
+            'team_abbr': ['CHI', 'CHI', 'LAL', 'LAL', 'LAL', 'LAL', 'BOS', 'BOS', 'BOS', 'BOS'],
+            'shot_zone': [
+                'Restricted Area', 'Mid-Range',  # CHI: 1 high, 1 low = 50%
+                'Restricted Area', 'Above the Break 3', 'Left Corner 3', 'Right Corner 3',  # LAL: 4 high, 0 low = 100%
+                'Mid-Range', 'In The Paint (Non-RA)', 'Mid-Range', 'Mid-Range',  # BOS: 0 high, 4 low = 0%
+            ],
+        })
+
+        result = high_value_zone_usage(fake_shots)
+
+        # LAL should be rank 1 (100%), CHI rank 2 (50%), BOS rank 3 (0%)
+        assert result.iloc[0]['team_abbr'] == 'LAL'
+        assert result.iloc[0]['rank'] == 1
+        assert result.iloc[0]['high_value_pct'] == 100.0
+
+        chi_row = result[result['team_abbr'] == 'CHI'].iloc[0]
+        assert chi_row['rank'] == 2
+
+        bos_row = result[result['team_abbr'] == 'BOS'].iloc[0]
+        assert bos_row['rank'] == 3
+        assert bos_row['high_value_pct'] == 0.0
+
+    def test_handles_empty_dataframe(self):
+        """Should return empty DataFrame for empty input."""
+        empty_df = pd.DataFrame()
+        result = high_value_zone_usage(empty_df)
+        assert result.empty
+
+    def test_handles_missing_columns(self):
+        """Should return empty DataFrame if required columns missing."""
+        fake_shots = pd.DataFrame({
+            'shot_zone': ['Restricted Area', 'Mid-Range'],
+            # Missing 'team_abbr'
+        })
+
+        result = high_value_zone_usage(fake_shots)
+        assert result.empty
+
+    def test_custom_high_value_zones(self):
+        """Should use custom high-value zones when provided."""
+        fake_shots = pd.DataFrame({
+            'team_abbr': ['CHI', 'CHI', 'CHI', 'CHI'],
+            'shot_zone': ['Restricted Area', 'Mid-Range', 'Mid-Range', 'Mid-Range'],
+        })
+
+        # Custom: only Mid-Range is high value
+        result = high_value_zone_usage(fake_shots, high_value_zones=['Mid-Range'])
+
+        chi_row = result[result['team_abbr'] == 'CHI'].iloc[0]
+        assert chi_row['high_value_pct'] == 75.0  # 3/4 = 75%
+        assert chi_row['low_value_pct'] == 25.0  # 1/4 = 25%
+
+    def test_excludes_backcourt_by_default(self):
+        """Should exclude Backcourt shots by default."""
+        fake_shots = pd.DataFrame({
+            'team_abbr': ['CHI', 'CHI', 'CHI'],
+            'shot_zone': ['Restricted Area', 'Mid-Range', 'Backcourt'],
+        })
+
+        result = high_value_zone_usage(fake_shots)
+
+        chi_row = result[result['team_abbr'] == 'CHI'].iloc[0]
+        assert chi_row['total_shots'] == 2  # Backcourt excluded
+        assert chi_row['high_value_pct'] == 50.0  # 1 Restricted / 2 total
+
+    def test_includes_backcourt_when_disabled(self):
+        """Should include Backcourt when exclude_backcourt=False."""
+        fake_shots = pd.DataFrame({
+            'team_abbr': ['CHI', 'CHI', 'CHI'],
+            'shot_zone': ['Restricted Area', 'Mid-Range', 'Backcourt'],
+        })
+
+        result = high_value_zone_usage(fake_shots, exclude_backcourt=False)
+
+        chi_row = result[result['team_abbr'] == 'CHI'].iloc[0]
+        assert chi_row['total_shots'] == 3  # Backcourt included

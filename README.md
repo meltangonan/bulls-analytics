@@ -4,15 +4,29 @@ Python workspace for exploring Chicago Bulls basketball data. Fetches data from 
 
 ## Requirements
 
-- Python 3.8+ (3.11 recommended)
-- Virtual environment (included)
+- Python 3.11+ (3.11 recommended)
+- Virtual environment
 - Internet connection for NBA API access
 
-## Quickstart
+## Setup
+
+### Installing Python 3.11 on macOS
+
+If your system Python is older than 3.11, install Python 3.11 via Homebrew:
 
 ```bash
-# Create and activate virtual environment
-python3 -m venv venv
+# Install Homebrew (if not already installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Python 3.11
+brew install python@3.11
+```
+
+### Quickstart
+
+```bash
+# Create and activate virtual environment with Python 3.11
+python3.11 -m venv venv
 source venv/bin/activate  # macOS/Linux
 # venv\Scripts\activate   # Windows
 
@@ -23,6 +37,8 @@ pip install -r requirements.txt
 python test_setup.py
 # Expected: Setup complete! Bulls ID: 1610612741
 ```
+
+**Note:** If you don't have Python 3.11 installed, replace `python3.11` with `python3` (but Python 3.11+ is recommended).
 
 ## Running Tests
 

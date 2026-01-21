@@ -6,6 +6,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Bulls Analytics is a Python data analysis workspace for exploring Chicago Bulls basketball data and creating visualizations. It uses the NBA API to fetch data and matplotlib for charts.
 
+**Python Version:** Python 3.11+ is recommended. If the system Python is older, install Python 3.11 via Homebrew:
+```bash
+brew install python@3.11
+```
+
+Then create the venv with: `python3.11 -m venv venv`
+
 ## Commands
 
 ### Running Tests

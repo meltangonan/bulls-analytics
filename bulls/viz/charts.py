@@ -591,6 +591,7 @@ def shot_chart(
     shots_data: pd.DataFrame,
     show_zones: bool = False,
     title: str = "",
+    annotations: Optional[List[Dict]] = None,
     save_path: Optional[str] = None,
     figsize: tuple = (12, 11)
 ) -> plt.Figure:
@@ -601,6 +602,12 @@ def shot_chart(
         shots_data: DataFrame with shot location data (loc_x, loc_y, shot_made)
         show_zones: If True, show hexbin heatmap; if False, show scatter plot
         title: Chart title
+        annotations: List of annotation dicts to add callout text boxes.
+                     Each dict should have:
+                     - 'text': The callout text (e.g., "12/18 at the rim")
+                     - 'position': Tuple (x, y) or preset string:
+                       'top_left', 'top_right', 'bottom_left', 'bottom_right'
+                     - 'fontsize': Optional font size (default: 14)
         save_path: Path to save image (optional)
         figsize: Figure size
 
@@ -610,6 +617,9 @@ def shot_chart(
     Example:
         >>> shots = data.get_player_shots(1629632)  # Coby White
         >>> shot_chart(shots, title="Coby White Shot Chart")
+        >>> # With annotations
+        >>> annotations = [{'text': '12/18 at the rim', 'position': 'bottom_left'}]
+        >>> shot_chart(shots, title="Shot Chart", annotations=annotations)
     """
     fig, ax = plt.subplots(figsize=figsize)
 
@@ -650,6 +660,31 @@ def shot_chart(
     # Remove axis labels for cleaner look
     ax.set_xticks([])
     ax.set_yticks([])
+
+    # Add annotations (callout text boxes)
+    if annotations:
+        for ann in annotations:
+            pos = ann.get('position', 'top_left')
+            # Position presets
+            if pos == 'top_left':
+                x, y = -200, 380
+            elif pos == 'top_right':
+                x, y = 200, 380
+            elif pos == 'bottom_left':
+                x, y = -200, -30
+            elif pos == 'bottom_right':
+                x, y = 200, -30
+            else:
+                x, y = pos  # Custom coordinates as tuple
+
+            ax.text(x, y, ann['text'],
+                    fontsize=ann.get('fontsize', 14),
+                    fontweight='bold',
+                    ha='center', va='center',
+                    bbox=dict(boxstyle='round,pad=0.5',
+                              facecolor='white',
+                              edgecolor='black',
+                              alpha=0.9))
 
     plt.tight_layout()
 

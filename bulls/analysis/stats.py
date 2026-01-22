@@ -1,7 +1,7 @@
 """Statistical analysis functions."""
 import pandas as pd
 import numpy as np
-from typing import Optional, List
+from typing import Optional, List, Dict
 
 
 def season_averages(player_games: pd.DataFrame) -> dict:
@@ -830,3 +830,53 @@ def team_zone_comparison(league_pps: dict, zones: Optional[List[str]] = None) ->
 
     df = pd.DataFrame(rows).sort_values('Overall', ascending=False)
     return df.reset_index(drop=True)
+
+
+def game_zone_stats(shots_data: pd.DataFrame) -> Dict[str, Dict]:
+    """
+    Calculate zone-by-zone shooting stats for a single game.
+
+    Args:
+        shots_data: DataFrame with shot data (shot_made, shot_zone columns required)
+
+    Returns:
+        Dict mapping zone names to stats:
+        {
+            'zone_name': {
+                'made': int,       # shots made
+                'attempted': int,  # shots attempted
+                'pct': float,      # field goal percentage
+                'formatted': str   # e.g., "12/18 (66.7%)"
+            }
+        }
+
+    Example:
+        >>> game_shots = data.get_team_shots(last_n_games=1)
+        >>> zone_stats = game_zone_stats(game_shots)
+        >>> print(zone_stats['Restricted Area']['formatted'])
+        '12/18 (66.7%)'
+    """
+    if shots_data.empty:
+        return {}
+
+    required_cols = ['shot_made', 'shot_zone']
+    missing_cols = [col for col in required_cols if col not in shots_data.columns]
+    if missing_cols:
+        return {}
+
+    result = {}
+
+    for zone in shots_data['shot_zone'].dropna().unique():
+        zone_shots = shots_data[shots_data['shot_zone'] == zone]
+        attempted = len(zone_shots)
+        made = zone_shots['shot_made'].sum()
+        pct = (made / attempted * 100) if attempted > 0 else 0.0
+
+        result[zone] = {
+            'made': int(made),
+            'attempted': attempted,
+            'pct': round(pct, 1),
+            'formatted': f"{made}/{attempted} ({pct:.1f}%)"
+        }
+
+    return result

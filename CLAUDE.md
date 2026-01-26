@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Documentation Requirements
+Changes to this project MUST include **relevant** updates to these files. However, be selective with the updates, not everythin might be necessary to include:
+
+1. **`CLAUDE.md`**
+2. **`README.md`**
+
 ## Project Overview
 
 Bulls Analytics is a Python data analysis workspace for exploring Chicago Bulls basketball data and creating visualizations. It uses the NBA API to fetch data and matplotlib for charts.

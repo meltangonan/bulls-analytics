@@ -3,7 +3,7 @@ import time
 import json
 import requests
 from io import BytesIO
-from typing import Optional
+from typing import Optional, List, Dict
 import pandas as pd
 from PIL import Image
 
@@ -456,4 +456,100 @@ def get_league_shots(
 
     result = pd.concat(all_shots, ignore_index=True)
     print(f"\nTotal: {len(result):,} shots from {len(all_shots)} teams")
+    return result
+
+
+def get_roster_efficiency(
+    last_n_games: int = 10,
+    min_fga: float = 5.0,
+    season: str = CURRENT_SEASON,
+) -> List[Dict]:
+    """
+    Get efficiency and volume data for all Bulls players.
+
+    Args:
+        last_n_games: Number of recent games to analyze
+        min_fga: Minimum FGA per game threshold to include player
+        season: NBA season string (default: current season)
+
+    Returns:
+        List of dicts with: player_id, name, ts_pct, fga_per_game, games
+
+    Example:
+        >>> roster = get_roster_efficiency(last_n_games=10, min_fga=5.0)
+        >>> for p in roster:
+        ...     print(f"{p['name']}: {p['ts_pct']:.1f}% TS on {p['fga_per_game']:.1f} FGA/G")
+    """
+    # Get team shots to identify players and their shot attempts
+    team_shots = get_team_shots(
+        team_id=BULLS_TEAM_ID,
+        season=season,
+        last_n_games=last_n_games,
+    )
+
+    if team_shots.empty or 'player_id' not in team_shots.columns:
+        return []
+
+    # Get unique game IDs to fetch box scores
+    game_ids = team_shots['game_id'].unique().tolist()
+
+    # Aggregate player stats from box scores
+    player_stats = {}
+
+    for game_id in game_ids:
+        box = get_box_score(game_id)
+        if box.empty:
+            continue
+
+        for _, row in box.iterrows():
+            player_id = row.get('personId') or row.get('playerId')
+            if player_id is None:
+                continue
+
+            player_id = int(player_id)
+            name = row.get('name', f"{row.get('firstName', '')} {row.get('familyName', '')}".strip())
+
+            if player_id not in player_stats:
+                player_stats[player_id] = {
+                    'player_id': player_id,
+                    'name': name,
+                    'games': 0,
+                    'points': 0,
+                    'fga': 0,
+                    'fta': 0,
+                }
+
+            player_stats[player_id]['games'] += 1
+            player_stats[player_id]['points'] += int(row.get('points', 0) or 0)
+            player_stats[player_id]['fga'] += int(row.get('fieldGoalsAttempted', 0) or 0)
+            player_stats[player_id]['fta'] += int(row.get('freeThrowsAttempted', 0) or 0)
+
+    # Calculate efficiency metrics and filter
+    result = []
+    for pid, stats in player_stats.items():
+        if stats['games'] == 0:
+            continue
+
+        fga_per_game = stats['fga'] / stats['games']
+
+        # Skip players below minimum FGA threshold
+        if fga_per_game < min_fga:
+            continue
+
+        # Calculate True Shooting %
+        # TS% = PTS / (2 * (FGA + 0.44 * FTA))
+        tsa = stats['fga'] + 0.44 * stats['fta']
+        ts_pct = (stats['points'] / (2 * tsa) * 100) if tsa > 0 else 0
+
+        result.append({
+            'player_id': pid,
+            'name': stats['name'],
+            'ts_pct': round(ts_pct, 1),
+            'fga_per_game': round(fga_per_game, 1),
+            'games': stats['games'],
+        })
+
+    # Sort by volume (FGA per game) descending
+    result.sort(key=lambda x: x['fga_per_game'], reverse=True)
+
     return result

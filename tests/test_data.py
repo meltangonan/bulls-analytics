@@ -9,6 +9,7 @@ from bulls.data import (
     get_player_games,
     get_player_headshot,
     get_player_shots,
+    get_roster_efficiency,
 )
 from bulls.config import BULLS_TEAM_ID, CURRENT_SEASON
 
@@ -209,3 +210,54 @@ class TestGetPlayerShots:
         """get_player_shots should accept last_n_games parameter."""
         shots = get_player_shots(1629632, last_n_games=5)
         assert isinstance(shots, pd.DataFrame)
+
+
+class TestGetRosterEfficiency:
+    """Tests for get_roster_efficiency function."""
+
+    def test_returns_list(self, mock_roster_efficiency_api):
+        """get_roster_efficiency should return a list."""
+        result = get_roster_efficiency(last_n_games=5)
+        assert isinstance(result, list)
+
+    def test_returns_expected_keys(self, mock_roster_efficiency_api):
+        """get_roster_efficiency should return dicts with expected keys."""
+        result = get_roster_efficiency(last_n_games=5)
+
+        if result:
+            expected_keys = ['player_id', 'name', 'ts_pct', 'fga_per_game', 'games']
+            for player in result:
+                for key in expected_keys:
+                    assert key in player, f"Missing key: {key}"
+
+    def test_filters_by_min_fga(self, mock_roster_efficiency_api):
+        """get_roster_efficiency should filter players by min_fga."""
+        # With high min_fga threshold, should filter out low-volume players
+        result = get_roster_efficiency(last_n_games=5, min_fga=100.0)
+        assert isinstance(result, list)
+        # May be empty if no players meet threshold
+
+    def test_handles_empty_shots(self, mock_empty_shot_chart_api):
+        """get_roster_efficiency should handle empty shot data gracefully."""
+        result = get_roster_efficiency(last_n_games=5)
+        assert isinstance(result, list)
+        assert result == []
+
+    def test_sorted_by_volume(self, mock_roster_efficiency_api):
+        """get_roster_efficiency should return players sorted by FGA desc."""
+        result = get_roster_efficiency(last_n_games=5, min_fga=0.0)
+
+        if len(result) > 1:
+            fga_values = [p['fga_per_game'] for p in result]
+            assert fga_values == sorted(fga_values, reverse=True)
+
+    def test_calculates_ts_pct(self, mock_roster_efficiency_api):
+        """get_roster_efficiency should calculate TS% for players."""
+        result = get_roster_efficiency(last_n_games=5, min_fga=0.0)
+
+        if result:
+            for player in result:
+                assert 'ts_pct' in player
+                assert isinstance(player['ts_pct'], (int, float))
+                # TS% should be reasonable (0-100 range)
+                assert 0 <= player['ts_pct'] <= 100

@@ -1,5 +1,6 @@
 """Basic chart functions using matplotlib."""
 import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
 from matplotlib.patches import Circle, Rectangle, Arc, Patch
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 import numpy as np
@@ -881,12 +882,303 @@ def zone_leaders_chart(
     # Remove axis labels for cleaner look
     ax.set_xticks([])
     ax.set_yticks([])
-    
+
     plt.tight_layout()
-    
+
     if save_path:
         OUTPUT_DIR.mkdir(exist_ok=True)
         fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
         print(f"Saved to {save_path}")
-    
+
+    return fig
+
+
+def _create_efficiency_gradient(
+    ax,
+    x_range: tuple,
+    y_range: tuple,
+    league_avg_ts: float,
+) -> None:
+    """
+    Create subtle gradient background based on efficiency zones.
+
+    Args:
+        ax: matplotlib axes
+        x_range: Tuple of (x_min, x_max) for the plot
+        y_range: Tuple of (y_min, y_max) for the plot
+        league_avg_ts: League average TS% for gradient center
+    """
+    # Create a gradient that goes from red (inefficient) to green (efficient)
+    # based on y-axis (efficiency)
+    y_min, y_max = y_range
+    x_min, x_max = x_range
+
+    # Create grid for gradient
+    y_vals = np.linspace(y_min, y_max, 100)
+
+    # Normalize efficiency values to 0-1 range for colormap
+    # Below league avg = red, above = green
+    normalized = (y_vals - y_min) / (y_max - y_min)
+
+    # Create custom colormap: red -> white -> green
+    colors = [
+        tuple(c / 255 for c in RED_COLOR),
+        (1, 1, 1),
+        tuple(c / 255 for c in GREEN),
+    ]
+    cmap = mcolors.LinearSegmentedColormap.from_list('efficiency', colors)
+
+    # Create 2D gradient image (efficiency increases with y)
+    gradient = np.tile(normalized, (100, 1)).T
+
+    ax.imshow(
+        gradient,
+        extent=[x_min, x_max, y_min, y_max],
+        aspect='auto',
+        cmap=cmap,
+        alpha=0.15,
+        zorder=0,
+        origin='lower',
+    )
+
+
+def _adjust_positions_for_overlap(
+    positions: List[tuple],
+    min_distance: float = 0.8,
+    iterations: int = 50,
+) -> List[tuple]:
+    """
+    Push overlapping positions apart using simple repulsion.
+
+    Args:
+        positions: List of (x, y) tuples
+        min_distance: Minimum distance between points (in data units)
+        iterations: Number of repulsion iterations
+
+    Returns:
+        Adjusted list of (x, y) tuples
+    """
+    if len(positions) <= 1:
+        return positions
+
+    positions = [list(p) for p in positions]  # Make mutable
+
+    for _ in range(iterations):
+        for i in range(len(positions)):
+            for j in range(i + 1, len(positions)):
+                dx = positions[j][0] - positions[i][0]
+                dy = positions[j][1] - positions[i][1]
+                dist = np.sqrt(dx ** 2 + dy ** 2)
+
+                if dist < min_distance and dist > 0:
+                    # Calculate repulsion force
+                    overlap = min_distance - dist
+                    force = overlap / 2
+
+                    # Normalize direction
+                    dx_norm = dx / dist
+                    dy_norm = dy / dist
+
+                    # Apply repulsion
+                    positions[i][0] -= dx_norm * force
+                    positions[i][1] -= dy_norm * force
+                    positions[j][0] += dx_norm * force
+                    positions[j][1] += dy_norm * force
+
+    return [(p[0], p[1]) for p in positions]
+
+
+def efficiency_matrix(
+    players_data: List[Dict],
+    title: str = "Bulls Efficiency Matrix",
+    league_avg_ts: float = 57.0,
+    league_avg_fga: float = 12.0,
+    show_gradient: bool = True,
+    show_names: bool = True,
+    save_path: Optional[str] = None,
+    figsize: tuple = (12, 10),
+) -> plt.Figure:
+    """
+    Create an Instagram-style efficiency matrix showing players as headshots.
+
+    X-axis shows Volume (FGA per game), Y-axis shows Efficiency (True Shooting %).
+    Players are displayed as circular headshots positioned by their metrics.
+    Quadrant labels identify player types: Stars, Specialists, Chuckers, Limited.
+
+    Args:
+        players_data: List of dicts with player_id, name, ts_pct, fga_per_game
+        title: Chart title
+        league_avg_ts: League average TS% for quadrant division (default: 57.0)
+        league_avg_fga: League average FGA for quadrant division (default: 12.0)
+        show_gradient: Show efficiency gradient background
+        show_names: Show player first names below headshots
+        save_path: Path to save image (optional)
+        figsize: Figure size
+
+    Returns:
+        matplotlib Figure object
+
+    Example:
+        >>> roster = data.get_roster_efficiency(last_n_games=10, min_fga=5.0)
+        >>> fig = efficiency_matrix(roster, title="Bulls Efficiency Matrix")
+        >>> plt.show()
+    """
+    from bulls import data
+
+    fig, ax = plt.subplots(figsize=figsize)
+
+    # Handle empty data
+    if not players_data:
+        ax.text(0.5, 0.5, 'No player data available',
+                ha='center', va='center', fontsize=14,
+                transform=ax.transAxes)
+        ax.set_title(title, fontsize=18, fontweight='bold')
+        return fig
+
+    # Extract data points
+    x_vals = [p.get('fga_per_game', 0) for p in players_data]
+    y_vals = [p.get('ts_pct', 0) for p in players_data]
+
+    # Calculate axis ranges with padding
+    x_min = min(x_vals) - 2 if x_vals else 0
+    x_max = max(x_vals) + 2 if x_vals else 20
+    y_min = min(y_vals) - 5 if y_vals else 40
+    y_max = max(y_vals) + 5 if y_vals else 70
+
+    # Ensure league averages are visible in the plot
+    x_min = min(x_min, league_avg_fga - 5)
+    x_max = max(x_max, league_avg_fga + 5)
+    y_min = min(y_min, league_avg_ts - 10)
+    y_max = max(y_max, league_avg_ts + 10)
+
+    ax.set_xlim(x_min, x_max)
+    ax.set_ylim(y_min, y_max)
+
+    # Add gradient background
+    if show_gradient:
+        _create_efficiency_gradient(ax, (x_min, x_max), (y_min, y_max), league_avg_ts)
+
+    # Draw quadrant dividers
+    ax.axhline(y=league_avg_ts, color='gray', linestyle='--', alpha=0.7, linewidth=1.5, zorder=1)
+    ax.axvline(x=league_avg_fga, color='gray', linestyle='--', alpha=0.7, linewidth=1.5, zorder=1)
+
+    # Add quadrant labels
+    label_style = dict(fontsize=12, fontweight='bold', alpha=0.4, ha='center', va='center')
+
+    # Stars: High efficiency, high volume (top-right)
+    ax.text(
+        x_max - (x_max - league_avg_fga) * 0.5,
+        y_max - (y_max - league_avg_ts) * 0.15,
+        'STARS',
+        color=tuple(c / 255 for c in GREEN),
+        **label_style,
+    )
+
+    # Specialists: High efficiency, low volume (top-left)
+    ax.text(
+        x_min + (league_avg_fga - x_min) * 0.5,
+        y_max - (y_max - league_avg_ts) * 0.15,
+        'SPECIALISTS',
+        color=tuple(c / 255 for c in GREEN),
+        **label_style,
+    )
+
+    # Chuckers: Low efficiency, high volume (bottom-right)
+    ax.text(
+        x_max - (x_max - league_avg_fga) * 0.5,
+        y_min + (league_avg_ts - y_min) * 0.15,
+        'CHUCKERS',
+        color=tuple(c / 255 for c in RED_COLOR),
+        **label_style,
+    )
+
+    # Limited: Low efficiency, low volume (bottom-left)
+    ax.text(
+        x_min + (league_avg_fga - x_min) * 0.5,
+        y_min + (league_avg_ts - y_min) * 0.15,
+        'LIMITED',
+        color='gray',
+        **label_style,
+    )
+
+    # Prepare positions and adjust for overlap
+    positions = list(zip(x_vals, y_vals))
+
+    # Calculate min_distance based on axis scale
+    x_range = x_max - x_min
+    y_range = y_max - y_min
+    min_dist = min(x_range, y_range) * 0.08
+
+    adjusted_positions = _adjust_positions_for_overlap(positions, min_distance=min_dist)
+
+    # Place player headshots
+    for i, player in enumerate(players_data):
+        x, y = adjusted_positions[i]
+        player_id = player.get('player_id')
+        name = player.get('name', 'Unknown')
+
+        # Fetch headshot
+        headshot_img = None
+        if player_id:
+            try:
+                headshot_img = data.get_player_headshot(player_id, size=(80, 80))
+            except Exception:
+                pass
+
+        if headshot_img is not None:
+            # Convert PIL image to numpy array
+            img_array = np.array(headshot_img)
+            im = OffsetImage(img_array, zoom=0.5)
+            ab = AnnotationBbox(
+                im, (x, y),
+                frameon=True,
+                bboxprops=dict(
+                    boxstyle='round,pad=0.2',
+                    facecolor='white',
+                    edgecolor=tuple(c / 255 for c in BULLS_RED),
+                    linewidth=2,
+                ),
+                zorder=5,
+            )
+            ax.add_artist(ab)
+        else:
+            # Fallback: draw a circle with initials
+            initials = ''.join(word[0] for word in name.split()[:2]).upper()
+            circle = plt.Circle(
+                (x, y),
+                radius=min_dist * 0.4,
+                facecolor='white',
+                edgecolor=tuple(c / 255 for c in BULLS_RED),
+                linewidth=2,
+                zorder=5,
+            )
+            ax.add_patch(circle)
+            ax.text(x, y, initials, ha='center', va='center',
+                    fontsize=10, fontweight='bold', zorder=6)
+
+        # Add player first name below headshot
+        if show_names:
+            first_name = name.split()[0] if name else ''
+            name_y_offset = min_dist * 0.7
+            ax.text(
+                x, y - name_y_offset,
+                first_name,
+                ha='center', va='top',
+                fontsize=8, fontweight='bold',
+                zorder=6,
+            )
+
+    # Labels and styling
+    ax.set_xlabel('Volume (FGA per Game)', fontsize=12, fontweight='bold')
+    ax.set_ylabel('Efficiency (True Shooting %)', fontsize=12, fontweight='bold')
+    ax.set_title(title, fontsize=18, fontweight='bold', pad=20)
+    ax.grid(True, alpha=0.3, zorder=0)
+
+    plt.tight_layout()
+
+    if save_path:
+        OUTPUT_DIR.mkdir(exist_ok=True)
+        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
+        print(f"Saved to {save_path}")
+
     return fig

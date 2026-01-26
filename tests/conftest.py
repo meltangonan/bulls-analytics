@@ -242,3 +242,118 @@ def sample_player_games():
         'fg3_pct': [37.5, 28.6, 44.4, 25.0, 40.0],
         'ft_pct': [66.7, 100.0, 66.7, 66.7, 100.0],
     })
+
+
+@pytest.fixture
+def mock_roster_efficiency_data():
+    """Sample roster efficiency data for efficiency_matrix tests."""
+    return [
+        {'player_id': 1629632, 'name': 'Coby White', 'ts_pct': 58.5, 'fga_per_game': 14.2, 'games': 10},
+        {'player_id': 1631094, 'name': 'Josh Giddey', 'ts_pct': 48.5, 'fga_per_game': 11.0, 'games': 10},
+        {'player_id': 1628436, 'name': 'Nikola Vucevic', 'ts_pct': 55.0, 'fga_per_game': 13.5, 'games': 10},
+        {'player_id': 1630224, 'name': 'Zach LaVine', 'ts_pct': 60.2, 'fga_per_game': 16.8, 'games': 8},
+        {'player_id': 1631218, 'name': 'Patrick Williams', 'ts_pct': 52.3, 'fga_per_game': 8.5, 'games': 10},
+    ]
+
+
+# Extended mock box score data with player IDs for roster efficiency
+MOCK_BOX_SCORE_WITH_IDS = pd.DataFrame([
+    {
+        'teamId': BULLS_TEAM_ID,
+        'personId': 1629632,
+        'playerId': 1629632,
+        'firstName': 'Coby',
+        'familyName': 'White',
+        'points': 22,
+        'reboundsTotal': 4,
+        'assists': 5,
+        'steals': 1,
+        'blocks': 0,
+        'fieldGoalsMade': 8,
+        'fieldGoalsAttempted': 16,
+        'threePointersMade': 3,
+        'threePointersAttempted': 7,
+        'freeThrowsMade': 3,
+        'freeThrowsAttempted': 4,
+        'turnovers': 2,
+        'minutes': '32:15',
+    },
+    {
+        'teamId': BULLS_TEAM_ID,
+        'personId': 1630224,
+        'playerId': 1630224,
+        'firstName': 'Zach',
+        'familyName': 'LaVine',
+        'points': 28,
+        'reboundsTotal': 6,
+        'assists': 4,
+        'steals': 2,
+        'blocks': 1,
+        'fieldGoalsMade': 10,
+        'fieldGoalsAttempted': 20,
+        'threePointersMade': 4,
+        'threePointersAttempted': 9,
+        'freeThrowsMade': 4,
+        'freeThrowsAttempted': 5,
+        'turnovers': 3,
+        'minutes': '35:42',
+    },
+])
+
+
+# Extended team shot data with player info
+MOCK_TEAM_SHOTS_DATA = pd.DataFrame([
+    {
+        'LOC_X': 0,
+        'LOC_Y': 50,
+        'SHOT_MADE_FLAG': 1,
+        'SHOT_TYPE': '2PT Field Goal',
+        'SHOT_ZONE_BASIC': 'Restricted Area',
+        'SHOT_DISTANCE': 2,
+        'GAME_ID': '0022500503',
+        'PLAYER_ID': 1629632,
+        'PLAYER_NAME': 'Coby White',
+    },
+    {
+        'LOC_X': 150,
+        'LOC_Y': 200,
+        'SHOT_MADE_FLAG': 0,
+        'SHOT_TYPE': '3PT Field Goal',
+        'SHOT_ZONE_BASIC': 'Right Corner 3',
+        'SHOT_DISTANCE': 24,
+        'GAME_ID': '0022500503',
+        'PLAYER_ID': 1630224,
+        'PLAYER_NAME': 'Zach LaVine',
+    },
+    {
+        'LOC_X': -100,
+        'LOC_Y': 100,
+        'SHOT_MADE_FLAG': 1,
+        'SHOT_TYPE': '2PT Field Goal',
+        'SHOT_ZONE_BASIC': 'Mid-Range',
+        'SHOT_DISTANCE': 12,
+        'GAME_ID': '0022500489',
+        'PLAYER_ID': 1629632,
+        'PLAYER_NAME': 'Coby White',
+    },
+])
+
+
+@pytest.fixture
+def mock_roster_efficiency_api():
+    """Mock APIs for get_roster_efficiency function."""
+    with patch('bulls.data.fetch.shotchartdetail.ShotChartDetail') as mock_shot, \
+         patch('bulls.data.fetch.boxscoretraditionalv3.BoxScoreTraditionalV3') as mock_box:
+        # Setup shot chart mock
+        mock_shot_instance = MagicMock()
+        mock_shot_instance.get_data_frames.return_value = [MOCK_TEAM_SHOTS_DATA.copy()]
+        mock_shot.return_value = mock_shot_instance
+
+        # Setup box score mock
+        mock_box_instance = MagicMock()
+        mock_df = MOCK_BOX_SCORE_WITH_IDS.copy()
+        mock_df['name'] = mock_df['firstName'] + ' ' + mock_df['familyName']
+        mock_box_instance.player_stats.get_data_frame.return_value = mock_df
+        mock_box.return_value = mock_box_instance
+
+        yield {'shot': mock_shot, 'box': mock_box}

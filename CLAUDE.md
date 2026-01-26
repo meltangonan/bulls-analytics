@@ -3,10 +3,30 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Documentation Requirements
-Changes to this project MUST include **relevant** updates to these files. However, be selective with the updates, not everythin might be necessary to include:
+Changes to this project MUST include **relevant** updates to these files. However, be selective with the updates, not everything might be necessary to include:
 
 1. **`CLAUDE.md`**
 2. **`README.md`**
+
+## Notebook Requirements
+**Every new analysis or visualization MUST include a Jupyter notebook** in the `notebooks/` directory that demonstrates its usage. This allows for interactive testing and serves as living documentation.
+
+Notebook naming convention: `feature_name.ipynb` (e.g., `efficiency_matrix.ipynb`, `shot_selection_analysis.ipynb`)
+
+**Required setup cell:** Every notebook MUST start with this setup code to enable imports from the `bulls` package:
+
+```python
+import sys
+from pathlib import Path
+
+# Add parent directory to path so we can import bulls
+sys.path.insert(0, str(Path().absolute().parent))
+
+from bulls import data, analysis, viz
+import matplotlib.pyplot as plt
+
+%matplotlib inline
+```
 
 ## Project Overview
 
@@ -54,6 +74,14 @@ python test_setup.py
 source venv/bin/activate && jupyter notebook notebooks/
 ```
 
+### Available Notebooks
+
+- `efficiency_matrix.ipynb` - Instagram-style efficiency vs volume quadrant chart
+- `points_per_shot.ipynb` - Points per shot analysis
+- `postgame_shot_charts.ipynb` - Post-game shot chart visualizations
+- `shot_selection_analysis.ipynb` - Shot selection breakdown
+- `zone_leaders.ipynb` - Zone-by-zone scoring leaders
+
 ## Architecture
 
 Three-layer architecture with clear data flow:
@@ -79,6 +107,8 @@ VISUALIZATION LAYER (bulls/viz/charts.py)
 - `get_player_headshot(player_id)` -> PIL.Image
   - Returns gray placeholder on network error
 - `get_player_shots(player_id, team_id, season, last_n_games)` -> DataFrame with loc_x, loc_y, shot_made, shot_type, shot_zone, shot_distance
+- `get_roster_efficiency(last_n_games, min_fga, season)` -> List of dicts with player_id, name, ts_pct, fga_per_game, games
+  - Aggregates efficiency and volume data for all Bulls players
 
 ### Analysis Layer (`bulls.analysis`)
 - `season_averages(player_games)` -> dict with games, points, rebounds, assists, steals, blocks, fg_pct, fg3_pct
@@ -103,6 +133,7 @@ All return matplotlib.Figure. All support `save_path` parameter.
 - `rolling_efficiency_chart(data, efficiency_col, result_col, league_avg)` - Line with win/loss markers
 - `radar_chart(players_data, metrics, normalize)` - Spider chart, players_data is list of dicts with 'name' key
 - `shot_chart(shots_data, show_zones)` - show_zones=True for heatmap, False for scatter
+- `efficiency_matrix(players_data, title, league_avg_ts, league_avg_fga, show_gradient, show_names)` - Instagram-style quadrant chart with player headshots positioned by efficiency (TS%) and volume (FGA/game)
 
 ### Configuration (`bulls/config.py`)
 - `BULLS_TEAM_ID = 1610612741`
@@ -112,7 +143,7 @@ All return matplotlib.Figure. All support `save_path` parameter.
 
 ## Testing
 
-Tests use mocked NBA API calls (defined in `tests/conftest.py`) to avoid network dependencies. Test suite has 97 tests across 4 modules:
+Tests use mocked NBA API calls (defined in `tests/conftest.py`) to avoid network dependencies. Test suite has 124 tests across 4 modules:
 - `test_config.py` - Config constants
 - `test_data.py` - Data fetching with mocks
 - `test_analysis.py` - Statistical analysis
@@ -131,6 +162,8 @@ When adding new data functions, use these fixtures from `tests/conftest.py`:
 - `mock_shot_chart_api` - Mocks `ShotChartDetail` with sample shot data
 - `mock_empty_shot_chart_api` - Mocks `ShotChartDetail` returning empty data
 - `sample_player_games` - Sample player games DataFrame for analysis tests
+- `mock_roster_efficiency_data` - Sample roster efficiency data for `efficiency_matrix` tests
+- `mock_roster_efficiency_api` - Mocks shot chart and box score APIs for `get_roster_efficiency` tests
 
 ## Usage Pattern
 
@@ -147,6 +180,10 @@ trend = analysis.scoring_trend(player_games)
 
 # Visualize
 fig = viz.bar_chart(player_games, x='date', y='points', title="Scoring")
+
+# Efficiency Matrix (Instagram-style visualization)
+roster = data.get_roster_efficiency(last_n_games=10, min_fga=5.0)
+fig = viz.efficiency_matrix(roster, title="Bulls Efficiency Matrix")
 ```
 
 ## Gotchas
@@ -156,3 +193,4 @@ fig = viz.bar_chart(player_games, x='date', y='points', title="Scoring")
 - `get_player_games()` makes multiple API calls (one per game) so it can be slow
 - Shot chart coordinates use NBA court coordinate system (origin at basket)
 - Always check for empty DataFrames before passing to analysis functions: `if not df.empty:`
+- Notebooks must include `sys.path.insert(0, str(Path().absolute().parent))` to import `bulls` - see Notebook Requirements

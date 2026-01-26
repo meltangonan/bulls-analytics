@@ -9,4 +9,5 @@ from bulls.viz.charts import (
     radar_chart,
     shot_chart,
     zone_leaders_chart,
+    efficiency_matrix,
 )

@@ -3,6 +3,8 @@ import pytest
 import pandas as pd
 from pathlib import Path
 import matplotlib.pyplot as plt
+from unittest.mock import patch, MagicMock
+from PIL import Image
 
 from bulls.viz import (
     bar_chart,
@@ -10,6 +12,7 @@ from bulls.viz import (
     rolling_efficiency_chart,
     radar_chart,
     shot_chart,
+    efficiency_matrix,
 )
 from bulls.config import OUTPUT_DIR
 
@@ -302,4 +305,99 @@ class TestShotChart:
 
         fig = shot_chart(shots_data)
         assert fig is not None
+        plt.close(fig)
+
+
+class TestEfficiencyMatrix:
+    """Tests for efficiency_matrix function."""
+
+    def test_returns_figure(self, mock_roster_efficiency_data, mock_headshot_request):
+        """Should return a matplotlib Figure object."""
+        fig = efficiency_matrix(mock_roster_efficiency_data)
+
+        assert isinstance(fig, plt.Figure)
+        plt.close(fig)
+
+    def test_handles_empty_data(self):
+        """Should handle empty data gracefully."""
+        fig = efficiency_matrix([])
+
+        assert isinstance(fig, plt.Figure)
+        plt.close(fig)
+
+    def test_handles_single_player(self, mock_headshot_request):
+        """Should handle single player data."""
+        single_player = [
+            {'player_id': 1629632, 'name': 'Coby White', 'ts_pct': 58.5, 'fga_per_game': 14.2}
+        ]
+
+        fig = efficiency_matrix(single_player)
+
+        assert isinstance(fig, plt.Figure)
+        plt.close(fig)
+
+    def test_respects_show_gradient_toggle(self, mock_roster_efficiency_data, mock_headshot_request):
+        """Should work with show_gradient=False."""
+        fig = efficiency_matrix(mock_roster_efficiency_data, show_gradient=False)
+
+        assert isinstance(fig, plt.Figure)
+        plt.close(fig)
+
+    def test_respects_show_names_toggle(self, mock_roster_efficiency_data, mock_headshot_request):
+        """Should work with show_names=False."""
+        fig = efficiency_matrix(mock_roster_efficiency_data, show_names=False)
+
+        assert isinstance(fig, plt.Figure)
+        plt.close(fig)
+
+    def test_respects_custom_thresholds(self, mock_roster_efficiency_data, mock_headshot_request):
+        """Should respect custom league average thresholds."""
+        fig = efficiency_matrix(
+            mock_roster_efficiency_data,
+            league_avg_ts=55.0,
+            league_avg_fga=10.0,
+        )
+
+        assert isinstance(fig, plt.Figure)
+        plt.close(fig)
+
+    def test_saves_to_file(self, mock_roster_efficiency_data, mock_headshot_request, tmp_path):
+        """Should save chart to file when save_path provided."""
+        save_path = tmp_path / "test_efficiency_matrix.png"
+        fig = efficiency_matrix(mock_roster_efficiency_data, save_path=str(save_path))
+
+        assert save_path.exists()
+        plt.close(fig)
+
+    def test_handles_headshot_errors_gracefully(self, mock_roster_efficiency_data, mock_headshot_error):
+        """Should handle headshot fetch errors gracefully."""
+        fig = efficiency_matrix(mock_roster_efficiency_data)
+
+        assert isinstance(fig, plt.Figure)
+        plt.close(fig)
+
+    def test_handles_missing_player_id(self, mock_headshot_request):
+        """Should handle players without player_id."""
+        data_without_id = [
+            {'name': 'Unknown Player', 'ts_pct': 55.0, 'fga_per_game': 10.0}
+        ]
+
+        fig = efficiency_matrix(data_without_id)
+
+        assert isinstance(fig, plt.Figure)
+        plt.close(fig)
+
+    def test_custom_title(self, mock_roster_efficiency_data, mock_headshot_request):
+        """Should use custom title."""
+        custom_title = "Custom Matrix Title"
+        fig = efficiency_matrix(mock_roster_efficiency_data, title=custom_title)
+
+        assert isinstance(fig, plt.Figure)
+        plt.close(fig)
+
+    def test_custom_figsize(self, mock_roster_efficiency_data, mock_headshot_request):
+        """Should respect custom figsize."""
+        fig = efficiency_matrix(mock_roster_efficiency_data, figsize=(8, 6))
+
+        assert isinstance(fig, plt.Figure)
         plt.close(fig)

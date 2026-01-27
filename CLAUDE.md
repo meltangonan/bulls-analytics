@@ -11,7 +11,7 @@ Changes to this project MUST include **relevant** updates to these files. Howeve
 ## Notebook Requirements
 **Every new analysis or visualization MUST include a Jupyter notebook** in the `notebooks/` directory that demonstrates its usage. This allows for interactive testing and serves as living documentation.
 
-Notebook naming convention: `feature_name.ipynb` (e.g., `efficiency_matrix.ipynb`, `shot_selection_analysis.ipynb`)
+Notebook naming convention: `analysis_name.ipynb` (e.g., `efficiency_matrix.ipynb`, `shot_selection_analysis.ipynb`)
 
 **Required setup cell:** Every notebook MUST start with this setup code to enable imports from the `bulls` package:
 
@@ -79,6 +79,7 @@ source venv/bin/activate && jupyter notebook notebooks/
 - `efficiency_matrix.ipynb` - Instagram-style efficiency vs volume quadrant chart
 - `points_per_shot.ipynb` - Points per shot analysis
 - `postgame_shot_charts.ipynb` - Post-game shot chart visualizations
+- `shooting_matrices.ipynb` - Three matrix visualizations (FGM vs FGA, Rim vs Three, 3P% vs 3PA)
 - `shot_selection_analysis.ipynb` - Shot selection breakdown
 - `zone_leaders.ipynb` - Zone-by-zone scoring leaders
 

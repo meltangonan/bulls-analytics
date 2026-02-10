@@ -4,7 +4,6 @@ from bulls.data.fetch import (
     get_games,
     get_box_score,
     get_player_games,
-    get_player_headshot,
     get_player_shots,
     get_team_shots,
     get_league_shots,

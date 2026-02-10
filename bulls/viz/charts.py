@@ -1,14 +1,36 @@
-"""Basic chart functions using matplotlib."""
+"""Notebook-first chart helpers for Bulls analytics."""
+
+from __future__ import annotations
+
+from typing import Dict, List, Optional, Sequence
+
 import matplotlib.pyplot as plt
-import matplotlib.colors as mcolors
-from matplotlib.patches import Circle, Rectangle, Arc, Patch
-from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 import numpy as np
 import pandas as pd
-from typing import Optional, List, Dict
-from pathlib import Path
+from matplotlib.lines import Line2D
+from matplotlib.patches import Arc, Circle, Patch, Rectangle
 
-from bulls.config import BULLS_RED, BULLS_BLACK, WHITE, GREEN, RED as RED_COLOR, OUTPUT_DIR
+from bulls.config import BULLS_BLACK, BULLS_RED, GREEN, RED as RED_COLOR
+
+
+def _mpl_color(rgb: Sequence[int]) -> tuple:
+    """Convert RGB values (0-255) to matplotlib color tuple (0-1)."""
+    return tuple(channel / 255 for channel in rgb)
+
+
+def _chronological(data: pd.DataFrame) -> pd.DataFrame:
+    """Reverse rows so charts read oldest -> newest left to right."""
+    if data.empty:
+        return data.copy()
+    return data.iloc[::-1].reset_index(drop=True)
+
+
+def _short_date_labels(values: list) -> list:
+    labels = []
+    for value in values:
+        raw = str(value)
+        labels.append(raw[5:10] if len(raw) >= 10 else raw)
+    return labels
 
 
 def bar_chart(
@@ -18,70 +40,43 @@ def bar_chart(
     title: str = "",
     color: tuple = BULLS_RED,
     highlight_last: bool = True,
-    save_path: Optional[str] = None,
-    figsize: tuple = (10, 6)
+    figsize: tuple = (10, 6),
 ) -> plt.Figure:
-    """
-    Create a bar chart.
-    
-    Args:
-        data: DataFrame with the data
-        x: Column name for x-axis
-        y: Column name for y-axis (bar heights)
-        title: Chart title
-        color: Bar color (RGB tuple)
-        highlight_last: Highlight the most recent bar
-        save_path: Path to save image (optional)
-        figsize: Figure size
-    
-    Returns:
-        matplotlib Figure object
-    
-    Example:
-        >>> coby = get_player_games("Coby White", last_n=10)
-        >>> bar_chart(coby, x='date', y='points', title="Coby's Scoring")
-    """
+    """Create a bar chart for notebook exploration."""
     fig, ax = plt.subplots(figsize=figsize)
-    
-    # Reverse data so oldest is first (left to right chronologically)
-    plot_data = data.iloc[::-1].copy()
-    
+    plot_data = _chronological(data)
+
+    if y not in plot_data.columns:
+        ax.text(0.5, 0.5, f"Missing column: {y}", ha="center", va="center", transform=ax.transAxes)
+        ax.set_title(title or "Bar Chart")
+        return fig
+
     x_vals = range(len(plot_data))
     y_vals = plot_data[y].tolist()
-    
-    # Color bars
-    colors = [tuple(c/255 for c in color)] * len(y_vals)
-    if highlight_last and len(colors) > 0:
-        colors[-1] = tuple(c/255 for c in BULLS_RED)  # Highlight most recent
-    
-    ax.bar(x_vals, y_vals, color=colors, edgecolor='black', linewidth=0.5)
-    
-    # Styling
-    ax.set_title(title, fontsize=16, fontweight='bold')
-    ax.set_ylabel(y.capitalize())
-    
-    # X-axis labels
+
+    base_color = _mpl_color(color)
+    colors = [base_color] * len(y_vals)
+    if highlight_last and colors:
+        colors[-1] = _mpl_color(BULLS_RED)
+
+    ax.bar(x_vals, y_vals, color=colors, edgecolor="black", linewidth=0.5)
+
+    ax.set_title(title or y.replace("_", " ").title(), fontsize=14, fontweight="bold")
+    ax.set_ylabel(y.replace("_", " ").title())
+
     if x in plot_data.columns:
         labels = plot_data[x].tolist()
-        # Shorten date labels if needed
-        if 'date' in x.lower():
-            labels = [str(l)[5:10] if len(str(l)) > 5 else l for l in labels]
-        ax.set_xticks(x_vals)
-        ax.set_xticklabels(labels, rotation=45, ha='right')
-    
-    # Add average line (only if we have data)
-    if len(y_vals) > 0:
-        avg = sum(y_vals) / len(y_vals)
-        ax.axhline(y=avg, color='gray', linestyle='--', alpha=0.7, label=f'Avg: {avg:.1f}')
-        ax.legend()
-    
+        if "date" in x.lower():
+            labels = _short_date_labels(labels)
+        ax.set_xticks(list(x_vals))
+        ax.set_xticklabels(labels, rotation=45, ha="right")
+
+    if y_vals:
+        avg = float(np.mean(y_vals))
+        ax.axhline(avg, color="gray", linestyle="--", alpha=0.7, label=f"Avg: {avg:.1f}")
+        ax.legend(loc="best")
+
     plt.tight_layout()
-    
-    if save_path:
-        OUTPUT_DIR.mkdir(exist_ok=True)
-        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
-        print(f"Saved to {save_path}")
-    
     return fig
 
 
@@ -91,52 +86,33 @@ def line_chart(
     y: str,
     title: str = "",
     color: tuple = BULLS_RED,
-    save_path: Optional[str] = None,
-    figsize: tuple = (10, 6)
+    figsize: tuple = (10, 6),
 ) -> plt.Figure:
-    """
-    Create a line chart showing trend over time.
-    
-    Args:
-        data: DataFrame with the data
-        x: Column name for x-axis
-        y: Column name for y-axis
-        title: Chart title
-        color: Line color (RGB tuple)
-        save_path: Path to save image (optional)
-        figsize: Figure size
-    
-    Returns:
-        matplotlib Figure object
-    """
+    """Create a line chart showing a stat over time."""
     fig, ax = plt.subplots(figsize=figsize)
-    
-    # Reverse for chronological order
-    plot_data = data.iloc[::-1].copy()
-    
+    plot_data = _chronological(data)
+
+    if y not in plot_data.columns:
+        ax.text(0.5, 0.5, f"Missing column: {y}", ha="center", va="center", transform=ax.transAxes)
+        ax.set_title(title or "Line Chart")
+        return fig
+
     x_vals = range(len(plot_data))
     y_vals = plot_data[y].tolist()
-    
-    ax.plot(x_vals, y_vals, color=tuple(c/255 for c in color), linewidth=2, marker='o')
-    
-    ax.set_title(title, fontsize=16, fontweight='bold')
-    ax.set_ylabel(y.capitalize())
-    
-    # X-axis labels
+
+    ax.plot(x_vals, y_vals, color=_mpl_color(color), linewidth=2, marker="o")
+    ax.set_title(title or y.replace("_", " ").title(), fontsize=14, fontweight="bold")
+    ax.set_ylabel(y.replace("_", " ").title())
+
     if x in plot_data.columns:
         labels = plot_data[x].tolist()
-        if 'date' in x.lower():
-            labels = [str(l)[5:10] if len(str(l)) > 5 else l for l in labels]
-        ax.set_xticks(x_vals)
-        ax.set_xticklabels(labels, rotation=45, ha='right')
-    
+        if "date" in x.lower():
+            labels = _short_date_labels(labels)
+        ax.set_xticks(list(x_vals))
+        ax.set_xticklabels(labels, rotation=45, ha="right")
+
+    ax.grid(alpha=0.25)
     plt.tight_layout()
-    
-    if save_path:
-        OUTPUT_DIR.mkdir(exist_ok=True)
-        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
-        print(f"Saved to {save_path}")
-    
     return fig
 
 
@@ -147,58 +123,43 @@ def scatter_plot(
     title: str = "",
     color: tuple = BULLS_RED,
     size: Optional[int] = None,
-    save_path: Optional[str] = None,
-    figsize: tuple = (10, 6)
+    figsize: tuple = (10, 6),
 ) -> plt.Figure:
-    """
-    Create a scatter plot comparing two metrics.
-    
-    Args:
-        data: DataFrame with the data
-        x: Column name for x-axis
-        y: Column name for y-axis
-        title: Chart title
-        color: Point color (RGB tuple)
-        size: Point size (optional, can use a column name for variable sizing)
-        save_path: Path to save image (optional)
-        figsize: Figure size
-    
-    Returns:
-        matplotlib Figure object
-    
-    Example:
-        >>> coby = get_player_games("Coby White", last_n=15)
-        >>> scatter_plot(coby, x='points', y='assists', title="Points vs Assists")
-    """
+    """Create a scatter plot comparing two metrics."""
     fig, ax = plt.subplots(figsize=figsize)
-    
+
+    if x not in data.columns or y not in data.columns:
+        missing = [col for col in (x, y) if col not in data.columns]
+        ax.text(0.5, 0.5, f"Missing column(s): {', '.join(missing)}", ha="center", va="center", transform=ax.transAxes)
+        ax.set_title(title or "Scatter Plot")
+        return fig
+
     x_vals = data[x].tolist()
     y_vals = data[y].tolist()
-    
-    # Handle size parameter
+
     if size is None:
-        sizes = 100
+        sizes = 80
     elif isinstance(size, str) and size in data.columns:
-        sizes = data[size].tolist()
-        # Scale sizes for visibility
-        sizes = [s * 10 for s in sizes]
+        sizes = (data[size].clip(lower=1) * 10).tolist()
     else:
         sizes = size
-    
-    ax.scatter(x_vals, y_vals, c=[tuple(c/255 for c in color)], s=sizes, alpha=0.6, edgecolors='black', linewidth=0.5)
-    
-    ax.set_title(title, fontsize=16, fontweight='bold')
-    ax.set_xlabel(x.capitalize())
-    ax.set_ylabel(y.capitalize())
-    ax.grid(True, alpha=0.3)
-    
+
+    ax.scatter(
+        x_vals,
+        y_vals,
+        c=[_mpl_color(color)],
+        s=sizes,
+        alpha=0.7,
+        edgecolors="black",
+        linewidth=0.5,
+    )
+
+    ax.set_title(title or f"{y} vs {x}", fontsize=14, fontweight="bold")
+    ax.set_xlabel(x.replace("_", " ").title())
+    ax.set_ylabel(y.replace("_", " ").title())
+    ax.grid(alpha=0.25)
+
     plt.tight_layout()
-    
-    if save_path:
-        OUTPUT_DIR.mkdir(exist_ok=True)
-        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
-        print(f"Saved to {save_path}")
-    
     return fig
 
 
@@ -208,63 +169,57 @@ def comparison_chart(
     y: str,
     group_by: str,
     title: str = "",
-    save_path: Optional[str] = None,
-    figsize: tuple = (10, 6)
+    figsize: tuple = (10, 6),
 ) -> plt.Figure:
-    """
-    Create a comparison chart showing multiple groups side by side.
-    
-    Args:
-        data: DataFrame with the data
-        x: Column name for x-axis (categories)
-        y: Column name for y-axis (values)
-        group_by: Column name to group by (creates multiple series)
-        title: Chart title
-        save_path: Path to save image (optional)
-        figsize: Figure size
-    
-    Returns:
-        matplotlib Figure object
-    
-    Example:
-        >>> # Compare multiple players' scoring
-        >>> comparison_chart(data, x='date', y='points', group_by='player_name')
-    """
+    """Create grouped bars for comparing multiple players or groups."""
     fig, ax = plt.subplots(figsize=figsize)
-    
-    groups = data[group_by].unique()
-    colors = [BULLS_RED, BULLS_BLACK, GREEN, RED_COLOR]
-    
-    x_categories = sorted(data[x].unique())
-    x_pos = range(len(x_categories))
-    
-    width = 0.8 / len(groups)
-    
-    for i, group in enumerate(groups):
-        group_data = data[data[group_by] == group]
-        values = [group_data[group_data[x] == cat][y].values[0] if len(group_data[group_data[x] == cat]) > 0 else 0 
-                 for cat in x_categories]
-        
-        offset = (i - len(groups)/2 + 0.5) * width
-        ax.bar([p + offset for p in x_pos], values, width=width, 
-               label=group, color=tuple(c/255 for c in colors[i % len(colors)]), 
-               edgecolor='black', linewidth=0.5)
-    
-    ax.set_title(title, fontsize=16, fontweight='bold')
-    ax.set_xlabel(x.capitalize())
-    ax.set_ylabel(y.capitalize())
-    ax.set_xticks(x_pos)
-    ax.set_xticklabels(x_categories, rotation=45, ha='right')
-    ax.legend()
-    ax.grid(True, alpha=0.3, axis='y')
-    
+
+    required = [x, y, group_by]
+    missing = [col for col in required if col not in data.columns]
+    if missing:
+        ax.text(0.5, 0.5, f"Missing column(s): {', '.join(missing)}", ha="center", va="center", transform=ax.transAxes)
+        ax.set_title(title or "Comparison Chart")
+        return fig
+
+    groups = data[group_by].dropna().unique().tolist()
+    if not groups:
+        ax.text(0.5, 0.5, "No group data", ha="center", va="center", transform=ax.transAxes)
+        ax.set_title(title or "Comparison Chart")
+        return fig
+
+    categories = sorted(data[x].dropna().unique().tolist())
+    x_positions = np.arange(len(categories))
+    width = 0.8 / max(len(groups), 1)
+
+    palette = [BULLS_RED, BULLS_BLACK, GREEN, RED_COLOR]
+
+    for idx, group in enumerate(groups):
+        group_rows = data[data[group_by] == group]
+        values = []
+        for category in categories:
+            matching = group_rows[group_rows[x] == category]
+            values.append(float(matching[y].iloc[0]) if not matching.empty else 0.0)
+
+        offset = (idx - (len(groups) - 1) / 2) * width
+        ax.bar(
+            x_positions + offset,
+            values,
+            width=width,
+            label=str(group),
+            color=_mpl_color(palette[idx % len(palette)]),
+            edgecolor="black",
+            linewidth=0.5,
+        )
+
+    ax.set_title(title or f"{y.replace('_', ' ').title()} by {group_by}", fontsize=14, fontweight="bold")
+    ax.set_xlabel(x.replace("_", " ").title())
+    ax.set_ylabel(y.replace("_", " ").title())
+    ax.set_xticks(x_positions)
+    ax.set_xticklabels(categories, rotation=45, ha="right")
+    ax.legend(loc="best")
+    ax.grid(alpha=0.25, axis="y")
+
     plt.tight_layout()
-    
-    if save_path:
-        OUTPUT_DIR.mkdir(exist_ok=True)
-        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
-        print(f"Saved to {save_path}")
-    
     return fig
 
 
@@ -272,162 +227,108 @@ def win_loss_chart(
     data: pd.DataFrame,
     x: str,
     y: str,
-    result_col: str = 'result',
+    result_col: str = "result",
     title: str = "",
-    save_path: Optional[str] = None,
-    figsize: tuple = (10, 6)
+    figsize: tuple = (10, 6),
 ) -> plt.Figure:
-    """
-    Create a bar chart with different colors for wins and losses.
-    
-    Args:
-        data: DataFrame with the data
-        x: Column name for x-axis
-        y: Column name for y-axis (bar heights)
-        result_col: Column name containing 'W' or 'L' for win/loss
-        title: Chart title
-        save_path: Path to save image (optional)
-        figsize: Figure size
-    
-    Returns:
-        matplotlib Figure object
-    
-    Example:
-        >>> games = get_games(last_n=10)
-        >>> win_loss_chart(games, x='GAME_DATE', y='PTS', result_col='WL')
-    """
+    """Create a bar chart with win/loss color coding."""
     fig, ax = plt.subplots(figsize=figsize)
-    
-    # Reverse data so oldest is first
-    plot_data = data.iloc[::-1].copy()
-    
+    plot_data = _chronological(data)
+
+    if y not in plot_data.columns:
+        ax.text(0.5, 0.5, f"Missing column: {y}", ha="center", va="center", transform=ax.transAxes)
+        ax.set_title(title or "Win/Loss Chart")
+        return fig
+
     x_vals = range(len(plot_data))
     y_vals = plot_data[y].tolist()
-    
-    # Color bars based on win/loss
+
     colors = []
     for _, row in plot_data.iterrows():
-        if result_col in row and str(row[result_col]).upper() == 'W':
-            colors.append(tuple(c/255 for c in GREEN))
-        else:
-            colors.append(tuple(c/255 for c in RED_COLOR))
-    
-    ax.bar(x_vals, y_vals, color=colors, edgecolor='black', linewidth=0.5)
-    
-    ax.set_title(title, fontsize=16, fontweight='bold')
-    ax.set_ylabel(y.capitalize())
-    
-    # X-axis labels
+        is_win = str(row.get(result_col, "")).upper() == "W"
+        colors.append(_mpl_color(GREEN if is_win else RED_COLOR))
+
+    ax.bar(x_vals, y_vals, color=colors, edgecolor="black", linewidth=0.5)
+    ax.set_title(title or y.replace("_", " ").title(), fontsize=14, fontweight="bold")
+    ax.set_ylabel(y.replace("_", " ").title())
+
     if x in plot_data.columns:
         labels = plot_data[x].tolist()
-        if 'date' in x.lower():
-            labels = [str(l)[5:10] if len(str(l)) > 5 else l for l in labels]
-        ax.set_xticks(x_vals)
-        ax.set_xticklabels(labels, rotation=45, ha='right')
-    
-    # Add legend
-    legend_elements = [
-        Patch(facecolor=tuple(c/255 for c in GREEN), label='Win'),
-        Patch(facecolor=tuple(c/255 for c in RED_COLOR), label='Loss')
-    ]
-    ax.legend(handles=legend_elements)
+        if "date" in x.lower():
+            labels = _short_date_labels(labels)
+        ax.set_xticks(list(x_vals))
+        ax.set_xticklabels(labels, rotation=45, ha="right")
+
+    ax.legend(
+        handles=[
+            Patch(facecolor=_mpl_color(GREEN), label="Win"),
+            Patch(facecolor=_mpl_color(RED_COLOR), label="Loss"),
+        ],
+        loc="best",
+    )
 
     plt.tight_layout()
-
-    if save_path:
-        OUTPUT_DIR.mkdir(exist_ok=True)
-        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
-        print(f"Saved to {save_path}")
-
     return fig
 
 
 def rolling_efficiency_chart(
     data: pd.DataFrame,
     efficiency_col: str,
-    result_col: str = 'result',
+    result_col: str = "result",
     title: str = "",
     league_avg: float = 57.0,
-    save_path: Optional[str] = None,
-    figsize: tuple = (12, 6)
+    figsize: tuple = (12, 6),
 ) -> plt.Figure:
-    """
-    Create a line chart of rolling efficiency with win/loss markers.
-
-    Args:
-        data: DataFrame with efficiency and result data
-        efficiency_col: Column name for efficiency metric (e.g., 'ts_pct_roll_5')
-        result_col: Column name containing 'W' or 'L' for win/loss
-        title: Chart title
-        league_avg: League average line (default: 57% for TS%)
-        save_path: Path to save image (optional)
-        figsize: Figure size
-
-    Returns:
-        matplotlib Figure object
-
-    Example:
-        >>> coby = get_player_games("Coby White", last_n=15)
-        >>> coby_eff = game_efficiency(coby)
-        >>> coby_roll = rolling_averages(coby_eff, metrics=['ts_pct'], windows=[5])
-        >>> rolling_efficiency_chart(coby_roll, efficiency_col='ts_pct_roll_5')
-    """
+    """Plot rolling efficiency with win/loss markers."""
     fig, ax = plt.subplots(figsize=figsize)
+    plot_data = _chronological(data)
 
-    # Reverse for chronological order
-    plot_data = data.iloc[::-1].copy()
+    if plot_data.empty or efficiency_col not in plot_data.columns:
+        ax.text(0.5, 0.5, f"Missing or empty data for {efficiency_col}", ha="center", va="center", transform=ax.transAxes)
+        ax.set_title(title or "Rolling Efficiency")
+        return fig
 
     x_vals = range(len(plot_data))
     y_vals = plot_data[efficiency_col].tolist()
 
-    # Plot line
-    ax.plot(x_vals, y_vals, color=tuple(c/255 for c in BULLS_RED), linewidth=2, zorder=2)
+    ax.plot(x_vals, y_vals, color=_mpl_color(BULLS_RED), linewidth=2, label="Efficiency")
+    ax.axhline(league_avg, color="gray", linestyle="--", alpha=0.7, label=f"League Avg ({league_avg}%)")
 
-    # Add win/loss markers
-    for i, (_, row) in enumerate(plot_data.iterrows()):
-        if result_col in row:
-            if str(row[result_col]).upper() == 'W':
-                ax.scatter(i, y_vals[i], marker='^', s=100,
-                           color=tuple(c/255 for c in GREEN), edgecolors='black',
-                           linewidth=0.5, zorder=3)
-            else:
-                ax.scatter(i, y_vals[i], marker='v', s=100,
-                           color=tuple(c/255 for c in RED_COLOR), edgecolors='black',
-                           linewidth=0.5, zorder=3)
+    if result_col in plot_data.columns:
+        for i, (_, row) in enumerate(plot_data.iterrows()):
+            result = str(row.get(result_col, "")).upper()
+            marker = "^" if result == "W" else "v"
+            marker_color = GREEN if result == "W" else RED_COLOR
+            ax.scatter(
+                i,
+                y_vals[i],
+                marker=marker,
+                s=80,
+                color=_mpl_color(marker_color),
+                edgecolors="black",
+                linewidth=0.4,
+                zorder=3,
+            )
 
-    # League average reference line
-    ax.axhline(y=league_avg, color='gray', linestyle='--', alpha=0.7,
-               label=f'League Avg: {league_avg}%', zorder=1)
+    if "date" in plot_data.columns:
+        labels = _short_date_labels(plot_data["date"].tolist())
+        ax.set_xticks(list(x_vals))
+        ax.set_xticklabels(labels, rotation=45, ha="right")
 
-    ax.set_title(title or f'Rolling {efficiency_col}', fontsize=16, fontweight='bold')
-    ax.set_ylabel('Efficiency %')
-    ax.set_xlabel('Game')
+    ax.set_title(title or efficiency_col.replace("_", " ").title(), fontsize=14, fontweight="bold")
+    ax.set_xlabel("Game")
+    ax.set_ylabel("Efficiency %")
+    ax.grid(alpha=0.25)
 
-    # X-axis labels (dates if available)
-    if 'date' in plot_data.columns:
-        labels = [str(d)[5:10] if len(str(d)) > 5 else d for d in plot_data['date'].tolist()]
-        ax.set_xticks(x_vals)
-        ax.set_xticklabels(labels, rotation=45, ha='right')
-
-    # Legend
-    legend_elements = [
-        plt.Line2D([0], [0], color=tuple(c/255 for c in BULLS_RED), linewidth=2, label='Efficiency'),
-        plt.Line2D([0], [0], color='gray', linestyle='--', label=f'League Avg ({league_avg}%)'),
-        plt.Line2D([0], [0], marker='^', color='w', markerfacecolor=tuple(c/255 for c in GREEN),
-                   markersize=10, label='Win'),
-        plt.Line2D([0], [0], marker='v', color='w', markerfacecolor=tuple(c/255 for c in RED_COLOR),
-                   markersize=10, label='Loss'),
+    legend = [
+        Line2D([0], [0], color=_mpl_color(BULLS_RED), linewidth=2, label="Efficiency"),
+        Line2D([0], [0], color="gray", linestyle="--", label=f"League Avg ({league_avg}%)"),
+        Line2D([0], [0], marker="^", color="w", markerfacecolor=_mpl_color(GREEN), markeredgecolor="black", label="Win"),
+        Line2D([0], [0], marker="v", color="w", markerfacecolor=_mpl_color(RED_COLOR), markeredgecolor="black", label="Loss"),
     ]
-    ax.legend(handles=legend_elements, loc='upper left')
-    ax.grid(True, alpha=0.3)
+    ax.legend(handles=legend, loc="best")
 
     plt.tight_layout()
-
-    if save_path:
-        OUTPUT_DIR.mkdir(exist_ok=True)
-        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
-        print(f"Saved to {save_path}")
-
     return fig
 
 
@@ -436,155 +337,73 @@ def radar_chart(
     metrics: Optional[List[str]] = None,
     normalize: bool = True,
     title: str = "",
-    save_path: Optional[str] = None,
-    figsize: tuple = (8, 8)
+    figsize: tuple = (8, 8),
 ) -> plt.Figure:
-    """
-    Create a radar/spider chart comparing players across metrics.
-
-    Args:
-        players_data: List of dicts, each with 'name' and metric values
-        metrics: List of metrics to include (default: points, rebounds, assists, steals, fg_pct)
-        normalize: Scale values to 0-100 for fair comparison
-        title: Chart title
-        save_path: Path to save image (optional)
-        figsize: Figure size
-
-    Returns:
-        matplotlib Figure object
-
-    Example:
-        >>> coby = data.get_player_games("Coby White", last_n=10)
-        >>> avgs = analysis.season_averages(coby)
-        >>> avgs['name'] = 'Coby White'
-        >>> radar_chart([avgs], title="Coby White Stats")
-    """
+    """Create a radar chart for one or more players."""
     if metrics is None:
-        metrics = ['points', 'rebounds', 'assists', 'steals', 'fg_pct']
+        metrics = ["points", "rebounds", "assists", "steals", "fg_pct"]
 
-    # Handle empty players list
     if not players_data:
         fig, ax = plt.subplots(figsize=figsize)
-        ax.text(0.5, 0.5, 'No player data', ha='center', va='center')
+        ax.text(0.5, 0.5, "No player data", ha="center", va="center", transform=ax.transAxes)
+        ax.set_axis_off()
         return fig
 
-    # Filter to metrics that exist in data
-    available_metrics = []
-    for m in metrics:
-        if all(m in p for p in players_data):
-            available_metrics.append(m)
-
-    if not available_metrics:
+    available = [metric for metric in metrics if any(metric in player for player in players_data)]
+    if not available:
         fig, ax = plt.subplots(figsize=figsize)
-        ax.text(0.5, 0.5, 'No metrics available', ha='center', va='center')
+        ax.text(0.5, 0.5, "No metrics available", ha="center", va="center", transform=ax.transAxes)
+        ax.set_axis_off()
         return fig
 
-    num_vars = len(available_metrics)
-    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
-    angles += angles[:1]  # Complete the loop
+    angles = np.linspace(0, 2 * np.pi, len(available), endpoint=False).tolist()
+    angles += angles[:1]
 
-    fig, ax = plt.subplots(figsize=figsize, subplot_kw=dict(polar=True))
+    fig, ax = plt.subplots(figsize=figsize, subplot_kw={"polar": True})
+    palette = [BULLS_RED, BULLS_BLACK, GREEN, RED_COLOR]
 
-    # Colors for multiple players
-    colors = [BULLS_RED, BULLS_BLACK, GREEN, RED_COLOR]
+    max_vals = {metric: max(player.get(metric, 0) for player in players_data) or 1 for metric in available}
 
-    # Normalization: find max values for scaling
-    if normalize:
-        max_vals = {}
-        for m in available_metrics:
-            max_vals[m] = max(p.get(m, 0) for p in players_data) or 1
-
-    for i, player in enumerate(players_data):
+    for idx, player in enumerate(players_data):
         values = []
-        for m in available_metrics:
-            val = player.get(m, 0)
+        for metric in available:
+            value = float(player.get(metric, 0))
             if normalize:
-                val = (val / max_vals[m]) * 100 if max_vals[m] > 0 else 0
-            values.append(val)
-        values += values[:1]  # Complete the loop
+                value = value / max_vals[metric] * 100 if max_vals[metric] else 0
+            values.append(value)
+        values += values[:1]
 
-        color = tuple(c/255 for c in colors[i % len(colors)])
-        ax.plot(angles, values, 'o-', linewidth=2, label=player.get('name', f'Player {i+1}'),
-                color=color)
-        ax.fill(angles, values, alpha=0.25, color=color)
+        ax.plot(angles, values, linewidth=2, marker="o", color=_mpl_color(palette[idx % len(palette)]), label=player.get("name", f"Player {idx + 1}"))
+        ax.fill(angles, values, alpha=0.2, color=_mpl_color(palette[idx % len(palette)]))
 
-    # Labels
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels([m.replace('_', ' ').title() for m in available_metrics])
+    ax.set_xticklabels([metric.replace("_", " ").title() for metric in available])
 
     if normalize:
         ax.set_ylim(0, 100)
         ax.set_yticks([20, 40, 60, 80, 100])
 
-    ax.set_title(title or 'Player Comparison', fontsize=16, fontweight='bold', pad=20)
-    ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1.0))
+    ax.set_title(title or "Player Comparison", fontsize=14, fontweight="bold", pad=20)
+    ax.legend(loc="upper right", bbox_to_anchor=(1.25, 1.15))
 
     plt.tight_layout()
-
-    if save_path:
-        OUTPUT_DIR.mkdir(exist_ok=True)
-        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
-        print(f"Saved to {save_path}")
-
     return fig
 
 
-def _draw_court(ax, color='black', lw=2):
-    """
-    Draw basketball half-court lines on the given axes.
-
-    Args:
-        ax: matplotlib axes
-        color: Line color
-        lw: Line width
-    """
-    # Hoop
-    hoop = Circle((0, 0), radius=7.5, linewidth=lw, color=color, fill=False)
-    ax.add_patch(hoop)
-
-    # Backboard
-    backboard = Rectangle((-30, -7.5), 60, 0, linewidth=lw, color=color)
-    ax.add_patch(backboard)
-
-    # Paint (outer box)
-    outer_box = Rectangle((-80, -47.5), 160, 190, linewidth=lw, color=color, fill=False)
-    ax.add_patch(outer_box)
-
-    # Paint (inner box)
-    inner_box = Rectangle((-60, -47.5), 120, 190, linewidth=lw, color=color, fill=False)
-    ax.add_patch(inner_box)
-
-    # Free throw top arc
-    top_free_throw = Arc((0, 142.5), 120, 120, theta1=0, theta2=180,
-                         linewidth=lw, color=color)
-    ax.add_patch(top_free_throw)
-
-    # Free throw bottom arc (dashed)
-    bottom_free_throw = Arc((0, 142.5), 120, 120, theta1=180, theta2=0,
-                            linewidth=lw, color=color, linestyle='dashed')
-    ax.add_patch(bottom_free_throw)
-
-    # Restricted zone arc
-    restricted = Arc((0, 0), 80, 80, theta1=0, theta2=180, linewidth=lw, color=color)
-    ax.add_patch(restricted)
-
-    # Three-point line
-    corner_three_left = Rectangle((-220, -47.5), 0, 140, linewidth=lw, color=color)
-    corner_three_right = Rectangle((220, -47.5), 0, 140, linewidth=lw, color=color)
-    ax.add_patch(corner_three_left)
-    ax.add_patch(corner_three_right)
-
-    three_arc = Arc((0, 0), 475, 475, theta1=22, theta2=158, linewidth=lw, color=color)
-    ax.add_patch(three_arc)
-
-    # Center court
-    center_outer_arc = Arc((0, 422.5), 120, 120, theta1=180, theta2=0,
-                           linewidth=lw, color=color)
-    ax.add_patch(center_outer_arc)
-
-    # Half court line
+def _draw_court(ax, color: str = "black", lw: float = 1.5):
+    """Draw a half-court for shot charts."""
+    ax.add_patch(Circle((0, 0), radius=7.5, linewidth=lw, color=color, fill=False))
+    ax.add_patch(Rectangle((-30, -7.5), 60, 0, linewidth=lw, color=color))
+    ax.add_patch(Rectangle((-80, -47.5), 160, 190, linewidth=lw, color=color, fill=False))
+    ax.add_patch(Rectangle((-60, -47.5), 120, 190, linewidth=lw, color=color, fill=False))
+    ax.add_patch(Arc((0, 142.5), 120, 120, theta1=0, theta2=180, linewidth=lw, color=color))
+    ax.add_patch(Arc((0, 142.5), 120, 120, theta1=180, theta2=0, linewidth=lw, color=color, linestyle="dashed"))
+    ax.add_patch(Arc((0, 0), 80, 80, theta1=0, theta2=180, linewidth=lw, color=color))
+    ax.add_patch(Rectangle((-220, -47.5), 0, 140, linewidth=lw, color=color))
+    ax.add_patch(Rectangle((220, -47.5), 0, 140, linewidth=lw, color=color))
+    ax.add_patch(Arc((0, 0), 475, 475, theta1=22, theta2=158, linewidth=lw, color=color))
+    ax.add_patch(Arc((0, 422.5), 120, 120, theta1=180, theta2=0, linewidth=lw, color=color))
     ax.plot([-250, 250], [422.5, 422.5], linewidth=lw, color=color)
-
     return ax
 
 
@@ -593,592 +412,236 @@ def shot_chart(
     show_zones: bool = False,
     title: str = "",
     annotations: Optional[List[Dict]] = None,
-    save_path: Optional[str] = None,
-    figsize: tuple = (12, 11)
+    figsize: tuple = (12, 11),
 ) -> plt.Figure:
-    """
-    Create a shot chart visualization on a basketball court.
-
-    Args:
-        shots_data: DataFrame with shot location data (loc_x, loc_y, shot_made)
-        show_zones: If True, show hexbin heatmap; if False, show scatter plot
-        title: Chart title
-        annotations: List of annotation dicts to add callout text boxes.
-                     Each dict should have:
-                     - 'text': The callout text (e.g., "12/18 at the rim")
-                     - 'position': Tuple (x, y) or preset string:
-                       'top_left', 'top_right', 'bottom_left', 'bottom_right'
-                     - 'fontsize': Optional font size (default: 14)
-        save_path: Path to save image (optional)
-        figsize: Figure size
-
-    Returns:
-        matplotlib Figure object
-
-    Example:
-        >>> shots = data.get_player_shots(1629632)  # Coby White
-        >>> shot_chart(shots, title="Coby White Shot Chart")
-        >>> # With annotations
-        >>> annotations = [{'text': '12/18 at the rim', 'position': 'bottom_left'}]
-        >>> shot_chart(shots, title="Shot Chart", annotations=annotations)
-    """
+    """Create a team or player shot chart on a half-court."""
     fig, ax = plt.subplots(figsize=figsize)
+    _draw_court(ax, color="black", lw=1)
 
-    # Draw court
-    _draw_court(ax, color='black', lw=1)
-
-    if not shots_data.empty:
+    if not shots_data.empty and {"loc_x", "loc_y", "shot_made"}.issubset(shots_data.columns):
         if show_zones:
-            # Hexbin heatmap for shot efficiency
-            makes = shots_data[shots_data['shot_made']]
-            if len(makes) > 0:
-                hb = ax.hexbin(shots_data['loc_x'], shots_data['loc_y'],
-                               C=shots_data['shot_made'].astype(int),
-                               reduce_C_function=np.mean,
-                               gridsize=25, cmap='RdYlGn', mincnt=1)
-                cb = fig.colorbar(hb, ax=ax)
-                cb.set_label('FG%')
+            hb = ax.hexbin(
+                shots_data["loc_x"],
+                shots_data["loc_y"],
+                C=shots_data["shot_made"].astype(int),
+                reduce_C_function=np.mean,
+                gridsize=24,
+                cmap="RdYlGn",
+                mincnt=1,
+            )
+            colorbar = fig.colorbar(hb, ax=ax)
+            colorbar.set_label("FG%")
         else:
-            # Scatter plot: green for makes, red for misses
-            makes = shots_data[shots_data['shot_made']]
-            misses = shots_data[~shots_data['shot_made']]
+            makes = shots_data[shots_data["shot_made"]]
+            misses = shots_data[~shots_data["shot_made"]]
 
-            if len(misses) > 0:
-                ax.scatter(misses['loc_x'], misses['loc_y'], c='red', marker='x',
-                           s=40, alpha=0.6, label='Miss')
-            if len(makes) > 0:
-                ax.scatter(makes['loc_x'], makes['loc_y'], c='green', marker='o',
-                           s=40, alpha=0.6, label='Make')
+            if not misses.empty:
+                ax.scatter(misses["loc_x"], misses["loc_y"], c="red", marker="x", s=35, alpha=0.6, label="Miss")
+            if not makes.empty:
+                ax.scatter(makes["loc_x"], makes["loc_y"], c="green", marker="o", s=35, alpha=0.6, label="Make")
+            if not makes.empty or not misses.empty:
+                ax.legend(loc="upper right")
 
-            ax.legend(loc='upper right')
+    if annotations:
+        presets = {
+            "top_left": (-195, 380),
+            "top_right": (195, 380),
+            "bottom_left": (-195, -30),
+            "bottom_right": (195, -30),
+        }
+        for ann in annotations:
+            position = ann.get("position", "top_left")
+            x, y = presets.get(position, position)
+            ax.text(
+                x,
+                y,
+                ann.get("text", ""),
+                fontsize=ann.get("fontsize", 12),
+                ha="center",
+                va="center",
+                bbox={"boxstyle": "round,pad=0.4", "facecolor": "white", "edgecolor": "black", "alpha": 0.9},
+            )
 
-    # Set court dimensions
     ax.set_xlim(-250, 250)
     ax.set_ylim(-47.5, 422.5)
-    ax.set_aspect('equal')
-    ax.set_title(title or 'Shot Chart', fontsize=16, fontweight='bold')
-
-    # Remove axis labels for cleaner look
+    ax.set_aspect("equal")
+    ax.set_title(title or "Shot Chart", fontsize=14, fontweight="bold")
     ax.set_xticks([])
     ax.set_yticks([])
 
-    # Add annotations (callout text boxes)
-    if annotations:
-        for ann in annotations:
-            pos = ann.get('position', 'top_left')
-            # Position presets
-            if pos == 'top_left':
-                x, y = -200, 380
-            elif pos == 'top_right':
-                x, y = 200, 380
-            elif pos == 'bottom_left':
-                x, y = -200, -30
-            elif pos == 'bottom_right':
-                x, y = 200, -30
-            else:
-                x, y = pos  # Custom coordinates as tuple
-
-            ax.text(x, y, ann['text'],
-                    fontsize=ann.get('fontsize', 14),
-                    fontweight='bold',
-                    ha='center', va='center',
-                    bbox=dict(boxstyle='round,pad=0.5',
-                              facecolor='white',
-                              edgecolor='black',
-                              alpha=0.9))
-
     plt.tight_layout()
-
-    if save_path:
-        OUTPUT_DIR.mkdir(exist_ok=True)
-        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
-        print(f"Saved to {save_path}")
-
     return fig
 
 
-def _draw_zone_boundaries(ax, color='gray', lw=1, alpha=0.3):
-    """
-    Draw approximate zone boundaries on the court.
-    
-    Args:
-        ax: matplotlib axes
-        color: Line color
-        lw: Line width
-        alpha: Transparency
-    """
-    # Restricted Area (already drawn as arc in _draw_court, but add circle for clarity)
-    restricted_circle = Circle((0, 0), radius=48, linewidth=lw, 
-                               color=color, fill=False, linestyle='--', alpha=alpha)
-    ax.add_patch(restricted_circle)
-    
-    # Paint boundary (free throw line at y=142.5)
-    # Draw lines to separate paint from mid-range
-    paint_left = Rectangle((-80, -47.5), 0, 190, linewidth=lw, 
-                           color=color, linestyle='--', alpha=alpha)
-    paint_right = Rectangle((80, -47.5), 0, 190, linewidth=lw, 
-                            color=color, linestyle='--', alpha=alpha)
-    ax.add_patch(paint_left)
-    ax.add_patch(paint_right)
-    
-    # Corner 3 boundaries (approximate at x = ±200)
-    corner_left = Rectangle((-200, -47.5), 0, 140, linewidth=lw, 
-                            color=color, linestyle='--', alpha=alpha)
-    corner_right = Rectangle((200, -47.5), 0, 140, linewidth=lw, 
-                             color=color, linestyle='--', alpha=alpha)
-    ax.add_patch(corner_left)
-    ax.add_patch(corner_right)
-    
-    return ax
-
-
 def _get_zone_center(zone_name: str) -> tuple:
-    """
-    Get approximate center coordinates for a shot zone.
-    
-    Args:
-        zone_name: Name of the shot zone
-    
-    Returns:
-        Tuple of (x, y) coordinates for zone center
-    """
-    zone_centers = {
-        'Restricted Area': (0, 0),
-        'In The Paint (Non-RA)': (0, 70),
-        'Mid-Range': (0, 200),
-        'Left Corner 3': (-180, 50),
-        'Right Corner 3': (180, 50),
-        'Above the Break 3': (0, 300),
-        'Backcourt': (0, 400),
+    """Approximate zone center coordinates for label placement."""
+    centers = {
+        "Restricted Area": (0, 5),
+        "In The Paint (Non-RA)": (0, 80),
+        "Mid-Range": (0, 200),
+        "Left Corner 3": (-185, 55),
+        "Right Corner 3": (185, 55),
+        "Above the Break 3": (0, 300),
+        "Backcourt": (0, 395),
     }
-    
-    # Try exact match first
-    if zone_name in zone_centers:
-        return zone_centers[zone_name]
-    
-    # Try partial matches
-    zone_lower = zone_name.lower()
-    if 'restricted' in zone_lower:
-        return zone_centers['Restricted Area']
-    elif 'paint' in zone_lower and 'non' in zone_lower:
-        return zone_centers['In The Paint (Non-RA)']
-    elif 'mid' in zone_lower or 'range' in zone_lower:
-        return zone_centers['Mid-Range']
-    elif 'left' in zone_lower and 'corner' in zone_lower:
-        return zone_centers['Left Corner 3']
-    elif 'right' in zone_lower and 'corner' in zone_lower:
-        return zone_centers['Right Corner 3']
-    elif 'above' in zone_lower or 'break' in zone_lower:
-        return zone_centers['Above the Break 3']
-    elif 'backcourt' in zone_lower:
-        return zone_centers['Backcourt']
-    
-    # Default to center court
-    return (0, 200)
+
+    if zone_name in centers:
+        return centers[zone_name]
+
+    zone = zone_name.lower()
+    if "restricted" in zone:
+        return centers["Restricted Area"]
+    if "paint" in zone:
+        return centers["In The Paint (Non-RA)"]
+    if "corner" in zone and "left" in zone:
+        return centers["Left Corner 3"]
+    if "corner" in zone and "right" in zone:
+        return centers["Right Corner 3"]
+    if "break" in zone or "above" in zone:
+        return centers["Above the Break 3"]
+    if "backcourt" in zone:
+        return centers["Backcourt"]
+    return centers["Mid-Range"]
 
 
 def zone_leaders_chart(
     zone_leaders_dict: Dict,
     title: str = "Zone Leaders - Points Per Game",
-    save_path: Optional[str] = None,
-    figsize: tuple = (14, 12)
+    figsize: tuple = (12, 10),
 ) -> plt.Figure:
-    """
-    Create a shot chart visualization showing which player leads in PPG for each zone.
-    
-    Args:
-        zone_leaders_dict: Dict from zone_leaders() mapping zone names to leader info
-        title: Chart title
-        save_path: Path to save image (optional)
-        figsize: Figure size
-    
-    Returns:
-        matplotlib Figure object
-    
-    Example:
-        >>> shots = data.get_team_shots()
-        >>> leaders = analysis.zone_leaders(shots, min_shots=5)
-        >>> zone_leaders_chart(leaders, title="Bulls Zone Leaders")
-    """
-    from bulls import data
-    
+    """Plot zone leaders as labeled callouts directly on the court."""
     fig, ax = plt.subplots(figsize=figsize)
-    
-    # Draw court
-    _draw_court(ax, color='black', lw=1.5)
-    
-    # Draw zone boundaries
-    _draw_zone_boundaries(ax, color='gray', lw=1, alpha=0.3)
-    
+    _draw_court(ax, color="black", lw=1.2)
+
     if not zone_leaders_dict:
-        ax.text(0, 200, 'No zone leaders data available', 
-                ha='center', va='center', fontsize=14)
-        ax.set_xlim(-250, 250)
-        ax.set_ylim(-47.5, 422.5)
-        ax.set_aspect('equal')
-        ax.set_title(title, fontsize=16, fontweight='bold')
-        ax.set_xticks([])
-        ax.set_yticks([])
-        plt.tight_layout()
-        return fig
-    
-    # Place player headshots/names in each zone
-    for zone_name, leader_info in zone_leaders_dict.items():
-        zone_center = _get_zone_center(zone_name)
-        x, y = zone_center
-        
-        player_id = leader_info.get('player_id')
-        player_name = leader_info.get('player_name', 'Unknown')
-        ppg = leader_info.get('ppg', 0)
-        
-        # Try to fetch headshot
-        headshot_img = None
-        if player_id:
-            try:
-                headshot_img = data.get_player_headshot(player_id, size=(80, 80))
-            except Exception:
-                pass
-        
-        # Place headshot or name
-        if headshot_img:
-            # Convert PIL image to numpy array for matplotlib
-            img_array = np.array(headshot_img)
-            im = OffsetImage(img_array, zoom=0.5)
-            ab = AnnotationBbox(im, (x, y), frameon=True, 
-                               bboxprops=dict(boxstyle='round,pad=2', 
-                                            facecolor='white', 
-                                            edgecolor=tuple(c/255 for c in BULLS_RED),
-                                            linewidth=2))
-            ax.add_artist(ab)
-        else:
-            # Use text if no headshot
-            ax.text(x, y, player_name, ha='center', va='center',
-                   fontsize=10, fontweight='bold',
-                   bbox=dict(boxstyle='round,pad=3', 
-                           facecolor='white', 
-                           edgecolor=tuple(c/255 for c in BULLS_RED),
-                           linewidth=2))
-        
-        # Add PPG label below headshot/name
-        label_y = y - 60
-        ax.text(x, label_y, f"{ppg:.1f} PPG", ha='center', va='center',
-               fontsize=9, fontweight='bold',
-               bbox=dict(boxstyle='round,pad=2', 
-                       facecolor=tuple(c/255 for c in BULLS_RED), 
-                       edgecolor='black',
-                       linewidth=1))
-        
-        # Add zone name label
-        zone_label_y = y + 60 if y < 200 else y - 80
-        ax.text(x, zone_label_y, zone_name, ha='center', va='center',
-               fontsize=8, style='italic', alpha=0.7)
-    
-    # Set court dimensions
+        ax.text(0, 180, "No zone leaders data", ha="center", va="center", fontsize=13)
+    else:
+        for zone_name, leader in zone_leaders_dict.items():
+            x, y = _get_zone_center(zone_name)
+            player_name = leader.get("player_name", "Unknown")
+            ppg = float(leader.get("ppg", 0))
+
+            ax.text(
+                x,
+                y,
+                f"{player_name}\n{ppg:.1f} PPG",
+                ha="center",
+                va="center",
+                fontsize=9,
+                fontweight="bold",
+                bbox={
+                    "boxstyle": "round,pad=0.3",
+                    "facecolor": "white",
+                    "edgecolor": _mpl_color(BULLS_RED),
+                    "linewidth": 1.3,
+                },
+            )
+            ax.text(x, y + 48, zone_name, ha="center", va="center", fontsize=8, color="dimgray")
+
     ax.set_xlim(-250, 250)
     ax.set_ylim(-47.5, 422.5)
-    ax.set_aspect('equal')
-    ax.set_title(title, fontsize=18, fontweight='bold', pad=20)
-    
-    # Remove axis labels for cleaner look
+    ax.set_aspect("equal")
+    ax.set_title(title, fontsize=14, fontweight="bold")
     ax.set_xticks([])
     ax.set_yticks([])
 
     plt.tight_layout()
-
-    if save_path:
-        OUTPUT_DIR.mkdir(exist_ok=True)
-        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
-        print(f"Saved to {save_path}")
-
     return fig
 
 
-def _create_efficiency_gradient(
-    ax,
-    x_range: tuple,
-    y_range: tuple,
-    league_avg_ts: float,
-) -> None:
-    """
-    Create subtle gradient background based on efficiency zones.
-
-    Args:
-        ax: matplotlib axes
-        x_range: Tuple of (x_min, x_max) for the plot
-        y_range: Tuple of (y_min, y_max) for the plot
-        league_avg_ts: League average TS% for gradient center
-    """
-    # Create a gradient that goes from red (inefficient) to green (efficient)
-    # based on y-axis (efficiency)
-    y_min, y_max = y_range
-    x_min, x_max = x_range
-
-    # Create grid for gradient
-    y_vals = np.linspace(y_min, y_max, 100)
-
-    # Normalize efficiency values to 0-1 range for colormap
-    # Below league avg = red, above = green
-    normalized = (y_vals - y_min) / (y_max - y_min)
-
-    # Create custom colormap: red -> white -> green
-    colors = [
-        tuple(c / 255 for c in RED_COLOR),
-        (1, 1, 1),
-        tuple(c / 255 for c in GREEN),
-    ]
-    cmap = mcolors.LinearSegmentedColormap.from_list('efficiency', colors)
-
-    # Create 2D gradient image (efficiency increases with y)
-    gradient = np.tile(normalized, (100, 1)).T
-
-    ax.imshow(
-        gradient,
-        extent=[x_min, x_max, y_min, y_max],
-        aspect='auto',
-        cmap=cmap,
-        alpha=0.15,
-        zorder=0,
-        origin='lower',
-    )
-
-
-def _adjust_positions_for_overlap(
-    positions: List[tuple],
-    min_distance: float = 0.8,
-    iterations: int = 50,
-) -> List[tuple]:
-    """
-    Push overlapping positions apart using simple repulsion.
-
-    Args:
-        positions: List of (x, y) tuples
-        min_distance: Minimum distance between points (in data units)
-        iterations: Number of repulsion iterations
-
-    Returns:
-        Adjusted list of (x, y) tuples
-    """
-    if len(positions) <= 1:
-        return positions
-
-    positions = [list(p) for p in positions]  # Make mutable
-
-    for _ in range(iterations):
-        for i in range(len(positions)):
-            for j in range(i + 1, len(positions)):
-                dx = positions[j][0] - positions[i][0]
-                dy = positions[j][1] - positions[i][1]
-                dist = np.sqrt(dx ** 2 + dy ** 2)
-
-                if dist < min_distance and dist > 0:
-                    # Calculate repulsion force
-                    overlap = min_distance - dist
-                    force = overlap / 2
-
-                    # Normalize direction
-                    dx_norm = dx / dist
-                    dy_norm = dy / dist
-
-                    # Apply repulsion
-                    positions[i][0] -= dx_norm * force
-                    positions[i][1] -= dy_norm * force
-                    positions[j][0] += dx_norm * force
-                    positions[j][1] += dy_norm * force
-
-    return [(p[0], p[1]) for p in positions]
-
-
 def efficiency_matrix(
-    players_data: List[Dict],
+    players_data: List[dict],
     title: str = "Bulls Efficiency Matrix",
     league_avg_ts: float = 57.0,
     league_avg_fga: float = 12.0,
     show_gradient: bool = True,
     show_names: bool = True,
-    save_path: Optional[str] = None,
-    figsize: tuple = (12, 10),
+    figsize: tuple = (12, 8),
 ) -> plt.Figure:
-    """
-    Create an Instagram-style efficiency matrix showing players as headshots.
-
-    X-axis shows Volume (FGA per game), Y-axis shows Efficiency (True Shooting %).
-    Players are displayed as circular headshots positioned by their metrics.
-    Quadrant labels identify player types: Stars, Specialists, Chuckers, Limited.
-
-    Args:
-        players_data: List of dicts with player_id, name, ts_pct, fga_per_game
-        title: Chart title
-        league_avg_ts: League average TS% for quadrant division (default: 57.0)
-        league_avg_fga: League average FGA for quadrant division (default: 12.0)
-        show_gradient: Show efficiency gradient background
-        show_names: Show player first names below headshots
-        save_path: Path to save image (optional)
-        figsize: Figure size
-
-    Returns:
-        matplotlib Figure object
-
-    Example:
-        >>> roster = data.get_roster_efficiency(last_n_games=10, min_fga=5.0)
-        >>> fig = efficiency_matrix(roster, title="Bulls Efficiency Matrix")
-        >>> plt.show()
-    """
-    from bulls import data
-
+    """Plot TS% vs volume (FGA/G) in a quadrant matrix."""
     fig, ax = plt.subplots(figsize=figsize)
 
-    # Handle empty data
     if not players_data:
-        ax.text(0.5, 0.5, 'No player data available',
-                ha='center', va='center', fontsize=14,
-                transform=ax.transAxes)
-        ax.set_title(title, fontsize=18, fontweight='bold')
+        ax.text(0.5, 0.5, "No player data", ha="center", va="center", transform=ax.transAxes)
+        ax.set_title(title, fontsize=14, fontweight="bold")
         return fig
 
-    # Extract data points
-    x_vals = [p.get('fga_per_game', 0) for p in players_data]
-    y_vals = [p.get('ts_pct', 0) for p in players_data]
+    df = pd.DataFrame(players_data).copy()
+    required = ["ts_pct", "fga_per_game"]
+    missing = [col for col in required if col not in df.columns]
+    if missing:
+        ax.text(0.5, 0.5, f"Missing column(s): {', '.join(missing)}", ha="center", va="center", transform=ax.transAxes)
+        ax.set_title(title, fontsize=14, fontweight="bold")
+        return fig
 
-    # Calculate axis ranges with padding
-    x_min = min(x_vals) - 2 if x_vals else 0
-    x_max = max(x_vals) + 2 if x_vals else 20
-    y_min = min(y_vals) - 5 if y_vals else 40
-    y_max = max(y_vals) + 5 if y_vals else 70
+    x = df["fga_per_game"].astype(float)
+    y = df["ts_pct"].astype(float)
 
-    # Ensure league averages are visible in the plot
-    x_min = min(x_min, league_avg_fga - 5)
-    x_max = max(x_max, league_avg_fga + 5)
-    y_min = min(y_min, league_avg_ts - 10)
-    y_max = max(y_max, league_avg_ts + 10)
+    x_margin = max((x.max() - x.min()) * 0.15, 1.0)
+    y_margin = max((y.max() - y.min()) * 0.15, 1.0)
+
+    x_min = min(x.min() - x_margin, league_avg_fga - x_margin)
+    x_max = max(x.max() + x_margin, league_avg_fga + x_margin)
+    y_min = min(y.min() - y_margin, league_avg_ts - y_margin)
+    y_max = max(y.max() + y_margin, league_avg_ts + y_margin)
+
+    if show_gradient:
+        gradient = np.linspace(0, 1, 256).reshape(-1, 1)
+        ax.imshow(
+            gradient,
+            extent=[x_min, x_max, y_min, y_max],
+            origin="lower",
+            cmap="RdYlGn",
+            alpha=0.12,
+            aspect="auto",
+            zorder=0,
+        )
+
+    ax.scatter(
+        x,
+        y,
+        s=120,
+        color=_mpl_color(BULLS_RED),
+        edgecolors="black",
+        linewidth=0.7,
+        zorder=3,
+    )
+
+    if show_names and "name" in df.columns:
+        for _, row in df.iterrows():
+            ax.annotate(
+                str(row.get("name", "")),
+                (float(row["fga_per_game"]), float(row["ts_pct"])),
+                textcoords="offset points",
+                xytext=(6, 6),
+                fontsize=9,
+                zorder=4,
+            )
+
+    ax.axhline(league_avg_ts, color="gray", linestyle="--", linewidth=1.2)
+    ax.axvline(league_avg_fga, color="gray", linestyle="--", linewidth=1.2)
+
+    quadrant_style = {"fontsize": 9, "color": "dimgray", "ha": "center", "va": "center"}
+    ax.text((x_min + league_avg_fga) / 2, (league_avg_ts + y_max) / 2, "Efficient\nLow Volume", **quadrant_style)
+    ax.text((league_avg_fga + x_max) / 2, (league_avg_ts + y_max) / 2, "Efficient\nHigh Volume", **quadrant_style)
+    ax.text((x_min + league_avg_fga) / 2, (y_min + league_avg_ts) / 2, "Inefficient\nLow Volume", **quadrant_style)
+    ax.text((league_avg_fga + x_max) / 2, (y_min + league_avg_ts) / 2, "Inefficient\nHigh Volume", **quadrant_style)
 
     ax.set_xlim(x_min, x_max)
     ax.set_ylim(y_min, y_max)
+    ax.set_xlabel("Field Goal Attempts per Game")
+    ax.set_ylabel("True Shooting %")
+    ax.set_title(title, fontsize=14, fontweight="bold")
+    ax.grid(alpha=0.2)
 
-    # Add gradient background
-    if show_gradient:
-        _create_efficiency_gradient(ax, (x_min, x_max), (y_min, y_max), league_avg_ts)
-
-    # Draw quadrant dividers
-    ax.axhline(y=league_avg_ts, color='gray', linestyle='--', alpha=0.7, linewidth=1.5, zorder=1)
-    ax.axvline(x=league_avg_fga, color='gray', linestyle='--', alpha=0.7, linewidth=1.5, zorder=1)
-
-    # Add quadrant labels
-    label_style = dict(fontsize=12, fontweight='bold', alpha=0.4, ha='center', va='center')
-
-    # Stars: High efficiency, high volume (top-right)
-    ax.text(
-        x_max - (x_max - league_avg_fga) * 0.5,
-        y_max - (y_max - league_avg_ts) * 0.15,
-        'STARS',
-        color=tuple(c / 255 for c in GREEN),
-        **label_style,
+    ax.legend(
+        handles=[
+            Patch(facecolor=_mpl_color(BULLS_RED), edgecolor="black", label="Bulls Players"),
+            Line2D([0], [0], color="gray", linestyle="--", label=f"League Avg TS% ({league_avg_ts})"),
+            Line2D([0], [0], color="gray", linestyle="--", label=f"League Avg FGA/G ({league_avg_fga})"),
+        ],
+        loc="best",
     )
-
-    # Specialists: High efficiency, low volume (top-left)
-    ax.text(
-        x_min + (league_avg_fga - x_min) * 0.5,
-        y_max - (y_max - league_avg_ts) * 0.15,
-        'SPECIALISTS',
-        color=tuple(c / 255 for c in GREEN),
-        **label_style,
-    )
-
-    # Chuckers: Low efficiency, high volume (bottom-right)
-    ax.text(
-        x_max - (x_max - league_avg_fga) * 0.5,
-        y_min + (league_avg_ts - y_min) * 0.15,
-        'CHUCKERS',
-        color=tuple(c / 255 for c in RED_COLOR),
-        **label_style,
-    )
-
-    # Limited: Low efficiency, low volume (bottom-left)
-    ax.text(
-        x_min + (league_avg_fga - x_min) * 0.5,
-        y_min + (league_avg_ts - y_min) * 0.15,
-        'LIMITED',
-        color='gray',
-        **label_style,
-    )
-
-    # Prepare positions and adjust for overlap
-    positions = list(zip(x_vals, y_vals))
-
-    # Calculate min_distance based on axis scale
-    x_range = x_max - x_min
-    y_range = y_max - y_min
-    min_dist = min(x_range, y_range) * 0.08
-
-    adjusted_positions = _adjust_positions_for_overlap(positions, min_distance=min_dist)
-
-    # Place player headshots
-    for i, player in enumerate(players_data):
-        x, y = adjusted_positions[i]
-        player_id = player.get('player_id')
-        name = player.get('name', 'Unknown')
-
-        # Fetch headshot
-        headshot_img = None
-        if player_id:
-            try:
-                headshot_img = data.get_player_headshot(player_id, size=(80, 80))
-            except Exception:
-                pass
-
-        if headshot_img is not None:
-            # Convert PIL image to numpy array
-            img_array = np.array(headshot_img)
-            im = OffsetImage(img_array, zoom=0.5)
-            ab = AnnotationBbox(
-                im, (x, y),
-                frameon=True,
-                bboxprops=dict(
-                    boxstyle='round,pad=0.2',
-                    facecolor='white',
-                    edgecolor=tuple(c / 255 for c in BULLS_RED),
-                    linewidth=2,
-                ),
-                zorder=5,
-            )
-            ax.add_artist(ab)
-        else:
-            # Fallback: draw a circle with initials
-            initials = ''.join(word[0] for word in name.split()[:2]).upper()
-            circle = plt.Circle(
-                (x, y),
-                radius=min_dist * 0.4,
-                facecolor='white',
-                edgecolor=tuple(c / 255 for c in BULLS_RED),
-                linewidth=2,
-                zorder=5,
-            )
-            ax.add_patch(circle)
-            ax.text(x, y, initials, ha='center', va='center',
-                    fontsize=10, fontweight='bold', zorder=6)
-
-        # Add player first name below headshot
-        if show_names:
-            first_name = name.split()[0] if name else ''
-            name_y_offset = min_dist * 0.7
-            ax.text(
-                x, y - name_y_offset,
-                first_name,
-                ha='center', va='top',
-                fontsize=8, fontweight='bold',
-                zorder=6,
-            )
-
-    # Labels and styling
-    ax.set_xlabel('Volume (FGA per Game)', fontsize=12, fontweight='bold')
-    ax.set_ylabel('Efficiency (True Shooting %)', fontsize=12, fontweight='bold')
-    ax.set_title(title, fontsize=18, fontweight='bold', pad=20)
-    ax.grid(True, alpha=0.3, zorder=0)
 
     plt.tight_layout()
-
-    if save_path:
-        OUTPUT_DIR.mkdir(exist_ok=True)
-        fig.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
-        print(f"Saved to {save_path}")
-
     return fig

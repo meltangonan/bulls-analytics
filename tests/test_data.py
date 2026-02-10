@@ -1,13 +1,11 @@
 """Tests for bulls.data module."""
 import pytest
 import pandas as pd
-from PIL import Image
 from bulls.data import (
     get_games,
     get_latest_game,
     get_box_score,
     get_player_games,
-    get_player_headshot,
     get_player_shots,
     get_roster_efficiency,
 )
@@ -156,28 +154,6 @@ class TestGetPlayerGames:
             assert 'fg3_pct' in player_games.columns
             assert pd.api.types.is_numeric_dtype(player_games['fg_pct'])
             assert pd.api.types.is_numeric_dtype(player_games['fg3_pct'])
-
-
-class TestGetPlayerHeadshot:
-    """Tests for get_player_headshot function."""
-
-    def test_returns_image(self, mock_headshot_request):
-        """get_player_headshot should return a PIL Image."""
-        img = get_player_headshot(1629632)
-        assert isinstance(img, Image.Image)
-
-    def test_handles_invalid_player_id(self, mock_headshot_error):
-        """get_player_headshot should handle invalid player_id gracefully."""
-        img = get_player_headshot(999999999)
-        assert isinstance(img, Image.Image)
-        # Should return placeholder image (gray)
-
-    def test_handles_network_errors(self, mock_headshot_error):
-        """get_player_headshot should handle network errors gracefully."""
-        img = get_player_headshot(0)
-        assert isinstance(img, Image.Image)
-        # Should return placeholder image
-        assert img.size == (300, 300)  # Default size
 
 
 class TestGetPlayerShots:

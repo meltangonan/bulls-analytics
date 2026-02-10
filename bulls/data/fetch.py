@@ -2,10 +2,8 @@
 import time
 import json
 import requests
-from io import BytesIO
 from typing import Optional, List, Dict
 import pandas as pd
-from PIL import Image
 
 from nba_api.stats.endpoints import (
     leaguegamefinder,
@@ -18,7 +16,6 @@ from bulls.config import (
     CURRENT_SEASON,
     LAST_SEASON,
     API_DELAY,
-    NBA_HEADSHOT_URL,
     NBA_TEAMS,
 )
 
@@ -217,40 +214,6 @@ def get_player_games(
         df['ft_pct'] = (df['ft_made'] / df['ft_attempted'].replace(0, 1) * 100).round(1)
 
     return df
-
-
-def get_player_headshot(
-    player_id: int,
-    size: tuple = (300, 300)
-) -> Image.Image:
-    """
-    Fetch player headshot from NBA CDN.
-    
-    Args:
-        player_id: NBA player ID
-        size: Resize to (width, height)
-    
-    Returns:
-        PIL Image object
-    
-    Example:
-        >>> # Get Coby White's headshot (ID: 1629632)
-        >>> img = get_player_headshot(1629632)
-        >>> img.save("coby.png")
-    """
-    url = NBA_HEADSHOT_URL.format(player_id=player_id)
-    
-    try:
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
-        img = Image.open(BytesIO(response.content))
-        img = img.convert('RGBA')
-        img = img.resize(size, Image.Resampling.LANCZOS)
-        return img
-    except (requests.RequestException, OSError, ValueError) as e:
-        print(f"Could not fetch headshot for {player_id}: {e}")
-        # Return placeholder
-        return Image.new('RGBA', size, (100, 100, 100, 255))
 
 
 def get_player_shots(

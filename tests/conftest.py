@@ -1,8 +1,6 @@
 """Pytest fixtures for Bulls Analytics tests."""
 import pytest
 import pandas as pd
-from io import BytesIO
-from PIL import Image
 from unittest.mock import MagicMock, patch
 
 from bulls.config import BULLS_TEAM_ID
@@ -170,32 +168,6 @@ def mock_empty_box_score_api():
         mock_instance.player_stats.get_data_frame.return_value = pd.DataFrame()
         mock_box.return_value = mock_instance
         yield mock_box
-
-
-@pytest.fixture
-def mock_headshot_request():
-    """Mock requests.get for player headshot URLs."""
-    with patch('bulls.data.fetch.requests.get') as mock_get:
-        # Create a simple test image
-        img = Image.new('RGBA', (260, 190), (255, 0, 0, 255))
-        img_bytes = BytesIO()
-        img.save(img_bytes, format='PNG')
-        img_bytes.seek(0)
-
-        mock_response = MagicMock()
-        mock_response.content = img_bytes.read()
-        mock_response.raise_for_status = MagicMock()
-        mock_get.return_value = mock_response
-        yield mock_get
-
-
-@pytest.fixture
-def mock_headshot_error():
-    """Mock requests.get to simulate a network error."""
-    import requests
-    with patch('bulls.data.fetch.requests.get') as mock_get:
-        mock_get.side_effect = requests.RequestException("Network error")
-        yield mock_get
 
 
 @pytest.fixture

@@ -2,7 +2,7 @@
 Bulls Analytics - Collaborative analysis workspace for Chicago Bulls data.
 
 Usage:
-    from bulls import data, analysis, viz
+    from bulls import data, analysis, viz, graphics
     
     # Get recent games
     games = data.get_games(last_n=10)
@@ -17,11 +17,16 @@ Usage:
     # Visualize
     viz.bar_chart(coby, x='date', y='points', title="Coby's Scoring")
     viz.line_chart(coby, x='date', y='points', title="Coby's Scoring Trend")
+
+    # Build social graphics
+    shots = data.get_team_shots(last_n_games=10)
+    fig = graphics.build_zone_pps_post(shots)
 """
 
 from bulls import data
 from bulls import analysis
 from bulls import viz
+from bulls import graphics
 from bulls.config import BULLS_TEAM_ID, CURRENT_SEASON
 
 __version__ = "0.1.0"

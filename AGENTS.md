@@ -17,12 +17,16 @@ Guidance for Codex and other coding agents working in this repo.
 3. Keep notebooks concise: headings + one-liner context.
 4. Extract helper functions only when notebook logic repeats 2-3 times.
 5. Prefer small, test-backed changes.
+6. Use one notebook per idea with consistent section structure.
 
 ## Repo Conventions
 - `bulls/data`: NBA API fetch helpers
 - `bulls/analysis`: stat and shot-quality logic
 - `bulls/viz`: matplotlib notebook chart helpers
-- `notebooks`: exploration and visual analysis
+- `notebooks/active`: current idea notebooks (`YYYY-MM-DD-topic-slug.ipynb`)
+- `notebooks/archive`: frozen/older notebooks
+- `notebooks/templates`: starter notebooks
+- `notebooks/INDEX.md`: notebook catalog + workflow rules
 - `tests`: fast unit tests with mocks
 
 ## Validation

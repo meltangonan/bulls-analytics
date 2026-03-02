@@ -17,7 +17,11 @@ bulls-analytics/
 │   ├── data/       # NBA API fetch helpers
 │   ├── analysis/   # stat + shot-quality analysis helpers
 │   └── viz/        # matplotlib chart helpers for notebooks
-├── notebooks/      # exploratory analysis notebooks
+├── notebooks/
+│   ├── active/     # current idea notebooks
+│   ├── archive/    # older/frozen notebooks
+│   ├── templates/  # notebook starter templates
+│   └── INDEX.md    # notebook catalog + workflow rules
 ├── tests/          # focused unit tests with mocked API calls
 └── output/         # optional scratch folder (not part of core workflow)
 ```
@@ -50,6 +54,21 @@ team_shots = data.get_team_shots(last_n_games=10)
 pps = analysis.points_per_shot(team_shots, by_zone=True)
 fig = viz.shot_chart(team_shots, show_zones=False, title="Bulls Shot Chart")
 ```
+
+## Notebook Workflow (One Notebook Per Idea)
+- New notebook location: `notebooks/active/`
+- Name format: `YYYY-MM-DD-topic-slug.ipynb`
+- Start from template: `notebooks/templates/idea_template.ipynb`
+- Move completed notebooks to: `notebooks/archive/`
+- Keep notebook list updated in: `notebooks/INDEX.md`
+
+Notebook section contract:
+- `Objective` (one sentence)
+- `Data Pull` (imports + fetch only)
+- `Analysis` (2-4 focused blocks)
+- `Output` (1-2 key charts/tables)
+- `Takeaways` (3 bullets)
+- `Next Question` (one line)
 
 ## Keep It Simple Rules
 - Start analysis in notebooks.

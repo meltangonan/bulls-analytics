@@ -12,7 +12,10 @@ This project is notebook-first Bulls analysis.
 
 ## Working Style
 - Keep reusable code in `bulls/data`, `bulls/analysis`, and `bulls/viz`.
-- Keep notebooks concise (short markdown, more code/plots).
+- Use one notebook per idea in `notebooks/active/` with file name format `YYYY-MM-DD-topic-slug.ipynb`.
+- Start new work from `notebooks/templates/idea_template.ipynb`.
+- Move completed notebooks to `notebooks/archive/` and keep `notebooks/INDEX.md` updated.
+- Keep notebooks concise (short markdown, focused code/plots).
 - Do not add PNG/export workflows by default.
 
 ## Tests

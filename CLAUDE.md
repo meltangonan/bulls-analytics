@@ -21,6 +21,7 @@ bulls/
   viz/charts.py      # Matplotlib chart helpers (bar, line, shot chart, radar, etc.)
 scripts/             # CLI entrypoints for generating graphics
   make_zone_leaders.py   # Zone leaders PPG + frequency graphics
+  make_zone_shooting.py  # Zone shooting stats (team aggregate or volume leaders)
   make_feed_post.py      # General feed post generation
 notebooks/
   templates/idea_template.ipynb  # Starting point for new notebooks
@@ -47,6 +48,7 @@ tests/               # pytest suite (112 tests)
 - `detailed_zones(team_shots)` — expands 6 basic zones into 12 granular zones
 - `zone_leaders(team_shots, min_shots=)` — PPG leader per zone
 - `zone_leaders_by_frequency(team_shots, min_shots=)` — FGA/game leader per zone
+- `zone_volume_leaders(team_shots, min_shots=)` — highest-FGA shooter per zone (returns FGM, FGA, FG%)
 - `points_per_shot(team_shots, by_zone=)` — PPS overall and per zone
 - `league_pps_by_zone(league_shots)`, `high_value_zone_usage(league_shots)`
 - `season_averages()`, `efficiency_metrics()`, `scoring_trend()`, `rolling_averages()`
@@ -55,6 +57,8 @@ tests/               # pytest suite (112 tests)
 - `build_zone_leaders_post(team_shots, title=, subtitle=, footnote=, min_shots=)` — PPG court map
 - `build_zone_frequency_post(team_shots, ...)` — frequency court map
 - `build_zone_pps_post(team_shots, ...)` — horizontal bar chart of PPS by zone
+- `build_zone_team_stats_post(team_shots, ...)` — court map with team FGM/FGA + FG% per zone
+- `build_zone_volume_leaders_post(team_shots, ...)` — court map with top volume shooter per zone
 - `save_feed_post(fig, output_path)` — saves to PNG at 150 DPI
 
 ## Working Style
@@ -79,6 +83,7 @@ tests/               # pytest suite (112 tests)
 - Headshots are auto-downloaded from the NBA CDN and cached in `cache/headshots/`.
 - Output goes to `output/feed/` with naming: `YYYY-MM-DD-zone-{mode}-{scope}.png`.
 - To generate via CLI: `venv/bin/python scripts/make_zone_leaders.py --mode ppg|frequency [--last-n-games N]`.
+- Zone shooting stats: `venv/bin/python scripts/make_zone_shooting.py --mode team|volume [--last-n-games N] [--min-shots N]`.
 
 ## Clarification Gate (Visual Requests)
 - Before creating a new visual, clarify request details first.

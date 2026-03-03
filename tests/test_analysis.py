@@ -12,6 +12,7 @@ from bulls.analysis import (
     consistency_score,
     points_per_shot,
     high_value_zone_usage,
+    zone_volume_leaders,
 )
 
 
@@ -759,3 +760,80 @@ class TestHighValueZoneUsage:
 
         chi_row = result[result['team_abbr'] == 'CHI'].iloc[0]
         assert chi_row['total_shots'] == 3  # Backcourt included
+
+
+class TestZoneVolumeLeaders:
+    """Tests for zone_volume_leaders function."""
+
+    def _make_shots(self):
+        """Helper: create shots with two players across two zones."""
+        rows = []
+        # Player A: 10 shots in Restricted Area (7 made)
+        for i in range(10):
+            rows.append({
+                'player_id': 1, 'player_name': 'Player A',
+                'shot_zone': 'Restricted Area', 'shot_made': i < 7,
+            })
+        # Player B: 6 shots in Restricted Area (3 made)
+        for i in range(6):
+            rows.append({
+                'player_id': 2, 'player_name': 'Player B',
+                'shot_zone': 'Restricted Area', 'shot_made': i < 3,
+            })
+        # Player B: 8 shots in Mid-Range (4 made)
+        for i in range(8):
+            rows.append({
+                'player_id': 2, 'player_name': 'Player B',
+                'shot_zone': 'Mid-Range', 'shot_made': i < 4,
+            })
+        return pd.DataFrame(rows)
+
+    def test_returns_leader_per_zone(self):
+        """Should return correct leader with fgm, fga, fg_pct per zone."""
+        shots = self._make_shots()
+        result = zone_volume_leaders(shots, min_shots=5)
+
+        assert 'Restricted Area' in result
+        leader = result['Restricted Area']
+        assert leader['player_name'] == 'Player A'
+        assert leader['fga'] == 10
+        assert leader['fgm'] == 7
+        assert leader['fg_pct'] == 70.0
+
+        assert 'Mid-Range' in result
+        assert result['Mid-Range']['player_name'] == 'Player B'
+        assert result['Mid-Range']['fga'] == 8
+
+    def test_respects_min_shots(self):
+        """Should filter out players below min_shots threshold."""
+        shots = self._make_shots()
+        # With min_shots=7, Player B (6 FGA) doesn't qualify in Restricted Area
+        # but Player A (10) still leads; in Mid-Range Player B (8) qualifies
+        result = zone_volume_leaders(shots, min_shots=7)
+
+        assert result['Restricted Area']['player_name'] == 'Player A'
+        assert result['Mid-Range']['player_name'] == 'Player B'
+
+    def test_excludes_backcourt(self):
+        """Should exclude Backcourt zone by default."""
+        rows = []
+        for i in range(5):
+            rows.append({
+                'player_id': 1, 'player_name': 'Player A',
+                'shot_zone': 'Backcourt', 'shot_made': False,
+            })
+        for i in range(5):
+            rows.append({
+                'player_id': 1, 'player_name': 'Player A',
+                'shot_zone': 'Restricted Area', 'shot_made': i < 3,
+            })
+        shots = pd.DataFrame(rows)
+        result = zone_volume_leaders(shots, min_shots=1)
+
+        assert 'Backcourt' not in result
+        assert 'Restricted Area' in result
+
+    def test_handles_empty_dataframe(self):
+        """Should return empty dict for empty input."""
+        result = zone_volume_leaders(pd.DataFrame())
+        assert result == {}

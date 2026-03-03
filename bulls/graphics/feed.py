@@ -210,24 +210,24 @@ def _zone_positions() -> dict:
     """
     return {
         # Interior
-        "Restricted Area": (0, 12),
+        "Restricted Area": (0, -2),
         "In The Paint (Non-RA)": (0, 100),
         # Baseline mid-range (short corner)
-        "Left Baseline": (-125, 30),
-        "Right Baseline": (125, 30),
+        "Left Baseline": (-145, 30),
+        "Right Baseline": (145, 30),
         # Wing mid-range
-        "Left Mid-Range": (-140, 140),
-        "Right Mid-Range": (140, 140),
+        "Left Mid-Range": (-145, 140),
+        "Right Mid-Range": (145, 140),
         # Top-of-key mid-range
         "Center Mid-Range": (0, 188),
         # Corner 3s — clearly outside the 3pt line (line at x=±220)
-        "Left Corner 3": (-245, 25),
-        "Right Corner 3": (245, 25),
+        "Left Corner 3": (-250, 25),
+        "Right Corner 3": (250, 25),
         # Wing 3s — above the arc, names clear of the line
-        "Left Wing 3": (-172, 228),
-        "Right Wing 3": (172, 228),
+        "Left Wing 3": (-172, 213),
+        "Right Wing 3": (172, 213),
         # Top of key 3 — above the arc apex (237.5)
-        "Top of Key 3": (0, 282),
+        "Top of Key 3": (0, 267),
         # Fallbacks for basic (6-zone) data
         "Mid-Range": (-140, 140),
         "Above the Break 3": (0, 268),
@@ -425,6 +425,140 @@ def build_zone_frequency_post(
         return fig
 
     _place_headshots(ax, leaders, ctx["ink"], headshot_cache_dir)
+    return fig
+
+
+def _draw_zone_borders(ax, color: str = "#BBBBBB", alpha: float = 0.5, lw: float = 1.0):
+    """Draw semi-transparent lines dividing the court into 12 zones."""
+    pass
+
+
+# Font sizes per zone tier for text-only zone stats
+_TIER_TEXT_SETTINGS = {
+    "xl": {"fs_main": 13, "fs_sub": 11},
+    "lg": {"fs_main": 12, "fs_sub": 10},
+    "md": {"fs_main": 11, "fs_sub": 9.5},
+    "sm": {"fs_main": 10, "fs_sub": 8.5},
+}
+
+
+def _place_zone_text(ax, zone_data: dict, ink: str, mode: str = "team",
+                     total_shots: int = 0):
+    """Place text stats on the court for each zone.
+
+    Args:
+        ax: Matplotlib axes with court drawn
+        zone_data: Dict mapping zone name -> stats dict
+        ink: Text color
+        mode: "team" shows FGM/FGA + distribution %, "volume" shows player name + FGM/FGA + FG%
+        total_shots: Total shot attempts across all zones (used for distribution % in team mode)
+    """
+    positions = _zone_positions()
+
+    for zone_name, stats in zone_data.items():
+        if zone_name not in positions:
+            continue
+
+        x, y = positions[zone_name]
+        tier_key = _ZONE_TIER.get(zone_name, "sm")
+        tier = _TIER_TEXT_SETTINGS[tier_key]
+
+        if mode == "team":
+            made = stats.get('made', 0)
+            attempted = stats.get('attempted', 0)
+
+            if total_shots > 0:
+                dist_pct = attempted / total_shots * 100
+                sub_label = f"{dist_pct:.1f}% of shots"
+            else:
+                pct = stats.get('pct', 0.0)
+                sub_label = f"{pct:.1f}%"
+
+            main_label = f"{made}/{attempted}"
+            fs_sub = 8.5 if tier_key == "sm" else 10.5
+
+            ax.text(x, y + 8, main_label,
+                    ha="center", va="center", fontsize=12,
+                    color=ink, fontproperties=_fp_body(weight="bold"))
+            ax.text(x, y - 12, sub_label,
+                    ha="center", va="center", fontsize=fs_sub,
+                    color=ink, fontproperties=_fp_body(weight="bold"))
+
+        elif mode == "volume":
+            player_name = stats.get('player_name', '')
+            fgm = stats.get('fgm', 0)
+            fga = stats.get('fga', 0)
+            fg_pct = stats.get('fg_pct', 0.0)
+
+            last_name = player_name.split()[-1] if player_name else ''
+
+            ax.text(x, y + 16, last_name,
+                    ha="center", va="center", fontsize=tier["fs_main"],
+                    color=ink, fontproperties=_fp_body(weight="bold"))
+            ax.text(x, y - 4, f"{fgm}/{fga}",
+                    ha="center", va="center", fontsize=tier["fs_sub"],
+                    color=ink, fontproperties=_fp_body(weight="medium"))
+            ax.text(x, y - 22, f"{fg_pct:.1f}%",
+                    ha="center", va="center", fontsize=tier["fs_sub"],
+                    color=ink, fontproperties=_fp_body(weight="medium"))
+
+
+def build_zone_team_stats_post(
+    team_shots: pd.DataFrame,
+    title: str = "Zone Shooting",
+    subtitle: str = "Chicago Bulls | 2025-26 Season",
+    footnote: str = "Shot Attempts and Distribution by Court Area",
+) -> plt.Figure:
+    """Build a court map showing team aggregate FGM/FGA and shot distribution % per zone."""
+    fig, ax, ctx = _build_court_canvas(title, subtitle, footnote)
+
+    if team_shots.empty:
+        ax.text(0, 130, "No shot data available", ha="center", va="center",
+                fontsize=16, color=ctx["ink"])
+        return fig
+
+    shots_detailed = analysis.detailed_zones(team_shots)
+    shots_detailed = shots_detailed[shots_detailed['shot_zone'] != 'Backcourt']
+    zone_stats = analysis.game_zone_stats(shots_detailed)
+
+    if not zone_stats:
+        ax.text(0, 130, "No zone stats found", ha="center", va="center",
+                fontsize=16, color=ctx["ink"])
+        return fig
+
+    total_shots = sum(s['attempted'] for s in zone_stats.values())
+
+    _draw_zone_borders(ax)
+    _place_zone_text(ax, zone_stats, ctx["ink"], mode="team",
+                     total_shots=total_shots)
+    return fig
+
+
+def build_zone_volume_leaders_post(
+    team_shots: pd.DataFrame,
+    title: str = "Zone Volume Leaders",
+    subtitle: str = "Chicago Bulls | 2025-26 Season",
+    footnote: str = "Highest FGA by Court Area",
+    min_shots: int = 5,
+) -> plt.Figure:
+    """Build a court map showing the top volume shooter per zone."""
+    fig, ax, ctx = _build_court_canvas(title, subtitle, footnote)
+
+    if team_shots.empty:
+        ax.text(0, 130, "No shot data available", ha="center", va="center",
+                fontsize=16, color=ctx["ink"])
+        return fig
+
+    shots_detailed = analysis.detailed_zones(team_shots)
+    leaders = analysis.zone_volume_leaders(shots_detailed, min_shots=min_shots)
+
+    if not leaders:
+        ax.text(0, 130, "No zone leaders found", ha="center", va="center",
+                fontsize=16, color=ctx["ink"])
+        return fig
+
+    _draw_zone_borders(ax)
+    _place_zone_text(ax, leaders, ctx["ink"], mode="volume")
     return fig
 
 

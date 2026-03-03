@@ -12,6 +12,7 @@ from bulls.analysis.stats import (
     points_per_shot,
     zone_leaders,
     zone_leaders_by_frequency,
+    zone_volume_leaders,
     league_pps_by_zone,
     high_value_zone_usage,
     zone_value_ranking,

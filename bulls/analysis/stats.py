@@ -675,6 +675,87 @@ def zone_leaders_by_frequency(
     return leaders
 
 
+def zone_volume_leaders(
+    team_shots: pd.DataFrame,
+    min_shots: int = 5,
+    exclude_backcourt: bool = True
+) -> dict:
+    """
+    Find the highest-volume shooter (most FGA) in each shot zone.
+
+    Args:
+        team_shots: DataFrame from get_team_shots() with shot data
+        min_shots: Minimum number of shots required in a zone to qualify
+        exclude_backcourt: If True (default), exclude Backcourt shots
+
+    Returns:
+        Dict mapping zone names to leader info:
+        {
+            'zone_name': {
+                'player_name': str,
+                'fgm': int,
+                'fga': int,
+                'fg_pct': float
+            }
+        }
+    """
+    if team_shots.empty:
+        return {}
+
+    required_cols = ['player_id', 'player_name', 'shot_zone', 'shot_made']
+    missing_cols = [col for col in required_cols if col not in team_shots.columns]
+    if missing_cols:
+        return {}
+
+    if exclude_backcourt:
+        team_shots = team_shots[team_shots['shot_zone'] != 'Backcourt']
+
+    player_zone_stats = []
+    for (player_id, player_name, zone), group in team_shots.groupby(
+        ['player_id', 'player_name', 'shot_zone']
+    ):
+        if pd.isna(player_id) or pd.isna(zone):
+            continue
+        fga = len(group)
+        fgm = int(group['shot_made'].sum())
+
+        player_zone_stats.append({
+            'player_id': int(player_id),
+            'player_name': str(player_name),
+            'zone': str(zone),
+            'fgm': fgm,
+            'fga': fga,
+        })
+
+    if not player_zone_stats:
+        return {}
+
+    stats_df = pd.DataFrame(player_zone_stats)
+
+    leaders = {}
+    for zone in stats_df['zone'].unique():
+        zone_stats = stats_df[stats_df['zone'] == zone]
+        qualified = zone_stats[zone_stats['fga'] >= min_shots]
+
+        if not qualified.empty:
+            leader = qualified.loc[qualified['fga'].idxmax()]
+        else:
+            leader = zone_stats.loc[zone_stats['fga'].idxmax()]
+
+        fga = leader['fga']
+        fgm = leader['fgm']
+        fg_pct = round(fgm / fga * 100, 1) if fga > 0 else 0.0
+
+        leaders[zone] = {
+            'player_name': leader['player_name'],
+            'fgm': fgm,
+            'fga': fga,
+            'fg_pct': fg_pct,
+        }
+
+    return leaders
+
+
 def league_pps_by_zone(
     league_shots: pd.DataFrame,
     exclude_backcourt: bool = True

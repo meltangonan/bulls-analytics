@@ -25,16 +25,19 @@ This is the Kirk Goldsberry / datakabas approach - the chart IS the content, wit
 - Shot chart data (location, zone, distance, made/missed)
 - League-wide shot data for all 30 teams
 - Points Per Shot (PPS) analysis by zone
+- 12-zone granular breakdown via `detailed_zones()`
+- Zone leaders by PPG and by frequency (FGA/game)
+- Current roster via NBA API (`get_roster()`) — filters out traded players
 - Shot selection quality metrics
 - Efficiency metrics (TS%, eFG%)
 - Rolling averages and consistency scores
 - Scoring trends (direction, comparison)
+- Automated social graphics (zone leaders, zone PPS) at 1080x1350
 
-**Key findings from existing analysis:**
-- Bulls rank #1 in shot selection (78.7% high-value shots)
-- Bulls rank #28 at the rim (Restricted Area efficiency)
-- Bulls rank #4 in right corner 3 efficiency (90th percentile)
-- Bulls are -91 points vs league-average execution this season
+**Roster note (2025-26 season):**
+Nikola Vucevic, Coby White, and Ayo Dosunmu were traded mid-season. They still appear in full-season shot data but are NOT on the current roster. Use `data.get_roster()` to filter. Graphics and notebooks support both all-players and current-roster views.
+
+**Key current roster players:** Josh Giddey, Matas Buzelis, Anfernee Simons, Collin Sexton, Rob Dillingham, Jaden Ivey, Patrick Williams, Isaac Okoro, Jalen Smith, Guerschon Yabusele, Tre Jones, Nick Richards, Zach Collins
 
 ---
 
@@ -74,12 +77,12 @@ This is the Kirk Goldsberry / datakabas approach - the chart IS the content, wit
 
 **A) Zone Dominance**
 - Player headshot + shot chart of THEIR shots only
-- Callout: "Josh Giddey: 65% at the rim (Team high)"
+- Callout: "Giddey: leads the team in 7+ zones by frequency"
 - Visual shows the cluster of makes in that zone
 
 **B) Efficiency Snapshot**
 - Player photo + efficiency number
-- Callout: "Coby White: 58.2% TS (Above league avg 57.1%)"
+- Callout: "Simons: 58.2% TS (Above league avg 57.1%)"
 - Simple bar or gauge visual showing where they stand
 
 **C) Hot Streak / Cold Streak**
@@ -252,7 +255,7 @@ Caption: "Bulls shot it well tonight. 48% from the field (season: 44%) and 42% f
 └─────────────────────────────────┘
 ```
 
-Caption: "Bulls are elite from the right corner. #4 in the league at 1.42 PPS. Ayo Dosunmu leads the team from that spot."
+Caption: "Bulls are elite from the right corner. #4 in the league at 1.42 PPS."
 
 ---
 
@@ -266,19 +269,18 @@ Caption: "Bulls are elite from the right corner. #4 in the league at 1.42 PPS. A
 
 ```
 High-Value Shot Selection:
-1. Julian Phillips   95.9%  ████████████████████
+1. Matas Buzelis     84.1%  █████████████████░░░
 2. Patrick Williams  88.2%  ██████████████████░░
-3. Matas Buzelis     84.1%  █████████████████░░░
+3. Jaden Ivey        82.5%  ████████████████░░░░
 ...
-10. Nikola Vučević   57.3%  ███████████░░░░░░░░░
 ```
 
-**Callout:** "Julian Phillips shoots like an analytics dream. Vučević? Not so much."
+**Callout:** "Buzelis shoots like an analytics dream."
 
 **Why it works:**
 - Casuals: Simple percentage, clear ranking
 - Data heads: Shot selection quality is real analytics
-- Hot take fuel: Vučević's mid-range game is controversial
+- Hot take fuel: Who on this young roster is shooting the "right" shots?
 
 **Data:** `high_value_zone_usage()` - already exists!
 
@@ -323,12 +325,12 @@ High-Value Shot Selection:
 
 ```
 Last 10 Games:
-Coby White  [🟢][🟢][🟢][🔴][🟢][🟢][🟢][🟢][🔴][🟢]  ▲ +4.2 PPG
+Simons      [🟢][🟢][🟢][🔴][🟢][🟢][🟢][🟢][🔴][🟢]  ▲ +4.2 PPG
 Giddey      [🔴][🟢][🟢][🟢][🔴][🔴][🟢][🟢][🟢][🔴]  → Stable
-Vučević     [🟢][🔴][🔴][🔴][🟢][🔴][🔴][🟢][🔴][🔴]  ▼ -3.1 PPG
+Buzelis     [🟢][🔴][🔴][🟢][🟢][🟢][🔴][🟢][🔴][🟢]  ▲ +2.1 PPG
 ```
 
-**Callout:** "Coby is HOT. Vučević is ice cold."
+**Callout:** "Simons is HOT since arriving in Chicago."
 
 **Why it works:**
 - Casuals: Green = good, red = bad. Obvious trend.
@@ -346,7 +348,7 @@ Vučević     [🟢][🔴][🔴][🔴][🟢][🔴][🔴][🟢][🔴][🔴]  ▼ 
 **Visual:** Player cards showing mean ± volatility
 
 ```
-COBY WHITE
+ANFERNEE SIMONS
 ────────────
 PPG:  18.2 ± 6.1
       ▓▓▓▓▓▓░░░░  "Volatile"
@@ -357,7 +359,7 @@ PPG:  14.8 ± 3.2
       ▓▓▓▓▓▓▓▓░░  "Consistent"
 ```
 
-**Callout:** "Giddey gives you 12-18 every night. Coby might give you 8 or 28."
+**Callout:** "Giddey gives you 12-18 every night. Simons might give you 8 or 28."
 
 **Why it works:**
 - Casuals: "You know what you're getting" is relatable
@@ -375,7 +377,7 @@ PPG:  14.8 ± 3.2
 **Visual:** Horizontal bar showing percentile
 
 ```
-COBY WHITE - True Shooting %
+ANFERNEE SIMONS - True Shooting %
 
 League Distribution:
 |░░░░░░░░░░░░░░░░░░▓░░|
@@ -384,7 +386,7 @@ League Distribution:
                   "Above Average"
 ```
 
-**Callout:** "Coby shoots better than 72% of the league by TS%."
+**Callout:** "Simons shoots better than 72% of the league by TS%."
 
 **Why it works:**
 - Casuals: Percentile is intuitive - "better than X% of players"
@@ -434,18 +436,18 @@ League Distribution:
 **Visual:** Simple pie/donut chart per player
 
 ```
-JULIAN PHILLIPS
+MATAS BUZELIS
 Shot Diet:
-[Rim 60%][3PT 36%][Mid 4%]
+[Rim 55%][3PT 35%][Mid 10%]
          ▲ Analytics-approved
 
-NIKOLA VUČEVIĆ
+COLLIN SEXTON
 Shot Diet:
-[Rim 28%][3PT 20%][Mid 52%]
+[Rim 30%][3PT 25%][Mid 45%]
          ▲ Old school
 ```
 
-**Callout:** "Phillips plays modern basketball. Vučević is from 2008."
+**Callout:** "Buzelis plays modern basketball. Who else is eating clean?"
 
 **Why it works:**
 - Casuals: Pie chart is simple
@@ -538,10 +540,10 @@ Mid-Range:    34%   →    27%  ▼
 3. **"The Story of the Game"** - One zone that defined win/loss
 
 ### Player Spotlights
-4. **"Giddey at the Rim"** - His restricted area dominance (6.28 PPG, 65%)
-5. **"Coby's Range"** - Shot chart showing his 3-point distribution
-6. **"Julian Phillips: Modern Player"** - 95.9% high-value shots visual
-7. **"Vučević's Mid-Range"** - The exception to the analytics rule
+4. **"Giddey Owns the Court"** - Leads frequency in 7+ zones post-trade
+5. **"Simons' Range"** - Shot chart showing his 3-point distribution since arriving
+6. **"Buzelis: Modern Player"** - High-value shot selection visual
+7. **"The New Backcourt"** - Simons + Sexton + Giddey zone breakdown comparison
 
 ### League Context
 8. **"Right Corner Snipers"** - Bulls #4 ranking with top 5 teams
@@ -571,14 +573,27 @@ Mid-Range:    34%   →    27%  ▼
 
 ## Production Workflow
 
+### For Zone Leaders Graphics (Ready Now)
+
+```bash
+# Full season — PPG and frequency
+venv/bin/python scripts/make_zone_leaders.py --mode ppg
+venv/bin/python scripts/make_zone_leaders.py --mode frequency
+
+# Last 10 games
+venv/bin/python scripts/make_zone_leaders.py --mode ppg --last-n-games 10
+venv/bin/python scripts/make_zone_leaders.py --mode frequency --last-n-games 10
+```
+
+For current-roster-only versions, filter shots via `data.get_roster()` before passing to the builder (see README for code snippet).
+
 ### For Post-Game Content (Quick Turnaround)
 
-1. Run `get_team_shots()` filtered to that game
-2. Generate `shot_chart()`
-3. Calculate zone breakdowns manually or add helper function
-4. Export PNG from Python
-5. Add callouts in Figma/Canva
-6. Post with caption
+1. Run `get_team_shots(last_n_games=1)` for the latest game
+2. Generate `shot_chart()` or zone breakdown
+3. Export PNG via `graphics.save_feed_post()`
+4. Optionally polish in Figma/Canva
+5. Post with caption
 
 ### For Player Spotlights (Planned Content)
 
@@ -612,7 +627,7 @@ Mid-Range:    34%   →    27%  ▼
 
 ### Quick Wins (Current Data)
 
-1. Zone Leaders / Winner by Bucket
+1. ~~Zone Leaders / Winner by Bucket~~ **DONE** — PPG + frequency graphics with current roster filtering
 2. Post-game shot charts
 3. Team identity map (3PA vs rim share)
 4. Bulls vs League heatmap
@@ -648,12 +663,12 @@ Mid-Range:    34%   →    27%  ▼
 
 ## Example Post in Practice
 
-**"Coby's 30-Piece"**
+**"Simons Goes Off"**
 
-Visual: Coby's shot chart from the game
+Visual: Simons' shot chart from the game
 Callouts:
-- "12/20 FG"
-- "6/9 from 3"
-- Circle the left wing where he hit 4/5
+- "10/18 FG"
+- "5/8 from 3"
+- Circle the wing 3 zones where he lit up
 
-Caption: "Coby White dropped 30 on [Opponent]. His shot selection: 75% from high-value zones. The left wing was his office tonight."
+Caption: "Anfernee Simons dropped 28 on [Opponent]. 5/8 from deep — the wings were his office tonight."

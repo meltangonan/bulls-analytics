@@ -8,5 +8,6 @@ from bulls.data.fetch import (
     get_team_shots,
     get_league_shots,
     get_roster_efficiency,
+    get_roster,
     get_player_headshot,
 )

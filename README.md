@@ -53,6 +53,15 @@ from bulls import data, analysis, viz
 games = data.get_games(last_n=10)
 team_shots = data.get_team_shots(last_n_games=10)
 
+# Current roster (filters out traded players like Vucevic, Coby, Ayo)
+roster = data.get_roster()
+roster_ids = set(roster['player_id'].tolist())
+current_shots = team_shots[team_shots['player_id'].isin(roster_ids)]
+
+# 12-zone breakdown + zone leaders
+detailed = analysis.detailed_zones(team_shots)
+leaders = analysis.zone_leaders(detailed, min_shots=5)
+
 pps = analysis.points_per_shot(team_shots, by_zone=True)
 fig = viz.shot_chart(team_shots, show_zones=False, title="Bulls Shot Chart")
 ```
@@ -72,26 +81,53 @@ Notebook section contract:
 - `Takeaways` (3 bullets)
 - `Next Question` (one line)
 
-## Graphics Workflow (Single-Image Feed Posts v1)
+## Graphics Workflow (Single-Image Feed Posts)
 - Build one social image at a time from data + reusable graphics helpers.
-- Current post type: `zone-pps` (zone points-per-shot).
-- Output default: `output/feed/YYYY-MM-DD-zone-pps.png`.
-- Before implementation, run a clarification pass so the brief is explicit.
+- Format: 1080x1350 PNG (Instagram portrait 4:5) at 150 DPI.
+- Fonts: Playfair Display (titles) + DM Sans (body) from `assets/fonts/`.
+- Headshots auto-downloaded from NBA CDN, cached in `cache/headshots/`.
+- Output: `output/feed/YYYY-MM-DD-zone-{mode}-{scope}.png`.
 
-Generate a feed post:
+### Available graphics
+
+| Graphic | Builder function | Script |
+|---------|-----------------|--------|
+| Zone PPS bars | `graphics.build_zone_pps_post()` | `scripts/make_feed_post.py --post-type zone-pps` |
+| Zone leaders (PPG) | `graphics.build_zone_leaders_post()` | `scripts/make_zone_leaders.py --mode ppg` |
+| Zone leaders (frequency) | `graphics.build_zone_frequency_post()` | `scripts/make_zone_leaders.py --mode frequency` |
+
+### Zone leaders (PPG + frequency)
+
+```bash
+# Full season
+venv/bin/python scripts/make_zone_leaders.py --mode ppg
+venv/bin/python scripts/make_zone_leaders.py --mode frequency
+
+# Last 10 games
+venv/bin/python scripts/make_zone_leaders.py --mode ppg --last-n-games 10
+venv/bin/python scripts/make_zone_leaders.py --mode frequency --last-n-games 10
+```
+
+### Current roster filtering
+
+The NBA shot chart API returns all shots taken in a Bulls uniform, including traded players (Vucevic, Coby White, Ayo Dosunmu, etc.). To generate graphics for the current roster only, filter the shots before passing to the builder:
+
+```python
+from bulls import data, graphics
+
+shots = data.get_team_shots()
+roster = data.get_roster()
+roster_ids = set(roster['player_id'].tolist())
+current_shots = shots[shots['player_id'].isin(roster_ids)]
+
+fig = graphics.build_zone_leaders_post(current_shots, ...)
+```
+
+### Zone PPS bars
 
 ```bash
 venv/bin/python scripts/make_feed_post.py --post-type zone-pps
-```
-
-Useful options:
-
-```bash
-# Last 10 games instead of full season
 venv/bin/python scripts/make_feed_post.py --post-type zone-pps --last-n-games 10
-
-# Custom destination path
-venv/bin/python scripts/make_feed_post.py --post-type zone-pps --output output/feed/custom.png
 ```
 
 ## Visual Request Protocol (Agent + User)

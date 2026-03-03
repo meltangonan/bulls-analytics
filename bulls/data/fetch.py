@@ -10,6 +10,7 @@ from nba_api.stats.endpoints import (
     leaguegamefinder,
     boxscoretraditionalv3,
     shotchartdetail,
+    commonteamroster,
 )
 
 from bulls.config import (
@@ -532,6 +533,48 @@ def get_roster_efficiency(
     result.sort(key=lambda x: x['fga_per_game'], reverse=True)
 
     return result
+
+
+def get_roster(
+    team_id: int = BULLS_TEAM_ID,
+    season: str = CURRENT_SEASON,
+) -> pd.DataFrame:
+    """
+    Get the current roster for a team.
+
+    Args:
+        team_id: NBA team ID (default: Bulls)
+        season: NBA season string (default: current season)
+
+    Returns:
+        DataFrame with player_id and player_name columns.
+
+    Example:
+        >>> roster = get_roster()
+        >>> roster[['player_name', 'player_id']]
+    """
+    time.sleep(API_DELAY)
+
+    try:
+        roster = commonteamroster.CommonTeamRoster(
+            team_id=team_id,
+            season=season,
+            timeout=60,
+            headers=_NBA_HEADERS,
+        )
+        df = roster.common_team_roster.get_data_frame()
+
+        if df.empty:
+            return pd.DataFrame(columns=['player_id', 'player_name'])
+
+        return pd.DataFrame({
+            'player_id': df['PLAYER_ID'],
+            'player_name': df['PLAYER'],
+        })
+
+    except (AttributeError, KeyError, IndexError, requests.RequestException, json.JSONDecodeError, ValueError) as e:
+        print(f"Error fetching roster for team {team_id}: {e}")
+        return pd.DataFrame(columns=['player_id', 'player_name'])
 
 
 def get_player_headshot(

@@ -350,6 +350,49 @@ def consistency_score(
     return result
 
 
+def detailed_zones(team_shots: pd.DataFrame) -> pd.DataFrame:
+    """
+    Replace shot_zone with granular zones by combining shot_zone + shot_zone_area.
+
+    Produces 12 zones instead of 6:
+    - Restricted Area, Paint (Non-RA)
+    - Left Baseline, Right Baseline (short corner mid-range)
+    - Left Mid-Range, Right Mid-Range (wing mid-range)
+    - Center Mid-Range
+    - Left Corner 3, Right Corner 3
+    - Left Wing 3, Right Wing 3, Top of Key 3
+
+    Args:
+        team_shots: DataFrame with shot_zone and shot_zone_area columns
+
+    Returns:
+        Copy of DataFrame with shot_zone replaced by detailed zone names.
+        If shot_zone_area is missing, returns unchanged copy.
+    """
+    df = team_shots.copy()
+    if 'shot_zone_area' not in df.columns:
+        return df
+
+    zone_map = {
+        ('Above the Break 3', 'Left Side Center(LC)'): 'Left Wing 3',
+        ('Above the Break 3', 'Right Side Center(RC)'): 'Right Wing 3',
+        ('Above the Break 3', 'Center(C)'): 'Top of Key 3',
+        ('Above the Break 3', 'Back Court(BC)'): 'Backcourt',
+        ('Mid-Range', 'Left Side(L)'): 'Left Baseline',
+        ('Mid-Range', 'Left Side Center(LC)'): 'Left Mid-Range',
+        ('Mid-Range', 'Right Side(R)'): 'Right Baseline',
+        ('Mid-Range', 'Right Side Center(RC)'): 'Right Mid-Range',
+        ('Mid-Range', 'Center(C)'): 'Center Mid-Range',
+    }
+
+    def map_zone(row):
+        key = (row['shot_zone'], row.get('shot_zone_area', ''))
+        return zone_map.get(key, row['shot_zone'])
+
+    df['shot_zone'] = df.apply(map_zone, axis=1)
+    return df
+
+
 def points_per_shot(
     team_shots: pd.DataFrame,
     by_zone: bool = False,
@@ -494,26 +537,22 @@ def zone_leaders(
     team_shots = team_shots.copy()
     team_shots['points'] = team_shots.apply(calculate_points, axis=1)
     
-    # Group by player, zone, and game to get points per game
-    # Then aggregate to get total points and unique games
+    # Collect stats for every player in every zone (no filtering yet)
     player_zone_stats = []
-    
+
     for (player_id, player_name, zone), group in team_shots.groupby(['player_id', 'player_name', 'shot_zone']):
         if pd.isna(player_id) or pd.isna(zone):
             continue
-        
+
         total_shots = len(group)
-        if total_shots < min_shots:
-            continue
-        
         total_points = group['points'].sum()
         unique_games = group['game_id'].nunique()
-        
+
         if unique_games == 0:
             continue
-        
+
         ppg = total_points / unique_games
-        
+
         player_zone_stats.append({
             'player_id': int(player_id),
             'player_name': str(player_name),
@@ -523,19 +562,24 @@ def zone_leaders(
             'total_shots': total_shots,
             'games': unique_games
         })
-    
+
     if not player_zone_stats:
         return {}
-    
-    # Convert to DataFrame for easier processing
+
     stats_df = pd.DataFrame(player_zone_stats)
-    
-    # Find leader for each zone (highest PPG)
+
+    # For each zone: pick the highest-PPG player who meets min_shots.
+    # Fallback: if nobody qualifies, pick the highest-volume player.
     leaders = {}
     for zone in stats_df['zone'].unique():
         zone_stats = stats_df[stats_df['zone'] == zone]
-        leader = zone_stats.loc[zone_stats['ppg'].idxmax()]
-        
+        qualified = zone_stats[zone_stats['total_shots'] >= min_shots]
+
+        if not qualified.empty:
+            leader = qualified.loc[qualified['ppg'].idxmax()]
+        else:
+            leader = zone_stats.loc[zone_stats['total_shots'].idxmax()]
+
         leaders[zone] = {
             'player_id': leader['player_id'],
             'player_name': leader['player_name'],
@@ -543,6 +587,89 @@ def zone_leaders(
             'total_points': leader['total_points'],
             'total_shots': leader['total_shots'],
             'games': leader['games']
+        }
+
+    return leaders
+
+
+def zone_leaders_by_frequency(
+    team_shots: pd.DataFrame,
+    min_shots: int = 5,
+    exclude_backcourt: bool = True
+) -> dict:
+    """
+    Calculate which player leads in shot attempts per game for each zone.
+
+    Args:
+        team_shots: DataFrame from get_team_shots() with shot data
+        min_shots: Minimum number of shots required in a zone to qualify
+        exclude_backcourt: If True (default), exclude Backcourt shots
+
+    Returns:
+        Dict mapping zone names to leader info:
+        {
+            'zone_name': {
+                'player_id': int,
+                'player_name': str,
+                'fga_pg': float,      # field goal attempts per game
+                'total_shots': int,
+                'games': int
+            }
+        }
+    """
+    if team_shots.empty:
+        return {}
+
+    required_cols = ['player_id', 'player_name', 'shot_zone', 'game_id']
+    missing_cols = [col for col in required_cols if col not in team_shots.columns]
+    if missing_cols:
+        return {}
+
+    if exclude_backcourt:
+        team_shots = team_shots[team_shots['shot_zone'] != 'Backcourt']
+
+    player_zone_stats = []
+    for (player_id, player_name, zone), group in team_shots.groupby(
+        ['player_id', 'player_name', 'shot_zone']
+    ):
+        if pd.isna(player_id) or pd.isna(zone):
+            continue
+        total_shots = len(group)
+        unique_games = group['game_id'].nunique()
+        if unique_games == 0:
+            continue
+        fga_pg = total_shots / unique_games
+
+        player_zone_stats.append({
+            'player_id': int(player_id),
+            'player_name': str(player_name),
+            'zone': str(zone),
+            'fga_pg': fga_pg,
+            'total_shots': total_shots,
+            'games': unique_games,
+        })
+
+    if not player_zone_stats:
+        return {}
+
+    stats_df = pd.DataFrame(player_zone_stats)
+
+    leaders = {}
+    for zone in stats_df['zone'].unique():
+        zone_stats = stats_df[stats_df['zone'] == zone]
+        qualified = zone_stats[zone_stats['total_shots'] >= min_shots]
+
+        if not qualified.empty:
+            leader = qualified.loc[qualified['fga_pg'].idxmax()]
+        else:
+            leader = zone_stats.loc[zone_stats['total_shots'].idxmax()]
+
+        leaders[zone] = {
+            'player_id': leader['player_id'],
+            'player_name': leader['player_name'],
+            'fga_pg': round(leader['fga_pg'], 1),
+            'total_shots': leader['total_shots'],
+            'games': leader['games'],
         }
 
     return leaders

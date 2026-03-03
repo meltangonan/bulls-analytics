@@ -23,7 +23,11 @@ htmlcov/
 output/*.png
 output/*.jpg
 output/*.jpeg
+output/feed/
 !output/.gitkeep
+
+# Cached data
+cache/
 
 # IDE
 .vscode/
@@ -31,6 +35,9 @@ output/*.jpeg
 *.swp
 *.swo
 *~
+
+# direnv
+.envrc
 
 # OS
 .DS_Store

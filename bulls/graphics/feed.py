@@ -3,14 +3,21 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Sequence
+from typing import Optional, Sequence
 
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import numpy as np
 import pandas as pd
+from matplotlib.offsetbox import AnnotationBbox, OffsetImage
+from matplotlib.patches import Arc, Circle, FancyBboxPatch, Rectangle
 
 from bulls import analysis
 from bulls.config import BULLS_BLACK, BULLS_RED
 
+import matplotlib.font_manager as _fm
+
+_FONT_DIR = Path(__file__).resolve().parents[2] / "assets" / "fonts"
 
 # Instagram portrait feed post (4:5)
 INSTAGRAM_FEED_WIDTH_PX = 1080
@@ -130,6 +137,294 @@ def build_zone_pps_post(
     )
 
     fig.subplots_adjust(left=0.22, right=0.94, top=0.88, bottom=0.08)
+    return fig
+
+
+def _fp_title(**kwargs) -> _fm.FontProperties:
+    """FontProperties for Playfair Display headings."""
+    return _fm.FontProperties(fname=str(_FONT_DIR / "PlayfairDisplay.ttf"), **kwargs)
+
+
+def _fp_body(**kwargs) -> _fm.FontProperties:
+    """FontProperties for DM Sans body text."""
+    return _fm.FontProperties(fname=str(_FONT_DIR / "DMSans.ttf"), **kwargs)
+
+
+def _draw_court(ax, line_color: str = "#888888", line_alpha: float = 1.0,
+                lw: float = 1.2, show_boundary: bool = True):
+    """Draw a half-court diagram."""
+    kw = dict(linewidth=lw, color=line_color, alpha=line_alpha, fill=False)
+    # Backboard + hoop
+    ax.plot([-30, 30], [-7.5, -7.5], linewidth=lw, color=line_color, alpha=line_alpha)
+    ax.add_patch(Circle((0, 0), radius=7.5, **kw))
+    # Paint
+    ax.add_patch(Rectangle((-80, -47.5), 160, 190, **kw))
+    # Free throw circles
+    ax.add_patch(Arc((0, 142.5), 120, 120, theta1=0, theta2=180, linewidth=lw, color=line_color, alpha=line_alpha))
+    ax.add_patch(Arc((0, 142.5), 120, 120, theta1=180, theta2=0, linewidth=lw, color=line_color, alpha=line_alpha * 0.5, linestyle="dashed"))
+    # Restricted area
+    ax.add_patch(Arc((0, 0), 80, 80, theta1=0, theta2=180, linewidth=lw, color=line_color, alpha=line_alpha))
+    # Corner 3 lines
+    ax.plot([-220, -220], [-47.5, 92.5], linewidth=lw, color=line_color, alpha=line_alpha)
+    ax.plot([220, 220], [-47.5, 92.5], linewidth=lw, color=line_color, alpha=line_alpha)
+    # 3-point arc
+    ax.add_patch(Arc((0, 0), 475, 475, theta1=22, theta2=158, linewidth=lw, color=line_color, alpha=line_alpha))
+    if show_boundary:
+        # Half court
+        ax.add_patch(Arc((0, 422.5), 120, 120, theta1=180, theta2=0, linewidth=lw, color=line_color, alpha=line_alpha * 0.5))
+        ax.plot([-250, 250], [422.5, 422.5], linewidth=lw, color=line_color, alpha=line_alpha * 0.5)
+        # Boundary
+        ax.add_patch(Rectangle((-250, -47.5), 500, 470, linewidth=lw + 0.5, color=line_color, alpha=line_alpha, fill=False))
+
+
+# Size tier per zone – controls headshot zoom and label sizing
+_ZONE_TIER = {
+    "Restricted Area": "xl",
+    "In The Paint (Non-RA)": "lg",
+    "Center Mid-Range": "md",
+    "Top of Key 3": "md",
+    "Left Wing 3": "sm",
+    "Right Wing 3": "sm",
+    "Left Mid-Range": "sm",
+    "Right Mid-Range": "sm",
+    "Left Baseline": "sm",
+    "Right Baseline": "sm",
+    "Left Corner 3": "sm",
+    "Right Corner 3": "sm",
+    "Mid-Range": "sm",
+    "Above the Break 3": "md",
+}
+_TIER_SETTINGS = {
+    "xl": {"zoom": 0.092, "gap": 37, "fs_name": 10.5},
+    "lg": {"zoom": 0.092, "gap": 37, "fs_name": 10.5},
+    "md": {"zoom": 0.088, "gap": 35, "fs_name": 10},
+    "sm": {"zoom": 0.088, "gap": 35, "fs_name": 10},
+}
+
+
+def _zone_positions() -> dict:
+    """Court positions (x, y) for 12 zones.
+
+    Geographically accurate: basket at (0,0), 3pt arc radius ~237.5,
+    corner lines at x=±220, paint x=±80 up to y=142.5.
+    """
+    return {
+        # Interior
+        "Restricted Area": (0, 12),
+        "In The Paint (Non-RA)": (0, 100),
+        # Baseline mid-range (short corner)
+        "Left Baseline": (-125, 30),
+        "Right Baseline": (125, 30),
+        # Wing mid-range
+        "Left Mid-Range": (-140, 140),
+        "Right Mid-Range": (140, 140),
+        # Top-of-key mid-range
+        "Center Mid-Range": (0, 188),
+        # Corner 3s — clearly outside the 3pt line (line at x=±220)
+        "Left Corner 3": (-245, 25),
+        "Right Corner 3": (245, 25),
+        # Wing 3s — above the arc, names clear of the line
+        "Left Wing 3": (-172, 228),
+        "Right Wing 3": (172, 228),
+        # Top of key 3 — above the arc apex (237.5)
+        "Top of Key 3": (0, 282),
+        # Fallbacks for basic (6-zone) data
+        "Mid-Range": (-140, 140),
+        "Above the Break 3": (0, 268),
+    }
+
+
+def _make_circular_headshot(
+    img_path: Path,
+    border_color: Optional[tuple] = None,
+    border_frac: float = 0.035,
+) -> Optional[np.ndarray]:
+    """Load an image, crop to circle, optionally add a colored border ring."""
+    try:
+        img = mpimg.imread(str(img_path))
+    except Exception:
+        return None
+
+    h, w = img.shape[:2]
+    sq = min(h, w)
+    x_start = (w - sq) // 2
+    img = img[:sq, x_start:x_start + sq]
+
+    h, w = img.shape[:2]
+    Y, X = np.ogrid[:h, :w]
+    center = h // 2
+    outer_mask = ((X - center) ** 2 + (Y - center) ** 2) <= center ** 2
+
+    # Ensure RGBA
+    if img.shape[2] == 3:
+        if img.dtype == np.uint8:
+            alpha = np.full((h, w, 1), 255, dtype=np.uint8)
+        else:
+            alpha = np.ones((h, w, 1), dtype=img.dtype)
+        img = np.concatenate([img, alpha], axis=2)
+
+    # Paint border ring
+    if border_color is not None:
+        border_px = max(int(center * border_frac), 2)
+        inner_radius = center - border_px
+        inner_mask = ((X - center) ** 2 + (Y - center) ** 2) <= inner_radius ** 2
+        ring = outer_mask & ~inner_mask
+        if img.dtype == np.uint8:
+            img[ring] = [int(c) for c in border_color[:3]] + [255]
+        else:
+            img[ring] = [c / 255 for c in border_color[:3]] + [1.0]
+
+    # Transparency outside circle
+    if img.dtype == np.uint8:
+        img[~outer_mask, 3] = 0
+    else:
+        img[~outer_mask, 3] = 0.0
+
+    return img
+
+
+def _build_court_canvas(title, subtitle, footnote):
+    """Create a figure with court layout and title block. Returns (fig, ax, coords)."""
+    bg = "#FFFFFF"
+    court_line = "#C8C8C8"
+    ink = "#1A1A1A"
+    muted = "#777777"
+    red = "#CE1141"
+
+    figsize = (INSTAGRAM_FEED_WIDTH_PX / DEFAULT_DPI, INSTAGRAM_FEED_HEIGHT_PX / DEFAULT_DPI)
+    fig = plt.figure(figsize=figsize, facecolor=bg)
+
+    ax = fig.add_axes([0.0, 0.0, 1.0, 1.0])
+    ax.set_facecolor(bg)
+
+    x_lo, x_hi = -280, 280
+    x_range = x_hi - x_lo
+    y_range = x_range * (INSTAGRAM_FEED_HEIGHT_PX / INSTAGRAM_FEED_WIDTH_PX)
+    y_lo = -185
+    y_hi = y_lo + y_range
+
+    ax.set_xlim(x_lo, x_hi)
+    ax.set_ylim(y_lo, y_hi)
+    ax.set_aspect("equal")
+    ax.set_xticks([])
+    ax.set_yticks([])
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+    ax.text(x_lo + 15, y_hi - 90, title,
+            ha="left", va="top", fontsize=44, color=ink,
+            fontproperties=_fp_title(weight="bold"))
+    ax.text(x_lo + 15, y_hi - 148, subtitle,
+            ha="left", va="top", fontsize=18, color=muted,
+            fontproperties=_fp_body(weight="medium"))
+    ax.text(x_lo + 15, y_hi - 175, footnote,
+            ha="left", va="top", fontsize=14, color=red, style="italic",
+            fontproperties=_fp_body(weight="medium"))
+
+    _draw_court(ax, line_color=court_line, line_alpha=1.0, lw=1.3, show_boundary=False)
+    ax.plot([-220, 220], [-47.5, -47.5], linewidth=1.3, color=court_line)
+
+    ax.text(x_lo + 20, y_lo + 15, "Data via NBA.com/Stats",
+            ha="left", va="bottom", fontsize=8.5, color="#AAAAAA",
+            fontproperties=_fp_body())
+
+    return fig, ax, {"ink": ink, "x_lo": x_lo, "y_lo": y_lo}
+
+
+def _place_headshots(ax, leaders, ink, headshot_cache_dir, skip_zero_points=False):
+    """Place headshots and name labels on the court for a dict of zone leaders."""
+    from bulls.data.fetch import get_player_headshot
+
+    positions = _zone_positions()
+
+    for zone_name, leader in leaders.items():
+        if zone_name not in positions:
+            continue
+        if skip_zero_points and int(leader.get("total_points", 0)) == 0:
+            continue
+
+        x, y = positions[zone_name]
+        player_id = leader["player_id"]
+        player_name = leader["player_name"]
+
+        tier_key = _ZONE_TIER.get(zone_name, "sm")
+        tier = _TIER_SETTINGS[tier_key]
+
+        headshot_path = get_player_headshot(player_id, cache_dir=headshot_cache_dir)
+        headshot_placed = False
+
+        if headshot_path and headshot_path.exists():
+            circular = _make_circular_headshot(headshot_path)
+            if circular is not None:
+                im = OffsetImage(circular, zoom=tier["zoom"])
+                im.image.axes = ax
+                ab = AnnotationBbox(im, (x, y), frameon=False, pad=0)
+                ax.add_artist(ab)
+                headshot_placed = True
+
+        label_y = y - tier["gap"] if headshot_placed else y
+        last_name = player_name.split()[-1]
+
+        ax.text(x, label_y, last_name,
+                ha="center", va="top", fontsize=tier["fs_name"], color=ink,
+                fontproperties=_fp_body(weight="bold"))
+
+
+def build_zone_leaders_post(
+    team_shots: pd.DataFrame,
+    title: str = "Leading Scorers By Zone",
+    subtitle: str = "Chicago Bulls | 2025-26 Season",
+    footnote: str = "Points Per Game by Court Area",
+    min_shots: int = 5,
+    headshot_cache_dir: str = "cache/headshots",
+) -> plt.Figure:
+    """Build a zone leaders (PPG) graphic with player headshots."""
+    fig, ax, ctx = _build_court_canvas(title, subtitle, footnote)
+
+    if team_shots.empty:
+        ax.text(0, 130, "No shot data available", ha="center", va="center",
+                fontsize=16, color=ctx["ink"])
+        return fig
+
+    shots_detailed = analysis.detailed_zones(team_shots)
+    leaders = analysis.zone_leaders(shots_detailed, min_shots=min_shots)
+
+    if not leaders:
+        ax.text(0, 130, "No zone leaders found", ha="center", va="center",
+                fontsize=16, color=ctx["ink"])
+        return fig
+
+    _place_headshots(ax, leaders, ctx["ink"], headshot_cache_dir,
+                     skip_zero_points=True)
+    return fig
+
+
+def build_zone_frequency_post(
+    team_shots: pd.DataFrame,
+    title: str = "Shot Frequency By Zone",
+    subtitle: str = "Chicago Bulls | 2025-26 Season",
+    footnote: str = "Shot Attempts Per Game by Court Area",
+    min_shots: int = 5,
+    headshot_cache_dir: str = "cache/headshots",
+) -> plt.Figure:
+    """Build a zone frequency (FGA/game) graphic with player headshots."""
+    fig, ax, ctx = _build_court_canvas(title, subtitle, footnote)
+
+    if team_shots.empty:
+        ax.text(0, 130, "No shot data available", ha="center", va="center",
+                fontsize=16, color=ctx["ink"])
+        return fig
+
+    shots_detailed = analysis.detailed_zones(team_shots)
+    leaders = analysis.zone_leaders_by_frequency(shots_detailed,
+                                                  min_shots=min_shots)
+
+    if not leaders:
+        ax.text(0, 130, "No zone leaders found", ha="center", va="center",
+                fontsize=16, color=ctx["ink"])
+        return fig
+
+    _place_headshots(ax, leaders, ctx["ink"], headshot_cache_dir)
     return fig
 
 

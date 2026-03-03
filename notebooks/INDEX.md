@@ -23,7 +23,7 @@ cp notebooks/templates/idea_template.ipynb notebooks/active/$(date +%F)-topic-sl
 ```
 
 ## Active Notebooks
-- None yet.
+- `2026-03-02-zone-leaders-analysis.ipynb` — Full player-by-zone tables behind the zone leaders graphics, with PPG/frequency breakdowns and social commentary insights.
 
 ## Archive
 - `efficiency_matrix.ipynb`

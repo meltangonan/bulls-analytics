@@ -1,6 +1,7 @@
 """Fetch Bulls data from NBA API."""
 import time
 import json
+from pathlib import Path
 import requests
 from typing import Optional, List, Dict
 import pandas as pd
@@ -18,6 +19,13 @@ from bulls.config import (
     API_DELAY,
     NBA_TEAMS,
 )
+
+# Custom headers needed for reliable NBA Stats API access
+_NBA_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+    'Referer': 'https://www.nba.com/',
+    'Accept': 'application/json',
+}
 
 
 def get_games(
@@ -256,6 +264,8 @@ def get_player_shots(
             season_type_all_star='Regular Season',
             last_n_games=last_n,
             context_measure_simple='FGA',
+            timeout=60,
+            headers=_NBA_HEADERS,
         )
 
         shots = shot_chart.get_data_frames()[0]
@@ -323,6 +333,8 @@ def get_team_shots(
             season_type_all_star='Regular Season',
             last_n_games=last_n,
             context_measure_simple='FGA',
+            timeout=60,
+            headers=_NBA_HEADERS,
         )
 
         shots = shot_chart.get_data_frames()[0]
@@ -341,6 +353,10 @@ def get_team_shots(
             'game_id': shots['GAME_ID'],
             'game_date': shots['GAME_DATE'] if 'GAME_DATE' in shots.columns else None,
         })
+
+        # Add zone area for granular zone breakdowns
+        if 'SHOT_ZONE_AREA' in shots.columns:
+            result['shot_zone_area'] = shots['SHOT_ZONE_AREA']
 
         # Add player info if available
         if 'PLAYER_ID' in shots.columns:
@@ -516,3 +532,34 @@ def get_roster_efficiency(
     result.sort(key=lambda x: x['fga_per_game'], reverse=True)
 
     return result
+
+
+def get_player_headshot(
+    player_id: int,
+    cache_dir: str = "cache/headshots",
+) -> Optional[Path]:
+    """
+    Download and cache a player headshot from the NBA CDN.
+
+    Args:
+        player_id: NBA player ID
+        cache_dir: Local directory to cache headshot PNGs
+
+    Returns:
+        Path to cached headshot PNG, or None if download fails.
+    """
+    cache_path = Path(cache_dir)
+    cache_path.mkdir(parents=True, exist_ok=True)
+
+    file_path = cache_path / f"{player_id}.png"
+    if file_path.exists():
+        return file_path
+
+    url = f"https://cdn.nba.com/headshots/nba/latest/1040x760/{player_id}.png"
+    try:
+        resp = requests.get(url, timeout=10)
+        resp.raise_for_status()
+        file_path.write_bytes(resp.content)
+        return file_path
+    except requests.RequestException:
+        return None

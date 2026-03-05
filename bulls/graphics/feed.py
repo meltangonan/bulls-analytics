@@ -526,11 +526,20 @@ def build_zone_team_stats_post(
                 fontsize=16, color=ctx["ink"])
         return fig
 
-    total_shots = sum(s['attempted'] for s in zone_stats.values())
+    total_made = sum(s['made'] for s in zone_stats.values())
+    total_attempted = sum(s['attempted'] for s in zone_stats.values())
+    fg_pct = (total_made / total_attempted * 100) if total_attempted > 0 else 0.0
 
     _draw_zone_borders(ax)
     _place_zone_text(ax, zone_stats, ctx["ink"], mode="team",
-                     total_shots=total_shots)
+                     total_shots=total_attempted)
+
+    # Overall totals at the bottom
+    totals_label = f"TOTAL: {total_made}/{total_attempted} FG  ({fg_pct:.1f}%)"
+    ax.text(0, -110, totals_label,
+            ha="center", va="center", fontsize=16, color=ctx["ink"],
+            fontproperties=_fp_body(weight="bold"))
+
     return fig
 
 

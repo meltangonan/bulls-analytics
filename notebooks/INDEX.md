@@ -23,9 +23,10 @@ cp notebooks/templates/idea_template.ipynb notebooks/active/$(date +%F)-topic-sl
 ```
 
 ## Active Notebooks
-- `2026-03-02-zone-leaders-analysis.ipynb` — Full player-by-zone tables behind the zone leaders graphics, with PPG/frequency breakdowns and social commentary insights.
+- `2026-07-03-impact-board-game-score.ipynb` — Most Impactful Bulls 2025-26: ranked avg Game Score board (headshots, shared-scale bars, PPG/TS%/GP columns), all-players + current-roster views. First board-format post from the ideation playbook.
 
 ## Archive
+- `2026-03-02-zone-leaders-analysis.ipynb` — Full player-by-zone tables behind the zone leaders graphics, with PPG/frequency breakdowns and social commentary insights.
 - `efficiency_matrix.ipynb`
 - `points_per_shot.ipynb`
 - `points_per_shot_last_season.ipynb`

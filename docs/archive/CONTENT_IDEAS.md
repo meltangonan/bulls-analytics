@@ -1,5 +1,7 @@
 # Bulls Instagram Content Ideas
 
+> **Superseded (2026-07):** this was the original court-first content playbook. The current north star is the board-first "Bulls visual encyclopedia" in `docs/ideation/2026-06-29-instagram-inspired-bulls-content-ideation.html`. Kept for the format sketches and concept fragments.
+
 Reference document for creating Instagram content around Bulls stats and analysis.
 
 ---

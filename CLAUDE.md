@@ -3,7 +3,18 @@
 Guidance for AI edits in this repository.
 
 ## Scope
-Bulls analysis with notebook exploration plus lightweight social graphics generation.
+Bulls analysis with notebook exploration plus lightweight social graphics generation, feeding the `@chicagobullsdata` Instagram account.
+
+## Content North Star
+- The playbook lives in `docs/ideation/2026-06-29-instagram-inspired-bulls-content-ideation.html`: a "Bulls visual encyclopedia" — current, historical, comparative, understandable.
+- Default grammar: boards, tables, grids, and shared-scale comparisons (Basketball University style). Use the court only when location is the actual question.
+- Work one post idea at a time: walk it through the clarification gate, mock it in a notebook, stop.
+- Keep qualification thresholds, coverage windows, and sources visible on graphics (fairness guardrails in the playbook).
+
+## Instagram Access
+- The user's account is `@chicagobullsdata` ("Chicago Bulls + Data Viz"); they stay logged in on Chrome.
+- Claude can browse it via the Chrome MCP tools (`mcp__claude-in-chrome__*`): check the current feed/grid, the saved "Basketball" collection (curated reference posts the north star doc is built on), and reference accounts (Basketball University, Kirk Goldsberry, WNBA Viz Wiz, datakabas).
+- Read-only use: never post, comment, like, follow, or change settings without explicit per-action approval.
 
 ## Priorities
 1. Keep solutions simple.
@@ -28,9 +39,13 @@ notebooks/
   active/                        # Work in progress
   archive/                       # Completed notebooks
   INDEX.md                       # Registry of all notebooks
+docs/
+  ideation/          # North star + ideation docs (HTML)
+  reference/         # Saved tutorials, inspiration screenshots
+  archive/           # Superseded planning docs (e.g. pre-north-star CONTENT_IDEAS.md)
 assets/fonts/        # Playfair Display + DM Sans for graphics
-output/feed/         # Generated PNG graphics
-tests/               # pytest suite (112 tests)
+output/feed/         # Generated PNG graphics (gitignored)
+tests/               # pytest suite (120 tests)
 ```
 
 ## Key APIs
@@ -101,7 +116,7 @@ tests/               # pytest suite (112 tests)
 - Run tests with the project venv:
   - `./run_tests.sh`
   - or `venv/bin/python -m pytest tests/ -v`
-- 112 tests across: `test_data.py`, `test_analysis.py`, `test_viz.py`, `test_graphics.py`, `test_config.py`
+- 120 tests across: `test_data.py`, `test_analysis.py`, `test_viz.py`, `test_graphics.py`, `test_config.py`
 
 ## Docs
 Update `README.md`, `CLAUDE.md`, and `AGENTS.md` when behavior or workflow changes.

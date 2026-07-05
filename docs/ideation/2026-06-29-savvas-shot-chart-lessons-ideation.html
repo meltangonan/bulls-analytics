@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ideation: Shot-chart lessons for Bulls Analytics</title>
+  <style>
+    :root {
+      --bg: #f5f3ef;
+      --paper: #fffdfa;
+      --ink: #171717;
+      --muted: #66615b;
+      --line: #ded9d2;
+      --red: #ce1141;
+      --red-soft: #f8e8ed;
+      --black-soft: #efeeeb;
+      --green-soft: #e8f3ec;
+      --green: #28623d;
+      --amber-soft: #fbf1dc;
+      --amber: #7a5410;
+      --shadow: 0 14px 40px rgba(24, 20, 16, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      width: min(940px, calc(100% - 32px));
+      margin: 32px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    header.hero { padding: 52px 56px 34px; background: linear-gradient(145deg, #fffdfa 35%, #f8e8ed); }
+    .eyebrow { margin: 0 0 8px; color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.15; }
+    h1 { margin: 0; max-width: 18ch; font-size: clamp(34px, 6vw, 58px); font-weight: 700; letter-spacing: -.035em; }
+    .dek { max-width: 69ch; margin: 20px 0 0; color: #403c38; font-size: 18px; }
+    .metadata { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 22px; margin: 28px 0 0; }
+    .metadata div, .idea-meta div { min-width: 0; }
+    dt { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 0 56px 34px; background: linear-gradient(145deg, #fffdfa 35%, #f8e8ed); }
+    .stat { padding: 16px; border: 1px solid #ebd4dc; border-radius: 12px; background: rgba(255,255,255,.7); }
+    .stat strong { display: block; font-family: Georgia, serif; font-size: 28px; line-height: 1; }
+    .stat span { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; }
+    section { padding: 38px 56px; border-top: 1px solid var(--line); }
+    h2 { margin: 0 0 18px; font-size: 30px; letter-spacing: -.02em; }
+    h3 { margin: 0; font-size: 23px; letter-spacing: -.015em; }
+    p { max-width: 72ch; }
+    code { padding: .08em .3em; border-radius: 4px; background: var(--black-soft); font: .92em ui-monospace, SFMono-Regular, Menlo, monospace; }
+    a { color: #9e0c31; text-underline-offset: 2px; }
+    .context-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .context-card { padding: 18px; border-radius: 12px; background: var(--black-soft); }
+    .context-card h3 { margin-bottom: 8px; font-family: inherit; font-size: 14px; font-weight: 800; }
+    .context-card p { margin: 0; color: #45413d; font-size: 14px; }
+    .callout { margin-top: 18px; padding: 16px 18px; border-radius: 12px; background: var(--amber-soft); color: #523706; }
+    .callout strong { color: inherit; }
+    .axes { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px; padding: 0; list-style: none; }
+    .axes li { display: grid; place-items: center; min-height: 84px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; text-align: center; font-size: 13px; font-weight: 700; background: #fff; }
+    .jump-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0 0 24px; padding: 0; list-style: none; }
+    .jump-list a { display: block; padding: 10px 12px; border-radius: 9px; background: var(--black-soft); color: var(--ink); text-decoration: none; font-size: 13px; }
+    .idea { margin-top: 18px; padding: 24px; border: 1px solid var(--line); border-radius: 15px; background: #fff; }
+    .idea:first-of-type { margin-top: 0; }
+    .idea-head { display: flex; align-items: flex-start; gap: 14px; }
+    .rank { flex: 0 0 auto; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: white; font-weight: 800; }
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+    .chip { padding: 5px 9px; border-radius: 999px; background: var(--black-soft); color: #4b4742; font-size: 11px; font-weight: 750; }
+    .chip.high { background: var(--green-soft); color: var(--green); }
+    .chip.med { background: var(--amber-soft); color: var(--amber); }
+    .idea > p { margin: 18px 0 0; }
+    .idea-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 20px; margin: 20px 0 0; padding: 16px; border-radius: 11px; background: #f7f5f2; }
+    .idea-meta .wide { grid-column: 1 / -1; }
+    .diagram { margin: 20px 0 2px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: #fbfaf8; overflow-x: auto; }
+    .diagram svg { display: block; min-width: 690px; width: 100%; height: auto; }
+    .diagram figcaption { margin-top: 8px; color: var(--muted); font-size: 12px; text-align: center; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: var(--black-soft); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+    tr:last-child td { border-bottom: 0; }
+    .sources { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .sources h3 { font-family: inherit; font-size: 14px; }
+    .sources ul { margin: 8px 0 0; padding-left: 20px; }
+    footer { padding: 24px 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    @media (max-width: 760px) {
+      header.hero, section { padding: 30px 24px; }
+      .stats { grid-template-columns: repeat(2, 1fr); padding: 0 24px 28px; }
+      .metadata, .context-grid, .idea-meta, .jump-list { grid-template-columns: 1fr; }
+      .idea-meta .wide { grid-column: auto; }
+      .axes { grid-template-columns: 1fr 1fr; }
+      footer { padding: 22px 24px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <p class="eyebrow">Ranked ideation</p>
+    <h1>Shot-chart lessons for Bulls Analytics</h1>
+    <p class="dek">Savvas Tjortjoglou’s tutorial is still a good map of the basic terrain. This repo has already crossed most of it. The useful next moves are about analytical meaning, comparison, and trust—not another court renderer.</p>
+    <dl class="metadata">
+      <div><dt>Date</dt><dd><time datetime="2026-06-29">2026-06-29</time></dd></div>
+      <div><dt>Topic</dt><dd>savvas-shot-chart-lessons</dd></div>
+      <div><dt>Focus</dt><dd>Read the Savvas shot-chart article and identify grounded ideas for Bulls Analytics.</dd></div>
+      <div><dt>Mode</dt><dd>repo-grounded</dd></div>
+    </dl>
+  </header>
+
+  <div class="stats" aria-label="Ideation counts">
+    <div class="stat"><strong>40</strong><span>raw candidates</span></div>
+    <div class="stat"><strong>7</strong><span>ranked survivors</span></div>
+    <div class="stat"><strong>5</strong><span>topic axes covered</span></div>
+    <div class="stat"><strong>3</strong><span>external sources checked</span></div>
+  </div>
+
+  <section id="grounding-context">
+    <p class="eyebrow">What is already true</p>
+    <h2>Grounding Context</h2>
+    <div class="context-grid">
+      <article class="context-card">
+        <h3>Codebase Context</h3>
+        <p>The repo already fetches NBA shot rows, draws the half-court, supports raw makes/misses and FG% hexbins, computes detailed 12-zone summaries and PPS, and produces branded feed graphics with cached headshots.</p>
+      </article>
+      <article class="context-card">
+        <h3>Existing product direction</h3>
+        <p><code>CONTENT_IDEAS.md</code> already names tonight-vs-season, efficiency gap, shot diet, postgame charts, and league context. The ideas below favor moves that make several of those cheaper or sharper.</p>
+      </article>
+      <article class="context-card">
+        <h3>What the article contributes</h3>
+        <p>Savvas makes the coordinate system, orientation check, court geometry, scatter, KDE, hexbin, and presentation layers tangible. The durable lesson is to separate data, geometry, and visual encoding.</p>
+      </article>
+      <article class="context-card">
+        <h3>What has changed since 2015</h3>
+        <p>The repo correctly uses <code>nba_api</code> instead of hand-building endpoint URLs. Current endpoint docs also expose a league-average table and contextual shot fields that the normalized repo tables currently discard.</p>
+      </article>
+    </div>
+    <div class="callout"><strong>Feedback in one sentence:</strong> do not add Seaborn or a KDE chart just because the tutorial used them; the strongest gap is a clean distinction between where shots happen, how valuable they are, what baseline they differ from, and how much evidence supports the claim.</div>
+    <div class="sources">
+      <h3>Evidence checked</h3>
+      <ul>
+        <li><a href="http://savvastjortjoglou.com/nba-shot-sharts.html">Savvas Tjortjoglou — How to Create NBA Shot Charts in Python</a></li>
+        <li><a href="https://danvatterott.com/creating-nba-shot-charts.html">Dan Vatterott — Creating NBA Shot Charts</a>, which adds volume-by-size and percentage-by-color.</li>
+        <li><a href="https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/endpoints/shotchartdetail.md">nba_api — ShotChartDetail endpoint documentation</a></li>
+        <li><a href="https://github.com/meltangonan/bulls-analytics/blob/main/bulls/viz/charts.py">Repo chart helpers</a>, <a href="https://github.com/meltangonan/bulls-analytics/blob/main/bulls/data/fetch.py">fetch normalization</a>, and <a href="https://github.com/meltangonan/bulls-analytics/blob/main/bulls/analysis/stats.py">analysis helpers</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="topic-axes">
+    <p class="eyebrow">Surface map</p>
+    <h2>Topic Axes</h2>
+    <ul class="axes">
+      <li>Data contract<br>and context</li>
+      <li>Analytical<br>meaning</li>
+      <li>Notebook<br>exploration</li>
+      <li>Social<br>storytelling</li>
+      <li>Correctness<br>and tests</li>
+    </ul>
+  </section>
+
+  <section id="ranked-ideas">
+    <p class="eyebrow">The survivors</p>
+    <h2>Ranked Ideas</h2>
+    <ol class="jump-list">
+      <li><a href="#idea-1">1. League-relative efficiency-gap court</a></li>
+      <li><a href="#idea-2">2. Tonight vs normal residual profile</a></li>
+      <li><a href="#idea-3">3. Shot-profile core + explicit modes</a></li>
+      <li><a href="#idea-4">4. Trustworthy bivariate shot map</a></li>
+      <li><a href="#idea-5">5. Roster-transition identity map</a></li>
+      <li><a href="#idea-6">6. Richer, consistent shot-row contract</a></li>
+      <li><a href="#idea-7">7. Comparable shot fingerprints</a></li>
+    </ol>
+
+    <article class="idea" id="idea-1">
+      <div class="idea-head"><span class="rank">1</span><div><h3>1. League-relative efficiency-gap court</h3><div class="chips"><span class="chip">Analytical meaning</span><span class="chip high">Confidence 95%</span><span class="chip">Medium complexity</span></div></div></div>
+      <p><strong>Description:</strong> Show points gained or lost versus league-average shooting from the same court areas. Start with the repo’s explicit zones, not a spatial model: attempt volume determines the weight, league-relative conversion determines the gain or loss, and the output highlights the handful of zones that materially move the total.</p>
+      <dl class="idea-meta">
+        <div class="wide"><dt>Basis</dt><dd><strong>direct:</strong> <code>CONTENT_IDEAS.md</code> already calls this “The Efficiency Gap”; the official endpoint returns a league-average dataset, while <code>get_team_shots()</code> currently selects only the first returned frame.</dd></div>
+        <div class="wide"><dt>Rationale</dt><dd>This turns a descriptive picture into the visceral question “where are the Bulls gaining or leaving points on the table?” It is analytically meaningful, naturally supports one or two callouts, and can use a cheaper league baseline for basic zone work.</dd></div>
+        <div><dt>Downsides</dt><dd>The endpoint baseline must be mapped carefully to the repo’s 12-zone vocabulary. Custom PPS rankings may still require the existing 30-team pull.</dd></div>
+        <div><dt>Why it survived</dt><dd>It is already desired, grounded in available data, and more decision-changing than another raw heatmap.</dd></div>
+      </dl>
+      <figure class="diagram">
+        <svg viewBox="0 0 760 150" role="img" aria-labelledby="eff-title eff-desc">
+          <title id="eff-title">Efficiency-gap idea flow</title>
+          <desc id="eff-desc">Bulls shot rows and a league zone baseline combine into a zone comparison that produces a points gained or lost court and one headline.</desc>
+          <defs><marker id="arrow-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8f8a84"/></marker></defs>
+          <rect x="10" y="22" width="150" height="48" rx="10" fill="#efeeeb" stroke="#cfc9c1"/>
+          <rect x="10" y="84" width="150" height="48" rx="10" fill="#efeeeb" stroke="#cfc9c1"/>
+          <text x="85" y="43" text-anchor="middle" font-size="13" font-weight="700" fill="#171717">Bulls shot rows</text><text x="85" y="59" text-anchor="middle" font-size="11" fill="#66615b">volume + makes</text>
+          <text x="85" y="105" text-anchor="middle" font-size="13" font-weight="700" fill="#171717">League baseline</text><text x="85" y="121" text-anchor="middle" font-size="11" fill="#66615b">zone FG% / PPS</text>
+          <line x1="174" y1="47" x2="265" y2="70" stroke="#8f8a84" stroke-width="2" marker-end="url(#arrow-red)"/><line x1="174" y1="108" x2="265" y2="83" stroke="#8f8a84" stroke-width="2" marker-end="url(#arrow-red)"/>
+          <rect x="278" y="47" width="190" height="62" rx="12" fill="#f8e8ed" stroke="#ce1141"/>
+          <text x="373" y="72" text-anchor="middle" font-size="14" font-weight="700" fill="#171717">Zone comparison</text><text x="373" y="91" text-anchor="middle" font-size="12" fill="#6d1730">expected vs actual points</text>
+          <line x1="482" y1="78" x2="555" y2="78" stroke="#8f8a84" stroke-width="2" marker-end="url(#arrow-red)"/>
+          <rect x="568" y="30" width="180" height="96" rx="12" fill="#e8f3ec" stroke="#78a388"/>
+          <text x="658" y="60" text-anchor="middle" font-size="14" font-weight="700" fill="#173823">Court map</text><text x="658" y="80" text-anchor="middle" font-size="12" fill="#28623d">+ / − points by zone</text><text x="658" y="102" text-anchor="middle" font-size="12" fill="#28623d">one headline callout</text>
+        </svg>
+        <figcaption>Illustrative direction: the comparison is the product; the court is its clearest reading surface.</figcaption>
+      </figure>
+    </article>
+
+    <article class="idea" id="idea-2">
+      <div class="idea-head"><span class="rank">2</span><div><h3>2. “Tonight vs normal” residual profile</h3><div class="chips"><span class="chip">Analytical meaning</span><span class="chip high">Confidence 93%</span><span class="chip">Medium complexity</span></div></div></div>
+      <p><strong>Description:</strong> Compare the latest game’s shot profile with the season baseline and show only the largest changes in shot share and PPS. The result answers “what was different tonight?” instead of presenting two dense charts and asking readers to spot the difference themselves.</p>
+      <dl class="idea-meta">
+        <div class="wide"><dt>Basis</dt><dd><strong>direct:</strong> The repo already supports <code>get_team_shots(last_n_games=1)</code> and season shots, and the existing content brief explicitly proposes “Tonight vs Season.”</dd></div>
+        <div class="wide"><dt>Rationale</dt><dd>A generic profile comparison can also support first-20 vs last-20, Bulls vs opponent, and current roster vs all players. One analysis primitive can therefore drive several recurring notebook ideas.</dd></div>
+        <div><dt>Downsides</dt><dd>Single-game zone rates are noisy. The chart must show attempts and avoid turning tiny samples into strong color or copy.</dd></div>
+        <div><dt>Why it survived</dt><dd>It has a clear recurring job, uses existing fetches, and produces a stronger editorial answer than a raw postgame scatter.</dd></div>
+      </dl>
+    </article>
+
+    <article class="idea" id="idea-3">
+      <div class="idea-head"><span class="rank">3</span><div><h3>3. Shot-profile core plus explicit visualization modes</h3><div class="chips"><span class="chip">Notebook exploration</span><span class="chip high">Confidence 91%</span><span class="chip">Medium complexity</span></div></div></div>
+      <p><strong>Description:</strong> Create one tidy, testable shot-profile table—one row per detailed zone with FGA, FGA share, FGM, FG%, PPS, and games—then make charts thin consumers with named modes such as <code>scatter</code>, <code>frequency</code>, <code>efficiency</code>, and later <code>relative_value</code>. Keep raw makes/misses for single games and diagnostics.</p>
+      <dl class="idea-meta">
+        <div class="wide"><dt>Basis</dt><dd><strong>direct:</strong> Zone aggregation is currently spread across <code>detailed_zones()</code>, <code>points_per_shot()</code>, <code>game_zone_stats()</code>, league helpers, and the plotting function. <code>shot_chart(show_zones=True)</code> silently means mean FG% hexbin.</dd></div>
+        <div class="wide"><dt>Rationale</dt><dd>The profile table is the reusable analysis seam; explicit chart modes make the notebook question visible in code. Together they prevent the visualization module from growing into one-off builders.</dd></div>
+        <div><dt>Downsides</dt><dd>This touches a public helper. Preserve <code>show_zones</code> temporarily or update notebooks and docs in one small migration.</dd></div>
+        <div><dt>Why it survived</dt><dd>It compounds across nearly every strong content direction while fitting the repo’s analysis-first convention.</dd></div>
+      </dl>
+      <figure class="diagram">
+        <svg viewBox="0 0 760 160" role="img" aria-labelledby="profile-title profile-desc">
+          <title id="profile-title">Shot-profile core fan-out</title>
+          <desc id="profile-desc">Normalized shot rows feed one tested profile table, which then feeds notebook modes, comparison analysis, and feed graphics.</desc>
+          <defs><marker id="arrow-gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8f8a84"/></marker></defs>
+          <rect x="18" y="53" width="160" height="56" rx="11" fill="#efeeeb" stroke="#cfc9c1"/><text x="98" y="77" text-anchor="middle" font-size="14" font-weight="700" fill="#171717">Normalized shots</text><text x="98" y="96" text-anchor="middle" font-size="11" fill="#66615b">player / team / scope</text>
+          <line x1="192" y1="81" x2="278" y2="81" stroke="#8f8a84" stroke-width="2" marker-end="url(#arrow-gray)"/>
+          <rect x="291" y="40" width="178" height="82" rx="12" fill="#f8e8ed" stroke="#ce1141"/><text x="380" y="69" text-anchor="middle" font-size="14" font-weight="700" fill="#171717">Shot profile</text><text x="380" y="88" text-anchor="middle" font-size="11" fill="#6d1730">share · FG% · PPS</text><text x="380" y="104" text-anchor="middle" font-size="11" fill="#6d1730">sample size · provenance</text>
+          <line x1="483" y1="58" x2="553" y2="32" stroke="#8f8a84" stroke-width="2" marker-end="url(#arrow-gray)"/><line x1="483" y1="81" x2="553" y2="81" stroke="#8f8a84" stroke-width="2" marker-end="url(#arrow-gray)"/><line x1="483" y1="104" x2="553" y2="130" stroke="#8f8a84" stroke-width="2" marker-end="url(#arrow-gray)"/>
+          <rect x="566" y="9" width="176" height="42" rx="9" fill="#e8f3ec" stroke="#9ab7a4"/><text x="654" y="35" text-anchor="middle" font-size="12" font-weight="700" fill="#173823">Notebook chart modes</text>
+          <rect x="566" y="60" width="176" height="42" rx="9" fill="#e8f3ec" stroke="#9ab7a4"/><text x="654" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="#173823">Profile comparisons</text>
+          <rect x="566" y="111" width="176" height="42" rx="9" fill="#e8f3ec" stroke="#9ab7a4"/><text x="654" y="137" text-anchor="middle" font-size="12" font-weight="700" fill="#173823">Feed graphics</text>
+        </svg>
+        <figcaption>Illustrative direction: one analytical source of truth, several deliberately thin presentation paths.</figcaption>
+      </figure>
+    </article>
+
+    <article class="idea" id="idea-4">
+      <div class="idea-head"><span class="rank">4</span><div><h3>4. Trustworthy bivariate shot map</h3><div class="chips"><span class="chip">Correctness and tests</span><span class="chip high">Confidence 86%</span><span class="chip">Medium complexity</span></div></div></div>
+      <p><strong>Description:</strong> Use fixed bins, marker area for attempts, and diverging color for PPS or FG% versus a baseline. Mask or fade low-attempt bins, validate left/right orientation with known landmarks, and test the underlying bin table plus the Matplotlib collections—not only that a figure exists.</p>
+      <dl class="idea-meta">
+        <div class="wide"><dt>Basis</dt><dd><strong>external:</strong> Dan Vatterott’s follow-up to Savvas combines size for shot count and color for shooting percentage. <strong>direct:</strong> the current heatmap encodes only mean FG% with <code>mincnt=1</code>, and its tests assert only that a Figure is returned.</dd></div>
+        <div class="wide"><dt>Rationale</dt><dd>The map can answer volume and performance together, but only if sample size and orientation are treated as first-class semantics. That trust layer is what makes the richer encoding worthwhile.</dd></div>
+        <div><dt>Downsides</dt><dd>Bivariate legends are harder to read, especially on mobile. Prototype in a notebook and reject it if a paired two-panel view is clearer.</dd></div>
+        <div><dt>Why it survived</dt><dd>It is the most faithful extension of the article and its follow-up, with the statistical caveats the originals largely omit.</dd></div>
+      </dl>
+    </article>
+
+    <article class="idea" id="idea-5">
+      <div class="idea-head"><span class="rank">5</span><div><h3>5. Roster-transition identity map</h3><div class="chips"><span class="chip">Analytical meaning</span><span class="chip high">Confidence 85%</span><span class="chip">Low complexity</span></div></div></div>
+      <p><strong>Description:</strong> Use the repo’s mandated all-players and current-roster views as an explicit comparison: which zones, volumes, and values disappeared or shifted after the trades? This turns a filtering caveat into a Bulls-specific story about how the team’s offensive identity changed.</p>
+      <dl class="idea-meta">
+        <div class="wide"><dt>Basis</dt><dd><strong>direct:</strong> <code>AGENTS.md</code> requires both all-player and current-roster views because the API includes shots from traded players.</dd></div>
+        <div class="wide"><dt>Rationale</dt><dd>The comparison is unique to the repo’s live context and can be produced first as a concise notebook. It also stress-tests the general profile-comparison idea with a meaningful real case.</dd></div>
+        <div><dt>Downsides</dt><dd>A roster filter alone mixes personnel and time effects. The notebook should label the comparison honestly or use a date split when answering before-versus-after.</dd></div>
+        <div><dt>Why it survived</dt><dd>It transforms an awkward data detail into a concrete, timely analytical narrative.</dd></div>
+      </dl>
+    </article>
+
+    <article class="idea" id="idea-6">
+      <div class="idea-head"><span class="rank">6</span><div><h3>6. Richer, consistent shot-row contract</h3><div class="chips"><span class="chip">Data contract and context</span><span class="chip high">Confidence 83%</span><span class="chip">Low complexity</span></div></div></div>
+      <p><strong>Description:</strong> Make player and team shot tables agree on core zone fields, then retain a small set of optional context columns—<code>action_type</code>, period, time remaining, opponent/home-away identifiers, and event ID—when the endpoint provides them. Store the endpoint’s league-average frame through a separate, clearly named path rather than changing every existing return value at once.</p>
+      <dl class="idea-meta">
+        <div class="wide"><dt>Basis</dt><dd><strong>direct:</strong> team shots add <code>shot_zone_area</code> and player identity while player shots do not. <strong>external:</strong> official endpoint docs list <code>ACTION_TYPE</code>, period/time, matchup identifiers, and the league-average dataset.</dd></div>
+        <div class="wide"><dt>Rationale</dt><dd>Schema parity lets the same zone helpers work for player and team notebooks. Retaining cheap contextual fields preserves future analytical options without committing to clutch or play-type features today.</dd></div>
+        <div><dt>Downsides</dt><dd>Every retained field becomes a contract to test. Keep the list narrow and tolerate absent upstream columns.</dd></div>
+        <div><dt>Why it survived</dt><dd>It is a small leverage move grounded in data already arriving from the API.</dd></div>
+      </dl>
+    </article>
+
+    <article class="idea" id="idea-7">
+      <div class="idea-head"><span class="rank">7</span><div><h3>7. Comparable shot fingerprints</h3><div class="chips"><span class="chip">Social storytelling</span><span class="chip med">Confidence 78%</span><span class="chip">Medium complexity</span></div></div></div>
+      <p><strong>Description:</strong> Render the same compact 12-zone silhouette for each player, roster scope, or period: attempt share on one layer and PPS or relative value on another. Use small multiples with identical scales so the viewer can recognize and compare offensive “fingerprints.”</p>
+      <dl class="idea-meta">
+        <div class="wide"><dt>Basis</dt><dd><strong>reasoned:</strong> fingerprints work because fixed measurement positions make profiles recognizable; this repo already owns a stable 12-zone vocabulary and needs both all-player/current-roster views.</dd></div>
+        <div class="wide"><dt>Rationale</dt><dd>This creates a reusable comparison format for player fit, roster change, and first-half/second-half identity without inventing a new metric.</dd></div>
+        <div><dt>Downsides</dt><dd>Small multiples can become cramped on a phone. The first prototype should compare only two or three profiles.</dd></div>
+        <div><dt>Why it survived</dt><dd>It covers the social-communication axis with a Bulls-specific, comparison-first format rather than decoration.</dd></div>
+      </dl>
+    </article>
+  </section>
+
+  <section id="rejection-summary">
+    <p class="eyebrow">The skeptical pass</p>
+    <h2>Rejection Summary</h2>
+    <p>The strongest cuts were not bad ideas; most were duplicate components, constraints, or existing workflow rules. Keeping them separate would make the shortlist look busier without creating more genuine choices.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Considered idea</th><th>Reason rejected</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Explicit chart modes</td><td>Folded into ranked idea 3.</td></tr>
+          <tr><td>2</td><td>Low-sample spatial-bin masking</td><td>Folded into ranked idea 4.</td></tr>
+          <tr><td>3</td><td>Capture endpoint league averages</td><td>Necessary component of ranked idea 1, not a separate direction.</td></tr>
+          <tr><td>4</td><td>Coordinate-orientation contract</td><td>Folded into ranked idea 4’s trust layer.</td></tr>
+          <tr><td>5</td><td>Player/team schema parity</td><td>Merged into ranked idea 6.</td></tr>
+          <tr><td>6</td><td>Finish 12-zone border overlay</td><td>Valid tactical fix, below the meeting-test floor for this run.</td></tr>
+          <tr><td>7</td><td>One shot-profile table</td><td>Folded into ranked idea 3.</td></tr>
+          <tr><td>8</td><td>Replace 30-team baseline pulls</td><td>Folded into ranked idea 1 with limitations retained.</td></tr>
+          <tr><td>9</td><td>Retire full-season raw-dot charts</td><td>A presentation rule inside ranked idea 3, not an independent direction.</td></tr>
+          <tr><td>10</td><td>Do not add Seaborn</td><td>Good scope constraint, not a product idea.</td></tr>
+          <tr><td>11</td><td>Notebook recipes before helpers</td><td>Already the repo’s documented workflow.</td></tr>
+          <tr><td>12</td><td>Latest game vs season</td><td>Folded into ranked idea 2.</td></tr>
+          <tr><td>13</td><td>Relative performance maps</td><td>Folded into ranked ideas 1 and 4.</td></tr>
+          <tr><td>14</td><td>Retain action type</td><td>Merged into ranked idea 6.</td></tr>
+          <tr><td>15</td><td>12-zone mobile matrix</td><td>Folded into ranked idea 7.</td></tr>
+          <tr><td>16</td><td>Headshots only in feed graphics</td><td>Useful boundary, not a standalone direction.</td></tr>
+          <tr><td>17</td><td>Visualize uncertainty</td><td>Folded into ranked idea 4.</td></tr>
+          <tr><td>18</td><td>Pure spatial-bin helper</td><td>Implementation-shaped component of ranked ideas 3 and 4.</td></tr>
+          <tr><td>19</td><td>Tidy profile schema</td><td>Folded into ranked idea 3.</td></tr>
+          <tr><td>20</td><td>Generic profile comparator</td><td>Folded into ranked idea 2.</td></tr>
+          <tr><td>21</td><td>Preserve context columns</td><td>Merged into ranked idea 6.</td></tr>
+          <tr><td>22</td><td>Attach provenance record</td><td>Worthwhile detail inside ranked idea 3, not a separate direction.</td></tr>
+          <tr><td>23</td><td>Semantic chart tests</td><td>Folded into ranked idea 4.</td></tr>
+          <tr><td>24</td><td>Cartographic bivariate symbols</td><td>Folded into ranked idea 4.</td></tr>
+          <tr><td>25</td><td>Weather-anomaly map</td><td>Folded into ranked ideas 1 and 2.</td></tr>
+          <tr><td>26</td><td>Quality-control sample rules</td><td>Folded into ranked idea 4.</td></tr>
+          <tr><td>27</td><td>Before/after registered panels</td><td>Folded into ranked idea 2.</td></tr>
+          <tr><td>28</td><td>One-headline selector</td><td>Premature before the underlying comparison analysis exists.</td></tr>
+          <tr><td>29</td><td>Zero new dependencies</td><td>Retained as a constraint across all survivors.</td></tr>
+          <tr><td>30</td><td>One figure for volume and value</td><td>Folded into ranked idea 4.</td></tr>
+          <tr><td>31</td><td>One-screen zone graphic</td><td>Folded into ranked idea 7.</td></tr>
+          <tr><td>32</td><td>One API call</td><td>Folded into ranked idea 1.</td></tr>
+          <tr><td>33</td><td>One insight survives</td><td>Already an explicit content principle in the repo.</td></tr>
+          <tr><td>34</td><td>No smoothing for evaluative charts</td><td>Retained as a correctness constraint, not a separate direction.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><strong>Verification caveat:</strong> the configured fresh-context verifier could not be dispatched in this run, so basis verification was performed directly against the repo and fetched source material. All five topic axes still have at least one survivor.</div>
+  </section>
+
+  <footer class="composition-signal">Composed 2026-06-29T21:35:01Z by ce-ideate from the user’s Savvas shot-chart article prompt and the Bulls Analytics repository.</footer>
+</main>
+</body>
+</html>

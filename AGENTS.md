@@ -4,7 +4,8 @@ Guidance for Codex and other coding agents working in this repo.
 
 ## Project Intent
 - Bulls analytics workspace for notebook-driven exploration plus social graphics generation.
-- Primary outputs: analysis in Jupyter notebooks and 1080x1350 Instagram graphics.
+- Primary outputs: analysis in Jupyter notebooks and 1080x1350 Instagram graphics for `@chicagobullsdata`.
+- Content north star: the "Bulls visual encyclopedia" playbook in `docs/ideation/2026-06-29-instagram-inspired-bulls-content-ideation.html`. Boards/tables/shared-scale comparisons are the default grammar; court graphics only when location is the question. One post idea at a time.
 
 ## Non-Goals (Unless User Asks)
 - No scheduled automation workflows.
@@ -31,10 +32,13 @@ Guidance for Codex and other coding agents working in this repo.
 - `notebooks/archive/`: Frozen/older notebooks
 - `notebooks/templates/`: Starter notebooks
 - `notebooks/INDEX.md`: Notebook catalog + workflow rules
+- `docs/ideation/`: North star + ideation docs
+- `docs/reference/`: Saved tutorials, inspiration screenshots
+- `docs/archive/`: Superseded planning docs
 - `assets/fonts/`: Playfair Display + DM Sans for graphics
-- `output/feed/`: Generated PNG graphics
+- `output/feed/`: Generated PNG graphics (gitignored)
 - `cache/headshots/`: Player headshot PNGs from NBA CDN
-- `tests/`: 112 unit tests with mocked API calls
+- `tests/`: 120 unit tests with mocked API calls
 
 ## Traded Players
 The NBA shot chart API returns all shots taken in a Bulls uniform this season, including traded players (e.g. Nikola Vucevic, Coby White, Ayo Dosunmu).

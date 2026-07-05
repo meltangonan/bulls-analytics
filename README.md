@@ -1,13 +1,16 @@
 # Bulls Analytics
 
-Lean Python workspace for Chicago Bulls analysis in Jupyter notebooks.
+Lean Python workspace for Chicago Bulls analysis in Jupyter notebooks, feeding the [@chicagobullsdata](https://www.instagram.com/chicagobullsdata/) Instagram account.
 
 ## What This Repo Is For
 - Pull Bulls game and shot data from the NBA API
 - Compute reusable analysis metrics in `bulls/analysis`
 - Build charts directly in notebooks with `matplotlib`
+- Produce 1080x1350 Instagram graphics, one post idea at a time
 
 This repo is intentionally lean: notebook-first for exploration, with a lightweight script-based flow for single-image social graphics.
+
+**Content north star:** the "Bulls visual encyclopedia" playbook in `docs/ideation/2026-06-29-instagram-inspired-bulls-content-ideation.html`. Boards, tables, and shared-scale comparisons are the default grammar; court graphics only when location is the actual question.
 
 ## Project Layout
 
@@ -25,7 +28,11 @@ bulls-analytics/
 │   └── INDEX.md    # notebook catalog + workflow rules
 ├── scripts/        # CLI entrypoints
 ├── tests/          # focused unit tests with mocked API calls
-└── output/         # optional scratch folder (not part of core workflow)
+├── docs/
+│   ├── ideation/   # north star + ideation docs
+│   ├── reference/  # saved tutorials, inspiration screenshots
+│   └── archive/    # superseded planning docs
+└── output/         # generated graphics (gitignored)
 ```
 
 ## Setup
@@ -34,7 +41,7 @@ bulls-analytics/
 python3.11 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-python test_setup.py
+./run_tests.sh  # verify setup
 ```
 
 ## Running Tests

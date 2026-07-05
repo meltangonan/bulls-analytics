@@ -6,7 +6,7 @@ Guidance for AI edits in this repository.
 Bulls analysis with notebook exploration plus lightweight social graphics generation, feeding the `@chicagobullsdata` Instagram account.
 
 ## Content North Star
-- The playbook lives in `docs/ideation/2026-06-29-instagram-inspired-bulls-content-ideation.html`: a "Bulls visual encyclopedia" — current, historical, comparative, understandable.
+- The playbook lives in `docs/bulls-content-playbook.html`: a "Bulls visual encyclopedia" — current, historical, comparative, understandable.
 - Default grammar: boards, tables, grids, and shared-scale comparisons (Basketball University style). Use the court only when location is the actual question.
 - Work one post idea at a time: walk it through the clarification gate, mock it in a notebook, stop.
 - Keep qualification thresholds, coverage windows, and sources visible on graphics (fairness guardrails in the playbook).
@@ -34,12 +34,14 @@ scripts/             # CLI entrypoints for generating graphics
   make_zone_leaders.py   # Zone leaders PPG + frequency graphics
   make_zone_shooting.py  # Zone shooting stats (team aggregate or volume leaders)
   make_feed_post.py      # General feed post generation
+  prototypes/            # One-off mock generators behind idea-catalog cards
 notebooks/
   templates/idea_template.ipynb  # Starting point for new notebooks
   active/                        # Work in progress
   archive/                       # Completed notebooks
   INDEX.md                       # Registry of all notebooks
 docs/
+  idea-catalog.html  # Visual idea catalog: one card per post idea (mock image, status, notes)
   ideation/          # North star + ideation docs (HTML)
   reference/         # Saved tutorials, inspiration screenshots
   archive/           # Superseded planning docs (e.g. pre-north-star CONTENT_IDEAS.md)
@@ -79,10 +81,8 @@ tests/               # pytest suite (120 tests)
 ## Working Style
 - Keep reusable code in `bulls/data`, `bulls/analysis`, and `bulls/viz`.
 - Keep social image builders in `bulls/graphics` and CLI entrypoints in `scripts/`.
-- Use one notebook per idea in `notebooks/active/` with file name format `YYYY-MM-DD-topic-slug.ipynb`.
-- Start new work from `notebooks/templates/idea_template.ipynb`.
-- Move completed notebooks to `notebooks/archive/` and keep `notebooks/INDEX.md` updated.
-- Keep notebooks concise (short markdown, focused code/plots).
+- Post mocks are prototype-script-first (adopted 2026-07-04): one script per idea batch in `scripts/prototypes/`, PNGs to `output/feed/`, and a card in `docs/idea-catalog.html` (newest first, use the in-file template; statuses: Posted / Mocked / Generated / Parked). Copy each card's image into `docs/mocks/` (committed) so the catalog stays portable — `output/` is gitignored. Promote a builder into `bulls/graphics` + a `scripts/` CLI only once the format repeats.
+- Notebooks are optional — reserve them for analysis whose tables/narrative matter beyond one graphic. When used: one idea per notebook in `notebooks/active/` (`YYYY-MM-DD-topic-slug.ipynb`), start from `notebooks/templates/idea_template.ipynb`, keep them concise, archive when done, keep `notebooks/INDEX.md` updated.
 - Do not add large export pipelines by default; keep graphics generation script-based and simple.
 
 ## Traded Players

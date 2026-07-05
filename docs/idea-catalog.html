@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulls Visual Idea Catalog</title>
+<style>
+  @font-face {
+    font-family: "Playfair Display";
+    src: url("../assets/fonts/PlayfairDisplay.ttf");
+  }
+  @font-face {
+    font-family: "Playfair Display";
+    src: url("../assets/fonts/PlayfairDisplay-Italic.ttf");
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "DM Sans";
+    src: url("../assets/fonts/DMSans.ttf");
+  }
+  @font-face {
+    font-family: "DM Sans";
+    src: url("../assets/fonts/DMSans-Italic.ttf");
+    font-style: italic;
+  }
+
+  :root {
+    --ink: #1A1A1A;
+    --muted: #777777;
+    --faint: #AAAAAA;
+    --rule: #DDDDDD;
+    --red: #CE1141;
+    --bg: #FFFFFF;
+    --card-bg: #FAFAFA;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+    padding: 56px 48px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  header { margin-bottom: 14px; }
+
+  h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 1.05;
+  }
+
+  .subtitle { color: var(--muted); font-size: 18px; margin-top: 10px; }
+  .kicker { color: var(--red); font-style: italic; font-size: 15px; margin-top: 6px; }
+
+  .northstar {
+    margin-top: 18px; font-size: 14px; color: var(--muted);
+  }
+  .northstar a { color: var(--red); }
+
+  .legend {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin: 28px 0 8px; font-size: 12px; color: var(--muted);
+    align-items: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+    margin-top: 24px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card a.thumb { display: block; background: #fff; border-bottom: 1px solid var(--rule); }
+  .card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card .body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+
+  .card h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+  .chip {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  .chip.posted   { background: var(--red); color: #fff; }
+  .chip.mocked   { background: #fff; color: var(--red); border: 1px solid var(--red); }
+  .chip.generated{ background: #EEE; color: var(--muted); }
+  .chip.parked   { background: #fff; color: var(--faint); border: 1px dashed var(--faint); }
+  .chip.grammar  { background: #fff; color: var(--muted); border: 1px solid var(--rule); }
+
+  .date { font-size: 12px; color: var(--faint); }
+
+  .insight { font-size: 14px; line-height: 1.45; }
+  .notes { font-size: 13px; color: var(--muted); font-style: italic; line-height: 1.4; }
+  .notes strong { color: var(--red); font-style: normal; }
+
+  .files { font-size: 12.5px; color: var(--muted); margin-top: auto; padding-top: 8px; }
+  .files a { color: var(--red); text-decoration: none; }
+  .files a:hover { text-decoration: underline; }
+
+  footer {
+    margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--rule);
+    font-size: 12px; color: var(--faint);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Bulls Visual Idea Catalog</h1>
+  <p class="subtitle">Every post idea we mock, in one shelf — newest first.</p>
+  <p class="kicker">Reference, react, and pick what ships next.</p>
+  <p class="northstar">
+    North star: <a href="bulls-content-playbook.html">the Bulls Content Playbook</a>
+    &nbsp;·&nbsp; Account: @chicagobullsdata
+  </p>
+</header>
+
+<div class="legend">
+  <span class="chip posted">Posted</span> on Instagram
+  <span class="chip mocked">Mocked</span> full-size render, awaiting decision
+  <span class="chip generated">Generated</span> made before the playbook, not posted
+  <span class="chip parked">Parked</span> deliberately on hold
+</div>
+
+<!-- ============================================================
+  HOW TO ADD AN ENTRY
+  Copy the card template below to the TOP of the grid (newest first),
+  fill in the fields, and keep image paths relative to docs/.
+
+  <div class="card">
+    <a class="thumb" href="mocks/FILE.png"><img src="mocks/FILE.png" alt=""></a>
+    <div class="body">
+      <h2>Title</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Board</span>
+        <span class="date">YYYY-MM-DD</span>
+      </div>
+      <p class="insight">One sentence: what the graphic argues.</p>
+      <p class="notes"><strong>Notes:</strong> reactions, tweaks, open questions.</p>
+      <p class="files">Notebook: <a href="../notebooks/active/X.ipynb">X.ipynb</a></p>
+    </div>
+  </div>
+============================================================ -->
+
+<div class="grid">
+
+  <div class="card">
+    <a class="thumb" href="mocks/2026-07-04-option-b-month-by-month-grid.png"><img src="mocks/2026-07-04-option-b-month-by-month-grid.png" alt="The Season, Month by Month"></a>
+    <div class="body">
+      <h2>The Season, Month by Month</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Grid</span>
+        <span class="date">2026-07-04</span>
+      </div>
+      <p class="insight">Players &times; months heatmap of avg Game Score. The gray cells tell the trade-deadline story without words: V&#x16D;čević, White, Dosunmu, Huerter go dark after FEB as Sexton and Miller light up.</p>
+      <p class="notes"><strong>Notes:</strong> strongest storyteller of the 2026-07-04 batch. Giddey's 0.4 April cell is an honest small-sample oddity — keep.</p>
+      <p class="files">Script: <a href="../scripts/prototypes/three_options.py">prototypes/three_options.py</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="thumb" href="mocks/2026-07-04-option-a-impact-availability-quadrant.png"><img src="mocks/2026-07-04-option-a-impact-availability-quadrant.png" alt="Impact vs. Availability"></a>
+    <div class="body">
+      <h2>Impact vs. Availability</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Quadrant</span>
+        <span class="date">2026-07-04</span>
+      </div>
+      <p class="insight">Avg Game Score vs games played, headshots as points, plain-language corner labels. Only Jones and Buzelis lived in "Carried All Season"; Giddey and V&#x16D;čević carried harder but for ~50 games.</p>
+      <p class="notes"><strong>Notes:</strong> best debate-bait of the batch. Thresholds visible on the graphic: 41 games = half season, Game Score 10 = league-average game.</p>
+      <p class="files">Script: <a href="../scripts/prototypes/three_options.py">prototypes/three_options.py</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="thumb" href="mocks/2026-07-04-option-c-season-shape-timeline.png"><img src="mocks/2026-07-04-option-c-season-shape-timeline.png" alt="The Shape of the Season"></a>
+    <div class="body">
+      <h2>The Shape of the Season</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Timeline</span>
+        <span class="date">2026-07-04</span>
+      </div>
+      <p class="insight">Rolling 10-game point differential compresses 31-51 into one silhouette: treading water to December, the +5.5 January surge, the post-deadline cliff to &minus;18.1.</p>
+      <p class="notes"><strong>Notes:</strong> most reusable format — the "season fingerprint" shape could compare eras side by side (1996 vs 2026) when the historical lane opens.</p>
+      <p class="files">Script: <a href="../scripts/prototypes/three_options.py">prototypes/three_options.py</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="thumb" href="mocks/2026-07-03-impact-board-season.png"><img src="mocks/2026-07-03-impact-board-season.png" alt="Most Impactful Bulls"></a>
+    <div class="body">
+      <h2>Most Impactful Bulls</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Board</span>
+        <span class="date">2026-07-03</span>
+      </div>
+      <p class="insight">Ranked avg Game Score leaderboard with headshots, shared-scale bars, and PPG / TS% / GP context columns. First board-format post; Giddey leads at 16.2.</p>
+      <p class="notes"><strong>Notes:</strong> two views rendered (all players + current roster). CDN headshots show a player's <em>current</em> team — one more reason the roster view matters.</p>
+      <p class="files">Notebook: <a href="../notebooks/active/2026-07-03-impact-board-game-score.ipynb">2026-07-03-impact-board-game-score.ipynb</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="thumb" href="mocks/2026-03-02-zone-shooting-team-season.png"><img src="mocks/2026-03-02-zone-shooting-team-season.png" alt="Zone Shooting"></a>
+    <div class="body">
+      <h2>Zone Shooting Stats</h2>
+      <div class="meta">
+        <span class="chip posted">Posted</span>
+        <span class="chip grammar">Court</span>
+        <span class="date">2026-03-02</span>
+      </div>
+      <p class="insight">Team FGM/FGA + FG% per court area on the 12-zone map. Both current @chicagobullsdata posts use this format (season + vs OKC).</p>
+      <p class="notes"><strong>Notes:</strong> clean work, but the playbook flags the limitation: numbers without comparison, court as default canvas.</p>
+      <p class="files">Script: <a href="../scripts/make_zone_shooting.py">make_zone_shooting.py</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="thumb" href="mocks/2026-03-02-zone-ppg-season.png"><img src="mocks/2026-03-02-zone-ppg-season.png" alt="Zone Leaders"></a>
+    <div class="body">
+      <h2>Zone Leaders (PPG / Frequency)</h2>
+      <div class="meta">
+        <span class="chip generated">Generated</span>
+        <span class="chip grammar">Court</span>
+        <span class="date">2026-03-02</span>
+      </div>
+      <p class="insight">Headshot per court zone: who scores most (PPG mode) or shoots most often (frequency mode) from each area.</p>
+      <p class="notes"><strong>Notes:</strong> made pre-playbook; never posted. Court grammar is justified here — location is the actual subject.</p>
+      <p class="files">Script: <a href="../scripts/make_zone_leaders.py">make_zone_leaders.py</a> · Notebook: <a href="../notebooks/archive/2026-03-02-zone-leaders-analysis.ipynb">zone-leaders-analysis</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="thumb" href="mocks/2026-03-02-zone-shooting-volume-season.png"><img src="mocks/2026-03-02-zone-shooting-volume-season.png" alt="Zone Volume Leaders"></a>
+    <div class="body">
+      <h2>Zone Volume Leaders</h2>
+      <div class="meta">
+        <span class="chip generated">Generated</span>
+        <span class="chip grammar">Court</span>
+        <span class="date">2026-03-02</span>
+      </div>
+      <p class="insight">Highest-FGA shooter per zone with FGM/FGA and FG% — the "who actually takes these shots" view of the court.</p>
+      <p class="notes"><strong>Notes:</strong> made pre-playbook; never posted.</p>
+      <p class="files">Script: <a href="../scripts/make_zone_shooting.py">make_zone_shooting.py --mode volume</a></p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Maintained by hand, one card per idea, newest first. Catalog images are committed copies in <code>docs/mocks/</code> (working renders stay in <code>output/feed/</code>, gitignored); add new cards using the template in this file's source.
+  Last updated 2026-07-04.
+</footer>
+
+</body>
+</html>

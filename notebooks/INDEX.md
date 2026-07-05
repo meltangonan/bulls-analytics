@@ -2,6 +2,8 @@
 
 This workspace uses a one-notebook-per-idea workflow.
 
+> **Since 2026-07-04:** post mocks no longer require a notebook — they live as prototype scripts in `scripts/prototypes/` with a card in `docs/idea-catalog.html`. Notebooks are for analysis deep dives whose tables/narrative matter beyond one graphic.
+
 ## Rules
 - New notebooks go in `notebooks/active/`.
 - File names must follow `YYYY-MM-DD-topic-slug.ipynb`.

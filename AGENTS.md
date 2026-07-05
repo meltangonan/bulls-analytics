@@ -3,9 +3,9 @@
 Guidance for Codex and other coding agents working in this repo.
 
 ## Project Intent
-- Bulls analytics workspace for notebook-driven exploration plus social graphics generation.
-- Primary outputs: analysis in Jupyter notebooks and 1080x1350 Instagram graphics for `@chicagobullsdata`.
-- Content north star: the "Bulls visual encyclopedia" playbook in `docs/ideation/2026-06-29-instagram-inspired-bulls-content-ideation.html`. Boards/tables/shared-scale comparisons are the default grammar; court graphics only when location is the question. One post idea at a time.
+- Bulls analytics workspace for social graphics generation, with optional notebook exploration.
+- Primary outputs: 1080x1350 Instagram graphics for `@chicagobullsdata`, tracked as cards in `docs/idea-catalog.html`.
+- Content north star: the "Bulls visual encyclopedia" playbook in `docs/bulls-content-playbook.html`. Boards/tables/shared-scale comparisons are the default grammar; court graphics only when location is the question. One post idea at a time.
 
 ## Non-Goals (Unless User Asks)
 - No scheduled automation workflows.
@@ -15,10 +15,10 @@ Guidance for Codex and other coding agents working in this repo.
 ## Engineering Rules
 1. Keep it simple; avoid over-engineering.
 2. Prioritize reusable analysis helpers over presentation helpers.
-3. Keep notebooks concise: headings + one-liner context.
-4. Extract helper functions only when notebook logic repeats 2-3 times.
-5. Prefer small, test-backed changes.
-6. Use one notebook per idea with consistent section structure.
+3. Post mocks are prototype-script-first (adopted 2026-07-04): one script per idea batch in `scripts/prototypes/` + a catalog card. Promote to `bulls/graphics` + a `scripts/` CLI only when a format repeats.
+4. Notebooks are optional (analysis deep dives only). When used: one idea per notebook, consistent section structure, concise.
+5. Extract helper functions only when prototype/notebook logic repeats 2-3 times.
+6. Prefer small, test-backed changes.
 7. Before building any visual/graphic, run the Clarification Gate below.
 
 ## Repo Conventions
@@ -28,10 +28,14 @@ Guidance for Codex and other coding agents working in this repo.
 - `bulls/graphics/feed.py`: Single-image social graphics builders (1080x1350 Instagram)
 - `bulls/viz/charts.py`: Matplotlib chart helpers for notebooks
 - `scripts/`: CLI entrypoints for generating graphics
+- `scripts/prototypes/`: One-off mock generators behind idea-catalog cards
 - `notebooks/active/`: Current idea notebooks (`YYYY-MM-DD-topic-slug.ipynb`)
 - `notebooks/archive/`: Frozen/older notebooks
 - `notebooks/templates/`: Starter notebooks
 - `notebooks/INDEX.md`: Notebook catalog + workflow rules
+- `docs/bulls-content-playbook.html`: North star playbook (living doc, revision history at bottom)
+- `docs/idea-catalog.html`: Visual idea catalog — one card per post idea (mock, status, notes), newest first
+- `docs/mocks/`: Committed copies of catalog-referenced mock images (`output/` is gitignored)
 - `docs/ideation/`: North star + ideation docs
 - `docs/reference/`: Saved tutorials, inspiration screenshots
 - `docs/archive/`: Superseded planning docs

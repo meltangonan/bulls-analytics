@@ -5,12 +5,14 @@ Lean Python workspace for Chicago Bulls analysis in Jupyter notebooks, feeding t
 ## What This Repo Is For
 - Pull Bulls game and shot data from the NBA API
 - Compute reusable analysis metrics in `bulls/analysis`
-- Build charts directly in notebooks with `matplotlib`
 - Produce 1080x1350 Instagram graphics, one post idea at a time
+- Track every post idea as a card in the idea catalog
 
-This repo is intentionally lean: notebook-first for exploration, with a lightweight script-based flow for single-image social graphics.
+This repo is intentionally lean: prototype scripts (`scripts/prototypes/`) + the idea catalog drive post mocks; notebooks are optional for deeper analysis.
 
-**Content north star:** the "Bulls visual encyclopedia" playbook in `docs/ideation/2026-06-29-instagram-inspired-bulls-content-ideation.html`. Boards, tables, and shared-scale comparisons are the default grammar; court graphics only when location is the actual question.
+**Content north star:** the "Bulls visual encyclopedia" playbook in `docs/bulls-content-playbook.html`. Boards, tables, and shared-scale comparisons are the default grammar; court graphics only when location is the actual question.
+
+**Idea catalog:** every post idea we mock gets a card in `docs/idea-catalog.html` (image, status, grammar, notes) — open it in a browser to review the shelf.
 
 ## Project Layout
 
@@ -27,8 +29,12 @@ bulls-analytics/
 │   ├── templates/  # notebook starter templates
 │   └── INDEX.md    # notebook catalog + workflow rules
 ├── scripts/        # CLI entrypoints
+│   └── prototypes/ # one-off mock generators behind idea-catalog cards
 ├── tests/          # focused unit tests with mocked API calls
 ├── docs/
+│   ├── bulls-content-playbook.html  # north star (living doc, revision history at bottom)
+│   ├── idea-catalog.html  # visual idea catalog (one card per post idea)
+│   ├── mocks/      # committed copies of catalog-referenced mock images
 │   ├── ideation/   # north star + ideation docs
 │   ├── reference/  # saved tutorials, inspiration screenshots
 │   └── archive/    # superseded planning docs

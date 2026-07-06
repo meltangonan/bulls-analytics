@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import matplotlib.text as mtext
 import numpy as np
 from matplotlib.colors import Colormap, LinearSegmentedColormap
-from matplotlib.offsetbox import AnnotationBbox, OffsetImage
+from matplotlib.image import AxesImage
 from matplotlib.patches import Rectangle
 
 from bulls.graphics.feed import _fp_body, _make_circular_headshot
@@ -189,25 +189,28 @@ def headshot_label(
     image_path: Optional[Path | str],
     x: float,
     y: float,
-    zoom: float = 0.09,
+    radius: float = 34.0,
     border_color: Optional[tuple] = None,
-) -> AnnotationBbox:
-    """Place a circular headshot as an axis annotation at (x, y).
+) -> AxesImage:
+    """Place a circular headshot centered at (x, y).
 
-    When image_path is None, missing, or unreadable, a neutral placeholder
-    disc is drawn instead of raising, so builders never break on a player
-    without a cached photo.
+    Sized by ``radius`` in the axes' data coordinates, so the rendered
+    size is independent of the source image's pixel dimensions (NBA CDN
+    photos and the placeholder disc differ). When image_path is None,
+    missing, or unreadable, a neutral placeholder disc is drawn instead
+    of raising, so builders never break on a player without a cached
+    photo.
 
     Args:
         ax: Target axes
         image_path: Path to a headshot image, or None
         x: Horizontal center (data coords)
         y: Vertical center (data coords)
-        zoom: OffsetImage zoom factor
+        radius: Half the rendered diameter (data coords)
         border_color: Optional RGB tuple (0-255) for a border ring
 
     Returns:
-        The AnnotationBbox artist added to the axes.
+        The AxesImage artist added to the axes.
     """
     circular = None
     if image_path is not None:
@@ -217,8 +220,9 @@ def headshot_label(
     if circular is None:
         circular = _placeholder_disc()
 
-    im = OffsetImage(circular, zoom=zoom)
-    im.image.axes = ax
-    artist = AnnotationBbox(im, (x, y), frameon=False, pad=0)
-    ax.add_artist(artist)
-    return artist
+    return ax.imshow(
+        circular,
+        extent=[x - radius, x + radius, y - radius, y + radius],
+        zorder=3,
+        interpolation="bilinear",
+    )

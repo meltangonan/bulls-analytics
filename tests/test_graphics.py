@@ -199,14 +199,21 @@ class TestHeadshotLabel:
 
     def test_none_path_draws_placeholder(self):
         fig, ax = plt.subplots()
-        artist = headshot_label(ax, None, 0.5, 0.5)
+        artist = headshot_label(ax, None, 0.5, 0.5, radius=0.1)
 
-        assert artist in ax.artists
+        assert artist in ax.images
         plt.close(fig)
 
     def test_missing_path_draws_placeholder(self, tmp_path):
         fig, ax = plt.subplots()
-        artist = headshot_label(ax, tmp_path / "missing.png", 0.5, 0.5)
+        artist = headshot_label(ax, tmp_path / "missing.png", 0.5, 0.5, radius=0.1)
 
-        assert artist in ax.artists
+        assert artist in ax.images
+        plt.close(fig)
+
+    def test_radius_sets_extent(self):
+        fig, ax = plt.subplots()
+        artist = headshot_label(ax, None, 10.0, 20.0, radius=5.0)
+
+        assert tuple(artist.get_extent()) == (5.0, 15.0, 15.0, 25.0)
         plt.close(fig)

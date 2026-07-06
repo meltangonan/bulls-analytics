@@ -26,6 +26,7 @@ Guidance for Codex and other coding agents working in this repo.
 - `bulls/data/fetch.py`: NBA API wrappers (shots, games, box scores, roster)
 - `bulls/analysis/stats.py`: Statistical functions (zone leaders, PPS, efficiency, trends)
 - `bulls/graphics/feed.py`: Single-image social graphics builders (1080x1350 Instagram)
+- `bulls/graphics/craft.py`: Shared F5-derived helpers (gradient bars, stacked labels, threshold footers, headshot labels)
 - `bulls/viz/charts.py`: Matplotlib chart helpers for notebooks
 - `scripts/`: CLI entrypoints for generating graphics
 - `scripts/prototypes/`: One-off mock generators behind idea-catalog cards
@@ -42,7 +43,7 @@ Guidance for Codex and other coding agents working in this repo.
 - `assets/fonts/`: Playfair Display + DM Sans for graphics
 - `output/feed/`: Generated PNG graphics (gitignored)
 - `cache/headshots/`: Player headshot PNGs from NBA CDN
-- `tests/`: 120 unit tests with mocked API calls
+- `tests/`: 132 unit tests with mocked API calls
 
 ## Traded Players
 The NBA shot chart API returns all shots taken in a Bulls uniform this season, including traded players (e.g. Nikola Vucevic, Coby White, Ayo Dosunmu).
@@ -54,12 +55,14 @@ Pattern for handling this:
 - `min_shots` thresholds scale by timeframe: ~30 for full season, ~10 for last-N games.
 
 ## Graphics Generation
-- Format: 1080x1350 PNG (Instagram portrait 4:5) at 150 DPI.
+- Format: 1080x1350 PNG (Instagram portrait 4:5) at 150 DPI; new prototypes export at 300 DPI (2160x2700).
 - Fonts: Playfair Display (titles), DM Sans (body) from `assets/fonts/`.
 - Court-based graphics use `analysis.detailed_zones()` for 12-zone breakdown.
 - Headshots auto-download from NBA CDN and cache in `cache/headshots/`.
 - Output naming: `output/feed/YYYY-MM-DD-zone-{mode}-{scope}.png`.
 - Available builders: `build_zone_leaders_post()`, `build_zone_frequency_post()`, `build_zone_pps_post()`.
+- Shared craft helpers in `bulls/graphics/craft.py` (F5-derived); table posts use `plottable`; lineup data via `data.get_lineup_stats()`.
+- F5 technique reference: `docs/reference/f5-technique-notes.html`.
 - CLI: `venv/bin/python scripts/make_zone_leaders.py --mode ppg|frequency [--last-n-games N]`.
 
 ## Clarification Gate (Required for Visual Requests)

@@ -96,10 +96,11 @@ Notebook section contract:
 
 ## Graphics Workflow (Single-Image Feed Posts)
 - Build one social image at a time from data + reusable graphics helpers.
-- Format: 1080x1350 PNG (Instagram portrait 4:5) at 150 DPI.
+- Format: 1080x1350 PNG (Instagram portrait 4:5) at 150 DPI; new prototypes export at 300 DPI (2160x2700) so text survives Instagram compression.
 - Fonts: Playfair Display (titles) + DM Sans (body) from `assets/fonts/`.
 - Headshots auto-downloaded from NBA CDN, cached in `cache/headshots/`.
 - Output: `output/feed/YYYY-MM-DD-zone-{mode}-{scope}.png`.
+- Shared craft helpers (`bulls/graphics/craft.py`, F5-derived): gradient stat bars, stacked labels, threshold footers, headshot labels. Table posts render via `plottable`. Technique notes: `docs/reference/f5-technique-notes.html`.
 
 ### Available graphics
 

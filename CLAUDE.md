@@ -26,9 +26,10 @@ Bulls analysis with notebook exploration plus lightweight social graphics genera
 ```
 bulls/
   config.py          # Team ID, season strings, colors, API delay
-  data/fetch.py      # NBA API wrappers (shots, games, box scores, roster)
+  data/fetch.py      # NBA API wrappers (shots, games, box scores, roster, lineups)
   analysis/stats.py  # Statistical functions (zone leaders, PPS, efficiency, trends)
   graphics/feed.py   # Social image builders (1080x1350 Instagram posts)
+  graphics/craft.py  # Shared F5-derived helpers (gradient bars, stacked labels, threshold footers, headshot labels)
   viz/charts.py      # Matplotlib chart helpers (bar, line, shot chart, radar, etc.)
 scripts/             # CLI entrypoints for generating graphics
   make_zone_leaders.py   # Zone leaders PPG + frequency graphics
@@ -47,7 +48,7 @@ docs/
   archive/           # Superseded planning docs (e.g. pre-north-star CONTENT_IDEAS.md)
 assets/fonts/        # Playfair Display + DM Sans for graphics
 output/feed/         # Generated PNG graphics (gitignored)
-tests/               # pytest suite (120 tests)
+tests/               # pytest suite (132 tests)
 ```
 
 ## Key APIs
@@ -58,6 +59,7 @@ tests/               # pytest suite (120 tests)
 - `get_games(last_n=)`, `get_latest_game()`, `get_box_score(game_id)`
 - `get_player_games(player_name, last_n=)`, `get_player_shots(player_id)`
 - `get_league_shots(season=)` — all 30 teams (slow, ~30 API calls)
+- `get_lineup_stats(min_minutes=)` — Bulls 2-man lineup ratings (Advanced measure: OFF/DEF/NET_RATING)
 - `get_roster_efficiency(last_n_games=, min_fga=)`
 - `get_player_headshot(player_id)` — downloads + caches from NBA CDN
 
@@ -76,7 +78,8 @@ tests/               # pytest suite (120 tests)
 - `build_zone_pps_post(team_shots, ...)` — horizontal bar chart of PPS by zone
 - `build_zone_team_stats_post(team_shots, ...)` — court map with team FGM/FGA + FG% per zone
 - `build_zone_volume_leaders_post(team_shots, ...)` — court map with top volume shooter per zone
-- `save_feed_post(fig, output_path)` — saves to PNG at 150 DPI
+- `save_feed_post(fig, output_path)` — saves to PNG at 150 DPI (pass `dpi=300` for the 2160x2700 export new prototypes use)
+- `craft.gradient_bar / stacked_label / threshold_footer / headshot_label` — shared F5-derived helpers; `threshold_footer` renders the fairness guardrails (threshold + coverage + source) on every graphic
 
 ## Working Style
 - Keep reusable code in `bulls/data`, `bulls/analysis`, and `bulls/viz`.
@@ -92,7 +95,9 @@ tests/               # pytest suite (120 tests)
 - `min_shots` thresholds scale by timeframe: 30 for full season, 10 for last-N games.
 
 ## Graphics Generation
-- Default format: 1080x1350 PNG (Instagram portrait 4:5).
+- Default format: 1080x1350 PNG (Instagram portrait 4:5). New prototypes export at 300 DPI (2160x2700) so text survives Instagram compression.
+- Table-format posts render via `plottable` (matplotlib-native); see `scripts/prototypes/f5_lineup_table.py`.
+- F5 technique reference (craft patterns + source links): `docs/reference/f5-technique-notes.html`.
 - Fonts: Playfair Display (titles), DM Sans (body) from `assets/fonts/`.
 - Court-based graphics use `detailed_zones()` for 12-zone breakdown.
 - Headshots are auto-downloaded from the NBA CDN and cached in `cache/headshots/`.
@@ -116,7 +121,7 @@ tests/               # pytest suite (120 tests)
 - Run tests with the project venv:
   - `./run_tests.sh`
   - or `venv/bin/python -m pytest tests/ -v`
-- 120 tests across: `test_data.py`, `test_analysis.py`, `test_viz.py`, `test_graphics.py`, `test_config.py`
+- 132 tests across: `test_data.py`, `test_analysis.py`, `test_viz.py`, `test_graphics.py`, `test_config.py`
 
 ## Docs
 Update `README.md`, `CLAUDE.md`, and `AGENTS.md` when behavior or workflow changes.

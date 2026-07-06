@@ -176,6 +176,106 @@
 <div class="grid">
 
   <div class="card">
+    <a class="thumb" href="mocks/2026-07-05-f5-leaderboard-current-roster.png"><img src="mocks/2026-07-05-f5-leaderboard-current-roster.png" alt="F5 Leaderboard — Bulls Scoring Leaders"></a>
+    <div class="body">
+      <h2>F5 Leaderboard &mdash; Scoring Leaders</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Leaderboard</span>
+        <span class="date">2026-07-05</span>
+      </div>
+      <p class="insight">The F5's engagement format in Bulls clothing: top-10 PPG, headshots, magnitude-colored bars, outlined values, threshold in the footer. First output of the shared craft helpers.</p>
+      <p class="notes"><strong>Notes:</strong> exports at 2160&times;2700 so text survives IG compression. Swap <code>STAT_COL</code> for any stat &mdash; layout stays put. Two views rendered; roster view shown.</p>
+      <p class="files">Script: <a href="../scripts/prototypes/f5_leaderboard.py">prototypes/f5_leaderboard.py</a> · Source: <a href="reference/f5-technique-notes.html">F5 technique notes</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="thumb" href="mocks/2026-07-05-f5-lineup-table.png"><img src="mocks/2026-07-05-f5-lineup-table.png" alt="Bulls Two-Man Lineups table"></a>
+    <div class="body">
+      <h2>Bulls Two-Man Lineups</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Table</span>
+        <span class="date">2026-07-05</span>
+      </div>
+      <p class="insight">The "Doubling Up" format: ten most-used Bulls pairs with off/def/net rating, net rating color-scaled around zero. Only Vučević + Jones broke even; Okoro pairings bled double digits.</p>
+      <p class="notes"><strong>Notes:</strong> first table-format post — new capability via <code>plottable</code>. Reusable: any stat table can ship through this layout now.</p>
+      <p class="files">Script: <a href="../scripts/prototypes/f5_lineup_table.py">prototypes/f5_lineup_table.py</a> · Data: <code>get_lineup_stats()</code></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="body">
+      <h2>Bulls Percentile Cards</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Grid</span>
+        <span class="date">2026-07-05</span>
+      </div>
+      <p class="insight">One mini-card per rotation player: headshot, name plate, and 3&ndash;5 percentile bars vs league (scoring, rebounding, playmaking, defense). NBA Jam rating-card energy.</p>
+      <p class="notes"><strong>Notes:</strong> F5-derived (his NBA Jam ref small-multiple). Needs league-wide percentile baselines &mdash; a real data step. Rounded bars via <code>FancyBboxPatch</code>.</p>
+      <p class="files">Source: <a href="reference/f5-technique-notes.html">F5 technique notes #8</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="body">
+      <h2>Headshot Stat-Card Grid</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Grid</span>
+        <span class="date">2026-07-05</span>
+      </div>
+      <p class="insight">A grid of player tiles, each carrying one big color-coded number (e.g., 3P% among qualifying Bulls). His catch-and-shoot bigs post, Bulls-ified.</p>
+      <p class="notes"><strong>Notes:</strong> simplest parked idea &mdash; craft helpers cover most of it. Good "everyone at a glance" complement to the top-10 leaderboard.</p>
+      <p class="files">Source: <a href="reference/f5-technique-notes.html">F5 technique notes #1&ndash;2</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="body">
+      <h2>Season Trend Small Multiples</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Grid</span>
+        <span class="date">2026-07-05</span>
+      </div>
+      <p class="insight">One mini trend-line per Bulls player (rolling Game Score), shared axes across all panels, ordered by season average. The season's shape, player by player.</p>
+      <p class="notes"><strong>Notes:</strong> F5's shared-scale facet trick (dummy min/max data) noted in the technique doc. Pairs naturally with "The Shape of the Season" timeline.</p>
+      <p class="files">Source: <a href="reference/f5-technique-notes.html">F5 technique notes #7</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="body">
+      <h2>League Leaderboard, Bulls Highlight</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Leaderboard</span>
+        <span class="date">2026-07-05</span>
+      </div>
+      <p class="insight">The eye-candy leaderboard pointed league-wide at a niche stat, with any Bulls player's row highlighted in red. Reach format: "where does our guy rank?"</p>
+      <p class="notes"><strong>Notes:</strong> niche stats via pbpstats.com free API (his Z-Bounds source). Same builder as the Bulls leaderboard &mdash; data change only.</p>
+      <p class="files">Source: <a href="reference/f5-technique-notes.html">F5 technique notes #10</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="body">
+      <h2>Availability Grid</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Grid</span>
+        <span class="date">2026-07-05</span>
+      </div>
+      <p class="insight">Players &times; games grid: played / rested / injured cells across the season. The "why did this season die" post &mdash; availability is the Bulls' story.</p>
+      <p class="notes"><strong>Notes:</strong> F5 has an availability-chart tutorial in the archive (2021). Cached game logs cover most of the data; injury reasons need a source decision.</p>
+      <p class="files">Source: <a href="reference/f5-technique-notes.html">F5 technique notes</a> (tutorial index)</p>
+    </div>
+  </div>
+
+  <div class="card">
     <a class="thumb" href="mocks/2026-07-04-option-b-month-by-month-grid.png"><img src="mocks/2026-07-04-option-b-month-by-month-grid.png" alt="The Season, Month by Month"></a>
     <div class="body">
       <h2>The Season, Month by Month</h2>
@@ -284,7 +384,7 @@
 
 <footer>
   Maintained by hand, one card per idea, newest first. Catalog images are committed copies in <code>docs/mocks/</code> (working renders stay in <code>output/feed/</code>, gitignored); add new cards using the template in this file's source.
-  Last updated 2026-07-04.
+  Last updated 2026-07-05.
 </footer>
 
 </body>

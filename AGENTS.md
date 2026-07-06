@@ -43,7 +43,7 @@ Guidance for Codex and other coding agents working in this repo.
 - `assets/fonts/`: Playfair Display + DM Sans for graphics
 - `output/feed/`: Generated PNG graphics (gitignored)
 - `cache/headshots/`: Player headshot PNGs from NBA CDN
-- `tests/`: 132 unit tests with mocked API calls
+- `tests/`: 134 unit tests with mocked API calls
 
 ## Traded Players
 The NBA shot chart API returns all shots taken in a Bulls uniform this season, including traded players (e.g. Nikola Vucevic, Coby White, Ayo Dosunmu).

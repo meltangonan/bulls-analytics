@@ -346,3 +346,14 @@ class TestGetLineupStats:
         assert kwargs['group_quantity'] == 2
         assert kwargs['per_mode_detailed'] == 'Totals'
         assert kwargs['measure_type_detailed_defense'] == 'Advanced'
+
+    def test_api_error_returns_empty_dataframe_with_columns(self):
+        """get_lineup_stats should degrade to an empty column-bearing frame on API errors."""
+        with patch('bulls.data.fetch.leaguedashlineups.LeagueDashLineups') as mock_lineups:
+            mock_lineups.side_effect = ValueError("malformed response")
+            lineups = get_lineup_stats()
+
+        assert isinstance(lineups, pd.DataFrame)
+        assert lineups.empty
+        for col in LINEUP_COLUMNS:
+            assert col in lineups.columns, f"Missing column: {col}"

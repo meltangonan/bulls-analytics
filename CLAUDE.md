@@ -48,7 +48,7 @@ docs/
   archive/           # Superseded planning docs (e.g. pre-north-star CONTENT_IDEAS.md)
 assets/fonts/        # Playfair Display + DM Sans for graphics
 output/feed/         # Generated PNG graphics (gitignored)
-tests/               # pytest suite (132 tests)
+tests/               # pytest suite (134 tests)
 ```
 
 ## Key APIs
@@ -121,7 +121,7 @@ tests/               # pytest suite (132 tests)
 - Run tests with the project venv:
   - `./run_tests.sh`
   - or `venv/bin/python -m pytest tests/ -v`
-- 132 tests across: `test_data.py`, `test_analysis.py`, `test_viz.py`, `test_graphics.py`, `test_config.py`
+- 134 tests across: `test_data.py`, `test_analysis.py`, `test_viz.py`, `test_graphics.py`, `test_config.py`
 
 ## Docs
 Update `README.md`, `CLAUDE.md`, and `AGENTS.md` when behavior or workflow changes.

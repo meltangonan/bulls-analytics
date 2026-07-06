@@ -43,6 +43,7 @@ from bulls.graphics.feed import (
 
 BOX_CSV = _REPO / "cache" / "box_scores_2025-26.csv"
 ROSTER_CSV = _REPO / "cache" / "roster_2025-26.csv"
+HEADSHOT_CACHE = _REPO / "cache" / "headshots"
 OUTPUT_DIR = _REPO / "output" / "feed"
 
 MIN_GAMES = 20
@@ -133,7 +134,7 @@ def build_leaderboard(
         ax.text(x_rank, y, str(i + 1), ha="right", va="center",
                 fontsize=20, color=FAINT, fontproperties=_fp_body(weight="bold"))
 
-        headshot = get_player_headshot(int(row["personId"]))
+        headshot = get_player_headshot(int(row["personId"]), cache_dir=str(HEADSHOT_CACHE))
         headshot_label(ax, Path(headshot) if headshot else None, x_photo, y, radius=photo_r)
 
         stacked_label(

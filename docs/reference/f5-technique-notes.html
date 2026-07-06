@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>F5 Technique Notes — craft patterns from Owen Phillips, mapped to this repo</title>
+  <style>
+    :root {
+      --bg: #ece9e2;
+      --paper: #fffdf7;
+      --ink: #171716;
+      --muted: #625e57;
+      --line: #d8d2c7;
+      --red: #ce1141;
+      --red-soft: #f8e7ed;
+      --cream: #f3eee3;
+      --green-soft: #e7f1e8;
+      --green: #235d35;
+      --amber-soft: #f9efd8;
+      --amber: #72500d;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(920px, calc(100% - 32px)); margin: 30px auto; background: var(--paper); border: 1px solid var(--line); border-radius: 17px; overflow: hidden; }
+    header.hero { padding: 44px 52px 30px; background: linear-gradient(145deg, #fffdf7 30%, #f8e7ed); }
+    .eyebrow { margin: 0 0 8px; color: var(--red); font-size: 11px; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.15; }
+    h1 { margin: 0; font-size: clamp(30px, 5vw, 46px); letter-spacing: -.03em; }
+    h2 { margin: 0 0 16px; font-size: 27px; letter-spacing: -.02em; }
+    .dek { max-width: 72ch; margin: 16px 0 0; color: #403d38; font-size: 16px; }
+    section { padding: 34px 52px; border-top: 1px solid var(--line); }
+    p { max-width: 74ch; }
+    code { padding: .08em .32em; border-radius: 4px; background: #eeebe5; font: .92em ui-monospace, SFMono-Regular, Menlo, monospace; }
+    a { color: #971033; text-underline-offset: 2px; }
+    .note { margin: 14px 0 0; padding: 14px 16px; border-radius: 11px; background: var(--amber-soft); color: #543a05; font-size: 13px; }
+    .pattern { margin-top: 16px; padding: 20px 22px; border: 1px solid var(--line); border-radius: 13px; background: #fff; }
+    .pattern:first-of-type { margin-top: 0; }
+    .pattern h3 { margin: 0 0 8px; font-size: 19px; }
+    .pattern p { margin: 6px 0 0; color: #45413b; font-size: 14px; }
+    .pattern .fields { display: grid; grid-template-columns: 92px 1fr; gap: 4px 14px; margin-top: 10px; font-size: 13px; }
+    .pattern .fields dt { color: var(--muted); font-size: 10px; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; padding-top: 2px; }
+    .pattern .fields dd { margin: 0; color: #45413b; }
+    .status { display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: 11px; font-weight: 750; }
+    .status.built { background: var(--green-soft); color: var(--green); }
+    .status.parked { background: var(--amber-soft); color: var(--amber); }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 13.5px; }
+    th, td { padding: 9px 11px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 10.5px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .yes { color: var(--green); font-weight: 700; }
+    .no { color: var(--red); font-weight: 700; }
+  </style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <p class="eyebrow">Reference · Saved 2026-07-05</p>
+    <h1>F5 Technique Notes</h1>
+    <p class="dek">Craft patterns distilled from Owen Phillips' newsletter <strong>The F5</strong> (thef5.substack.com), in our own words, each mapped to where it lives in this repo. The newsletter ended August 2025; its ~75 tutorials remain at the <a href="https://thef5.substack.com/p/r-tutorials">tutorial index</a> (paid archive — these notes exist so the knowledge survives without it).</p>
+    <p class="note">House rule: we take his <em>structure</em> (layout craft, labels, thresholds), not his look. Bulls graphics keep Playfair Display / DM Sans, Bulls red, and the 4:5 portrait format. No article text is reproduced here — notes and links only.</p>
+  </header>
+
+  <section>
+    <h2>Craft patterns</h2>
+
+    <article class="pattern">
+      <h3>1. Headshots and logos as data labels <span class="status built">Built</span></h3>
+      <p>Player headshots and team logos sit directly on the graphic as row labels, replacing text-only identification. This is the single biggest legibility upgrade for social-feed graphics — a face reads faster than a name.</p>
+      <dl class="fields">
+        <dt>When</dt><dd>Any leaderboard, board, or table row keyed to a player or team.</dd>
+        <dt>Source</dt><dd><a href="https://thef5.substack.com/p/how-to-create-instagram-eye-candy">How To Create Instagram Eye Candy</a> (his <code>ggpath</code> usage)</dd>
+        <dt>In repo</dt><dd><code>bulls.graphics.craft.headshot_label</code> (takes an image path; placeholder circle when missing); ids resolve via <code>bulls.data.fetch.get_player_headshot</code> with local caching.</dd>
+      </dl>
+    </article>
+
+    <article class="pattern">
+      <h3>2. Gradient-scaled stat bars and columns <span class="status built">Built</span></h3>
+      <p>The bar or table cell encoding a stat is colored by its magnitude on a light→dark ramp, so the ranking reads twice: by position and by color depth. He anchors the ramp to one hue rather than a rainbow.</p>
+      <dl class="fields">
+        <dt>When</dt><dd>Leaderboard value bars; the "verdict" column of a stats table (e.g., net rating).</dd>
+        <dt>Source</dt><dd><a href="https://thef5.substack.com/p/how-to-create-instagram-eye-candy">Instagram Eye Candy</a> (<code>scale_fill_gradient</code>); <a href="https://thef5.substack.com/p/how-to-make-great-tables-in-python">Great Tables In Python</a> (<code>data_color</code>)</dd>
+        <dt>In repo</dt><dd><code>bulls.graphics.craft.gradient_bar</code> (ramp anchored on Bulls red); color-scaled columns in <code>scripts/prototypes/f5_lineup_table.py</code>.</dd>
+      </dl>
+    </article>
+
+    <article class="pattern">
+      <h3>3. Stacked primary + context labels <span class="status built">Built</span></h3>
+      <p>Two-line labels — bold player name over a muted context line (team, minutes, role) — pack identification and qualification into one visual unit instead of extra columns.</p>
+      <dl class="fields">
+        <dt>When</dt><dd>Any row where a name needs context without widening the layout.</dd>
+        <dt>Source</dt><dd><a href="https://thef5.substack.com/p/how-to-make-beautiful-big-boards">How To Make Beautiful Big Boards</a> (<code>gt_merge_stack</code>)</dd>
+        <dt>In repo</dt><dd><code>bulls.graphics.craft.stacked_label</code> — includes the house 16-character truncation rule (long names become "F. Lastname") so every builder handles names identically.</dd>
+      </dl>
+    </article>
+
+    <article class="pattern">
+      <h3>4. Thresholds and coverage printed on the graphic <span class="status built">Built</span></h3>
+      <p>Qualification rules live in the subtitle or footer of the image itself ("min. 3 stat boards and 3 scout boards", "minimum 50 summer-league minutes"), never only in a caption. This is our fairness-guardrail #4 executed as a reusable element.</p>
+      <dl class="fields">
+        <dt>When</dt><dd>Every graphic, by default.</dd>
+        <dt>Source</dt><dd><a href="https://thef5.substack.com/p/how-to-make-beautiful-big-boards">Big Boards</a>; <a href="https://thef5.substack.com/p/small-multiple-r-python">Small multiples in R and Python</a></dd>
+        <dt>In repo</dt><dd><code>bulls.graphics.craft.threshold_footer</code> (threshold + coverage window + source line).</dd>
+      </dl>
+    </article>
+
+    <article class="pattern">
+      <h3>5. Outlined value text on busy backgrounds <span class="status built">Built</span></h3>
+      <p>Big stat numbers get a thin contrasting outline so they stay legible on top of gradient bars or photos. His R tool is <code>shadowtext</code>; the matplotlib equivalent is a stroke path-effect on the text object.</p>
+      <dl class="fields">
+        <dt>When</dt><dd>Value labels drawn over colored bars or images.</dd>
+        <dt>Source</dt><dd><a href="https://thef5.substack.com/p/how-to-create-instagram-eye-candy">Instagram Eye Candy</a></dd>
+        <dt>In repo</dt><dd>Applied inline in <code>scripts/prototypes/f5_leaderboard.py</code> via <code>matplotlib.patheffects</code>.</dd>
+      </dl>
+    </article>
+
+    <article class="pattern">
+      <h3>6. Polished tables as post format <span class="status built">Built</span></h3>
+      <p>A well-set table — logos in cells, stacked labels, one color-scaled verdict column, row striping, tight padding, "UR"-style explicit markers for missing values — is a first-class Instagram format, not a fallback. His stack is <code>{gt}</code>/<code>great_tables</code>; ours is <code>plottable</code> (matplotlib-native, so it reuses our fonts and save pipeline without a browser dependency).</p>
+      <dl class="fields">
+        <dt>When</dt><dd>Multi-column evidence: lineups, combo stats, side-by-side player comparisons.</dd>
+        <dt>Source</dt><dd><a href="https://thef5.substack.com/p/how-to-make-great-tables-in-python">Great Tables In Python</a>; <a href="https://thef5.substack.com/p/how-to-make-more-great-tables-in">More Great Tables in R and Python</a> (headshots as column headers); <a href="https://thef5.substack.com/p/how-to-make-beautiful-big-boards">Big Boards</a> (spanners, borders, color domains)</dd>
+        <dt>In repo</dt><dd><code>scripts/prototypes/f5_lineup_table.py</code>.</dd>
+      </dl>
+    </article>
+
+    <article class="pattern">
+      <h3>7. Small multiples with shared scales <span class="status parked">Parked</span></h3>
+      <p>One mini-chart per player/team in a grid, ordered by a meaningful stat (he orders by correlation strength or total rank), with axis limits forced equal across facets so panels compare honestly. His trick: a dummy dataset carrying each facet's min/max.</p>
+      <dl class="fields">
+        <dt>When</dt><dd>Season-shape stories across the roster; distribution comparisons.</dd>
+        <dt>Source</dt><dd><a href="https://thef5.substack.com/p/small-multiple-r-python">Small multiples in R and Python</a>; <a href="https://thef5.substack.com/p/how-to-make-a-nba-jam-style-small">NBA Jam Style Small Multiple</a></dd>
+        <dt>In repo</dt><dd>Not yet built — catalog card "Season Trend Small Multiples" (Parked). Matplotlib path: <code>plt.subplots</code> grid + shared limits.</dd>
+      </dl>
+    </article>
+
+    <article class="pattern">
+      <h3>8. Percentile bars / stat cards <span class="status parked">Parked</span></h3>
+      <p>Each player gets a mini-card: headshot, name plate, and 3–5 horizontal percentile bars (0–100 vs league) in rounded-bar style with a faint full-scale track behind each bar. Reads like a video-game rating card — extremely feed-friendly.</p>
+      <dl class="fields">
+        <dt>When</dt><dd>Player profiles; rotation overviews; "who does what" explainers.</dd>
+        <dt>Source</dt><dd><a href="https://thef5.substack.com/p/how-to-make-a-nba-jam-style-small">NBA Jam Style Small Multiple</a> (<code>ggchicklet</code> rounded bars + percentile ranks)</dd>
+        <dt>In repo</dt><dd>Not yet built — catalog card "Bulls Percentile Cards" (Parked). Matplotlib path: <code>FancyBboxPatch</code> for rounded bars.</dd>
+      </dl>
+    </article>
+
+    <article class="pattern">
+      <h3>9. High-resolution 4:5 export <span class="status built">Built</span></h3>
+      <p>He exports at 4×5 inches, 600 DPI — the same 4:5 shape as our 1080×1350, just denser. Instagram recompresses everything to ~1080 wide, and text drawn at higher resolution survives that compression visibly crisper.</p>
+      <dl class="fields">
+        <dt>When</dt><dd>All new prototypes.</dd>
+        <dt>Source</dt><dd><a href="https://thef5.substack.com/p/how-to-create-instagram-eye-candy">Instagram Eye Candy</a></dd>
+        <dt>In repo</dt><dd><code>save_feed_post(fig, path, dpi=300)</code> → 2160×2700. Existing builders stay at 150 DPI until restyled.</dd>
+      </dl>
+    </article>
+
+    <article class="pattern">
+      <h3>10. The engagement-format anatomy — used knowingly <span class="status built">Built</span></h3>
+      <p>His most-shared format: top-10 on one stat, one big number per row, faces + logos, zero interpretation required in the first second. He is candid that this is bait — a stat-as-factoid, not analysis. We use the format as a hook but keep our guardrails on it: visible threshold, coverage window, source line, and an insight-first caption.</p>
+      <dl class="fields">
+        <dt>When</dt><dd>Reach posts; niche-stat leaderboards; season milestones.</dd>
+        <dt>Source</dt><dd><a href="https://thef5.substack.com/p/how-to-create-instagram-eye-candy">How To Create Instagram Eye Candy</a></dd>
+        <dt>In repo</dt><dd><code>scripts/prototypes/f5_leaderboard.py</code>.</dd>
+      </dl>
+    </article>
+  </section>
+
+  <section>
+    <h2>His stack → our stack</h2>
+    <table>
+      <thead><tr><th>He uses (R)</th><th>What it does</th><th>Our equivalent</th><th>Have it?</th></tr></thead>
+      <tbody>
+        <tr><td><code>hoopR</code></td><td>NBA Stats API access</td><td><code>nba_api</code> via <code>bulls.data.fetch</code></td><td class="yes">Yes</td></tr>
+        <tr><td><code>ggplot2</code></td><td>Charting grammar</td><td><code>matplotlib</code> (his own Python ports use <code>plotnine</code>)</td><td class="yes">Yes</td></tr>
+        <tr><td><code>gt</code> / <code>gtExtras</code> / <code>gtUtils</code></td><td>Publication tables</td><td><code>plottable</code> (matplotlib-native; <code>great_tables</code> rejected — PNG export needs a headless browser)</td><td class="yes">Added 2026-07</td></tr>
+        <tr><td><code>polars</code> / <code>dplyr</code></td><td>Data wrangling</td><td><code>pandas</code></td><td class="yes">Yes</td></tr>
+        <tr><td><code>ggpath</code></td><td>Images as plot elements</td><td><code>craft.headshot_label</code> / <code>OffsetImage</code></td><td class="yes">Yes</td></tr>
+        <tr><td><code>shadowtext</code></td><td>Outlined text</td><td><code>matplotlib.patheffects</code> stroke</td><td class="yes">Yes</td></tr>
+        <tr><td><code>ggchicklet</code></td><td>Rounded bars</td><td><code>FancyBboxPatch</code></td><td class="yes">Technique</td></tr>
+        <tr><td><code>paletteer</code></td><td>Color palettes</td><td>matplotlib colormaps (house rule: one-hue ramps on Bulls red)</td><td class="yes">Yes</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Data sources he leans on</h2>
+    <p><strong>pbpstats.com free JSON API</strong> — niche play-by-play-derived stats (the Z-Bounds leaderboard came from <code>api.pbpstats.com/get-totals/nba</code>). Our fallback when <code>nba_api</code> lacks a stat.</p>
+    <p><strong>His GitHub data repo</strong> — <a href="https://github.com/Henryjean/data">github.com/Henryjean/data</a>: square team logos, referee data, tutorial datasets. Third-party hosted; cache locally anything we adopt (as we already do for headshots).</p>
+    <p><strong>Full tutorial index</strong> — <a href="https://thef5.substack.com/p/r-tutorials">thef5.substack.com/p/r-tutorials</a>: ~75 tutorials (2020–2025) including formats not yet mined here: diamond plots, beeswarms, availability charts, comet plots, matchup tables, shot-clock data, DuckDB play-by-play work.</p>
+  </section>
+</main>
+</body>
+</html>

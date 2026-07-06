@@ -217,3 +217,17 @@ class TestHeadshotLabel:
 
         assert tuple(artist.get_extent()) == (5.0, 15.0, 15.0, 25.0)
         plt.close(fig)
+
+    def test_real_image_renders_instead_of_placeholder(self, tmp_path):
+        import numpy as np
+
+        img_path = tmp_path / "headshot.png"
+        plt.imsave(img_path, np.zeros((20, 20, 3)))
+
+        fig, ax = plt.subplots()
+        artist = headshot_label(ax, img_path, 0.5, 0.5, radius=0.1)
+
+        # Placeholder discs are 190px square; the real-image branch keeps
+        # the source image's dimensions through the circular crop.
+        assert artist.get_array().shape[0] == 20
+        plt.close(fig)

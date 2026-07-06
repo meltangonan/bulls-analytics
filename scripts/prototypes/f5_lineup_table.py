@@ -22,6 +22,7 @@ import numpy as np
 from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
 from plottable import ColumnDefinition, Table
 
+from bulls.config import CURRENT_SEASON
 from bulls.data import get_lineup_stats
 from bulls.graphics.craft import FAINT, INK, MUTED, threshold_footer
 from bulls.graphics.feed import (
@@ -40,8 +41,8 @@ TOP_N = 10
 EXPORT_DPI = 300  # 2160x2700
 
 TITLE = "Bulls Two-Man Lineups"
-SUBTITLE = "Most-used pairs and their net rating | 2025-26 Season"
-COVERAGE = "2025-26 regular season"
+SUBTITLE = f"Most-used pairs and their net rating | {CURRENT_SEASON} Season"
+COVERAGE = f"{CURRENT_SEASON} regular season"
 
 # Diverging: red for negative net rating, neutral at zero, green for positive.
 NET_CMAP = LinearSegmentedColormap.from_list(
@@ -124,12 +125,18 @@ def build_lineup_table(lineups) -> plt.Figure:
 
 
 def main():
-    lineups = get_lineup_stats(min_minutes=MIN_MINUTES)
+    lineups = get_lineup_stats()
     if lineups.empty:
         sys.exit("No lineup data returned — NBA API unreachable?")
-    print(lineups.sort_values("MIN", ascending=False).head(TOP_N).to_string())
+    qualified = lineups[lineups["MIN"] >= MIN_MINUTES].reset_index(drop=True)
+    if qualified.empty:
+        sys.exit(
+            f"{len(lineups)} lineups returned but none played {MIN_MINUTES}+ minutes "
+            "together — early in the season? Lower MIN_MINUTES."
+        )
+    print(qualified.sort_values("MIN", ascending=False).head(TOP_N).to_string())
 
-    fig = build_lineup_table(lineups)
+    fig = build_lineup_table(qualified)
     stamp = date.today().isoformat()
     path = save_feed_post(fig, OUTPUT_DIR / f"{stamp}-f5-lineup-table.png", dpi=EXPORT_DPI)
     print(f"Saved {path}")

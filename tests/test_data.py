@@ -1,6 +1,7 @@
 """Tests for bulls.data module."""
 import pytest
 import pandas as pd
+from unittest.mock import MagicMock, patch
 from bulls.data import (
     get_games,
     get_latest_game,
@@ -8,6 +9,7 @@ from bulls.data import (
     get_player_games,
     get_player_shots,
     get_roster_efficiency,
+    get_lineup_stats,
 )
 from bulls.config import BULLS_TEAM_ID, CURRENT_SEASON
 
@@ -237,3 +239,110 @@ class TestGetRosterEfficiency:
                 assert isinstance(player['ts_pct'], (int, float))
                 # TS% should be reasonable (0-100 range)
                 assert 0 <= player['ts_pct'] <= 100
+
+
+# Sample 2-man lineup data matching the LeagueDashLineups Advanced response
+MOCK_LINEUP_DATA = pd.DataFrame([
+    {
+        'GROUP_SET': 'Lineups',
+        'GROUP_ID': '-1629632-1631094-',
+        'GROUP_NAME': 'C. White - J. Giddey',
+        'TEAM_ID': BULLS_TEAM_ID,
+        'TEAM_ABBREVIATION': 'CHI',
+        'GP': 40,
+        'MIN': 850.0,
+        'OFF_RATING': 114.2,
+        'DEF_RATING': 112.5,
+        'NET_RATING': 1.7,
+    },
+    {
+        'GROUP_SET': 'Lineups',
+        'GROUP_ID': '-1628436-1629632-',
+        'GROUP_NAME': 'N. Vucevic - C. White',
+        'TEAM_ID': BULLS_TEAM_ID,
+        'TEAM_ABBREVIATION': 'CHI',
+        'GP': 38,
+        'MIN': 620.0,
+        'OFF_RATING': 111.8,
+        'DEF_RATING': 113.4,
+        'NET_RATING': -1.6,
+    },
+    {
+        'GROUP_SET': 'Lineups',
+        'GROUP_ID': '-1631218-1641739-',
+        'GROUP_NAME': 'P. Williams - M. Buzelis',
+        'TEAM_ID': BULLS_TEAM_ID,
+        'TEAM_ABBREVIATION': 'CHI',
+        'GP': 12,
+        'MIN': 55.0,
+        'OFF_RATING': 108.3,
+        'DEF_RATING': 110.1,
+        'NET_RATING': -1.8,
+    },
+])
+
+LINEUP_COLUMNS = ['GROUP_ID', 'GROUP_NAME', 'GP', 'MIN',
+                  'OFF_RATING', 'DEF_RATING', 'NET_RATING']
+
+
+@pytest.fixture
+def mock_lineup_api():
+    """Mock the NBA API LeagueDashLineups to return sample data."""
+    with patch('bulls.data.fetch.leaguedashlineups.LeagueDashLineups') as mock_lineups:
+        mock_instance = MagicMock()
+        mock_instance.get_data_frames.return_value = [MOCK_LINEUP_DATA.copy()]
+        mock_lineups.return_value = mock_instance
+        yield mock_lineups
+
+
+@pytest.fixture
+def mock_empty_lineup_api():
+    """Mock the NBA API LeagueDashLineups to return empty data."""
+    with patch('bulls.data.fetch.leaguedashlineups.LeagueDashLineups') as mock_lineups:
+        mock_instance = MagicMock()
+        mock_instance.get_data_frames.return_value = [pd.DataFrame()]
+        mock_lineups.return_value = mock_instance
+        yield mock_lineups
+
+
+class TestGetLineupStats:
+    """Tests for get_lineup_stats function."""
+
+    def test_returns_dataframe(self, mock_lineup_api):
+        """get_lineup_stats should return a pandas DataFrame."""
+        lineups = get_lineup_stats()
+        assert isinstance(lineups, pd.DataFrame)
+
+    def test_returns_expected_columns(self, mock_lineup_api):
+        """get_lineup_stats should return expected columns."""
+        lineups = get_lineup_stats()
+        for col in LINEUP_COLUMNS:
+            assert col in lineups.columns, f"Missing column: {col}"
+
+    def test_min_minutes_filters_lineups(self, mock_lineup_api):
+        """get_lineup_stats should drop lineups below the MIN threshold."""
+        all_lineups = get_lineup_stats()
+        filtered = get_lineup_stats(min_minutes=100)
+
+        assert len(all_lineups) == 3
+        assert len(filtered) == 2
+        assert (filtered['MIN'] >= 100).all()
+
+    def test_empty_response_returns_empty_dataframe_with_columns(self, mock_empty_lineup_api):
+        """get_lineup_stats should return an empty DataFrame with expected columns."""
+        lineups = get_lineup_stats()
+        assert isinstance(lineups, pd.DataFrame)
+        assert lineups.empty
+        for col in LINEUP_COLUMNS:
+            assert col in lineups.columns, f"Missing column: {col}"
+
+    def test_uses_config_team_id_and_season(self, mock_lineup_api):
+        """get_lineup_stats should call the endpoint with config values."""
+        get_lineup_stats()
+
+        _, kwargs = mock_lineup_api.call_args
+        assert kwargs['team_id_nullable'] == BULLS_TEAM_ID
+        assert kwargs['season'] == CURRENT_SEASON
+        assert kwargs['group_quantity'] == 2
+        assert kwargs['per_mode_detailed'] == 'Totals'
+        assert kwargs['measure_type_detailed_defense'] == 'Advanced'

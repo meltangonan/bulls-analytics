@@ -12,8 +12,8 @@ for repeating formats. (The old notebook workflow was removed 2026-07-06.)
 ## Content North Star
 - The playbook lives in `docs/bulls-content-playbook.html`: a "Bulls visual encyclopedia" —
   current, historical, comparative, understandable.
-- Default grammar: boards, tables, grids, and shared-scale comparisons (Basketball University
-  style). Use the court only when location is the actual question.
+- Common grammar: boards, tables, grids, and shared-scale comparisons. Use the court only when
+  location is the actual question.
 - Work one post idea at a time: walk it through the clarification gate, mock it, stop.
 - Keep qualification thresholds, coverage windows, and sources visible on graphics (fairness
   guardrails in the playbook).
@@ -31,9 +31,15 @@ for repeating formats. (The old notebook workflow was removed 2026-07-06.)
 ## Instagram Access
 - The user's account is `@chicagobullsdata` ("Chicago Bulls + Data Viz"); they stay logged in on
   Chrome.
-- Claude can browse it via the Chrome MCP tools (`mcp__claude-in-chrome__*`): check the current
-  feed/grid, the saved "Basketball" collection (curated reference posts the north star doc is built
-  on), and reference accounts (Basketball University, Kirk Goldsberry, WNBA Viz Wiz, datakabas).
+- Agents should inspect Instagram in Chrome when the task depends on current saves, the live feed,
+  or reference accounts. Use the Chrome/browser capability available in the current runtime: Claude
+  may expose Chrome MCP tools (`mcp__claude-in-chrome__*`), while Codex should discover Chrome or
+  browser tools with `tool_search` when they are not already visible.
+- Treat Instagram access as best-effort and current-session-specific. Use it as a helpful reference
+  surface, and avoid presenting old saved-post counts as confirmed-current.
+- Useful places to check: the current feed/grid, the saved "Basketball" collection, and reference
+  accounts such as Basketball University, Kirk Goldsberry, WNBA Viz Wiz, datakabas, and newer user
+  saves that may better match the current direction.
 - Read-only use: never post, comment, like, follow, or change settings without explicit per-action
   approval.
 

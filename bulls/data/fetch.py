@@ -11,6 +11,7 @@ from nba_api.stats.endpoints import (
     boxscoretraditionalv3,
     shotchartdetail,
     commonteamroster,
+    leaguedashlineups,
 )
 
 from bulls.config import (
@@ -575,6 +576,69 @@ def get_roster(
     except (AttributeError, KeyError, IndexError, requests.RequestException, json.JSONDecodeError, ValueError) as e:
         print(f"Error fetching roster for team {team_id}: {e}")
         return pd.DataFrame(columns=['player_id', 'player_name'])
+
+
+# Columns consumed from the lineup response (Advanced measure type)
+_LINEUP_COLUMNS = ['GROUP_ID', 'GROUP_NAME', 'GP', 'MIN',
+                   'OFF_RATING', 'DEF_RATING', 'NET_RATING']
+
+
+def get_lineup_stats(
+    min_minutes: float = 0,
+    team_id: int = BULLS_TEAM_ID,
+    season: str = CURRENT_SEASON,
+) -> pd.DataFrame:
+    """
+    Get 2-man lineup stats for a team.
+
+    Uses the Advanced measure type because the default Base measure
+    does not include OFF_RATING/DEF_RATING/NET_RATING columns.
+
+    Args:
+        min_minutes: Drop lineups with total MIN below this threshold
+        team_id: NBA team ID (default: Bulls)
+        season: NBA season string (default: current season)
+
+    Returns:
+        DataFrame with columns:
+        - GROUP_ID: Dash-separated player IDs in the lineup
+        - GROUP_NAME: Lineup label (e.g., "C. White - J. Giddey")
+        - GP: Games played together
+        - MIN: Total minutes together
+        - OFF_RATING, DEF_RATING, NET_RATING: Advanced ratings
+
+    Example:
+        >>> lineups = get_lineup_stats(min_minutes=100)
+        >>> lineups.sort_values('NET_RATING', ascending=False).head()
+    """
+    time.sleep(API_DELAY)
+
+    try:
+        lineups = leaguedashlineups.LeagueDashLineups(
+            group_quantity=2,
+            team_id_nullable=team_id,
+            season=season,
+            per_mode_detailed='Totals',
+            measure_type_detailed_defense='Advanced',
+            timeout=60,
+            headers=_NBA_HEADERS,
+        )
+
+        df = lineups.get_data_frames()[0]
+
+        if df.empty:
+            return pd.DataFrame(columns=_LINEUP_COLUMNS)
+
+        result = df[_LINEUP_COLUMNS].copy()
+
+        if min_minutes > 0:
+            result = result[result['MIN'] >= min_minutes].reset_index(drop=True)
+
+        return result
+
+    except (AttributeError, KeyError, IndexError, requests.RequestException, json.JSONDecodeError, ValueError) as e:
+        print(f"Error fetching lineup stats for team {team_id}: {e}")
+        return pd.DataFrame(columns=_LINEUP_COLUMNS)
 
 
 def get_player_headshot(

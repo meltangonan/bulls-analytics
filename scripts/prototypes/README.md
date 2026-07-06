@@ -9,6 +9,8 @@ deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
 | --- | --- |
 | `impact_board.py` | Most Impactful Bulls (also lives in the 2026-07-03 notebook) |
 | `three_options.py` | Impact vs. Availability · The Season, Month by Month · The Shape of the Season |
+| `f5_leaderboard.py` | F5 Leaderboard — Bulls Scoring Leaders (exports at 300 DPI / 2160x2700; change `STAT_COL` + labels for new topics) |
+| `f5_lineup_table.py` | Bulls Lineup Table — 2-man combos by net rating (needs network for lineup data; 300 DPI) |
 
 ## Season cache
 
@@ -38,6 +40,8 @@ fetch.get_roster().to_csv("cache/roster_2025-26.csv", index=False)
 ```bash
 venv/bin/python scripts/prototypes/impact_board.py
 venv/bin/python scripts/prototypes/three_options.py
+venv/bin/python scripts/prototypes/f5_leaderboard.py
+venv/bin/python scripts/prototypes/f5_lineup_table.py
 ```
 
 After keeping a mock, copy its PNG into `docs/mocks/` and add a catalog card

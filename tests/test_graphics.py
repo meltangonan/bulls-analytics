@@ -9,7 +9,11 @@ from bulls.graphics import (
     build_zone_pps_post,
     build_zone_team_stats_post,
     build_zone_volume_leaders_post,
+    gradient_bar,
+    headshot_label,
     save_feed_post,
+    stacked_label,
+    threshold_footer,
 )
 
 
@@ -141,3 +145,75 @@ class TestSaveFeedPost:
 
         assert saved.exists()
         assert saved.suffix == ".png"
+
+
+class TestGradientBar:
+    """Tests for gradient_bar."""
+
+    def test_min_maps_light_and_max_maps_dark(self):
+        fig, ax = plt.subplots()
+        low = gradient_bar(ax, y=1.0, value=0.0, vmin=0.0, vmax=10.0, length=100)
+        high = gradient_bar(ax, y=2.0, value=10.0, vmin=0.0, vmax=10.0, length=100)
+
+        low_intensity = sum(low.get_facecolor()[:3])
+        high_intensity = sum(high.get_facecolor()[:3])
+        assert low_intensity > high_intensity
+        plt.close(fig)
+
+
+class TestStackedLabel:
+    """Tests for stacked_label."""
+
+    def test_renders_primary_above_secondary(self):
+        fig, ax = plt.subplots()
+        primary, secondary = stacked_label(ax, 0.5, 0.5, "Coby White", "22.4 PPG")
+
+        assert primary.get_text() == "Coby White"
+        assert secondary.get_text() == "22.4 PPG"
+        assert primary.get_position()[1] > secondary.get_position()[1]
+        plt.close(fig)
+
+    def test_truncates_long_name(self):
+        fig, ax = plt.subplots()
+        primary, _ = stacked_label(ax, 0.5, 0.5, "Giannis Antetokounmpo", "30.1 PPG")
+
+        assert primary.get_text() == "G. Antetokounmpo"
+        plt.close(fig)
+
+
+class TestThresholdFooter:
+    """Tests for threshold_footer."""
+
+    def test_contains_threshold_and_coverage_window(self):
+        fig, ax = plt.subplots()
+        threshold_footer(fig, "Min. 20 games", "2025-26 season through Jul 4")
+
+        footer = " ".join(t.get_text() for t in fig.texts)
+        assert "20" in footer
+        assert "2025-26 season through Jul 4" in footer
+        plt.close(fig)
+
+
+class TestHeadshotLabel:
+    """Tests for headshot_label."""
+
+    def test_none_path_draws_placeholder(self):
+        fig, ax = plt.subplots()
+        artist = headshot_label(ax, None, 0.5, 0.5, radius=0.1)
+
+        assert artist in ax.images
+        plt.close(fig)
+
+    def test_missing_path_draws_placeholder(self, tmp_path):
+        fig, ax = plt.subplots()
+        artist = headshot_label(ax, tmp_path / "missing.png", 0.5, 0.5, radius=0.1)
+
+        assert artist in ax.images
+        plt.close(fig)
+
+    def test_radius_sets_extent(self):
+        fig, ax = plt.subplots()
+        artist = headshot_label(ax, None, 10.0, 20.0, radius=5.0)
+
+        assert tuple(artist.get_extent()) == (5.0, 15.0, 15.0, 25.0)
+        plt.close(fig)

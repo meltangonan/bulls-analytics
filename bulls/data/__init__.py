@@ -10,4 +10,5 @@ from bulls.data.fetch import (
     get_roster_efficiency,
     get_roster,
     get_player_headshot,
+    get_lineup_stats,
 )

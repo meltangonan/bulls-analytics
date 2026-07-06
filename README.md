@@ -53,6 +53,7 @@ venv/bin/python -m pytest tests/ -v
 
 ## Working In This Repo
 
-Conventions, the data/analysis/graphics API reference, the graphics-generation workflow, and the
-clarification gate for new visual requests live in **`AGENTS.md`** (`CLAUDE.md` is a one-line
+Conventions, the data/analysis/graphics API reference, the graphics-generation workflow, the
+clarification gate for new visual requests, and the posting workflow (session entry points) live
+in **`AGENTS.md`** (`CLAUDE.md` is a one-line
 pointer to it). Start there before adding data helpers, building a graphic, or mocking a post idea.

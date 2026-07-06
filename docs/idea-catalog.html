@@ -176,6 +176,90 @@
 <div class="grid">
 
   <div class="card">
+    <div class="body">
+      <h2>Shot Profile Evolution</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Court</span>
+        <span class="date">2026-07-06</span>
+      </div>
+      <p class="insight">How the Bulls' shot mix moved across eras &mdash; two (or four) season courts on one shared frequency scale, mid-range dying as the arc takes over. Kirk's &ldquo;two eras, one canvas, one unmistakable conclusion&rdquo; model; court grammar earns its place because location <em>is</em> the question.</p>
+      <p class="notes"><strong>Notes:</strong> data is reachable today &mdash; every shot fetcher takes a <code>season</code> string, so past seasons are one call each (slow; cache per-season pulls). Design questions: which eras (e.g., 2010-11 Rose vs 2025-26), and frequency vs efficiency as the color.</p>
+      <p class="files">Data: <code>get_team_shots(season=&hellip;)</code> · Source: playbook &ldquo;Spatial and style evolution&rdquo; lane + Kirk spatial-comparison reference</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="body">
+      <h2>Most-Played Five-Man Lineups</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Board</span>
+        <span class="date">2026-07-06</span>
+      </div>
+      <p class="insight">The Basketball University lineup board in Bulls clothing: one row per five-man unit &mdash; five headshots, a big net-rating pill, a possession-count badge &mdash; ranked by possessions played. Dense but obvious.</p>
+      <p class="notes"><strong>Notes:</strong> direct adaptation of the saved BBU reference the playbook calls the target grammar for lineup boards. Data is nearly free: <code>get_lineup_stats()</code> already hits <code>LeagueDashLineups</code> with <code>group_quantity=2</code> &mdash; a 5-man variant is a parameter change. Keep the min-possession threshold visible.</p>
+      <p class="files">Data: <code>get_lineup_stats()</code> (extend to 5-man) · Source: playbook &ldquo;lineup board&rdquo; reference</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="body">
+      <h2>Where This Ranks &mdash; Franchise Company</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Leaderboard</span>
+        <span class="date">2026-07-06</span>
+      </div>
+      <p class="insight">A current Bulls season placed on an all-time franchise leaderboard &mdash; e.g., Giddey's 2025-26 among the best Bulls guard seasons ever &mdash; with the current player's row highlighted in red. Turns a season stat into historical company.</p>
+      <p class="notes"><strong>Notes:</strong> first card in the historical lane. Same builder as the F5 leaderboard; the new work is the data step (franchise season-level history via NBA API player career stats or a basketball-reference pull &mdash; source decision needed).</p>
+      <p class="files">Source: playbook &ldquo;Historical Rankings, Records &amp; Rarity&rdquo; lane</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="body">
+      <h2>Same Age, Different Era</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Board</span>
+        <span class="date">2026-07-06</span>
+      </div>
+      <p class="insight">Buzelis at 21 next to past Bulls at 21 &mdash; Rose, Butler, LaVine, Jordan &mdash; on one shared-scale board (per-36 scoring, efficiency, usage). The fairest version of &ldquo;is the kid ahead of schedule?&rdquo;</p>
+      <p class="notes"><strong>Notes:</strong> playbook prompt starter (&ldquo;players at the same age or career stage&rdquo;). NBA API career stats cover it; era context (pace, league averages) should ride along as a footer caveat.</p>
+      <p class="files">Source: playbook &ldquo;Player Comparisons&rdquo; lane</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="body">
+      <h2>Cap Share by Era</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Timeline</span>
+        <span class="date">2026-07-06</span>
+      </div>
+      <p class="insight">Top salary as a share of the cap, season by season &mdash; how concentrated Bulls payroll was under Jordan, Rose, Butler, LaVine, and now. Cap share, never raw dollars, so decades stay comparable.</p>
+      <p class="notes"><strong>Notes:</strong> opens the salary lane. Blocker is the data source &mdash; no salary data in the repo; needs hoopshype / spotrac / basketball-reference contracts (source decision before mocking).</p>
+      <p class="files">Source: playbook &ldquo;Salary, Cap &amp; Roster-Building History&rdquo; lane</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="body">
+      <h2>Bulls Draft History Grid</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Grid</span>
+        <span class="date">2026-07-06</span>
+      </div>
+      <p class="insight">Every Bulls first-round pick since 2000 in one grid &mdash; headshot, pick number, and an outcome measure (games or win shares as a Bull). The Kirk history-grid grammar: repetition carries the story.</p>
+      <p class="notes"><strong>Notes:</strong> opens the drafts &amp; transactions lane. NBA API draft history endpoint exists; outcome metric choice (and its fairness for recent picks) is the design question.</p>
+      <p class="files">Source: playbook &ldquo;Records, Drafts &amp; Transactions&rdquo; lane</p>
+    </div>
+  </div>
+
+  <div class="card">
     <a class="thumb" href="mocks/2026-07-05-f5-leaderboard-current-roster.png"><img src="mocks/2026-07-05-f5-leaderboard-current-roster.png" alt="F5 Leaderboard — Bulls Scoring Leaders"></a>
     <div class="body">
       <h2>F5 Leaderboard &mdash; Scoring Leaders</h2>
@@ -384,7 +468,7 @@
 
 <footer>
   Maintained by hand, one card per idea, newest first. Catalog images are committed copies in <code>docs/mocks/</code> (working renders stay in <code>output/feed/</code>, gitignored); add new cards using the template in this file's source.
-  Last updated 2026-07-05.
+  Last updated 2026-07-06.
 </footer>
 
 </body>

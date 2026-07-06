@@ -141,6 +141,37 @@ tests/               # pytest suite (mocked NBA API calls)
 - After clarifying: re-state the agreed brief in 3-6 bullets, then implement data/analysis changes,
   add tests, and generate the image.
 
+## Session Entry Points (Posting Workflow)
+The goal is to post regularly and often. Sessions typically open one of three ways — recognize
+which one it is and run the matching flow:
+
+1. **"I want to post X from the catalog."** Pull up the card in `docs/idea-catalog.html` and treat
+   it as a pre-filled brief. Run an abbreviated clarification gate: only ask about fields the card
+   leaves open (usually exact timeframe and title/subtitle/footnote copy — one question at a time).
+   Then refresh data, run or adapt the prototype script, render at 300 DPI, and iterate with the
+   user. When they approve it for posting: copy the final PNG to `docs/mocks/`, update the card
+   (status → Mocked), and add a copy-paste caption + hashtag block to the card so posting from the
+   phone is trivial (the playbook's "Ship-Ready Caption Blocks" thread — its wake condition is any
+   post that ships). The user posts manually; never post for them. After they confirm it went up,
+   flip the card to Posted.
+
+2. **"I have a new idea / question."** Full clarification gate, then the standard prototype-first
+   flow: script in `scripts/prototypes/`, PNG to `output/feed/`, card in the catalog.
+
+3. **"I have no ideas but need to post."** Surface 2-3 concrete candidates, favoring: Parked
+   catalog cards whose data is ready today, then the playbook's Guided Idea Bank lanes, then
+   anything timely (latest game via `get_latest_game()`, roster news, dates/anniversaries). Present
+   them as a short reaction round with a one-line pitch each; the user picks; continue as flow 1
+   or 2. Don't invent a new format when a Parked card already covers the idea.
+
+Card status flow: Parked → Mocked → Posted (Generated is legacy, pre-playbook). Whichever entry
+point, the per-post rule from the north star still holds: one idea at a time, thresholds and
+sources visible on the graphic.
+
+Season rollover: every fetcher defaults to `CURRENT_SEASON` in `bulls/config.py`. When a new
+season starts (typically late October), bump `CURRENT_SEASON`/`LAST_SEASON` first — otherwise
+"current" posts silently render last season's frozen data.
+
 ## Tests
 Run with the project venv:
 - `./run_tests.sh`

@@ -7,7 +7,7 @@ deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
 
 | Script | Catalog cards |
 | --- | --- |
-| `impact_board.py` | Most Impactful Bulls (also lives in the 2026-07-03 notebook) |
+| `impact_board.py` | Most Impactful Bulls |
 | `three_options.py` | Impact vs. Availability · The Season, Month by Month · The Shape of the Season |
 | `f5_leaderboard.py` | F5 Leaderboard — Bulls Scoring Leaders (exports at 300 DPI / 2160x2700; change `STAT_COL` + labels for new topics) |
 | `f5_lineup_table.py` | Bulls Lineup Table — 2-man combos by net rating (needs network for lineup data; 300 DPI) |

@@ -1,100 +1,154 @@
-# AGENTS.md
+# Working Guide
 
-Guidance for Codex and other coding agents working in this repo.
+Guidance for AI coding agents (Claude Code, Codex, and others) working in this repository.
+This is the single source of truth — `CLAUDE.md` imports it via `@AGENTS.md`, so edit this file
+only.
 
-## Project Intent
-- Bulls analytics workspace for social graphics generation, with optional notebook exploration.
-- Primary outputs: 1080x1350 Instagram graphics for `@chicagobullsdata`, tracked as cards in `docs/idea-catalog.html`.
-- Content north star: the "Bulls visual encyclopedia" playbook in `docs/bulls-content-playbook.html`. Boards/tables/shared-scale comparisons are the default grammar; court graphics only when location is the question. One post idea at a time.
+## Scope
+Bulls analysis with lightweight social-graphics generation, feeding the `@chicagobullsdata`
+Instagram account. Everything runs as scripts — prototype scripts for post mocks, promoted CLIs
+for repeating formats. (The old notebook workflow was removed 2026-07-06.)
 
-## Non-Goals (Unless User Asks)
+## Content North Star
+- The playbook lives in `docs/bulls-content-playbook.html`: a "Bulls visual encyclopedia" —
+  current, historical, comparative, understandable.
+- Default grammar: boards, tables, grids, and shared-scale comparisons (Basketball University
+  style). Use the court only when location is the actual question.
+- Work one post idea at a time: walk it through the clarification gate, mock it, stop.
+- Keep qualification thresholds, coverage windows, and sources visible on graphics (fairness
+  guardrails in the playbook).
+
+## Priorities
+1. Keep solutions simple.
+2. Favor analysis quality over presentation polish.
+3. Avoid adding automation/pipelines unless explicitly requested.
+
+## Non-Goals (Unless The User Asks)
 - No scheduled automation workflows.
 - No heavy export pipelines.
 - No heavy framework additions.
 
-## Engineering Rules
-1. Keep it simple; avoid over-engineering.
-2. Prioritize reusable analysis helpers over presentation helpers.
-3. Post mocks are prototype-script-first (adopted 2026-07-04): one script per idea batch in `scripts/prototypes/` + a catalog card. Promote to `bulls/graphics` + a `scripts/` CLI only when a format repeats.
-4. Notebooks are optional (analysis deep dives only). When used: one idea per notebook, consistent section structure, concise.
-5. Extract helper functions only when prototype/notebook logic repeats 2-3 times.
-6. Prefer small, test-backed changes.
-7. Before building any visual/graphic, run the Clarification Gate below.
+## Instagram Access
+- The user's account is `@chicagobullsdata` ("Chicago Bulls + Data Viz"); they stay logged in on
+  Chrome.
+- Claude can browse it via the Chrome MCP tools (`mcp__claude-in-chrome__*`): check the current
+  feed/grid, the saved "Basketball" collection (curated reference posts the north star doc is built
+  on), and reference accounts (Basketball University, Kirk Goldsberry, WNBA Viz Wiz, datakabas).
+- Read-only use: never post, comment, like, follow, or change settings without explicit per-action
+  approval.
 
-## Repo Conventions
-- `bulls/config.py`: Team ID, season strings, colors, API delay
-- `bulls/data/fetch.py`: NBA API wrappers (shots, games, box scores, roster)
-- `bulls/analysis/stats.py`: Statistical functions (zone leaders, PPS, efficiency, trends)
-- `bulls/graphics/feed.py`: Single-image social graphics builders (1080x1350 Instagram)
-- `bulls/graphics/craft.py`: Shared F5-derived helpers (gradient bars, stacked labels, threshold footers, headshot labels)
-- `bulls/viz/charts.py`: Matplotlib chart helpers for notebooks
-- `scripts/`: CLI entrypoints for generating graphics
-- `scripts/prototypes/`: One-off mock generators behind idea-catalog cards
-- `notebooks/active/`: Current idea notebooks (`YYYY-MM-DD-topic-slug.ipynb`)
-- `notebooks/archive/`: Frozen/older notebooks
-- `notebooks/templates/`: Starter notebooks
-- `notebooks/INDEX.md`: Notebook catalog + workflow rules
-- `docs/bulls-content-playbook.html`: North star playbook (living doc, revision history at bottom)
-- `docs/idea-catalog.html`: Visual idea catalog — one card per post idea (mock, status, notes), newest first
-- `docs/mocks/`: Committed copies of catalog-referenced mock images (`output/` is gitignored)
-- `docs/ideation/`: North star + ideation docs
-- `docs/reference/`: Saved tutorials, inspiration screenshots
-- `docs/archive/`: Superseded planning docs
-- `assets/fonts/`: Playfair Display + DM Sans for graphics
-- `output/feed/`: Generated PNG graphics (gitignored)
-- `cache/headshots/`: Player headshot PNGs from NBA CDN
-- `tests/`: 134 unit tests with mocked API calls
+## Project Structure
+
+```
+bulls/
+  config.py          # Team ID, season strings, colors, API delay
+  data/fetch.py      # NBA API wrappers (shots, games, box scores, roster, lineups)
+  analysis/stats.py  # Statistical functions (zone leaders, PPS, efficiency, trends)
+  graphics/feed.py   # Social image builders (1080x1350 Instagram posts)
+  graphics/craft.py  # Shared F5-derived helpers (gradient bars, stacked labels, threshold footers, headshot labels)
+scripts/             # CLI entrypoints for generating graphics
+  make_zone_leaders.py   # Zone leaders PPG + frequency graphics
+  make_zone_shooting.py  # Zone shooting stats (team aggregate or volume leaders)
+  make_feed_post.py      # General feed post generation
+  prototypes/            # One-off mock generators behind idea-catalog cards
+docs/
+  bulls-content-playbook.html  # North star (living doc, revision history at bottom)
+  idea-catalog.html  # Visual idea catalog: one card per post idea (mock image, status, notes)
+  mocks/             # Committed copies of catalog-referenced mock images (output/ is gitignored)
+  ideation/          # North star + ideation docs (HTML)
+  reference/         # Saved tutorials, inspiration screenshots, F5 technique notes
+  archive/           # Superseded planning docs
+assets/fonts/        # Playfair Display + DM Sans for graphics
+cache/headshots/     # Player headshot PNGs from NBA CDN
+output/feed/         # Generated PNG graphics (gitignored)
+tests/               # pytest suite (mocked NBA API calls)
+```
+
+## Key APIs
+
+### `bulls.data`
+- `get_team_shots(last_n_games=)` — shot chart data for all players on the team
+- `get_roster()` — current roster from NBA API (use to filter out traded players)
+- `get_games(last_n=)`, `get_latest_game()`, `get_box_score(game_id)`
+- `get_player_games(player_name, last_n=)`, `get_player_shots(player_id)`
+- `get_league_shots(season=)` — all 30 teams (slow, ~30 API calls)
+- `get_lineup_stats(min_minutes=)` — Bulls 2-man lineup ratings (Advanced measure: OFF/DEF/NET_RATING)
+- `get_roster_efficiency(last_n_games=, min_fga=)`
+- `get_player_headshot(player_id)` — downloads + caches from NBA CDN
+
+### `bulls.analysis`
+- `detailed_zones(team_shots)` — expands 6 basic zones into 12 granular zones
+- `zone_leaders(team_shots, min_shots=)` — PPG leader per zone
+- `zone_leaders_by_frequency(team_shots, min_shots=)` — FGA/game leader per zone
+- `zone_volume_leaders(team_shots, min_shots=)` — highest-FGA shooter per zone (returns FGM, FGA, FG%)
+- `points_per_shot(team_shots, by_zone=)` — PPS overall and per zone
+- `league_pps_by_zone(league_shots)`, `high_value_zone_usage(league_shots)`
+- `season_averages()`, `efficiency_metrics()`, `scoring_trend()`, `rolling_averages()`
+
+### `bulls.graphics`
+- `build_zone_leaders_post(team_shots, title=, subtitle=, footnote=, min_shots=)` — PPG court map
+- `build_zone_frequency_post(team_shots, ...)` — frequency court map
+- `build_zone_pps_post(team_shots, ...)` — horizontal bar chart of PPS by zone
+- `build_zone_team_stats_post(team_shots, ...)` — court map with team FGM/FGA + FG% per zone
+- `build_zone_volume_leaders_post(team_shots, ...)` — court map with top volume shooter per zone
+- `save_feed_post(fig, output_path)` — saves to PNG at 150 DPI (pass `dpi=300` for the 2160x2700 export new prototypes use)
+- `craft.gradient_bar / stacked_label / threshold_footer / headshot_label` — shared F5-derived helpers; `threshold_footer` renders the fairness guardrails (threshold + coverage + source) on every graphic
+
+## Working Style
+- Keep reusable code in `bulls/data` and `bulls/analysis`.
+- Keep social image builders in `bulls/graphics` and CLI entrypoints in `scripts/`.
+- Post mocks are prototype-script-first (adopted 2026-07-04): one script per idea batch in
+  `scripts/prototypes/`, PNGs to `output/feed/`, and a card in `docs/idea-catalog.html` (newest
+  first, use the in-file template; statuses: Posted / Mocked / Generated / Parked). Copy each card's
+  image into `docs/mocks/` (committed) so the catalog stays portable — `output/` is gitignored.
+  Promote a builder into `bulls/graphics` + a `scripts/` CLI only once the format repeats.
+- Extract helper functions only when prototype logic repeats 2-3 times.
+- Prefer small, test-backed changes.
 
 ## Traded Players
-The NBA shot chart API returns all shots taken in a Bulls uniform this season, including traded players (e.g. Nikola Vucevic, Coby White, Ayo Dosunmu).
-
-Pattern for handling this:
-- Use `data.get_roster()` to fetch the current roster from the NBA API.
-- Filter shot data by `player_id` to get current-roster-only views.
-- Notebooks and graphics should show **both views** (all players + current roster) so the user can compare.
+- The NBA shot chart API returns all shots taken in a Bulls uniform this season, including traded
+  players (e.g. Nikola Vucevic, Coby White, Ayo Dosunmu).
+- Use `data.get_roster()` to get the current roster and filter by `player_id` when needed.
+- Graphics should show both views (all players + current roster) so the user can compare.
 - `min_shots` thresholds scale by timeframe: ~30 for full season, ~10 for last-N games.
 
 ## Graphics Generation
-- Format: 1080x1350 PNG (Instagram portrait 4:5) at 150 DPI; new prototypes export at 300 DPI (2160x2700).
+- Default format: 1080x1350 PNG (Instagram portrait 4:5) at 150 DPI. New prototypes export at
+  300 DPI (2160x2700) so text survives Instagram compression.
+- Table-format posts render via `plottable` (matplotlib-native); see
+  `scripts/prototypes/f5_lineup_table.py`.
+- F5 technique reference (craft patterns + source links): `docs/reference/f5-technique-notes.html`.
 - Fonts: Playfair Display (titles), DM Sans (body) from `assets/fonts/`.
-- Court-based graphics use `analysis.detailed_zones()` for 12-zone breakdown.
-- Headshots auto-download from NBA CDN and cache in `cache/headshots/`.
-- Output naming: `output/feed/YYYY-MM-DD-zone-{mode}-{scope}.png`.
-- Available builders: `build_zone_leaders_post()`, `build_zone_frequency_post()`, `build_zone_pps_post()`.
-- Shared craft helpers in `bulls/graphics/craft.py` (F5-derived); table posts use `plottable`; lineup data via `data.get_lineup_stats()`.
-- F5 technique reference: `docs/reference/f5-technique-notes.html`.
-- CLI: `venv/bin/python scripts/make_zone_leaders.py --mode ppg|frequency [--last-n-games N]`.
+- Court-based graphics use `analysis.detailed_zones()` for the 12-zone breakdown.
+- Headshots are auto-downloaded from the NBA CDN and cached in `cache/headshots/`.
+- Output goes to `output/feed/` with naming: `YYYY-MM-DD-zone-{mode}-{scope}.png`.
+- CLI examples:
+  - `venv/bin/python scripts/make_zone_leaders.py --mode ppg|frequency [--last-n-games N]`
+  - `venv/bin/python scripts/make_zone_shooting.py --mode team|volume [--last-n-games N] [--min-shots N]`
+  - `venv/bin/python scripts/make_feed_post.py --post-type zone-pps [--last-n-games N]`
 
 ## Clarification Gate (Required for Visual Requests)
-- Ask focused clarification questions before implementation.
-- Ask one question at a time when possible.
-- Do not generate final visuals until all required fields below are clear.
-- If the runtime supports AskUserTool, use it; otherwise ask directly in chat.
+- Before creating a new visual, clarify the request first.
+- Ask one focused question at a time.
+- If AskUserTool is available in the runtime, use it; otherwise ask directly in chat.
+- Do not start implementation until these fields are clear:
+  - `insight_goal`: what the post should prove
+  - `scope`: team/player + season or last N games
+  - `visual_type`: chart/card style
+  - `style_direction`: clean, bold, editorial, etc.
+  - `output_text`: exact title/subtitle/footnote copy
+- Defaults if the user says "pick for me": 1080x1350 Instagram feed portrait, PNG export.
+- After clarifying: re-state the agreed brief in 3-6 bullets, then implement data/analysis changes,
+  add tests, and generate the image.
 
-Required fields:
-- `insight_goal`: What the visual should prove.
-- `scope`: Team/player and season vs last N games.
-- `visual_type`: Chart/card type.
-- `style_direction`: Visual direction (clean, bold, editorial, etc.).
-- `output_text`: Exact title/subtitle/footnote copy.
+## Tests
+Run with the project venv:
+- `./run_tests.sh`
+- or `venv/bin/python -m pytest tests/ -v`
 
-Defaults (if user says "pick for me"):
-- `size`: 1080x1350 (Instagram feed portrait)
-- `format`: PNG
+Suites: `test_data.py`, `test_analysis.py`, `test_graphics.py`, `test_config.py` — all NBA API
+calls are mocked.
 
-After clarifying:
-- Re-state the agreed brief in 3-6 bullet points.
-- Then implement data/analysis changes, add tests, and generate the image.
-
-## Validation
-Run before finishing:
-
-```bash
-./run_tests.sh
-```
-
-## Documentation Sync
-If behavior changes, update:
-- `README.md`
-- `CLAUDE.md`
-- `AGENTS.md`
+## Docs
+Update `README.md` and this file when behavior or workflow changes. `CLAUDE.md` is a one-line
+pointer (`@AGENTS.md`) — don't add content there.

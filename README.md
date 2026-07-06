@@ -1,18 +1,23 @@
 # Bulls Analytics
 
-Lean Python workspace for Chicago Bulls analysis in Jupyter notebooks, feeding the [@chicagobullsdata](https://www.instagram.com/chicagobullsdata/) Instagram account.
+Lean Python workspace for Chicago Bulls analysis and lightweight social-graphics generation,
+feeding the [@chicagobullsdata](https://www.instagram.com/chicagobullsdata/) Instagram account.
 
 ## What This Repo Is For
-- Pull Bulls game and shot data from the NBA API
-- Compute reusable analysis metrics in `bulls/analysis`
-- Produce 1080x1350 Instagram graphics, one post idea at a time
-- Track every post idea as a card in the idea catalog
+- Pull Bulls game and shot data from the NBA API.
+- Compute reusable analysis metrics (zone leaders, points-per-shot, efficiency, lineups).
+- Produce 1080x1350 Instagram graphics, one post idea at a time.
+- Track every post idea as a card in the idea catalog.
 
-This repo is intentionally lean: prototype scripts (`scripts/prototypes/`) + the idea catalog drive post mocks; notebooks are optional for deeper analysis.
+This repo is intentionally lean: prototype scripts (`scripts/prototypes/`) plus the idea catalog
+drive post mocks; formats that repeat get promoted into `bulls/graphics` with a CLI.
 
-**Content north star:** the "Bulls visual encyclopedia" playbook in `docs/bulls-content-playbook.html`. Boards, tables, and shared-scale comparisons are the default grammar; court graphics only when location is the actual question.
+**Content north star** — the "Bulls visual encyclopedia" playbook in
+`docs/bulls-content-playbook.html`. Boards, tables, and shared-scale comparisons are the default
+grammar; court graphics only when location is the actual question.
 
-**Idea catalog:** every post idea we mock gets a card in `docs/idea-catalog.html` (image, status, grammar, notes) — open it in a browser to review the shelf.
+**Idea catalog** — every post idea we mock gets a card in `docs/idea-catalog.html` (image, status,
+grammar, notes). Open it in a browser to review the shelf.
 
 ## Project Layout
 
@@ -21,23 +26,11 @@ bulls-analytics/
 ├── bulls/
 │   ├── data/       # NBA API fetch helpers
 │   ├── analysis/   # stat + shot-quality analysis helpers
-│   ├── viz/        # matplotlib chart helpers for notebooks
-│   └── graphics/   # single-image social graphics builders
-├── notebooks/
-│   ├── active/     # current idea notebooks
-│   ├── archive/    # older/frozen notebooks
-│   ├── templates/  # notebook starter templates
-│   └── INDEX.md    # notebook catalog + workflow rules
+│   └── graphics/   # social-graphics builders + shared craft helpers
 ├── scripts/        # CLI entrypoints
 │   └── prototypes/ # one-off mock generators behind idea-catalog cards
-├── tests/          # focused unit tests with mocked API calls
-├── docs/
-│   ├── bulls-content-playbook.html  # north star (living doc, revision history at bottom)
-│   ├── idea-catalog.html  # visual idea catalog (one card per post idea)
-│   ├── mocks/      # committed copies of catalog-referenced mock images
-│   ├── ideation/   # north star + ideation docs
-│   ├── reference/  # saved tutorials, inspiration screenshots
-│   └── archive/    # superseded planning docs
+├── docs/           # north star playbook, idea catalog, mocks, reference
+├── tests/          # unit tests with mocked API calls
 └── output/         # generated graphics (gitignored)
 ```
 
@@ -58,105 +51,8 @@ pip install -r requirements.txt
 venv/bin/python -m pytest tests/ -v
 ```
 
-## Notebook Quick Start
+## Working In This Repo
 
-```python
-from bulls import data, analysis, viz
-
-games = data.get_games(last_n=10)
-team_shots = data.get_team_shots(last_n_games=10)
-
-# Current roster (filters out traded players like Vucevic, Coby, Ayo)
-roster = data.get_roster()
-roster_ids = set(roster['player_id'].tolist())
-current_shots = team_shots[team_shots['player_id'].isin(roster_ids)]
-
-# 12-zone breakdown + zone leaders
-detailed = analysis.detailed_zones(team_shots)
-leaders = analysis.zone_leaders(detailed, min_shots=5)
-
-pps = analysis.points_per_shot(team_shots, by_zone=True)
-fig = viz.shot_chart(team_shots, show_zones=False, title="Bulls Shot Chart")
-```
-
-## Notebook Workflow (One Notebook Per Idea)
-- New notebook location: `notebooks/active/`
-- Name format: `YYYY-MM-DD-topic-slug.ipynb`
-- Start from template: `notebooks/templates/idea_template.ipynb`
-- Move completed notebooks to: `notebooks/archive/`
-- Keep notebook list updated in: `notebooks/INDEX.md`
-
-Notebook section contract:
-- `Objective` (one sentence)
-- `Data Pull` (imports + fetch only)
-- `Analysis` (2-4 focused blocks)
-- `Output` (1-2 key charts/tables)
-- `Takeaways` (3 bullets)
-- `Next Question` (one line)
-
-## Graphics Workflow (Single-Image Feed Posts)
-- Build one social image at a time from data + reusable graphics helpers.
-- Format: 1080x1350 PNG (Instagram portrait 4:5) at 150 DPI; new prototypes export at 300 DPI (2160x2700) so text survives Instagram compression.
-- Fonts: Playfair Display (titles) + DM Sans (body) from `assets/fonts/`.
-- Headshots auto-downloaded from NBA CDN, cached in `cache/headshots/`.
-- Output: `output/feed/YYYY-MM-DD-zone-{mode}-{scope}.png`.
-- Shared craft helpers (`bulls/graphics/craft.py`, F5-derived): gradient stat bars, stacked labels, threshold footers, headshot labels. Table posts render via `plottable`. Technique notes: `docs/reference/f5-technique-notes.html`.
-
-### Available graphics
-
-| Graphic | Builder function | Script |
-|---------|-----------------|--------|
-| Zone PPS bars | `graphics.build_zone_pps_post()` | `scripts/make_feed_post.py --post-type zone-pps` |
-| Zone leaders (PPG) | `graphics.build_zone_leaders_post()` | `scripts/make_zone_leaders.py --mode ppg` |
-| Zone leaders (frequency) | `graphics.build_zone_frequency_post()` | `scripts/make_zone_leaders.py --mode frequency` |
-
-### Zone leaders (PPG + frequency)
-
-```bash
-# Full season
-venv/bin/python scripts/make_zone_leaders.py --mode ppg
-venv/bin/python scripts/make_zone_leaders.py --mode frequency
-
-# Last 10 games
-venv/bin/python scripts/make_zone_leaders.py --mode ppg --last-n-games 10
-venv/bin/python scripts/make_zone_leaders.py --mode frequency --last-n-games 10
-```
-
-### Current roster filtering
-
-The NBA shot chart API returns all shots taken in a Bulls uniform, including traded players (Vucevic, Coby White, Ayo Dosunmu, etc.). To generate graphics for the current roster only, filter the shots before passing to the builder:
-
-```python
-from bulls import data, graphics
-
-shots = data.get_team_shots()
-roster = data.get_roster()
-roster_ids = set(roster['player_id'].tolist())
-current_shots = shots[shots['player_id'].isin(roster_ids)]
-
-fig = graphics.build_zone_leaders_post(current_shots, ...)
-```
-
-### Zone PPS bars
-
-```bash
-venv/bin/python scripts/make_feed_post.py --post-type zone-pps
-venv/bin/python scripts/make_feed_post.py --post-type zone-pps --last-n-games 10
-```
-
-## Visual Request Protocol (Agent + User)
-For any new visual request, lock these fields first:
-- `insight_goal`: what the post should prove
-- `scope`: team/player + season or last N games
-- `visual_type`: chart/card style
-- `style_direction`: clean, bold, editorial, etc.
-- `output_text`: exact title/subtitle/footnote
-
-If you do not care about format details, defaults are:
-- `1080x1350` feed portrait
-- `PNG` export
-
-## Keep It Simple Rules
-- Start analysis in notebooks.
-- Move code to `bulls/` only after repeating it 2-3 times.
-- Prefer short markdown cells: title + one-liner context.
+Conventions, the data/analysis/graphics API reference, the graphics-generation workflow, and the
+clarification gate for new visual requests live in **`AGENTS.md`** (`CLAUDE.md` is a one-line
+pointer to it). Start there before adding data helpers, building a graphic, or mocking a post idea.

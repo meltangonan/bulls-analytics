@@ -179,6 +179,9 @@ def main():
     roster = pd.read_csv(ROSTER_CSV)
     roster_ids = set(roster["player_id"].astype(int))
     current = leaders[leaders["personId"].astype(int).isin(roster_ids)].reset_index(drop=True)
+    if current.empty:
+        sys.exit("No current-roster players meet the MIN_GAMES threshold — stale/empty roster cache?")
+    print(current[["name", "games", "ppg", "mpg"]].head(TOP_N).to_string())
     fig = build_leaderboard(
         current, subtitle=SUBTITLE + " | Current Roster")
     path = save_feed_post(

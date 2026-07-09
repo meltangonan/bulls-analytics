@@ -51,6 +51,7 @@ the *how*.
 
 ```
 STRATEGY.md          # Why the account exists: audience, metrics, tracks (strategy anchor)
+DESIGN.md            # Design system: palette, type, layout patterns, annotation grammar, brand status
 bulls-content-playbook.html  # North star: the "Bulls visual encyclopedia" (living doc, revision history at bottom)
 idea-catalog.html    # Visual idea catalog: one card per post idea (mock image, status, notes)
 bulls/
@@ -130,7 +131,7 @@ tests/               # pytest suite (mocked NBA API calls)
 - Table-format posts render via `plottable` (matplotlib-native); see
   `scripts/prototypes/f5_lineup_table.py`.
 - F5 technique reference (craft patterns + source links): `docs/reference/f5-technique-notes.html`.
-- Fonts: see **Design System** below. (Playfair Display + DM Sans remain only in the legacy
+- Fonts: see `DESIGN.md` §Typography. (Playfair Display + DM Sans remain only in the legacy
   `bulls/graphics/feed.py` zone builders.)
 - Court-based graphics use `analysis.detailed_zones()` for the 12-zone breakdown.
 - Headshots are auto-downloaded from the NBA CDN and cached in `cache/headshots/`.
@@ -140,49 +141,14 @@ tests/               # pytest suite (mocked NBA API calls)
   - `venv/bin/python scripts/make_zone_shooting.py --mode team|volume [--last-n-games N] [--min-shots N]`
   - `venv/bin/python scripts/make_feed_post.py --post-type zone-pps [--last-n-games N]`
 
-## Design System (established with the debut post, 2026-07-09)
-The account's visual identity, decided with the user over the first shipped post
-(`scripts/prototypes/season_shape_post.py` is the reference implementation). Reuse it; don't
-re-litigate it per post.
-
-**Type**
-- Titles: **Academic M54** (`assets/fonts/AcademicM54.ttf`) — collegiate slab, ALL CAPS,
-  auto-fit so left/right margins balance (~60px each side), one accent word in Bulls red.
-  ⚠️ License: free for **non-commercial use only**. If the account ever goes commercial,
-  license it or swap to `Bevan.ttf` (OFL, kept in `assets/fonts/` as the drop-in fallback).
-- Body/labels/annotations: **Archivo** — instanced static weights `Archivo-400/500/600.ttf`.
-  matplotlib **ignores the `weight=` kwarg for single-file fonts** (DM Sans was silently
-  single-weight for months) — always select the weight by file, not by kwarg. Re-instance
-  more weights from the variable font with `fontTools.varLib.instancer` if needed.
-
-**Color**
-- Bulls red `#CE1141` for positive/above/accent; rich near-black `#141414` for
-  negative/below/heavy fills. Red + black is the team palette — avoid neutral grays for
-  *meaningful* areas (gray reads off-brand and flat; grays stay for gridlines/muted text).
-
-**Header pattern**
-- Title tight above subtitle; subtitle segments separated by thin light-gray vertical ticks
-  (`#CFCFCF`, ~1.3lw) — never "|" or "·" glyphs in rendered text.
-- Kicker (red italic) states the metric; if it does, don't repeat the explanation in a footer.
-- Footer, every graphic: source credit bottom-left ("Data via NBA.com/Stats" — fairness
-  guardrail) and the **watermark bottom-right** ("@chicagobullsdata", muted, ~10.5pt,
-  same baseline) so authorship survives reposts/screenshots. Fold both into the shared
-  canvas helper when the format is promoted out of prototypes.
-
-**Two visual languages (annotation grammar)**
-- *Factual event markers*: gray dashed vertical lines with dated, stacked, muted labels
-  (e.g. "TRADE DEADLINE / Feb 5"). Budget: ~1 hero line, at most 1 supporting.
-- *Fan-voice callouts*: emotional beats in ink with thin connector lines. Budget: 3-4.
-- Every marker/callout must **explain a bend in the data** — if the line doesn't turn there,
-  it's trivia; cut it. Alternate emotional beats with factual anchors so it never reads
-  as a rant or a spec sheet.
-- Faces (headshots) are the highest-stopping-power object: use sparingly, red border ring
-  = "the payoff." Position so geometry does the pointing (e.g. line ends at the face).
-
-**Voice**
-- Annotations are written "fan in the stands": first-person, wry, a notch above meme-page
-  ("5-0 start, we were so back", "Tank for Caleb begins"). Names/context/thesis live in the
-  IG caption, not on the graphic. The user writes or heavily owns captions.
+## Design System
+The account's full visual identity lives in **`DESIGN.md`** (repo root): palette tokens,
+typography (font files, licenses, the matplotlib weight gotcha), canvas/export specs,
+header/footer patterns, annotation grammar and budgets, headshot rules, the craft-helper
+reference, and brand/rebrand status. **Read it before building any graphic**; reuse its
+decisions, don't re-litigate them per post. Reference implementation:
+`scripts/prototypes/season_shape_post.py`. When a design decision changes, update
+`DESIGN.md` (including its decision log), not this file.
 
 ## Clarification Gate (Required for Visual Requests)
 - Before creating a new visual, clarify the request first.
@@ -255,7 +221,8 @@ Suites: `test_data.py`, `test_analysis.py`, `test_graphics.py`, `test_config.py`
 calls are mocked.
 
 ## Docs
-The repo's three root anchors are `STRATEGY.md` (why — audience, metrics, tracks),
-`bulls-content-playbook.html` (visual north star), and `idea-catalog.html` (the idea shelf).
+The repo's four root anchors are `STRATEGY.md` (why — audience, metrics, tracks),
+`DESIGN.md` (how it looks — the design system), `bulls-content-playbook.html` (visual
+north star), and `idea-catalog.html` (the idea shelf).
 Update `README.md` and this file when behavior or workflow changes. `CLAUDE.md` is a one-line
 pointer (`@AGENTS.md`) — don't add content there.

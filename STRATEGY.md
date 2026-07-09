@@ -57,7 +57,7 @@ University / Goldsberry / Owen Phillips). Your *visual voice* lives here for now
 Settled with the debut post (2026-07-09): the account speaks **"fan in the stands"** —
 annotations are first-person, wry, a notch above meme-page; the graphic stays clean and
 the caption carries names and context. The concrete design system (fonts, red/black
-palette, annotation grammar) is documented in `AGENTS.md` → "Design System".
+palette, annotation grammar, brand status) is documented in `DESIGN.md` at the repo root.
 
 _Why it serves the approach:_ the craft bet **is** this track — it's where "pretty
 + instantly legible" gets built and standardized so every post clears the bar.

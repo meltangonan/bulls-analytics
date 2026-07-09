@@ -69,7 +69,8 @@ docs/
   ideation/          # Ideation docs (HTML)
   reference/         # Saved tutorials, inspiration screenshots, F5 technique notes
   archive/           # Superseded planning docs
-assets/fonts/        # Playfair Display + DM Sans for graphics
+assets/fonts/        # Academic M54 (titles) + Archivo 400/500/600 (body) + legacy Playfair/DM Sans; Bevan = OFL fallback
+assets/img/          # Committed one-off image assets (e.g. Caleb Wilson draft-night crop)
 cache/headshots/     # Player headshot PNGs from NBA CDN
 output/feed/         # Generated PNG graphics (gitignored)
 tests/               # pytest suite (mocked NBA API calls)
@@ -129,7 +130,8 @@ tests/               # pytest suite (mocked NBA API calls)
 - Table-format posts render via `plottable` (matplotlib-native); see
   `scripts/prototypes/f5_lineup_table.py`.
 - F5 technique reference (craft patterns + source links): `docs/reference/f5-technique-notes.html`.
-- Fonts: Playfair Display (titles), DM Sans (body) from `assets/fonts/`.
+- Fonts: see **Design System** below. (Playfair Display + DM Sans remain only in the legacy
+  `bulls/graphics/feed.py` zone builders.)
 - Court-based graphics use `analysis.detailed_zones()` for the 12-zone breakdown.
 - Headshots are auto-downloaded from the NBA CDN and cached in `cache/headshots/`.
 - Output goes to `output/feed/` with naming: `YYYY-MM-DD-zone-{mode}-{scope}.png`.
@@ -137,6 +139,50 @@ tests/               # pytest suite (mocked NBA API calls)
   - `venv/bin/python scripts/make_zone_leaders.py --mode ppg|frequency [--last-n-games N]`
   - `venv/bin/python scripts/make_zone_shooting.py --mode team|volume [--last-n-games N] [--min-shots N]`
   - `venv/bin/python scripts/make_feed_post.py --post-type zone-pps [--last-n-games N]`
+
+## Design System (established with the debut post, 2026-07-09)
+The account's visual identity, decided with the user over the first shipped post
+(`scripts/prototypes/season_shape_post.py` is the reference implementation). Reuse it; don't
+re-litigate it per post.
+
+**Type**
+- Titles: **Academic M54** (`assets/fonts/AcademicM54.ttf`) — collegiate slab, ALL CAPS,
+  auto-fit so left/right margins balance (~60px each side), one accent word in Bulls red.
+  ⚠️ License: free for **non-commercial use only**. If the account ever goes commercial,
+  license it or swap to `Bevan.ttf` (OFL, kept in `assets/fonts/` as the drop-in fallback).
+- Body/labels/annotations: **Archivo** — instanced static weights `Archivo-400/500/600.ttf`.
+  matplotlib **ignores the `weight=` kwarg for single-file fonts** (DM Sans was silently
+  single-weight for months) — always select the weight by file, not by kwarg. Re-instance
+  more weights from the variable font with `fontTools.varLib.instancer` if needed.
+
+**Color**
+- Bulls red `#CE1141` for positive/above/accent; rich near-black `#141414` for
+  negative/below/heavy fills. Red + black is the team palette — avoid neutral grays for
+  *meaningful* areas (gray reads off-brand and flat; grays stay for gridlines/muted text).
+
+**Header pattern**
+- Title tight above subtitle; subtitle segments separated by thin light-gray vertical ticks
+  (`#CFCFCF`, ~1.3lw) — never "|" or "·" glyphs in rendered text.
+- Kicker (red italic) states the metric; if it does, don't repeat the explanation in a footer.
+- Footer, every graphic: source credit bottom-left ("Data via NBA.com/Stats" — fairness
+  guardrail) and the **watermark bottom-right** ("@chicagobullsdata", muted, ~10.5pt,
+  same baseline) so authorship survives reposts/screenshots. Fold both into the shared
+  canvas helper when the format is promoted out of prototypes.
+
+**Two visual languages (annotation grammar)**
+- *Factual event markers*: gray dashed vertical lines with dated, stacked, muted labels
+  (e.g. "TRADE DEADLINE / Feb 5"). Budget: ~1 hero line, at most 1 supporting.
+- *Fan-voice callouts*: emotional beats in ink with thin connector lines. Budget: 3-4.
+- Every marker/callout must **explain a bend in the data** — if the line doesn't turn there,
+  it's trivia; cut it. Alternate emotional beats with factual anchors so it never reads
+  as a rant or a spec sheet.
+- Faces (headshots) are the highest-stopping-power object: use sparingly, red border ring
+  = "the payoff." Position so geometry does the pointing (e.g. line ends at the face).
+
+**Voice**
+- Annotations are written "fan in the stands": first-person, wry, a notch above meme-page
+  ("5-0 start, we were so back", "Tank for Caleb begins"). Names/context/thesis live in the
+  IG caption, not on the graphic. The user writes or heavily owns captions.
 
 ## Clarification Gate (Required for Visual Requests)
 - Before creating a new visual, clarify the request first.
@@ -151,6 +197,23 @@ tests/               # pytest suite (mocked NBA API calls)
 - Defaults if the user says "pick for me": 1080x1350 Instagram feed portrait, PNG export.
 - After clarifying: re-state the agreed brief in 3-6 bullets, then implement data/analysis changes,
   add tests, and generate the image.
+
+### Refinement Gates (post-draft, before final render — added 2026-07-09)
+Once a draft image exists, walk these in order; each is one focused question round:
+1. **Voice dial** — how much fan-voice for this post's annotations (sets register for all copy).
+2. **Event lines** — which real-world events earn a vertical marker ("explains a bend" test),
+   then **source the real dates before drawing** (see fact rule below).
+3. **Copy deck** — present every annotation as a before→after table; get redlines or approval.
+4. **Title/subtitle** — confirm or tweak.
+5. **Caption + hashtags** — draft for the catalog card unless the user writes their own.
+6. **Render** — iterate at 150 DPI (fast), export final at 300 DPI (`--final` flag pattern).
+
+**Fact rule:** anything printed on a graphic (dates, picks, trades, injuries) must be verified —
+web-search anything past the model's knowledge cutoff; never draw a guessed date. **Image rule:**
+NBA CDN headshots for new rookies are often the gray silhouette (~12KB file = silhouette; real
+headshots are 50-200KB) — check visually, and fall back to the team's own CDN (nba.com/bulls
+article images are clean/unwatermarked); crop square around the face for the circular helper, and
+flag wire-photo licensing to the user before using non-NBA sources.
 
 ## Session Entry Points (Posting Workflow)
 The goal is to post regularly and often. Sessions typically open one of three ways — recognize

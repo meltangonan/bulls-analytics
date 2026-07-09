@@ -27,6 +27,9 @@ grammar, notes). Open it in a browser to review the shelf.
 ```text
 bulls-analytics/
 ├── STRATEGY.md      # why the account exists: audience, metrics, tracks
+├── DESIGN.md        # visual system: palette, typography, layout, brand status
+├── POSTING_WORKFLOW.md # visual-post gates and catalog-to-post workflow
+├── DEVELOPMENT.md   # code, data, graphics, and test reference
 ├── bulls-content-playbook.html  # north star: the "Bulls visual encyclopedia"
 ├── idea-catalog.html            # every mocked post idea as a card
 ├── bulls/
@@ -59,7 +62,7 @@ venv/bin/python -m pytest tests/ -v
 
 ## Working In This Repo
 
-Conventions, the data/analysis/graphics API reference, the graphics-generation workflow, the
-clarification gate for new visual requests, and the posting workflow (session entry points) live
-in **`AGENTS.md`** (`CLAUDE.md` is a one-line
-pointer to it). Start there before adding data helpers, building a graphic, or mocking a post idea.
+Start with **`AGENTS.md`** (`CLAUDE.md` is a one-line pointer to it). It routes work to the focused
+owner documents: `DEVELOPMENT.md` for code and tests, `DESIGN.md` for visual decisions,
+`POSTING_WORKFLOW.md` for visual-post production, and `STRATEGY.md` plus
+`bulls-content-playbook.html` for editorial direction.

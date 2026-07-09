@@ -8,6 +8,8 @@ from bulls.analysis import (
     top_performers,
     efficiency_metrics,
     game_efficiency,
+    cumulative_point_differential,
+    cumulative_record_delta,
     rolling_averages,
     consistency_score,
     points_per_shot,
@@ -439,6 +441,70 @@ class TestRollingAverages:
 
         assert 'points_roll_3' in result.columns
         assert 'nonexistent_roll_3' not in result.columns
+
+
+class TestCumulativePointDifferential:
+    """Tests for cumulative_point_differential function."""
+
+    def test_adds_running_point_differential(self):
+        """Should add a running sum of game point differential."""
+        fake_games = pd.DataFrame({
+            'PLUS_MINUS': [4, -10, 7, -3],
+        })
+
+        result = cumulative_point_differential(fake_games)
+
+        assert result['cum_point_diff'].tolist() == [4, -6, 1, -2]
+
+    def test_handles_empty_dataframe(self):
+        """Should handle empty input gracefully."""
+        empty_df = pd.DataFrame()
+
+        result = cumulative_point_differential(empty_df)
+
+        assert result.empty
+
+    def test_skips_missing_margin_column(self):
+        """Should leave data unchanged when the margin column is missing."""
+        fake_games = pd.DataFrame({
+            'PTS': [120, 100],
+        })
+
+        result = cumulative_point_differential(fake_games)
+
+        assert result.equals(fake_games)
+
+
+class TestCumulativeRecordDelta:
+    """Tests for cumulative_record_delta function."""
+
+    def test_adds_games_over_500(self):
+        """Should add a running wins-minus-losses column."""
+        fake_games = pd.DataFrame({
+            'WL': ['W', 'W', 'L', 'L', 'W'],
+        })
+
+        result = cumulative_record_delta(fake_games)
+
+        assert result['games_over_500'].tolist() == [1, 2, 1, 0, 1]
+
+    def test_handles_empty_dataframe(self):
+        """Should handle empty input gracefully."""
+        empty_df = pd.DataFrame()
+
+        result = cumulative_record_delta(empty_df)
+
+        assert result.empty
+
+    def test_skips_missing_result_column(self):
+        """Should leave data unchanged when the result column is missing."""
+        fake_games = pd.DataFrame({
+            'PLUS_MINUS': [5, -8],
+        })
+
+        result = cumulative_record_delta(fake_games)
+
+        assert result.equals(fake_games)
 
 
 class TestConsistencyScore:

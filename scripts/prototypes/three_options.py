@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from bulls.analysis import cumulative_point_differential, cumulative_record_delta
 from bulls.data.fetch import get_player_headshot
 from bulls.graphics.feed import (
     DEFAULT_DPI,
@@ -229,19 +230,20 @@ def build_month_grid():
 # ------------------------------------------------------------ C. Season timeline
 def build_timeline():
     g = games.sort_values("GAME_DATE").reset_index(drop=True)
-    g["roll"] = g["PLUS_MINUS"].rolling(10).mean()
+    g = cumulative_point_differential(g)
     wins, losses = int((g["WL"] == "W").sum()), int((g["WL"] == "L").sum())
 
     fig, ax = canvas(
         "The Shape of the Season",
         f"Chicago Bulls | 2025-26 Season | Finished {wins}-{losses}",
-        "Rolling 10-game average point differential",
+        "Cumulative point differential through each game",
     )
 
     px0, px1, py0, py1 = 110, 1020, 260, 1000
     n = len(g)
-    lo = float(np.floor(g["roll"].min())) - 2
-    hi = float(np.ceil(g["roll"].max())) + 4
+    metric = "cum_point_diff"
+    lo = float(np.floor(g[metric].min() / 50) * 50) - 50
+    hi = float(np.ceil(g[metric].max() / 50) * 50) + 50
 
     def X(i):
         return px0 + i / (n - 1) * (px1 - px0)
@@ -257,7 +259,9 @@ def build_timeline():
                 fontproperties=_fp_body(weight="bold"))
         ax.plot([X(idx), X(idx)], [py0, py1], color="#F0F0F0", lw=1.0, zorder=1)
 
-    for v in [v for v in range(-20, 15, 5) if v != 0 and lo < v < hi]:
+    tick_start = int(np.ceil(lo / 100) * 100)
+    tick_end = int(np.floor(hi / 100) * 100)
+    for v in [v for v in range(tick_start, tick_end + 1, 100) if v != 0 and lo < v < hi]:
         ax.plot([px0, px1], [Y(v), Y(v)], color="#F0F0F0", lw=1.0, zorder=1)
         ax.text(px0 - 12, Y(v), f"{v:+d}", ha="right", va="center", fontsize=10,
                 color=MUTED, fontproperties=_fp_body())
@@ -266,10 +270,9 @@ def build_timeline():
             fontproperties=_fp_body())
 
     xs = [X(i) for i in range(n)]
-    ys = [Y(v) if not np.isnan(v) else np.nan for v in g["roll"]]
-    valid = ~g["roll"].isna()
+    valid = ~g[metric].isna()
     xv = np.array(xs)[valid]
-    yv = np.array(g["roll"][valid])
+    yv = np.array(g[metric][valid])
 
     ax.fill_between(xv, Y(0), [Y(v) for v in np.clip(yv, 0, None)],
                     color=RED, alpha=0.85, zorder=3)
@@ -277,31 +280,133 @@ def build_timeline():
                     color="#2A2A2A", alpha=0.75, zorder=3)
     ax.plot(xv, [Y(v) for v in yv], color=INK, lw=1.6, zorder=4)
 
-    # Data-derived annotations: best and worst 10-game stretch
-    i_best = int(g["roll"].idxmax())
-    i_worst = int(g["roll"].idxmin())
-    best_v, worst_v = g["roll"].iloc[i_best], g["roll"].iloc[i_worst]
+    # Data-derived annotations: season high-water mark and final margin
+    i_best = int(g[metric].idxmax())
+    i_final = len(g) - 1
+    best_v = g[metric].iloc[i_best]
+    final_v = g[metric].iloc[i_final]
 
-    ax.annotate(f"Best stretch: {best_v:+.1f}\nover 10 games",
-                xy=(X(i_best), Y(best_v)), xytext=(X(i_best) - 40, Y(best_v) + 120),
-                ha="center", fontsize=11, color=INK,
+    ax.annotate(f"High-water mark:\n{best_v:+.0f}",
+                xy=(X(i_best), Y(best_v)), xytext=(X(i_best) + 28, Y(best_v) + 92),
+                ha="left", fontsize=11, color=INK,
                 fontproperties=_fp_body(weight="bold"),
                 arrowprops=dict(arrowstyle="-", color=MUTED, lw=1.0), zorder=6)
-    ax.annotate(f"Worst stretch: {worst_v:+.1f}",
-                xy=(X(i_worst), Y(worst_v)), xytext=(X(i_worst) - 150, Y(worst_v) - 4),
+    ax.annotate(f"Finished: {final_v:+.0f}",
+                xy=(X(i_final), Y(final_v)), xytext=(X(i_final) - 145, Y(final_v) + 46),
                 ha="right", fontsize=11, color=INK,
                 fontproperties=_fp_body(weight="bold"),
                 arrowprops=dict(arrowstyle="-", color=MUTED, lw=1.0), zorder=6)
 
-    ax.text(60, 62, "Each point averages the previous 10 games. Red = outscoring "
-            "opponents, black = outscored.",
+    ax.text(60, 62, "Each point shows the season's running point differential after that game. "
+            "Red = above even, black = below even.",
+            ha="left", va="bottom", fontsize=8.5, color=FAINT, fontproperties=_fp_body())
+    return fig
+
+
+def build_record_timeline():
+    g = games.sort_values("GAME_DATE").reset_index(drop=True)
+    g = cumulative_record_delta(g)
+    wins, losses = int((g["WL"] == "W").sum()), int((g["WL"] == "L").sum())
+
+    fig, ax = canvas(
+        "The Shape of the Record",
+        f"Chicago Bulls | 2025-26 Season | Finished {wins}-{losses}",
+        "Games over/under .500 through each game",
+    )
+
+    px0, px1, py0, py1 = 110, 1020, 260, 1000
+    n = len(g)
+    metric = "games_over_500"
+    lo = float(np.floor(g[metric].min() / 5) * 5) - 5
+    hi = float(np.ceil(g[metric].max() / 5) * 5) + 5
+
+    def X(i):
+        return px0 + i / n * (px1 - px0)
+
+    def Y(v):
+        return py0 + (v - lo) / (hi - lo) * (py1 - py0)
+
+    g["month"] = g["GAME_DATE"].str[:7]
+    for m, idx in g.groupby("month").apply(lambda d: d.index.min()).items():
+        lab = pd.Timestamp(m + "-01").strftime("%b").upper()
+        ax.text(X(idx), py0 - 20, lab, ha="left", va="top", fontsize=10, color=MUTED,
+                fontproperties=_fp_body(weight="bold"))
+        ax.plot([X(idx), X(idx)], [py0, py1], color="#F0F0F0", lw=1.0, zorder=1)
+
+    tick_start = int(np.ceil(lo / 5) * 5)
+    tick_end = int(np.floor(hi / 5) * 5)
+    for v in [v for v in range(tick_start, tick_end + 1, 5) if v != 0 and lo < v < hi]:
+        ax.plot([px0, px1], [Y(v), Y(v)], color="#F0F0F0", lw=1.0, zorder=1)
+        ax.text(px0 - 12, Y(v), f"{v:+d}", ha="right", va="center", fontsize=10,
+                color=MUTED, fontproperties=_fp_body())
+    ax.plot([px0, px1], [Y(0), Y(0)], color=MUTED, lw=1.3, zorder=2)
+    ax.text(px0 - 12, Y(0), ".500", ha="right", va="center", fontsize=10, color=MUTED,
+            fontproperties=_fp_body())
+
+    x_path = np.array([X(i) for i in range(n + 1)])
+    y_path = np.concatenate(([0], g[metric].to_numpy()))
+
+    ax.fill_between(x_path, Y(0), Y(np.clip(y_path, 0, None)),
+                    color=RED, alpha=0.85, zorder=3)
+    ax.fill_between(x_path, Y(0), Y(np.clip(y_path, None, 0)),
+                    color="#2A2A2A", alpha=0.75, zorder=3)
+    ax.plot(x_path, Y(y_path), color=INK, lw=1.6, zorder=4)
+
+    i_best = int(g[metric].idxmax())
+    i_final = len(g) - 1
+    best_v = g[metric].iloc[i_best]
+    final_v = g[metric].iloc[i_final]
+
+    ax.annotate(f"5-0 start:\nHigh-water {best_v:+.0f}",
+                xy=(X(i_best + 1), Y(best_v)), xytext=(X(i_best + 1) + 28, Y(best_v) + 96),
+                ha="left", fontsize=11, color=INK,
+                fontproperties=_fp_body(weight="bold"),
+                arrowprops=dict(arrowstyle="-", color=MUTED, lw=1.0), zorder=6)
+
+    dec_run_i = int(g[(g["GAME_DATE"] == "2025-12-26")].index[0])
+    ax.annotate("5-game Dec. run:\nBack to .500",
+                xy=(X(dec_run_i + 1), Y(g[metric].iloc[dec_run_i])),
+                xytext=(X(dec_run_i + 1) - 20, Y(3.4)),
+                ha="center", fontsize=11, color=INK,
+                fontproperties=_fp_body(weight="bold"),
+                arrowprops=dict(arrowstyle="-", color=MUTED, lw=1.0), zorder=6)
+
+    over_500 = g[g[metric] > 0]
+    if not over_500.empty:
+        i_last_over = int(over_500.index.max())
+        last_over_ts = pd.Timestamp(g["GAME_DATE"].iloc[i_last_over])
+        last_over_date = f"{last_over_ts.strftime('%b')}. {last_over_ts.day}"
+        ax.annotate(f"4 straight in Jan.:\nLast over .500: {last_over_date}",
+                    xy=(X(i_last_over + 1), Y(g[metric].iloc[i_last_over])),
+                    xytext=(X(i_last_over + 1) + 88, Y(3) + 24),
+                    ha="left", fontsize=11, color=INK,
+                    fontproperties=_fp_body(weight="bold"),
+                    arrowprops=dict(arrowstyle="-", color=MUTED, lw=1.0), zorder=6)
+
+    feb_skid_i = int(g[(g["GAME_DATE"] == "2026-02-26")].index[0])
+    ax.annotate("11-game skid:\nFeb. 1-26",
+                xy=(X(feb_skid_i + 1), Y(g[metric].iloc[feb_skid_i])),
+                xytext=(X(feb_skid_i + 1) - 42, Y(-15.3)),
+                ha="right", fontsize=11, color=INK,
+                fontproperties=_fp_body(weight="bold"),
+                arrowprops=dict(arrowstyle="-", color=MUTED, lw=1.0), zorder=6)
+
+    ax.annotate(f"Finished: {final_v:+.0f}",
+                xy=(X(i_final + 1), Y(final_v)), xytext=(X(i_final + 1) - 145, Y(final_v) + 48),
+                ha="right", fontsize=11, color=INK,
+                fontproperties=_fp_body(weight="bold"),
+                arrowprops=dict(arrowstyle="-", color=MUTED, lw=1.0), zorder=6)
+
+    ax.text(60, 62, "Each point shows the season record relative to .500. "
+            "Red = above .500, gray = below .500.",
             ha="left", va="bottom", fontsize=8.5, color=FAINT, fontproperties=_fp_body())
     return fig
 
 
 for fn, name in ((build_quadrant, "2026-07-04-option-a-impact-availability-quadrant.png"),
                  (build_month_grid, "2026-07-04-option-b-month-by-month-grid.png"),
-                 (build_timeline, "2026-07-04-option-c-season-shape-timeline.png")):
+                 (build_timeline, "2026-07-04-option-c-season-shape-timeline.png"),
+                 (build_record_timeline, "2026-07-09-season-record-shape.png")):
     fig = fn()
     save_feed_post(fig, OUT / name)
     plt.close(fig)

@@ -277,6 +277,54 @@ def rolling_averages(
     return result
 
 
+def cumulative_point_differential(
+    games: pd.DataFrame,
+    margin_col: str = 'PLUS_MINUS',
+    output_col: str = 'cum_point_diff',
+) -> pd.DataFrame:
+    """
+    Add a running point differential column to an already-ordered game log.
+
+    Args:
+        games: Team game log ordered in the direction to chart
+        margin_col: Column containing per-game point differential
+        output_col: Name for the cumulative point differential column
+
+    Returns:
+        DataFrame with the cumulative point differential column added.
+    """
+    if games.empty or margin_col not in games.columns:
+        return games.copy()
+
+    result = games.copy()
+    result[output_col] = result[margin_col].fillna(0).cumsum()
+    return result
+
+
+def cumulative_record_delta(
+    games: pd.DataFrame,
+    result_col: str = 'WL',
+    output_col: str = 'games_over_500',
+) -> pd.DataFrame:
+    """
+    Add a running wins-minus-losses column to an already-ordered game log.
+
+    Args:
+        games: Team game log ordered in the direction to chart
+        result_col: Column containing W/L game results
+        output_col: Name for the cumulative record delta column
+
+    Returns:
+        DataFrame with the games-over-.500 column added.
+    """
+    if games.empty or result_col not in games.columns:
+        return games.copy()
+
+    result = games.copy()
+    result[output_col] = result[result_col].map({'W': 1, 'L': -1}).fillna(0).cumsum()
+    return result
+
+
 def consistency_score(
     player_games: pd.DataFrame,
     metrics: Optional[List[str]] = None,

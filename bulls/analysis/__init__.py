@@ -6,6 +6,8 @@ from bulls.analysis.stats import (
     top_performers,
     efficiency_metrics,
     game_efficiency,
+    cumulative_point_differential,
+    cumulative_record_delta,
     rolling_averages,
     consistency_score,
     detailed_zones,

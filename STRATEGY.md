@@ -82,6 +82,16 @@ _Why it serves the approach:_ belonging is the goal and the #1 no-budget growth
 lever — a niche account grows by *borrowing* other pages' audiences, not by
 outspending anyone.
 
+**Engagement principles:** Participate before you promote. Leave occasional,
+specific comments that add a useful observation, a good question, or the right
+kind of humor for the post; do not mass-engage, link-drop, or make every
+interaction about this account. Build familiarity through repeated genuine
+participation, then make a warm, no-pressure introduction to high-fit peer
+pages. A repost or collaboration should follow a relevant original post and an
+existing relationship — it is an endorsement to earn, not a cold ask. The
+durable growth loop is: publish useful original work, join the conversations
+around it, earn recognition, and give people a clear reason to share it.
+
 ## Not working on
 
 - Chasing raw follower count as the headline goal — belonging in the community

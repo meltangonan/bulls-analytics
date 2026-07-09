@@ -9,8 +9,12 @@ Bulls analysis with lightweight social-graphics generation, feeding the `@chicag
 Instagram account. Everything runs as scripts — prototype scripts for post mocks, promoted CLIs
 for repeating formats. (The old notebook workflow was removed 2026-07-06.)
 
+The account's **strategy** — target problem, audience, key metrics, and the tracks of work — lives
+in `STRATEGY.md` at the repo root. Read it for the *why* behind content decisions; this guide is
+the *how*.
+
 ## Content North Star
-- The playbook lives in `docs/bulls-content-playbook.html`: a "Bulls visual encyclopedia" —
+- The playbook lives in `bulls-content-playbook.html` (repo root): a "Bulls visual encyclopedia" —
   current, historical, comparative, understandable.
 - Common grammar: boards, tables, grids, and shared-scale comparisons. Use the court only when
   location is the actual question.
@@ -46,6 +50,9 @@ for repeating formats. (The old notebook workflow was removed 2026-07-06.)
 ## Project Structure
 
 ```
+STRATEGY.md          # Why the account exists: audience, metrics, tracks (strategy anchor)
+bulls-content-playbook.html  # North star: the "Bulls visual encyclopedia" (living doc, revision history at bottom)
+idea-catalog.html    # Visual idea catalog: one card per post idea (mock image, status, notes)
 bulls/
   config.py          # Team ID, season strings, colors, API delay
   data/fetch.py      # NBA API wrappers (shots, games, box scores, roster, lineups)
@@ -58,10 +65,8 @@ scripts/             # CLI entrypoints for generating graphics
   make_feed_post.py      # General feed post generation
   prototypes/            # One-off mock generators behind idea-catalog cards
 docs/
-  bulls-content-playbook.html  # North star (living doc, revision history at bottom)
-  idea-catalog.html  # Visual idea catalog: one card per post idea (mock image, status, notes)
-  mocks/             # Committed copies of catalog-referenced mock images (output/ is gitignored)
-  ideation/          # North star + ideation docs (HTML)
+  mocks/             # Committed copies of catalog-referenced mock images (catalog links here as docs/mocks/; output/ gitignored)
+  ideation/          # Ideation docs (HTML)
   reference/         # Saved tutorials, inspiration screenshots, F5 technique notes
   archive/           # Superseded planning docs
 assets/fonts/        # Playfair Display + DM Sans for graphics
@@ -104,7 +109,7 @@ tests/               # pytest suite (mocked NBA API calls)
 - Keep reusable code in `bulls/data` and `bulls/analysis`.
 - Keep social image builders in `bulls/graphics` and CLI entrypoints in `scripts/`.
 - Post mocks are prototype-script-first (adopted 2026-07-04): one script per idea batch in
-  `scripts/prototypes/`, PNGs to `output/feed/`, and a card in `docs/idea-catalog.html` (newest
+  `scripts/prototypes/`, PNGs to `output/feed/`, and a card in `idea-catalog.html` (newest
   first, use the in-file template; statuses: Posted / Mocked / Generated / Parked). Copy each card's
   image into `docs/mocks/` (committed) so the catalog stays portable — `output/` is gitignored.
   Promote a builder into `bulls/graphics` + a `scripts/` CLI only once the format repeats.
@@ -151,7 +156,7 @@ tests/               # pytest suite (mocked NBA API calls)
 The goal is to post regularly and often. Sessions typically open one of three ways — recognize
 which one it is and run the matching flow:
 
-1. **"I want to post X from the catalog."** Pull up the card in `docs/idea-catalog.html` and treat
+1. **"I want to post X from the catalog."** Pull up the card in `idea-catalog.html` and treat
    it as a pre-filled brief. Run an abbreviated clarification gate: only ask about fields the card
    leaves open (usually exact timeframe and title/subtitle/footnote copy — one question at a time).
    Then refresh data, run or adapt the prototype script, render at 300 DPI, and iterate with the
@@ -187,5 +192,7 @@ Suites: `test_data.py`, `test_analysis.py`, `test_graphics.py`, `test_config.py`
 calls are mocked.
 
 ## Docs
+The repo's three root anchors are `STRATEGY.md` (why — audience, metrics, tracks),
+`bulls-content-playbook.html` (visual north star), and `idea-catalog.html` (the idea shelf).
 Update `README.md` and this file when behavior or workflow changes. `CLAUDE.md` is a one-line
 pointer (`@AGENTS.md`) — don't add content there.

@@ -13,23 +13,29 @@ This repo is intentionally lean: prototype scripts (`scripts/prototypes/`) plus 
 drive post mocks; formats that repeat get promoted into `bulls/graphics` with a CLI.
 
 **Content north star** — the "Bulls visual encyclopedia" playbook in
-`docs/bulls-content-playbook.html`. Boards, tables, and shared-scale comparisons are the default
+`bulls-content-playbook.html` (repo root). Boards, tables, and shared-scale comparisons are the default
 grammar; court graphics only when location is the actual question.
 
-**Idea catalog** — every post idea we mock gets a card in `docs/idea-catalog.html` (image, status,
+**Idea catalog** — every post idea we mock gets a card in `idea-catalog.html` (image, status,
 grammar, notes). Open it in a browser to review the shelf.
+
+**Strategy** — who the account is for, what winning looks like, and where effort goes lives in
+`STRATEGY.md` at the repo root.
 
 ## Project Layout
 
 ```text
 bulls-analytics/
+├── STRATEGY.md      # why the account exists: audience, metrics, tracks
+├── bulls-content-playbook.html  # north star: the "Bulls visual encyclopedia"
+├── idea-catalog.html            # every mocked post idea as a card
 ├── bulls/
 │   ├── data/       # NBA API fetch helpers
 │   ├── analysis/   # stat + shot-quality analysis helpers
 │   └── graphics/   # social-graphics builders + shared craft helpers
 ├── scripts/        # CLI entrypoints
 │   └── prototypes/ # one-off mock generators behind idea-catalog cards
-├── docs/           # north star playbook, idea catalog, mocks, reference
+├── docs/           # mocks, reference, ideation, archive
 ├── tests/          # unit tests with mocked API calls
 └── output/         # generated graphics (gitignored)
 ```

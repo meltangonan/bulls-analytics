@@ -1,6 +1,6 @@
 # Prototype Mock Generators
 
-One-off scripts behind the cards in `docs/idea-catalog.html`. Each renders
+One-off scripts behind the cards in `idea-catalog.html`. Each renders
 1080x1350 PNGs into `output/feed/` from cached season data. These are
 deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
 `scripts/` CLI only once its format repeats.
@@ -8,7 +8,7 @@ deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
 | Script | Catalog cards |
 | --- | --- |
 | `impact_board.py` | Most Impactful Bulls |
-| `three_options.py` | Impact vs. Availability · The Season, Month by Month · The Shape of the Season |
+| `three_options.py` | Impact vs. Availability · The Season, Month by Month · The Shape of the Season · The Shape of the Record |
 | `f5_leaderboard.py` | F5 Leaderboard — Bulls Scoring Leaders (exports at 300 DPI / 2160x2700; change `STAT_COL` + labels for new topics) |
 | `f5_lineup_table.py` | Bulls Lineup Table — 2-man combos by net rating (needs network for lineup data; 300 DPI) |
 
@@ -45,4 +45,4 @@ venv/bin/python scripts/prototypes/f5_lineup_table.py
 ```
 
 After keeping a mock, copy its PNG into `docs/mocks/` and add a catalog card
-(template in `docs/idea-catalog.html` source).
+(template in `idea-catalog.html` source).

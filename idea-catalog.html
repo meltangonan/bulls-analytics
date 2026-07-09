@@ -7,20 +7,20 @@
 <style>
   @font-face {
     font-family: "Playfair Display";
-    src: url("../assets/fonts/PlayfairDisplay.ttf");
+    src: url("assets/fonts/PlayfairDisplay.ttf");
   }
   @font-face {
     font-family: "Playfair Display";
-    src: url("../assets/fonts/PlayfairDisplay-Italic.ttf");
+    src: url("assets/fonts/PlayfairDisplay-Italic.ttf");
     font-style: italic;
   }
   @font-face {
     font-family: "DM Sans";
-    src: url("../assets/fonts/DMSans.ttf");
+    src: url("assets/fonts/DMSans.ttf");
   }
   @font-face {
     font-family: "DM Sans";
-    src: url("../assets/fonts/DMSans-Italic.ttf");
+    src: url("assets/fonts/DMSans-Italic.ttf");
     font-style: italic;
   }
 
@@ -158,7 +158,7 @@
   fill in the fields, and keep image paths relative to docs/.
 
   <div class="card">
-    <a class="thumb" href="mocks/FILE.png"><img src="mocks/FILE.png" alt=""></a>
+    <a class="thumb" href="docs/mocks/FILE.png"><img src="docs/mocks/FILE.png" alt=""></a>
     <div class="body">
       <h2>Title</h2>
       <div class="meta">
@@ -168,12 +168,27 @@
       </div>
       <p class="insight">One sentence: what the graphic argues.</p>
       <p class="notes"><strong>Notes:</strong> reactions, tweaks, open questions.</p>
-      <p class="files">Script: <a href="../scripts/prototypes/X.py">X.py</a></p>
+      <p class="files">Script: <a href="scripts/prototypes/X.py">X.py</a></p>
     </div>
   </div>
 ============================================================ -->
 
 <div class="grid">
+
+  <div class="card">
+    <a class="thumb" href="docs/mocks/2026-07-09-season-record-shape.png"><img src="docs/mocks/2026-07-09-season-record-shape.png" alt="The Shape of the Record"></a>
+    <div class="body">
+      <h2>The Shape of the Record</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Timeline</span>
+        <span class="date">2026-07-09</span>
+      </div>
+      <p class="insight">Games over/under .500 makes the record arc literal: the Bulls start 5-0, climb back to .500 with a December run, briefly pop over again in January, then the 11-game February skid sends them toward 20 under.</p>
+      <p class="notes"><strong>Notes:</strong> companion to the cumulative point-differential version. Keeps the cleaner red/gray area fill and uses annotations, not line colors, to call out the winning pockets inside the larger losing record.</p>
+      <p class="files">Script: <a href="scripts/prototypes/three_options.py">prototypes/three_options.py</a></p>
+    </div>
+  </div>
 
   <div class="card">
     <div class="body">
@@ -260,7 +275,7 @@
   </div>
 
   <div class="card">
-    <a class="thumb" href="mocks/2026-07-05-f5-leaderboard-current-roster.png"><img src="mocks/2026-07-05-f5-leaderboard-current-roster.png" alt="F5 Leaderboard — Bulls Scoring Leaders"></a>
+    <a class="thumb" href="docs/mocks/2026-07-05-f5-leaderboard-current-roster.png"><img src="docs/mocks/2026-07-05-f5-leaderboard-current-roster.png" alt="F5 Leaderboard — Bulls Scoring Leaders"></a>
     <div class="body">
       <h2>F5 Leaderboard &mdash; Scoring Leaders</h2>
       <div class="meta">
@@ -270,12 +285,12 @@
       </div>
       <p class="insight">The F5's engagement format in Bulls clothing: top-10 PPG, headshots, magnitude-colored bars, outlined values, threshold in the footer. First output of the shared craft helpers.</p>
       <p class="notes"><strong>Notes:</strong> exports at 2160&times;2700 so text survives IG compression. Swap <code>STAT_COL</code> for any stat &mdash; layout stays put. Two views rendered; roster view shown.</p>
-      <p class="files">Script: <a href="../scripts/prototypes/f5_leaderboard.py">prototypes/f5_leaderboard.py</a> · Source: <a href="reference/f5-technique-notes.html">F5 technique notes</a></p>
+      <p class="files">Script: <a href="scripts/prototypes/f5_leaderboard.py">prototypes/f5_leaderboard.py</a> · Source: <a href="docs/reference/f5-technique-notes.html">F5 technique notes</a></p>
     </div>
   </div>
 
   <div class="card">
-    <a class="thumb" href="mocks/2026-07-05-f5-lineup-table.png"><img src="mocks/2026-07-05-f5-lineup-table.png" alt="Bulls Two-Man Lineups table"></a>
+    <a class="thumb" href="docs/mocks/2026-07-05-f5-lineup-table.png"><img src="docs/mocks/2026-07-05-f5-lineup-table.png" alt="Bulls Two-Man Lineups table"></a>
     <div class="body">
       <h2>Bulls Two-Man Lineups</h2>
       <div class="meta">
@@ -285,7 +300,7 @@
       </div>
       <p class="insight">The "Doubling Up" format: ten most-used Bulls pairs with off/def/net rating, net rating color-scaled around zero. Only Vučević + Jones broke even; Okoro pairings bled double digits.</p>
       <p class="notes"><strong>Notes:</strong> first table-format post — new capability via <code>plottable</code>. Reusable: any stat table can ship through this layout now.</p>
-      <p class="files">Script: <a href="../scripts/prototypes/f5_lineup_table.py">prototypes/f5_lineup_table.py</a> · Data: <code>get_lineup_stats()</code></p>
+      <p class="files">Script: <a href="scripts/prototypes/f5_lineup_table.py">prototypes/f5_lineup_table.py</a> · Data: <code>get_lineup_stats()</code></p>
     </div>
   </div>
 
@@ -299,7 +314,7 @@
       </div>
       <p class="insight">One mini-card per rotation player: headshot, name plate, and 3&ndash;5 percentile bars vs league (scoring, rebounding, playmaking, defense). NBA Jam rating-card energy.</p>
       <p class="notes"><strong>Notes:</strong> F5-derived (his NBA Jam ref small-multiple). Needs league-wide percentile baselines &mdash; a real data step. Rounded bars via <code>FancyBboxPatch</code>.</p>
-      <p class="files">Source: <a href="reference/f5-technique-notes.html">F5 technique notes #8</a></p>
+      <p class="files">Source: <a href="docs/reference/f5-technique-notes.html">F5 technique notes #8</a></p>
     </div>
   </div>
 
@@ -313,7 +328,7 @@
       </div>
       <p class="insight">A grid of player tiles, each carrying one big color-coded number (e.g., 3P% among qualifying Bulls). His catch-and-shoot bigs post, Bulls-ified.</p>
       <p class="notes"><strong>Notes:</strong> simplest parked idea &mdash; craft helpers cover most of it. Good "everyone at a glance" complement to the top-10 leaderboard.</p>
-      <p class="files">Source: <a href="reference/f5-technique-notes.html">F5 technique notes #1&ndash;2</a></p>
+      <p class="files">Source: <a href="docs/reference/f5-technique-notes.html">F5 technique notes #1&ndash;2</a></p>
     </div>
   </div>
 
@@ -327,7 +342,7 @@
       </div>
       <p class="insight">One mini trend-line per Bulls player (rolling Game Score), shared axes across all panels, ordered by season average. The season's shape, player by player.</p>
       <p class="notes"><strong>Notes:</strong> F5's shared-scale facet trick (dummy min/max data) noted in the technique doc. Pairs naturally with "The Shape of the Season" timeline.</p>
-      <p class="files">Source: <a href="reference/f5-technique-notes.html">F5 technique notes #7</a></p>
+      <p class="files">Source: <a href="docs/reference/f5-technique-notes.html">F5 technique notes #7</a></p>
     </div>
   </div>
 
@@ -341,7 +356,7 @@
       </div>
       <p class="insight">The eye-candy leaderboard pointed league-wide at a niche stat, with any Bulls player's row highlighted in red. Reach format: "where does our guy rank?"</p>
       <p class="notes"><strong>Notes:</strong> niche stats via pbpstats.com free API (his Z-Bounds source). Same builder as the Bulls leaderboard &mdash; data change only.</p>
-      <p class="files">Source: <a href="reference/f5-technique-notes.html">F5 technique notes #10</a></p>
+      <p class="files">Source: <a href="docs/reference/f5-technique-notes.html">F5 technique notes #10</a></p>
     </div>
   </div>
 
@@ -355,12 +370,12 @@
       </div>
       <p class="insight">Players &times; games grid: played / rested / injured cells across the season. The "why did this season die" post &mdash; availability is the Bulls' story.</p>
       <p class="notes"><strong>Notes:</strong> F5 has an availability-chart tutorial in the archive (2021). Cached game logs cover most of the data; injury reasons need a source decision.</p>
-      <p class="files">Source: <a href="reference/f5-technique-notes.html">F5 technique notes</a> (tutorial index)</p>
+      <p class="files">Source: <a href="docs/reference/f5-technique-notes.html">F5 technique notes</a> (tutorial index)</p>
     </div>
   </div>
 
   <div class="card">
-    <a class="thumb" href="mocks/2026-07-04-option-b-month-by-month-grid.png"><img src="mocks/2026-07-04-option-b-month-by-month-grid.png" alt="The Season, Month by Month"></a>
+    <a class="thumb" href="docs/mocks/2026-07-04-option-b-month-by-month-grid.png"><img src="docs/mocks/2026-07-04-option-b-month-by-month-grid.png" alt="The Season, Month by Month"></a>
     <div class="body">
       <h2>The Season, Month by Month</h2>
       <div class="meta">
@@ -370,12 +385,12 @@
       </div>
       <p class="insight">Players &times; months heatmap of avg Game Score. The gray cells tell the trade-deadline story without words: V&#x16D;čević, White, Dosunmu, Huerter go dark after FEB as Sexton and Miller light up.</p>
       <p class="notes"><strong>Notes:</strong> strongest storyteller of the 2026-07-04 batch. Giddey's 0.4 April cell is an honest small-sample oddity — keep.</p>
-      <p class="files">Script: <a href="../scripts/prototypes/three_options.py">prototypes/three_options.py</a></p>
+      <p class="files">Script: <a href="scripts/prototypes/three_options.py">prototypes/three_options.py</a></p>
     </div>
   </div>
 
   <div class="card">
-    <a class="thumb" href="mocks/2026-07-04-option-a-impact-availability-quadrant.png"><img src="mocks/2026-07-04-option-a-impact-availability-quadrant.png" alt="Impact vs. Availability"></a>
+    <a class="thumb" href="docs/mocks/2026-07-04-option-a-impact-availability-quadrant.png"><img src="docs/mocks/2026-07-04-option-a-impact-availability-quadrant.png" alt="Impact vs. Availability"></a>
     <div class="body">
       <h2>Impact vs. Availability</h2>
       <div class="meta">
@@ -385,12 +400,12 @@
       </div>
       <p class="insight">Avg Game Score vs games played, headshots as points, plain-language corner labels. Only Jones and Buzelis lived in "Carried All Season"; Giddey and V&#x16D;čević carried harder but for ~50 games.</p>
       <p class="notes"><strong>Notes:</strong> best debate-bait of the batch. Thresholds visible on the graphic: 41 games = half season, Game Score 10 = league-average game.</p>
-      <p class="files">Script: <a href="../scripts/prototypes/three_options.py">prototypes/three_options.py</a></p>
+      <p class="files">Script: <a href="scripts/prototypes/three_options.py">prototypes/three_options.py</a></p>
     </div>
   </div>
 
   <div class="card">
-    <a class="thumb" href="mocks/2026-07-04-option-c-season-shape-timeline.png"><img src="mocks/2026-07-04-option-c-season-shape-timeline.png" alt="The Shape of the Season"></a>
+    <a class="thumb" href="docs/mocks/2026-07-04-option-c-season-shape-timeline.png"><img src="docs/mocks/2026-07-04-option-c-season-shape-timeline.png" alt="The Shape of the Season"></a>
     <div class="body">
       <h2>The Shape of the Season</h2>
       <div class="meta">
@@ -398,14 +413,14 @@
         <span class="chip grammar">Timeline</span>
         <span class="date">2026-07-04</span>
       </div>
-      <p class="insight">Rolling 10-game point differential compresses 31-51 into one silhouette: treading water to December, the +5.5 January surge, the post-deadline cliff to &minus;18.1.</p>
-      <p class="notes"><strong>Notes:</strong> most reusable format — the "season fingerprint" shape could compare eras side by side (1996 vs 2026) when the historical lane opens.</p>
-      <p class="files">Script: <a href="../scripts/prototypes/three_options.py">prototypes/three_options.py</a></p>
+      <p class="insight">Cumulative point differential turns 31-51 into one stock-chart silhouette: a brief October climb to +44, below even by Nov. 12, then a long slide to &minus;427.</p>
+      <p class="notes"><strong>Notes:</strong> revised from rolling 10-game average point differential after the cumulative version read cleaner. Most reusable format — the "season fingerprint" shape could compare eras side by side (1996 vs 2026) when the historical lane opens.</p>
+      <p class="files">Script: <a href="scripts/prototypes/three_options.py">prototypes/three_options.py</a></p>
     </div>
   </div>
 
   <div class="card">
-    <a class="thumb" href="mocks/2026-07-03-impact-board-season.png"><img src="mocks/2026-07-03-impact-board-season.png" alt="Most Impactful Bulls"></a>
+    <a class="thumb" href="docs/mocks/2026-07-03-impact-board-season.png"><img src="docs/mocks/2026-07-03-impact-board-season.png" alt="Most Impactful Bulls"></a>
     <div class="body">
       <h2>Most Impactful Bulls</h2>
       <div class="meta">
@@ -415,12 +430,12 @@
       </div>
       <p class="insight">Ranked avg Game Score leaderboard with headshots, shared-scale bars, and PPG / TS% / GP context columns. First board-format post; Giddey leads at 16.2.</p>
       <p class="notes"><strong>Notes:</strong> two views rendered (all players + current roster). CDN headshots show a player's <em>current</em> team — one more reason the roster view matters.</p>
-      <p class="files">Script: <a href="../scripts/prototypes/impact_board.py">impact_board.py</a></p>
+      <p class="files">Script: <a href="scripts/prototypes/impact_board.py">impact_board.py</a></p>
     </div>
   </div>
 
   <div class="card">
-    <a class="thumb" href="mocks/2026-03-02-zone-shooting-team-season.png"><img src="mocks/2026-03-02-zone-shooting-team-season.png" alt="Zone Shooting"></a>
+    <a class="thumb" href="docs/mocks/2026-03-02-zone-shooting-team-season.png"><img src="docs/mocks/2026-03-02-zone-shooting-team-season.png" alt="Zone Shooting"></a>
     <div class="body">
       <h2>Zone Shooting Stats</h2>
       <div class="meta">
@@ -430,12 +445,12 @@
       </div>
       <p class="insight">Team FGM/FGA + FG% per court area on the 12-zone map. Both current @chicagobullsdata posts use this format (season + vs OKC).</p>
       <p class="notes"><strong>Notes:</strong> clean work, but the playbook flags the limitation: numbers without comparison, court as default canvas.</p>
-      <p class="files">Script: <a href="../scripts/make_zone_shooting.py">make_zone_shooting.py</a></p>
+      <p class="files">Script: <a href="scripts/make_zone_shooting.py">make_zone_shooting.py</a></p>
     </div>
   </div>
 
   <div class="card">
-    <a class="thumb" href="mocks/2026-03-02-zone-ppg-season.png"><img src="mocks/2026-03-02-zone-ppg-season.png" alt="Zone Leaders"></a>
+    <a class="thumb" href="docs/mocks/2026-03-02-zone-ppg-season.png"><img src="docs/mocks/2026-03-02-zone-ppg-season.png" alt="Zone Leaders"></a>
     <div class="body">
       <h2>Zone Leaders (PPG / Frequency)</h2>
       <div class="meta">
@@ -445,12 +460,12 @@
       </div>
       <p class="insight">Headshot per court zone: who scores most (PPG mode) or shoots most often (frequency mode) from each area.</p>
       <p class="notes"><strong>Notes:</strong> made pre-playbook; never posted. Court grammar is justified here — location is the actual subject.</p>
-      <p class="files">Script: <a href="../scripts/make_zone_leaders.py">make_zone_leaders.py</a></p>
+      <p class="files">Script: <a href="scripts/make_zone_leaders.py">make_zone_leaders.py</a></p>
     </div>
   </div>
 
   <div class="card">
-    <a class="thumb" href="mocks/2026-03-02-zone-shooting-volume-season.png"><img src="mocks/2026-03-02-zone-shooting-volume-season.png" alt="Zone Volume Leaders"></a>
+    <a class="thumb" href="docs/mocks/2026-03-02-zone-shooting-volume-season.png"><img src="docs/mocks/2026-03-02-zone-shooting-volume-season.png" alt="Zone Volume Leaders"></a>
     <div class="body">
       <h2>Zone Volume Leaders</h2>
       <div class="meta">
@@ -460,7 +475,7 @@
       </div>
       <p class="insight">Highest-FGA shooter per zone with FGM/FGA and FG% — the "who actually takes these shots" view of the court.</p>
       <p class="notes"><strong>Notes:</strong> made pre-playbook; never posted.</p>
-      <p class="files">Script: <a href="../scripts/make_zone_shooting.py">make_zone_shooting.py --mode volume</a></p>
+      <p class="files">Script: <a href="scripts/make_zone_shooting.py">make_zone_shooting.py --mode volume</a></p>
     </div>
   </div>
 

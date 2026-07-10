@@ -27,6 +27,10 @@ workflow is retired.
 3. Avoid scheduled automation, heavy export pipelines, and heavy framework additions unless asked.
 4. Keep thresholds, coverage windows, and sources visible on graphics.
 5. Work one post idea at a time.
+6. Work directly on the local `main` branch. Do not create branches or Git worktrees by default.
+   After completing and verifying requested changes, commit and push directly to `main`. Use a
+   separate branch only when the user explicitly requests it or agrees that unusually risky work
+   should be isolated.
 
 ## Instagram Access
 

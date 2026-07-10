@@ -11,6 +11,7 @@ deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
 | `three_options.py` | Impact vs. Availability · The Season, Month by Month · The Shape of the Season · The Shape of the Record |
 | `f5_leaderboard.py` | F5 Leaderboard — Bulls Scoring Leaders (exports at 300 DPI / 2160x2700; change `STAT_COL` + labels for new topics) |
 | `f5_lineup_table.py` | Bulls Lineup Table — 2-man combos by net rating (needs network for lineup data; 300 DPI) |
+| `summer_league_report.py` | Summer League Report — post-game player cards; run bare to auto-resolve the latest completed Bulls SL game, then re-run with `--carousel --player …` (team front page + one slide per player, the chosen game-night format) or 1–3 `--player`/`--lens` pairs for the single image (needs network; refuses in-progress games) |
 
 ## Season cache
 

@@ -37,6 +37,8 @@ output/feed/                 # Generated PNGs; gitignored
 ### `bulls.data`
 
 - `get_team_shots(last_n_games=)` — all team shot-chart data
+- `get_game_shots(game_id)` — one game's team shots, any league; derives `league_id` from the
+  game-ID prefix via `league_for_game` (`00` NBA, `15` Summer League), so Summer League works
 - `get_roster()` — current roster; use it to filter traded players
 - `get_games(last_n=)`, `get_latest_game()`, `get_box_score(game_id)`
 - `get_player_games(player_name, last_n=)`, `get_player_shots(player_id)`
@@ -79,6 +81,10 @@ output/feed/                 # Generated PNGs; gitignored
 
 ## Data and Graphics Guardrails
 
+- `ShotChartDetail` filters by `league_id` server-side and defaults to the regular NBA, so it
+  silently returns zero rows for Summer League games. Use `get_game_shots`, which derives the
+  league from the game ID, instead of calling the endpoint directly. Prefer the NBA's own
+  `shot_zone` labels over re-deriving zones from distance or coordinates.
 - Shot-chart data includes everyone who took a Bulls shot that season, including traded players.
   Use `get_roster()` and player IDs to create a current-roster view when relevant, and show both
   all-player and current-roster views for a fair comparison.

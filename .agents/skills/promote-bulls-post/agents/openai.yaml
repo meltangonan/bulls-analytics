@@ -1,0 +1,4 @@
+interface:
+  display_name: "Promote Bulls Post"
+  short_description: "Prepare and distribute an approved Bulls post"
+  default_prompt: "Use $promote-bulls-post to prepare this approved Bulls post for Instagram."

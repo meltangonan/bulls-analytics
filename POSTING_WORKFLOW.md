@@ -16,30 +16,37 @@ system, read `DESIGN.md`; for the editorial north star and fairness principles, 
 
 ## Clarification Gate
 
-Before creating a new visual, clarify the request. Ask one focused question at a time; use the
-runtime's question tool when available. Do not start implementation until these fields are clear:
+Before creating a new visual, complete the brief below. Treat it as an internal completeness check,
+not a fixed questionnaire. Use the conversation, catalog card, and project documents as already-settled
+context; ask one focused question at a time only for decisions that remain unresolved. Use the runtime's
+question tool for clear choices when available and normal conversation for nuanced questions.
 
-- `insight_goal` — what the post should prove
-- `scope` — team/player and season or last-N-games window
-- `visual_type` — chart or card style
-- `style_direction` — clean, bold, editorial, and so on
-- `output_text` — exact title, subtitle, and footnote copy
+1. **Objective** — the basketball question, intended insight, and why a Bulls fan should care.
+2. **Analytical scope** — team or player, timeframe, metrics, filters, and sample.
+3. **Comparison logic** — the baseline, peers, eras, or before/after framing that gives the number meaning.
+4. **Evidence and qualifications** — sources, thresholds, uncertainty, fairness, and what the data can support.
+5. **Visual communication** — visual form, information hierarchy, title, annotations, and required footnotes.
+6. **Deliverable** — feed or carousel format, prototype expectations, and what constitutes an approved draft.
 
-If the user says “pick for me,” default to a 1080×1350 Instagram-feed PNG. Once the brief is clear,
-restate it in 3–6 bullets, then make any data or analysis changes, add tests, and generate the draft.
+Every area must be answered by the user, inferred from existing context, filled with a recommended default,
+or explicitly deferred because it does not affect the first draft. If the user says “pick for me,” choose a
+reasonable project-consistent default; use a 1080×1350 feed PNG when no other output format is implied.
+Once every area has a state, restate the settled brief in 3–6 bullets and give the user a chance to correct it
+before making data or analysis changes, adding tests, and generating the draft.
 
 ## Draft Refinement Gate
 
-Once a draft exists, work through these rounds in order. Each round is one focused question:
+Once a draft exists, cover the checks below before calling it approved. They are exit criteria, not six
+mandatory conversational rounds: review only what changed or remains unresolved, in the order that best fits
+the draft, and ask one focused question when a user decision is actually needed.
 
-1. **Voice dial** — set the amount of fan voice for every annotation.
-2. **Event lines** — add a real-world marker only when it explains a bend in the data; verify the
-   date before drawing it.
-3. **Copy deck** — show each annotation as a before→after table and get approval or redlines.
-4. **Title and subtitle** — confirm or revise them.
-5. **Caption and hashtags** — add a copy-paste block to the catalog card unless the user provides it.
-6. **Render** — iterate at 150 DPI, then export the approved post at 300 DPI using the prototype's
-   `--final` pattern when available.
+- **Voice** — annotations match the settled amount of fan voice.
+- **Event lines** — a real-world marker appears only when it explains the data; its date is verified.
+- **Copy deck** — every annotation is accurate, concise, and approved or redlined.
+- **Title and subtitle** — both are accurate, legible, and approved.
+- **Posting copy** — either approved copy is saved with the catalog card or the user has chosen to write it.
+- **Render** — drafts iterate at 150 DPI; the approved post exports at 300 DPI using the prototype's
+  `--final` pattern when available.
 
 ### Fact and Image Rules
 
@@ -63,9 +70,37 @@ When the user approves a post for publishing:
 
 1. Copy the final PNG to `docs/mocks/`.
 2. Update the catalog card to `Mocked`.
-3. Add a copy-paste caption and hashtag block.
+3. Add the approved caption or note that the user is supplying it. Add hashtags only when requested.
 
 After the user confirms it is live, update the card to `Posted`.
+
+## Promotion and Distribution
+
+Base final posting copy on the approved graphic and its underlying analysis. Prefer simple, direct,
+basketball-literate language; a plain factual caption is a valid result. Do not force a hook, humor, fan slang,
+rhetorical questions, or engagement bait. Preserve material qualifiers and verify any current fact before use.
+
+Provide caption help, alt text, hashtags, Story copy, or distribution guidance only when useful or requested.
+Keep distribution guidance to a few post-specific actions grounded in the actual subject and relevant Bulls
+community; do not produce a generic engagement checklist. Draft and advise only. The user publishes and
+interacts manually unless they give explicit per-action approval.
+
+## Post Review and Learning
+
+A review may use creative feedback alone or combine it with the final graphic, actual caption, audience
+response, and Instagram Insights. Ask for the most important missing feedback or evidence rather than requiring
+every input. Classify each lesson as:
+
+- **Observation** — something seen in one post or session.
+- **Working hypothesis** — a possible pattern to surface to the user and watch in later work.
+- **Durable rule** — an explicitly stated user preference, a user-confirmed hypothesis, or a pattern supported
+  by repeated evidence.
+
+Record post-specific evidence compactly on the catalog card. Surface hypotheses to the user for confirmation;
+do not silently turn a single performance result into a rule. Route confirmed durable knowledge to its owner
+document: visual and voice decisions to `DESIGN.md`, production behavior to this file, strategy and distribution
+principles to `STRATEGY.md`, and clear new post ideas to `idea-catalog.html`. Revise stale guidance rather than
+appending duplicate history.
 
 ### “I have a new idea / question.”
 

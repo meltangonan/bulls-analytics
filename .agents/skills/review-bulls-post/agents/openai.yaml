@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Bulls Post"
+  short_description: "Turn post feedback and results into durable learning"
+  default_prompt: "Use $review-bulls-post to review this Bulls post and carry its lessons forward."

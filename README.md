@@ -26,6 +26,8 @@ grammar, notes). Open it in a browser to review the shelf.
 
 ```text
 bulls-analytics/
+├── .agents/skills/   # repo-scoped post creation, promotion, and review workflows
+├── .claude/skills/   # Claude Code wrappers with links to canonical .agents skill files
 ├── STRATEGY.md      # why the account exists: audience, metrics, tracks
 ├── DESIGN.md        # visual system: palette, typography, layout, brand status
 ├── POSTING_WORKFLOW.md # visual-post gates and catalog-to-post workflow
@@ -65,4 +67,7 @@ venv/bin/python -m pytest tests/ -v
 Start with **`AGENTS.md`** (`CLAUDE.md` is a one-line pointer to it). It routes work to the focused
 owner documents: `DEVELOPMENT.md` for code and tests, `DESIGN.md` for visual decisions,
 `POSTING_WORKFLOW.md` for visual-post production, and `STRATEGY.md` plus
-`bulls-content-playbook.html` for editorial direction.
+`bulls-content-playbook.html` for editorial direction. Canonical repo-scoped skills in
+`.agents/skills/` guide the recurring create, promote, and review stages without duplicating those
+owner documents; `.claude/skills/` contains discovery wrappers with symlinked entrypoints to the
+same skills for Claude Code.

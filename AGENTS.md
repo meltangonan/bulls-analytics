@@ -17,6 +17,7 @@ workflow is retired.
 | A visual, mock, or post iteration | `DESIGN.md`, then `POSTING_WORKFLOW.md` |
 | Editorial direction, idea lanes, or fairness guardrails | `bulls-content-playbook.html` |
 | The current shelf of post ideas | `idea-catalog.html` |
+| Creating, promoting, or reviewing a specific post | Matching skill in `.agents/skills/`, then its routed owner documents |
 | Fetchers, analysis, graphics code, scripts, or tests | `DEVELOPMENT.md` |
 | Setup and a high-level orientation | `README.md` |
 
@@ -28,9 +29,10 @@ workflow is retired.
 4. Keep thresholds, coverage windows, and sources visible on graphics.
 5. Work one post idea at a time.
 6. Work directly on the local `main` branch. Do not create branches or Git worktrees by default.
-   After completing and verifying requested changes, commit and push directly to `main`. Use a
-   separate branch only when the user explicitly requests it or agrees that unusually risky work
-   should be isolated.
+   After completing and verifying requested changes, show the user the result and wait for explicit
+   approval before committing or pushing to `main`. Treat commit and push approval as applying only
+   to the completed work currently under review. Use a separate branch only when the user explicitly
+   requests it or agrees that unusually risky work should be isolated.
 
 ## Instagram Access
 
@@ -48,5 +50,20 @@ workflow is retired.
 - Update the document that owns a changed decision: strategy in `STRATEGY.md`, visual-system
   decisions in `DESIGN.md`, post-production behavior in `POSTING_WORKFLOW.md`, and technical
   conventions in `DEVELOPMENT.md`.
+- Treat documentation maintenance as part of completing the work; the user should not need to ask
+  separately. Update only the affected owner documents and revise or replace stale guidance instead
+  of duplicating it or appending unnecessary history.
+- Surface evidence-based hypotheses and unresolved patterns to the user for confirmation. Record an
+  explicitly stated user preference as a durable rule; keep conclusions inferred from results as
+  hypotheses until the user confirms them or repeated evidence supports them.
 - Keep `AGENTS.md` as a short map plus durable defaults; do not duplicate detailed procedures here.
 - Update `README.md` when the repository layout, setup, or entrypoint map changes.
+
+## Cross-Tool Skills
+
+- Keep the canonical copy of every repo-scoped skill in `.agents/skills/<skill-name>/`.
+- For Claude Code discovery, create `.claude/skills/<skill-name>/` with a relative `SKILL.md`
+  symlink to the canonical `.agents/skills/<skill-name>/SKILL.md`. Link any supporting resources
+  the same way when they exist. Never maintain copied skill files in both locations.
+- When adding, renaming, or removing a repo skill, update both discovery paths and verify that each
+  resolves to the same `SKILL.md`.

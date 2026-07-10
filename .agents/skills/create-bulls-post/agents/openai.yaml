@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Bulls Post"
+  short_description: "Turn a selected Bulls idea into an approved post"
+  default_prompt: "Use $create-bulls-post to clarify and build this Bulls post idea."

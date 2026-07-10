@@ -190,8 +190,13 @@ The grid viewed as a whole is the brand (the Half Court Mindset lesson: the temp
 
 - On-graphic copy is minimal and in the fan voice (§7). The analytical thesis, player
   names, and context live in the **IG caption**, which the user writes or heavily owns.
-- Ship-ready caption + hashtag block goes on the idea-catalog card when a post is
-  approved (so posting from the phone is trivial).
+- Captions sound like a knowledgeable person who watches the Bulls: simple, direct, and
+  grounded in the actual basketball observation. A plain factual caption is a successful result.
+- Do not add a hook, joke, fan slang, rhetorical question, or engagement bait merely to make the
+  copy feel distinctive. Use humor only when it is natural to the post or explicitly comes from
+  the user; never perform a social-media persona.
+- Save the approved caption on the idea-catalog card when available. Hashtags, alt text, and Story
+  copy are optional supporting pieces, not mandatory additions.
 
 ---
 
@@ -212,6 +217,8 @@ logo exists).
 
 ## Decision Log
 
+- **2026-07-10** — Caption voice clarified: knowledgeable Bulls observer, simple and direct;
+  manufactured hooks, humor, slang, and engagement bait ruled out. Supporting posting copy is optional.
 - **2026-07-09** — Rebrand round closed: grid rules codified (§10); footer watermark
   confirmed as the only on-graphic brand element for now. Tagline/bio parked with
   "Chicago Bulls, charted." as the leading candidate. Logo work parked earlier same day.

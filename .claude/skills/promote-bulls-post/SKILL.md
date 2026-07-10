@@ -1,0 +1,1 @@
+../../../.agents/skills/promote-bulls-post/SKILL.md

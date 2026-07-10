@@ -46,6 +46,10 @@ a detail would help a nerd but confuse a casual fan, the casual fan wins.
   Bulls pages and the "top guys." The metric closest to the actual goal.
   *Qualitative running note, moves over months.*
 
+Review published work as a learning loop, not a verdict on one post. Record post-specific results as
+observations, surface plausible patterns as hypotheses, and change durable strategy only after the user
+confirms the lesson or repeated evidence supports it. Explicit user preferences do not require repeated proof.
+
 ## Tracks
 
 ### Craft & the format library
@@ -91,6 +95,8 @@ pages. A repost or collaboration should follow a relevant original post and an
 existing relationship — it is an endorsement to earn, not a cold ask. The
 durable growth loop is: publish useful original work, join the conversations
 around it, earn recognition, and give people a clear reason to share it.
+Distribution advice should stay small and specific to the post; generic engagement
+checklists are not a strategy.
 
 ## Not working on
 

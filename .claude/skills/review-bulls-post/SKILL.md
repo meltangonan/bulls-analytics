@@ -1,0 +1,1 @@
+../../../.agents/skills/review-bulls-post/SKILL.md

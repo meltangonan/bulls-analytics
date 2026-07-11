@@ -30,7 +30,31 @@ games.**
 ## Working format
 
 - Keep the general title `SUMMER LEAGUE REPORT`.
-- Start with a compact final-score and team-stat snapshot.
+- **Slide 1 (approved direction after anatomy study, 2026-07-10):** Bulls-only front page — no opponent
+  comparison ("that's the point of this page"). Bold subtitle: Bulls score red, opponent
+  black, date gray; no kicker by default (`--kicker` adds an approved editorial line).
+  Snapshot band holds four white stat cards (REB, AST, STL, TO) plus the team shot map
+  with FG / 3PT / FT make-attempt lines and percentages. Replace the bordered featured-player
+  card stack below it with the compact Great Tables-style player comparison proven in
+  `scripts/prototypes/summer_league_great_tables_spike.py`. Keep the Bulls visual system rather
+  than copying the reference: white, Bulls red/black, Archivo, restrained rules/striping, and one
+  meaningful emphasis. The likely columns are headshot, player, MIN, PTS, FG, 3PT, REB, AST,
+  eFG%, and +/-. Do not repeat a title/subtitle inside the embedded table.
+- **Player slides (approved C2 direction):** date-only subtitle, no kicker. Use the C2 mockup's
+  structure: a large exact-location FGA chart on the left and a compact supporting metric rail on
+  the right. Remove the `PRIMARY TAKEAWAY` label and takeaway headline entirely; do not manufacture
+  an editorial thesis. Retain the original box line (PTS, MIN, FG, 3PT, REB, AST), FGA share, eFG%,
+  plus/minus, and HOW HE SCORED splits for RIM/PAINT, MID-RANGE, THREES, and FREE THROWS, but give
+  them hierarchy instead of equal-weight cards. Plot all FGA with the same circular shape: solid
+  for makes and hollow for misses. Do not distinguish 2PA from 3PA by marker.
+- **APPROVED (2026-07-10, pre-game).** Both slides are built, refined, and user-approved on the
+  rehearsal game: slide 1 with the embedded Great Tables comparison (sorted by PTS, PTS is the
+  magnitude-colored column), and the C2 player slide (identity chips, exact-FGA court left,
+  shot-profile cards right with a solid-red eFG% payoff card; card text centered after a spacing
+  fix). Slide 1 is post-ready on its own; the user may post slide 1 alone tonight if the player
+  slide needs more polish on real data. `great-tables>=0.22` is now in `requirements.txt`
+  (`gt_extras` stays environment-only; spike script only). Approved mocks:
+  `docs/mocks/2025-07-14-summer-league-report-s1.png` and `-s2.png`; catalog card added (Mocked).
 - Feature one to three Bulls player cards, only when the game provides a real story.
 - Every card keeps the basic box score and adds one selected lens:
   - `shot_diet` — how the player scored, grouped as rim/paint, mid-range, and threes.
@@ -130,23 +154,57 @@ NBA.com prints "Noa Essengue"). A wrong name raises an error that lists the vali
   path — the carousel gives each player a full slide — but if anyone falls back to single-image mode
   for a one-player night, the band is still there. Centring was tried and rejected (it strands the
   `PLAYER STORIES` header). Left as a `DESIGN.md` decision only if single-image mode is ever revived.
-- **Player-slide kicker repeats.** Every carousel slide currently shows the same kicker line
-  ("N Bulls stories from the game"). On player slides it could read "Player story · 2 of 4" instead.
-  Cheap to add during the refinement gate once real data is in front of us; deferred.
+- ~~Player-slide kicker repeats.~~ Superseded 2026-07-10: kickers were removed from all slides
+  (slide 1 accepts an optional `--kicker`; player slides have none and show a date-only subtitle).
+- ~~Long names on player slides.~~ Resolved 2026-07-10: names auto-shrink via `_fitted_text`, and
+  hyphens render as spaces in the display face (Academic M54 has no hyphen glyph — data lookups
+  still use the exact NBA.com spelling).
 - **Footnote disclosure.** The footnote still reads `Summer League game · Data via NBA.com/Stats`.
   It does not disclose the shot-diet thresholds, which `AGENTS.md` asks for, nor the one-free-throw
-  rule. The user chose to leave this for now.
-- No `idea-catalog.html` card exists for this format yet.
+  rule. The user chose to leave this for now. FT volume will look low under the one-FT rule; if it
+  reads jarring on the real game, a one-line footnote is the fix.
+- ~~No `idea-catalog.html` card exists.~~ Resolved 2026-07-10: card added (Mocked), mocks in
+  `docs/mocks/`.
+- **Rookie headshots.** CDN photos for 2026 rookies (Caleb Wilson especially) may still be gray
+  silhouettes. The script warns when a cached file is under ~20 KB; fall back to a Bulls team-CDN
+  crop per `DESIGN.md` §8 if the warning fires. Both the slide-1 table and the player slide show
+  headshots.
 
 ## Current evidence
 
 - Rehearsal game: Bulls 114, Pacers 105, July 14, 2025; NBA game ID `1522500033`.
-- Both formats render clean against the rehearsal game: the single image (three lenses — Buzelis
-  `shot_diet`, Essengue `impact`, Freeman-Liberty `role`) and the four-slide carousel (team front
-  page + three player slides).
-- `venv/bin/python -m pytest tests/test_summer_league_report.py -v` passes (11 tests); full suite
-  passes (129 tests).
-- Output PNGs are generated under `output/feed/` and are intentionally untracked.
+- The approved four-slide carousel renders clean against the rehearsal game; approved mocks are
+  committed at `docs/mocks/2025-07-14-summer-league-report-s1.png` and `-s2.png`. The legacy
+  single-image mode still renders.
+- Full suite passes (132 tests). Output PNGs under `output/feed/` stay untracked; the pre-redesign
+  renders are preserved there as `*-baseline.png`.
+- Design-study artifacts: `docs/ideation/summer-league-anatomy-study.html`, wireframes and spikes in
+  `scripts/prototypes/` (see its README).
+
+## Game-night runbook (tonight: Bulls vs. Grizzlies, 7:00 PM CT)
+
+1. Wait for the final buzzer (~9:00–9:30 PM CT). The script refuses in-progress games.
+2. Review pass — auto-resolves the game and prints the story table:
+
+   ```bash
+   venv/bin/python scripts/prototypes/summer_league_report.py
+   ```
+
+   If NBA.com lags on auto-resolve, pass `--game-id` from the NBA.com game URL.
+3. Clarification gate with the user: choose 1–3 featured players from the printed table (type names
+   exactly as the table spells them) and confirm any `--kicker` line. Watch for the headshot
+   silhouette warning on rookies.
+4. Draft render at 150 DPI:
+
+   ```bash
+   venv/bin/python scripts/prototypes/summer_league_report.py --carousel \
+     --player "<Name>" [--player "<Name>" ...]
+   ```
+
+5. Refine with the user. Slide 1 alone is an approved fallback post if the player slides need work.
+6. After approval: re-run with `--final` (300 DPI), copy finals to `docs/mocks/`, save the caption
+   on the catalog card (or note the user is writing it), and use `promote-bulls-post` for posting
+   copy. The user posts manually; update the card to `Posted` only after they confirm it is live.
 
 ## Roster reference (verify spellings against the review pass)
 

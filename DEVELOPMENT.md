@@ -91,8 +91,12 @@ output/feed/                 # Generated PNGs; gitignored
 - Set `min_shots` by timeframe: about 30 for a season and 10 for a recent-games view.
 - Standard output is 1080×1350 at 150 DPI. New prototypes should export 2160×2700 at 300 DPI for
   Instagram compression; use 150 DPI only for fast draft iteration.
-- Table posts use `plottable`; see `scripts/prototypes/f5_lineup_table.py`. Craft patterns and
-  source links are in `docs/reference/f5-technique-notes.html`.
+- Table posts use `plottable` (see `scripts/prototypes/f5_lineup_table.py`) or Great Tables when
+  the table engine should own row rhythm, image cells, and a single color-emphasized column —
+  `summer_league_report.py` renders its player table with Great Tables to a cropped PNG and
+  composites it into the matplotlib canvas (`gtsave` needs a headless browser). `gt_extras` stays
+  environment-only; only the spike script uses it. Craft patterns and source links are in
+  `docs/reference/f5-technique-notes.html`.
 - `DESIGN.md` owns typography. `Playfair Display` and `DM Sans` remain only in legacy
   `bulls/graphics/feed.py` zone builders.
 - Court graphics use `analysis.detailed_zones()`; headshots are cached in `cache/headshots/`.

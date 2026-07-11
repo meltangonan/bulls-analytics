@@ -106,3 +106,33 @@ def test_role_and_impact_lenses_use_box_score_values_without_true_shooting():
     assert report.efg_pct(player) == 58.333333333333336
     assert report.lens_copy("role", player, team, shots()) == ("THE ROLE", "20% OF BULLS FGA")
     assert report.lens_copy("impact", player, team, shots()) == ("THE IMPACT", "BULLS -4 IN HIS MINUTES")
+
+
+def test_shot_diet_covers_the_whole_team_when_no_player_is_given():
+    chart = shots((7, "Restricted Area"), (8, "Above the Break 3"), (9, "Mid-Range"))
+
+    assert report.shot_diet(chart, None) == {"rim": 1, "paint": 0, "mid": 1, "three": 1}
+    assert report.shot_diet_line(chart, None) == "1 RIM/PAINT · 1 MID · 1 3PT"
+
+
+def test_minutes_played_reads_both_nba_clock_formats():
+    assert report.minutes_played(pd.Series({"minutes": "22:34"})) == 22
+    assert report.minutes_played(pd.Series({"minutes": "PT22M34.00S"})) == 22
+    assert report.minutes_played(pd.Series({"minutes": ""})) == 0
+    assert report.minutes_played(pd.Series({"minutes": None})) == 0
+
+
+def test_zone_splits_count_makes_and_attempts_per_zone_group():
+    chart = pd.DataFrame(
+        [
+            (7, "Restricted Area", True),
+            (7, "In The Paint (Non-RA)", False),
+            (7, "Mid-Range", True),
+            (7, "Left Corner 3", False),
+            (8, "Above the Break 3", True),
+        ],
+        columns=["player_id", "shot_zone", "shot_made"],
+    )
+
+    assert report.zone_splits(chart, 7) == {"rim_paint": (1, 2), "mid": (1, 1), "three": (0, 1)}
+    assert report.zone_splits(chart, None)["three"] == (1, 2)

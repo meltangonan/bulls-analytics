@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Summer League Report — F5 Anatomy Study</title>
+  <style>
+    :root {
+      --paper: #f5f2ec;
+      --card: #fff;
+      --ink: #191919;
+      --muted: #6e6b66;
+      --faint: #aaa59c;
+      --rule: #ddd7ce;
+      --soft: #ebe7df;
+      --red: #ce1141;
+      --green: #1f6a4a;
+      --amber: #9a6112;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+    main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 52px 0 100px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 900px; font-size: clamp(42px, 7vw, 84px); line-height: .96; letter-spacing: -.045em; margin-bottom: 24px; }
+    h2 { font-size: clamp(28px, 4vw, 46px); letter-spacing: -.025em; margin-bottom: 20px; }
+    h3 { font-size: 22px; letter-spacing: -.015em; margin-bottom: 10px; }
+    p { max-width: 780px; }
+    a { color: inherit; text-decoration-color: var(--red); text-underline-offset: 3px; }
+    .eyebrow { color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .dek { color: var(--muted); font-size: clamp(18px, 2.5vw, 25px); max-width: 880px; }
+    .hero { padding-bottom: 46px; border-bottom: 1px solid var(--rule); }
+    .hero-note { display: inline-block; margin-top: 18px; padding: 10px 14px; background: var(--ink); color: white; font-size: 13px; }
+    section { padding: 54px 0; border-bottom: 1px solid var(--rule); }
+    .finding {
+      padding: 28px;
+      border-left: 6px solid var(--red);
+      background: white;
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 750;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+    .grid { display: grid; gap: 22px; }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card { background: var(--card); border: 1px solid var(--rule); padding: 24px; }
+    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+    .meta { color: var(--muted); font-size: 13px; }
+    .pill { display: inline-block; padding: 4px 8px; background: var(--soft); color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .step { display: grid; grid-template-columns: 28px 1fr; gap: 10px; padding: 9px 0; border-top: 1px solid var(--rule); }
+    .step:first-of-type { border-top: 0; }
+    .step b { color: var(--red); }
+    .anatomy {
+      min-height: 340px;
+      background: #fbfaf7;
+      border: 1px solid var(--rule);
+      padding: 16px;
+      display: grid;
+      gap: 8px;
+    }
+    .zone { border: 1px dashed #aaa49a; color: #716c65; padding: 10px; font-size: 12px; font-weight: 700; }
+    .zone.header { min-height: 52px; }
+    .rows { display: grid; gap: 4px; }
+    .row-unit { display: grid; grid-template-columns: 48px 68px 1fr 58px; gap: 6px; align-items: center; min-height: 34px; }
+    .row-unit span { background: var(--soft); height: 100%; border-radius: 2px; }
+    .row-unit span:nth-child(3) { background: #ded9d1; }
+    .row-unit span:last-child { background: #a9a49b; }
+    .table-sketch { display: grid; grid-template-columns: 1.6fr repeat(5, .62fr); gap: 3px; }
+    .table-sketch span { min-height: 24px; background: var(--soft); }
+    .table-sketch span:nth-child(6n) { background: #9e9a93; }
+    .columns-sketch { display: grid; grid-template-columns: 1.2fr repeat(4, 1fr); gap: 4px; }
+    .columns-sketch span { min-height: 30px; background: var(--soft); }
+    .columns-sketch .face { min-height: 72px; background: #d8d3ca; border-radius: 50% 50% 0 0; }
+    .court-sketch { position: relative; min-height: 300px; border: 2px solid #d6d1c9; overflow: hidden; }
+    .court-sketch::before { content: ""; position: absolute; left: 21%; right: 21%; bottom: -23%; height: 72%; border: 2px solid #d6d1c9; border-radius: 50% 50% 0 0; }
+    .court-sketch::after { content: ""; position: absolute; width: 27%; height: 36%; left: 36.5%; bottom: 0; border: 2px solid #d6d1c9; }
+    .shot { position: absolute; width: 12px; height: 12px; border: 2px solid #555; border-radius: 50%; z-index: 2; }
+    .shot.make { background: #555; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 14px 12px; text-align: left; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+    td:first-child { font-weight: 750; width: 20%; }
+    .severity-high { color: #8e1c32; font-weight: 750; }
+    .severity-med { color: var(--amber); font-weight: 750; }
+    .severity-low { color: var(--green); font-weight: 750; }
+    .wireframes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .wireframe { background: white; border: 1px solid var(--rule); padding: 12px; }
+    .wireframe img { display: block; width: 100%; height: auto; background: #eee; }
+    .wireframe h3 { margin: 16px 6px 6px; }
+    .wireframe p { margin: 0 6px 14px; color: var(--muted); font-size: 14px; }
+    .verdict { margin-top: 22px; padding: 22px; background: #ebe7df; }
+    .verdict strong { color: var(--red); }
+    .recommendation { background: var(--ink); color: white; padding: 34px; }
+    .recommendation h2 { color: white; }
+    .recommendation p { color: #d6d3ce; }
+    .recommendation strong { color: white; }
+    .sequence { counter-reset: build; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+    .sequence div { min-height: 150px; padding: 16px; background: white; border-top: 4px solid var(--red); }
+    .sequence div::before { counter-increment: build; content: counter(build); display: block; color: var(--red); font-size: 30px; font-weight: 800; }
+    .sequence b { display: block; margin: 6px 0; }
+    .sequence span { color: var(--muted); font-size: 13px; }
+    .small { font-size: 13px; color: var(--muted); }
+    code { background: var(--soft); padding: 2px 5px; font-size: .9em; }
+    @media (max-width: 850px) {
+      .grid.three, .grid.four, .grid.two, .wireframes, .sequence { grid-template-columns: 1fr; }
+      table { font-size: 13px; }
+      th, td { padding: 10px 8px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <p class="eyebrow">@chicagobullsdata · design research · 2026-07-10</p>
+    <h1>Anatomy of an F5-quality sports graphic</h1>
+    <p class="dek">A structural study of three Owen Phillips tutorials, measured against the current Summer League report. The goal is to borrow the method—data shape, hierarchy, rhythm, and finishing discipline—without copying The F5's visual identity.</p>
+    <span class="hero-note">Study only · no current Summer League work overwritten</span>
+  </header>
+
+  <section>
+    <p class="eyebrow">Executive finding</p>
+    <div class="finding">The quality gap is not “R/Python versus design software.” Owen chooses a layout grammar first, reshapes the data to serve it, and gives only one element the strongest emphasis. Our current report starts with a complete set of components, then asks spacing and styling to manufacture hierarchy afterward.</div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Research scope</p>
+    <h2>Four references, four different visual jobs</h2>
+    <div class="grid four">
+      <article class="card">
+        <span class="pill">Fast scan</span>
+        <h3>Instagram Eye Candy</h3>
+        <p>Ten-player ranking. One repeated horizontal unit. Identity on the left, one isolated number on the right.</p>
+        <p class="meta">4:5 · 2400×3000 source image · ggplot2 facets · 600 DPI</p>
+        <p><a href="https://thef5.substack.com/p/how-to-create-instagram-eye-candy">Open tutorial</a></p>
+      </article>
+      <article class="card">
+        <span class="pill">Dense evidence</span>
+        <h3>Great Tables in Python</h3>
+        <p>Twenty-row Summer League board. Many stats, but DRE alone owns the color scale and ranking logic.</p>
+        <p class="meta">Great Tables · team logos · zebra rows · one verdict column</p>
+        <p><a href="https://thef5.substack.com/p/how-to-make-great-tables-in-python">Open tutorial</a></p>
+      </article>
+      <article class="card">
+        <span class="pill">Direct comparison</span>
+        <h3>More Great Tables</h3>
+        <p>Four players become columns; stats become rows. Headshots replace conventional column labels.</p>
+        <p class="meta">Data transposed before styling · gt-extras image headers</p>
+        <p><a href="https://thef5.substack.com/p/how-to-make-more-great-tables-in">Open tutorial</a></p>
+      </article>
+      <article class="card">
+        <span class="pill">Spatial evidence</span>
+        <h3>Shot-location data</h3>
+        <p>NBA locations are converted into court coordinates, plotted on a fixed aspect ratio, and layered over reusable court paths.</p>
+        <p class="meta">Regular FGA only for this study · no foul analysis retained</p>
+        <p><a href="https://thef5.substack.com/p/how-to-shooting-fouls">Open tutorial</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Reference anatomy 1</p>
+    <h2>The repeated-row board</h2>
+    <div class="grid two">
+      <div class="anatomy">
+        <div class="zone header">TITLE + one-sentence metric definition</div>
+        <div class="rows">
+          <div class="row-unit"><span></span><span></span><span></span><span></span></div>
+          <div class="row-unit"><span></span><span></span><span></span><span></span></div>
+          <div class="row-unit"><span></span><span></span><span></span><span></span></div>
+          <div class="row-unit"><span></span><span></span><span></span><span></span></div>
+          <div class="row-unit"><span></span><span></span><span></span><span></span></div>
+          <div class="row-unit"><span></span><span></span><span></span><span></span></div>
+          <div class="row-unit"><span></span><span></span><span></span><span></span></div>
+          <div class="row-unit"><span></span><span></span><span></span><span></span></div>
+          <div class="row-unit"><span></span><span></span><span></span><span></span></div>
+          <div class="row-unit"><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="zone">SOURCE</div>
+      </div>
+      <div>
+        <h3>What the code is doing</h3>
+        <div class="step"><b>1</b><span>A reusable theme sets the background, font, title, subtitle, caption, and default spacing.</span></div>
+        <div class="step"><b>2</b><span>Each player becomes a facet, so the plotting system enforces identical row geometry.</span></div>
+        <div class="step"><b>3</b><span>One rectangle creates the right-side value zone for every row.</span></div>
+        <div class="step"><b>4</b><span>Name and team are stacked as one identity unit; headshot and logo do labeling work.</span></div>
+        <div class="step"><b>5</b><span>A single-hue gradient encodes the ranked stat. No other element competes with it.</span></div>
+        <div class="step"><b>6</b><span>The image is exported directly at the intended social aspect ratio and high DPI.</span></div>
+        <p class="small"><strong>Transferable lesson:</strong> repetition creates polish before decorative styling begins.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Reference anatomy 2</p>
+    <h2>The semantic stat table</h2>
+    <div class="grid two">
+      <div class="anatomy">
+        <div class="zone header">CENTERED TITLE + definition of ranked metric</div>
+        <div class="table-sketch">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="zone">CROPPED TO TABLE CONTENT</div>
+      </div>
+      <div>
+        <h3>What the code is doing</h3>
+        <div class="step"><b>1</b><span>Fetch and clean only the columns needed for the table.</span></div>
+        <div class="step"><b>2</b><span>Combine makes and attempts into compact strings so the table can breathe.</span></div>
+        <div class="step"><b>3</b><span>Sort by DRE and make the ranking logic explicit.</span></div>
+        <div class="step"><b>4</b><span>Use a table engine for column widths, baselines, row rhythm, formatting, and cropping.</span></div>
+        <div class="step"><b>5</b><span>Apply visual emphasis to DRE only; use striping and rules as quiet scaffolding.</span></div>
+        <p class="small"><strong>Transferable lesson:</strong> dense information can still have one focal column.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Reference anatomy 3</p>
+    <h2>The players-as-columns comparison</h2>
+    <div class="grid two">
+      <div class="anatomy">
+        <div class="zone header">LEFT-ALIGNED TITLE + coverage window</div>
+        <div class="columns-sketch">
+          <span></span><span class="face"></span><span class="face"></span><span class="face"></span><span class="face"></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div>
+        <h3>What the code is doing</h3>
+        <div class="step"><b>1</b><span>Unpivot and pivot the data so the comparison question determines the table orientation.</span></div>
+        <div class="step"><b>2</b><span>Use image headers so faces and names become one column-label unit.</span></div>
+        <div class="step"><b>3</b><span>Center player values, left-align stat labels, and let zebra rows handle tracking.</span></div>
+        <div class="step"><b>4</b><span>Avoid extra stat cards, icons, or color when the comparison itself is already clear.</span></div>
+        <p class="small"><strong>Transferable lesson:</strong> reshape the data before styling the output.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Reference anatomy 4</p>
+    <h2>The shot chart as a coordinate system</h2>
+    <div class="grid two">
+      <div class="anatomy">
+        <div class="zone header">TITLE + exact coverage window</div>
+        <div class="court-sketch">
+          <span class="shot make" style="left:48%;bottom:17%"></span>
+          <span class="shot" style="left:39%;bottom:28%"></span>
+          <span class="shot make" style="left:55%;bottom:25%"></span>
+          <span class="shot" style="left:12%;bottom:58%"></span>
+          <span class="shot make" style="right:10%;bottom:67%"></span>
+          <span class="shot" style="right:4%;bottom:34%"></span>
+        </div>
+        <div class="zone">ONE FGA MARKER · SOLID MAKE / HOLLOW MISS</div>
+      </div>
+      <div>
+        <h3>What the tutorial is doing</h3>
+        <div class="step"><b>1</b><span>Load reusable NBA court paths instead of drawing a decorative court by eye.</span></div>
+        <div class="step"><b>2</b><span>Convert raw <code>locX</code>/<code>locY</code> into the same units and origin as the court geometry.</span></div>
+        <div class="step"><b>3</b><span>Filter play-by-play events to field-goal attempts. The shooting-foul layer is separate and is excluded from our study.</span></div>
+        <div class="step"><b>4</b><span>Use a fixed coordinate ratio and explicit court limits so spatial patterns are not distorted.</span></div>
+        <div class="step"><b>5</b><span>Overlay point marks, remove axes and grid scaffolding, and let the court provide orientation.</span></div>
+        <div class="step"><b>6</b><span>Use low alpha for season-level density; use stronger make/miss marks for one-game charts.</span></div>
+        <p class="small"><strong>Our adaptation:</strong> every FGA uses the same circular marker. Solid means make and hollow means miss. The simpler encoding is easier to read and can later map cleanly to Bulls red.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Current-state audit</p>
+    <h2>Why the Summer League carousel feels designed in pieces</h2>
+    <p>The current prototype is ambitious and analytically sound, but it contains several nested visual systems. The script is 804 lines and uses 47 separate text placements. That produces control, but it also makes hierarchy depend on dozens of unrelated coordinate decisions.</p>
+    <table>
+      <thead><tr><th>Dimension</th><th>Current report</th><th>Effect</th><th>Gap</th></tr></thead>
+      <tbody>
+        <tr><td>Slide job</td><td>Scoreboard, team dashboard, shot map, shooting splits, and player index</td><td>The first slide has no single dominant reading path</td><td class="severity-high">High</td></tr>
+        <tr><td>Player slide</td><td>Six box chips, three lens cards, four zone splits, and a court</td><td>Evidence is present, but every category is introduced as a peer</td><td class="severity-high">High</td></tr>
+        <tr><td>Containers</td><td>Panel → cards → chips</td><td>Boxes do grouping work that alignment and rhythm could do more quietly</td><td class="severity-med">Medium</td></tr>
+        <tr><td>Typography</td><td>Display face on the global title and every player name</td><td>Large black shapes compete with the data rather than organizing it</td><td class="severity-med">Medium</td></tr>
+        <tr><td>Images</td><td>Headshots sit beside a separate name and separate chip system</td><td>Faces attract attention but do not fully replace another label layer</td><td class="severity-med">Medium</td></tr>
+        <tr><td>Shot data</td><td>Real NBA locations already reconcile to 37 makes on 74 FGA</td><td>The court is valuable evidence; the problem was its surrounding hierarchy, not the data</td><td class="severity-low">Preserve</td></tr>
+        <tr><td>Accuracy</td><td>NBA box score, NBA shot zones, sources, and tested helper logic</td><td>The analytical foundation is strong and should be preserved</td><td class="severity-low">Low</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <p class="eyebrow">Shot-chart extension</p>
+    <h2>Two ways to restore spatial evidence</h2>
+    <p>The original report was right to value shot locations. The refinement is to give the court a specific job instead of placing it beside every other summary component.</p>
+    <div class="grid two">
+      <article class="wireframe">
+        <a href="../../output/feed/2025-07-14-summer-league-wireframe-c2-real-shot-chart.png"><img src="../../output/feed/2025-07-14-summer-league-wireframe-c2-real-shot-chart.png" alt="Editorial Matas Buzelis slide with real shot locations"></a>
+        <h3>C2 · Editorial story + exact FGA</h3>
+        <p>Recommended player-slide structure. The chart proves the rim/paint takeaway; the side rail carries only four supporting totals.</p>
+      </article>
+      <article class="wireframe">
+        <a href="../../output/feed/2025-07-14-summer-league-wireframe-d-shot-small-multiples.png"><img src="../../output/feed/2025-07-14-summer-league-wireframe-d-shot-small-multiples.png" alt="Three-player shot-profile small-multiple wireframe"></a>
+        <h3>D · Shot-profile small multiples</h3>
+        <p>Useful comparison slide. All three players share the same court scale and encoding, so location patterns become directly comparable.</p>
+      </article>
+    </div>
+    <div class="verdict"><strong>Data reconciliation:</strong> the rehearsal game contains exactly 74 Bulls FGA and 37 makes. Matas, Noa, and Javon each attempted 14 shots.</div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Wireframe study</p>
+    <h2>Three structures using the same settled data</h2>
+    <div class="wireframes">
+      <article class="wireframe">
+        <a href="../../output/feed/2025-07-14-summer-league-wireframe-a-row-board.png"><img src="../../output/feed/2025-07-14-summer-league-wireframe-a-row-board.png" alt="Repeated-row Summer League board wireframe"></a>
+        <h3>A · Repeated-row board</h3>
+        <p>Fastest scan and strongest cover. Each player has the same row grammar; points own the endpoint.</p>
+      </article>
+      <article class="wireframe">
+        <a href="../../output/feed/2025-07-14-summer-league-wireframe-b-comparison.png"><img src="../../output/feed/2025-07-14-summer-league-wireframe-b-comparison.png" alt="Players-as-columns Summer League comparison wireframe"></a>
+        <h3>B · Comparison table</h3>
+        <p>Cleanest direct comparison. Best as a self-contained report or reference slide, weaker as a narrative carousel.</p>
+      </article>
+      <article class="wireframe">
+        <a href="../../output/feed/2025-07-14-summer-league-wireframe-c-player-story.png"><img src="../../output/feed/2025-07-14-summer-league-wireframe-c-player-story.png" alt="Editorial player-story Summer League wireframe"></a>
+        <h3>C · Editorial player story</h3>
+        <p>Strongest analytical slide. One claim owns the page; the shot chart proves it and three figures support it.</p>
+      </article>
+    </div>
+    <div class="verdict"><strong>Study verdict:</strong> Direction A is the best cover grammar. Direction C is the best player-slide grammar. Direction B is useful, but it solves a different job: compact comparison rather than editorial storytelling.</div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Library feasibility</p>
+    <h2>Great Tables earned a real trial</h2>
+    <div class="grid two">
+      <div class="card">
+        <h3>Player rows + one verdict column</h3>
+        <p>The local Great Tables spike automatically handled row rhythm, baselines, image sizing, alignment, striping, and content cropping. Only effective FG percentage receives magnitude color.</p>
+        <p><a href="../../output/feed/2025-07-14-summer-league-great-tables-spike.png">Open rendered spike</a></p>
+      </div>
+      <div class="card">
+        <h3>gt-extras image headers</h3>
+        <p>The player-as-columns spike successfully embedded all three local headshots into semantic column headers—the exact technique used in the F5 comparison tutorial.</p>
+        <p><a href="../../output/feed/2025-07-14-summer-league-gt-extras-columns-spike.png">Open rendered spike</a></p>
+      </div>
+    </div>
+    <p style="margin-top:20px"><strong>Technical finding:</strong> Great Tables 0.22 and gt-extras 0.0.8 work in the project virtual environment. Current <code>gtsave()</code> rendered both PNGs successfully. The packages remain uncommitted environment-only dependencies until a selected table format justifies adding them to <code>requirements.txt</code>.</p>
+    <p class="small">Caution: gt-extras documents itself as still in development and warns that breaking changes should be expected. Use it in a prototype first; keep a fallback path for durable formats.</p>
+  </section>
+
+  <section class="recommendation">
+    <p class="eyebrow">Recommendation</p>
+    <h2>Build the carousel as A + C2</h2>
+    <p><strong>Slide 1:</strong> use the repeated-row board. Keep the score/date as context, then show the three players with one short takeaway and one emphasized endpoint. Remove the team dashboard and team shot map from the cover.</p>
+    <p><strong>Slides 2–4:</strong> use one editorial player story per slide. Choose one thesis from the existing data, let the exact shot chart prove the spatial claim, and limit the support rail to a few numbers.</p>
+    <p><strong>Direction D:</strong> use the shared-scale small multiple only when comparing shot profiles is itself the point. It should replace separate player slides, not be added on top of them.</p>
+    <p><strong>Direction B:</strong> preserve the Great Tables comparison as a separate format option. It may become the right answer for a “three-player report card” or a one-slide post, but it should not be forced into this narrative carousel.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Following build sequence</p>
+    <h2>How the next implementation should proceed</h2>
+    <div class="sequence">
+      <div><b>Freeze baseline</b><span>Leave the current uncommitted report intact for side-by-side comparison.</span></div>
+      <div><b>Build cover</b><span>Translate Direction A into Bulls color and the established header/footer system.</span></div>
+      <div><b>Build one story</b><span>Use Matas as the first full Direction C2 slide with exact FGA; approve hierarchy before multiplying it.</span></div>
+      <div><b>Choose format</b><span>Decide whether Noa and Javon each warrant their own thesis or whether one comparison slide is more honest.</span></div>
+      <div><b>Promote carefully</b><span>Add Great Tables to requirements only if the chosen post actually uses it and the export remains stable.</span></div>
+    </div>
+  </section>
+
+  <section style="border-bottom:0">
+    <p class="eyebrow">Status</p>
+    <h2>Research complete; visual direction ready for review</h2>
+    <p>This study records observations and working hypotheses. It does not change the account-wide design system yet. The A + C2 recommendation should become a durable production rule only after the first redesigned carousel is reviewed and approved.</p>
+  </section>
+</main>
+</body>
+</html>

@@ -22,6 +22,10 @@ grammar, notes). Open it in a browser to review the shelf.
 **Strategy** — who the account is for, what winning looks like, and where effort goes lives in
 `STRATEGY.md` at the repo root.
 
+**Interactive design reference** — browse `design-system.html` at the repo root for the visual
+companion to `DESIGN.md`. The HTML makes the established system easier to scan; design decisions
+and their history still live in `DESIGN.md`.
+
 ## Project Layout
 
 ```text
@@ -30,6 +34,7 @@ bulls-analytics/
 ├── .claude/skills/   # Claude Code wrappers with links to canonical .agents skill files
 ├── STRATEGY.md      # why the account exists: audience, metrics, tracks
 ├── DESIGN.md        # visual system: palette, typography, layout, brand status
+├── design-system.html # browsable companion to DESIGN.md
 ├── POSTING_WORKFLOW.md # visual-post gates and catalog-to-post workflow
 ├── DEVELOPMENT.md   # code, data, graphics, and test reference
 ├── bulls-content-playbook.html  # north star: the "Bulls visual encyclopedia"

@@ -7,7 +7,9 @@ per post. When a decision here changes, update this file and note it in the deci
 at the bottom.
 
 Companion docs: `STRATEGY.md` (why the account exists), `bulls-content-playbook.html`
-(what to post — the visual encyclopedia), `idea-catalog.html` (the idea shelf).
+(what to post — the visual encyclopedia), `idea-catalog.html` (the idea shelf), and
+`design-system.html` (a browsable visual companion). This file is the canonical record for
+design decisions and their history.
 This file is *how it should look*.
 
 ---

@@ -47,5 +47,21 @@ venv/bin/python scripts/prototypes/f5_leaderboard.py
 venv/bin/python scripts/prototypes/f5_lineup_table.py
 ```
 
+### Summer League Report quick start
+
+Run `summer_league_report.py` with no arguments to resolve the latest completed Bulls Summer League
+game and print the review table. After choosing the players with the user, render the carousel with
+NBA.com spellings from that table:
+
+```bash
+venv/bin/python scripts/prototypes/summer_league_report.py
+venv/bin/python scripts/prototypes/summer_league_report.py --carousel \
+  --player "<Name>" [--player "<Name>" ...]
+```
+
+Use `--final` only after draft approval. The script refuses in-progress games, treats lagging shot
+and advanced feeds as unavailable, and automatically prints the 2026 one-free-throw TS% disclosure.
+On game night, NBA.com's derived feeds may not populate until morning.
+
 After keeping a mock, copy its PNG into `docs/mocks/` and add a catalog card
 (template in `idea-catalog.html` source).

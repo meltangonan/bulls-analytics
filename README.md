@@ -40,7 +40,7 @@ bulls-analytics/
 │   └── graphics/   # social-graphics builders + shared craft helpers
 ├── scripts/        # CLI entrypoints
 │   └── prototypes/ # one-off mock generators behind idea-catalog cards
-├── docs/           # mocks, reference, ideation, archive
+├── docs/           # mocks, reference, ideation, temporary handoffs, archive
 ├── tests/          # unit tests with mocked API calls
 └── output/         # generated graphics (gitignored)
 ```

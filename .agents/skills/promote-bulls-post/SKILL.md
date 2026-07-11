@@ -24,7 +24,7 @@ Do not reopen approved visual decisions unless the readiness check finds a real 
 
 ## Prepare Only Useful Copy
 
-When the user supplies a draft, preserve its structure and voice and make the smallest useful edit. When the user asks for a new caption, provide one strong, simple draft by default.
+The user owns the caption. When they supply a draft, preserve its structure and voice and make the smallest useful edit. When they ask for caption help, offer at most one short line as raw material by default. Provide a fuller draft only when they explicitly ask for one.
 
 - Lead with the basketball observation, not a manufactured hook.
 - Sound like a knowledgeable person who watches the Bulls and understands the analysis.
@@ -34,7 +34,7 @@ When the user supplies a draft, preserve its structure and voice and make the sm
 - Use humor only when it is natural to the post or explicitly comes from the user.
 - Do not provide multiple caption variants unless comparison would genuinely help or the user asks.
 
-Add alt text, hashtags, Story copy, or another supporting piece only when requested or clearly useful. Keep hashtags few and relevant.
+Add alt text, hashtags, Story copy, or another supporting piece only when requested or clearly useful. Keep hashtags few and relevant, and verify every named player and hashtag against the final posted content.
 
 ## Recommend Distribution Carefully
 

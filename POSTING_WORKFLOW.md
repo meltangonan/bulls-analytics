@@ -10,7 +10,7 @@ system, read `DESIGN.md`; for the editorial north star and fairness principles, 
 - Work one post idea at a time: clarify it, mock it, then stop for feedback.
 - Prefer boards, tables, grids, and shared-scale comparisons. Use a court only when location is the
   actual question.
-- Keep qualification thresholds, coverage windows, and sources visible on every graphic.
+- Keep applicable qualification thresholds, coverage windows, and sources visible on every graphic.
 - The user posts manually. Never post, comment, like, follow, or change account settings without
   explicit per-action approval.
 
@@ -80,10 +80,10 @@ Base final posting copy on the approved graphic and its underlying analysis. Pre
 basketball-literate language; a plain factual caption is a valid result. Do not force a hook, humor, fan slang,
 rhetorical questions, or engagement bait. Preserve material qualifiers and verify any current fact before use.
 
-Durable caption rules (user-confirmed 2026-07-11, after the first two published posts):
+Durable caption rules (user-confirmed 2026-07-11, after the account's first two published data-viz posts):
 
 - **The user writes the caption.** Offer at most one short line as raw material — never a
-  multi-sentence draft. Both published posts used the user's own one-liner plus hashtags.
+  multi-sentence draft. The first two data-viz posts both used the user's own one-liner plus hashtags.
 - **Verify hashtags and named players against the posted content.** A leftover tag from an earlier
   draft (a player who did not appear in the final post) slipped into the first live carousel;
   checking tags is part of publish readiness, not decoration.
@@ -129,6 +129,6 @@ above. Do not invent a new format when a Parked card already fits.
 ## Catalog and Season Maintenance
 
 - Card lifecycle: `Parked` → `Mocked` → `Posted`. `Generated` is legacy, pre-playbook terminology.
-- Keep the thresholds and sources visible regardless of entry point.
+- Keep applicable qualification thresholds, coverage windows, and sources visible regardless of entry point.
 - At the start of a new NBA season, update `CURRENT_SEASON` and `LAST_SEASON` in `bulls/config.py`.
   Fetchers otherwise keep serving the previous season's frozen data.

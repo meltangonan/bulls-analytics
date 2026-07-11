@@ -26,7 +26,7 @@ workflow is retired.
 1. Keep solutions simple and avoid speculative architecture.
 2. Favor analysis quality over presentation polish.
 3. Avoid scheduled automation, heavy export pipelines, and heavy framework additions unless asked.
-4. Keep thresholds, coverage windows, and sources visible on graphics.
+4. Keep applicable qualification thresholds, coverage windows, and sources visible on graphics.
 5. Work one post idea at a time.
 6. Work directly on the local `main` branch. Do not create branches or Git worktrees by default.
    After completing and verifying requested changes, show the user the result and wait for explicit
@@ -53,9 +53,18 @@ workflow is retired.
 - Treat documentation maintenance as part of completing the work; the user should not need to ask
   separately. Update only the affected owner documents and revise or replace stale guidance instead
   of duplicating it or appending unnecessary history.
+- Treat temporal language such as "current," "today," wake conditions, and manually maintained
+  freshness labels as a maintenance obligation: update it with the related artifact or remove it
+  when Git history and item-level dates are the more reliable record.
 - Surface evidence-based hypotheses and unresolved patterns to the user for confirmation. Record an
   explicitly stated user preference as a durable rule; keep conclusions inferred from results as
   hypotheses until the user confirms them or repeated evidence supports them.
+- Treat `docs/handoffs/` as temporary transfer notes, not owner documents. Mark each handoff
+  `ACTIVE` or `CLOSED`; when work closes, move reusable knowledge to the relevant owner document,
+  catalog card, or format README, then compact the handoff to its outcome, remaining follow-up, and
+  durable pointers. Remove superseded operational instructions.
+- Keep owner documents current-state-first. Retain decision history only when it prevents a settled
+  question from being re-litigated; compact or archive it when it starts obscuring the active rules.
 - Keep `AGENTS.md` as a short map plus durable defaults; do not duplicate detailed procedures here.
 - Update `README.md` when the repository layout, setup, or entrypoint map changes.
 

@@ -22,6 +22,7 @@ scripts/                    # Reusable CLIs and one-off prototypes
   prototypes/               # One script per idea batch
 docs/
   mocks/                    # Committed copies of catalog images
+  handoffs/                 # Temporary cross-session notes; compact when closed
   ideation/                 # Ideation artifacts
   reference/                # Tutorials, inspiration, and craft notes
   archive/                  # Superseded plans and references
@@ -85,6 +86,9 @@ output/feed/                 # Generated PNGs; gitignored
   silently returns zero rows for Summer League games. Use `get_game_shots`, which derives the
   league from the game ID, instead of calling the endpoint directly. Prefer the NBA's own
   `shot_zone` labels over re-deriving zones from distance or coordinates.
+- Summer League's traditional box score may finalize hours before its shot-chart and advanced-box
+  feeds. `summer_league_report.py` treats empty or all-zero derived feeds as unavailable instead of
+  printing false values; use its review pass and expect a morning-after render when NBA.com lags.
 - Shot-chart data includes everyone who took a Bulls shot that season, including traded players.
   Use `get_roster()` and player IDs to create a current-roster view when relevant, and show both
   all-player and current-roster views for a fair comparison.

@@ -34,6 +34,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.patches import Arc, Circle, FancyBboxPatch
 from nba_api.stats.endpoints import (
+    boxscoreadvancedv3,
     boxscoresummaryv3,
     boxscoretraditionalv3,
     leaguegamefinder,
@@ -169,6 +170,21 @@ def fetch_game_data(game_id: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFr
     teams = box.team_stats.get_data_frame()
     if players.empty or teams.empty:
         raise ValueError(f"NBA.com returned no completed box score for game {game_id}.")
+    try:
+        advanced = boxscoreadvancedv3.BoxScoreAdvancedV3(
+            game_id=game_id,
+            timeout=30,
+            headers=_NBA_HEADERS,
+        ).player_stats.get_data_frame()
+        players = players.merge(
+            advanced[["personId", "usagePercentage", "netRating", "trueShootingPercentage"]],
+            on="personId",
+            how="left",
+        )
+    except Exception:
+        print("Warning: advanced box score unavailable; NETRTG, USG%, and TS% will show as missing.")
+        for column in ("usagePercentage", "netRating", "trueShootingPercentage"):
+            players[column] = float("nan")
     shots = get_game_shots(game_id)
     if shots.empty:
         # The shot chart can lag the box score right after the buzzer; only the
@@ -228,6 +244,29 @@ def efg_pct(player: pd.Series) -> float:
         _number(player.get("fieldGoalsMade"))
         + 0.5 * _number(player.get("threePointersMade"))
     ) / attempts
+
+
+def ts_pct(player: pd.Series) -> float:
+    """NBA-computed true shooting, as a percentage."""
+    return 100 * _number(player.get("trueShootingPercentage"))
+
+
+def usage_pct(player: pd.Series) -> float:
+    return 100 * _number(player.get("usagePercentage"))
+
+
+def net_rating(player: pd.Series) -> float:
+    return _number(player.get("netRating"))
+
+
+def one_ft_rule_applies(game_id: str) -> bool:
+    """The one-free-throw experiment started with the 2026 Summer League.
+
+    Game IDs encode {league:2}{season_type:1}{season:2}{game:5}, so characters
+    3-4 are the two-digit season year. TS% printed for these games carries a
+    footnote because the rule halves FTA and inflates the standard formula.
+    """
+    return game_id[:2] == SUMMER_LEAGUE_LEAGUE_ID and game_id[3:5] >= "26"
 
 
 def role_share_pct(player: pd.Series, team: pd.Series) -> float:
@@ -540,8 +579,11 @@ def _draw_header(ax, team: pd.Series, opponent: pd.Series, game_date: str, kicke
         ax.text(60, H - 206, kicker, ha="left", va="top", fontsize=14, color=RED, style="italic", fontproperties=_fp_body("medium"))
 
 
-def _draw_footer(ax):
-    ax.text(60, 40, "Summer League game · Data via NBA.com/Stats", ha="left", va="bottom", fontsize=8.5, color=FAINT, fontproperties=_fp_body())
+def _draw_footer(ax, note: str | None = None):
+    source = "Summer League game · Data via NBA.com/Stats"
+    if note:
+        source = f"{note} · {source}"
+    ax.text(60, 40, source, ha="left", va="bottom", fontsize=8.5, color=FAINT, fontproperties=_fp_body())
     ax.text(1020, 40, "@chicagobullsdata", ha="right", va="bottom", fontsize=10.5, color=MUTED, fontproperties=_fp_body("medium"))
 
 
@@ -580,49 +622,60 @@ def _player_table_image(players: list[pd.Series], out_path: Path) -> Path:
             {
                 "headshot": f"{int(_number(player['personId']))}.png",
                 "player": _player_name(player),
+                "netrtg": net_rating(player),
                 "min": minutes_played(player),
                 "pts": int(_number(player["points"])),
-                "fg": f"{int(_number(player['fieldGoalsMade']))}-{int(_number(player['fieldGoalsAttempted']))}",
-                "three": f"{int(_number(player['threePointersMade']))}-{int(_number(player['threePointersAttempted']))}",
                 "reb": int(_number(player["reboundsTotal"])),
                 "ast": int(_number(player["assists"])),
-                "efg": efg_pct(player),
-                "plus_minus": plus_minus(player),
+                "tov": int(_number(player["turnovers"])),
+                "stl": int(_number(player["steals"])),
+                "blk": int(_number(player["blocks"])),
+                "fgma": f"{int(_number(player['fieldGoalsMade']))}/{int(_number(player['fieldGoalsAttempted']))}",
+                "pm3a": f"{int(_number(player['threePointersMade']))}/{int(_number(player['threePointersAttempted']))}",
+                "ftma": f"{int(_number(player['freeThrowsMade']))}/{int(_number(player['freeThrowsAttempted']))}",
+                "usg": usage_pct(player),
+                "ts": ts_pct(player),
             }
             for player in players
         ]
-    ).sort_values("pts", ascending=False)
+    ).sort_values("netrtg", ascending=False)
     table = (
         GT(rows)
         .cols_label(
             headshot="",
             player="PLAYER",
+            netrtg="NETRTG",
             min="MIN",
             pts="PTS",
-            fg="FG",
-            three="3PT",
             reb="REB",
             ast="AST",
-            efg="eFG%",
-            plus_minus="+/-",
+            tov="TOV",
+            stl="STL",
+            blk="BLK",
+            fgma="FGM/A",
+            pm3a="3PM/A",
+            ftma="FTM/A",
+            usg="USG%",
+            ts="TS%",
         )
-        .fmt_image(columns="headshot", path=str(_REPO / "cache" / "headshots"), height=56)
-        .fmt_number(columns="efg", decimals=1, pattern="{x}%")
-        .fmt_number(columns="plus_minus", decimals=0, force_sign=True)
+        .fmt_image(columns="headshot", path=str(_REPO / "cache" / "headshots"), height=52)
+        .fmt_number(columns="netrtg", decimals=1, force_sign=True)
+        .fmt_number(columns=["usg", "ts"], decimals=1)
+        .sub_missing(missing_text="—")
         .data_color(
-            columns="pts",
+            columns="netrtg",
             palette=["#F2EAE8", "#CE1141", "#7E0C2B"],
             autocolor_text=True,
         )
         .cols_align("left", columns="player")
-        .cols_align("center", columns=["headshot", "min", "pts", "fg", "three", "reb", "ast", "efg", "plus_minus"])
+        .cols_align("center", columns=["headshot", "netrtg", "min", "pts", "reb", "ast", "tov", "stl", "blk", "fgma", "pm3a", "ftma", "usg", "ts"])
         .opt_row_striping(row_striping=True)
         .tab_options(
             table_background_color="white",
             table_font_names=["Archivo", "Helvetica Neue", "Helvetica", "Arial"],
-            table_font_size="18px",
+            table_font_size="16px",
             table_font_color=INK,
-            column_labels_font_size="13px",
+            column_labels_font_size="12px",
             column_labels_font_weight="bold",
             data_row_padding="11px",
             row_striping_background_color="#F7F7F7",
@@ -652,6 +705,7 @@ def render_team_slide(
     shots: pd.DataFrame,
     game_date: str,
     kicker: str | None,
+    ft_note: str | None = None,
 ):
     """Slide 1: the front page — score, Bulls-only snapshot with the team shot
     chart, and one card per featured player."""
@@ -717,7 +771,7 @@ def render_team_slide(
         zorder=3,
         interpolation="bilinear",
     )
-    _draw_footer(ax)
+    _draw_footer(ax, ft_note)
     return fig
 
 
@@ -727,7 +781,8 @@ def render_player_slide(
     opponent: pd.Series,
     shots: pd.DataFrame,
     game_date: str,
-    kicker: str,
+    kicker: str | None,
+    ft_note: str | None = None,
 ):
     """One full slide per player, in the C2 anatomy-study structure: identity
     header, a large exact-location FGA chart on the left as the evidence
@@ -771,7 +826,7 @@ def render_player_slide(
         (f"{int(_number(player['fieldGoalsMade']))}-{int(_number(player['fieldGoalsAttempted']))}", "FIELD GOALS", False),
         (f"{int(_number(player['threePointersMade']))}-{int(_number(player['threePointersAttempted']))}", "THREES", False),
         (f"{int(_number(player['freeThrowsMade']))}-{int(_number(player['freeThrowsAttempted']))}", "FREE THROWS", False),
-        (f"{efg_pct(player):.1f}%", "EFFECTIVE FG", True),  # the payoff number
+        (f"{ts_pct(player):.1f}%", "TRUE SHOOTING", True),  # the payoff number
         (f"{role_share_pct(player, team):.0f}%", "OF BULLS FGA", False),
         (f"{plus_minus(player):+d}", "PLUS/MINUS", False),
     ]
@@ -793,7 +848,7 @@ def render_player_slide(
         cx = rail_x + rail_w / 2
         ax.text(cx, top - card_h * 0.34, value, ha="center", va="center", fontsize=23, color=value_color, fontproperties=_fp_body("bold"))
         ax.text(cx, top - card_h * 0.73, label, ha="center", va="center", fontsize=9, color=label_color, fontproperties=_fp_body("bold"))
-    _draw_footer(ax)
+    _draw_footer(ax, ft_note)
     return fig
 
 
@@ -839,7 +894,10 @@ def main():
 
     print("\nBULLS STORY REVIEW")
     print(player_candidates(bulls, team_row).to_string(index=False))
-    print("\nShot diet uses NBA.com shot zones. eFG% is shown for review; true shooting is intentionally excluded during the 2026 Summer League free-throw experiment.")
+    print(
+        "\nShot diet uses NBA.com shot zones. TS% prints per user decision (2026-07-10); under the"
+        " 2026 one-free-throw rule it reads high, so those games carry a footnote disclosure."
+    )
     if not args.players:
         print("\nChoose one to three players and matching lenses, then re-run. See --help for an example.")
         return
@@ -854,10 +912,12 @@ def main():
     graphic_date = args.date or played_on.strftime("%b %d, %Y").upper()
     dpi = 300 if args.final else DEFAULT_DPI
 
+    ft_note = "TS% reads high under the one-free-throw rule" if one_ft_rule_applies(game_id) else None
+
     if args.carousel:
-        slides = [render_team_slide(team_row, opponent_row, selected, shots, graphic_date, kicker)]
+        slides = [render_team_slide(team_row, opponent_row, selected, shots, graphic_date, kicker, ft_note)]
         slides += [
-            render_player_slide(player, team_row, opponent_row, shots, graphic_date, None)
+            render_player_slide(player, team_row, opponent_row, shots, graphic_date, None, ft_note)
             for player in selected
         ]
         for index, fig in enumerate(slides, start=1):

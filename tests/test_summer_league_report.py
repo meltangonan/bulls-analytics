@@ -136,3 +136,9 @@ def test_zone_splits_count_makes_and_attempts_per_zone_group():
 
     assert report.zone_splits(chart, 7) == {"rim_paint": (1, 2), "mid": (1, 1), "three": (0, 1)}
     assert report.zone_splits(chart, None)["three"] == (1, 2)
+
+
+def test_one_ft_rule_gate_matches_summer_league_seasons():
+    assert report.one_ft_rule_applies("1522600012")  # 2026 SL: rule active
+    assert not report.one_ft_rule_applies("1522500033")  # 2025 SL rehearsal: normal rules
+    assert not report.one_ft_rule_applies("0022600123")  # regular NBA game

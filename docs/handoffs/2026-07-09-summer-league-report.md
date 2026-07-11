@@ -21,11 +21,17 @@ Summer League 2026 is running the experimental **one-free-throw rule**: outside 
 of regulation and all of overtime, a player shoots a single free throw worth the number of points he
 was awarded. A shooting foul on a three becomes one attempt worth three.
 
-This is why the report shows **eFG%** and not true shooting. TS% is `PTS / (2 × (FGA + 0.44 × FTA))`,
-and the `0.44` coefficient assumes most trips to the line are two-shot trips. Under the one-FT rule
-`FTA` roughly halves while points stay the same, so TS% inflates and becomes meaningless. eFG% only
-touches field goals, so it survives the rule change untouched. **Do not print or cite TS% from these
-games.**
+The math consequence: TS% is `PTS / (2 × (FGA + 0.44 × FTA))`, and the `0.44` coefficient assumes
+most trips to the line are two-shot trips. Under the one-FT rule `FTA` roughly halves while points
+stay the same, so TS% inflates (a 71 TS% performance under normal rules reads ~82 under the
+experiment).
+
+**User decision (2026-07-10, evening), superseding the earlier eFG%-only rule:** the report prints
+NBA.com's **TS%** anyway — the user chose it with full knowledge of the inflation, as an informed
+override. The disclosure is automated: `one_ft_rule_applies(game_id)` gates a footnote ("TS% reads
+high under the one-free-throw rule") that prints on every slide of a 2026 Summer League game and
+stays off for normal-rules games like the 2025 rehearsal. Do not quote a 2026 SL TS% in captions
+without the same qualifier.
 
 ## Working format
 
@@ -38,12 +44,17 @@ games.**
   card stack below it with the compact Great Tables-style player comparison proven in
   `scripts/prototypes/summer_league_great_tables_spike.py`. Keep the Bulls visual system rather
   than copying the reference: white, Bulls red/black, Archivo, restrained rules/striping, and one
-  meaningful emphasis. The likely columns are headshot, player, MIN, PTS, FG, 3PT, REB, AST,
-  eFG%, and +/-. Do not repeat a title/subtitle inside the embedded table.
+  meaningful emphasis. Columns follow the F5 Great Tables tutorial (user decisions, 2026-07-10
+  evening): headshot, PLAYER, then **NETRTG first as the sort key and the color-blocked column**,
+  followed by MIN, PTS, REB, AST, TOV, STL, BLK, FGM/A, 3PM/A, FTM/A, USG%, TS%. NETRTG/USG%/TS%
+  come from `BoxScoreAdvancedV3` (merged in `fetch_game_data`; degrades to "—" with a warning if
+  the endpoint lags). The +/- column was dropped as redundant with NETRTG. The player-slide payoff
+  card is TRUE SHOOTING. Do not repeat a title/subtitle inside the embedded table.
 - **Player slides (approved C2 direction):** date-only subtitle, no kicker. Use the C2 mockup's
   structure: a large exact-location FGA chart on the left and a compact supporting metric rail on
   the right. Remove the `PRIMARY TAKEAWAY` label and takeaway headline entirely; do not manufacture
-  an editorial thesis. Retain the original box line (PTS, MIN, FG, 3PT, REB, AST), FGA share, eFG%,
+  an editorial thesis. Retain the original box line (PTS, MIN, FG, 3PT, REB, AST), FGA share, TS%
+  (the red payoff card; see the rules-context section for the footnote it requires on 2026 games),
   plus/minus, and HOW HE SCORED splits for RIM/PAINT, MID-RANGE, THREES, and FREE THROWS, but give
   them hierarchy instead of equal-weight cards. Plot all FGA with the same circular shape: solid
   for makes and hollow for misses. Do not distinguish 2PA from 3PA by marker.

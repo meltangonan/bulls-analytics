@@ -4,7 +4,7 @@ Game-night flow:
 1. Run with no arguments to auto-resolve the latest completed Bulls Summer
    League game and review player box scores, role share, plus/minus, and
    shot-diet inputs.
-2. In the clarification pass, choose one to three players and assign each the
+2. In the clarification pass, choose one to four players and assign each the
    lens that tells the clearest story: ``shot_diet``, ``role``, or ``impact``.
 3. Re-run with matching ``--player`` and ``--lens`` values to render the post.
 
@@ -170,20 +170,26 @@ def fetch_game_data(game_id: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFr
     teams = box.team_stats.get_data_frame()
     if players.empty or teams.empty:
         raise ValueError(f"NBA.com returned no completed box score for game {game_id}.")
+    advanced_columns = ("usagePercentage", "netRating", "trueShootingPercentage")
     try:
         advanced = boxscoreadvancedv3.BoxScoreAdvancedV3(
             game_id=game_id,
             timeout=30,
             headers=_NBA_HEADERS,
         ).player_stats.get_data_frame()
+        # Right after the buzzer the endpoint can respond with all-zero rows
+        # before the real numbers post. A played game cannot have zero TS% for
+        # every player, so an all-zero frame means "not populated yet".
+        if advanced[list(advanced_columns)].abs().to_numpy().sum() == 0:
+            raise ValueError("advanced box score not populated yet")
         players = players.merge(
-            advanced[["personId", "usagePercentage", "netRating", "trueShootingPercentage"]],
+            advanced[["personId", *advanced_columns]],
             on="personId",
             how="left",
         )
-    except Exception:
-        print("Warning: advanced box score unavailable; NETRTG, USG%, and TS% will show as missing.")
-        for column in ("usagePercentage", "netRating", "trueShootingPercentage"):
+    except Exception as error:
+        print(f"Warning: advanced box score unavailable ({error}); NETRTG, USG%, and TS% will show as missing.")
+        for column in advanced_columns:
             players[column] = float("nan")
     shots = get_game_shots(game_id)
     if shots.empty:
@@ -414,8 +420,17 @@ def _display_name(player: pd.Series) -> str:
 
 
 def _headshot_path(player: pd.Series):
-    """Cached NBA CDN headshot; warn when the CDN only has the gray silhouette."""
-    path = get_player_headshot(int(player["personId"]))
+    """Committed local crop if one exists, else the cached NBA CDN headshot.
+
+    Local overrides live in assets/img/players/<personId>.png — used when the
+    CDN only has the gray rookie silhouette (DESIGN.md §8). Warns when falling
+    back to a file that looks like the silhouette.
+    """
+    person_id = int(_number(player["personId"]))
+    local = _REPO / "assets" / "img" / "players" / f"{person_id}.png"
+    if local.exists():
+        return local
+    path = get_player_headshot(person_id)
     if path is not None and path.stat().st_size < 20_000:
         print(
             f"Warning: headshot for {_player_name(player)} looks like the CDN silhouette "
@@ -615,14 +630,12 @@ def _player_table_image(players: list[pd.Series], out_path: Path) -> Path:
     """
     from great_tables import GT  # imported lazily; not in requirements.txt yet
 
-    for player in players:
-        _headshot_path(player)  # make sure the CDN image is cached for fmt_image
     rows = pd.DataFrame(
         [
             {
-                "headshot": f"{int(_number(player['personId']))}.png",
+                # Absolute path so local overrides and the CDN cache both work.
+                "headshot": str(_headshot_path(player)),
                 "player": _player_name(player),
-                "netrtg": net_rating(player),
                 "min": minutes_played(player),
                 "pts": int(_number(player["points"])),
                 "reb": int(_number(player["reboundsTotal"])),
@@ -635,10 +648,11 @@ def _player_table_image(players: list[pd.Series], out_path: Path) -> Path:
                 "ftma": f"{int(_number(player['freeThrowsMade']))}/{int(_number(player['freeThrowsAttempted']))}",
                 "usg": usage_pct(player),
                 "ts": ts_pct(player),
+                "netrtg": net_rating(player),
             }
             for player in players
         ]
-    ).sort_values("netrtg", ascending=False)
+    ).sort_values("pts", ascending=False)
     table = (
         GT(rows)
         .cols_label(
@@ -658,15 +672,10 @@ def _player_table_image(players: list[pd.Series], out_path: Path) -> Path:
             usg="USG%",
             ts="TS%",
         )
-        .fmt_image(columns="headshot", path=str(_REPO / "cache" / "headshots"), height=52)
+        .fmt_image(columns="headshot", height=52)
         .fmt_number(columns="netrtg", decimals=1, force_sign=True)
         .fmt_number(columns=["usg", "ts"], decimals=1)
         .sub_missing(missing_text="—")
-        .data_color(
-            columns="netrtg",
-            palette=["#F2EAE8", "#CE1141", "#7E0C2B"],
-            autocolor_text=True,
-        )
         .cols_align("left", columns="player")
         .cols_align("center", columns=["headshot", "netrtg", "min", "pts", "reb", "ast", "tov", "stl", "blk", "fgma", "pm3a", "ftma", "usg", "ts"])
         .opt_row_striping(row_striping=True)
@@ -856,7 +865,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--game-id", help="NBA.com game ID; omit to auto-resolve the latest completed Bulls game")
     parser.add_argument("--season", default=str(date.today().year), help="Summer League year used to auto-resolve the game")
-    parser.add_argument("--player", action="append", dest="players", help="Featured Bulls player; repeat one to three times")
+    parser.add_argument("--player", action="append", dest="players", help="Featured Bulls player; repeat one to four times")
     parser.add_argument("--lens", action="append", choices=LENSES, help="Matching story lens for each --player")
     parser.add_argument("--date", help="Graphic date label; defaults to the game's own date")
     parser.add_argument("--kicker", help="Short editorial line below the score")
@@ -871,9 +880,9 @@ def main():
         if bool(args.players) != bool(args.lens) or args.players and len(args.players) != len(args.lens):
             raise SystemExit("Pass one --lens for every --player.")
     elif not args.players:
-        raise SystemExit("Carousel mode needs one to three --player names.")
-    if args.players and not 1 <= len(args.players) <= 3:
-        raise SystemExit("Choose one to three featured players.")
+        raise SystemExit("Carousel mode needs one to four --player names.")
+    if args.players and not 1 <= len(args.players) <= 4:
+        raise SystemExit("Choose one to four featured players.")
 
     game_id = args.game_id
     if not game_id:
@@ -899,7 +908,7 @@ def main():
         " 2026 one-free-throw rule it reads high, so those games carry a footnote disclosure."
     )
     if not args.players:
-        print("\nChoose one to three players and matching lenses, then re-run. See --help for an example.")
+        print("\nChoose one to four players and matching lenses, then re-run. See --help for an example.")
         return
 
     needs_shots = args.carousel or (args.lens and "shot_diet" in args.lens)

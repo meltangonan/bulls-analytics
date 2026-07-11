@@ -1,5 +1,32 @@
 # Summer League Report Handoff
 
+## RESUME HERE (2026-07-11 morning)
+
+The Memphis game is played and final: **Grizzlies 97, Bulls 96** (game ID `1522600012`,
+2026-07-10). The clarification gate is DONE — the user locked **four featured players: Caleb
+Wilson, Jaylin Sellers, Noa Essengue, Dailyn Swain** (the script's feature cap was raised from
+three to four for this). Caleb Wilson's pro debut is the headline: 35 points, 12-21 FG, 7-11 3PT,
+30% of Bulls FGA, −11 in the one-point loss. His 2-6 FT line is correct under the one-FT rule
+(each make was worth two points).
+
+Rendering was blocked overnight only because NBA.com's derived feeds lagged the box score: the
+shot chart returned zero rows and the advanced box (NETRTG/USG%/TS%) returned all-zero placeholder
+rows hours after the final. A guard now detects the all-zero advanced frame and degrades to "—"
+instead of printing fake zeros. Both feeds should be populated by morning.
+
+Morning command (then the normal refinement gate, then `--final` after approval):
+
+```bash
+venv/bin/python scripts/prototypes/summer_league_report.py --game-id 1522600012 --carousel \
+  --player "Caleb Wilson" --player "Jaylin Sellers" \
+  --player "Noa Essengue" --player "Dailyn Swain"
+```
+
+`--date` defaults to the game's own date, so the post still reads JUL 10, 2026. The 2026 game
+triggers the automatic TS% footnote. Watch for the rookie-headshot silhouette warning on Wilson.
+The feature-cap raise and the advanced-box zero-guard are **uncommitted** on local `main` —
+present them with the rendered post and get commit approval together.
+
 ## Next-session goal
 
 After the Bulls' Summer League game, create a player-led Instagram post through the normal
@@ -44,9 +71,10 @@ without the same qualifier.
   card stack below it with the compact Great Tables-style player comparison proven in
   `scripts/prototypes/summer_league_great_tables_spike.py`. Keep the Bulls visual system rather
   than copying the reference: white, Bulls red/black, Archivo, restrained rules/striping, and one
-  meaningful emphasis. Columns follow the F5 Great Tables tutorial (user decisions, 2026-07-10
-  evening): headshot, PLAYER, then **NETRTG first as the sort key and the color-blocked column**,
-  followed by MIN, PTS, REB, AST, TOV, STL, BLK, FGM/A, 3PM/A, FTM/A, USG%, TS%. NETRTG/USG%/TS%
+  meaningful emphasis. Columns follow the F5 Great Tables tutorial (final user decisions,
+  2026-07-11): headshot, PLAYER, MIN, PTS, REB, AST, TOV, STL, BLK, FGM/A, 3PM/A, FTM/A, USG%,
+  TS%, NETRTG last. Rows sort by PTS so the headline scorer tops the table, and **no column is
+  color-highlighted** (an earlier NETRTG color block was tried and removed). NETRTG/USG%/TS%
   come from `BoxScoreAdvancedV3` (merged in `fetch_game_data`; degrades to "—" with a warning if
   the endpoint lags). The +/- column was dropped as redundant with NETRTG. The player-slide payoff
   card is TRUE SHOOTING. Do not repeat a title/subtitle inside the embedded table.

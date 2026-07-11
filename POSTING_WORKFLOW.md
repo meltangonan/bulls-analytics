@@ -80,6 +80,14 @@ Base final posting copy on the approved graphic and its underlying analysis. Pre
 basketball-literate language; a plain factual caption is a valid result. Do not force a hook, humor, fan slang,
 rhetorical questions, or engagement bait. Preserve material qualifiers and verify any current fact before use.
 
+Durable caption rules (user-confirmed 2026-07-11, after the first two published posts):
+
+- **The user writes the caption.** Offer at most one short line as raw material — never a
+  multi-sentence draft. Both published posts used the user's own one-liner plus hashtags.
+- **Verify hashtags and named players against the posted content.** A leftover tag from an earlier
+  draft (a player who did not appear in the final post) slipped into the first live carousel;
+  checking tags is part of publish readiness, not decoration.
+
 Provide caption help, alt text, hashtags, Story copy, or distribution guidance only when useful or requested.
 Keep distribution guidance to a few post-specific actions grounded in the actual subject and relevant Bulls
 community; do not produce a generic engagement checklist. Draft and advise only. The user publishes and

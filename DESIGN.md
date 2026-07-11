@@ -217,12 +217,13 @@ logo exists).
 
 ## Decision Log
 
-- **2026-07-10** — F5 emphasis grammar adopted for stat compositions (Summer League Report,
-  approved on the rehearsal render): exactly one element per composition carries the strongest
-  treatment — a magnitude-colored value block (MAGNITUDE_CMAP) in tables, or a single solid-red
-  payoff card in a card rail — while every sibling element stays gray/quiet. Embedded tables may
-  be rendered with Great Tables to a cropped PNG and composited onto the white canvas; the canvas
-  stays white (F5's cream background considered and not adopted — §10 grid rule).
+- **2026-07-11** — F5 emphasis grammar refined on the first live Summer League Report: it holds
+  for **card rails** (exactly one solid-red payoff card while siblings stay gray) but was
+  **rejected for dense stat tables** — the user removed the magnitude-colored column entirely, and
+  the shipped table is a clean zebra-striped box score sorted by the story stat (points, so the
+  headline player tops the table) with no emphasized column. Embedded tables may be rendered with
+  Great Tables to a cropped PNG and composited onto the white canvas; the canvas stays white
+  (F5's cream background considered and not adopted — §10 grid rule).
 - **2026-07-10** — Caption voice clarified: knowledgeable Bulls observer, simple and direct;
   manufactured hooks, humor, slang, and engagement bait ruled out. Supporting posting copy is optional.
 - **2026-07-09** — Rebrand round closed: grid rules codified (§10); footer watermark

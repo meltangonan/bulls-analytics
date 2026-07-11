@@ -1,36 +1,25 @@
 # Summer League Report Handoff
 
-## RESUME HERE (2026-07-11 morning)
+## STATUS: first live post shipped (2026-07-11)
 
-The Memphis game is played and final: **Grizzlies 97, Bulls 96** (game ID `1522600012`,
-2026-07-10). The clarification gate is DONE — the user locked **four featured players: Caleb
-Wilson, Jaylin Sellers, Noa Essengue, Dailyn Swain** (the script's feature cap was raised from
-three to four for this). Caleb Wilson's pro debut is the headline: 35 points, 12-21 FG, 7-11 3PT,
-30% of Bulls FGA, −11 in the one-point loss. His 2-6 FT line is correct under the one-FT rule
-(each make was worth two points).
+The Memphis game report is **posted** (game of Jul 10: Grizzlies 97, Bulls 96, game ID
+`1522600012`; featured Wilson / Sellers / Essengue / Swain; Caleb Wilson's 35-point debut was
+the headline). Catalog card is `Posted` with the user's caption; the five 300 DPI finals live in
+`docs/mocks/2026-07-10-summer-league-report-s*.png`. Everything through commit `290df60` is on
+`main`. A performance review (`review-bulls-post` with Instagram Insights) is due a few days
+after posting.
 
-Rendering was blocked overnight only because NBA.com's derived feeds lagged the box score: the
-shot chart returned zero rows and the advanced box (NETRTG/USG%/TS%) returned all-zero placeholder
-rows hours after the final. A guard now detects the all-zero advanced frame and degrades to "—"
-instead of printing fake zeros. Both feeds should be populated by morning.
-
-Morning command (then the normal refinement gate, then `--final` after approval):
+## Next game quick start (Jul 14 vs. Washington, then Jul 16 vs. LA Lakers)
 
 ```bash
-venv/bin/python scripts/prototypes/summer_league_report.py --game-id 1522600012 --carousel \
-  --player "Caleb Wilson" --player "Jaylin Sellers" \
-  --player "Noa Essengue" --player "Dailyn Swain"
+venv/bin/python scripts/prototypes/summer_league_report.py            # review pass, auto-resolves
+venv/bin/python scripts/prototypes/summer_league_report.py --carousel \
+  --player "<Name>" [... up to four]                                  # draft after the user picks
 ```
 
-`--date` defaults to the game's own date, so the post still reads JUL 10, 2026. The 2026 game
-triggers the automatic TS% footnote. Watch for the rookie-headshot silhouette warning on Wilson.
-The feature-cap raise and the advanced-box zero-guard are **uncommitted** on local `main` —
-present them with the rendered post and get commit approval together.
-
-## Next-session goal
-
-After the Bulls' Summer League game, create a player-led Instagram post through the normal
-clarification and draft-refinement workflow.
+Then the refinement gate, `--final` after approval, finals to `docs/mocks/`, caption via
+`promote-bulls-post`. Expect NBA.com's derived feeds (shot chart, advanced box) to lag the box
+score by hours on game night — see Data notes; a morning-after render is the reliable path.
 
 ## The game
 
@@ -94,14 +83,11 @@ without the same qualifier.
   slide needs more polish on real data. `great-tables>=0.22` is now in `requirements.txt`
   (`gt_extras` stays environment-only; spike script only). Approved mocks:
   `docs/mocks/2025-07-14-summer-league-report-s1.png` and `-s2.png`; catalog card added (Mocked).
-- Feature one to three Bulls player cards, only when the game provides a real story.
-- Every card keeps the basic box score and adds one selected lens:
-  - `shot_diet` — how the player scored, grouped as rim/paint, mid-range, and threes.
-  - `role` — the player's share of Bulls field-goal attempts.
-  - `impact` — the Bulls' plus/minus in the player's minutes.
-- Do not force three cards or a different lens for each player when the game does not support it.
-- `shot_diet` needs volume to say anything. Below roughly eight field-goal attempts, prefer `role`
-  or `impact`.
+- Feature one to **four** featured players (cap raised 2026-07-11 at the user's pick), only when
+  the game provides a real story; do not force a full slate on a quiet night.
+- The lens system (`shot_diet` / `role` / `impact`) survives **only in the legacy single-image
+  mode**. Carousel player slides always show the identity chips, the shot-profile rail, and the
+  exact-FGA chart — there is no lens choice to make on the primary path.
 
 ## Prepared tool
 
@@ -116,9 +102,8 @@ venv/bin/python scripts/prototypes/summer_league_report.py
 
 2. Run the clarification gate before choosing players, lenses, title/subtitle copy, and fan-voice
    level.
-3. Render the draft. **The chosen format for tonight (user decision, 2026-07-10) is the carousel**:
-   a team front-page slide (score + team snapshot + featured list + swipe cue) plus one full slide
-   per player showing the box line, all three lenses, and a large shot map:
+3. Render the draft. **The production format is the carousel**: the team front page (score, snapshot,
+   team chart, embedded player table) plus one C2-structure slide per featured player:
 
 ```bash
 venv/bin/python scripts/prototypes/summer_league_report.py --carousel \
@@ -128,10 +113,11 @@ venv/bin/python scripts/prototypes/summer_league_report.py --carousel \
 
 Slides save as `<game-date>-summer-league-report-s1.png`, `-s2.png`, … in `output/feed/`. Use
 `--final` for the 300-DPI export only after the draft is approved. The original single-image mode
-still works (one to three `--player`/`--lens` pairs; lenses `shot_diet`, `role`, `impact`) — in
-carousel mode `--lens` is ignored because every player slide shows all three. Pass `--kicker` for
-the approved editorial line. `--date` defaults to the game's own date, so a post rendered after
-midnight still dates itself correctly.
+still works (one to four `--player`/`--lens` pairs; lenses `shot_diet`, `role`, `impact`) — in
+carousel mode `--lens` is ignored because player slides have a fixed structure (identity chips,
+shot-profile rail, exact-FGA chart). Pass `--kicker` for an optional slide-1 editorial line.
+`--date` defaults to the game's own date, so a post rendered after midnight still dates itself
+correctly.
 
 **Format decision (user, 2026-07-10).** After talking through alternatives, the user chose the
 carousel and kept the existing `SUMMER LEAGUE REPORT` identity. One carousel post per game: a team
@@ -162,8 +148,19 @@ NBA.com prints "Noa Essengue"). A wrong name raises an error that lists the vali
   to the regular NBA and silently returns zero rows. `shot_diet` reads its `shot_zone` column (the
   NBA's own `SHOT_ZONE_BASIC` label): `Restricted Area` + `In The Paint (Non-RA)` → RIM/PAINT,
   `Mid-Range` → MID, and the corner/above-the-break/backcourt zones → 3PT.
-- If the shot chart lags the box score right after the buzzer, the script warns and continues; only
-  a `shot_diet` lens is blocked (with a clear message). `role` and `impact` never need shots.
+- **Feed-lag pattern (observed on the live game, 2026-07-10):** the traditional box score was
+  final within ~30 minutes of the buzzer, but the shot chart returned zero rows and the advanced
+  box returned all-zero placeholder rows for 2+ hours; both were populated by morning. Plan for a
+  morning-after render on game nights; the carousel needs shots and the table wants NETRTG/USG/TS.
+  The fetch guards both: empty shots warn and block only shot-dependent pieces, and an all-zero
+  advanced frame is treated as missing ("—") instead of printing fake +0.0 ratings.
+- **FT lines under the one-FT rule:** a made free throw can be worth 1, 2, or 3 points, so FTM/A
+  understates FT scoring (Wilson's 2/6 produced 4 points). Don't caption FT% from these games
+  without that context.
+- **Rookie headshots:** the CDN can serve gray silhouettes for weeks after the draft. Committed
+  overrides in `assets/img/players/<personId>.png` win over the CDN cache (Wilson's draft-photo
+  crop is there); the script warns on any cached file under ~20 KB. Shipping silhouettes for
+  non-headline rookies was acceptable to the user for the first live post.
 - `shot_diet` cards now embed a **mini half-court shot map** (makes solid red, misses hollow),
   inspired by a saved reference post. Draft-stage; not yet through the refinement gate.
 - Do **not** re-derive zones from coordinates or `shotDistance`. The NBA already publishes the

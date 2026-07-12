@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bulls Design System · @chicagobullsdata</title>
 <meta name="description" content="The rendered companion to DESIGN.md: every token, component, and template, visible.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23CE1141'/%3E%3Crect x='13' y='8' width='38' height='48' rx='3' fill='white'/%3E%3Cpath d='M19 18h26M19 24h18' stroke='%23141414' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -41,6 +42,7 @@
   --bg:#FAF8F5; --panel:#FFFFFF; --ink:#141414; --muted:#5F5B57;
   --line:#E6E2DB; --line-strong:#141414; --accent:#CE1141; --accent-ink:#FFFFFF;
   --band:#CE1141; --code-bg:#F1EEE8; --wash:#F5F2EC;
+  --trim-a:#FFFFFF; --trim-b:#141414;
   --font-body:"Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif;
   --fs-body:1.0625rem;
 }
@@ -48,6 +50,7 @@
   --bg:#F3EDDF; --panel:#FBF7EC; --ink:#191713; --muted:#5D5749;
   --line:#DCD3BF; --line-strong:#191713; --accent:#B5123C; --accent-ink:#FFFFFF;
   --band:#191713; --code-bg:#EAE2CE; --wash:#EEE6D3;
+  --trim-a:#F3EDDF; --trim-b:#B5123C;
   --font-body:"Libre Franklin", Georgia, serif;
   --fs-body:1rem;
 }
@@ -55,13 +58,15 @@
   --bg:#121214; --panel:#1B1B1E; --ink:#F1EFEC; --muted:#A7A39E;
   --line:#2B2B30; --line-strong:#F1EFEC; --accent:#FF3355; --accent-ink:#141414;
   --band:#FF3355; --code-bg:#232327; --wash:#19191C;
+  --trim-a:#121214; --trim-b:#F1EFEC;
   --font-body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   --fs-body:1rem;
 }
 :root[data-theme="hardwood"] {
-  --bg:#BE0E3B; --panel:#B00D36; --ink:#FDF3EA; --muted:#F4D9CC;
+  --bg:#BE0E3B; --panel:#B00D36; --ink:#FDF3EA; --muted:#FBE8E0;
   --line:rgba(253,243,234,.30); --line-strong:#FDF3EA; --accent:#141414; --accent-ink:#FDF3EA;
   --band:#141414; --code-bg:rgba(0,0,0,.22); --wash:rgba(0,0,0,.12);
+  --trim-a:#FDF3EA; --trim-b:#BE0E3B;
   --font-body:"Archivo DS", "Archivo", "Helvetica Neue", Arial, sans-serif;
   --fs-body:1rem;
 }
@@ -81,9 +86,21 @@ body {
 ::selection { background:var(--accent); color:var(--accent-ink); }
 a { color:inherit; }
 :focus-visible { outline:2px solid var(--accent); outline-offset:2px; border-radius:2px; }
+.skip-link {
+  position:fixed; left:16px; top:12px; z-index:calc(var(--z-switcher) + 1);
+  transform:translateY(-160%); background:var(--ink); color:var(--bg);
+  padding:8px 12px; border-radius:6px; font-weight:600; text-decoration:none;
+}
+.skip-link:focus { transform:translateY(0); }
 
 /* ---------- shell ---------- */
-.band { height:10px; background:var(--band); transition:background-color .25s ease; }
+.band {
+  height:16px;
+  background:linear-gradient(to bottom,
+    var(--band) 0 4px, var(--trim-a) 4px 6px, var(--band) 6px 10px,
+    var(--trim-b) 10px 12px, var(--band) 12px 16px);
+  transition:background-color .25s ease;
+}
 .shell { max-width:1140px; margin:0 auto; padding:0 clamp(20px, 4vw, 48px) 96px; }
 .prose { max-width:70ch; }
 
@@ -92,7 +109,7 @@ a { color:inherit; }
 .masthead h1 {
   font-family:var(--font-academic); font-weight:400; text-transform:uppercase;
   font-size:clamp(2.75rem, 7.5vw, 5.5rem); line-height:.95; letter-spacing:.01em;
-  text-wrap:balance;
+  white-space:nowrap; width:max-content; max-width:none; transform-origin:left center;
 }
 .masthead h1 .acc { color:var(--accent); }
 .mast-meta { display:flex; flex-wrap:wrap; align-items:center; gap:.35em 0; margin-top:18px; font-weight:500; }
@@ -105,10 +122,13 @@ a { color:inherit; }
 .mast-how { margin-top:22px; color:var(--muted); }
 .mast-how strong { color:var(--ink); }
 .mast-rule { border:0; border-top:3px solid var(--line-strong); margin:36px 0 28px; }
+@media (max-width:359px) {
+  .masthead h1 { white-space:normal; width:auto; transform:none !important; }
+}
 
 /* ---------- theme switcher ---------- */
 .switcher {
-  position:fixed; top:22px; right:clamp(14px,2.5vw,28px); z-index:var(--z-switcher);
+  position:fixed; bottom:18px; right:clamp(14px,2.5vw,28px); z-index:var(--z-switcher);
   display:flex; align-items:center; gap:5px;
   background:var(--panel); border:1px solid var(--line); border-radius:999px;
   padding:5px 7px; box-shadow:0 4px 18px rgba(0,0,0,.10);
@@ -127,19 +147,20 @@ a { color:inherit; }
 .sw-btn:hover { background:var(--wash); }
 .sw-btn[aria-pressed="true"] { background:var(--ink); color:var(--bg); }
 @media (max-width:760px) {
-  .switcher { top:12px; right:12px; }
+  .switcher { bottom:12px; right:12px; }
   .switcher .sw-label, .sw-btn .sw-name { display:none; }
   .sw-btn { padding:7px; }
 }
 
 /* ---------- section nav ---------- */
-.toc { display:flex; flex-wrap:wrap; gap:8px; }
+.toc { position:sticky; top:0; z-index:var(--z-nav); display:flex; flex-wrap:nowrap; gap:7px; overflow-x:auto; scrollbar-width:thin; padding:10px 0; margin-top:18px; background:color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter:blur(8px); }
 .toc a {
   text-decoration:none; font-size:.85rem; font-weight:600;
   border:1px solid var(--line); border-radius:8px; padding:7px 13px;
   background:var(--panel); transition:border-color .15s ease, background-color .15s ease;
 }
 .toc a:hover { border-color:var(--ink); }
+.toc a[aria-current="true"] { background:var(--ink); border-color:var(--ink); color:var(--bg); }
 .toc a .n { color:var(--accent); font-family:var(--font-mono); font-weight:400; font-size:.75rem; margin-right:6px; }
 
 /* ---------- sections ---------- */
@@ -148,6 +169,8 @@ section { margin-top:clamp(64px, 9vw, 110px); scroll-margin-top:84px; }
 .sec-head .num { font-family:var(--font-academic); font-size:1.5rem; color:var(--accent); }
 .sec-head h2 { font-family:var(--font-academic); font-weight:400; text-transform:uppercase; font-size:clamp(1.7rem,3.2vw,2.4rem); letter-spacing:.015em; line-height:1; }
 .sec-head .src { margin-left:auto; font-family:var(--font-mono); font-size:.72rem; color:var(--muted); }
+.sec-head .src, .comp-head .sig, .comp-src, .anatomy .src, .bl-card .src,
+code, .mono { overflow-wrap:anywhere; word-break:break-word; }
 /* Academic M54 has no "&" glyph (same quirk as its missing hyphen), so set it in the body face */
 .sec-head h2 .amp { font-family:var(--font-body); font-weight:600; font-size:.72em; vertical-align:.08em; }
 .sec-intro { max-width:74ch; margin-bottom:28px; }
@@ -163,7 +186,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 .warn::before { content:"⚠"; color:var(--accent); font-weight:700; }
 
 /* status tags */
-.tag { display:inline-block; font-family:var(--font-mono); font-size:.62rem; letter-spacing:.12em; font-weight:700; border-radius:5px; padding:3px 8px; vertical-align:middle; }
+.tag { display:inline-block; font-family:var(--font-mono); font-size:.68rem; letter-spacing:.1em; font-weight:700; border-radius:5px; padding:3px 8px; vertical-align:middle; }
 .tag.parked { background:var(--wash); color:var(--muted); border:1px solid var(--line); }
 .tag.idea, .tag.open { background:var(--accent); color:var(--accent-ink); }
 .tag.leaning { background:var(--ink); color:var(--bg); }
@@ -193,12 +216,30 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 /* ---------- 01 color ---------- */
 .swatches { display:grid; grid-template-columns:repeat(auto-fill, minmax(168px, 1fr)); gap:14px; }
 .swatch { border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--panel); }
-.swatch .chip { height:62px; }
+.swatch .chip { display:block; width:100%; height:62px; border:0; cursor:pointer; box-shadow:inset 0 0 0 1px rgba(0,0,0,.16); }
 .swatch .meta { padding:10px 13px 12px; }
 .swatch .meta .row { display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
 .swatch .meta .name { font-family:var(--font-mono); font-size:.72rem; font-weight:700; letter-spacing:.03em; }
 .swatch .meta .hex { font-family:var(--font-mono); font-size:.7rem; color:var(--muted); }
 .swatch .meta p { font-size:.8rem; color:var(--muted); line-height:1.45; margin-top:5px; }
+.palette-board { border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--panel); }
+.palette-strip { display:flex; height:150px; background:#fff; }
+.palette-slice { position:relative; min-width:8px; box-shadow:inset -1px 0 rgba(0,0,0,.12); border:0; padding:0; cursor:pointer; }
+.palette-slice .slice-label {
+  position:absolute; left:10px; bottom:9px; color:#1A1A1A; font-family:var(--font-mono);
+  font-size:.66rem; font-weight:700; line-height:1.35; text-shadow:0 1px rgba(255,255,255,.7);
+}
+.palette-slice.dark .slice-label { color:#fff; text-shadow:0 1px rgba(0,0,0,.45); }
+.palette-legend { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0 22px; padding:16px 18px 18px; }
+.palette-legend div { display:grid; grid-template-columns:minmax(82px,auto) 1fr; gap:10px; padding:7px 0; border-bottom:1px solid var(--line); }
+.palette-legend dt { font-family:var(--font-mono); font-size:.7rem; font-weight:700; }
+.palette-legend dd { color:var(--muted); font-size:.82rem; }
+.palette-caption { padding:10px 18px; border-top:1px solid var(--line); color:var(--muted); font-size:.78rem; }
+.copy-status { float:right; color:var(--accent); font-weight:700; }
+@media (max-width:560px) {
+  .palette-strip { height:112px; }
+  .palette-slice .slice-label { display:none; }
+}
 .cmap { border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:16px 18px; }
 .cmap .strip { height:26px; border-radius:6px; border:1px solid rgba(0,0,0,.08); }
 .cmap .ends { display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:.68rem; color:var(--muted); margin-top:7px; }
@@ -232,6 +273,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 .canvas-diagram .dim.w { left:50%; transform:translateX(-50%); bottom:-22px; }
 .canvas-diagram .dim.h { right:-34px; top:50%; transform:translateY(-50%) rotate(90deg); transform-origin:center; }
 .canvas-diagram .dim.mgn { left:1px; top:38%; transform:rotate(90deg); transform-origin:left top; color:#C4547A; }
+@media (max-width:460px) { .canvas-diagram .dim.h { right:-27px; } }
 
 /* ---------- 04 header demo ---------- */
 .hdr-demo .t { font-family:var(--font-academic); text-transform:uppercase; font-size:clamp(1.6rem,4.4vw,2.7rem); line-height:1; letter-spacing:.01em; color:var(--g-ink); }
@@ -284,11 +326,23 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 .comp-src { font-family:var(--font-mono); font-size:.68rem; color:var(--muted); margin-top:14px; }
 .comp-note { display:grid; grid-template-columns:auto 1fr; gap:12px; align-items:baseline; margin-top:14px; font-size:.88rem; color:var(--muted); }
 .comp-note .nlab { font-family:var(--font-mono); font-size:.62rem; letter-spacing:.12em; color:var(--accent); font-weight:700; }
+@media (min-width:980px) {
+  .comp-note { grid-template-columns:86px 1fr; }
+  .comp-note .nlab { text-align:right; transform:translateX(-8px); }
+}
+.comp:has(.shotmap-wrap) .canvas-card, .comp:has(.table-demo) .canvas-card { border:0; box-shadow:none; padding-inline:0; }
 
 .gbar-demo { display:grid; gap:12px; }
 .gbar-demo .row { display:grid; grid-template-columns:70px 1fr; align-items:center; gap:14px; }
 .gbar-demo .fl { font-family:var(--font-mono); font-size:.7rem; color:var(--g-muted); }
 .gbar-demo .track { height:20px; border-radius:3px; }
+.gbar-live { margin-top:16px; }
+.gbar-live .live-track { position:relative; height:30px; background:#F2EAE8; border-radius:4px; }
+.gbar-live .live-fill { position:absolute; inset:0 auto 0 0; width:50%; border-radius:4px; }
+.gbar-live .live-value { position:absolute; top:50%; transform:translate(-100%,-50%); color:#fff; font-weight:700; -webkit-text-stroke:1px var(--g-ink); }
+.gbar-live .live-value.outside { transform:translate(8px,-50%); color:var(--g-ink); -webkit-text-stroke:0; }
+.gbar-control { display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:center; margin-top:10px; color:var(--g-muted); font-size:.78rem; }
+.gbar-control input { width:100%; accent-color:var(--g-red); }
 
 .slabel { display:flex; gap:40px; flex-wrap:wrap; }
 .slabel .item b { display:block; font-weight:600; font-size:1.05rem; color:var(--g-ink); }
@@ -344,14 +398,38 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 /* ---------- 09 anatomies ---------- */
 .anatomy { display:grid; grid-template-columns:minmax(260px,340px) 1fr; gap:26px; border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:22px; margin-top:20px; align-items:start; }
 @media (max-width:760px){ .anatomy { grid-template-columns:1fr; } }
-.anatomy .shot { position:relative; border-radius:8px; overflow:hidden; border:1px solid var(--line); }
-.anatomy .shot img { display:block; width:100%; height:auto; }
-.anatomy .pin { position:absolute; width:24px; height:24px; border-radius:50%; background:var(--accent); color:var(--accent-ink); font-size:.72rem; font-weight:700; display:flex; align-items:center; justify-content:center; transform:translate(-50%,-50%); box-shadow:0 0 0 2px rgba(255,255,255,.85), 0 2px 6px rgba(0,0,0,.3); }
+.anatomy .shot { position:relative; margin-inline:16px; }
+.anatomy .shot img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+.anatomy .callout {
+  --line-color:color-mix(in srgb, var(--accent) 78%, transparent);
+  position:absolute; z-index:1; top:var(--y); left:-16px;
+  width:calc(var(--x) + 16px); border-top:1px solid var(--line-color);
+  color:var(--accent); font-family:var(--font-mono); font-size:.66rem; font-weight:700;
+}
+.anatomy .callout::before {
+  content:attr(data-n); position:absolute; left:0; top:0; transform:translate(-50%,-50%);
+  width:20px; height:20px; display:grid; place-items:center; border-radius:50%;
+  background:var(--panel); border:1px solid var(--accent);
+}
+.anatomy .callout::after {
+  content:""; position:absolute; right:0; top:0; transform:translate(50%,-50%);
+  width:8px; height:8px; border:2px solid var(--accent); border-radius:50%;
+  background:rgba(255,255,255,.88);
+}
+.anatomy .callout.right { left:var(--x); width:calc(100% - var(--x) + 16px); }
+.anatomy .callout.right::before { left:auto; right:0; transform:translate(50%,-50%); }
+.anatomy .callout.right::after { left:0; right:auto; transform:translate(-50%,-50%); }
 .anatomy h3 { font-size:1.05rem; font-weight:600; }
 .anatomy h3 .fmt { color:var(--accent); font-family:var(--font-mono); font-size:.72rem; font-weight:700; letter-spacing:.08em; margin-right:8px; }
 .anatomy .src { font-family:var(--font-mono); font-size:.68rem; color:var(--muted); margin:4px 0 14px; }
 .anatomy ol { list-style:none; display:grid; gap:9px; }
 .anatomy ol li { display:grid; grid-template-columns:24px 1fr; gap:10px; font-size:.9rem; color:var(--muted); }
+.anatomy .callout, .anatomy ol li { transition:opacity .16s ease, transform .16s ease, background-color .16s ease; }
+.anatomy.has-highlight .callout, .anatomy.has-highlight ol li { opacity:.34; }
+.anatomy.has-highlight .callout.is-active, .anatomy.has-highlight ol li.is-active { opacity:1; }
+.anatomy .callout.is-active { transform:scale(1.02); }
+.anatomy ol li { border-radius:6px; }
+.anatomy ol li.is-active { background:var(--wash); transform:translateX(3px); }
 .anatomy ol li b { color:var(--ink); font-weight:600; }
 .anatomy ol .pn { width:22px; height:22px; border-radius:50%; background:var(--accent); color:var(--accent-ink); font-size:.68rem; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:2px; }
 
@@ -372,7 +450,8 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 
 /* ---------- 11 grid rules ---------- */
 .rules { display:grid; gap:12px; counter-reset:rule; max-width:78ch; }
-.rule-item { display:grid; grid-template-columns:44px 1fr; gap:16px; align-items:center; border:1px solid var(--line); border-radius:12px; background:var(--panel); padding:16px 20px; }
+.rule-item { display:grid; grid-template-columns:44px 1fr; gap:16px; align-items:center; border-top:1px solid var(--line); padding:18px 0; }
+.rule-item:first-child { border-top:0; }
 .rule-item .rn { font-family:var(--font-academic); font-size:1.6rem; color:var(--accent); text-align:center; }
 .rule-item p b { font-weight:600; }
 
@@ -391,21 +470,27 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 
 /* ---------- page footer ---------- */
 .page-foot { margin-top:clamp(70px,10vw,120px); border-top:2px solid var(--line-strong); padding-top:22px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px 20px; color:var(--muted); font-size:.88rem; }
+.page-foot a { font-weight:600; text-underline-offset:3px; }
 .page-foot .wm { font-weight:600; color:var(--ink); }
+@keyframes band-in { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+@keyframes title-in { from { opacity:.01; } to { opacity:1; } }
+.band { transform-origin:left; animation:band-in .3s cubic-bezier(.16,1,.3,1) both; }
+.masthead h1 { animation:title-in .25s cubic-bezier(.16,1,.3,1) both; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to design system</a>
 <div class="band"></div>
 
 <nav class="switcher" aria-label="Document theme">
   <span class="sw-label">THEME</span>
-  <button class="sw-btn" data-set="jersey" aria-pressed="true"><span class="dot" style="background:#CE1141"></span><span class="sw-name">Jersey</span></button>
-  <button class="sw-btn" data-set="newsprint" aria-pressed="false"><span class="dot" style="background:#B5123C"></span><span class="sw-name">Newsprint</span></button>
-  <button class="sw-btn" data-set="blackout" aria-pressed="false"><span class="dot" style="background:#FF3355"></span><span class="sw-name">Blackout</span></button>
-  <button class="sw-btn" data-set="hardwood" aria-pressed="false"><span class="dot" style="background:#7E0C2B"></span><span class="sw-name">Hardwood Red</span></button>
+  <button class="sw-btn" data-set="jersey" aria-label="Use Jersey theme" aria-pressed="true"><span class="dot" style="background:#CE1141"></span><span class="sw-name">Jersey</span></button>
+  <button class="sw-btn" data-set="newsprint" aria-label="Use Newsprint theme" aria-pressed="false"><span class="dot" style="background:#B5123C"></span><span class="sw-name">Newsprint</span></button>
+  <button class="sw-btn" data-set="blackout" aria-label="Use Blackout theme" aria-pressed="false"><span class="dot" style="background:#FF3355"></span><span class="sw-name">Blackout</span></button>
+  <button class="sw-btn" data-set="hardwood" aria-label="Use Hardwood Red theme" aria-pressed="false"><span class="dot" style="background:#7E0C2B"></span><span class="sw-name">Hardwood Red</span></button>
 </nav>
 
-<div class="shell">
+<main class="shell" id="main">
 
 <header class="masthead">
   <h1>Design <span class="acc">System</span></h1>
@@ -417,7 +502,8 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
   <p class="mast-kicker">The rendered companion to DESIGN.md: every token, component, and template, visible.</p>
   <p class="mast-how prose"><strong>How to use this file:</strong> DESIGN.md stays the canonical prose (decisions + log). This page is the visual spec: what each rule looks like rendered, and which <code>craft.py</code> / prototype function produces it. When a decision changes, update both. The theme switcher restyles <em>this document only</em>; the graphics spec it documents is fixed; spec demos below always render on white, because the graphics always ship on white.</p>
   <hr class="mast-rule">
-  <nav class="toc" aria-label="Sections">
+</header>
+<nav class="toc" aria-label="Sections">
     <a href="#s01"><span class="n">01</span>Color</a>
     <a href="#s02"><span class="n">02</span>Typography</a>
     <a href="#s03"><span class="n">03</span>Canvas</a>
@@ -431,32 +517,43 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
     <a href="#s11"><span class="n">11</span>Grid Rules</a>
     <a href="#s12"><span class="n">12</span>Voice</a>
     <a href="#s13"><span class="n">13</span>Open Questions</a>
-  </nav>
-</header>
+</nav>
 
 <!-- ============================== 01 COLOR ============================== -->
 <section id="s01">
   <div class="sec-head"><span class="num">01</span><h2>Color</h2><span class="src">DESIGN.md §2 · bulls/graphics/craft.py</span></div>
   <p class="sec-intro">Red + black are the only <em>meaningful</em> colors: a thumbnail should read red + black + white before the title is legible. Grays are scaffolding only: gridlines, muted labels, separators. Never gray for a data value that matters.</p>
 
-  <div class="swatches">
-    <div class="swatch"><div class="chip" style="background:#CE1141"></div><div class="meta"><div class="row"><span class="name">RED</span><span class="hex">#CE1141</span></div><p>Bulls red. Positive / above / accent. One accent word in titles; the payoff ring.</p></div></div>
-    <div class="swatch"><div class="chip" style="background:#141414"></div><div class="meta"><div class="row"><span class="name">BULLS_BLACK</span><span class="hex">#141414</span></div><p>Rich near-black. Negative / below / heavy fills. Never pure #000.</p></div></div>
-    <div class="swatch"><div class="chip" style="background:#1A1A1A"></div><div class="meta"><div class="row"><span class="name">INK</span><span class="hex">#1A1A1A</span></div><p>Primary text, data lines.</p></div></div>
-    <div class="swatch"><div class="chip" style="background:#777777"></div><div class="meta"><div class="row"><span class="name">MUTED</span><span class="hex">#777777</span></div><p>Secondary text, axis labels, event-line labels, watermark.</p></div></div>
-    <div class="swatch"><div class="chip" style="background:#AAAAAA"></div><div class="meta"><div class="row"><span class="name">FAINT</span><span class="hex">#AAAAAA</span></div><p>Footer / source credit. Quietest text tier.</p></div></div>
-    <div class="swatch"><div class="chip" style="background:#DDDDDD"></div><div class="meta"><div class="row"><span class="name">RULE</span><span class="hex">#DDDDDD</span></div><p>Table rules, hairlines, row dividers.</p></div></div>
-    <div class="swatch"><div class="chip" style="background:#CFCFCF"></div><div class="meta"><div class="row"><span class="name">—</span><span class="hex">#CFCFCF</span></div><p>Subtitle separator ticks.</p></div></div>
-    <div class="swatch"><div class="chip" style="background:#F0F0F0"></div><div class="meta"><div class="row"><span class="name">—</span><span class="hex">#F0F0F0</span></div><p>Chart gridlines.</p></div></div>
-    <div class="swatch"><div class="chip" style="background:#FFFFFF; border-bottom:1px solid var(--line)"></div><div class="meta"><div class="row"><span class="name">—</span><span class="hex">#FFFFFF</span></div><p>Canvas: always white.</p></div></div>
-  </div>
+  <figure class="palette-board">
+    <div class="palette-strip" aria-label="Illustrative color share of a typical Bulls graphic">
+      <button class="palette-slice" data-hex="#FFFFFF" aria-label="Copy canvas white #FFFFFF" style="background:#FFFFFF;flex:56"><span class="slice-label">CANVAS<br>#FFFFFF</span></button>
+      <button class="palette-slice" data-hex="#F0F0F0" aria-label="Copy gridline gray #F0F0F0" style="background:#F0F0F0;flex:5"></button>
+      <button class="palette-slice" data-hex="#DDDDDD" aria-label="Copy rule gray #DDDDDD" style="background:#DDDDDD;flex:4"></button>
+      <button class="palette-slice" data-hex="#AAAAAA" aria-label="Copy faint gray #AAAAAA" style="background:#AAAAAA;flex:4"></button>
+      <button class="palette-slice dark" data-hex="#777777" aria-label="Copy muted gray #777777" style="background:#777777;flex:5"></button>
+      <button class="palette-slice dark" data-hex="#CE1141" aria-label="Copy Bulls red #CE1141" style="background:#CE1141;flex:10"><span class="slice-label">RED<br>#CE1141</span></button>
+      <button class="palette-slice dark" data-hex="#141414" aria-label="Copy Bulls black #141414" style="background:#141414;flex:16"><span class="slice-label">BLACK<br>#141414</span></button>
+    </div>
+    <dl class="palette-legend">
+      <div><dt>RED #CE1141</dt><dd>Positive, accent, payoff ring.</dd></div>
+      <div><dt>BULLS_BLACK #141414</dt><dd>Negative and heavy fills.</dd></div>
+      <div><dt>INK #1A1A1A</dt><dd>Primary text and data lines.</dd></div>
+      <div><dt>MUTED #777777</dt><dd>Secondary text and labels.</dd></div>
+      <div><dt>FAINT #AAAAAA</dt><dd>Footer and source credit.</dd></div>
+      <div><dt>RULE #DDDDDD</dt><dd>Hairlines and row dividers.</dd></div>
+      <div><dt>#CFCFCF</dt><dd>Subtitle separator ticks.</dd></div>
+      <div><dt>#F0F0F0</dt><dd>Chart gridlines.</dd></div>
+      <div><dt>#FFFFFF</dt><dd>Canvas, always white.</dd></div>
+    </dl>
+    <figcaption class="palette-caption">Illustrative share of a typical post, not a required formula. Meaning stays concentrated in red and black; neutrals provide structure. <span class="copy-status" role="status" aria-live="polite"></span></figcaption>
+  </figure>
 
   <h3 class="sub">Panel tints: scaffolding texture, not meaning</h3>
   <div class="swatches">
-    <div class="swatch"><div class="chip" style="background:#F7E8ED"></div><div class="meta"><div class="row"><span class="name">PALE_RED</span><span class="hex">#F7E8ED</span></div><p>Snapshot panel wash.</p></div></div>
-    <div class="swatch"><div class="chip" style="background:#FAF1F4"></div><div class="meta"><div class="row"><span class="name">PANEL_RED</span><span class="hex">#FAF1F4</span></div><p>Large court panels.</p></div></div>
-    <div class="swatch"><div class="chip" style="background:#F4F4F4"></div><div class="meta"><div class="row"><span class="name">CHIP_GRAY</span><span class="hex">#F4F4F4</span></div><p>Stat-chip containers.</p></div></div>
-    <div class="swatch"><div class="chip" style="background:#C9A8B5"></div><div class="meta"><div class="row"><span class="name">COURT_LINE</span><span class="hex">#C9A8B5</span></div><p>Court lines on pale panels.</p></div></div>
+    <div class="swatch"><button class="chip" data-hex="#F7E8ED" aria-label="Copy pale red #F7E8ED" style="background:#F7E8ED"></button><div class="meta"><div class="row"><span class="name">PALE_RED</span><span class="hex">#F7E8ED</span></div><p>Snapshot panel wash.</p></div></div>
+    <div class="swatch"><button class="chip" data-hex="#FAF1F4" aria-label="Copy panel red #FAF1F4" style="background:#FAF1F4"></button><div class="meta"><div class="row"><span class="name">PANEL_RED</span><span class="hex">#FAF1F4</span></div><p>Large court panels.</p></div></div>
+    <div class="swatch"><button class="chip" data-hex="#F4F4F4" aria-label="Copy chip gray #F4F4F4" style="background:#F4F4F4"></button><div class="meta"><div class="row"><span class="name">CHIP_GRAY</span><span class="hex">#F4F4F4</span></div><p>Stat-chip containers.</p></div></div>
+    <div class="swatch"><button class="chip" data-hex="#C9A8B5" aria-label="Copy court line #C9A8B5" style="background:#C9A8B5"></button><div class="meta"><div class="row"><span class="name">COURT_LINE</span><span class="hex">#C9A8B5</span></div><p>Court lines on pale panels.</p></div></div>
   </div>
   <p class="note" style="margin-top:14px">Panel tints from <code>summer_league_report.py</code>: texture for grouping, never encoding; the canvas itself stays white.</p>
 
@@ -474,7 +571,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
       <div class="fn">f5_lineup_table.NET_CMAP</div>
       <div class="strip" style="background:linear-gradient(90deg,#B01030,#F5F1EA,#1E6E3C)"></div>
       <div class="ends"><span>#B01030 · neg</span><span>#F5F1EA · 0</span><span>#1E6E3C · pos</span></div>
-      <p>Net-rating-style stats centered at zero (<code>TwoSlopeNorm</code>). Currently table-only; the green is an allowed exception inside value cells, never for canvas elements.</p>
+      <p>Net-rating-style stats centered at zero (<code>TwoSlopeNorm</code>). This red→green pair is not colorblind-safe, so printed signs are mandatory and color never carries the sign alone. Currently table-only; green is an exception inside value cells, never for canvas elements.</p>
     </div>
   </div>
 </section>
@@ -490,7 +587,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
         <span><b>Role</b>&nbsp;titles only</span>
         <span><b>Case</b>&nbsp;ALL CAPS</span>
         <span><b>Accent</b>&nbsp;exactly one word in RED</span>
-        <span><b>Size</b>&nbsp;auto-fit to W−120 (§04)</span>
+        <span><b>Size</b>&nbsp;auto-fit to W−120 (<a href="#s04">§04</a>)</span>
       </div>
       <div class="type-facts" style="margin-top:8px"><span class="mono" style="font-size:.7rem">AcademicM54.ttf</span></div>
     </div>
@@ -503,15 +600,15 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
   <h3 class="sub">Body face: Archivo, weight selected by file</h3>
   <div class="canvas-card">
     <div class="type-weight">
-      <div class="sample" style="font-weight:400">Aa 0123</div>
+      <div class="sample" style="font-weight:400">CALEB 35 PTS</div>
       <div class="who"><b>Archivo 400 · Regular</b>Source credit, axis values, quiet text.<div class="file">Archivo-400.ttf · weight="regular"</div></div>
     </div>
     <div class="type-weight">
-      <div class="sample" style="font-weight:500">Aa 0123</div>
+      <div class="sample" style="font-weight:500">BULLS 31-51</div>
       <div class="who"><b>Archivo 500 · Medium</b>Subtitles, kickers, secondary stats, watermark.<div class="file">Archivo-500.ttf · weight="medium"</div></div>
     </div>
     <div class="type-weight">
-      <div class="sample" style="font-weight:600">Aa 0123</div>
+      <div class="sample" style="font-weight:600">NET RTG +9.0</div>
       <div class="who"><b>Archivo 600 · SemiBold</b>Player names, callouts, column headers, month labels.<div class="file">Archivo-600.ttf · weight="bold"</div></div>
     </div>
   </div>
@@ -527,7 +624,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
     <div style="padding:10px 0 26px">
       <div class="canvas-diagram">
         <div class="m l"></div><div class="m r"></div>
-        <div class="zone header">HEADER §04</div>
+        <div class="zone header">HEADER <a href="#s04">§04</a></div>
         <div class="zone idea">One idea</div>
         <div class="foot"><span class="src">Data via NBA.com/Stats</span><span class="wm">@chicagobullsdata</span></div>
         <div class="dim w">1080</div>
@@ -640,6 +737,10 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
         <div class="row"><span class="fl">frac 0.75</span><div><div class="track" style="width:75%; background:linear-gradient(90deg,#F2EAE8,#CE1141,#A60F36)"></div></div></div>
         <div class="row"><span class="fl">frac 1.00</span><div><div class="track" style="width:100%; background:linear-gradient(90deg,#F2EAE8,#CE1141,#7E0C2B)"></div></div></div>
       </div>
+      <div class="gbar-live">
+        <div class="live-track"><div class="live-fill"></div><output class="live-value">0.50</output></div>
+        <label class="gbar-control"><span>frac</span><input type="range" min="0" max="100" value="50" aria-label="Gradient bar fraction"><output>0.50</output></label>
+      </div>
     </div>
     <div class="comp-note"><span class="nlab">NOTE</span><span>For flat single-color bars on a shared scale (impact-board style), a plain RED rectangle is also house style; gradient fill is for when magnitude is the message. Related: solid-RED shared-scale bars in <code>impact_board.py</code>.</span></div>
   </div>
@@ -713,7 +814,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
         <div class="chip-d payoff"><b>35</b><span>PTS</span></div>
       </div>
     </div>
-    <div class="comp-note"><span class="nlab">EMPHASIS RULE</span><span>Exactly one payoff card per composition (F5 emphasis grammar); every sibling chip stays CHIP_GRAY. Chip 118×52 r10; rail card 280×88 r12.</span></div>
+    <div class="comp-note"><span class="nlab">DIMENSIONS</span><span>Chip 118×52 r10; rail card 280×88 r12. The canonical emphasis rule appears with the table component below.</span></div>
     <div class="comp-src">summer_league_report.py · promotion candidate for craft.py</div>
   </div>
 
@@ -758,34 +859,34 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
   </div>
 
   <div class="api-list">
-    <div class="api-item"><code>threshold_footer(fig, qualification, coverage, source)</code><p>The fairness-guardrail footer, rendered in §05. 8.5&hairsp;pt, FAINT, joined with “ | ”.</p></div>
-    <div class="api-item"><code>headshot_label(ax, image_path, x, y, radius, border_color)</code><p>Circular headshot with placeholder fallback, rendered in §07. Sized by radius in data coords, independent of source pixels.</p></div>
+    <div class="api-item"><code>threshold_footer(fig, qualification, coverage, source)</code><p>The fairness-guardrail footer, rendered in <a href="#s05">§05</a>. 8.5&hairsp;pt, FAINT, joined with “ | ”.</p></div>
+    <div class="api-item"><code>headshot_label(ax, image_path, x, y, radius, border_color)</code><p>Circular headshot with placeholder fallback, rendered in <a href="#s07">§07</a>. Sized by radius in data coords, independent of source pixels.</p></div>
   </div>
 </section>
 
 <!-- ============================== 09 ANATOMIES ============================== -->
 <section id="s09">
   <div class="sec-head"><span class="num">09</span><h2>Template Anatomies</h2><span class="src">docs/mocks/ · real renders</span></div>
-  <p class="sec-intro">The four canonical post formats, shown as the actual rendered output in <code>docs/mocks/</code>. Numbered pins map regions to the system sections above.</p>
+  <p class="sec-intro">The four canonical post formats, shown as the actual rendered output in <code>docs/mocks/</code>. Numbered gutter callouts map regions to the system sections above; focus or hover a legend row to trace it on the render.</p>
 
   <div class="anatomy">
     <div class="shot">
       <img src="docs/mocks/2026-07-09-season-shape.png" alt="The Shape of the Season · shipped debut chart post" loading="lazy">
-      <span class="pin" style="left:8%; top:6%">1</span>
-      <span class="pin" style="left:24%; top:23%">2</span>
-      <span class="pin" style="left:63%; top:21%">3</span>
-      <span class="pin" style="left:88%; top:81%">4</span>
-      <span class="pin" style="left:12%; top:96%">5</span>
+      <span class="callout" data-n="1" aria-hidden="true" style="--x:8%;--y:6%"></span>
+      <span class="callout" data-n="2" aria-hidden="true" style="--x:24%;--y:23%"></span>
+      <span class="callout right" data-n="3" aria-hidden="true" style="--x:63%;--y:21%"></span>
+      <span class="callout right" data-n="4" aria-hidden="true" style="--x:88%;--y:81%"></span>
+      <span class="callout" data-n="5" aria-hidden="true" style="--x:12%;--y:96%"></span>
     </div>
     <div>
       <h3><span class="fmt">FORMAT A</span>Chart post: “The Shape of the Season”</h3>
       <div class="src">scripts/prototypes/season_shape_post.py · shipped debut 2026-07-09 · reference implementation</div>
       <ol>
-        <li><span class="pn">1</span><p><b>Header stack (§04)</b>: fitted title, tick subtitle, red kicker.</p></li>
-        <li><span class="pn">2</span><p><b>Fan-voice callouts (§06)</b>: 3–4 budget; RED above / BULLS_BLACK below encodes the sign.</p></li>
-        <li><span class="pn">3</span><p><b>Factual event marker (§06)</b>: dashed line, stacked dated label.</p></li>
-        <li><span class="pn">4</span><p><b>Payoff face (§07)</b>: red ring, unlabeled; the line ends at it.</p></li>
-        <li><span class="pn">5</span><p><b>Footer pair (§05)</b>: credit left, watermark right, y=40.</p></li>
+        <li data-n="1" tabindex="0"><span class="pn">1</span><p><b>Header stack (<a href="#s04">§04</a>)</b>: fitted title, tick subtitle, red kicker.</p></li>
+        <li data-n="2" tabindex="0"><span class="pn">2</span><p><b>Fan-voice callouts (<a href="#s06">§06</a>)</b>: 3–4 budget; RED above / BULLS_BLACK below encodes the sign.</p></li>
+        <li data-n="3" tabindex="0"><span class="pn">3</span><p><b>Factual event marker (<a href="#s06">§06</a>)</b>: dashed line, stacked dated label.</p></li>
+        <li data-n="4" tabindex="0"><span class="pn">4</span><p><b>Payoff face (<a href="#s07">§07</a>)</b>: red ring, unlabeled; the line ends at it.</p></li>
+        <li data-n="5" tabindex="0"><span class="pn">5</span><p><b>Footer pair (<a href="#s05">§05</a>)</b>: credit left, watermark right, y=40.</p></li>
       </ol>
     </div>
   </div>
@@ -793,19 +894,19 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
   <div class="anatomy">
     <div class="shot">
       <img src="docs/mocks/2026-07-03-impact-board-season.png" alt="Most Impactful Bulls · ranked board" loading="lazy">
-      <span class="pin" style="left:8%; top:7%">1</span>
-      <span class="pin" style="left:15%; top:28%">2</span>
-      <span class="pin" style="left:42%; top:34%">3</span>
-      <span class="pin" style="left:86%; top:28%">4</span>
+      <span class="callout" data-n="1" aria-hidden="true" style="--x:8%;--y:7%"></span>
+      <span class="callout" data-n="2" aria-hidden="true" style="--x:15%;--y:28%"></span>
+      <span class="callout" data-n="3" aria-hidden="true" style="--x:42%;--y:34%"></span>
+      <span class="callout right" data-n="4" aria-hidden="true" style="--x:86%;--y:28%"></span>
     </div>
     <div>
       <h3><span class="fmt">FORMAT B</span>Ranked board: “Impact Board”</h3>
       <div class="src">scripts/prototypes/impact_board.py · row_h=92 · boards are the default grammar</div>
       <ol>
-        <li><span class="pn">1</span><p><b>Header stack</b>; kicker doubles as the qualification line. <em>(This render predates the Academic M54 fitted-title rule; new boards get §04 in full.)</em></p></li>
-        <li><span class="pn">2</span><p><b>Row unit:</b> FAINT rank · headshot (§07) · 15&hairsp;pt name (truncation rule) · RULE hairline dividers.</p></li>
-        <li><span class="pn">3</span><p><b>Shared-scale RED bars (§08)</b> + bold value; max value = full length.</p></li>
-        <li><span class="pn">4</span><p><b>Secondary stat columns</b> in MUTED: quiet, centered, 14&hairsp;pt.</p></li>
+        <li data-n="1" tabindex="0"><span class="pn">1</span><p><b>Header stack</b>; kicker doubles as the qualification line. <em>(This render predates the Academic M54 fitted-title rule; new boards get §04 in full.)</em></p></li>
+        <li data-n="2" tabindex="0"><span class="pn">2</span><p><b>Row unit:</b> FAINT rank · headshot (§07) · 15&hairsp;pt name (truncation rule) · RULE hairline dividers.</p></li>
+        <li data-n="3" tabindex="0"><span class="pn">3</span><p><b>Shared-scale RED bars (§08)</b> + bold value; max value = full length.</p></li>
+        <li data-n="4" tabindex="0"><span class="pn">4</span><p><b>Secondary stat columns</b> in MUTED: quiet, centered, 14&hairsp;pt.</p></li>
       </ol>
     </div>
   </div>
@@ -813,19 +914,19 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
   <div class="anatomy">
     <div class="shot">
       <img src="docs/mocks/2026-07-05-f5-lineup-table.png" alt="Bulls Two-Man Lineups · table post" loading="lazy">
-      <span class="pin" style="left:9%; top:8%">1</span>
-      <span class="pin" style="left:22%; top:48%">2</span>
-      <span class="pin" style="left:87%; top:44%">3</span>
-      <span class="pin" style="left:22%; top:95%">4</span>
+      <span class="callout" data-n="1" aria-hidden="true" style="--x:9%;--y:8%"></span>
+      <span class="callout" data-n="2" aria-hidden="true" style="--x:22%;--y:48%"></span>
+      <span class="callout right" data-n="3" aria-hidden="true" style="--x:87%;--y:44%"></span>
+      <span class="callout" data-n="4" aria-hidden="true" style="--x:22%;--y:95%"></span>
     </div>
     <div>
       <h3><span class="fmt">FORMAT C</span>Table post: “Lineup Table”</h3>
       <div class="src">scripts/prototypes/f5_lineup_table.py · plottable · export 300 DPI</div>
       <ol>
-        <li><span class="pn">1</span><p><b>Header stack</b> <em>(this render predates the fitted-title rule; new tables get §04 in full)</em>.</p></li>
-        <li><span class="pn">2</span><p><b>Body columns stay MUTED</b>; lineup names bold INK, one player per line.</p></li>
-        <li><span class="pn">3</span><p><b>One emphasized column:</b> NET RTG value cells on the diverging cmap (§01), the F5 emphasis grammar.</p></li>
-        <li><span class="pn">4</span><p><b>threshold_footer (§05):</b> min-minutes + coverage + source.</p></li>
+        <li data-n="1" tabindex="0"><span class="pn">1</span><p><b>Header stack</b> <em>(this render predates the fitted-title rule; new tables get §04 in full)</em>.</p></li>
+        <li data-n="2" tabindex="0"><span class="pn">2</span><p><b>Body columns stay MUTED</b>; lineup names bold INK, one player per line.</p></li>
+        <li data-n="3" tabindex="0"><span class="pn">3</span><p><b>One emphasized column:</b> NET RTG value cells on the diverging cmap (§01), the F5 emphasis grammar.</p></li>
+        <li data-n="4" tabindex="0"><span class="pn">4</span><p><b>threshold_footer (§05):</b> min-minutes + coverage + source.</p></li>
       </ol>
     </div>
   </div>
@@ -833,19 +934,19 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
   <div class="anatomy">
     <div class="shot">
       <img src="docs/mocks/2026-07-10-summer-league-report-s1.png" alt="Summer League Report · carousel slide 1" loading="lazy">
-      <span class="pin" style="left:9%; top:8%">1</span>
-      <span class="pin" style="left:26%; top:32%">2</span>
-      <span class="pin" style="left:72%; top:25%">3</span>
-      <span class="pin" style="left:50%; top:62%">4</span>
+      <span class="callout" data-n="1" aria-hidden="true" style="--x:9%;--y:8%"></span>
+      <span class="callout" data-n="2" aria-hidden="true" style="--x:26%;--y:32%"></span>
+      <span class="callout right" data-n="3" aria-hidden="true" style="--x:72%;--y:25%"></span>
+      <span class="callout right" data-n="4" aria-hidden="true" style="--x:50%;--y:62%"></span>
     </div>
     <div>
       <h3><span class="fmt">FORMAT D</span>Report card (multi-slide): “Summer League Report”</h3>
       <div class="src">scripts/prototypes/summer_league_report.py · carousel s1–s5 · first live post 2026-07-11</div>
       <ol>
-        <li><span class="pn">1</span><p><b>Header</b>; subtitle carries the score, Bulls side in RED.</p></li>
-        <li><span class="pn">2</span><p><b>Tinted section panel</b> with white stat cards, the one panel-background exception; canvas stays white.</p></li>
-        <li><span class="pn">3</span><p><b>Court graphic</b> only because location is the actual question (make/miss chart; player slides s2–s3 go full-court).</p></li>
-        <li><span class="pn">4</span><p><b>Player table:</b> headshot + name + stat columns; clean zebra box score, no emphasized column (2026-07-11 decision).</p></li>
+        <li data-n="1" tabindex="0"><span class="pn">1</span><p><b>Header</b>; subtitle carries the score, Bulls side in RED.</p></li>
+        <li data-n="2" tabindex="0"><span class="pn">2</span><p><b>Tinted section panel</b> with white stat cards, the one panel-background exception; canvas stays white.</p></li>
+        <li data-n="3" tabindex="0"><span class="pn">3</span><p><b>Court graphic</b> only because location is the actual question (make/miss chart; player slides s2–s3 go full-court).</p></li>
+        <li data-n="4" tabindex="0"><span class="pn">4</span><p><b>Player table:</b> headshot + name + stat columns; clean zebra box score, no emphasized column (2026-07-11 decision).</p></li>
       </ol>
     </div>
   </div>
@@ -899,7 +1000,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
   <div class="voice">
     <div class="v-card">
       <h3>ON-GRAPHIC</h3>
-      <p>Minimal, fan voice (§06). Names, context, and the analytical thesis do not go on the graphic; they live in the caption.</p>
+      <p>Minimal, fan voice (<a href="#s06">§06</a>). Names, context, and the analytical thesis do not go on the graphic; they live in the caption.</p>
     </div>
     <div class="v-card">
       <h3>IG CAPTION</h3>
@@ -923,11 +1024,11 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 </section>
 
 <footer class="page-foot">
-  <span>Companion to DESIGN.md · decisions and log live there · keep both in sync</span>
+  <span>Companion to DESIGN.md · decisions and log live there · keep both in sync · <a href="#main">Back to top</a></span>
   <span class="wm">@chicagobullsdata</span>
 </footer>
 
-</div>
+</main>
 
 <script>
 (function () {
@@ -946,6 +1047,96 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
   var saved = null;
   try { saved = localStorage.getItem(KEY); } catch (e) {}
   if (saved && document.querySelector('.sw-btn[data-set="' + saved + '"]')) apply(saved);
+
+  var mastTitle = document.querySelector(".masthead h1");
+  var masthead = document.querySelector(".masthead");
+  var fitFrame = null;
+  function fitMastheadTitle() {
+    if (!mastTitle || !masthead || window.innerWidth < 360) {
+      if (mastTitle) mastTitle.style.removeProperty("transform");
+      return;
+    }
+    mastTitle.style.removeProperty("transform");
+    var natural = mastTitle.getBoundingClientRect().width;
+    var available = masthead.getBoundingClientRect().width;
+    if (natural > 0) mastTitle.style.transform = "scaleX(" + (available / natural).toFixed(4) + ")";
+  }
+  function requestTitleFit() {
+    if (fitFrame) cancelAnimationFrame(fitFrame);
+    fitFrame = requestAnimationFrame(fitMastheadTitle);
+  }
+  requestTitleFit();
+  window.addEventListener("resize", requestTitleFit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(requestTitleFit);
+
+  document.querySelectorAll(".anatomy").forEach(function (card) {
+    function setHighlight(number) {
+      card.classList.toggle("has-highlight", Boolean(number));
+      card.querySelectorAll(".callout, ol li").forEach(function (item) {
+        item.classList.toggle("is-active", Boolean(number) && item.dataset.n === number);
+      });
+    }
+    card.querySelectorAll(".callout, ol li").forEach(function (item) {
+      item.addEventListener("mouseenter", function () { setHighlight(item.dataset.n); });
+      item.addEventListener("mouseleave", function () { setHighlight(null); });
+      item.addEventListener("focusin", function () { setHighlight(item.dataset.n); });
+      item.addEventListener("focusout", function () { setHighlight(null); });
+    });
+  });
+
+  var copyStatus = document.querySelector(".copy-status");
+  var copyTimer = null;
+  function copyHex(hex) {
+    function done() {
+      if (!copyStatus) return;
+      copyStatus.textContent = hex + " copied ✓";
+      clearTimeout(copyTimer);
+      copyTimer = setTimeout(function () { copyStatus.textContent = ""; }, 1200);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(hex).then(done).catch(function () {});
+    }
+  }
+  document.querySelectorAll("[data-hex]").forEach(function (swatch) {
+    swatch.addEventListener("click", function () { copyHex(swatch.dataset.hex); });
+  });
+
+  var range = document.querySelector('.gbar-control input[type="range"]');
+  var liveFill = document.querySelector(".gbar-live .live-fill");
+  var liveValue = document.querySelector(".gbar-live .live-value");
+  var liveOutput = document.querySelector(".gbar-control output");
+  function mix(a, b, t) { return Math.round(a + (b - a) * t); }
+  function hex(rgb) { return "#" + rgb.map(function (n) { return n.toString(16).padStart(2, "0"); }).join(""); }
+  function updateGradient() {
+    if (!range || !liveFill || !liveValue || !liveOutput) return;
+    var f = Number(range.value) / 100;
+    var low = [242,234,232], mid = [206,17,65], high = [126,12,43];
+    var color = f <= .5
+      ? low.map(function (n, i) { return mix(n, mid[i], f * 2); })
+      : mid.map(function (n, i) { return mix(n, high[i], (f - .5) * 2); });
+    var label = f.toFixed(2);
+    liveFill.style.width = (f * 100) + "%";
+    liveFill.style.background = hex(color);
+    liveValue.style.left = (f * 100) + "%";
+    liveValue.classList.toggle("outside", f < .22);
+    liveValue.textContent = label;
+    liveOutput.textContent = label;
+  }
+  if (range) range.addEventListener("input", updateGradient);
+  updateGradient();
+
+  var sectionLinks = document.querySelectorAll(".toc a");
+  if ("IntersectionObserver" in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        sectionLinks.forEach(function (link) {
+          link.setAttribute("aria-current", String(link.getAttribute("href") === "#" + entry.target.id));
+        });
+      });
+    }, { rootMargin:"-18% 0px -72% 0px" });
+    document.querySelectorAll("main section[id]").forEach(function (section) { spy.observe(section); });
+  }
 })();
 </script>
 </body>

@@ -172,6 +172,20 @@ Shared F5-derived helpers — reach for these before hand-rolling:
 - `headshot_label(ax, image_path, x, y, radius, border_color)` — circular headshot with
   placeholder fallback.
 
+### Report-card component values
+
+The Summer League report established the current component dimensions used by
+`scripts/prototypes/summer_league_report.py`:
+
+- Standard stat chip: 118×52 px, radius 10 px.
+- Supporting rail card: 280×88 px, radius 12 px.
+- Player story row: `PLAYER_ROW_HEIGHT = 173` px.
+- Court lines: `#CFCFCF` on white, `#C6C6C6` at slide scale, and `COURT_LINE`
+  (`#C9A8B5`) on pale panels.
+
+These are component defaults, not reasons to force every post into the report-card format.
+Promote the prototype helpers into `craft.py` only when a second post needs the same grammar.
+
 Table-format posts render via `plottable` (see `scripts/prototypes/f5_lineup_table.py`).
 F5 technique references: `docs/reference/f5-technique-notes.html`.
 
@@ -219,6 +233,14 @@ logo exists).
 
 ## Decision Log
 
+- **2026-07-12** — `design-system.html` enhancement completed: fitted masthead, jersey-trim
+  chrome, proportional/copyable palette, sticky section navigation, interactive component
+  demonstrations, side-gutter anatomy callouts, varied documentation rhythm, and mobile/
+  accessibility fixes. These are documentation-interface treatments; the two-layer rule
+  remains unchanged and graphic-spec demos still use fixed tokens on white.
+- **2026-07-12** — Design-system enhancement decisions: retain all four documentation
+  themes; use side-gutter callout lines instead of solid floating pins on real-render
+  anatomies; absorb durable report-card component values into this canonical document.
 - **2026-07-12** — `design-system.html` rebuilt as a hand-authored static page (v2) after a
   Claude Design exploration round. Doc-chrome themes adopted (Jersey default + Newsprint,
   Blackout, Hardwood Red switcher) — chrome-only: spec demos always render on white with the

@@ -30,8 +30,8 @@ and their history still live in `DESIGN.md`.
 
 ```text
 bulls-analytics/
-├── .agents/skills/   # repo-scoped post creation, promotion, and review workflows
-├── .claude/skills/   # Claude Code wrappers with links to canonical .agents skill files
+├── .agents/skills/   # Bulls workflows plus Codex's Impeccable design skill
+├── .claude/skills/   # linked Bulls workflow wrappers plus Claude's Impeccable build
 ├── STRATEGY.md      # why the account exists: audience, metrics, tracks
 ├── DESIGN.md        # visual system: palette, typography, layout, brand status
 ├── design-system.html # browsable companion to DESIGN.md
@@ -74,5 +74,5 @@ owner documents: `DEVELOPMENT.md` for code and tests, `DESIGN.md` for visual dec
 `POSTING_WORKFLOW.md` for visual-post production, and `STRATEGY.md` plus
 `bulls-content-playbook.html` for editorial direction. Canonical repo-scoped skills in
 `.agents/skills/` guide the recurring create, promote, and review stages without duplicating those
-owner documents; `.claude/skills/` contains discovery wrappers with symlinked entrypoints to the
-same skills for Claude Code.
+owner documents; their `.claude/skills/` counterparts are symlinked discovery wrappers. Impeccable
+is the exception: it supplies separate provider-specific builds in both folders.

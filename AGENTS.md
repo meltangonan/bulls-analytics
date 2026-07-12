@@ -14,6 +14,7 @@ workflow is retired.
 | When working on… | Read… |
 | --- | --- |
 | Account purpose, audience, metrics, or priorities | `STRATEGY.md` |
+| Design register, brand personality, or design principles (feeds the Impeccable skill) | `PRODUCT.md` |
 | A visual, mock, or post iteration | `DESIGN.md`, then `POSTING_WORKFLOW.md` |
 | Editorial direction, idea lanes, or fairness guardrails | `bulls-content-playbook.html` |
 | The current shelf of post ideas | `idea-catalog.html` |

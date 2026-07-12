@@ -41,3 +41,7 @@ Thumbs.db
 
 # Logs
 *.log
+# Impeccable skill (local/cache state; shared config and critique snapshots are committed)
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/live/sessions/

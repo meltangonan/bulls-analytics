@@ -219,6 +219,14 @@ logo exists).
 
 ## Decision Log
 
+- **2026-07-12** — `design-system.html` rebuilt as a hand-authored static page (v2) after a
+  Claude Design exploration round. Doc-chrome themes adopted (Jersey default + Newsprint,
+  Blackout, Hardwood Red switcher) — chrome-only: spec demos always render on white with the
+  real tokens and fonts. **Archivo confirmed as the graphics body face**; Barlow Semi Condensed
+  is the Jersey theme's page font only (a Claude Design export had wrongly documented it as the
+  graphics face). §09 anatomies now embed the real renders from `docs/mocks/`. The loose
+  Claude Design exports ("Bulls Design System.html", "Direction Options.html") are absorbed
+  and slated for removal.
 - **2026-07-11** — F5 emphasis grammar refined on the first live Summer League Report: it holds
   for **card rails** (exactly one solid-red payoff card while siblings stay gray) but was
   **rejected for dense stat tables** — the user removed the magnitude-colored column entirely, and

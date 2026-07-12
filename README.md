@@ -33,6 +33,7 @@ bulls-analytics/
 ├── .agents/skills/   # Bulls workflows plus Codex's Impeccable design skill
 ├── .claude/skills/   # linked Bulls workflow wrappers plus Claude's Impeccable build
 ├── STRATEGY.md      # why the account exists: audience, metrics, tracks
+├── PRODUCT.md       # design register, brand personality, principles (Impeccable context)
 ├── DESIGN.md        # visual system: palette, typography, layout, brand status
 ├── design-system.html # browsable companion to DESIGN.md
 ├── POSTING_WORKFLOW.md # visual-post gates and catalog-to-post workflow

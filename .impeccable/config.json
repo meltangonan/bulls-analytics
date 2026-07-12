@@ -1,0 +1,9 @@
+{
+  "detector": {
+    "ignoreRules": [
+      "numbered-section-markers"
+    ],
+    "ignoreFiles": [],
+    "ignoreValues": []
+  }
+}

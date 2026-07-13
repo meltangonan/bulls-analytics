@@ -19,9 +19,7 @@ import numpy as np
 import pandas as pd
 
 from bulls.analysis import cumulative_record_delta
-from bulls.graphics.feed import (
-    _make_circular_headshot,
-)
+from bulls.graphics.craft import _make_circular_headshot
 from bulls.graphics.house import (
     BULLS_BLACK,
     CANVAS_HEIGHT as H,

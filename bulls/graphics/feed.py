@@ -14,6 +14,7 @@ from matplotlib.patches import Arc, Circle, FancyBboxPatch, Rectangle
 
 from bulls import analysis
 from bulls.config import BULLS_BLACK, BULLS_RED
+from bulls.graphics.craft import _make_circular_headshot
 
 import matplotlib.font_manager as _fm
 
@@ -232,55 +233,6 @@ def _zone_positions() -> dict:
         "Mid-Range": (-140, 140),
         "Above the Break 3": (0, 268),
     }
-
-
-def _make_circular_headshot(
-    img_path: Path,
-    border_color: Optional[tuple] = None,
-    border_frac: float = 0.035,
-) -> Optional[np.ndarray]:
-    """Load an image, crop to circle, optionally add a colored border ring."""
-    try:
-        img = mpimg.imread(str(img_path))
-    except Exception:
-        return None
-
-    h, w = img.shape[:2]
-    sq = min(h, w)
-    x_start = (w - sq) // 2
-    img = img[:sq, x_start:x_start + sq]
-
-    h, w = img.shape[:2]
-    Y, X = np.ogrid[:h, :w]
-    center = h // 2
-    outer_mask = ((X - center) ** 2 + (Y - center) ** 2) <= center ** 2
-
-    # Ensure RGBA
-    if img.shape[2] == 3:
-        if img.dtype == np.uint8:
-            alpha = np.full((h, w, 1), 255, dtype=np.uint8)
-        else:
-            alpha = np.ones((h, w, 1), dtype=img.dtype)
-        img = np.concatenate([img, alpha], axis=2)
-
-    # Paint border ring
-    if border_color is not None:
-        border_px = max(int(center * border_frac), 2)
-        inner_radius = center - border_px
-        inner_mask = ((X - center) ** 2 + (Y - center) ** 2) <= inner_radius ** 2
-        ring = outer_mask & ~inner_mask
-        if img.dtype == np.uint8:
-            img[ring] = [int(c) for c in border_color[:3]] + [255]
-        else:
-            img[ring] = [c / 255 for c in border_color[:3]] + [1.0]
-
-    # Transparency outside circle
-    if img.dtype == np.uint8:
-        img[~outer_mask, 3] = 0
-    else:
-        img[~outer_mask, 3] = 0.0
-
-    return img
 
 
 def _build_court_canvas(title, subtitle, footnote):

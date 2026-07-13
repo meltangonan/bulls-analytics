@@ -128,3 +128,7 @@ venv/bin/python scripts/make_feed_post.py --post-type zone-pps [--last-n-games N
 
 Run the project suite with `./run_tests.sh` or `venv/bin/python -m pytest tests/ -v`.
 `test_data.py`, `test_analysis.py`, `test_graphics.py`, and `test_config.py` mock all NBA API calls.
+`test_design_tokens.py` is the token drift alarm: it fails when the hex values documented in
+`DESIGN.md`, `design-system.html`, or `bulls/config.py` stop matching `bulls/graphics/house.py`.
+When a palette decision changes, update `house.py` and the docs together; the test enforces the
+"keep both in sync" rule so it never depends on memory.

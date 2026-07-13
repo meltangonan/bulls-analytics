@@ -19,13 +19,13 @@ import pandas as pd
 
 from bulls.config import BULLS_RED
 from bulls.data.fetch import get_player_headshot
+from bulls.graphics.craft import _make_circular_headshot
 from bulls.graphics.feed import (
     DEFAULT_DPI,
     INSTAGRAM_FEED_HEIGHT_PX,
     INSTAGRAM_FEED_WIDTH_PX,
     _fp_body,
     _fp_title,
-    _make_circular_headshot,
     save_feed_post,
 )
 

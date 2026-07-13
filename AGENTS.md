@@ -51,6 +51,10 @@ workflow is retired.
 - Update the document that owns a changed decision: strategy in `STRATEGY.md`, visual-system
   decisions in `DESIGN.md`, post-production behavior in `POSTING_WORKFLOW.md`, and technical
   conventions in `DEVELOPMENT.md`.
+- A visual-system decision has three synchronized surfaces: the executable layer
+  (`bulls/graphics/house.py` / `craft.py`), the canonical record (`DESIGN.md`), and the rendered
+  companion (`design-system.html`). Change all three together; `tests/test_design_tokens.py`
+  enforces this for color tokens only, so fonts, components, and layout values rely on this rule.
 - Treat documentation maintenance as part of completing the work; the user should not need to ask
   separately. Update only the affected owner documents and revise or replace stale guidance instead
   of duplicating it or appending unnecessary history.

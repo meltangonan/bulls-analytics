@@ -15,13 +15,13 @@ import pandas as pd
 
 from bulls.analysis import cumulative_point_differential, cumulative_record_delta
 from bulls.data.fetch import get_player_headshot
+from bulls.graphics.craft import _make_circular_headshot
 from bulls.graphics.feed import (
     DEFAULT_DPI,
     INSTAGRAM_FEED_HEIGHT_PX as H,
     INSTAGRAM_FEED_WIDTH_PX as W,
     _fp_body,
     _fp_title,
-    _make_circular_headshot,
     save_feed_post,
 )
 from impact_board import compute_board, parse_minutes, game_score

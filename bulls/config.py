@@ -40,11 +40,10 @@ NBA_TEAMS = {
     "WAS": {"id": 1610612764, "name": "Washington Wizards"},
 }
 
-# Colors (RGB tuples)
-BULLS_RED = (206, 17, 65)      # #CE1141
-BULLS_BLACK = (0, 0, 0)        # #000000
-GREEN = (34, 197, 94)          # #22c55e (positive)
-RED = (239, 68, 68)            # #ef4444 (negative)
+# Colors (RGB tuples) — legacy consumers only; the hex tokens in
+# bulls/graphics/house.py are the canonical palette for graphics.
+BULLS_RED = (206, 17, 65)      # house.RED #CE1141
+BULLS_BLACK = (20, 20, 20)     # house.BULLS_BLACK #141414 (never pure black)
 
 # NBA API
 API_DELAY = 0.6  # Seconds between API calls (rate limiting)

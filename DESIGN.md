@@ -3,8 +3,9 @@
 The visual identity for the account's graphics. Established with the debut post
 ("The Shape of the Season," 2026-07-09); the reference implementation is
 `scripts/prototypes/season_shape_post.py`. Reuse these decisions; don't re-litigate them
-per post. When a decision here changes, update this file and note it in the decision log
-at the bottom.
+per post. When a decision here changes, update this file (noting it in the decision log at
+the bottom), the executable layer (`bulls/graphics/house.py` / `craft.py`), and the rendered
+companion `design-system.html` together — the token drift test only catches color mismatches.
 
 Companion docs: `STRATEGY.md` (why the account exists), `bulls-content-playbook.html`
 (what to post — the visual encyclopedia), `idea-catalog.html` (the idea shelf), and
@@ -149,7 +150,7 @@ never reads as a rant or a spec sheet.
 
 The highest-stopping-power object on a graphic — use sparingly.
 
-- Circular crop via `_make_circular_headshot` / `craft.headshot_label`; a **red border
+- Circular crop via `craft._make_circular_headshot` / `craft.headshot_label`; a **red border
   ring** (`border_color=(206, 17, 65)`, `border_frac≈0.045`) means "the payoff."
 - Position so geometry does the pointing (e.g. the data line ends at the face); the
   payoff face can go unlabeled.
@@ -246,6 +247,12 @@ logo exists).
 
 ## Decision Log
 
+- **2026-07-13** — Token-integrity pass: `tests/test_design_tokens.py` now fails the suite when
+  the hex values in this file, `design-system.html`, or `bulls/config.py` diverge from
+  `house.py` (the docs stay hand-authored; the test replaces manual sync discipline).
+  `bulls/config.py` legacy RGB tuples aligned to house tokens (`BULLS_BLACK` was `#000000`;
+  off-system green/red pair removed). `_make_circular_headshot` moved from legacy `feed.py`
+  into `craft.py` so the current component layer no longer depends on the legacy module.
 - **2026-07-12** — Python remains the center of the graphics pipeline. Added
   `bulls/graphics/house.py` as the executable implementation of settled cross-post rules; Season
   Shape and Summer League now consume it with pixel-identical final renders. Summer League also

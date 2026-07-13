@@ -26,6 +26,7 @@ DRAFT_DPI = 150
 FINAL_DPI = 300
 SIDE_MARGIN = 60
 FOOTER_Y = 40
+STRIPE_HEIGHT = 16  # full-bleed jersey-trim band at the very top of the canvas
 
 WHITE = "#FFFFFF"
 RED = "#CE1141"
@@ -90,6 +91,33 @@ def new_canvas():
     for spine in ax.spines.values():
         spine.set_visible(False)
     return fig, ax
+
+
+def draw_jersey_stripe(ax):
+    """Draw the full-bleed jersey-trim band across the top of the canvas.
+
+    Red with one white and one black pinstripe, top-down: red 4, white 2,
+    red 4, black 2, red 4 (16 px total). Mirrors the ``.band`` element on
+    design-system.html.
+    """
+    layers = [(4, RED), (2, WHITE), (4, RED), (2, BULLS_BLACK), (4, RED)]
+    artists = []
+    y = CANVAS_HEIGHT
+    for height, color in layers:
+        y -= height
+        artists.append(
+            ax.add_patch(
+                plt.Rectangle(
+                    (0, y),
+                    CANVAS_WIDTH,
+                    height,
+                    facecolor=color,
+                    edgecolor="none",
+                    zorder=5,
+                )
+            )
+        )
+    return artists
 
 
 def draw_fitted_title(
@@ -181,9 +209,11 @@ def draw_header(
     kicker: str | None = None,
     subtitle_weight: str = "medium",
     title_base_size: float = 90,
+    stripe: bool = True,
 ):
-    """Draw the current title, subtitle, and optional kicker pattern."""
-    artists = list(draw_fitted_title(ax, title_segments, base_size=title_base_size))
+    """Draw the current stripe, title, subtitle, and optional kicker pattern."""
+    artists = list(draw_jersey_stripe(ax)) if stripe else []
+    artists.extend(draw_fitted_title(ax, title_segments, base_size=title_base_size))
     artists.extend(draw_subtitle(ax, subtitle_parts, weight=subtitle_weight))
     if kicker:
         artists.append(

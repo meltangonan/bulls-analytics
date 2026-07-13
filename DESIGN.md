@@ -103,6 +103,10 @@ font with `fontTools.varLib.instancer` if needed.
 
 Stacked tight, top-left anchored at x=60 (values from the reference implementation):
 
+0. **Jersey stripe** — full-bleed 16 px band across the very top of the canvas: `RED`
+   with one white and one black pinstripe (top-down: red 4 / white 2 / red 4 / black 2 /
+   red 4). Mirrors the `.band` element on design-system.html. Default-on via
+   `house.draw_header(..., stripe=True)`; `house.draw_jersey_stripe(ax)` standalone.
 1. **Title** — Academic M54, ALL CAPS, top at y = H−66. Auto-fit so the string fills
    W−120 exactly (balanced ~60 px margins regardless of copy length). One accent word
    in `RED`, rest in `INK`.
@@ -247,6 +251,10 @@ logo exists).
 
 ## Decision Log
 
+- **2026-07-13** — Jersey-trim stripe promoted from a design-system.html page decoration to
+  part of the graphics themselves: a full-bleed 16 px red band with white/black pinstripes
+  at the top of every canvas (§5 item 0, `house.draw_jersey_stripe`), default-on in
+  `draw_header`.
 - **2026-07-13** — Token-integrity pass: `tests/test_design_tokens.py` now fails the suite when
   the hex values in this file, `design-system.html`, or `bulls/config.py` diverge from
   `house.py` (the docs stay hand-authored; the test replaces manual sync discipline).

@@ -17,6 +17,7 @@ Example:
       --player "Dailyn Swain" --lens impact
 """
 import argparse
+import base64
 import sys
 from collections import Counter
 from dataclasses import dataclass
@@ -30,6 +31,8 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.image as mpimg
+import matplotlib.colors as mcolors
+import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.patches import Arc, Circle, FancyBboxPatch
@@ -46,14 +49,16 @@ from bulls.graphics.craft import headshot_label
 from bulls.graphics.house import (
     CANVAS_HEIGHT as H,
     CANVAS_WIDTH as W,
+    DEFAULT_THEME,
     INK,
     MUTED,
     RED,
     RULE,
+    WHITE,
     body_font,
     display_font,
     draw_footer,
-    draw_header,
+    draw_jersey_stripe,
     export_dpi,
     new_canvas,
     rendered_width,
@@ -62,7 +67,8 @@ from bulls.graphics.house import (
 
 PALE_RED = "#F7E8ED"
 PANEL_RED = "#FAF1F4"  # lighter wash for large court panels
-CHIP_GRAY = "#F4F4F4"  # stat-chip containers (scaffolding, not meaning)
+CHIP_GRAY = "#F1ECE8"  # warm neutral for cards outside a tinted panel
+CHIP_BLUSH = "#F3E1E7"  # visible stat chips on the jersey canvas
 COURT_LINE = "#C9A8B5"  # warm court lines on the pale panels
 OUTPUT_DIR = _REPO / "output" / "feed"
 LENSES = ("shot_diet", "role", "impact")
@@ -88,6 +94,7 @@ STORIES_TOP = 795
 class HeaderData:
     """Display-ready content shared by one report slide header."""
 
+    title_segments: tuple[tuple[str, str], ...]
     subtitle_parts: tuple[tuple[str, str], ...]
     kicker: str | None = None
 
@@ -107,6 +114,28 @@ class StatItem:
     label: str
     color: str = INK
     highlight: bool = False
+
+
+@dataclass(frozen=True)
+class ComparisonItem:
+    """One Bulls/opponent row in the compact game comparison."""
+
+    label: str
+    bulls_value: float
+    opponent_value: float
+    bulls_display: str
+    opponent_display: str
+
+
+@dataclass(frozen=True)
+class ZoneItem:
+    """One Bulls shooting zone, including accuracy and shot-diet share."""
+
+    key: str
+    makes: int
+    attempts: int
+    percentage: float
+    share: float
 
 
 @dataclass(frozen=True)
@@ -131,11 +160,10 @@ class PlayerTableRow:
 @dataclass(frozen=True)
 class TeamSlideData:
     header: HeaderData
-    snapshot_stats: tuple[StatItem, ...]
-    shots: tuple[ShotMark, ...]
+    comparison_stats: tuple[ComparisonItem, ...]
+    zones: tuple[ZoneItem, ...]
     shooting_splits: tuple[str, ...]
     players: tuple[PlayerTableRow, ...]
-    footer_note: str | None = None
 
 
 @dataclass(frozen=True)
@@ -146,9 +174,8 @@ class PlayerSlideData:
     identity_stats: tuple[StatItem, ...]
     attempts_label: str
     shots: tuple[ShotMark, ...]
-    zone_caption: str
+    zone_stats: tuple[StatItem, ...]
     profile_stats: tuple[StatItem, ...]
-    footer_note: str | None = None
 
 
 def _number(value) -> float:
@@ -392,15 +419,97 @@ def prepare_header(
     show_score: bool = True,
 ) -> HeaderData:
     """Turn raw box-score rows into the exact header copy the renderer needs."""
+    title = (
+        (str(team["teamTricode"]), RED),
+        (" VS ", DEFAULT_THEME.ink),
+        (str(opponent["teamTricode"]), DEFAULT_THEME.ink),
+    )
     if show_score:
         parts = (
             (f"Bulls {int(_number(team['points']))}", RED),
-            (f"{team_nickname(opponent['teamTricode'])} {int(_number(opponent['points']))}", INK),
-            (game_date, MUTED),
+            (f"{team_nickname(opponent['teamTricode'])} {int(_number(opponent['points']))}", DEFAULT_THEME.ink),
+            (game_date, DEFAULT_THEME.muted),
         )
     else:
-        parts = ((game_date, MUTED),)
-    return HeaderData(parts, kicker)
+        parts = ((game_date, DEFAULT_THEME.muted),)
+    return HeaderData(title, parts, kicker)
+
+
+def _shooting_percentage(team: pd.Series, made_key: str, attempts_key: str) -> float:
+    attempts = _number(team.get(attempts_key))
+    return 100 * _number(team.get(made_key)) / attempts if attempts else 0.0
+
+
+def prepare_comparison_stats(team: pd.Series, opponent: pd.Series) -> tuple[ComparisonItem, ...]:
+    """Prepare the eight non-scoring rows shown in the game snapshot."""
+    rows: list[ComparisonItem] = []
+    for label, key in (
+        ("REB", "reboundsTotal"),
+        ("AST", "assists"),
+        ("STL", "steals"),
+        ("BLK", "blocks"),
+        ("TO", "turnovers"),
+    ):
+        bulls_value = _number(team.get(key))
+        opponent_value = _number(opponent.get(key))
+        rows.append(
+            ComparisonItem(
+                label,
+                bulls_value,
+                opponent_value,
+                str(int(bulls_value)),
+                str(int(opponent_value)),
+            )
+        )
+    for label, made_key, attempts_key in (
+        ("FG%", "fieldGoalsMade", "fieldGoalsAttempted"),
+        ("3P%", "threePointersMade", "threePointersAttempted"),
+        ("FT%", "freeThrowsMade", "freeThrowsAttempted"),
+    ):
+        bulls_value = _shooting_percentage(team, made_key, attempts_key)
+        opponent_value = _shooting_percentage(opponent, made_key, attempts_key)
+        rows.append(
+            ComparisonItem(
+                label,
+                bulls_value,
+                opponent_value,
+                f"{bulls_value:.1f}",
+                f"{opponent_value:.1f}",
+            )
+        )
+    return tuple(rows)
+
+
+def prepare_team_zones(shots: pd.DataFrame) -> tuple[ZoneItem, ...]:
+    """Summarize the Bulls' six useful half-court zones for the cover slide."""
+    zone_keys = (
+        ("restricted", "Restricted Area"),
+        ("paint", "In The Paint (Non-RA)"),
+        ("mid", "Mid-Range"),
+        ("left_corner", "Left Corner 3"),
+        ("right_corner", "Right Corner 3"),
+        ("above_break", "Above the Break 3"),
+    )
+    total_attempts = len(shots)
+    results = []
+    for key, nba_label in zone_keys:
+        if key == "above_break":
+            rows = shots[~shots["shot_zone"].isin(label for _, label in zone_keys[:-1])]
+        else:
+            rows = shots[shots["shot_zone"] == nba_label]
+        attempts = len(rows)
+        makes = int(rows["shot_made"].sum()) if attempts else 0
+        percentage = 100 * makes / attempts if attempts else 0.0
+        share = 100 * attempts / total_attempts if total_attempts else 0.0
+        results.append(ZoneItem(key, makes, attempts, percentage, share))
+    return tuple(results)
+
+
+def _shooting_split_line(team: pd.Series, label: str, made_key: str, attempts_key: str) -> str:
+    made = int(_number(team.get(made_key)))
+    attempts = int(_number(team.get(attempts_key)))
+    percentage = 100 * made / attempts if attempts else 0.0
+    return f"{label}  {made}-{attempts}  ({percentage:.1f}%)"
 
 
 def prepare_shot_marks(shots: pd.DataFrame, player_id: int | None) -> tuple[ShotMark, ...]:
@@ -421,7 +530,18 @@ def _fitted_text(ax, x, y, text, fp, base_size, max_width, color, ha="left", va=
     return ax.text(x, y, text, ha=ha, va=va, fontsize=size, color=color, fontproperties=fp)
 
 
-def _stat_chip(ax, x, y_top, w, h, value, label, value_size=14.5, value_color=INK):
+def _stat_chip(
+    ax,
+    x,
+    y_top,
+    w,
+    h,
+    value,
+    label,
+    value_size=14.5,
+    value_color=INK,
+    facecolor=CHIP_GRAY,
+):
     """One stat in its own small container: bold value over a muted label."""
     ax.add_patch(
         FancyBboxPatch(
@@ -429,7 +549,7 @@ def _stat_chip(ax, x, y_top, w, h, value, label, value_size=14.5, value_color=IN
             w,
             h,
             boxstyle="round,pad=0,rounding_size=10",
-            facecolor=CHIP_GRAY,
+            facecolor=facecolor,
             edgecolor="none",
         )
     )
@@ -438,10 +558,31 @@ def _stat_chip(ax, x, y_top, w, h, value, label, value_size=14.5, value_color=IN
     ax.text(cx, y_top - h * 0.72, label, ha="center", va="center", fontsize=8.5, color=MUTED, fontproperties=body_font("bold"))
 
 
-def _chip_row(ax, chips: list[tuple[str, str, str]], x, y_top, w, h, gap, value_size=14.5):
+def _chip_row(
+    ax,
+    chips: list[tuple[str, str, str]],
+    x,
+    y_top,
+    w,
+    h,
+    gap,
+    value_size=14.5,
+    facecolor=CHIP_GRAY,
+):
     """A row of stat chips; each entry is (value, label, value_color)."""
     for index, (value, label, color) in enumerate(chips):
-        _stat_chip(ax, x + index * (w + gap), y_top, w, h, value, label, value_size, value_color=color)
+        _stat_chip(
+            ax,
+            x + index * (w + gap),
+            y_top,
+            w,
+            h,
+            value,
+            label,
+            value_size,
+            value_color=color,
+            facecolor=facecolor,
+        )
 
 
 def _display_name(player: pd.Series) -> str:
@@ -517,7 +658,35 @@ def _draw_shot_map(
     """
     if not attempts:
         return
-    top_y = 280  # court window shown; deeper heaves are clamped to the edge
+    t, x0, y0, top_y = _draw_half_court(ax, right, y_center, s, line_color)
+
+    dot_r = max(5.0, 5 * s / 0.42 * 0.7)
+    legend_size = 8 if s <= 0.6 else 12
+    for shot in attempts:
+        cx, cy = shot.x, min(shot.y, top_y)
+        dot_x, dot_y = t(cx, cy)
+        if shot.made:
+            ax.add_patch(Circle((dot_x, dot_y), dot_r, facecolor=RED, edgecolor="#FFFFFF", lw=0.8, zorder=4))
+        elif miss_as_x:
+            ax.plot(dot_x, dot_y, marker="x", ms=dot_r * 0.72, color=INK, mew=1.2, zorder=4)
+        else:
+            ax.add_patch(Circle((dot_x, dot_y), dot_r, facecolor="#FFFFFF", edgecolor=MUTED, lw=1.2, zorder=4))
+    if not draw_legend:
+        return
+    legend_y = y0 - (14 if s <= 0.6 else 26)
+    ax.add_patch(Circle((x0 + 4, legend_y), legend_size / 2, facecolor=RED, edgecolor="none"))
+    ax.text(x0 + 14 + legend_size / 2, legend_y, "MAKE", ha="left", va="center", fontsize=legend_size, color=MUTED, fontproperties=body_font("medium"))
+    miss_x = x0 + (84 if s <= 0.6 else 120)
+    if miss_as_x:
+        ax.plot(miss_x, legend_y, marker="x", ms=legend_size * 0.65, color=INK, mew=1.2)
+    else:
+        ax.add_patch(Circle((miss_x, legend_y), legend_size / 2, facecolor="#FFFFFF", edgecolor=MUTED, lw=1.2))
+    ax.text(miss_x + 10 + legend_size / 2, legend_y, "MISS", ha="left", va="center", fontsize=legend_size, color=MUTED, fontproperties=body_font("medium"))
+
+
+def _draw_half_court(ax, right: float, y_center: float, s: float, line_color: str):
+    """Draw the reusable court geometry and return its coordinate transform."""
+    top_y = 280
     x0 = right - 500 * s
     y0 = y_center - (top_y + 47.5) * s / 2
 
@@ -541,25 +710,7 @@ def _draw_shot_map(
     ax.add_patch(
         Arc((hoop_x, hoop_y), 2 * 237.5 * s, 2 * 237.5 * s, theta1=theta, theta2=180 - theta, color=line_color, lw=1.1)
     )
-    dot_r = max(5.0, 5 * s / 0.42 * 0.7)
-    legend_size = 8 if s <= 0.6 else 12
-    for shot in attempts:
-        cx, cy = shot.x, min(shot.y, top_y)
-        dot_x, dot_y = t(cx, cy)
-        if shot.made:
-            ax.add_patch(Circle((dot_x, dot_y), dot_r, facecolor=RED, edgecolor="#FFFFFF", lw=0.8, zorder=4))
-        elif miss_as_x:
-            ax.plot(dot_x, dot_y, marker="x", ms=dot_r * 1.6, color=INK, mew=2.2, zorder=4)
-        else:
-            ax.add_patch(Circle((dot_x, dot_y), dot_r, facecolor="#FFFFFF", edgecolor=MUTED, lw=1.2, zorder=4))
-    if not draw_legend:
-        return
-    legend_y = y0 - (14 if s <= 0.6 else 26)
-    ax.add_patch(Circle((x0 + 4, legend_y), legend_size / 2, facecolor=RED, edgecolor="none"))
-    ax.text(x0 + 14 + legend_size / 2, legend_y, "MAKE", ha="left", va="center", fontsize=legend_size, color=MUTED, fontproperties=body_font("medium"))
-    miss_x = x0 + (84 if s <= 0.6 else 120)
-    ax.add_patch(Circle((miss_x, legend_y), legend_size / 2, facecolor="#FFFFFF", edgecolor=MUTED, lw=1.2))
-    ax.text(miss_x + 10 + legend_size / 2, legend_y, "MISS", ha="left", va="center", fontsize=legend_size, color=MUTED, fontproperties=body_font("medium"))
+    return t, x0, y0, top_y
 
 
 def _draw_player_row(ax, player: pd.Series, lens: str, team: pd.Series, shots: pd.DataFrame, y_top: float, first: bool):
@@ -595,21 +746,55 @@ def _draw_player_row(ax, player: pd.Series, lens: str, team: pd.Series, shots: p
 
 
 def _draw_header(ax, header: HeaderData):
-    draw_header(
-        ax,
-        [("SUMMER LEAGUE ", INK), ("REPORT", RED)],
-        header.subtitle_parts,
-        kicker=header.kicker,
-        subtitle_weight="bold",
-        title_base_size=86,
-    )
+    draw_jersey_stripe(ax)
+    team_code = header.title_segments[0][0]
+    opponent_code = header.title_segments[-1][0]
+    team_logo = _REPO / "assets" / "img" / "teams" / f"{team_code}.png"
+    opponent_logo = _REPO / "assets" / "img" / "teams" / f"{opponent_code}.png"
+    logo_bottom, logo_top = H - 157, H - 57
+    if team_logo.exists():
+        ax.imshow(mpimg.imread(team_logo), extent=[60, 160, logo_bottom, logo_top], zorder=6)
+    cursor = 178 if team_logo.exists() else 60
+    title_y = H - 55
+    title_size = 54
+    for text, color in header.title_segments:
+        artist = ax.text(
+            cursor,
+            title_y,
+            text,
+            ha="left",
+            va="top",
+            fontsize=title_size,
+            color=color,
+            fontproperties=display_font(),
+            path_effects=[
+                pe.withStroke(linewidth=7, foreground=RED),
+                pe.withStroke(linewidth=3.5, foreground=WHITE),
+                pe.Normal(),
+            ],
+        )
+        cursor += rendered_width(ax, artist)
+    if opponent_logo.exists():
+        ax.imshow(mpimg.imread(opponent_logo), extent=[cursor + 18, cursor + 118, logo_bottom, logo_top], zorder=6)
+    # Keep every subtitle segment on one visual centerline; the date remains
+    # secondary through weight and color rather than a mismatched size.
+    subtitle_y = H - 194
+    cursor = 60
+    for index, (text, color) in enumerate(header.subtitle_parts):
+        artist = ax.text(cursor, subtitle_y, text, ha="left", va="center", fontsize=18, color=color, fontproperties=body_font("bold" if index < 2 else "medium"))
+        cursor += rendered_width(ax, artist)
+        if index < len(header.subtitle_parts) - 1:
+            cursor += 13
+            ax.plot([cursor, cursor], [subtitle_y - 8, subtitle_y + 8], color=DEFAULT_THEME.tick, lw=1.3, zorder=6)
+            cursor += 13
+    if header.kicker:
+        ax.text(60, H - 210, header.kicker, ha="left", va="top", fontsize=14, color=RED, style="italic", fontproperties=body_font("medium"))
 
 
-def _draw_footer(ax, note: str | None = None):
+def _draw_footer(ax):
     draw_footer(
         ax,
-        source="Summer League game · Data via NBA.com/Stats",
-        note=note,
+        source="Data via nba.com",
     )
 
 
@@ -690,31 +875,38 @@ def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> 
         .cols_align("center", columns=["headshot", "netrtg", "min", "pts", "reb", "ast", "tov", "stl", "blk", "fgma", "pm3a", "ftma", "usg", "ts"])
         .opt_row_striping(row_striping=True)
         .tab_options(
-            table_background_color="white",
+            table_background_color=DEFAULT_THEME.canvas,
             table_font_names=["Archivo", "Helvetica Neue", "Helvetica", "Arial"],
             table_font_size="16px",
-            table_font_color=INK,
+            table_font_color=DEFAULT_THEME.ink,
             column_labels_font_size="12px",
             column_labels_font_weight="bold",
             data_row_padding="11px",
-            row_striping_background_color="#F7F7F7",
+            row_striping_background_color="#F3EFE9",
             table_body_hlines_color="transparent",
-            column_labels_border_top_color=INK,
+            column_labels_border_top_color=DEFAULT_THEME.ink,
             column_labels_border_top_width="2px",
-            column_labels_border_bottom_color=RULE,
-            table_body_border_bottom_color=RULE,
+            column_labels_border_bottom_color=DEFAULT_THEME.rule,
+            table_body_border_bottom_color=DEFAULT_THEME.rule,
             table_border_top_style="none",
             table_border_bottom_style="none",
         )
     )
-    table.gtsave(str(out_path), zoom=2, expand=4)
+    # Great Tables renders inside a browser, which cannot see Matplotlib's font
+    # registry. Embed the exact local Archivo files so the PNG cannot silently
+    # fall back to Helvetica on another machine.
+    font_css = []
+    for weight, filename in ((400, "Archivo-400.ttf"), (500, "Archivo-500.ttf"), (600, "Archivo-600.ttf")):
+        encoded = base64.b64encode((_REPO / "assets" / "fonts" / filename).read_bytes()).decode("ascii")
+        font_css.append(
+            f"@font-face{{font-family:'Archivo';font-style:normal;font-weight:{weight};"
+            f"src:url(data:font/ttf;base64,{encoded}) format('truetype');}}"
+        )
+    html = table.as_raw_html().replace("<style>", f"<style>{''.join(font_css)}", 1)
+    import nokap
+
+    nokap.from_html(html=html, file=out_path, selector="table", expand=0, zoom=2, vwidth=992, vheight=744)
     return out_path
-
-
-def _shooting_split_line(team: pd.Series, prefix: str, made_key: str, att_key: str) -> str:
-    made, att = int(_number(team[made_key])), int(_number(team[att_key]))
-    pct = 100 * made / att if att else 0.0
-    return f"{prefix}  {made}-{att}  ({pct:.1f}%)"
 
 
 def _prepare_player_table_row(player: pd.Series) -> PlayerTableRow:
@@ -744,20 +936,8 @@ def prepare_team_slide(
     shots: pd.DataFrame,
     game_date: str,
     kicker: str | None,
-    ft_note: str | None = None,
 ) -> TeamSlideData:
     """Prepare the complete front-page content before any drawing occurs."""
-    stats = (
-        StatItem(str(int(_number(team["reboundsTotal"]))), "REBOUNDS"),
-        StatItem(str(int(_number(team["assists"]))), "ASSISTS"),
-        StatItem(str(int(_number(team["steals"]))), "STEALS"),
-        StatItem(str(int(_number(team["turnovers"]))), "TURNOVERS"),
-    )
-    splits = (
-        _shooting_split_line(team, "FG", "fieldGoalsMade", "fieldGoalsAttempted"),
-        _shooting_split_line(team, "3PT", "threePointersMade", "threePointersAttempted"),
-        _shooting_split_line(team, "FT", "freeThrowsMade", "freeThrowsAttempted"),
-    )
     table_rows = tuple(
         sorted(
             (_prepare_player_table_row(player) for player in players),
@@ -767,11 +947,14 @@ def prepare_team_slide(
     )
     return TeamSlideData(
         header=prepare_header(team, opponent, game_date, kicker),
-        snapshot_stats=stats,
-        shots=prepare_shot_marks(shots, None),
-        shooting_splits=splits,
+        comparison_stats=prepare_comparison_stats(team, opponent),
+        zones=prepare_team_zones(shots),
+        shooting_splits=(
+            _shooting_split_line(team, "FG", "fieldGoalsMade", "fieldGoalsAttempted"),
+            _shooting_split_line(team, "3PT", "threePointersMade", "threePointersAttempted"),
+            _shooting_split_line(team, "FT", "freeThrowsMade", "freeThrowsAttempted"),
+        ),
         players=table_rows,
-        footer_note=ft_note,
     )
 
 
@@ -782,16 +965,10 @@ def prepare_player_slide(
     shots: pd.DataFrame,
     game_date: str,
     kicker: str | None,
-    ft_note: str | None = None,
 ) -> PlayerSlideData:
     """Prepare one player's display copy, metrics, image, and shot marks."""
     person_id = int(_number(player["personId"]))
     splits = zone_splits(shots, person_id)
-    zone_caption = (
-        f"{splits['rim_paint'][0]}-{splits['rim_paint'][1]} RIM/PAINT"
-        f"   ·   {splits['mid'][0]}-{splits['mid'][1]} MID-RANGE"
-        f"   ·   {splits['three'][0]}-{splits['three'][1]} THREES"
-    )
     return PlayerSlideData(
         header=prepare_header(team, opponent, game_date, kicker, show_score=False),
         display_name=_display_name(player),
@@ -801,10 +978,16 @@ def prepare_player_slide(
             StatItem(str(minutes_played(player)), "MIN"),
             StatItem(str(int(_number(player["reboundsTotal"]))), "REB"),
             StatItem(str(int(_number(player["assists"]))), "AST"),
+            StatItem(str(int(_number(player["steals"]))), "STL"),
+            StatItem(str(int(_number(player["blocks"]))), "BLK"),
         ),
-        attempts_label=f"ALL {int(_number(player['fieldGoalsAttempted']))} FIELD-GOAL ATTEMPTS",
+        attempts_label="SHOT CHART",
         shots=prepare_shot_marks(shots, person_id),
-        zone_caption=zone_caption,
+        zone_stats=(
+            StatItem(f"{splits['rim_paint'][0]}-{splits['rim_paint'][1]}", "RIM / PAINT"),
+            StatItem(f"{splits['mid'][0]}-{splits['mid'][1]}", "MID-RANGE"),
+            StatItem(f"{splits['three'][0]}-{splits['three'][1]}", "THREES"),
+        ),
         profile_stats=(
             StatItem(
                 f"{int(_number(player['fieldGoalsMade']))}-{int(_number(player['fieldGoalsAttempted']))}",
@@ -822,19 +1005,17 @@ def prepare_player_slide(
             StatItem(f"{role_share_pct(player, team):.0f}%", "OF BULLS FGA"),
             StatItem(f"{plus_minus(player):+d}", "PLUS/MINUS"),
         ),
-        footer_note=ft_note,
     )
 
 
 def render_team_slide(
     data: TeamSlideData,
 ):
-    """Slide 1: the front page — score, Bulls-only snapshot with the team shot
-    chart, and one card per featured player."""
+    """Slide 1: matchup, compact game comparison, shot diet, and player table."""
     fig, ax = new_canvas()
     _draw_header(ax, data.header)
 
-    y_top, y_bottom = 1130, 700
+    y_top, y_bottom = 1105, 620
     ax.add_patch(
         FancyBboxPatch(
             (60, y_bottom),
@@ -845,26 +1026,56 @@ def render_team_slide(
             edgecolor="none",
         )
     )
-    ax.text(84, y_top - 27, "TEAM SNAPSHOT", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
-    card_w, card_h, gap = 185, 125, 14
-    for index, stat in enumerate(data.snapshot_stats):
-        x = 84 + (card_w + gap) * (index % 2)
-        cy_top = 1030 - (card_h + gap) * (index // 2)
-        ax.add_patch(
-            FancyBboxPatch(
-                (x, cy_top - card_h),
-                card_w,
-                card_h,
-                boxstyle="round,pad=0,rounding_size=12",
-                facecolor="#FFFFFF",
-                edgecolor="none",
-            )
-        )
-        ax.text(x + card_w / 2, cy_top - 47, stat.value, ha="center", va="center", fontsize=28, color=INK, fontproperties=body_font("bold"))
-        ax.text(x + card_w / 2, cy_top - 93, stat.label, ha="center", va="center", fontsize=9.5, color=MUTED, fontproperties=body_font("bold"))
-    _draw_shot_map(ax, data.shots, right=985, y_center=962, s=0.72)
+    section_y = y_top - 25
+    ax.text(84, section_y, "TEAM SNAPSHOT", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
+    # The shot diet carries more visual information, so it owns roughly 65%
+    # of the panel while the compact comparison uses the remaining 35%.
+    divider_x = 420
+    ax.plot([divider_x, divider_x], [y_bottom + 22, y_top - 58], color="#E6C4CF", lw=1)
+
+    # Left: every row is normalized within itself, so bar length answers only
+    # "which team had more of this stat?" Exact labels carry the actual values.
+    left_end, right_start, max_bar = 210, 270, 64
+    ax.text(left_end, 1028, "CHI", ha="right", va="center", fontsize=10, color=RED, fontproperties=body_font("bold"))
+    ax.text(right_start, 1028, "MEM", ha="left", va="center", fontsize=10, color=DEFAULT_THEME.ink, fontproperties=body_font("bold"))
+    for index, stat in enumerate(data.comparison_stats):
+        y = 990 - index * 43
+        row_max = max(stat.bulls_value, stat.opponent_value, 1)
+        bulls_w = max_bar * stat.bulls_value / row_max
+        opponent_w = max_bar * stat.opponent_value / row_max
+        ax.add_patch(FancyBboxPatch((left_end - bulls_w, y - 9), bulls_w, 18, boxstyle="round,pad=0,rounding_size=2", facecolor=RED, edgecolor="none"))
+        ax.add_patch(FancyBboxPatch((right_start, y - 9), opponent_w, 18, boxstyle="round,pad=0,rounding_size=2", facecolor=DEFAULT_THEME.contrast, edgecolor="none"))
+        ax.text(left_end - bulls_w - 7, y, stat.bulls_display, ha="right", va="center", fontsize=10, color=RED, fontproperties=body_font("bold"))
+        ax.text(240, y, stat.label, ha="center", va="center", fontsize=9.5, color=DEFAULT_THEME.muted, fontproperties=body_font("bold"))
+        ax.text(right_start + opponent_w + 7, y, stat.opponent_display, ha="left", va="center", fontsize=10, color=DEFAULT_THEME.ink, fontproperties=body_font("bold"))
+
+    # Right: compact zone labels preserve the court geography while replacing
+    # dozens of overlapping shot dots with makes/attempts, FG%, and diet share.
+    ax.text(444, section_y, "BULLS SHOT DIET", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
+    t, _, _, _ = _draw_half_court(ax, right=996, y_center=866, s=0.94, line_color=COURT_LINE)
+    zone_positions = {
+        "restricted": t(0, 4),
+        "paint": t(0, 94),
+        "mid": t(0, 184),
+        "left_corner": t(-220, 80),
+        "right_corner": t(220, 80),
+        "above_break": t(0, 274),
+    }
+    max_share = max((zone.share for zone in data.zones), default=1) or 1
+    for zone in data.zones:
+        x, y = zone_positions[zone.key]
+        strength = zone.share / max_share if zone.attempts else 0
+        mix = 0.12 + 0.68 * strength if zone.attempts else 0.04
+        fill_rgb = tuple((1 - mix) * a + mix * b for a, b in zip(mcolors.to_rgb(PANEL_RED), mcolors.to_rgb(RED)))
+        text_color = WHITE if mix >= 0.5 else DEFAULT_THEME.ink
+        w = 80 if "corner" in zone.key else 108
+        h = 50
+        ax.add_patch(FancyBboxPatch((x - w / 2, y - h / 2), w, h, boxstyle="round,pad=0,rounding_size=7", facecolor=fill_rgb, edgecolor="none", zorder=4))
+        ax.text(x, y + 12, f"{zone.makes}/{zone.attempts}", ha="center", va="center", fontsize=10.5, color=text_color, fontproperties=body_font("bold"), zorder=5)
+        ax.text(x, y - 2, f"{zone.percentage:.1f}%", ha="center", va="center", fontsize=7.2, color=text_color, fontproperties=body_font("medium"), zorder=5)
+        ax.text(x, y - 16, f"{zone.share:.1f}% OF FGA", ha="center", va="center", fontsize=6.3, color=text_color, fontproperties=body_font("bold"), zorder=5)
     for index, line in enumerate(data.shooting_splits):
-        ax.text(805, 792 - index * 33, line, ha="center", va="top", fontsize=12.5, color=INK, fontproperties=body_font("bold"))
+        ax.text(761, 680 - index * 23, line, ha="center", va="center", fontsize=10.5, color=DEFAULT_THEME.ink, fontproperties=body_font("bold"))
 
     # The featured players render as one Great Tables comparison so the table
     # engine, not per-card coordinates, owns row rhythm and alignment.
@@ -881,7 +1092,7 @@ def render_team_slide(
         zorder=3,
         interpolation="bilinear",
     )
-    _draw_footer(ax, data.footer_note)
+    _draw_footer(ax)
     return fig
 
 
@@ -892,37 +1103,74 @@ def render_player_slide(
     header, a large exact-location FGA chart on the left as the evidence
     layer, and a compact supporting stat rail on the right."""
     fig, ax = new_canvas()
-    _draw_header(ax, data.header)
+    draw_jersey_stripe(ax)
 
-    headshot_label(ax, data.headshot, 118, 1058, radius=58)
-    _fitted_text(ax, 206, 1096, data.display_name, display_font(), 30, 790, INK)
+    # The player is the slide title; the headshot and outlined name form one
+    # identity block, while the date stays quiet underneath.
+    headshot_label(ax, data.headshot, 118, 1218, radius=54)
+    title = _fitted_text(ax, 196, 1274, data.display_name, display_font(), 48, 824, DEFAULT_THEME.ink)
+    title.set_path_effects([
+        pe.withStroke(linewidth=7, foreground=RED),
+        pe.withStroke(linewidth=3.5, foreground=WHITE),
+        pe.Normal(),
+    ])
+    ax.text(198, 1163, data.header.subtitle_parts[0][0], ha="left", va="top", fontsize=13, color=DEFAULT_THEME.muted, fontproperties=body_font("medium"))
+
     identity_chips = [(item.value, item.label, item.color) for item in data.identity_stats]
-    _chip_row(ax, identity_chips, 208, 1038, w=118, h=52, gap=10, value_size=14.5)
-    ax.plot([60, 1020], [952, 952], color=RULE, lw=1)
+    _chip_row(ax, identity_chips, 60, 1098, w=145, h=62, gap=18, value_size=16, facecolor=CHIP_BLUSH)
+    ax.plot([60, 1020], [1004, 1004], color=DEFAULT_THEME.rule, lw=1)
 
-    ax.text(60, 904, data.attempts_label, ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
+    # A translucent-looking Bulls-red wash groups the evidence and supporting
+    # metrics into one story zone while the jersey canvas remains visible.
+    ax.add_patch(
+        FancyBboxPatch(
+            (40, 146),
+            W - 80,
+            830,
+            boxstyle="round,pad=0,rounding_size=18",
+            facecolor=PALE_RED,
+            edgecolor="none",
+            alpha=0.72,
+            zorder=0,
+        )
+    )
+
+    ax.text(60, 952, data.attempts_label, ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
     _draw_shot_map(
         ax,
         data.shots,
         right=660,
-        y_center=590,
+        y_center=582,
         s=1.2,
-        line_color="#C6C6C6",
+        line_color=COURT_LINE,
+        miss_as_x=True,
     )
-    ax.text(60, 322, data.zone_caption, ha="left", va="top", fontsize=11.5, color=MUTED, fontproperties=body_font("medium"))
+    ax.text(60, 314, "SHOT DISTRIBUTION", ha="left", va="top", fontsize=10, color=RED, fontproperties=body_font("bold"))
+    distribution_chips = [(item.value, item.label, item.color) for item in data.zone_stats]
+    _chip_row(
+        ax,
+        distribution_chips,
+        60,
+        282,
+        w=190,
+        h=68,
+        gap=15,
+        value_size=16,
+        facecolor=DEFAULT_THEME.canvas,
+    )
 
     rail_x, rail_w = 740, 280
-    ax.text(rail_x, 904, "SHOT PROFILE", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
-    card_h, gap = 88, 14
+    ax.text(rail_x, 952, "SHOT PROFILE", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
+    card_h, gap = 80, 12
     for index, stat in enumerate(data.profile_stats):
-        top = 862 - index * (card_h + gap)
+        top = 910 - index * (card_h + gap)
         ax.add_patch(
             FancyBboxPatch(
                 (rail_x, top - card_h),
                 rail_w,
                 card_h,
                 boxstyle="round,pad=0,rounding_size=12",
-                facecolor=RED if stat.highlight else CHIP_GRAY,
+                facecolor=RED if stat.highlight else DEFAULT_THEME.canvas,
                 edgecolor="none",
             )
         )
@@ -931,7 +1179,7 @@ def render_player_slide(
         cx = rail_x + rail_w / 2
         ax.text(cx, top - card_h * 0.34, stat.value, ha="center", va="center", fontsize=23, color=value_color, fontproperties=body_font("bold"))
         ax.text(cx, top - card_h * 0.73, stat.label, ha="center", va="center", fontsize=9, color=label_color, fontproperties=body_font("bold"))
-    _draw_footer(ax, data.footer_note)
+    _draw_footer(ax)
     return fig
 
 
@@ -978,8 +1226,8 @@ def main():
     print("\nBULLS STORY REVIEW")
     print(player_candidates(bulls, team_row).to_string(index=False))
     print(
-        "\nShot diet uses NBA.com shot zones. TS% prints per user decision (2026-07-10); under the"
-        " 2026 one-free-throw rule it reads high, so those games carry a footnote disclosure."
+        "\nShot diet uses NBA.com shot zones. TS% can read high under the 2026"
+        " one-free-throw rule; interpret it as Summer League context."
     )
     if not args.players:
         print("\nChoose one to four players and matching lenses, then re-run. See --help for an example.")
@@ -995,8 +1243,6 @@ def main():
     graphic_date = args.date or played_on.strftime("%b %d, %Y").upper()
     dpi = export_dpi(args.final)
 
-    ft_note = "TS% reads high under the one-free-throw rule" if one_ft_rule_applies(game_id) else None
-
     if args.carousel:
         team_slide = prepare_team_slide(
             team_row,
@@ -1005,7 +1251,6 @@ def main():
             shots,
             graphic_date,
             kicker,
-            ft_note,
         )
         player_slides = [
             prepare_player_slide(
@@ -1015,7 +1260,6 @@ def main():
                 shots,
                 graphic_date,
                 None,
-                ft_note,
             )
             for player in selected
         ]

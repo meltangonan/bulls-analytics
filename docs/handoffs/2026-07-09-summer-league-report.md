@@ -1,29 +1,56 @@
 # Summer League Report Handoff
 
-**Status: CLOSED — first live post shipped 2026-07-11**
+**Status: ACTIVE — awaiting the final Bulls–Jazz game and NBA.com feeds on 2026-07-13**
 
-## Outcome
+## Current Objective
 
-The first live Summer League Report covered the July 10 Bulls–Grizzlies game and shipped as a
-five-slide carousel featuring Caleb Wilson, Jaylin Sellers, Noa Essengue, and Dailyn Swain. The
-approved finals live at `docs/mocks/2026-07-10-summer-league-report-s*.png`; the catalog card records
-the final caption, design decisions, and pre-Insights review. The implementation and post-cycle
-review are on `main` through commit `f0314a0`.
+Replace the Bulls–Grizzlies rehearsal data with the completed Bulls–Jazz Summer League game,
+choose the player stories supported by the final box score, and finish the approved carousel for
+manual Instagram posting. The user approved the revised format on 2026-07-13; do not reopen the
+layout unless the Jazz data exposes a real fit or legibility problem.
+
+## Approved Format
+
+- Slide 1 uses the jersey off-white canvas, matchup logos/title, score/date subtitle, a roughly
+  35/65 team-comparison-to-shot-diet panel, the FG/3PT/FT shooting lines, and the player table.
+- Player slides use the player as the outlined title, six identity chips, a pale-red evidence
+  panel, exact shot locations, off-white supporting cards, and one solid-red true-shooting card.
+- Every slide keeps `Data via nba.com` bottom-left and `@chicagobullsdata` bottom-right.
+- This is the approved Summer League recap format. Regular-season analytical experiments belong
+  in a separate prototype and should not block tonight's post.
+
+Implementation: `scripts/prototypes/summer_league_report.py`.
+
+## Clearest Next Action
+
+After the game is final, use the `create-bulls-post` skill and run:
+
+```bash
+venv/bin/python scripts/prototypes/summer_league_report.py --season 2026
+```
+
+The review pass auto-resolves the latest completed Bulls Summer League game and prints the player
+table. If the Jazz game is still in progress, or the NBA.com shot/advanced feeds have not populated,
+the script should refuse to render rather than print false zeros. Once the feeds are ready:
+
+1. Show the review table to the user and recommend one to four player stories; do not automatically
+   repeat the four Grizzlies-game players.
+2. Render the 150-DPI carousel with the selected `--player` values plus `--carousel` and visually
+   inspect every slide, including rookie headshots and long player names.
+3. Preserve the Summer League true-shooting caveat in the analytical review: the 2026
+   one-free-throw rule can make TS% read unusually high.
+4. After the user approves the Jazz-data draft, render with `--final`, copy the approved 300-DPI
+   slides to `docs/mocks/`, update the matching catalog card, run the full tests and
+   `git diff --check`, then stop for explicit commit/push approval.
+5. Mark this handoff `CLOSED` and compact it again after the Jazz post is finalized.
 
 ## Durable Pointers
 
-- `idea-catalog.html` — post-specific outcome, caption, and review evidence.
-- `scripts/prototypes/README.md` — current command sequence and game-night operating notes.
-- `scripts/prototypes/summer_league_report.py` — executable behavior and CLI help.
-- `DEVELOPMENT.md` — Summer League feed, league-ID, and data-quality guardrails.
-- `DESIGN.md` — confirmed visual rules from the shipped carousel.
-- `POSTING_WORKFLOW.md` — approval, caption ownership, release, and review behavior.
+- `scripts/prototypes/README.md` — game-night command sequence and operating notes.
+- `DEVELOPMENT.md` — Summer League league-ID and feed-readiness guardrails.
+- `DESIGN.md` — visual-system rules and jersey-theme decision.
+- `POSTING_WORKFLOW.md` — draft/final approval and release behavior.
+- `idea-catalog.html` — post-specific status, caption, and review evidence.
 
-Reusable decisions and run instructions were moved to those owners. Superseded pre-game commands,
-earlier table variants, resolved questions, and the dated “tonight” runbook were removed from this
-handoff so they cannot compete with the current sources of truth.
-
-## Remaining Follow-up
-
-An Instagram Insights review is still useful when the data is available. Treat that as a new
-`review-bulls-post` task; it does not reopen this completed creation handoff.
+The July 10 Bulls–Grizzlies carousel remains the first shipped example at
+`docs/mocks/2026-07-10-summer-league-report-s*.png`.

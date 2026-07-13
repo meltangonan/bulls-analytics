@@ -14,11 +14,12 @@
    Bulls Design System: hand-authored, no build step.
    Two color layers, deliberately separate:
    1. DOC CHROME: themed via [data-theme] custom properties.
-   2. GRAPHIC SPEC: fixed constants (--g-* for the white default,
-      --gt-* for the four canvas themes in house.THEMES). These are
-      the matplotlib tokens from house.py; they never change with
-      the page theme. Spec demos render on the white default; the
-      §03 theme cards show the sanctioned alternates.
+   2. GRAPHIC SPEC: fixed constants (--g-* for the white-canvas
+      base tokens, --gt-* for the five canvas themes in
+      house.THEMES; jersey is the render default). These are the
+      matplotlib tokens from house.py; they never change with the
+      page theme. Spec demos render on white; the §03 theme cards
+      show all five sanctioned canvases.
    ================================================================ */
 
 /* ---- Bulls production faces, loaded from the repo ---- */
@@ -40,6 +41,10 @@
   --gt-white-faint:#AAAAAA; --gt-white-rule:#DDDDDD; --gt-white-tick:#CFCFCF;
   --gt-white-grid:#F0F0F0; --gt-white-accent:#CE1141; --gt-white-contrast:#141414;
   --gt-white-band:#CE1141; --gt-white-trim-a:#FFFFFF; --gt-white-trim-b:#141414;
+  --gt-jersey-canvas:#FAF8F5; --gt-jersey-ink:#141414; --gt-jersey-muted:#5F5B57;
+  --gt-jersey-faint:#A19B92; --gt-jersey-rule:#E6E2DB; --gt-jersey-tick:#D6D0C6;
+  --gt-jersey-grid:#F1EEE8; --gt-jersey-accent:#CE1141; --gt-jersey-contrast:#141414;
+  --gt-jersey-band:#CE1141; --gt-jersey-trim-a:#FFFFFF; --gt-jersey-trim-b:#141414;
   --gt-newsprint-canvas:#F3EDDF; --gt-newsprint-ink:#191713; --gt-newsprint-muted:#5D5749;
   --gt-newsprint-faint:#948C79; --gt-newsprint-rule:#DCD3BF; --gt-newsprint-tick:#CBC1A9;
   --gt-newsprint-grid:#EAE2CE; --gt-newsprint-accent:#B5123C; --gt-newsprint-contrast:#191713;
@@ -534,7 +539,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
     <span>v2 · Jul 12, 2026</span>
   </div>
   <p class="mast-kicker">The rendered companion to DESIGN.md: every token, component, and template, visible.</p>
-  <p class="mast-how prose"><strong>How to use this file:</strong> DESIGN.md stays the canonical prose (decisions + log). This page is the visual spec: what each rule looks like rendered; <code>house.py</code> implements the shared frame and <code>craft.py</code> holds reusable components. When a decision changes, update the owner document, executable house layer, and affected demos together. The theme switcher restyles <em>this document only</em>; the graphics spec it documents is fixed. Spec demos below render on the white default canvas; the four <a href="#s03">canvas themes</a> (white default + newsprint, blackout, hardwood) are real render options chosen per post via <code>house.new_canvas(theme)</code>.</p>
+  <p class="mast-how prose"><strong>How to use this file:</strong> DESIGN.md stays the canonical prose (decisions + log). This page is the visual spec: what each rule looks like rendered; <code>house.py</code> implements the shared frame and <code>craft.py</code> holds reusable components. When a decision changes, update the owner document, executable house layer, and affected demos together. The theme switcher restyles <em>this document only</em>; the graphics spec it documents is fixed. Spec demos below render on the white canvas tokens; the five <a href="#s03">canvas themes</a> (jersey default + white, newsprint, blackout, hardwood) are real render options chosen per post via <code>house.new_canvas(theme)</code>.</p>
   <hr class="mast-rule">
 </header>
 <nav class="toc" aria-label="Sections">
@@ -660,14 +665,14 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
         <div class="m l"></div><div class="m r"></div>
         <div class="zone header">HEADER <a href="#s04">§04</a></div>
         <div class="zone idea">One idea</div>
-        <div class="foot"><span class="src">Data via NBA.com/Stats</span><span class="wm">@chicagobullsdata</span></div>
+        <div class="foot"><span class="src">Data via nba.com</span><span class="wm">@chicagobullsdata</span></div>
         <div class="dim w">1080</div>
         <div class="dim h">1350</div>
         <div class="dim mgn">60px</div>
       </div>
     </div>
     <div class="spec-list">
-      <div class="spec-item"><div class="k">Format</div><p>1080×1350&hairsp;px · Instagram portrait 4:5. White canvas by default; one of the four canvas themes below may be chosen per post.</p></div>
+      <div class="spec-item"><div class="k">Format</div><p>1080×1350&hairsp;px · Instagram portrait 4:5. Jersey off-white canvas (#FAF8F5) by default; one of the five canvas themes below may be chosen per post.</p></div>
       <div class="spec-item"><div class="k">Side margins</div><p>60&hairsp;px left and right. Title, subtitle, kicker, and footer all anchor here.</p></div>
       <div class="spec-item"><div class="k">DPI</div><p>Iterate at 150 (fast). Export final at 300 (2160×2700), so text survives Instagram compression. Current prototypes take <code>--final</code> and call <code>house.save_post(..., final=True)</code>.</p></div>
       <div class="spec-item"><div class="k">Axes setup</div><p>Full-bleed axes (<code>fig.add_axes([0,0,1,1])</code>), data coords = pixel coords, equal aspect, no spines or ticks.</p></div>
@@ -675,16 +680,24 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
     </div>
   </div>
 
-  <h3 class="sub">Canvas themes: four sanctioned canvases, one grammar</h3>
-  <p class="note">A theme is the whole coordinated token set (canvas, ink, quiet tiers, accent, stripe), never just a background fill. White is the default; the alternates are per-post choices made at mock time in the Clarification Gate. <code>house.THEMES</code> holds the tokens; every house draw function takes <code>theme=</code>. Full token table: DESIGN.md §2.</p>
+  <h3 class="sub">Canvas themes: five sanctioned canvases, one grammar</h3>
+  <p class="note">A theme is the whole coordinated token set (canvas, ink, quiet tiers, accent, stripe), never just a background fill. Jersey is the default; the alternates are per-post choices made at mock time in the Clarification Gate. <code>house.THEMES</code> holds the tokens; every house draw function takes <code>theme=</code>. Full token table: DESIGN.md §2.</p>
   <div class="theme-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:14px">
     <figure style="margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden">
       <div style="background:var(--gt-white-canvas);padding:0 0 18px">
         <div style="height:4px;background:var(--gt-white-band)"></div><div style="height:2px;background:var(--gt-white-trim-a)"></div><div style="height:4px;background:var(--gt-white-band)"></div><div style="height:2px;background:var(--gt-white-trim-b)"></div><div style="height:4px;background:var(--gt-white-band)"></div>
-        <div style="padding:14px 14px 0;font-family:var(--font-academic);font-size:1.3rem;letter-spacing:.02em;color:var(--gt-white-ink)">WHITE <span style="color:var(--gt-white-accent)">DEFAULT</span></div>
+        <div style="padding:14px 14px 0;font-family:var(--font-academic);font-size:1.3rem;letter-spacing:.02em;color:var(--gt-white-ink)">WH<span style="color:var(--gt-white-accent)">ITE</span></div>
         <div style="padding:6px 14px 0;font-family:var(--font-archivo);font-size:.72rem;color:var(--gt-white-muted)">ink · muted · <span style="color:var(--gt-white-faint)">faint</span></div>
       </div>
-      <figcaption style="padding:8px 12px;font-size:.75rem"><code>theme="white"</code> · the house look since the debut post</figcaption>
+      <figcaption style="padding:8px 12px;font-size:.75rem"><code>theme="white"</code> · the debut-era canvas, kept as an alternate</figcaption>
+    </figure>
+    <figure style="margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden">
+      <div style="background:var(--gt-jersey-canvas);padding:0 0 18px">
+        <div style="height:4px;background:var(--gt-jersey-band)"></div><div style="height:2px;background:var(--gt-jersey-trim-a)"></div><div style="height:4px;background:var(--gt-jersey-band)"></div><div style="height:2px;background:var(--gt-jersey-trim-b)"></div><div style="height:4px;background:var(--gt-jersey-band)"></div>
+        <div style="padding:14px 14px 0;font-family:var(--font-academic);font-size:1.3rem;letter-spacing:.02em;color:var(--gt-jersey-ink)">JER<span style="color:var(--gt-jersey-accent)">SEY</span></div>
+        <div style="padding:6px 14px 0;font-family:var(--font-archivo);font-size:.72rem;color:var(--gt-jersey-muted)">ink · muted · <span style="color:var(--gt-jersey-faint)">faint</span></div>
+      </div>
+      <figcaption style="padding:8px 12px;font-size:.75rem"><code>theme="jersey"</code> · <strong>the default</strong>: this page's warm off-white, standard red</figcaption>
     </figure>
     <figure style="margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden">
       <div style="background:var(--gt-newsprint-canvas);padding:0 0 18px">
@@ -739,7 +752,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
   <p class="sec-intro">Every graphic. Both items on the same baseline at y=40, quiet. The source credit is a fairness guardrail; it never comes off. The watermark is authorship that survives reposts and screenshots.</p>
 
   <div class="canvas-card">
-    <div class="ftr-demo"><span class="src">Data via NBA.com/Stats</span><span class="wm">@chicagobullsdata</span></div>
+    <div class="ftr-demo"><span class="src">Data via nba.com</span><span class="wm">@chicagobullsdata</span></div>
     <div class="ftr-variant">
       <div class="lab">STAT-BOARD VARIANT · threshold_footer()</div>
       <div class="line">Min. 20 games | 2025-26 season through Jul 4 | data: stats.nba.com</div>

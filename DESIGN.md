@@ -74,33 +74,36 @@ off-brand and flat. Grays are for scaffolding: gridlines, muted labels, separato
 
 ### Canvas themes
 
-The white canvas is the default, but it is a **theme**, not the only legal background.
-Four sanctioned canvas themes exist (`house.THEMES`), promoted from the design-system.html
-doc-chrome palettes on 2026-07-13. A theme is the full coordinated token set — a background
+The canvas is a **theme**, not a fixed background. Five sanctioned canvas themes exist
+(`house.THEMES`), promoted from the design-system.html doc-chrome palettes on 2026-07-13;
+**`jersey` (warm off-white `#FAF8F5`) is the default**, with `white` kept as a sanctioned
+alternate. A theme is the full coordinated token set — a background
 is a contract with every color on the page, so switching themes swaps ink, rules, gridlines,
 and the jersey stripe together, never just the fill. The theme is chosen per post at mock
 time (see `POSTING_WORKFLOW.md` Clarification Gate); no other backgrounds or textures.
 
-| Token | `white` (default) | `newsprint` | `blackout` | `hardwood` |
-|---|---|---|---|---|
-| `canvas` | `#FFFFFF` | `#F3EDDF` | `#121214` | `#BE0E3B` |
-| `ink` | `#1A1A1A` | `#191713` | `#F1EFEC` | `#FDF3EA` |
-| `muted` | `#777777` | `#5D5749` | `#A7A39E` | `#FBE8E0` |
-| `faint` | `#AAAAAA` | `#948C79` | `#6F6B66` | `#E497A4` |
-| `rule` | `#DDDDDD` | `#DCD3BF` | `#2B2B30` | `#D15370` |
-| `tick` | `#CFCFCF` | `#CBC1A9` | `#3A3A40` | `#D76A81` |
-| `grid` | `#F0F0F0` | `#EAE2CE` | `#1B1B1E` | `#A70C34` |
-| `accent` | `#CE1141` | `#B5123C` | `#FF3355` | `#141414` |
-| `contrast` | `#141414` | `#191713` | `#F1EFEC` | `#FDF3EA` |
-| `band` | `#CE1141` | `#191713` | `#FF3355` | `#141414` |
-| `trim_a` | `#FFFFFF` | `#F3EDDF` | `#121214` | `#FDF3EA` |
-| `trim_b` | `#141414` | `#B5123C` | `#F1EFEC` | `#BE0E3B` |
+| Token | `white` | `jersey` (default) | `newsprint` | `blackout` | `hardwood` |
+|---|---|---|---|---|---|
+| `canvas` | `#FFFFFF` | `#FAF8F5` | `#F3EDDF` | `#121214` | `#BE0E3B` |
+| `ink` | `#1A1A1A` | `#141414` | `#191713` | `#F1EFEC` | `#FDF3EA` |
+| `muted` | `#777777` | `#5F5B57` | `#5D5749` | `#A7A39E` | `#FBE8E0` |
+| `faint` | `#AAAAAA` | `#A19B92` | `#948C79` | `#6F6B66` | `#E497A4` |
+| `rule` | `#DDDDDD` | `#E6E2DB` | `#DCD3BF` | `#2B2B30` | `#D15370` |
+| `tick` | `#CFCFCF` | `#D6D0C6` | `#CBC1A9` | `#3A3A40` | `#D76A81` |
+| `grid` | `#F0F0F0` | `#F1EEE8` | `#EAE2CE` | `#1B1B1E` | `#A70C34` |
+| `accent` | `#CE1141` | `#CE1141` | `#B5123C` | `#FF3355` | `#141414` |
+| `contrast` | `#141414` | `#141414` | `#191713` | `#F1EFEC` | `#FDF3EA` |
+| `band` | `#CE1141` | `#CE1141` | `#191713` | `#FF3355` | `#141414` |
+| `trim_a` | `#FFFFFF` | `#FFFFFF` | `#F3EDDF` | `#121214` | `#FDF3EA` |
+| `trim_b` | `#141414` | `#141414` | `#B5123C` | `#F1EFEC` | `#BE0E3B` |
 
 Canvas/ink/muted/accent/band/trim values mirror the design-system.html doc themes exactly;
 `faint`/`rule`/`tick`/`grid` are first-pass derivations (blends toward the canvas) and may be
 tuned against real renders. On `hardwood` the accent flips to black — red is the ground, so
 black is the one meaningful color; on `blackout` the accent brightens to `#FF3355` because
-`#CE1141` lacks contrast on near-black.
+`#CE1141` lacks contrast on near-black. `jersey` is the warm off-white of the
+design-system.html page itself (its default doc theme) with the standard red accent and
+stripe; the user adopted it as the everyday default over plain white on 2026-07-13.
 
 ## 3. Typography
 
@@ -121,8 +124,9 @@ font with `fontTools.varLib.instancer` if needed.
 
 ## 4. Canvas & Export
 
-- **Format:** 1080×1350 px (Instagram portrait 4:5). White background by default;
-  a sanctioned canvas theme (§2) may be chosen per post — `house.new_canvas(theme)`.
+- **Format:** 1080×1350 px (Instagram portrait 4:5). Jersey off-white background
+  (`#FAF8F5`) by default; a sanctioned canvas theme (§2) may be chosen per post —
+  `house.new_canvas(theme)`.
 - **Iterate at 150 DPI** (fast), **export final at 300 DPI** (2160×2700 — text survives
   Instagram compression). Prototype scripts take a `--final` flag for the 300-DPI render;
   current posts use `house.save_post(fig, path, final=...)` so draft/final dimensions are explicit.
@@ -156,7 +160,7 @@ Stacked tight, top-left anchored at x=60 (values from the reference implementati
 
 Both on the same baseline (y=40), quiet:
 
-- **Bottom-left:** source credit — "Data via NBA.com/Stats", 8.5 pt Archivo regular,
+- **Bottom-left:** source credit — "Data via nba.com", 8.5 pt Archivo regular,
   `FAINT`. This is a fairness guardrail; it never comes off.
 - **Bottom-right:** watermark — `@chicagobullsdata`, 10.5 pt Archivo medium, `MUTED`,
   right-aligned at x=1020. Authorship must survive reposts/screenshots.
@@ -248,9 +252,10 @@ F5 technique references: `docs/reference/f5-technique-notes.html`.
 The grid viewed as a whole is the brand (the Half Court Mindset lesson: the template
 *is* the identity). Every feed post shares:
 
-1. A sanctioned canvas theme (§2), 4:5 portrait (§4) — white is the default; newsprint,
-   blackout, and hardwood are the only alternates. No other colors, no textures. The
-   theme is a per-post choice made at mock time, not a per-element decoration.
+1. A sanctioned canvas theme (§2), 4:5 portrait (§4) — jersey (warm off-white) is the
+   default; white, newsprint, blackout, and hardwood are the only alternates. No other
+   colors, no textures. The theme is a per-post choice made at mock time, not a
+   per-element decoration.
 2. The header pattern (§5): Academic M54 ALL-CAPS title with exactly one red accent
    word, tick-separated muted subtitle, red italic kicker.
 3. Red/black as the only *meaningful* colors (§2) — a thumbnail should read as
@@ -289,6 +294,14 @@ logo exists).
 
 ## Decision Log
 
+- **2026-07-13** — Source credit standardized to `Data via nba.com`: a concise attribution
+  to the official provider with only the opening `D` capitalized. Updated the shared footer
+  default and rendered companion.
+- **2026-07-13** — Fifth canvas theme `jersey` added and **adopted as the default** (§2): the
+  design-system.html page's own warm off-white (`#FAF8F5`) with the standard red accent and
+  stripe. User preferred it over plain white on the mock-post render; white stays a sanctioned
+  alternate. All house draw functions now default to jersey (`house.DEFAULT_THEME`).
+  `scripts/prototypes/mock_post_demo.py` gained `--theme <name>` to preview any canvas theme.
 - **2026-07-13** — Outlined "jersey lettering" title adopted as the default (user pick from a
   side-by-side mock): red outer stroke + white gap path effects on the fitted Academic M54
   title (§5 item 1). `house.OUTLINED_TITLE` is the global switch; `outlined=False` per post.

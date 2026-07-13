@@ -185,7 +185,7 @@ class TestHouseGraphics:
         text = " ".join(artist.get_text() for artist in ax.texts)
         assert "THE SHAPE OF THE" in text
         assert "Games above/below .500" in text
-        assert "Data via NBA.com/Stats" in text
+        assert "Data via nba.com" in text
         assert "@chicagobullsdata" in text
         plt.close(fig)
 

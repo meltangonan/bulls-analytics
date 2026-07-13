@@ -26,9 +26,9 @@ question tool for clear choices when available and normal conversation for nuanc
 3. **Comparison logic** — the baseline, peers, eras, or before/after framing that gives the number meaning.
 4. **Evidence and qualifications** — sources, thresholds, uncertainty, fairness, and what the data can support.
 5. **Visual communication** — visual form, information hierarchy, title, annotations, required
-   footnotes, and the canvas theme. Always ask which canvas theme the post uses (white default,
-   newsprint, blackout, or hardwood — DESIGN.md §2) unless the user already chose one for this
-   post; recommend white and note when the story argues for an alternate.
+   footnotes, and the canvas theme. Always ask which canvas theme the post uses (jersey default,
+   white, newsprint, blackout, or hardwood — DESIGN.md §2) unless the user already chose one
+   for this post; recommend jersey and note when the story argues for an alternate.
 6. **Deliverable** — feed or carousel format, prototype expectations, and what constitutes an approved draft.
 
 Every area must be answered by the user, inferred from existing context, filled with a recommended default,

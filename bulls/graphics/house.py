@@ -50,10 +50,10 @@ class Theme:
     """A coordinated canvas palette for rendered posts.
 
     A background is a contract with every other color on the page, so a theme
-    carries the full token set, not just the canvas fill. ``white`` is the
-    default and matches the loose module constants above; the alternates
-    mirror the doc-chrome palettes on design-system.html, promoted to real
-    render options (DESIGN.md §2/§10).
+    carries the full token set, not just the canvas fill. ``jersey`` (warm
+    off-white) is the default; ``white`` matches the loose module constants
+    above. The palettes mirror the doc-chrome themes on design-system.html,
+    promoted to real render options (DESIGN.md §2/§10).
     """
 
     name: str
@@ -97,6 +97,21 @@ THEMES: dict[str, Theme] = {
         band=RED,
         trim_a=WHITE,
         trim_b=BULLS_BLACK,
+    ),
+    "jersey": Theme(
+        name="jersey",
+        canvas="#FAF8F5",
+        ink="#141414",
+        muted="#5F5B57",
+        faint="#A19B92",
+        rule="#E6E2DB",
+        tick="#D6D0C6",
+        grid="#F1EEE8",
+        accent=RED,
+        contrast="#141414",
+        band=RED,
+        trim_a=WHITE,
+        trim_b="#141414",
     ),
     "newsprint": Theme(
         name="newsprint",
@@ -145,11 +160,11 @@ THEMES: dict[str, Theme] = {
     ),
 }
 
-DEFAULT_THEME = THEMES["white"]
+DEFAULT_THEME = THEMES["jersey"]
 
 
 def get_theme(name: str | Theme | None) -> Theme:
-    """Resolve a theme by name; None means the white default."""
+    """Resolve a theme by name; None means the default (jersey)."""
     if name is None:
         return DEFAULT_THEME
     if isinstance(name, Theme):
@@ -200,8 +215,8 @@ def rendered_width(ax, text_artist) -> float:
 def new_canvas(theme: str | Theme | None = None):
     """Create the fixed 1080x1350 full-bleed house canvas.
 
-    ``theme`` selects a canvas theme by name ("white", "newsprint",
-    "blackout", "hardwood"); omitted means the white default.
+    ``theme`` selects a canvas theme by name ("jersey", "white",
+    "newsprint", "blackout", "hardwood"); omitted means the jersey default.
     """
     theme = get_theme(theme)
     fig = plt.figure(
@@ -224,9 +239,9 @@ def draw_jersey_stripe(ax, theme: str | Theme | None = None):
     """Draw the full-bleed jersey-trim band across the top of the canvas.
 
     Band with two pinstripes, top-down: band 4, trim 2, band 4, trim 2,
-    band 4 (16 px total). On the white default that is red with one white
-    and one black pinstripe; alternates use their theme's band/trim tokens.
-    Mirrors the ``.band`` element on design-system.html.
+    band 4 (16 px total). On the jersey/white themes that is red with one
+    white and one black pinstripe; the other themes use their own band/trim
+    tokens. Mirrors the ``.band`` element on design-system.html.
     """
     layers = get_theme(theme).stripe_layers
     artists = []
@@ -384,7 +399,7 @@ def draw_header(
 def draw_footer(
     ax,
     *,
-    source: str = "Data via NBA.com/Stats",
+    source: str = "Data via nba.com",
     note: str | None = None,
     watermark: str = "@chicagobullsdata",
     theme: str | Theme | None = None,

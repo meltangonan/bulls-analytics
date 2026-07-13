@@ -124,7 +124,10 @@ def test_white_theme_matches_module_constants():
     assert white.grid == house.GRIDLINE
     assert white.accent == house.RED
     assert white.contrast == house.BULLS_BLACK
-    assert house.DEFAULT_THEME is white
+
+
+def test_default_theme_is_jersey():
+    assert house.DEFAULT_THEME is house.THEMES["jersey"]
 
 
 def test_config_rgb_tuples_match_house():

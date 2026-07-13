@@ -152,6 +152,7 @@ def _team_row():
             "reboundsTotal": 29,
             "assists": 14,
             "steals": 8,
+            "blocks": 11,
             "turnovers": 13,
             "fieldGoalsMade": 30,
             "fieldGoalsAttempted": 69,
@@ -164,7 +165,23 @@ def _team_row():
 
 
 def _opponent_row():
-    return pd.Series({"teamTricode": "MEM", "points": 97})
+    return pd.Series(
+        {
+            "teamTricode": "MEM",
+            "points": 97,
+            "reboundsTotal": 35,
+            "assists": 18,
+            "steals": 8,
+            "blocks": 7,
+            "turnovers": 14,
+            "fieldGoalsMade": 33,
+            "fieldGoalsAttempted": 70,
+            "threePointersMade": 5,
+            "threePointersAttempted": 35,
+            "freeThrowsMade": 17,
+            "freeThrowsAttempted": 22,
+        }
+    )
 
 
 def _player_row():
@@ -200,6 +217,7 @@ def _located_shots():
             (7, "Restricted Area", True, 0, 10),
             (7, "Above the Break 3", False, 20, 240),
             (8, "Mid-Range", True, -80, 120),
+            (8, "Left Corner 3", False, -220, 40),
         ],
         columns=["player_id", "shot_zone", "shot_made", "loc_x", "loc_y"],
     )
@@ -215,15 +233,19 @@ def test_prepare_team_slide_removes_raw_api_fields_from_renderer_input(monkeypat
         _located_shots(),
         "JUL 10, 2026",
         None,
-        "TS% note",
     )
 
+    assert [text for text, _ in data.header.title_segments] == ["CHI", " VS ", "MEM"]
     assert data.header.subtitle_parts[0][0] == "Bulls 96"
-    assert [item.value for item in data.snapshot_stats] == ["29", "14", "8", "13"]
-    assert data.shooting_splits[1] == "3PT  14-32  (43.8%)"
+    assert [item.label for item in data.comparison_stats] == ["REB", "AST", "STL", "BLK", "TO", "FG%", "3P%", "FT%"]
+    assert data.comparison_stats[0].bulls_display == "29"
+    assert data.comparison_stats[0].opponent_display == "35"
+    assert data.comparison_stats[6].bulls_display == "43.8"
+    assert next(zone for zone in data.zones if zone.key == "restricted").share == 25.0
+    assert next(zone for zone in data.zones if zone.key == "above_break").attempts == 1
+    assert data.shooting_splits == ("FG  30-69  (43.5%)", "3PT  14-32  (43.8%)", "FT  13-25  (52.0%)")
     assert data.players[0].player == "Caleb Wilson"
     assert data.players[0].true_shooting == 74.0
-    assert len(data.shots) == 3
 
 
 def test_prepare_player_slide_contains_display_ready_story_content(monkeypatch):
@@ -236,12 +258,16 @@ def test_prepare_player_slide_contains_display_ready_story_content(monkeypatch):
         _located_shots(),
         "JUL 10, 2026",
         None,
-        "TS% note",
     )
 
     assert data.display_name == "CALEB WILSON"
-    assert data.attempts_label == "ALL 21 FIELD-GOAL ATTEMPTS"
-    assert data.zone_caption == "1-1 RIM/PAINT   ·   0-0 MID-RANGE   ·   0-1 THREES"
+    assert data.attempts_label == "SHOT CHART"
+    assert [item.label for item in data.identity_stats] == ["PTS", "MIN", "REB", "AST", "STL", "BLK"]
+    assert [(item.value, item.label) for item in data.zone_stats] == [
+        ("1-1", "RIM / PAINT"),
+        ("0-0", "MID-RANGE"),
+        ("0-1", "THREES"),
+    ]
     assert [item.label for item in data.profile_stats] == [
         "FIELD GOALS",
         "THREES",

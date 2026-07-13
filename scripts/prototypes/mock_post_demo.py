@@ -7,8 +7,11 @@ so design changes can be judged on an actual 1080x1350 graphic instead of
 only in design-system.html.
 
 Outputs two drafts to output/feed/:
-  mock-post-demo.png        house default (outlined jersey-lettering title)
+  mock-post-demo.png        house default (jersey canvas, outlined title)
   mock-post-demo-plain.png  plain-title comparison (outlined=False)
+
+Pass --theme <name> (a house.THEMES key) to preview another canvas theme;
+non-default outputs are suffixed with the theme name.
 """
 import sys
 from pathlib import Path
@@ -23,13 +26,11 @@ matplotlib.use("Agg")
 from bulls.graphics.craft import gradient_bar, stacked_label
 from bulls.graphics.house import (
     CANVAS_WIDTH as W,
-    GRIDLINE,
-    INK,
-    MUTED,
-    RED,
+    DEFAULT_THEME,
     body_font,
     draw_footer,
     draw_header,
+    get_theme,
     new_canvas,
     save_post,
 )
@@ -47,14 +48,16 @@ PLAYERS = [
 ]
 
 
-def build(outlined: bool) -> Path:
-    fig, ax = new_canvas()
+def build(outlined: bool, theme_name: str | None = None) -> Path:
+    theme = get_theme(theme_name)
+    fig, ax = new_canvas(theme)
     draw_header(
         ax,
-        [("Who Carries the ", INK), ("Offense", RED)],
+        [("Who Carries the ", theme.ink), ("Offense", theme.accent)],
         ["Mock Bulls", "2025-26 Season", "Fake data"],
         kicker="Points per game, fictional roster — layout demo only",
         outlined=outlined,
+        theme=theme,
     )
 
     # Leaderboard: headshot disc + stacked name label + gradient PPG bar.
@@ -65,31 +68,40 @@ def build(outlined: bool) -> Path:
     vmax = max(ppg for _, _, ppg in PLAYERS)
     for i, (name, context, ppg) in enumerate(PLAYERS):
         y = top_y - i * row_gap
-        ax.plot([60, W - 60], [y - row_gap / 2] * 2, color=GRIDLINE, lw=1, zorder=1)
+        ax.plot([60, W - 60], [y - row_gap / 2] * 2, color=theme.grid, lw=1, zorder=1)
         headshot_label(ax, None, 105, y, radius=44)
-        stacked_label(ax, 175, y, name, context, gap=16, primary_size=17, secondary_size=12)
+        stacked_label(
+            ax, 175, y, name, context, gap=16, primary_size=17, secondary_size=12,
+            primary_color=theme.ink, secondary_color=theme.muted,
+        )
         gradient_bar(ax, y, ppg, vmin=0, vmax=vmax, x0=bar_x0, length=bar_len, height=34)
         ax.text(
             bar_x0 + (ppg / vmax) * bar_len + 14, y, f"{ppg:.1f}",
-            ha="left", va="center", fontsize=16, color=INK,
+            ha="left", va="center", fontsize=16, color=theme.ink,
             fontproperties=body_font("bold"),
         )
     ax.text(
         bar_x0, top_y + 72, "PPG",
-        ha="left", va="center", fontsize=11, color=MUTED,
+        ha="left", va="center", fontsize=11, color=theme.muted,
         fontproperties=body_font("medium"),
     )
 
     # Stat-board footer variant: one line joining threshold + coverage + source.
-    draw_footer(ax, source="Min. 25 games | fictional demo data | not a real post")
+    draw_footer(
+        ax, source="Min. 25 games | fictional demo data | not a real post", theme=theme
+    )
 
+    theme_suffix = "" if theme is DEFAULT_THEME else f"-{theme.name}"
     suffix = "" if outlined else "-plain"
-    path = OUT / f"mock-post-demo{suffix}.png"
+    path = OUT / f"mock-post-demo{theme_suffix}{suffix}.png"
     save_post(fig, path, final="--final" in sys.argv)
     return path
 
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
+    theme_name = (
+        sys.argv[sys.argv.index("--theme") + 1] if "--theme" in sys.argv else None
+    )
     for outlined in (True, False):
-        print("wrote", build(outlined))
+        print("wrote", build(outlined, theme_name))

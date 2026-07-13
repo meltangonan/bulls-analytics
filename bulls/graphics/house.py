@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Sequence
 
 import matplotlib.font_manager as fm
+import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
 
 
@@ -27,6 +28,10 @@ FINAL_DPI = 300
 SIDE_MARGIN = 60
 FOOTER_Y = 40
 STRIPE_HEIGHT = 16  # full-bleed jersey-trim band at the very top of the canvas
+
+# Jersey-lettering title: ink fill, white gap, red outer stroke. Flip to False
+# (or pass outlined=False per post) to return to the plain fitted title.
+OUTLINED_TITLE = True
 
 WHITE = "#FFFFFF"
 RED = "#CE1141"
@@ -128,8 +133,16 @@ def draw_fitted_title(
     y: float = CANVAS_HEIGHT - 66,
     max_width: float = CANVAS_WIDTH - 2 * SIDE_MARGIN,
     base_size: float = 90,
+    outlined: bool | None = None,
 ):
-    """Draw a multi-color Academic M54 title fitted to the house margins."""
+    """Draw a multi-color Academic M54 title fitted to the house margins.
+
+    ``outlined`` defaults to the module-level ``OUTLINED_TITLE`` switch. When
+    on, each glyph gets jersey-lettering strokes: red outer, white gap, then
+    the segment's fill color.
+    """
+    if outlined is None:
+        outlined = OUTLINED_TITLE
     font = display_font()
     probe = ax.text(
         x,
@@ -158,6 +171,12 @@ def draw_fitted_title(
             color=color,
             fontproperties=font,
         )
+        if outlined:
+            artist.set_path_effects([
+                pe.withStroke(linewidth=7, foreground=RED),
+                pe.withStroke(linewidth=3.5, foreground=WHITE),
+                pe.Normal(),
+            ])
         artists.append(artist)
         cursor += rendered_width(ax, artist)
     return artists
@@ -210,10 +229,13 @@ def draw_header(
     subtitle_weight: str = "medium",
     title_base_size: float = 90,
     stripe: bool = True,
+    outlined: bool | None = None,
 ):
     """Draw the current stripe, title, subtitle, and optional kicker pattern."""
     artists = list(draw_jersey_stripe(ax)) if stripe else []
-    artists.extend(draw_fitted_title(ax, title_segments, base_size=title_base_size))
+    artists.extend(
+        draw_fitted_title(ax, title_segments, base_size=title_base_size, outlined=outlined)
+    )
     artists.extend(draw_subtitle(ax, subtitle_parts, weight=subtitle_weight))
     if kicker:
         artists.append(

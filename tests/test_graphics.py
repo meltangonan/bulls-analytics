@@ -4,13 +4,22 @@ from __future__ import annotations
 
 import matplotlib.pyplot as plt
 import pandas as pd
+from PIL import Image
 
 from bulls.graphics import (
+    CANVAS_HEIGHT,
+    CANVAS_WIDTH,
+    body_font,
     build_zone_pps_post,
     build_zone_team_stats_post,
     build_zone_volume_leaders_post,
+    display_font,
+    draw_footer,
+    draw_header,
     gradient_bar,
     headshot_label,
+    new_canvas,
+    save_post,
     save_feed_post,
     stacked_label,
     threshold_footer,
@@ -145,6 +154,53 @@ class TestSaveFeedPost:
 
         assert saved.exists()
         assert saved.suffix == ".png"
+
+
+class TestHouseGraphics:
+    """Executable checks for the settled design-system frame."""
+
+    def test_canvas_uses_feed_coordinates(self):
+        fig, ax = new_canvas()
+
+        assert tuple(ax.get_xlim()) == (0.0, float(CANVAS_WIDTH))
+        assert tuple(ax.get_ylim()) == (0.0, float(CANVAS_HEIGHT))
+        plt.close(fig)
+
+    def test_house_fonts_use_academic_and_archivo_files(self):
+        assert display_font().get_file().endswith("AcademicM54.ttf")
+        assert body_font("regular").get_file().endswith("Archivo-400.ttf")
+        assert body_font("medium").get_file().endswith("Archivo-500.ttf")
+        assert body_font("bold").get_file().endswith("Archivo-600.ttf")
+
+    def test_header_and_footer_include_required_house_elements(self):
+        fig, ax = new_canvas()
+        draw_header(
+            ax,
+            [("THE SHAPE OF THE ", "#1A1A1A"), ("SEASON", "#CE1141")],
+            ["Chicago Bulls", "2025-26 Season"],
+            kicker="Games above/below .500",
+        )
+        draw_footer(ax)
+
+        text = " ".join(artist.get_text() for artist in ax.texts)
+        assert "THE SHAPE OF THE" in text
+        assert "Games above/below .500" in text
+        assert "Data via NBA.com/Stats" in text
+        assert "@chicagobullsdata" in text
+        plt.close(fig)
+
+    def test_house_export_has_explicit_draft_and_final_dimensions(self, tmp_path):
+        draft_fig, _ = new_canvas()
+        final_fig, _ = new_canvas()
+        draft_path = save_post(draft_fig, tmp_path / "draft.png")
+        final_path = save_post(final_fig, tmp_path / "final.png", final=True)
+        plt.close(draft_fig)
+        plt.close(final_fig)
+
+        with Image.open(draft_path) as image:
+            assert image.size == (1080, 1350)
+        with Image.open(final_path) as image:
+            assert image.size == (2160, 2700)
 
 
 class TestGradientBar:

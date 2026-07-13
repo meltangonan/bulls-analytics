@@ -34,6 +34,18 @@ reasonable project-consistent default; use a 1080×1350 feed PNG when no other o
 Once every area has a state, restate the settled brief in 3–6 bullets and give the user a chance to correct it
 before making data or analysis changes, adding tests, and generating the draft.
 
+## Prepare, Then Render
+
+For a data-heavy repeat format, convert fetched/validated data into display-ready post content before
+drawing: the chosen claim, labels, supporting metrics, image paths, shot marks, and qualifications.
+Renderers should consume that prepared content rather than fetch data or interpret raw NBA API columns.
+This keeps analytical truth and visual composition independently testable without forcing every post into
+one schema. Simple one-off prototypes can stay direct when a preparation layer would add ceremony without
+clarity.
+
+New Matplotlib posts use `bulls.graphics.house` for the shared canvas, fonts, header/footer, and
+draft/final export behavior.
+
 ## Draft Refinement Gate
 
 Once a draft exists, cover the checks below before calling it approved. They are exit criteria, not six

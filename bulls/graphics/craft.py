@@ -18,14 +18,8 @@ from matplotlib.colors import Colormap, LinearSegmentedColormap
 from matplotlib.image import AxesImage
 from matplotlib.patches import Rectangle
 
-from bulls.graphics.feed import _fp_body, _make_circular_headshot
-
-# House palette (matches scripts/prototypes/impact_board.py)
-INK = "#1A1A1A"
-MUTED = "#777777"
-FAINT = "#AAAAAA"
-RULE = "#DDDDDD"
-RED = "#CE1141"
+from bulls.graphics.feed import _make_circular_headshot
+from bulls.graphics.house import FAINT, INK, MUTED, RED, RULE, body_font
 
 # Light neutral at vmin -> Bulls red -> deep Bulls red at vmax.
 MAGNITUDE_CMAP = LinearSegmentedColormap.from_list(
@@ -125,12 +119,12 @@ def stacked_label(
     primary_text = ax.text(
         x, y + gap, _truncate_name(primary),
         ha=ha, va="center", fontsize=primary_size, color=primary_color,
-        fontproperties=_fp_body(weight="bold"),
+        fontproperties=body_font("bold"),
     )
     secondary_text = ax.text(
         x, y - gap, secondary,
         ha=ha, va="center", fontsize=secondary_size, color=secondary_color,
-        fontproperties=_fp_body(weight="medium"),
+        fontproperties=body_font("medium"),
     )
     return primary_text, secondary_text
 
@@ -165,7 +159,7 @@ def threshold_footer(
     return fig.text(
         x, y, line,
         ha=ha, va="bottom", fontsize=fontsize, color=FAINT,
-        fontproperties=_fp_body(),
+        fontproperties=body_font(),
     )
 
 

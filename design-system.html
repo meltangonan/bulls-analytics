@@ -15,7 +15,7 @@
    Two color layers, deliberately separate:
    1. DOC CHROME: themed via [data-theme] custom properties.
    2. GRAPHIC SPEC: fixed constants (--g-*). These are the
-      matplotlib tokens from craft.py; they never change with the
+      matplotlib tokens from house.py; they never change with the
       page theme, because the graphics always ship on white.
    ================================================================ */
 
@@ -26,7 +26,7 @@
 @font-face { font-family:"Archivo DS"; src:url("assets/fonts/Archivo-600.ttf") format("truetype"); font-weight:600; font-display:swap; }
 
 :root {
-  /* Graphic-spec constants: mirror bulls/graphics/craft.py. Never themed. */
+  /* Graphic-spec constants: mirror bulls/graphics/house.py. Never themed. */
   --g-red:#CE1141; --g-black:#141414; --g-ink:#1A1A1A; --g-muted:#777777;
   --g-faint:#AAAAAA; --g-rule:#DDDDDD; --g-tick:#CFCFCF; --g-grid:#F0F0F0;
   --g-canvas:#FFFFFF;
@@ -500,7 +500,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
     <span>v2 · Jul 12, 2026</span>
   </div>
   <p class="mast-kicker">The rendered companion to DESIGN.md: every token, component, and template, visible.</p>
-  <p class="mast-how prose"><strong>How to use this file:</strong> DESIGN.md stays the canonical prose (decisions + log). This page is the visual spec: what each rule looks like rendered, and which <code>craft.py</code> / prototype function produces it. When a decision changes, update both. The theme switcher restyles <em>this document only</em>; the graphics spec it documents is fixed; spec demos below always render on white, because the graphics always ship on white.</p>
+  <p class="mast-how prose"><strong>How to use this file:</strong> DESIGN.md stays the canonical prose (decisions + log). This page is the visual spec: what each rule looks like rendered; <code>house.py</code> implements the shared frame and <code>craft.py</code> holds reusable components. When a decision changes, update the owner document, executable house layer, and affected demos together. The theme switcher restyles <em>this document only</em>; the graphics spec it documents is fixed; spec demos below always render on white, because the graphics always ship on white.</p>
   <hr class="mast-rule">
 </header>
 <nav class="toc" aria-label="Sections">
@@ -521,7 +521,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 
 <!-- ============================== 01 COLOR ============================== -->
 <section id="s01">
-  <div class="sec-head"><span class="num">01</span><h2>Color</h2><span class="src">DESIGN.md §2 · bulls/graphics/craft.py</span></div>
+  <div class="sec-head"><span class="num">01</span><h2>Color</h2><span class="src">DESIGN.md §2 · bulls/graphics/house.py</span></div>
   <p class="sec-intro">Red + black are the only <em>meaningful</em> colors: a thumbnail should read red + black + white before the title is legible. Grays are scaffolding only: gridlines, muted labels, separators. Never gray for a data value that matters.</p>
 
   <figure class="palette-board">
@@ -612,14 +612,14 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
       <div class="who"><b>Archivo 600 · SemiBold</b>Player names, callouts, column headers, month labels.<div class="file">Archivo-600.ttf · weight="bold"</div></div>
     </div>
   </div>
-  <div class="warn"><span><b>matplotlib gotcha:</b> the <code>weight=</code> kwarg is silently ignored for single-file fonts (DM Sans was single-weight for months without anyone noticing). Always select the weight by file: <code>FontProperties(fname="Archivo-600.ttf")</code> via <code>_fp_body(weight="bold")</code>. Instance more weights from the variable font with <code>fontTools.varLib.instancer</code> if needed.</span></div>
+  <div class="warn"><span><b>matplotlib gotcha:</b> the <code>weight=</code> kwarg is silently ignored for single-file fonts (DM Sans was single-weight for months without anyone noticing). Always select the weight by file: <code>FontProperties(fname="Archivo-600.ttf")</code> via <code>house.body_font("bold")</code>. Instance more weights from the variable font with <code>fontTools.varLib.instancer</code> if needed.</span></div>
   <p class="note" style="margin-top:14px"><strong>Legacy (do not use in new work):</strong> Playfair Display + DM Sans remain only in the <code>feed.py</code> zone builders. New posts are Academic M54 + Archivo. Bevan is the OFL fallback title face.</p>
   <p class="note" style="margin-top:10px"><strong>This page’s own body font is doc chrome</strong>: it changes with the theme (Barlow Semi Condensed on Jersey, Libre Franklin on Newsprint, …) and says nothing about the graphics. The graphics body face is Archivo, shown above on white.</p>
 </section>
 
 <!-- ============================== 03 CANVAS ============================== -->
 <section id="s03">
-  <div class="sec-head"><span class="num">03</span><h2>Canvas <span class="amp">&amp;</span> Export</h2><span class="src">DESIGN.md §4 · feed.py</span></div>
+  <div class="sec-head"><span class="num">03</span><h2>Canvas <span class="amp">&amp;</span> Export</h2><span class="src">DESIGN.md §4 · house.py</span></div>
   <div class="demo-row">
     <div style="padding:10px 0 26px">
       <div class="canvas-diagram">
@@ -635,9 +635,9 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
     <div class="spec-list">
       <div class="spec-item"><div class="k">Format</div><p>1080×1350&hairsp;px · Instagram portrait 4:5. White background, always.</p></div>
       <div class="spec-item"><div class="k">Side margins</div><p>60&hairsp;px left and right. Title, subtitle, kicker, and footer all anchor here.</p></div>
-      <div class="spec-item"><div class="k">DPI</div><p>Iterate at 150 (fast). Export final at 300 (2160×2700), so text survives Instagram compression. Prototypes take <code>--final</code>; pass <code>dpi=300</code> to <code>save_feed_post</code>.</p></div>
+      <div class="spec-item"><div class="k">DPI</div><p>Iterate at 150 (fast). Export final at 300 (2160×2700), so text survives Instagram compression. Current prototypes take <code>--final</code> and call <code>house.save_post(..., final=True)</code>.</p></div>
       <div class="spec-item"><div class="k">Axes setup</div><p>Full-bleed axes (<code>fig.add_axes([0,0,1,1])</code>), data coords = pixel coords, equal aspect, no spines or ticks.</p></div>
-      <div class="spec-item"><div class="k">Constants</div><p><code>feed.INSTAGRAM_FEED_WIDTH_PX</code> · <code>feed.INSTAGRAM_FEED_HEIGHT_PX</code> · <code>feed.DEFAULT_DPI</code></p></div>
+      <div class="spec-item"><div class="k">Constants</div><p><code>house.CANVAS_WIDTH</code> · <code>house.CANVAS_HEIGHT</code> · <code>house.DRAFT_DPI</code> · <code>house.FINAL_DPI</code></p></div>
     </div>
   </div>
 </section>
@@ -724,8 +724,8 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 
 <!-- ============================== 08 COMPONENTS ============================== -->
 <section id="s08">
-  <div class="sec-head"><span class="num">08</span><h2>Component Library</h2><span class="src">bulls/graphics/craft.py</span></div>
-  <p class="sec-intro">Shared F5-derived helpers; reach for these before hand-rolling. Data fetching stays out of this layer: callers pass values and image paths.</p>
+  <div class="sec-head"><span class="num">08</span><h2>Component Library</h2><span class="src">bulls/graphics/house.py · craft.py</span></div>
+  <p class="sec-intro"><code>house.py</code> supplies the shared frame; <code>craft.py</code> supplies focused reusable components. Data fetching stays out of both layers: callers pass prepared values and image paths.</p>
 
   <div class="comp">
     <div class="comp-head"><h3>gradient bar</h3><span class="sig">gradient_bar(ax, y, value, vmin, vmax, ...)</span></div>
@@ -1019,7 +1019,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
     <div class="oq-item"><span class="tag leaning">LEANING</span><p><b>Positioning line + bio</b>: leading candidate: “Chicago Bulls, charted.” with name field “Chicago Bulls Data”. Decision deferred, not the direction.</p></div>
     <div class="oq-item"><span class="tag open">OPEN</span><p><b>Story / reel canvas (9:16)</b>: needed? No variant of the grid exists yet.</p></div>
     <div class="oq-item"><span class="tag gap">GAP</span><p><b>Legacy zone builders</b>: <code>feed.py</code> court graphics still use Playfair + DM Sans and predate the header/footer patterns; migrate when a court post next ships.</p></div>
-    <div class="oq-item"><span class="tag gap">GAP</span><p><b>config.py palette drift</b>: <code>bulls/config.py</code> still defines BULLS_BLACK as <code>#000000</code> and a green/red pair that’s off-system; <code>craft.py</code> values are canonical.</p></div>
+    <div class="oq-item"><span class="tag gap">GAP</span><p><b>config.py palette drift</b>: <code>bulls/config.py</code> still defines BULLS_BLACK as <code>#000000</code> and a green/red pair that’s off-system; <code>house.py</code> values are canonical for graphics.</p></div>
   </div>
 </section>
 

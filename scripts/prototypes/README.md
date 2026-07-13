@@ -1,7 +1,8 @@
 # Prototype Mock Generators
 
-One-off scripts behind the cards in `idea-catalog.html`. Each renders
-1080x1350 PNGs into `output/feed/` from cached season data. These are
+One-off scripts behind the cards in `idea-catalog.html`. Production prototypes render
+1080x1350 PNGs into `output/feed/` from cached or fetched data; explicitly named spikes may write
+additional comparison artifacts there. These are
 deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
 `scripts/` CLI only once its format repeats.
 

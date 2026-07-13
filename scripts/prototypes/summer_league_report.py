@@ -19,6 +19,7 @@ Example:
 import argparse
 import sys
 from collections import Counter
+from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
@@ -28,7 +29,6 @@ sys.path.insert(0, str(_REPO))
 import matplotlib
 
 matplotlib.use("Agg")
-import matplotlib.font_manager as fm
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -43,28 +43,27 @@ from nba_api.stats.endpoints import (
 from bulls.config import BULLS_TEAM_ID, NBA_TEAMS
 from bulls.data.fetch import _NBA_HEADERS, get_game_shots, get_player_headshot
 from bulls.graphics.craft import headshot_label
-from bulls.graphics.feed import (
-    DEFAULT_DPI,
-    INSTAGRAM_FEED_HEIGHT_PX as H,
-    INSTAGRAM_FEED_WIDTH_PX as W,
-    save_feed_post,
+from bulls.graphics.house import (
+    CANVAS_HEIGHT as H,
+    CANVAS_WIDTH as W,
+    INK,
+    MUTED,
+    RED,
+    RULE,
+    body_font,
+    display_font,
+    draw_footer,
+    draw_header,
+    export_dpi,
+    new_canvas,
+    rendered_width,
+    save_post,
 )
 
-INK = "#1A1A1A"
-MUTED = "#777777"
-FAINT = "#AAAAAA"
-RED = "#CE1141"
-RULE = "#DDDDDD"
 PALE_RED = "#F7E8ED"
 PANEL_RED = "#FAF1F4"  # lighter wash for large court panels
 CHIP_GRAY = "#F4F4F4"  # stat-chip containers (scaffolding, not meaning)
 COURT_LINE = "#C9A8B5"  # warm court lines on the pale panels
-DISPLAY_FONT = _REPO / "assets" / "fonts" / "AcademicM54.ttf"
-BODY_FONTS = {
-    "regular": _REPO / "assets" / "fonts" / "Archivo-400.ttf",
-    "medium": _REPO / "assets" / "fonts" / "Archivo-500.ttf",
-    "bold": _REPO / "assets" / "fonts" / "Archivo-600.ttf",
-}
 OUTPUT_DIR = _REPO / "output" / "feed"
 LENSES = ("shot_diet", "role", "impact")
 SUMMER_LEAGUE_LEAGUE_ID = "15"
@@ -85,12 +84,71 @@ PLAYER_ROW_HEIGHT = 173
 STORIES_TOP = 795
 
 
-def _fp_display():
-    return fm.FontProperties(fname=str(DISPLAY_FONT))
+@dataclass(frozen=True)
+class HeaderData:
+    """Display-ready content shared by one report slide header."""
+
+    subtitle_parts: tuple[tuple[str, str], ...]
+    kicker: str | None = None
 
 
-def _fp_body(weight="regular"):
-    return fm.FontProperties(fname=str(BODY_FONTS[weight]))
+@dataclass(frozen=True)
+class ShotMark:
+    """One prepared shot-chart mark; no NBA/Pandas fields reach the renderer."""
+
+    x: float
+    y: float
+    made: bool
+
+
+@dataclass(frozen=True)
+class StatItem:
+    value: str
+    label: str
+    color: str = INK
+    highlight: bool = False
+
+
+@dataclass(frozen=True)
+class PlayerTableRow:
+    headshot: Path | None
+    player: str
+    minutes: int
+    points: int
+    rebounds: int
+    assists: int
+    turnovers: int
+    steals: int
+    blocks: int
+    field_goals: str
+    threes: str
+    free_throws: str
+    usage: float
+    true_shooting: float
+    net_rating: float
+
+
+@dataclass(frozen=True)
+class TeamSlideData:
+    header: HeaderData
+    snapshot_stats: tuple[StatItem, ...]
+    shots: tuple[ShotMark, ...]
+    shooting_splits: tuple[str, ...]
+    players: tuple[PlayerTableRow, ...]
+    footer_note: str | None = None
+
+
+@dataclass(frozen=True)
+class PlayerSlideData:
+    header: HeaderData
+    display_name: str
+    headshot: Path | None
+    identity_stats: tuple[StatItem, ...]
+    attempts_label: str
+    shots: tuple[ShotMark, ...]
+    zone_caption: str
+    profile_stats: tuple[StatItem, ...]
+    footer_note: str | None = None
 
 
 def _number(value) -> float:
@@ -325,67 +383,39 @@ def select_players(players: pd.DataFrame, names: list[str]) -> list[pd.Series]:
     return selected
 
 
-def _data_width(ax, text_obj) -> float:
-    ax.figure.canvas.draw()
-    bbox = text_obj.get_window_extent()
-    inverse = ax.transData.inverted()
-    x0, _ = inverse.transform((bbox.x0, bbox.y0))
-    x1, _ = inverse.transform((bbox.x1, bbox.y0))
-    return x1 - x0
+def prepare_header(
+    team: pd.Series,
+    opponent: pd.Series,
+    game_date: str,
+    kicker: str | None,
+    *,
+    show_score: bool = True,
+) -> HeaderData:
+    """Turn raw box-score rows into the exact header copy the renderer needs."""
+    if show_score:
+        parts = (
+            (f"Bulls {int(_number(team['points']))}", RED),
+            (f"{team_nickname(opponent['teamTricode'])} {int(_number(opponent['points']))}", INK),
+            (game_date, MUTED),
+        )
+    else:
+        parts = ((game_date, MUTED),)
+    return HeaderData(parts, kicker)
 
 
-def _draw_title(ax, segments):
-    x, y, max_width, base_size = 60, H - 66, W - 120, 86
-    probe = ax.text(
-        x,
-        y,
-        "".join(text for text, _ in segments),
-        ha="left",
-        va="top",
-        fontsize=base_size,
-        fontproperties=_fp_display(),
-        alpha=0,
+def prepare_shot_marks(shots: pd.DataFrame, player_id: int | None) -> tuple[ShotMark, ...]:
+    """Remove dataframe/API vocabulary before shot attempts reach drawing code."""
+    rows = shots if player_id is None else shots[shots["player_id"] == player_id]
+    return tuple(
+        ShotMark(float(shot["loc_x"]), float(shot["loc_y"]), bool(shot["shot_made"]))
+        for _, shot in rows.iterrows()
     )
-    size = base_size * max_width / _data_width(ax, probe)
-    probe.remove()
-    for text, color in segments:
-        item = ax.text(
-            x,
-            y,
-            text,
-            ha="left",
-            va="top",
-            fontsize=size,
-            color=color,
-            fontproperties=_fp_display(),
-        )
-        x += _data_width(ax, item)
-
-
-def _draw_subtitle(ax, parts: list[tuple[str, str]], y: float):
-    x = 60
-    for index, (text, color) in enumerate(parts):
-        item = ax.text(
-            x,
-            y,
-            text,
-            ha="left",
-            va="top",
-            fontsize=18,
-            color=color,
-            fontproperties=_fp_body("bold"),
-        )
-        x += _data_width(ax, item)
-        if index < len(parts) - 1:
-            x += 13
-            ax.plot([x, x], [y - 21, y - 5], color="#CFCFCF", lw=1.3)
-            x += 13
 
 
 def _fitted_text(ax, x, y, text, fp, base_size, max_width, color, ha="left", va="top"):
     """Draw text at base_size, shrinking only if it would overflow max_width."""
     probe = ax.text(x, y, text, ha=ha, va=va, fontsize=base_size, fontproperties=fp, alpha=0)
-    width = _data_width(ax, probe)
+    width = rendered_width(ax, probe)
     probe.remove()
     size = base_size if width <= max_width else base_size * max_width / width
     return ax.text(x, y, text, ha=ha, va=va, fontsize=size, color=color, fontproperties=fp)
@@ -404,8 +434,8 @@ def _stat_chip(ax, x, y_top, w, h, value, label, value_size=14.5, value_color=IN
         )
     )
     cx = x + w / 2
-    ax.text(cx, y_top - h * 0.35, value, ha="center", va="center", fontsize=value_size, color=value_color, fontproperties=_fp_body("bold"))
-    ax.text(cx, y_top - h * 0.72, label, ha="center", va="center", fontsize=8.5, color=MUTED, fontproperties=_fp_body("bold"))
+    ax.text(cx, y_top - h * 0.35, value, ha="center", va="center", fontsize=value_size, color=value_color, fontproperties=body_font("bold"))
+    ax.text(cx, y_top - h * 0.72, label, ha="center", va="center", fontsize=8.5, color=MUTED, fontproperties=body_font("bold"))
 
 
 def _chip_row(ax, chips: list[tuple[str, str, str]], x, y_top, w, h, gap, value_size=14.5):
@@ -451,7 +481,7 @@ def _draw_team_snapshot(ax, team: pd.Series):
             edgecolor="none",
         )
     )
-    ax.text(84, y_top - 27, "TEAM SNAPSHOT", ha="left", va="top", fontsize=11, color=RED, fontproperties=_fp_body("bold"))
+    ax.text(84, y_top - 27, "TEAM SNAPSHOT", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
     stats = [
         (f"{int(_number(team['fieldGoalsMade']))}-{int(_number(team['fieldGoalsAttempted']))}", "FG"),
         (f"{int(_number(team['threePointersMade']))}-{int(_number(team['threePointersAttempted']))}", "3PT"),
@@ -463,14 +493,13 @@ def _draw_team_snapshot(ax, team: pd.Series):
         x = 84 + stat_width * index
         if index:
             ax.plot([x - 18, x - 18], [y_bottom + 22, y_top - 56], color="#E6C4CF", lw=1)
-        ax.text(x, y_top - 75, value, ha="left", va="top", fontsize=29, color=INK, fontproperties=_fp_body("bold"))
-        ax.text(x, y_top - 125, label, ha="left", va="top", fontsize=11, color=MUTED, fontproperties=_fp_body("bold"))
+        ax.text(x, y_top - 75, value, ha="left", va="top", fontsize=29, color=INK, fontproperties=body_font("bold"))
+        ax.text(x, y_top - 125, label, ha="left", va="top", fontsize=11, color=MUTED, fontproperties=body_font("bold"))
 
 
 def _draw_shot_map(
     ax,
-    shots: pd.DataFrame,
-    player_id: int | None,
+    attempts: tuple[ShotMark, ...],
     right: float,
     y_center: float,
     s: float = 0.42,
@@ -484,10 +513,9 @@ def _draw_shot_map(
     court 500 wide, baseline at y=-47.5, paint |x|<=80 up to y=142.5, three-point
     arc radius 237.5 meeting the corner lines at x=+/-220. ``s`` scales the
     500-unit court width (0.42 -> 210 px card inset; 1.5 -> 750 px slide court).
-    ``player_id=None`` plots the whole team's attempts.
+    The caller prepares the team or player attempt set before drawing.
     """
-    player_shots = shots if player_id is None else shots[shots["player_id"] == player_id]
-    if player_shots.empty:
+    if not attempts:
         return
     top_y = 280  # court window shown; deeper heaves are clamped to the edge
     x0 = right - 500 * s
@@ -515,10 +543,10 @@ def _draw_shot_map(
     )
     dot_r = max(5.0, 5 * s / 0.42 * 0.7)
     legend_size = 8 if s <= 0.6 else 12
-    for _, shot in player_shots.iterrows():
-        cx, cy = shot["loc_x"], min(shot["loc_y"], top_y)
+    for shot in attempts:
+        cx, cy = shot.x, min(shot.y, top_y)
         dot_x, dot_y = t(cx, cy)
-        if shot["shot_made"]:
+        if shot.made:
             ax.add_patch(Circle((dot_x, dot_y), dot_r, facecolor=RED, edgecolor="#FFFFFF", lw=0.8, zorder=4))
         elif miss_as_x:
             ax.plot(dot_x, dot_y, marker="x", ms=dot_r * 1.6, color=INK, mew=2.2, zorder=4)
@@ -528,10 +556,10 @@ def _draw_shot_map(
         return
     legend_y = y0 - (14 if s <= 0.6 else 26)
     ax.add_patch(Circle((x0 + 4, legend_y), legend_size / 2, facecolor=RED, edgecolor="none"))
-    ax.text(x0 + 14 + legend_size / 2, legend_y, "MAKE", ha="left", va="center", fontsize=legend_size, color=MUTED, fontproperties=_fp_body("medium"))
+    ax.text(x0 + 14 + legend_size / 2, legend_y, "MAKE", ha="left", va="center", fontsize=legend_size, color=MUTED, fontproperties=body_font("medium"))
     miss_x = x0 + (84 if s <= 0.6 else 120)
     ax.add_patch(Circle((miss_x, legend_y), legend_size / 2, facecolor="#FFFFFF", edgecolor=MUTED, lw=1.2))
-    ax.text(miss_x + 10 + legend_size / 2, legend_y, "MISS", ha="left", va="center", fontsize=legend_size, color=MUTED, fontproperties=_fp_body("medium"))
+    ax.text(miss_x + 10 + legend_size / 2, legend_y, "MISS", ha="left", va="center", fontsize=legend_size, color=MUTED, fontproperties=body_font("medium"))
 
 
 def _draw_player_row(ax, player: pd.Series, lens: str, team: pd.Series, shots: pd.DataFrame, y_top: float, first: bool):
@@ -548,58 +576,41 @@ def _draw_player_row(ax, player: pd.Series, lens: str, team: pd.Series, shots: p
             edgecolor="none",
         )
     )
-    ax.text(126, y_center + 17, str(int(_number(player["points"]))), ha="center", va="center", fontsize=40, color="#FFFFFF", fontproperties=_fp_body("bold"))
-    ax.text(126, y_center - 22, "PTS", ha="center", va="center", fontsize=10, color="#FFFFFF", fontproperties=_fp_body("bold"))
-    ax.text(224, y_center + 36, _player_name(player).upper(), ha="left", va="center", fontsize=22, color=INK, fontproperties=_fp_body("bold"))
+    ax.text(126, y_center + 17, str(int(_number(player["points"]))), ha="center", va="center", fontsize=40, color="#FFFFFF", fontproperties=body_font("bold"))
+    ax.text(126, y_center - 22, "PTS", ha="center", va="center", fontsize=10, color="#FFFFFF", fontproperties=body_font("bold"))
+    ax.text(224, y_center + 36, _player_name(player).upper(), ha="left", va="center", fontsize=22, color=INK, fontproperties=body_font("bold"))
     box_line = (
         f"{int(_number(player['fieldGoalsMade']))}-{int(_number(player['fieldGoalsAttempted']))} FG"
         f"   ·   {int(_number(player['threePointersMade']))}-{int(_number(player['threePointersAttempted']))} 3PT"
         f"   ·   {int(_number(player['reboundsTotal']))} REB"
         f"   ·   {int(_number(player['assists']))} AST"
     )
-    ax.text(224, y_center + 4, box_line, ha="left", va="center", fontsize=13, color=MUTED, fontproperties=_fp_body("medium"))
+    ax.text(224, y_center + 4, box_line, ha="left", va="center", fontsize=13, color=MUTED, fontproperties=body_font("medium"))
     lens_label, lens_value = lens_copy(lens, player, team, shots)
-    ax.text(224, y_center - 27, lens_label, ha="left", va="center", fontsize=10, color=RED, fontproperties=_fp_body("bold"))
-    ax.text(224, y_center - 48, lens_value, ha="left", va="center", fontsize=13, color=INK, fontproperties=_fp_body("bold"))
+    ax.text(224, y_center - 27, lens_label, ha="left", va="center", fontsize=10, color=RED, fontproperties=body_font("bold"))
+    ax.text(224, y_center - 48, lens_value, ha="left", va="center", fontsize=13, color=INK, fontproperties=body_font("bold"))
     if lens == "shot_diet":
-        _draw_shot_map(ax, shots, int(player["personId"]), right=1010, y_center=y_center)
+        attempts = prepare_shot_marks(shots, int(player["personId"]))
+        _draw_shot_map(ax, attempts, right=1010, y_center=y_center)
 
 
-def _new_canvas():
-    fig = plt.figure(figsize=(W / DEFAULT_DPI, H / DEFAULT_DPI), facecolor="#FFFFFF")
-    ax = fig.add_axes([0, 0, 1, 1])
-    ax.set_xlim(0, W)
-    ax.set_ylim(0, H)
-    ax.set_aspect("equal")
-    ax.set_xticks([])
-    ax.set_yticks([])
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-    return fig, ax
-
-
-def _draw_header(ax, team: pd.Series, opponent: pd.Series, game_date: str, kicker: str | None, show_score: bool = True):
-    _draw_title(ax, [("SUMMER LEAGUE ", INK), ("REPORT", RED)])
-    if show_score:
-        opponent_name = team_nickname(opponent["teamTricode"])
-        parts = [
-            (f"Bulls {int(_number(team['points']))}", RED),
-            (f"{opponent_name} {int(_number(opponent['points']))}", INK),
-            (game_date, MUTED),
-        ]
-    else:
-        parts = [(game_date, MUTED)]
-    _draw_subtitle(ax, parts, H - 168)
-    if kicker:
-        ax.text(60, H - 206, kicker, ha="left", va="top", fontsize=14, color=RED, style="italic", fontproperties=_fp_body("medium"))
+def _draw_header(ax, header: HeaderData):
+    draw_header(
+        ax,
+        [("SUMMER LEAGUE ", INK), ("REPORT", RED)],
+        header.subtitle_parts,
+        kicker=header.kicker,
+        subtitle_weight="bold",
+        title_base_size=86,
+    )
 
 
 def _draw_footer(ax, note: str | None = None):
-    source = "Summer League game · Data via NBA.com/Stats"
-    if note:
-        source = f"{note} · {source}"
-    ax.text(60, 40, source, ha="left", va="bottom", fontsize=8.5, color=FAINT, fontproperties=_fp_body())
-    ax.text(1020, 40, "@chicagobullsdata", ha="right", va="bottom", fontsize=10.5, color=MUTED, fontproperties=_fp_body("medium"))
+    draw_footer(
+        ax,
+        source="Summer League game · Data via NBA.com/Stats",
+        note=note,
+    )
 
 
 def render_report(
@@ -611,17 +622,17 @@ def render_report(
     game_date: str,
     kicker: str,
 ):
-    fig, ax = _new_canvas()
-    _draw_header(ax, team, opponent, game_date, kicker)
+    fig, ax = new_canvas()
+    _draw_header(ax, prepare_header(team, opponent, game_date, kicker))
     _draw_team_snapshot(ax, team)
-    ax.text(60, 843, "PLAYER STORIES", ha="left", va="top", fontsize=12, color=MUTED, fontproperties=_fp_body("bold"))
+    ax.text(60, 843, "PLAYER STORIES", ha="left", va="top", fontsize=12, color=MUTED, fontproperties=body_font("bold"))
     for index, (player, lens) in enumerate(zip(players, lenses)):
         _draw_player_row(ax, player, lens, team, shots, STORIES_TOP - index * PLAYER_ROW_HEIGHT, index == 0)
     _draw_footer(ax)
     return fig
 
 
-def _player_table_image(players: list[pd.Series], out_path: Path) -> Path:
+def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> Path:
     """Render the featured-player comparison as a tightly cropped PNG.
 
     Uses Great Tables (environment-only dependency for now — see the anatomy
@@ -633,22 +644,21 @@ def _player_table_image(players: list[pd.Series], out_path: Path) -> Path:
     rows = pd.DataFrame(
         [
             {
-                # Absolute path so local overrides and the CDN cache both work.
-                "headshot": str(_headshot_path(player)),
-                "player": _player_name(player),
-                "min": minutes_played(player),
-                "pts": int(_number(player["points"])),
-                "reb": int(_number(player["reboundsTotal"])),
-                "ast": int(_number(player["assists"])),
-                "tov": int(_number(player["turnovers"])),
-                "stl": int(_number(player["steals"])),
-                "blk": int(_number(player["blocks"])),
-                "fgma": f"{int(_number(player['fieldGoalsMade']))}/{int(_number(player['fieldGoalsAttempted']))}",
-                "pm3a": f"{int(_number(player['threePointersMade']))}/{int(_number(player['threePointersAttempted']))}",
-                "ftma": f"{int(_number(player['freeThrowsMade']))}/{int(_number(player['freeThrowsAttempted']))}",
-                "usg": usage_pct(player),
-                "ts": ts_pct(player),
-                "netrtg": net_rating(player),
+                "headshot": str(player.headshot or ""),
+                "player": player.player,
+                "min": player.minutes,
+                "pts": player.points,
+                "reb": player.rebounds,
+                "ast": player.assists,
+                "tov": player.turnovers,
+                "stl": player.steals,
+                "blk": player.blocks,
+                "fgma": player.field_goals,
+                "pm3a": player.threes,
+                "ftma": player.free_throws,
+                "usg": player.usage,
+                "ts": player.true_shooting,
+                "netrtg": player.net_rating,
             }
             for player in players
         ]
@@ -707,7 +717,27 @@ def _shooting_split_line(team: pd.Series, prefix: str, made_key: str, att_key: s
     return f"{prefix}  {made}-{att}  ({pct:.1f}%)"
 
 
-def render_team_slide(
+def _prepare_player_table_row(player: pd.Series) -> PlayerTableRow:
+    return PlayerTableRow(
+        headshot=_headshot_path(player),
+        player=_player_name(player),
+        minutes=minutes_played(player),
+        points=int(_number(player["points"])),
+        rebounds=int(_number(player["reboundsTotal"])),
+        assists=int(_number(player["assists"])),
+        turnovers=int(_number(player["turnovers"])),
+        steals=int(_number(player["steals"])),
+        blocks=int(_number(player["blocks"])),
+        field_goals=f"{int(_number(player['fieldGoalsMade']))}/{int(_number(player['fieldGoalsAttempted']))}",
+        threes=f"{int(_number(player['threePointersMade']))}/{int(_number(player['threePointersAttempted']))}",
+        free_throws=f"{int(_number(player['freeThrowsMade']))}/{int(_number(player['freeThrowsAttempted']))}",
+        usage=usage_pct(player),
+        true_shooting=ts_pct(player),
+        net_rating=net_rating(player),
+    )
+
+
+def prepare_team_slide(
     team: pd.Series,
     opponent: pd.Series,
     players: list[pd.Series],
@@ -715,11 +745,94 @@ def render_team_slide(
     game_date: str,
     kicker: str | None,
     ft_note: str | None = None,
+) -> TeamSlideData:
+    """Prepare the complete front-page content before any drawing occurs."""
+    stats = (
+        StatItem(str(int(_number(team["reboundsTotal"]))), "REBOUNDS"),
+        StatItem(str(int(_number(team["assists"]))), "ASSISTS"),
+        StatItem(str(int(_number(team["steals"]))), "STEALS"),
+        StatItem(str(int(_number(team["turnovers"]))), "TURNOVERS"),
+    )
+    splits = (
+        _shooting_split_line(team, "FG", "fieldGoalsMade", "fieldGoalsAttempted"),
+        _shooting_split_line(team, "3PT", "threePointersMade", "threePointersAttempted"),
+        _shooting_split_line(team, "FT", "freeThrowsMade", "freeThrowsAttempted"),
+    )
+    table_rows = tuple(
+        sorted(
+            (_prepare_player_table_row(player) for player in players),
+            key=lambda row: row.points,
+            reverse=True,
+        )
+    )
+    return TeamSlideData(
+        header=prepare_header(team, opponent, game_date, kicker),
+        snapshot_stats=stats,
+        shots=prepare_shot_marks(shots, None),
+        shooting_splits=splits,
+        players=table_rows,
+        footer_note=ft_note,
+    )
+
+
+def prepare_player_slide(
+    player: pd.Series,
+    team: pd.Series,
+    opponent: pd.Series,
+    shots: pd.DataFrame,
+    game_date: str,
+    kicker: str | None,
+    ft_note: str | None = None,
+) -> PlayerSlideData:
+    """Prepare one player's display copy, metrics, image, and shot marks."""
+    person_id = int(_number(player["personId"]))
+    splits = zone_splits(shots, person_id)
+    zone_caption = (
+        f"{splits['rim_paint'][0]}-{splits['rim_paint'][1]} RIM/PAINT"
+        f"   ·   {splits['mid'][0]}-{splits['mid'][1]} MID-RANGE"
+        f"   ·   {splits['three'][0]}-{splits['three'][1]} THREES"
+    )
+    return PlayerSlideData(
+        header=prepare_header(team, opponent, game_date, kicker, show_score=False),
+        display_name=_display_name(player),
+        headshot=_headshot_path(player),
+        identity_stats=(
+            StatItem(str(int(_number(player["points"]))), "PTS", RED),
+            StatItem(str(minutes_played(player)), "MIN"),
+            StatItem(str(int(_number(player["reboundsTotal"]))), "REB"),
+            StatItem(str(int(_number(player["assists"]))), "AST"),
+        ),
+        attempts_label=f"ALL {int(_number(player['fieldGoalsAttempted']))} FIELD-GOAL ATTEMPTS",
+        shots=prepare_shot_marks(shots, person_id),
+        zone_caption=zone_caption,
+        profile_stats=(
+            StatItem(
+                f"{int(_number(player['fieldGoalsMade']))}-{int(_number(player['fieldGoalsAttempted']))}",
+                "FIELD GOALS",
+            ),
+            StatItem(
+                f"{int(_number(player['threePointersMade']))}-{int(_number(player['threePointersAttempted']))}",
+                "THREES",
+            ),
+            StatItem(
+                f"{int(_number(player['freeThrowsMade']))}-{int(_number(player['freeThrowsAttempted']))}",
+                "FREE THROWS",
+            ),
+            StatItem(f"{ts_pct(player):.1f}%", "TRUE SHOOTING", RED, True),
+            StatItem(f"{role_share_pct(player, team):.0f}%", "OF BULLS FGA"),
+            StatItem(f"{plus_minus(player):+d}", "PLUS/MINUS"),
+        ),
+        footer_note=ft_note,
+    )
+
+
+def render_team_slide(
+    data: TeamSlideData,
 ):
     """Slide 1: the front page — score, Bulls-only snapshot with the team shot
     chart, and one card per featured player."""
-    fig, ax = _new_canvas()
-    _draw_header(ax, team, opponent, game_date, kicker)
+    fig, ax = new_canvas()
+    _draw_header(ax, data.header)
 
     y_top, y_bottom = 1130, 700
     ax.add_patch(
@@ -732,15 +845,9 @@ def render_team_slide(
             edgecolor="none",
         )
     )
-    ax.text(84, y_top - 27, "TEAM SNAPSHOT", ha="left", va="top", fontsize=11, color=RED, fontproperties=_fp_body("bold"))
-    stats = [
-        (str(int(_number(team["reboundsTotal"]))), "REBOUNDS"),
-        (str(int(_number(team["assists"]))), "ASSISTS"),
-        (str(int(_number(team["steals"]))), "STEALS"),
-        (str(int(_number(team["turnovers"]))), "TURNOVERS"),
-    ]
+    ax.text(84, y_top - 27, "TEAM SNAPSHOT", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
     card_w, card_h, gap = 185, 125, 14
-    for index, (value, label) in enumerate(stats):
+    for index, stat in enumerate(data.snapshot_stats):
         x = 84 + (card_w + gap) * (index % 2)
         cy_top = 1030 - (card_h + gap) * (index // 2)
         ax.add_patch(
@@ -753,21 +860,15 @@ def render_team_slide(
                 edgecolor="none",
             )
         )
-        ax.text(x + card_w / 2, cy_top - 47, value, ha="center", va="center", fontsize=28, color=INK, fontproperties=_fp_body("bold"))
-        ax.text(x + card_w / 2, cy_top - 93, label, ha="center", va="center", fontsize=9.5, color=MUTED, fontproperties=_fp_body("bold"))
-    if not shots.empty:
-        _draw_shot_map(ax, shots, None, right=985, y_center=962, s=0.72)
-    splits = [
-        _shooting_split_line(team, "FG", "fieldGoalsMade", "fieldGoalsAttempted"),
-        _shooting_split_line(team, "3PT", "threePointersMade", "threePointersAttempted"),
-        _shooting_split_line(team, "FT", "freeThrowsMade", "freeThrowsAttempted"),
-    ]
-    for index, line in enumerate(splits):
-        ax.text(805, 792 - index * 33, line, ha="center", va="top", fontsize=12.5, color=INK, fontproperties=_fp_body("bold"))
+        ax.text(x + card_w / 2, cy_top - 47, stat.value, ha="center", va="center", fontsize=28, color=INK, fontproperties=body_font("bold"))
+        ax.text(x + card_w / 2, cy_top - 93, stat.label, ha="center", va="center", fontsize=9.5, color=MUTED, fontproperties=body_font("bold"))
+    _draw_shot_map(ax, data.shots, right=985, y_center=962, s=0.72)
+    for index, line in enumerate(data.shooting_splits):
+        ax.text(805, 792 - index * 33, line, ha="center", va="top", fontsize=12.5, color=INK, fontproperties=body_font("bold"))
 
     # The featured players render as one Great Tables comparison so the table
     # engine, not per-card coordinates, owns row rhythm and alignment.
-    table_png = _player_table_image(players, OUTPUT_DIR / "_player_table.png")
+    table_png = _player_table_image(data.players, OUTPUT_DIR / "_player_table.png")
     table_img = mpimg.imread(table_png)
     img_h, img_w = table_img.shape[:2]
     disp_w = W - 120
@@ -780,67 +881,40 @@ def render_team_slide(
         zorder=3,
         interpolation="bilinear",
     )
-    _draw_footer(ax, ft_note)
+    _draw_footer(ax, data.footer_note)
     return fig
 
 
 def render_player_slide(
-    player: pd.Series,
-    team: pd.Series,
-    opponent: pd.Series,
-    shots: pd.DataFrame,
-    game_date: str,
-    kicker: str | None,
-    ft_note: str | None = None,
+    data: PlayerSlideData,
 ):
     """One full slide per player, in the C2 anatomy-study structure: identity
     header, a large exact-location FGA chart on the left as the evidence
     layer, and a compact supporting stat rail on the right."""
-    fig, ax = _new_canvas()
-    _draw_header(ax, team, opponent, game_date, kicker, show_score=False)
+    fig, ax = new_canvas()
+    _draw_header(ax, data.header)
 
-    headshot_label(ax, _headshot_path(player), 118, 1058, radius=58)
-    _fitted_text(ax, 206, 1096, _display_name(player), _fp_display(), 30, 790, INK)
-    identity_chips = [
-        (str(int(_number(player["points"]))), "PTS", RED),
-        (str(minutes_played(player)), "MIN", INK),
-        (str(int(_number(player["reboundsTotal"]))), "REB", INK),
-        (str(int(_number(player["assists"]))), "AST", INK),
-    ]
+    headshot_label(ax, data.headshot, 118, 1058, radius=58)
+    _fitted_text(ax, 206, 1096, data.display_name, display_font(), 30, 790, INK)
+    identity_chips = [(item.value, item.label, item.color) for item in data.identity_stats]
     _chip_row(ax, identity_chips, 208, 1038, w=118, h=52, gap=10, value_size=14.5)
     ax.plot([60, 1020], [952, 952], color=RULE, lw=1)
 
-    fga = int(_number(player["fieldGoalsAttempted"]))
-    ax.text(60, 904, f"ALL {fga} FIELD-GOAL ATTEMPTS", ha="left", va="top", fontsize=11, color=RED, fontproperties=_fp_body("bold"))
+    ax.text(60, 904, data.attempts_label, ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
     _draw_shot_map(
         ax,
-        shots,
-        int(player["personId"]),
+        data.shots,
         right=660,
         y_center=590,
         s=1.2,
         line_color="#C6C6C6",
     )
-    splits = zone_splits(shots, int(player["personId"]))
-    zone_caption = (
-        f"{splits['rim_paint'][0]}-{splits['rim_paint'][1]} RIM/PAINT"
-        f"   ·   {splits['mid'][0]}-{splits['mid'][1]} MID-RANGE"
-        f"   ·   {splits['three'][0]}-{splits['three'][1]} THREES"
-    )
-    ax.text(60, 322, zone_caption, ha="left", va="top", fontsize=11.5, color=MUTED, fontproperties=_fp_body("medium"))
+    ax.text(60, 322, data.zone_caption, ha="left", va="top", fontsize=11.5, color=MUTED, fontproperties=body_font("medium"))
 
     rail_x, rail_w = 740, 280
-    ax.text(rail_x, 904, "SHOT PROFILE", ha="left", va="top", fontsize=11, color=RED, fontproperties=_fp_body("bold"))
-    rail = [
-        (f"{int(_number(player['fieldGoalsMade']))}-{int(_number(player['fieldGoalsAttempted']))}", "FIELD GOALS", False),
-        (f"{int(_number(player['threePointersMade']))}-{int(_number(player['threePointersAttempted']))}", "THREES", False),
-        (f"{int(_number(player['freeThrowsMade']))}-{int(_number(player['freeThrowsAttempted']))}", "FREE THROWS", False),
-        (f"{ts_pct(player):.1f}%", "TRUE SHOOTING", True),  # the payoff number
-        (f"{role_share_pct(player, team):.0f}%", "OF BULLS FGA", False),
-        (f"{plus_minus(player):+d}", "PLUS/MINUS", False),
-    ]
+    ax.text(rail_x, 904, "SHOT PROFILE", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
     card_h, gap = 88, 14
-    for index, (value, label, payoff) in enumerate(rail):
+    for index, stat in enumerate(data.profile_stats):
         top = 862 - index * (card_h + gap)
         ax.add_patch(
             FancyBboxPatch(
@@ -848,16 +922,16 @@ def render_player_slide(
                 rail_w,
                 card_h,
                 boxstyle="round,pad=0,rounding_size=12",
-                facecolor=RED if payoff else CHIP_GRAY,
+                facecolor=RED if stat.highlight else CHIP_GRAY,
                 edgecolor="none",
             )
         )
-        value_color = "#FFFFFF" if payoff else INK
-        label_color = "#F5C9D6" if payoff else MUTED
+        value_color = "#FFFFFF" if stat.highlight else INK
+        label_color = "#F5C9D6" if stat.highlight else MUTED
         cx = rail_x + rail_w / 2
-        ax.text(cx, top - card_h * 0.34, value, ha="center", va="center", fontsize=23, color=value_color, fontproperties=_fp_body("bold"))
-        ax.text(cx, top - card_h * 0.73, label, ha="center", va="center", fontsize=9, color=label_color, fontproperties=_fp_body("bold"))
-    _draw_footer(ax, ft_note)
+        ax.text(cx, top - card_h * 0.34, stat.value, ha="center", va="center", fontsize=23, color=value_color, fontproperties=body_font("bold"))
+        ax.text(cx, top - card_h * 0.73, stat.label, ha="center", va="center", fontsize=9, color=label_color, fontproperties=body_font("bold"))
+    _draw_footer(ax, data.footer_note)
     return fig
 
 
@@ -919,26 +993,47 @@ def main():
     kicker = args.kicker
     played_on = game_day(summary)
     graphic_date = args.date or played_on.strftime("%b %d, %Y").upper()
-    dpi = 300 if args.final else DEFAULT_DPI
+    dpi = export_dpi(args.final)
 
     ft_note = "TS% reads high under the one-free-throw rule" if one_ft_rule_applies(game_id) else None
 
     if args.carousel:
-        slides = [render_team_slide(team_row, opponent_row, selected, shots, graphic_date, kicker, ft_note)]
-        slides += [
-            render_player_slide(player, team_row, opponent_row, shots, graphic_date, None, ft_note)
+        team_slide = prepare_team_slide(
+            team_row,
+            opponent_row,
+            selected,
+            shots,
+            graphic_date,
+            kicker,
+            ft_note,
+        )
+        player_slides = [
+            prepare_player_slide(
+                player,
+                team_row,
+                opponent_row,
+                shots,
+                graphic_date,
+                None,
+                ft_note,
+            )
             for player in selected
+        ]
+        slides = [render_team_slide(team_slide)]
+        slides += [
+            render_player_slide(player_slide)
+            for player_slide in player_slides
         ]
         for index, fig in enumerate(slides, start=1):
             output = OUTPUT_DIR / f"{played_on.isoformat()}-summer-league-report-s{index}.png"
-            save_feed_post(fig, output, dpi=dpi)
+            save_post(fig, output, final=args.final)
             plt.close(fig)
             print(f"Saved {output} at {dpi} DPI")
         return
 
     fig = render_report(team_row, opponent_row, selected, args.lens, shots, graphic_date, kicker)
     output = OUTPUT_DIR / f"{played_on.isoformat()}-summer-league-report.png"
-    save_feed_post(fig, output, dpi=dpi)
+    save_post(fig, output, final=args.final)
     plt.close(fig)
     print(f"\nSaved {output} at {dpi} DPI")
 

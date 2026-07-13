@@ -43,7 +43,7 @@ bulls-analytics/
 ├── bulls/
 │   ├── data/       # NBA API fetch helpers
 │   ├── analysis/   # stat + shot-quality analysis helpers
-│   └── graphics/   # social-graphics builders + shared craft helpers
+│   └── graphics/   # house style, social-graphics builders, and shared craft helpers
 ├── scripts/        # CLI entrypoints
 │   └── prototypes/ # one-off mock generators behind idea-catalog cards
 ├── docs/           # mocks, reference, ideation, temporary handoffs, archive

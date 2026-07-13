@@ -93,7 +93,7 @@ font with `fontTools.varLib.instancer` if needed.
 - **Format:** 1080×1350 px (Instagram portrait 4:5), white background.
 - **Iterate at 150 DPI** (fast), **export final at 300 DPI** (2160×2700 — text survives
   Instagram compression). Prototype scripts take a `--final` flag for the 300-DPI render;
-  pass `dpi=300` to `save_feed_post`.
+  current posts use `house.save_post(fig, path, final=...)` so draft/final dimensions are explicit.
 - Full-bleed axes (`fig.add_axes([0, 0, 1, 1])`), data coords = pixel coords, equal aspect,
   no spines/ticks.
 - **Side margins:** 60 px left and right (title, subtitle, kicker, footer all anchor here).
@@ -160,7 +160,20 @@ The highest-stopping-power object on a graphic — use sparingly.
   around the face for the circular helper. Flag wire-photo licensing to the user before
   using non-NBA sources.
 
-## 9. Component Library (`bulls/graphics/craft.py`)
+## 9. Executable House Layer and Component Library
+
+### House foundation (`bulls/graphics/house.py`)
+
+`DESIGN.md` is the human-readable north star; `house.py` is the small Matplotlib implementation
+of the rules every current post shares. It owns the palette, Academic M54/Archivo font files,
+1080×1350 canvas, 60 px margins, fitted segmented title, tick-separated subtitle, optional kicker,
+source/watermark footer pair, and 150/300-DPI export contract.
+
+Use the house layer for new posts before drawing format-specific content. Do not put charts, tables,
+story copy, or post-specific layout in it. Those stay with the prototype until a second real post
+proves that the grammar repeats.
+
+### Craft components (`bulls/graphics/craft.py`)
 
 Shared F5-derived helpers — reach for these before hand-rolling:
 
@@ -233,6 +246,13 @@ logo exists).
 
 ## Decision Log
 
+- **2026-07-12** — Python remains the center of the graphics pipeline. Added
+  `bulls/graphics/house.py` as the executable implementation of settled cross-post rules; Season
+  Shape and Summer League now consume it with pixel-identical final renders. Summer League also
+  separates display-ready slide data from drawing so another renderer can be compared without
+  changing the analysis. An HTML/CSS/SVG version of the team slide was tested and not adopted: the
+  user preferred the original Matplotlib output, so the executable spike was removed. Revisit only
+  if a future layout-heavy format provides a clearer reason.
 - **2026-07-12** — `design-system.html` enhancement completed: fitted masthead, jersey-trim
   chrome, proportional/copyable palette, sticky section navigation, interactive component
   demonstrations, side-gutter anatomy callouts, varied documentation rhythm, and mobile/

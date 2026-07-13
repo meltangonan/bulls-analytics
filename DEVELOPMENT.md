@@ -17,6 +17,7 @@ bulls/
   data/fetch.py             # NBA API wrappers
   analysis/stats.py         # Statistical functions
   graphics/feed.py          # Legacy zone-post builders
+  graphics/house.py         # Current canvas, fonts, header/footer, tokens, export contract
   graphics/craft.py         # Shared F5-derived helpers
 scripts/                    # Reusable CLIs and one-off prototypes
   prototypes/               # One script per idea batch
@@ -60,12 +61,14 @@ output/feed/                 # Generated PNGs; gitignored
 
 ### `bulls.graphics`
 
+- `house.new_canvas`, `draw_header`, `draw_footer`, `save_post` — executable current-design
+  foundation; `DESIGN.md` remains the human-readable owner of the decisions
 - `build_zone_leaders_post(team_shots, ...)` — PPG court map
 - `build_zone_frequency_post(team_shots, ...)` — frequency court map
 - `build_zone_pps_post(team_shots, ...)` — PPS bar chart
 - `build_zone_team_stats_post(team_shots, ...)` — team zone shooting court map
 - `build_zone_volume_leaders_post(team_shots, ...)` — volume-leader court map
-- `save_feed_post(fig, output_path)` — saves at 150 DPI; pass `dpi=300` for final prototypes
+- `save_feed_post(fig, output_path)` — legacy save API retained for older builders
 - `craft.gradient_bar`, `stacked_label`, `threshold_footer`, `headshot_label` — shared helpers;
   `threshold_footer` shows qualification, coverage, and source
 
@@ -73,6 +76,12 @@ output/feed/                 # Generated PNGs; gitignored
 
 - Keep reusable fetching and analysis logic in `bulls/data` and `bulls/analysis`.
 - Keep reusable graphics builders in `bulls/graphics`; keep entry points in `scripts/`.
+- Use `bulls.graphics.house` for the current canvas, fonts, header/footer, tokens, and export
+  behavior. Do not rebuild those rules inside a new prototype.
+- For a format that fetches substantial raw data, prepare display-ready content before drawing it:
+  calculations, editorial selections, labels, images, and shot marks belong in a preparation step;
+  the renderer should receive that prepared object instead of understanding NBA API columns. Keep
+  the prepared shape format-specific rather than inventing a universal post schema.
 - Start new formats as one script per idea batch in `scripts/prototypes/`; promote a builder to a
   reusable graphics module and CLI only after it repeats.
 - Add the new card at the top of `idea-catalog.html`, then copy its image to `docs/mocks/` so the
@@ -93,8 +102,9 @@ output/feed/                 # Generated PNGs; gitignored
   Use `get_roster()` and player IDs to create a current-roster view when relevant, and show both
   all-player and current-roster views for a fair comparison.
 - Set `min_shots` by timeframe: about 30 for a season and 10 for a recent-games view.
-- Standard output is 1080×1350 at 150 DPI. New prototypes should export 2160×2700 at 300 DPI for
-  Instagram compression; use 150 DPI only for fast draft iteration.
+- Standard draft output is 1080×1350 at 150 DPI; approved posts export 2160×2700 at 300 DPI for
+  Instagram compression. Current posts use `house.save_post(..., final=False|True)`; retain the
+  legacy `save_feed_post(..., dpi=...)` API only for older builders until they are reused.
 - Table posts use `plottable` (see `scripts/prototypes/f5_lineup_table.py`) or Great Tables when
   the table engine should own row rhythm, image cells, and a single color-emphasized column —
   `summer_league_report.py` renders its player table with Great Tables to a cropped PNG and

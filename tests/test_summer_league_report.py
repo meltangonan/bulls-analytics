@@ -142,3 +142,112 @@ def test_one_ft_rule_gate_matches_summer_league_seasons():
     assert report.one_ft_rule_applies("1522600012")  # 2026 SL: rule active
     assert not report.one_ft_rule_applies("1522500033")  # 2025 SL rehearsal: normal rules
     assert not report.one_ft_rule_applies("0022600123")  # regular NBA game
+
+
+def _team_row():
+    return pd.Series(
+        {
+            "teamTricode": "CHI",
+            "points": 96,
+            "reboundsTotal": 29,
+            "assists": 14,
+            "steals": 8,
+            "turnovers": 13,
+            "fieldGoalsMade": 30,
+            "fieldGoalsAttempted": 69,
+            "threePointersMade": 14,
+            "threePointersAttempted": 32,
+            "freeThrowsMade": 13,
+            "freeThrowsAttempted": 25,
+        }
+    )
+
+
+def _opponent_row():
+    return pd.Series({"teamTricode": "MEM", "points": 97})
+
+
+def _player_row():
+    return pd.Series(
+        {
+            "personId": 7,
+            "firstName": "Caleb",
+            "familyName": "Wilson",
+            "minutes": "32:15",
+            "points": 35,
+            "reboundsTotal": 5,
+            "assists": 0,
+            "turnovers": 6,
+            "steals": 2,
+            "blocks": 3,
+            "fieldGoalsMade": 12,
+            "fieldGoalsAttempted": 21,
+            "threePointersMade": 7,
+            "threePointersAttempted": 11,
+            "freeThrowsMade": 2,
+            "freeThrowsAttempted": 6,
+            "usagePercentage": 0.371,
+            "trueShootingPercentage": 0.740,
+            "netRating": -13.6,
+            "plusMinusPoints": -11,
+        }
+    )
+
+
+def _located_shots():
+    return pd.DataFrame(
+        [
+            (7, "Restricted Area", True, 0, 10),
+            (7, "Above the Break 3", False, 20, 240),
+            (8, "Mid-Range", True, -80, 120),
+        ],
+        columns=["player_id", "shot_zone", "shot_made", "loc_x", "loc_y"],
+    )
+
+
+def test_prepare_team_slide_removes_raw_api_fields_from_renderer_input(monkeypatch):
+    monkeypatch.setattr(report, "_headshot_path", lambda player: None)
+
+    data = report.prepare_team_slide(
+        _team_row(),
+        _opponent_row(),
+        [_player_row()],
+        _located_shots(),
+        "JUL 10, 2026",
+        None,
+        "TS% note",
+    )
+
+    assert data.header.subtitle_parts[0][0] == "Bulls 96"
+    assert [item.value for item in data.snapshot_stats] == ["29", "14", "8", "13"]
+    assert data.shooting_splits[1] == "3PT  14-32  (43.8%)"
+    assert data.players[0].player == "Caleb Wilson"
+    assert data.players[0].true_shooting == 74.0
+    assert len(data.shots) == 3
+
+
+def test_prepare_player_slide_contains_display_ready_story_content(monkeypatch):
+    monkeypatch.setattr(report, "_headshot_path", lambda player: None)
+
+    data = report.prepare_player_slide(
+        _player_row(),
+        _team_row(),
+        _opponent_row(),
+        _located_shots(),
+        "JUL 10, 2026",
+        None,
+        "TS% note",
+    )
+
+    assert data.display_name == "CALEB WILSON"
+    assert data.attempts_label == "ALL 21 FIELD-GOAL ATTEMPTS"
+    assert data.zone_caption == "1-1 RIM/PAINT   ·   0-0 MID-RANGE   ·   0-1 THREES"
+    assert [item.label for item in data.profile_stats] == [
+        "FIELD GOALS",
+        "THREES",
+        "FREE THROWS",
+        "TRUE SHOOTING",
+        "OF BULLS FGA",
+        "PLUS/MINUS",
+    ]
+    assert next(item for item in data.profile_stats if item.highlight).value == "74.0%"

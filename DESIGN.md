@@ -72,6 +72,36 @@ off-brand and flat. Grays are for scaffolding: gridlines, muted labels, separato
 **Magnitude colormap** (`craft.MAGNITUDE_CMAP`): light neutral `#F2EAE8` → Bulls red
 `#CE1141` → deep red `#7E0C2B`. Use when a bar/cell's fill encodes stat magnitude.
 
+### Canvas themes
+
+The white canvas is the default, but it is a **theme**, not the only legal background.
+Four sanctioned canvas themes exist (`house.THEMES`), promoted from the design-system.html
+doc-chrome palettes on 2026-07-13. A theme is the full coordinated token set — a background
+is a contract with every color on the page, so switching themes swaps ink, rules, gridlines,
+and the jersey stripe together, never just the fill. The theme is chosen per post at mock
+time (see `POSTING_WORKFLOW.md` Clarification Gate); no other backgrounds or textures.
+
+| Token | `white` (default) | `newsprint` | `blackout` | `hardwood` |
+|---|---|---|---|---|
+| `canvas` | `#FFFFFF` | `#F3EDDF` | `#121214` | `#BE0E3B` |
+| `ink` | `#1A1A1A` | `#191713` | `#F1EFEC` | `#FDF3EA` |
+| `muted` | `#777777` | `#5D5749` | `#A7A39E` | `#FBE8E0` |
+| `faint` | `#AAAAAA` | `#948C79` | `#6F6B66` | `#E497A4` |
+| `rule` | `#DDDDDD` | `#DCD3BF` | `#2B2B30` | `#D15370` |
+| `tick` | `#CFCFCF` | `#CBC1A9` | `#3A3A40` | `#D76A81` |
+| `grid` | `#F0F0F0` | `#EAE2CE` | `#1B1B1E` | `#A70C34` |
+| `accent` | `#CE1141` | `#B5123C` | `#FF3355` | `#141414` |
+| `contrast` | `#141414` | `#191713` | `#F1EFEC` | `#FDF3EA` |
+| `band` | `#CE1141` | `#191713` | `#FF3355` | `#141414` |
+| `trim_a` | `#FFFFFF` | `#F3EDDF` | `#121214` | `#FDF3EA` |
+| `trim_b` | `#141414` | `#B5123C` | `#F1EFEC` | `#BE0E3B` |
+
+Canvas/ink/muted/accent/band/trim values mirror the design-system.html doc themes exactly;
+`faint`/`rule`/`tick`/`grid` are first-pass derivations (blends toward the canvas) and may be
+tuned against real renders. On `hardwood` the accent flips to black — red is the ground, so
+black is the one meaningful color; on `blackout` the accent brightens to `#FF3355` because
+`#CE1141` lacks contrast on near-black.
+
 ## 3. Typography
 
 | Role | Face | File(s) | Notes |
@@ -91,7 +121,8 @@ font with `fontTools.varLib.instancer` if needed.
 
 ## 4. Canvas & Export
 
-- **Format:** 1080×1350 px (Instagram portrait 4:5), white background.
+- **Format:** 1080×1350 px (Instagram portrait 4:5). White background by default;
+  a sanctioned canvas theme (§2) may be chosen per post — `house.new_canvas(theme)`.
 - **Iterate at 150 DPI** (fast), **export final at 300 DPI** (2160×2700 — text survives
   Instagram compression). Prototype scripts take a `--final` flag for the 300-DPI render;
   current posts use `house.save_post(fig, path, final=...)` so draft/final dimensions are explicit.
@@ -103,9 +134,10 @@ font with `fontTools.varLib.instancer` if needed.
 
 Stacked tight, top-left anchored at x=60 (values from the reference implementation):
 
-0. **Jersey stripe** — full-bleed 16 px band across the very top of the canvas: `RED`
-   with one white and one black pinstripe (top-down: red 4 / white 2 / red 4 / black 2 /
-   red 4). Mirrors the `.band` element on design-system.html. Default-on via
+0. **Jersey stripe** — full-bleed 16 px band across the very top of the canvas: the
+   theme's `band` color with two pinstripes (top-down: band 4 / trim_a 2 / band 4 /
+   trim_b 2 / band 4). On the white default that is red with one white and one black
+   pinstripe. Mirrors the `.band` element on design-system.html. Default-on via
    `house.draw_header(..., stripe=True)`; `house.draw_jersey_stripe(ax)` standalone.
 1. **Title** — Academic M54, ALL CAPS, top at y = H−66. Auto-fit so the string fills
    W−120 exactly (balanced ~60 px margins regardless of copy length). One accent word
@@ -173,7 +205,8 @@ The highest-stopping-power object on a graphic — use sparingly.
 ### House foundation (`bulls/graphics/house.py`)
 
 `DESIGN.md` is the human-readable north star; `house.py` is the small Matplotlib implementation
-of the rules every current post shares. It owns the palette, Academic M54/Archivo font files,
+of the rules every current post shares. It owns the palette and canvas themes (`house.THEMES`;
+every draw function takes an optional `theme` and defaults to white), Academic M54/Archivo font files,
 1080×1350 canvas, 60 px margins, fitted segmented title, tick-separated subtitle, optional kicker,
 source/watermark footer pair, and 150/300-DPI export contract.
 
@@ -215,7 +248,9 @@ F5 technique references: `docs/reference/f5-technique-notes.html`.
 The grid viewed as a whole is the brand (the Half Court Mindset lesson: the template
 *is* the identity). Every feed post shares:
 
-1. White canvas, 4:5 portrait (§4) — no colored or textured backgrounds.
+1. A sanctioned canvas theme (§2), 4:5 portrait (§4) — white is the default; newsprint,
+   blackout, and hardwood are the only alternates. No other colors, no textures. The
+   theme is a per-post choice made at mock time, not a per-element decoration.
 2. The header pattern (§5): Academic M54 ALL-CAPS title with exactly one red accent
    word, tick-separated muted subtitle, red italic kicker.
 3. Red/black as the only *meaningful* colors (§2) — a thumbnail should read as
@@ -259,6 +294,13 @@ logo exists).
   title (§5 item 1). `house.OUTLINED_TITLE` is the global switch; `outlined=False` per post.
   `scripts/prototypes/mock_post_demo.py` added as a fake-data design-preview harness that
   renders both variants.
+- **2026-07-13** — Canvas themes promoted from doc chrome to render options: the white canvas
+  became the default of four sanctioned themes (`white`, `newsprint`, `blackout`, `hardwood` —
+  §2 Canvas themes), implemented as `house.Theme`/`house.THEMES` with every house draw function
+  taking an optional `theme`. The theme is chosen per post during the Clarification Gate. §10
+  rule 1 relaxed accordingly; "no other colors, no textures" still holds. Doc-chrome palettes on
+  design-system.html supplied canvas/ink/muted/accent/stripe values; quiet-tier tokens
+  (`faint`/`rule`/`tick`/`grid`) are first-pass blends open to visual tuning.
 - **2026-07-13** — Jersey-trim stripe promoted from a design-system.html page decoration to
   part of the graphics themselves: a full-bleed 16 px red band with white/black pinstripes
   at the top of every canvas (§5 item 0, `house.draw_jersey_stripe`), default-on in

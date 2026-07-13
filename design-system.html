@@ -14,9 +14,11 @@
    Bulls Design System: hand-authored, no build step.
    Two color layers, deliberately separate:
    1. DOC CHROME: themed via [data-theme] custom properties.
-   2. GRAPHIC SPEC: fixed constants (--g-*). These are the
-      matplotlib tokens from house.py; they never change with the
-      page theme, because the graphics always ship on white.
+   2. GRAPHIC SPEC: fixed constants (--g-* for the white default,
+      --gt-* for the four canvas themes in house.THEMES). These are
+      the matplotlib tokens from house.py; they never change with
+      the page theme. Spec demos render on the white default; the
+      §03 theme cards show the sanctioned alternates.
    ================================================================ */
 
 /* ---- Bulls production faces, loaded from the repo ---- */
@@ -31,6 +33,25 @@
   --g-faint:#AAAAAA; --g-rule:#DDDDDD; --g-tick:#CFCFCF; --g-grid:#F0F0F0;
   --g-canvas:#FFFFFF;
   --g-pale-red:#F7E8ED; --g-panel-red:#FAF1F4; --g-chip-gray:#F4F4F4; --g-court-line:#C9A8B5;
+
+  /* Canvas-theme tokens: mirror house.THEMES (render options, not doc chrome).
+     tests/test_design_tokens.py checks these against house.py. */
+  --gt-white-canvas:#FFFFFF; --gt-white-ink:#1A1A1A; --gt-white-muted:#777777;
+  --gt-white-faint:#AAAAAA; --gt-white-rule:#DDDDDD; --gt-white-tick:#CFCFCF;
+  --gt-white-grid:#F0F0F0; --gt-white-accent:#CE1141; --gt-white-contrast:#141414;
+  --gt-white-band:#CE1141; --gt-white-trim-a:#FFFFFF; --gt-white-trim-b:#141414;
+  --gt-newsprint-canvas:#F3EDDF; --gt-newsprint-ink:#191713; --gt-newsprint-muted:#5D5749;
+  --gt-newsprint-faint:#948C79; --gt-newsprint-rule:#DCD3BF; --gt-newsprint-tick:#CBC1A9;
+  --gt-newsprint-grid:#EAE2CE; --gt-newsprint-accent:#B5123C; --gt-newsprint-contrast:#191713;
+  --gt-newsprint-band:#191713; --gt-newsprint-trim-a:#F3EDDF; --gt-newsprint-trim-b:#B5123C;
+  --gt-blackout-canvas:#121214; --gt-blackout-ink:#F1EFEC; --gt-blackout-muted:#A7A39E;
+  --gt-blackout-faint:#6F6B66; --gt-blackout-rule:#2B2B30; --gt-blackout-tick:#3A3A40;
+  --gt-blackout-grid:#1B1B1E; --gt-blackout-accent:#FF3355; --gt-blackout-contrast:#F1EFEC;
+  --gt-blackout-band:#FF3355; --gt-blackout-trim-a:#121214; --gt-blackout-trim-b:#F1EFEC;
+  --gt-hardwood-canvas:#BE0E3B; --gt-hardwood-ink:#FDF3EA; --gt-hardwood-muted:#FBE8E0;
+  --gt-hardwood-faint:#E497A4; --gt-hardwood-rule:#D15370; --gt-hardwood-tick:#D76A81;
+  --gt-hardwood-grid:#A70C34; --gt-hardwood-accent:#141414; --gt-hardwood-contrast:#FDF3EA;
+  --gt-hardwood-band:#141414; --gt-hardwood-trim-a:#FDF3EA; --gt-hardwood-trim-b:#BE0E3B;
   --font-academic:"Academic M54", "Bevan", "Arial Black", sans-serif;
   --font-archivo:"Archivo DS", "Archivo", "Helvetica Neue", Arial, sans-serif;
   --font-mono:ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
@@ -513,7 +534,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
     <span>v2 · Jul 12, 2026</span>
   </div>
   <p class="mast-kicker">The rendered companion to DESIGN.md: every token, component, and template, visible.</p>
-  <p class="mast-how prose"><strong>How to use this file:</strong> DESIGN.md stays the canonical prose (decisions + log). This page is the visual spec: what each rule looks like rendered; <code>house.py</code> implements the shared frame and <code>craft.py</code> holds reusable components. When a decision changes, update the owner document, executable house layer, and affected demos together. The theme switcher restyles <em>this document only</em>; the graphics spec it documents is fixed; spec demos below always render on white, because the graphics always ship on white.</p>
+  <p class="mast-how prose"><strong>How to use this file:</strong> DESIGN.md stays the canonical prose (decisions + log). This page is the visual spec: what each rule looks like rendered; <code>house.py</code> implements the shared frame and <code>craft.py</code> holds reusable components. When a decision changes, update the owner document, executable house layer, and affected demos together. The theme switcher restyles <em>this document only</em>; the graphics spec it documents is fixed. Spec demos below render on the white default canvas; the four <a href="#s03">canvas themes</a> (white default + newsprint, blackout, hardwood) are real render options chosen per post via <code>house.new_canvas(theme)</code>.</p>
   <hr class="mast-rule">
 </header>
 <nav class="toc" aria-label="Sections">
@@ -556,7 +577,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
       <div><dt>RULE #DDDDDD</dt><dd>Hairlines and row dividers.</dd></div>
       <div><dt>#CFCFCF</dt><dd>Subtitle separator ticks.</dd></div>
       <div><dt>#F0F0F0</dt><dd>Chart gridlines.</dd></div>
-      <div><dt>#FFFFFF</dt><dd>Canvas, always white.</dd></div>
+      <div><dt>#FFFFFF</dt><dd>Canvas (white theme, the default; see <a href="#s03">§03</a>).</dd></div>
     </dl>
     <figcaption class="palette-caption">Illustrative share of a typical post, not a required formula. Meaning stays concentrated in red and black; neutrals provide structure. <span class="copy-status" role="status" aria-live="polite"></span></figcaption>
   </figure>
@@ -568,7 +589,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
     <div class="swatch"><button class="chip" data-hex="#F4F4F4" aria-label="Copy chip gray #F4F4F4" style="background:#F4F4F4"></button><div class="meta"><div class="row"><span class="name">CHIP_GRAY</span><span class="hex">#F4F4F4</span></div><p>Stat-chip containers.</p></div></div>
     <div class="swatch"><button class="chip" data-hex="#C9A8B5" aria-label="Copy court line #C9A8B5" style="background:#C9A8B5"></button><div class="meta"><div class="row"><span class="name">COURT_LINE</span><span class="hex">#C9A8B5</span></div><p>Court lines on pale panels.</p></div></div>
   </div>
-  <p class="note" style="margin-top:14px">Panel tints from <code>summer_league_report.py</code>: texture for grouping, never encoding; the canvas itself stays white.</p>
+  <p class="note" style="margin-top:14px">Panel tints from <code>summer_league_report.py</code>: texture for grouping, never encoding; these tints assume the white default canvas.</p>
 
   <h3 class="sub">Colormaps</h3>
   <div class="demo-grid">
@@ -646,12 +667,49 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
       </div>
     </div>
     <div class="spec-list">
-      <div class="spec-item"><div class="k">Format</div><p>1080×1350&hairsp;px · Instagram portrait 4:5. White background, always.</p></div>
+      <div class="spec-item"><div class="k">Format</div><p>1080×1350&hairsp;px · Instagram portrait 4:5. White canvas by default; one of the four canvas themes below may be chosen per post.</p></div>
       <div class="spec-item"><div class="k">Side margins</div><p>60&hairsp;px left and right. Title, subtitle, kicker, and footer all anchor here.</p></div>
       <div class="spec-item"><div class="k">DPI</div><p>Iterate at 150 (fast). Export final at 300 (2160×2700), so text survives Instagram compression. Current prototypes take <code>--final</code> and call <code>house.save_post(..., final=True)</code>.</p></div>
       <div class="spec-item"><div class="k">Axes setup</div><p>Full-bleed axes (<code>fig.add_axes([0,0,1,1])</code>), data coords = pixel coords, equal aspect, no spines or ticks.</p></div>
       <div class="spec-item"><div class="k">Constants</div><p><code>house.CANVAS_WIDTH</code> · <code>house.CANVAS_HEIGHT</code> · <code>house.DRAFT_DPI</code> · <code>house.FINAL_DPI</code></p></div>
     </div>
+  </div>
+
+  <h3 class="sub">Canvas themes: four sanctioned canvases, one grammar</h3>
+  <p class="note">A theme is the whole coordinated token set (canvas, ink, quiet tiers, accent, stripe), never just a background fill. White is the default; the alternates are per-post choices made at mock time in the Clarification Gate. <code>house.THEMES</code> holds the tokens; every house draw function takes <code>theme=</code>. Full token table: DESIGN.md §2.</p>
+  <div class="theme-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:14px">
+    <figure style="margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden">
+      <div style="background:var(--gt-white-canvas);padding:0 0 18px">
+        <div style="height:4px;background:var(--gt-white-band)"></div><div style="height:2px;background:var(--gt-white-trim-a)"></div><div style="height:4px;background:var(--gt-white-band)"></div><div style="height:2px;background:var(--gt-white-trim-b)"></div><div style="height:4px;background:var(--gt-white-band)"></div>
+        <div style="padding:14px 14px 0;font-family:var(--font-academic);font-size:1.3rem;letter-spacing:.02em;color:var(--gt-white-ink)">WHITE <span style="color:var(--gt-white-accent)">DEFAULT</span></div>
+        <div style="padding:6px 14px 0;font-family:var(--font-archivo);font-size:.72rem;color:var(--gt-white-muted)">ink · muted · <span style="color:var(--gt-white-faint)">faint</span></div>
+      </div>
+      <figcaption style="padding:8px 12px;font-size:.75rem"><code>theme="white"</code> · the house look since the debut post</figcaption>
+    </figure>
+    <figure style="margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden">
+      <div style="background:var(--gt-newsprint-canvas);padding:0 0 18px">
+        <div style="height:4px;background:var(--gt-newsprint-band)"></div><div style="height:2px;background:var(--gt-newsprint-trim-a)"></div><div style="height:4px;background:var(--gt-newsprint-band)"></div><div style="height:2px;background:var(--gt-newsprint-trim-b)"></div><div style="height:4px;background:var(--gt-newsprint-band)"></div>
+        <div style="padding:14px 14px 0;font-family:var(--font-academic);font-size:1.3rem;letter-spacing:.02em;color:var(--gt-newsprint-ink)">NEWS<span style="color:var(--gt-newsprint-accent)">PRINT</span></div>
+        <div style="padding:6px 14px 0;font-family:var(--font-archivo);font-size:.72rem;color:var(--gt-newsprint-muted)">ink · muted · <span style="color:var(--gt-newsprint-faint)">faint</span></div>
+      </div>
+      <figcaption style="padding:8px 12px;font-size:.75rem"><code>theme="newsprint"</code> · cream paper, black band, deeper red</figcaption>
+    </figure>
+    <figure style="margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden">
+      <div style="background:var(--gt-blackout-canvas);padding:0 0 18px">
+        <div style="height:4px;background:var(--gt-blackout-band)"></div><div style="height:2px;background:var(--gt-blackout-trim-a)"></div><div style="height:4px;background:var(--gt-blackout-band)"></div><div style="height:2px;background:var(--gt-blackout-trim-b)"></div><div style="height:4px;background:var(--gt-blackout-band)"></div>
+        <div style="padding:14px 14px 0;font-family:var(--font-academic);font-size:1.3rem;letter-spacing:.02em;color:var(--gt-blackout-ink)">BLACK<span style="color:var(--gt-blackout-accent)">OUT</span></div>
+        <div style="padding:6px 14px 0;font-family:var(--font-archivo);font-size:.72rem;color:var(--gt-blackout-muted)">ink · muted · <span style="color:var(--gt-blackout-faint)">faint</span></div>
+      </div>
+      <figcaption style="padding:8px 12px;font-size:.75rem"><code>theme="blackout"</code> · near-black, brighter red for contrast</figcaption>
+    </figure>
+    <figure style="margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden">
+      <div style="background:var(--gt-hardwood-canvas);padding:0 0 18px">
+        <div style="height:4px;background:var(--gt-hardwood-band)"></div><div style="height:2px;background:var(--gt-hardwood-trim-a)"></div><div style="height:4px;background:var(--gt-hardwood-band)"></div><div style="height:2px;background:var(--gt-hardwood-trim-b)"></div><div style="height:4px;background:var(--gt-hardwood-band)"></div>
+        <div style="padding:14px 14px 0;font-family:var(--font-academic);font-size:1.3rem;letter-spacing:.02em;color:var(--gt-hardwood-ink)">HARD<span style="color:var(--gt-hardwood-accent)">WOOD</span></div>
+        <div style="padding:6px 14px 0;font-family:var(--font-archivo);font-size:.72rem;color:var(--gt-hardwood-muted)">ink · muted · <span style="color:var(--gt-hardwood-faint)">faint</span></div>
+      </div>
+      <figcaption style="padding:8px 12px;font-size:.75rem"><code>theme="hardwood"</code> · full-bleed red; black becomes the accent</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -1001,7 +1059,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
   <div class="sec-head"><span class="num">11</span><h2>Grid Rules</h2><span class="src">DESIGN.md §10 · every post, no exceptions</span></div>
   <p class="sec-intro">The grid viewed as a whole is the brand: the template <em>is</em> the identity (the Half Court Mindset lesson). Every feed post shares:</p>
   <div class="rules">
-    <div class="rule-item"><span class="rn">1</span><p><b>White canvas, 4:5 portrait</b>: no colored or textured backgrounds.</p></div>
+    <div class="rule-item"><span class="rn">1</span><p><b>A sanctioned canvas theme, 4:5 portrait</b>: white default, or newsprint / blackout / hardwood (<a href="#s03">§03</a>) chosen per post at mock time. No other colors, no textures.</p></div>
     <div class="rule-item"><span class="rn">2</span><p><b>The header pattern:</b> Academic M54 ALL-CAPS title with exactly one red accent word, tick-separated muted subtitle, red italic kicker.</p></div>
     <div class="rule-item"><span class="rn">3</span><p><b>Red/black as the only meaningful colors</b>: a thumbnail reads red + black + white before the title is legible.</p></div>
     <div class="rule-item"><span class="rn">4</span><p><b>The footer pair:</b> source credit bottom-left, watermark bottom-right.</p></div>

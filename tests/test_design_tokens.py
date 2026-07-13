@@ -80,6 +80,53 @@ def test_design_system_html_spec_constants_match_house(var):
     )
 
 
+# Theme dataclass fields that hold a color, in declaration order.
+THEME_COLOR_FIELDS = [
+    "canvas", "ink", "muted", "faint", "rule", "tick",
+    "grid", "accent", "contrast", "band", "trim_a", "trim_b",
+]
+
+
+@pytest.mark.parametrize(
+    "theme_name,field",
+    [(t, f) for t in sorted(house.THEMES) for f in THEME_COLOR_FIELDS],
+)
+def test_theme_tokens_match_design_system_html(theme_name, field):
+    var = f"--gt-{theme_name}-{field.replace('_', '-')}"
+    expected = getattr(house.THEMES[theme_name], field)
+    match = re.search(rf"{var}:\s*(#[0-9A-Fa-f]{{6}})", DESIGN_HTML)
+    assert match, f"design-system.html no longer defines {var}."
+    assert match.group(1).upper() == expected.upper(), (
+        f"design-system.html sets {var} to {match.group(1)} but house.py says {expected}."
+    )
+
+
+@pytest.mark.parametrize(
+    "theme_name,field",
+    [(t, f) for t in sorted(house.THEMES) for f in THEME_COLOR_FIELDS],
+)
+def test_theme_tokens_documented_in_design_md(theme_name, field):
+    expected = getattr(house.THEMES[theme_name], field).upper()
+    assert expected in DESIGN_MD.upper(), (
+        f"house.THEMES['{theme_name}'].{field} = {expected} does not appear in "
+        "DESIGN.md — update the §2 Canvas themes table (or house.py) so they agree."
+    )
+
+
+def test_white_theme_matches_module_constants():
+    white = house.THEMES["white"]
+    assert white.canvas == house.WHITE
+    assert white.ink == house.INK
+    assert white.muted == house.MUTED
+    assert white.faint == house.FAINT
+    assert white.rule == house.RULE
+    assert white.tick == house.SUBTITLE_RULE
+    assert white.grid == house.GRIDLINE
+    assert white.accent == house.RED
+    assert white.contrast == house.BULLS_BLACK
+    assert house.DEFAULT_THEME is white
+
+
 def test_config_rgb_tuples_match_house():
     assert config.BULLS_RED == _hex_to_rgb(house.RED)
     assert config.BULLS_BLACK == _hex_to_rgb(house.BULLS_BLACK)

@@ -138,6 +138,7 @@ def threshold_footer(
     y: float = 0.03,
     ha: str = "left",
     fontsize: float = 8.5,
+    color: str = FAINT,
 ) -> mtext.Text:
     """Render the fairness-guardrail footer at the bottom of a figure.
 
@@ -158,7 +159,7 @@ def threshold_footer(
     line = " | ".join(part for part in (qualification, coverage, source) if part)
     return fig.text(
         x, y, line,
-        ha=ha, va="bottom", fontsize=fontsize, color=FAINT,
+        ha=ha, va="bottom", fontsize=fontsize, color=color,
         fontproperties=body_font(),
     )
 

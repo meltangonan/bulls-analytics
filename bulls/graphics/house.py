@@ -11,6 +11,7 @@ that the visual grammar repeats.
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Sequence
 
@@ -42,6 +43,122 @@ FAINT = "#AAAAAA"
 RULE = "#DDDDDD"
 SUBTITLE_RULE = "#CFCFCF"
 GRIDLINE = "#F0F0F0"
+
+
+@dataclass(frozen=True)
+class Theme:
+    """A coordinated canvas palette for rendered posts.
+
+    A background is a contract with every other color on the page, so a theme
+    carries the full token set, not just the canvas fill. ``white`` is the
+    default and matches the loose module constants above; the alternates
+    mirror the doc-chrome palettes on design-system.html, promoted to real
+    render options (DESIGN.md §2/§10).
+    """
+
+    name: str
+    canvas: str  # canvas background
+    ink: str  # primary text, data lines
+    muted: str  # secondary text, axis labels, watermark
+    faint: str  # footer/source credit, quietest tier
+    rule: str  # table rules, hairlines
+    tick: str  # subtitle separator ticks
+    grid: str  # chart gridlines
+    accent: str  # the one accent color (red on light canvases)
+    contrast: str  # heavy fills opposite the accent (black role)
+    band: str  # jersey-stripe band fill
+    trim_a: str  # first pinstripe
+    trim_b: str  # second pinstripe
+
+    @property
+    def stripe_layers(self) -> list[tuple[int, str]]:
+        """Top-down stripe layers: band 4 / trim_a 2 / band 4 / trim_b 2 / band 4."""
+        return [
+            (4, self.band),
+            (2, self.trim_a),
+            (4, self.band),
+            (2, self.trim_b),
+            (4, self.band),
+        ]
+
+
+THEMES: dict[str, Theme] = {
+    "white": Theme(
+        name="white",
+        canvas=WHITE,
+        ink=INK,
+        muted=MUTED,
+        faint=FAINT,
+        rule=RULE,
+        tick=SUBTITLE_RULE,
+        grid=GRIDLINE,
+        accent=RED,
+        contrast=BULLS_BLACK,
+        band=RED,
+        trim_a=WHITE,
+        trim_b=BULLS_BLACK,
+    ),
+    "newsprint": Theme(
+        name="newsprint",
+        canvas="#F3EDDF",
+        ink="#191713",
+        muted="#5D5749",
+        faint="#948C79",
+        rule="#DCD3BF",
+        tick="#CBC1A9",
+        grid="#EAE2CE",
+        accent="#B5123C",
+        contrast="#191713",
+        band="#191713",
+        trim_a="#F3EDDF",
+        trim_b="#B5123C",
+    ),
+    "blackout": Theme(
+        name="blackout",
+        canvas="#121214",
+        ink="#F1EFEC",
+        muted="#A7A39E",
+        faint="#6F6B66",
+        rule="#2B2B30",
+        tick="#3A3A40",
+        grid="#1B1B1E",
+        accent="#FF3355",
+        contrast="#F1EFEC",
+        band="#FF3355",
+        trim_a="#121214",
+        trim_b="#F1EFEC",
+    ),
+    "hardwood": Theme(
+        name="hardwood",
+        canvas="#BE0E3B",
+        ink="#FDF3EA",
+        muted="#FBE8E0",
+        faint="#E497A4",
+        rule="#D15370",
+        tick="#D76A81",
+        grid="#A70C34",
+        accent="#141414",
+        contrast="#FDF3EA",
+        band="#141414",
+        trim_a="#FDF3EA",
+        trim_b="#BE0E3B",
+    ),
+}
+
+DEFAULT_THEME = THEMES["white"]
+
+
+def get_theme(name: str | Theme | None) -> Theme:
+    """Resolve a theme by name; None means the white default."""
+    if name is None:
+        return DEFAULT_THEME
+    if isinstance(name, Theme):
+        return name
+    try:
+        return THEMES[name]
+    except KeyError as error:
+        options = ", ".join(THEMES)
+        raise ValueError(f"Unknown theme '{name}'; choose one of: {options}.") from error
 
 _DISPLAY_FONT = REPO_ROOT / "assets" / "fonts" / "AcademicM54.ttf"
 _BODY_FONTS = {
@@ -80,14 +197,19 @@ def rendered_width(ax, text_artist) -> float:
     return x1 - x0
 
 
-def new_canvas():
-    """Create the fixed 1080x1350 full-bleed house canvas."""
+def new_canvas(theme: str | Theme | None = None):
+    """Create the fixed 1080x1350 full-bleed house canvas.
+
+    ``theme`` selects a canvas theme by name ("white", "newsprint",
+    "blackout", "hardwood"); omitted means the white default.
+    """
+    theme = get_theme(theme)
     fig = plt.figure(
         figsize=(CANVAS_WIDTH / DRAFT_DPI, CANVAS_HEIGHT / DRAFT_DPI),
-        facecolor=WHITE,
+        facecolor=theme.canvas,
     )
     ax = fig.add_axes([0, 0, 1, 1])
-    ax.set_facecolor(WHITE)
+    ax.set_facecolor(theme.canvas)
     ax.set_xlim(0, CANVAS_WIDTH)
     ax.set_ylim(0, CANVAS_HEIGHT)
     ax.set_aspect("equal")
@@ -98,14 +220,15 @@ def new_canvas():
     return fig, ax
 
 
-def draw_jersey_stripe(ax):
+def draw_jersey_stripe(ax, theme: str | Theme | None = None):
     """Draw the full-bleed jersey-trim band across the top of the canvas.
 
-    Red with one white and one black pinstripe, top-down: red 4, white 2,
-    red 4, black 2, red 4 (16 px total). Mirrors the ``.band`` element on
-    design-system.html.
+    Band with two pinstripes, top-down: band 4, trim 2, band 4, trim 2,
+    band 4 (16 px total). On the white default that is red with one white
+    and one black pinstripe; alternates use their theme's band/trim tokens.
+    Mirrors the ``.band`` element on design-system.html.
     """
-    layers = [(4, RED), (2, WHITE), (4, RED), (2, BULLS_BLACK), (4, RED)]
+    layers = get_theme(theme).stripe_layers
     artists = []
     y = CANVAS_HEIGHT
     for height, color in layers:
@@ -188,12 +311,14 @@ def draw_subtitle(
     *,
     y: float = CANVAS_HEIGHT - 168,
     weight: str = "medium",
+    theme: str | Theme | None = None,
 ):
     """Draw subtitle parts separated by real vertical ticks, never glyphs."""
+    theme = get_theme(theme)
     cursor = SIDE_MARGIN
     artists = []
     for index, part in enumerate(parts):
-        text, color = part if isinstance(part, tuple) else (part, MUTED)
+        text, color = part if isinstance(part, tuple) else (part, theme.muted)
         artist = ax.text(
             cursor,
             y,
@@ -211,7 +336,7 @@ def draw_subtitle(
             line = ax.plot(
                 [cursor, cursor],
                 [y - 21, y - 5],
-                color=SUBTITLE_RULE,
+                color=theme.tick,
                 lw=1.3,
                 zorder=6,
             )[0]
@@ -230,13 +355,15 @@ def draw_header(
     title_base_size: float = 90,
     stripe: bool = True,
     outlined: bool | None = None,
+    theme: str | Theme | None = None,
 ):
     """Draw the current stripe, title, subtitle, and optional kicker pattern."""
-    artists = list(draw_jersey_stripe(ax)) if stripe else []
+    theme = get_theme(theme)
+    artists = list(draw_jersey_stripe(ax, theme)) if stripe else []
     artists.extend(
         draw_fitted_title(ax, title_segments, base_size=title_base_size, outlined=outlined)
     )
-    artists.extend(draw_subtitle(ax, subtitle_parts, weight=subtitle_weight))
+    artists.extend(draw_subtitle(ax, subtitle_parts, weight=subtitle_weight, theme=theme))
     if kicker:
         artists.append(
             ax.text(
@@ -246,7 +373,7 @@ def draw_header(
                 ha="left",
                 va="top",
                 fontsize=14,
-                color=RED,
+                color=theme.accent,
                 style="italic",
                 fontproperties=body_font("medium"),
             )
@@ -260,8 +387,10 @@ def draw_footer(
     source: str = "Data via NBA.com/Stats",
     note: str | None = None,
     watermark: str = "@chicagobullsdata",
+    theme: str | Theme | None = None,
 ):
     """Draw the required source/watermark footer pair."""
+    theme = get_theme(theme)
     left_text = f"{note} · {source}" if note else source
     source_artist = ax.text(
         SIDE_MARGIN,
@@ -270,7 +399,7 @@ def draw_footer(
         ha="left",
         va="bottom",
         fontsize=8.5,
-        color=FAINT,
+        color=theme.faint,
         fontproperties=body_font(),
     )
     watermark_artist = ax.text(
@@ -280,7 +409,7 @@ def draw_footer(
         ha="right",
         va="bottom",
         fontsize=10.5,
-        color=MUTED,
+        color=theme.muted,
         fontproperties=body_font("medium"),
         zorder=8,
     )

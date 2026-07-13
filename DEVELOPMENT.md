@@ -62,7 +62,10 @@ output/feed/                 # Generated PNGs; gitignored
 ### `bulls.graphics`
 
 - `house.new_canvas`, `draw_header`, `draw_footer`, `save_post` — executable current-design
-  foundation; `DESIGN.md` remains the human-readable owner of the decisions
+  foundation; `DESIGN.md` remains the human-readable owner of the decisions. Each draw
+  function takes an optional `theme=` (a `house.THEMES` name: `white` default, `newsprint`,
+  `blackout`, `hardwood`); themed posts should pull chart colors from the `Theme` tokens
+  (`theme.ink`, `theme.accent`, `theme.grid`, …) instead of the white-canvas module constants
 - `build_zone_leaders_post(team_shots, ...)` — PPG court map
 - `build_zone_frequency_post(team_shots, ...)` — frequency court map
 - `build_zone_pps_post(team_shots, ...)` — PPS bar chart

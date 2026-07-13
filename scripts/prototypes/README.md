@@ -12,7 +12,8 @@ deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
 | `three_options.py` | Impact vs. Availability · The Season, Month by Month · The Shape of the Season · The Shape of the Record |
 | `f5_leaderboard.py` | F5 Leaderboard — Bulls Scoring Leaders (exports at 300 DPI / 2160x2700; change `STAT_COL` + labels for new topics) |
 | `f5_lineup_table.py` | Bulls Lineup Table — 2-man combos by net rating (needs network for lineup data; 300 DPI) |
-| `summer_league_report.py` | Summer League Report — run bare to auto-resolve the latest completed Bulls SL game, then re-run with `--carousel --player …` (the game-night format: team front page with an embedded Great Tables player comparison + one C2-structure slide per player) or 1–3 `--player`/`--lens` pairs for the legacy single image (needs network; refuses in-progress games) |
+| `summer_league_report.py` | Summer League Report v1 + v2 — run bare to auto-resolve the latest completed Bulls SL game, then re-run with `--carousel --player …` (current v2: team front page with the 35/65 comparison-and-shot-diet panel, shooting splits, and Great Tables player table + one player-focused shot-profile slide per selection) or 1–3 `--player`/`--lens` pairs for the legacy single image (needs network; refuses in-progress games) |
+| `regular_season_gamebook.py` | Four independent regular-season postgame experiments — Game Deciders · Game Fingerprint · Shot Quality vs. Making · Who Drove What? (deterministic rehearsal using the Jul 10 Summer League game plus frozen 2025-26 benchmarks; no live API call) |
 | `summer_league_anatomy_wireframes.py` | Structure study only — the A/B/C/C2/D wireframes behind `docs/ideation/summer-league-anatomy-study.html`; not a posting format |
 | `summer_league_great_tables_spike.py` | Great Tables / gt-extras feasibility spike behind the anatomy study; the production table now lives in `summer_league_report.py` |
 | `mock_post_demo.py` | Not a catalog card — a design-preview harness. Renders a full fake post (fictional roster, no network/cache needed) through the real house pipeline so design-system changes can be judged on an actual graphic; also writes a plain-title comparison variant (`-plain.png`, `outlined=False`) |
@@ -47,6 +48,7 @@ venv/bin/python scripts/prototypes/impact_board.py
 venv/bin/python scripts/prototypes/three_options.py
 venv/bin/python scripts/prototypes/f5_leaderboard.py
 venv/bin/python scripts/prototypes/f5_lineup_table.py
+venv/bin/python scripts/prototypes/regular_season_gamebook.py
 ```
 
 ### Summer League Report quick start

@@ -176,9 +176,94 @@
 <div class="grid">
 
   <div class="card">
+    <a class="thumb" href="docs/mocks/2026-07-13-summer-league-report-v2-concept-s1.png"><img src="docs/mocks/2026-07-13-summer-league-report-v2-concept-s1.png" alt="Summer League Report v2 team snapshot concept"></a>
+    <div class="body">
+      <h2>Summer League Report v2</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Carousel</span>
+        <span class="chip grammar">Repeat Format</span>
+        <span class="date">2026-07-13</span>
+      </div>
+      <p class="insight">The redesigned game-night recap: matchup logos and score lead into a roughly 35/65 opponent-comparison and Bulls shot-diet panel, shooting splits, and a clean player table; selected player slides pair identity stats with an exact shot chart, shot distribution, and one red true-shooting payoff card.</p>
+      <p class="notes"><strong>Status:</strong> structure approved after a Bulls&ndash;Grizzlies rehearsal, but this v2 mock has not been posted. The original Memphis carousel remains preserved below as the `Posted` v1 artifact. The next game report should replace the rehearsal values and choose player stories from that game rather than treating these five slides as fixed.</p>
+      <p class="notes"><strong>Operating guardrails:</strong> NBA.com&rsquo;s shot-chart and advanced feeds can trail the final box score, so the renderer refuses incomplete derived data. Traditional TS% also needs Summer League context because the 2026 one-free-throw rule can inflate it.</p>
+      <p class="files">Script: <a href="scripts/prototypes/summer_league_report.py">prototypes/summer_league_report.py</a> &middot; player-slide examples: <a href="docs/mocks/2026-07-13-summer-league-report-v2-concept-s2.png">s2</a> &middot; <a href="docs/mocks/2026-07-13-summer-league-report-v2-concept-s3.png">s3</a> &middot; <a href="docs/mocks/2026-07-13-summer-league-report-v2-concept-s4.png">s4</a> &middot; <a href="docs/mocks/2026-07-13-summer-league-report-v2-concept-s5.png">s5</a> &middot; next report: <a href="docs/handoffs/2026-07-13-handoff-bulls-jazz-summer-league-report.md">Bulls&ndash;Jazz handoff</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="thumb" href="docs/mocks/2026-07-13-regular-season-gamebook-concept-s1.png"><img src="docs/mocks/2026-07-13-regular-season-gamebook-concept-s1.png" alt="Game Deciders regular-season postgame concept"></a>
+    <div class="body">
+      <h2>Postgame Experiment &mdash; Game Deciders</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Comparison</span>
+        <span class="chip grammar">Postgame</span>
+        <span class="date">2026-07-13</span>
+      </div>
+      <p class="insight">Reduce a game to the four margins that most often decide it: effective field-goal percentage, turnover rate, offensive-rebound rate, and free-throw scoring rate, with the Bulls and opponent on one shared comparison board.</p>
+      <p class="notes"><strong>Experiment:</strong> the most immediately understandable and repeatable of four regular-season recap directions. This mock uses the Jul 10 Bulls&ndash;Grizzlies Summer League game only as rehearsal data; a live version would use the completed regular-season game.</p>
+      <p class="notes"><strong>Open question:</strong> whether the free-throw factor should remain FTM/FGA, which reflects points converted, or switch to FTA/FGA, which better isolates foul-drawing process. No recurring format has been approved.</p>
+      <p class="files">Shared prototype: <a href="scripts/prototypes/regular_season_gamebook.py">prototypes/regular_season_gamebook.py</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="thumb" href="docs/mocks/2026-07-13-regular-season-gamebook-concept-s2.png"><img src="docs/mocks/2026-07-13-regular-season-gamebook-concept-s2.png" alt="Game Fingerprint regular-season postgame concept"></a>
+    <div class="body">
+      <h2>Postgame Experiment &mdash; Game Fingerprint</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Profile</span>
+        <span class="chip grammar">Postgame</span>
+        <span class="date">2026-07-13</span>
+      </div>
+      <p class="insight">Show what made one Bulls game unusual by locating its shotmaking, shot mix, free-throw rate, turnovers, and assisted-field-goal rate inside the team&rsquo;s own season distribution.</p>
+      <p class="notes"><strong>Experiment:</strong> the strongest &ldquo;I did not know that&rdquo; direction because it turns a box-score number into team-specific context. The mock deliberately crosses Summer League game values with the 2025&ndash;26 regular-season Bulls baseline to rehearse the visual, not to make a real basketball comparison.</p>
+      <p class="notes"><strong>Open question:</strong> use the Bulls&rsquo; season-to-date distribution before the game for the cleanest baseline, then feature only the one or two genuinely unusual traits instead of forcing the same five every night.</p>
+      <p class="files">Shared prototype: <a href="scripts/prototypes/regular_season_gamebook.py">prototypes/regular_season_gamebook.py</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="thumb" href="docs/mocks/2026-07-13-regular-season-gamebook-concept-s3.png"><img src="docs/mocks/2026-07-13-regular-season-gamebook-concept-s3.png" alt="Shot Quality versus Making regular-season postgame concept"></a>
+    <div class="body">
+      <h2>Postgame Experiment &mdash; Shot Quality vs. Making</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Bar Chart</span>
+        <span class="chip grammar">Postgame</span>
+        <span class="date">2026-07-13</span>
+      </div>
+      <p class="insight">Separate shot diet from shot conversion by comparing actual field-goal points with the points an average NBA team would expect from the same basic shot-zone mix.</p>
+      <p class="notes"><strong>Experiment:</strong> the most analytically distinctive direction, best used when shot location explains the game. This rehearsal model uses 2025&ndash;26 league-average field-goal percentage by five basic zones; it is intentionally simpler than a true expected-shot model.</p>
+      <p class="notes"><strong>Limitation:</strong> location alone does not account for shooter, defender distance, clock, pass quality, or self-created difficulty. Treat it as average location value, not a complete measure of shot quality, and use it selectively rather than automatically.</p>
+      <p class="files">Shared prototype: <a href="scripts/prototypes/regular_season_gamebook.py">prototypes/regular_season_gamebook.py</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="thumb" href="docs/mocks/2026-07-13-regular-season-gamebook-concept-s4.png"><img src="docs/mocks/2026-07-13-regular-season-gamebook-concept-s4.png" alt="Who Drove What regular-season postgame concept"></a>
+    <div class="body">
+      <h2>Postgame Experiment &mdash; Who Drove What?</h2>
+      <div class="meta">
+        <span class="chip mocked">Mocked</span>
+        <span class="chip grammar">Contribution Board</span>
+        <span class="chip grammar">Postgame</span>
+        <span class="date">2026-07-13</span>
+      </div>
+      <p class="insight">Map the rotation by role rather than one catch-all rating: each qualifying player&rsquo;s share of team scoring, shot attempts, assists, and rebounds shows who carried which part of the game.</p>
+      <p class="notes"><strong>Experiment:</strong> the strongest Basketball University-style roster board of the set and a possible alternative to automatically making individual player slides. The rehearsal includes players who logged at least 10 minutes in Bulls&ndash;Grizzlies.</p>
+      <p class="notes"><strong>Open question:</strong> whether this belongs inside a recap carousel or works better as a standalone post when the roles split in an interesting way. It deliberately avoids leaning on noisy single-game plus-minus.</p>
+      <p class="files">Shared prototype: <a href="scripts/prototypes/regular_season_gamebook.py">prototypes/regular_season_gamebook.py</a></p>
+    </div>
+  </div>
+
+  <div class="card">
     <a class="thumb" href="docs/mocks/2026-07-10-summer-league-report-s1.png"><img src="docs/mocks/2026-07-10-summer-league-report-s1.png" alt="Summer League Report"></a>
     <div class="body">
-      <h2>Summer League Report</h2>
+      <h2>Summer League Report v1 &mdash; Bulls vs. Grizzlies</h2>
       <div class="meta">
         <span class="chip posted">Posted</span>
         <span class="chip grammar">Carousel</span>

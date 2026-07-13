@@ -20,6 +20,7 @@ output/*.jpg
 output/*.jpeg
 output/feed/
 output/brand/
+output/theme-demos/
 !output/.gitkeep
 
 # Cached data

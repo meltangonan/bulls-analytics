@@ -109,7 +109,10 @@ Stacked tight, top-left anchored at x=60 (values from the reference implementati
    `house.draw_header(..., stripe=True)`; `house.draw_jersey_stripe(ax)` standalone.
 1. **Title** — Academic M54, ALL CAPS, top at y = H−66. Auto-fit so the string fills
    W−120 exactly (balanced ~60 px margins regardless of copy length). One accent word
-   in `RED`, rest in `INK`.
+   in `RED`, rest in `INK`. **Jersey-lettering outline, default-on:** each glyph gets a
+   red outer stroke (7 pt) and white gap (3.5 pt) via path effects, echoing the stripe.
+   Switch back globally by flipping `house.OUTLINED_TITLE = False`, or per post with
+   `draw_header(..., outlined=False)`.
 2. **Subtitle** — y = H−168, 18 pt Archivo medium, `MUTED`. Segments (team · season ·
    record etc.) separated by thin light-gray **vertical ticks** (`#CFCFCF`, ~1.3 lw,
    ~16 px tall) — never "|" or "·" glyphs in rendered text.
@@ -251,6 +254,11 @@ logo exists).
 
 ## Decision Log
 
+- **2026-07-13** — Outlined "jersey lettering" title adopted as the default (user pick from a
+  side-by-side mock): red outer stroke + white gap path effects on the fitted Academic M54
+  title (§5 item 1). `house.OUTLINED_TITLE` is the global switch; `outlined=False` per post.
+  `scripts/prototypes/mock_post_demo.py` added as a fake-data design-preview harness that
+  renders both variants.
 - **2026-07-13** — Jersey-trim stripe promoted from a design-system.html page decoration to
   part of the graphics themselves: a full-bleed 16 px red band with white/black pinstripes
   at the top of every canvas (§5 item 0, `house.draw_jersey_stripe`), default-on in

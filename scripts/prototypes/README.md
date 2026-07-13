@@ -15,6 +15,7 @@ deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
 | `summer_league_report.py` | Summer League Report — run bare to auto-resolve the latest completed Bulls SL game, then re-run with `--carousel --player …` (the game-night format: team front page with an embedded Great Tables player comparison + one C2-structure slide per player) or 1–3 `--player`/`--lens` pairs for the legacy single image (needs network; refuses in-progress games) |
 | `summer_league_anatomy_wireframes.py` | Structure study only — the A/B/C/C2/D wireframes behind `docs/ideation/summer-league-anatomy-study.html`; not a posting format |
 | `summer_league_great_tables_spike.py` | Great Tables / gt-extras feasibility spike behind the anatomy study; the production table now lives in `summer_league_report.py` |
+| `mock_post_demo.py` | Not a catalog card — a design-preview harness. Renders a full fake post (fictional roster, no network/cache needed) through the real house pipeline so design-system changes can be judged on an actual graphic; also writes a plain-title comparison variant (`-plain.png`, `outlined=False`) |
 
 ## Season cache
 

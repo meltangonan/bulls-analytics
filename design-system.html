@@ -282,8 +282,15 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
     var(--g-red) 0 4px, var(--g-canvas) 4px 6px, var(--g-red) 6px 10px,
     var(--g-black) 10px 12px, var(--g-red) 12px 16px);
 }
-.hdr-demo .t { font-family:var(--font-academic); text-transform:uppercase; font-size:clamp(1.6rem,4.4vw,2.7rem); line-height:1; letter-spacing:.01em; color:var(--g-ink); }
+.hdr-demo .t { font-family:var(--font-academic); text-transform:uppercase; font-size:clamp(1.6rem,4.4vw,2.7rem); line-height:1; letter-spacing:.01em; color:var(--g-ink); position:relative; z-index:0; width:max-content; }
 .hdr-demo .t .acc { color:var(--g-red); }
+/* Jersey-lettering outline: two stroked copies stacked behind the fill
+   (red outer, white gap) — mirrors house.py path effects. */
+.hdr-demo .t::before, .hdr-demo .t::after {
+  content:attr(data-text); position:absolute; inset:0; z-index:-1;
+  -webkit-text-stroke:6px var(--g-red); color:transparent;
+}
+.hdr-demo .t::after { -webkit-text-stroke:3px var(--g-canvas); }
 .hdr-demo .s { display:flex; flex-wrap:wrap; align-items:center; margin-top:12px; color:var(--g-muted); font-weight:500; font-size:1.02rem; }
 .hdr-demo .s span { display:inline-flex; align-items:center; }
 .hdr-demo .s span + span::before { content:""; width:1.5px; height:15px; background:var(--g-tick); margin:0 .8em; }
@@ -655,14 +662,14 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 
   <div class="canvas-card hdr-demo">
     <div class="g-stripe"></div>
-    <div class="t">The Shape of the <span class="acc">Season</span></div>
+    <div class="t" data-text="The Shape of the Season">The Shape of the <span class="acc">Season</span></div>
     <div class="s"><span>Chicago Bulls</span><span>2025-26 Season</span><span>31-51</span></div>
     <div class="k">Games over/under .500 through each game</div>
   </div>
 
   <div class="spec-list" style="margin-top:20px">
     <div class="spec-item"><div class="k"><span class="n">0</span>JERSEY STRIPE</div><p>Full-bleed 16&hairsp;px band at the very top of the canvas: RED with one white and one black pinstripe (top-down: red 4 / white 2 / red 4 / black 2 / red 4) — the same trim as this page’s top band. Default-on. <code>house.draw_jersey_stripe(ax)</code> · <code>draw_header(..., stripe=True)</code></p></div>
-    <div class="spec-item"><div class="k"><span class="n">1</span>TITLE</div><p>Academic M54, ALL CAPS, top at y = H−66. Auto-fit so the string fills W−120 exactly, for balanced margins at any copy length. One accent word RED, rest INK. <code>_draw_fitted_title(ax, segments, 60, H-66, maxw=W-120)</code></p></div>
+    <div class="spec-item"><div class="k"><span class="n">1</span>TITLE</div><p>Academic M54, ALL CAPS, top at y = H−66. Auto-fit so the string fills W−120 exactly, for balanced margins at any copy length. One accent word RED, rest INK. <strong>Jersey-lettering outline, default-on:</strong> red outer stroke (7&hairsp;pt) + white gap (3.5&hairsp;pt) path effects on every glyph. Global switch <code>house.OUTLINED_TITLE</code>; per post <code>draw_header(..., outlined=False)</code>. <code>draw_fitted_title(ax, segments, base_size=90)</code></p></div>
     <div class="spec-item"><div class="k"><span class="n">2</span>SUBTITLE</div><p>y = H−168, 18&hairsp;pt Archivo medium, MUTED. Segments (team · season · record) separated by thin vertical ticks (<code>#CFCFCF</code>, 1.3&hairsp;lw, ~16&hairsp;px tall); never "|" or "·" glyphs in rendered text.</p></div>
     <div class="spec-item"><div class="k"><span class="n">3</span>KICKER</div><p>y = H−206, 14&hairsp;pt Archivo medium italic, RED. States the metric in plain words. If the kicker explains the metric, don’t repeat the explanation in a footer.</p></div>
   </div>

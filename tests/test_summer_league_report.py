@@ -263,6 +263,7 @@ def test_prepare_player_slide_contains_display_ready_story_content(monkeypatch):
     assert data.display_name == "CALEB WILSON"
     assert data.attempts_label == "SHOT CHART"
     assert [item.label for item in data.identity_stats] == ["PTS", "MIN", "REB", "AST", "STL", "BLK"]
+    assert all(item.color == report.INK for item in data.identity_stats)
     assert [(item.value, item.label) for item in data.zone_stats] == [
         ("1-1", "RIM / PAINT"),
         ("0-0", "MID-RANGE"),
@@ -280,3 +281,21 @@ def test_prepare_player_slide_contains_display_ready_story_content(monkeypatch):
     assert true_shooting.value == "74.0%"
     assert not true_shooting.highlight
     assert not any(item.highlight for item in data.profile_stats)
+
+
+def test_prepare_player_slide_highlights_only_requested_identity_stat(monkeypatch):
+    monkeypatch.setattr(report, "_headshot_path", lambda player: None)
+
+    data = report.prepare_player_slide(
+        _player_row(),
+        _team_row(),
+        _opponent_row(),
+        _located_shots(),
+        "JUL 13, 2026",
+        None,
+        frozenset({"BLK"}),
+    )
+
+    colors = {item.label: item.color for item in data.identity_stats}
+    assert colors["BLK"] == report.RED
+    assert all(color == report.INK for label, color in colors.items() if label != "BLK")

@@ -99,9 +99,10 @@ Durable caption rules (user-confirmed 2026-07-11, after the account's first two 
 
 - **The user writes the caption.** Offer at most one short line as raw material — never a
   multi-sentence draft. The first two data-viz posts both used the user's own one-liner plus hashtags.
-- **Verify hashtags and named players against the posted content.** A leftover tag from an earlier
-  draft (a player who did not appear in the final post) slipped into the first live carousel;
-  checking tags is part of publish readiness, not decoration.
+- **Verify hashtags and named players against the posted content.** Run this check on the actual
+  final caption immediately before posting, not only on an earlier draft, and do not reuse a prior
+  hashtag block unchanged. `#matas` carried into two Summer League reports despite Matas not
+  appearing in either final carousel; checking tags is part of publish readiness, not decoration.
 
 Provide caption help, alt text, hashtags, Story copy, or distribution guidance only when useful or requested.
 Keep distribution guidance to a few post-specific actions grounded in the actual subject and relevant Bulls

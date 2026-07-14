@@ -395,7 +395,19 @@ def player_candidates(players: pd.DataFrame, team: pd.Series) -> pd.DataFrame:
     candidates["FGA share"] = candidates.apply(lambda p: f"{role_share_pct(p, team):.0f}%", axis=1)
     candidates["eFG%"] = candidates.apply(lambda p: f"{efg_pct(p):.1f}%", axis=1)
     return candidates[
-        ["name", "points", "FG", "3PT", "reboundsTotal", "assists", "+/-", "FGA share", "eFG%"]
+        [
+            "name",
+            "points",
+            "FG",
+            "3PT",
+            "reboundsTotal",
+            "assists",
+            "steals",
+            "blocks",
+            "+/-",
+            "FGA share",
+            "eFG%",
+        ]
     ].sort_values(["points", "reboundsTotal", "assists"], ascending=False)
 
 
@@ -965,6 +977,7 @@ def prepare_player_slide(
     shots: pd.DataFrame,
     game_date: str,
     kicker: str | None,
+    highlighted_identity_stats: frozenset[str] = frozenset(),
 ) -> PlayerSlideData:
     """Prepare one player's display copy, metrics, image, and shot marks."""
     person_id = int(_number(player["personId"]))
@@ -974,12 +987,12 @@ def prepare_player_slide(
         display_name=_display_name(player),
         headshot=_headshot_path(player),
         identity_stats=(
-            StatItem(str(int(_number(player["points"]))), "PTS", RED),
-            StatItem(str(minutes_played(player)), "MIN"),
-            StatItem(str(int(_number(player["reboundsTotal"]))), "REB"),
-            StatItem(str(int(_number(player["assists"]))), "AST"),
-            StatItem(str(int(_number(player["steals"]))), "STL"),
-            StatItem(str(int(_number(player["blocks"]))), "BLK"),
+            StatItem(str(int(_number(player["points"]))), "PTS", RED if "PTS" in highlighted_identity_stats else INK),
+            StatItem(str(minutes_played(player)), "MIN", RED if "MIN" in highlighted_identity_stats else INK),
+            StatItem(str(int(_number(player["reboundsTotal"]))), "REB", RED if "REB" in highlighted_identity_stats else INK),
+            StatItem(str(int(_number(player["assists"]))), "AST", RED if "AST" in highlighted_identity_stats else INK),
+            StatItem(str(int(_number(player["steals"]))), "STL", RED if "STL" in highlighted_identity_stats else INK),
+            StatItem(str(int(_number(player["blocks"]))), "BLK", RED if "BLK" in highlighted_identity_stats else INK),
         ),
         attempts_label="SHOT CHART",
         shots=prepare_shot_marks(shots, person_id),
@@ -1036,8 +1049,9 @@ def render_team_slide(
     # Left: every row is normalized within itself, so bar length answers only
     # "which team had more of this stat?" Exact labels carry the actual values.
     left_end, right_start, max_bar = 210, 270, 64
+    opponent_code = data.header.title_segments[-1][0]
     ax.text(left_end, 1028, "CHI", ha="right", va="center", fontsize=10, color=RED, fontproperties=body_font("bold"))
-    ax.text(right_start, 1028, "MEM", ha="left", va="center", fontsize=10, color=DEFAULT_THEME.ink, fontproperties=body_font("bold"))
+    ax.text(right_start, 1028, opponent_code, ha="left", va="center", fontsize=10, color=DEFAULT_THEME.ink, fontproperties=body_font("bold"))
     for index, stat in enumerate(data.comparison_stats):
         y = 990 - index * 43
         row_max = max(stat.bulls_value, stat.opponent_value, 1)
@@ -1188,6 +1202,13 @@ def parse_args():
     parser.add_argument("--game-id", help="NBA.com game ID; omit to auto-resolve the latest completed Bulls game")
     parser.add_argument("--season", default=str(date.today().year), help="Summer League year used to auto-resolve the game")
     parser.add_argument("--player", action="append", dest="players", help="Featured Bulls player; repeat one to four times")
+    parser.add_argument(
+        "--highlight-player-stat",
+        action="append",
+        default=[],
+        metavar="PLAYER:STAT",
+        help="Color one identity-stat value red, for example 'Caleb Wilson:BLK'; repeat as needed",
+    )
     parser.add_argument("--lens", action="append", choices=LENSES, help="Matching story lens for each --player")
     parser.add_argument("--date", help="Graphic date label; defaults to the game's own date")
     parser.add_argument("--kicker", help="Short editorial line below the score")
@@ -1237,6 +1258,20 @@ def main():
     if needs_shots and shots.empty:
         raise SystemExit("The shot chart for this game is not available yet; choose another lens or retry shortly.")
     selected = select_players(bulls, args.players)
+    highlights: dict[str, set[str]] = {}
+    valid_identity_stats = {"PTS", "MIN", "REB", "AST", "STL", "BLK"}
+    for selection in args.highlight_player_stat:
+        try:
+            player_name, stat = (part.strip() for part in selection.rsplit(":", 1))
+        except ValueError as exc:
+            raise SystemExit("Each --highlight-player-stat must use PLAYER:STAT, such as 'Caleb Wilson:BLK'.") from exc
+        stat = stat.upper()
+        if not player_name or stat not in valid_identity_stats:
+            allowed = ", ".join(sorted(valid_identity_stats))
+            raise SystemExit(f"Invalid highlight '{selection}'. Stat must be one of: {allowed}.")
+        if not any(_player_name(player).casefold() == player_name.casefold() for player in selected):
+            raise SystemExit(f"Highlighted player '{player_name}' must also be passed with --player.")
+        highlights.setdefault(player_name.casefold(), set()).add(stat)
     # Slide 1 carries no kicker by default; --kicker adds an approved editorial line.
     kicker = args.kicker
     played_on = game_day(summary)
@@ -1260,6 +1295,7 @@ def main():
                 shots,
                 graphic_date,
                 None,
+                frozenset(highlights.get(_player_name(player).casefold(), set())),
             )
             for player in selected
         ]

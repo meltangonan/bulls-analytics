@@ -892,7 +892,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 
   <div class="comp">
     <div class="comp-head"><h3>stat chips &amp; payoff cards</h3><span class="sig">_stat_chip(...) · _chip_row(...)</span></div>
-    <p class="comp-desc">Bold value over a muted ALL-CAPS label in a rounded container. CHIP_GRAY = scaffolding; solid RED = the payoff (label in <code>#F5C9D6</code>). The big red block is the score anchor on player rows.</p>
+    <p class="comp-desc">Bold value over a muted ALL-CAPS label in a rounded container. CHIP_GRAY = scaffolding; solid RED is reserved for a deliberately chosen payoff (label in <code>#F5C9D6</code>), never added automatically. The Summer League shot-profile rail stays neutral, including TRUE SHOOTING. The big red block remains the score anchor on compact player rows.</p>
     <div class="canvas-card">
       <div class="chips">
         <div class="chip-d"><b>7-15</b><span>FIELD GOALS</span></div>
@@ -900,7 +900,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
         <div class="chip-d payoff"><b>35</b><span>PTS</span></div>
       </div>
     </div>
-    <div class="comp-note"><span class="nlab">DIMENSIONS</span><span>Chip 118×52 r10; rail card 280×88 r12. The canonical emphasis rule appears with the table component below.</span></div>
+    <div class="comp-note"><span class="nlab">DIMENSIONS</span><span>Chip 118×52 r10; rail card 280×88 r12. Use at most one payoff card only when the composition has a clear headline number; an all-neutral rail is valid.</span></div>
     <div class="comp-src">summer_league_report.py · promotion candidate for craft.py</div>
   </div>
 
@@ -941,7 +941,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
     </div>
     <div class="comp-note"><span class="nlab">TWO ENGINES</span><span><b>plottable</b> (default): matplotlib-native, reuses house fonts + save pipeline. Row dividers RULE 0.8&hairsp;lw; column-label divider INK 1.2&hairsp;lw; no column borders. <code>f5_lineup_table.py</code><br><b>Great Tables</b> (embedded): rendered to a cropped PNG (zoom=2) and composited onto the white canvas; the table engine owns row rhythm and image sizing. Striping <code>#F7F7F7</code>; headshots 52&hairsp;px; labels 12&hairsp;px bold; padding 11&hairsp;px; missing → “—”. Env-only dependency for now. <code>summer_league_report._player_table_image()</code></span></div>
     <div class="comp-note"><span class="nlab">SIGN RULE</span><span>Net-rating columns always print the sign (<code>force_sign</code>).</span></div>
-    <div class="comp-note"><span class="nlab">EMPHASIS</span><span>F5 emphasis grammar (decision 2026-07-10, refined 2026-07-11): exactly one element per composition carries the strongest treatment (a magnitude-colored value column in a spec table, or a single solid-red payoff card in a card rail) while every sibling stays gray and quiet. Dense box-score tables may drop the emphasized column entirely (the shipped Summer League table did).</span></div>
+    <div class="comp-note"><span class="nlab">EMPHASIS</span><span>F5 emphasis grammar (decision 2026-07-10, refined 2026-07-13): at most one element per composition carries the strongest treatment (a magnitude-colored value column in a spec table, or a single solid-red payoff card in a card rail) while every sibling stays quiet. Omit the strongest treatment when no number is meant to be the visual verdict; the Summer League player rail and shipped dense box-score table both do.</span></div>
   </div>
 
   <div class="api-list">

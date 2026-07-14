@@ -276,4 +276,7 @@ def test_prepare_player_slide_contains_display_ready_story_content(monkeypatch):
         "OF BULLS FGA",
         "PLUS/MINUS",
     ]
-    assert next(item for item in data.profile_stats if item.highlight).value == "74.0%"
+    true_shooting = next(item for item in data.profile_stats if item.label == "TRUE SHOOTING")
+    assert true_shooting.value == "74.0%"
+    assert not true_shooting.highlight
+    assert not any(item.highlight for item in data.profile_stats)

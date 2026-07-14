@@ -1001,7 +1001,7 @@ def prepare_player_slide(
                 f"{int(_number(player['freeThrowsMade']))}-{int(_number(player['freeThrowsAttempted']))}",
                 "FREE THROWS",
             ),
-            StatItem(f"{ts_pct(player):.1f}%", "TRUE SHOOTING", RED, True),
+            StatItem(f"{ts_pct(player):.1f}%", "TRUE SHOOTING"),
             StatItem(f"{role_share_pct(player, team):.0f}%", "OF BULLS FGA"),
             StatItem(f"{plus_minus(player):+d}", "PLUS/MINUS"),
         ),

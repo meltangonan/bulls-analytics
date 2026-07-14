@@ -16,7 +16,8 @@ This is a new post. The closed Grizzlies report remains documented separately in
 - Slide 1 uses the jersey off-white canvas, matchup logos/title, score/date subtitle, a roughly
   35/65 team-comparison-to-shot-diet panel, the FG/3PT/FT shooting lines, and the player table.
 - Player slides use the player as the outlined title, six identity chips, a pale-red evidence
-  panel, exact shot locations, off-white supporting cards, and one solid-red true-shooting card.
+  panel, exact shot locations, and an all-neutral off-white shot-profile rail. True shooting stays
+  visible but does not receive a solid-red highlight.
 - Every slide keeps `Data via nba.com` bottom-left and `@chicagobullsdata` bottom-right.
 - Regular-season Gamebook experiments live in a separate prototype and should not block this post.
 

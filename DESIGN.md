@@ -347,8 +347,12 @@ logo exists).
   graphics face). §09 anatomies now embed the real renders from `docs/mocks/`. The loose
   Claude Design exports ("Bulls Design System.html", "Direction Options.html") are absorbed
   and slated for removal.
-- **2026-07-11** — F5 emphasis grammar refined on the first live Summer League Report: it holds
-  for **card rails** (exactly one solid-red payoff card while siblings stay gray) but was
+- **2026-07-13** — Strong card-rail emphasis became optional and meaning-driven rather than
+  automatic. The Summer League player slide keeps every shot-profile card neutral; TS% remains
+  visible but does not receive a solid-red payoff treatment. A red payoff card is still available
+  when a future composition has a deliberately chosen headline number.
+- **2026-07-11** — F5 emphasis grammar refined on the first live Summer League Report: it can hold
+  for **card rails** (at most one solid-red payoff card while siblings stay quiet) but was
   **rejected for dense stat tables** — the user removed the magnitude-colored column entirely, and
   the shipped table is a clean zebra-striped box score sorted by the story stat (points, so the
   headline player tops the table) with no emphasized column. Embedded tables may be rendered with

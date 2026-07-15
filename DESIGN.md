@@ -236,8 +236,15 @@ The Summer League report established the current component dimensions used by
 `scripts/prototypes/summer_league_report.py`:
 
 - Standard stat chip: 118×52 px, radius 10 px.
-- Supporting rail card: 280×88 px, radius 12 px.
+- Supporting rail card: 250×80 px, radius 12 px; neutral profile and distribution cards use the
+  stronger borderless blush `#F3E1E7` against the pale panel. Profile values sit lower in the card
+  at 21 pt so their top padding and label spacing remain balanced.
 - Player story row: `PLAYER_ROW_HEIGHT = 173` px.
+- Full-slide player identity: 58 px headshot radius with warm-neutral stat chips; the evidence panel
+  uses a borderless pale blush field so the jersey canvas remains the dominant surface.
+- Featured-player tables use 52 px headshots, 16 px body type, and 11 px row padding through four
+  rows. A five-player table compacts to 46 px headshots, 15 px body type, and 7 px row padding so it
+  preserves footer clearance rather than shrinking the full table after composition.
 - Court lines: `#CFCFCF` on white, `#C6C6C6` at slide scale, and `COURT_LINE`
   (`#C9A8B5`) on pale panels.
 

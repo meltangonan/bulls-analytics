@@ -33,7 +33,7 @@
   --g-red:#CE1141; --g-black:#141414; --g-ink:#1A1A1A; --g-muted:#777777;
   --g-faint:#AAAAAA; --g-rule:#DDDDDD; --g-tick:#CFCFCF; --g-grid:#F0F0F0;
   --g-canvas:#FFFFFF;
-  --g-pale-red:#F7E8ED; --g-panel-red:#FAF1F4; --g-chip-gray:#F4F4F4; --g-court-line:#C9A8B5;
+  --g-pale-red:#F7E8ED; --g-panel-red:#FAF1F4; --g-chip-gray:#F4F4F4; --g-chip-blush:#F3E1E7; --g-court-line:#C9A8B5;
 
   /* Canvas-theme tokens: mirror house.THEMES (render options, not doc chrome).
      tests/test_design_tokens.py checks these against house.py. */
@@ -401,7 +401,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 .outline-demo .out { color:var(--g-ink); font-weight:600; font-size:1.05rem; margin-left:8px; }
 
 .chips { display:flex; gap:12px; flex-wrap:wrap; align-items:stretch; }
-.chip-d { background:var(--g-chip-gray); border-radius:10px; min-width:118px; padding:9px 16px 10px; text-align:center; }
+.chip-d { background:var(--g-chip-blush); border-radius:10px; min-width:118px; padding:11px 16px 10px; text-align:center; }
 .chip-d b { display:block; font-size:1.15rem; font-weight:600; color:var(--g-ink); }
 .chip-d span { font-size:.62rem; letter-spacing:.08em; font-weight:600; color:var(--g-muted); }
 .chip-d.payoff { background:var(--g-red); border-radius:12px; min-width:150px; padding:13px 20px; }
@@ -892,7 +892,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
 
   <div class="comp">
     <div class="comp-head"><h3>stat chips &amp; payoff cards</h3><span class="sig">_stat_chip(...) · _chip_row(...)</span></div>
-    <p class="comp-desc">Bold value over a muted ALL-CAPS label in a rounded container. CHIP_GRAY = scaffolding; solid RED is reserved for a deliberately chosen payoff (label in <code>#F5C9D6</code>), never added automatically. The Summer League shot-profile rail stays neutral, including TRUE SHOOTING. The big red block remains the score anchor on compact player rows.</p>
+    <p class="comp-desc">Bold value over a muted ALL-CAPS label in a rounded container. CHIP_GRAY remains quiet scaffolding outside tinted panels; neutral shot-profile and distribution cards use the stronger borderless blush <code>#F3E1E7</code> inside pale evidence panels. Solid RED is reserved for a deliberately chosen payoff (label in <code>#F5C9D6</code>), never added automatically. The big red block remains the score anchor on compact player rows.</p>
     <div class="canvas-card">
       <div class="chips">
         <div class="chip-d"><b>7-15</b><span>FIELD GOALS</span></div>
@@ -900,7 +900,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
         <div class="chip-d payoff"><b>35</b><span>PTS</span></div>
       </div>
     </div>
-    <div class="comp-note"><span class="nlab">DIMENSIONS</span><span>Chip 118×52 r10; rail card 280×88 r12. Use at most one payoff card only when the composition has a clear headline number; an all-neutral rail is valid.</span></div>
+    <div class="comp-note"><span class="nlab">DIMENSIONS</span><span>Chip 118×52 r10; full-slide rail card 250×80 r12. Rail values are 21&hairsp;pt and sit at 40% of card height so the top padding and label spacing remain balanced. Use at most one payoff card only when the composition has a clear headline number; an all-neutral rail is valid.</span></div>
     <div class="comp-src">summer_league_report.py · promotion candidate for craft.py</div>
   </div>
 
@@ -922,7 +922,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
       </div>
     </div>
     <div class="comp-note"><span class="nlab">RULES</span><span>PTS block: 132×90 r12, 40&hairsp;pt value, the only solid-red element on the row. Name 22&hairsp;pt Archivo 600 CAPS; box line 13&hairsp;pt MUTED; lens label 10&hairsp;pt RED over 13&hairsp;pt INK value. <code>shot_diet</code> lens adds the card-inset shot map (s=0.42) on the right. One lens per player: the lens that tells the clearest story, chosen at review time.</span></div>
-    <div class="comp-note"><span class="nlab">VARIANT</span><span>Full-slide identity header: headshot (r=58) + Academic M54 name + chip row. Names render without hyphens (the face has no “-” glyph).</span></div>
+    <div class="comp-note"><span class="nlab">VARIANT</span><span>Full-slide identity header: headshot (r=58) + Academic M54 name + warm-neutral chip row. A borderless pale blush field groups the shot evidence while keeping the jersey canvas visually dominant. Names render without hyphens (the face has no “-” glyph).</span></div>
     <div class="comp-src">summer_league_report.py · PLAYER_ROW_HEIGHT=173 · lenses: shot_diet | role | impact</div>
   </div>
 
@@ -939,7 +939,7 @@ code, .mono { font-family:var(--font-mono); font-size:.84em; background:var(--co
         </tbody>
       </table>
     </div>
-    <div class="comp-note"><span class="nlab">TWO ENGINES</span><span><b>plottable</b> (default): matplotlib-native, reuses house fonts + save pipeline. Row dividers RULE 0.8&hairsp;lw; column-label divider INK 1.2&hairsp;lw; no column borders. <code>f5_lineup_table.py</code><br><b>Great Tables</b> (embedded): rendered to a cropped PNG (zoom=2) and composited onto the white canvas; the table engine owns row rhythm and image sizing. Striping <code>#F7F7F7</code>; headshots 52&hairsp;px; labels 12&hairsp;px bold; padding 11&hairsp;px; missing → “—”. Env-only dependency for now. <code>summer_league_report._player_table_image()</code></span></div>
+    <div class="comp-note"><span class="nlab">TWO ENGINES</span><span><b>plottable</b> (default): matplotlib-native, reuses house fonts + save pipeline. Row dividers RULE 0.8&hairsp;lw; column-label divider INK 1.2&hairsp;lw; no column borders. <code>f5_lineup_table.py</code><br><b>Great Tables</b> (embedded): rendered to a cropped PNG (zoom=2) and composited onto the white canvas; the table engine owns row rhythm and image sizing. Through four players: 52&hairsp;px headshots, 16&hairsp;px body type, 11&hairsp;px row padding. At five players: 46&hairsp;px headshots, 15&hairsp;px body type, 7&hairsp;px row padding to preserve footer clearance. Labels stay 12&hairsp;px bold; missing → “—”. Env-only dependency for now. <code>summer_league_report._player_table_image()</code></span></div>
     <div class="comp-note"><span class="nlab">SIGN RULE</span><span>Net-rating columns always print the sign (<code>force_sign</code>).</span></div>
     <div class="comp-note"><span class="nlab">EMPHASIS</span><span>F5 emphasis grammar (decision 2026-07-10, refined 2026-07-13): at most one element per composition carries the strongest treatment (a magnitude-colored value column in a spec table, or a single solid-red payoff card in a card rail) while every sibling stays quiet. Omit the strongest treatment when no number is meant to be the visual verdict; the Summer League player rail and shipped dense box-score table both do.</span></div>
   </div>

@@ -299,3 +299,23 @@ def test_prepare_player_slide_highlights_only_requested_identity_stat(monkeypatc
     colors = {item.label: item.color for item in data.identity_stats}
     assert colors["BLK"] == report.RED
     assert all(color == report.INK for label, color in colors.items() if label != "BLK")
+
+
+def test_prepare_player_slide_can_highlight_three_point_profile_card(monkeypatch):
+    monkeypatch.setattr(report, "_headshot_path", lambda player: None)
+
+    data = report.prepare_player_slide(
+        _player_row(),
+        _team_row(),
+        _opponent_row(),
+        _located_shots(),
+        "JUL 14, 2026",
+        None,
+        frozenset({"3PT"}),
+    )
+
+    threes = next(item for item in data.profile_stats if item.label == "THREES")
+    assert threes.value == "7-11"
+    assert threes.highlight
+    assert not any(item.highlight for item in data.profile_stats if item.label != "THREES")
+    assert all(item.color == report.INK for item in data.identity_stats)

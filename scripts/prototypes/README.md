@@ -55,7 +55,9 @@ venv/bin/python scripts/prototypes/regular_season_gamebook.py
 
 Run `summer_league_report.py` with no arguments to resolve the latest completed Bulls Summer League
 game and print the review table. After choosing the players with the user, render the carousel with
-NBA.com spellings from that table:
+NBA.com spellings from that table. Carousels support up to five featured players; the first-slide
+table automatically tightens its headshots, type, and row padding at five rows so it stays clear of
+the footer:
 
 ```bash
 venv/bin/python scripts/prototypes/summer_league_report.py

@@ -4,7 +4,7 @@ Game-night flow:
 1. Run with no arguments to auto-resolve the latest completed Bulls Summer
    League game and review player box scores, role share, plus/minus, and
    shot-diet inputs.
-2. In the clarification pass, choose one to four players and assign each the
+2. In the clarification pass, choose one to five players and assign each the
    lens that tells the clearest story: ``shot_diet``, ``role``, or ``impact``.
 3. Re-run with matching ``--player`` and ``--lens`` values to render the post.
 
@@ -68,11 +68,12 @@ from bulls.graphics.house import (
 PALE_RED = "#F7E8ED"
 PANEL_RED = "#FAF1F4"  # lighter wash for large court panels
 CHIP_GRAY = "#F1ECE8"  # warm neutral for cards outside a tinted panel
-CHIP_BLUSH = "#F3E1E7"  # visible stat chips on the jersey canvas
+CHIP_BLUSH = "#F3E1E7"  # stronger tonal-red card surface inside pale panels
 COURT_LINE = "#C9A8B5"  # warm court lines on the pale panels
 OUTPUT_DIR = _REPO / "output" / "feed"
 LENSES = ("shot_diet", "role", "impact")
 SUMMER_LEAGUE_LEAGUE_ID = "15"
+MAX_CAROUSEL_PLAYERS = 5
 
 # The NBA labels every shot with its own zone, the same ones a shot chart draws.
 # Any zone not listed here -- both corner threes, above the break, backcourt --
@@ -838,6 +839,11 @@ def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> 
     """
     from great_tables import GT  # imported lazily; not in requirements.txt yet
 
+    compact = len(players) >= MAX_CAROUSEL_PLAYERS
+    headshot_height = 46 if compact else 52
+    table_font_size = "15px" if compact else "16px"
+    row_padding = "7px" if compact else "11px"
+
     rows = pd.DataFrame(
         [
             {
@@ -879,7 +885,7 @@ def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> 
             usg="USG%",
             ts="TS%",
         )
-        .fmt_image(columns="headshot", height=52)
+        .fmt_image(columns="headshot", height=headshot_height)
         .fmt_number(columns="netrtg", decimals=1, force_sign=True)
         .fmt_number(columns=["usg", "ts"], decimals=1)
         .sub_missing(missing_text="—")
@@ -889,11 +895,11 @@ def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> 
         .tab_options(
             table_background_color=DEFAULT_THEME.canvas,
             table_font_names=["Archivo", "Helvetica Neue", "Helvetica", "Arial"],
-            table_font_size="16px",
+            table_font_size=table_font_size,
             table_font_color=DEFAULT_THEME.ink,
             column_labels_font_size="12px",
             column_labels_font_weight="bold",
-            data_row_padding="11px",
+            data_row_padding=row_padding,
             row_striping_background_color="#F3EFE9",
             table_body_hlines_color="transparent",
             column_labels_border_top_color=DEFAULT_THEME.ink,
@@ -977,7 +983,7 @@ def prepare_player_slide(
     shots: pd.DataFrame,
     game_date: str,
     kicker: str | None,
-    highlighted_identity_stats: frozenset[str] = frozenset(),
+    highlighted_stats: frozenset[str] = frozenset(),
 ) -> PlayerSlideData:
     """Prepare one player's display copy, metrics, image, and shot marks."""
     person_id = int(_number(player["personId"]))
@@ -987,12 +993,12 @@ def prepare_player_slide(
         display_name=_display_name(player),
         headshot=_headshot_path(player),
         identity_stats=(
-            StatItem(str(int(_number(player["points"]))), "PTS", RED if "PTS" in highlighted_identity_stats else INK),
-            StatItem(str(minutes_played(player)), "MIN", RED if "MIN" in highlighted_identity_stats else INK),
-            StatItem(str(int(_number(player["reboundsTotal"]))), "REB", RED if "REB" in highlighted_identity_stats else INK),
-            StatItem(str(int(_number(player["assists"]))), "AST", RED if "AST" in highlighted_identity_stats else INK),
-            StatItem(str(int(_number(player["steals"]))), "STL", RED if "STL" in highlighted_identity_stats else INK),
-            StatItem(str(int(_number(player["blocks"]))), "BLK", RED if "BLK" in highlighted_identity_stats else INK),
+            StatItem(str(int(_number(player["points"]))), "PTS", RED if "PTS" in highlighted_stats else INK),
+            StatItem(str(minutes_played(player)), "MIN", RED if "MIN" in highlighted_stats else INK),
+            StatItem(str(int(_number(player["reboundsTotal"]))), "REB", RED if "REB" in highlighted_stats else INK),
+            StatItem(str(int(_number(player["assists"]))), "AST", RED if "AST" in highlighted_stats else INK),
+            StatItem(str(int(_number(player["steals"]))), "STL", RED if "STL" in highlighted_stats else INK),
+            StatItem(str(int(_number(player["blocks"]))), "BLK", RED if "BLK" in highlighted_stats else INK),
         ),
         attempts_label="SHOT CHART",
         shots=prepare_shot_marks(shots, person_id),
@@ -1009,6 +1015,7 @@ def prepare_player_slide(
             StatItem(
                 f"{int(_number(player['threePointersMade']))}-{int(_number(player['threePointersAttempted']))}",
                 "THREES",
+                highlight="3PT" in highlighted_stats,
             ),
             StatItem(
                 f"{int(_number(player['freeThrowsMade']))}-{int(_number(player['freeThrowsAttempted']))}",
@@ -1121,30 +1128,30 @@ def render_player_slide(
 
     # The player is the slide title; the headshot and outlined name form one
     # identity block, while the date stays quiet underneath.
-    headshot_label(ax, data.headshot, 118, 1218, radius=54)
-    title = _fitted_text(ax, 196, 1274, data.display_name, display_font(), 48, 824, DEFAULT_THEME.ink)
+    headshot_label(ax, data.headshot, 122, 1218, radius=58)
+    title = _fitted_text(ax, 206, 1274, data.display_name, display_font(), 48, 814, DEFAULT_THEME.ink)
     title.set_path_effects([
         pe.withStroke(linewidth=7, foreground=RED),
         pe.withStroke(linewidth=3.5, foreground=WHITE),
         pe.Normal(),
     ])
-    ax.text(198, 1163, data.header.subtitle_parts[0][0], ha="left", va="top", fontsize=13, color=DEFAULT_THEME.muted, fontproperties=body_font("medium"))
+    ax.text(208, 1163, data.header.subtitle_parts[0][0], ha="left", va="top", fontsize=13, color=DEFAULT_THEME.muted, fontproperties=body_font("medium"))
 
     identity_chips = [(item.value, item.label, item.color) for item in data.identity_stats]
-    _chip_row(ax, identity_chips, 60, 1098, w=145, h=62, gap=18, value_size=16, facecolor=CHIP_BLUSH)
+    _chip_row(ax, identity_chips, 60, 1098, w=145, h=62, gap=18, value_size=16, facecolor=CHIP_GRAY)
     ax.plot([60, 1020], [1004, 1004], color=DEFAULT_THEME.rule, lw=1)
 
-    # A translucent-looking Bulls-red wash groups the evidence and supporting
-    # metrics into one story zone while the jersey canvas remains visible.
+    # A borderless blush field groups the evidence while the darker tonal-red
+    # cards create hierarchy without looking like form inputs.
     ax.add_patch(
         FancyBboxPatch(
             (40, 146),
             W - 80,
             830,
             boxstyle="round,pad=0,rounding_size=18",
-            facecolor=PALE_RED,
+            facecolor=PANEL_RED,
             edgecolor="none",
-            alpha=0.72,
+            alpha=0.52,
             zorder=0,
         )
     )
@@ -1170,10 +1177,10 @@ def render_player_slide(
         h=68,
         gap=15,
         value_size=16,
-        facecolor=DEFAULT_THEME.canvas,
+        facecolor=CHIP_BLUSH,
     )
 
-    rail_x, rail_w = 740, 280
+    rail_x, rail_w = 760, 250
     ax.text(rail_x, 952, "SHOT PROFILE", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
     card_h, gap = 80, 12
     for index, stat in enumerate(data.profile_stats):
@@ -1184,15 +1191,15 @@ def render_player_slide(
                 rail_w,
                 card_h,
                 boxstyle="round,pad=0,rounding_size=12",
-                facecolor=RED if stat.highlight else DEFAULT_THEME.canvas,
+                facecolor=RED if stat.highlight else CHIP_BLUSH,
                 edgecolor="none",
             )
         )
         value_color = "#FFFFFF" if stat.highlight else INK
         label_color = "#F5C9D6" if stat.highlight else MUTED
         cx = rail_x + rail_w / 2
-        ax.text(cx, top - card_h * 0.34, stat.value, ha="center", va="center", fontsize=23, color=value_color, fontproperties=body_font("bold"))
-        ax.text(cx, top - card_h * 0.73, stat.label, ha="center", va="center", fontsize=9, color=label_color, fontproperties=body_font("bold"))
+        ax.text(cx, top - card_h * 0.40, stat.value, ha="center", va="center", fontsize=21, color=value_color, fontproperties=body_font("bold"))
+        ax.text(cx, top - card_h * 0.74, stat.label, ha="center", va="center", fontsize=9, color=label_color, fontproperties=body_font("bold"))
     _draw_footer(ax)
     return fig
 
@@ -1201,13 +1208,13 @@ def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--game-id", help="NBA.com game ID; omit to auto-resolve the latest completed Bulls game")
     parser.add_argument("--season", default=str(date.today().year), help="Summer League year used to auto-resolve the game")
-    parser.add_argument("--player", action="append", dest="players", help="Featured Bulls player; repeat one to four times")
+    parser.add_argument("--player", action="append", dest="players", help="Featured Bulls player; repeat one to five times")
     parser.add_argument(
         "--highlight-player-stat",
         action="append",
         default=[],
         metavar="PLAYER:STAT",
-        help="Color one identity-stat value red, for example 'Caleb Wilson:BLK'; repeat as needed",
+        help="Highlight one approved player stat, for example 'Caleb Wilson:BLK' or 'Donovan Atwell:3PT'; repeat as needed",
     )
     parser.add_argument("--lens", action="append", choices=LENSES, help="Matching story lens for each --player")
     parser.add_argument("--date", help="Graphic date label; defaults to the game's own date")
@@ -1223,9 +1230,9 @@ def main():
         if bool(args.players) != bool(args.lens) or args.players and len(args.players) != len(args.lens):
             raise SystemExit("Pass one --lens for every --player.")
     elif not args.players:
-        raise SystemExit("Carousel mode needs one to four --player names.")
-    if args.players and not 1 <= len(args.players) <= 4:
-        raise SystemExit("Choose one to four featured players.")
+        raise SystemExit("Carousel mode needs one to five --player names.")
+    if args.players and not 1 <= len(args.players) <= MAX_CAROUSEL_PLAYERS:
+        raise SystemExit("Choose one to five featured players.")
 
     game_id = args.game_id
     if not game_id:
@@ -1251,7 +1258,7 @@ def main():
         " one-free-throw rule; interpret it as Summer League context."
     )
     if not args.players:
-        print("\nChoose one to four players and matching lenses, then re-run. See --help for an example.")
+        print("\nChoose one to five players and matching lenses, then re-run. See --help for an example.")
         return
 
     needs_shots = args.carousel or (args.lens and "shot_diet" in args.lens)
@@ -1259,15 +1266,15 @@ def main():
         raise SystemExit("The shot chart for this game is not available yet; choose another lens or retry shortly.")
     selected = select_players(bulls, args.players)
     highlights: dict[str, set[str]] = {}
-    valid_identity_stats = {"PTS", "MIN", "REB", "AST", "STL", "BLK"}
+    valid_highlight_stats = {"PTS", "MIN", "REB", "AST", "STL", "BLK", "3PT"}
     for selection in args.highlight_player_stat:
         try:
             player_name, stat = (part.strip() for part in selection.rsplit(":", 1))
         except ValueError as exc:
             raise SystemExit("Each --highlight-player-stat must use PLAYER:STAT, such as 'Caleb Wilson:BLK'.") from exc
         stat = stat.upper()
-        if not player_name or stat not in valid_identity_stats:
-            allowed = ", ".join(sorted(valid_identity_stats))
+        if not player_name or stat not in valid_highlight_stats:
+            allowed = ", ".join(sorted(valid_highlight_stats))
             raise SystemExit(f"Invalid highlight '{selection}'. Stat must be one of: {allowed}.")
         if not any(_player_name(player).casefold() == player_name.casefold() for player in selected):
             raise SystemExit(f"Highlighted player '{player_name}' must also be passed with --player.")

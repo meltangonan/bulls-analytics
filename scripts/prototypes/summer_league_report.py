@@ -154,8 +154,8 @@ class PlayerTableRow:
     threes: str
     free_throws: str
     usage: float
-    true_shooting: float
-    net_rating: float
+    fg: float
+    plus_minus: int
 
 
 @dataclass(frozen=True)
@@ -274,7 +274,7 @@ def fetch_game_data(game_id: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFr
             how="left",
         )
     except Exception as error:
-        print(f"Warning: advanced box score unavailable ({error}); NETRTG, USG%, and TS% will show as missing.")
+        print(f"Warning: advanced box score unavailable ({error}); NETRTG and USG% will show as missing.")
         for column in advanced_columns:
             players[column] = float("nan")
     shots = get_game_shots(game_id)
@@ -328,6 +328,13 @@ def zone_splits(shots: pd.DataFrame, player_id: int | None) -> dict[str, tuple[i
     return {key: tuple(pair) for key, pair in splits.items()}
 
 
+def fg_pct(player: pd.Series) -> float:
+    attempts = _number(player.get("fieldGoalsAttempted"))
+    if not attempts:
+        return 0.0
+    return 100 * _number(player.get("fieldGoalsMade")) / attempts
+
+
 def efg_pct(player: pd.Series) -> float:
     attempts = _number(player.get("fieldGoalsAttempted"))
     if not attempts:
@@ -336,11 +343,6 @@ def efg_pct(player: pd.Series) -> float:
         _number(player.get("fieldGoalsMade"))
         + 0.5 * _number(player.get("threePointersMade"))
     ) / attempts
-
-
-def ts_pct(player: pd.Series) -> float:
-    """NBA-computed true shooting, as a percentage."""
-    return 100 * _number(player.get("trueShootingPercentage"))
 
 
 def usage_pct(player: pd.Series) -> float:
@@ -716,6 +718,14 @@ def _draw_half_court(ax, right: float, y_center: float, s: float, line_color: st
     )
     hoop_x, hoop_y = t(0, 0)
     ax.add_patch(Circle((hoop_x, hoop_y), 7.5 * s * 2, facecolor="none", edgecolor=line_color, lw=1.1))
+    # Backboard: 6 ft wide, 4 ft from the baseline (1 ft behind the rim).
+    ax.plot([t(-30, -7.5)[0], t(30, -7.5)[0]], [t(0, -7.5)[1]] * 2, **court)
+    # Restricted-area arc under the rim.
+    ax.add_patch(Arc((hoop_x, hoop_y), 2 * 40 * s, 2 * 40 * s, theta1=0, theta2=180, color=line_color, lw=1.1))
+    # Free-throw circle on the top of the key: solid above the line, dashed below.
+    ft_x, ft_y = t(0, 142.5)
+    ax.add_patch(Arc((ft_x, ft_y), 2 * 60 * s, 2 * 60 * s, theta1=0, theta2=180, color=line_color, lw=1.1))
+    ax.add_patch(Arc((ft_x, ft_y), 2 * 60 * s, 2 * 60 * s, theta1=180, theta2=360, color=line_color, lw=1.1, linestyle=(0, (4, 3))))
     corner_top = (237.5**2 - 220**2) ** 0.5
     for side in (-220, 220):
         ax.plot([t(side, -47.5)[0]] * 2, [t(side, -47.5)[1], t(side, corner_top)[1]], **court)
@@ -857,11 +867,11 @@ def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> 
                 "stl": player.steals,
                 "blk": player.blocks,
                 "fgma": player.field_goals,
+                "fgp": player.fg,
                 "pm3a": player.threes,
                 "ftma": player.free_throws,
                 "usg": player.usage,
-                "ts": player.true_shooting,
-                "netrtg": player.net_rating,
+                "pm": player.plus_minus,
             }
             for player in players
         ]
@@ -871,7 +881,7 @@ def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> 
         .cols_label(
             headshot="",
             player="PLAYER",
-            netrtg="NETRTG",
+            pm="+/-",
             min="MIN",
             pts="PTS",
             reb="REB",
@@ -880,17 +890,18 @@ def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> 
             stl="STL",
             blk="BLK",
             fgma="FGM/A",
+            fgp="FG%",
             pm3a="3PM/A",
             ftma="FTM/A",
             usg="USG%",
-            ts="TS%",
         )
         .fmt_image(columns="headshot", height=headshot_height)
-        .fmt_number(columns="netrtg", decimals=1, force_sign=True)
-        .fmt_number(columns=["usg", "ts"], decimals=1)
+        .fmt_number(columns="pm", decimals=0, force_sign=True)
+        .fmt_number(columns="usg", decimals=1)
+        .fmt_number(columns="fgp", decimals=1, pattern="{x}%")
         .sub_missing(missing_text="—")
         .cols_align("left", columns="player")
-        .cols_align("center", columns=["headshot", "netrtg", "min", "pts", "reb", "ast", "tov", "stl", "blk", "fgma", "pm3a", "ftma", "usg", "ts"])
+        .cols_align("center", columns=["headshot", "pm", "min", "pts", "reb", "ast", "tov", "stl", "blk", "fgma", "fgp", "pm3a", "ftma", "usg"])
         .opt_row_striping(row_striping=True)
         .tab_options(
             table_background_color=DEFAULT_THEME.canvas,
@@ -942,8 +953,8 @@ def _prepare_player_table_row(player: pd.Series) -> PlayerTableRow:
         threes=f"{int(_number(player['threePointersMade']))}/{int(_number(player['threePointersAttempted']))}",
         free_throws=f"{int(_number(player['freeThrowsMade']))}/{int(_number(player['freeThrowsAttempted']))}",
         usage=usage_pct(player),
-        true_shooting=ts_pct(player),
-        net_rating=net_rating(player),
+        fg=fg_pct(player),
+        plus_minus=plus_minus(player),
     )
 
 
@@ -1021,9 +1032,12 @@ def prepare_player_slide(
                 f"{int(_number(player['freeThrowsMade']))}-{int(_number(player['freeThrowsAttempted']))}",
                 "FREE THROWS",
             ),
-            StatItem(f"{ts_pct(player):.1f}%", "TRUE SHOOTING"),
+            StatItem(f"{fg_pct(player):.1f}%", "FG%"),
             StatItem(f"{role_share_pct(player, team):.0f}%", "OF BULLS FGA"),
-            StatItem(f"{plus_minus(player):+d}", "PLUS/MINUS"),
+            StatItem(
+                "—" if pd.isna(player.get("netRating")) else f"{net_rating(player):+.1f}",
+                "NET RATING",
+            ),
         ),
     )
 
@@ -1145,9 +1159,9 @@ def render_player_slide(
     # cards create hierarchy without looking like form inputs.
     ax.add_patch(
         FancyBboxPatch(
-            (40, 146),
+            (40, 222),
             W - 80,
-            830,
+            754,
             boxstyle="round,pad=0,rounding_size=18",
             facecolor=PANEL_RED,
             edgecolor="none",
@@ -1161,18 +1175,18 @@ def render_player_slide(
         ax,
         data.shots,
         right=660,
-        y_center=582,
+        y_center=655,
         s=1.2,
         line_color=COURT_LINE,
         miss_as_x=True,
     )
-    ax.text(60, 314, "SHOT DISTRIBUTION", ha="left", va="top", fontsize=10, color=RED, fontproperties=body_font("bold"))
+    ax.text(60, 390, "SHOT DISTRIBUTION", ha="left", va="top", fontsize=10, color=RED, fontproperties=body_font("bold"))
     distribution_chips = [(item.value, item.label, item.color) for item in data.zone_stats]
     _chip_row(
         ax,
         distribution_chips,
         60,
-        282,
+        358,
         w=190,
         h=68,
         gap=15,
@@ -1254,8 +1268,8 @@ def main():
     print("\nBULLS STORY REVIEW")
     print(player_candidates(bulls, team_row).to_string(index=False))
     print(
-        "\nShot diet uses NBA.com shot zones. TS% can read high under the 2026"
-        " one-free-throw rule; interpret it as Summer League context."
+        "\nShot diet uses NBA.com shot zones. Point totals reflect the 2026"
+        " one-free-throw rule; field-goal percentages are unaffected by it."
     )
     if not args.players:
         print("\nChoose one to five players and matching lenses, then re-run. See --help for an example.")

@@ -354,6 +354,13 @@ logo exists).
   graphics face). §09 anatomies now embed the real renders from `docs/mocks/`. The loose
   Claude Design exports ("Bulls Design System.html", "Direction Options.html") are absorbed
   and slated for removal.
+- **2026-07-16** — Summer League Report stat ladder settled: the cover table closes with the
+  basic +/- while the detailed player slides carry NETRTG (the "advanced" stat belongs with the
+  deeper view), and TS% was replaced by plain FG% on both surfaces (cover table column placed
+  right after FGM/A) — FG% ignores free throws, so the 2026 one-free-throw rule cannot inflate
+  a shooting number on the graphic. Player-slide shot charts gained fuller court geometry
+  (free-throw circle with dashed lower half, restricted-area arc, backboard) and sit closer
+  under the SHOT CHART label.
 - **2026-07-13** — Strong card-rail emphasis became optional and meaning-driven rather than
   automatic. The Summer League player slide keeps every shot-profile card neutral; TS% remains
   visible but does not receive a solid-red payoff treatment. A red payoff card is still available

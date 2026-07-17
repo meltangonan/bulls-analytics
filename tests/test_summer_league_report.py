@@ -245,7 +245,8 @@ def test_prepare_team_slide_removes_raw_api_fields_from_renderer_input(monkeypat
     assert next(zone for zone in data.zones if zone.key == "above_break").attempts == 1
     assert data.shooting_splits == ("FG  30-69  (43.5%)", "3PT  14-32  (43.8%)", "FT  13-25  (52.0%)")
     assert data.players[0].player == "Caleb Wilson"
-    assert data.players[0].true_shooting == 74.0
+    assert data.players[0].fg == pytest.approx(57.1, abs=0.05)
+    assert data.players[0].plus_minus == -11
 
 
 def test_prepare_player_slide_contains_display_ready_story_content(monkeypatch):
@@ -273,13 +274,15 @@ def test_prepare_player_slide_contains_display_ready_story_content(monkeypatch):
         "FIELD GOALS",
         "THREES",
         "FREE THROWS",
-        "TRUE SHOOTING",
+        "FG%",
         "OF BULLS FGA",
-        "PLUS/MINUS",
+        "NET RATING",
     ]
-    true_shooting = next(item for item in data.profile_stats if item.label == "TRUE SHOOTING")
-    assert true_shooting.value == "74.0%"
-    assert not true_shooting.highlight
+    fg = next(item for item in data.profile_stats if item.label == "FG%")
+    assert fg.value == "57.1%"
+    assert not fg.highlight
+    net_rating = next(item for item in data.profile_stats if item.label == "NET RATING")
+    assert net_rating.value == "-13.6"
     assert not any(item.highlight for item in data.profile_stats)
 
 

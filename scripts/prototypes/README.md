@@ -66,7 +66,8 @@ venv/bin/python scripts/prototypes/summer_league_report.py --carousel \
 ```
 
 Use `--final` only after draft approval. The script refuses in-progress games, treats lagging shot
-and advanced feeds as unavailable, and automatically prints the 2026 one-free-throw TS% disclosure.
+and advanced feeds as unavailable, and notes that point totals reflect the 2026 one-free-throw rule
+(the rendered FG% is unaffected by it).
 On game night, NBA.com's derived feeds may not populate until morning.
 
 After keeping a mock, copy its PNG into `docs/mocks/` and add a catalog card

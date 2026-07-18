@@ -22,6 +22,18 @@ Confirm that the graphic, underlying analysis, and posting copy agree on the sub
 
 Do not reopen approved visual decisions unless the readiness check finds a real accuracy or comprehension problem.
 
+## Offer a Community Narrative Scan (Optional)
+
+After the readiness check, offer — do not automatically run — a read-only scan of the community
+conversation around the post's subject: the Instagram feed and Favorites of followed Bulls pages,
+and X via the `@bullsdata` timeline and targeted searches (see Instagram and X Access in
+`AGENTS.md`). If the user declines, skip it without argument.
+
+When accepted, report the 3–5 most relevant current narratives with their sources and engagement
+signals, and say how each touches this post. Use the findings to sharpen caption raw material and
+distribution advice. Treat scanned state as best-effort and session-specific, and verify any fact
+independently before it reaches posting copy or a graphic.
+
 ## Prepare Only Useful Copy
 
 The user owns the caption. When they supply a draft, preserve its structure and voice and make the smallest useful edit. When they ask for caption help, offer at most one short line as raw material by default. Provide a fuller draft only when they explicitly ask for one.
@@ -34,7 +46,11 @@ The user owns the caption. When they supply a draft, preserve its structure and 
 - Use humor only when it is natural to the post or explicitly comes from the user.
 - Do not provide multiple caption variants unless comparison would genuinely help or the user asks.
 
-Add alt text, hashtags, Story copy, or another supporting piece only when requested or clearly useful. Keep hashtags few and relevant, and verify every named player and hashtag against the final posted content.
+Always include a ready-to-paste hashtag block, built per the Hashtags rules in `POSTING_WORKFLOW.md`:
+the standing generic reach set, the post's featured players, and any user-designated reach tags.
+Verify the block against the final posted content for accidental carryover before publish.
+
+Add alt text, Story copy, or another supporting piece only when requested or clearly useful.
 
 ## Recommend Distribution Carefully
 

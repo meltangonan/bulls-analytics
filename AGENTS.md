@@ -35,16 +35,20 @@ workflow is retired.
    to the completed work currently under review. Use a separate branch only when the user explicitly
    requests it or agrees that unusually risky work should be isolated.
 
-## Instagram Access
+## Instagram and X Access
 
 - The user is logged into `@chicagobullsdata` in the runtimes in-app browser or Chrome. Inspect the live account or saved
   references only when the task depends on current state; treat that state as best-effort and
   session-specific.
+- The user is also logged into X as `@bullsdata` (display name "Mel", created July 2026), usually in
+  an in-app browser tab. It follows a curated set of basketball data/analytics accounts; use its
+  timeline and X search as a reference surface for narratives, beat-reporter news (e.g. K.C.
+  Johnson), and the official `@chicagobulls` account.
 - Use the runtime's in-app browser capability when available, fallback to Chrome. Helpful reference surfaces include
   the grid, the saved `Basketball` collection, and accounts such as Basketball University, Kirk
   Goldsberry, WNBA Viz Wiz, and datakabas.
-- Read-only by default: never post, comment, like, follow, or change settings without explicit,
-  per-action approval.
+- Read-only by default on both platforms: never post, comment, like, follow, or change settings
+  without explicit, per-action approval.
 
 ## Documentation Ownership
 

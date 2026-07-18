@@ -56,4 +56,11 @@ After the user approves the post:
 5. Summarize the practical result, verification, risks, and all changed files.
 6. Stop for explicit approval before committing or pushing.
 
+## Hand Off to the Next Stage
+
+Once the approved export, mock copy, and catalog card are complete, offer the next step instead of
+ending silently: ask whether to continue into `promote-bulls-post` (caption raw material, readiness
+check, and distribution advice). If the user agrees, invoke that skill in the same session so it
+inherits the settled context. Do not start promotion work without that confirmation.
+
 Never mark a post `Posted` until the user confirms it is live. Never publish or interact with Instagram without explicit per-action approval.

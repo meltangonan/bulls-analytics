@@ -53,6 +53,43 @@ def test_shot_diet_line_reports_a_player_who_never_shot():
     assert report.shot_diet_line(shots((8, "Mid-Range")), 7) == "NO FIELD-GOAL ATTEMPTS"
 
 
+def typed_shots(*rows):
+    """Shot rows carrying the NBA's own 2PT/3PT type and location."""
+    return pd.DataFrame(
+        list(rows),
+        columns=["player_id", "shot_zone", "shot_type", "shot_made", "loc_x", "loc_y"],
+    )
+
+
+def test_shot_type_overrides_a_contradictory_zone_label():
+    """A made three at the corner boundary (x=219) can arrive zoned Mid-Range;
+    the box score counts it as a three, so the diet and splits must agree."""
+    chart = typed_shots(
+        (7, "Mid-Range", "3PT", True, 219, 5),
+        (7, "Mid-Range", "2PT", True, 104, 92),
+        (7, "Above the Break 3", "3PT", False, 20, 240),
+    )
+
+    assert report.shot_diet(chart, 7) == {"rim": 0, "paint": 0, "mid": 1, "three": 2}
+    assert report.zone_splits(chart, 7) == {"rim_paint": (0, 0), "mid": (1, 1), "three": (1, 2)}
+
+
+def test_a_two_point_shot_zoned_as_a_three_becomes_mid_range():
+    chart = typed_shots((7, "Left Corner 3", "2PT", True, -215, 30))
+
+    assert report.shot_diet(chart, 7) == {"rim": 0, "paint": 0, "mid": 1, "three": 0}
+
+
+def test_team_zone_map_reassigns_a_mislabeled_three_by_location():
+    corner = typed_shots((7, "Mid-Range", "3PT", True, 219, 5))
+    above = typed_shots((7, "Mid-Range", "3PT", True, -132, 222))
+
+    corner_zone = next(z for z in report.prepare_team_zones(corner) if z.key == "right_corner")
+    assert (corner_zone.makes, corner_zone.attempts) == (1, 1)
+    above_zone = next(z for z in report.prepare_team_zones(above) if z.key == "above_break")
+    assert (above_zone.makes, above_zone.attempts) == (1, 1)
+
+
 def test_league_is_derived_from_the_game_id_prefix():
     from bulls.data import league_for_game
 

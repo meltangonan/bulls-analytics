@@ -87,6 +87,10 @@ SHOT_ZONE_BUCKETS = {
 # Every other NBA nickname is the last word of the team name.
 TWO_WORD_NICKNAMES = ("Trail Blazers",)
 
+# Where the three-point arc meets the corner lines, in tenths of a foot;
+# matches the court geometry drawn in _draw_half_court.
+CORNER_TOP_Y = (237.5**2 - 220**2) ** 0.5
+
 PLAYER_ROW_HEIGHT = 173
 STORIES_TOP = 795
 
@@ -294,6 +298,27 @@ def team_nickname(tricode: str) -> str:
     return full_name.rsplit(" ", 1)[-1]
 
 
+def corrected_zone(shot: pd.Series) -> str:
+    """The NBA zone label, fixed when it contradicts the shot's own 2PT/3PT type.
+
+    Boundary shots occasionally carry the wrong zone (a made three at x=219
+    labeled Mid-Range). The box score follows ``shot_type``, so the graphic
+    must too or its zone totals visibly disagree with the printed 3PT line.
+    A mislabeled three is reassigned by location; a mislabeled two becomes a
+    long Mid-Range attempt.
+    """
+    zone = shot["shot_zone"]
+    shot_type = str(shot.get("shot_type", "")).strip()
+    zone_is_three = zone not in SHOT_ZONE_BUCKETS
+    if shot_type == "3PT" and not zone_is_three:
+        if float(shot["loc_y"]) <= CORNER_TOP_Y:
+            return "Right Corner 3" if float(shot["loc_x"]) > 0 else "Left Corner 3"
+        return "Above the Break 3"
+    if shot_type == "2PT" and zone_is_three:
+        return "Mid-Range"
+    return zone
+
+
 def shot_diet(shots: pd.DataFrame, player_id: int | None) -> Counter:
     """Group field-goal attempts by the NBA's own shot zones.
 
@@ -302,9 +327,9 @@ def shot_diet(shots: pd.DataFrame, player_id: int | None) -> Counter:
     ``player_id=None`` for the whole team's attempts.
     """
     buckets = Counter({"rim": 0, "paint": 0, "mid": 0, "three": 0})
-    zones = shots["shot_zone"] if player_id is None else shots.loc[shots["player_id"] == player_id, "shot_zone"]
-    for zone in zones:
-        buckets[SHOT_ZONE_BUCKETS.get(zone, "three")] += 1
+    rows = shots if player_id is None else shots[shots["player_id"] == player_id]
+    for _, shot in rows.iterrows():
+        buckets[SHOT_ZONE_BUCKETS.get(corrected_zone(shot), "three")] += 1
     return buckets
 
 
@@ -321,7 +346,7 @@ def zone_splits(shots: pd.DataFrame, player_id: int | None) -> dict[str, tuple[i
     rows = shots if player_id is None else shots[shots["player_id"] == player_id]
     splits = {"rim_paint": [0, 0], "mid": [0, 0], "three": [0, 0]}
     for _, shot in rows.iterrows():
-        bucket = SHOT_ZONE_BUCKETS.get(shot["shot_zone"], "three")
+        bucket = SHOT_ZONE_BUCKETS.get(corrected_zone(shot), "three")
         key = "rim_paint" if bucket in ("rim", "paint") else ("mid" if bucket == "mid" else "three")
         splits[key][1] += 1
         splits[key][0] += int(bool(shot["shot_made"]))
@@ -506,12 +531,13 @@ def prepare_team_zones(shots: pd.DataFrame) -> tuple[ZoneItem, ...]:
         ("above_break", "Above the Break 3"),
     )
     total_attempts = len(shots)
+    labels = shots.apply(corrected_zone, axis=1) if total_attempts else pd.Series(dtype=object)
     results = []
     for key, nba_label in zone_keys:
         if key == "above_break":
-            rows = shots[~shots["shot_zone"].isin(label for _, label in zone_keys[:-1])]
+            rows = shots[~labels.isin([label for _, label in zone_keys[:-1]])]
         else:
-            rows = shots[shots["shot_zone"] == nba_label]
+            rows = shots[labels == nba_label]
         attempts = len(rows)
         makes = int(rows["shot_made"].sum()) if attempts else 0
         percentage = 100 * makes / attempts if attempts else 0.0

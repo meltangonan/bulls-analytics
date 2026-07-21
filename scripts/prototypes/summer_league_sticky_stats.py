@@ -27,6 +27,7 @@ import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from matplotlib.font_manager import FontProperties
 from matplotlib.patches import Circle, FancyBboxPatch
 from nba_api.stats.endpoints import boxscoretraditionalv3, leaguegamefinder, shotchartdetail
 
@@ -61,10 +62,11 @@ CACHE_DIR = _REPO / "cache" / "sl_sticky_stats_2026"
 OUTPUT_DIR = _REPO / "output" / "feed"
 OUTPUT_STEM = "2026-07-20-sl-shot-profile"
 
+# Essengue dropped from the featured set 2026-07-21 (user edit); he remains in
+# the plotted pool as an unlabeled context dot.
 FEATURED_PLAYERS = (
     "Caleb Wilson",
     "Dailyn Swain",
-    "Noa Essengue",
     "Jaylin Sellers",
     "Donovan Atwell",
 )
@@ -325,7 +327,56 @@ def fetch_league_data(refresh: bool = False) -> tuple[pd.DataFrame, pd.DataFrame
     return pd.concat(boxes, ignore_index=True), pd.concat(shots, ignore_index=True)
 
 
-def _headshot_path(player_id: int) -> Path | None:
+# Helvetica for the Canva-assembled chart export only (user-directed
+# 2026-07-21); the house Archivo faces still own every in-repo poster render.
+HELVETICA_TTC = Path("/System/Library/Fonts/Helvetica.ttc")
+HELVETICA_FACES = {"regular": 0, "bold": 1}
+FONT_CACHE_DIR = _REPO / "cache" / "fonts"
+
+
+def helvetica(weight: str = "regular") -> FontProperties:
+    """Return a Helvetica face, extracting real Bold from the macOS collection.
+
+    matplotlib registers only the Regular face of ``Helvetica.ttc``, so asking
+    for ``weight="bold"`` by family name silently renders regular. Split the
+    requested face out of the collection once into the ignored cache directory
+    and load it by filename instead. Extraction stays in ``cache/`` so the
+    licensed system font is never copied into the repository. Falls back to the
+    house Archivo faces when Helvetica is unavailable (non-macOS).
+    """
+    fallback = "bold" if weight == "bold" else "medium"
+    if not HELVETICA_TTC.exists():
+        return body_font(fallback)
+    extracted = FONT_CACHE_DIR / f"Helvetica-{weight}.ttf"
+    if not extracted.exists():
+        try:
+            from fontTools.ttLib import TTCollection
+
+            collection = TTCollection(str(HELVETICA_TTC))
+            FONT_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+            collection.fonts[HELVETICA_FACES.get(weight, 0)].save(str(extracted))
+        except Exception:
+            return body_font(fallback)
+    return FontProperties(fname=str(extracted))
+
+
+# User-saved ESPN headshots preferred over NBA CDN photos (2026-07-21). Keys are
+# roster names; values are the exact saved filenames ("jailyn" spelling is in
+# the file on disk). Essengue has no saved ESPN photo yet and falls through to
+# the NBA-ID path.
+ESPN_HEADSHOTS = {
+    "Caleb Wilson": "caleb-wilson-headshot.png",
+    "Dailyn Swain": "dailyn-swain-headshot.png",
+    "Jaylin Sellers": "jailyn-sellers-headshot.png",
+    "Donovan Atwell": "donovan-atwell-headshot.png",
+}
+
+
+def _headshot_path(player_id: int, name: str | None = None) -> Path | None:
+    if name and name in ESPN_HEADSHOTS:
+        espn = _REPO / "assets" / "img" / ESPN_HEADSHOTS[name]
+        if espn.exists():
+            return espn
     local = _REPO / "assets" / "img" / "players" / f"{int(player_id)}.png"
     if local.exists():
         return local
@@ -399,7 +450,7 @@ def render_cover(profiles: pd.DataFrame, final: bool = False) -> Path:
         name = str(player["name"])
         x, y, radius = face_layout[name]
         is_caleb = name == "Caleb Wilson"
-        headshot_label(ax, _headshot_path(int(player["player_id"])), x, y, radius=radius,
+        headshot_label(ax, _headshot_path(int(player["player_id"]), name), x, y, radius=radius,
                        border_color=(206, 17, 65) if is_caleb else (95, 91, 87))
         # One shared baseline below the lowest circle keeps the staggered
         # cluster from reading as scattered labels.
@@ -629,7 +680,8 @@ def render_shot_profile(profiles: pd.DataFrame, final: bool = False) -> Path:
         ax.add_patch(Circle((point_x, point_y), radius=7 if is_caleb else 5.5,
                             facecolor=theme.accent if is_caleb else theme.muted,
                             edgecolor=theme.canvas, linewidth=1.0, zorder=5))
-        image = headshot_label(ax, _headshot_path(int(player["player_id"])), face_x, face_y, radius=radius,
+        image = headshot_label(ax, _headshot_path(int(player["player_id"]), str(player["name"])), face_x, face_y,
+                               radius=radius,
                                border_color=(206, 17, 65) if is_caleb else (95, 91, 87))
         image.set_zorder(7)
         label_y = face_y - radius - 8
@@ -671,7 +723,7 @@ def render_chart_only(profiles: pd.DataFrame, final: bool = False) -> Path:
     destination canvas without a color-mismatch seam.
     """
     theme = DEFAULT_THEME
-    width, height = 1080, 1000
+    width, height = 1080, 1030
     fig = plt.figure(figsize=(width / 150, height / 150))
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, width)
@@ -689,10 +741,16 @@ def render_chart_only(profiles: pd.DataFrame, final: bool = False) -> Path:
     ].copy()
     featured = _featured_profiles(profiles)
 
-    x0, x1 = 145, 1005
-    y0, y1 = 170, 940
-    x_min, x_max = 0.0, 100.0
-    y_min, y_max = 0.0, 100.0
+    # Margins are deliberately generous: the axis titles and fine print sit
+    # well inside the edge so a Canva frame that crops slightly cannot clip
+    # them off the graphic.
+    x0, x1 = 190, 1015
+    y0, y1 = 175, 950
+    # The plotted range runs past 0–100% so a portrait centered on an extreme
+    # value (Atwell at 2.8% rim) still sits fully inside the panel instead of
+    # being clipped by the axis.
+    x_min, x_max = -6.0, 106.0
+    y_min, y_max = -14.0, 104.0
 
     def chart_x(value: float) -> float:
         return x0 + (value - x_min) / (x_max - x_min) * (x1 - x0)
@@ -702,22 +760,34 @@ def render_chart_only(profiles: pd.DataFrame, final: bool = False) -> Path:
 
     panel_fill = "#F5F1EC"
     halo = [pe.withStroke(linewidth=3.2, foreground=panel_fill)]
-    ax.add_patch(FancyBboxPatch((x0 - 16, y0 - 14), x1 - x0 + 30, y1 - y0 + 26,
-                                boxstyle="round,pad=0,rounding_size=12", facecolor=panel_fill,
-                                edgecolor=theme.rule, linewidth=1.0, zorder=0))
+    # Borderless panel: the Canva page supplies any framing, so the export
+    # carries fill only and never doubles up on an outline.
+    panel = FancyBboxPatch((x0 - 16, y0 - 14), x1 - x0 + 30, y1 - y0 + 26,
+                           boxstyle="round,pad=0,rounding_size=12", facecolor=panel_fill,
+                           edgecolor="none", zorder=0)
+    ax.add_patch(panel)
 
+    # The panel stays one flat off-white. A tinted quadrant wash was tried and
+    # removed: it made the dots and portraits harder to read, and any
+    # corner-to-corner ramp risks implying that one shot diet is better than
+    # another.
+    #
+    # Axes drawn in ink with outward tick marks so the frame of reference stays
+    # legible once the chart is scaled down inside a Canva page.
     for value in range(0, 101, 25):
         x = chart_x(float(value))
         ax.plot([x, x], [y0, y1], color=theme.grid, lw=1.1, zorder=1)
-        ax.text(x, y0 - 27, f"{value}%", ha="center", va="top", fontsize=9.5,
-                color=theme.muted, fontproperties=body_font("medium"))
+        ax.plot([x, x], [y0, y0 - 10], color=theme.ink, lw=1.6, zorder=3)
+        ax.text(x, y0 - 22, f"{value}%", ha="center", va="top", fontsize=13,
+                color=theme.ink, fontproperties=helvetica())
     for value in range(0, 101, 25):
         y = chart_y(float(value))
         ax.plot([x0, x1], [y, y], color=theme.grid, lw=1.1, zorder=1)
-        ax.text(x0 - 18, y, f"{value}%", ha="right", va="center", fontsize=9.5,
-                color=theme.muted, fontproperties=body_font("medium"))
-    ax.plot([x0, x1], [y0, y0], color=theme.muted, lw=1.2, zorder=2)
-    ax.plot([x0, x0], [y0, y1], color=theme.muted, lw=1.2, zorder=2)
+        ax.plot([x0, x0 - 10], [y, y], color=theme.ink, lw=1.6, zorder=3)
+        ax.text(x0 - 20, y, f"{value}%", ha="right", va="center", fontsize=13,
+                color=theme.ink, fontproperties=helvetica())
+    ax.plot([x0, x1], [y0, y0], color=theme.ink, lw=2.2, zorder=3)
+    ax.plot([x0, x0], [y0, y1], color=theme.ink, lw=2.2, zorder=3)
 
     median_three_pt_rate = float(rankable["three_pt_attempt_rate"].median())
     median_rim_rate = float(rankable["rim_rate"].median())
@@ -728,19 +798,53 @@ def render_chart_only(profiles: pd.DataFrame, final: bool = False) -> Path:
     ax.plot([x0, x1], [median_y, median_y], color=theme.muted, lw=1.2,
             linestyle=(0, (4, 4)), alpha=0.8, zorder=2)
     ax.text(median_x + 9, y1 - 17, f"MEDIAN {median_three_pt_rate:.1f}%", ha="left", va="top",
-            fontsize=7.5,
-            color=theme.muted, fontproperties=body_font("bold"), zorder=3, path_effects=halo)
+            fontsize=9,
+            color=theme.muted, fontproperties=helvetica("bold"), zorder=3, path_effects=halo)
     ax.text(x1 - 9, median_y + 12, f"MEDIAN {median_rim_rate:.1f}%", ha="right", va="bottom",
-            fontsize=7.5, color=theme.muted, fontproperties=body_font("bold"), zorder=3,
+            fontsize=9, color=theme.muted, fontproperties=helvetica("bold"), zorder=3,
             path_effects=halo)
 
-    ax.text(x0 + 18, y1 - 22, "RIM-HEAVY", ha="left", va="top", fontsize=9,
-            color=theme.muted, fontproperties=body_font("bold"), zorder=3, path_effects=halo)
-    ax.text(x1 - 18, y1 - 22, "RIM + 3 HEAVY", ha="right", va="top", fontsize=9,
-            color=theme.muted, fontproperties=body_font("bold"), zorder=3, path_effects=halo)
-    ax.text(x1 - 18, y1 - 45, "FEWER OTHER 2S", ha="right", va="top", fontsize=7.2,
-            color=theme.muted, fontproperties=body_font("medium"), zorder=3, path_effects=halo)
+    def quadrant_pill(anchor_x, anchor_y, ha, va, title, detail):
+        """Draw one corner key: a style name and what it means, in plain words."""
+        probe = ax.text(0, 0, title, fontsize=10.5, fontproperties=helvetica("bold"), alpha=0)
+        title_width = rendered_width(ax, probe)
+        probe.remove()
+        probe = ax.text(0, 0, detail, fontsize=9.5, fontproperties=helvetica(), alpha=0)
+        detail_width = rendered_width(ax, probe)
+        probe.remove()
+        box_w = max(title_width, detail_width) + 32
+        box_h = 66
+        left = anchor_x if ha == "left" else anchor_x - box_w
+        bottom = anchor_y if va == "bottom" else anchor_y - box_h
+        ax.add_patch(FancyBboxPatch((left, bottom), box_w, box_h,
+                                    boxstyle="round,pad=0,rounding_size=11",
+                                    facecolor=theme.canvas, edgecolor=theme.rule,
+                                    linewidth=1.0, alpha=0.94, zorder=6))
+        ax.text(left + 16, bottom + box_h - 21, title, ha="left", va="center", fontsize=10.5,
+                color=theme.ink, fontproperties=helvetica("bold"), zorder=7)
+        ax.text(left + 16, bottom + 20, detail, ha="left", va="center", fontsize=9.5,
+                color=theme.muted, fontproperties=helvetica(), zorder=7)
 
+    # Quadrant keys name the shot diet and then say plainly what it means.
+    # Details stay short so the pills fit the corners without crowding the
+    # portraits. The bottom-right key is anchored just right of the median
+    # rather than in its corner, which Atwell's portrait occupies.
+    # Keys are pinned to the 0–100% data area, not the padded panel edge, so
+    # they sit inside the chart rather than floating in the margin.
+    key_top = chart_y(100.0) - 12
+    # The bottom keys tuck just under the 0% line: it keeps them clear of
+    # Wilson's stat label without pushing them into the panel margin.
+    key_bottom = chart_y(0.0) - 12
+    # Each key's second line restates both axes in the same parallel form, so a
+    # reader can decode any quadrant without re-reading the axis titles.
+    quadrant_pill(chart_x(0.0) + 14, key_top, "left", "top",
+                  "PAINT-FIRST", "higher rim, lower 3PT")
+    quadrant_pill(chart_x(100.0) - 14, key_top, "right", "top",
+                  "RIM + THREES", "higher rim, higher 3PT")
+    quadrant_pill(chart_x(0.0) + 14, key_bottom, "left", "bottom",
+                  "MID-RANGE LEAN", "lower rim, lower 3PT")
+    quadrant_pill(median_x + 20, key_bottom, "left", "bottom",
+                  "PERIMETER-FIRST", "lower rim, higher 3PT")
     featured_ids = set(featured["player_id"].astype(int))
     for _, player in rankable.iterrows():
         if int(player["player_id"]) in featured_ids:
@@ -750,51 +854,58 @@ def render_chart_only(profiles: pd.DataFrame, final: bool = False) -> Path:
         ax.add_patch(Circle((x, y), radius=4.6, facecolor=theme.muted, edgecolor=theme.canvas,
                             linewidth=0.7, alpha=0.32, zorder=3))
 
-    face_offsets = {
-        "Caleb Wilson": (28, -40),
-        "Dailyn Swain": (-62, 82),
-        "Noa Essengue": (6, 130),
-        "Jaylin Sellers": (64, 78),
-        "Donovan Atwell": (-28, 70),
-    }
+    # The portrait *is* the data point: each headshot is centered on the
+    # player's exact coordinates with no connector line, so position alone
+    # carries the reading. Portraits sit above the pool dots and may cover a
+    # few of them.
+    radius = 46
     for _, player in featured.iterrows():
         if not player["qualified"] or pd.isna(player["rim_rate"]):
             continue
         point_x = chart_x(float(player["three_pt_attempt_rate"]))
         point_y = chart_y(float(player["rim_rate"]))
-        dx, dy = face_offsets[str(player["name"])]
-        face_x, face_y = point_x + dx, point_y + dy
-        is_caleb = player["name"] == "Caleb Wilson"
-        radius = 47 if is_caleb else 34
-        ax.plot([point_x, face_x], [point_y, face_y], color=theme.accent if is_caleb else theme.muted,
-                lw=1.1, alpha=0.9, zorder=4)
-        ax.add_patch(Circle((point_x, point_y), radius=7 if is_caleb else 5.5,
-                            facecolor=theme.accent if is_caleb else theme.muted,
-                            edgecolor=theme.canvas, linewidth=1.0, zorder=5))
-        image = headshot_label(ax, _headshot_path(int(player["player_id"])), face_x, face_y, radius=radius,
-                               border_color=(206, 17, 65) if is_caleb else (95, 91, 87))
-        image.set_zorder(7)
-        label_y = face_y - radius - 8
-        ax.text(face_x, label_y, str(player["name"]).split()[-1].upper(), ha="center", va="top",
-                fontsize=10.5 if is_caleb else 8.8, color=theme.ink,
-                fontproperties=body_font("bold"), zorder=8, path_effects=halo)
-        ax.text(face_x, label_y - 21,
-                f"{player['three_pt_attempt_rate']:.1f}% 3PT · {player['rim_rate']:.1f}% RIM",
-                ha="center", va="top", fontsize=8.8 if is_caleb else 8.0,
-                color=theme.accent if is_caleb else theme.muted,
-                fontproperties=body_font("medium"), zorder=8, path_effects=halo)
+        name = str(player["name"])
+        image = headshot_label(ax, _headshot_path(int(player["player_id"]), name),
+                               point_x, point_y, radius=radius, border_color=None)
+        image.set_zorder(9)
+        values = f"{player['three_pt_attempt_rate']:.1f}% 3PT  ×  {player['rim_rate']:.1f}% RIM"
+        # Keep the centered label inside the panel even when the portrait sits
+        # hard against an edge.
+        label_x = min(max(point_x, x0 + 105), x1 - 105)
+        # Flip the label above the portrait only when there is no room beneath
+        # it, so edge players never print their stats outside the panel.
+        if point_y - radius - 31 < y0 + 12:
+            align, name_y, value_y = "bottom", point_y + radius + 34, point_y + radius + 11
+        else:
+            align, name_y, value_y = "top", point_y - radius - 8, point_y - radius - 31
+        ax.text(label_x, name_y, name.split()[-1].upper(), ha="center", va=align,
+                fontsize=9.5, color=theme.ink,
+                fontproperties=helvetica("bold"), zorder=10)
+        # Bulls red on every featured player's rates: the stat pair is the
+        # payoff of the chart, and red is the one accent in the house palette.
+        # Applied uniformly so it stays emphasis, not a ranking.
+        ax.text(label_x, value_y, values,
+                ha="center", va=align, fontsize=7.8,
+                color=theme.accent,
+                fontproperties=helvetica("bold"), zorder=10)
 
-    ax.text((x0 + x1) / 2, 95, "3PT ATTEMPT RATE  (% OF FGA)", ha="center", va="center",
-            fontsize=15, color=theme.ink, fontproperties=body_font("bold"))
-    ax.text(58, (y0 + y1) / 2, "RIM RATE  (% OF FGA)", ha="center", va="center", rotation=90,
-            fontsize=15, color=theme.ink, fontproperties=body_font("bold"))
+    ax.text((x0 + x1) / 2, 92, "3PT ATTEMPT RATE  (% OF FGA)", ha="center", va="center",
+            fontsize=17, color=theme.ink, fontproperties=helvetica("bold"))
+    ax.text(78, (y0 + y1) / 2, "RIM RATE  (% OF FGA)", ha="center", va="center", rotation=90,
+            fontsize=17, color=theme.ink, fontproperties=helvetica("bold"))
 
-    ax.text(60, 44,
-            "Each axis is a separate SL→rookie signal; this scatter is not a regression between the axes.",
-            ha="left", va="bottom", fontsize=7.8, color=theme.muted, fontproperties=body_font("medium"))
-    ax.text(60, 22,
-            f"Min. {int(MIN_MINUTES)} SL minutes · {len(rankable)} of {len(qualified)} qualified players have fully reconciled shot detail",
-            ha="left", va="bottom", fontsize=7.8, color=theme.faint, fontproperties=body_font())
+    # The threshold/reconciliation fine print and the not-a-regression note are
+    # deliberately NOT drawn here (user-directed 2026-07-21): they are typed
+    # into the Canva template instead. Both are still required on the published
+    # graphic — the current values are printed to stdout below so they can be
+    # copied across, and they change whenever the data is refetched.
+
+    print("Type into the Canva template (required on the published graphic):")
+    print(f"  · Min. {int(MIN_MINUTES)} SL minutes · {len(rankable)} of {len(qualified)} "
+          "qualified players have fully reconciled shot detail")
+    print("  · Each axis is a separate Summer League-to-rookie signal; this scatter is not a "
+          "regression between the axes.")
+    print("  · Data via nba.com · R²: Phillips, The F5 · Lee, The Hardwood Collective")
 
     output = OUTPUT_DIR / f"{OUTPUT_STEM}-s3-chart-only.png"
     output.parent.mkdir(parents=True, exist_ok=True)

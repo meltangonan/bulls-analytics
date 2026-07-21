@@ -139,7 +139,7 @@ def test_three_slide_carousel_renders_standard_draft_files(tmp_path, monkeypatch
         ]
     )
     monkeypatch.setattr(sticky, "OUTPUT_DIR", tmp_path)
-    monkeypatch.setattr(sticky, "_headshot_path", lambda player_id: None)
+    monkeypatch.setattr(sticky, "_headshot_path", lambda player_id, name=None: None)
 
     outputs = (
         sticky.render_cover(profiles),

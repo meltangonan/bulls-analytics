@@ -36,9 +36,12 @@ Do not begin implementation while a blocking area is unresolved. When coverage i
 Follow the prototype-first workflow in `POSTING_WORKFLOW.md` and `DEVELOPMENT.md`.
 
 - Reuse the established design system and existing helpers before creating a new visual grammar.
+- Choose the simplest supported production path from `POSTING_WORKFLOW.md`: Python full layout or
+  verified Python chart/data asset + Canva assembly.
 - Verify the analysis, thresholds, coverage window, sources, and any current factual claims.
 - Add or update tests for reusable data or analysis behavior.
-- Generate one reviewable draft and explain the important analytical and visual choices in plain language.
+- Generate one reviewable draft and explain the important analytical, production-path, and visual
+  choices in plain language.
 - Update the affected owner documents and catalog card as decisions change; revise stale guidance instead of appending duplicates.
 
 Do not prepare promotional copy unless the user asks for it; `promote-bulls-post` owns that stage.
@@ -49,12 +52,15 @@ Use the Draft Refinement Gate in `POSTING_WORKFLOW.md` as a coverage check, not 
 
 After the user approves the post:
 
-1. Produce the final 300 DPI export.
-2. Copy the approved graphic to `docs/mocks/`.
-3. Update the matching catalog card to `Mocked` and preserve its supporting context.
-4. Run the relevant tests and `git diff --check`.
-5. Summarize the practical result, verification, risks, and all changed files.
-6. Stop for explicit approval before committing or pushing.
+1. Produce the final artifact for the chosen path: a 300-DPI Python full layout, or the downloaded
+   1080×1350 Canva page/carousel assembled from verified Python assets.
+2. Inspect the actual final files. For Canva, run the downloaded-page checklist in
+   `POSTING_WORKFLOW.md`; do not approve only the editable design or chart asset.
+3. Copy every approved final page to `docs/mocks/`.
+4. Update the matching catalog card to `Mocked` and preserve its supporting context.
+5. Run the relevant tests and `git diff --check`.
+6. Summarize the practical result, verification, risks, and all changed files.
+7. Stop for explicit approval before committing or pushing.
 
 ## Hand Off to the Next Stage
 

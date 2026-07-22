@@ -22,8 +22,9 @@ fan wins.
 
 @chicagobullsdata makes league-quality data storytelling specifically about the Chicago
 Bulls — a corner that is empty for every NBA team. The deliverables are 1080×1350 Instagram
-graphics rendered from Python; this repo is the studio that produces them (analysis
-pipeline, graphics library, design system, editorial playbook). Success is measured by
+pages built either as complete Python renders or as Canva compositions from verified Python
+chart/data assets; this repo is the studio and editor of record for the analysis, final downloads,
+design system, and editorial playbook. Success is measured by
 shares/sends per post, engagement rate, and community recognition from other Bulls pages
 and the top viz accounts — belonging over raw follower count.
 
@@ -39,8 +40,8 @@ Bulls, made legible and fun for any fan — not just stats people.
 - The line a visitor remembers after 10 seconds: "Chicago Bulls, charted."
 - Belief ladder: this is about *my* team → I understood it instantly → that was genuinely
   new to me → they do this all the time → follow.
-- Proof on hand: the live grid itself (4 posts including the Summer League Report
-  carousel) and community recognition as it accrues; tracked qualitatively in STRATEGY.md.
+- Proof on hand: the live grid, the posted evidence in `idea-catalog.html`, and community
+  recognition as it accrues; tracked qualitatively in `STRATEGY.md` rather than duplicated here.
 
 ## Brand Personality
 
@@ -74,8 +75,9 @@ no manufactured hooks or engagement bait.
 
 ## Accessibility & Inclusion
 
-Legibility-first, tuned for the Instagram feed: 300 DPI final export so text survives
-compression, generous type sizes, and high-contrast red/black/white as the meaningful
-palette. Known caveat: the table diverging colormap (NET_CMAP) runs red-to-green, a
+Legibility-first, tuned for the Instagram feed: Python full layouts export at 300 DPI; Canva pages
+are checked from the downloaded 1080×1350 final. Both paths use generous type sizes and
+high-contrast red/black/white as the meaningful palette. Known caveat: the table diverging
+colormap (NET_CMAP) runs red-to-green, a
 colorblind-unsafe pair — mitigated by always printing the sign on values (force_sign);
 revisit the pair if a table post ever leans on color alone.

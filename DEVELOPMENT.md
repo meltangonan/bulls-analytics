@@ -79,16 +79,20 @@ output/feed/                 # Generated PNGs; gitignored
 
 - Keep reusable fetching and analysis logic in `bulls/data` and `bulls/analysis`.
 - Keep reusable graphics builders in `bulls/graphics`; keep entry points in `scripts/`.
-- Use `bulls.graphics.house` for the current canvas, fonts, header/footer, tokens, and export
-  behavior. Do not rebuild those rules inside a new prototype.
+- Use `bulls.graphics.house` for the current Python-composed canvas, fonts, header/footer, tokens,
+  and export behavior. For Canva-composed posts, generate verified chart/data assets in Python and
+  mirror the canonical `DESIGN.md` tokens in Canva; do not rebuild analytical logic or invent a
+  separate visual system in the external layout tool.
 - For a format that fetches substantial raw data, prepare display-ready content before drawing it:
   calculations, editorial selections, labels, images, and shot marks belong in a preparation step;
   the renderer should receive that prepared object instead of understanding NBA API columns. Keep
   the prepared shape format-specific rather than inventing a universal post schema.
 - Start new formats as one script per idea batch in `scripts/prototypes/`; promote a builder to a
   reusable graphics module and CLI only after it repeats.
-- Add the new card at the top of `idea-catalog.html`, then copy its image to `docs/mocks/` so the
-  catalog remains portable. `output/` is gitignored.
+- Add the new card at the top of `idea-catalog.html`, then copy the approved final page or carousel
+  pages to `docs/mocks/` so the catalog remains portable. For Canva work, preserve the downloaded
+  1080×1350 pages, not only the Python chart asset. `output/` is gitignored and is disposable only
+  after approved manual artifacts have been promoted to `docs/mocks/`.
 - Extract helpers only after the same logic appears in 2–3 prototypes. Prefer small, test-backed
   changes; do not add automation, export pipelines, or heavy frameworks unless requested.
 
@@ -105,18 +109,24 @@ output/feed/                 # Generated PNGs; gitignored
   Use `get_roster()` and player IDs to create a current-roster view when relevant, and show both
   all-player and current-roster views for a fair comparison.
 - Set `min_shots` by timeframe: about 30 for a season and 10 for a recent-games view.
-- Standard draft output is 1080×1350 at 150 DPI; approved posts export 2160×2700 at 300 DPI for
-  Instagram compression. Current posts use `house.save_post(..., final=False|True)`; retain the
-  legacy `save_feed_post(..., dpi=...)` API only for older builders until they are reused.
+- Python full-layout drafts use a 1080×1350 logical canvas at 150 DPI; approved posts export
+  2160×2700 at 300 DPI for Instagram compression through `house.save_post(..., final=False|True)`.
+  Canva-composed posts use sufficiently large Python assets for their placed size, then export the
+  complete final page at exactly 1080×1350. DPI metadata does not make Canva-rendered text sharper;
+  inspect the downloaded page at feed size. Retain `save_feed_post(..., dpi=...)` only for older
+  builders until they are reused.
 - Table posts use `plottable` (see `scripts/prototypes/f5_lineup_table.py`) or Great Tables when
-  the table engine should own row rhythm, image cells, and a single color-emphasized column —
-  `summer_league_report.py` renders its player table with Great Tables to a cropped PNG and
-  composites it into the matplotlib canvas (`gtsave` needs a headless browser). `gt_extras` stays
-  environment-only; only the spike script uses it. Craft patterns and source links are in
+  the table engine should own row rhythm and image cells. `summer_league_report.py` calls
+  `GT.as_raw_html()`, embeds the local Archivo fonts, renders the HTML through `nokap.from_html`,
+  and composites the cropped PNG into the Matplotlib canvas. This browser-backed step is part of
+  the live report path, not the rejected full-slide HTML renderer. `gt_extras` remains limited to
+  the separate Great Tables spike. Craft patterns and source links are in
   `docs/reference/f5-technique-notes.html`.
 - `DESIGN.md` owns typography. `Playfair Display` and `DM Sans` remain only in legacy
   `bulls/graphics/feed.py` zone builders.
 - Court graphics use `analysis.detailed_zones()`; headshots are cached in `cache/headshots/`.
+  Treat NBA response caches, reconciled analysis caches, and locally extracted font caches as
+  expensive reusable inputs, not generic cleanup targets.
 - Name outputs `YYYY-MM-DD-zone-{mode}-{scope}.png` in `output/feed/`.
 
 Useful CLIs:

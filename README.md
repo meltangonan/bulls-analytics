@@ -1,13 +1,16 @@
 # Bulls Analytics
 
-Lean Python workspace for Chicago Bulls analysis and lightweight social-graphics generation,
+Lean Python workspace for Chicago Bulls analysis and lightweight social-graphics production,
 feeding the [@chicagobullsdata](https://www.instagram.com/chicagobullsdata/) Instagram account.
+Python produces verified analysis and either complete posts or high-resolution assets for Canva
+assembly.
 
 ## What This Repo Is For
 - Pull Bulls game and shot data from the NBA API.
 - Compute reusable analysis metrics (zone leaders, points-per-shot, efficiency, lineups).
-- Produce 1080x1350 Instagram graphics, one post idea at a time.
-- Track every post idea as a card in the idea catalog.
+- Produce complete Instagram graphics in Python or verified chart/data assets for Canva assembly,
+  one post idea at a time.
+- Preserve approved 1080x1350 final pages and track every post idea as a card in the idea catalog.
 
 This repo is intentionally lean: prototype scripts (`scripts/prototypes/`) plus the idea catalog
 drive post mocks; formats that repeat get promoted into `bulls/graphics` with a CLI.

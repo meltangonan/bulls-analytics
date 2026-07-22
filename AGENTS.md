@@ -5,9 +5,9 @@ keep shared instructions here and put detailed guidance in its named owner docum
 
 ## Scope
 
-Bulls analysis and lightweight social-graphics generation for `@chicagobullsdata`. Everything runs
-as scripts: prototypes for one-off mocks, promoted CLIs only for repeat formats. The notebook
-workflow is retired.
+Bulls analysis and lightweight social-graphics production for `@chicagobullsdata`. Python scripts
+produce either complete posts or verified chart/data assets for Canva assembly: prototypes for
+one-off mocks, promoted CLIs only for repeat formats. The notebook workflow is retired.
 
 ## Read the Right Document
 
@@ -27,9 +27,12 @@ workflow is retired.
 1. Keep solutions simple and avoid speculative architecture.
 2. Favor analysis quality over presentation polish.
 3. Avoid scheduled automation, heavy export pipelines, and heavy framework additions unless asked.
-4. Keep applicable qualification thresholds, coverage windows, and sources visible on graphics.
-5. Work one post idea at a time.
-6. Work directly on the local `main` branch. Do not create branches or Git worktrees by default.
+4. Support two production paths: Python may render the complete post or supply verified chart/data
+   assets for Canva assembly. Canva is not an analytical source.
+5. Keep applicable qualification thresholds, coverage windows, and sources visible on graphics.
+   Preserve approved Canva downloads in `docs/mocks/` before treating ignored output as disposable.
+6. Work one post idea at a time.
+7. Work directly on the local `main` branch. Do not create branches or Git worktrees by default.
    After completing and verifying requested changes, show the user the result and wait for explicit
    approval before committing or pushing to `main`. Treat commit and push approval as applying only
    to the completed work currently under review. Use a separate branch only when the user explicitly
@@ -55,10 +58,11 @@ workflow is retired.
 - Update the document that owns a changed decision: strategy in `STRATEGY.md`, visual-system
   decisions in `DESIGN.md`, post-production behavior in `POSTING_WORKFLOW.md`, and technical
   conventions in `DEVELOPMENT.md`.
-- A visual-system decision has three synchronized surfaces: the executable layer
+- A visual-system decision has three synchronized repository surfaces: the executable layer
   (`bulls/graphics/house.py` / `craft.py`), the canonical record (`DESIGN.md`), and the rendered
   companion (`design-system.html`). Change all three together; `tests/test_design_tokens.py`
   enforces this for color tokens only, so fonts, components, and layout values rely on this rule.
+  Canva's Brand Kit is a manually reviewed downstream mirror, not another canonical owner.
 - Treat documentation maintenance as part of completing the work; the user should not need to ask
   separately. Update only the affected owner documents and revise or replace stale guidance instead
   of duplicating it or appending unnecessary history.

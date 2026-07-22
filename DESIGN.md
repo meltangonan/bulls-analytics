@@ -6,6 +6,8 @@ The visual identity for the account's graphics. Established with the debut post
 per post. When a decision here changes, update this file (noting it in the decision log at
 the bottom), the executable layer (`bulls/graphics/house.py` / `craft.py`), and the rendered
 companion `design-system.html` together — the token drift test only catches color mismatches.
+Canva is a downstream mirror of these rules, not a fourth canonical owner; check its Brand Kit and
+final downloaded pages manually when a Canva-composed post uses the system.
 
 Companion docs: `STRATEGY.md` (why the account exists), `bulls-content-playbook.html`
 (what to post — the visual encyclopedia), `idea-catalog.html` (the idea shelf), and
@@ -127,16 +129,25 @@ font with `fontTools.varLib.instancer` if needed.
 - **Format:** 1080×1350 px (Instagram portrait 4:5). Jersey off-white background
   (`#FAF8F5`) by default; a sanctioned canvas theme (§2) may be chosen per post —
   `house.new_canvas(theme)`.
-- **Iterate at 150 DPI** (fast), **export final at 300 DPI** (2160×2700 — text survives
-  Instagram compression). Prototype scripts take a `--final` flag for the 300-DPI render;
-  current posts use `house.save_post(fig, path, final=...)` so draft/final dimensions are explicit.
+- **Python full layout:** iterate at 150 DPI and export final at 300 DPI (2160×2700 — text
+  survives Instagram compression). Prototype scripts take a `--final` flag and current posts use
+  `house.save_post(fig, path, final=...)` so draft/final dimensions are explicit.
+- **Canva assembly:** export Python chart/data assets large enough for their placed size, then
+  download the complete page at exactly 1080×1350. Canva-rendered text is judged from the downloaded
+  page at feed size; DPI metadata does not improve it. Preserve those downloaded finals in
+  `docs/mocks/`.
 - Full-bleed axes (`fig.add_axes([0, 0, 1, 1])`), data coords = pixel coords, equal aspect,
   no spines/ticks.
 - **Side margins:** 60 px left and right (title, subtitle, kicker, footer all anchor here).
 
 ## 5. Header Pattern
 
-Stacked tight, top-left anchored at x=60 (values from the reference implementation):
+This is the default for Python full-layout posts. Canva narrative pages may rearrange the hierarchy
+when the story needs a cover or explainer composition, but they retain the sanctioned palette,
+collegiate display character, clear title emphasis, and restrained supporting type; review the
+downloaded page against the grid rules in §10.
+
+Python layout values are stacked tight and top-left anchored at x=60:
 
 0. **Jersey stripe** — full-bleed 16 px band across the very top of the canvas: the
    theme's `band` color with two pinstripes (top-down: band 4 / trim_a 2 / band 4 /
@@ -150,23 +161,30 @@ Stacked tight, top-left anchored at x=60 (values from the reference implementati
    Switch back globally by flipping `house.OUTLINED_TITLE = False`, or per post with
    `draw_header(..., outlined=False)`.
 2. **Subtitle** — y = H−168, 18 pt Archivo medium, `MUTED`. Segments (team · season ·
-   record etc.) separated by thin light-gray **vertical ticks** (`#CFCFCF`, ~1.3 lw,
-   ~16 px tall) — never "|" or "·" glyphs in rendered text.
+   record etc.) are separated by thin light-gray **vertical ticks** (`#CFCFCF`, ~1.3 lw,
+   ~16 px tall). Python layouts draw the ticks. A Canva layout may use a carefully spaced `|`
+   fallback only when the tool cannot reproduce the drawn separators and the deviation is reviewed
+   on the downloaded final.
 3. **Kicker** — y = H−206, 14 pt Archivo medium italic, `RED`. States the metric in
    plain words ("Games over/under .500 through each game"). If the kicker explains the
    metric, don't repeat the explanation in a footer.
 
-## 6. Footer Pattern (every graphic)
+## 6. Footer and Attribution
 
-Both on the same baseline (y=40), quiet:
+Python full layouts place both items on the quiet y=40 baseline:
 
-- **Bottom-left:** source credit — "Data via nba.com", 8.5 pt Archivo regular,
-  `FAINT`. This is a fairness guardrail; it never comes off.
+- **Bottom-left:** source credit — "Data via nba.com", 8.5 pt Archivo regular, `FAINT`.
 - **Bottom-right:** watermark — `@chicagobullsdata`, 10.5 pt Archivo medium, `MUTED`,
-  right-aligned at x=1020. Authorship must survive reposts/screenshots.
-- For stat boards with qualification rules, use `craft.threshold_footer(qualification,
-  coverage, source)` — one line joining threshold + coverage window + source, e.g.
-  "Min. 20 games | 2025-26 season through Jul 4 | data: stats.nba.com".
+  right-aligned at x=1020.
+
+Every final page needs visible account authorship, and every data-bearing page needs its applicable
+source, qualification, and coverage. Canva narrative pages may move the watermark or citation to fit
+the composition, but they may not remove the information; authorship and analytical honesty must
+survive reposts and screenshots.
+
+For stat boards with qualification rules, use `craft.threshold_footer(qualification, coverage,
+source)` — one line joining threshold + coverage window + source, e.g. "Min. 20 games | 2025-26
+season through Jul 4 | data: stats.nba.com".
 
 ## 7. Annotation Grammar (two visual languages)
 
@@ -208,11 +226,12 @@ The highest-stopping-power object on a graphic — use sparingly.
 
 ### House foundation (`bulls/graphics/house.py`)
 
-`DESIGN.md` is the human-readable north star; `house.py` is the small Matplotlib implementation
-of the rules every current post shares. It owns the palette and canvas themes (`house.THEMES`;
-every draw function takes an optional `theme` and defaults to white), Academic M54/Archivo font files,
-1080×1350 canvas, 60 px margins, fitted segmented title, tick-separated subtitle, optional kicker,
-source/watermark footer pair, and 150/300-DPI export contract.
+`DESIGN.md` is the canonical visual-system record; `house.py` is the small Matplotlib implementation
+of the rules shared by Python-composed posts. It owns the palette and canvas themes (`house.THEMES`;
+every draw function takes an optional `theme` and defaults to `jersey`), Academic M54/Archivo font
+files, 1080×1350 canvas, 60 px margins, fitted segmented title, tick-separated subtitle, optional
+kicker, source/watermark footer pair, and 150/300-DPI export contract. Canva-composed posts mirror
+these decisions manually and preserve their downloaded final pages in the repository.
 
 Use the house layer for new posts before drawing format-specific content. Do not put charts, tables,
 story copy, or post-specific layout in it. Those stay with the prototype until a second real post
@@ -257,17 +276,20 @@ F5 technique references: `docs/reference/f5-technique-notes.html`.
 ## 10. Grid Rules (what every post must share)
 
 The grid viewed as a whole is the brand (the Half Court Mindset lesson: the template
-*is* the identity). Every feed post shares:
+*is* the identity). These are visual outcomes, regardless of whether Python or Canva performs the
+final composition. Every feed post shares:
 
 1. A sanctioned canvas theme (§2), 4:5 portrait (§4) — jersey (warm off-white) is the
    default; white, newsprint, blackout, and hardwood are the only alternates. No other
    colors, no textures. The theme is a per-post choice made at mock time, not a
    per-element decoration.
-2. The header pattern (§5): Academic M54 ALL-CAPS title with exactly one red accent
-   word, tick-separated muted subtitle, red italic kicker.
+2. A recognizable title hierarchy (§5): collegiate display character, restrained supporting type,
+   and deliberate red emphasis. Python full layouts use the fixed house header; Canva narrative
+   pages may adapt its arrangement without inventing a different brand.
 3. Red/black as the only *meaningful* colors (§2) — a thumbnail should read as
    red + black + white even before the title is legible.
-4. The footer pair (§6): source credit bottom-left, watermark bottom-right.
+4. Visible authorship on every page and visible source/qualification/coverage on every data-bearing
+   page (§6). Python uses the footer pair; Canva may adapt placement, not remove the information.
 5. One idea per post — the title states it; if the title needs "and," it's two posts.
 
 ## 11. Voice & Caption
@@ -293,14 +315,19 @@ logo exists).
 - [ ] Positioning line + bio — leading candidate: **"Chicago Bulls, charted."**
       (already the STRATEGY.md one-liner) with name field "Chicago Bulls Data" and a
       one-line descriptor; user deferred the decision, not the direction.
-- [ ] Logo / avatar mark — three sketched directions (season-shape glyph, data-bull,
-      varsity wordmark); candidate sheet: `scripts/prototypes/brand_logo_candidates.py`
+- [ ] Logo / avatar mark — five sketched directions rendered at full, avatar, feed, and
+      watermark scale; candidate sheet: `scripts/prototypes/brand_logo_candidates.py`
 - [ ] Profile picture — depends on the logo (player photo ruled out long-term)
 - [ ] Watermark logo lockup — depends on the logo
 - [ ] Story/reel variants of the canvas (9:16) — needed?
 
 ## Decision Log
 
+- **2026-07-22** — Canva assembly adopted as a supported production path after the Sticky Stats
+  pilot. Python remains the source of analytical truth and either renders the full page or supplies
+  verified chart/data assets; Canva may own framing and editorial copy. The downloaded 1080×1350
+  pages are the approved Canva artifact and return to `docs/mocks/`. `DESIGN.md` remains canonical;
+  Canva's Brand Kit is a manually checked mirror.
 - **2026-07-13** — Source credit standardized to `Data via nba.com`: a concise attribution
   to the official provider with only the opening `D` capitalized. Updated the shared footer
   default and rendered companion.

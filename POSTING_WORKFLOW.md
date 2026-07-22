@@ -29,7 +29,7 @@ question tool for clear choices when available and normal conversation for nuanc
    footnotes, and the canvas theme. Always ask which canvas theme the post uses (jersey default,
    white, newsprint, blackout, or hardwood — DESIGN.md §2) unless the user already chose one
    for this post; recommend jersey and note when the story argues for an alternate.
-6. **Deliverable** — feed or carousel format, prototype expectations, and what constitutes an approved draft.
+6. **Deliverable** — feed or carousel format, production path (Python full layout or Python chart/data asset + Canva assembly), prototype expectations, and what constitutes an approved draft.
 
 Every area must be answered by the user, inferred from existing context, filled with a recommended default,
 or explicitly deferred because it does not affect the first draft. If the user says “pick for me,” choose a
@@ -46,8 +46,18 @@ This keeps analytical truth and visual composition independently testable withou
 one schema. Simple one-off prototypes can stay direct when a preparation layer would add ceremony without
 clarity.
 
-New Matplotlib posts use `bulls.graphics.house` for the shared canvas, fonts, header/footer, and
-draft/final export behavior.
+Choose the simplest production path that keeps the analysis verifiable:
+
+- **Python full layout** — Matplotlib owns the complete page. New posts use `bulls.graphics.house`
+  for the shared canvas, fonts, header/footer, and draft/final export behavior.
+- **Python asset + Canva assembly** — Python owns the verified calculations, display-ready content,
+  and chart/data assets; Canva owns page framing and editorial copy. Canva is a layout surface, not
+  an analytical source. The repository remains the editor of record for metrics, qualifications,
+  sources, visual tokens, and the final downloaded pages.
+
+Both paths use the same brief, evidence checks, approval lifecycle, catalog record, and post review.
+Do not use Canva merely to avoid implementing a straightforward Python layout, and do not force a
+layout-heavy composition into Python when a tested chart asset is the more reliable boundary.
 
 ## Draft Refinement Gate
 
@@ -60,8 +70,10 @@ the draft, and ask one focused question when a user decision is actually needed.
 - **Copy deck** — every annotation is accurate, concise, and approved or redlined.
 - **Title and subtitle** — both are accurate, legible, and approved.
 - **Posting copy** — either approved copy is saved with the catalog card or the user has chosen to write it.
-- **Render** — drafts iterate at 150 DPI; the approved post exports at 300 DPI using the prototype's
-  `--final` pattern when available.
+- **Render** — Python full-layout drafts iterate at 150 DPI and approved posts export at 300 DPI
+  using the prototype's `--final` pattern when available. Canva assets must have enough source
+  resolution for their placed size; the approved Canva deliverable is the downloaded 1080×1350 PNG
+  page, not the editable canvas or chart asset alone.
 
 ### Fact and Image Rules
 
@@ -77,15 +89,25 @@ the draft, and ask one focused question when a user decision is actually needed.
 ### “I want to post X from the catalog.”
 
 Open the card in `idea-catalog.html` and treat it as a pre-filled brief. Run an abbreviated
-clarification gate: ask only about fields the card leaves open, usually timeframe and exact
-title/subtitle/footnote copy. Refresh data, run or adapt the prototype, render at 300 DPI, and
-iterate with the user.
+clarification gate: ask only about fields the card leaves open, usually timeframe, production path,
+and exact title/subtitle/footnote copy. Refresh data, run or adapt the prototype, and iterate with
+the user. For a Python full layout, produce the approved 300-DPI render. For Canva assembly, produce
+the verified chart/data asset, assemble the page, and review the downloaded 1080×1350 PNG.
 
 When the user approves a post for publishing:
 
-1. Copy the final PNG to `docs/mocks/`.
+1. Copy the actual final page or carousel pages to `docs/mocks/`. For Canva work, this means the
+   downloaded PNGs, not only the Python asset.
 2. Update the catalog card to `Mocked`.
 3. Add the approved caption or note that the user is supplying it. Add hashtags only when requested.
+
+For a Canva final, verify the downloaded files before promotion:
+
+- every page is exactly 1080×1350;
+- charts are not cropped and labels remain readable at feed size;
+- thresholds, coverage, sources, attribution, names, dates, and handles match the latest Python output;
+- no placeholder, duplicate frame, draft note, or previous-post copy remains;
+- review the downloaded PNGs, not only the editable Canva design.
 
 After the user confirms it is live, update the card to `Posted`.
 
@@ -135,8 +157,10 @@ appending duplicate history.
 
 ### “I have a new idea / question.”
 
-Run the full clarification gate, then follow the prototype-first flow: create one script under
-`scripts/prototypes/`, write the PNG to `output/feed/`, and add a card to `idea-catalog.html`.
+Run the full clarification gate, choose the production path, then follow the prototype-first flow:
+create one script under `scripts/prototypes/`, write generated drafts/assets to `output/feed/`, and
+add a card to `idea-catalog.html`. Once approved, preserve the actual final page or pages in
+`docs/mocks/` before treating ignored output as disposable.
 
 ### “I have no ideas but need to post.”
 

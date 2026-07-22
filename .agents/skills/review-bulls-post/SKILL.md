@@ -10,7 +10,9 @@ Turn feedback and results into current, compact, reusable project knowledge rath
 ## Reconstruct the Evidence
 
 1. Read `AGENTS.md`, the Post Review and Learning section of `POSTING_WORKFLOW.md`, and `STRATEGY.md`.
-2. Inspect the actual graphic, actual caption, matching `idea-catalog.html` card, relevant analysis, and any available Insights or qualitative feedback.
+2. Inspect the actual final graphic, actual caption, matching `idea-catalog.html` card, relevant
+   analysis, and any available Insights or qualitative feedback. For Canva-composed work, use the
+   downloaded pages preserved in `docs/mocks/`, not only the editable design or Python asset.
 3. Read the relevant owner document before proposing a durable change: `DESIGN.md` for visual or voice decisions, `POSTING_WORKFLOW.md` for production behavior, and `STRATEGY.md` for audience, distribution, or success principles.
 4. Compare with prior catalog evidence when it is relevant; do not rely on remembered performance or invent missing metrics.
 
@@ -33,6 +35,8 @@ If the user is unsure whether to confirm a hypothesis, give a recommendation and
 Documentation maintenance is part of the review. Make the smallest set of updates that keeps the project current:
 
 - Record post-specific feedback, results, and unresolved hypotheses compactly on the matching catalog card.
+- Record whether the post was Python- or Canva-composed only when the production path materially
+  affected accuracy, comprehension, effort, or results; renderer choice alone is not a performance lesson.
 - Revise `DESIGN.md` for confirmed visual or voice rules.
 - Revise `POSTING_WORKFLOW.md` for confirmed creation, approval, promotion, or review behavior.
 - Revise `STRATEGY.md` for confirmed audience, metric, distribution, or strategic learning.

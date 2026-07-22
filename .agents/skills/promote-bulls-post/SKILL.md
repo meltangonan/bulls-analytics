@@ -10,7 +10,10 @@ Prepare one approved post for a clean, accurate release without manufacturing a 
 ## Ground the Work
 
 1. Read `AGENTS.md`, the Promotion and Distribution section of `POSTING_WORKFLOW.md`, and the Voice & Caption section of `DESIGN.md`.
-2. Inspect the actual approved graphic, its analysis or prototype, and its `idea-catalog.html` card. Do not draft from a generic summary when the artifacts are available.
+2. Inspect the actual approved final graphic, its analysis or prototype, and its
+   `idea-catalog.html` card. For Canva-composed work, inspect every downloaded final page in
+   `docs/mocks/`, not only the editable Canva design or Python chart asset. Do not draft from a
+   generic summary when the artifacts are available.
 3. Read `STRATEGY.md` before recommending distribution.
 4. Verify any current statistic, roster fact, date, transaction, injury, or news claim before using it.
 
@@ -18,7 +21,11 @@ Ask one focused question only when a missing decision would materially change th
 
 ## Check Publish Readiness
 
-Confirm that the graphic, underlying analysis, and posting copy agree on the subject, timeframe, comparison, threshold, and conclusion. Flag factual conflicts, missing material qualifications, or unclear references before polishing copy.
+Confirm that the graphic, underlying analysis, and posting copy agree on the subject, timeframe,
+comparison, threshold, source, attribution, and conclusion. For a Canva final, also confirm that the
+downloaded pages are 1080×1350, charts are not cropped, labels remain legible, and data-bound copy
+matches the latest Python output. Flag factual conflicts, missing material qualifications, unclear
+references, incorrect handles, or stale template copy before polishing the caption.
 
 Do not reopen approved visual decisions unless the readiness check finds a real accuracy or comprehension problem.
 

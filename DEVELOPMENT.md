@@ -46,6 +46,10 @@ output/feed/                 # Generated PNGs; gitignored
 - `get_player_games(player_name, last_n=)`, `get_player_shots(player_id)`
 - `get_league_shots(season=)` — all 30 teams; slow, about 30 API calls
 - `get_lineup_stats(min_minutes=)` — Bulls two-player lineup ratings
+- `get_team_player_advanced_stats()` — team-stint player total minutes plus on-court OffRtg,
+  DefRtg, and NetRtg; joins Traditional total minutes to the Advanced ratings because the Advanced
+  response reports minutes per game even when `PerMode=Totals`
+- `get_team_advanced_stats()` — team-level advanced ratings used for same-season reference lines
 - `get_roster_efficiency(last_n_games=, min_fga=)`
 - `get_player_headshot(player_id)` — downloads and caches NBA CDN headshots
 
@@ -108,6 +112,11 @@ output/feed/                 # Generated PNGs; gitignored
 - Shot-chart data includes everyone who took a Bulls shot that season, including traded players.
   Use `get_roster()` and player IDs to create a current-roster view when relevant, and show both
   all-player and current-roster views for a fair comparison.
+- NBA.com's team-filtered player endpoints can attach a traded player's later/current team
+  abbreviation even while the games, minutes, and ratings remain scoped to the requested team.
+  Treat the request's `team_id_nullable` filter as the stint scope; do not infer scope from the
+  returned abbreviation. For total player minutes paired with advanced ratings, use
+  `get_team_player_advanced_stats()` rather than the Advanced response's per-game `MIN` value.
 - Set `min_shots` by timeframe: about 30 for a season and 10 for a recent-games view.
 - Python full-layout drafts use a 1080×1350 logical canvas at 150 DPI; approved posts export
   2160×2700 at 300 DPI for Instagram compression through `house.save_post(..., final=False|True)`.

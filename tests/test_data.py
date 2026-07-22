@@ -10,6 +10,8 @@ from bulls.data import (
     get_player_shots,
     get_roster_efficiency,
     get_lineup_stats,
+    get_team_player_advanced_stats,
+    get_team_advanced_stats,
 )
 from bulls.config import BULLS_TEAM_ID, CURRENT_SEASON
 
@@ -357,3 +359,132 @@ class TestGetLineupStats:
         assert lineups.empty
         for col in LINEUP_COLUMNS:
             assert col in lineups.columns, f"Missing column: {col}"
+
+
+MOCK_TEAM_PLAYER_TOTALS = pd.DataFrame([
+    {
+        'PLAYER_ID': 1629632,
+        'PLAYER_NAME': 'Coby White',
+        'GP': 29,
+        'MIN': 843.426667,
+    },
+    {
+        'PLAYER_ID': 1630188,
+        'PLAYER_NAME': 'Jalen Smith',
+        'GP': 53,
+        'MIN': 1095.388333,
+    },
+])
+
+MOCK_TEAM_PLAYER_ADVANCED = pd.DataFrame([
+    {
+        'PLAYER_ID': 1629632,
+        'PLAYER_NAME': 'Coby White',
+        'GP': 29,
+        'MIN': 29.1,
+        'OFF_RATING': 115.5,
+        'DEF_RATING': 115.8,
+        'NET_RATING': -0.3,
+        'POSS': 1830,
+    },
+    {
+        'PLAYER_ID': 1630188,
+        'PLAYER_NAME': 'Jalen Smith',
+        'GP': 53,
+        'MIN': 20.7,
+        'OFF_RATING': 116.4,
+        'DEF_RATING': 113.0,
+        'NET_RATING': 3.4,
+        'POSS': 2371,
+    },
+])
+
+
+class TestGetTeamPlayerAdvancedStats:
+    """Tests for the joined team-stint player advanced data."""
+
+    @patch('bulls.data.fetch.time.sleep')
+    @patch('bulls.data.fetch.leaguedashplayerstats.LeagueDashPlayerStats')
+    def test_joins_total_minutes_to_advanced_ratings(self, mock_players, _mock_sleep):
+        traditional_response = MagicMock()
+        traditional_response.get_data_frames.return_value = [MOCK_TEAM_PLAYER_TOTALS.copy()]
+        advanced_response = MagicMock()
+        advanced_response.get_data_frames.return_value = [MOCK_TEAM_PLAYER_ADVANCED.copy()]
+        mock_players.side_effect = [traditional_response, advanced_response]
+
+        result = get_team_player_advanced_stats()
+
+        assert list(result.columns) == [
+            'PLAYER_ID', 'PLAYER_NAME', 'GP', 'MIN',
+            'OFF_RATING', 'DEF_RATING', 'NET_RATING', 'POSS',
+        ]
+        coby = result.loc[result['PLAYER_NAME'] == 'Coby White'].iloc[0]
+        assert coby['MIN'] == pytest.approx(843.426667)
+        assert coby['OFF_RATING'] == 115.5
+        assert coby['DEF_RATING'] == 115.8
+
+    @patch('bulls.data.fetch.time.sleep')
+    @patch('bulls.data.fetch.leaguedashplayerstats.LeagueDashPlayerStats')
+    def test_filters_both_requests_to_team_and_season(self, mock_players, _mock_sleep):
+        traditional_response = MagicMock()
+        traditional_response.get_data_frames.return_value = [MOCK_TEAM_PLAYER_TOTALS.copy()]
+        advanced_response = MagicMock()
+        advanced_response.get_data_frames.return_value = [MOCK_TEAM_PLAYER_ADVANCED.copy()]
+        mock_players.side_effect = [traditional_response, advanced_response]
+
+        get_team_player_advanced_stats()
+
+        assert mock_players.call_count == 2
+        for call in mock_players.call_args_list:
+            kwargs = call.kwargs
+            assert kwargs['team_id_nullable'] == BULLS_TEAM_ID
+            assert kwargs['season'] == CURRENT_SEASON
+            assert kwargs['season_type_all_star'] == 'Regular Season'
+            assert kwargs['per_mode_detailed'] == 'Totals'
+        assert mock_players.call_args_list[0].kwargs['measure_type_detailed_defense'] == 'Base'
+        assert mock_players.call_args_list[1].kwargs['measure_type_detailed_defense'] == 'Advanced'
+
+    @patch('bulls.data.fetch.time.sleep')
+    @patch('bulls.data.fetch.leaguedashplayerstats.LeagueDashPlayerStats')
+    def test_empty_response_returns_expected_columns(self, mock_players, _mock_sleep):
+        empty_response = MagicMock()
+        empty_response.get_data_frames.return_value = [pd.DataFrame()]
+        mock_players.side_effect = [empty_response, empty_response]
+
+        result = get_team_player_advanced_stats()
+
+        assert result.empty
+        assert list(result.columns) == [
+            'PLAYER_ID', 'PLAYER_NAME', 'GP', 'MIN',
+            'OFF_RATING', 'DEF_RATING', 'NET_RATING', 'POSS',
+        ]
+
+
+class TestGetTeamAdvancedStats:
+    """Tests for the team-level crosshair data."""
+
+    @patch('bulls.data.fetch.time.sleep')
+    @patch('bulls.data.fetch.leaguedashteamstats.LeagueDashTeamStats')
+    def test_returns_team_advanced_row(self, mock_teams, _mock_sleep):
+        response = MagicMock()
+        response.get_data_frames.return_value = [pd.DataFrame([{
+            'TEAM_ID': BULLS_TEAM_ID,
+            'TEAM_NAME': 'Chicago Bulls',
+            'GP': 82,
+            'MIN': 3951.0,
+            'OFF_RATING': 112.1,
+            'DEF_RATING': 117.4,
+            'NET_RATING': -5.3,
+            'PACE': 103.22,
+            'POSS': 8506,
+        }])]
+        mock_teams.return_value = response
+
+        result = get_team_advanced_stats()
+
+        assert result.iloc[0]['OFF_RATING'] == 112.1
+        assert result.iloc[0]['DEF_RATING'] == 117.4
+        kwargs = mock_teams.call_args.kwargs
+        assert kwargs['team_id_nullable'] == BULLS_TEAM_ID
+        assert kwargs['season'] == CURRENT_SEASON
+        assert kwargs['measure_type_detailed_defense'] == 'Advanced'

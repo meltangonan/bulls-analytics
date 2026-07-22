@@ -12,6 +12,8 @@ from nba_api.stats.endpoints import (
     shotchartdetail,
     commonteamroster,
     leaguedashlineups,
+    leaguedashplayerstats,
+    leaguedashteamstats,
 )
 
 from bulls.config import (
@@ -661,6 +663,101 @@ def get_roster(
 # Columns consumed from the lineup response (Advanced measure type)
 _LINEUP_COLUMNS = ['GROUP_ID', 'GROUP_NAME', 'GP', 'MIN',
                    'OFF_RATING', 'DEF_RATING', 'NET_RATING']
+
+_TEAM_PLAYER_ADVANCED_COLUMNS = [
+    'PLAYER_ID', 'PLAYER_NAME', 'GP', 'MIN',
+    'OFF_RATING', 'DEF_RATING', 'NET_RATING', 'POSS',
+]
+
+_TEAM_ADVANCED_COLUMNS = [
+    'TEAM_ID', 'TEAM_NAME', 'GP', 'MIN',
+    'OFF_RATING', 'DEF_RATING', 'NET_RATING', 'PACE', 'POSS',
+]
+
+
+def get_team_advanced_stats(
+    team_id: int = BULLS_TEAM_ID,
+    season: str = CURRENT_SEASON,
+) -> pd.DataFrame:
+    """Get a team's regular-season advanced ratings from NBA.com."""
+    time.sleep(API_DELAY)
+
+    try:
+        teams = leaguedashteamstats.LeagueDashTeamStats(
+            team_id_nullable=team_id,
+            season=season,
+            season_type_all_star='Regular Season',
+            per_mode_detailed='Totals',
+            measure_type_detailed_defense='Advanced',
+            timeout=60,
+            headers=_NBA_HEADERS,
+        ).get_data_frames()[0]
+
+        if teams.empty:
+            return pd.DataFrame(columns=_TEAM_ADVANCED_COLUMNS)
+
+        return teams[_TEAM_ADVANCED_COLUMNS].copy().reset_index(drop=True)
+
+    except (AttributeError, KeyError, IndexError, requests.RequestException,
+            json.JSONDecodeError, ValueError) as e:
+        print(f"Error fetching advanced stats for team {team_id}: {e}")
+        return pd.DataFrame(columns=_TEAM_ADVANCED_COLUMNS)
+
+
+def get_team_player_advanced_stats(
+    team_id: int = BULLS_TEAM_ID,
+    season: str = CURRENT_SEASON,
+) -> pd.DataFrame:
+    """Get team-stint player minutes and on-court advanced ratings.
+
+    NBA.com's player Advanced response reports ``MIN`` as minutes per game,
+    even with ``PerMode=Totals``. The player Traditional response does return
+    total minutes. Both requests use the same team filter, and this function
+    joins total minutes from Traditional to the on-court ratings from
+    Advanced so traded players retain only the selected team's stint.
+
+    Returns:
+        DataFrame with ``PLAYER_ID``, ``PLAYER_NAME``, ``GP``, total ``MIN``,
+        ``OFF_RATING``, ``DEF_RATING``, ``NET_RATING``, and ``POSS``.
+    """
+    try:
+        request_kwargs = {
+            'team_id_nullable': team_id,
+            'season': season,
+            'season_type_all_star': 'Regular Season',
+            'per_mode_detailed': 'Totals',
+            'timeout': 60,
+            'headers': _NBA_HEADERS,
+        }
+
+        time.sleep(API_DELAY)
+        traditional = leaguedashplayerstats.LeagueDashPlayerStats(
+            measure_type_detailed_defense='Base',
+            **request_kwargs,
+        ).get_data_frames()[0]
+
+        time.sleep(API_DELAY)
+        advanced = leaguedashplayerstats.LeagueDashPlayerStats(
+            measure_type_detailed_defense='Advanced',
+            **request_kwargs,
+        ).get_data_frames()[0]
+
+        if traditional.empty or advanced.empty:
+            return pd.DataFrame(columns=_TEAM_PLAYER_ADVANCED_COLUMNS)
+
+        minutes = traditional[['PLAYER_ID', 'PLAYER_NAME', 'GP', 'MIN']].copy()
+        ratings = advanced[
+            ['PLAYER_ID', 'OFF_RATING', 'DEF_RATING', 'NET_RATING', 'POSS']
+        ].copy()
+        result = minutes.merge(ratings, on='PLAYER_ID', how='inner', validate='one_to_one')
+        return result[_TEAM_PLAYER_ADVANCED_COLUMNS].sort_values(
+            'MIN', ascending=False
+        ).reset_index(drop=True)
+
+    except (AttributeError, KeyError, IndexError, requests.RequestException,
+            json.JSONDecodeError, ValueError) as e:
+        print(f"Error fetching player advanced stats for team {team_id}: {e}")
+        return pd.DataFrame(columns=_TEAM_PLAYER_ADVANCED_COLUMNS)
 
 
 def get_lineup_stats(

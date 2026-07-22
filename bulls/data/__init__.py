@@ -13,4 +13,6 @@ from bulls.data.fetch import (
     get_roster,
     get_player_headshot,
     get_lineup_stats,
+    get_team_player_advanced_stats,
+    get_team_advanced_stats,
 )

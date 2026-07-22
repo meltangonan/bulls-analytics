@@ -72,9 +72,9 @@ because they require a large, thinning historical shot-location dataset.
 ## Production Record
 
 - Analysis and chart asset: `scripts/prototypes/summer_league_sticky_stats.py`
-- Pure calculation tests: `tests/test_summer_league_sticky_stats.py`
+- Analysis, Canva-copy, and chart-export tests: `tests/test_summer_league_sticky_stats.py`
 - Saved headshots: `assets/img/*-headshot.png`
-- Live chart-only export: `output/feed/2026-07-20-sl-shot-profile-s3-chart-only.png`
+- Live chart-only export: `output/feed/2026-07-21-sl-sticky-stats-chart.png`
 
 The Canva pilot established the supported division of labor now recorded in `DESIGN.md`,
 `POSTING_WORKFLOW.md`, and `DEVELOPMENT.md`: Python owns verified analysis and chart/data assets;

@@ -1,9 +1,11 @@
-"""Tests for the pure calculations in the sticky-stats prototype."""
+"""Tests for the Sticky Stats analysis, Canva copy, and chart export."""
 
+import argparse
 import importlib.util
 from pathlib import Path
 import sys
 
+import numpy as np
 import pandas as pd
 from PIL import Image
 import pytest
@@ -15,6 +17,36 @@ sticky = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None
 sys.modules[SPEC.name] = sticky
 SPEC.loader.exec_module(sticky)
+
+
+def chart_profiles() -> pd.DataFrame:
+    rows = [
+        (1, "Caleb Wilson", True, 45.6, 23.5),
+        (2, "Dailyn Swain", True, 22.6, 41.9),
+        (3, "Jaylin Sellers", True, 62.3, 34.4),
+        (4, "Donovan Atwell", True, 91.7, 2.8),
+        (5, "Pool Player", True, 40.0, 30.0),
+        (6, "Incomplete Player", True, 50.0, np.nan),
+        (7, "Unqualified Player", False, 10.0, 90.0),
+    ]
+    return pd.DataFrame(
+        [
+            {
+                "player_id": player_id,
+                "name": name,
+                "qualified": qualified,
+                "three_pt_attempt_rate": three_rate,
+                "rim_rate": rim_rate,
+                "games": 4,
+                "minutes": 80.0,
+                "rim_fga": 10,
+                "rim_percentile": 50.0,
+                "box_3pa": 12,
+                "three_pt_percentile": 50.0,
+            }
+            for player_id, name, qualified, three_rate, rim_rate in rows
+        ]
+    )
 
 
 @pytest.mark.parametrize(
@@ -99,12 +131,28 @@ def test_caleb_definition_matches_seven_dunks_on_68_official_fga():
 
 
 def test_incomplete_shot_detail_is_not_ranked():
-    boxes = pd.DataFrame([
-        {"personId": 5, "firstName": "Echo", "familyName": "Five", "teamTricode": "EEE", "minutes": "60:00", "fieldGoalsAttempted": 2}
-    ])
-    shots = pd.DataFrame([
-        {"PLAYER_ID": 5, "SHOT_ATTEMPTED_FLAG": 1, "SHOT_ZONE_BASIC": "Restricted Area", "ACTION_TYPE": "Dunk Shot"}
-    ])
+    boxes = pd.DataFrame(
+        [
+            {
+                "personId": 5,
+                "firstName": "Echo",
+                "familyName": "Five",
+                "teamTricode": "EEE",
+                "minutes": "60:00",
+                "fieldGoalsAttempted": 2,
+            }
+        ]
+    )
+    shots = pd.DataFrame(
+        [
+            {
+                "PLAYER_ID": 5,
+                "SHOT_ATTEMPTED_FLAG": 1,
+                "SHOT_ZONE_BASIC": "Restricted Area",
+                "ACTION_TYPE": "Dunk Shot",
+            }
+        ]
+    )
 
     player = sticky.prepare_shot_profiles(boxes, shots).iloc[0]
 
@@ -119,40 +167,85 @@ def test_is_dunk_accepts_nba_dunk_variants_only():
     assert not sticky.is_dunk("Driving Layup Shot")
 
 
-def test_three_slide_carousel_renders_standard_draft_files(tmp_path, monkeypatch):
-    profiles = pd.DataFrame(
+def test_prepare_chart_content_uses_only_rankable_players_for_counts_and_medians():
+    content = sticky.prepare_chart_content(chart_profiles())
+
+    assert content.qualified_count == 6
+    assert content.reconciled_count == 5
+    assert content.median_three_pt_rate == pytest.approx(45.6)
+    assert content.median_rim_rate == pytest.approx(30.0)
+    assert content.featured["name"].tolist() == list(sticky.FEATURED_PLAYERS)
+
+
+def test_prepare_chart_content_omits_missing_or_unqualified_featured_players():
+    profiles = chart_profiles()
+    profiles = profiles[~profiles["name"].isin(["Jaylin Sellers", "Donovan Atwell"])]
+    profiles.loc[profiles["name"].eq("Dailyn Swain"), "qualified"] = False
+
+    content = sticky.prepare_chart_content(profiles)
+
+    assert content.featured["name"].tolist() == ["Caleb Wilson"]
+    assert content.missing_featured == ("Dailyn Swain", "Jaylin Sellers", "Donovan Atwell")
+
+
+def test_format_canva_copy_is_authoritative_and_delimited():
+    content = sticky.prepare_chart_content(chart_profiles())
+
+    assert sticky.format_canva_copy(content) == "\n".join(
         [
-            {
-                "player_id": player_id,
-                "name": name,
-                "qualified": True,
-                "rim_rate": rim_rate,
-                "three_pt_attempt_rate": three_rate,
-            }
-            for player_id, name, three_rate, rim_rate in (
-                (1, "Caleb Wilson", 45.6, 23.5),
-                (2, "Dailyn Swain", 22.6, 41.9),
-                (3, "Noa Essengue", 37.5, 43.8),
-                (4, "Jaylin Sellers", 62.3, 34.4),
-                (5, "Donovan Atwell", 91.7, 2.8),
-            )
+            "=== CANVA COPY (DATA-BOUND) ===",
+            "SUBTITLE: SL 2026 | MIN. 50 SL MINUTES | 5 PLAYERS",
+            "QUALIFICATION: Min. 50 SL minutes · 5 of 6 qualified players have fully reconciled shot detail",
+            "INTERPRETATION: Each axis is a separate Summer League-to-rookie signal; this scatter is not a regression between the axes.",
+            "SOURCE: Data via nba.com · R²: Phillips, The F5 · Lee, The Hardwood Collective",
+            "=== END CANVA COPY ===",
         ]
     )
+
+
+def test_chart_export_has_expected_dimensions_and_transparency(tmp_path, monkeypatch):
+    content = sticky.prepare_chart_content(chart_profiles())
     monkeypatch.setattr(sticky, "OUTPUT_DIR", tmp_path)
     monkeypatch.setattr(sticky, "_headshot_path", lambda player_id, name=None: None)
 
-    outputs = (
-        sticky.render_cover(profiles),
-        sticky.render_definitions(),
-        sticky.render_shot_profile(profiles),
-    )
+    output = sticky.render_chart_only(content)
+    assert output.name == "2026-07-21-sl-sticky-stats-chart.png"
+    with Image.open(output) as image:
+        assert image.size == (1080, 1030)
+        assert image.mode == "RGBA"
+        assert image.getpixel((0, 0))[3] == 0
 
-    assert [path.name for path in outputs] == [
-        "2026-07-20-sl-shot-profile-s1-cover.png",
-        "2026-07-20-sl-shot-profile-s2-research.png",
-        "2026-07-20-sl-shot-profile-s3-bulls.png",
-    ]
-    for path in outputs:
-        assert path.exists()
-        with Image.open(path) as image:
-            assert image.size == (1080, 1350)
+    sticky.render_chart_only(content, final=True)
+    with Image.open(output) as image:
+        assert image.size == (2160, 2060)
+        assert image.getpixel((0, 0))[3] == 0
+
+
+def test_main_renders_only_the_chart_and_prints_canva_copy(monkeypatch, capsys):
+    profiles = chart_profiles()
+    boxes = pd.DataFrame([{"fieldGoalsAttempted": 10}])
+    shots = pd.DataFrame([{"SHOT_ATTEMPTED_FLAG": 1} for _ in range(10)])
+    calls = []
+
+    monkeypatch.setattr(
+        sticky,
+        "parse_args",
+        lambda: argparse.Namespace(refresh=False, final=False, fetch_only=False),
+    )
+    monkeypatch.setattr(sticky, "fetch_league_data", lambda refresh=False: (boxes, shots))
+    monkeypatch.setattr(sticky, "prepare_shot_profiles", lambda box_scores, shot_rows: profiles)
+
+    def fake_render(content, final=False):
+        calls.append((content, final))
+        return Path("/tmp/sticky-chart.png")
+
+    monkeypatch.setattr(sticky, "render_chart_only", fake_render)
+    monkeypatch.setattr(sticky, "format_canva_copy", lambda content: "CANVA COPY SENTINEL")
+
+    sticky.main()
+
+    assert len(calls) == 1
+    assert calls[0][1] is False
+    output = capsys.readouterr().out
+    assert "CANVA COPY SENTINEL" in output
+    assert output.rstrip().endswith("/tmp/sticky-chart.png")

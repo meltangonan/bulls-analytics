@@ -1,13 +1,13 @@
-"""Build the 2026 Bulls Summer League sticky shot-profile carousel.
+"""Build the 2026 Bulls Summer League sticky shot-profile chart for Canva.
 
-Slide 1 asks what Summer League can tell us, slide 2 explains the published
-research behind two repeatable shot-diet rates, and slide 3 applies those rates
-to five Bulls within the 2026 Summer League player pool.
+The script owns the reconciled NBA.com analysis, prepares display-ready chart
+content, renders one transparent 3PT Attempt Rate-vs-Rim Rate asset, and prints
+the exact data-bound copy required in the Canva layout.
 
 NBA.com does not currently return the league-wide Summer League player dashboard
 through ``nba_api``, so the script caches one traditional box score and one shot
 chart per completed game. Re-renders read those ignored cache files instead of
-repeating roughly 150 network calls.
+repeating roughly 190 network calls.
 """
 
 from __future__ import annotations
@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import sys
 import time
+from dataclasses import dataclass
 from pathlib import Path
 
 _REPO = Path(__file__).resolve().parents[2]
@@ -34,20 +35,7 @@ from nba_api.stats.endpoints import boxscoretraditionalv3, leaguegamefinder, sho
 from bulls.config import API_DELAY
 from bulls.data.fetch import _NBA_HEADERS, get_player_headshot
 from bulls.graphics.craft import headshot_label
-from bulls.graphics.house import (
-    CANVAS_WIDTH,
-    DEFAULT_THEME,
-    RED,
-    WHITE,
-    body_font,
-    display_font,
-    draw_footer,
-    draw_header,
-    draw_jersey_stripe,
-    new_canvas,
-    rendered_width,
-    save_post,
-)
+from bulls.graphics.house import DRAFT_DPI, DEFAULT_THEME, body_font, export_dpi, rendered_width
 
 
 SEASON = "2026"
@@ -60,7 +48,7 @@ MIN_MINUTES = 50.0
 REQUEST_RETRIES = 5
 CACHE_DIR = _REPO / "cache" / "sl_sticky_stats_2026"
 OUTPUT_DIR = _REPO / "output" / "feed"
-OUTPUT_STEM = "2026-07-20-sl-shot-profile"
+OUTPUT_STEM = "2026-07-21-sl-sticky-stats"
 
 # Essengue dropped from the featured set 2026-07-21 (user edit); he remains in
 # the plotted pool as an unlabeled context dot.
@@ -384,347 +372,91 @@ def _headshot_path(player_id: int, name: str | None = None) -> Path | None:
 
 
 def _featured_profiles(profiles: pd.DataFrame) -> pd.DataFrame:
+    """Return available featured Bulls in the approved display order."""
     featured = profiles[profiles["name"].isin(FEATURED_PLAYERS)].copy()
-    missing = [name for name in FEATURED_PLAYERS if name not in set(featured["name"])]
-    if missing:
-        raise RuntimeError(f"Featured Bulls missing from the 2026 data: {', '.join(missing)}")
     featured["order"] = featured["name"].map({name: index for index, name in enumerate(FEATURED_PLAYERS)})
     return featured.sort_values("order")
 
 
-def _centered_display_lines(ax, lines, y_top: float, theme, max_width: float = 940.0,
-                            gap: float = 1.12) -> float:
-    """Draw centered Academic M54 title lines at one shared fitted size.
+@dataclass(frozen=True)
+class StickyChartContent:
+    """Display-ready values for the chart and its data-bound Canva copy."""
 
-    ``lines`` is a sequence of segment lists ``[(text, color), ...]``. Every line
-    is measured first and the smallest fitted size wins, so a two-line cover
-    title keeps one consistent glyph height. Returns the y below the last line.
-    """
-    font = display_font()
-    size = None
-    for segments in lines:
-        text = "".join(part for part, _ in segments)
-        probe = ax.text(0, 0, text, fontsize=100, fontproperties=font, alpha=0)
-        width = rendered_width(ax, probe)
-        probe.remove()
-        if width > 0:
-            fitted = 100 * max_width / width
-            size = fitted if size is None else min(size, fitted)
-    size = size or 60
-    y = y_top
-    line_height = size * 2.08 * gap
-    for segments in lines:
-        text = "".join(part for part, _ in segments)
-        probe = ax.text(0, 0, text, fontsize=size, fontproperties=font, alpha=0)
-        width = rendered_width(ax, probe)
-        probe.remove()
-        cursor = (CANVAS_WIDTH - width) / 2
-        for part, color in segments:
-            artist = ax.text(cursor, y, part, ha="left", va="top", fontsize=size,
-                             color=color, fontproperties=font)
-            artist.set_path_effects([
-                pe.withStroke(linewidth=7, foreground=RED),
-                pe.withStroke(linewidth=3.5, foreground=WHITE),
-                pe.Normal(),
-            ])
-            cursor += rendered_width(ax, artist)
-        y -= line_height
-    return y
+    rankable: pd.DataFrame
+    featured: pd.DataFrame
+    median_three_pt_rate: float
+    median_rim_rate: float
+    qualified_count: int
+    minimum_minutes: int
+    canva_copy_items: tuple[tuple[str, str], ...]
+
+    @property
+    def reconciled_count(self) -> int:
+        return len(self.rankable)
+
+    @property
+    def missing_featured(self) -> tuple[str, ...]:
+        available = set(self.featured["name"])
+        return tuple(name for name in FEATURED_PLAYERS if name not in available)
 
 
-def render_cover(profiles: pd.DataFrame, final: bool = False) -> Path:
-    """Render slide 1: masthead, the five Bulls, and one plain question."""
-    theme = DEFAULT_THEME
-    fig, ax = new_canvas(theme)
-    featured = _featured_profiles(profiles)
-    draw_jersey_stripe(ax, theme)
-
-    face_layout = {
-        "Caleb Wilson": (540, 1015, 115),
-        "Dailyn Swain": (205, 985, 78),
-        "Noa Essengue": (368, 1050, 86),
-        "Jaylin Sellers": (712, 1050, 86),
-        "Donovan Atwell": (875, 985, 78),
-    }
-    for _, player in featured.iterrows():
-        name = str(player["name"])
-        x, y, radius = face_layout[name]
-        is_caleb = name == "Caleb Wilson"
-        headshot_label(ax, _headshot_path(int(player["player_id"]), name), x, y, radius=radius,
-                       border_color=(206, 17, 65) if is_caleb else (95, 91, 87))
-        # One shared baseline below the lowest circle keeps the staggered
-        # cluster from reading as scattered labels.
-        ax.text(x, 872, name.split()[-1].upper(), ha="center", va="top",
-                fontsize=11 if is_caleb else 9.5, color=theme.ink,
-                fontproperties=body_font("bold"))
-
-    # Academic M54 has no "?" glyph, so the title reads as a topic statement.
-    title_lines = (
-        [("WHAT ", theme.ink), ("STICKS", theme.accent), (" FROM", theme.ink)],
-        [("SUMMER LEAGUE", theme.ink)],
-    )
-    below = _centered_display_lines(ax, title_lines, 700, theme)
-    ax.text(CANVAS_WIDTH / 2, below - 8,
-            "a research-backed look at what Summer League can really tell us",
-            ha="center", va="top", fontsize=13, color=theme.muted,
-            fontproperties=body_font("medium"))
-
-    ax.plot([415, 665], [180, 180], color=theme.rule, lw=1.4)
-    ax.text(CANVAS_WIDTH / 2, 154, "1 / 3  ·  SWIPE FOR THE ANSWER  →",
-            ha="center", va="center", fontsize=10.5, color=theme.muted,
-            fontproperties=body_font("bold"))
-
-    draw_footer(ax, source="", theme=theme)
-    output = OUTPUT_DIR / f"{OUTPUT_STEM}-s1-cover.png"
-    save_post(fig, output, final=final)
-    plt.close(fig)
-    return output
-
-
-def render_definitions(final: bool = False) -> Path:
-    """Render slide 2: how the research compares Summer League to rookie year."""
-    theme = DEFAULT_THEME
-    fig, ax = new_canvas(theme)
-    draw_header(
-        ax,
-        [("HOW THE ", theme.ink), ("RESEARCH ", theme.accent), ("WORKS", theme.ink)],
-        ["PHILLIPS ’08–24", "LEE ’17–25", "SAME PLAYERS"],
-        kicker="Most box-score noise fades; shot selection is the repeatable signal",
-        theme=theme,
-    )
-
-    process_y = 970
-    process_cards = (
-        (60, "FIRST SUMMER LEAGUE", "Measure a player's shot rate"),
-        (650, "ROOKIE SEASON", "Measure that same rate again"),
-    )
-    for x, label, detail in process_cards:
-        ax.add_patch(FancyBboxPatch(
-            (x, process_y - 50), 370, 100,
-            boxstyle="round,pad=0,rounding_size=14",
-            facecolor="#F5F1EC", edgecolor=theme.rule, linewidth=1.0,
-        ))
-        ax.text(x + 22, process_y + 14, label, ha="left", va="center",
-                fontsize=13, color=theme.ink, fontproperties=body_font("bold"))
-        ax.text(x + 22, process_y - 18, detail, ha="left", va="center",
-                fontsize=10.5, color=theme.muted, fontproperties=body_font("medium"))
-    ax.annotate("", xy=(638, process_y), xytext=(442, process_y),
-                arrowprops={"arrowstyle": "->", "color": theme.accent, "lw": 2.0})
-    ax.text(540, process_y + 24, "COMPARE", ha="center", va="center",
-            fontsize=9, color=theme.accent, fontproperties=body_font("bold"))
-    ax.text(540, process_y - 24, "same player · same rate", ha="center", va="center",
-            fontsize=8.5, color=theme.muted, fontproperties=body_font("medium"))
-
-    signal_cards = (
-        (
-            60,
-            "3PT ATTEMPT RATE",
-            "R² .70",
-            "Threes as a share of all field-goal attempts",
-            "PHILLIPS · THE F5",
-            "25 box-score stats · 485 rookies · 2008–24",
-        ),
-        (
-            550,
-            "RIM RATE",
-            "R² .65",
-            "Restricted-area attempts as a share of all FGA",
-            "LEE · THE HARDWOOD COLLECTIVE",
-            "Shot-location extension · 2017–25",
-        ),
-    )
-    for x, metric, value, definition, source, context in signal_cards:
-        ax.add_patch(FancyBboxPatch(
-            (x, 555), 470, 300,
-            boxstyle="round,pad=0,rounding_size=16",
-            facecolor="#F3E1E7", edgecolor="none",
-        ))
-        ax.text(x + 28, 811, metric, ha="left", va="center", fontsize=13,
-                color=theme.ink, fontproperties=body_font("bold"))
-        ax.text(x + 28, 743, value, ha="left", va="center", fontsize=34,
-                color=theme.accent, fontproperties=body_font("bold"))
-        ax.plot([x + 28, x + 442], [700, 700], color=theme.rule, lw=1.0)
-        ax.text(x + 28, 664, definition, ha="left", va="center", fontsize=10.5,
-                color=theme.ink, fontproperties=body_font("medium"))
-        ax.text(x + 28, 615, source, ha="left", va="center", fontsize=9.5,
-                color=theme.muted, fontproperties=body_font("bold"))
-        ax.text(x + 28, 585, context, ha="left", va="center", fontsize=8.5,
-                color=theme.muted, fontproperties=body_font("medium"))
-
-    ax.add_patch(FancyBboxPatch(
-        (60, 365), 960, 126,
-        boxstyle="round,pad=0,rounding_size=14",
-        facecolor="#F5F1EC", edgecolor=theme.rule, linewidth=1.0,
-    ))
-    ax.text(84, 454, "WHAT R² MEANS", ha="left", va="center", fontsize=10,
-            color=theme.accent, fontproperties=body_font("bold"))
-    ax.text(84, 420,
-            "How much the Summer League rate explains that same rookie-season rate,",
-            ha="left", va="center", fontsize=12.5, color=theme.ink,
-            fontproperties=body_font("medium"))
-    ax.text(84, 390, "from 0 (none) to 1 (perfect).", ha="left", va="center", fontsize=12.5,
-            color=theme.ink, fontproperties=body_font("medium"))
-
-    ax.text(60, 292, "SHOT PROFILE, NOT PLAYER GRADE", ha="left", va="center",
-            fontsize=10.5, color=theme.ink, fontproperties=body_font("bold"))
-    ax.text(60, 260, "These measures describe a player's style — not how good they'll be.",
-            ha="left", va="center", fontsize=12, color=theme.muted,
-            fontproperties=body_font("regular"))
-
-    ax.text(60, 68,
-            "Research samples: 50+ Summer League minutes · 250+ rookie-season minutes",
-            ha="left", va="bottom", fontsize=7.8, color=theme.faint, fontproperties=body_font())
-    draw_footer(ax, source="Research via The F5 + The Hardwood Collective", theme=theme)
-    output = OUTPUT_DIR / f"{OUTPUT_STEM}-s2-research.png"
-    save_post(fig, output, final=final)
-    plt.close(fig)
-    return output
-
-
-def render_shot_profile(profiles: pd.DataFrame, final: bool = False) -> Path:
-    theme = DEFAULT_THEME
-    fig, ax = new_canvas(theme)
-    qualified = profiles[profiles["qualified"]].copy()
-    rankable = qualified[
-        qualified["rim_rate"].notna() & qualified["three_pt_attempt_rate"].notna()
+def prepare_chart_content(profiles: pd.DataFrame) -> StickyChartContent:
+    """Prepare the one approved chart and every data-bound Canva string."""
+    qualified_mask = profiles["qualified"]
+    rankable = profiles[
+        qualified_mask
+        & profiles["rim_rate"].notna()
+        & profiles["three_pt_attempt_rate"].notna()
     ].copy()
-    featured = _featured_profiles(profiles)
-    draw_header(
-        ax,
-        [("FIVE BULLS, FIVE ", theme.ink), ("SHOT DIETS", theme.accent)],
-        ["ALL 3 CIRCUITS", "JUL 3–19", f"{len(rankable)} PROFILES"],
-        kicker="Two rim-first · Atwell outside · Sellers both · Wilson near center",
-        theme=theme,
+    if rankable.empty:
+        raise RuntimeError("No qualified players have reconciled shot profiles.")
+
+    minimum_minutes = int(MIN_MINUTES)
+    qualified_count = int(qualified_mask.sum())
+    reconciled_count = len(rankable)
+    canva_copy_items = (
+        ("SUBTITLE", f"SL {SEASON} | MIN. {minimum_minutes} SL MINUTES | {reconciled_count} PLAYERS"),
+        (
+            "QUALIFICATION",
+            f"Min. {minimum_minutes} SL minutes · {reconciled_count} of {qualified_count} "
+            "qualified players have fully reconciled shot detail",
+        ),
+        (
+            "INTERPRETATION",
+            "Each axis is a separate Summer League-to-rookie signal; this scatter is not a "
+            "regression between the axes.",
+        ),
+        ("SOURCE", "Data via nba.com · R²: Phillips, The F5 · Lee, The Hardwood Collective"),
+    )
+    return StickyChartContent(
+        rankable=rankable,
+        featured=_featured_profiles(rankable),
+        median_three_pt_rate=float(rankable["three_pt_attempt_rate"].median()),
+        median_rim_rate=float(rankable["rim_rate"].median()),
+        qualified_count=qualified_count,
+        minimum_minutes=minimum_minutes,
+        canva_copy_items=canva_copy_items,
     )
 
-    x0, x1 = 145, 1005
-    y0, y1 = 235, 1040
-    x_min, x_max = 0.0, 100.0
-    y_min, y_max = 0.0, 100.0
 
-    def chart_x(value: float) -> float:
-        return x0 + (value - x_min) / (x_max - x_min) * (x1 - x0)
-
-    def chart_y(value: float) -> float:
-        return y0 + (value - y_min) / (y_max - y_min) * (y1 - y0)
-
-    panel_fill = "#F5F1EC"
-    # Canvas-colored stroke behind in-chart text so pool dots never bleed
-    # through a label (Atwell's caption sat on a dot in the first draft).
-    halo = [pe.withStroke(linewidth=3.2, foreground=panel_fill)]
-    ax.add_patch(FancyBboxPatch((x0 - 16, y0 - 14), x1 - x0 + 30, y1 - y0 + 26,
-                                boxstyle="round,pad=0,rounding_size=12", facecolor=panel_fill,
-                                edgecolor=theme.rule, linewidth=1.0, zorder=0))
-
-    for value in range(0, 101, 25):
-        x = chart_x(float(value))
-        ax.plot([x, x], [y0, y1], color=theme.grid, lw=1.1, zorder=1)
-        ax.text(x, y0 - 27, f"{value}%", ha="center", va="top", fontsize=9.5,
-                color=theme.muted, fontproperties=body_font("medium"))
-    for value in range(0, 101, 25):
-        y = chart_y(float(value))
-        ax.plot([x0, x1], [y, y], color=theme.grid, lw=1.1, zorder=1)
-        ax.text(x0 - 18, y, f"{value}%", ha="right", va="center", fontsize=9.5,
-                color=theme.muted, fontproperties=body_font("medium"))
-    ax.plot([x0, x1], [y0, y0], color=theme.muted, lw=1.2, zorder=2)
-    ax.plot([x0, x0], [y0, y1], color=theme.muted, lw=1.2, zorder=2)
-
-    median_three_pt_rate = float(rankable["three_pt_attempt_rate"].median())
-    median_rim_rate = float(rankable["rim_rate"].median())
-    median_x = chart_x(median_three_pt_rate)
-    median_y = chart_y(median_rim_rate)
-    ax.plot([median_x, median_x], [y0, y1], color=theme.muted, lw=1.2,
-            linestyle=(0, (4, 4)), alpha=0.8, zorder=2)
-    ax.plot([x0, x1], [median_y, median_y], color=theme.muted, lw=1.2,
-            linestyle=(0, (4, 4)), alpha=0.8, zorder=2)
-    ax.text(median_x + 9, y1 - 17, f"MEDIAN {median_three_pt_rate:.1f}%", ha="left", va="top",
-            fontsize=7.5,
-            color=theme.muted, fontproperties=body_font("bold"), zorder=3, path_effects=halo)
-    ax.text(x1 - 9, median_y + 12, f"MEDIAN {median_rim_rate:.1f}%", ha="right", va="bottom",
-            fontsize=7.5, color=theme.muted, fontproperties=body_font("bold"), zorder=3,
-            path_effects=halo)
-
-    ax.text(x0 + 18, y1 - 22, "RIM-HEAVY", ha="left", va="top", fontsize=9,
-            color=theme.muted, fontproperties=body_font("bold"), zorder=3, path_effects=halo)
-    ax.text(x1 - 18, y1 - 22, "RIM + 3 HEAVY", ha="right", va="top", fontsize=9,
-            color=theme.muted, fontproperties=body_font("bold"), zorder=3, path_effects=halo)
-    ax.text(x1 - 18, y1 - 45, "FEWER OTHER 2S", ha="right", va="top", fontsize=7.2,
-            color=theme.muted, fontproperties=body_font("medium"), zorder=3, path_effects=halo)
-    featured_ids = set(featured["player_id"].astype(int))
-    for _, player in rankable.iterrows():
-        if int(player["player_id"]) in featured_ids:
-            continue
-        x = chart_x(float(player["three_pt_attempt_rate"]))
-        y = chart_y(float(player["rim_rate"]))
-        ax.add_patch(Circle((x, y), radius=4.6, facecolor=theme.muted, edgecolor=theme.canvas,
-                            linewidth=0.7, alpha=0.32, zorder=3))
-
-    face_offsets = {
-        "Caleb Wilson": (28, -40),
-        "Dailyn Swain": (-62, 82),
-        "Noa Essengue": (6, 130),
-        "Jaylin Sellers": (64, 78),
-        "Donovan Atwell": (-28, 70),
-    }
-    for _, player in featured.iterrows():
-        if not player["qualified"] or pd.isna(player["rim_rate"]):
-            continue
-        point_x = chart_x(float(player["three_pt_attempt_rate"]))
-        point_y = chart_y(float(player["rim_rate"]))
-        dx, dy = face_offsets[str(player["name"])]
-        face_x, face_y = point_x + dx, point_y + dy
-        is_caleb = player["name"] == "Caleb Wilson"
-        radius = 47 if is_caleb else 34
-        ax.plot([point_x, face_x], [point_y, face_y], color=theme.accent if is_caleb else theme.muted,
-                lw=1.1, alpha=0.9, zorder=4)
-        ax.add_patch(Circle((point_x, point_y), radius=7 if is_caleb else 5.5,
-                            facecolor=theme.accent if is_caleb else theme.muted,
-                            edgecolor=theme.canvas, linewidth=1.0, zorder=5))
-        image = headshot_label(ax, _headshot_path(int(player["player_id"]), str(player["name"])), face_x, face_y,
-                               radius=radius,
-                               border_color=(206, 17, 65) if is_caleb else (95, 91, 87))
-        image.set_zorder(7)
-        label_y = face_y - radius - 8
-        ax.text(face_x, label_y, str(player["name"]).split()[-1].upper(), ha="center", va="top",
-                fontsize=10.5 if is_caleb else 8.8, color=theme.ink,
-                fontproperties=body_font("bold"), zorder=8, path_effects=halo)
-        ax.text(face_x, label_y - 21,
-                f"{player['three_pt_attempt_rate']:.1f}% 3PT · {player['rim_rate']:.1f}% RIM",
-                ha="center", va="top", fontsize=8.8 if is_caleb else 8.0,
-                color=theme.accent if is_caleb else theme.muted,
-                fontproperties=body_font("medium"), zorder=8, path_effects=halo)
-
-    ax.text((x0 + x1) / 2, 160, "3PT ATTEMPT RATE  (% OF FGA)", ha="center", va="center",
-            fontsize=15, color=theme.ink, fontproperties=body_font("bold"))
-    ax.text(58, (y0 + y1) / 2, "RIM RATE  (% OF FGA)", ha="center", va="center", rotation=90,
-            fontsize=15, color=theme.ink, fontproperties=body_font("bold"))
-
-    ax.text(60, 90,
-            "Each axis is a separate SL→rookie signal; this scatter is not a regression between the axes.",
-            ha="left", va="bottom", fontsize=7.8, color=theme.muted, fontproperties=body_font("medium"))
-    ax.text(60, 68,
-            f"Min. {int(MIN_MINUTES)} SL minutes · {len(rankable)} of {len(qualified)} qualified players have fully reconciled shot detail",
-            ha="left", va="bottom", fontsize=7.8, color=theme.faint, fontproperties=body_font())
-    draw_footer(ax, source="Data via nba.com · Research via The F5 + The Hardwood Collective", theme=theme)
-    output = OUTPUT_DIR / f"{OUTPUT_STEM}-s3-bulls.png"
-    save_post(fig, output, final=final)
-    plt.close(fig)
-    return output
+def format_canva_copy(content: StickyChartContent) -> str:
+    """Return a clearly delimited block for manual Canva verification."""
+    lines = ["=== CANVA COPY (DATA-BOUND) ==="]
+    lines.extend(f"{label}: {value}" for label, value in content.canva_copy_items)
+    lines.append("=== END CANVA COPY ===")
+    return "\n".join(lines)
 
 
-def render_chart_only(profiles: pd.DataFrame, final: bool = False) -> Path:
-    """Render the slide-3 scatter alone for assembly in an external layout tool.
+def render_chart_only(content: StickyChartContent, final: bool = False) -> Path:
+    """Render the approved transparent scatter asset for Canva assembly.
 
-    The Canva template owns the title, subtitle, kicker, footer, and watermark,
-    so this export draws only the chart panel, axis titles, and the
-    stat-derived fine print (threshold and reconciliation counts), which must
-    travel with the chart so the template cannot drift from the data. The
-    figure background is transparent: the rounded panel sits directly on the
-    destination canvas without a color-mismatch seam.
+    Canva owns the page title, subtitle, closing line, footer, and watermark.
+    Data-bound copy is generated separately by ``format_canva_copy`` so it can
+    be tested and checked against the downloaded final.
     """
     theme = DEFAULT_THEME
     width, height = 1080, 1030
-    fig = plt.figure(figsize=(width / 150, height / 150))
+    fig = plt.figure(figsize=(width / DRAFT_DPI, height / DRAFT_DPI))
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, width)
     ax.set_ylim(0, height)
@@ -735,11 +467,8 @@ def render_chart_only(profiles: pd.DataFrame, final: bool = False) -> Path:
         spine.set_visible(False)
     ax.patch.set_alpha(0)
 
-    qualified = profiles[profiles["qualified"]].copy()
-    rankable = qualified[
-        qualified["rim_rate"].notna() & qualified["three_pt_attempt_rate"].notna()
-    ].copy()
-    featured = _featured_profiles(profiles)
+    rankable = content.rankable
+    featured = content.featured
 
     # Margins are deliberately generous: the axis titles and fine print sit
     # well inside the edge so a Canva frame that crops slightly cannot clip
@@ -789,8 +518,8 @@ def render_chart_only(profiles: pd.DataFrame, final: bool = False) -> Path:
     ax.plot([x0, x1], [y0, y0], color=theme.ink, lw=2.2, zorder=3)
     ax.plot([x0, x0], [y0, y1], color=theme.ink, lw=2.2, zorder=3)
 
-    median_three_pt_rate = float(rankable["three_pt_attempt_rate"].median())
-    median_rim_rate = float(rankable["rim_rate"].median())
+    median_three_pt_rate = content.median_three_pt_rate
+    median_rim_rate = content.median_rim_rate
     median_x = chart_x(median_three_pt_rate)
     median_y = chart_y(median_rim_rate)
     ax.plot([median_x, median_x], [y0, y1], color=theme.muted, lw=1.2,
@@ -860,8 +589,6 @@ def render_chart_only(profiles: pd.DataFrame, final: bool = False) -> Path:
     # few of them.
     radius = 46
     for _, player in featured.iterrows():
-        if not player["qualified"] or pd.isna(player["rim_rate"]):
-            continue
         point_x = chart_x(float(player["three_pt_attempt_rate"]))
         point_y = chart_y(float(player["rim_rate"]))
         name = str(player["name"])
@@ -894,22 +621,9 @@ def render_chart_only(profiles: pd.DataFrame, final: bool = False) -> Path:
     ax.text(78, (y0 + y1) / 2, "RIM RATE  (% OF FGA)", ha="center", va="center", rotation=90,
             fontsize=17, color=theme.ink, fontproperties=helvetica("bold"))
 
-    # The threshold/reconciliation fine print and the not-a-regression note are
-    # deliberately NOT drawn here (user-directed 2026-07-21): they are typed
-    # into the Canva template instead. Both are still required on the published
-    # graphic — the current values are printed to stdout below so they can be
-    # copied across, and they change whenever the data is refetched.
-
-    print("Type into the Canva template (required on the published graphic):")
-    print(f"  · Min. {int(MIN_MINUTES)} SL minutes · {len(rankable)} of {len(qualified)} "
-          "qualified players have fully reconciled shot detail")
-    print("  · Each axis is a separate Summer League-to-rookie signal; this scatter is not a "
-          "regression between the axes.")
-    print("  · Data via nba.com · R²: Phillips, The F5 · Lee, The Hardwood Collective")
-
-    output = OUTPUT_DIR / f"{OUTPUT_STEM}-s3-chart-only.png"
+    output = OUTPUT_DIR / f"{OUTPUT_STEM}-chart.png"
     output.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(output, dpi=300 if final else 150, transparent=True)
+    fig.savefig(output, dpi=export_dpi(final), transparent=True)
     plt.close(fig)
     return output
 
@@ -919,11 +633,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--refresh", action="store_true", help="Refetch all game-level NBA.com data")
     parser.add_argument("--final", action="store_true", help="Export at 300 DPI instead of draft 150 DPI")
     parser.add_argument("--fetch-only", action="store_true", help="Build/validate the cache without rendering")
-    parser.add_argument(
-        "--chart-only",
-        action="store_true",
-        help="Render only the frameless slide-3 scatter export for Canva assembly",
-    )
     return parser.parse_args()
 
 
@@ -931,18 +640,19 @@ def main() -> None:
     args = parse_args()
     box_scores, shots = fetch_league_data(refresh=args.refresh)
     profiles = prepare_shot_profiles(box_scores, shots)
-    qualified = profiles[profiles["qualified"]]
-    featured = _featured_profiles(profiles)
+    content = prepare_chart_content(profiles)
+    if content.missing_featured:
+        print(f"Warning: featured Bulls omitted from the chart: {', '.join(content.missing_featured)}")
 
     box_fga = int(pd.to_numeric(box_scores["fieldGoalsAttempted"], errors="coerce").fillna(0).sum())
     shot_fga = int(pd.to_numeric(shots["SHOT_ATTEMPTED_FLAG"], errors="coerce").fillna(0).sum())
     print(f"Coverage: {len(box_scores):,} player-games; {len(shots):,} shots; box FGA {box_fga:,}; shot FGA {shot_fga:,}")
     print(
-        f"Pool: {len(qualified)} players at {MIN_MINUTES:.0f}+ minutes; "
-        f"{qualified['rim_rate'].notna().sum()} complete shot profiles"
+        f"Pool: {content.qualified_count} players at {content.minimum_minutes}+ minutes; "
+        f"{content.reconciled_count} complete shot profiles"
     )
     print(
-        featured[
+        content.featured[
             [
                 "name",
                 "games",
@@ -959,14 +669,8 @@ def main() -> None:
     if args.fetch_only:
         return
 
-    if args.chart_only:
-        print(render_chart_only(profiles, final=args.final))
-        return
-
-    print(render_cover(profiles, final=args.final))
-    print(render_definitions(final=args.final))
-    print(render_shot_profile(profiles, final=args.final))
-    print(render_chart_only(profiles, final=args.final))
+    print(format_canva_copy(content))
+    print(render_chart_only(content, final=args.final))
 
 
 if __name__ == "__main__":

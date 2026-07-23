@@ -177,6 +177,23 @@
 
   <div class="card">
     <div class="body">
+      <h2>Current Bulls Scoring Landscape</h2>
+      <div class="meta">
+        <span class="chip parked">Parked</span>
+        <span class="chip grammar">Landscape</span>
+        <span class="chip grammar">Current Roster</span>
+        <span class="date">2026-07-23</span>
+      </div>
+      <p class="insight">Map how often the current Bulls&rsquo; established NBA players generated true shooting attempts in 2025&ndash;26 against how efficiently they converted them relative to the league.</p>
+      <p class="notes"><strong>Analytical boundary:</strong> NBA.com owns current roster membership, full-season totals, the inclusive 250-true-shooting-attempt qualification, and both plotted axes. Each player&rsquo;s 2025&ndash;26 regular-season totals follow him across all teams; the chart does not imply that new Bulls produced those numbers for Chicago. SHOTS is true shooting attempts (<code>FGA + 0.44 &times; FTA</code>) per 100 NBA.com player possessions; rTS% is the player&rsquo;s calculated TS% minus the exact aggregate league TS% from all 30 teams&rsquo; totals. Players without comparable NBA data or enough attempts remain off the plotted population.</p>
+      <p class="notes"><strong>Carousel structure:</strong> slide one is the scoring-landscape payoff with concise SHOTS and rTS% definitions in the header. Slide two explains both formulas with Matas as the worked example, decodes the four quadrants and dashed baselines, and states the current-roster, complete-prior-season, and 250-TSA scope.</p>
+      <p class="notes"><strong>Production:</strong> verified transparent Python chart asset for slide one plus an editable, Canva-native explainer on slide two; the Python explainer render remains a review reference, not the final editable composition. Reuse the DARKO landscape&rsquo;s warm flat panel, Helvetica typography, equal-size square headshots, grid, crosshair, quadrant key, and Bulls-red directional treatment. Canva owns the final two-page 1080&times;1350 download; both downloaded pages return to <code>docs/mocks/</code> after approval.</p>
+      <p class="files">Script: <a href="scripts/prototypes/current_roster_scoring_landscape.py">prototypes/current_roster_scoring_landscape.py</a> &middot; test: <a href="tests/test_current_roster_scoring_landscape.py">test_current_roster_scoring_landscape.py</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="body">
       <h2>How DARKO Sees the Current Bulls</h2>
       <div class="meta">
         <span class="chip parked">Parked</span>

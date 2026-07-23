@@ -176,6 +176,25 @@
 <div class="grid">
 
   <div class="card">
+    <a class="thumb" href="docs/mocks/2026-07-23-roster-hot-spots-posted.png"><img src="docs/mocks/2026-07-23-roster-hot-spots-posted.png" alt="Hot-spot shot charts for the current Bulls roster"></a>
+    <div class="body">
+      <h2>Where the Bulls Shoot: Roster Hot Spots</h2>
+      <div class="meta">
+        <span class="chip posted">Posted</span>
+        <span class="chip grammar">Small Multiples</span>
+        <span class="chip grammar">Current Roster</span>
+        <span class="date">2026-07-23</span>
+      </div>
+      <p class="insight">A small-multiples wall of shot-location &ldquo;hot spots&rdquo; for the current roster: for each player, where they take <em>more</em> of their shots than a typical NBA player (red), revealing the team&rsquo;s shot-diet identity: Claxton a pure rim finisher, Jones the lone mid-range holdout, everyone else living on the arc.</p>
+      <p class="notes"><strong>Method:</strong> a faithful port of Owen Phillips&rsquo; F5 hot-spot chart (a kernel-density estimate of a player&rsquo;s shot locations minus league-average density) to this repo&rsquo;s Python stack, computed as a 2D histogram + Gaussian blur. Rendered his way: sqrt-scaled filled contour bands plus contour-line outlines (his <code>geom_raster</code> + <code>stat_contour</code>), on a Bulls-red gradient, so each zone reads as distinct topographic steps rather than a soft blob. This maps shot <em>frequency/location</em>, not accuracy. Red-only: his second gray &ldquo;shoots less&rdquo; layer was dropped for clarity at 10-up and to respect the no-meaningful-grays rule (a <code>--cold</code> flag can restore it). Ordered by shot volume; each court is labeled with the player&rsquo;s headshot and name, plus field-goal attempts and games played.</p>
+      <p class="notes"><strong>Scope &amp; qualification:</strong> the 2026&ndash;27 roster validated 2026-07-23, mapped from each player&rsquo;s 2025&ndash;26 regular-season shots within 35&nbsp;ft via <code>get_player_shots(team_id=0)</code> so acquired players&rsquo; full prior-team seasons are captured (Powell/Miami, Claxton/Brooklyn). A 150-FGA minimum leaves 10 of the 16; the four 2026 rookies plus low-sample Collins (64) and Essengue (3) fall out and belong in the caption.</p>
+      <p class="notes"><strong>Production:</strong> transparent chart-only asset (2160&times;2700) for user-led Canva assembly; Canva owns the title, the &ldquo;red = shoots here more than league&rdquo; legend, the min-FGA/coverage/source line, and the acquired-players caveat. A <code>--full-post</code> mode renders the framed house layout instead. Court labels use Helvetica bold (the landscape/Canva chart-asset family) rather than the house display faces. The league baseline is all 30 teams&rsquo; 2025&ndash;26 shots (219,160). Reuses the Summer League report&rsquo;s half-court geometry.</p>
+      <p class="notes"><strong>Posted 2026-07-23:</strong> live on Instagram (<a href="https://www.instagram.com/p/DbJhT2iFlxq/">DbJhT2iFlxq</a>). The user wrote the caption and credited Owen Phillips / The F5 in the footer. FGA labels show each player&rsquo;s total season attempts (matching nba.com); the &le;35&nbsp;ft filter applies only to the plotted density, so a rare heave (Powell, Giddey, Okoro each had one) counts toward FGA but sits off the grid. The posted 1080&times;1350 page is preserved as <code>docs/mocks/2026-07-23-roster-hot-spots-posted.png</code>; the transparent Python chart asset is <code>docs/mocks/2026-07-23-roster-hot-spots.png</code>.</p>
+      <p class="files">Script: <a href="scripts/prototypes/current_roster_hot_spots.py">prototypes/current_roster_hot_spots.py</a> &middot; test: <a href="tests/test_current_roster_hot_spots.py">test_current_roster_hot_spots.py</a></p>
+    </div>
+  </div>
+
+  <div class="card">
     <div class="body">
       <h2>Current Bulls Scoring Landscape</h2>
       <div class="meta">

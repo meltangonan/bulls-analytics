@@ -122,9 +122,14 @@ Durable caption rules (user-confirmed 2026-07-11, after the account's first two 
 - **The user writes the caption.** Offer at most one short line as raw material — never a
   multi-sentence draft. The first two data-viz posts both used the user's own one-liner plus hashtags.
 - **Always provide a ready-to-paste hashtag block** (user rule, 2026-07-18). Build it as:
-  1. The standing generic reach set, on every post: `#chicagobulls #bulls #nba #nbastats #dataviz`,
-     plus the seasonal context tag when one applies (currently `#summerleague`).
-  2. One tag per player featured in the final graphic.
+  1. The standing generic reach set, on every post:
+     `#chicagobulls #bulls #nba #nbastats #dataviz #analytics`, plus a seasonal context tag when the
+     post's own subject is in that season (`#summerleague` during Summer League coverage). Do not
+     carry a seasonal tag past the window it describes.
+  2. One tag per featured player worth tagging. Draft the block with every player in the final
+     graphic, and expect the user to cut the low-reach names — searched-for players earn the tag,
+     deep-bench and low-profile names dilute it (user-confirmed 2026-07-24, after the scoring
+     landscape shipped without Claxton, Okoro, Miller, and Dillingham).
   3. Deliberate reach tags the user designates, allowed even when the player is not in the post —
      currently `#calebwilson`, as the roster's most popular player.
 - **Verify hashtags and named players against the posted content.** Run this check on the actual

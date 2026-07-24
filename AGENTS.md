@@ -14,7 +14,7 @@ one-off mocks, promoted CLIs only for repeat formats. The notebook workflow is r
 | When working on… | Read… |
 | --- | --- |
 | Account purpose, audience, metrics, or priorities | `STRATEGY.md` |
-| Design register, brand personality, or design principles (feeds the Impeccable skill) | `PRODUCT.md` |
+| Design register, brand personality, or design principles | `PRODUCT.md` |
 | A visual, mock, or post iteration | `DESIGN.md`, then `POSTING_WORKFLOW.md` |
 | Editorial direction, idea lanes, or fairness guardrails | `bulls-content-playbook.html` |
 | The current shelf of post ideas | `idea-catalog.html` |
@@ -83,12 +83,9 @@ one-off mocks, promoted CLIs only for repeat formats. The notebook workflow is r
 
 ## Cross-Tool Skills
 
-- Keep the canonical copy of each Bulls-authored repo skill in `.agents/skills/<skill-name>/`.
+- Keep the canonical copy of every repo-scoped skill in `.agents/skills/<skill-name>/`.
 - For Claude Code discovery, create `.claude/skills/<skill-name>/` with a relative `SKILL.md`
   symlink to the canonical `.agents/skills/<skill-name>/SKILL.md`. Link any supporting resources
   the same way when they exist. Never maintain copied skill files in both locations.
 - When adding, renaming, or removing a repo skill, update both discovery paths and verify that each
   resolves to the same `SKILL.md`.
-- Exception: third-party skills that ship provider-specific builds (currently Impeccable) keep their
-  installer-managed copies in both `.agents/skills/` and `.claude/skills/`; do not replace them with
-  symlinks.

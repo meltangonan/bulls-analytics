@@ -48,6 +48,15 @@ These are the traps that produce silently wrong numbers rather than errors.
 - **The Advanced endpoint reports minutes per game even when `PerMode=Totals`.** For total player
   minutes paired with advanced ratings, use `get_team_player_advanced_stats()`, which joins
   Traditional totals to the Advanced ratings.
+- **DataBallR's percentiles are position-adjusted; ours are league-wide.** Don't treat a mismatch as
+  a bug. Tre Jones reads 67th percentile in assists there and 89th here off the same rate. Claxton is
+  the tell: DataBallR has him 95th in assists and 23rd in rebounds, which is only possible ranked
+  against other centers. Pick the population that fits the post — league-wide preserves positional
+  archetypes, position-adjusted normalizes them away — and say which one on the graphic.
+- **`LeagueDashPlayerShotLocations` (`distance_range="By Zone"`) returns per-player zone splits for
+  the whole league in one request** — far cheaper than re-deriving zones from `get_league_shots()`,
+  and its FGM/FGA reconcile exactly to each player's box score. Its columns arrive as a two-level
+  index that needs flattening. Note zone points exclude free throws, which have no location.
 - `get_league_shots()` hits all 30 teams — about 30 API calls, slow.
 - Set `min_shots` by timeframe: roughly 30 for a season, 10 for a recent-games view.
 - Treat NBA response caches, reconciled analysis caches, and extracted font caches as expensive

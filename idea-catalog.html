@@ -176,6 +176,26 @@
 <div class="grid">
 
   <div class="card">
+    <a class="thumb" href="docs/mocks/2026-07-25-jam-cards-posted.png"><img src="docs/mocks/2026-07-25-jam-cards-posted.png" alt="NBA Jam-style percentile cards for the current Bulls roster"></a>
+    <div class="body">
+      <h2>Bulls&rsquo; Offensive Play Styles (NBA Jam Cards)</h2>
+      <div class="meta">
+        <span class="chip posted">Posted</span>
+        <span class="chip grammar">Small Multiples</span>
+        <span class="chip grammar">Current Roster</span>
+        <span class="date">2026-07-25</span>
+      </div>
+      <p class="insight">A card per rotation player with five percentile bars &mdash; rim, paint outside the restricted area, mid-range, three, passing &mdash; so the <em>shape</em> of a card describes how a player fills a box score rather than how good he is. Giddey is a passing spike, Claxton a rim tower with a stub at THREE, Powell a wide scoring block with nothing under it.</p>
+      <p class="notes"><strong>Method:</strong> a port of Owen Phillips&rsquo; F5 tutorial &ldquo;How To Make A NBA Jam Style Small Multiple&rdquo; (2025-04-27, R/ggplot2). His anatomy is preserved: percentile-length rounded bars over a faint full-length track, the value printed on the bar, portrait and name plate inside a hairline card border. Two deliberate divergences, both stated in the script docstring: cards are landscape rather than portrait (ten subjects on a 4:5 page want wide bars where his thirty-six wanted tall cards), and bars are Bulls red rather than his four-hue palette, since the house rule allows only red and black as meaningful colors.</p>
+      <p class="notes"><strong>Metric design:</strong> each bar is a league percentile of a per-75-possession rate. Four bars are points from an NBA.com shot zone; PASS is assists. <em>Points</em> rather than attempts, because points already fold volume and accuracy together, so a high-volume misser cannot fill a bar. <strong>No defense bar:</strong> a steals-plus-blocks bar was built and cut after testing &mdash; it put Okoro, a well-regarded defender, in the 33rd percentile while Buzelis reached the 82nd mostly on blocks. A rebounding bar replaced it briefly and was then also cut at the user&rsquo;s direction, making this a purely offensive graphic.</p>
+      <p class="notes"><strong>Qualification:</strong> minimum <strong>1,500 possessions</strong> &mdash; a playing-time gate, deliberately not the 250-TSA shooting gate used by the scoring landscape, because a shooting threshold would decide who ranks in PASS by how much a player shot. Switched 2026-07-25 after the user questioned it; all ten Bulls survive (Miller clears at 1,605) and the league pool is 341. The change moved no bar more than 4 percentile points. 2025&ndash;26 totals follow each player across all teams, so Powell&rsquo;s are Miami&rsquo;s and Claxton&rsquo;s are Brooklyn&rsquo;s.</p>
+      <p class="notes"><strong>DataBallR cross-check:</strong> DataBallR shows Tre Jones at the 67th percentile in assists where this graphic shows 89, and the rates agree. <strong>DataBallR&rsquo;s percentiles are position-adjusted; these are league-wide.</strong> Claxton is the proof &mdash; DataBallR has him 95th in assists and 23rd in rebounds, which is only possible ranked against other centers. League-wide is correct for this post: position-adjusting would normalize away the archetype shapes the format exists to show.</p>
+      <p class="notes"><strong>Posted 2026-07-25:</strong> live on Instagram (<a href="https://www.instagram.com/chicagobullsdata/p/DbOdIujFsz1/">DbOdIujFsz1</a>); account at 13 posts / 51 followers. Caption (user-written): &ldquo;How each Bulls player gets their offense 🐂&rdquo; plus the full seventeen-tag block with no cuts. Hashtag preflight passed: all ten tagged players appear on the graphic and #calebwilson is the designated reach tag. Pre-publish QA re-derived all 70 printed values (50 percentiles, 10 GP, 10 MIN) from the working CSV with zero mismatches, which also confirmed the placed Canva image was the current render and not a stale one. Two defects caught and fixed: the Owen Phillips credit rendered as a blue underlined hyperlink (the only blue on the page) and the footer text box was too narrow for the longer qualification and collided with the credit line. The posted 1080&times;1350 page is <code>docs/mocks/2026-07-25-jam-cards-posted.png</code>; the transparent chart asset is <code>docs/mocks/2026-07-25-jam-cards.png</code>.</p>
+      <p class="files">Script: <a href="scripts/prototypes/current_roster_jam_cards.py">prototypes/current_roster_jam_cards.py</a> &middot; test: <a href="tests/test_current_roster_jam_cards.py">test_current_roster_jam_cards.py</a> &middot; Canva: <code>DAHQaU2nBtk</code></p>
+    </div>
+  </div>
+
+  <div class="card">
     <a class="thumb" href="docs/mocks/2026-07-23-roster-hot-spots-posted.png"><img src="docs/mocks/2026-07-23-roster-hot-spots-posted.png" alt="Hot-spot shot charts for the current Bulls roster"></a>
     <div class="body">
       <h2>Where the Bulls Shoot: Roster Hot Spots</h2>

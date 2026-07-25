@@ -34,7 +34,6 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from matplotlib.font_manager import FontProperties
 from matplotlib.patches import Arc, Circle, FancyBboxPatch
 from scipy.ndimage import gaussian_filter
 
@@ -48,6 +47,7 @@ from bulls import data
 from bulls.config import CURRENT_SEASON
 from bulls.data.fetch import _NBA_HEADERS
 from bulls.graphics import house
+from bulls.graphics.house import helvetica
 
 CACHE = ROOT / "cache" / "hot_spots"
 
@@ -98,29 +98,6 @@ HOT_ALPHA = 0.92
 COLD_ALPHA = 0.55
 
 HEADSHOT_HALF = 30.0  # half the square headshot side, left of each name
-
-# Helvetica bold, matching the landscape/Sticky Stats chart typography. Extracted
-# from the macOS system .ttc (face 0 regular, face 1 bold); Archivo is the fallback.
-HELVETICA_TTC = Path("/System/Library/Fonts/Helvetica.ttc")
-HELVETICA_FACES = {"regular": 0, "bold": 1}
-FONT_CACHE_DIR = ROOT / "cache" / "fonts"
-
-
-def helvetica(weight: str = "bold") -> FontProperties:
-    fallback = "bold" if weight == "bold" else "medium"
-    if not HELVETICA_TTC.exists():
-        return house.body_font(fallback)
-    extracted = FONT_CACHE_DIR / f"Helvetica-{weight}.ttf"
-    if not extracted.exists():
-        try:
-            from fontTools.ttLib import TTCollection
-
-            FONT_CACHE_DIR.mkdir(parents=True, exist_ok=True)
-            TTCollection(str(HELVETICA_TTC)).fonts[HELVETICA_FACES.get(weight, 0)].save(str(extracted))
-        except Exception:
-            return house.body_font(fallback)
-    return FontProperties(fname=str(extracted))
-
 
 # ---------------------------------------------------------------------------
 # Fetch (cached so the visual can iterate without re-hitting the API)

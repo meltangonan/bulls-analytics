@@ -26,7 +26,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
-from matplotlib.font_manager import FontProperties
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 from bulls.data import get_player_headshot
@@ -35,6 +34,7 @@ from bulls.graphics.house import (
     DRAFT_DPI,
     body_font,
     export_dpi,
+    helvetica,
     rendered_width,
 )
 
@@ -110,10 +110,6 @@ SHORT_NAMES = {
 # that the lower portrait does not have to cover the label or face.
 NAME_ABOVE = {"Nic Claxton", "Matas Buzelis", "Patrick Williams"}
 
-HELVETICA_TTC = Path("/System/Library/Fonts/Helvetica.ttc")
-HELVETICA_FACES = {"regular": 0, "bold": 1}
-FONT_CACHE_DIR = _REPO / "cache" / "fonts"
-
 _DARKO_NUMBER = r"[+\-\d.eE]+"
 _DARKO_RECORD = re.compile(
     r'\{nba_id:(?P<nba_id>\d+),'
@@ -128,24 +124,6 @@ _DARKO_RECORD = re.compile(
     rf'd_dpm:(?P<d_dpm>{_DARKO_NUMBER}),'
     r"box_dpm:"
 )
-
-
-def helvetica(weight: str = "regular") -> FontProperties:
-    """Match the approved Sticky Stats chart typography."""
-    fallback = "bold" if weight == "bold" else "medium"
-    if not HELVETICA_TTC.exists():
-        return body_font(fallback)
-    extracted = FONT_CACHE_DIR / f"Helvetica-{weight}.ttf"
-    if not extracted.exists():
-        try:
-            from fontTools.ttLib import TTCollection
-
-            collection = TTCollection(str(HELVETICA_TTC))
-            FONT_CACHE_DIR.mkdir(parents=True, exist_ok=True)
-            collection.fonts[HELVETICA_FACES.get(weight, 0)].save(str(extracted))
-        except Exception:
-            return body_font(fallback)
-    return FontProperties(fname=str(extracted))
 
 
 def _fetch_html(url: str) -> str:

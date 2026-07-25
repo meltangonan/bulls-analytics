@@ -28,14 +28,20 @@ import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from matplotlib.font_manager import FontProperties
 from matplotlib.patches import Circle, FancyBboxPatch
 from nba_api.stats.endpoints import boxscoretraditionalv3, leaguegamefinder, shotchartdetail
 
 from bulls.config import API_DELAY
 from bulls.data.fetch import _NBA_HEADERS, get_player_headshot
 from bulls.graphics.craft import headshot_label
-from bulls.graphics.house import DRAFT_DPI, DEFAULT_THEME, body_font, export_dpi, rendered_width
+from bulls.graphics.house import (
+    DRAFT_DPI,
+    DEFAULT_THEME,
+    body_font,
+    export_dpi,
+    helvetica,
+    rendered_width,
+)
 
 
 SEASON = "2026"
@@ -313,39 +319,6 @@ def fetch_league_data(refresh: bool = False) -> tuple[pd.DataFrame, pd.DataFrame
         shots.append(_fetch_shots(game_id, refresh=refresh))
         print(f"[{index:02d}/{total}] {game_id} cached", flush=True)
     return pd.concat(boxes, ignore_index=True), pd.concat(shots, ignore_index=True)
-
-
-# Helvetica for the Canva-assembled chart export only (user-directed
-# 2026-07-21); the house Archivo faces still own every in-repo poster render.
-HELVETICA_TTC = Path("/System/Library/Fonts/Helvetica.ttc")
-HELVETICA_FACES = {"regular": 0, "bold": 1}
-FONT_CACHE_DIR = _REPO / "cache" / "fonts"
-
-
-def helvetica(weight: str = "regular") -> FontProperties:
-    """Return a Helvetica face, extracting real Bold from the macOS collection.
-
-    matplotlib registers only the Regular face of ``Helvetica.ttc``, so asking
-    for ``weight="bold"`` by family name silently renders regular. Split the
-    requested face out of the collection once into the ignored cache directory
-    and load it by filename instead. Extraction stays in ``cache/`` so the
-    licensed system font is never copied into the repository. Falls back to the
-    house Archivo faces when Helvetica is unavailable (non-macOS).
-    """
-    fallback = "bold" if weight == "bold" else "medium"
-    if not HELVETICA_TTC.exists():
-        return body_font(fallback)
-    extracted = FONT_CACHE_DIR / f"Helvetica-{weight}.ttf"
-    if not extracted.exists():
-        try:
-            from fontTools.ttLib import TTCollection
-
-            collection = TTCollection(str(HELVETICA_TTC))
-            FONT_CACHE_DIR.mkdir(parents=True, exist_ok=True)
-            collection.fonts[HELVETICA_FACES.get(weight, 0)].save(str(extracted))
-        except Exception:
-            return body_font(fallback)
-    return FontProperties(fname=str(extracted))
 
 
 # User-saved ESPN headshots preferred over NBA CDN photos (2026-07-21). Keys are

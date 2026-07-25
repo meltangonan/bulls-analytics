@@ -82,8 +82,11 @@ Canva may own framing and editorial copy; downloaded final pages return to `docs
 
 The chart-only export deliberately uses Helvetica to match the Canva composition. The helper splits
 Regular/Bold faces from the local macOS Helvetica collection into ignored `cache/fonts/` and falls
-back to Archivo off macOS. This is post-scoped and does not replace the house Academic M54 + Archivo
-system.
+back to Archivo off macOS.
+
+> **Superseded 2026-07-25.** What this pilot treated as post-scoped became the standard: Helvetica is
+> now the chart face for all new work, the helper lives in `bulls/graphics/house.py` as
+> `house.helvetica()`, and the Academic M54 + Archivo full-layout system is legacy. See `DESIGN.md`.
 
 ## Open Items Before Publishing
 

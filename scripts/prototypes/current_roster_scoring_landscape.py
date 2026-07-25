@@ -35,6 +35,7 @@ from bulls.graphics.house import (
     draw_footer,
     draw_header,
     export_dpi,
+    helvetica,
     new_canvas,
     rendered_width,
     save_post,
@@ -43,7 +44,6 @@ from scripts.prototypes.current_roster_darko_landscape import (
     NBA_ROSTER_URL,
     _fetch_html,
     ensure_headshots,
-    helvetica,
     parse_nba_roster,
     square_headshot_label,
 )

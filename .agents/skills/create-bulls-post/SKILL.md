@@ -5,68 +5,54 @@ description: Turn a selected Chicago Bulls post idea into a clarified brief, tes
 
 # Create Bulls Post
 
-Move one selected idea from intent to an approved visual without making the user repeat settled context.
+Move one selected idea from intent to an approved visual without making the user repeat settled
+context.
 
-## Load Project Context
+## Context
 
-1. Read `AGENTS.md`, `DESIGN.md`, and `POSTING_WORKFLOW.md`.
-2. Read the matching card in `idea-catalog.html` when the idea already exists.
-3. Read the relevant sections of `bulls-content-playbook.html` when the editorial angle or fairness standard is unclear.
-4. Read `DEVELOPMENT.md` before changing analysis, fetchers, graphics code, scripts, or tests.
+Read `AGENTS.md`, `DESIGN.md`, and `POSTING_WORKFLOW.md`. Read the matching card in
+`idea-catalog.html` when the idea already exists, `bulls-content-playbook.html` when the editorial
+angle or fairness standard is unclear, and `DEVELOPMENT.md` before touching analysis, fetchers,
+graphics code, or tests.
 
-Treat these files and the current conversation as the source of truth. Do not duplicate their rules in a separate planning artifact.
+These files and the conversation are the source of truth. Don't restate their rules in a separate
+planning artifact.
 
-## Complete the Brief
+## Brief
 
-Use the six-area Clarification Gate in `POSTING_WORKFLOW.md` as an internal coverage check. For each area, determine whether it is:
+Cover the six areas in `POSTING_WORKFLOW.md`, then restate the settled brief so the user can correct
+it. Ask only about gaps that block the first draft; for an existing catalog card, that's usually just
+timeframe and exact title/subtitle/footnote copy. Never ask the user to re-decide
+something already settled.
 
-- answered by the user;
-- inferred from the conversation, catalog, or project documents;
-- filled with a recommended project-consistent default; or
-- explicitly deferred because it does not affect the first draft.
+If the user says "pick for me," choose and state the choice plainly.
 
-Ask only about blocking gaps. Ask one focused question at a time, use the runtime's question tool for clear choices when available, and explain the recommended option and meaningful tradeoff. Use normal conversation for nuanced questions. Never ask the user to repeat a settled decision.
+## One Draft
 
-If the user says “pick for me,” make the choice and state it plainly. For an existing catalog card, run an abbreviated gate covering only what remains open.
+Build a single reviewable draft, not a set of options. Python builds the **chart**; the Canva page
+carries the title, headers, and framing.
 
-Do not begin implementation while a blocking area is unresolved. When coverage is complete, restate the settled brief in 3–6 bullets and give the user a chance to correct it.
-
-## Build One Draft
-
-Follow the prototype-first workflow in `POSTING_WORKFLOW.md` and `DEVELOPMENT.md`.
-
-- Reuse the established design system and existing helpers before creating a new visual grammar.
-- Choose the simplest supported production path from `POSTING_WORKFLOW.md`: Python full layout or
-  verified Python chart/data asset + Canva assembly.
-- Verify the analysis, thresholds, coverage window, sources, and any current factual claims.
+- Reuse the established design system and existing helpers before inventing a new visual grammar.
+- When working from an F5 or similar tutorial, reproduce its styling and structure closely and swap
+  in our palette and type (`DESIGN.md` §6). Don't redesign it toward a different direction.
+- Verify the analysis, thresholds, coverage window, sources, and every factual claim that will be
+  printed.
 - Add or update tests for reusable data or analysis behavior.
-- Generate one reviewable draft and explain the important analytical, production-path, and visual
-  choices in plain language.
-- Update the affected owner documents and catalog card as decisions change; revise stale guidance instead of appending duplicates.
+- Explain the analytical, production-path, and visual choices in plain language.
 
-Do not prepare promotional copy unless the user asks for it; `promote-bulls-post` owns that stage.
+Don't prepare promotional copy — `promote-bulls-post` owns that stage.
 
-## Refine to the Exit Criteria
+## After Approval
 
-Use the Draft Refinement Gate in `POSTING_WORKFLOW.md` as a coverage check, not a fixed series of rounds. Review only what changed or remains unresolved and ask for a decision only when one is needed.
+1. Produce the final artifact: the downloaded 1080×1350 Canva page(s).
+2. **Inspect the actual downloaded files.** Run the checks in `POSTING_WORKFLOW.md` — approving the
+   editable Canva design or the chart asset alone is the recurring failure here.
+3. Copy every approved final page to `docs/mocks/` and update the catalog card to `Mocked`.
+4. Run the relevant tests and `git diff --check`.
+5. Update any owner document whose decision changed.
+6. Summarize the result, verification, risks, and changed files.
 
-After the user approves the post:
+Never mark a post `Posted` until the user confirms it's live.
 
-1. Produce the final artifact for the chosen path: a 300-DPI Python full layout, or the downloaded
-   1080×1350 Canva page/carousel assembled from verified Python assets.
-2. Inspect the actual final files. For Canva, run the downloaded-page checklist in
-   `POSTING_WORKFLOW.md`; do not approve only the editable design or chart asset.
-3. Copy every approved final page to `docs/mocks/`.
-4. Update the matching catalog card to `Mocked` and preserve its supporting context.
-5. Run the relevant tests and `git diff --check`.
-6. Summarize the practical result, verification, risks, and all changed files.
-7. Stop for explicit approval before committing or pushing.
-
-## Hand Off to the Next Stage
-
-Once the approved export, mock copy, and catalog card are complete, offer the next step instead of
-ending silently: ask whether to continue into `promote-bulls-post` (caption raw material, readiness
-check, and distribution advice). If the user agrees, invoke that skill in the same session so it
-inherits the settled context. Do not start promotion work without that confirmation.
-
-Never mark a post `Posted` until the user confirms it is live. Never publish or interact with Instagram without explicit per-action approval.
+Then offer — don't assume — continuing into `promote-bulls-post` in the same session so it inherits
+the settled context.

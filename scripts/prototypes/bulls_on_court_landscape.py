@@ -19,7 +19,6 @@ import matplotlib
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
-from matplotlib.font_manager import FontProperties
 from matplotlib.patches import Circle, FancyBboxPatch
 
 from bulls.data import get_team_advanced_stats, get_team_player_advanced_stats
@@ -28,6 +27,7 @@ from bulls.graphics.house import (
     DRAFT_DPI,
     body_font,
     export_dpi,
+    helvetica,
     rendered_width,
 )
 
@@ -71,29 +71,6 @@ SHORT_NAMES = {
     "Guerschon Yabusele": "YABUSELE",
     "Leonard Miller": "L. MILLER",
 }
-
-HELVETICA_TTC = Path("/System/Library/Fonts/Helvetica.ttc")
-HELVETICA_FACES = {"regular": 0, "bold": 1}
-FONT_CACHE_DIR = _REPO / "cache" / "fonts"
-
-
-def helvetica(weight: str = "regular") -> FontProperties:
-    """Match the approved Sticky Stats chart typography."""
-    fallback = "bold" if weight == "bold" else "medium"
-    if not HELVETICA_TTC.exists():
-        return body_font(fallback)
-    extracted = FONT_CACHE_DIR / f"Helvetica-{weight}.ttf"
-    if not extracted.exists():
-        try:
-            from fontTools.ttLib import TTCollection
-
-            collection = TTCollection(str(HELVETICA_TTC))
-            FONT_CACHE_DIR.mkdir(parents=True, exist_ok=True)
-            collection.fonts[HELVETICA_FACES.get(weight, 0)].save(str(extracted))
-        except Exception:
-            return body_font(fallback)
-    return FontProperties(fname=str(extracted))
-
 
 def chart_x(value: float) -> float:
     x0, _, x1, _ = PANEL

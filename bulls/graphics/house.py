@@ -202,6 +202,39 @@ def body_font(weight: str = "regular") -> fm.FontProperties:
     return fm.FontProperties(fname=str(path))
 
 
+_HELVETICA_TTC = Path("/System/Library/Fonts/Helvetica.ttc")
+_HELVETICA_FACES = {"regular": 0, "bold": 1}
+_FONT_CACHE_DIR = REPO_ROOT / "cache" / "fonts"
+
+
+def helvetica(weight: str = "regular") -> fm.FontProperties:
+    """Return a Helvetica face for chart assets, extracting real Bold.
+
+    Helvetica Bold is the account's body face; charts are assembled into Canva
+    pages that use it, so chart labels must match. matplotlib registers only the
+    Regular face of ``Helvetica.ttc``, so asking for ``weight="bold"`` by family
+    name silently renders regular. Split the requested face out of the
+    collection once into the ignored cache directory and load it by filename
+    instead. Extraction stays in ``cache/`` so the licensed system font is never
+    copied into the repository. Falls back to the legacy Archivo faces when
+    Helvetica is unavailable (non-macOS).
+    """
+    fallback = "bold" if weight == "bold" else "medium"
+    if not _HELVETICA_TTC.exists():
+        return body_font(fallback)
+    extracted = _FONT_CACHE_DIR / f"Helvetica-{weight}.ttf"
+    if not extracted.exists():
+        try:
+            from fontTools.ttLib import TTCollection
+
+            collection = TTCollection(str(_HELVETICA_TTC))
+            _FONT_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+            collection.fonts[_HELVETICA_FACES.get(weight, 0)].save(str(extracted))
+        except Exception:
+            return body_font(fallback)
+    return fm.FontProperties(fname=str(extracted))
+
+
 def rendered_width(ax, text_artist) -> float:
     """Rendered text width in the axes' pixel-like data coordinates."""
     ax.figure.canvas.draw()

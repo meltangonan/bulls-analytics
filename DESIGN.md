@@ -1,88 +1,76 @@
 # Design System — @chicagobullsdata
 
-The visual identity for the account's graphics. Established with the debut post
-("The Shape of the Season," 2026-07-09); the reference implementation is
-`scripts/prototypes/season_shape_post.py`. Reuse these decisions; don't re-litigate them
-per post. When a decision here changes, update this file (noting it in the decision log at
-the bottom), the executable layer (`bulls/graphics/house.py` / `craft.py`), and the rendered
-companion `design-system.html` together — the token drift test only catches color mismatches.
-Canva is a downstream mirror of these rules, not a fourth canonical owner; check its Brand Kit and
-final downloaded pages manually when a Canva-composed post uses the system.
+**This file owns the chart layer.** Canva's Brand Kit owns post typography and page layout.
 
-Companion docs: `STRATEGY.md` (why the account exists), `bulls-content-playbook.html`
-(what to post — the visual encyclopedia), `idea-catalog.html` (the idea shelf), and
-`design-system.html` (a browsable visual companion). This file is the canonical record for
-design decisions and their history.
-This file is *how it should look*.
+Posts are assembled in Canva. Python's job is a verified chart asset that drops into a Canva page
+and looks native there. That means this document specifies colors, chart typography, mark grammar,
+and the export contract — not headers, titles, or page furniture.
+
+| Surface | Owner |
+|---|---|
+| Post title, subtitle, headers, body copy, page layout | **Canva Brand Kit** |
+| Chart colors, chart typography, marks, annotations, export | **This file** + `bulls/graphics/house.py` |
+| Which post to make and how it ships | `POSTING_WORKFLOW.md` |
+
+When a chart-layer decision changes, update this file, `house.py`/`craft.py`, and
+`design-system.html` together — `tests/test_design_tokens.py` catches color drift only.
 
 ---
 
-## 1. Brand Identity
+## 1. Typography
 
-> **Status: OPEN — rebrand in progress (started 2026-07-09).** Logo/profile-picture
-> exploration is **parked** (candidate sheet generator:
-> `scripts/prototypes/brand_logo_candidates.py`, kept for later). Non-logo brand
-> decisions — positioning line, on-graphic brand presence, grid rules — are active.
+**Canva Brand Kit (posts):**
 
-- **Handle:** `@chicagobullsdata` · display name "Chicago Bulls + Data Viz"
-- **Logo:** parked (three candidate directions sketched: season-shape glyph, data-bull
-  concept mark, varsity wordmark; initials "CBD" ruled out as a lettermark)
-- **Profile picture:** parked with the logo (a player photo is explicitly *not* the
-  long-term direction; current avatar is a player headshot)
-- **Watermark:** text-only (`@chicagobullsdata`, see §6 Footer); a logo lockup variant
-  is parked with the logo.
-- **Trademark guardrail:** never trace, recolor, or closely imitate the official Bulls
-  mark — riffing on red/black as a fan account is fine, the logo itself is team IP.
+| Role | Face |
+|---|---|
+| Titles | **Clarendon Narrow** |
+| Subtitles and section headers | **Yearbook Solid** |
+| Body | **Helvetica Bold** |
 
-### Reference accounts (surveyed 2026-07-09)
+Clarendon Narrow and Yearbook Solid are Canva faces — they aren't installed locally and Python never
+renders them. Don't try to approximate them in a chart; if a chart seems to need a title, that title
+belongs on the Canva page.
 
-Three distinct branding models among accounts the user follows:
+**Charts (Python):** Helvetica, matching the Canva body face so labels read as part of the page.
+Use `house.helvetica()` / `house.helvetica("bold")`.
 
-- **Half Court Mindset** (`halfcourtmindset`, ~4.3k) — *the template is the brand.*
-  Concept-mark avatar (brain + basketball = "mindset") on a cream circle. Every graphic
-  shares one look: paper texture, rust/orange type, account name printed top-left like a
-  masthead, tagline ("For fans that see the game different") printed at the bottom.
-- **Orange Ball** (`__orangeball`, small/new) — *design-studio identity.* Wordmark
-  avatar ("ORANGE" in marker scrawl on white). Positioning line in bio: "an analytical
-  product of sport and design." Grid: B&W halftone player cutouts, cream space, orange
-  accents. High polish, low volume.
-- **Owen Phillips / The F5** (`owenlhjphillips`, ~6.8k) — *person up front, product
-  badge on the work.* Personal-photo avatar; the brand mark ("F5" badge, top corner)
-  lives on the graphics, not the profile.
-
-Takeaway for us: `@chicagobullsdata` is a thing, not a person → brand-mark avatar
-(HCM/Orange Ball model), and the graphics' shared canvas (header pattern + footer
-watermark) is already the masthead — consistency of the template is the brand.
+⚠️ **matplotlib registers only the Regular face of `Helvetica.ttc`**, so asking for bold by family
+name silently renders regular. `house.helvetica()` splits the requested face out of the system
+collection into `cache/fonts/` and loads it by filename. The extraction stays in `cache/` so the
+licensed system font is never committed. On non-macOS it falls back to Archivo.
 
 ## 2. Color
 
-Red + black is the team palette. Avoid neutral grays for *meaningful* areas — gray reads
-off-brand and flat. Grays are for scaffolding: gridlines, muted labels, separators.
+Red + black is the palette, unchanged. Avoid neutral grays for *meaningful* areas — gray reads
+off-brand and flat. Grays are scaffolding: gridlines, muted labels, separators.
 
 | Token | Hex | Role |
 |---|---|---|
-| `RED` | `#CE1141` | Bulls red — positive/above/accent, one accent word in titles, payoff ring |
+| `RED` | `#CE1141` | Bulls red — positive/above/accent, payoff emphasis |
 | `BULLS_BLACK` | `#141414` | Rich near-black — negative/below/heavy fills (never pure black) |
 | `INK` | `#1A1A1A` | Primary text, data lines |
-| `MUTED` | `#777777` | Secondary text, axis labels, event-line labels, watermark |
-| `FAINT` | `#AAAAAA` | Footer/source credit, quietest text tier |
+| `MUTED` | `#777777` | Secondary text, axis labels, annotation labels |
+| `FAINT` | `#AAAAAA` | Quietest text tier |
 | `RULE` | `#DDDDDD` | Table rules, hairlines |
-| — | `#CFCFCF` | Subtitle separator ticks |
-| — | `#F0F0F0` | Chart gridlines |
-| — | `#FFFFFF` | Canvas background |
+| `SUBTITLE_RULE` | `#CFCFCF` | Separator ticks |
+| `GRIDLINE` | `#F0F0F0` | Chart gridlines |
+| `WHITE` | `#FFFFFF` | The `white` theme's canvas — not the post default |
 
-**Magnitude colormap** (`craft.MAGNITUDE_CMAP`): light neutral `#F2EAE8` → Bulls red
-`#CE1141` → deep red `#7E0C2B`. Use when a bar/cell's fill encodes stat magnitude.
+**Post canvas is `#FAF8F5`** (warm off-white — the `jersey` theme). Charts are exported transparent
+and sit on that Canva background, so chart colors must be chosen to read against it.
 
-### Canvas themes
+**Magnitude colormap** (`craft.MAGNITUDE_CMAP`): light neutral `#F2EAE8` → `#CE1141` → deep red
+`#7E0C2B`. Use when a bar or cell fill encodes magnitude.
 
-The canvas is a **theme**, not a fixed background. Five sanctioned canvas themes exist
-(`house.THEMES`), promoted from the design-system.html doc-chrome palettes on 2026-07-13;
-**`jersey` (warm off-white `#FAF8F5`) is the default**, with `white` kept as a sanctioned
-alternate. A theme is the full coordinated token set — a background
-is a contract with every color on the page, so switching themes swaps ink, rules, gridlines,
-and the jersey stripe together, never just the fill. The theme is chosen per post at mock
-time (see `POSTING_WORKFLOW.md` Clarification Gate); no other backgrounds or textures.
+⚠️ The table diverging colormap (`NET_CMAP`) runs red-to-green — colorblind-unsafe. Mitigated by
+always printing the sign (`force_sign`). Revisit if a table post ever leans on color alone.
+
+### Alternate themes (parked)
+
+`house.THEMES` carries four alternates beyond `jersey`. **None are in active use** — the account runs
+on `#FAF8F5`. They're kept because the tokens may be reimplemented in Canva later to vary the look.
+A theme is a coordinated set, never just a background swap: changing the canvas changes ink, rules,
+gridlines, and accents together.
 
 | Token | `white` | `jersey` (default) | `newsprint` | `blackout` | `hardwood` |
 |---|---|---|---|---|---|
@@ -99,316 +87,148 @@ time (see `POSTING_WORKFLOW.md` Clarification Gate); no other backgrounds or tex
 | `trim_a` | `#FFFFFF` | `#FFFFFF` | `#F3EDDF` | `#121214` | `#FDF3EA` |
 | `trim_b` | `#141414` | `#141414` | `#B5123C` | `#F1EFEC` | `#BE0E3B` |
 
-Canvas/ink/muted/accent/band/trim values mirror the design-system.html doc themes exactly;
-`faint`/`rule`/`tick`/`grid` are first-pass derivations (blends toward the canvas) and may be
-tuned against real renders. On `hardwood` the accent flips to black — red is the ground, so
-black is the one meaningful color; on `blackout` the accent brightens to `#FF3355` because
-`#CE1141` lacks contrast on near-black. `jersey` is the warm off-white of the
-design-system.html page itself (its default doc theme) with the standard red accent and
-stripe; the user adopted it as the everyday default over plain white on 2026-07-13.
+Two deliberate inversions if these are ever revived: `hardwood` flips the accent to black (red is the
+ground, so black becomes the meaningful color), and `blackout` brightens it to `#FF3355` because
+`#CE1141` lacks contrast on near-black.
 
-## 3. Typography
+## 3. Chart Asset Contract
 
-| Role | Face | File(s) | Notes |
-|---|---|---|---|
-| Titles | **Academic M54** | `assets/fonts/AcademicM54.ttf` | Collegiate slab. ALL CAPS. Auto-fit to width (see §5). One accent word in `RED`. |
-| Body / labels / annotations | **Archivo** | `assets/fonts/Archivo-400/500/600.ttf` | Grotesque; 400 regular, 500 medium, 600 bold — always select weight **by file**. |
-| Fallback title face | Bevan | `assets/fonts/Bevan.ttf` | OFL-licensed drop-in if Academic M54 must be replaced. |
-| Legacy (don't use in new work) | Playfair Display + DM Sans | `assets/fonts/` | Remain only in `bulls/graphics/feed.py` zone builders. |
+- **Export transparent.** The chart carries no background; the Canva page supplies `#FAF8F5`.
+- **Export larger than the placed size.** Canva-rendered output is judged from the downloaded page at
+  feed size, and an undersized asset can't be recovered by DPI metadata.
+- **The chart carries data, not framing.** Axis labels, value labels, player names, medians, and
+  annotations belong in the chart. Titles, subtitles, kickers, source lines, watermark, and editorial
+  copy belong on the Canva page.
+- Prototypes print a Canva copy block — the exact strings to paste — so the page's numbers come from
+  the same run as the chart. Never retype a number from a chart into Canva by eye.
+- Chart labels use `house.helvetica()`; pull colors from the theme tokens (`theme.ink`,
+  `theme.accent`, `theme.grid`) rather than the white-canvas module constants.
 
-⚠️ **Academic M54 license:** free for **non-commercial use only**. If the account ever
-goes commercial, license it or swap to Bevan.
+## 4. Mark and Annotation Grammar
 
-⚠️ **matplotlib gotcha:** the `weight=` kwarg is silently ignored for single-file fonts
-(DM Sans was single-weight for months without anyone noticing). Always pass the specific
-weight's file via `FontProperties(fname=...)`. Instance more weights from the variable
-font with `fontTools.varLib.instancer` if needed.
+Every marker or callout must **explain a bend in the data**. If the line doesn't turn there, it's
+trivia — cut it.
 
-## 4. Canvas & Export
+- **Reference lines** (medians, league average) in `MUTED`, dashed `(0, (4, 3))`, 1.2 lw, with a
+  short label stating what the line is ("MEDIAN 34.1%").
+- **Event markers** — budget ~1 hero, at most 1 supporting. Stacked dated label: name (Helvetica
+  bold, 9 pt) over the date (9 pt regular), right-aligned 8 px off the line.
+- **Callouts** — budget 3–4. Bold label with a thin straight connector (`arrowstyle="-"`, `MUTED`,
+  1.0 lw) to the point. Names and context can live on the Canva page instead when the chart is dense.
+- **Emphasis is meaning-driven, never decorative.** At most one payoff element per chart.
 
-- **Format:** 1080×1350 px (Instagram portrait 4:5). Jersey off-white background
-  (`#FAF8F5`) by default; a sanctioned canvas theme (§2) may be chosen per post —
-  `house.new_canvas(theme)`.
-- **Python full layout:** iterate at 150 DPI and export final at 300 DPI (2160×2700 — text
-  survives Instagram compression). Prototype scripts take a `--final` flag and current posts use
-  `house.save_post(fig, path, final=...)` so draft/final dimensions are explicit.
-- **Canva assembly:** export Python chart/data assets large enough for their placed size, then
-  download the complete page at exactly 1080×1350. Canva-rendered text is judged from the downloaded
-  page at feed size; DPI metadata does not improve it. Preserve those downloaded finals in
-  `docs/mocks/`.
-- Full-bleed axes (`fig.add_axes([0, 0, 1, 1])`), data coords = pixel coords, equal aspect,
-  no spines/ticks.
-- **Side margins:** 60 px left and right (title, subtitle, kicker, footer all anchor here).
+## 5. Faces (headshots)
 
-## 5. Header Pattern
+The highest-stopping-power object on a chart — use sparingly.
 
-This is the default for Python full-layout posts. Canva narrative pages may rearrange the hierarchy
-when the story needs a cover or explainer composition, but they retain the sanctioned palette,
-collegiate display character, clear title emphasis, and restrained supporting type; review the
-downloaded page against the grid rules in §10.
+- Circular crop via `craft._make_circular_headshot` / `craft.headshot_label`. A red border ring
+  (`border_color=(206, 17, 65)`, `border_frac≈0.045`) means "the payoff."
+- Position so geometry does the pointing — the data line ends at the face.
+- Missing headshots render as a neutral placeholder disc; builders never break.
+- ⚠️ **NBA CDN headshots for new rookies are often a gray silhouette.** Check visually: ~12 KB is
+  usually the silhouette, a real headshot is 50–200 KB. Fall back to the team's own CDN
+  (nba.com/bulls article images are clean and unwatermarked), crop square around the face, and flag
+  wire-photo licensing before using a non-NBA source.
 
-Python layout values are stacked tight and top-left anchored at x=60:
+## 6. Working From F5 and Other Tutorials
 
-0. **Jersey stripe** — full-bleed 16 px band across the very top of the canvas: the
-   theme's `band` color with two pinstripes (top-down: band 4 / trim_a 2 / band 4 /
-   trim_b 2 / band 4). On the white default that is red with one white and one black
-   pinstripe. Mirrors the `.band` element on design-system.html. Default-on via
-   `house.draw_header(..., stripe=True)`; `house.draw_jersey_stripe(ax)` standalone.
-1. **Title** — Academic M54, ALL CAPS, top at y = H−66. Auto-fit so the string fills
-   W−120 exactly (balanced ~60 px margins regardless of copy length). One accent word
-   in `RED`, rest in `INK`. **Jersey-lettering outline, default-on:** each glyph gets a
-   red outer stroke (7 pt) and white gap (3.5 pt) via path effects, echoing the stripe.
-   Switch back globally by flipping `house.OUTLINED_TITLE = False`, or per post with
-   `draw_header(..., outlined=False)`.
-2. **Subtitle** — y = H−168, 18 pt Archivo medium, `MUTED`. Segments (team · season ·
-   record etc.) are separated by thin light-gray **vertical ticks** (`#CFCFCF`, ~1.3 lw,
-   ~16 px tall). Python layouts draw the ticks. A Canva layout may use a carefully spaced `|`
-   fallback only when the tool cannot reproduce the drawn separators and the deviation is reviewed
-   on the downloaded final.
-3. **Kicker** — y = H−206, 14 pt Archivo medium italic, `RED`. States the metric in
-   plain words ("Games over/under .500 through each game"). If the kicker explains the
-   metric, don't repeat the explanation in a footer.
+When building from `docs/reference/f5-technique-notes.html` or a similar tutorial, **reproduce the
+source's styling and structure closely.** Swap in our palette and Helvetica; keep its layout,
+proportions, mark choices, and visual logic.
 
-## 6. Footer and Attribution
+Do not redesign it toward "our own direction" — the reason to work from a tutorial is that its
+composition already works. Divergence should be a deliberate, stated choice, not a drift.
 
-Python full layouts place both items on the quiet y=40 baseline:
+## 7. What Every Post Shares
 
-- **Bottom-left:** source credit — "Data via nba.com", 8.5 pt Archivo regular, `FAINT`.
-- **Bottom-right:** watermark — `@chicagobullsdata`, 10.5 pt Archivo medium, `MUTED`,
-  right-aligned at x=1020.
+Visual outcomes, whichever tool composes the page:
 
-Every final page needs visible account authorship, and every data-bearing page needs its applicable
-source, qualification, and coverage. Canva narrative pages may move the watermark or citation to fit
-the composition, but they may not remove the information; authorship and analytical honesty must
-survive reposts and screenshots.
+1. `#FAF8F5` canvas, 1080×1350 (4:5). No other backgrounds, no textures.
+2. Red/black as the only *meaningful* colors — a thumbnail should read red + black + off-white before
+   the title is legible.
+3. Clarendon Narrow title, Yearbook Solid supporting headers, Helvetica Bold body, with deliberate
+   red emphasis.
+4. Visible authorship on every page; visible source, qualification, and coverage on every
+   data-bearing page. These may move to fit the composition but never disappear — analytical honesty
+   has to survive reposts and screenshots.
+5. **One idea per post.** The title states it; if the title needs "and," it's two posts.
+6. **Pretty *and* instantly legible.** The two-second bar rules out both ugly stat-dumps and
+   beautiful-but-inscrutable analytics. When a detail would help a nerd but confuse a casual fan, the
+   casual fan wins.
+7. **Take the structure, not the look.** Adopt formats from the best accounts, rendered in our
+   palette and type.
 
-For stat boards with qualification rules, use `craft.threshold_footer(qualification, coverage,
-source)` — one line joining threshold + coverage window + source, e.g. "Min. 20 games | 2025-26
-season through Jul 4 | data: stats.nba.com".
+## 8. Voice & Caption
 
-## 7. Annotation Grammar (two visual languages)
+The single owner of how the account sounds.
 
-Every marker or callout must **explain a bend in the data** — if the line doesn't turn
-there, it's trivia; cut it. Alternate emotional beats with factual anchors so the graphic
-never reads as a rant or a spec sheet.
+**On-graphic copy** is minimal. The analytical thesis, player names, and context live in the caption.
+On-chart annotations may carry a light "fan in the stands" voice — first-person, wry, a notch above
+meme-page — but the chart stays clean.
 
-**Factual event markers** — budget: ~1 hero line, at most 1 supporting.
-- Gray dashed vertical line: `MUTED`, 1.2 lw, dash pattern `(0, (4, 3))`.
-- Label: stacked, dated, muted — e.g. "TRADE DEADLINE" (9 pt Archivo bold) over
-  "Feb 5" (9 pt Archivo medium), right-aligned 8 px off the line.
-- **Fact rule:** anything printed on a graphic (dates, picks, trades, injuries) must be
-  verified — web-search anything past the model's knowledge cutoff; never draw a guessed
-  date.
+**The user writes the caption.** Offer at most one short line as raw material; never a multi-sentence
+draft unless asked. Both of the account's first two data-viz posts used the user's own one-liner plus
+hashtags (confirmed 2026-07-11).
 
-**Fan-voice callouts** — budget: 3–4.
-- 11 pt Archivo bold, `INK`, with a thin straight connector (`arrowstyle="-"`, `MUTED`,
-  1.0 lw) from text to the data point.
-- Voice: "fan in the stands" — first-person, wry, a notch above meme-page
-  ("5-0 start, we were so back", "Tank for Caleb begins"). Names/context/thesis live in
-  the IG caption, not on the graphic.
+Captions sound like a knowledgeable person who watches the Bulls: simple, direct, grounded in the
+actual basketball observation. **A plain factual caption is a successful result.** Preserve material
+qualifiers without turning the caption into methodology notes.
 
-## 8. Faces (headshots)
+Never add a hook, joke, fan slang, rhetorical question, or engagement bait to make copy feel
+distinctive. Use humor only when it's natural to the post or comes from the user. Never perform a
+social-media persona.
 
-The highest-stopping-power object on a graphic — use sparingly.
+## 9. Brand Identity
 
-- Circular crop via `craft._make_circular_headshot` / `craft.headshot_label`; a **red border
-  ring** (`border_color=(206, 17, 65)`, `border_frac≈0.045`) means "the payoff."
-- Position so geometry does the pointing (e.g. the data line ends at the face); the
-  payoff face can go unlabeled.
-- Missing headshots render as a neutral placeholder disc — builders never break.
-- **Image rule:** NBA CDN headshots for new rookies are often the gray silhouette
-  (~12 KB file = silhouette; real ones are 50–200 KB) — check visually. Fall back to the
-  team's own CDN (nba.com/bulls article images are clean/unwatermarked); crop square
-  around the face for the circular helper. Flag wire-photo licensing to the user before
-  using non-NBA sources.
+- **Handle:** `@chicagobullsdata` · display name "Chicago Bulls + Data Viz"
+- **Watermark:** text-only (`@chicagobullsdata`), set in Canva.
+- **Trademark guardrail:** never trace, recolor, or closely imitate the official Bulls mark. Riffing
+  on red/black as a fan account is fine; the logo itself is team IP.
+- **Ruled out:** "CBD" as a lettermark; a player photo as the long-term profile picture.
+- **Parked (2026-07-09):** positioning line and bio — leading candidate "Chicago Bulls, charted.";
+  logo/avatar mark; profile picture; 9:16 Story variants.
 
-## 9. Executable House Layer and Component Library
-
-### House foundation (`bulls/graphics/house.py`)
-
-`DESIGN.md` is the canonical visual-system record; `house.py` is the small Matplotlib implementation
-of the rules shared by Python-composed posts. It owns the palette and canvas themes (`house.THEMES`;
-every draw function takes an optional `theme` and defaults to `jersey`), Academic M54/Archivo font
-files, 1080×1350 canvas, 60 px margins, fitted segmented title, tick-separated subtitle, optional
-kicker, source/watermark footer pair, and 150/300-DPI export contract. Canva-composed posts mirror
-these decisions manually and preserve their downloaded final pages in the repository.
-
-Use the house layer for new posts before drawing format-specific content. Do not put charts, tables,
-story copy, or post-specific layout in it. Those stay with the prototype until a second real post
-proves that the grammar repeats.
-
-### Craft components (`bulls/graphics/craft.py`)
-
-Shared F5-derived helpers — reach for these before hand-rolling:
-
-- `gradient_bar(ax, y, value, vmin, vmax, ...)` — horizontal stat bar, fill sampled from
-  `MAGNITUDE_CMAP` at the value's normalized position.
-- `stacked_label(ax, x, y, primary, secondary, ...)` — bold name over muted context line;
-  names >16 chars collapse to "F. Lastname" everywhere.
-- `threshold_footer(fig, qualification, coverage, source)` — the fairness-guardrail footer.
-- `headshot_label(ax, image_path, x, y, radius, border_color)` — circular headshot with
-  placeholder fallback.
-
-### Report-card component values
-
-The Summer League report established the current component dimensions used by
-`scripts/prototypes/summer_league_report.py`:
-
-- Standard stat chip: 118×52 px, radius 10 px.
-- Supporting rail card: 250×80 px, radius 12 px; neutral profile and distribution cards use the
-  stronger borderless blush `#F3E1E7` against the pale panel. Profile values sit lower in the card
-  at 21 pt so their top padding and label spacing remain balanced.
-- Player story row: `PLAYER_ROW_HEIGHT = 173` px.
-- Full-slide player identity: 58 px headshot radius with warm-neutral stat chips; the evidence panel
-  uses a borderless pale blush field so the jersey canvas remains the dominant surface.
-- Featured-player tables use 52 px headshots, 16 px body type, and 11 px row padding through four
-  rows. A five-player table compacts to 46 px headshots, 15 px body type, and 7 px row padding so it
-  preserves footer clearance rather than shrinking the full table after composition.
-- Court lines: `#CFCFCF` on white, `#C6C6C6` at slide scale, and `COURT_LINE`
-  (`#C9A8B5`) on pale panels.
-
-These are component defaults, not reasons to force every post into the report-card format.
-Promote the prototype helpers into `craft.py` only when a second post needs the same grammar.
-
-Table-format posts render via `plottable` (see `scripts/prototypes/f5_lineup_table.py`).
-F5 technique references: `docs/reference/f5-technique-notes.html`.
-
-## 10. Grid Rules (what every post must share)
-
-The grid viewed as a whole is the brand (the Half Court Mindset lesson: the template
-*is* the identity). These are visual outcomes, regardless of whether Python or Canva performs the
-final composition. Every feed post shares:
-
-1. A sanctioned canvas theme (§2), 4:5 portrait (§4) — jersey (warm off-white) is the
-   default; white, newsprint, blackout, and hardwood are the only alternates. No other
-   colors, no textures. The theme is a per-post choice made at mock time, not a
-   per-element decoration.
-2. A recognizable title hierarchy (§5): collegiate display character, restrained supporting type,
-   and deliberate red emphasis. Python full layouts use the fixed house header; Canva narrative
-   pages may adapt its arrangement without inventing a different brand.
-3. Red/black as the only *meaningful* colors (§2) — a thumbnail should read as
-   red + black + white even before the title is legible.
-4. Visible authorship on every page and visible source/qualification/coverage on every data-bearing
-   page (§6). Python uses the footer pair; Canva may adapt placement, not remove the information.
-5. One idea per post — the title states it; if the title needs "and," it's two posts.
-
-## 11. Voice & Caption
-
-- On-graphic copy is minimal and in the fan voice (§7). The analytical thesis, player
-  names, and context live in the **IG caption**, which the user writes or heavily owns.
-- Captions sound like a knowledgeable person who watches the Bulls: simple, direct, and
-  grounded in the actual basketball observation. A plain factual caption is a successful result.
-- Do not add a hook, joke, fan slang, rhetorical question, or engagement bait merely to make the
-  copy feel distinctive. Use humor only when it is natural to the post or explicitly comes from
-  the user; never perform a social-media persona.
-- Save the approved caption on the idea-catalog card when available. Hashtags, alt text, and Story
-  copy are optional supporting pieces, not mandatory additions.
+**Why the template carries the brand.** A survey of three branding models — Half Court Mindset (the
+template *is* the brand), Orange Ball (design-studio identity), Owen Phillips / The F5 (person up
+front, product badge on the work) — landed on the first. `@chicagobullsdata` is a thing, not a
+person, so a consistent page template is the identity.
 
 ---
 
-## Open Questions (rebrand — all parked 2026-07-09, resume any session)
+## Legacy: Python Full-Layout Posts
 
-Settled this round: grid rules codified (§10); on-graphic brand presence stays
-footer-watermark-only (no masthead — the header already works hard; revisit when a
-logo exists).
+`house.py` still contains the full-page system used by earlier posts: `new_canvas`, `draw_header`,
+`draw_fitted_title`, `draw_subtitle`, `draw_jersey_stripe`, `draw_footer`, `save_post`, with Academic
+M54 titles and Archivo body (`display_font()` / `body_font()`). Reference implementation:
+`scripts/prototypes/season_shape_post.py`.
 
-- [ ] Positioning line + bio — leading candidate: **"Chicago Bulls, charted."**
-      (already the STRATEGY.md one-liner) with name field "Chicago Bulls Data" and a
-      one-line descriptor; user deferred the decision, not the direction.
-- [ ] Logo / avatar mark — five sketched directions rendered at full, avatar, feed, and
-      watermark scale; candidate sheet: `scripts/prototypes/brand_logo_candidates.py`
-- [ ] Profile picture — depends on the logo (player photo ruled out long-term)
-- [ ] Watermark logo lockup — depends on the logo
-- [ ] Story/reel variants of the canvas (9:16) — needed?
+**This is not the path for new posts.** It's documented so existing prototypes stay maintainable:
 
-## Decision Log
+- 1080×1350, 60 px side margins, full-bleed axes, iterate 150 DPI / export 300 DPI.
+- Jersey stripe: full-bleed 16 px band, pinstripes band 4 / trim_a 2 / band 4 / trim_b 2 / band 4.
+- Title auto-fits to W−120 with a red outer stroke (7 pt) and white gap (3.5 pt); subtitle at
+  y = H−168 with drawn tick separators; kicker at y = H−206.
+- Footer pair on the y=40 baseline: `Data via nba.com` bottom-left (`FAINT`), `@chicagobullsdata`
+  bottom-right (`MUTED`, x=1020).
+- ⚠️ Academic M54 is licensed **non-commercial only** — license it or swap to Bevan if that changes.
 
-- **2026-07-22** — Canva assembly adopted as a supported production path after the Sticky Stats
-  pilot. Python remains the source of analytical truth and either renders the full page or supplies
-  verified chart/data assets; Canva may own framing and editorial copy. The downloaded 1080×1350
-  pages are the approved Canva artifact and return to `docs/mocks/`. `DESIGN.md` remains canonical;
-  Canva's Brand Kit is a manually checked mirror.
-- **2026-07-13** — Source credit standardized to `Data via nba.com`: a concise attribution
-  to the official provider with only the opening `D` capitalized. Updated the shared footer
-  default and rendered companion.
-- **2026-07-13** — Fifth canvas theme `jersey` added and **adopted as the default** (§2): the
-  design-system.html page's own warm off-white (`#FAF8F5`) with the standard red accent and
-  stripe. User preferred it over plain white on the mock-post render; white stays a sanctioned
-  alternate. All house draw functions now default to jersey (`house.DEFAULT_THEME`).
-  `scripts/prototypes/mock_post_demo.py` gained `--theme <name>` to preview any canvas theme.
-- **2026-07-13** — Outlined "jersey lettering" title adopted as the default (user pick from a
-  side-by-side mock): red outer stroke + white gap path effects on the fitted Academic M54
-  title (§5 item 1). `house.OUTLINED_TITLE` is the global switch; `outlined=False` per post.
-  `scripts/prototypes/mock_post_demo.py` added as a fake-data design-preview harness that
-  renders both variants.
-- **2026-07-13** — Canvas themes promoted from doc chrome to render options: the white canvas
-  became the default of four sanctioned themes (`white`, `newsprint`, `blackout`, `hardwood` —
-  §2 Canvas themes), implemented as `house.Theme`/`house.THEMES` with every house draw function
-  taking an optional `theme`. The theme is chosen per post during the Clarification Gate. §10
-  rule 1 relaxed accordingly; "no other colors, no textures" still holds. Doc-chrome palettes on
-  design-system.html supplied canvas/ink/muted/accent/stripe values; quiet-tier tokens
-  (`faint`/`rule`/`tick`/`grid`) are first-pass blends open to visual tuning.
-- **2026-07-13** — Jersey-trim stripe promoted from a design-system.html page decoration to
-  part of the graphics themselves: a full-bleed 16 px red band with white/black pinstripes
-  at the top of every canvas (§5 item 0, `house.draw_jersey_stripe`), default-on in
-  `draw_header`.
-- **2026-07-13** — Token-integrity pass: `tests/test_design_tokens.py` now fails the suite when
-  the hex values in this file, `design-system.html`, or `bulls/config.py` diverge from
-  `house.py` (the docs stay hand-authored; the test replaces manual sync discipline).
-  `bulls/config.py` legacy RGB tuples aligned to house tokens (`BULLS_BLACK` was `#000000`;
-  off-system green/red pair removed). `_make_circular_headshot` moved from legacy `feed.py`
-  into `craft.py` so the current component layer no longer depends on the legacy module.
-- **2026-07-12** — Python remains the center of the graphics pipeline. Added
-  `bulls/graphics/house.py` as the executable implementation of settled cross-post rules; Season
-  Shape and Summer League now consume it with pixel-identical final renders. Summer League also
-  separates display-ready slide data from drawing so another renderer can be compared without
-  changing the analysis. An HTML/CSS/SVG version of the team slide was tested and not adopted: the
-  user preferred the original Matplotlib output, so the executable spike was removed. Revisit only
-  if a future layout-heavy format provides a clearer reason.
-- **2026-07-12** — `design-system.html` enhancement completed: fitted masthead, jersey-trim
-  chrome, proportional/copyable palette, sticky section navigation, interactive component
-  demonstrations, side-gutter anatomy callouts, varied documentation rhythm, and mobile/
-  accessibility fixes. These are documentation-interface treatments; the two-layer rule
-  remains unchanged and graphic-spec demos still use fixed tokens on white.
-- **2026-07-12** — Design-system enhancement decisions: retain all four documentation
-  themes; use side-gutter callout lines instead of solid floating pins on real-render
-  anatomies; absorb durable report-card component values into this canonical document.
-- **2026-07-12** — `design-system.html` rebuilt as a hand-authored static page (v2) after a
-  Claude Design exploration round. Doc-chrome themes adopted (Jersey default + Newsprint,
-  Blackout, Hardwood Red switcher) — chrome-only: spec demos always render on white with the
-  real tokens and fonts. **Archivo confirmed as the graphics body face**; Barlow Semi Condensed
-  is the Jersey theme's page font only (a Claude Design export had wrongly documented it as the
-  graphics face). §09 anatomies now embed the real renders from `docs/mocks/`. The loose
-  Claude Design exports ("Bulls Design System.html", "Direction Options.html") are absorbed
-  and slated for removal.
-- **2026-07-16** — Summer League Report stat ladder settled: the cover table closes with the
-  basic +/- while the detailed player slides carry NETRTG (the "advanced" stat belongs with the
-  deeper view), and TS% was replaced by plain FG% on both surfaces (cover table column placed
-  right after FGM/A) — FG% ignores free throws, so the 2026 one-free-throw rule cannot inflate
-  a shooting number on the graphic. Player-slide shot charts gained fuller court geometry
-  (free-throw circle with dashed lower half, restricted-area arc, backboard) and sit closer
-  under the SHOT CHART label.
-- **2026-07-13** — Strong card-rail emphasis became optional and meaning-driven rather than
-  automatic. The Summer League player slide keeps every shot-profile card neutral; TS% remains
-  visible but does not receive a solid-red payoff treatment. A red payoff card is still available
-  when a future composition has a deliberately chosen headline number.
-- **2026-07-11** — F5 emphasis grammar refined on the first live Summer League Report: it can hold
-  for **card rails** (at most one solid-red payoff card while siblings stay quiet) but was
-  **rejected for dense stat tables** — the user removed the magnitude-colored column entirely, and
-  the shipped table is a clean zebra-striped box score sorted by the story stat (points, so the
-  headline player tops the table) with no emphasized column. Embedded tables may be rendered with
-  Great Tables to a cropped PNG and composited onto the white canvas; the canvas stays white
-  (F5's cream background considered and not adopted — §10 grid rule).
-- **2026-07-10** — Caption voice clarified: knowledgeable Bulls observer, simple and direct;
-  manufactured hooks, humor, slang, and engagement bait ruled out. Supporting posting copy is optional.
-- **2026-07-09** — Rebrand round closed: grid rules codified (§10); footer watermark
-  confirmed as the only on-graphic brand element for now. Tagline/bio parked with
-  "Chicago Bulls, charted." as the leading candidate. Logo work parked earlier same day.
-- **2026-07-09** — Reference-account survey (Half Court Mindset, Orange Ball, Owen
-  Phillips) captured in §1. Logo/profile-pic/watermark-lockup exploration parked;
-  rebrand continues on positioning line, bio, on-graphic brand presence, grid rules.
-  "CBD" initials ruled out as a lettermark; trademark guardrail added.
-- **2026-07-09** — File created: design system extracted from AGENTS.md and expanded with
-  exact values from `season_shape_post.py` + `craft.py`. Rebrand exploration opened.
-- **2026-07-09** — Debut post shipped; type (Academic M54 + Archivo), palette, header/footer
-  patterns, annotation grammar, and voice established with the user.
+Report-card component values from the Summer League report (`PLAYER_ROW_HEIGHT = 173` px, 118×52 stat
+chips, 250×80 rail cards, `COURT_LINE` `#C9A8B5` on pale panels) live with that prototype.
+
+`design-system.html` documents this legacy system and has not been rebuilt for the Canva-first model.
+
+---
+
+## Settled — Don't Re-Litigate
+
+- **HTML/CSS/SVG rendering was tested and rejected** (2026-07-12) for composing graphics; the user
+  preferred the Matplotlib output and the spike was removed. Distinct from the *live* Great Tables
+  path, which legitimately renders HTML through `nokap.from_html` and composites the PNG.
+- **F5 magnitude-colored columns were rejected for dense stat tables** (2026-07-11) — the shipped
+  table is clean zebra stripes sorted by the story stat. Emphasis stays available for a single
+  deliberate payoff element (2026-07-13: strong emphasis became optional and meaning-driven).
+- **TS% was replaced by plain FG%** on Summer League surfaces (2026-07-16). FG% ignores free throws,
+  so the 2026 one-free-throw rule can't inflate a shooting number.
+- **"CBD" was ruled out as a lettermark** (2026-07-09).
+- **Canva became the assembly surface** (adopted 2026-07-22 after the Sticky Stats pilot; Brand Kit
+  took over post typography 2026-07-25). Python stays the source of analytical truth.

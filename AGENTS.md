@@ -12,7 +12,7 @@ metrics, qualifications, sources, and the final downloaded pages.
 | Audience, metrics, distribution | `STRATEGY.md` |
 | Any visual, mock, or post iteration | `DESIGN.md`, then `POSTING_WORKFLOW.md` |
 | Editorial direction and fairness guardrails | `bulls-content-playbook.html` |
-| The shelf of post ideas | `idea-catalog.html` |
+| The shelf of post ideas | the Notion `chicagobullsdata posts` database, then `idea-catalog.html` |
 | A create / promote / review stage | the matching skill in `.agents/skills/` |
 | Fetchers, analysis, graphics code, scripts, tests | `DEVELOPMENT.md` |
 
@@ -29,6 +29,16 @@ metrics, qualifications, sources, and the final downloaded pages.
 5. After completing and verifying work, show the user the result and wait for explicit approval
    before committing or pushing. Approval covers the work under review, not later work. Work on
    `main` unless the user asks for a branch.
+
+## Notion
+
+The user's Notion `chicagobullsdata posts` database is the live idea catalog and post log — one page
+per post, `Status` moving `Not started → In progress → Mocked → Posted`, and a `Canva` URL property
+holding the design's edit link. Read it when picking up or scoping an idea, and check it before
+assuming a post's state. The page body carries the working detail — what the chart shows, thresholds,
+what was rejected and why, build notes — so record those there as work lands, and keep the Canva link
+in the property rather than as a bookmark block. `idea-catalog.html` remains the repo-side shelf of
+worked-up briefs; Notion is where an idea starts and where its status stays current.
 
 ## Instagram and X Access
 

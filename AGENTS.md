@@ -18,8 +18,9 @@ metrics, qualifications, sources, and the final downloaded pages.
 
 ## Defaults
 
-1. One post idea at a time. Favor analysis quality over presentation polish, and keep solutions
-   simple — no speculative architecture, heavy export pipelines, or new frameworks unless asked.
+1. One post idea per task and working tree. Favor analysis quality over presentation polish, and
+   keep solutions simple — no speculative architecture, heavy export pipelines, or new frameworks
+   unless asked.
 2. Python builds the chart, Canva builds the page. Don't add titles, headers, or page furniture to a
    chart asset; don't recompute anything in Canva. The Python full-layout system is legacy
    (`DESIGN.md`) — maintain it, don't build new posts on it.
@@ -27,8 +28,12 @@ metrics, qualifications, sources, and the final downloaded pages.
    The user usually adds them manually in Canva.
 4. `output/` is disposable only after approved finals are preserved in `docs/mocks/`.
 5. After completing and verifying work, show the user the result and wait for explicit approval
-   before committing or pushing. Approval covers the work under review, not later work. Work on
-   `main` unless the user asks for a branch.
+   before committing or pushing. Approval covers the work under review, not later work.
+6. Any post task that changes repo files automatically gets a temporary branch and linked worktree;
+   the user does not need to request it or report parallel work. Keep the primary checkout on `main`
+   at all times — never switch it to a post branch. Follow `DEVELOPMENT.md` for the fixed worktree
+   location, shared environment, integration, and safe cleanup. Preserve and report any dirty or
+   unmerged worktree; remove only work already represented on `main`.
 
 ## Notion
 

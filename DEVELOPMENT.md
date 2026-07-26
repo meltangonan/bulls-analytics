@@ -7,6 +7,36 @@ Code lives in `bulls/data` (NBA API wrappers), `bulls/analysis` (stat functions)
 `bulls/graphics` (`house.py` tokens/themes/fonts, `craft.py` shared helpers, `feed.py` legacy zone
 builders). Read the modules for signatures — this file covers only what the code can't tell you.
 
+## Post Worktrees
+
+Any post task that changes repo files starts in its own linked worktree; the user does not need to
+request isolation. The primary checkout stays on `main` and is the integration copy — never switch
+it to a post branch. Use the visible sibling directory
+`../bulls-analytics-worktrees/<agent>-<post-slug>` and a matching temporary branch.
+
+Before editing, fetch and fast-forward a clean primary `main`, inspect `git worktree list`, and stop
+rather than switching, cleaning, or discarding unexpected work. Create the post worktree from that
+current `main`. Copy the primary checkout's ignored `cache/` into the worktree when present: the
+small snapshot avoids duplicate NBA requests while keeping concurrent cache writes isolated. Do not
+copy `venv/`; run scripts with the primary checkout's `venv/bin/python`. `./run_tests.sh`
+automatically finds that shared interpreter while forcing imports to resolve from the current
+worktree.
+
+Keep post-specific implementation, tests, outputs, and any required shared code or owner-doc changes
+in the worktree. Defer append-only indexes such as `idea-catalog.html` and
+`scripts/prototypes/README.md` until integration. After the user approves committing or pushing:
+
+1. Commit only the reviewed implementation in the post worktree, update the primary `main`, and
+   rebase the post branch onto it. Resolve real shared-code conflicts there.
+2. Add the deferred index updates in the rebased worktree, validate, and amend them into the same
+   reviewed post commit when practical.
+3. Inspect the staged/final diff and commit file list; never use `git add -A` or `git commit -am`.
+4. Fast-forward the primary `main` to the post branch, push only with explicit approval, and prove
+   local/remote SHA parity.
+5. After the final is preserved in `docs/mocks/`, remove the worktree and delete its now-merged
+   branch. At the next task start, prune missing worktree metadata and clean any clearly merged
+   leftovers; preserve and report anything dirty, unmerged, or unclear.
+
 ## Conventions
 
 - Keep reusable fetching and analysis in `bulls/data` and `bulls/analysis`; reusable builders in

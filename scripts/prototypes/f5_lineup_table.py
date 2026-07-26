@@ -1,12 +1,15 @@
-"""Prototype: F5-style lineup table — Bulls two-man combos by net rating.
+"""Build the 2025-26 Bulls most-used two-player lineup table.
 
-The "Doubling Up" format from The F5 restyled to the house look: most-used
-Bulls 2-man lineups with minutes and off/def/net ratings, net rating
-color-scaled around zero. Fetches live lineup data via bulls.data
-(network required), renders 1080x1350 at 300 DPI (2160x2700 export).
-
-Change TOP_N / MIN_MINUTES / column set below for future topics.
+NBA.com owns the data: the ten Bulls pairs are selected by total minutes
+together, then displayed with the team's offensive, defensive, and net rating
+while both players were on court. The script writes the validated analytical
+table, renders one transparent chart asset for Canva, and prints the exact page
+copy that belongs around the chart.
 """
+
+from __future__ import annotations
+
+import argparse
 import sys
 from datetime import date
 from pathlib import Path
@@ -17,130 +20,424 @@ sys.path.insert(0, str(_REPO))
 import matplotlib
 
 matplotlib.use("Agg")
+
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
-from plottable import ColumnDefinition, Table
+import pandas as pd
+from matplotlib.patches import FancyBboxPatch, Rectangle
 
 from bulls.config import CURRENT_SEASON
 from bulls.data import get_lineup_stats
-from bulls.graphics.craft import FAINT, INK, MUTED, threshold_footer
-from bulls.graphics.feed import (
-    DEFAULT_DPI,
-    INSTAGRAM_FEED_HEIGHT_PX,
-    INSTAGRAM_FEED_WIDTH_PX,
-    _fp_body,
-    _fp_title,
-    save_feed_post,
+from bulls.graphics.craft import MAGNITUDE_CMAP
+from bulls.graphics.house import (
+    DEFAULT_THEME,
+    DRAFT_DPI,
+    HEADSHOT_CACHE,
+    ensure_headshots,
+    export_dpi,
+    helvetica,
+    square_headshot_label,
 )
 
-OUTPUT_DIR = _REPO / "output" / "feed"
 
-MIN_MINUTES = 100
+SEASON = CURRENT_SEASON
 TOP_N = 10
-EXPORT_DPI = 300  # 2160x2700
+OUT = _REPO / "output" / "feed"
 
-TITLE = "Bulls Two-Man Lineups"
-SUBTITLE = f"Most-used pairs and their net rating | {CURRENT_SEASON} Season"
-COVERAGE = f"{CURRENT_SEASON} regular season"
+CHART_WIDTH = 1080
+CHART_HEIGHT = 1150
 
-# Diverging: red for negative net rating, neutral at zero, green for positive.
-NET_CMAP = LinearSegmentedColormap.from_list(
-    "net_diverging", ["#B01030", "#F5F1EA", "#1E6E3C"]
-)
-
-
-def net_color(norm: TwoSlopeNorm):
-    def _color(value: float):
-        return NET_CMAP(norm(value))
-    return _color
+REQUIRED_COLUMNS = [
+    "GROUP_ID",
+    "GROUP_NAME",
+    "MIN",
+    "OFF_RATING",
+    "DEF_RATING",
+    "NET_RATING",
+]
 
 
-def build_lineup_table(lineups) -> plt.Figure:
-    rows = lineups.sort_values("MIN", ascending=False).head(TOP_N).copy()
-
-    # Two-line lineup label: one player per line.
-    rows["combo"] = rows["GROUP_NAME"].str.replace(" - ", "\n", regex=False)
-    table_df = rows[["combo", "GP", "MIN", "OFF_RATING", "DEF_RATING", "NET_RATING"]]
-    table_df = table_df.set_index("combo")
-
-    figsize = (INSTAGRAM_FEED_WIDTH_PX / DEFAULT_DPI, INSTAGRAM_FEED_HEIGHT_PX / DEFAULT_DPI)
-    fig = plt.figure(figsize=figsize, facecolor="#FFFFFF")
-
-    fig.text(0.055, 0.945, TITLE, ha="left", va="top",
-             fontsize=42, color=INK, fontproperties=_fp_title(weight="bold"))
-    fig.text(0.055, 0.868, SUBTITLE, ha="left", va="top",
-             fontsize=17, color=MUTED, fontproperties=_fp_body(weight="medium"))
-
-    ax = fig.add_axes([0.045, 0.08, 0.91, 0.72])
-    ax.set_facecolor("#FFFFFF")
-
-    limit = max(abs(table_df["NET_RATING"].min()), abs(table_df["NET_RATING"].max()), 1.0)
-    norm = TwoSlopeNorm(vmin=-limit, vcenter=0.0, vmax=limit)
-
-    body_font = _fp_body(weight="medium")
-    bold_font = _fp_body(weight="bold")
-
-    Table(
-        table_df,
-        ax=ax,
-        textprops={"fontsize": 12, "color": INK, "fontproperties": body_font, "ha": "center"},
-        row_dividers=True,
-        row_divider_kw={"color": "#DDDDDD", "linewidth": 0.8},
-        col_label_divider_kw={"color": INK, "linewidth": 1.2},
-        footer_divider=True,
-        footer_divider_kw={"color": "#DDDDDD", "linewidth": 0.8},
-        column_border_kw={"linewidth": 0},
-        column_definitions=[
-            ColumnDefinition(
-                "combo", title="LINEUP", width=2.1,
-                textprops={"ha": "left", "fontsize": 13, "fontproperties": bold_font},
-            ),
-            ColumnDefinition("GP", title="GP", width=0.6,
-                             formatter="{:.0f}",
-                             textprops={"color": MUTED, "fontproperties": body_font}),
-            ColumnDefinition("MIN", title="MIN", width=0.8,
-                             formatter="{:.0f}",
-                             textprops={"color": MUTED, "fontproperties": body_font}),
-            ColumnDefinition("OFF_RATING", title="OFF RTG", width=0.9,
-                             formatter="{:.1f}",
-                             textprops={"color": MUTED, "fontproperties": body_font}),
-            ColumnDefinition("DEF_RATING", title="DEF RTG", width=0.9,
-                             formatter="{:.1f}",
-                             textprops={"color": MUTED, "fontproperties": body_font}),
-            ColumnDefinition("NET_RATING", title="NET RTG", width=0.95,
-                             formatter=lambda x: f"{x:+.1f}",
-                             cmap=net_color(norm),
-                             textprops={"fontproperties": bold_font, "fontsize": 13}),
-        ],
-    )
-
-    threshold_footer(
-        fig,
-        f"Min. {MIN_MINUTES} minutes together",
-        COVERAGE,
-        "data: NBA.com/Stats",
-    )
-    return fig
+def _split_pair(value: str, separator: str) -> tuple[str, str]:
+    parts = [part.strip() for part in str(value).split(separator) if part.strip()]
+    if len(parts) != 2:
+        raise ValueError(f"Expected one two-player pair, received: {value}")
+    return parts[0], parts[1]
 
 
-def main():
-    lineups = get_lineup_stats()
+def _player_label(value: str) -> str:
+    """Use the surname in compact horizontal pair cells."""
+    return str(value).split()[-1].upper()
+
+
+def prepare_lineup_rows(
+    lineups: pd.DataFrame,
+    top_n: int = TOP_N,
+) -> pd.DataFrame:
+    """Validate and select the Bulls' most-used two-player combinations."""
+    missing = [column for column in REQUIRED_COLUMNS if column not in lineups]
+    if missing:
+        raise ValueError(f"Lineup data is missing columns: {', '.join(missing)}")
     if lineups.empty:
-        sys.exit("No lineup data returned — NBA API unreachable?")
-    qualified = lineups[lineups["MIN"] >= MIN_MINUTES].reset_index(drop=True)
-    if qualified.empty:
-        sys.exit(
-            f"{len(lineups)} lineups returned but none played {MIN_MINUTES}+ minutes "
-            "together — early in the season? Lower MIN_MINUTES."
+        raise ValueError("NBA.com returned no Bulls two-player lineup data.")
+    if lineups["GROUP_ID"].duplicated().any():
+        duplicates = lineups.loc[
+            lineups["GROUP_ID"].duplicated(keep=False), "GROUP_ID"
+        ].tolist()
+        raise ValueError(f"Duplicate two-player group IDs: {duplicates}")
+    if len(lineups) < top_n:
+        raise ValueError(
+            f"NBA.com returned {len(lineups)} Bulls pairs; {top_n} are required."
         )
-    print(qualified.sort_values("MIN", ascending=False).head(TOP_N).to_string())
 
-    fig = build_lineup_table(qualified)
-    stamp = date.today().isoformat()
-    path = save_feed_post(fig, OUTPUT_DIR / f"{stamp}-f5-lineup-table.png", dpi=EXPORT_DPI)
-    print(f"Saved {path}")
+    rows = (
+        lineups.sort_values(
+            ["MIN", "GROUP_NAME"],
+            ascending=[False, True],
+            kind="stable",
+        )
+        .head(top_n)
+        .copy()
+        .reset_index(drop=True)
+    )
+
+    numeric = ["MIN", "OFF_RATING", "DEF_RATING", "NET_RATING"]
+    if rows[numeric].isna().any().any():
+        raise ValueError("A selected lineup is missing minutes or a rating.")
+
+    published_delta = (rows["OFF_RATING"] - rows["DEF_RATING"]).round(1)
+    if not np.allclose(
+        published_delta,
+        rows["NET_RATING"],
+        atol=0.11,
+        rtol=0,
+    ):
+        raise ValueError(
+            "A selected net rating does not reconcile to offensive minus "
+            "defensive rating within NBA.com's published rounding."
+        )
+
+    if not rows["MIN"].is_monotonic_decreasing:
+        raise ValueError("Selected lineups are not ordered by minutes.")
+
+    names = rows["GROUP_NAME"].map(lambda value: _split_pair(value, " - "))
+    ids = rows["GROUP_ID"].map(lambda value: _split_pair(value, "-"))
+    rows["PLAYER_1_NAME"] = names.map(lambda pair: pair[0])
+    rows["PLAYER_2_NAME"] = names.map(lambda pair: pair[1])
+    rows["PLAYER_1_LABEL"] = rows["PLAYER_1_NAME"].map(_player_label)
+    rows["PLAYER_2_LABEL"] = rows["PLAYER_2_NAME"].map(_player_label)
+    rows["PLAYER_1_ID"] = ids.map(lambda pair: int(pair[0]))
+    rows["PLAYER_2_ID"] = ids.map(lambda pair: int(pair[1]))
+    return rows
+
+
+def cache_selected_headshots(rows: pd.DataFrame) -> None:
+    """Ensure every selected player has a cached NBA CDN portrait."""
+    player_ids = pd.unique(
+        pd.concat(
+            [rows["PLAYER_1_ID"], rows["PLAYER_2_ID"]],
+            ignore_index=True,
+        )
+    )
+    ensure_headshots(player_ids)
+
+
+def write_analytical_table(rows: pd.DataFrame, snapshot_date: str) -> Path:
+    """Write the exact values rendered in the chart."""
+    table = rows[
+        [
+            "GROUP_ID",
+            "GROUP_NAME",
+            "MIN",
+            "OFF_RATING",
+            "DEF_RATING",
+            "NET_RATING",
+        ]
+    ].copy()
+    table["MIN"] = table["MIN"].round(1)
+    for column in ["OFF_RATING", "DEF_RATING", "NET_RATING"]:
+        table[column] = table[column].round(1)
+
+    path = OUT / f"{snapshot_date}-bulls-two-man-lineups.csv"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    table.to_csv(path, index=False)
+    return path
+
+
+def render_chart(
+    rows: pd.DataFrame,
+    snapshot_date: str,
+    final: bool = False,
+) -> Path:
+    """Render the transparent F5-style table for Canva assembly."""
+    theme = DEFAULT_THEME
+    fig = plt.figure(
+        figsize=(CHART_WIDTH / DRAFT_DPI, CHART_HEIGHT / DRAFT_DPI)
+    )
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, CHART_WIDTH)
+    ax.set_ylim(0, CHART_HEIGHT)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.patch.set_alpha(0)
+
+    left = 20
+    right = CHART_WIDTH - 20
+    header_y = 1107
+    header_rule_y = 1065
+    row_height = 104
+    first_row_y = 1012
+
+    columns = {
+        "PAIR": (28, "left"),
+        "MIN": (510, "center"),
+        "OFF RTG": (660, "center"),
+        "DEF RTG": (810, "center"),
+        "NET RTG": (1000, "center"),
+    }
+
+    for label, (x, alignment) in columns.items():
+        ax.text(
+            x,
+            header_y,
+            label,
+            ha=alignment,
+            va="center",
+            fontsize=14,
+            color=theme.ink,
+            fontproperties=helvetica("bold"),
+        )
+    ax.plot(
+        [left, right],
+        [header_rule_y, header_rule_y],
+        color=theme.ink,
+        lw=2.2,
+    )
+
+    net_min = float(rows["NET_RATING"].min())
+    net_max = float(rows["NET_RATING"].max())
+    net_span = net_max - net_min
+
+    for index, row in rows.iterrows():
+        y = first_row_y - index * row_height
+        divider_y = y - row_height / 2
+
+        if index % 2:
+            ax.add_patch(
+                Rectangle(
+                    (left, divider_y + 4),
+                    right - left,
+                    row_height - 8,
+                    facecolor="#F5F1EC",
+                    edgecolor="none",
+                    zorder=-1,
+                )
+            )
+
+        ax.text(
+            132,
+            y,
+            row["PLAYER_1_LABEL"],
+            ha="right",
+            va="center",
+            fontsize=12,
+            color=theme.ink,
+            fontproperties=helvetica("bold"),
+        )
+        square_headshot_label(
+            ax,
+            HEADSHOT_CACHE / f"{int(row['PLAYER_1_ID'])}.png",
+            172,
+            y,
+            half_size=36,
+            zorder=3,
+        )
+        ax.text(
+            323,
+            y,
+            row["PLAYER_2_LABEL"],
+            ha="right",
+            va="center",
+            fontsize=12,
+            color=theme.ink,
+            fontproperties=helvetica("bold"),
+        )
+        square_headshot_label(
+            ax,
+            HEADSHOT_CACHE / f"{int(row['PLAYER_2_ID'])}.png",
+            365,
+            y,
+            half_size=36,
+            zorder=3,
+        )
+        ax.text(
+            columns["MIN"][0],
+            y,
+            f"{row['MIN']:,.0f}",
+            ha="center",
+            va="center",
+            fontsize=15,
+            color=theme.muted,
+            fontproperties=helvetica(),
+        )
+        ax.text(
+            columns["OFF RTG"][0],
+            y,
+            f"{row['OFF_RATING']:.1f}",
+            ha="center",
+            va="center",
+            fontsize=15,
+            color=theme.muted,
+            fontproperties=helvetica(),
+        )
+        ax.text(
+            columns["DEF RTG"][0],
+            y,
+            f"{row['DEF_RATING']:.1f}",
+            ha="center",
+            va="center",
+            fontsize=15,
+            color=theme.muted,
+            fontproperties=helvetica(),
+        )
+
+        net_fraction = (
+            1.0
+            if net_span <= 0
+            else (net_max - float(row["NET_RATING"])) / net_span
+        )
+        net_fill = MAGNITUDE_CMAP(net_fraction)
+        net_text = "#FFFFFF" if net_fraction >= 0.46 else theme.ink
+        ax.add_patch(
+            FancyBboxPatch(
+                (columns["NET RTG"][0] - 59, y - 32),
+                118,
+                64,
+                boxstyle="round,pad=0,rounding_size=10",
+                facecolor=net_fill,
+                edgecolor="none",
+                zorder=1,
+            )
+        )
+        ax.text(
+            columns["NET RTG"][0],
+            y,
+            f"{row['NET_RATING']:+.1f}",
+            ha="center",
+            va="center",
+            fontsize=15.5,
+            color=net_text,
+            fontproperties=helvetica("bold"),
+            zorder=2,
+        )
+
+        ax.plot(
+            [left, right],
+            [divider_y, divider_y],
+            color=theme.rule,
+            lw=1.1,
+            zorder=0,
+        )
+
+    path = OUT / f"{snapshot_date}-bulls-two-man-lineups-chart.png"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path, dpi=export_dpi(final), transparent=True)
     plt.close(fig)
+    return path
+
+
+def canva_copy_block(rows: pd.DataFrame) -> str:
+    """Return the exact copy surrounding this chart on the Canva page."""
+    top_pair = rows.iloc[0]
+    best_pair = rows.loc[rows["NET_RATING"].idxmax()]
+    return "\n".join(
+        [
+            "=== CANVA COPY (DATA-BOUND) ===",
+            "",
+            "TITLE: THE BULLS’ MOST-USED DUOS",
+            "",
+            (
+                "SUBTITLE: How Chicago performed with its 10 most-played "
+                "pairs on the court"
+            ),
+            "",
+            (
+                f"LEAD NOTE: {top_pair['GROUP_NAME'].replace(' - ', ' + ')} "
+                f"led the Bulls with {top_pair['MIN']:,.0f} minutes together."
+            ),
+            "",
+            (
+                f"PAYOFF: {best_pair['GROUP_NAME'].replace(' - ', ' + ')} "
+                f"was the only top-10 pair above zero, though it was "
+                f"essentially even ({best_pair['NET_RATING']:+.1f})."
+            ),
+            "",
+            (
+                f"QUALIFICATION: {SEASON} regular season · Bulls pairs ranked "
+                "by total minutes together · Ratings per 100 possessions"
+            ),
+            "",
+            (
+                "NET RATING KEY: Darker red = lower/worse net rating among "
+                "these 10 pairs."
+            ),
+            "",
+            (
+                "METHOD NOTE: Ratings describe every minute with both players "
+                "on the court; they are not isolated two-player impact estimates."
+            ),
+            "",
+            "SOURCE: Data via NBA.com/Stats",
+            "",
+            "HANDLE: @chicagobullsdata",
+            "",
+            "=== END CANVA COPY ===",
+        ]
+    )
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Render the Bulls' most-used two-player lineup table."
+    )
+    parser.add_argument(
+        "--date",
+        default=date.today().isoformat(),
+        help="Snapshot date used in output filenames (YYYY-MM-DD).",
+    )
+    parser.add_argument(
+        "--final",
+        action="store_true",
+        help="Export the chart asset at final 2x resolution.",
+    )
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    lineups = get_lineup_stats(season=SEASON)
+    rows = prepare_lineup_rows(lineups)
+    cache_selected_headshots(rows)
+    table_path = write_analytical_table(rows, args.date)
+    chart_path = render_chart(rows, args.date, final=args.final)
+
+    print(
+        rows[
+            [
+                "GROUP_NAME",
+                "MIN",
+                "OFF_RATING",
+                "DEF_RATING",
+                "NET_RATING",
+            ]
+        ].to_string(index=False)
+    )
+    print(f"\nAnalytical table: {table_path}")
+    print(f"Chart asset: {chart_path}")
+    print(f"Chart export: {'2160×2300' if args.final else '1080×1150'} px")
+    print()
+    print(canva_copy_block(rows))
 
 
 if __name__ == "__main__":

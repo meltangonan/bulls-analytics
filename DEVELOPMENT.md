@@ -40,8 +40,14 @@ These are the traps that produce silently wrong numbers rather than errors.
   feeds.** `summer_league_report.py` treats empty or all-zero derived feeds as unavailable rather
   than printing false values. Expect a morning-after render when NBA.com lags.
 - **Shot-chart data includes everyone who took a Bulls shot that season, including traded players.**
-  Use `get_roster()` and player IDs for a current-roster view, and show both views when the
-  comparison needs to be fair.
+  Filter to a roster and show both views when the comparison needs to be fair.
+- **⚠️ Two roster sources, and they disagree. Use `get_current_roster()` for any "current roster"
+  post.** It reads the roster array embedded in NBA.com's public team page and reflects trades,
+  signings, and draft picks immediately. `get_roster()` wraps `commonteamroster`, which is
+  *season*-scoped and lags badly: checked 2026-07-25 it still returned Sexton, Simons, Yabusele,
+  and Richards while missing Claxton, Powell, and every 2026 rookie — 8 wrong out of 18. Never
+  infer current membership from a season stats endpoint's team field either; that answers "who
+  played here last season," which is a different question.
 - **NBA.com's team-filtered player endpoints can attach a traded player's *later* team abbreviation**
   even while games, minutes, and ratings remain scoped to the team you requested. Treat the request's
   `team_id_nullable` filter as the stint scope; never infer scope from the returned abbreviation.

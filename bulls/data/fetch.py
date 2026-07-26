@@ -847,3 +847,51 @@ def get_player_headshot(
         return file_path
     except requests.RequestException:
         return None
+
+
+def team_roster_url(team_id: int = BULLS_TEAM_ID) -> str:
+    """The public NBA.com roster page for a team."""
+    return f"https://www.nba.com/team/{team_id}/roster"
+
+
+def parse_nba_roster(html: str) -> pd.DataFrame:
+    """Read the official roster array embedded in an NBA.com roster page.
+
+    Returns ``nba_id`` and ``official_roster_name``. NBA.com's own page is the
+    membership source of record: it reflects trades and signings immediately,
+    where a season stats endpoint only knows who has already played.
+    """
+    marker = '"roster":'
+    marker_index = html.find(marker)
+    if marker_index < 0:
+        raise ValueError("NBA.com roster payload was not found.")
+
+    payload, _ = json.JSONDecoder().raw_decode(html[marker_index + len(marker):])
+    rows = [
+        {
+            "nba_id": int(player["PLAYER_ID"]),
+            "official_roster_name": str(player["PLAYER"]),
+        }
+        for player in payload
+    ]
+    roster = pd.DataFrame(rows)
+    if roster.empty:
+        raise ValueError("NBA.com roster payload was empty.")
+    return roster
+
+
+def get_current_roster(team_id: int = BULLS_TEAM_ID) -> pd.DataFrame:
+    """Fetch current roster membership from the public NBA.com team page."""
+    response = requests.get(
+        team_roster_url(team_id),
+        headers={
+            "User-Agent": (
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                "AppleWebKit/537.36"
+            ),
+            "Accept": "text/html,application/xhtml+xml",
+        },
+        timeout=30,
+    )
+    response.raise_for_status()
+    return parse_nba_roster(response.text)

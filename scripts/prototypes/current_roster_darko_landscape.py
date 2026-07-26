@@ -28,7 +28,7 @@ import pandas as pd
 import requests
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
-from bulls.data import get_player_headshot
+from bulls.data.fetch import parse_nba_roster, team_roster_url
 from bulls.graphics.house import (
     DEFAULT_THEME,
     DRAFT_DPI,
@@ -36,10 +36,12 @@ from bulls.graphics.house import (
     export_dpi,
     helvetica,
     rendered_width,
+    square_headshot_label,
 )
+from bulls.graphics.house import ensure_headshots as house_ensure_headshots
 
 
-NBA_ROSTER_URL = "https://www.nba.com/team/1610612741/roster"
+NBA_ROSTER_URL = team_roster_url()
 DARKO_URL = "https://www.darko.app/"
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 OUT = _REPO / "output" / "feed"
@@ -140,27 +142,6 @@ def _fetch_html(url: str) -> str:
     )
     response.raise_for_status()
     return response.text
-
-
-def parse_nba_roster(html: str) -> pd.DataFrame:
-    """Read the official roster array embedded in NBA.com's roster page."""
-    marker = '"roster":'
-    marker_index = html.find(marker)
-    if marker_index < 0:
-        raise ValueError("NBA.com roster payload was not found.")
-
-    payload, _ = json.JSONDecoder().raw_decode(html[marker_index + len(marker):])
-    rows = [
-        {
-            "nba_id": int(player["PLAYER_ID"]),
-            "official_roster_name": str(player["PLAYER"]),
-        }
-        for player in payload
-    ]
-    roster = pd.DataFrame(rows)
-    if roster.empty:
-        raise ValueError("NBA.com roster payload was empty.")
-    return roster
 
 
 def _parse_darko_number(value: str) -> float:
@@ -333,48 +314,9 @@ def chart_y(value: float) -> float:
     ) * (y1 - y0)
 
 
-def square_headshot_label(
-    ax,
-    image_path: Path,
-    x: float,
-    y: float,
-    half_size: float,
-):
-    """Place a square center crop without adding a ranking-coded border."""
-    try:
-        image = plt.imread(image_path)
-    except (FileNotFoundError, OSError, ValueError):
-        return ax.add_patch(
-            FancyBboxPatch(
-                (x - half_size, y - half_size),
-                2 * half_size,
-                2 * half_size,
-                boxstyle="square,pad=0",
-                facecolor="#DDD8D1",
-                edgecolor="none",
-                zorder=8,
-            )
-        )
-
-    height, width = image.shape[:2]
-    side = min(height, width)
-    left = max(0, (width - side) // 2)
-    top = max(0, (height - side) // 2)
-    square = image[top:top + side, left:left + side]
-    return ax.imshow(
-        square,
-        extent=[x - half_size, x + half_size, y - half_size, y + half_size],
-        interpolation="bilinear",
-        zorder=8,
-    )
-
-
 def ensure_headshots(available: pd.DataFrame) -> None:
-    """Populate the existing NBA CDN cache for every plotted player."""
-    for nba_id in available["nba_id"].astype(int):
-        path = HEADSHOTS / f"{nba_id}.png"
-        if not path.exists():
-            get_player_headshot(nba_id)
+    """Populate the shared NBA CDN cache for every plotted player."""
+    house_ensure_headshots(available["nba_id"])
 
 
 def render_chart_only(

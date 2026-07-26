@@ -121,8 +121,19 @@ trivia — cut it.
 
 The highest-stopping-power object on a chart — use sparingly.
 
-- Circular crop via `craft._make_circular_headshot` / `craft.headshot_label`. A red border ring
-  (`border_color=(206, 17, 65)`, `border_frac≈0.045`) means "the payoff."
+Two crops, and the difference carries meaning:
+
+- **Circular, red-ringed** — `craft._make_circular_headshot` / `craft.headshot_label`. The ring
+  (`border_color=(206, 17, 65)`, `border_frac≈0.045`) means "this is the payoff." At most one.
+- **Bare square** — `house.square_headshot_label(ax, path, x, y, half_size, zorder=…)`, the
+  landscape scatter family's plot marker. No ring: every plotted player is equal, so a ring would
+  read as an emphasis the layer does not intend. Use `half_size=36` for a roster landscape.
+  `house.ensure_headshots(nba_ids)` warms `house.HEADSHOT_CACHE` first; pass the ids in draw order
+  and set each returned artist's `zorder` so overlapping faces stack predictably.
+
+`bulls_on_court_landscape.py` and `current_roster_hot_spots.py` still carry their own square-crop
+copies that differ (top-anchored crop, and a non-returning variant); fold them in when either post
+is next touched.
 - Position so geometry does the pointing — the data line ends at the face.
 - Missing headshots render as a neutral placeholder disc; builders never break.
 - ⚠️ **NBA CDN headshots for new rookies are often a gray silhouette.** Check visually: ~12 KB is

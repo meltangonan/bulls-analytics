@@ -18,6 +18,7 @@ from typing import Sequence
 import matplotlib.font_manager as fm
 import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -474,3 +475,63 @@ def save_post(fig, output_path: str | Path, *, final: bool = False) -> Path:
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output, dpi=export_dpi(final), facecolor=fig.get_facecolor())
     return output
+
+
+HEADSHOT_CACHE = REPO_ROOT / "cache" / "headshots"
+
+
+def square_headshot_label(
+    ax,
+    image_path: str | Path,
+    x: float,
+    y: float,
+    half_size: float,
+    *,
+    zorder: float = 8,
+):
+    """Place a square center crop of a headshot, with no border ring.
+
+    The landscape scatter family plots players as bare square faces; the red
+    ring in ``craft.headshot_label`` means "this is the payoff" and would read
+    as an emphasis that a whole-roster layer does not intend (DESIGN.md §5).
+
+    Returns the placed artist so the caller can set a per-player draw order.
+    A missing or unreadable file becomes a neutral placeholder square, so a
+    builder never breaks on one absent portrait.
+    """
+    try:
+        image = plt.imread(image_path)
+    except (FileNotFoundError, OSError, ValueError):
+        return ax.add_patch(
+            FancyBboxPatch(
+                (x - half_size, y - half_size),
+                2 * half_size,
+                2 * half_size,
+                boxstyle="square,pad=0",
+                facecolor="#DDD8D1",
+                edgecolor="none",
+                zorder=zorder,
+            )
+        )
+
+    height, width = image.shape[:2]
+    side = min(height, width)
+    left = max(0, (width - side) // 2)
+    top = max(0, (height - side) // 2)
+    square = image[top:top + side, left:left + side]
+    return ax.imshow(
+        square,
+        extent=[x - half_size, x + half_size, y - half_size, y + half_size],
+        interpolation="bilinear",
+        zorder=zorder,
+    )
+
+
+def ensure_headshots(nba_ids) -> None:
+    """Populate the shared NBA CDN cache for every id that is not cached yet."""
+    from bulls.data.fetch import get_player_headshot
+
+    for nba_id in nba_ids:
+        nba_id = int(nba_id)
+        if not (HEADSHOT_CACHE / f"{nba_id}.png").exists():
+            get_player_headshot(nba_id)

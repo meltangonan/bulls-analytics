@@ -1,10 +1,11 @@
-"""Build the 2025-26 Bulls most-used two-player lineup table.
+"""Build the 2025-26 Bulls two-player lineup tables.
 
-NBA.com owns the data: the ten Bulls pairs are selected by total minutes
-together, then displayed with the team's offensive, defensive, and net rating
-while both players were on court. The script writes the validated analytical
-table, renders one transparent chart asset for Canva, and prints the exact page
-copy that belongs around the chart.
+NBA.com owns the data. The default table selects the ten Bulls pairs with the
+most total minutes together. The supplemental view selects the five highest net
+ratings among pairs with at least 400 shared minutes. Both display the team's
+offensive, defensive, and net rating while the two players were on court. The
+script writes the validated analytical table, renders one transparent chart
+asset for Canva, and prints the exact page copy that belongs around the chart.
 """
 
 from __future__ import annotations
@@ -42,10 +43,12 @@ from bulls.graphics.house import (
 
 SEASON = CURRENT_SEASON
 TOP_N = 10
+NET_RATING_TOP_N = 5
+NET_RATING_MIN_MINUTES = 400
 OUT = _REPO / "output" / "feed"
 
 CHART_WIDTH = 1080
-CHART_HEIGHT = 1150
+ROW_HEIGHT = 104
 
 REQUIRED_COLUMNS = [
     "GROUP_ID",
@@ -72,8 +75,13 @@ def _player_label(value: str) -> str:
 def prepare_lineup_rows(
     lineups: pd.DataFrame,
     top_n: int = TOP_N,
+    ranking: str = "minutes",
+    min_minutes: float = 0,
 ) -> pd.DataFrame:
-    """Validate and select the Bulls' most-used two-player combinations."""
+    """Validate and select Bulls two-player combinations for one ranking."""
+    if ranking not in {"minutes", "net-rating"}:
+        raise ValueError(f"Unsupported lineup ranking: {ranking}")
+
     missing = [column for column in REQUIRED_COLUMNS if column not in lineups]
     if missing:
         raise ValueError(f"Lineup data is missing columns: {', '.join(missing)}")
@@ -84,15 +92,31 @@ def prepare_lineup_rows(
             lineups["GROUP_ID"].duplicated(keep=False), "GROUP_ID"
         ].tolist()
         raise ValueError(f"Duplicate two-player group IDs: {duplicates}")
-    if len(lineups) < top_n:
+    eligible = lineups.copy()
+    if ranking == "net-rating":
+        eligible = eligible[eligible["MIN"] >= min_minutes].copy()
+
+    if len(eligible) < top_n:
+        qualifier = (
+            f" with at least {min_minutes:,.0f} minutes"
+            if ranking == "net-rating"
+            else ""
+        )
         raise ValueError(
-            f"NBA.com returned {len(lineups)} Bulls pairs; {top_n} are required."
+            f"NBA.com returned {len(eligible)} eligible Bulls pairs{qualifier}; "
+            f"{top_n} are required."
         )
 
+    sort_columns = (
+        ["MIN", "GROUP_NAME"]
+        if ranking == "minutes"
+        else ["NET_RATING", "MIN", "GROUP_NAME"]
+    )
+    sort_ascending = [False, True] if ranking == "minutes" else [False, False, True]
     rows = (
-        lineups.sort_values(
-            ["MIN", "GROUP_NAME"],
-            ascending=[False, True],
+        eligible.sort_values(
+            sort_columns,
+            ascending=sort_ascending,
             kind="stable",
         )
         .head(top_n)
@@ -116,8 +140,10 @@ def prepare_lineup_rows(
             "defensive rating within NBA.com's published rounding."
         )
 
-    if not rows["MIN"].is_monotonic_decreasing:
+    if ranking == "minutes" and not rows["MIN"].is_monotonic_decreasing:
         raise ValueError("Selected lineups are not ordered by minutes.")
+    if ranking == "net-rating" and not rows["NET_RATING"].is_monotonic_decreasing:
+        raise ValueError("Selected lineups are not ordered by net rating.")
 
     names = rows["GROUP_NAME"].map(lambda value: _split_pair(value, " - "))
     ids = rows["GROUP_ID"].map(lambda value: _split_pair(value, "-"))
@@ -141,7 +167,12 @@ def cache_selected_headshots(rows: pd.DataFrame) -> None:
     ensure_headshots(player_ids)
 
 
-def write_analytical_table(rows: pd.DataFrame, snapshot_date: str) -> Path:
+def write_analytical_table(
+    rows: pd.DataFrame,
+    snapshot_date: str,
+    ranking: str = "minutes",
+    min_minutes: float = 0,
+) -> Path:
     """Write the exact values rendered in the chart."""
     table = rows[
         [
@@ -157,7 +188,12 @@ def write_analytical_table(rows: pd.DataFrame, snapshot_date: str) -> Path:
     for column in ["OFF_RATING", "DEF_RATING", "NET_RATING"]:
         table[column] = table[column].round(1)
 
-    path = OUT / f"{snapshot_date}-bulls-two-man-lineups.csv"
+    suffix = (
+        "bulls-two-man-lineups"
+        if ranking == "minutes"
+        else f"bulls-two-man-lineups-net-rating-{min_minutes:,.0f}min"
+    )
+    path = OUT / f"{snapshot_date}-{suffix}.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False)
     return path
@@ -167,15 +203,18 @@ def render_chart(
     rows: pd.DataFrame,
     snapshot_date: str,
     final: bool = False,
+    ranking: str = "minutes",
+    min_minutes: float = 0,
 ) -> Path:
     """Render the transparent F5-style table for Canva assembly."""
     theme = DEFAULT_THEME
+    chart_height = 110 + ROW_HEIGHT * len(rows)
     fig = plt.figure(
-        figsize=(CHART_WIDTH / DRAFT_DPI, CHART_HEIGHT / DRAFT_DPI)
+        figsize=(CHART_WIDTH / DRAFT_DPI, chart_height / DRAFT_DPI)
     )
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, CHART_WIDTH)
-    ax.set_ylim(0, CHART_HEIGHT)
+    ax.set_ylim(0, chart_height)
     ax.set_xticks([])
     ax.set_yticks([])
     for spine in ax.spines.values():
@@ -184,10 +223,9 @@ def render_chart(
 
     left = 20
     right = CHART_WIDTH - 20
-    header_y = 1107
-    header_rule_y = 1065
-    row_height = 104
-    first_row_y = 1012
+    header_y = chart_height - 43
+    header_rule_y = chart_height - 85
+    first_row_y = chart_height - 138
 
     columns = {
         "PAIR": (28, "left"),
@@ -220,15 +258,15 @@ def render_chart(
     net_span = net_max - net_min
 
     for index, row in rows.iterrows():
-        y = first_row_y - index * row_height
-        divider_y = y - row_height / 2
+        y = first_row_y - index * ROW_HEIGHT
+        divider_y = y - ROW_HEIGHT / 2
 
         if index % 2:
             ax.add_patch(
                 Rectangle(
                     (left, divider_y + 4),
                     right - left,
-                    row_height - 8,
+                    ROW_HEIGHT - 8,
                     facecolor="#F5F1EC",
                     edgecolor="none",
                     zorder=-1,
@@ -340,15 +378,59 @@ def render_chart(
             zorder=0,
         )
 
-    path = OUT / f"{snapshot_date}-bulls-two-man-lineups-chart.png"
+    suffix = (
+        "bulls-two-man-lineups-chart"
+        if ranking == "minutes"
+        else f"bulls-two-man-lineups-net-rating-{min_minutes:,.0f}min-chart"
+    )
+    path = OUT / f"{snapshot_date}-{suffix}.png"
     path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(path, dpi=export_dpi(final), transparent=True)
     plt.close(fig)
     return path
 
 
-def canva_copy_block(rows: pd.DataFrame) -> str:
+def canva_copy_block(
+    rows: pd.DataFrame,
+    ranking: str = "minutes",
+    min_minutes: float = 0,
+) -> str:
     """Return the exact copy surrounding this chart on the Canva page."""
+    if ranking == "net-rating":
+        return "\n".join(
+            [
+                "=== CANVA COPY (DATA-BOUND) ===",
+                "",
+                "TITLE: BULLS DUOS",
+                "",
+                (
+                    "SUBTITLE: LAST YEAR’S TOP 5 DUOS BY NET RATING"
+                ),
+                "",
+                (
+                    f"QUALIFICATION: Minimum {min_minutes:,.0f} minutes "
+                    f"together · {SEASON} regular season · Ratings per 100 "
+                    "possessions"
+                ),
+                "",
+                (
+                    "NET RATING KEY: Darker red = lower/worse net rating among "
+                    "these 5 pairs."
+                ),
+                "",
+                (
+                    "METHOD NOTE: Ratings describe every minute with both players "
+                    "on the court; they are not isolated two-player impact estimates."
+                ),
+                "",
+                "SOURCE: Data via NBA.com/Stats",
+                "",
+                "HANDLE: @chicagobullsdata",
+                "",
+                "=== END CANVA COPY ===",
+            ]
+        )
+
     top_pair = rows.iloc[0]
     best_pair = rows.loc[rows["NET_RATING"].idxmax()]
     return "\n".join(
@@ -411,16 +493,40 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Export the chart asset at final 2x resolution.",
     )
+    parser.add_argument(
+        "--ranking",
+        choices=["minutes", "net-rating"],
+        default="minutes",
+        help="Rank pairs by total minutes or by net rating.",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     lineups = get_lineup_stats(season=SEASON)
-    rows = prepare_lineup_rows(lineups)
+    top_n = TOP_N if args.ranking == "minutes" else NET_RATING_TOP_N
+    min_minutes = 0 if args.ranking == "minutes" else NET_RATING_MIN_MINUTES
+    rows = prepare_lineup_rows(
+        lineups,
+        top_n=top_n,
+        ranking=args.ranking,
+        min_minutes=min_minutes,
+    )
     cache_selected_headshots(rows)
-    table_path = write_analytical_table(rows, args.date)
-    chart_path = render_chart(rows, args.date, final=args.final)
+    table_path = write_analytical_table(
+        rows,
+        args.date,
+        ranking=args.ranking,
+        min_minutes=min_minutes,
+    )
+    chart_path = render_chart(
+        rows,
+        args.date,
+        final=args.final,
+        ranking=args.ranking,
+        min_minutes=min_minutes,
+    )
 
     print(
         rows[
@@ -435,9 +541,17 @@ def main() -> None:
     )
     print(f"\nAnalytical table: {table_path}")
     print(f"Chart asset: {chart_path}")
-    print(f"Chart export: {'2160×2300' if args.final else '1080×1150'} px")
+    output_width = CHART_WIDTH * (2 if args.final else 1)
+    output_height = (110 + ROW_HEIGHT * len(rows)) * (2 if args.final else 1)
+    print(f"Chart export: {output_width}×{output_height} px")
     print()
-    print(canva_copy_block(rows))
+    print(
+        canva_copy_block(
+            rows,
+            ranking=args.ranking,
+            min_minutes=min_minutes,
+        )
+    )
 
 
 if __name__ == "__main__":

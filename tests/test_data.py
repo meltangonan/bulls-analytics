@@ -191,6 +191,26 @@ class TestGetPlayerShots:
         shots = get_player_shots(1629632, last_n_games=5)
         assert isinstance(shots, pd.DataFrame)
 
+    def test_passes_through_shot_zone_area(self, mock_shot_chart_api):
+        """shot_zone_area must survive: the 12 detailed zones are built from it."""
+        areas = ['Center(C)', 'Right Side(R)', 'Left Side(L)', 'Center(C)']
+        mock_shot_chart_api.return_value.get_data_frames.return_value[0]['SHOT_ZONE_AREA'] = areas
+
+        shots = get_player_shots(1629632)
+
+        assert 'shot_zone_area' in shots.columns
+        assert list(shots['shot_zone_area']) == areas
+
+    def test_tolerates_missing_shot_zone_area(self, mock_shot_chart_api):
+        """Older payloads omit the column; the fetcher should still return rows."""
+        frame = mock_shot_chart_api.return_value.get_data_frames.return_value[0]
+        assert 'SHOT_ZONE_AREA' not in frame.columns
+
+        shots = get_player_shots(1629632)
+
+        assert not shots.empty
+        assert 'shot_zone_area' not in shots.columns
+
 
 class TestGetRosterEfficiency:
     """Tests for get_roster_efficiency function."""

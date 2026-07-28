@@ -249,6 +249,7 @@ def get_player_shots(
         - shot_made: Boolean (True = made, False = missed)
         - shot_type: "2PT" or "3PT"
         - shot_zone: Zone description
+        - shot_zone_area: Side of the floor, when the API supplies it
         - shot_distance: Distance in feet
 
     Example:
@@ -288,6 +289,10 @@ def get_player_shots(
             'game_id': shots['GAME_ID'],
             'game_date': shots['GAME_DATE'] if 'GAME_DATE' in shots.columns else None,
         })
+
+        # Needed to split the six basic zones into the 12 detailed ones.
+        if 'SHOT_ZONE_AREA' in shots.columns:
+            result['shot_zone_area'] = shots['SHOT_ZONE_AREA']
 
         return result
 

@@ -116,6 +116,49 @@ trivia — cut it.
 - **Callouts** — budget 3–4. Bold label with a thin straight connector (`arrowstyle="-"`, `MUTED`,
   1.0 lw) to the point. Names and context can live on the Canva page instead when the chart is dense.
 - **Emphasis is meaning-driven, never decorative.** At most one payoff element per chart.
+- **Figures over a court diagram sit on a card, sized to the text it holds.** Page-coloured fill
+  (`#FAF8F5`) with a hairline warm-grey edge, so the label reads as resting on the floor rather than
+  as a second block of colour. Three treatments were tried on `scoring_by_location.py` before this
+  one: a text halo (invisible on the page but it fought the geometry), bare text over unbroken lines
+  (a court line runs straight through the digits), and cutting a gap in the line behind each label
+  (the broken boundary looked like a rendering fault). Size the card from the *measured* text extent
+  after layout, never a guess — the widest string differs per slide (`1.40 PPS` against `351 FGA`)
+  and shrinks again wherever chips are compacted. Faces stay above the card and may cover a line;
+  an opaque crop hides it cleanly.
+
+**Court diagrams** (`scoring_by_location.py`): a light Bulls-red floor (`#F6DCE1`), one step deeper
+for the paint (`#EFC6D0`) and deeper again for the restricted area (`#E5A9B8`), with every line —
+painted court geometry and analytical zone divider alike — in near-black. The red floor is what
+carries the red/black/off-white thumbnail read, so figures on it stay black rather than red.
+
+Draw the court **only as deep as the furthest chip needs** — about 34 ft, a little past the
+above-the-break labels — and crop the rest. Stopping right at the arc leaves a squat shape; running
+all the way to the half-court line is honest but hands back a third of the frame as empty floor.
+Trace zone dividers from the classifier rather than by hand, and blur the mask before contouring: a
+raw 0/1 mask leaves every diagonal divider visibly stair-stepped next to the true arcs.
+
+Two zone facts drive the layout, and both cost a rebuild to learn. The **mid-range band is shallow**
+between the paint and the arc, so a full-size chip there covers a border — shrink those chips
+instead. And **no chip needs a leader line** — three zones are too narrow to hold one (the rim and
+the two 3 ft corner strips), but each can sit hard against its own zone instead: the corners just
+past their sideline, where a chip still satisfies the corner zone's own rule, and the rim directly
+above the basket with its face across the baseline and its figures tucked between the backboard and
+the baseline. Adjacency points more cleanly than a line does, and it costs no ink. Reach for a
+leader only when a chip can be neither in its zone nor against it.
+
+**Draw the restricted area as the painted D, not as a disc** — a semicircle closing onto the
+backboard with two short straight sides. Two traps: NBA *classifies* it as the full 4 ft circle, so
+the sliver behind the board still counts (26 of 2,226 roster shots) though the D does not shade it;
+and because the paint is a ring around it, tracing the paint's own mask redraws that full circle as
+an inner edge. Merge the rim into the paint's mask before tracing, or the D arrives with a circle
+stamped over it.
+
+**Every zone divider must be a single straight ray from the hoop.** NBA's own geometry changes how
+many side sectors exist at 16 ft, which turns each baseline/mid-range border into a stepped tent. It
+reads as a drawing bug rather than a zone, and it was flagged three separate times in review before
+being traced to the data instead of the renderer. Draw five sectors at every distance, and group the
+numbers with the *same* function that draws them — `DEVELOPMENT.md` records the measured cost of
+that divergence and why it is an exception rather than the rule.
 
 ## 5. Faces (headshots)
 

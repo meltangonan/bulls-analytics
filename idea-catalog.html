@@ -176,6 +176,24 @@
 <div class="grid">
 
   <div class="card">
+    <a class="thumb" href="docs/mocks/2026-07-28-scoring-by-location-posted.png"><img src="docs/mocks/2026-07-28-scoring-by-location-posted.png" alt="Half court with the most efficient current Bull by points per shot in each of the twelve shot zones"></a>
+    <div class="body">
+      <h2>Scoring by location</h2>
+      <div class="meta">
+        <span class="chip posted">Posted</span>
+        <span class="chip grammar">Court map</span>
+        <span class="date">2026-07-28</span>
+      </div>
+      <p class="insight">A face in each of the twelve shot zones: the current Bull with the best points per shot there. <strong>Norman Powell takes six of the twelve</strong>, and the mid-range is nearly empty &mdash; the roster attempted just 29 shots from right mid-range all season against 2,226 at the rim.</p>
+      <p class="notes"><strong>Origin:</strong> the user&rsquo;s Notion card, from an All-NBA/All-City &ldquo;Scoring By Location&rdquo; reference that crowned the league leader per zone. Reframed to Bulls-only &mdash; the league-leader version would have read as &ldquo;our guy loses twelve times in a row&rdquo; on a rebuilding roster.</p>
+      <p class="notes"><strong>Qualification &mdash; a share, not a rank or a floor.</strong> The leader is the best points per shot among Bulls with <strong>&ge;15% of the team&rsquo;s attempts in that zone</strong>. Zone volume spans two orders of magnitude, so a rank ignores it (&ldquo;third by attempts&rdquo; means 324 shots at the rim and 8 on the right baseline) and a flat attempt floor drops the volume requirement entirely, handing the rim to Zach Collins on 28 attempts over Claxton&rsquo;s 351. Bayesian shrinkage also failed: any small-sample overperformer still floats above the zone mean. The share scales itself &mdash; 15% is 334 shots at the rim and 9 on the right baseline &mdash; and cut the low-sample zones from three to one. A leader under 10 attempts is drawn grey rather than dropped; only right mid-range (5 FGA) qualifies.</p>
+      <p class="notes"><strong>Zone geometry is ours, deliberately, and the cost is measured.</strong> NBA changes how many side sectors exist at 16&nbsp;ft, which draws each baseline/mid-range border as a stepped &ldquo;tent&rdquo; that reads as a rendering fault &mdash; flagged three separate times in review before being traced to the data rather than the renderer. The prototype classifies from <code>loc_x</code>/<code>loc_y</code> with five sectors at every distance, using the <em>same</em> function that draws the outlines, so the chart cannot count one set of regions while drawing another. Divergence from NBA&rsquo;s labels: <strong>34 of 5,855 roster shots (0.6%)</strong> &mdash; 25 from the sector rule inside 16&nbsp;ft, 9 from boundary rounding at the free-throw line and corner break &mdash; and one of twelve leaders changes. Every run prints the live agreement rate (99.4%). See <code>DEVELOPMENT.md</code> for why this is an exception, not the rule.</p>
+      <p class="notes"><strong>Posted 2026-07-28:</strong> shipped as a <strong>single page</strong>, not the two-slide carousel that was built. The companion volume slide (&ldquo;who actually takes the shots&rdquo; &mdash; same court, attempts as the headline figure, no qualification gate since the count <em>is</em> the sample) renders from <code>--mode volume</code> and is unused; its sharpest contrast is the paint, where Claxton takes the most (187 at 0.77) while Powell scores best (1.03 on 167). Red-background and pattern explorations (jersey photo, range rings, halftone, diagonal hatch) were built in Canva and set aside in favour of the house cream canvas. The posted 1080&times;1350 page is <code>docs/mocks/2026-07-28-scoring-by-location-posted.png</code>.</p>
+      <p class="files">Script: <a href="scripts/prototypes/scoring_by_location.py">prototypes/scoring_by_location.py</a> &middot; test: <a href="tests/test_scoring_by_location.py">test_scoring_by_location.py</a> &middot; Canva: <code>DAHQs-sPmN0</code></p>
+    </div>
+  </div>
+
+  <div class="card">
     <a class="thumb" href="docs/mocks/2026-07-25-rim-vs-three-pps.png"><img src="docs/mocks/2026-07-25-rim-vs-three-pps.png" alt="Rim vs three points-per-shot scatter with the Bulls over a grey league cloud"></a>
     <div class="body">
       <h2>Where The Points Come From (Rim vs Three PPS)</h2>

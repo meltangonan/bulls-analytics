@@ -66,6 +66,41 @@ These are the traps that produce silently wrong numbers rather than errors.
   returns zero rows for Summer League games without complaining. Use `get_game_shots`, which derives
   the league from the game-ID prefix (`00` NBA, `15` Summer League). Prefer the NBA's own `shot_zone`
   labels over re-deriving zones from distance or coordinates.
+- **The 12 detailed zones need `shot_zone_area`, and a fetcher that drops it fails silently** —
+  `detailed_zones` returns the six basic zones unchanged rather than raising. All three shot
+  fetchers now pass the column through when the API supplies it, but a cache written before that
+  will quietly collapse to six zones. Refetch rather than reuse.
+- **NBA's `SHOT_ZONE_AREA` sectors are angular from the hoop, but the number of sectors depends on
+  distance**: one inside 8 ft (all `Center(C)`), three from 8–16 ft (cuts at 60°/120°), five beyond
+  16 ft (cuts at 36°/72°/108°/144°). Pool the bands and the angle ranges overlap and look
+  self-contradictory. Consequences: `Left/Right Side Center` never appears inside 16 ft, so "Left
+  Mid-Range" is always a long two; `Left/Right Side` inside 16 ft covers a 60° wedge rather than only
+  the baseline its name suggests; above-the-break threes use just three sectors because the corners
+  take the outer two. Verified against 7,463 labelled 2025-26 shots — a classifier built to this
+  spec reproduces NBA's own labels on 99.8%, the rest being boundary rounding in NBA's integer
+  coordinates.
+- **A zone chart that draws NBA's real sector geometry looks broken, so `scoring_by_location.py`
+  deliberately does not.** The change in sector count at 16 ft makes each baseline/mid-range divider
+  a stepped "tent" rather than a straight ray, and it reads as a rendering fault (flagged three times
+  in review). That prototype uses five sectors at *every* distance and classifies from `loc_x`/
+  `loc_y` with its own `zone_of`, so the drawn regions and the grouped numbers are the same object
+  and the chart cannot draw one set of regions while counting another. The divergence is measured,
+  not assumed: 34 of 5,855 roster shots move (0.6%), almost all long twos near the 16 ft line, and
+  one of twelve zone leaders changes. The script prints the live agreement rate against NBA's labels
+  on every run — if that figure drifts, the geometry drifted. **This is a deliberate exception to
+  preferring NBA's labels, and it is only safe because the divergence is measured and reported.**
+  Any other post should still group by NBA's own `shot_zone`.
+- **To qualify a per-bucket leader, gate on a *share* of the bucket, not a rank or a flat floor.**
+  When bucket volume varies wildly this is the difference between a defensible claim and a fluke.
+  In `scoring_by_location.py` the roster took 2,226 shots at the rim and 29 from right mid-range, so
+  "top 3 by attempts" meant 324 shots in one zone and 8 in another, while a flat 10-attempt floor
+  handed the rim to a 28-attempt reserve over the man who took 351 — it drops the volume requirement
+  entirely. A 15% share scales itself (334 at the rim, 9 on the right baseline) and cut the
+  low-sample zones from three to one. Bayesian shrinkage was also tried and was worse: with the
+  bucket mean as the prior, any small-sample overperformer still floats to the top.
+- **`detailed_zones` reclassifies `Above the Break 3` + `Back Court(BC)` as `Backcourt`.** A
+  half-court heave arrives labelled an above-the-break three, so a zone analysis that filters on the
+  raw `shot_zone` alone scores a 60-footer against Top of Key.
 - **Summer League's traditional box score can finalize hours before its shot-chart and advanced-box
   feeds.** `summer_league_report.py` treats empty or all-zero derived feeds as unavailable rather
   than printing false values. Expect a morning-after render when NBA.com lags.

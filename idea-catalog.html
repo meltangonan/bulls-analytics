@@ -176,6 +176,24 @@
 <div class="grid">
 
   <div class="card">
+    <a class="thumb" href="docs/mocks/2026-07-29-assisted-buckets-posted-01-cover.jpg"><img src="docs/mocks/2026-07-29-assisted-buckets-posted-01-cover.jpg" alt="Posted carousel cover asking what share of the current Bulls' buckets were assisted or unassisted"></a>
+    <div class="body">
+      <h2>How the Bulls Got Their Buckets</h2>
+      <div class="meta">
+        <span class="chip posted">Posted</span>
+        <span class="chip grammar">100% stacked bars</span>
+        <span class="chip grammar">Current roster</span>
+        <span class="date">2026-07-29</span>
+      </div>
+      <p class="insight">The current roster spans very different scoring profiles: Rob Dillingham and Josh Giddey had just over half their makes recorded as unassisted, while only 13% of Jalen Smith&rsquo;s makes were unassisted.</p>
+      <p class="notes"><strong>Scope and qualification:</strong> current official Bulls roster, each player&rsquo;s complete 2025&ndash;26 regular-season totals across all teams, minimum 100 made field goals. The chart sorts the ten qualifiers by unassisted share. NBA.com&rsquo;s three-decimal assisted and unassisted shares reconcile to 100%, and each inferred integer pair sums exactly to official FGM. &ldquo;Unassisted&rdquo; is NBA bookkeeping, not necessarily self-created offense.</p>
+      <p class="notes"><strong>Production:</strong> a transparent Python chart asset supplies the verified bars, portrait headshots, percentages, and FGM counts; Canva supplies the two-page 1080&times;1350 cover and chart layout. A 2FGM/3FGM divider layer was tested and rejected as noisy and too familiar. The exact JPEGs retrieved from the live Instagram carousel are preserved below.</p>
+      <p class="notes"><strong>Posted 2026-07-29:</strong> <a href="https://www.instagram.com/chicagobullsdata/p/DbZUxlNlnKP/">Instagram carousel</a>. <strong>Caption (user-written):</strong> &ldquo;How many of the current Bulls&rsquo; made field goals were assisted or not &#x1F402;&rdquo; Read-only verification immediately after posting confirmed both pages were live, uncropped, and matched the validated chart. The footer is small but readable in the full-resolution upload; that is one post-specific observation, not a durable design rule. No performance conclusion was drawn from the first few minutes.</p>
+      <p class="files">Script: <a href="scripts/prototypes/assisted_buckets.py">prototypes/assisted_buckets.py</a> &middot; test: <a href="tests/test_assisted_buckets.py">test_assisted_buckets.py</a> &middot; posted pages: <a href="docs/mocks/2026-07-29-assisted-buckets-posted-01-cover.jpg">1</a> &middot; <a href="docs/mocks/2026-07-29-assisted-buckets-posted-02-chart.jpg">2</a> &middot; Canva: <a href="https://www.canva.com/design/DAHQzD9PV4Y">DAHQzD9PV4Y</a></p>
+    </div>
+  </div>
+
+  <div class="card">
     <a class="thumb" href="docs/mocks/2026-07-28-scoring-by-location-posted.png"><img src="docs/mocks/2026-07-28-scoring-by-location-posted.png" alt="Half court with the most efficient current Bull by points per shot in each of the twelve shot zones"></a>
     <div class="body">
       <h2>Scoring by location</h2>

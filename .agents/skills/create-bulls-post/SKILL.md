@@ -40,7 +40,7 @@ carries the title, headers, and framing.
 - Add or update tests for reusable data or analysis behavior.
 - Explain the analytical, production-path, and visual choices in plain language.
 
-**Save each version to `docs/posts/<slug>/` as you show it, not only at the end.** Every state the
+**Save each version to `docs/posts/YYYY-MM-DD-<slug>/assets/` as you show it, not only at the end.** Every state the
 user reviews is part of the record of how the post was made, and an image that only exists in
 gitignored `output/` can be deleted by routine worktree cleanup.
 

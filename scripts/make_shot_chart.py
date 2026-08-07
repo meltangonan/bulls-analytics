@@ -46,6 +46,7 @@ from bulls.data import shots as shot_data
 from bulls.graphics import house
 from bulls.graphics.court import ARC, draw_half_court
 from bulls.graphics.house import helvetica
+from bulls.posts import post_dir
 
 # --- Palettes ---------------------------------------------------------------
 HOT_BANDS = ["#F6CDD7", "#E67C96", "#CE1141", "#7E0C2B"]
@@ -1056,13 +1057,10 @@ def _output_path(args, slug: str) -> Path:
     parts.append(slug)
     folder = ROOT / "output" / "feed"
     if args.post:
-        folder = folder / _slugify(args.post)
+        # Same dated folder shape as docs/posts/, and the same reuse rule: an
+        # existing folder for this post is found by slug whatever date it wears.
+        folder = post_dir(folder, args.post, create=False)
     return folder / ("-".join(parts) + ".png")
-
-
-def _slugify(text: str) -> str:
-    import re
-    return re.sub(r"[^a-z0-9]+", "-", text.strip().lower()).strip("-")
 
 
 def main():

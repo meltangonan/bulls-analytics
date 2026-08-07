@@ -14,7 +14,7 @@ Read `AGENTS.md`, `DESIGN.md` §8 (Voice & Caption — the owner of how the acco
 
 **Inspect the actual artifacts**, not a summary: the approved final graphic, its analysis or
 prototype, and its `idea-catalog.html` card. For Canva work that means every downloaded page in
-`docs/posts/<slug>/` — the highest-numbered version is the current one (`docs/mocks/` for posts
+the post folder's `assets/` — the highest-numbered version is the current one (`docs/mocks/` for posts
 predating 2026-08).
 
 ## Readiness

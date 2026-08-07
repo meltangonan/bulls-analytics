@@ -2,10 +2,14 @@
 """Preserve a post's images in git, as a dated, numbered version.
 
     venv/bin/python scripts/save_post_version.py --post shot-value-ladder \
-        output/feed/2026-08-07-ladder-pps-league.png ...
+        output/feed/shot-value-ladder/*.png
+    venv/bin/python scripts/save_post_version.py --post shot-value-ladder --final \
+        ~/Downloads/slide-1.png
 
-Copies into ``docs/posts/<slug>/`` as ``YYYY-MM-DD-vNN-<name>.png``. That tree is
-**tracked**; ``output/`` is scratch and stays ignored.
+Copies into ``docs/posts/YYYY-MM-DD-<slug>/assets/`` as ``YYYY-MM-DD-vNN-<name>.png``,
+or into ``final/`` with ``--final`` for pages downloaded from Canva. That tree is
+**tracked**; ``output/`` is scratch and stays ignored. ``bulls/posts.py`` explains
+why the two kinds are kept differently.
 
 Run this every time a version is shown to the user for review -- that is the unit
 of a version, not every render. A render where a label moved two pixels is not a
@@ -36,18 +40,16 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from bulls.posts import ASSETS, FINAL, post_dir, slugify  # noqa: E402
+
 POSTS = ROOT / "docs" / "posts"
 VERSION_RE = re.compile(r"^\d{4}-\d{2}-\d{2}-v(\d+)-")
 # Dated first so the directory sorts chronologically, version zero-padded so
 # v10 sorts after v9 rather than between v1 and v2.
 STAMP = "{date}-v{version:02d}-{name}"
-
-
-def slugify(text: str) -> str:
-    slug = re.sub(r"[^a-z0-9]+", "-", text.strip().lower()).strip("-")
-    if not slug:
-        raise SystemExit("--post needs at least one alphanumeric character")
-    return slug
 
 
 def next_version(post_dir: Path) -> int:
@@ -71,21 +73,34 @@ def strip_stamp(name: str) -> str:
 
 
 def save(post: str, files: list[Path], when: str | None = None,
-         version: int | None = None) -> list[Path]:
-    slug = slugify(post)
-    post_dir = POSTS / slug
-    post_dir.mkdir(parents=True, exist_ok=True)
+         version: int | None = None, final: bool = False) -> list[Path]:
+    try:
+        slugify(post)
+    except ValueError as exc:
+        raise SystemExit(str(exc))
 
     missing = [f for f in files if not f.is_file()]
     if missing:
         raise SystemExit("Not found: " + ", ".join(str(m) for m in missing))
 
+    target = post_dir(POSTS, post, when) / (FINAL if final else ASSETS)
+    target.mkdir(parents=True, exist_ok=True)
     stamp_date = when or date.today().isoformat()
-    number = version if version is not None else next_version(post_dir)
+
     saved = []
+    if final:
+        # Finals are not versioned. One published page is one file; a second
+        # download of the same slide replaces it rather than accumulating.
+        for src in files:
+            dest = target / f"{stamp_date}-{strip_stamp(src.name)}"
+            shutil.copy2(src, dest)
+            saved.append(dest)
+        return saved
+
+    number = version if version is not None else next_version(target)
     for src in files:
-        dest = post_dir / STAMP.format(date=stamp_date, version=number,
-                                       name=strip_stamp(src.name))
+        dest = target / STAMP.format(date=stamp_date, version=number,
+                                     name=strip_stamp(src.name))
         shutil.copy2(src, dest)
         saved.append(dest)
     return saved
@@ -98,17 +113,18 @@ def main() -> None:
     ap.add_argument("--date", default="", help="override the date stamp (YYYY-MM-DD)")
     ap.add_argument("--version", type=int, default=None,
                     help="force a version number instead of auto-incrementing")
+    ap.add_argument("--final", action="store_true",
+                    help="a page downloaded from Canva: goes to final/, unversioned")
     ap.add_argument("files", nargs="+", type=Path)
     args = ap.parse_args()
 
-    saved = save(args.post, args.files, args.date or None, args.version)
+    saved = save(args.post, args.files, args.date or None, args.version, args.final)
     for path in saved:
         print(f"Saved {path.relative_to(ROOT)}")
-    print(f"\n{len(saved)} file(s) as v{VERSION_RE.match(saved[0].name).group(1)}. "
-          "Commit them — that is what makes them safe.")
+    match = VERSION_RE.match(saved[0].name)
+    what = f"as v{match.group(1)}" if match else "as the published final"
+    print(f"\n{len(saved)} file(s) {what}. Commit them — that is what makes them safe.")
 
 
 if __name__ == "__main__":
-    if str(ROOT) not in sys.path:
-        sys.path.insert(0, str(ROOT))
     main()

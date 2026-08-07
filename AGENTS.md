@@ -26,8 +26,9 @@ metrics, qualifications, sources, and the final downloaded pages.
    (`DESIGN.md`) — maintain it, don't build new posts on it.
 3. Applicable thresholds, coverage windows, and sources stay visible on every data-bearing graphic.
    The user usually adds them manually in Canva.
-4. **Every version shown to the user is saved to `docs/posts/<slug>/` and committed.** That tree is
-   tracked and dated; `output/` is scratch and stays gitignored. Save with
+4. **Every version shown to the user is saved to `docs/posts/YYYY-MM-DD-<slug>/assets/` and
+   committed**, with the published Canva page in `final/` alongside it. That tree is tracked;
+   `output/` is scratch and stays gitignored. Save with
    `scripts/save_post_version.py` as each version goes out for review — not only at the end. A
    version is a state someone actually saw, not every render. Untracked images have been lost to
    worktree cleanup before: files under `docs/posts/` make a worktree dirty, and dirty worktrees are

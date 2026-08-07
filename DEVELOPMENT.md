@@ -33,7 +33,7 @@ in the worktree. Defer append-only indexes such as `idea-catalog.html` and
 3. Inspect the staged/final diff and commit file list; never use `git add -A` or `git commit -am`.
 4. Fast-forward the primary `main` to the post branch, push only with explicit approval, and prove
    local/remote SHA parity.
-5. After the post's images are committed under `docs/posts/<slug>/`, remove the worktree and delete
+5. After the post's images are committed under `docs/posts/YYYY-MM-DD-<slug>/`, remove the worktree and delete
    its now-merged branch. At the next task start, prune missing worktree metadata and clean any
    clearly merged leftovers; preserve and report anything dirty, unmerged, or unclear.
 
@@ -60,11 +60,19 @@ is what keeps the two signals aligned, because tracked files make the worktree d
 - Never rebuild analytical logic in Canva, and never recompute a number that the chart already
   proved. Canva is layout only.
 - Add each new catalog card at the top of `idea-catalog.html`.
-- **`docs/posts/<slug>/` is the tracked home for post images, and every version shown to the user
-  goes there.** Save with `scripts/save_post_version.py --post <slug> <files...>`, which stamps
-  `YYYY-MM-DD-vNN-<name>.png` — dated so the folder reads chronologically, zero-padded so v10 sorts
-  after v9, and numbered one past the highest already present so a rebuild never renumbers history.
-  Then commit. Copying is not preservation; the commit is.
+- **`docs/posts/YYYY-MM-DD-<slug>/` is the tracked home for post images**, split into `assets/` and
+  `final/`. Save with `scripts/save_post_version.py --post <slug> <files...>` (add `--final` for a
+  page downloaded from Canva), then commit. Copying is not preservation; the commit is.
+  - `assets/` — our own renders, one numbered version per state shown to the user, stamped
+    `YYYY-MM-DD-vNN-<name>.png`. Zero-padded so v10 sorts after v9, numbered one past the highest
+    present so a rebuild never renumbers history. **These are versioned because they cannot be
+    regenerated** — the same command in October reads a season with more games in it, so the PNG is
+    the only record of what a version actually showed.
+  - `final/` — the page(s) downloaded from Canva at publish, one per slide, unversioned. Kept
+    because Canva stays editable after posting, so its link answers "what does this look like now",
+    never "what did we publish". A full export is already pulled for QA, so this costs nothing.
+  - The folder's date is fixed when the post starts and never moves; a later save finds the folder by
+    slug whatever date it carries, so a post spanning three days stays in one place.
 - A *version* is a state the user actually saw. A render made to check a two-pixel label offset is
   not a version. Roughly a third of renders qualify.
 - `output/` remains gitignored scratch. Render there freely; promote what gets reviewed.

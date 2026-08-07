@@ -30,11 +30,12 @@ def _png(tmp_path, name):
     return path
 
 
-def test_first_save_is_v01_and_carries_the_date(posts, tmp_path):
+def test_first_save_is_v01_in_a_dated_post_folder(posts, tmp_path):
     saved = svp.save("shot-value-ladder", [_png(tmp_path, "ladder-pps.png")],
                      when="2026-08-07")
     assert saved[0].name == "2026-08-07-v01-ladder-pps.png"
-    assert saved[0].parent.name == "shot-value-ladder"
+    assert saved[0].parent.name == "assets"
+    assert saved[0].parent.parent.name == "2026-08-07-shot-value-ladder"
 
 
 def test_version_increments_and_never_renumbers_history(posts, tmp_path):
@@ -42,9 +43,11 @@ def test_version_increments_and_never_renumbers_history(posts, tmp_path):
     for expected in ("v01", "v02", "v03"):
         saved = svp.save("shot-value-ladder", [src], when="2026-08-07")
         assert expected in saved[0].name
-    # A later day continues the sequence rather than restarting it.
+    # A later day continues the sequence, and stays in the ORIGINAL folder --
+    # a post spanning three days must not scatter across three folders.
     saved = svp.save("shot-value-ladder", [src], when="2026-09-01")
     assert saved[0].name == "2026-09-01-v04-ladder-pps.png"
+    assert saved[0].parent.parent.name == "2026-08-07-shot-value-ladder"
 
 
 def test_every_file_in_one_save_shares_a_version(posts, tmp_path):
@@ -58,7 +61,7 @@ def test_version_is_zero_padded_so_ten_sorts_after_nine(posts, tmp_path):
     src = _png(tmp_path, "chart.png")
     for _ in range(10):
         svp.save("p", [src], when="2026-08-07")
-    names = sorted(p.name for p in (posts / "p").glob("*.png"))
+    names = sorted(p.name for p in (posts / "2026-08-07-p" / "assets").glob("*.png"))
     assert names[-1].startswith("2026-08-07-v10")
 
 
@@ -83,7 +86,7 @@ def test_missing_file_fails_loudly_rather_than_saving_nothing(posts, tmp_path):
 def test_slug_is_normalised(posts, tmp_path):
     saved = svp.save("Shot Value Ladder!", [_png(tmp_path, "c.png")],
                      when="2026-08-07")
-    assert saved[0].parent.name == "shot-value-ladder"
+    assert saved[0].parent.parent.name == "2026-08-07-shot-value-ladder"
 
 
 def test_empty_slug_is_rejected(posts, tmp_path):
@@ -108,9 +111,37 @@ def test_render_and_archive_use_the_same_folder_shape():
     args = argparse.Namespace(chart="ladder", metric="pps", focus="",
                               band=2.0, post="Shot Value Ladder")
     path = msc._output_path(args, "bulls")
-    assert path.parent.name == "shot-value-ladder"
+    assert path.parent.name.endswith("-shot-value-ladder")
+    assert svp.VERSION_RE.sub("", path.parent.name) == path.parent.name
     assert path.parent.parent.name == "feed"
+    # Resolving a path must not create anything on disk.
+    assert not path.parent.exists()
 
     args.post = ""
     flat = msc._output_path(args, "bulls")
     assert flat.parent.name == "feed"
+
+
+# --- finals ----------------------------------------------------------------
+def test_final_goes_to_final_and_is_not_versioned(posts, tmp_path):
+    """A published page is one snapshot, not a version history."""
+    saved = svp.save("shot-value-ladder", [_png(tmp_path, "slide-1.png")],
+                     when="2026-08-12", final=True)
+    assert saved[0].parent.name == "final"
+    assert saved[0].name == "2026-08-12-slide-1.png"
+    assert "-v0" not in saved[0].name
+
+
+def test_final_shares_the_post_folder_with_its_assets(posts, tmp_path):
+    """Assets and the page they produced belong to one post, one folder."""
+    svp.save("shot-value-ladder", [_png(tmp_path, "chart.png")], when="2026-08-07")
+    final = svp.save("shot-value-ladder", [_png(tmp_path, "slide-1.png")],
+                     when="2026-08-12", final=True)
+    assert final[0].parent.parent.name == "2026-08-07-shot-value-ladder"
+
+
+def test_resaving_a_final_replaces_rather_than_accumulates(posts, tmp_path):
+    src = _png(tmp_path, "slide-1.png")
+    for _ in range(3):
+        svp.save("p", [src], when="2026-08-12", final=True)
+    assert len(list((posts / "2026-08-12-p" / "final").glob("*.png"))) == 1

@@ -40,6 +40,10 @@ carries the title, headers, and framing.
 - Add or update tests for reusable data or analysis behavior.
 - Explain the analytical, production-path, and visual choices in plain language.
 
+**Save each version to `docs/posts/<slug>/` as you show it, not only at the end.** Every state the
+user reviews is part of the record of how the post was made, and an image that only exists in
+gitignored `output/` can be deleted by routine worktree cleanup.
+
 Don't prepare promotional copy — `promote-bulls-post` owns that stage.
 
 ## After Approval
@@ -47,7 +51,8 @@ Don't prepare promotional copy — `promote-bulls-post` owns that stage.
 1. Produce the final artifact: the downloaded 1080×1350 Canva page(s).
 2. **Inspect the actual downloaded files.** Run the checks in `POSTING_WORKFLOW.md` — approving the
    editable Canva design or the chart asset alone is the recurring failure here.
-3. Copy every approved final page to `docs/mocks/` and update the catalog card to `Mocked`.
+3. Save every approved final page with `scripts/save_post_version.py --post <slug>` and commit it;
+   update the catalog card to `Mocked`.
 4. Update the post's Notion page: the working detail, and the **data provenance** section defined in
    `DEVELOPMENT.md` — where the numbers came from and how a raw record becomes the published figure.
    Write it without being asked; the user should not have to request the trail back to a finding.

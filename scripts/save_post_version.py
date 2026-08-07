@@ -1,0 +1,114 @@
+#!/usr/bin/env python3
+"""Preserve a post's images in git, as a dated, numbered version.
+
+    venv/bin/python scripts/save_post_version.py --post shot-value-ladder \
+        output/feed/2026-08-07-ladder-pps-league.png ...
+
+Copies into ``docs/posts/<slug>/`` as ``YYYY-MM-DD-vNN-<name>.png``. That tree is
+**tracked**; ``output/`` is scratch and stays ignored.
+
+Run this every time a version is shown to the user for review -- that is the unit
+of a version, not every render. A render where a label moved two pixels is not a
+version anybody wants to scroll past a year from now, but every state that was
+actually put in front of someone is part of the record of how the post got made.
+
+Two things this closes, both of which cost real work once:
+
+* **Images stopped being deletable.** ``output/`` is gitignored, so a worktree
+  holding nothing but rendered charts looked clean to the cleanup rule in
+  DEVELOPMENT.md and was removed, taking a day of approved renders with it.
+  Files under ``docs/posts/`` make the worktree dirty, and a dirty worktree is
+  already protected.
+* **Iterations stopped being anonymous.** One flat ``output/feed/`` with
+  overwriting filenames kept only the newest state, so "show me what it looked
+  like before" had no answer.
+
+Version numbers are per post and never reused: the next number is one past the
+highest already on disk, so re-running after a rebuild does not renumber history.
+"""
+from __future__ import annotations
+
+import argparse
+import re
+import shutil
+import sys
+from datetime import date
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+POSTS = ROOT / "docs" / "posts"
+VERSION_RE = re.compile(r"^\d{4}-\d{2}-\d{2}-v(\d+)-")
+# Dated first so the directory sorts chronologically, version zero-padded so
+# v10 sorts after v9 rather than between v1 and v2.
+STAMP = "{date}-v{version:02d}-{name}"
+
+
+def slugify(text: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", text.strip().lower()).strip("-")
+    if not slug:
+        raise SystemExit("--post needs at least one alphanumeric character")
+    return slug
+
+
+def next_version(post_dir: Path) -> int:
+    """One past the highest version already saved, so history never renumbers."""
+    highest = 0
+    for path in post_dir.glob("*.png"):
+        match = VERSION_RE.match(path.name)
+        if match:
+            highest = max(highest, int(match.group(1)))
+    return highest + 1
+
+
+def strip_stamp(name: str) -> str:
+    """Drop any leading date or version the render already carried.
+
+    The chart CLIs date their own output, so without this a saved file would
+    read ``2026-08-07-v03-2026-08-07-ladder-pps-league.png``.
+    """
+    name = VERSION_RE.sub("", name)
+    return re.sub(r"^\d{4}-\d{2}-\d{2}-", "", name)
+
+
+def save(post: str, files: list[Path], when: str | None = None,
+         version: int | None = None) -> list[Path]:
+    slug = slugify(post)
+    post_dir = POSTS / slug
+    post_dir.mkdir(parents=True, exist_ok=True)
+
+    missing = [f for f in files if not f.is_file()]
+    if missing:
+        raise SystemExit("Not found: " + ", ".join(str(m) for m in missing))
+
+    stamp_date = when or date.today().isoformat()
+    number = version if version is not None else next_version(post_dir)
+    saved = []
+    for src in files:
+        dest = post_dir / STAMP.format(date=stamp_date, version=number,
+                                       name=strip_stamp(src.name))
+        shutil.copy2(src, dest)
+        saved.append(dest)
+    return saved
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(
+        description="Save post images to docs/posts/<slug>/ as a dated version")
+    ap.add_argument("--post", required=True, help="post slug, e.g. shot-value-ladder")
+    ap.add_argument("--date", default="", help="override the date stamp (YYYY-MM-DD)")
+    ap.add_argument("--version", type=int, default=None,
+                    help="force a version number instead of auto-incrementing")
+    ap.add_argument("files", nargs="+", type=Path)
+    args = ap.parse_args()
+
+    saved = save(args.post, args.files, args.date or None, args.version)
+    for path in saved:
+        print(f"Saved {path.relative_to(ROOT)}")
+    print(f"\n{len(saved)} file(s) as v{VERSION_RE.match(saved[0].name).group(1)}. "
+          "Commit them — that is what makes them safe.")
+
+
+if __name__ == "__main__":
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
+    main()

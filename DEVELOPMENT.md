@@ -33,9 +33,16 @@ in the worktree. Defer append-only indexes such as `idea-catalog.html` and
 3. Inspect the staged/final diff and commit file list; never use `git add -A` or `git commit -am`.
 4. Fast-forward the primary `main` to the post branch, push only with explicit approval, and prove
    local/remote SHA parity.
-5. After the final is preserved in `docs/mocks/`, remove the worktree and delete its now-merged
-   branch. At the next task start, prune missing worktree metadata and clean any clearly merged
-   leftovers; preserve and report anything dirty, unmerged, or unclear.
+5. After the post's images are committed under `docs/posts/<slug>/`, remove the worktree and delete
+   its now-merged branch. At the next task start, prune missing worktree metadata and clean any
+   clearly merged leftovers; preserve and report anything dirty, unmerged, or unclear.
+
+**Before removing any worktree, check `output/` for images that were never saved to
+`docs/posts/`.** A merged branch does not mean the work is done — it means the *code* is done. This
+rule and the "preserve approved finals" rule key off different signals, and they came apart once: a
+worktree whose branch was merged looked like a clean leftover while its gitignored `output/` still
+held a day of approved renders, and removing it destroyed them. Saving versions as they are reviewed
+is what keeps the two signals aligned, because tracked files make the worktree dirty.
 
 ## Conventions
 
@@ -52,9 +59,18 @@ in the worktree. Defer append-only indexes such as `idea-catalog.html` and
   direct.
 - Never rebuild analytical logic in Canva, and never recompute a number that the chart already
   proved. Canva is layout only.
-- Add each new catalog card at the top of `idea-catalog.html`; copy approved final pages to
-  `docs/mocks/`. `output/` is gitignored and disposable only after that promotion.
-- Name outputs `YYYY-MM-DD-zone-{mode}-{scope}.png` in `output/feed/`.
+- Add each new catalog card at the top of `idea-catalog.html`.
+- **`docs/posts/<slug>/` is the tracked home for post images, and every version shown to the user
+  goes there.** Save with `scripts/save_post_version.py --post <slug> <files...>`, which stamps
+  `YYYY-MM-DD-vNN-<name>.png` — dated so the folder reads chronologically, zero-padded so v10 sorts
+  after v9, and numbered one past the highest already present so a rebuild never renumbers history.
+  Then commit. Copying is not preservation; the commit is.
+- A *version* is a state the user actually saw. A render made to check a two-pixel label offset is
+  not a version. Roughly a third of renders qualify.
+- `output/` remains gitignored scratch. Render there freely; promote what gets reviewed.
+- `docs/mocks/` is frozen — existing finals stay put and existing references keep working, but new
+  work goes to `docs/posts/`. There is one place for images going forward.
+- Name renders `YYYY-MM-DD-{chart}-{mode}-{scope}.png` in `output/feed/`.
 - Prefer small, test-backed changes. No automation, export pipelines, or heavy frameworks unless
   requested.
 

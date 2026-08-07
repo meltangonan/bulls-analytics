@@ -1034,12 +1034,18 @@ TEAM_CAPABLE = {"ladder", "hotspot", "hex", "cells"}
 
 
 def _output_path(args, slug: str) -> Path:
-    """``YYYY-MM-DD-{chart}-{mode}-{scope}.png``, the convention in DEVELOPMENT.md.
+    """``output/feed/[<post>/]YYYY-MM-DD-{chart}-{mode}-{scope}.png``.
 
     Dated because these are dailies: a chart rebuilt a week later is a different
     chart, and an undated filename silently overwrites the version already sitting
     in a Canva page. The date comes from the filesystem clock rather than the
     season string, since it stamps when the asset was cut, not what it covers.
+
+    ``--post`` puts renders in a folder named for the post, mirroring the shape of
+    ``docs/posts/<slug>/`` where reviewed versions are preserved. Scratch and
+    archive then look alike, so a flat pile of PNGs in ``output/feed/`` no longer
+    reads as the convention being ignored. Without ``--post`` the render stays
+    flat, which is right for one-off exploration that is not going anywhere.
     """
     from datetime import date
 
@@ -1048,7 +1054,15 @@ def _output_path(args, slug: str) -> Path:
     if args.chart == "ladder" and args.band != sm.LADDER_STEP_FT:
         parts.append(f"{args.band:g}ft")
     parts.append(slug)
-    return ROOT / "output" / "feed" / ("-".join(parts) + ".png")
+    folder = ROOT / "output" / "feed"
+    if args.post:
+        folder = folder / _slugify(args.post)
+    return folder / ("-".join(parts) + ".png")
+
+
+def _slugify(text: str) -> str:
+    import re
+    return re.sub(r"[^a-z0-9]+", "-", text.strip().lower()).strip("-")
 
 
 def main():
@@ -1071,6 +1085,9 @@ def main():
     ap.add_argument("--band", type=float, default=sm.LADDER_STEP_FT,
                     help="ladder only: band width in feet (1 for the league, "
                          "2 suits a single team's smaller sample)")
+    ap.add_argument("--post", default="",
+                    help="post slug; renders into output/feed/<slug>/ so scratch "
+                         "mirrors docs/posts/<slug>/")
     ap.add_argument("--output", default="")
     args = ap.parse_args()
 

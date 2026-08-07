@@ -89,3 +89,28 @@ def test_slug_is_normalised(posts, tmp_path):
 def test_empty_slug_is_rejected(posts, tmp_path):
     with pytest.raises(SystemExit):
         svp.save("---", [_png(tmp_path, "c.png")])
+
+
+# --- render target shape ---------------------------------------------------
+def test_render_and_archive_use_the_same_folder_shape():
+    """``output/feed/<slug>/`` mirrors ``docs/posts/<slug>/``.
+
+    Two differently-shaped homes for the same images read as the convention not
+    being followed, which is exactly how it was first reported.
+    """
+    import argparse
+    import importlib.util as _ilu
+
+    spec = _ilu.spec_from_file_location("msc", ROOT / "scripts" / "make_shot_chart.py")
+    msc = _ilu.module_from_spec(spec)
+    spec.loader.exec_module(msc)
+
+    args = argparse.Namespace(chart="ladder", metric="pps", focus="",
+                              band=2.0, post="Shot Value Ladder")
+    path = msc._output_path(args, "bulls")
+    assert path.parent.name == "shot-value-ladder"
+    assert path.parent.parent.name == "feed"
+
+    args.post = ""
+    flat = msc._output_path(args, "bulls")
+    assert flat.parent.name == "feed"

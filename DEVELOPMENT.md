@@ -70,7 +70,10 @@ is what keeps the two signals aligned, because tracked files make the worktree d
 - `output/` remains gitignored scratch. Render there freely; promote what gets reviewed.
 - `docs/mocks/` is frozen — existing finals stay put and existing references keep working, but new
   work goes to `docs/posts/`. There is one place for images going forward.
-- Name renders `YYYY-MM-DD-{chart}-{mode}-{scope}.png` in `output/feed/`.
+- Name renders `YYYY-MM-DD-{chart}-{mode}-{scope}.png` and pass `--post <slug>` so they land in
+  `output/feed/<slug>/`, mirroring `docs/posts/<slug>/`. Scratch and archive keep the same shape;
+  a flat pile of PNGs in `output/feed/` reads as the convention being ignored, which is how the
+  mismatch was first reported. Omit `--post` only for one-off exploration.
 - Prefer small, test-backed changes. No automation, export pipelines, or heavy frameworks unless
   requested.
 
@@ -217,7 +220,7 @@ venv/bin/python scripts/make_zone_leaders.py --mode ppg|frequency [--last-n-game
 venv/bin/python scripts/make_zone_shooting.py --mode team|volume [--last-n-games N] [--min-shots N]
 venv/bin/python scripts/make_feed_post.py --post-type zone-pps [--last-n-games N]
 venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|rings|cells [--final]
-venv/bin/python scripts/make_shot_chart.py --team|--league --chart ladder --metric pps|fg-rel|pps-rel
+venv/bin/python scripts/make_shot_chart.py --team|--league --chart ladder --metric pps|fg-rel|pps-rel [--post <slug>]
 venv/bin/python scripts/save_post_version.py --post <slug> <files...>   # preserve a reviewed version
 ```
 

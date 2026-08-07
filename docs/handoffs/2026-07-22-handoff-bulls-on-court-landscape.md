@@ -157,8 +157,8 @@ could look like a quality ranking.
 - User approved the chart asset, 500-Bulls-minute threshold, and square-crop headshots on 2026-07-22
   and moved the page into Canva assembly. This approves the chart, not the final post.
 - Review artifacts:
-  - `output/feed/2026-07-22-bulls-on-court-landscape-min-500.csv`
-  - `output/feed/2026-07-22-bulls-on-court-landscape-chart.png`
+  - `output/feed/2026-07-22-bulls-on-court-landscape/2026-07-22-bulls-on-court-landscape-min-500.csv`
+  - `output/feed/2026-07-22-bulls-on-court-landscape/2026-07-22-bulls-on-court-landscape-chart.png`
 
 ## Clearest next action
 

@@ -275,7 +275,7 @@ Before changing code, read `DEVELOPMENT.md` as required by the `create-bulls-pos
 - Extracted and validated the 12 available roster rows, confirmed the four missing rookies, and
   checked that each player's total DPM equals the offensive and defensive components within
   rounding.
-- Reviewed `output/feed/2026-07-22-bulls-on-court-landscape-draft.png` and
+- Reviewed `output/feed/2026-07-22-bulls-on-court-landscape/2026-07-22-bulls-on-court-landscape-draft.png` and
   `scripts/prototypes/bulls_on_court_landscape.py` so this post can remain a deliberate visual
   companion.
 - Finalized the scope, copy deck, production path, source language, zero-line treatment, and rookie

@@ -193,6 +193,14 @@ proportions, mark choices, and visual logic.
 Do not redesign it toward "our own direction" — the reason to work from a tutorial is that its
 composition already works. Divergence should be a deliberate, stated choice, not a drift.
 
+**Concentric-band charts get depth, not flat fills.** Where many bands abut — the `rings` and
+`ladder` shot charts — each band is drawn as a stack of thin sub-annuli tinted lighter at its inner
+edge, and `ladder` adds a soft cast shadow just outside each ring onto the larger one behind it.
+Matplotlib has no blur, so both gradients are built from a handful of steps. This is not decoration:
+30 flat abutting bands read as one mass, and the lift-plus-shadow is what separates them into
+countable steps. Court markings on these charts drop to ~0.68 alpha and a thinner line, since they
+sit on top of saturated data and should locate the reader rather than compete.
+
 ## 7. What Every Post Shares
 
 Visual outcomes, whichever tool composes the page:

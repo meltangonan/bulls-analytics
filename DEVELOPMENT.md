@@ -90,6 +90,13 @@ These are the traps that produce silently wrong numbers rather than errors.
   on every run — if that figure drifts, the geometry drifted. **This is a deliberate exception to
   preferring NBA's labels, and it is only safe because the divergence is measured and reported.**
   Any other post should still group by NBA's own `shot_zone`.
+- **`shot_maps.polar_cells()` is the second deliberate exception, and it solves the 16 ft step
+  differently.** Rather than flattening the sector count, it keeps NBA's angular cuts — three
+  sectors inside, five outside — and moves the change from 16 ft to the three-point line, where the
+  floor already has a painted line for the step to sit on. Classification comes from `loc_x`/`loc_y`
+  and `shot_type`, so the drawn regions and the counted regions are the same object; a
+  `tile the court without overlap` test asserts every shot lands in exactly one cell. The 2PT/3PT
+  split follows `shot_type` rather than radius so the corner pocket stays with the threes.
 - **To qualify a per-bucket leader, gate on a *share* of the bucket, not a rank or a flat floor.**
   When bucket volume varies wildly this is the difference between a defensible claim and a fluke.
   In `scoring_by_location.py` the roster took 2,226 shots at the rim and 29 from right mid-range, so
@@ -162,8 +169,73 @@ These are the traps that produce silently wrong numbers rather than errors.
 venv/bin/python scripts/make_zone_leaders.py --mode ppg|frequency [--last-n-games N]
 venv/bin/python scripts/make_zone_shooting.py --mode team|volume [--last-n-games N] [--min-shots N]
 venv/bin/python scripts/make_feed_post.py --post-type zone-pps [--last-n-games N]
-venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|rings [--final]
+venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|rings|cells [--final]
+venv/bin/python scripts/make_shot_chart.py --team|--league --chart ladder --metric pps|fg-rel|pps-rel
 ```
+
+`rings` and `cells` answer the same question — how well he shoots by area, against the league — at
+four zones and at 18. Choose by sample. `rings` keeps every band large enough to carry volume as
+well as efficiency; `cells` locates a strength or a hole precisely but greys out what it cannot
+stand behind. On a ~950-attempt season about half the `cells` grid greys, which is informative when
+a player genuinely has no mid-range game and misleading when he simply missed time — read the
+printed per-cell table before publishing either.
+
+`ladder` is the distance-only form, concentric distance bands and no angle at all, and it wants
+team-scale volume:
+`--team` pulls every Bulls shot (traded players included — this is the team's offence, not a
+roster), `--league` charts all 30 teams. `--metric pps` is the "Midrange Is Dead" chart and the one
+that carries an argument, because points per shot is the only scale on which a two and a three
+compare; `fg-rel` and `pps-rel` measure each ring against the league at the same distance and answer
+"did they shoot it well" versus "did the shot pay". `--league` rejects the `-rel` metrics, which
+would be all zeros. The colour scale is **clamped, not fitted** — the rim ring is a large enough
+outlier to squash every other ring into one shade if it sets the range.
+
+**The split at 24 ft is the method, not a detail.** Inside it a ring counts two-point attempts only;
+outside it, threes only. Binning purely by distance makes the 22-24 ft rings ~95% corner threes, so
+they read ~1.15 PPS, the curve rises smoothly into the arc, and the cliff the chart exists to show
+vanishes.
+
+**The corner pocket is carved out, and this is a deliberate divergence from the reference card.**
+A corner three sits ~22 ft from the hoop — inside the radius where the ladder counts twos — so a
+purely radial chart has to drop it. The card does exactly that: it loses 22% of all league threes
+and then paints the corner strip with the *above-the-break* value from 24-25 ft. That is backwards.
+Corner threes are the second most efficient shot in basketball, **1.15 PPS against 1.05 above the
+break**, so the card shows a great area as a merely good one. `shot_maps.corner_mask()` takes the
+region beyond the corner line and inside the split radius, `corner_split()` gives it its own value,
+and the two-point rings clip to the corner line so the two tile exactly. The carve-out is free of
+ambiguity: across 219,160 league attempts **zero** two-pointers fall beyond the corner line inside
+24 ft, because beyond that line a two does not exist. Coverage goes from 90.4% to **99.5%**; what
+remains excluded is heaves past 31 ft and ~190 above-the-break threes that register just under 24 ft.
+
+Ring values verified against a published league "Midrange Is Dead" card for 2025-26: of
+its 31 printed values, 15 reproduce exactly and 15 land within 0.01, with only the outermost 30-31 ft
+ring (smallest sample) off by 0.03. Pure-distance binning matches 16/31 but produces 0.70 / 1.10 /
+1.17 where the card prints 0.70 / 0.74 / 0.62 — that trio is the diagnostic if the method drifts.
+
+**Bands are 2 ft wide (`--band` overrides).** Two independent arguments landed on the same number.
+Statistically, 1 ft oversamples: across the league's own ladder **21 of 29 neighbouring 1 ft bands are
+statistically indistinguishable**, so most of that resolution renders noise as detail — pooling pairs
+turns the league mid-range from a jittery walk into a clean monotonic decline (0.91 → 0.87 → 0.84 →
+0.80 → 0.75 → 0.70, then the jump to 1.09 over the arc). Physically, a shooter and his defender
+occupy about two feet of floor, so a 14 ft and a 15 ft attempt are the same basketball situation
+measured twice; bands should be no finer than the resolution at which the phenomenon varies. It also
+takes a single team season from 12 grey bands to 2. 2 ft divides both `LADDER_MAX_FT` (30) and
+`LADDER_TWO_MAX_FT` (24), which it must — otherwise a band straddles the 2PT/3PT split.
+
+**The outer band has a hard edge at 30 ft; attempts past it are excluded and reported.** The
+reference card instead makes its outermost band a `30+` catch-all with no upper bound, which is why
+its top value reads 0.87 against our 0.90: it absorbs 962 heaves out to half court. A band with no
+outer edge is not a distance band, so we cap and disclose (0.4% of league attempts) rather than
+absorb. `ladder_edges()` snaps the last edge down so a wider band can never readmit them.
+
+**Colour scales are fixed, round and symmetric — never fitted.** Two separate requirements: a
+*clamped* range, so the rim's 1.51 cannot squash every other ring into one shade; and a *meaningful
+midpoint*, so the colour turn sits on a number a reader can name. For PPS that is 1.00 — a shot worth
+exactly one point — running 0.80 to 1.20 in steps of 0.05, which is what the reference does. Centring
+on the league mean (1.09) instead was a real bug: it pushed the turn up so 1.00 rendered orange and
+nothing went green until ~1.15, quietly flattering every ring between. Label placement is likewise
+measured, not eyeballed: glyph-ink centres are compared against band centres and the residual held at
+0 px (`LABEL_NUDGE_PX`).
 
 ## Tests
 

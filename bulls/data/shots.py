@@ -15,7 +15,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from bulls.config import CURRENT_SEASON
+from bulls.config import BULLS_TEAM_ID, CURRENT_SEASON
 from bulls.data import fetch
 
 CACHE = Path(__file__).resolve().parents[2] / "cache" / "shot_charts"
@@ -29,6 +29,25 @@ def player_shots(player_id: int, season: str = CURRENT_SEASON,
     if path.exists() and not refresh:
         return pd.read_csv(path)
     df = fetch.get_player_shots(player_id, team_id=0, season=season)
+    df = df[SHOT_COLUMNS] if not df.empty else pd.DataFrame(columns=SHOT_COLUMNS)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(path, index=False)
+    return df
+
+
+def team_shots(team_id: int = BULLS_TEAM_ID, season: str = CURRENT_SEASON,
+               refresh: bool = False) -> pd.DataFrame:
+    """Every shot the team took, by whoever took it.
+
+    Traded players are kept deliberately, which is the opposite of the roster
+    filter most posts want. This is the team's *offence*: a shot taken in a
+    Bulls uniform in November belongs to the team's shot profile whether or not
+    the man who took it is still here.
+    """
+    path = CACHE / f"team_{team_id}_{season}.csv"
+    if path.exists() and not refresh:
+        return pd.read_csv(path)
+    df = fetch.get_team_shots(team_id=team_id, season=season)
     df = df[SHOT_COLUMNS] if not df.empty else pd.DataFrame(columns=SHOT_COLUMNS)
     path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(path, index=False)

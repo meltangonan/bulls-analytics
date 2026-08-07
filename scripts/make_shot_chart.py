@@ -8,6 +8,13 @@ Four charts, three questions:
     hotspot   WHERE he shoots, vs the league          (frequency only)
     hex       where AND how well, at full resolution  (size = volume, color = efficiency)
     rings     how often AND how well, by zone         (both, vs the league)
+    cells     how well, spot by spot                  (18 polar cells, vs the league)
+
+``rings`` and ``cells`` are the same question at two resolutions, and the choice
+between them is a sample-size trade. Four zones give every band a large enough
+sample to also carry volume; 18 cells locate a strength or a hole precisely but
+leave several cells too thin to rate, which is why ``cells`` drops volume and
+greys what it cannot stand behind.
 
 A density-blob variant coloured by efficiency was tried and removed: thresholding on
 over-indexed volume drew only 27% of a player's shots and hid 100% of his rim and
@@ -401,6 +408,587 @@ def _scale_legend(ax):
                 fontproperties=helvetica("bold"))
 
 
+# ---------------------------------------------------------------------------
+# cells — the fine polar grid
+# ---------------------------------------------------------------------------
+# Same chart-only contract as rings: transparent, no title or footer, page
+# framing belongs to Canva. Colour is FG% vs league from the same cell, binned
+# into the family's four buckets rather than a continuous ramp. A ramp would
+# imply a precision the sample does not have -- several cells hold 20-40 shots,
+# where FG% swings on chance alone -- and it would break with the rings chart,
+# which a reader may meet in the same carousel.
+# Light enough that a wall of unrated cells recedes. Matas takes 12% of his
+# shots between 4 ft and the arc, so more than half the grid greys out; at the
+# rings chart's muted tone that emptiness read louder than the findings.
+CELL_GREY = "#D2CDC5"
+CELL_SEAM = "#F5EFE2"
+
+
+def render_cells(ctx, out: Path, final: bool):
+    cells = sm.polar_split(ctx["player"], ctx["league"])
+    rated, thin = cells[cells.rated], cells[~cells.rated]
+    print(f"  {len(rated)}/{len(cells)} cells rated, holding "
+          f"{rated.fga.sum() / len(ctx['player']) * 100:.0f}% of his attempts")
+    for c in cells.sort_values("fga", ascending=False).itertuples():
+        rel = f"{c.fg_rel:+5.1f}" if c.fga else "    -"
+        fg = c.fg * 100 if c.fga else 0.0
+        print(f"  {c.name:<18}{c.fga:>4} FGA  {fg:5.1f}% ({rel} vs lg)"
+              f"{'' if c.rated else '   (too few to rate)'}")
+
+    fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
+                              house.CANVAS_HEIGHT / house.DRAFT_DPI))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, house.CANVAS_WIDTH); ax.set_ylim(0, house.CANVAS_HEIGHT)
+    ax.set_aspect("equal"); ax.set_xticks([]); ax.set_yticks([])
+    ax.patch.set_alpha(0.0)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+
+    s, hx, hy = 2.0, house.CANVAS_WIDTH / 2, 470
+    base = hy + sm.BASELINE_Y * s
+    # Two clips, exactly as in rings: threes may run to the sidelines, twos stop
+    # at the corner line so the corner pocket belongs to the three-point cells.
+    clip = Rectangle((hx - 250 * s, base), 500 * s, 900 * s, transform=ax.transData)
+    two_pt = Rectangle((hx - 220 * s, base), 440 * s, 900 * s, transform=ax.transData)
+
+    for c in cells.itertuples():
+        color = _zone_color(c.fg_rel) if c.rated else CELL_GREY
+        _cell_wedge(ax, (hx, hy), c, s, color, clip if c.three else two_pt)
+    _ring_court(ax, hx, hy, s, clip)
+    for c in cells.itertuples():
+        _cell_label(ax, hx, hy, c, s)
+
+    _scale_legend(ax)
+    ax.text(house.CANVAS_WIDTH / 2, 108,
+            f"GREY = UNDER {sm.MIN_CELL_FGA} ATTEMPTS, TOO FEW TO RATE",
+            ha="center", va="center", fontsize=10, color=LEGEND_INK, alpha=0.9,
+            zorder=9, fontproperties=helvetica("bold"))
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out, dpi=house.export_dpi(final), transparent=True)
+    plt.close(fig)
+    print(f"Saved {out}")
+
+
+def _cell_angles(cell) -> tuple[float, float]:
+    """Matplotlib start/end angles for a cell's wedge, in degrees.
+
+    ``sector_index`` counts from the viewer's left while Wedge measures
+    anticlockwise from the +x axis, so the index has to be mirrored.
+
+    The two outermost sectors are extended below the hoop line, to 270 and -90,
+    which fills the strip between the hoop and the baseline. That is not a
+    cosmetic stretch: ``sector_index`` clamps a behind-the-hoop shot's angle to
+    0 or 180, so those shots already count in the outermost sectors, and the
+    drawn wedge now covers exactly the ground its own arithmetic claims.
+    """
+    if cell.n_sectors == 1:
+        return 0.0, 360.0
+    step = 180.0 / cell.n_sectors
+    t1 = -90.0 if cell.sector == cell.n_sectors - 1 else 180.0 - (cell.sector + 1) * step
+    t2 = 270.0 if cell.sector == 0 else 180.0 - cell.sector * step
+    return t1, t2
+
+
+def _cell_wedge(ax, centre, cell, s, color, clip):
+    t1, t2 = _cell_angles(cell)
+    r_out, r_in = cell.r_out * 10 * s, cell.draw_in * 10 * s
+    w = ax.add_patch(Wedge(centre, r_out + 0.6, t1, t2,
+                           width=None if r_in <= 0 else r_out - r_in + 0.6,
+                           facecolor=color, edgecolor=CELL_SEAM, linewidth=1.6,
+                           zorder=2))
+    w.set_clip_path(clip)
+
+
+MIN_LABELLED_FGA = 5     # a grey cell holding fewer is left blank, not annotated
+CORNER_X, CORNER_Y = 235.0, 62.0     # label anchor inside the corner pocket
+
+
+def _is_corner(cell) -> bool:
+    return bool(cell.three and cell.sector in (0, cell.n_sectors - 1))
+
+
+def _label_anchor(cell, hx, hy, s) -> tuple[float, float]:
+    """Where a cell's number sits, in pixels.
+
+    The angular midline at the radial midpoint lands near enough to a wedge's
+    visual centre for every cell but two. Corner threes are the exception: the
+    pocket is a strip 3 ft wide running up the sideline, so the sector's
+    geometric centroid falls off the canvas entirely. Those get a fixed anchor
+    inside the pocket instead. Angles come from the *unextended* sector span --
+    the below-hoop extension is drawn area, not where a reader looks.
+    """
+    if _is_corner(cell):
+        return hx + (-1 if cell.sector == 0 else 1) * CORNER_X * s, hy + CORNER_Y * s
+    if cell.n_sectors == 1:
+        mid = np.radians(90.0)
+    else:
+        mid = np.radians(180.0 - (cell.sector + 0.5) * (180.0 / cell.n_sectors))
+    r = (cell.r_in + 2.4) if cell.three else (cell.r_in + cell.r_out) / 2
+    return hx + np.cos(mid) * r * 10 * s, hy + np.sin(mid) * r * 10 * s
+
+
+def _cell_label(ax, hx, hy, cell, s):
+    """FG% at the cell's anchor, with its league delta alongside.
+
+    Corner labels are turned to read up the sideline. Horizontal type cannot fit
+    a 3 ft pocket at any size worth reading, and those two cells carry 170 of
+    his attempts -- too many to leave unlabelled or to shrink into illegibility.
+    """
+    if not cell.fga or (not cell.rated and cell.fga < MIN_LABELLED_FGA):
+        return
+    x, y = _label_anchor(cell, hx, hy, s)
+    corner = _is_corner(cell)
+    rot = 0 if not corner else (90 if cell.sector == 0 else -90)
+    # Rotated, the stacking axis turns with the text: "above" and "below" become
+    # sideways on the page, so the two lines stay stacked as the reader sees them.
+    if not corner:
+        top, under = (0.0, 9.0), (0.0, -13.0)
+    elif cell.sector == 0:
+        top, under = (-9.0, 0.0), (13.0, 0.0)
+    else:
+        top, under = (9.0, 0.0), (-13.0, 0.0)
+
+    if cell.rated:
+        ax.text(x + top[0], y + top[1], f"{cell.fg * 100:.0f}%", ha="center",
+                va="center", fontsize=17, color=CREAM, rotation=rot, zorder=10,
+                fontproperties=helvetica("bold"))
+        ax.text(x + under[0], y + under[1], f"{cell.fg_rel:+.0f} vs LA",
+                ha="center", va="center", fontsize=10, rotation=rot,
+                color=UP if cell.fg_rel >= 0 else DOWN, zorder=10,
+                fontproperties=helvetica("bold"))
+    else:
+        ax.text(x, y, f"{cell.fga} FGA", ha="center", va="center", fontsize=10,
+                color="#4A463F", alpha=0.75, rotation=rot, zorder=10,
+                fontproperties=helvetica("bold"))
+
+
+# ---------------------------------------------------------------------------
+# ladder — concentric distance bands, the "Midrange Is Dead" form
+# ---------------------------------------------------------------------------
+# Distance and nothing else. Two metrics, and they are not interchangeable:
+#
+#   pps     points per shot, the absolute value of a shot from that far out
+#   fg-rel  FG% minus the league's FG% from the same ring
+#
+# PPS is the one that carries the argument, because it is the only scale on
+# which a two and a three can be compared -- and it is the reason the floor of
+# the chart sits just INSIDE the arc rather than at the top of the key.
+LADDER_CMAP = LinearSegmentedColormap.from_list("ladder", [
+    "#5E1119", "#8C1D22", "#C0392B", "#E2614A", "#F0A05F", "#EFD07A",
+    "#BFD16C", "#7FBF5E", "#4C9B4A", "#2E7D3A", "#1B5E2A"])
+LADDER_SEAM = "#00000022"     # a hairline between rings, dark and nearly invisible
+LADDER_INK, LADDER_INK_DARK = "#FFFFFF", "#2A2118"
+# Light, so the run of unrated rings recedes into "nothing happens here" rather
+# than reading as a rendering fault. Those rings are a finding in their own
+# right: the Bulls take 79 shots all season from 16-21 ft, which is why the
+# band is empty at all.
+# Warm neutral rather than near-white: the asset exports transparent and may
+# land on a pale Canva page, where a lighter grey would vanish into it.
+LADDER_THIN = "#C2BAAE"
+
+# Fixed, round, symmetric scales -- never fitted to the data.
+#
+# Two separate ideas, and getting either wrong misreads the chart:
+#
+# 1. CLAMPED range. The rim ring is a huge outlier at 1.51, and letting it set
+#    the range squashes every other ring into two shades of red. The reference
+#    card clamps the same way: its key stops at 1.20 while its rim reads 1.51.
+# 2. MEANINGFUL midpoint. The colour turn must sit on a number a reader can
+#    name. For points per shot that is 1.00 -- a shot worth exactly one point --
+#    which is where the reference turns from orange to green. Centring on the
+#    league mean instead (1.09) was wrong: it pushed the turn up so that 1.00
+#    rendered orange and nothing went green until about 1.15, quietly flattering
+#    every ring between the two.
+#
+# Steps are round in each metric's own units so the key reads as a ruler.
+LADDER_SCALES = {
+    "pps": {"lo": 0.80, "hi": 1.20, "step": 0.05},
+    "pps-rel": {"lo": -0.20, "hi": 0.20, "step": 0.05},
+    "fg-rel": {"lo": -10.0, "hi": 10.0, "step": 5.0},
+}
+
+
+def _ladder_ticks(scale: dict) -> list[float]:
+    n = int(round((scale["hi"] - scale["lo"]) / scale["step"]))
+    return [scale["lo"] + i * scale["step"] for i in range(n + 1)]
+
+
+def scale_eps(span: float) -> float:
+    """Tolerance for 'is this the midpoint tick', robust to float drift."""
+    return span * 1e-6
+
+
+def _fit_note(ax, y: float, text: str, pt: float = 8.5):
+    """A centred note that shrinks rather than running off the canvas.
+
+    The coverage line is generated from the data, so its length changes with
+    the numbers in it; sizing it by hand would work until the day it didn't.
+    """
+    t = ax.text(house.CANVAS_WIDTH / 2, y, text, ha="center", va="center",
+                fontsize=pt, color=LEGEND_INK, alpha=0.9, zorder=9,
+                fontproperties=helvetica("bold"))
+    avail = house.CANVAS_WIDTH - 2 * house.SIDE_MARGIN
+    width = house.rendered_width(ax, t)
+    if width > avail:
+        t.set_fontsize(pt * avail / width)
+    return t
+
+LADDER_METRICS = {
+    "pps": {"column": "pps", "fmt": lambda v: f"{v:.2f}",
+            "title": "POINTS PER SHOT",
+            "tick_fmt": lambda v: f"{v:.2f}"},
+    "fg-rel": {"column": "fg_rel", "fmt": lambda v: _signed(v) + "%",
+               "title": "FG% VS LEAGUE AVERAGE",
+               "tick_fmt": lambda v: _signed(v) + "%"},
+    # The counterpart to fg-rel, and the sharper of the two for a team read:
+    # it asks not "did they shoot it well" but "did the shot pay", which folds
+    # accuracy and the extra point for a three into one number.
+    "pps-rel": {"column": "pps_rel", "fmt": lambda v: _signed2(v),
+                "title": "POINTS PER SHOT VS LEAGUE AVERAGE",
+                "tick_fmt": lambda v: _signed2(v)},
+}
+
+# 30 rings share ~580 px of column, so the type has to clear its own line
+# height with room left over or the stack reads as a solid block.
+LADDER_LABEL_PT = 7.5
+# Slightly INSIDE each ring's midpoint. Matplotlib centres a text *box*, not the
+# digits inside it, and that box carries descender space no digit uses -- so a
+# geometrically centred number sits visibly high in its band. The value is
+# measured, not guessed: rendering and comparing glyph-ink centres against band
+# centres puts the residual at 0 px here. It also drops the innermost label into
+# the rim itself, where the reference puts it.
+LABEL_NUDGE_PX = -1.0
+
+
+def _signed(v: float) -> str:
+    """Signed whole number, with no "-0". A ring level with the league reads 0."""
+    return "0" if round(v) == 0 else f"{v:+.0f}"
+
+
+def _signed2(v: float) -> str:
+    """Signed to two places, with no "-0.00"."""
+    return "0" if abs(round(v, 2)) < 0.005 else f"{v:+.2f}"
+
+
+def render_ladder(ctx, out: Path, final: bool):
+    metric = LADDER_METRICS[ctx["metric"]]
+    step = ctx.get("band", sm.LADDER_STEP_FT)
+    edges = sm.ladder_edges(step)
+    rings = sm.distance_ladder(ctx["player"], ctx["league"], step=step)
+    col = metric["column"]
+    # Coverage is told the ladder's REAL outer edge, not the nominal maximum:
+    # at 2 ft wide the last band stops at 30, so 30-31 ft becomes excluded and
+    # the "% shown" line has to say so.
+    cover = sm.ladder_coverage(ctx["player"], max_ft=float(edges[-1]))
+    corner = sm.corner_split(ctx["player"], ctx["league"])
+    for r in rings.itertuples():
+        flag = "" if r.rated else "   (too few to rate)"
+        kind = "3PT" if r.three else "2PT"
+        print(f"  {r.lo:5.0f}-{r.hi:<3.0f} ft {kind} {r.fga:>5} FGA   "
+              f"PPS {r.pps:.2f}   FG {r.fg * 100:5.1f}% ({r.fg_rel:+.1f} vs lg)"
+              f"{flag}")
+    print(f"  CORNER 3    {corner['fga']:>5} FGA   PPS {corner['pps']:.2f}   "
+          f"FG {corner['fg'] * 100:5.1f}% ({corner['fg_rel']:+.1f} vs lg)"
+          f"{'' if corner['rated'] else '   (too few to rate)'}")
+    print(f"  coverage: {cover['total'] - cover['excluded']} of {cover['total']} "
+          f"attempts on the chart ({(1 - cover['excluded_share']) * 100:.1f}%); "
+          f"excluded {cover['stray_threes']} threes registering inside "
+          f"{sm.LADDER_TWO_MAX_FT:.0f} ft off the corner "
+          f"({cover['three_share_excluded'] * 100:.1f}% of 3PA), "
+          f"{cover['long_twos']} long twos, {cover['beyond_range']} beyond range")
+
+    live = rings[rings.rated & rings[col].notna()]
+    if live.empty:
+        raise SystemExit("No ring has enough attempts to draw")
+    scale = LADDER_SCALES[ctx["metric"]]
+    ticks = _ladder_ticks(scale)
+    norm = Normalize(scale["lo"], scale["hi"], clip=True)
+    below = int((live[col] < scale["lo"]).sum())
+    above = int((live[col] > scale["hi"]).sum())
+    print(f"  scale {scale['lo']:.2f} to {scale['hi']:.2f} in steps of "
+          f"{scale['step']:.2f}, turning at "
+          f"{(scale['lo'] + scale['hi']) / 2:.2f}; {below} rings clamp low, "
+          f"{above} clamp high")
+
+    fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
+                              house.CANVAS_HEIGHT / house.DRAFT_DPI))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, house.CANVAS_WIDTH); ax.set_ylim(0, house.CANVAS_HEIGHT)
+    ax.set_aspect("equal"); ax.set_xticks([]); ax.set_yticks([])
+    ax.patch.set_alpha(0.0)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+
+    s, hx, hy = 2.0, house.CANVAS_WIDTH / 2, 470
+    base = hy + sm.BASELINE_Y * s
+    # Rings run past the sidelines and are cut there, exactly as the reference
+    # does: the court, not the data, decides how wide the fan gets.
+    clip = Rectangle((hx - 250 * s, base), 500 * s, 1000 * s, transform=ax.transData)
+    # Two-point rings stop at the corner line; the pocket beyond it is drawn
+    # separately with its own value, because a corner three is not a long two.
+    cx = sm.CORNER_LINE_X
+    inner_clip = Rectangle((hx - cx * s, base), 2 * cx * s, 1000 * s,
+                           transform=ax.transData)
+
+    # Outermost first, so each ring paints over its larger neighbour and can
+    # drop a shadow onto it -- the stacked-plate look the reference has.
+    for i, r in enumerate(reversed(list(rings.itertuples()))):
+        drawable = r.rated and not np.isnan(getattr(r, col))
+        color = LADDER_CMAP(norm(getattr(r, col))) if drawable else LADDER_THIN
+        _ladder_ring(ax, (hx, hy), r, s, color, clip if r.three else inner_clip,
+                     shadow=i > 0)
+    _corner_pocket(ax, hx, hy, s, base, corner, col, norm, metric)
+
+    _ladder_court(ax, hx, hy, s, clip)
+    for r in rings.itertuples():
+        _ladder_label(ax, hx, hy, s, r, col, metric, norm)
+    _ladder_legend(ax, norm, metric, ticks)
+    # Required by the working guide: the coverage window stays on the graphic.
+    # The grey key is not optional either -- on a team season a third of the
+    # ladder can grey out, and unexplained grey reads as "average" rather than
+    # "unknown", which is the opposite of what it means.
+    _fit_note(ax, 112,
+              f"INSIDE {sm.LADDER_TWO_MAX_FT:.0f} FT COUNTS 2-POINTERS  ·  "
+              f"OUTSIDE COUNTS 3-POINTERS  ·  CORNER POCKET SHOWN SEPARATELY")
+    grey = int((~rings.rated).sum()) + (0 if corner["rated"] else 1)
+    key = f"{(1 - cover['excluded_share']) * 100:.0f}% OF ALL ATTEMPTS SHOWN"
+    if grey:
+        key += (f"  ·  GREY = UNDER {sm.MIN_RING_FGA} ATTEMPTS, "
+                f"TOO FEW TO RATE ({grey} BANDS)")
+    _fit_note(ax, 90, key)
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out, dpi=house.export_dpi(final), transparent=True)
+    plt.close(fig)
+    print(f"Saved {out}")
+
+
+RING_STEPS = 6          # sub-bands per ring, for the inner-edge lift
+RING_LIFT = 0.13        # how far the inner edge tints toward white
+SHADOW_PX, SHADOW_ALPHA, SHADOW_STEPS = 7.0, 0.20, 7
+
+
+def _corner_pocket(ax, hx, hy, s, base, corner, col, norm, metric):
+    """The corner-three pocket, painted with its own value and labelled.
+
+    Drawn as a disc out to the split radius, clipped to the strip beyond each
+    corner line -- so it fills exactly the ground the two-point rings vacated,
+    with no seam and no overlap. The label reads up the sideline for the same
+    reason the ``cells`` chart's does: the pocket is 3 ft wide and horizontal
+    type cannot fit at any size worth reading.
+    """
+    value = corner.get(col)
+    drawable = corner["rated"] and value is not None and not np.isnan(value)
+    color = LADDER_CMAP(norm(value)) if drawable else LADDER_THIN
+    cx = sm.CORNER_LINE_X
+    for side in (-1, 1):
+        strip = Rectangle((hx + side * cx * s if side > 0 else hx - 250 * s, base),
+                          (250 - cx) * s, 1000 * s, transform=ax.transData)
+        w = ax.add_patch(Wedge((hx, hy), sm.LADDER_TWO_MAX_FT * 10 * s, 0, 360,
+                               facecolor=color, edgecolor="none", zorder=3))
+        w.set_clip_path(strip)
+    if not drawable:
+        return
+
+    rgb = LADDER_CMAP(norm(value))[:3]
+    dark_ink = 0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2] > 0.62
+    lx, ly = _corner_centroid()
+    for side in (-1, 1):
+        ax.text(hx + side * lx * s, hy + ly * s, metric["fmt"](value),
+                ha="center", va="center", fontsize=LADDER_LABEL_PT + 1.5,
+                rotation=90 if side < 0 else -90,
+                color=LADDER_INK_DARK if dark_ink else LADDER_INK, zorder=10,
+                fontproperties=helvetica("bold"))
+
+
+def _corner_centroid() -> tuple[float, float]:
+    """Area centroid of the corner pocket, in NBA units from the hoop.
+
+    The pocket is not a rectangle, so no fixed offset can sit in the middle of
+    it. Its outer edge is the split-radius circle, which means it is tallest
+    against the corner line and tapers to nothing where that circle crosses the
+    sideline -- so its true centre sits low and inward of where eyeballing puts
+    it. Computed rather than tuned, so it follows if the split radius or the
+    corner line ever moves.
+    """
+    r = sm.LADDER_TWO_MAX_FT * 10.0
+    xs = np.linspace(sm.CORNER_LINE_X, min(250.0, r), 512)
+    tops = np.sqrt(np.maximum(r ** 2 - xs ** 2, 0.0))
+    heights = np.maximum(tops - sm.BASELINE_Y, 0.0)
+    area = heights.sum()
+    if area <= 0:
+        return sm.CORNER_LINE_X + 15.0, 0.0
+    return (float((xs * heights).sum() / area),
+            float(((tops + sm.BASELINE_Y) / 2 * heights).sum() / area))
+
+
+def _ladder_ring(ax, centre, ring, s, color, clip, shadow: bool):
+    """One ring, drawn as a raised plate sitting on the ring outside it.
+
+    Two effects together sell the depth, and neither is decoration for its own
+    sake -- they are what separates 30 abutting bands into 30 readable steps:
+
+    * a **cast shadow** just outside the ring, darkening the larger neighbour
+      that was drawn a moment ago, as if this ring floated above it;
+    * an **inner-edge lift**, each ring tinted slightly lighter where it meets
+      the smaller ring, which reads as the light catching a bevelled edge.
+
+    Both are drawn as stacks of thin annuli. Matplotlib has no blur, so a
+    gradient built from a handful of steps is how a soft edge gets made.
+    """
+    r_out, r_in = ring.hi * 10 * s, ring.lo * 10 * s
+    if shadow:
+        for k in range(SHADOW_STEPS):
+            t = k / SHADOW_STEPS
+            w = ax.add_patch(Wedge(centre, r_out + SHADOW_PX * (1 - t), 0, 360,
+                                   width=SHADOW_PX / SHADOW_STEPS + 0.6,
+                                   facecolor="#1A120C", edgecolor="none",
+                                   alpha=SHADOW_ALPHA * t ** 1.6, zorder=2))
+            w.set_clip_path(clip)
+
+    edges_px = np.linspace(r_in, r_out, RING_STEPS + 1)
+    for k in range(RING_STEPS):
+        lo, hi = edges_px[k], edges_px[k + 1]
+        tint = _blend(color, "#FFFFFF", RING_LIFT * (1 - k / (RING_STEPS - 1)))
+        w = ax.add_patch(Wedge(centre, hi + 0.6, 0, 360,
+                               width=None if lo <= 0 else hi - lo + 0.6,
+                               facecolor=tint, edgecolor="none", zorder=3))
+        w.set_clip_path(clip)
+
+
+def _ladder_label(ax, hx, hy, s, ring, col, metric, norm):
+    """One number per ring, stacked up the middle of the court.
+
+    Ink flips with the ring beneath it. The ramp runs from near-black reds to
+    pale yellow-greens, so a single ink colour is unreadable somewhere on the
+    scale whichever one is chosen; luminance decides it per ring instead.
+    """
+    if not ring.fga:
+        return
+    value = getattr(ring, col)
+    # An unrated ring is left blank. The grey band already says "nothing
+    # happens here"; printing its attempt count invited the number to be read
+    # on the same scale as the rated rings, which it is not.
+    if not ring.rated or np.isnan(value):
+        return
+    # Ring midpoint, nudged out by a few pixels. Dead-centre puts the innermost
+    # label inside the rim circle, where the hoop draws straight through it; the
+    # nudge is small enough that every number still sits within its own band.
+    y = hy + (ring.lo + ring.hi) / 2 * 10 * s + LABEL_NUDGE_PX
+    rgb = LADDER_CMAP(norm(value))[:3]
+    lum = 0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]
+    ax.text(hx, y, metric["fmt"](value), ha="center", va="center",
+            fontsize=LADDER_LABEL_PT,
+            color=LADDER_INK_DARK if lum > 0.62 else LADDER_INK, zorder=10,
+            fontproperties=helvetica("bold"))
+
+
+# Court ink. Softer and thinner than the zone charts use: here the markings sit
+# on top of 30 saturated bands, so a hard white line fights the data for
+# attention instead of quietly locating it.
+LADDER_COURT_INK = "#FBF7F1"
+# Dropped a notch from 0.68 so the rim label stays legible. The innermost
+# value in the number column sits inside the hoop, and with the label
+# outlines removed an opaque rim circle drew straight through white digits.
+LADDER_COURT_ALPHA, LADDER_COURT_LW = 0.52, 1.3
+# Lane-space marks, in feet from the baseline along the paint edge. These are
+# the real NBA positions -- the block, then the three rebounding slots.
+LANE_MARKS_FT = (7.0, 8.0, 11.0, 14.0)
+HASH_FROM_BASELINE_FT = 28.0     # sideline hash, where the coaching box begins
+
+
+def _ladder_court(ax, hx, hy, s, clip):
+    """Court markings, drawn light because every ring sits under them."""
+    from matplotlib.patches import Arc as _Arc, Circle as _Circle
+    ink = LADDER_COURT_INK
+    line = dict(color=ink, lw=LADDER_COURT_LW, zorder=6, alpha=LADDER_COURT_ALPHA)
+    arcs = dict(color=ink, lw=LADDER_COURT_LW, alpha=LADDER_COURT_ALPHA, zorder=6)
+    base = hy + sm.BASELINE_Y * s
+
+    ax.plot([hx - 250 * s, hx + 250 * s], [base, base], **line)
+    ax.add_patch(Rectangle((hx - 80 * s, base), 160 * s, 190 * s, facecolor="none",
+                           edgecolor=ink, lw=LADDER_COURT_LW,
+                           alpha=LADDER_COURT_ALPHA, zorder=6))
+
+    # Lane marks: short ticks stepping out from each paint edge.
+    for ft in LANE_MARKS_FT:
+        y = base + ft * 10 * s
+        for side, direction in ((-80, -1), (80, 1)):
+            ax.plot([hx + side * s, hx + (side + direction * 8) * s], [y, y], **line)
+
+    # Sideline hash marks, which the reference keeps and which quietly tell the
+    # reader how far out the widest rings actually reach.
+    y = base + HASH_FROM_BASELINE_FT * 10 * s
+    for side, direction in ((-250, 1), (250, -1)):
+        ax.plot([hx + side * s, hx + (side + direction * 18) * s], [y, y], **line)
+
+    # Restricted area: 4 ft from the centre of the rim, the arc a defender
+    # cannot draw a charge inside. It belongs on this chart more than most --
+    # the rim ring's 1.51 points per shot is very largely taken inside it.
+    ax.add_patch(_Arc((hx, hy), 2 * 40 * s, 2 * 40 * s, theta1=0, theta2=180, **arcs))
+    for side in (-40, 40):
+        ax.plot([hx + side * s] * 2, [hy, hy - 7.5 * s], **line)
+
+    # Backboard with depth: a thick plate over a soft drop shadow, then the rim
+    # and its connector drawn on top.
+    bb_y = hy - 7.5 * s
+    for dy, lw, alpha, color in ((-2.4, 5.0, 0.30, "#150F0A"),
+                                 (0.0, 4.2, 0.95, ink)):
+        ax.plot([hx - 30 * s, hx + 30 * s], [bb_y + dy] * 2, color=color, lw=lw,
+                alpha=alpha, solid_capstyle="butt", zorder=7)
+    ax.plot([hx, hx], [bb_y, hy - 7.5 * s + 5.0], color=ink, lw=1.6, alpha=0.9,
+            zorder=7)
+    # The rim goes lightest of all. It is the one marking that shares its exact
+    # position with a number -- the innermost ring's value sits inside the hoop
+    # -- so it has to locate the basket without competing with the digits.
+    ax.add_patch(_Circle((hx, hy), 7.5 * s, facecolor="none", edgecolor=ink,
+                         lw=1.5, alpha=0.42, zorder=4))
+
+    ft_y = hy + 142.5 * s
+    for t1, t2, dash in ((0, 180, "solid"), (180, 360, (0, (5, 4)))):
+        ax.add_patch(_Arc((hx, ft_y), 120 * s, 120 * s, theta1=t1, theta2=t2,
+                          linestyle=dash, **arcs))
+    corner_top = (ARC ** 2 - 220 ** 2) ** 0.5
+    for side in (-220, 220):
+        ax.plot([hx + side * s] * 2, [base, hy + corner_top * s], **line)
+    a = ax.add_patch(_Arc((hx, hy), 2 * ARC * s, 2 * ARC * s, theta1=22.1,
+                          theta2=157.9, **arcs))
+    a.set_clip_path(clip)
+
+
+def _ladder_legend(ax, norm, metric, ticks):
+    """A continuous bar, because the encoding is continuous.
+
+    The binned legend the zone charts use would misdescribe this one: here every
+    ring gets its own value off a ramp, and rounding that into four buckets on
+    the key while the art shows a gradient is the kind of mismatch a reader
+    notices without being able to name.
+    """
+    w, h, y = 760.0, 22.0, 176.0
+    x0 = (house.CANVAS_WIDTH - w) / 2
+    grad = np.linspace(0, 1, 512).reshape(1, -1)
+    ax.imshow(grad, extent=(x0, x0 + w, y, y + h), aspect="auto",
+              cmap=LADDER_CMAP, zorder=9)
+    ax.text(house.CANVAS_WIDTH / 2, y + h + 26, metric["title"], ha="center",
+            va="center", fontsize=11, color=LEGEND_INK, zorder=9,
+            fontproperties=helvetica("bold"))
+    lo, hi = norm.vmin, norm.vmax
+    mid = (lo + hi) / 2
+    for tick in ticks:
+        tx = x0 + (tick - lo) / (hi - lo) * w
+        # The midpoint tick is the one that carries meaning -- it is where the
+        # ramp turns -- so it is drawn heavier than the rest of the ruler.
+        turn = abs(tick - mid) < scale_eps(hi - lo)
+        ax.plot([tx, tx], [y - (3 if turn else 0), y + h + (3 if turn else 0)],
+                color="#FFFFFF" if not turn else "#3A342C",
+                lw=1.8 if turn else 0.9, alpha=0.9 if turn else 0.5, zorder=10)
+        ax.text(tx, y - 19, metric["tick_fmt"](tick), ha="center", va="center",
+                fontsize=8.5, color=LEGEND_INK,
+                alpha=1.0 if turn else 0.85, zorder=9,
+                fontproperties=helvetica("bold"))
+
+
 def _blend(color, other, amount):
     """Mix ``color`` toward ``other`` by ``amount`` (0 = unchanged, 1 = other)."""
     import matplotlib.colors as mc
@@ -438,7 +1026,29 @@ def _save(fig, out: Path, final: bool, facecolor: str):
     print(f"Saved {out}")
 
 
-CHARTS = {"hotspot": render_hotspot, "hex": render_hex, "rings": render_rings}
+CHARTS = {"hotspot": render_hotspot, "hex": render_hex, "rings": render_rings,
+          "cells": render_cells, "ladder": render_ladder}
+# Charts that describe a shot profile rather than a shooter, so they accept
+# --team in place of --player.
+TEAM_CAPABLE = {"ladder", "hotspot", "hex", "cells"}
+
+
+def _output_path(args, slug: str) -> Path:
+    """``YYYY-MM-DD-{chart}-{mode}-{scope}.png``, the convention in DEVELOPMENT.md.
+
+    Dated because these are dailies: a chart rebuilt a week later is a different
+    chart, and an undated filename silently overwrites the version already sitting
+    in a Canva page. The date comes from the filesystem clock rather than the
+    season string, since it stamps when the asset was cut, not what it covers.
+    """
+    from datetime import date
+
+    mode = args.metric if args.chart == "ladder" else args.focus.strip().lower()
+    parts = [date.today().isoformat(), args.chart] + ([mode] if mode else [])
+    if args.chart == "ladder" and args.band != sm.LADDER_STEP_FT:
+        parts.append(f"{args.band:g}ft")
+    parts.append(slug)
+    return ROOT / "output" / "feed" / ("-".join(parts) + ".png")
 
 
 def main():
@@ -452,27 +1062,58 @@ def main():
     ap.add_argument("--refresh", action="store_true")
     ap.add_argument("--focus", default="",
                     help="rings only: spotlight one zone (rim, short, long, 3pt)")
+    ap.add_argument("--team", action="store_true",
+                    help="chart the Bulls' whole shot profile instead of a player")
+    ap.add_argument("--league", action="store_true",
+                    help="chart all 30 teams — the baseline every other chart compares to")
+    ap.add_argument("--metric", default="pps", choices=list(LADDER_METRICS),
+                    help="ladder only: what each ring's colour and number mean")
+    ap.add_argument("--band", type=float, default=sm.LADDER_STEP_FT,
+                    help="ladder only: band width in feet (1 for the league, "
+                         "2 suits a single team's smaller sample)")
     ap.add_argument("--output", default="")
     args = ap.parse_args()
 
-    if args.player_id and args.player:
-        pid, name = args.player_id, args.player
-    elif args.player:
-        pid, name = resolve_player(args.player)
+    league = shot_data.league_shots(args.season, args.refresh)
+    if args.team or args.league:
+        if args.chart not in TEAM_CAPABLE:
+            raise SystemExit(f"--team/--league is not available for --chart {args.chart}")
+        if args.team and args.league:
+            raise SystemExit("Pass one of --team or --league, not both")
+    if args.league:
+        # The league is its own baseline, so any "vs league" metric is all zeros.
+        if args.metric.endswith("-rel"):
+            raise SystemExit("--league has no league to compare against; "
+                             "use --metric pps")
+        shots, name, slug = league, "NBA", "league"
+    elif args.team:
+        shots, name, slug = (shot_data.team_shots(season=args.season,
+                                                  refresh=args.refresh),
+                             "Chicago Bulls", "bulls")
     else:
-        raise SystemExit("Pass --player NAME (and optionally --player-id)")
-
-    player = shot_data.player_shots(pid, args.season, args.refresh)
-    if player.empty:
+        if args.player_id and args.player:
+            pid, name = args.player_id, args.player
+        elif args.player:
+            pid, name = resolve_player(args.player)
+        else:
+            raise SystemExit("Pass --player NAME, or --team for the whole team")
+        shots = shot_data.player_shots(pid, args.season, args.refresh)
+        slug = name.lower().replace(" ", "-").replace(".", "")
+    if shots.empty:
         raise SystemExit(f"No {args.season} shots for {name}")
+
     ctx = {
-        "player": player,
-        "league": shot_data.league_shots(args.season, args.refresh),
+        "player": shots,
+        "league": league,
         "name": name,
         "subtitle": args.subtitle or f"{args.season} Regular Season",
         "season": args.season,
+        "metric": args.metric,
+        "band": args.band,
     }
     if args.chart == "rings":
+        if args.team:
+            raise SystemExit("rings needs per-75 rates, which are player-scoped")
         ctx["poss"] = shot_data.player_possessions(pid, args.season)
         ctx["league_poss"] = shot_data.league_possessions(args.season)
         if args.focus:
@@ -481,10 +1122,8 @@ def main():
                 raise SystemExit(f"--focus must be one of {sorted(set(FOCUS_ALIASES))}")
             ctx["focus"] = FOCUS_ALIASES[key]
 
-    print(f"{name}: {len(player)} FGA  ({args.chart})")
-    slug = name.lower().replace(" ", "-").replace(".", "")
-    tag = f"-{args.focus.strip().lower()}" if args.focus else ""
-    out = Path(args.output or ROOT / "output" / "feed" / f"{args.chart}{tag}-{slug}.png")
+    print(f"{name}: {len(shots)} FGA  ({args.chart})")
+    out = Path(args.output) if args.output else _output_path(args, slug)
     CHARTS[args.chart](ctx, out, args.final)
 
 

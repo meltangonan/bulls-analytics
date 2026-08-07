@@ -48,9 +48,12 @@ Don't prepare promotional copy — `promote-bulls-post` owns that stage.
 2. **Inspect the actual downloaded files.** Run the checks in `POSTING_WORKFLOW.md` — approving the
    editable Canva design or the chart asset alone is the recurring failure here.
 3. Copy every approved final page to `docs/mocks/` and update the catalog card to `Mocked`.
-4. Run the relevant tests and `git diff --check`.
-5. Update any owner document whose decision changed.
-6. Summarize the result, verification, risks, and changed files.
+4. Update the post's Notion page: the working detail, and the **data provenance** section defined in
+   `DEVELOPMENT.md` — where the numbers came from and how a raw record becomes the published figure.
+   Write it without being asked; the user should not have to request the trail back to a finding.
+5. Run the relevant tests and `git diff --check`.
+6. Update any owner document whose decision changed.
+7. Summarize the result, verification, risks, and changed files.
 
 Never mark a post `Posted` until the user confirms it's live.
 

@@ -58,6 +58,37 @@ in the worktree. Defer append-only indexes such as `idea-catalog.html` and
 - Prefer small, test-backed changes. No automation, export pipelines, or heavy frameworks unless
   requested.
 
+## Data Provenance
+
+Every data-bearing post gets a provenance section on its Notion page, written as the work lands
+rather than on request (`AGENTS.md` owns that rule; this section defines the content). A finding is
+reproducible only if the trail to it is written down, and the trail is the first thing forgotten.
+
+Six questions, and a section that cannot answer all six is incomplete:
+
+1. **Source and exact call.** Which endpoint, through which wrapper, with the real parameters pasted
+   in — not paraphrased. Parameter names here are frequently misleading: `season_type_all_star` is
+   the ordinary season-type filter (the suffix marks which *value list* it accepts, one that includes
+   `All Star`), and `context_measure_simple="FGA"` is what returns every attempt rather than makes
+   only. A reader who cannot see the literal call cannot tell what was scoped in or out.
+2. **The grain.** What one raw row represents, with a real sample. "One row per field-goal attempt"
+   is the fact everything else rests on.
+3. **Units and coordinate systems.** NBA shot coordinates are tenths of a foot with the hoop at the
+   origin and the baseline at `loc_y = -47.5`; every court constant in the code derives from that.
+4. **Derived versus measured fields.** State which columns the provider computed, and verify the
+   relationship rather than assuming it. `shot_distance` is exactly `floor(hypot(loc_x, loc_y)/10)`,
+   confirmed at 100% across 219,160 rows — which is what made "did they bin differently?" answerable.
+5. **What the source structurally cannot contain.** The most valuable line in the section and the
+   easiest to skip. `ShotChartDetail` is a field-goal log with no concept of a free throw, so any
+   points-per-shot figure built on it understates the rim, where shooting fouls concentrate. That is
+   a property of the dataset, not a setting — no parameter would add them.
+6. **One worked example.** A single real row traced from raw fields to its contribution to the
+   published number. This is the step that catches errors: a plausible-sounding claim about your own
+   pipeline survives a summary and dies against a trace.
+
+Also record what was cached and trimmed, since a cache written under an older column set is a
+silent-wrong-answer trap (see the guardrails below).
+
 ## Data Guardrails
 
 These are the traps that produce silently wrong numbers rather than errors.

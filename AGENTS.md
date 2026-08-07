@@ -42,7 +42,15 @@ per post, `Status` moving `Not started → In progress → Mocked → Posted`, a
 holding the design's edit link. Read it when picking up or scoping an idea, and check it before
 assuming a post's state. The page body carries the working detail — what the chart shows, thresholds,
 what was rejected and why, build notes — so record those there as work lands, and keep the Canva link
-in the property rather than as a bookmark block. `idea-catalog.html` remains the repo-side shelf of
+in the property rather than as a bookmark block.
+
+**Every data-bearing post page also carries a data provenance section, written without being asked.**
+Findings age well; the trail back to them does not. Record where the numbers came from and how a raw
+record becomes the published figure — endpoint and exact call parameters, what one raw row is, units
+and coordinate systems, which fields are derived rather than measured, what the source structurally
+cannot contain, and one worked example tracing a single record end to end. `DEVELOPMENT.md` defines
+what the section must answer. The user should never have to ask for it, and should never have to
+re-derive it to answer "where did this come from?" months later. `idea-catalog.html` remains the repo-side shelf of
 worked-up briefs; Notion is where an idea starts and where its status stays current.
 
 ## Instagram and X Access

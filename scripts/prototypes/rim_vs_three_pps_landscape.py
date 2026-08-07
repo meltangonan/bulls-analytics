@@ -67,7 +67,7 @@ SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 MIN_POSSESSIONS = 1500
 MIN_ZONE_ATTEMPTS = 75
 
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 
 NBA_ROSTER_URL = team_roster_url()
 NBA_SHOT_LOCATIONS_URL = (

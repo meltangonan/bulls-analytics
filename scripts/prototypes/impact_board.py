@@ -31,7 +31,7 @@ from bulls.graphics.feed import (
 
 BOX_CSV = _REPO / "cache" / "box_scores_2025-26.csv"
 ROSTER_CSV = _REPO / "cache" / "roster_2025-26.csv"
-OUTPUT_DIR = _REPO / "output" / "feed"
+OUTPUT_DIR = _REPO / "output"
 
 MIN_GAMES = 20
 TOP_N = 10

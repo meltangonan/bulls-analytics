@@ -6,7 +6,7 @@ How a Bulls analysis becomes an Instagram post. `DESIGN.md` owns how it looks an
 ## The Brief
 
 Before building, the brief needs a state for each area below — answered by the user, inferred from
-the catalog card or conversation, filled with a stated default, or explicitly deferred as
+the Notion page or conversation, filled with a stated default, or explicitly deferred as
 not-yet-relevant. Then restate it and let the user correct it.
 
 1. **Objective** — the basketball question and why a Bulls fan should care.
@@ -41,7 +41,7 @@ prototypes on it, don't start new posts there.
 - Every annotation, title, and subtitle is accurate, legible, and approved or redlined.
 - Event lines appear only where they explain a bend in the data, with verified dates.
 - Fan voice matches the settled amount for this post.
-- Posting copy is either saved on the catalog card or the user has chosen to write it.
+- Posting copy is either saved on the Notion page or the user has chosen to write it.
 
 **Verify every fact printed on a graphic** — dates, picks, trades, injuries, records. Web-search
 anything past the model's knowledge cutoff. Never draw a guessed date.
@@ -62,11 +62,11 @@ it. Fix resolution problems by exporting a larger source asset.
 ## After Approval
 
 1. Save the actual final page or carousel pages with
-   `scripts/save_post_version.py --post <slug> --final` and commit them. They land in
-   `docs/posts/YYYY-MM-DD-<slug>/final/`, beside the `assets/` versions that produced them. You have
+   `scripts/save_visual_version.py --project <slug> --final` and commit them. They land in
+   `docs/visuals/YYYY-MM-DD-<slug>/final/`, beside the `assets/` versions that produced them. You have
    already exported the page for the QA checks above, so this is the same file.
-2. Update the catalog card to `Mocked` and save the approved caption (or note the user supplies it).
-3. After the user confirms it is live, update the card to `Posted`. Never infer that a post is live.
+2. Update the Notion page to `Mocked` and save the approved caption (or note the user supplies it).
+3. After the user confirms it is live, update the page to `Posted`. Never infer that a post is live.
 
 Card lifecycle: `Parked` → `Mocked` → `Posted`. `Generated` is legacy, pre-playbook terminology.
 
@@ -93,7 +93,7 @@ deliberate reach tag is fine; anything else tagging an absent player is not.
 
 Offer 2–3 concrete candidates with one-line pitches, preferring in order:
 
-1. Parked catalog cards with data ready today.
+1. Parked Notion ideas with data ready today.
 2. Guided Idea Bank lanes in `bulls-content-playbook.html`.
 3. Timely hooks: the latest game, roster news, dates, anniversaries.
 

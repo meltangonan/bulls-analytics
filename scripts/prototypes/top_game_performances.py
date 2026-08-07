@@ -117,7 +117,7 @@ DECADE_LAYOUT = TableLayout(
 )
 
 RAW_CACHE = _REPO / "cache" / "nba.com" / "top-game-performances"
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 
 PLAYER_SOURCE_URL = (
     "https://www.nba.com/stats/players/boxscores-traditional"

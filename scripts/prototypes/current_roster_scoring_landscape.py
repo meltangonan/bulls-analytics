@@ -53,7 +53,7 @@ SEASON = "2025-26"
 SEASON_TYPE = "Regular Season"
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 MIN_TRUE_SHOOTING_ATTEMPTS = 250.0
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 HEADSHOTS = _REPO / "cache" / "headshots"
 
 NBA_PLAYER_STATS_URL = (

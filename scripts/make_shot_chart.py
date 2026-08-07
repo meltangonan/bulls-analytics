@@ -46,7 +46,7 @@ from bulls.data import shots as shot_data
 from bulls.graphics import house
 from bulls.graphics.court import ARC, draw_half_court
 from bulls.graphics.house import helvetica
-from bulls.posts import post_dir
+from bulls.visuals import visual_dir
 
 # --- Palettes ---------------------------------------------------------------
 HOT_BANDS = ["#F6CDD7", "#E67C96", "#CE1141", "#7E0C2B"]
@@ -1035,17 +1035,17 @@ TEAM_CAPABLE = {"ladder", "hotspot", "hex", "cells"}
 
 
 def _output_path(args, slug: str) -> Path:
-    """``output/feed/[<post>/]YYYY-MM-DD-{chart}-{mode}-{scope}.png``.
+    """``output/[<project>/]YYYY-MM-DD-{chart}-{mode}-{scope}.png``.
 
     Dated because these are dailies: a chart rebuilt a week later is a different
     chart, and an undated filename silently overwrites the version already sitting
     in a Canva page. The date comes from the filesystem clock rather than the
     season string, since it stamps when the asset was cut, not what it covers.
 
-    ``--post`` puts renders in a folder named for the post, mirroring the shape of
-    ``docs/posts/<slug>/`` where reviewed versions are preserved. Scratch and
-    archive then look alike, so a flat pile of PNGs in ``output/feed/`` no longer
-    reads as the convention being ignored. Without ``--post`` the render stays
+    ``--project`` puts renders in a folder named for the visual project, mirroring
+    ``docs/visuals/<slug>/`` where reviewed versions are preserved. Scratch and
+    archive then look alike, so a flat pile of PNGs in ``output/`` no longer
+    reads as the convention being ignored. Without ``--project`` the render stays
     flat, which is right for one-off exploration that is not going anywhere.
     """
     from datetime import date
@@ -1055,11 +1055,11 @@ def _output_path(args, slug: str) -> Path:
     if args.chart == "ladder" and args.band != sm.LADDER_STEP_FT:
         parts.append(f"{args.band:g}ft")
     parts.append(slug)
-    folder = ROOT / "output" / "feed"
-    if args.post:
-        # Same dated folder shape as docs/posts/, and the same reuse rule: an
-        # existing folder for this post is found by slug whatever date it wears.
-        folder = post_dir(folder, args.post, create=False)
+    folder = ROOT / "output"
+    if args.project:
+        # Same dated folder shape as docs/visuals/, and the same reuse rule: an
+        # existing folder for this project is found by slug whatever date it wears.
+        folder = visual_dir(folder, args.project, create=False)
     return folder / ("-".join(parts) + ".png")
 
 
@@ -1083,9 +1083,9 @@ def main():
     ap.add_argument("--band", type=float, default=sm.LADDER_STEP_FT,
                     help="ladder only: band width in feet (1 for the league, "
                          "2 suits a single team's smaller sample)")
-    ap.add_argument("--post", default="",
-                    help="post slug; renders into output/feed/<slug>/ so scratch "
-                         "mirrors docs/posts/<slug>/")
+    ap.add_argument("--project", default="",
+                    help="visual project slug; renders into output/<slug>/ so scratch "
+                         "mirrors docs/visuals/<slug>/")
     ap.add_argument("--output", default="")
     args = ap.parse_args()
 

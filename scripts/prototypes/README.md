@@ -1,7 +1,7 @@
 # Prototype Mock Generators
 
-One-off scripts behind the cards in `idea-catalog.html`. Production prototypes render
-1080x1350 PNGs into `output/feed/` from cached or fetched data; explicitly named spikes may write
+One-off scripts behind visual projects tracked in Notion. Production prototypes render
+1080x1350 PNGs into `output/` from cached or fetched data; explicitly named spikes may write
 additional comparison artifacts there. These are
 deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
 `scripts/` CLI only once its format repeats.
@@ -19,11 +19,9 @@ deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
 | `clutch_table.py` | Current Bulls in the clutch — joins the live official roster to complete 2025-26 NBA.com clutch totals across all teams, qualifies at 10+ clutch appearances, validates PTS, MIN, FGM–FGA, FG%, and WIN%, and renders one transparent Basketball University-inspired table asset; FG cell color compares the printed shooting line's FG% with the weighted league clutch average (needs network; add `--final` only after draft approval) |
 | `top_game_performances.py` | Top Bulls game performances by decade — caches NBA.com player and team game logs for 2000–01 through 2025–26, reconciles every player-game to the Bulls team score, calculates Hollinger Game Score and single-game TS%, keeps the top ten player-games in each season-defined decade, and renders three transparent table assets for Canva; regular season is the default and `--playoffs` switches the same analysis to postseason games (needs network only when a season cache is missing) |
 | `regular_season_gamebook.py` | Four independent regular-season postgame experiments — Game Deciders · Game Fingerprint · Shot Quality vs. Making · Who Drove What? (deterministic rehearsal using the Jul 10 Summer League game plus frozen 2025-26 benchmarks; no live API call) |
-| `summer_league_anatomy_wireframes.py` | Structure study only — the A/B/C/C2/D wireframes behind `docs/ideation/summer-league-anatomy-study.html`; not a posting format |
-| `summer_league_great_tables_spike.py` | Great Tables / gt-extras feasibility spike behind the anatomy study; the production table now lives in `summer_league_report.py` |
 | `rim_vs_three_pps_landscape.py` | Rim vs. Three points per shot — one `LeagueDashPlayerShotLocations` call plus Advanced possessions produce both axes on a shared points-per-attempt scale, qualifies the league at 1500+ possessions and 75+ attempts in each zone, highlights the current NBA.com roster (not the season's team field), and renders one transparent scatter plotting the roster as `house.square_headshot_label` faces at the roster-landscape size over a uniform grey league cloud (needs network; add `--final` only after draft approval) |
 | `scoring_by_location.py` | Scoring by location — one half court, twelve shot zones, and a face in each. Two slides off the same court: `--mode efficiency` crowns the best points per shot among Bulls with 15%+ of the team's attempts in that zone, `--mode volume` crowns whoever simply shoots it most (no gate — the count is the sample); bare runs write both. Zones are classified from `loc_x`/`loc_y` by the same `zone_of` that draws the outlines, deliberately diverging from NBA's own labels, and every run prints the live agreement rate (needs network on the first run; add `--final` for 300 DPI) |
-| `mock_post_demo.py` | Not a catalog card — a design-preview harness. Renders a full fake post (fictional roster, no network/cache needed) through the real house pipeline so design-system changes can be judged on an actual graphic; also writes a plain-title comparison variant (`-plain.png`, `outlined=False`) |
+| `mock_post_demo.py` | A design-preview harness, not a post idea. Renders a full fake post (fictional roster, no network/cache needed) through the real house pipeline so design-system changes can be judged on an actual graphic; also writes a plain-title comparison variant (`-plain.png`, `outlined=False`) |
 
 ## Season cache
 
@@ -77,5 +75,5 @@ and advanced feeds as unavailable, and notes that point totals reflect the 2026 
 (the rendered FG% is unaffected by it).
 On game night, NBA.com's derived feeds may not populate until morning.
 
-After keeping a mock, save its PNG with `scripts/save_post_version.py --post <slug>` and add a catalog card
-(template in `idea-catalog.html` source).
+After keeping a visual, save its PNG with `scripts/save_visual_version.py --project <slug>` and keep
+the matching Notion page current.

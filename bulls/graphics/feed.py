@@ -142,13 +142,14 @@ def build_zone_pps_post(
 
 
 def _fp_title(**kwargs) -> _fm.FontProperties:
-    """FontProperties for Playfair Display headings."""
-    return _fm.FontProperties(fname=str(_FONT_DIR / "PlayfairDisplay.ttf"), **kwargs)
+    """Helvetica title face retained for legacy feed builders."""
+    kwargs.setdefault("weight", "bold")
+    return _fm.FontProperties(family="Helvetica", **kwargs)
 
 
 def _fp_body(**kwargs) -> _fm.FontProperties:
-    """FontProperties for DM Sans body text."""
-    return _fm.FontProperties(fname=str(_FONT_DIR / "DMSans.ttf"), **kwargs)
+    """Helvetica body face retained for legacy feed builders."""
+    return _fm.FontProperties(family="Helvetica", **kwargs)
 
 
 def _draw_court(ax, line_color: str = "#888888", line_alpha: float = 1.0,
@@ -529,7 +530,7 @@ def save_feed_post(fig: plt.Figure, output_path: str, dpi: int = DEFAULT_DPI) ->
 
     Args:
         fig: Figure from a graphics builder
-        output_path: Destination image path (e.g., output/feed/post.png)
+        output_path: Destination image path (e.g., output/post.png)
         dpi: Export DPI
 
     Returns:

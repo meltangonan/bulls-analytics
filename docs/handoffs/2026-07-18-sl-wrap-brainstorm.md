@@ -6,7 +6,7 @@
 
 Create the Summer League wrap post: the cumulative "SL so far/wrap" piece that has been the
 planned home for the **rotating spotlight module** format twist (held since the Lakers
-installment; see DESIGN.md's decision log and the Lakers catalog card). Summer League is over:
+installment; see DESIGN.md's decision log and the Lakers Notion page). Summer League is over:
 the Bulls finished **1-4** (Jul 10 @MEM L 96-97, Jul 13 @UTA L, Jul 14 vs WAS W 99-87,
 Jul 16 vs LAL L 82-105, Jul 17 @CLE L 91-100).
 
@@ -20,7 +20,7 @@ decisions.
 ## Context Completed Before This Handoff
 
 - All four per-game SL reports are Posted (account at 8 posts / 29 followers as of 2026-07-18).
-  Full evidence, captions, and per-game analysis live on the `idea-catalog.html` cards.
+  The Notion post pages own the evidence, captions, and per-game analysis.
 - The per-game format stays unchanged as a serial; the wrap is where format experimentation was
   deliberately deferred.
 - Commits through `a74ecf9` cover the Cavs finale package, a shot-zone data fix, the hashtag
@@ -59,7 +59,7 @@ graphic or caption:
 
 ## Durable Pointers
 
-- `idea-catalog.html` — four Posted SL cards with captions and evidence.
+- Notion `chicagobullsdata posts` — four Posted SL pages with captions and evidence.
 - `scripts/prototypes/summer_league_report.py` — fetch/prep helpers reusable for cumulative
   stats (per-game only today; a wrap needs cross-game aggregation).
 - `bulls-content-playbook.html` — editorial lanes and fairness guardrails.

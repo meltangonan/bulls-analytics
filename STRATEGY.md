@@ -62,7 +62,7 @@ the graphic, with names and context in the caption. The concrete system lives in
 **The idea-to-post engine** — the steady supply of genuinely surprising Bulls angles, posted *often*.
 Craft needs substance to apply it to, and tempo is itself a top growth lever (per Owen Phillips,
 consistency is the key to success). The editorial POV lives in `bulls-content-playbook.html`; the
-shelf is `idea-catalog.html`.
+idea shelf and post log live in the Notion `chicagobullsdata posts` database.
 
 **Community & distribution** — belonging is the goal and the #1 no-budget growth lever. A niche
 account grows by *borrowing* other pages' audiences, not by outspending anyone.

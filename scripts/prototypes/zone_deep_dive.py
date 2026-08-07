@@ -227,7 +227,7 @@ def main():
               f'({r["diff"]*100:+5.1f})  {flag}')
 
     title, rule = ZONES[args.zone]
-    out = Path(args.output or ROOT / "output" / "feed" /
+    out = Path(args.output or ROOT / "output" /
                f"zone-{args.zone}-{args.name.lower().replace(' ', '-')}.png")
     render(rows, title, rule, args.name,
            args.subtitle or f"{args.season} Regular Season", out, args.final)

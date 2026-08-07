@@ -46,7 +46,7 @@ SEASON = "2025-26"
 SEASON_TYPE = "Regular Season"
 MIN_CLUTCH_GAMES = 10
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 
 NBA_CLUTCH_URL = (
     "https://www.nba.com/stats/players/clutch-traditional"

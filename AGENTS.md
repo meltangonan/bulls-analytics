@@ -12,7 +12,7 @@ metrics, qualifications, sources, and the final downloaded pages.
 | Audience, metrics, distribution | `STRATEGY.md` |
 | Any visual, mock, or post iteration | `DESIGN.md`, then `POSTING_WORKFLOW.md` |
 | Editorial direction and fairness guardrails | `bulls-content-playbook.html` |
-| The shelf of post ideas | the Notion `chicagobullsdata posts` database, then `idea-catalog.html` |
+| The shelf of post ideas and post log | the Notion `chicagobullsdata posts` database |
 | A create / promote / review stage | the matching skill in `.agents/skills/` |
 | Fetchers, analysis, graphics code, scripts, tests | `DEVELOPMENT.md` |
 
@@ -26,12 +26,12 @@ metrics, qualifications, sources, and the final downloaded pages.
    (`DESIGN.md`) — maintain it, don't build new posts on it.
 3. Applicable thresholds, coverage windows, and sources stay visible on every data-bearing graphic.
    The user usually adds them manually in Canva.
-4. **Every version shown to the user is saved to `docs/posts/YYYY-MM-DD-<slug>/assets/` and
+4. **Every visual version shown to the user is saved to `docs/visuals/YYYY-MM-DD-<slug>/assets/` and
    committed**, with the published Canva page in `final/` alongside it. That tree is tracked;
    `output/` is scratch and stays gitignored. Save with
-   `scripts/save_post_version.py` as each version goes out for review — not only at the end. A
+   `scripts/save_visual_version.py` as each version goes out for review — not only at the end. A
    version is a state someone actually saw, not every render. Untracked images have been lost to
-   worktree cleanup before: files under `docs/posts/` make a worktree dirty, and dirty worktrees are
+   worktree cleanup before: files under `docs/visuals/` make a worktree dirty, and dirty worktrees are
    already protected.
 5. After completing and verifying work, show the user the result and wait for explicit approval
    before committing or pushing. Approval covers the work under review, not later work.
@@ -56,8 +56,8 @@ record becomes the published figure — endpoint and exact call parameters, what
 and coordinate systems, which fields are derived rather than measured, what the source structurally
 cannot contain, and one worked example tracing a single record end to end. `DEVELOPMENT.md` defines
 what the section must answer. The user should never have to ask for it, and should never have to
-re-derive it to answer "where did this come from?" months later. `idea-catalog.html` remains the repo-side shelf of
-worked-up briefs; Notion is where an idea starts and where its status stays current.
+re-derive it to answer "where did this come from?" months later. Notion owns the idea, working brief,
+status, and post history; the repository owns code, verified artifacts, and durable system rules.
 
 ## Instagram and X Access
 
@@ -80,8 +80,8 @@ This is part of completing the work, not a separate request.
 upstream of this repo, so record changes in `DESIGN.md` rather than trying to reproduce them in
 Python. `DESIGN.md` owns the chart layer, and a chart-layer change must land in `DESIGN.md` and
 `bulls/graphics/house.py` together. `tests/test_design_tokens.py` catches color drift only.
-`design-system.html` documents the legacy full-layout system and has not been rebuilt for the
-Canva-first model.
+The legacy full-layout HTML design-system companion has been retired; `DESIGN.md` and
+`bulls/graphics/house.py` retain only the code and rules needed to maintain older renderers.
 
 Record an explicitly stated user preference as a durable rule immediately. Keep a conclusion inferred
 from results as a hypothesis until the user confirms it or repeated evidence supports it.

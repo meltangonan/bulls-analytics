@@ -44,7 +44,7 @@ from bulls.graphics.house import (
 )
 
 W, H = 1080, 1350
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 PALE_RED = "#F7E8ED"
 SOFT_RED = "#F1D5DE"
 TRACK = "#E8E2DC"

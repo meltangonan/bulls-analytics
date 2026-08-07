@@ -106,7 +106,7 @@ Treat these as starting words, not approved final copy.
 - Chose a combined-total ranking with the two directions preserved.
 - Confirmed this should remain a separate post from the two-player on-court ratings table.
 
-No assist-duos fetcher, analysis function, chart code, tests, catalog card, or final graphic has been
+No assist-duos fetcher, analysis function, chart code, tests, Notion page, or final graphic has been
 created yet.
 
 ## Clearest next action

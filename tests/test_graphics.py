@@ -166,11 +166,11 @@ class TestHouseGraphics:
         assert tuple(ax.get_ylim()) == (0.0, float(CANVAS_HEIGHT))
         plt.close(fig)
 
-    def test_house_fonts_use_academic_and_archivo_files(self):
-        assert display_font().get_file().endswith("AcademicM54.ttf")
-        assert body_font("regular").get_file().endswith("Archivo-400.ttf")
-        assert body_font("medium").get_file().endswith("Archivo-500.ttf")
-        assert body_font("bold").get_file().endswith("Archivo-600.ttf")
+    def test_house_fonts_use_helvetica_files(self):
+        assert "Helvetica" in display_font().get_file()
+        assert "Helvetica" in body_font("regular").get_file()
+        assert "Helvetica" in body_font("medium").get_file()
+        assert "Helvetica" in body_font("bold").get_file()
 
     def test_header_and_footer_include_required_house_elements(self):
         fig, ax = new_canvas()

@@ -1,7 +1,7 @@
 """Drift alarm for design tokens.
 
-bulls/graphics/house.py is the canonical palette. DESIGN.md, design-system.html,
-and bulls/config.py each restate its values by hand; these tests fail the suite
+bulls/graphics/house.py is the canonical palette. DESIGN.md and bulls/config.py
+restate its values by hand; these tests fail the suite
 the moment any copy diverges, so the docs can stay hand-authored without
 silently going stale.
 """
@@ -16,7 +16,6 @@ from bulls.graphics import craft, house
 
 REPO = Path(__file__).resolve().parents[1]
 DESIGN_MD = (REPO / "DESIGN.md").read_text()
-DESIGN_HTML = (REPO / "design-system.html").read_text()
 
 HOUSE_TOKENS = {
     "RED": house.RED,
@@ -28,19 +27,6 @@ HOUSE_TOKENS = {
     "SUBTITLE_RULE": house.SUBTITLE_RULE,
     "GRIDLINE": house.GRIDLINE,
     "WHITE": house.WHITE,
-}
-
-# design-system.html graphic-spec CSS constants (--g-*) mirror house.py.
-HTML_VAR_TO_HOUSE = {
-    "--g-red": house.RED,
-    "--g-black": house.BULLS_BLACK,
-    "--g-ink": house.INK,
-    "--g-muted": house.MUTED,
-    "--g-faint": house.FAINT,
-    "--g-rule": house.RULE,
-    "--g-tick": house.SUBTITLE_RULE,
-    "--g-grid": house.GRIDLINE,
-    "--g-canvas": house.WHITE,
 }
 
 # Tokens documented by name in the DESIGN.md §2 table.
@@ -70,35 +56,11 @@ def test_design_md_table_rows_match_house(name):
     )
 
 
-@pytest.mark.parametrize("var", sorted(HTML_VAR_TO_HOUSE))
-def test_design_system_html_spec_constants_match_house(var):
-    match = re.search(rf"{var}:\s*(#[0-9A-Fa-f]{{6}})", DESIGN_HTML)
-    assert match, f"design-system.html no longer defines {var}."
-    assert match.group(1).upper() == HTML_VAR_TO_HOUSE[var].upper(), (
-        f"design-system.html sets {var} to {match.group(1)} but house.py says "
-        f"{HTML_VAR_TO_HOUSE[var]}."
-    )
-
-
 # Theme dataclass fields that hold a color, in declaration order.
 THEME_COLOR_FIELDS = [
     "canvas", "ink", "muted", "faint", "rule", "tick",
     "grid", "accent", "contrast", "band", "trim_a", "trim_b",
 ]
-
-
-@pytest.mark.parametrize(
-    "theme_name,field",
-    [(t, f) for t in sorted(house.THEMES) for f in THEME_COLOR_FIELDS],
-)
-def test_theme_tokens_match_design_system_html(theme_name, field):
-    var = f"--gt-{theme_name}-{field.replace('_', '-')}"
-    expected = getattr(house.THEMES[theme_name], field)
-    match = re.search(rf"{var}:\s*(#[0-9A-Fa-f]{{6}})", DESIGN_HTML)
-    assert match, f"design-system.html no longer defines {var}."
-    assert match.group(1).upper() == expected.upper(), (
-        f"design-system.html sets {var} to {match.group(1)} but house.py says {expected}."
-    )
 
 
 @pytest.mark.parametrize(

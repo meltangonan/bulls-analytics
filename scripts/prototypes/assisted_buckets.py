@@ -42,7 +42,7 @@ SEASON = "2025-26"
 SEASON_TYPE = "Regular Season"
 MIN_FIELD_GOALS_MADE = 100
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 
 NBA_PLAYER_SCORING_URL = (
     "https://www.nba.com/stats/players/scoring"

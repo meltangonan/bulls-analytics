@@ -13,9 +13,8 @@ Read `AGENTS.md`, `DESIGN.md` §8 (Voice & Caption — the owner of how the acco
 `POSTING_WORKFLOW.md` for hashtags, and `STRATEGY.md` before recommending distribution.
 
 **Inspect the actual artifacts**, not a summary: the approved final graphic, its analysis or
-prototype, and its `idea-catalog.html` card. For Canva work that means every downloaded page in
-the post folder's `assets/` — the highest-numbered version is the current one (`docs/mocks/` for posts
-predating 2026-08).
+prototype, and its Notion `chicagobullsdata posts` page. For Canva work that means every downloaded page in
+the visual folder's `final/`, with `assets/` holding the chart versions that produced it.
 
 ## Readiness
 
@@ -61,5 +60,5 @@ explicit per-action approval.
 
 ## Close
 
-Save the approved caption on the catalog card (or note that the user supplied it). Never infer the
-post is live — the card moves to `Posted` only on the user's confirmation.
+Save the approved caption on the Notion page (or note that the user supplied it). Never infer the
+post is live — the page moves to `Posted` only on the user's confirmation.

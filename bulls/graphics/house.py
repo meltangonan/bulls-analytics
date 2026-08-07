@@ -53,7 +53,7 @@ class Theme:
     A background is a contract with every other color on the page, so a theme
     carries the full token set, not just the canvas fill. ``jersey`` (warm
     off-white) is the default; ``white`` matches the loose module constants
-    above. The palettes mirror the doc-chrome themes on design-system.html,
+    above. The palettes retain the earlier full-layout themes,
     promoted to real render options (DESIGN.md §2/§10).
     """
 
@@ -176,31 +176,16 @@ def get_theme(name: str | Theme | None) -> Theme:
         options = ", ".join(THEMES)
         raise ValueError(f"Unknown theme '{name}'; choose one of: {options}.") from error
 
-_DISPLAY_FONT = REPO_ROOT / "assets" / "fonts" / "AcademicM54.ttf"
-_BODY_FONTS = {
-    "regular": REPO_ROOT / "assets" / "fonts" / "Archivo-400.ttf",
-    "medium": REPO_ROOT / "assets" / "fonts" / "Archivo-500.ttf",
-    "bold": REPO_ROOT / "assets" / "fonts" / "Archivo-600.ttf",
-}
-
-
 def display_font() -> fm.FontProperties:
-    """Academic M54 display face.
-
-    The font is free for non-commercial use only. If the account becomes
-    commercial, license it or replace it with the documented Bevan fallback.
-    """
-    return fm.FontProperties(fname=str(_DISPLAY_FONT))
+    """Compatibility alias for legacy layouts; repository text is Helvetica."""
+    return helvetica("bold")
 
 
 def body_font(weight: str = "regular") -> fm.FontProperties:
-    """Return the explicit Archivo file for a supported weight."""
-    try:
-        path = _BODY_FONTS[weight]
-    except KeyError as error:
-        supported = ", ".join(_BODY_FONTS)
-        raise ValueError(f"Unsupported Archivo weight '{weight}'; choose {supported}.") from error
-    return fm.FontProperties(fname=str(path))
+    """Compatibility alias for legacy layouts; medium maps to Helvetica Bold."""
+    if weight not in {"regular", "medium", "bold"}:
+        raise ValueError("Unsupported Helvetica weight; choose regular, medium, or bold.")
+    return helvetica("regular" if weight == "regular" else "bold")
 
 
 _HELVETICA_TTC = Path("/System/Library/Fonts/Helvetica.ttc")
@@ -217,12 +202,11 @@ def helvetica(weight: str = "regular") -> fm.FontProperties:
     name silently renders regular. Split the requested face out of the
     collection once into the ignored cache directory and load it by filename
     instead. Extraction stays in ``cache/`` so the licensed system font is never
-    copied into the repository. Falls back to the legacy Archivo faces when
+    copied into the repository. Falls back to an installed sans-serif when
     Helvetica is unavailable (non-macOS).
     """
-    fallback = "bold" if weight == "bold" else "medium"
     if not _HELVETICA_TTC.exists():
-        return body_font(fallback)
+        return fm.FontProperties(family=["Helvetica", "Arial", "DejaVu Sans"], weight=weight)
     extracted = _FONT_CACHE_DIR / f"Helvetica-{weight}.ttf"
     if not extracted.exists():
         try:
@@ -232,7 +216,7 @@ def helvetica(weight: str = "regular") -> fm.FontProperties:
             _FONT_CACHE_DIR.mkdir(parents=True, exist_ok=True)
             collection.fonts[_HELVETICA_FACES.get(weight, 0)].save(str(extracted))
         except Exception:
-            return body_font(fallback)
+            return fm.FontProperties(family=["Helvetica", "Arial", "DejaVu Sans"], weight=weight)
     return fm.FontProperties(fname=str(extracted))
 
 
@@ -275,7 +259,7 @@ def draw_jersey_stripe(ax, theme: str | Theme | None = None):
     Band with two pinstripes, top-down: band 4, trim 2, band 4, trim 2,
     band 4 (16 px total). On the jersey/white themes that is red with one
     white and one black pinstripe; the other themes use their own band/trim
-    tokens. Mirrors the ``.band`` element on design-system.html.
+    tokens. Retained for older full-layout renders.
     """
     layers = get_theme(theme).stripe_layers
     artists = []
@@ -307,7 +291,7 @@ def draw_fitted_title(
     base_size: float = 90,
     outlined: bool | None = None,
 ):
-    """Draw a multi-color Academic M54 title fitted to the house margins.
+    """Draw a multi-color Helvetica title fitted to the house margins.
 
     ``outlined`` defaults to the module-level ``OUTLINED_TITLE`` switch. When
     on, each glyph gets jersey-lettering strokes: red outer, white gap, then

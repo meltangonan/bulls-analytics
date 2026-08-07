@@ -44,7 +44,7 @@ def parse_args() -> argparse.Namespace:
 def default_output(mode: str, last_n: int | None) -> str:
     stamp = datetime.now().strftime("%Y-%m-%d")
     suffix = f"last-{last_n}" if last_n else "season"
-    return str(Path("output/feed") / f"{stamp}-zone-{mode}-{suffix}.png")
+    return str(Path("output") / f"{stamp}-zone-{mode}-{suffix}.png")
 
 
 def _format_date() -> str:

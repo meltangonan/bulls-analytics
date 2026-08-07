@@ -42,7 +42,7 @@ from bulls.graphics import house
 from bulls.graphics.house import helvetica
 
 CACHE = REPO_ROOT / "cache" / "scoring_by_location"
-OUTPUT = REPO_ROOT / "output" / "feed"
+OUTPUT = REPO_ROOT / "output"
 
 # Official 2026-27 roster, snapshot 2026-07-23 (docs/handoffs), matching
 # current_roster_hot_spots. The four 2026 rookies (Awaka, Sellers, Swain,

@@ -44,7 +44,7 @@ from bulls.graphics.house import ensure_headshots as house_ensure_headshots
 NBA_ROSTER_URL = team_roster_url()
 DARKO_URL = "https://www.darko.app/"
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 HEADSHOTS = _REPO / "cache" / "headshots"
 
 CHART_WIDTH = 1080

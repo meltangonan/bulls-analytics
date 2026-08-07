@@ -4,9 +4,9 @@ Renders every shared element of a real feed post (jersey stripe, fitted
 title, tick subtitle, kicker, leaderboard rows with placeholder headshots,
 gradient stat bars, threshold footer, watermark) using an invented roster,
 so design changes can be judged on an actual 1080x1350 graphic instead of
-only in design-system.html.
+through a real render.
 
-Outputs two drafts to output/feed/:
+Outputs two drafts to output/:
   mock-post-demo.png        house default (jersey canvas, outlined title)
   mock-post-demo-plain.png  plain-title comparison (outlined=False)
 
@@ -36,7 +36,7 @@ from bulls.graphics.house import (
 )
 from bulls.graphics.craft import headshot_label
 
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 
 # Fictional roster — placeholder data only, never post.
 PLAYERS = [

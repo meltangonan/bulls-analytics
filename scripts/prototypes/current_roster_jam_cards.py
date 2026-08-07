@@ -62,7 +62,7 @@ SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 # is measured in the same unit as the per-75 rates it screens.
 MIN_POSSESSIONS = 1500.0
 PER_POSSESSIONS = 75.0
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 
 NBA_SHOT_LOCATIONS_URL = (
     "https://www.nba.com/stats/players/shots-general"

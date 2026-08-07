@@ -29,7 +29,7 @@ from impact_board import compute_board, parse_minutes, game_score
 INK, MUTED, FAINT, RULE, RED = "#1A1A1A", "#777777", "#AAAAAA", "#DDDDDD", "#CE1141"
 
 CACHE = _REPO / "cache"
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 
 for _f in ("box_scores_2025-26.csv", "games_2025-26.csv"):
     if not (CACHE / _f).exists():

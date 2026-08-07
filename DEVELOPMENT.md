@@ -23,8 +23,8 @@ automatically finds that shared interpreter while forcing imports to resolve fro
 worktree.
 
 Keep post-specific implementation, tests, outputs, and any required shared code or owner-doc changes
-in the worktree. Defer append-only indexes such as `idea-catalog.html` and
-`scripts/prototypes/README.md` until integration. After the user approves committing or pushing:
+in the worktree. Defer the shared `scripts/prototypes/README.md` index until integration. After the
+user approves committing or pushing:
 
 1. Commit only the reviewed implementation in the post worktree, update the primary `main`, and
    rebase the post branch onto it. Resolve real shared-code conflicts there.
@@ -33,12 +33,12 @@ in the worktree. Defer append-only indexes such as `idea-catalog.html` and
 3. Inspect the staged/final diff and commit file list; never use `git add -A` or `git commit -am`.
 4. Fast-forward the primary `main` to the post branch, push only with explicit approval, and prove
    local/remote SHA parity.
-5. After the post's images are committed under `docs/posts/YYYY-MM-DD-<slug>/`, remove the worktree and delete
+5. After the project's images are committed under `docs/visuals/YYYY-MM-DD-<slug>/`, remove the worktree and delete
    its now-merged branch. At the next task start, prune missing worktree metadata and clean any
    clearly merged leftovers; preserve and report anything dirty, unmerged, or unclear.
 
 **Before removing any worktree, check `output/` for images that were never saved to
-`docs/posts/`.** A merged branch does not mean the work is done — it means the *code* is done. This
+`docs/visuals/`.** A merged branch does not mean the work is done — it means the *code* is done. This
 rule and the "preserve approved finals" rule key off different signals, and they came apart once: a
 worktree whose branch was merged looked like a clean leftover while its gitignored `output/` still
 held a day of approved renders, and removing it destroyed them. Saving versions as they are reviewed
@@ -59,9 +59,10 @@ is what keeps the two signals aligned, because tracked files make the worktree d
   direct.
 - Never rebuild analytical logic in Canva, and never recompute a number that the chart already
   proved. Canva is layout only.
-- Add each new catalog card at the top of `idea-catalog.html`.
-- **`docs/posts/YYYY-MM-DD-<slug>/` is the tracked home for post images**, split into `assets/` and
-  `final/`. Save with `scripts/save_post_version.py --post <slug> <files...>` (add `--final` for a
+- Keep the matching Notion page current as the idea, status, and post log.
+- **`docs/visuals/YYYY-MM-DD-<slug>/` is the tracked home for visual work**, whether it becomes a
+  post or remains a reviewed chart or exploration. It is split into `assets/` and optional `final/`.
+  Save with `scripts/save_visual_version.py --project <slug> <files...>` (add `--final` for a
   page downloaded from Canva), then commit. Copying is not preservation; the commit is.
   - `assets/` — our own renders, one numbered version per state shown to the user, stamped
     `YYYY-MM-DD-vNN-<name>.png`. Zero-padded so v10 sorts after v9, numbered one past the highest
@@ -76,12 +77,10 @@ is what keeps the two signals aligned, because tracked files make the worktree d
 - A *version* is a state the user actually saw. A render made to check a two-pixel label offset is
   not a version. Roughly a third of renders qualify.
 - `output/` remains gitignored scratch. Render there freely; promote what gets reviewed.
-- `docs/mocks/` is frozen — existing finals stay put and existing references keep working, but new
-  work goes to `docs/posts/`. There is one place for images going forward.
-- Name renders `YYYY-MM-DD-{chart}-{mode}-{scope}.png` and pass `--post <slug>` so they land in
-  `output/feed/<slug>/`, mirroring `docs/posts/<slug>/`. Scratch and archive keep the same shape;
-  a flat pile of PNGs in `output/feed/` reads as the convention being ignored, which is how the
-  mismatch was first reported. Omit `--post` only for one-off exploration.
+- Legacy mocks have been migrated into `docs/visuals/`; there is one tracked home for visual work.
+- Name renders `YYYY-MM-DD-{chart}-{mode}-{scope}.png` and pass `--project <slug>` so they land in
+  `output/YYYY-MM-DD-<slug>/`, mirroring `docs/visuals/YYYY-MM-DD-<slug>/`. Omit `--project` only for
+  disposable one-off exploration, which lands directly in `output/`.
 - Prefer small, test-backed changes. No automation, export pipelines, or heavy frameworks unless
   requested.
 
@@ -207,14 +206,14 @@ These are the traps that produce silently wrong numbers rather than errors.
 - Chart text uses `house.helvetica()` / `house.helvetica("bold")`, which extracts the real Bold face
   from the macOS system `Helvetica.ttc` into `cache/fonts/` — matplotlib silently renders regular if
   you ask for bold by family name. The extraction stays in `cache/` so the licensed system font is
-  never committed; it falls back to Archivo off macOS.
+  never committed; it falls back to an installed sans-serif off macOS.
 - Pull chart colors from the `Theme` tokens (`theme.ink`, `theme.accent`, `theme.grid`, …) rather
   than the white-canvas module constants.
 - Prototypes should print a Canva copy block of the exact strings to paste, so the page's numbers and
   the chart's numbers come from the same run.
 - Building from an F5 or similar tutorial: reproduce its styling and structure closely, swapping in
   our palette and Helvetica (`DESIGN.md` §6).
-- `summer_league_report.py` calls `GT.as_raw_html()`, embeds the local Archivo fonts, renders through
+- `summer_league_report.py` calls `GT.as_raw_html()`, uses Helvetica in the browser, and renders through
   `nokap.from_html`, and composites the cropped PNG into the Matplotlib canvas. **This browser-backed
   step is part of the live report path**, not the rejected full-slide HTML renderer (`DESIGN.md`,
   Settled). `gt_extras` stays limited to the separate Great Tables spike.
@@ -224,13 +223,13 @@ These are the traps that produce silently wrong numbers rather than errors.
 ## CLIs
 
 ```bash
-venv/bin/python scripts/make_zone_leaders.py --mode ppg|frequency [--last-n-games N]
-venv/bin/python scripts/make_zone_shooting.py --mode team|volume [--last-n-games N] [--min-shots N]
-venv/bin/python scripts/make_feed_post.py --post-type zone-pps [--last-n-games N]
 venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|rings|cells [--final]
-venv/bin/python scripts/make_shot_chart.py --team|--league --chart ladder --metric pps|fg-rel|pps-rel [--post <slug>]
-venv/bin/python scripts/save_post_version.py --post <slug> <files...>   # preserve a reviewed version
+venv/bin/python scripts/make_shot_chart.py --team|--league --chart ladder --metric pps|fg-rel|pps-rel [--project <slug>]
+venv/bin/python scripts/save_visual_version.py --project <slug> <files...>   # preserve a reviewed version
 ```
+
+The older `make_zone_leaders.py`, `make_zone_shooting.py`, and `make_feed_post.py` commands remain
+only to reproduce legacy full-page zone graphics. Do not use them for new Canva-first work.
 
 `rings` and `cells` answer the same question — how well he shoots by area, against the league — at
 four zones and at 18. Choose by sample. `rings` keeps every band large enough to carry volume as
@@ -303,6 +302,6 @@ measured, not eyeballed: glyph-ink centres are compared against band centres and
 ```
 
 All NBA API calls are mocked. `test_design_tokens.py` is the token drift alarm: it fails when hex
-values in `DESIGN.md`, `design-system.html`, or `bulls/config.py` stop matching
+values in `DESIGN.md` or `bulls/config.py` stop matching
 `bulls/graphics/house.py`. It parses the §2 table rows by token name, so keep that table's format
 intact when editing `DESIGN.md`.

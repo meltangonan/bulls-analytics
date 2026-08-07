@@ -18,11 +18,11 @@ Canva design: `DAHQCKjwtPI` (design ID only; never store the private edit URL).
 
 The approved downloads are preserved at:
 
-- `docs/mocks/2026-07-21-sl-sticky-stats-s1.png`
-- `docs/mocks/2026-07-21-sl-sticky-stats-s2.png`
-- `docs/mocks/2026-07-21-sl-sticky-stats-s3.png`
+- `docs/visuals/2026-07-21-summer-league-sticky-stats/assets/2026-07-21-sl-sticky-stats-s1.png`
+- `docs/visuals/2026-07-21-summer-league-sticky-stats/assets/2026-07-21-sl-sticky-stats-s2.png`
+- `docs/visuals/2026-07-21-summer-league-sticky-stats/assets/2026-07-21-sl-sticky-stats-s3.png`
 
-The matching `idea-catalog.html` card is `Mocked` until the user confirms the post is live.
+The matching Notion page is `Mocked` until the user confirms the post is live.
 
 1. **Cover:** “What can we take from the Bulls' time at summer league?” with Caleb Wilson,
    Dailyn Swain, Jaylin Sellers, and Donovan Atwell.
@@ -74,19 +74,20 @@ because they require a large, thinning historical shot-location dataset.
 - Analysis and chart asset: `scripts/prototypes/summer_league_sticky_stats.py`
 - Analysis, Canva-copy, and chart-export tests: `tests/test_summer_league_sticky_stats.py`
 - Saved headshots: `assets/img/*-headshot.png`
-- Live chart-only export: `output/feed/2026-07-21-sl-sticky-stats/2026-07-21-sl-sticky-stats-chart.png`
+- Live chart-only export: `docs/visuals/2026-07-21-summer-league-sticky-stats/assets/2026-07-21-sl-sticky-stats-chart.png`
 
 The Canva pilot established the supported division of labor now recorded in `DESIGN.md`,
 `POSTING_WORKFLOW.md`, and `DEVELOPMENT.md`: Python owns verified analysis and chart/data assets;
-Canva may own framing and editorial copy; downloaded final pages return to `docs/mocks/`.
+Canva may own framing and editorial copy; downloaded final pages return to the project's
+`docs/visuals/` folder.
 
 The chart-only export deliberately uses Helvetica to match the Canva composition. The helper splits
 Regular/Bold faces from the local macOS Helvetica collection into ignored `cache/fonts/` and falls
-back to Archivo off macOS.
+back to an installed sans-serif off macOS.
 
 > **Superseded 2026-07-25.** What this pilot treated as post-scoped became the standard: Helvetica is
 > now the chart face for all new work, the helper lives in `bulls/graphics/house.py` as
-> `house.helvetica()`, and the Academic M54 + Archivo full-layout system is legacy. See `DESIGN.md`.
+> `house.helvetica()`; the old full-layout helpers now use the same Helvetica path. See `DESIGN.md`.
 
 ## Open Items Before Publishing
 
@@ -100,7 +101,7 @@ back to Archivo off macOS.
 4. Capitalization of “summer league” differs between slides 1 and 2.
 
 Next action: run `promote-bulls-post`, complete the final downloaded-page and handle checks, prepare
-the hashtag block, and publish only with explicit user approval. Mark the catalog card `Posted` only
+the hashtag block, and publish only with explicit user approval. Mark the Notion page `Posted` only
 after the user confirms the live post.
 
 ## Git Forensics (2026-07-22)
@@ -110,5 +111,5 @@ after the user confirms the live post.
 - Local commit `e1f9087` contained a Canva edit link and was amended to `3d60054` before push.
   GitHub contains `3d60054` and not `e1f9087`.
 - Final Canva-ready chart work was committed and pushed as `283da56`.
-- Batch 1 preserved the approved Canva downloads and catalog card in local commit `0d0cd6a`; that
+- Batch 1 preserved the approved Canva downloads and post record in local commit `0d0cd6a`; that
   commit was not yet pushed when this handoff was compacted.

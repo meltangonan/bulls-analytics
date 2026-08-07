@@ -124,7 +124,7 @@ TWO_SLIDE_LAYOUT = TableLayout(
 )
 
 RAW_CACHE = _REPO / "cache" / "nba.com" / "scoring-age-ladder"
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 NBA_PLAYER_SCORING_URL = (
     "https://www.nba.com/stats/players/traditional"
     "?PerMode=Totals&Season={season}&SeasonType=Regular%20Season"

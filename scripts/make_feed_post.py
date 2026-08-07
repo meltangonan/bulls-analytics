@@ -45,14 +45,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         default="",
-        help="Output PNG path (default: output/feed/<date>-zone-pps.png)",
+        help="Output PNG path (default: output/<date>-zone-pps.png)",
     )
     return parser.parse_args()
 
 
 def default_output(post_type: str) -> str:
     stamp = datetime.now().strftime("%Y-%m-%d")
-    return str(Path("output/feed") / f"{stamp}-{post_type}.png")
+    return str(Path("output") / f"{stamp}-{post_type}.png")
 
 
 def main() -> None:

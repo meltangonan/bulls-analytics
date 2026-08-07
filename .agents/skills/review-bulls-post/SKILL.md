@@ -10,14 +10,14 @@ Turn feedback and results into compact reusable project knowledge rather than a 
 ## Evidence
 
 Read `AGENTS.md` and `STRATEGY.md`. Inspect the actual final graphic, the actual caption, the
-matching `idea-catalog.html` card, the relevant analysis, and any Insights or qualitative feedback.
+matching Notion `chicagobullsdata posts` page, the relevant analysis, and any Insights or qualitative feedback.
 For Canva work, use the published pages in the post folder's `final/`, and its `assets/` for the
 chart versions that produced them, highest version number first
-(`docs/mocks/` for posts predating 2026-08). Earlier versions in that folder show how the post
-evolved, which is often what explains a piece of feedback.
+Earlier versions in that folder show how the post evolved, which is often what explains a piece of
+feedback.
 
 A review can proceed without Insights. Never rely on remembered performance or invent missing
-metrics. Compare against prior catalog evidence when it's relevant.
+metrics. Compare against prior Notion post evidence when it's relevant.
 
 ## Classify Each Lesson
 
@@ -35,10 +35,10 @@ weaken it — then leave it as a hypothesis rather than forcing a decision.
 
 Make the smallest set of updates that keeps the project current:
 
-- Post-specific feedback and results go compactly on the catalog card.
+- Post-specific feedback and results go compactly on the Notion page.
 - Confirmed visual or voice rules → `DESIGN.md`. Confirmed production behavior →
   `POSTING_WORKFLOW.md`. Confirmed audience, metric, or distribution learning → `STRATEGY.md`.
-- A clear, distinct future idea → a new `Parked` catalog card.
+- A clear, distinct future idea → a new `Parked` Notion page.
 
 Note production mechanics (chart export, Canva assembly) only when they materially affected
 accuracy, comprehension, effort, or results — tooling alone is not a performance lesson.

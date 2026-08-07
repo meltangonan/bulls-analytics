@@ -348,7 +348,7 @@ def main():
     chart_only = not args.full_post
     suffix = "hot-spots" if args.full_post else "hot-spots-chart"
     out = args.output or str(
-        ROOT / "output" / "feed" / f"{datetime.now():%Y-%m-%d}-roster-{suffix}.png"
+        ROOT / "output" / f"{datetime.now():%Y-%m-%d}-roster-{suffix}.png"
     )
     print("Preparing hot-spot maps...")
     maps = prepare(args.refresh)

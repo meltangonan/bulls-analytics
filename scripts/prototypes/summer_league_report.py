@@ -17,7 +17,6 @@ Example:
       --player "Dailyn Swain" --lens impact
 """
 import argparse
-import base64
 import sys
 from collections import Counter
 from dataclasses import dataclass
@@ -70,7 +69,7 @@ PANEL_RED = "#FAF1F4"  # lighter wash for large court panels
 CHIP_GRAY = "#F1ECE8"  # warm neutral for cards outside a tinted panel
 CHIP_BLUSH = "#F3E1E7"  # stronger tonal-red card surface inside pale panels
 COURT_LINE = "#C9A8B5"  # warm court lines on the pale panels
-OUTPUT_DIR = _REPO / "output" / "feed"
+OUTPUT_DIR = _REPO / "output"
 LENSES = ("shot_diet", "role", "impact")
 SUMMER_LEAGUE_LEAGUE_ID = "15"
 MAX_CAROUSEL_PLAYERS = 5
@@ -931,7 +930,7 @@ def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> 
         .opt_row_striping(row_striping=True)
         .tab_options(
             table_background_color=DEFAULT_THEME.canvas,
-            table_font_names=["Archivo", "Helvetica Neue", "Helvetica", "Arial"],
+            table_font_names=["Helvetica", "Helvetica Neue", "Arial"],
             table_font_size=table_font_size,
             table_font_color=DEFAULT_THEME.ink,
             column_labels_font_size="12px",
@@ -947,17 +946,7 @@ def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> 
             table_border_bottom_style="none",
         )
     )
-    # Great Tables renders inside a browser, which cannot see Matplotlib's font
-    # registry. Embed the exact local Archivo files so the PNG cannot silently
-    # fall back to Helvetica on another machine.
-    font_css = []
-    for weight, filename in ((400, "Archivo-400.ttf"), (500, "Archivo-500.ttf"), (600, "Archivo-600.ttf")):
-        encoded = base64.b64encode((_REPO / "assets" / "fonts" / filename).read_bytes()).decode("ascii")
-        font_css.append(
-            f"@font-face{{font-family:'Archivo';font-style:normal;font-weight:{weight};"
-            f"src:url(data:font/ttf;base64,{encoded}) format('truetype');}}"
-        )
-    html = table.as_raw_html().replace("<style>", f"<style>{''.join(font_css)}", 1)
+    html = table.as_raw_html()
     import nokap
 
     nokap.from_html(html=html, file=out_path, selector="table", expand=0, zoom=2, vwidth=992, vheight=744)

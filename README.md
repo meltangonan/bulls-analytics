@@ -24,16 +24,14 @@ bulls-analytics/
 ├── AGENTS.md         # start here — map, defaults, safety rules (CLAUDE.md points at it)
 ├── STRATEGY.md       # who the account is for, what winning looks like
 ├── DESIGN.md         # chart layer, colors, and voice — the canonical record
-├── design-system.html          # browsable companion (documents the legacy full-layout system)
 ├── POSTING_WORKFLOW.md         # brief → draft → approval → catalog
 ├── DEVELOPMENT.md    # code conventions and data gotchas
 ├── bulls-content-playbook.html # north star: the "Bulls visual encyclopedia"
-├── idea-catalog.html           # every post idea as a card
 ├── .agents/skills/   # canonical create / promote / review skills
 ├── .claude/skills/   # symlinks to the above, for Claude Code discovery
 ├── bulls/            # data fetchers, analysis, graphics
 ├── scripts/          # CLI entrypoints; prototypes/ holds one-off mock generators
-├── docs/             # mocks, reference, ideation, handoffs, archive
+├── docs/             # visuals, reference, ideation, handoffs, archive
 ├── tests/            # pytest, NBA API mocked
 └── output/           # generated graphics (gitignored)
 ```
@@ -44,8 +42,8 @@ Start with **`AGENTS.md`**. It routes to the owner document for whatever you're 
 topic has exactly one owner — visual and voice decisions in `DESIGN.md`, production procedure in
 `POSTING_WORKFLOW.md`, code in `DEVELOPMENT.md`, audience and distribution in `STRATEGY.md`.
 
-Post images live in `docs/posts/YYYY-MM-DD-<slug>/`: `assets/` holds our own renders, one numbered
-version per state shown for review, and `final/` holds the page downloaded from Canva at publish.
-Both are saved with `scripts/save_post_version.py`. `output/` is gitignored scratch. Posts are tracked as
-cards in `idea-catalog.html`; `docs/mocks/` holds pre-2026-08 finals and is frozen.
-Open `design-system.html` in a browser for the visual companion to `DESIGN.md`.
+Reviewed visual work lives in `docs/visuals/YYYY-MM-DD-<slug>/`: `assets/` holds our own renders, one
+numbered version per state shown for review, and optional `final/` holds pages downloaded from Canva.
+Both are saved with `scripts/save_visual_version.py`. `output/` is disposable, gitignored scratch.
+Posts are tracked in the Notion `chicagobullsdata posts` database; all preserved graphics live under
+`docs/visuals/`.

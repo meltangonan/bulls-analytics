@@ -13,7 +13,7 @@ and the export contract — not headers, titles, or page furniture.
 | Which post to make and how it ships | `POSTING_WORKFLOW.md` |
 
 When a chart-layer decision changes, update this file, `house.py`/`craft.py`, and
-`design-system.html` together — `tests/test_design_tokens.py` catches color drift only.
+`bulls/graphics/house.py` together — `tests/test_design_tokens.py` catches color drift.
 
 ---
 
@@ -37,7 +37,7 @@ Use `house.helvetica()` / `house.helvetica("bold")`.
 ⚠️ **matplotlib registers only the Regular face of `Helvetica.ttc`**, so asking for bold by family
 name silently renders regular. `house.helvetica()` splits the requested face out of the system
 collection into `cache/fonts/` and loads it by filename. The extraction stays in `cache/` so the
-licensed system font is never committed. On non-macOS it falls back to Archivo.
+licensed system font is never committed. On non-macOS it falls back to an installed sans-serif.
 
 ## 2. Color
 
@@ -260,8 +260,8 @@ person, so a consistent page template is the identity.
 ## Legacy: Python Full-Layout Posts
 
 `house.py` still contains the full-page system used by earlier posts: `new_canvas`, `draw_header`,
-`draw_fitted_title`, `draw_subtitle`, `draw_jersey_stripe`, `draw_footer`, `save_post`, with Academic
-M54 titles and Archivo body (`display_font()` / `body_font()`). Reference implementation:
+`draw_fitted_title`, `draw_subtitle`, `draw_jersey_stripe`, `draw_footer`, `save_post`. Its compatibility
+font helpers now resolve to Helvetica, matching the current chart layer. Reference implementation:
 `scripts/prototypes/season_shape_post.py`.
 
 **This is not the path for new posts.** It's documented so existing prototypes stay maintainable:
@@ -272,12 +272,11 @@ M54 titles and Archivo body (`display_font()` / `body_font()`). Reference implem
   y = H−168 with drawn tick separators; kicker at y = H−206.
 - Footer pair on the y=40 baseline: `Data via nba.com` bottom-left (`FAINT`), `@chicagobullsdata`
   bottom-right (`MUTED`, x=1020).
-- ⚠️ Academic M54 is licensed **non-commercial only** — license it or swap to Bevan if that changes.
 
 Report-card component values from the Summer League report (`PLAYER_ROW_HEIGHT = 173` px, 118×52 stat
 chips, 250×80 rail cards, `COURT_LINE` `#C9A8B5` on pale panels) live with that prototype.
 
-`design-system.html` documents this legacy system and has not been rebuilt for the Canva-first model.
+The browsable HTML companion for this legacy system was retired after the move to Canva-first posts.
 
 ---
 

@@ -37,7 +37,7 @@ from bulls.graphics.house import (
 )
 
 CACHE = _REPO / "cache"
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 CALEB_IMG = _REPO / "assets" / "img" / "caleb-wilson-draft.png"
 
 games = pd.read_csv(CACHE / "games_2025-26.csv")

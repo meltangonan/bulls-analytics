@@ -53,7 +53,7 @@ SUMMER_LEAGUES = {
 MIN_MINUTES = 50.0
 REQUEST_RETRIES = 5
 CACHE_DIR = _REPO / "cache" / "sl_sticky_stats_2026"
-OUTPUT_DIR = _REPO / "output" / "feed"
+OUTPUT_DIR = _REPO / "output"
 OUTPUT_STEM = "2026-07-21-sl-sticky-stats"
 
 # Essengue dropped from the featured set 2026-07-21 (user edit); he remains in

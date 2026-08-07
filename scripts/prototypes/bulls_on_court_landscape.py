@@ -34,7 +34,7 @@ from bulls.graphics.house import (
 
 SEASON = "2025-26"
 DEFAULT_MIN_MINUTES = 500
-OUT = _REPO / "output" / "feed"
+OUT = _REPO / "output"
 HEADSHOTS = _REPO / "cache" / "headshots"
 
 CHART_WIDTH = 1080

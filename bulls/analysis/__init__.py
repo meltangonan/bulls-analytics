@@ -21,3 +21,13 @@ from bulls.analysis.stats import (
     team_zone_comparison,
     game_zone_stats,
 )
+from bulls.analysis.shot_maps import (
+    ZONE_ORDER,
+    density,
+    edges,
+    separable,
+    signed_diff,
+    within_range,
+    zone_masks,
+    zone_split,
+)

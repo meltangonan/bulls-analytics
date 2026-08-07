@@ -34,8 +34,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from matplotlib.patches import Arc, Circle, FancyBboxPatch
-from scipy.ndimage import gaussian_filter
+from matplotlib.patches import FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
@@ -44,9 +43,21 @@ if str(ROOT) not in sys.path:
 from nba_api.stats.endpoints import leaguedashplayerstats
 
 from bulls import data
+from bulls.analysis.shot_maps import (
+    BASELINE_Y,
+    CELL,
+    GRID_X,
+    GRID_Y,
+    MAX_DIST_FT,
+    density,
+    edges as _edges,
+    signed_diff,
+    within_range as _filter,
+)
 from bulls.config import CURRENT_SEASON
 from bulls.data.fetch import _NBA_HEADERS
 from bulls.graphics import house
+from bulls.graphics.court import draw_half_court
 from bulls.graphics.house import helvetica
 
 CACHE = ROOT / "cache" / "hot_spots"
@@ -73,12 +84,6 @@ ROSTER = [
 MIN_FGA = 150       # field-goal attempts needed for a stable location map
 MAX_DIST_FT = 35    # drop half-court heaves, matching the F5 filter
 
-# --- Density grid (raw NBA coords: tenths of a foot, hoop at origin) ---------
-GRID_X = (-250.0, 250.0)     # court is 500 wide
-GRID_Y = (-50.0, 300.0)      # baseline at -47.5; covers shots out to ~30 ft
-CELL = 5.0                   # grid cell size in tenths of a foot (0.5 ft)
-BLUR_FT = 3.8                # Gaussian bandwidth in feet (smoothing radius)
-BASELINE_Y = -47.5
 
 # Row layout for the small-multiples grid (players per row, top to bottom).
 # Symmetric so the grid never looks top- or bottom-heavy.
@@ -152,34 +157,6 @@ def load_games_played(refresh: bool) -> dict[int, int]:
 # ---------------------------------------------------------------------------
 # Prepare: shot locations -> normalized density difference (the F5 method)
 # ---------------------------------------------------------------------------
-def _edges():
-    xe = np.arange(GRID_X[0], GRID_X[1] + CELL, CELL)
-    ye = np.arange(GRID_Y[0], GRID_Y[1] + CELL, CELL)
-    return xe, ye
-
-
-def density(df: pd.DataFrame) -> np.ndarray:
-    """Smoothed, normalized shot-location density on the shared grid (nx, ny)."""
-    xe, ye = _edges()
-    counts, _, _ = np.histogram2d(df["loc_x"], df["loc_y"], bins=[xe, ye])
-    sigma = BLUR_FT * 10.0 / CELL  # feet -> grid cells
-    smooth = gaussian_filter(counts, sigma=sigma, mode="constant")
-    total = smooth.sum()
-    return smooth / total if total else smooth
-
-
-def signed_diff(player_pdf: np.ndarray, league_pdf: np.ndarray) -> np.ndarray:
-    """Player-minus-league density, with off-court cells zeroed.
-
-    Positive where the player shoots MORE than league average, negative where he
-    shoots LESS. Cells at/below the baseline are zeroed so heat never bleeds off
-    the court bottom.
-    """
-    diff = player_pdf - league_pdf
-    _, ye = _edges()
-    yc = (ye[:-1] + ye[1:]) / 2.0
-    diff[:, yc <= BASELINE_Y] = 0.0
-    return diff
 
 
 @dataclass
@@ -213,46 +190,11 @@ def prepare(refresh: bool) -> list[PlayerMap]:
     return maps
 
 
-def _filter(df: pd.DataFrame) -> pd.DataFrame:
-    return df[df["shot_distance"] <= MAX_DIST_FT]
 
 
 # ---------------------------------------------------------------------------
 # Render
 # ---------------------------------------------------------------------------
-def draw_half_court(ax, center_x: float, center_y: float, s: float, color: str):
-    """Reusable half-court geometry (from summer_league_report), center-anchored.
-
-    Returns the (x0, y0) origin so the density grid can be transformed into the
-    same pixel space: px = x0 + (loc_x + 250) * s, py = y0 + (loc_y + 47.5) * s.
-    """
-    top_y = 280.0
-    x0 = center_x - 250.0 * s
-    y0 = center_y - (top_y + 47.5) * s / 2.0
-
-    def t(cx, cy):
-        return x0 + (cx + 250.0) * s, y0 + (cy + 47.5) * s
-
-    line = dict(color=color, lw=1.1, zorder=5)
-    ax.plot([t(-250, -47.5)[0], t(250, -47.5)[0]], [y0, y0], **line)
-    for side in (-250, 250):
-        ax.plot([t(side, -47.5)[0]] * 2, [t(side, -47.5)[1], t(side, 110)[1]], **line)
-    ax.add_patch(FancyBboxPatch(
-        t(-80, -47.5), 160 * s, 190 * s, boxstyle="square,pad=0",
-        facecolor="none", edgecolor=color, lw=1.1, zorder=5))
-    hoop_x, hoop_y = t(0, 0)
-    ax.add_patch(Circle((hoop_x, hoop_y), 7.5 * s * 2, facecolor="none", edgecolor=color, lw=1.1, zorder=5))
-    ax.plot([t(-30, -7.5)[0], t(30, -7.5)[0]], [t(0, -7.5)[1]] * 2, **line)  # backboard
-    ax.add_patch(Arc((hoop_x, hoop_y), 2 * 40 * s, 2 * 40 * s, theta1=0, theta2=180, color=color, lw=1.1, zorder=5))
-    ft_x, ft_y = t(0, 142.5)
-    ax.add_patch(Arc((ft_x, ft_y), 2 * 60 * s, 2 * 60 * s, theta1=0, theta2=180, color=color, lw=1.1, zorder=5))
-    ax.add_patch(Arc((ft_x, ft_y), 2 * 60 * s, 2 * 60 * s, theta1=180, theta2=360, color=color, lw=1.1, linestyle=(0, (4, 3)), zorder=5))
-    corner_top = (237.5 ** 2 - 220 ** 2) ** 0.5
-    for side in (-220, 220):
-        ax.plot([t(side, -47.5)[0]] * 2, [t(side, -47.5)[1], t(side, corner_top)[1]], **line)
-    theta = 22.1
-    ax.add_patch(Arc((hoop_x, hoop_y), 2 * 237.5 * s, 2 * 237.5 * s, theta1=theta, theta2=180 - theta, color=color, lw=1.1, zorder=5))
-    return x0, y0
 
 
 def _draw_field(ax, x0, y0, s, field, fill_colors, line_color, alpha):

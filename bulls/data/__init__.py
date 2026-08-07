@@ -19,3 +19,9 @@ from bulls.data.fetch import (
     get_team_player_advanced_stats,
     get_team_advanced_stats,
 )
+from bulls.data.shots import (
+    league_possessions,
+    league_shots,
+    player_possessions,
+    player_shots,
+)

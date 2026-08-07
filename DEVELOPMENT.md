@@ -162,6 +162,7 @@ These are the traps that produce silently wrong numbers rather than errors.
 venv/bin/python scripts/make_zone_leaders.py --mode ppg|frequency [--last-n-games N]
 venv/bin/python scripts/make_zone_shooting.py --mode team|volume [--last-n-games N] [--min-shots N]
 venv/bin/python scripts/make_feed_post.py --post-type zone-pps [--last-n-games N]
+venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|rings [--final]
 ```
 
 ## Tests

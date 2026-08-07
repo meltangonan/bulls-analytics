@@ -77,5 +77,5 @@ and advanced feeds as unavailable, and notes that point totals reflect the 2026 
 (the rendered FG% is unaffected by it).
 On game night, NBA.com's derived feeds may not populate until morning.
 
-After keeping a mock, copy its PNG into `docs/mocks/` and add a catalog card
+After keeping a mock, save its PNG with `scripts/save_post_version.py --post <slug>` and add a catalog card
 (template in `idea-catalog.html` source).

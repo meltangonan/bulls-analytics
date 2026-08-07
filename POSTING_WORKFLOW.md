@@ -61,7 +61,9 @@ it. Fix resolution problems by exporting a larger source asset.
 
 ## After Approval
 
-1. Copy the actual final page or carousel pages to `docs/mocks/`.
+1. Save the actual final page or carousel pages with
+   `scripts/save_post_version.py --post <slug>` and commit them. They land in `docs/posts/<slug>/`
+   as a dated version alongside the earlier states that were reviewed.
 2. Update the catalog card to `Mocked` and save the approved caption (or note the user supplies it).
 3. After the user confirms it is live, update the card to `Posted`. Never infer that a post is live.
 

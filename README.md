@@ -44,5 +44,7 @@ Start with **`AGENTS.md`**. It routes to the owner document for whatever you're 
 topic has exactly one owner — visual and voice decisions in `DESIGN.md`, production procedure in
 `POSTING_WORKFLOW.md`, code in `DEVELOPMENT.md`, audience and distribution in `STRATEGY.md`.
 
-Approved final pages are preserved in `docs/mocks/` and tracked as cards in `idea-catalog.html`.
+Post images live in `docs/posts/<slug>/`, one dated, numbered version per state shown for review,
+saved with `scripts/save_post_version.py`. `output/` is gitignored scratch. Posts are tracked as
+cards in `idea-catalog.html`; `docs/mocks/` holds pre-2026-08 finals and is frozen.
 Open `design-system.html` in a browser for the visual companion to `DESIGN.md`.

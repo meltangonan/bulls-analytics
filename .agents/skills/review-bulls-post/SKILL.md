@@ -11,7 +11,9 @@ Turn feedback and results into compact reusable project knowledge rather than a 
 
 Read `AGENTS.md` and `STRATEGY.md`. Inspect the actual final graphic, the actual caption, the
 matching `idea-catalog.html` card, the relevant analysis, and any Insights or qualitative feedback.
-For Canva work, use the downloaded pages in `docs/mocks/`.
+For Canva work, use the downloaded pages in `docs/posts/<slug>/`, highest version number first
+(`docs/mocks/` for posts predating 2026-08). Earlier versions in that folder show how the post
+evolved, which is often what explains a piece of feedback.
 
 A review can proceed without Insights. Never rely on remembered performance or invent missing
 metrics. Compare against prior catalog evidence when it's relevant.

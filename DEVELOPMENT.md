@@ -218,6 +218,7 @@ venv/bin/python scripts/make_zone_shooting.py --mode team|volume [--last-n-games
 venv/bin/python scripts/make_feed_post.py --post-type zone-pps [--last-n-games N]
 venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|rings|cells [--final]
 venv/bin/python scripts/make_shot_chart.py --team|--league --chart ladder --metric pps|fg-rel|pps-rel
+venv/bin/python scripts/save_post_version.py --post <slug> <files...>   # preserve a reviewed version
 ```
 
 `rings` and `cells` answer the same question — how well he shoots by area, against the league — at

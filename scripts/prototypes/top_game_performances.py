@@ -3,7 +3,8 @@
 NBA.com's PlayerGameLogs endpoint supplies the historical Chicago player-game
 box scores. This prototype caches one player-game response and one Bulls team
 game response per season, calculates Hollinger Game Score and single-game TS%,
-and renders three transparent table assets for Canva.
+and renders three transparent table assets for Canva. By default the source is
+the regular season; ``--playoffs`` switches the same analysis to playoff games.
 """
 
 from __future__ import annotations
@@ -52,6 +53,7 @@ TOP_N = 10
 NBA_REQUEST_ATTEMPTS = 3
 LIVE_REQUEST_DELAY_SECONDS = 0.8
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
+SEASON_TYPE_SLUGS = {"Regular Season": "regular-season", "Playoffs": "playoffs"}
 MIN_USABLE_HEADSHOT_BYTES = 5_000
 HISTORICAL_HEADSHOT_URLS = {
     1500: "https://basket-retro.com/wp-content/uploads/2016/05/ron.jpg",  # Ron Mercer
@@ -119,11 +121,11 @@ OUT = _REPO / "output" / "feed"
 
 PLAYER_SOURCE_URL = (
     "https://www.nba.com/stats/players/boxscores-traditional"
-    "?Season={season}&SeasonType=Regular%20Season&TeamID={team_id}"
+    "?Season={season}&SeasonType={season_type}&TeamID={team_id}"
 )
 TEAM_SOURCE_URL = (
     "https://www.nba.com/stats/teams/boxscores"
-    "?Season={season}&SeasonType=Regular%20Season&TeamID={team_id}"
+    "?Season={season}&SeasonType={season_type}&TeamID={team_id}"
 )
 
 PLAYER_COLUMNS = {
@@ -163,12 +165,34 @@ def display_season_label(end_year: int) -> str:
     return season_label(end_year).replace("-", "–", 1)
 
 
-def player_source_url(end_year: int) -> str:
-    return PLAYER_SOURCE_URL.format(season=season_label(end_year), team_id=BULLS_TEAM_ID)
+def season_type_slug(season_type: str) -> str:
+    """Return the stable filename slug for an NBA.com season type."""
+    try:
+        return SEASON_TYPE_SLUGS[season_type]
+    except KeyError as exc:
+        raise ValueError(f"Unsupported NBA season type: {season_type!r}.") from exc
 
 
-def team_source_url(end_year: int) -> str:
-    return TEAM_SOURCE_URL.format(season=season_label(end_year), team_id=BULLS_TEAM_ID)
+def _source_season_type(season_type: str) -> str:
+    """Encode the season type in the query string used by nba.com/stats."""
+    season_type_slug(season_type)
+    return season_type.replace(" ", "%20")
+
+
+def player_source_url(end_year: int, season_type: str = "Regular Season") -> str:
+    return PLAYER_SOURCE_URL.format(
+        season=season_label(end_year),
+        season_type=_source_season_type(season_type),
+        team_id=BULLS_TEAM_ID,
+    )
+
+
+def team_source_url(end_year: int, season_type: str = "Regular Season") -> str:
+    return TEAM_SOURCE_URL.format(
+        season=season_label(end_year),
+        season_type=_source_season_type(season_type),
+        team_id=BULLS_TEAM_ID,
+    )
 
 
 def game_score(row: pd.Series) -> float:
@@ -229,9 +253,14 @@ def _opponent(matchup: str) -> str:
     return text
 
 
-def fetch_bulls_team_games(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
+def fetch_bulls_team_games(
+    end_year: int,
+    *,
+    season_type: str = "Regular Season",
+    refresh: bool = False,
+) -> pd.DataFrame:
     """Load Bulls game scores used to reconcile player totals per game."""
-    cache_path = RAW_CACHE / f"CHI-team-{end_year}.csv"
+    cache_path = RAW_CACHE / f"CHI-team-{season_type_slug(season_type)}-{end_year}.csv"
     if cache_path.exists() and not refresh:
         return pd.read_csv(cache_path)
 
@@ -240,7 +269,7 @@ def fetch_bulls_team_games(end_year: int, *, refresh: bool = False) -> pd.DataFr
         lambda: leaguegamefinder.LeagueGameFinder(
             team_id_nullable=BULLS_TEAM_ID,
             season_nullable=season,
-            season_type_nullable="Regular Season",
+            season_type_nullable=season_type,
             headers=_NBA_HEADERS,
             timeout=60,
         ),
@@ -262,15 +291,20 @@ def fetch_bulls_team_games(end_year: int, *, refresh: bool = False) -> pd.DataFr
         result[column] = pd.to_numeric(result[column], errors="raise").astype(int)
     result["game_id"] = result["game_id"].astype(str)
     result["season_end_year"] = end_year
-    result["team_source_url"] = team_source_url(end_year)
+    result["team_source_url"] = team_source_url(end_year, season_type)
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     result.to_csv(cache_path, index=False)
     return result
 
 
-def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
-    """Load and calculate one Chicago regular-season player-game table."""
-    cache_path = RAW_CACHE / f"CHI-players-{end_year}.csv"
+def fetch_bulls_season(
+    end_year: int,
+    *,
+    season_type: str = "Regular Season",
+    refresh: bool = False,
+) -> pd.DataFrame:
+    """Load and calculate one Chicago player-game table for a season type."""
+    cache_path = RAW_CACHE / f"CHI-players-{season_type_slug(season_type)}-{end_year}.csv"
     if cache_path.exists() and not refresh:
         cached = pd.read_csv(cache_path)
         if {"fg3m", "fg3a"}.issubset(cached.columns):
@@ -280,7 +314,7 @@ def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
     frame = _request_frame(
         lambda: playergamelogs.PlayerGameLogs(
             season_nullable=season,
-            season_type_nullable="Regular Season",
+            season_type_nullable=season_type,
             team_id_nullable=str(BULLS_TEAM_ID),
             timeout=60,
             headers=_NBA_HEADERS,
@@ -319,7 +353,7 @@ def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
     result["opponent"] = result["matchup"].map(_opponent)
     result["game_score"] = result.apply(game_score, axis=1)
     result["ts_pct"] = result.apply(true_shooting_pct, axis=1)
-    result["player_source_url"] = player_source_url(end_year)
+    result["player_source_url"] = player_source_url(end_year, season_type)
     result = result[
         [
             "season_end_year",
@@ -358,14 +392,18 @@ def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
     return result
 
 
-def fetch_bulls_history(*, refresh: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Load every Bulls regular season since 2000–01."""
+def fetch_bulls_history(
+    *,
+    season_type: str = "Regular Season",
+    refresh: bool = False,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Load every Bulls season of the requested type since 2000–01."""
     player_frames: list[pd.DataFrame] = []
     team_frames: list[pd.DataFrame] = []
     for end_year in range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1):
         print(f"Loading {display_season_label(end_year)}")
-        player_frames.append(fetch_bulls_season(end_year, refresh=refresh))
-        team_frames.append(fetch_bulls_team_games(end_year, refresh=refresh))
+        player_frames.append(fetch_bulls_season(end_year, season_type=season_type, refresh=refresh))
+        team_frames.append(fetch_bulls_team_games(end_year, season_type=season_type, refresh=refresh))
     return (
         pd.concat(player_frames, ignore_index=True),
         pd.concat(team_frames, ignore_index=True),
@@ -481,12 +519,18 @@ def build_working_table(players: pd.DataFrame, teams: pd.DataFrame) -> pd.DataFr
     return joined
 
 
-def validate_working_table(table: pd.DataFrame) -> dict[str, object]:
+def validate_working_table(
+    table: pd.DataFrame,
+    *,
+    require_all_seasons: bool = True,
+) -> dict[str, object]:
     """Validate coverage, score reconciliation, and exactly ten rows per decade."""
     expected_years = set(range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1))
     present_years = set(table["season_end_year"].astype(int))
-    if present_years != expected_years:
+    if require_all_seasons and present_years != expected_years:
         raise ValueError("Historical source coverage does not include every season since 2000–01.")
+    if not present_years.issubset(expected_years):
+        raise ValueError("Historical source coverage includes a season outside the post timeframe.")
     if table.duplicated(["game_id", "player_id"]).any():
         raise ValueError("The working table contains duplicate player-game rows.")
     if table["minutes"].isna().any():
@@ -536,8 +580,13 @@ def top_games_by_decade(table: pd.DataFrame) -> pd.DataFrame:
     return ranked.sort_values(["decade", "rank"], kind="stable").reset_index(drop=True)
 
 
-def write_working_table(table: pd.DataFrame, date: str) -> Path:
-    path = OUT / f"{date}-bulls-top-game-performances-working.csv"
+def write_working_table(
+    table: pd.DataFrame,
+    date: str,
+    *,
+    season_type: str = "Regular Season",
+) -> Path:
+    path = OUT / f"{date}-bulls-top-game-performances-{season_type_slug(season_type)}-working.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False)
     return path
@@ -705,6 +754,7 @@ def render_chart(
     date: str,
     *,
     decade: str,
+    season_type: str = "Regular Season",
     final: bool = False,
 ) -> Path:
     """Render one transparent decade table in the settled ladder grammar."""
@@ -871,23 +921,35 @@ def render_chart(
 
     OUT.mkdir(parents=True, exist_ok=True)
     suffix = "final" if final else "draft"
-    path = OUT / f"{date}-bulls-top-game-performances-{decade}-{suffix}.png"
+    path = OUT / (
+        f"{date}-bulls-top-game-performances-{season_type_slug(season_type)}-"
+        f"{decade}-{suffix}.png"
+    )
     fig.savefig(path, dpi=dpi, transparent=True, bbox_inches=None, pad_inches=0)
     plt.close(fig)
     return path
 
 
-def canva_copy_block(report: dict[str, object]) -> str:
+def canva_copy_block(report: dict[str, object], season_type: str = "Regular Season") -> str:
     """Return the exact data-bound framing for Canva."""
+    playoff = season_type == "Playoffs"
+    period = "playoff" if playoff else "regular-season"
+    title = "THE BULLS' BEST PLAYOFF GAMES BY DECADE" if playoff else "THE BULLS' BEST GAMES BY DECADE"
+    subtitle = f"Top 10 {period} box-score performances ranked by Game Score"
+    footer = (
+        f"Data via nba.com | 2000–01 to 2025–26 {period} games | "
+        "Game Score calculated from NBA.com box scores"
+    )
+    audit_suffix = "seasons with a playoff game" if playoff else "seasons"
     return "\n".join(
         [
             "CANVA COPY",
-            "TITLE: THE BULLS' BEST GAMES BY DECADE",
-            "SUBTITLE: Top 10 regular-season box-score performances ranked by Game Score",
+            f"TITLE: {title}",
+            f"SUBTITLE: {subtitle}",
             "SLIDES: 2000s | 2010s | 2020s",
-            "FOOTER: Data via nba.com | 2000–01 to 2025–26 regular seasons | Game Score calculated from NBA.com box scores",
+            f"FOOTER: {footer}",
             "NOTE: Game Score measures box-score productivity; TS% is supporting context. Overtime games are included and not adjusted.",
-            f"AUDIT: {report['player_game_count']} player-games across {report['game_count']} Bulls games and {report['season_count']} seasons.",
+            f"AUDIT: {report['player_game_count']} player-games across {report['game_count']} Bulls {period} games and {report['season_count']} {audit_suffix}.",
         ]
     )
 
@@ -895,15 +957,17 @@ def canva_copy_block(report: dict[str, object]) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build the Bulls top-game performances carousel assets.")
     parser.add_argument("--refresh", action="store_true", help="Refetch all cached NBA.com season responses.")
+    parser.add_argument("--playoffs", action="store_true", help="Use playoff games instead of regular-season games.")
     parser.add_argument("--final", action="store_true", help="Export at final resolution after approval.")
     args = parser.parse_args()
 
     snapshot = datetime.now(SNAPSHOT_TZ)
-    players, teams = fetch_bulls_history(refresh=args.refresh)
+    season_type = "Playoffs" if args.playoffs else "Regular Season"
+    players, teams = fetch_bulls_history(season_type=season_type, refresh=args.refresh)
     table = build_working_table(players, teams)
-    report = validate_working_table(table)
+    report = validate_working_table(table, require_all_seasons=season_type == "Regular Season")
     date = snapshot.date().isoformat()
-    audit_path = write_working_table(table, date)
+    audit_path = write_working_table(table, date, season_type=season_type)
     ranked = top_games_by_decade(table)
     ensure_headshots(ranked["player_id"].tolist())
     ensure_historical_headshot_fallbacks(ranked["player_id"].tolist())
@@ -914,13 +978,14 @@ def main() -> None:
                 ranked.loc[ranked["decade"].eq(decade)],
                 date,
                 decade=decade,
+                season_type=season_type,
                 final=args.final,
             )
         )
     print(f"Audit: {audit_path}")
     for chart_path in chart_paths:
         print(f"Chart: {chart_path}")
-    print(canva_copy_block(report))
+    print(canva_copy_block(report, season_type))
     for decade in ("2000s", "2010s", "2020s"):
         print(f"\n{decade}")
         print(

@@ -6,7 +6,10 @@ from scripts.prototypes.top_game_performances import (
     GAME_SCORE_FILL,
     decade_for_end_year,
     game_score,
+    player_source_url,
+    season_type_slug,
     slide_height,
+    team_source_url,
     top_games_by_decade,
     true_shooting_pct,
 )
@@ -64,6 +67,13 @@ def test_decade_mapping_uses_nba_season_end_years():
     assert decade_for_end_year(2021) == "2020s"
     with pytest.raises(ValueError):
         decade_for_end_year(2000)
+
+
+def test_source_urls_can_switch_to_playoffs_without_reusing_regular_season_urls():
+    assert season_type_slug("Playoffs") == "playoffs"
+    assert "SeasonType=Playoffs" in player_source_url(2022, "Playoffs")
+    assert "SeasonType=Playoffs" in team_source_url(2022, "Playoffs")
+    assert "SeasonType=Regular%20Season" in player_source_url(2022)
 
 
 def test_game_score_uses_one_solid_bulls_red_fill():

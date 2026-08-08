@@ -33,11 +33,14 @@ metrics, qualifications, sources, and the final downloaded pages.
    only at the end. A version is a state someone actually saw, not every render. Untracked images
    have been lost to worktree cleanup before: files under `docs/visuals/` make a worktree dirty, and
    dirty worktrees are already protected.
-   **A graphic's data ships with the graphic.** The analysis table a chart was drawn from, and any
-   fetched dataset that is slow or rate-limited to rebuild, belong in that `data/` folder from the
-   start — not in `cache/`, which is ignored and has already destroyed fifty minutes of play-by-play
-   behind an already-published post. `cache/` stays ignored and stays right for a cheap refetch, the
-   licensed font extraction, and third-party portraits. `bulls/visuals.py` owns the distinction.
+   **A graphic's data ships with the graphic.** Scope decides where a dataset lives: if exactly one
+   post consumes it, it belongs in that post's `data/` from the start — the analysis table the chart
+   was drawn from, and the fetched inputs behind it — whether or not it was expensive, because that
+   is what makes the numbers auditable later without refetching. Only genuinely shared material
+   stays in `cache/`, which is ignored: portraits, the licensed font extraction, the league shot
+   baseline, season game logs. Cost does not decide the folder, it decides the stakes — an ignored
+   `cache/` has already destroyed fifty minutes of play-by-play behind an already-published post.
+   `bulls/visuals.py` owns the full rule; `tests/test_data_locations.py` enforces it.
 5. After completing and verifying work, show the user the result and wait for explicit approval
    before committing or pushing. Approval covers the work under review, not later work.
 6. Any post task that changes repo files automatically gets a temporary branch and linked worktree;

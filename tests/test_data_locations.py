@@ -29,14 +29,18 @@ CACHE_PATH = re.compile(r'/\s*"cache"\s*/\s*"([\w.\-]+)"|"cache/([\w.\-]+)')
 CACHE_TOKEN = re.compile(r'/\s*"cache"')
 
 # folder -> why it is allowed to live in an ignored cache.
+#
+# Every entry must be genuinely SHARED. A dataset with one consuming post belongs in that
+# post's docs/visuals/<slug>/data/ regardless of how cheap it is to refetch — that is what
+# makes a published number auditable later. sl_sticky_stats_2026 used to sit here and was
+# moved out for exactly that reason: one script, one post, no other consumer.
 ALLOWED = {
-    "headshots": "third-party NBA portrait images, re-downloadable one request each",
+    "headshots": "third-party portraits shared by 17 scripts; no single post owns them",
     "fonts": "extraction of the licensed system Helvetica — DESIGN.md forbids committing it",
-    "shot_charts": "league shot baseline, ~30 requests to rebuild",
-    "hot_spots": "per-player zone splits, cheap to refetch",
-    "scoring_by_location": "one league request to rebuild",
-    "sl_sticky_stats_2026": "Summer League box scores, one tournament, cheap",
-    "nba.com": "season game logs, one request per season",
+    "shot_charts": "league shot baseline behind the whole shot-chart family via bulls/data/shots",
+    "hot_spots": "per-player zone splits shared by three posts, cheap to refetch",
+    "scoring_by_location": "derived zone classification shared with the hot-spot family",
+    "nba.com": "season game logs shared by the game-score and scoring-ladder posts",
 }
 
 # Modules that legitimately reference the cache root itself rather than a subfolder.
@@ -114,6 +118,14 @@ def test_the_assist_duos_season_data_is_tracked():
     assert data.is_dir(), f"season data missing from the tracked tree: {data}"
     seasons = list(data.glob("assisted-baskets-*.csv"))
     assert len(seasons) == 26, f"expected 26 cached seasons, found {len(seasons)}"
+
+
+def test_single_owner_post_data_ships_with_its_post():
+    """Summer League sticky stats: one script, one post, so it lives with the post."""
+    data = ROOT / "docs" / "visuals" / "2026-07-21-summer-league-sticky-stats" / "data"
+    assert data.is_dir(), f"Summer League inputs missing from the tracked tree: {data}"
+    assert list(data.glob("games*.csv")), "expected the tournament game index"
+    assert (data / "box").is_dir(), "expected the cached box scores"
 
 
 def test_every_allowed_cache_folder_states_a_reason():

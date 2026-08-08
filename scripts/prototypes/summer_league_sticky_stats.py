@@ -34,6 +34,7 @@ from nba_api.stats.endpoints import boxscoretraditionalv3, leaguegamefinder, sho
 from bulls.config import API_DELAY
 from bulls.data.fetch import _NBA_HEADERS, get_player_headshot
 from bulls.graphics.craft import headshot_label
+from bulls.visuals import DATA, visual_dir
 from bulls.graphics.house import (
     DRAFT_DPI,
     DEFAULT_THEME,
@@ -52,7 +53,13 @@ SUMMER_LEAGUES = {
 }
 MIN_MINUTES = 50.0
 REQUEST_RETRIES = 5
-CACHE_DIR = _REPO / "cache" / "sl_sticky_stats_2026"
+# Tracked with the post, not in the ignored cache. This tournament's box scores and
+# shot charts have exactly one consumer — this script, for this post — so they ship with
+# the graphic they produced. See bulls/visuals.py for why single-owner data lives here.
+CACHE_DIR = (
+    visual_dir(_REPO / "docs" / "visuals", "summer-league-sticky-stats", create=False)
+    / DATA
+)
 OUTPUT_DIR = _REPO / "output"
 OUTPUT_STEM = "2026-07-21-sl-sticky-stats"
 

@@ -30,10 +30,33 @@ time, or that a provider could change or retire, is written here from the start
 rather than copied here later: a tracked folder needs no one to remember it, and a
 worktree holding one is dirty, which is already protected.
 
-Not everything belongs here. `cache/` remains the right home for a cheap refetch,
-for the licensed system font extraction that `DESIGN.md` says must never be
-committed, and for third-party portrait images. The test is not "is this derived?"
-but "what does it cost to get back, and can it still be got back at all?"
+## Which folder a dataset belongs in
+
+Two independent questions, and conflating them is what put fifty minutes of
+play-by-play in an ignored folder:
+
+**Scope decides where.** A dataset with exactly one consumer belongs in that
+post's `data/`. A dataset many posts share has no single owner, and filing it
+under one of them is arbitrary — the next post would either duplicate it or
+reach sideways into a sibling's folder, which is worse. Shared material stays in
+`cache/`: portraits (17 scripts), the font extraction (22), the league shot
+baseline, the season game logs.
+
+**Cost decides how much the choice matters.** Single-owner data ships with its
+post whether or not it was expensive, because a graphic's inputs are what make
+its numbers auditable a year later without refetching anything. Cost only raises
+the stakes: cheap single-owner data in `cache/` is untidy, expensive
+single-owner data in `cache/` is a loss waiting to happen.
+
+`cache/` therefore holds shared, cheap, licensed, or third-party material only —
+never the record behind a published number. The test is not "is this derived?"
+but "who owns this, and what does it cost to get back — if it can be got back at
+all?"
+
+**Known gap: shared *and* expensive has no home.** `cache/` is ignored and post
+`data/` folders are single-owner, so a costly dataset feeding three posts would
+have nowhere safe to sit. Nothing qualifies today. The answer when something does
+is a tracked shared folder, not squeezing it into whichever post got there first.
 
 The folder's date is fixed when the post starts and never moves. Re-dating it per
 save would scatter a post that spans three days across three folders, so lookup

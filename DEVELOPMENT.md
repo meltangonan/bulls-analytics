@@ -56,10 +56,13 @@ is what keeps the two signals aligned, because tracked files make the worktree d
 followed — while a `cache/` folder holding 2,132 rate-limited play-by-play requests, about fifty
 minutes of fetching, went into the same `rm -rf` and was destroyed after the post had shipped. A
 safety rule written for one kind of artifact quietly implies a category, and the next thing lost is
-whichever member of that category the rule did not name. So the rule is now about cost, not type:
-**anything a published number rests on that is slow, rate-limited, or could be retired upstream is
-written into the post's tracked `docs/visuals/<slug>/data/` folder from the start.** Not copied there
-at the end — written there, so no one has to remember. `cache/` stays ignored, and stays correct for
+whichever member of that category the rule did not name. So the rule is now about ownership:
+**a dataset with exactly one consuming post is written into that post's tracked
+`docs/visuals/<slug>/data/` folder from the start** — not copied there at the end, written there, so
+no one has to remember. That holds whether or not the fetch was expensive; shipping a post's inputs
+with the post is what lets someone answer "where did this number come from?" a year later without
+refetching anything. Cost is not the filing rule, it is the severity rule: cheap single-owner data
+in `cache/` is untidy, expensive single-owner data in `cache/` is a loss waiting to happen. `cache/` stays ignored, and stays correct for
 a cheap refetch, the licensed Helvetica extraction `DESIGN.md` forbids committing, and third-party
 portraits. Prefer running a long fetch from the primary checkout regardless, since it writes only to
 ignored `cache/` and touches no tracked file.

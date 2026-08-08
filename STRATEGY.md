@@ -22,6 +22,10 @@ casual fan actually gets.
 
 **One-liner:** The top account in the space — but for data. *Chicago Bulls, charted.*
 
+**Editorial north star:** Build a visual encyclopedia of Bulls basketball — current, historical,
+comparative, and understandable. Start with an interesting basketball question and comparison group,
+then let that question choose the timeframe and visual. A format is a tool, not the content strategy.
+
 ## Who it's for
 
 **Primary:** The everyday Bulls fan who'd never call themselves a stats person. They meet the work
@@ -61,8 +65,8 @@ the graphic, with names and context in the caption. The concrete system lives in
 
 **The idea-to-post engine** — the steady supply of genuinely surprising Bulls angles, posted *often*.
 Craft needs substance to apply it to, and tempo is itself a top growth lever (per Owen Phillips,
-consistency is the key to success). The editorial POV lives in `bulls-content-playbook.html`; the
-idea shelf and post log live in the Notion `chicagobullsdata posts` database.
+consistency is the key to success). This document owns the editorial POV; the idea shelf and post log
+live in the Notion `chicagobullsdata posts` database.
 
 **Community & distribution** — belonging is the goal and the #1 no-budget growth lever. A niche
 account grows by *borrowing* other pages' audiences, not by outspending anyone.

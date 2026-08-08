@@ -14,9 +14,8 @@ Usage:
     avgs = analysis.season_averages(coby)
     trend = analysis.scoring_trend(coby)
 
-    # Build social graphics
-    shots = data.get_team_shots(last_n_games=10)
-    fig = graphics.build_zone_pps_post(shots)
+    # Shared graphics helpers live in bulls.graphics; post-specific renderers
+    # start in scripts/prototypes.
 """
 
 from bulls import data

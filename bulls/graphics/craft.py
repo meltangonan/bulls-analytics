@@ -26,7 +26,7 @@ MAGNITUDE_CMAP = LinearSegmentedColormap.from_list(
     "bulls_magnitude", ["#F2EAE8", "#CE1141", "#7E0C2B"]
 )
 
-# Names longer than this collapse to "F. Lastname" (impact_board rule).
+# Names longer than this collapse to "F. Lastname" in compact labels.
 _MAX_NAME_LEN = 16
 
 # Matches the short side of NBA CDN headshots so zoom behaves the same

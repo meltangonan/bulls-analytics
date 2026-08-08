@@ -4,8 +4,8 @@ Read before changing fetchers, analysis, graphics builders, scripts, or tests. `
 visual decisions; `POSTING_WORKFLOW.md` owns post production.
 
 Code lives in `bulls/data` (NBA API wrappers), `bulls/analysis` (stat functions), and
-`bulls/graphics` (`house.py` tokens/themes/fonts, `craft.py` shared helpers, `feed.py` legacy zone
-builders). Read the modules for signatures — this file covers only what the code can't tell you.
+`bulls/graphics` (`house.py` tokens/themes/fonts, `craft.py` shared helpers, and `court.py` standard
+court geometry). Read the modules for signatures — this file covers only what the code can't tell you.
 
 ## Post Worktrees
 
@@ -218,7 +218,6 @@ These are the traps that produce silently wrong numbers rather than errors.
   step is part of the live report path**, not the rejected full-slide HTML renderer (`DESIGN.md`,
   Settled). `gt_extras` stays limited to the separate Great Tables spike.
 - Court graphics use `analysis.detailed_zones()`.
-- `save_feed_post(..., dpi=...)` is retained only for older `feed.py` builders.
 
 ## CLIs
 
@@ -227,9 +226,6 @@ venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|r
 venv/bin/python scripts/make_shot_chart.py --team|--league --chart ladder --metric pps|fg-rel|pps-rel [--project <slug>]
 venv/bin/python scripts/save_visual_version.py --project <slug> <files...>   # preserve a reviewed version
 ```
-
-The older `make_zone_leaders.py`, `make_zone_shooting.py`, and `make_feed_post.py` commands remain
-only to reproduce legacy full-page zone graphics. Do not use them for new Canva-first work.
 
 `rings` and `cells` answer the same question — how well he shoots by area, against the league — at
 four zones and at 18. Choose by sample. `rings` keeps every band large enough to carry volume as

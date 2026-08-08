@@ -11,9 +11,8 @@ context.
 ## Context
 
 Read `AGENTS.md`, `DESIGN.md`, and `POSTING_WORKFLOW.md`. Read the matching page in the Notion
-`chicagobullsdata posts` database when the idea already exists, `bulls-content-playbook.html` when the editorial
-angle or fairness standard is unclear, and `DEVELOPMENT.md` before touching analysis, fetchers,
-graphics code, or tests.
+`chicagobullsdata posts` database when the idea already exists, `STRATEGY.md` when the editorial
+angle is unclear, and `DEVELOPMENT.md` before touching analysis, fetchers, graphics code, or tests.
 
 These files and the conversation are the source of truth. Don't restate their rules in a separate
 planning artifact.

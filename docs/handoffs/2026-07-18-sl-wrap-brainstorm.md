@@ -41,8 +41,8 @@ graphic or caption:
   is a natural above-the-fray answer.
 - **Patience counter-narrative for Noa/Dailyn**: Noa grew three inches, had shoulder surgery,
   and is younger than Caleb/Dailyn; Dailyn played out of position. Both sat the finale for
-  precautionary soreness (K.C. Johnson, Bulls PR). The bulls-content-playbook fairness
-  guardrails matter here.
+  precautionary soreness (K.C. Johnson, Bulls PR). The `POSTING_WORKFLOW.md` fairness guardrails
+  matter here.
 - **Caleb's final SL line circulating**: 23.5 PPG / 7.3 RPG / 2.5 BPG on 50/42 splits in
   4 games (fan-posted; recompute from NBA.com before use).
 - Verified in-session nuggets: Awaka made 7 straight FGs over the last two games (13 of his
@@ -62,7 +62,7 @@ graphic or caption:
 - Notion `chicagobullsdata posts` — four Posted SL pages with captions and evidence.
 - `scripts/prototypes/summer_league_report.py` — fetch/prep helpers reusable for cumulative
   stats (per-game only today; a wrap needs cross-game aggregation).
-- `bulls-content-playbook.html` — editorial lanes and fairness guardrails.
-- `STRATEGY.md` — casual-fan-first decision rule; shares/sends as the metric.
+- `STRATEGY.md` — editorial direction, casual-fan-first decision rule, and shares/sends as the metric.
+- `POSTING_WORKFLOW.md` — brief requirements and fairness guardrails.
 - `AGENTS.md` — Instagram and X access (@chicagobullsdata, @bullsdata) for the optional
   narrative re-scan in `promote-bulls-post`.

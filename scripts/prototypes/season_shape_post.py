@@ -2,7 +2,7 @@
 
 Cumulative games over/under .500 for 2025-26, fan-voice annotations, the Feb 5
 trade-deadline line, and the payoff: Caleb Wilson (No. 4 pick) at the endpoint.
-Grew out of build_record_timeline in three_options.py; promoted to its own file
+Promoted from an earlier multi-option exploration into its own file
 because it's the post we're actually shipping.
 """
 import sys

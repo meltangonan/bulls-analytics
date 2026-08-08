@@ -1,9 +1,10 @@
-"""Shared half-court geometry for the shot-chart family.
+"""Standard half-court geometry shared by conventional shot charts.
 
-Promoted out of the prototypes once the same court appeared in four of them
-(roster hot spots, hex chart, zone deep-dive, zone rings). Everything here works
-in raw NBA shot-chart coordinates: tenths of a foot, hoop at the origin, court
-500 units wide, baseline at y=-47.5.
+The hotspot, hex, roster-hot-spots, and zone-deep-dive renderers use this court.
+Concentric rings and ladders draw specialized overlays in ``make_shot_chart.py``
+because their markings need different clipping, layering, and opacity. Everything
+here works in raw NBA shot-chart coordinates: tenths of a foot, hoop at the
+origin, court 500 units wide, baseline at y=-47.5.
 """
 from __future__ import annotations
 

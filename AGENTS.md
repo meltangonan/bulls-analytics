@@ -9,9 +9,9 @@ metrics, qualifications, sources, and the final downloaded pages.
 
 | Working on… | Read… |
 | --- | --- |
-| Audience, metrics, distribution | `STRATEGY.md` |
+| Audience, editorial direction, metrics, distribution | `STRATEGY.md` |
 | Any visual, mock, or post iteration | `DESIGN.md`, then `POSTING_WORKFLOW.md` |
-| Editorial direction and fairness guardrails | `bulls-content-playbook.html` |
+| Analytical scope and fairness guardrails | `POSTING_WORKFLOW.md` |
 | The shelf of post ideas and post log | the Notion `chicagobullsdata posts` database |
 | A create / promote / review stage | the matching skill in `.agents/skills/` |
 | Fetchers, analysis, graphics code, scripts, tests | `DEVELOPMENT.md` |

@@ -1,7 +1,7 @@
 # Posting Workflow
 
-How a Bulls analysis becomes an Instagram post. `DESIGN.md` owns how it looks and sounds;
-`bulls-content-playbook.html` owns what's worth posting.
+How a Bulls analysis becomes an Instagram post. `STRATEGY.md` owns what's worth posting;
+`DESIGN.md` owns how it looks and sounds; this document owns the production and fairness checks.
 
 ## The Brief
 
@@ -20,6 +20,21 @@ not-yet-relevant. Then restate it and let the user correct it.
 6. **Deliverable** — feed or carousel, and what counts as an approved draft.
 
 Default to a 1080×1350 feed page when nothing else is implied.
+
+## Data & Fairness Guardrails
+
+- **Name the coverage window.** Say “since 2000” or “shot-location era” when the source does not
+  cover full franchise history.
+- **Adjust when eras distort the comparison.** Use pace, league efficiency, role, or opportunity
+  context when raw totals would reward the environment more than the player.
+- **Normalize financial comparisons.** Prefer salary-cap share, payroll share, or same-season
+  context over nominal dollars across decades.
+- **Show the qualification rule.** Keep minimum games, minutes, possessions, attempts, or seasons
+  visible on the graphic.
+- **Expose important metric components.** A named composite can help, but readers should see its
+  inputs and not mistake editorial weighting for objective truth.
+- **Keep sources and dates attached.** Posts should remain auditable after the season changes and
+  the graphic recirculates.
 
 ## How a Post Gets Built
 
@@ -94,8 +109,8 @@ deliberate reach tag is fine; anything else tagging an absent player is not.
 Offer 2–3 concrete candidates with one-line pitches, preferring in order:
 
 1. Parked Notion ideas with data ready today.
-2. Guided Idea Bank lanes in `bulls-content-playbook.html`.
-3. Timely hooks: the latest game, roster news, dates, anniversaries.
+2. Timely hooks: the latest game, roster news, dates, or anniversaries.
+3. A new brainstorm only when no existing Notion idea fits.
 
 Don't invent a new format when a Parked card already fits.
 

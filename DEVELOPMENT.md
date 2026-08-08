@@ -180,6 +180,30 @@ These are the traps that produce silently wrong numbers rather than errors.
 - **NBA.com's team-filtered player endpoints can attach a traded player's *later* team abbreviation**
   even while games, minutes, and ratings remain scoped to the team you requested. Treat the request's
   `team_id_nullable` filter as the stint scope; never infer scope from the returned abbreviation.
+- **Play-by-play names the assister only inside the event description, with no player id.**
+  `PlayByPlayV3` is the sole source of player-to-player assist detail before 2013-14 and the only
+  source at any date carrying `shotValue`, but resolving `"(Butler 3 AST)"` to a person is a
+  minefield, and every failure is silent. Use `assist_duos_fetch.surname_key` / `_name_variants`
+  rather than re-deriving: fold diacritics (descriptions are ASCII `Vucevic`, the name column is
+  `Vučević`); strip generational suffixes (the column says `Butler III`, the description says
+  `Butler` — **417 of Jimmy Butler's 2016-17 assists vanished** on this alone); and generate
+  first-name prefixes of one, two, and three letters, because a shared surname is disambiguated by
+  whatever prefix is unique (`J. Sampson`, and `Ty.`/`Ti. Thomas` for Tyrus and Tim). Resolve within
+  the game first, then the season, and run resolution *after* the whole season is collected — a
+  player whose only appearance in a game is the assist itself produces no event row of his own.
+- **Reconcile extracted play-by-play against the official box score before reading any leaderboard.**
+  Summing `AST` over a season's team game log costs one request and turns every bug above from
+  something you must notice into a number that is not zero. All 26 Bulls seasons now sit at
+  48,316/48,316. Report a gap, never force it away.
+- **Two-man lineup minutes (`leaguedashlineups`) return zero rows before 2007-08.** Shared minutes
+  are the better denominator than shared games, but they do not exist for the early 2000s, so a
+  since-2000 post must use games played together. Choose a metric against the oldest season on the
+  graphic, not the newest.
+- **The NBA CDN answers an unknown player with a grey silhouette, not a 404**, and it is 12,430
+  bytes — above any "file too small" threshold. Detect it by hashing (`assist_duos.is_silhouette`);
+  a size check silently passes it through and the chart renders a grey blob that reads as a design
+  choice. This also defeats `ensure_historical_headshot_fallbacks`, which treats any file over its
+  size floor as a usable cache and so skips the replacement it was written to fetch.
 - **The Advanced endpoint reports minutes per game even when `PerMode=Totals`.** For total player
   minutes paired with advanced ratings, use `get_team_player_advanced_stats()`, which joins
   Traditional totals to the Advanced ratings.

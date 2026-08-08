@@ -1,117 +1,81 @@
-# ACTIVE — 2025–26 Bulls assist-duos post
+# ACTIVE — Bulls assist-duos posts
 
-## Objective
+Which Bulls pairs created the most baskets for one another. One analysis, **two separate visual
+projects**, each with its own folder under `docs/visuals/` and its own Notion page when it ships.
 
-Create a separate `@chicagobullsdata` post showing which Bulls pairs produced the most assisted
-baskets for one another during the 2025–26 regular season.
+| Project | Slug | Slides |
+| --- | --- | --- |
+| The post being taken forward | `assist-duos` | Best connection of every season, one slide per decade (10 / 10 / 6 rows), plus a 2025-26 top-eight slide |
+| Parked, liked, not scheduled | `assist-duos-by-decade` | Top ten connections within each decade (10 / 10 / 10) |
 
-This is a companion to the most-used two-player lineup table, not an extra metric for that table.
-Do not combine shared-minutes ratings and player-to-player assists in one graphic.
+Both render from `scripts/prototypes/assist_duos.py`; `--mode both` writes both projects.
 
 ## Settled direction
 
-- Population: all players who logged a 2025–26 regular-season Bulls stint, including players later
-  traded away. This is a completed-season Chicago recap, not a current-roster view.
-- Rank the top five unordered pairs by **combined assists between the two players**:
-  `A assists B + B assists A`.
-- Preserve the directional split in the graphic. A combined total without the two directions hides
-  whether the relationship was balanced or primarily creator-to-finisher.
-- Treat this as a volume post: "most productive assist connections," not "best chemistry" or
-  "most efficient duo." Minutes, role, and ballhandling responsibility drive totals.
-- Start with one ranked board or table row per pair. The likely row anatomy is two player names or
-  headshots, the two directional counts, and one prominent combined total.
-- Keep the first version simple. Do not begin with per-100 shared-possession rates, an assist
-  network, or play-by-play reconstruction.
-- Build one transparent Python chart asset for Canva assembly. Canva owns the title, subtitle,
-  coverage/source line, and handle.
+- Rank unordered pairs by **combined assists between the two players** (`A→B + B→A`), ties broken on
+  the points those baskets were worth.
+- Preserve the directional split — it is the point of the post. It ranges from 87% one-way
+  (Giddey→Buzelis, 2025-26) to a dead-even 35-34 (Vučević↔Buzelis). The split bar carries both facts
+  in one mark: length is the total, the colour break is the boundary between directions.
+- Second column is **games played together**, not points. Points ran at ~2.3 per assist for every
+  duo, restating the total; shared games explain *why* a total is what it is. Giddey-Vučević fell
+  from 175 to 106 mostly because they shared 33 games instead of 63.
+- Volume post: "most productive connections", not "best chemistry".
+- Decade boundaries come from `top_game_performances.decade_for_end_year`, so the two carousels cut
+  seasons identically. 2019-20 is the 2010s.
+- One bar scale and one canvas height across a carousel — readers compare slides directly, and every
+  slide must drop into the same Canva frame. All slides export 1500×1320.
+- Chart assets only. Canva owns the title, subtitle, coverage line, and handle.
 
-## Confirmed NBA.com data path
+## Data
 
-The installed `nba_api` package exposes:
+`scripts/prototypes/assist_duos_fetch.py` caches every assisted Bulls basket since 2000-01 from
+`PlayByPlayV3`, one CSV per season under `cache/assist-duos/`. ~2,100 games at roughly two minutes
+per season, strictly serial: **NBA.com throttles concurrent play-by-play hard** — a four-worker test
+made even single serial requests time out for minutes afterwards.
 
-```python
-from nba_api.stats.endpoints import playerdashptpass
-```
+Play-by-play rather than the tracking passing dashboard because only it carries `shotValue`, and
+because it *is* the official record: tracking undercounts (2,312 vs 2,335 official in 2025-26).
 
-`PlayerDashPtPass` takes `team_id`, `player_id`, `season`, and
-`season_type_all_star`. Its `PassesMade` dataset includes:
+**Every season reconciles exactly: 48,316 extracted vs 48,316 official.** Run
+`--reconcile` after any refetch. The identity-matching traps that got there are in `DEVELOPMENT.md`
+under Data Guardrails — read them before touching the resolver.
 
-- `PLAYER_ID` and `PLAYER_NAME_LAST_FIRST`
-- `PASS_TO`
-- `PASS_TEAMMATE_PLAYER_ID`
-- `PASS`
-- `AST`
-- made/attempted field-goal columns from those passes
+Games played together comes from `PlayerGameLogs`, one request per season.
 
-Use the existing Bulls ID and NBA request headers from `bulls.data.fetch`. A live 2025–26 check
-returned:
+**Shared minutes are not available.** `leaguedashlineups` returns zero rows before 2007-08, which
+would blank the two best rows on the board (2006-07 Hinrich/Deng, 2003-04 Hinrich/Crawford). Games
+is the coarser but complete denominator. Revisit only for a 2010s-onward post.
 
-- Josh Giddey → Matas Buzelis: **84 assists**
-- Matas Buzelis → Josh Giddey: **13 assists**
-- Proposed combined duo total: **97**
+## Findings
 
-That check establishes feasibility; it is not a complete leaderboard.
+- **Derrick Rose → Luol Deng, 2010-11: 233 combined (182 one way)** — far clear of everything since
+  2000; the next best is Hinrich→Deng at 184.
+- Every 2000s leader beats the 2025-26 best of 106. The modern number only means something beside
+  the Hinrich era.
+- The decade view is repetitive by nature — Hinrich in four 2000s rows, Vučević in nine of ten 2020s
+  rows. That is why the yearly view was chosen for the post.
 
-## Aggregation guardrail
+## Open
 
-Fetch **`PassesMade` only** for every Bulls player. Do not append `PassesReceived`, because it is the
-same relationship viewed from the recipient and would double-count the events.
+- **Jay Williams (2398) has no portrait** on the NBA CDN or ESPN; he is row 8 of the decade-2000s
+  slide only, so he does not affect the chosen post. Greg Anthony (21) is the same case on the
+  yearly-2000s slide and currently renders as the CDN silhouette, at the user's direction. A Getty
+  comp was offered and declined — licensed sources only. Wikimedia has CC-licensed photos of both,
+  but they are present-day candids that clash with studio headshots and carry attribution and
+  share-alike obligations.
+- **Newest season first** is settled. The CLI now renders only `yearly-desc`; ascending is still
+  reachable via `best_per_season(descending=False)` and its v01 renders are kept in the archive.
+- Canva assembly, QA off a full export, and the caption are the user's next session.
 
-For each directional row:
+## State
 
-1. Keep the passer ID, recipient ID, passer name, recipient name, and `AST`.
-2. Create a canonical unordered pair key by sorting the two player IDs.
-3. Retain the original passer/recipient orientation for the directional display.
-4. Sum both orientations to produce the pair's combined total.
-5. Rank the unordered pairs by that combined total and select the top five.
+Both Notion pages are written, with the full data provenance section on the per-season page and a
+pointer to it from the decade page. Status: `Mocked` for the post, `Parked` for the decade board.
+The `Canva` property on both is still empty — it gets the design's edit link at assembly.
 
-Build the season's Bulls player-ID list from a Chicago-filtered team/player endpoint, not from the
-current roster. `bulls.data.get_team_player_advanced_stats(season="2025-26")` is one existing source
-of team-stint player IDs.
+`docs/visuals/2026-08-08-assist-duos/assets/` and `.../2026-08-08-assist-duos-by-decade/assets/`
+hold v01 of each project. Test suite 484 passing, 59 of them for this post.
 
-## Required validation
-
-- Confirm the selected player list represents Bulls stints rather than the July 2026 roster.
-- Confirm every `(passer_id, recipient_id)` directional key is unique before aggregation.
-- For representative high-volume passers, compare the sum of `PassesMade.AST` with their
-  Chicago-stint assist total and explain any NBA tracking discrepancy rather than silently forcing
-  equality.
-- Confirm the two directions sum exactly to every displayed combined total.
-- Inspect names for traded players and do not infer stint scope from a returned current/later team
-  abbreviation.
-- Save a date-stamped analytical CSV containing both directional rows and the combined totals before
-  rendering.
-- Keep coverage and source language explicit: `2025–26 regular season` and `NBA.com/Stats`.
-
-Use play-by-play only as a fallback or cross-check if the passing endpoint proves incomplete. A
-full play-by-play pipeline would add substantially more collection and identity-matching work
-without improving the first version's basketball question.
-
-## Working copy direction
-
-- Working title: **THE BULLS’ TOP ASSIST CONNECTIONS**
-- Working subtitle: **The five pairs that created the most baskets for one another**
-- Qualification: **2025–26 regular season · Combined assists in both directions**
-- Method note: **Totals reflect made baskets officially credited with an assist; volume is affected
-  by minutes and offensive role.**
-- Source: **Data via NBA.com/Stats**
-
-Treat these as starting words, not approved final copy.
-
-## Work completed
-
-- Confirmed that NBA.com's player-to-player passing endpoint is available in the project venv.
-- Inspected the endpoint's expected `PassesMade` and `PassesReceived` columns.
-- Successfully fetched the Giddey directional rows quoted above.
-- Chose a combined-total ranking with the two directions preserved.
-- Confirmed this should remain a separate post from the two-player on-court ratings table.
-
-No assist-duos fetcher, analysis function, chart code, tests, Notion page, or final graphic has been
-created yet.
-
-## Clearest next action
-
-Use the `create-bulls-post` skill. Read `AGENTS.md`, `DESIGN.md`, `POSTING_WORKFLOW.md`, and
-`DEVELOPMENT.md`, then fetch the full Bulls player-to-player passing table and show the validated top
-five pairs before making the graphic. Preserve the decisions above and keep the implementation
-post-specific until a second use proves that a reusable fetcher or chart builder is needed.
+The superseded first-session worktree `claude-assist-duos` has been removed; nothing on it was
+unique to it.

@@ -82,6 +82,17 @@ ignored `cache/` and touches no tracked file.
   direct.
 - Never rebuild analytical logic in Canva, and never recompute a number that the chart already
   proved. Canva is layout only.
+- **Data that can't be fetched is still that post's data: it lives in the post's tracked
+  `docs/visuals/<slug>/data/` as a dated snapshot CSV, never as a literal in a script, and never
+  behind a scraper.** Salary and contract data is the standing case: it isn't an
+  NBA.com statistic, and the sites that compile it (Basketball Reference, Spotrac) prohibit
+  automated access in their terms and return 403 to scripted requests. So the snapshot is captured
+  by hand, committed, and carries `#` comment lines naming each source URL, the capture date, the
+  exact call parameters, and every exclusion or correction. **Give each snapshot reconciliations the
+  tests can assert** — a total the source itself publishes, a structural invariant like roster size
+  or games per season — so a transcription slip or a bad source row fails a test instead of
+  shipping. `payroll_vs_wins.py` is the worked example: its guards caught Spotrac publishing a
+  2015-16 Bulls payroll inflated by three players who joined the team the following offseason.
 - Keep the matching Notion page current as the idea, status, and post log.
 - **`docs/visuals/YYYY-MM-DD-<slug>/` is the tracked home for visual work**, whether it becomes a
   post or remains a reviewed chart or exploration. It is split into `assets/` and optional `final/`.

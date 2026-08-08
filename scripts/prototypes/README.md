@@ -49,7 +49,17 @@ fetch.get_roster().to_csv("cache/roster_2025-26.csv", index=False)
 ```bash
 venv/bin/python scripts/prototypes/f5_lineup_table.py
 venv/bin/python scripts/prototypes/regular_season_gamebook.py
+venv/bin/python scripts/prototypes/payroll_vs_wins.py
 ```
+
+### Payroll vs wins
+
+`payroll_vs_wins.py` fetches nothing. Salary is not an NBA.com statistic and the sites that compile
+it block scripted requests, so it reads the committed snapshot
+`docs/visuals/2026-08-08-payroll-vs-wins/data/2026-08-08-bulls-payroll-vs-wins.csv`. Refresh that file once per offseason by repeating the
+browser steps in its header comments, then re-run the suite: `tests/test_payroll_vs_wins.py`
+re-checks the snapshot against facts the sources publish independently, including a regression guard
+for a 2015-16 payroll figure Spotrac still publishes wrong.
 
 ### Summer League Report quick start
 

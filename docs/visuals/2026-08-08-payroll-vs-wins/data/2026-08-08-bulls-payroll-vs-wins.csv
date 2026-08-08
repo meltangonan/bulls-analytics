@@ -1,0 +1,73 @@
+# Chicago Bulls payroll, salary cap, and record by season — 2011-12 through 2025-26.
+#
+# CAPTURED 2026-08-08 by hand. Salary is not an NBA.com statistic and the sites that
+# compile it prohibit automated access, returning 403 to scripted requests (DEVELOPMENT.md).
+# Refresh once per offseason by repeating the steps below in a browser.
+#
+# SOURCES
+#   payroll, dead_cap   Spotrac NBA Team Salary Cap Tracker, "Total Cap Allocations"
+#                       and "Dead Cap" columns for the CHI row.
+#                       https://www.spotrac.com/nba/cap/_/year/YYYY
+#                       YYYY is the season's STARTING year: year/2025 is 2025-26.
+#   salary_cap          Basketball Reference NBA Salary Cap History.
+#                       https://www.basketball-reference.com/contracts/salary-cap-history.html
+#                       Independently confirmed against Spotrac's own implied cap
+#                       (Total Cap Allocations + Cap Space) for all 15 seasons; exact match.
+#   wins, losses        Basketball Reference team season pages.
+#                       https://www.basketball-reference.com/teams/CHI/YYYY.html
+#                       YYYY is the season's ENDING year: /CHI/2026.html is 2025-26.
+#                       NOTE THE OPPOSITE YEAR CONVENTION from Spotrac. Join on the
+#                       season label, never on a bare year integer.
+#
+# DO NOT USE SPOTRAC'S "RECORD" COLUMN. On archived pages it shows the PREVIOUS
+# season's record; on the current season's page it shows the current one. Verified
+# across six seasons. Joining on it shifts every win-percentage point by one season
+# and produces a chart that looks entirely plausible and is entirely wrong.
+#
+# CORRECTION — 2015-16 payroll is NOT Spotrac's published figure.
+#   Spotrac lists $102,184,130 from an 18-player table in a 15-man roster (its own
+#   header reads "PLAYER (18 OF 15)"). Three listed players were never on the
+#   2015-16 Bulls; all three arrived in the following offseason:
+#       Robin Lopez        $12,650,000   acquired June 2016 (Derrick Rose trade)
+#       Jerian Grant        $1,572,360   acquired June 2016 (same trade)
+#       Spencer Dinwiddie     $845,059   acquired July 2016, waived that October
+#   Confirmed absent from Basketball Reference's 2015-16 roster and per-game stats.
+#   Removing them gives $86,783,378, which matches the Patricia Bender salary
+#   archive (https://www.eskimo.com/~pbender/misc/salaries16.txt) to the dollar.
+#   The value below is that corrected figure plus $333,333 dead money.
+#   Cross-check: $87,116,711 is $2.4M over the 2015-16 tax line of $84,740,000,
+#   consistent with the Bulls paying a modest luxury tax that season. Spotrac's
+#   own page estimates a $36.7M tax bill from its inflated figure, which is not
+#   credible against roughly $8.1M paid across franchise history through 2022.
+#
+# DEFINITIONAL NOTE — 2013-14 and 2014-15 are cap charge, not cash spent.
+#   Basketball Reference reports these two seasons about $14M higher than Spotrac
+#   because it counts money paid to amnestied and waived players while Spotrac
+#   counts only what hit the cap. The clearest case is Carlos Boozer at $13,550,000
+#   in 2014-15: amnestied that July, played for the Lakers, still paid by Chicago,
+#   removed from Chicago's cap. This file is on a cap-charge basis throughout so the
+#   metric stays internally consistent; those two seasons understate cash out the
+#   door. The 2013-14 component is not itemised here and was not verified line by line.
+#
+# WHAT THIS FILE STRUCTURALLY CANNOT SHOW
+#   - Nothing before 2011-12; Spotrac's cap tracker does not go back further.
+#   - No luxury tax actually paid, which is real money that never appears as cap charge.
+#   - One figure per season, so mid-season trades are invisible.
+#
+# payroll and dead_cap are dollars; dead_cap is a component of payroll, not additional.
+season,payroll,dead_cap,salary_cap,wins,losses
+2011-12,70787864,2081875,58044000,50,16
+2012-13,74258448,152582,58044000,45,37
+2013-14,71073626,7761353,58679000,48,34
+2014-15,67432537,333333,63065000,50,32
+2015-16,87116711,333333,70000000,42,40
+2016-17,93175538,494500,94143000,41,41
+2017-18,90105625,26278656,99093000,27,55
+2018-19,112014084,19003962,101869000,22,60
+2019-20,113208742,1488231,109140000,22,43
+2020-21,128065350,97261,109140000,31,41
+2021-22,136118673,1795605,112414000,46,36
+2022-23,153093665,3872408,123655000,40,42
+2023-24,166348969,2135781,136021000,39,43
+2024-25,168006873,8739110,140588000,39,43
+2025-26,187673271,16916687,154647000,31,51

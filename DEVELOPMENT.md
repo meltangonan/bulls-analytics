@@ -103,6 +103,17 @@ ignored `cache/` and touches no tracked file.
     present so a rebuild never renumbers history. **These are versioned because they cannot be
     regenerated** — the same command in October reads a season with more games in it, so the PNG is
     the only record of what a version actually showed.
+    - **When a version is approved, save its `--final` export as the next version too.** Draft
+      renders are half-size previews; the export that actually goes into Canva is the one at full
+      resolution, and by the same cannot-be-regenerated logic it is the *most* important file in the
+      folder — yet the workflow used to track the preview and leave the shipped asset in scratch,
+      where it died with the worktree. Expect the approved draft and its final export to sit as two
+      adjacent, near-identical versions; that is the point, not duplication. The high-resolution one
+      is what you upload.
+    - ⚠️ Two different `--final` flags. On a prototype it means *render at 300 DPI*. On
+      `save_visual_version.py` it means *this is a page downloaded from Canva, put it in `final/`*.
+      Saving a chart asset with `--final` files it as a published page. Save chart renders with
+      `--project <slug>` alone, whatever DPI they are.
   - `final/` — the page(s) downloaded from Canva at publish, one per slide, unversioned. Kept
     because Canva stays editable after posting, so its link answers "what does this look like now",
     never "what did we publish". A full export is already pulled for QA, so this costs nothing.

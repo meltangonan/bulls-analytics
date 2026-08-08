@@ -43,15 +43,12 @@ from matplotlib.patches import Rectangle
 
 from bulls.graphics.house import DEFAULT_THEME, export_dpi, helvetica
 
-SNAPSHOT = (
-    _REPO
-    / "docs"
-    / "visuals"
-    / "2026-08-08-payroll-vs-wins"
-    / "data"
-    / "2026-08-08-bulls-payroll-vs-wins.csv"
-)
-OUT = _REPO / "output" / "feed"
+# One slug names both the post's tracked folder and its scratch folder, so the two
+# mirror each other and a render never has to be hunted for (DEVELOPMENT.md).
+SLUG = "2026-08-08-payroll-vs-wins"
+PROJECT = _REPO / "docs" / "visuals" / SLUG
+SNAPSHOT = PROJECT / "data" / "2026-08-08-bulls-payroll-vs-wins.csv"
+OUT = _REPO / "output" / SLUG
 
 CHART_WIDTH = 1080
 CHART_HEIGHT = 1120

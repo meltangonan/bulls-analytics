@@ -184,11 +184,11 @@ is next touched.
   (nba.com/bulls article images are clean and unwatermarked), crop square around the face, and flag
   wire-photo licensing before using a non-NBA source.
 
-## 6. Working From F5 and Other Tutorials
+## 6. Working From External References
 
-When building from `docs/reference/f5-technique-notes.html` or a similar tutorial, **reproduce the
-source's styling and structure closely.** Swap in our palette and Helvetica; keep its layout,
-proportions, mark choices, and visual logic.
+When building from an external tutorial or visual reference, **reproduce the source's styling and
+structure closely.** Swap in our palette and Helvetica; keep its layout, proportions, mark choices,
+and visual logic.
 
 Do not redesign it toward "our own direction" — the reason to work from a tutorial is that its
 composition already works. Divergence should be a deliberate, stated choice, not a drift.

@@ -49,7 +49,7 @@ from matplotlib.colors import to_rgb
 from matplotlib.patches import FancyBboxPatch, Rectangle
 from nba_api.stats.static import players as static_players
 
-from bulls.visuals import visual_dir
+from bulls.visuals import DATA, visual_dir
 from bulls.graphics.house import (
     DEFAULT_THEME,
     HEADSHOT_CACHE,
@@ -75,17 +75,35 @@ from scripts.prototypes.top_game_performances import (
 CURRENT_SEASON_END_YEAR = 2026
 SEASON_TOP_N = 8
 HISTORY_TOP_N = 10
+ALL_TIME_TOP_N = 15
 
 # Two visual projects off one analysis, so the yearly post and the decade board keep
 # separate folders under output/ and docs/visuals/ rather than sharing a version history.
 YEARLY_PROJECT = "assist-duos"
 DECADE_PROJECT = "assist-duos-by-decade"
+ALL_TIME_PROJECT = "assist-duos-all-time"
 OUTPUT_ROOT = _REPO / "output"
+
+
+VISUALS_ROOT = _REPO / "docs" / "visuals"
 
 
 def project_dir(project: str):
     """Scratch folder for one project, mirroring docs/visuals/<date>-<slug>/."""
     folder = visual_dir(OUTPUT_ROOT, project, create=False)
+    folder.mkdir(parents=True, exist_ok=True)
+    return folder
+
+
+def data_dir(project: str):
+    """The project's **tracked** data folder.
+
+    The analysis table a graphic was drawn from goes here rather than into output/.
+    Written to scratch it is deleted with the scratch, which is how the numbers behind
+    an already-published chart were lost once; written here it is committed with the
+    renders it explains.
+    """
+    folder = visual_dir(VISUALS_ROOT, project, create=False) / DATA
     folder.mkdir(parents=True, exist_ok=True)
     return folder
 
@@ -120,7 +138,12 @@ MIN_INSIDE_LABEL_WIDTH = 40
 
 AST_CARD_OUTSET_X = 8
 AST_CARD_OUTSET_Y = 9
-AST_CARD_OVERLAP_Y = 7
+# The card's top rises past the header rule rather than stopping on it, the way the
+# clutch table's points card does — the rule is 2px and centred, so this covers it
+# outright and leaves a little showing above, which reads as the card sitting in front
+# of the table rather than being butted up against it. Kept small so the gap down from
+# the column header stays comfortable.
+AST_CARD_OVERLAP_Y = 13
 
 
 @dataclass(frozen=True)
@@ -268,6 +291,16 @@ def attach_games_together(pairs: pd.DataFrame, logs: pd.DataFrame) -> pd.DataFra
     shared = result.games_together.astype(float)
     result["ast_per_game"] = result.combined_ast / shared.where(shared > 0)
     return result
+
+
+def top_overall(pairs: pd.DataFrame, top_n: int = ALL_TIME_TOP_N) -> pd.DataFrame:
+    """The best single-season connections since 2000-01, ignoring decade boundaries.
+
+    One board rather than a carousel, so the eras compete directly. Rose-Deng's 233 in
+    2010-11 clears the field by 49 assists, which the decade split hides by giving the
+    2000s and 2020s leaders a slide of their own to top.
+    """
+    return pairs.head(top_n).reset_index(drop=True)
 
 
 DECADES = ("2000s", "2010s", "2020s")
@@ -641,10 +674,14 @@ def render_table(
     if absent:
         names = {int(r.high_id): r.high_name for _, r in rows.iterrows()}
         names.update({int(r.low_id): r.low_name for _, r in rows.iterrows()})
+        # Reported, not warned about: a silhouette is an accepted outcome for a
+        # player with no licensed portrait anywhere (Jay Williams, Greg Anthony), and
+        # calling it a warning every run trains the eye to skip it. It still prints, so
+        # a newly-missing portrait for someone who *should* have one is visible.
         print(
-            "WARNING: no usable portrait for "
+            "Note: rendering the NBA silhouette for "
             + ", ".join(f"{names.get(p, p)} ({p})" for p in absent)
-            + " — add a source to HISTORICAL_HEADSHOT_URLS"
+            + " — no licensed portrait available. Add one to EXTRA_HEADSHOT_URLS if found."
         )
 
     bar_left = BAR_LEFT_WITH_SEASON if show_season else BAR_LEFT_NO_SEASON
@@ -809,7 +846,9 @@ def main() -> None:
             bulls_player_game_logs(CURRENT_SEASON_END_YEAR),
         ).head(SEASON_TOP_N)
         out = project_dir(YEARLY_PROJECT)
-        pairs.to_csv(out / f"{args.date}-assist-duos-season.csv", index=False)
+        pairs.to_csv(
+            data_dir(YEARLY_PROJECT) / "assist-duos-2025-26-season.csv", index=False
+        )
         path = render_table(
             pairs, out / f"{args.date}-assist-duos-season.png",
             show_season=False, final=args.final,
@@ -824,12 +863,29 @@ def main() -> None:
             build_pairs(events, names),
             load_player_game_logs(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR),
         )
-        project_dir(YEARLY_PROJECT).joinpath(
-            f"{args.date}-assist-duos-history.csv"
-        ).write_text(pairs.to_csv(index=False))
+        # Every pair-season since 2000-01, the table all three boards select from.
+        pairs.to_csv(
+            data_dir(YEARLY_PROJECT) / "assist-duos-all-pair-seasons.csv", index=False
+        )
 
         columns = ["season", "high_name", "high_ast", "low_name", "low_ast",
                    "combined_ast", "games_together", "ast_per_game"]
+
+        # One board, no decade split: the outright best connections since 2000-01.
+        all_time = top_overall(pairs)
+        all_time.to_csv(
+            data_dir(ALL_TIME_PROJECT) / "assist-duos-all-time-top15.csv", index=False
+        )
+        path = render_table(
+            all_time,
+            project_dir(ALL_TIME_PROJECT)
+            / f"{args.date}-assist-duos-all-time.png",
+            show_season=True,
+            final=args.final,
+        )
+        print(f"\nall-time ({len(all_time)} rows) -> {path.name}")
+        print(all_time[columns].to_string(index=False))
+
         # Newest season first: the slide opens on the season a reader just watched.
         # Ascending stays available through best_per_season(descending=False).
         variants = {
@@ -843,8 +899,10 @@ def main() -> None:
             ceiling = max(int(rows.combined_ast.max()) for rows in populated)
             canvas_rows = max(len(rows) for rows in populated)
             # The decade board is its own post idea, so it keeps its own folder.
-            out = project_dir(
-                DECADE_PROJECT if variant == "decade" else YEARLY_PROJECT
+            project = DECADE_PROJECT if variant == "decade" else YEARLY_PROJECT
+            out = project_dir(project)
+            pd.concat(populated).to_csv(
+                data_dir(project) / f"assist-duos-{variant}-selection.csv", index=False
             )
             for index, (decade, rows) in enumerate(slides.items(), 1):
                 if rows.empty:

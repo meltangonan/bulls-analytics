@@ -48,16 +48,30 @@ from nba_api.stats.static import players as static_players
 
 from bulls.config import BULLS_TEAM_ID
 from bulls.data.fetch import _NBA_HEADERS
+from bulls.visuals import DATA, visual_dir
 
 FIRST_SEASON_END_YEAR = 2001
 LAST_SEASON_END_YEAR = 2026
 
-CACHE = _REPO / "cache" / "assist-duos"
+# Tracked, not cached. These 26 CSVs are 2,132 rate-limited requests and about fifty
+# minutes of fetching; an ignored cache/ folder let a routine worktree cleanup destroy
+# them after the graphic had already shipped. Writing them into the post's tracked data/
+# folder from the start means nobody has to remember to preserve them. See bulls/visuals.py.
+SEASON_DATA_PROJECT = "assist-duos"
+# Resolved by slug, so the folder's own date is whatever the post started with — the
+# same reuse rule every other visuals lookup follows, rather than a hardcoded date that
+# silently forks a second folder next year.
+CACHE = (
+    visual_dir(_REPO / "docs" / "visuals", SEASON_DATA_PROJECT, create=False)
+    / DATA / "seasons"
+)
 REQUEST_DELAY_SECONDS = 1.0
 REQUEST_ATTEMPTS = 5
 BACKOFF_SECONDS = (5, 20, 60, 120)
 
-ASSIST_RE = re.compile(r"\(([^()]+?)\s+\d+\s+AST\)")
+# Group 2 is the assister's running assist total in that game, which disambiguates
+# two teammates who share a surname. See _resolve_assister.
+ASSIST_RE = re.compile(r"\(([^()]+?)\s+(\d+)\s+AST\)")
 
 
 def season_label(end_year: int) -> str:
@@ -160,7 +174,7 @@ def bulls_player_game_logs(end_year: int) -> pd.DataFrame:
         ),
         f"player game logs {season_label(end_year)}",
     )
-    logs = logs[["PLAYER_ID", "PLAYER_NAME", "GAME_ID", "MIN"]].copy()
+    logs = logs[["PLAYER_ID", "PLAYER_NAME", "GAME_ID", "MIN", "AST"]].copy()
     logs["season_end_year"] = end_year
     CACHE.mkdir(parents=True, exist_ok=True)
     logs.to_csv(path, index=False)
@@ -198,6 +212,34 @@ def reconcile_season(end_year: int) -> dict[str, object]:
 
 
 @lru_cache(maxsize=1)
+def check_passer_attribution(first: int, last: int) -> pd.DataFrame:
+    """Verify every passer's attributed assists equal his official season total.
+
+    Reconciling the season *total* proves no assist was lost or double-counted. It says
+    nothing about whether each one reached the right pair — swapping two teammates leaves
+    the total untouched. This does prove it, and it is the stronger check of the two.
+
+    The scorer end is already measured, not inferred: ``personId`` on the made-shot event
+    is the scorer, no parsing involved. The passer end is the only guess. So if every
+    passer's count matches the box score, both ends of every pair are right — a
+    misattribution would have to push one player over and another under.
+
+    Unlike the tracking cross-check this needs no extra endpoint and covers all 26
+    seasons, including the seven before player tracking existed.
+    """
+    events = load_history(first, last)
+    logs = load_player_game_logs(first, last)
+
+    official = logs.groupby(["season_end_year", "PLAYER_ID"]).AST.sum().rename("official")
+    attributed = events.groupby(["season_end_year", "assister_id"]).size()
+    attributed = attributed.rename("attributed")
+    attributed.index.names = ["season_end_year", "PLAYER_ID"]
+
+    comp = pd.concat([official, attributed], axis=1).fillna(0).astype(int)
+    comp["difference"] = comp.attributed - comp.official
+    return comp.reset_index()
+
+
 def _static_full_names() -> dict[int, str]:
     """Player id -> full name, from nba_api's offline table. No request."""
     return {int(p["id"]): p["full_name"] for p in static_players.get_players()}
@@ -224,19 +266,32 @@ def _name_variants(full_name: str) -> set[str]:
     return variants
 
 
-def _index_names(bulls: pd.DataFrame) -> dict[str, set[int]]:
+def _index_names(bulls: pd.DataFrame) -> dict[str, dict[str, set[int]]]:
     """Map every way a Bulls player is named in this frame to his player id.
 
-    Indexes the frame's own two name columns plus the generated variants above.
-    ``playerName`` is the bare surname; ``playerNameI`` adds the single-initial form.
+    Two indexes, and the difference between them matters:
+
+    * ``exact`` keys on the name as written, diacritics folded but the generational
+      suffix left on.
+    * ``loose`` keys on the suffix-stripped form, plus generated first-name prefixes.
+
+    Suffix stripping is required in one direction and destructive in the other. The
+    description says ``(Butler 3 AST)`` while the column says ``Butler III``, so only
+    the loose form connects them. But the 2022-23 Bulls carried **both Carlik Jones
+    (``Jones``) and Derrick Jones Jr. (``Jones Jr.``)**, and there NBA.com is
+    disambiguating with the suffix itself — a bare ``(Jones 1 AST)`` means Carlik, and
+    stripping suffixes on both sides throws that away. Consulting ``exact`` first keeps
+    the distinction where the source drew one and falls back where it did not.
     """
-    index: dict[str, set[int]] = {}
+    exact: dict[str, set[int]] = {}
+    loose: dict[str, set[int]] = {}
     for column in ("playerName", "playerNameI"):
         if column not in bulls.columns:
             continue
         for person_id, name in zip(bulls.personId, bulls[column]):
             if person_id and isinstance(name, str) and name.strip():
-                index.setdefault(surname_key(name), set()).add(int(person_id))
+                exact.setdefault(fold(name).strip(), set()).add(int(person_id))
+                loose.setdefault(surname_key(name), set()).add(int(person_id))
 
     full_names = _static_full_names()
     for person_id in {int(p) for p in bulls.personId if p}:
@@ -244,8 +299,8 @@ def _index_names(bulls: pd.DataFrame) -> dict[str, set[int]]:
         if not full_name:
             continue
         for variant in _name_variants(full_name):
-            index.setdefault(variant, set()).add(person_id)
-    return index
+            loose.setdefault(variant, set()).add(person_id)
+    return {"exact": exact, "loose": loose}
 
 
 def assisted_baskets_for_game(game_id: str) -> tuple[list[dict], dict[str, set[int]]]:
@@ -265,13 +320,36 @@ def assisted_baskets_for_game(game_id: str) -> tuple[list[dict], dict[str, set[i
         rows.append(
             {
                 "game_id": game_id,
+                "assister_raw": fold(match.group(1)).strip(),
                 "assister_key": surname_key(match.group(1)),
+                "assist_ordinal": int(match.group(2)),
                 "scorer_id": int(event.personId),
                 "scorer_name": event.playerName,
                 "shot_value": int(event.shotValue),
             }
         )
     return rows, _index_names(bulls)
+
+
+def _resolve_assister(ids, row, tally):
+    """Narrow an ambiguous surname using the running assist count in the description.
+
+    Two teammates can share a surname — Carlik Jones and Derrick Jones Jr. were both
+    2022-23 Bulls — and NBA.com does not always add an initial to tell them apart. But
+    the description always carries that player's assist number *so far in this game*,
+    so the candidate whose tally is one short of it is the one who just recorded it.
+
+    Returns the original candidate set when it is already unambiguous or when the tally
+    cannot single one out; the caller still rejects anything it cannot narrow to one.
+    """
+    if not ids or len(ids) == 1:
+        return ids
+    expected = row["assist_ordinal"] - 1
+    matches = {
+        player_id for player_id in ids
+        if tally.get((row["game_id"], player_id), 0) == expected
+    }
+    return matches if len(matches) == 1 else ids
 
 
 def fetch_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
@@ -300,21 +378,36 @@ def fetch_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
                 flush=True,
             )
 
-    season_index: dict[str, set[int]] = {}
+    season_index: dict[str, dict[str, set[int]]] = {"exact": {}, "loose": {}}
     for name_index in game_indexes.values():
-        for key, ids in name_index.items():
-            season_index.setdefault(key, set()).update(ids)
+        for kind in ("exact", "loose"):
+            for key, ids in name_index[kind].items():
+                season_index[kind].setdefault(key, set()).update(ids)
 
     # Phase two: resolve against that game's roster first — the smallest candidate set,
     # so two players sharing a surname only collide if both played — then the season.
+    # Events are walked in game and clock order, which is what lets the running assist
+    # count break a tie between two teammates of the same surname.
     rows: list[dict] = []
     unresolved: list[tuple] = []
+    tally: dict[tuple[str, int], int] = {}
     for row in pending:
-        key = row["assister_key"]
-        ids = game_indexes[row["game_id"]].get(key) or season_index.get(key)
+        game_index = game_indexes[row["game_id"]]
+        # Narrowest and most literal first: this game's exact spelling, then this
+        # game's loose form, then the same two season-wide.
+        ids = (
+            game_index["exact"].get(row["assister_raw"])
+            or game_index["loose"].get(row["assister_key"])
+            or season_index["exact"].get(row["assister_raw"])
+            or season_index["loose"].get(row["assister_key"])
+        )
+        ids = _resolve_assister(ids, row, tally)
         if not ids or len(ids) != 1:
-            unresolved.append((row["game_id"], key, sorted(ids) if ids else None))
+            unresolved.append(
+                (row["game_id"], row["assister_key"], sorted(ids) if ids else None)
+            )
             continue
+        tally[(row["game_id"], next(iter(ids)))] = row["assist_ordinal"]
         rows.append(
             {
                 "game_id": row["game_id"],
@@ -378,7 +471,24 @@ def main() -> None:
         report = pd.DataFrame(
             reconcile_season(year) for year in range(args.first, args.last + 1)
         )
+        # Saved, not just printed. This table is the evidence the published numbers are
+        # complete; a provenance section claiming 100% coverage with nothing to point at
+        # is a claim, not a record.
+        CACHE.parent.mkdir(parents=True, exist_ok=True)
+        report.to_csv(CACHE.parent / "assist-duos-reconciliation.csv", index=False)
         print("\n" + report.to_string(index=False))
+
+        passers = check_passer_attribution(args.first, args.last)
+        passers.to_csv(
+            CACHE.parent / "assist-duos-passer-attribution-check.csv", index=False
+        )
+        wrong = passers[passers.difference != 0]
+        print(
+            f"\npasser attribution: {len(passers) - len(wrong)}/{len(passers)} "
+            f"player-seasons match their official assist total"
+        )
+        if not wrong.empty:
+            print("MISATTRIBUTED:\n" + wrong.to_string(index=False))
         print(
             f"\noverall: {report.extracted_assists.sum()} extracted vs "
             f"{report.official_assists.sum()} official "

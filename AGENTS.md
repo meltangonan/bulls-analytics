@@ -27,12 +27,17 @@ metrics, qualifications, sources, and the final downloaded pages.
 3. Applicable thresholds, coverage windows, and sources stay visible on every data-bearing graphic.
    The user usually adds them manually in Canva.
 4. **Every visual version shown to the user is saved to `docs/visuals/YYYY-MM-DD-<slug>/assets/` and
-   committed**, with the published Canva page in `final/` alongside it. That tree is tracked;
-   `output/` is scratch and stays gitignored. Save with
-   `scripts/save_visual_version.py` as each version goes out for review — not only at the end. A
-   version is a state someone actually saw, not every render. Untracked images have been lost to
-   worktree cleanup before: files under `docs/visuals/` make a worktree dirty, and dirty worktrees are
-   already protected.
+   committed**, with the published Canva page in `final/` alongside it and **the numbers behind the
+   render in `data/`**. That tree is tracked; `output/` is scratch and stays gitignored. Save with
+   `scripts/save_visual_version.py` (`--final`, `--data`) as each version goes out for review — not
+   only at the end. A version is a state someone actually saw, not every render. Untracked images
+   have been lost to worktree cleanup before: files under `docs/visuals/` make a worktree dirty, and
+   dirty worktrees are already protected.
+   **A graphic's data ships with the graphic.** The analysis table a chart was drawn from, and any
+   fetched dataset that is slow or rate-limited to rebuild, belong in that `data/` folder from the
+   start — not in `cache/`, which is ignored and has already destroyed fifty minutes of play-by-play
+   behind an already-published post. `cache/` stays ignored and stays right for a cheap refetch, the
+   licensed font extraction, and third-party portraits. `bulls/visuals.py` owns the distinction.
 5. After completing and verifying work, show the user the result and wait for explicit approval
    before committing or pushing. Approval covers the work under review, not later work.
 6. Any post task that changes repo files automatically gets a temporary branch and linked worktree;

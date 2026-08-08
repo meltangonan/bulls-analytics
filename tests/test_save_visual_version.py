@@ -145,3 +145,45 @@ def test_resaving_a_final_replaces_rather_than_accumulates(visuals, tmp_path):
     for _ in range(3):
         svp.save("p", [src], when="2026-08-12", final=True)
     assert len(list((visuals / "2026-08-12-p" / "final").glob("*.png"))) == 1
+
+
+def test_data_goes_to_data_and_is_not_versioned(visuals, tmp_path):
+    """The numbers behind a render are current truth, not a version history."""
+    src = tmp_path / "pairs.csv"
+    src.write_text("season,combined_ast\n2010-11,233\n")
+    saved = svp.save("shot-value-ladder", [src], when="2026-08-12", data=True)
+    assert saved[0].parent.name == "data"
+    assert "-v0" not in saved[0].name
+
+
+def test_data_keeps_the_source_filename_verbatim(visuals, tmp_path):
+    """A rebuild must overwrite its own file, not pile up dated near-copies."""
+    src = tmp_path / "pairs.csv"
+    src.write_text("a,b\n1,2\n")
+    saved = svp.save("p", [src], when="2026-08-12", data=True)
+    assert saved[0].name == "pairs.csv"
+
+
+def test_resaving_data_replaces_rather_than_accumulates(visuals, tmp_path):
+    src = tmp_path / "pairs.csv"
+    src.write_text("a,b\n1,2\n")
+    for _ in range(3):
+        svp.save("p", [src], when="2026-08-12", data=True)
+    assert len(list((visuals / "2026-08-12-p" / "data").glob("*.csv"))) == 1
+
+
+def test_data_shares_the_project_folder_with_its_assets(visuals, tmp_path):
+    """A graphic's data ships with the graphic, in one folder."""
+    svp.save("shot-value-ladder", [_png(tmp_path, "chart.png")], when="2026-08-07")
+    src = tmp_path / "pairs.csv"
+    src.write_text("a,b\n1,2\n")
+    data = svp.save("shot-value-ladder", [src], when="2026-08-12", data=True)
+    assert data[0].parent.parent.name == "2026-08-07-shot-value-ladder"
+
+
+def test_final_and_data_together_are_rejected(visuals, tmp_path):
+    """They are different destinations; silently picking one would lose the other."""
+    src = tmp_path / "pairs.csv"
+    src.write_text("a,b\n1,2\n")
+    with pytest.raises(SystemExit):
+        svp.save("p", [src], when="2026-08-12", final=True, data=True)

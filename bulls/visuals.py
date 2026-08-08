@@ -1,13 +1,14 @@
 """Where a visual project's images live, for scratch and the tracked copy.
 
-One project gets one dated folder, `YYYY-MM-DD-<slug>`, and two kinds of image
-inside it:
+One project gets one dated folder, `YYYY-MM-DD-<slug>`, holding three kinds of
+thing:
 
     docs/visuals/2026-08-07-shot-value-ladder/
         assets/   our own renders, versioned v01, v02, ... as each is reviewed
         final/    the page(s) downloaded from Canva once it publishes
+        data/     the numbers the renders were built from
 
-The split is not filing for its own sake -- the two have different lifetimes and
+The split is not filing for its own sake -- the three have different lifetimes and
 different reasons to exist.
 
 **Assets are versioned because they cannot be regenerated.** A chart rebuilt in
@@ -20,6 +21,20 @@ being editable after the post goes out, so its link answers "what does this look
 like now", never "what did we publish". One downloaded page per slide settles
 that, and it costs nothing: a full export is already pulled for QA.
 
+**Data is tracked because it is not always reproducible.** `cache/` is ignored on
+the assumption that a fetch is cheap to repeat -- true for a one-request endpoint,
+false for the 2,132 rate-limited play-by-play requests behind the assist-duos post,
+which took fifty minutes and were destroyed by a routine worktree cleanup after the
+graphic had already shipped. Anything a published number rests on that costs real
+time, or that a provider could change or retire, is written here from the start
+rather than copied here later: a tracked folder needs no one to remember it, and a
+worktree holding one is dirty, which is already protected.
+
+Not everything belongs here. `cache/` remains the right home for a cheap refetch,
+for the licensed system font extraction that `DESIGN.md` says must never be
+committed, and for third-party portrait images. The test is not "is this derived?"
+but "what does it cost to get back, and can it still be got back at all?"
+
 The folder's date is fixed when the post starts and never moves. Re-dating it per
 save would scatter a post that spans three days across three folders, so lookup
 matches on the slug and ignores whatever date is already attached.
@@ -30,7 +45,7 @@ import re
 from datetime import date
 from pathlib import Path
 
-ASSETS, FINAL = "assets", "final"
+ASSETS, FINAL, DATA = "assets", "final", "data"
 _DATE_PREFIX = re.compile(r"^\d{4}-\d{2}-\d{2}-")
 
 

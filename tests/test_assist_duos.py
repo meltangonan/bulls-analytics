@@ -15,9 +15,11 @@ from scripts.prototypes.assist_duos import (
     render_table,
     slide_height,
     top_by_decade,
+    top_overall,
 )
 from scripts.prototypes.assist_duos_fetch import (
     ASSIST_RE,
+    _resolve_assister,
     fold,
     season_label,
     surname_key,
@@ -252,6 +254,28 @@ class TestDecadeSplit:
         assert list(rows.combined_ast) == sorted(rows.combined_ast, reverse=True)
 
 
+class TestTopOverall:
+    def test_ranks_across_every_decade_at_once(self):
+        rows = top_overall(_multi_season_pairs(), top_n=3)
+        # 2019-20's 20 beats 2006-07's 18 beats 2010-11's 15, decade irrelevant.
+        assert list(rows.season) == ["2019-20", "2006-07", "2010-11"]
+
+    def test_caps_at_top_n(self):
+        assert len(top_overall(_multi_season_pairs(), top_n=2)) == 2
+
+    def test_asking_for_more_rows_than_exist_returns_what_there_is(self):
+        pairs = _multi_season_pairs()
+        assert len(top_overall(pairs, top_n=999)) == len(pairs)
+
+    def test_keeps_two_rows_from_one_season_when_both_qualify(self):
+        # Unlike best_per_season, an all-time board has no one-row-per-season rule.
+        rows = top_overall(_multi_season_pairs(), top_n=6)
+        assert list(rows.season).count("2006-07") == 2
+
+    def test_rows_are_renumbered_from_zero(self):
+        assert list(top_overall(_multi_season_pairs(), top_n=3).index) == [0, 1, 2]
+
+
 class TestBestPerSeason:
     def test_keeps_exactly_one_row_per_season(self):
         slides = best_per_season(_multi_season_pairs())
@@ -446,3 +470,64 @@ class TestSharedBarScale:
         ceiling = max(int(r.combined_ast.max()) for r in slides.values() if len(r))
         assert ceiling == 20
         assert ceiling >= max(int(r.combined_ast.max()) for r in slides.values() if len(r))
+
+
+class TestAssistOrdinal:
+    def test_the_running_assist_count_is_captured(self):
+        m = ASSIST_RE.search("Deng 18' Jump Shot (12 PTS) (Rose 7 AST)")
+        assert (m.group(1), m.group(2)) == ("Rose", "7")
+
+    def test_a_tie_is_broken_by_whose_tally_is_one_short(self):
+        row = {"game_id": "g", "assist_ordinal": 3}
+        assert _resolve_assister({1, 2}, row, {("g", 1): 2, ("g", 2): 5}) == {1}
+
+    def test_an_unbreakable_tie_is_left_ambiguous(self):
+        # Both on zero and it is the first assist: nothing to tell them apart.
+        row = {"game_id": "g", "assist_ordinal": 1}
+        assert _resolve_assister({1, 2}, row, {}) == {1, 2}
+
+    def test_an_already_unique_candidate_is_untouched(self):
+        row = {"game_id": "g", "assist_ordinal": 1}
+        assert _resolve_assister({7}, row, {}) == {7}
+
+    def test_tallies_do_not_leak_between_games(self):
+        row = {"game_id": "g2", "assist_ordinal": 3}
+        assert _resolve_assister({1, 2}, row, {("g1", 1): 2}) == {1, 2}
+
+
+class TestExactBeforeLoose:
+    def test_a_suffix_distinguishes_two_teammates_of_one_surname(self):
+        # 2022-23 carried Carlik Jones ("Jones") and Derrick Jones Jr. ("Jones Jr.").
+        # NBA.com disambiguates them by suffix, so the folded exact forms must differ.
+        assert fold("Jones") != fold("Jones Jr.")
+
+    def test_suffix_stripping_would_collapse_them(self):
+        # Which is why the loose index alone cannot resolve a bare "(Jones 1 AST)".
+        assert surname_key("Jones") == surname_key("Jones Jr.") == "JONES"
+
+    def test_the_butler_case_still_needs_the_loose_form(self):
+        # The opposite direction: the description drops a suffix the column carries.
+        assert fold("Butler") != fold("Butler III")
+        assert surname_key("Butler") == surname_key("Butler III") == "BUTLER"
+
+
+class TestDataIsTracked:
+    def test_season_data_is_not_written_to_the_ignored_cache(self):
+        """The regression that cost fifty minutes of fetching.
+
+        cache/ is gitignored, so a season cache written there is destroyed by routine
+        worktree cleanup. These CSVs must land in the post's tracked data/ folder.
+        """
+        from scripts.prototypes.assist_duos_fetch import CACHE
+
+        parts = CACHE.parts
+        assert "cache" not in parts, f"season data is under an ignored cache/: {CACHE}"
+        assert "visuals" in parts and "data" in parts, CACHE
+
+    def test_analysis_tables_are_not_written_to_scratch(self):
+        """output/ is gitignored; the numbers behind a chart must outlive it."""
+        from scripts.prototypes.assist_duos import ALL_TIME_PROJECT, data_dir
+
+        folder = data_dir(ALL_TIME_PROJECT)
+        assert "output" not in folder.parts, folder
+        assert folder.parts[-1] == "data" and "visuals" in folder.parts, folder

@@ -18,7 +18,10 @@ htmlcov/
 output/*
 !output/.gitkeep
 
-# Cached data
+# Cached data. Cheap refetches, the licensed Helvetica extraction DESIGN.md forbids
+# committing, and third-party portraits. Anything a published number rests on that is
+# slow or rate-limited to rebuild does NOT belong here — it goes to the post's tracked
+# docs/visuals/<slug>/data/ folder. See bulls/visuals.py.
 cache/
 
 # IDE

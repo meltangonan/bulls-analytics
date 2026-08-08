@@ -22,6 +22,14 @@ copy `venv/`; run scripts with the primary checkout's `venv/bin/python`. `./run_
 automatically finds that shared interpreter while forcing imports to resolve from the current
 worktree.
 
+⚠️ **The primary checkout owns the cache. A cache built inside a worktree must be copied back to it
+before that worktree is removed, or it is destroyed with the directory.** `git worktree remove`
+refuses a directory holding scratch, and the `rm -rf` that follows takes `cache/` with it — that is
+how 26 seasons of assist-duos play-by-play, about fifty minutes of rate-limited fetching, were lost
+after the work had already been committed and pushed. Committed artifacts are safe; the data behind
+them is not. Prefer running a long fetch from the primary checkout in the first place, since it
+writes only to the ignored `cache/` and touches no tracked file.
+
 Keep post-specific implementation, tests, outputs, and any required shared code or owner-doc changes
 in the worktree. Defer the shared `scripts/prototypes/README.md` index until integration. After the
 user approves committing or pushing:
@@ -43,6 +51,18 @@ rule and the "preserve approved finals" rule key off different signals, and they
 worktree whose branch was merged looked like a clean leftover while its gitignored `output/` still
 held a day of approved renders, and removing it destroyed them. Saving versions as they are reviewed
 is what keeps the two signals aligned, because tracked files make the worktree dirty.
+
+**The same trap has a second mouth: ignored data.** That rule was written about images, and it was
+followed — while a `cache/` folder holding 2,132 rate-limited play-by-play requests, about fifty
+minutes of fetching, went into the same `rm -rf` and was destroyed after the post had shipped. A
+safety rule written for one kind of artifact quietly implies a category, and the next thing lost is
+whichever member of that category the rule did not name. So the rule is now about cost, not type:
+**anything a published number rests on that is slow, rate-limited, or could be retired upstream is
+written into the post's tracked `docs/visuals/<slug>/data/` folder from the start.** Not copied there
+at the end — written there, so no one has to remember. `cache/` stays ignored, and stays correct for
+a cheap refetch, the licensed Helvetica extraction `DESIGN.md` forbids committing, and third-party
+portraits. Prefer running a long fetch from the primary checkout regardless, since it writes only to
+ignored `cache/` and touches no tracked file.
 
 ## Conventions
 
@@ -111,6 +131,10 @@ Six questions, and a section that cannot answer all six is incomplete:
 6. **One worked example.** A single real row traced from raw fields to its contribution to the
    published number. This is the step that catches errors: a plausible-sounding claim about your own
    pipeline survives a summary and dies against a trace.
+
+Record where the data itself lives, not only how it was obtained. A provenance section that names an
+endpoint but points at a folder that no longer exists answers nothing — see the tracked
+`docs/visuals/<slug>/data/` rule above.
 
 Also record what was cached and trimmed, since a cache written under an older column set is a
 silent-wrong-answer trap (see the guardrails below).

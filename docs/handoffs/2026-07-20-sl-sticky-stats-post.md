@@ -10,8 +10,6 @@ research found relatively sticky into a player's rookie season:
 - **3PT Attempt Rate:** 3PA / finalized box-score FGA; published R² 0.70.
 - **Rim Rate:** NBA.com Restricted Area attempts / finalized box-score FGA; published R² 0.65.
 
-This is separate from `docs/handoffs/2026-07-18-sl-wrap-brainstorm.md`, which remains ACTIVE.
-
 ## Final Carousel
 
 Canva design: `DAHQCKjwtPI` (design ID only; never store the private edit URL).

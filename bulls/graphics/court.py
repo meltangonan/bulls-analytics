@@ -8,7 +8,9 @@ origin, court 500 units wide, baseline at y=-47.5.
 """
 from __future__ import annotations
 
-from matplotlib.patches import Arc, Circle, FancyBboxPatch
+import numpy as np
+from matplotlib.path import Path
+from matplotlib.patches import Arc, Circle, FancyBboxPatch, PathPatch
 
 
 # Court constants, tenths of a foot.
@@ -18,9 +20,46 @@ BASELINE_Y = -47.5
 PAINT_HALF_WIDTH = 80.0
 FT_LINE_Y = 142.5
 COURT_HALF_WIDTH = 250.0
+HOOP_RADIUS = 7.5
+# The board is 1.25 ft behind the hoop center. Its connector stops at the
+# rear edge of the 18-inch rim rather than continuing through the circle.
+BACKBOARD_Y = -12.5
+BACKBOARD_HALF_WIDTH = 30.0
+RESTRICTED_RADIUS = 40.0
+FT_RADIUS = 60.0
+LANE_MARKS_FT = (7.0, 8.0, 11.0, 14.0)
+HASH_FROM_BASELINE_FT = 28.0
 
 # Warm court line for pale panels; the Summer League report's original value.
 COURT_LINE = "#C9A8B5"
+
+
+def restricted_area_patch(ax, hoop_x: float, hoop_y: float, s: float,
+                          color: str, lw: float, zorder: int,
+                          alpha: float = 1.0) -> PathPatch:
+    """Draw the restricted-area D as one continuous anti-aliased path."""
+    radius = RESTRICTED_RADIUS * s
+    board_y = hoop_y + BACKBOARD_Y * s
+    arc = Path.arc(0, 180)
+    arc_vertices = arc.vertices * np.array([radius, radius]) + np.array([hoop_x, hoop_y])
+    vertices = np.vstack([
+        [hoop_x + radius, board_y],
+        [hoop_x + radius, hoop_y],
+        arc_vertices[1:],
+        [hoop_x - radius, board_y],
+    ])
+    codes = np.concatenate([
+        [Path.MOVETO, Path.LINETO],
+        arc.codes[1:],
+        [Path.LINETO],
+    ])
+    patch = PathPatch(
+        Path(vertices, codes), facecolor="none", edgecolor=color, lw=lw,
+        alpha=alpha, zorder=zorder, antialiased=True,
+        capstyle="round", joinstyle="round", snap=False,
+    )
+    ax.add_patch(patch)
+    return patch
 
 def draw_half_court(ax, center_x: float, center_y: float, s: float,
                     color: str = COURT_LINE, lw: float = 1.1, zorder: int = 5):
@@ -50,19 +89,41 @@ def draw_half_court(ax, center_x: float, center_y: float, s: float,
         boxstyle="square,pad=0", facecolor="none", edgecolor=color,
         lw=lw, zorder=zorder))
 
+    # The same lane-space and sideline markings used by the shot-value ladder.
+    # They are court geography, not chart decoration, so conventional shot maps
+    # should not lose them just because their data layer is made of hexagons.
+    for ft in LANE_MARKS_FT:
+        mark_y = BASELINE_Y + ft * 10
+        for side, direction in ((-PAINT_HALF_WIDTH, -1), (PAINT_HALF_WIDTH, 1)):
+            ax.plot([t(side, mark_y)[0], t(side + direction * 8, mark_y)[0]],
+                    [t(0, mark_y)[1]] * 2, **line)
+
+    hash_y = BASELINE_Y + HASH_FROM_BASELINE_FT * 10
+    for side, direction in ((-COURT_HALF_WIDTH, 1), (COURT_HALF_WIDTH, -1)):
+        ax.plot([t(side, hash_y)[0], t(side + direction * 18, hash_y)[0]],
+                [t(0, hash_y)[1]] * 2, **line)
+
     hoop_x, hoop_y = t(0, 0)
-    ax.add_patch(Circle((hoop_x, hoop_y), 7.5 * s * 2, facecolor="none",
+    ax.add_patch(Circle((hoop_x, hoop_y), HOOP_RADIUS * s, facecolor="none",
                         edgecolor=color, lw=lw, zorder=zorder))
-    # Backboard: 6 ft wide, 1 ft behind the rim.
-    ax.plot([t(-30, -7.5)[0], t(30, -7.5)[0]], [t(0, -7.5)[1]] * 2, **line)
-    # Restricted-area arc.
-    ax.add_patch(Arc((hoop_x, hoop_y), 2 * 40 * s, 2 * 40 * s, theta1=0,
-                     theta2=180, color=color, lw=lw, zorder=zorder))
+    # Backboard: a six-foot plate behind the rim, plus the short connector that
+    # makes it read as a basket assembly rather than another court tick.
+    board_y = t(0, BACKBOARD_Y)[1]
+    ax.plot([t(-BACKBOARD_HALF_WIDTH, BACKBOARD_Y)[0],
+             t(BACKBOARD_HALF_WIDTH, BACKBOARD_Y)[0]], [board_y] * 2,
+            color=color, lw=lw * 2.5, zorder=zorder + 1,
+            solid_capstyle="butt")
+    rim_back_y = hoop_y - HOOP_RADIUS * s
+    ax.plot([hoop_x, hoop_x], [board_y, rim_back_y], color=color,
+            lw=lw * 1.25, zorder=zorder + 1)
+    restricted_area_patch(ax, hoop_x, hoop_y, s, color, lw, zorder)
     # Free-throw circle: solid above the line, dashed below.
     ft_x, ft_y = t(0, FT_LINE_Y)
-    ax.add_patch(Arc((ft_x, ft_y), 2 * 60 * s, 2 * 60 * s, theta1=0, theta2=180,
+    ax.add_patch(Arc((ft_x, ft_y), 2 * FT_RADIUS * s, 2 * FT_RADIUS * s,
+                     theta1=0, theta2=180,
                      color=color, lw=lw, zorder=zorder))
-    ax.add_patch(Arc((ft_x, ft_y), 2 * 60 * s, 2 * 60 * s, theta1=180, theta2=360,
+    ax.add_patch(Arc((ft_x, ft_y), 2 * FT_RADIUS * s, 2 * FT_RADIUS * s,
+                     theta1=180, theta2=360,
                      color=color, lw=lw, linestyle=(0, (4, 3)), zorder=zorder))
     # Three-point line: straight corner runs, then the arc between them.
     corner_top = (ARC ** 2 - CORNER_X ** 2) ** 0.5

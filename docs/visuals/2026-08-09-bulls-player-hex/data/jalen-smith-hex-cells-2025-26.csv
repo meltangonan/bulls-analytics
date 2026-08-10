@@ -1,0 +1,390 @@
+nba_id,official_roster_name,hex_center_x,hex_center_y,exact_fga,nearby_subject_fga,nearby_subject_fg_pct,nearby_nba_fga,nearby_nba_fg_pct,subject_vs_nba_fg_pct_points,displayed,low_volume_gray,color_rated,size_cap_fga,radius_fraction,color_band
+1630188,Jalen Smith,-250.0000,-50.0000,0,9,33.3333,1805,38.8920,-5.5586,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-250.0000,-15.0000,2,21,42.8571,8066,39.0032,3.8539,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-250.0000,20.0000,0,25,40.0000,10593,38.9314,1.0686,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-250.0000,55.0000,0,7,42.8571,6233,38.3603,4.4968,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-250.0000,90.0000,0,2,50.0000,3298,36.8102,13.1898,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-250.0000,125.0000,0,3,0.0000,3094,36.5223,-36.5223,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-250.0000,160.0000,0,3,0.0000,2008,37.0518,-37.0518,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-250.0000,195.0000,0,0,,329,29.7872,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-250.0000,230.0000,0,0,,71,25.3521,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-250.0000,265.0000,0,0,,11,9.0909,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-250.0000,300.0000,0,0,,2,0.0000,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-222.2222,-50.0000,0,11,45.4545,2355,39.3206,6.1340,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-222.2222,-15.0000,8,23,39.1304,8677,39.1495,-0.0190,True,False,True,51.8500,0.3928,approximately average
+1630188,Jalen Smith,-222.2222,20.0000,5,25,40.0000,11294,38.8348,1.1652,True,False,True,51.8500,0.3105,approximately average
+1630188,Jalen Smith,-222.2222,55.0000,1,8,37.5000,7123,38.5231,-1.0231,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-222.2222,90.0000,0,5,20.0000,4379,36.5609,-16.5609,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-222.2222,125.0000,2,5,0.0000,5133,37.0349,-37.0349,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-222.2222,160.0000,1,8,25.0000,6441,36.4229,-11.4229,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-222.2222,195.0000,0,4,50.0000,4614,35.8257,14.1743,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-222.2222,230.0000,0,0,,839,31.5852,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-222.2222,265.0000,0,0,,138,21.0145,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-222.2222,300.0000,0,0,,19,5.2632,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-194.4444,-50.0000,0,0,,476,39.0756,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-194.4444,-15.0000,0,17,41.1765,5569,38.8759,2.3006,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-194.4444,20.0000,1,13,30.7692,7890,39.0368,-8.2675,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-194.4444,55.0000,0,5,20.0000,3841,38.5577,-18.5577,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-194.4444,90.0000,0,1,0.0000,2921,37.3845,-37.3845,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-194.4444,125.0000,0,6,0.0000,5455,37.5985,-37.5985,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-194.4444,160.0000,0,13,15.3846,8903,36.2237,-20.8391,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-194.4444,195.0000,0,16,31.2500,10421,35.5244,-4.2744,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-194.4444,230.0000,0,4,25.0000,5120,33.8086,-8.8086,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-194.4444,265.0000,0,0,,749,31.1081,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-194.4444,300.0000,0,0,,89,23.5955,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-166.6667,-50.0000,0,0,,87,44.8276,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-166.6667,-15.0000,0,0,,862,42.9234,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-166.6667,20.0000,0,1,0.0000,1513,40.7799,-40.7799,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-166.6667,55.0000,0,0,,1217,38.9482,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-166.6667,90.0000,0,0,,991,37.3360,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-166.6667,125.0000,0,3,0.0000,2129,36.7778,-36.7778,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-166.6667,160.0000,2,18,27.7778,8654,36.4687,-8.6909,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-166.6667,195.0000,8,24,33.3333,12853,35.3458,-2.0125,True,False,True,51.8500,0.3928,approximately average
+1630188,Jalen Smith,-166.6667,230.0000,0,22,40.9091,11473,34.8122,6.0969,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-166.6667,265.0000,0,2,0.0000,2641,31.9955,-31.9955,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-166.6667,300.0000,0,0,,271,29.8893,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-138.8889,-50.0000,0,0,,154,38.9610,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-138.8889,-15.0000,0,0,,1354,42.7622,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-138.8889,20.0000,0,0,,2434,42.3993,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-138.8889,55.0000,0,0,,2173,40.5890,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-138.8889,90.0000,0,0,,1852,37.3650,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-138.8889,125.0000,0,2,0.0000,1811,38.1005,-38.1005,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-138.8889,160.0000,0,8,12.5000,4115,37.2539,-24.7539,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-138.8889,195.0000,1,30,43.3333,12181,35.2024,8.1310,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-138.8889,230.0000,5,32,50.0000,13277,35.0079,14.9921,True,False,True,51.8500,0.3105,well above
+1630188,Jalen Smith,-138.8889,265.0000,0,10,60.0000,6316,33.5814,26.4186,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-138.8889,300.0000,0,0,,605,28.7603,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-111.1111,-50.0000,0,0,,166,39.7590,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-111.1111,-15.0000,0,0,,1658,43.2449,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-111.1111,20.0000,0,0,,3355,42.3845,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-111.1111,55.0000,0,0,,3469,41.2799,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-111.1111,90.0000,0,1,0.0000,3000,38.9333,-38.9333,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-111.1111,125.0000,0,0,,3041,39.8553,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-111.1111,160.0000,0,0,,2335,39.8715,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-111.1111,195.0000,0,23,56.5217,7969,36.2028,20.3190,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-111.1111,230.0000,9,33,54.5455,12017,34.7924,19.7531,True,False,True,51.8500,0.4166,well above
+1630188,Jalen Smith,-111.1111,265.0000,0,21,61.9048,8695,34.2381,27.6667,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-111.1111,300.0000,0,0,,1100,31.7273,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-83.3333,-50.0000,0,0,,114,38.5965,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-83.3333,-15.0000,0,1,0.0000,2174,42.1343,-42.1343,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-83.3333,20.0000,0,2,50.0000,5906,42.1436,7.8564,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-83.3333,55.0000,0,1,0.0000,6019,42.0336,-42.0336,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-83.3333,90.0000,0,1,0.0000,5207,42.8846,-42.8846,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-83.3333,125.0000,0,0,,4605,43.5179,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-83.3333,160.0000,0,1,0.0000,3131,41.9355,-41.9355,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-83.3333,195.0000,1,10,40.0000,3418,37.7414,2.2586,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-83.3333,230.0000,2,28,53.5714,9378,35.5406,18.0308,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-83.3333,265.0000,0,22,45.4545,8570,34.8308,10.6237,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-83.3333,300.0000,0,4,0.0000,1736,32.4309,-32.4309,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-55.5556,-50.0000,0,0,,117,40.1709,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-55.5556,-15.0000,0,9,77.7778,8598,53.2682,24.5096,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-55.5556,20.0000,1,26,65.3846,19884,51.1617,14.2229,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-55.5556,55.0000,0,5,20.0000,13218,42.9793,-22.9793,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-55.5556,90.0000,0,3,0.0000,8554,44.5055,-44.5055,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-55.5556,125.0000,0,1,0.0000,6098,45.1132,-45.1132,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-55.5556,160.0000,0,0,,3817,43.3063,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-55.5556,195.0000,0,2,0.0000,1911,39.8744,-39.8744,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-55.5556,230.0000,0,19,42.1053,7253,35.5163,6.5889,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-55.5556,265.0000,4,21,38.0952,8419,35.4436,2.6516,True,False,True,51.8500,0.2778,above
+1630188,Jalen Smith,-55.5556,300.0000,0,8,0.0000,2551,32.6147,-32.6147,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-27.7778,-50.0000,0,1,0.0000,469,65.2452,-65.2452,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-27.7778,-15.0000,0,107,73.8318,41960,69.1873,4.6445,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-27.7778,20.0000,8,137,69.3431,62633,64.5219,4.8212,True,False,True,51.8500,0.3928,above
+1630188,Jalen Smith,-27.7778,55.0000,1,36,50.0000,31616,50.7370,-0.7370,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-27.7778,90.0000,0,7,28.5714,14975,45.9699,-17.3985,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-27.7778,125.0000,0,1,100.0000,9093,46.4423,53.5577,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-27.7778,160.0000,0,0,,4868,45.0904,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-27.7778,195.0000,0,0,,2147,40.6614,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-27.7778,230.0000,0,11,18.1818,6876,36.8383,-18.6565,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-27.7778,265.0000,3,23,21.7391,9216,35.9158,-14.1767,True,False,True,51.8500,0.2500,well below
+1630188,Jalen Smith,-27.7778,300.0000,0,9,11.1111,3782,34.3469,-23.2358,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,0.0000,-50.0000,0,3,66.6667,1232,80.3571,-13.6905,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,0.0000,-15.0000,1,140,70.0000,55334,69.0245,0.9755,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,0.0000,20.0000,38,161,66.4596,75539,63.2468,3.2128,True,False,True,51.8500,0.8561,above
+1630188,Jalen Smith,0.0000,55.0000,3,72,58.3333,45850,55.4133,2.9200,True,False,True,51.8500,0.2500,above
+1630188,Jalen Smith,0.0000,90.0000,0,8,50.0000,17751,46.1157,3.8843,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,0.0000,125.0000,0,1,100.0000,10194,46.8805,53.1195,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,0.0000,160.0000,0,0,,5213,45.8277,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,0.0000,195.0000,0,0,,2442,42.7109,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,0.0000,230.0000,0,18,16.6667,7078,36.6488,-19.9821,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,0.0000,265.0000,6,23,17.3913,9424,36.0357,-18.6443,True,False,True,51.8500,0.3402,well below
+1630188,Jalen Smith,0.0000,300.0000,0,9,33.3333,4396,35.2821,-1.9487,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,27.7778,-50.0000,0,2,50.0000,472,67.3729,-17.3729,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,27.7778,-15.0000,1,117,67.5214,44399,69.2786,-1.7572,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,27.7778,20.0000,10,149,65.7718,65182,64.1650,1.6069,True,False,True,51.8500,0.4392,approximately average
+1630188,Jalen Smith,27.7778,55.0000,2,45,46.6667,34544,51.3924,-4.7258,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,27.7778,90.0000,0,10,60.0000,15770,45.4280,14.5720,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,27.7778,125.0000,0,1,100.0000,9321,45.9393,54.0607,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,27.7778,160.0000,0,1,0.0000,4848,45.2558,-45.2558,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,27.7778,195.0000,0,1,0.0000,2112,42.1875,-42.1875,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,27.7778,230.0000,0,25,20.0000,6843,35.9930,-15.9930,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,27.7778,265.0000,5,30,23.3333,9189,35.1725,-11.8392,True,False,True,51.8500,0.3105,well below
+1630188,Jalen Smith,27.7778,300.0000,0,13,30.7692,3647,34.5489,-3.7797,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,55.5556,-50.0000,0,0,,98,42.8571,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,55.5556,-15.0000,0,17,47.0588,9738,53.9844,-6.9256,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,55.5556,20.0000,1,36,41.6667,22940,52.1927,-10.5260,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,55.5556,55.0000,1,12,33.3333,15370,44.0403,-10.7070,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,55.5556,90.0000,0,2,0.0000,9354,43.8957,-43.8957,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,55.5556,125.0000,0,0,,6316,44.8068,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,55.5556,160.0000,0,1,0.0000,3814,43.2617,-43.2617,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,55.5556,195.0000,0,2,0.0000,1745,40.5158,-40.5158,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,55.5556,230.0000,0,39,25.6410,7385,34.7867,-9.1457,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,55.5556,265.0000,5,38,26.3158,8484,34.6535,-8.3377,True,False,True,51.8500,0.3105,well below
+1630188,Jalen Smith,55.5556,300.0000,0,8,25.0000,2482,33.1990,-8.1990,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,83.3333,-50.0000,0,0,,141,43.2624,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,83.3333,-15.0000,0,0,,2335,42.2698,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,83.3333,20.0000,0,4,0.0000,6819,42.4402,-42.4402,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,83.3333,55.0000,0,3,0.0000,6970,41.9943,-41.9943,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,83.3333,90.0000,0,2,0.0000,5672,44.2525,-44.2525,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,83.3333,125.0000,0,0,,4782,43.2037,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,83.3333,160.0000,0,1,0.0000,3118,40.5067,-40.5067,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,83.3333,195.0000,0,14,42.8571,3050,35.4098,7.4473,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,83.3333,230.0000,5,45,42.2222,9700,34.0309,8.1913,True,False,True,51.8500,0.3105,well above
+1630188,Jalen Smith,83.3333,265.0000,1,40,35.0000,8850,33.9096,1.0904,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,83.3333,300.0000,0,4,25.0000,1706,31.2427,-6.2427,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,111.1111,-50.0000,0,0,,187,48.1283,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,111.1111,-15.0000,0,0,,1696,44.0448,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,111.1111,20.0000,0,0,,3477,42.8243,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,111.1111,55.0000,0,1,0.0000,3622,43.0701,-43.0701,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,111.1111,90.0000,0,0,,3222,43.4823,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,111.1111,125.0000,0,0,,3169,42.7895,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,111.1111,160.0000,0,1,100.0000,2322,39.9655,60.0345,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,111.1111,195.0000,1,25,48.0000,7433,34.9388,13.0612,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,111.1111,230.0000,11,46,43.4783,11692,34.1858,9.2925,True,False,True,51.8500,0.4606,well above
+1630188,Jalen Smith,111.1111,265.0000,0,36,47.2222,8944,33.8104,13.4118,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,111.1111,300.0000,0,0,,1008,32.6389,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,138.8889,-50.0000,0,0,,177,44.0678,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,138.8889,-15.0000,0,0,,1329,44.0933,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,138.8889,20.0000,0,0,,2273,43.6868,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,138.8889,55.0000,0,0,,2159,44.3261,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,138.8889,90.0000,0,0,,1939,42.7024,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,138.8889,125.0000,0,0,,1870,42.6203,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,138.8889,160.0000,0,7,42.8571,3311,37.2999,5.5572,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,138.8889,195.0000,1,32,37.5000,10716,34.5185,2.9815,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,138.8889,230.0000,3,40,40.0000,12256,34.3179,5.6821,True,False,True,51.8500,0.2500,above
+1630188,Jalen Smith,138.8889,265.0000,0,13,61.5385,6251,34.0586,27.4799,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,138.8889,300.0000,0,0,,532,32.7068,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,166.6667,-50.0000,0,0,,103,33.0097,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,166.6667,-15.0000,0,0,,811,40.5672,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,166.6667,20.0000,0,2,50.0000,1393,42.0675,7.9325,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,166.6667,55.0000,0,2,100.0000,1133,41.2180,58.7820,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,166.6667,90.0000,0,1,100.0000,941,42.8268,57.1732,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,166.6667,125.0000,0,2,50.0000,1808,40.9845,9.0155,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,166.6667,160.0000,0,13,46.1538,6884,35.8948,10.2590,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,166.6667,195.0000,4,24,25.0000,10582,35.2296,-10.2296,True,False,True,51.8500,0.2778,well below
+1630188,Jalen Smith,166.6667,230.0000,1,24,33.3333,10044,34.5480,-1.2147,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,166.6667,265.0000,0,1,0.0000,2149,33.8297,-33.8297,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,166.6667,300.0000,0,0,,242,31.8182,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,194.4444,-50.0000,0,0,,233,36.9099,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,194.4444,-15.0000,0,17,47.0588,4021,38.3984,8.6604,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,194.4444,20.0000,0,22,31.8182,7393,38.6176,-6.7994,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,194.4444,55.0000,1,10,40.0000,4550,38.8132,1.1868,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,194.4444,90.0000,0,6,50.0000,3284,36.9671,13.0329,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,194.4444,125.0000,0,7,71.4286,4709,36.1011,35.3275,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,194.4444,160.0000,2,13,53.8462,7122,35.8326,18.0135,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,194.4444,195.0000,4,18,33.3333,8268,35.2322,-1.8989,True,False,False,51.8500,0.2778,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,194.4444,230.0000,0,11,27.2727,4244,34.5193,-7.2466,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,194.4444,265.0000,0,0,,548,31.7518,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,194.4444,300.0000,0,0,,89,22.4719,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,222.2222,-50.0000,0,9,55.5556,1234,37.8444,17.7111,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,222.2222,-15.0000,8,27,33.3333,6886,38.7598,-5.4265,True,False,True,51.8500,0.3928,below
+1630188,Jalen Smith,222.2222,20.0000,5,31,38.7097,10223,38.7949,-0.0852,True,False,True,51.8500,0.3105,approximately average
+1630188,Jalen Smith,222.2222,55.0000,0,15,26.6667,7994,38.2412,-11.5745,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,222.2222,90.0000,1,7,57.1429,4988,37.3296,19.8133,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,222.2222,125.0000,1,8,62.5000,4637,35.8421,26.6579,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,222.2222,160.0000,2,6,66.6667,5250,35.7905,30.8762,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,222.2222,195.0000,0,6,66.6667,3472,35.5127,31.1540,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,222.2222,230.0000,0,0,,544,33.6397,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,222.2222,265.0000,0,0,,93,19.3548,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,222.2222,300.0000,0,0,,26,15.3846,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,250.0000,-50.0000,0,8,62.5000,896,38.5045,23.9955,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,250.0000,-15.0000,1,24,37.5000,6290,38.7440,-1.2440,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,250.0000,20.0000,0,30,33.3333,9695,38.6488,-5.3155,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,250.0000,55.0000,0,11,18.1818,7108,38.2667,-20.0849,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,250.0000,90.0000,0,6,50.0000,3963,37.4464,12.5536,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,250.0000,125.0000,0,5,60.0000,3014,34.8042,25.1958,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,250.0000,160.0000,0,4,75.0000,1619,35.3305,39.6695,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,250.0000,195.0000,0,0,,203,32.5123,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,250.0000,230.0000,0,0,,41,17.0732,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,250.0000,265.0000,0,0,,7,28.5714,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,250.0000,300.0000,0,0,,3,0.0000,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-236.1111,-32.5000,1,17,41.1765,5868,39.1956,1.9808,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-236.1111,2.5000,6,23,39.1304,10448,39.2898,-0.1594,True,False,True,51.8500,0.3402,approximately average
+1630188,Jalen Smith,-236.1111,37.5000,1,14,35.7143,9971,38.5418,-2.8275,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-236.1111,72.5000,0,4,25.0000,5057,37.9474,-12.9474,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-236.1111,107.5000,1,3,0.0000,3966,36.7625,-36.7625,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-236.1111,142.5000,0,4,0.0000,4718,36.6681,-36.6681,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-236.1111,177.5000,0,1,0.0000,3236,36.6502,-36.6502,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-236.1111,212.5000,0,0,,634,31.8612,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-236.1111,247.5000,0,0,,111,25.2252,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-236.1111,282.5000,0,0,,18,5.5556,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-208.3333,-32.5000,0,16,43.7500,4650,39.2258,4.5242,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-208.3333,2.5000,0,23,39.1304,10167,39.1659,-0.0355,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-208.3333,37.5000,0,12,33.3333,8971,38.6133,-5.2800,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-208.3333,72.5000,0,3,33.3333,4312,37.9870,-4.6537,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-208.3333,107.5000,0,4,0.0000,4536,36.9929,-36.9929,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-208.3333,142.5000,0,10,20.0000,6815,36.8305,-16.8305,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-208.3333,177.5000,0,9,22.2222,8466,35.9792,-13.7570,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-208.3333,212.5000,0,6,50.0000,5268,34.2445,15.7555,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-208.3333,247.5000,0,0,,872,32.4541,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-208.3333,282.5000,0,0,,135,25.9259,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-180.5556,-32.5000,0,0,,440,40.4545,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-180.5556,2.5000,0,1,0.0000,1716,39.1608,-39.1608,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-180.5556,37.5000,0,1,0.0000,1415,40.6360,-40.6360,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-180.5556,72.5000,0,0,,921,37.8936,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-180.5556,107.5000,0,3,0.0000,2118,36.0246,-36.0246,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-180.5556,142.5000,1,11,18.1818,6911,36.5649,-18.3831,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-180.5556,177.5000,4,18,27.7778,11114,35.9547,-8.1769,True,False,False,51.8500,0.2778,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-180.5556,212.5000,0,19,31.5789,11665,34.9679,-3.3889,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-180.5556,247.5000,0,2,0.0000,4055,33.6868,-33.6868,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-180.5556,282.5000,0,0,,515,32.4272,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-152.7778,-32.5000,0,0,,519,40.2697,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-152.7778,2.5000,0,0,,1626,42.2509,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-152.7778,37.5000,0,0,,1913,41.0873,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-152.7778,72.5000,0,0,,1413,37.7919,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-152.7778,107.5000,0,1,0.0000,1366,35.9444,-35.9444,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-152.7778,142.5000,0,5,0.0000,2724,36.8576,-36.8576,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-152.7778,177.5000,1,22,31.8182,10611,35.7553,-3.9372,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-152.7778,212.5000,3,29,44.8276,13684,34.9459,9.8817,True,False,True,51.8500,0.2500,well above
+1630188,Jalen Smith,-152.7778,247.5000,0,17,58.8235,9669,34.5537,24.2698,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-152.7778,282.5000,0,1,0.0000,1407,31.6986,-31.6986,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-125.0000,-32.5000,0,0,,731,41.7237,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-125.0000,2.5000,0,0,,2330,42.8326,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-125.0000,37.5000,0,0,,3117,42.2842,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-125.0000,72.5000,0,0,,2489,38.9715,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-125.0000,107.5000,0,0,,2402,38.8843,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-125.0000,142.5000,0,1,0.0000,2265,39.3819,-39.3819,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-125.0000,177.5000,0,15,40.0000,5963,36.5085,3.4915,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-125.0000,212.5000,5,33,51.5152,12686,35.0623,16.4529,True,False,True,51.8500,0.3105,well above
+1630188,Jalen Smith,-125.0000,247.5000,1,27,55.5556,11484,34.6047,20.9509,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-125.0000,282.5000,0,3,33.3333,3090,33.2039,0.1294,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-97.2222,-32.5000,0,0,,706,42.0680,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-97.2222,2.5000,0,1,0.0000,3142,42.4889,-42.4889,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-97.2222,37.5000,0,0,,4744,42.3272,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-97.2222,72.5000,0,1,0.0000,4149,41.5763,-41.5763,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-97.2222,107.5000,0,1,0.0000,3909,41.1870,-41.1870,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-97.2222,142.5000,0,0,,3432,41.2005,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-97.2222,177.5000,0,1,0.0000,2355,39.4480,-39.4480,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-97.2222,212.5000,0,28,60.7143,9261,35.1042,25.6101,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-97.2222,247.5000,4,29,58.6207,10652,34.8479,23.7728,True,False,True,51.8500,0.2778,well above
+1630188,Jalen Smith,-97.2222,282.5000,0,9,55.5556,4899,33.1904,22.3651,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-69.4444,-32.5000,0,1,0.0000,850,43.6471,-43.6471,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-69.4444,2.5000,1,6,66.6667,7940,46.4861,20.1805,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-69.4444,37.5000,0,4,50.0000,10461,42.6728,7.3272,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-69.4444,72.5000,1,2,0.0000,7528,42.9596,-42.9596,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-69.4444,107.5000,0,1,0.0000,6000,44.7167,-44.7167,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-69.4444,142.5000,0,0,,4577,44.3085,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-69.4444,177.5000,0,1,0.0000,2462,41.1454,-41.1454,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-69.4444,212.5000,0,14,64.2857,5544,36.7244,27.5613,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-69.4444,247.5000,4,24,41.6667,9115,35.3264,6.3403,True,False,True,51.8500,0.2778,above
+1630188,Jalen Smith,-69.4444,282.5000,1,16,37.5000,5978,34.7942,2.7058,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-41.6667,-32.5000,0,5,60.0000,4791,61.4068,-1.4068,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-41.6667,2.5000,0,91,69.2308,39856,64.3466,4.8841,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-41.6667,37.5000,1,43,62.7907,31814,54.2057,8.5850,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-41.6667,72.5000,0,6,0.0000,14774,44.7069,-44.7069,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-41.6667,107.5000,0,4,25.0000,9187,45.6188,-20.6188,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-41.6667,142.5000,0,0,,6069,45.6253,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-41.6667,177.5000,0,0,,2889,41.7099,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-41.6667,212.5000,0,4,25.0000,3436,38.3877,-13.3877,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-41.6667,247.5000,2,19,31.5789,8676,35.8806,-4.3016,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-41.6667,282.5000,2,16,25.0000,7039,35.4454,-10.4454,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-13.8889,-32.5000,1,69,75.3623,25735,72.9435,2.4189,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-13.8889,2.5000,30,147,68.7075,65230,65.7581,2.9494,True,False,True,51.8500,0.7607,above
+1630188,Jalen Smith,-13.8889,37.5000,7,149,67.1141,71784,62.3078,4.8063,True,False,True,51.8500,0.3674,above
+1630188,Jalen Smith,-13.8889,72.5000,3,20,40.0000,23040,47.0269,-7.0269,True,False,True,51.8500,0.2500,below
+1630188,Jalen Smith,-13.8889,107.5000,1,5,40.0000,12801,46.4807,-6.4807,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-13.8889,142.5000,0,1,100.0000,7405,46.3065,53.6935,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-13.8889,177.5000,0,0,,3526,43.5337,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-13.8889,212.5000,0,1,0.0000,3171,38.3475,-38.3475,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-13.8889,247.5000,0,21,19.0476,8984,36.0307,-16.9831,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,-13.8889,282.5000,1,18,16.6667,8062,35.5495,-18.8828,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,13.8889,-32.5000,0,70,70.0000,26597,73.2752,-3.2752,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,13.8889,2.5000,51,156,66.0256,66077,65.6855,0.3402,True,False,True,51.8500,0.9918,approximately average
+1630188,Jalen Smith,13.8889,37.5000,4,157,64.3312,73317,62.0716,2.2597,True,False,True,51.8500,0.2778,approximately average
+1630188,Jalen Smith,13.8889,72.5000,1,21,47.6190,23782,46.6992,0.9199,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,13.8889,107.5000,0,5,40.0000,13169,46.3513,-6.3513,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,13.8889,142.5000,0,0,,7460,46.4745,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,13.8889,177.5000,0,0,,3489,44.0527,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,13.8889,212.5000,0,5,0.0000,3190,38.3386,-38.3386,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,13.8889,247.5000,3,25,20.0000,8959,36.0196,-16.0196,True,False,True,51.8500,0.2500,well below
+1630188,Jalen Smith,13.8889,282.5000,0,23,17.3913,8041,35.5180,-18.1267,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,41.6667,-32.5000,0,11,63.6364,5021,61.6610,1.9753,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,41.6667,2.5000,2,106,64.1509,43815,64.7130,-0.5621,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,41.6667,37.5000,3,62,54.8387,35921,55.0207,-0.1820,True,False,True,51.8500,0.2500,approximately average
+1630188,Jalen Smith,41.6667,72.5000,0,13,53.8462,16397,44.4167,9.4295,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,41.6667,107.5000,0,1,100.0000,9744,45.6589,54.3411,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,41.6667,142.5000,0,1,0.0000,6178,45.0308,-45.0308,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,41.6667,177.5000,0,1,0.0000,2826,43.4183,-43.4183,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,41.6667,212.5000,0,14,14.2857,3360,36.7560,-22.4702,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,41.6667,247.5000,7,41,24.3902,8711,35.2543,-10.8640,True,False,True,51.8500,0.3674,well below
+1630188,Jalen Smith,41.6667,282.5000,0,27,22.2222,7041,34.6968,-12.4746,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,69.4444,-32.5000,0,0,,956,43.0962,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,69.4444,2.5000,0,10,30.0000,9187,46.9468,-16.9468,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,69.4444,37.5000,1,11,27.2727,12283,43.5317,-16.2590,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,69.4444,72.5000,0,3,33.3333,8624,42.6832,-9.3499,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,69.4444,107.5000,0,0,,6508,44.5144,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,69.4444,142.5000,0,1,0.0000,4615,43.6403,-43.6403,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,69.4444,177.5000,1,1,0.0000,2356,40.0255,-40.0255,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,69.4444,212.5000,0,28,32.1429,5586,34.5686,-2.4257,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,69.4444,247.5000,12,44,34.0909,9261,34.3375,-0.2466,True,False,True,51.8500,0.4811,approximately average
+1630188,Jalen Smith,69.4444,282.5000,0,26,26.9231,6211,33.9237,-7.0006,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,97.2222,-32.5000,0,0,,750,44.2667,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,97.2222,2.5000,0,0,,3349,43.2368,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,97.2222,37.5000,0,1,0.0000,5229,42.3025,-42.3025,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,97.2222,72.5000,0,1,0.0000,4520,44.0708,-44.0708,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,97.2222,107.5000,0,0,,4263,44.1004,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,97.2222,142.5000,0,0,,3511,42.2102,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,97.2222,177.5000,0,2,50.0000,2164,37.8466,12.1534,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,97.2222,212.5000,0,43,46.5116,9255,34.5651,11.9465,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,97.2222,247.5000,6,44,45.4545,10847,34.0647,11.3898,True,False,True,51.8500,0.3402,well above
+1630188,Jalen Smith,97.2222,282.5000,0,18,44.4444,5190,33.0443,11.4001,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,125.0000,-32.5000,0,0,,739,44.9256,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,125.0000,2.5000,0,0,,2298,43.7772,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,125.0000,37.5000,0,0,,3075,43.2195,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,125.0000,72.5000,0,0,,2618,42.7044,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,125.0000,107.5000,0,0,,2572,43.6236,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,125.0000,142.5000,0,0,,2301,41.6775,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,125.0000,177.5000,0,13,46.1538,5121,35.9891,10.1648,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,125.0000,212.5000,5,42,42.8571,11804,34.3358,8.5213,True,False,True,51.8500,0.3105,well above
+1630188,Jalen Smith,125.0000,247.5000,2,37,45.9459,11287,34.0303,11.9156,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,125.0000,282.5000,0,3,33.3333,2862,32.7044,0.6289,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,152.7778,-32.5000,0,0,,535,42.2430,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,152.7778,2.5000,0,0,,1509,43.6713,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,152.7778,37.5000,0,1,100.0000,1789,43.4880,56.5120,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,152.7778,72.5000,0,2,100.0000,1385,42.0939,57.9061,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,152.7778,107.5000,0,0,,1380,43.1159,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,152.7778,142.5000,0,1,0.0000,2311,37.9922,-37.9922,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,152.7778,177.5000,0,22,27.2727,8750,35.3486,-8.0758,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,152.7778,212.5000,7,37,37.8378,12007,34.6714,3.1664,True,False,True,51.8500,0.3674,above
+1630188,Jalen Smith,152.7778,247.5000,0,24,37.5000,9088,34.1439,3.3561,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,152.7778,282.5000,0,0,,1174,33.3901,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,180.5556,-32.5000,0,0,,326,35.2761,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,180.5556,2.5000,0,5,80.0000,1462,38.5089,41.4911,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,180.5556,37.5000,1,4,75.0000,1381,38.2332,36.7668,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,180.5556,72.5000,0,3,66.6667,929,42.0883,24.5784,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,180.5556,107.5000,0,0,,2004,36.9261,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,180.5556,142.5000,0,7,42.8571,5563,36.1136,6.7435,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,180.5556,177.5000,2,21,38.0952,8799,35.5950,2.5003,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,180.5556,212.5000,1,22,22.7273,9536,34.8993,-12.1721,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,180.5556,247.5000,0,6,0.0000,3314,33.3736,-33.3736,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,180.5556,282.5000,0,0,,391,31.2020,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,208.3333,-32.5000,0,18,44.4444,3046,38.6408,5.8036,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,208.3333,2.5000,0,28,35.7143,8522,38.3595,-2.6453,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,208.3333,37.5000,1,22,36.3636,9286,38.8003,-2.4367,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,208.3333,72.5000,0,10,50.0000,5224,38.1891,11.8109,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,208.3333,107.5000,0,6,50.0000,4557,35.7472,14.2528,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,208.3333,142.5000,1,7,71.4286,5632,35.6357,35.7929,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,208.3333,177.5000,0,12,50.0000,6658,35.3409,14.6591,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,208.3333,212.5000,0,9,33.3333,4115,34.8238,-1.4905,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,208.3333,247.5000,0,0,,601,32.1131,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,208.3333,282.5000,0,0,,106,25.4717,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,236.1111,-32.5000,0,21,42.8571,4116,39.2614,3.5957,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,236.1111,2.5000,11,30,33.3333,8888,38.7489,-5.4155,True,False,True,51.8500,0.4606,below
+1630188,Jalen Smith,236.1111,37.5000,4,25,24.0000,10116,38.7307,-14.7307,True,False,True,51.8500,0.2778,well below
+1630188,Jalen Smith,236.1111,72.5000,3,10,40.0000,5928,37.9386,2.0614,True,False,False,51.8500,0.2500,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,236.1111,107.5000,1,7,57.1429,4220,35.7583,21.3846,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,236.1111,142.5000,0,7,71.4286,4091,35.3214,36.1071,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,236.1111,177.5000,0,5,60.0000,2512,35.0717,24.9283,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,236.1111,212.5000,0,0,,410,34.6341,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,236.1111,247.5000,0,0,,70,20.0000,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630188,Jalen Smith,236.1111,282.5000,0,0,,15,20.0000,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume

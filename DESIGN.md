@@ -131,6 +131,41 @@ for the paint (`#EFC6D0`) and deeper again for the restricted area (`#E5A9B8`), 
 painted court geometry and analytical zone divider alike — in near-black. The red floor is what
 carries the red/black/off-white thumbnail read, so figures on it stay black rather than red.
 
+**Every shot-chart court uses the same complete landmark set:** a thick six-foot backboard sitting
+1.25 feet behind the center of the correctly sized 18-inch rim, with its short connector stopping
+at the rim's rear edge, plus the restricted-area D,
+lane-space ticks, sideline hashes, the free-throw circle, and the full three-point line. Contrast may
+change with the data layer — light over saturated ladder bands and Bulls black over the pale hex map
+— but the court geometry does not.
+
+**Hex efficiency uses five fixed FG%-versus-NBA bands, not a gradient:** well below (dark blue,
+below −7.5 percentage points), below (light blue, −7.5 to −2.5), approximately average (yellow,
+−2.5 to +2.5), above (orange, +2.5 to +7.5), and well above (dark red, above +7.5). Fixed,
+symmetric cuts make “average” stable across teams and players and avoid presenting shade-level
+precision that the smoothed neighborhood estimate cannot support. Location already distinguishes
+two-point and three-point areas, so relative eFG% would mostly amplify the same three-point result
+by 1.5 rather than add new information.
+
+Hex marks use the fuller, deliberately overlapping scale: maximum radius is 96% of the nominal hex
+bin radius, with a 25%-of-maximum floor so qualified three- to seven-attempt cells grow along with
+the rest of the map instead of remaining pinpricks. Area grows with attempts through the middle of
+the scale and caps at the 97.5th percentile. Draw high-volume marks first and smaller marks above
+them, with a restrained sub-pixel shadow and a 0.30-point white hairline. The layering and seam keep
+overlapping colors distinct without turning the map into a white grid. Clip the entire mark layer
+to the sidelines and baseline; edge-bin centers remain in their true locations, but no part of a
+shot mark may appear outside the court.
+
+Keep the hex-chart key visual and sparse in one two-column row: **Volume** on the left, with one
+small and one large hex labeled **Less** and **More** beneath it; **FG% vs. NBA Avg** on the right,
+with the five efficiency colors labeled **Below** and **Above** beneath it. Do not print subject
+names, headshots, FGA, FG%, eFG%, 3PT%, or gray-cell qualification notes inside the chart asset;
+those details belong in the accompanying Canva copy.
+Place the key close beneath the baseline and crop the transparent export vertically around the
+outermost shots and key. A chart asset is not a 4:5 post page: retain the full 1080-pixel court width,
+but do not make Canva carry hundreds of pixels of empty transparent space above and below it.
+Keep both sets of legend icons compact: the two volume examples and the five color chips should read
+as continuous left-to-right scales, not as isolated symbols spread across the chart width.
+
 Draw the court **only as deep as the furthest chip needs** — about 34 ft, a little past the
 above-the-break labels — and crop the rest. Stopping right at the arc leaves a squat shape; running
 all the way to the half-court line is honest but hands back a third of the frame as empty floor.

@@ -35,6 +35,7 @@ import numpy as np
 import pandas as pd
 from matplotlib.colors import LinearSegmentedColormap, Normalize
 from matplotlib.patches import FancyBboxPatch, Rectangle, RegularPolygon, Wedge
+from matplotlib.transforms import Bbox
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -44,7 +45,20 @@ from bulls.analysis import shot_maps as sm
 from bulls.config import CURRENT_SEASON
 from bulls.data import shots as shot_data
 from bulls.graphics import house
-from bulls.graphics.court import ARC, draw_half_court
+from bulls.graphics.court import (
+    ARC,
+    BACKBOARD_HALF_WIDTH,
+    BACKBOARD_Y,
+    CORNER_X,
+    FT_LINE_Y,
+    FT_RADIUS,
+    HASH_FROM_BASELINE_FT,
+    HOOP_RADIUS,
+    LANE_MARKS_FT,
+    PAINT_HALF_WIDTH,
+    draw_half_court,
+    restricted_area_patch,
+)
 from bulls.graphics.house import helvetica
 from bulls.visuals import visual_dir
 
@@ -53,8 +67,8 @@ HOT_BANDS = ["#F6CDD7", "#E67C96", "#CE1141", "#7E0C2B"]
 HOT_LINE = "#5E0820"
 COURT_WARM = "#C9A8B5"
 
-HEX_CMAP = LinearSegmentedColormap.from_list(
-    "hexdiff", ["#2C6FB5", "#8FB4D6", "#EFEAE4", "#E8896F", "#C42B1C"])
+HEX_COLORS = ("#2166AC", "#92C5DE", "#F1CC5B", "#E8763C", "#A80F2A")
+HEX_CUTS = (-0.075, -0.025, 0.025, 0.075)
 REL_CMAP = LinearSegmentedColormap.from_list("rel", [
     "#6E1113", "#B3312A", "#DE6B3C", "#F0BE45", "#9FC24C", "#4A9C3A", "#1F6B2F"])
 
@@ -123,58 +137,231 @@ def _contour_field(ax, x0, y0, s, field, fill_colors, line_color, alpha):
 
 
 # ---------------------------------------------------------------------------
-# hex — size = volume, color = efficiency vs league
+# hex — size = volume, color = FG% vs league
 # ---------------------------------------------------------------------------
-GRIDSIZE, MIN_ATT, SMOOTH_R, MIN_SMOOTH, DIFF_CLAMP = 18, 2, 45.0, 20, 0.10
+GRIDSIZE, MIN_ATT, SMOOTH_R, MIN_SMOOTH = 18, 3, 45.0, 20
+HEX_SIZE_CAP_PERCENTILE = 97.5
+HEX_RADIUS_SCALE = 0.96
+HEX_MIN_RADIUS_FRACTION = 0.25
+HEX_EDGE_WIDTH = 0.30
+HEX_SHADOW_OFFSET = 0.6
+HEX_SHADOW_ALPHA = 0.055
+# The hex chart is a Canva asset, not a full post page. Keep the complete court
+# width but trim the unused transparent space above the longest shots and below
+# the legend. Values are in the 1080 x 1350 draft-coordinate system.
+# The legend sits 20 px below the earlier near-tangent placement. Extend the
+# crop by the same amount so the bottom method label keeps its breathing room.
+HEX_CROP_BOTTOM = 325
+HEX_CROP_TOP = 1220
+HEX_LEGEND_DY = 110
+HEX_VOLUME_MARKS = ((245, 7), (270, 15))
+HEX_COLOR_CENTERS = (690, 718, 746, 774, 802)
+HEX_BAND_NAMES = ("well below", "below", "approximately average", "above", "well above")
+
+
+def _hex_color(diff: float) -> str:
+    """One of five discrete Kirk-style bands around league-average FG%."""
+    return HEX_COLORS[int(np.digitize(diff, HEX_CUTS))]
+
+
+def _hex_radius_fraction(attempts: float, cap: float) -> float:
+    """Radius fraction with a readable low-volume floor and outlier cap.
+
+    Hex area, not diameter, is what the eye reads. Since area grows with radius
+    squared, ``sqrt(attempts / cap)`` makes a cell with four times the attempts
+    occupy four times the area through the middle of the scale. The 25% floor
+    keeps qualified three- to seven-attempt cells visible; the cap prevents rim
+    outliers from shrinking everything else.
+    """
+    if attempts <= 0 or cap <= 0:
+        return 0.0
+    return min(max((attempts / cap) ** 0.5, HEX_MIN_RADIUS_FRACTION), 1.0)
+
+
+def _hex_base_radius() -> float:
+    """Full-volume radius from the original, deliberately overlapping scale."""
+    return ((sm.GRID_X[1] - sm.GRID_X[0]) / GRIDSIZE / np.sqrt(3)
+            * HEX_RADIUS_SCALE)
+
+
+def _within_hex_extent(shots: pd.DataFrame) -> pd.DataFrame:
+    """Attempts whose coordinates fit the plotted 30-foot court window."""
+    return shots[
+        shots.loc_x.between(*sm.GRID_X)
+        & shots.loc_y.between(*sm.GRID_Y)
+    ]
+
+
+def _hex_display_mask(attempts: pd.Series, show_thin_gray: bool) -> pd.Series:
+    """Cells to draw: established locations, plus 1-2 shot gray cells on request."""
+    return attempts.gt(0) if show_thin_gray else attempts.ge(MIN_ATT)
+
+
+def prepare_hex_table(ctx) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Build the auditable cell table used by both rendering and data exports."""
+    from scipy.spatial import cKDTree
+
+    p = _within_hex_extent(ctx["player"])
+    league = _within_hex_extent(ctx["league"])
+    centres, attempts = _hexbin(p.loc_x, p.loc_y)
+    subject_fg, subject_pool = _pooled(
+        cKDTree(np.c_[p.loc_x, p.loc_y]), p.shot_made.to_numpy(float), centres)
+    league_fg, league_pool = _pooled(
+        cKDTree(np.c_[league.loc_x, league.loc_y]), league.shot_made.to_numpy(float), centres)
+
+    table = pd.DataFrame({
+        "hex_center_x": centres[:, 0],
+        "hex_center_y": centres[:, 1],
+        "exact_fga": attempts.astype(int),
+        "nearby_subject_fga": subject_pool.astype(int),
+        "nearby_subject_fg_pct": subject_fg * 100,
+        "nearby_nba_fga": league_pool.astype(int),
+        "nearby_nba_fg_pct": league_fg * 100,
+        "subject_vs_nba_fg_pct_points": (subject_fg - league_fg) * 100,
+    })
+    show_thin_gray = bool(ctx.get("show_thin_gray", False))
+    table["displayed"] = _hex_display_mask(table.exact_fga, show_thin_gray)
+    table["low_volume_gray"] = show_thin_gray & table.exact_fga.between(1, MIN_ATT - 1)
+    table["color_rated"] = (
+        table.exact_fga.ge(MIN_ATT) & table.nearby_subject_fga.ge(MIN_SMOOTH)
+    )
+
+    established = table.exact_fga.ge(MIN_ATT)
+    cap_override = ctx.get("hex_size_cap")
+    cap = (float(cap_override) if cap_override is not None else
+           float(np.percentile(table.loc[established, "exact_fga"],
+                               HEX_SIZE_CAP_PERCENTILE))
+           if established.any() else 1.0)
+    table["size_cap_fga"] = cap
+    table["radius_fraction"] = [
+        _hex_radius_fraction(fga, cap) if displayed else 0.0
+        for fga, displayed in zip(table.exact_fga, table.displayed)
+    ]
+    table["color_band"] = "gray: insufficient exact-cell or nearby volume"
+    rated = table.color_rated
+    table.loc[rated, "color_band"] = [
+        HEX_BAND_NAMES[int(np.digitize(value / 100, HEX_CUTS))]
+        for value in table.loc[rated, "subject_vs_nba_fg_pct_points"]
+    ]
+    return p, table
 
 
 def render_hex(ctx, out: Path, final: bool):
-    from scipy.spatial import cKDTree
-
     theme = house.get_theme("jersey")
-    fig, ax = house.new_canvas(theme)
-    s = 1.72
-    x0, y0 = draw_half_court(ax, house.CANVAS_WIDTH / 2, 700, s, COURT_WARM)
+    fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
+                              house.CANVAS_HEIGHT / house.DRAFT_DPI))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, house.CANVAS_WIDTH); ax.set_ylim(0, house.CANVAS_HEIGHT)
+    ax.set_aspect("equal"); ax.set_xticks([]); ax.set_yticks([])
+    ax.patch.set_alpha(0.0)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
 
-    p = ctx["player"][ctx["player"].shot_distance <= 30]
-    l = ctx["league"][ctx["league"].shot_distance <= 30]
-    centres, att = _hexbin(p.loc_x, p.loc_y)
+    s = 1.84
+    x0, y0 = draw_half_court(ax, house.CANVAS_WIDTH / 2, 830, s, theme.ink,
+                             lw=1.2)
 
-    # Efficiency is pooled from a neighbourhood: a hex holding three shots can
-    # only score 0/33/67/100%, which is noise dressed as signal.
-    p_fg, pool = _pooled(cKDTree(np.c_[p.loc_x, p.loc_y]),
-                         p.shot_made.to_numpy(float), centres)
-    l_fg, _ = _pooled(cKDTree(np.c_[l.loc_x, l.loc_y]),
-                      l.shot_made.to_numpy(float), centres)
-    df = pd.DataFrame({"x": centres[:, 0], "y": centres[:, 1], "att": att,
-                       "pool": pool, "diff": p_fg - l_fg})
-    df = df[df.att >= MIN_ATT].copy()
-    df.loc[df.pool < MIN_SMOOTH, "diff"] = np.nan
+    p, table = prepare_hex_table(ctx)
+    sparse_attempts = int(table.loc[
+        table.exact_fga.between(1, MIN_ATT - 1), "exact_fga"].sum())
+    show_thin_gray = bool(ctx.get("show_thin_gray", False))
+    df = table[table.displayed].copy()
 
-    hex_r = (sm.GRID_X[1] - sm.GRID_X[0]) / GRIDSIZE / np.sqrt(3) * 1.08
-    cap = float(np.percentile(df.att, 92))
-    norm = Normalize(-DIFF_CLAMP, DIFF_CLAMP)
-    for row in df.itertuples():
-        r = hex_r * s * (0.34 + 0.66 * min(row.att / cap, 1.0) ** 0.5)
-        color = "#D8D2CA" if np.isnan(row.diff) else HEX_CMAP(norm(row.diff))
-        ax.add_patch(RegularPolygon(
-            (x0 + (row.x + 250.0) * s, y0 + (row.y + 47.5) * s), numVertices=6,
-            radius=r, orientation=0, facecolor=color, edgecolor=theme.canvas,
-            linewidth=0.5, zorder=3))
+    hex_r = _hex_base_radius()
+    # A very small number of exact rim-coordinate cells are extreme outliers.
+    # Capping at the 97.5th percentile keeps those from shrinking the entire
+    # map while allowing more of the high-volume tail to remain distinct.
+    # Keep the established-cell scale unchanged when the gray 1-2 shot cells
+    # are added; otherwise merely revealing them would resize every other mark.
+    cap = float(table.size_cap_fga.iloc[0])
+    # Boundary bins are centred on the sideline; only the part of the mark that
+    # lies on the court should be visible. Larger cells go down first, then
+    # smaller cells sit above them like the raised plates in the value ladder.
+    court_clip = Rectangle((x0, y0), 500 * s, 1000 * s, transform=ax.transData)
+    ordered = df.sort_values("exact_fga", ascending=False)
+    total = max(len(ordered), 1)
+    for index, row in enumerate(ordered.itertuples()):
+        r = hex_r * s * row.radius_fraction
+        color = ("#D8D2CA" if not row.color_rated else
+                 _hex_color(row.subject_vs_nba_fg_pct_points / 100))
+        px = x0 + (row.hex_center_x + 250.0) * s
+        py = y0 + (row.hex_center_y + 47.5) * s
+        z = 2.0 + 2.0 * index / total
+        shadow = ax.add_patch(RegularPolygon(
+            (px + HEX_SHADOW_OFFSET, py - HEX_SHADOW_OFFSET), numVertices=6,
+            radius=r + 0.2, orientation=0, facecolor=theme.ink,
+            edgecolor="none", linewidth=0.0, alpha=HEX_SHADOW_ALPHA, zorder=z))
+        shadow.set_clip_path(court_clip)
+        mark = ax.add_patch(RegularPolygon(
+            (px, py), numVertices=6, radius=r, orientation=0,
+            facecolor=color, edgecolor="#FFFFFF", linewidth=HEX_EDGE_WIDTH,
+            zorder=z + 0.01))
+        mark.set_clip_path(court_clip)
 
-    _header(ax, theme, ctx, "Size = shot frequency  ·  Color = FG% vs. league from that spot")
+    _hex_legend(ax, theme)
+    off_map = len(ctx["player"]) - len(p)
+    sparse = sparse_attempts
     made = ctx["player"].shot_made.sum()
     efg = (made + 0.5 * ctx["player"].loc[ctx["player"].shot_type == "3PT",
                                           "shot_made"].sum()) / len(ctx["player"]) * 100
-    ax.text(house.CANVAS_WIDTH / 2, 236,
-            f"{len(ctx['player'])} FGA  ·  {made / len(ctx['player']) * 100:.1f}% FG"
-            f"  ·  {efg:.1f}% eFG", ha="center", va="bottom", fontsize=16,
-            color=theme.ink, fontproperties=helvetica("bold"))
-    ax.text(house.CANVAS_WIDTH / 2, 202, "gray = too few shots nearby to judge",
-            ha="center", va="bottom", fontsize=11, color=theme.faint,
-            fontproperties=helvetica("bold"))
-    _footer(ax, theme, ctx)
-    _save(fig, out, final, theme.canvas)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    crop = Bbox.from_extents(
+        0,
+        HEX_CROP_BOTTOM / house.DRAFT_DPI,
+        house.CANVAS_WIDTH / house.DRAFT_DPI,
+        HEX_CROP_TOP / house.DRAFT_DPI,
+    )
+    fig.savefig(out, dpi=house.export_dpi(final), transparent=True,
+                bbox_inches=crop)
+    plt.close(fig)
+    print(f"Saved {out}")
+    print("\nCANVA COPY")
+    print(f"Subtitle: {ctx['season']} Regular Season")
+    print("Key: Five FG% bands · Blue = below NBA · Yellow = average · Orange/red = above")
+    print(f"Summary: {len(ctx['player']):,} FGA · "
+          f"{made / len(ctx['player']) * 100:.1f}% FG · {efg:.1f}% eFG")
+    if show_thin_gray:
+        print(f"Method: Color pools shots within 4.5 ft; gray = under {MIN_ATT} "
+              f"attempts in the exact cell or under {MIN_SMOOTH} "
+              f"{ctx['name']} attempts nearby")
+        print(f"Coverage: {len(p):,} of {len(ctx['player']):,} attempts drawn; "
+              f"{sparse} attempts in 1-2 shot cells shown gray and {off_map} "
+              "beyond the 30-ft court window omitted")
+    else:
+        print(f"Method: Color pools shots within 4.5 ft; gray = under "
+              f"{MIN_SMOOTH} {ctx['name']} attempts nearby")
+        shown = len(p) - sparse
+        print(f"Coverage: {shown:,} of {len(ctx['player']):,} attempts drawn; "
+              f"{sparse} in sub-{MIN_ATT}-attempt hexes and {off_map} beyond the "
+              "30-ft court window omitted")
+    print("Source: NBA.com/stats")
+
+
+def _hex_legend(ax, theme):
+    """One horizontal band: volume on the left, efficiency on the right."""
+    dy = HEX_LEGEND_DY
+    ax.text(260, 380 + dy, "VOLUME", ha="center", va="center",
+            fontsize=10, color=theme.accent, fontproperties=helvetica("bold"))
+    ax.text(218, 337 + dy, "LESS", ha="right", va="center", fontsize=9,
+            color=theme.muted, fontproperties=helvetica("bold"))
+    for x, radius in HEX_VOLUME_MARKS:
+        ax.add_patch(RegularPolygon((x, 337 + dy), numVertices=6, radius=radius,
+                                    orientation=0, facecolor=theme.ink,
+                                    edgecolor="none", linewidth=0.0, zorder=9))
+    ax.text(295, 337 + dy, "MORE", ha="left", va="center", fontsize=9,
+            color=theme.muted, fontproperties=helvetica("bold"))
+
+    xs = np.asarray(HEX_COLOR_CENTERS)
+    ax.text(xs.mean(), 380 + dy, "FG% VS. NBA AVG", ha="center", va="center",
+            fontsize=10, color=theme.accent, fontproperties=helvetica("bold"))
+    for x, color in zip(xs, HEX_COLORS):
+        ax.add_patch(RegularPolygon((x, 337 + dy), numVertices=6, radius=13,
+                                    orientation=0, facecolor=color,
+                                    edgecolor="none", linewidth=0.0, zorder=9))
+    ax.text(xs[0] - 18, 337 + dy, "BELOW", ha="right", va="center",
+            fontsize=9, color=theme.muted, fontproperties=helvetica("bold"))
+    ax.text(xs[-1] + 18, 337 + dy, "ABOVE", ha="left", va="center",
+            fontsize=9, color=theme.muted, fontproperties=helvetica("bold"))
 
 
 def _hexbin(x, y, c=None):
@@ -328,20 +515,35 @@ def _ring_court(ax, hx, hy, s, clip):
     base = hy + sm.BASELINE_Y * s
 
     ax.plot([hx - 250 * s, hx + 250 * s], [base, base], **line)
-    ax.add_patch(Rectangle((hx - 80 * s, base), 160 * s, 190 * s, facecolor="none",
+    ax.add_patch(Rectangle((hx - PAINT_HALF_WIDTH * s, base),
+                           2 * PAINT_HALF_WIDTH * s, 190 * s, facecolor="none",
                            edgecolor=COURT_INK, lw=2.0, zorder=6))
-    ax.add_patch(_Circle((hx, hy), 7.5 * s, facecolor="none", edgecolor=COURT_INK,
+    for ft in LANE_MARKS_FT:
+        y = base + ft * 10 * s
+        for side, direction in ((-PAINT_HALF_WIDTH, -1), (PAINT_HALF_WIDTH, 1)):
+            ax.plot([hx + side * s, hx + (side + direction * 8) * s], [y, y], **line)
+    hash_y = base + HASH_FROM_BASELINE_FT * 10 * s
+    for side, direction in ((-250, 1), (250, -1)):
+        ax.plot([hx + side * s, hx + (side + direction * 18) * s],
+                [hash_y, hash_y], **line)
+    ax.add_patch(_Circle((hx, hy), HOOP_RADIUS * s, facecolor="none", edgecolor=COURT_INK,
                          lw=2.0, zorder=7))
-    ax.plot([hx - 30 * s, hx + 30 * s], [hy - 7.5 * s] * 2, **line)
-    ax.add_patch(_Arc((hx, hy), 2 * 40 * s, 2 * 40 * s, theta1=0, theta2=180,
+    board_y = hy + BACKBOARD_Y * s
+    ax.plot([hx - BACKBOARD_HALF_WIDTH * s, hx + BACKBOARD_HALF_WIDTH * s],
+            [board_y] * 2, color=COURT_INK, lw=4.2, zorder=7,
+            solid_capstyle="butt")
+    ax.plot([hx, hx], [board_y, hy - HOOP_RADIUS * s], color=COURT_INK,
+            lw=1.6, zorder=7)
+    restricted_area_patch(ax, hx, hy, s, COURT_INK, 2.0, 6)
+    ft_y = hy + FT_LINE_Y * s
+    ax.add_patch(_Arc((hx, ft_y), 2 * FT_RADIUS * s, 2 * FT_RADIUS * s,
+                      theta1=0, theta2=180,
                       color=COURT_INK, lw=2.0, zorder=6))
-    ft_y = hy + 142.5 * s
-    ax.add_patch(_Arc((hx, ft_y), 120 * s, 120 * s, theta1=0, theta2=180,
-                      color=COURT_INK, lw=2.0, zorder=6))
-    ax.add_patch(_Arc((hx, ft_y), 120 * s, 120 * s, theta1=180, theta2=360,
+    ax.add_patch(_Arc((hx, ft_y), 2 * FT_RADIUS * s, 2 * FT_RADIUS * s,
+                      theta1=180, theta2=360,
                       color=COURT_INK, lw=2.0, linestyle=(0, (5, 4)), zorder=6))
-    corner_top = (ARC ** 2 - 220 ** 2) ** 0.5
-    for side in (-220, 220):
+    corner_top = (ARC ** 2 - CORNER_X ** 2) ** 0.5
+    for side in (-CORNER_X, CORNER_X):
         ax.plot([hx + side * s] * 2, [base, hy + corner_top * s], **line)
     a = ax.add_patch(_Arc((hx, hy), 2 * ARC * s, 2 * ARC * s, theta1=22.1,
                           theta2=157.9, color=COURT_INK, lw=2.0, zorder=6))
@@ -942,12 +1144,6 @@ LADDER_COURT_INK = "#FBF7F1"
 # value in the number column sits inside the hoop, and with the label
 # outlines removed an opaque rim circle drew straight through white digits.
 LADDER_COURT_ALPHA, LADDER_COURT_LW = 0.52, 1.3
-# Lane-space marks, in feet from the baseline along the paint edge. These are
-# the real NBA positions -- the block, then the three rebounding slots.
-LANE_MARKS_FT = (7.0, 8.0, 11.0, 14.0)
-HASH_FROM_BASELINE_FT = 28.0     # sideline hash, where the coaching box begins
-
-
 def _ladder_court(ax, hx, hy, s, clip):
     """Court markings, drawn light because every ring sits under them."""
     from matplotlib.patches import Arc as _Arc, Circle as _Circle
@@ -957,14 +1153,15 @@ def _ladder_court(ax, hx, hy, s, clip):
     base = hy + sm.BASELINE_Y * s
 
     ax.plot([hx - 250 * s, hx + 250 * s], [base, base], **line)
-    ax.add_patch(Rectangle((hx - 80 * s, base), 160 * s, 190 * s, facecolor="none",
+    ax.add_patch(Rectangle((hx - PAINT_HALF_WIDTH * s, base),
+                           2 * PAINT_HALF_WIDTH * s, 190 * s, facecolor="none",
                            edgecolor=ink, lw=LADDER_COURT_LW,
                            alpha=LADDER_COURT_ALPHA, zorder=6))
 
     # Lane marks: short ticks stepping out from each paint edge.
     for ft in LANE_MARKS_FT:
         y = base + ft * 10 * s
-        for side, direction in ((-80, -1), (80, 1)):
+        for side, direction in ((-PAINT_HALF_WIDTH, -1), (PAINT_HALF_WIDTH, 1)):
             ax.plot([hx + side * s, hx + (side + direction * 8) * s], [y, y], **line)
 
     # Sideline hash marks, which the reference keeps and which quietly tell the
@@ -976,31 +1173,32 @@ def _ladder_court(ax, hx, hy, s, clip):
     # Restricted area: 4 ft from the centre of the rim, the arc a defender
     # cannot draw a charge inside. It belongs on this chart more than most --
     # the rim ring's 1.51 points per shot is very largely taken inside it.
-    ax.add_patch(_Arc((hx, hy), 2 * 40 * s, 2 * 40 * s, theta1=0, theta2=180, **arcs))
-    for side in (-40, 40):
-        ax.plot([hx + side * s] * 2, [hy, hy - 7.5 * s], **line)
+    restricted_area_patch(ax, hx, hy, s, ink, LADDER_COURT_LW, 6,
+                          LADDER_COURT_ALPHA)
 
     # Backboard with depth: a thick plate over a soft drop shadow, then the rim
     # and its connector drawn on top.
-    bb_y = hy - 7.5 * s
+    bb_y = hy + BACKBOARD_Y * s
     for dy, lw, alpha, color in ((-2.4, 5.0, 0.30, "#150F0A"),
                                  (0.0, 4.2, 0.95, ink)):
-        ax.plot([hx - 30 * s, hx + 30 * s], [bb_y + dy] * 2, color=color, lw=lw,
+        ax.plot([hx - BACKBOARD_HALF_WIDTH * s, hx + BACKBOARD_HALF_WIDTH * s],
+                [bb_y + dy] * 2, color=color, lw=lw,
                 alpha=alpha, solid_capstyle="butt", zorder=7)
-    ax.plot([hx, hx], [bb_y, hy - 7.5 * s + 5.0], color=ink, lw=1.6, alpha=0.9,
+    ax.plot([hx, hx], [bb_y, hy - HOOP_RADIUS * s], color=ink, lw=1.6, alpha=0.9,
             zorder=7)
     # The rim goes lightest of all. It is the one marking that shares its exact
     # position with a number -- the innermost ring's value sits inside the hoop
     # -- so it has to locate the basket without competing with the digits.
-    ax.add_patch(_Circle((hx, hy), 7.5 * s, facecolor="none", edgecolor=ink,
+    ax.add_patch(_Circle((hx, hy), HOOP_RADIUS * s, facecolor="none", edgecolor=ink,
                          lw=1.5, alpha=0.42, zorder=4))
 
-    ft_y = hy + 142.5 * s
+    ft_y = hy + FT_LINE_Y * s
     for t1, t2, dash in ((0, 180, "solid"), (180, 360, (0, (5, 4)))):
-        ax.add_patch(_Arc((hx, ft_y), 120 * s, 120 * s, theta1=t1, theta2=t2,
+        ax.add_patch(_Arc((hx, ft_y), 2 * FT_RADIUS * s, 2 * FT_RADIUS * s,
+                          theta1=t1, theta2=t2,
                           linestyle=dash, **arcs))
-    corner_top = (ARC ** 2 - 220 ** 2) ** 0.5
-    for side in (-220, 220):
+    corner_top = (ARC ** 2 - CORNER_X ** 2) ** 0.5
+    for side in (-CORNER_X, CORNER_X):
         ax.plot([hx + side * s] * 2, [base, hy + corner_top * s], **line)
     a = ax.add_patch(_Arc((hx, hy), 2 * ARC * s, 2 * ARC * s, theta1=22.1,
                           theta2=157.9, **arcs))
@@ -1141,6 +1339,8 @@ def main():
     ap.add_argument("--project", default="",
                     help="visual project slug; renders into output/<slug>/ so scratch "
                          "mirrors docs/visuals/<slug>/")
+    ap.add_argument("--show-thin-gray", action="store_true",
+                    help="hex only: draw occupied 1-2 shot cells in gray")
     ap.add_argument("--output", default="")
     args = ap.parse_args()
 
@@ -1184,6 +1384,7 @@ def main():
         "metric": args.metric,
         "band": args.band,
         "blank": args.blank,
+        "show_thin_gray": args.show_thin_gray,
     }
     if args.chart == "ladder":
         ctx["min_fga"] = args.min_fga if args.min_fga is not None else (

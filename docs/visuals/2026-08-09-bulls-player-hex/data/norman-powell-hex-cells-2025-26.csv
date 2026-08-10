@@ -1,0 +1,390 @@
+nba_id,official_roster_name,hex_center_x,hex_center_y,exact_fga,nearby_subject_fga,nearby_subject_fg_pct,nearby_nba_fga,nearby_nba_fg_pct,subject_vs_nba_fg_pct_points,displayed,low_volume_gray,color_rated,size_cap_fga,radius_fraction,color_band
+1626181,Norman Powell,-250.0000,-50.0000,0,5,40.0000,1805,38.8920,1.1080,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-250.0000,-15.0000,0,28,32.1429,8066,39.0032,-6.8604,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-250.0000,20.0000,0,35,34.2857,10593,38.9314,-4.6457,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-250.0000,55.0000,1,22,45.4545,6233,38.3603,7.0942,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-250.0000,90.0000,0,12,58.3333,3298,36.8102,21.5231,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-250.0000,125.0000,0,15,53.3333,3094,36.5223,16.8110,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-250.0000,160.0000,0,11,27.2727,2008,37.0518,-9.7791,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-250.0000,195.0000,0,0,,329,29.7872,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-250.0000,230.0000,0,0,,71,25.3521,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-250.0000,265.0000,0,0,,11,9.0909,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-250.0000,300.0000,0,0,,2,0.0000,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-222.2222,-50.0000,0,7,28.5714,2355,39.3206,-10.7492,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-222.2222,-15.0000,6,31,32.2581,8677,39.1495,-6.8914,True,False,True,51.8500,0.3402,below
+1626181,Norman Powell,-222.2222,20.0000,12,39,33.3333,11294,38.8348,-5.5014,True,False,True,51.8500,0.4811,below
+1626181,Norman Powell,-222.2222,55.0000,1,26,42.3077,7123,38.5231,3.7846,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-222.2222,90.0000,3,20,45.0000,4379,36.5609,8.4391,True,False,True,51.8500,0.2500,well above
+1626181,Norman Powell,-222.2222,125.0000,4,38,44.7368,5133,37.0349,7.7020,True,False,True,51.8500,0.2778,well above
+1626181,Norman Powell,-222.2222,160.0000,2,46,39.1304,6441,36.4229,2.7075,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-222.2222,195.0000,0,34,41.1765,4614,35.8257,5.3507,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-222.2222,230.0000,0,5,40.0000,839,31.5852,8.4148,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-222.2222,265.0000,0,0,,138,21.0145,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-222.2222,300.0000,0,0,,19,5.2632,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-194.4444,-50.0000,0,1,0.0000,476,39.0756,-39.0756,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-194.4444,-15.0000,0,20,25.0000,5569,38.8759,-13.8759,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-194.4444,20.0000,0,29,41.3793,7890,39.0368,2.3426,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-194.4444,55.0000,1,18,33.3333,3841,38.5577,-5.2243,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-194.4444,90.0000,2,22,50.0000,2921,37.3845,12.6155,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-194.4444,125.0000,5,43,44.1860,5455,37.5985,6.5875,True,False,True,51.8500,0.3105,above
+1626181,Norman Powell,-194.4444,160.0000,12,64,42.1875,8903,36.2237,5.9638,True,False,True,51.8500,0.4811,above
+1626181,Norman Powell,-194.4444,195.0000,4,67,41.7910,10421,35.5244,6.2666,True,False,True,51.8500,0.2778,above
+1626181,Norman Powell,-194.4444,230.0000,0,24,41.6667,5120,33.8086,7.8581,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-194.4444,265.0000,0,2,50.0000,749,31.1081,18.8919,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-194.4444,300.0000,0,0,,89,23.5955,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-166.6667,-50.0000,0,0,,87,44.8276,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-166.6667,-15.0000,0,6,50.0000,862,42.9234,7.0766,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-166.6667,20.0000,1,14,35.7143,1513,40.7799,-5.0656,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-166.6667,55.0000,2,10,20.0000,1217,38.9482,-18.9482,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-166.6667,90.0000,1,12,41.6667,991,37.3360,4.3306,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-166.6667,125.0000,0,19,57.8947,2129,36.7778,21.1169,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-166.6667,160.0000,2,67,44.7761,8654,36.4687,8.3074,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-166.6667,195.0000,11,80,37.5000,12853,35.3458,2.1542,True,False,True,51.8500,0.4606,approximately average
+1626181,Norman Powell,-166.6667,230.0000,2,62,45.1613,11473,34.8122,10.3491,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-166.6667,265.0000,0,16,43.7500,2641,31.9955,11.7545,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-166.6667,300.0000,0,3,33.3333,271,29.8893,3.4440,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-138.8889,-50.0000,0,0,,154,38.9610,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-138.8889,-15.0000,0,8,50.0000,1354,42.7622,7.2378,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-138.8889,20.0000,0,20,30.0000,2434,42.3993,-12.3993,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-138.8889,55.0000,2,16,43.7500,2173,40.5890,3.1610,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-138.8889,90.0000,0,13,23.0769,1852,37.3650,-14.2881,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-138.8889,125.0000,2,10,50.0000,1811,38.1005,11.8995,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-138.8889,160.0000,1,27,37.0370,4115,37.2539,-0.2169,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-138.8889,195.0000,5,68,35.2941,12181,35.2024,0.0918,True,False,True,51.8500,0.3105,approximately average
+1626181,Norman Powell,-138.8889,230.0000,10,69,34.7826,13277,35.0079,-0.2253,True,False,True,51.8500,0.4392,approximately average
+1626181,Norman Powell,-138.8889,265.0000,3,36,38.8889,6316,33.5814,5.3075,True,False,True,51.8500,0.2500,above
+1626181,Norman Powell,-138.8889,300.0000,0,5,40.0000,605,28.7603,11.2397,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-111.1111,-50.0000,0,1,100.0000,166,39.7590,60.2410,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-111.1111,-15.0000,1,11,45.4545,1658,43.2449,2.2097,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-111.1111,20.0000,4,24,37.5000,3355,42.3845,-4.8845,True,False,True,51.8500,0.2778,below
+1626181,Norman Powell,-111.1111,55.0000,5,23,34.7826,3469,41.2799,-6.4973,True,False,True,51.8500,0.3105,below
+1626181,Norman Powell,-111.1111,90.0000,2,17,47.0588,3000,38.9333,8.1255,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-111.1111,125.0000,0,13,53.8462,3041,39.8553,13.9908,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-111.1111,160.0000,2,6,33.3333,2335,39.8715,-6.5382,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-111.1111,195.0000,0,39,30.7692,7969,36.2028,-5.4336,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-111.1111,230.0000,8,59,38.9831,12017,34.7924,4.1907,True,False,True,51.8500,0.3928,above
+1626181,Norman Powell,-111.1111,265.0000,0,46,43.4783,8695,34.2381,9.2402,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-111.1111,300.0000,0,3,0.0000,1100,31.7273,-31.7273,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-83.3333,-50.0000,0,0,,114,38.5965,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-83.3333,-15.0000,0,10,50.0000,2174,42.1343,7.8657,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-83.3333,20.0000,2,35,42.8571,5906,42.1436,0.7136,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-83.3333,55.0000,2,38,42.1053,6019,42.0336,0.0717,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-83.3333,90.0000,0,27,55.5556,5207,42.8846,12.6710,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-83.3333,125.0000,2,17,47.0588,4605,43.5179,3.5409,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-83.3333,160.0000,1,9,55.5556,3131,41.9355,13.6201,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-83.3333,195.0000,0,11,27.2727,3418,37.7414,-10.4686,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-83.3333,230.0000,2,38,36.8421,9378,35.5406,1.3015,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-83.3333,265.0000,2,35,34.2857,8570,34.8308,-0.5451,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-83.3333,300.0000,0,7,28.5714,1736,32.4309,-3.8594,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-55.5556,-50.0000,0,0,,117,40.1709,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-55.5556,-15.0000,0,45,55.5556,8598,53.2682,2.2874,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-55.5556,20.0000,7,106,52.8302,19884,51.1617,1.6685,True,False,True,51.8500,0.3674,approximately average
+1626181,Norman Powell,-55.5556,55.0000,5,66,43.9394,13218,42.9793,0.9601,True,False,True,51.8500,0.3105,approximately average
+1626181,Norman Powell,-55.5556,90.0000,2,38,44.7368,8554,44.5055,0.2313,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-55.5556,125.0000,3,20,55.0000,6098,45.1132,9.8868,True,False,True,51.8500,0.2500,well above
+1626181,Norman Powell,-55.5556,160.0000,1,11,45.4545,3817,43.3063,2.1483,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-55.5556,195.0000,0,6,16.6667,1911,39.8744,-23.2077,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-55.5556,230.0000,0,30,36.6667,7253,35.5163,1.1503,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-55.5556,265.0000,1,36,44.4444,8419,35.4436,9.0008,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-55.5556,300.0000,0,8,37.5000,2551,32.6147,4.8853,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-27.7778,-50.0000,0,2,50.0000,469,65.2452,-15.2452,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-27.7778,-15.0000,1,155,66.4516,41960,69.1873,-2.7357,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-27.7778,20.0000,23,237,60.7595,62633,64.5219,-3.7624,True,False,True,51.8500,0.6660,below
+1626181,Norman Powell,-27.7778,55.0000,7,143,53.8462,31616,50.7370,3.1092,True,False,True,51.8500,0.3674,above
+1626181,Norman Powell,-27.7778,90.0000,1,55,56.3636,14975,45.9699,10.3937,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-27.7778,125.0000,0,32,53.1250,9093,46.4423,6.6827,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-27.7778,160.0000,1,10,30.0000,4868,45.0904,-15.0904,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-27.7778,195.0000,0,6,0.0000,2147,40.6614,-40.6614,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-27.7778,230.0000,2,27,25.9259,6876,36.8383,-10.9124,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-27.7778,265.0000,4,45,35.5556,9216,35.9158,-0.3602,True,False,True,51.8500,0.2778,approximately average
+1626181,Norman Powell,-27.7778,300.0000,0,21,52.3810,3782,34.3469,18.0340,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,0.0000,-50.0000,0,6,100.0000,1232,80.3571,19.6429,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,0.0000,-15.0000,5,198,64.6465,55334,69.0245,-4.3780,True,False,True,51.8500,0.3105,below
+1626181,Norman Powell,0.0000,20.0000,51,283,59.7173,75539,63.2468,-3.5295,True,False,True,51.8500,0.9918,below
+1626181,Norman Powell,0.0000,55.0000,11,183,54.6448,45850,55.4133,-0.7685,True,False,True,51.8500,0.4606,approximately average
+1626181,Norman Powell,0.0000,90.0000,5,69,55.0725,17751,46.1157,8.9568,True,False,True,51.8500,0.3105,well above
+1626181,Norman Powell,0.0000,125.0000,6,32,65.6250,10194,46.8805,18.7445,True,False,True,51.8500,0.3402,well above
+1626181,Norman Powell,0.0000,160.0000,0,17,52.9412,5213,45.8277,7.1134,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,0.0000,195.0000,1,4,0.0000,2442,42.7109,-42.7109,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,0.0000,230.0000,0,36,27.7778,7078,36.6488,-8.8710,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,0.0000,265.0000,5,51,41.1765,9424,36.0357,5.1408,True,False,True,51.8500,0.3105,above
+1626181,Norman Powell,0.0000,300.0000,0,25,52.0000,4396,35.2821,16.7179,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,27.7778,-50.0000,0,0,,472,67.3729,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,27.7778,-15.0000,0,139,61.1511,44399,69.2786,-8.1275,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,27.7778,20.0000,24,221,59.2760,65182,64.1650,-4.8889,True,False,True,51.8500,0.6803,below
+1626181,Norman Powell,27.7778,55.0000,10,123,53.6585,34544,51.3924,2.2661,True,False,True,51.8500,0.4392,approximately average
+1626181,Norman Powell,27.7778,90.0000,4,60,58.3333,15770,45.4280,12.9053,True,False,True,51.8500,0.2778,well above
+1626181,Norman Powell,27.7778,125.0000,1,31,70.9677,9321,45.9393,25.0285,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,27.7778,160.0000,0,10,40.0000,4848,45.2558,-5.2558,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,27.7778,195.0000,0,5,20.0000,2112,42.1875,-22.1875,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,27.7778,230.0000,0,35,28.5714,6843,35.9930,-7.4216,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,27.7778,265.0000,8,48,37.5000,9189,35.1725,2.3275,True,False,True,51.8500,0.3928,approximately average
+1626181,Norman Powell,27.7778,300.0000,0,22,54.5455,3647,34.5489,19.9965,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,55.5556,-50.0000,0,0,,98,42.8571,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,55.5556,-15.0000,0,38,47.3684,9738,53.9844,-6.6160,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,55.5556,20.0000,2,79,49.3671,22940,52.1927,-2.8256,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,55.5556,55.0000,3,53,50.9434,15370,44.0403,6.9031,True,False,True,51.8500,0.2500,above
+1626181,Norman Powell,55.5556,90.0000,2,30,50.0000,9354,43.8957,6.1043,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,55.5556,125.0000,2,16,62.5000,6316,44.8068,17.6932,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,55.5556,160.0000,1,8,50.0000,3814,43.2617,6.7383,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,55.5556,195.0000,1,6,66.6667,1745,40.5158,26.1509,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,55.5556,230.0000,3,35,31.4286,7385,34.7867,-3.3582,True,False,True,51.8500,0.2500,below
+1626181,Norman Powell,55.5556,265.0000,4,40,35.0000,8484,34.6535,0.3465,True,False,True,51.8500,0.2778,approximately average
+1626181,Norman Powell,55.5556,300.0000,0,10,40.0000,2482,33.1990,6.8010,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,83.3333,-50.0000,0,0,,141,43.2624,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,83.3333,-15.0000,0,6,83.3333,2335,42.2698,41.0635,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,83.3333,20.0000,1,18,61.1111,6819,42.4402,18.6709,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,83.3333,55.0000,1,21,42.8571,6970,41.9943,0.8629,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,83.3333,90.0000,1,13,53.8462,5672,44.2525,9.5937,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,83.3333,125.0000,1,9,44.4444,4782,43.2037,1.2408,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,83.3333,160.0000,0,5,60.0000,3118,40.5067,19.4933,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,83.3333,195.0000,0,8,50.0000,3050,35.4098,14.5902,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,83.3333,230.0000,2,47,31.9149,9700,34.0309,-2.1160,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,83.3333,265.0000,2,39,33.3333,8850,33.9096,-0.5763,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,83.3333,300.0000,0,4,25.0000,1706,31.2427,-6.2427,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,111.1111,-50.0000,0,0,,187,48.1283,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,111.1111,-15.0000,0,4,25.0000,1696,44.0448,-19.0448,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,111.1111,20.0000,2,10,40.0000,3477,42.8243,-2.8243,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,111.1111,55.0000,2,9,66.6667,3622,43.0701,23.5965,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,111.1111,90.0000,2,8,37.5000,3222,43.4823,-5.9823,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,111.1111,125.0000,0,4,25.0000,3169,42.7895,-17.7895,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,111.1111,160.0000,0,3,66.6667,2322,39.9655,26.7011,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,111.1111,195.0000,0,31,45.1613,7433,34.9388,10.2225,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,111.1111,230.0000,12,53,35.8491,11692,34.1858,1.6633,True,False,True,51.8500,0.4811,approximately average
+1626181,Norman Powell,111.1111,265.0000,1,44,36.3636,8944,33.8104,2.5533,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,111.1111,300.0000,0,2,0.0000,1008,32.6389,-32.6389,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,138.8889,-50.0000,0,0,,177,44.0678,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,138.8889,-15.0000,0,3,0.0000,1329,44.0933,-44.0933,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,138.8889,20.0000,1,7,42.8571,2273,43.6868,-0.8296,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,138.8889,55.0000,0,6,50.0000,2159,44.3261,5.6739,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,138.8889,90.0000,1,4,50.0000,1939,42.7024,7.2976,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,138.8889,125.0000,0,2,0.0000,1870,42.6203,-42.6203,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,138.8889,160.0000,0,12,50.0000,3311,37.2999,12.7001,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,138.8889,195.0000,2,45,37.7778,10716,34.5185,3.2593,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,138.8889,230.0000,5,57,40.3509,12256,34.3179,6.0330,True,False,True,51.8500,0.3105,above
+1626181,Norman Powell,138.8889,265.0000,2,31,32.2581,6251,34.0586,-1.8005,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,138.8889,300.0000,0,4,0.0000,532,32.7068,-32.7068,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,166.6667,-50.0000,0,0,,103,33.0097,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,166.6667,-15.0000,0,3,0.0000,811,40.5672,-40.5672,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,166.6667,20.0000,0,3,0.0000,1393,42.0675,-42.0675,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,166.6667,55.0000,0,4,25.0000,1133,41.2180,-16.2180,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,166.6667,90.0000,0,3,0.0000,941,42.8268,-42.8268,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,166.6667,125.0000,0,10,30.0000,1808,40.9845,-10.9845,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,166.6667,160.0000,1,34,35.2941,6884,35.8948,-0.6007,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,166.6667,195.0000,11,52,40.3846,10582,35.2296,5.1550,True,False,True,51.8500,0.4606,above
+1626181,Norman Powell,166.6667,230.0000,2,49,38.7755,10044,34.5480,4.2275,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,166.6667,265.0000,0,11,27.2727,2149,33.8297,-6.5570,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,166.6667,300.0000,0,3,0.0000,242,31.8182,-31.8182,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,194.4444,-50.0000,0,0,,233,36.9099,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,194.4444,-15.0000,0,7,28.5714,4021,38.3984,-9.8270,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,194.4444,20.0000,0,13,30.7692,7393,38.6176,-7.8484,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,194.4444,55.0000,0,13,38.4615,4550,38.8132,-0.3516,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,194.4444,90.0000,1,13,38.4615,3284,36.9671,1.4944,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,194.4444,125.0000,0,23,34.7826,4709,36.1011,-1.3185,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,194.4444,160.0000,6,33,33.3333,7122,35.8326,-2.4993,True,False,True,51.8500,0.3402,approximately average
+1626181,Norman Powell,194.4444,195.0000,4,42,40.4762,8268,35.2322,5.2440,True,False,True,51.8500,0.2778,above
+1626181,Norman Powell,194.4444,230.0000,1,19,42.1053,4244,34.5193,7.5859,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,194.4444,265.0000,0,3,66.6667,548,31.7518,34.9148,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,194.4444,300.0000,0,1,0.0000,89,22.4719,-22.4719,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,222.2222,-50.0000,0,3,33.3333,1234,37.8444,-4.5111,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,222.2222,-15.0000,3,12,16.6667,6886,38.7598,-22.0931,True,False,False,51.8500,0.2500,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,222.2222,20.0000,3,22,27.2727,10223,38.7949,-11.5221,True,False,True,51.8500,0.2500,well below
+1626181,Norman Powell,222.2222,55.0000,2,19,36.8421,7994,38.2412,-1.3991,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,222.2222,90.0000,0,20,40.0000,4988,37.3296,2.6704,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,222.2222,125.0000,7,18,44.4444,4637,35.8421,8.6023,True,False,False,51.8500,0.3674,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,222.2222,160.0000,0,23,26.0870,5250,35.7905,-9.7035,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,222.2222,195.0000,0,18,22.2222,3472,35.5127,-13.2905,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,222.2222,230.0000,0,2,100.0000,544,33.6397,66.3603,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,222.2222,265.0000,0,0,,93,19.3548,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,222.2222,300.0000,0,0,,26,15.3846,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,250.0000,-50.0000,0,3,33.3333,896,38.5045,-5.1711,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,250.0000,-15.0000,0,11,18.1818,6290,38.7440,-20.5622,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,250.0000,20.0000,2,21,28.5714,9695,38.6488,-10.0774,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,250.0000,55.0000,1,18,33.3333,7108,38.2667,-4.9334,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,250.0000,90.0000,0,17,41.1765,3963,37.4464,3.7301,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,250.0000,125.0000,0,13,46.1538,3014,34.8042,11.3496,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,250.0000,160.0000,0,4,25.0000,1619,35.3305,-10.3305,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,250.0000,195.0000,0,0,,203,32.5123,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,250.0000,230.0000,0,0,,41,17.0732,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,250.0000,265.0000,0,0,,7,28.5714,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,250.0000,300.0000,0,0,,3,0.0000,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-236.1111,-32.5000,1,17,23.5294,5868,39.1956,-15.6662,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-236.1111,2.5000,9,36,33.3333,10448,39.2898,-5.9565,True,False,True,51.8500,0.4166,below
+1626181,Norman Powell,-236.1111,37.5000,6,32,34.3750,9971,38.5418,-4.1668,True,False,True,51.8500,0.3402,below
+1626181,Norman Powell,-236.1111,72.5000,2,17,52.9412,5057,37.9474,14.9938,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-236.1111,107.5000,3,18,55.5556,3966,36.7625,18.7931,True,False,False,51.8500,0.2500,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-236.1111,142.5000,0,31,38.7097,4718,36.6681,2.0416,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-236.1111,177.5000,0,24,20.8333,3236,36.6502,-15.8169,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-236.1111,212.5000,0,4,25.0000,634,31.8612,-6.8612,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-236.1111,247.5000,0,0,,111,25.2252,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-236.1111,282.5000,0,0,,18,5.5556,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-208.3333,-32.5000,0,18,22.2222,4650,39.2258,-17.0036,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-208.3333,2.5000,1,34,32.3529,10167,39.1659,-6.8130,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-208.3333,37.5000,0,30,46.6667,8971,38.6133,8.0534,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-208.3333,72.5000,0,22,45.4545,4312,37.9870,7.4675,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-208.3333,107.5000,1,31,48.3871,4536,36.9929,11.3942,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-208.3333,142.5000,7,51,47.0588,6815,36.8305,10.2283,True,False,True,51.8500,0.3674,well above
+1626181,Norman Powell,-208.3333,177.5000,6,60,41.6667,8466,35.9792,5.6875,True,False,True,51.8500,0.3402,above
+1626181,Norman Powell,-208.3333,212.5000,0,35,48.5714,5268,34.2445,14.3269,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-208.3333,247.5000,0,4,75.0000,872,32.4541,42.5459,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-208.3333,282.5000,0,0,,135,25.9259,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-180.5556,-32.5000,0,4,50.0000,440,40.4545,9.5455,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-180.5556,2.5000,2,11,36.3636,1716,39.1608,-2.7972,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-180.5556,37.5000,0,12,41.6667,1415,40.6360,1.0306,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-180.5556,72.5000,0,13,38.4615,921,37.8936,0.5679,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-180.5556,107.5000,2,21,52.3810,2118,36.0246,16.3564,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-180.5556,142.5000,1,60,43.3333,6911,36.5649,6.7684,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-180.5556,177.5000,15,79,40.5063,11114,35.9547,4.5517,True,False,True,51.8500,0.5379,above
+1626181,Norman Powell,-180.5556,212.5000,7,71,38.0282,11665,34.9679,3.0603,True,False,True,51.8500,0.3674,above
+1626181,Norman Powell,-180.5556,247.5000,1,25,40.0000,4055,33.6868,6.3132,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-180.5556,282.5000,0,5,40.0000,515,32.4272,7.5728,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-152.7778,-32.5000,0,4,75.0000,519,40.2697,34.7303,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-152.7778,2.5000,3,13,38.4615,1626,42.2509,-3.7894,True,False,False,51.8500,0.2500,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-152.7778,37.5000,1,16,31.2500,1913,41.0873,-9.8373,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-152.7778,72.5000,0,13,23.0769,1413,37.7919,-14.7150,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-152.7778,107.5000,0,12,33.3333,1366,35.9444,-2.6110,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-152.7778,142.5000,0,22,54.5455,2724,36.8576,17.6879,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-152.7778,177.5000,3,63,42.8571,10611,35.7553,7.1018,True,False,True,51.8500,0.2500,above
+1626181,Norman Powell,-152.7778,212.5000,13,76,38.1579,13684,34.9459,3.2120,True,False,True,51.8500,0.5007,above
+1626181,Norman Powell,-152.7778,247.5000,2,50,36.0000,9669,34.5537,1.4463,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-152.7778,282.5000,1,11,54.5455,1407,31.6986,22.8468,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-125.0000,-32.5000,0,4,25.0000,731,41.7237,-16.7237,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-125.0000,2.5000,1,15,40.0000,2330,42.8326,-2.8326,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-125.0000,37.5000,2,25,36.0000,3117,42.2842,-6.2842,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-125.0000,72.5000,1,18,33.3333,2489,38.9715,-5.6381,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-125.0000,107.5000,1,8,37.5000,2402,38.8843,-1.3843,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-125.0000,142.5000,0,10,50.0000,2265,39.3819,10.6181,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-125.0000,177.5000,1,34,29.4118,5963,36.5085,-7.0967,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-125.0000,212.5000,5,62,32.2581,12686,35.0623,-2.8042,True,False,True,51.8500,0.3105,below
+1626181,Norman Powell,-125.0000,247.5000,6,60,35.0000,11484,34.6047,0.3953,True,False,True,51.8500,0.3402,approximately average
+1626181,Norman Powell,-125.0000,282.5000,1,16,50.0000,3090,33.2039,16.7961,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-97.2222,-32.5000,0,3,66.6667,706,42.0680,24.5987,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-97.2222,2.5000,1,19,31.5789,3142,42.4889,-10.9099,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-97.2222,37.5000,2,30,36.6667,4744,42.3272,-5.6605,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-97.2222,72.5000,0,23,39.1304,4149,41.5763,-2.4458,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-97.2222,107.5000,1,13,46.1538,3909,41.1870,4.9668,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-97.2222,142.5000,0,12,50.0000,3432,41.2005,8.7995,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-97.2222,177.5000,1,8,37.5000,2355,39.4480,-1.9480,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-97.2222,212.5000,0,42,38.0952,9261,35.1042,2.9910,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-97.2222,247.5000,11,47,42.5532,10652,34.8479,7.7053,True,False,True,51.8500,0.4606,well above
+1626181,Norman Powell,-97.2222,282.5000,0,21,38.0952,4899,33.1904,4.9048,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-69.4444,-32.5000,0,2,0.0000,850,43.6471,-43.6471,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-69.4444,2.5000,1,41,46.3415,7940,46.4861,-0.1447,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-69.4444,37.5000,4,65,49.2308,10461,42.6728,6.5580,True,False,True,51.8500,0.2778,above
+1626181,Norman Powell,-69.4444,72.5000,3,43,44.1860,7528,42.9596,1.2264,True,False,True,51.8500,0.2500,approximately average
+1626181,Norman Powell,-69.4444,107.5000,2,21,57.1429,6000,44.7167,12.4262,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-69.4444,142.5000,1,15,53.3333,4577,44.3085,9.0248,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-69.4444,177.5000,0,6,33.3333,2462,41.1454,-7.8121,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-69.4444,212.5000,1,20,35.0000,5544,36.7244,-1.7244,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-69.4444,247.5000,7,39,35.8974,9115,35.3264,0.5711,True,False,True,51.8500,0.3674,approximately average
+1626181,Norman Powell,-69.4444,282.5000,2,26,42.3077,5978,34.7942,7.5134,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-41.6667,-32.5000,0,31,64.5161,4791,61.4068,3.1093,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-41.6667,2.5000,8,148,63.5135,39856,64.3466,-0.8331,True,False,True,51.8500,0.3928,approximately average
+1626181,Norman Powell,-41.6667,37.5000,12,155,56.1290,31814,54.2057,1.9233,True,False,True,51.8500,0.4811,approximately average
+1626181,Norman Powell,-41.6667,72.5000,4,61,45.9016,14774,44.7069,1.1947,True,False,True,51.8500,0.2778,approximately average
+1626181,Norman Powell,-41.6667,107.5000,3,38,63.1579,9187,45.6188,17.5391,True,False,True,51.8500,0.2500,well above
+1626181,Norman Powell,-41.6667,142.5000,1,15,46.6667,6069,45.6253,1.0414,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-41.6667,177.5000,0,7,42.8571,2889,41.7099,1.1472,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-41.6667,212.5000,0,14,21.4286,3436,38.3877,-16.9591,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-41.6667,247.5000,5,36,38.8889,8676,35.8806,3.0083,True,False,True,51.8500,0.3105,above
+1626181,Norman Powell,-41.6667,282.5000,4,29,37.9310,7039,35.4454,2.4857,True,False,True,51.8500,0.2778,approximately average
+1626181,Norman Powell,-13.8889,-32.5000,0,82,67.0732,25735,72.9435,-5.8703,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-13.8889,2.5000,52,245,62.4490,65230,65.7581,-3.3091,True,False,True,51.8500,1.0000,below
+1626181,Norman Powell,-13.8889,37.5000,19,274,60.2190,71784,62.3078,-2.0888,True,False,True,51.8500,0.6053,approximately average
+1626181,Norman Powell,-13.8889,72.5000,8,98,51.0204,23040,47.0269,3.9935,True,False,True,51.8500,0.3928,above
+1626181,Norman Powell,-13.8889,107.5000,3,45,62.2222,12801,46.4807,15.7415,True,False,True,51.8500,0.2500,well above
+1626181,Norman Powell,-13.8889,142.5000,3,24,58.3333,7405,46.3065,12.0268,True,False,True,51.8500,0.2500,well above
+1626181,Norman Powell,-13.8889,177.5000,1,9,22.2222,3526,43.5337,-21.3115,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-13.8889,212.5000,0,16,25.0000,3171,38.3475,-13.3475,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,-13.8889,247.5000,8,44,36.3636,8984,36.0307,0.3329,True,False,True,51.8500,0.3928,approximately average
+1626181,Norman Powell,-13.8889,282.5000,4,41,39.0244,8062,35.5495,3.4749,True,False,True,51.8500,0.2778,above
+1626181,Norman Powell,13.8889,-32.5000,0,78,65.3846,26597,73.2752,-7.8906,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,13.8889,2.5000,52,236,62.7119,66077,65.6855,-2.9736,True,False,True,51.8500,1.0000,below
+1626181,Norman Powell,13.8889,37.5000,14,261,60.1533,73317,62.0716,-1.9183,True,False,True,51.8500,0.5196,approximately average
+1626181,Norman Powell,13.8889,72.5000,9,91,54.9451,23782,46.6992,8.2459,True,False,True,51.8500,0.4166,well above
+1626181,Norman Powell,13.8889,107.5000,3,48,64.5833,13169,46.3513,18.2321,True,False,True,51.8500,0.2500,well above
+1626181,Norman Powell,13.8889,142.5000,3,26,61.5385,7460,46.4745,15.0639,True,False,True,51.8500,0.2500,well above
+1626181,Norman Powell,13.8889,177.5000,0,9,22.2222,3489,44.0527,-21.8305,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,13.8889,212.5000,1,14,14.2857,3190,38.3386,-24.0528,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,13.8889,247.5000,3,49,42.8571,8959,36.0196,6.8375,True,False,True,51.8500,0.2500,above
+1626181,Norman Powell,13.8889,282.5000,6,43,41.8605,8041,35.5180,6.3425,True,False,True,51.8500,0.3402,above
+1626181,Norman Powell,41.6667,-32.5000,0,22,50.0000,5021,61.6610,-11.6610,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,41.6667,2.5000,3,126,60.3175,43815,64.7130,-4.3955,True,False,True,51.8500,0.2500,below
+1626181,Norman Powell,41.6667,37.5000,7,132,52.2727,35921,55.0207,-2.7480,True,False,True,51.8500,0.3674,below
+1626181,Norman Powell,41.6667,72.5000,2,60,51.6667,16397,44.4167,7.2500,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,41.6667,107.5000,3,37,67.5676,9744,45.6589,21.9087,True,False,True,51.8500,0.2500,well above
+1626181,Norman Powell,41.6667,142.5000,0,16,56.2500,6178,45.0308,11.2192,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,41.6667,177.5000,0,5,20.0000,2826,43.4183,-23.4183,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,41.6667,212.5000,0,14,28.5714,3360,36.7560,-8.1845,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,41.6667,247.5000,5,39,33.3333,8711,35.2543,-1.9209,True,False,True,51.8500,0.3105,approximately average
+1626181,Norman Powell,41.6667,282.5000,2,34,38.2353,7041,34.6968,3.5385,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,69.4444,-32.5000,0,3,66.6667,956,43.0962,23.5704,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,69.4444,2.5000,2,28,50.0000,9187,46.9468,3.0532,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,69.4444,37.5000,1,37,45.9459,12283,43.5317,2.4142,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,69.4444,72.5000,0,25,44.0000,8624,42.6832,1.3168,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,69.4444,107.5000,1,14,57.1429,6508,44.5144,12.6284,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,69.4444,142.5000,0,8,62.5000,4615,43.6403,18.8597,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,69.4444,177.5000,0,3,66.6667,2356,40.0255,26.6412,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,69.4444,212.5000,0,18,38.8889,5586,34.5686,4.3203,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,69.4444,247.5000,5,39,33.3333,9261,34.3375,-1.0042,True,False,True,51.8500,0.3105,approximately average
+1626181,Norman Powell,69.4444,282.5000,0,27,33.3333,6211,33.9237,-0.5904,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,97.2222,-32.5000,0,1,100.0000,750,44.2667,55.7333,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,97.2222,2.5000,0,11,54.5455,3349,43.2368,11.3087,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,97.2222,37.5000,0,14,57.1429,5229,42.3025,14.8403,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,97.2222,72.5000,0,9,44.4444,4520,44.0708,0.3736,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,97.2222,107.5000,0,9,44.4444,4263,44.1004,0.3440,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,97.2222,142.5000,1,4,50.0000,3511,42.2102,7.7898,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,97.2222,177.5000,1,4,75.0000,2164,37.8466,37.1534,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,97.2222,212.5000,0,43,39.5349,9255,34.5651,4.9698,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,97.2222,247.5000,11,51,33.3333,10847,34.0647,-0.7314,True,False,True,51.8500,0.4606,approximately average
+1626181,Norman Powell,97.2222,282.5000,0,25,24.0000,5190,33.0443,-9.0443,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,125.0000,-32.5000,0,2,0.0000,739,44.9256,-44.9256,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,125.0000,2.5000,2,6,33.3333,2298,43.7772,-10.4439,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,125.0000,37.5000,1,9,44.4444,3075,43.2195,1.2249,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,125.0000,72.5000,0,7,57.1429,2618,42.7044,14.4385,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,125.0000,107.5000,0,5,40.0000,2572,43.6236,-3.6236,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,125.0000,142.5000,0,3,33.3333,2301,41.6775,-8.3442,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,125.0000,177.5000,0,20,50.0000,5121,35.9891,14.0109,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,125.0000,212.5000,4,51,43.1373,11804,34.3358,8.8014,True,False,True,51.8500,0.2778,well above
+1626181,Norman Powell,125.0000,247.5000,6,52,32.6923,11287,34.0303,-1.3380,True,False,True,51.8500,0.3402,approximately average
+1626181,Norman Powell,125.0000,282.5000,0,17,29.4118,2862,32.7044,-3.2926,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,152.7778,-32.5000,0,2,0.0000,535,42.2430,-42.2430,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,152.7778,2.5000,0,3,0.0000,1509,43.6713,-43.6713,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,152.7778,37.5000,0,5,40.0000,1789,43.4880,-3.4880,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,152.7778,72.5000,0,3,33.3333,1385,42.0939,-8.7605,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,152.7778,107.5000,0,2,0.0000,1380,43.1159,-43.1159,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,152.7778,142.5000,0,9,55.5556,2311,37.9922,17.5633,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,152.7778,177.5000,0,45,40.0000,8750,35.3486,4.6514,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,152.7778,212.5000,8,58,43.1034,12007,34.6714,8.4320,True,False,True,51.8500,0.3928,well above
+1626181,Norman Powell,152.7778,247.5000,3,46,39.1304,9088,34.1439,4.9865,True,False,True,51.8500,0.2500,above
+1626181,Norman Powell,152.7778,282.5000,1,9,22.2222,1174,33.3901,-11.1679,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,180.5556,-32.5000,0,0,,326,35.2761,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,180.5556,2.5000,0,3,0.0000,1462,38.5089,-38.5089,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,180.5556,37.5000,0,2,50.0000,1381,38.2332,11.7668,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,180.5556,72.5000,0,2,0.0000,929,42.0883,-42.0883,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,180.5556,107.5000,0,11,27.2727,2004,36.9261,-9.6534,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,180.5556,142.5000,0,24,37.5000,5563,36.1136,1.3864,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,180.5556,177.5000,10,44,40.9091,8799,35.5950,5.3141,True,False,True,51.8500,0.4392,above
+1626181,Norman Powell,180.5556,212.5000,4,45,42.2222,9536,34.8993,7.3229,True,False,True,51.8500,0.2778,above
+1626181,Norman Powell,180.5556,247.5000,0,17,35.2941,3314,33.3736,1.9206,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,180.5556,282.5000,0,2,0.0000,391,31.2020,-31.2020,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,208.3333,-32.5000,0,6,16.6667,3046,38.6408,-21.9742,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,208.3333,2.5000,0,15,20.0000,8522,38.3595,-18.3595,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,208.3333,37.5000,1,22,31.8182,9286,38.8003,-6.9822,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,208.3333,72.5000,1,18,50.0000,5224,38.1891,11.8109,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,208.3333,107.5000,0,20,40.0000,4557,35.7472,4.2528,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,208.3333,142.5000,4,29,34.4828,5632,35.6357,-1.1529,True,False,True,51.8500,0.2778,approximately average
+1626181,Norman Powell,208.3333,177.5000,1,34,35.2941,6658,35.3409,-0.0468,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,208.3333,212.5000,0,23,30.4348,4115,34.8238,-4.3890,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,208.3333,247.5000,0,4,75.0000,601,32.1131,42.8869,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,208.3333,282.5000,0,0,,106,25.4717,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,236.1111,-32.5000,0,6,16.6667,4116,39.2614,-22.5948,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,236.1111,2.5000,3,18,27.7778,8888,38.7489,-10.9711,True,False,False,51.8500,0.2500,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,236.1111,37.5000,6,22,31.8182,10116,38.7307,-6.9125,True,False,True,51.8500,0.3402,below
+1626181,Norman Powell,236.1111,72.5000,4,20,50.0000,5928,37.9386,12.0614,True,False,True,51.8500,0.2778,well above
+1626181,Norman Powell,236.1111,107.5000,5,20,40.0000,4220,35.7583,4.2417,True,False,True,51.8500,0.3105,above
+1626181,Norman Powell,236.1111,142.5000,0,20,40.0000,4091,35.3214,4.6786,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,236.1111,177.5000,0,7,14.2857,2512,35.0717,-20.7859,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,236.1111,212.5000,0,1,100.0000,410,34.6341,65.3659,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,236.1111,247.5000,0,0,,70,20.0000,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1626181,Norman Powell,236.1111,282.5000,0,0,,15,20.0000,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume

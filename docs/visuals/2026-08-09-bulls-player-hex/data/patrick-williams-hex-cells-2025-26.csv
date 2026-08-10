@@ -1,0 +1,390 @@
+nba_id,official_roster_name,hex_center_x,hex_center_y,exact_fga,nearby_subject_fga,nearby_subject_fg_pct,nearby_nba_fga,nearby_nba_fg_pct,subject_vs_nba_fg_pct_points,displayed,low_volume_gray,color_rated,size_cap_fga,radius_fraction,color_band
+1630172,Patrick Williams,-250.0000,-50.0000,0,4,50.0000,1805,38.8920,11.1080,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-250.0000,-15.0000,0,17,35.2941,8066,39.0032,-3.7091,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-250.0000,20.0000,1,24,33.3333,10593,38.9314,-5.5980,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-250.0000,55.0000,0,12,33.3333,6233,38.3603,-5.0270,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-250.0000,90.0000,0,5,40.0000,3298,36.8102,3.1898,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-250.0000,125.0000,0,8,37.5000,3094,36.5223,0.9777,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-250.0000,160.0000,0,2,50.0000,2008,37.0518,12.9482,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-250.0000,195.0000,0,0,,329,29.7872,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-250.0000,230.0000,0,0,,71,25.3521,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-250.0000,265.0000,0,0,,11,9.0909,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-250.0000,300.0000,0,0,,2,0.0000,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-222.2222,-50.0000,0,6,50.0000,2355,39.3206,10.6794,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-222.2222,-15.0000,3,19,31.5789,8677,39.1495,-7.5705,True,False,False,51.8500,0.2500,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-222.2222,20.0000,4,25,32.0000,11294,38.8348,-6.8348,True,False,True,51.8500,0.2778,below
+1630172,Patrick Williams,-222.2222,55.0000,2,14,28.5714,7123,38.5231,-9.9517,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-222.2222,90.0000,0,9,22.2222,4379,36.5609,-14.3386,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-222.2222,125.0000,5,9,44.4444,5133,37.0349,7.4096,True,False,False,51.8500,0.3105,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-222.2222,160.0000,0,16,31.2500,6441,36.4229,-5.1729,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-222.2222,195.0000,0,10,30.0000,4614,35.8257,-5.8257,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-222.2222,230.0000,0,2,0.0000,839,31.5852,-31.5852,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-222.2222,265.0000,0,0,,138,21.0145,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-222.2222,300.0000,0,0,,19,5.2632,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-194.4444,-50.0000,0,1,100.0000,476,39.0756,60.9244,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-194.4444,-15.0000,0,12,33.3333,5569,38.8759,-5.5426,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-194.4444,20.0000,0,14,35.7143,7890,39.0368,-3.3225,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-194.4444,55.0000,0,8,25.0000,3841,38.5577,-13.5577,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-194.4444,90.0000,0,5,20.0000,2921,37.3845,-17.3845,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-194.4444,125.0000,0,11,36.3636,5455,37.5985,-1.2349,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-194.4444,160.0000,3,24,37.5000,8903,36.2237,1.2763,True,False,True,51.8500,0.2500,approximately average
+1630172,Patrick Williams,-194.4444,195.0000,1,32,37.5000,10421,35.5244,1.9756,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-194.4444,230.0000,0,17,29.4118,5120,33.8086,-4.3968,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-194.4444,265.0000,0,2,0.0000,749,31.1081,-31.1081,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-194.4444,300.0000,0,0,,89,23.5955,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-166.6667,-50.0000,0,0,,87,44.8276,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-166.6667,-15.0000,0,1,100.0000,862,42.9234,57.0766,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-166.6667,20.0000,0,1,100.0000,1513,40.7799,59.2201,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-166.6667,55.0000,0,0,,1217,38.9482,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-166.6667,90.0000,0,0,,991,37.3360,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-166.6667,125.0000,0,5,40.0000,2129,36.7778,3.2222,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-166.6667,160.0000,0,23,39.1304,8654,36.4687,2.6617,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-166.6667,195.0000,8,42,33.3333,12853,35.3458,-2.0125,True,False,True,51.8500,0.3928,approximately average
+1630172,Patrick Williams,-166.6667,230.0000,4,41,31.7073,11473,34.8122,-3.1049,True,False,True,51.8500,0.2778,below
+1630172,Patrick Williams,-166.6667,265.0000,0,14,35.7143,2641,31.9955,3.7188,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-166.6667,300.0000,0,0,,271,29.8893,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-138.8889,-50.0000,0,1,100.0000,154,38.9610,61.0390,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-138.8889,-15.0000,1,2,50.0000,1354,42.7622,7.2378,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-138.8889,20.0000,0,2,50.0000,2434,42.3993,7.6007,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-138.8889,55.0000,0,0,,2173,40.5890,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-138.8889,90.0000,0,1,0.0000,1852,37.3650,-37.3650,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-138.8889,125.0000,0,1,0.0000,1811,38.1005,-38.1005,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-138.8889,160.0000,0,11,45.4545,4115,37.2539,8.2006,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-138.8889,195.0000,1,39,33.3333,12181,35.2024,-1.8690,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-138.8889,230.0000,9,52,38.4615,13277,35.0079,3.4536,True,False,True,51.8500,0.4166,above
+1630172,Patrick Williams,-138.8889,265.0000,0,26,34.6154,6316,33.5814,1.0340,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-138.8889,300.0000,0,2,0.0000,605,28.7603,-28.7603,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-111.1111,-50.0000,0,0,,166,39.7590,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-111.1111,-15.0000,0,2,50.0000,1658,43.2449,6.7551,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-111.1111,20.0000,1,3,66.6667,3355,42.3845,24.2822,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-111.1111,55.0000,0,4,50.0000,3469,41.2799,8.7201,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-111.1111,90.0000,0,3,33.3333,3000,38.9333,-5.6000,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-111.1111,125.0000,0,2,0.0000,3041,39.8553,-39.8553,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-111.1111,160.0000,0,1,0.0000,2335,39.8715,-39.8715,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-111.1111,195.0000,0,23,30.4348,7969,36.2028,-5.7680,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-111.1111,230.0000,8,47,36.1702,12017,34.7924,1.3778,True,False,True,51.8500,0.3928,approximately average
+1630172,Patrick Williams,-111.1111,265.0000,2,40,42.5000,8695,34.2381,8.2619,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-111.1111,300.0000,0,5,40.0000,1100,31.7273,8.2727,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-83.3333,-50.0000,0,0,,114,38.5965,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-83.3333,-15.0000,0,4,50.0000,2174,42.1343,7.8657,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-83.3333,20.0000,0,10,60.0000,5906,42.1436,17.8564,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-83.3333,55.0000,0,7,57.1429,6019,42.0336,15.1093,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-83.3333,90.0000,0,5,40.0000,5207,42.8846,-2.8846,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-83.3333,125.0000,0,5,40.0000,4605,43.5179,-3.5179,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-83.3333,160.0000,1,3,33.3333,3131,41.9355,-8.6022,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-83.3333,195.0000,0,8,37.5000,3418,37.7414,-0.2414,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-83.3333,230.0000,1,31,38.7097,9378,35.5406,3.1691,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-83.3333,265.0000,4,31,38.7097,8570,34.8308,3.8789,True,False,True,51.8500,0.2778,above
+1630172,Patrick Williams,-83.3333,300.0000,1,9,55.5556,1736,32.4309,23.1247,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-55.5556,-50.0000,0,0,,117,40.1709,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-55.5556,-15.0000,0,17,41.1765,8598,53.2682,-12.0917,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-55.5556,20.0000,4,32,43.7500,19884,51.1617,-7.4117,True,False,True,51.8500,0.2778,below
+1630172,Patrick Williams,-55.5556,55.0000,0,16,37.5000,13218,42.9793,-5.4793,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-55.5556,90.0000,0,11,18.1818,8554,44.5055,-26.3237,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-55.5556,125.0000,1,6,33.3333,6098,45.1132,-11.7798,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-55.5556,160.0000,0,6,33.3333,3817,43.3063,-9.9729,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-55.5556,195.0000,0,0,,1911,39.8744,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-55.5556,230.0000,0,16,37.5000,7253,35.5163,1.9837,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-55.5556,265.0000,0,22,36.3636,8419,35.4436,0.9200,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-55.5556,300.0000,0,8,50.0000,2551,32.6147,17.3853,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-27.7778,-50.0000,0,1,0.0000,469,65.2452,-65.2452,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-27.7778,-15.0000,0,80,50.0000,41960,69.1873,-19.1873,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-27.7778,20.0000,12,106,48.1132,62633,64.5219,-16.4087,True,False,True,51.8500,0.4811,well below
+1630172,Patrick Williams,-27.7778,55.0000,1,58,25.8621,31616,50.7370,-24.8749,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-27.7778,90.0000,3,27,22.2222,14975,45.9699,-23.7477,True,False,True,51.8500,0.2500,well below
+1630172,Patrick Williams,-27.7778,125.0000,0,12,33.3333,9093,46.4423,-13.1090,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-27.7778,160.0000,2,5,40.0000,4868,45.0904,-5.0904,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-27.7778,195.0000,0,2,50.0000,2147,40.6614,9.3386,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-27.7778,230.0000,0,9,44.4444,6876,36.8383,7.6062,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-27.7778,265.0000,2,21,47.6190,9216,35.9158,11.7032,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-27.7778,300.0000,0,11,36.3636,3782,34.3469,2.0167,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,0.0000,-50.0000,0,3,66.6667,1232,80.3571,-13.6905,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,0.0000,-15.0000,3,92,51.0870,55334,69.0245,-17.9375,True,False,True,51.8500,0.2500,well below
+1630172,Patrick Williams,0.0000,20.0000,15,128,42.9688,75539,63.2468,-20.2780,True,False,True,51.8500,0.5379,well below
+1630172,Patrick Williams,0.0000,55.0000,7,74,32.4324,45850,55.4133,-22.9809,True,False,True,51.8500,0.3674,well below
+1630172,Patrick Williams,0.0000,90.0000,7,38,23.6842,17751,46.1157,-22.4315,True,False,True,51.8500,0.3674,well below
+1630172,Patrick Williams,0.0000,125.0000,0,18,38.8889,10194,46.8805,-7.9916,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,0.0000,160.0000,0,5,40.0000,5213,45.8277,-5.8277,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,0.0000,195.0000,0,2,50.0000,2442,42.7109,7.2891,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,0.0000,230.0000,0,13,46.1538,7078,36.6488,9.5051,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,0.0000,265.0000,3,23,39.1304,9424,36.0357,3.0948,True,False,True,51.8500,0.2500,above
+1630172,Patrick Williams,0.0000,300.0000,3,14,35.7143,4396,35.2821,0.4322,True,False,False,51.8500,0.2500,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,27.7778,-50.0000,0,0,,472,67.3729,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,27.7778,-15.0000,0,72,52.7778,44399,69.2786,-16.5008,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,27.7778,20.0000,9,108,44.4444,65182,64.1650,-19.7205,True,False,True,51.8500,0.4166,well below
+1630172,Patrick Williams,27.7778,55.0000,5,65,30.7692,34544,51.3924,-20.6232,True,False,True,51.8500,0.3105,well below
+1630172,Patrick Williams,27.7778,90.0000,1,43,27.9070,15770,45.4280,-17.5211,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,27.7778,125.0000,2,16,43.7500,9321,45.9393,-2.1893,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,27.7778,160.0000,0,3,66.6667,4848,45.2558,21.4109,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,27.7778,195.0000,0,1,100.0000,2112,42.1875,57.8125,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,27.7778,230.0000,0,19,42.1053,6843,35.9930,6.1123,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,27.7778,265.0000,3,25,32.0000,9189,35.1725,-3.1725,True,False,True,51.8500,0.2500,below
+1630172,Patrick Williams,27.7778,300.0000,1,15,33.3333,3647,34.5489,-1.2156,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,55.5556,-50.0000,0,0,,98,42.8571,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,55.5556,-15.0000,0,14,28.5714,9738,53.9844,-25.4130,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,55.5556,20.0000,4,34,29.4118,22940,52.1927,-22.7809,True,False,True,51.8500,0.2778,well below
+1630172,Patrick Williams,55.5556,55.0000,3,32,18.7500,15370,44.0403,-25.2903,True,False,True,51.8500,0.2500,well below
+1630172,Patrick Williams,55.5556,90.0000,4,16,37.5000,9354,43.8957,-6.3957,True,False,False,51.8500,0.2778,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,55.5556,125.0000,0,9,33.3333,6316,44.8068,-11.4735,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,55.5556,160.0000,0,2,50.0000,3814,43.2617,6.7383,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,55.5556,195.0000,0,2,50.0000,1745,40.5158,9.4842,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,55.5556,230.0000,0,24,29.1667,7385,34.7867,-5.6201,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,55.5556,265.0000,5,27,29.6296,8484,34.6535,-5.0238,True,False,True,51.8500,0.3105,below
+1630172,Patrick Williams,55.5556,300.0000,0,7,0.0000,2482,33.1990,-33.1990,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,83.3333,-50.0000,0,0,,141,43.2624,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,83.3333,-15.0000,0,6,33.3333,2335,42.2698,-8.9365,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,83.3333,20.0000,3,12,25.0000,6819,42.4402,-17.4402,True,False,False,51.8500,0.2500,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,83.3333,55.0000,0,14,21.4286,6970,41.9943,-20.5657,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,83.3333,90.0000,0,9,33.3333,5672,44.2525,-10.9191,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,83.3333,125.0000,0,2,50.0000,4782,43.2037,6.7963,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,83.3333,160.0000,0,1,0.0000,3118,40.5067,-40.5067,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,83.3333,195.0000,1,5,20.0000,3050,35.4098,-15.4098,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,83.3333,230.0000,1,38,39.4737,9700,34.0309,5.4428,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,83.3333,265.0000,4,30,33.3333,8850,33.9096,-0.5763,True,False,True,51.8500,0.2778,approximately average
+1630172,Patrick Williams,83.3333,300.0000,0,5,20.0000,1706,31.2427,-11.2427,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,111.1111,-50.0000,0,0,,187,48.1283,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,111.1111,-15.0000,0,4,75.0000,1696,44.0448,30.9552,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,111.1111,20.0000,1,8,50.0000,3477,42.8243,7.1757,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,111.1111,55.0000,0,4,50.0000,3622,43.0701,6.9299,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,111.1111,90.0000,0,1,100.0000,3222,43.4823,56.5177,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,111.1111,125.0000,0,2,50.0000,3169,42.7895,7.2105,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,111.1111,160.0000,0,2,50.0000,2322,39.9655,10.0345,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,111.1111,195.0000,0,31,35.4839,7433,34.9388,0.5451,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,111.1111,230.0000,11,48,35.4167,11692,34.1858,1.2309,True,False,True,51.8500,0.4606,approximately average
+1630172,Patrick Williams,111.1111,265.0000,1,36,41.6667,8944,33.8104,7.8563,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,111.1111,300.0000,0,3,66.6667,1008,32.6389,34.0278,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,138.8889,-50.0000,0,0,,177,44.0678,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,138.8889,-15.0000,0,2,100.0000,1329,44.0933,55.9067,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,138.8889,20.0000,0,4,100.0000,2273,43.6868,56.3132,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,138.8889,55.0000,1,1,100.0000,2159,44.3261,55.6739,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,138.8889,90.0000,0,1,100.0000,1939,42.7024,57.2976,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,138.8889,125.0000,0,2,50.0000,1870,42.6203,7.3797,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,138.8889,160.0000,1,6,50.0000,3311,37.2999,12.7001,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,138.8889,195.0000,2,45,33.3333,10716,34.5185,-1.1851,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,138.8889,230.0000,10,59,35.5932,12256,34.3179,1.2753,True,False,True,51.8500,0.4392,approximately average
+1630172,Patrick Williams,138.8889,265.0000,1,27,37.0370,6251,34.0586,2.9785,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,138.8889,300.0000,0,1,0.0000,532,32.7068,-32.7068,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,166.6667,-50.0000,0,0,,103,33.0097,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,166.6667,-15.0000,0,1,100.0000,811,40.5672,59.4328,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,166.6667,20.0000,0,1,100.0000,1393,42.0675,57.9325,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,166.6667,55.0000,0,1,100.0000,1133,41.2180,58.7820,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,166.6667,90.0000,0,0,,941,42.8268,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,166.6667,125.0000,0,3,33.3333,1808,40.9845,-7.6512,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,166.6667,160.0000,0,22,27.2727,6884,35.8948,-8.6221,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,166.6667,195.0000,7,48,25.0000,10582,35.2296,-10.2296,True,False,True,51.8500,0.3674,well below
+1630172,Patrick Williams,166.6667,230.0000,6,54,29.6296,10044,34.5480,-4.9184,True,False,True,51.8500,0.3402,below
+1630172,Patrick Williams,166.6667,265.0000,0,14,28.5714,2149,33.8297,-5.2583,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,166.6667,300.0000,0,1,0.0000,242,31.8182,-31.8182,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,194.4444,-50.0000,0,1,100.0000,233,36.9099,63.0901,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,194.4444,-15.0000,0,6,33.3333,4021,38.3984,-5.0651,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,194.4444,20.0000,0,10,50.0000,7393,38.6176,11.3824,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,194.4444,55.0000,0,8,62.5000,4550,38.8132,23.6868,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,194.4444,90.0000,0,8,25.0000,3284,36.9671,-11.9671,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,194.4444,125.0000,0,14,28.5714,4709,36.1011,-7.5297,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,194.4444,160.0000,5,20,25.0000,7122,35.8326,-10.8326,True,False,True,51.8500,0.3105,well below
+1630172,Patrick Williams,194.4444,195.0000,4,34,26.4706,8268,35.2322,-8.7616,True,False,True,51.8500,0.2778,well below
+1630172,Patrick Williams,194.4444,230.0000,2,24,16.6667,4244,34.5193,-17.8527,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,194.4444,265.0000,0,4,0.0000,548,31.7518,-31.7518,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,194.4444,300.0000,0,0,,89,22.4719,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,222.2222,-50.0000,0,4,50.0000,1234,37.8444,12.1556,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,222.2222,-15.0000,3,12,33.3333,6886,38.7598,-5.4265,True,False,False,51.8500,0.2500,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,222.2222,20.0000,3,17,41.1765,10223,38.7949,2.3816,True,False,False,51.8500,0.2500,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,222.2222,55.0000,4,12,50.0000,7994,38.2412,11.7588,True,False,False,51.8500,0.2778,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,222.2222,90.0000,1,12,33.3333,4988,37.3296,-3.9963,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,222.2222,125.0000,7,12,25.0000,4637,35.8421,-10.8421,True,False,False,51.8500,0.3674,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,222.2222,160.0000,0,16,31.2500,5250,35.7905,-4.5405,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,222.2222,195.0000,0,13,15.3846,3472,35.5127,-20.1281,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,222.2222,230.0000,0,2,0.0000,544,33.6397,-33.6397,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,222.2222,265.0000,0,0,,93,19.3548,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,222.2222,300.0000,0,0,,26,15.3846,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,250.0000,-50.0000,0,3,33.3333,896,38.5045,-5.1711,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,250.0000,-15.0000,0,11,27.2727,6290,38.7440,-11.4713,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,250.0000,20.0000,1,16,37.5000,9695,38.6488,-1.1488,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,250.0000,55.0000,0,12,50.0000,7108,38.2667,11.7333,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,250.0000,90.0000,0,10,30.0000,3963,37.4464,-7.4464,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,250.0000,125.0000,0,9,33.3333,3014,34.8042,-1.4709,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,250.0000,160.0000,0,4,50.0000,1619,35.3305,14.6695,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,250.0000,195.0000,0,1,0.0000,203,32.5123,-32.5123,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,250.0000,230.0000,0,0,,41,17.0732,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,250.0000,265.0000,0,0,,7,28.5714,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,250.0000,300.0000,0,0,,3,0.0000,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-236.1111,-32.5000,1,13,38.4615,5868,39.1956,-0.7341,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-236.1111,2.5000,9,24,37.5000,10448,39.2898,-1.7898,True,False,True,51.8500,0.4166,approximately average
+1630172,Patrick Williams,-236.1111,37.5000,6,22,31.8182,9971,38.5418,-6.7236,True,False,True,51.8500,0.3402,below
+1630172,Patrick Williams,-236.1111,72.5000,1,10,40.0000,5057,37.9474,2.0526,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-236.1111,107.5000,1,10,30.0000,3966,36.7625,-6.7625,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-236.1111,142.5000,0,10,40.0000,4718,36.6681,3.3319,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-236.1111,177.5000,0,2,0.0000,3236,36.6502,-36.6502,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-236.1111,212.5000,0,0,,634,31.8612,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-236.1111,247.5000,0,0,,111,25.2252,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-236.1111,282.5000,0,0,,18,5.5556,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-208.3333,-32.5000,0,10,40.0000,4650,39.2258,0.7742,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-208.3333,2.5000,0,22,36.3636,10167,39.1659,-2.8023,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-208.3333,37.5000,0,19,26.3158,8971,38.6133,-12.2975,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-208.3333,72.5000,0,9,44.4444,4312,37.9870,6.4574,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-208.3333,107.5000,0,8,37.5000,4536,36.9929,0.5071,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-208.3333,142.5000,2,16,31.2500,6815,36.8305,-5.5805,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-208.3333,177.5000,1,20,40.0000,8466,35.9792,4.0208,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-208.3333,212.5000,0,15,26.6667,5268,34.2445,-7.5778,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-208.3333,247.5000,0,3,66.6667,872,32.4541,34.2125,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-208.3333,282.5000,0,0,,135,25.9259,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-180.5556,-32.5000,0,1,100.0000,440,40.4545,59.5455,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-180.5556,2.5000,0,2,50.0000,1716,39.1608,10.8392,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-180.5556,37.5000,0,1,100.0000,1415,40.6360,59.3640,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-180.5556,72.5000,0,0,,921,37.8936,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-180.5556,107.5000,0,6,33.3333,2118,36.0246,-2.6912,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-180.5556,142.5000,0,20,45.0000,6911,36.5649,8.4351,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-180.5556,177.5000,8,31,38.7097,11114,35.9547,2.7550,True,False,True,51.8500,0.3928,above
+1630172,Patrick Williams,-180.5556,212.5000,5,38,34.2105,11665,34.9679,-0.7573,True,False,True,51.8500,0.3105,approximately average
+1630172,Patrick Williams,-180.5556,247.5000,0,17,41.1765,4055,33.6868,7.4897,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-180.5556,282.5000,0,1,0.0000,515,32.4272,-32.4272,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-152.7778,-32.5000,0,1,100.0000,519,40.2697,59.7303,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-152.7778,2.5000,0,2,50.0000,1626,42.2509,7.7491,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-152.7778,37.5000,0,1,0.0000,1913,41.0873,-41.0873,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-152.7778,72.5000,0,0,,1413,37.7919,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-152.7778,107.5000,0,0,,1366,35.9444,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-152.7778,142.5000,0,8,50.0000,2724,36.8576,13.1424,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-152.7778,177.5000,2,31,32.2581,10611,35.7553,-3.4973,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-152.7778,212.5000,5,49,34.6939,13684,34.9459,-0.2520,True,False,True,51.8500,0.3105,approximately average
+1630172,Patrick Williams,-152.7778,247.5000,2,36,36.1111,9669,34.5537,1.5574,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-152.7778,282.5000,0,6,33.3333,1407,31.6986,1.6347,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-125.0000,-32.5000,0,1,100.0000,731,41.7237,58.2763,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-125.0000,2.5000,0,2,50.0000,2330,42.8326,7.1674,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-125.0000,37.5000,0,2,50.0000,3117,42.2842,7.7158,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-125.0000,72.5000,0,1,0.0000,2489,38.9715,-38.9715,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-125.0000,107.5000,0,1,0.0000,2402,38.8843,-38.8843,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-125.0000,142.5000,0,2,0.0000,2265,39.3819,-39.3819,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-125.0000,177.5000,0,16,31.2500,5963,36.5085,-5.2585,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-125.0000,212.5000,4,48,37.5000,12686,35.0623,2.4377,True,False,True,51.8500,0.2778,approximately average
+1630172,Patrick Williams,-125.0000,247.5000,6,46,39.1304,11484,34.6047,4.5258,True,False,True,51.8500,0.3402,above
+1630172,Patrick Williams,-125.0000,282.5000,0,14,42.8571,3090,33.2039,9.6533,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-97.2222,-32.5000,0,0,,706,42.0680,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-97.2222,2.5000,0,4,50.0000,3142,42.4889,7.5111,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-97.2222,37.5000,1,8,62.5000,4744,42.3272,20.1728,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-97.2222,72.5000,0,6,50.0000,4149,41.5763,8.4237,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-97.2222,107.5000,1,2,0.0000,3909,41.1870,-41.1870,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-97.2222,142.5000,0,3,33.3333,3432,41.2005,-7.8671,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-97.2222,177.5000,0,3,33.3333,2355,39.4480,-6.1146,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-97.2222,212.5000,0,33,36.3636,9261,35.1042,1.2594,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-97.2222,247.5000,7,43,39.5349,10652,34.8479,4.6870,True,False,True,51.8500,0.3674,above
+1630172,Patrick Williams,-97.2222,282.5000,0,22,36.3636,4899,33.1904,3.1732,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-69.4444,-32.5000,0,1,100.0000,850,43.6471,56.3529,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-69.4444,2.5000,0,16,43.7500,7940,46.4861,-2.7361,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-69.4444,37.5000,2,20,40.0000,10461,42.6728,-2.6728,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-69.4444,72.5000,3,9,44.4444,7528,42.9596,1.4848,True,False,False,51.8500,0.2500,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-69.4444,107.5000,0,8,37.5000,6000,44.7167,-7.2167,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-69.4444,142.5000,1,5,40.0000,4577,44.3085,-4.3085,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-69.4444,177.5000,0,3,33.3333,2462,41.1454,-7.8121,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-69.4444,212.5000,0,19,31.5789,5544,36.7244,-5.1454,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-69.4444,247.5000,6,27,37.0370,9115,35.3264,1.7107,True,False,True,51.8500,0.3402,approximately average
+1630172,Patrick Williams,-69.4444,282.5000,1,19,36.8421,5978,34.7942,2.0479,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-41.6667,-32.5000,0,7,42.8571,4791,61.4068,-18.5497,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-41.6667,2.5000,3,71,47.8873,39856,64.3466,-16.4593,True,False,True,51.8500,0.2500,well below
+1630172,Patrick Williams,-41.6667,37.5000,1,58,39.6552,31814,54.2057,-14.5505,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-41.6667,72.5000,1,24,29.1667,14774,44.7069,-15.5403,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-41.6667,107.5000,1,14,14.2857,9187,45.6188,-31.3331,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-41.6667,142.5000,1,6,50.0000,6069,45.6253,4.3747,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-41.6667,177.5000,0,4,50.0000,2889,41.7099,8.2901,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-41.6667,212.5000,0,4,25.0000,3436,38.3877,-13.3877,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-41.6667,247.5000,1,18,38.8889,8676,35.8806,3.0083,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-41.6667,282.5000,2,16,50.0000,7039,35.4454,14.5546,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-13.8889,-32.5000,0,56,51.7857,25735,72.9435,-21.1577,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-13.8889,2.5000,29,111,46.8468,65230,65.7581,-18.9112,True,False,True,51.8500,0.7479,well below
+1630172,Patrick Williams,-13.8889,37.5000,6,123,41.4634,71784,62.3078,-20.8443,True,False,True,51.8500,0.3402,well below
+1630172,Patrick Williams,-13.8889,72.5000,5,45,26.6667,23040,47.0269,-20.3602,True,False,True,51.8500,0.3105,well below
+1630172,Patrick Williams,-13.8889,107.5000,0,22,27.2727,12801,46.4807,-19.2080,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-13.8889,142.5000,0,7,42.8571,7405,46.3065,-3.4494,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-13.8889,177.5000,0,4,50.0000,3526,43.5337,6.4663,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-13.8889,212.5000,0,3,66.6667,3171,38.3475,28.3191,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-13.8889,247.5000,2,17,47.0588,8984,36.0307,11.0281,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,-13.8889,282.5000,3,23,43.4783,8062,35.5495,7.9288,True,False,True,51.8500,0.2500,well above
+1630172,Patrick Williams,13.8889,-32.5000,0,48,54.1667,26597,73.2752,-19.1085,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,13.8889,2.5000,28,107,46.7290,66077,65.6855,-18.9565,True,False,True,51.8500,0.7349,well below
+1630172,Patrick Williams,13.8889,37.5000,7,124,40.3226,73317,62.0716,-21.7490,True,False,True,51.8500,0.3674,well below
+1630172,Patrick Williams,13.8889,72.5000,4,52,26.9231,23782,46.6992,-19.7761,True,False,True,51.8500,0.2778,well below
+1630172,Patrick Williams,13.8889,107.5000,2,32,31.2500,13169,46.3513,-15.1013,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,13.8889,142.5000,1,8,37.5000,7460,46.4745,-8.9745,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,13.8889,177.5000,0,3,66.6667,3489,44.0527,22.6139,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,13.8889,212.5000,0,3,33.3333,3190,38.3386,-5.0052,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,13.8889,247.5000,2,19,36.8421,8959,36.0196,0.8225,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,13.8889,282.5000,2,23,34.7826,8041,35.5180,-0.7354,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,41.6667,-32.5000,0,8,37.5000,5021,61.6610,-24.1610,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,41.6667,2.5000,1,62,45.1613,43815,64.7130,-19.5517,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,41.6667,37.5000,3,56,28.5714,35921,55.0207,-26.4493,True,False,True,51.8500,0.2500,well below
+1630172,Patrick Williams,41.6667,72.5000,3,38,31.5789,16397,44.4167,-12.8377,True,False,True,51.8500,0.2500,well below
+1630172,Patrick Williams,41.6667,107.5000,2,20,40.0000,9744,45.6589,-5.6589,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,41.6667,142.5000,0,6,50.0000,6178,45.0308,4.9692,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,41.6667,177.5000,0,3,66.6667,2826,43.4183,23.2484,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,41.6667,212.5000,0,7,42.8571,3360,36.7560,6.1012,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,41.6667,247.5000,1,24,33.3333,8711,35.2543,-1.9209,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,41.6667,282.5000,1,25,24.0000,7041,34.6968,-10.6968,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,69.4444,-32.5000,0,0,,956,43.0962,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,69.4444,2.5000,0,14,28.5714,9187,46.9468,-18.3753,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,69.4444,37.5000,1,20,25.0000,12283,43.5317,-18.5317,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,69.4444,72.5000,0,13,23.0769,8624,42.6832,-19.6063,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,69.4444,107.5000,0,10,30.0000,6508,44.5144,-14.5144,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,69.4444,142.5000,0,2,0.0000,4615,43.6403,-43.6403,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,69.4444,177.5000,0,2,50.0000,2356,40.0255,9.9745,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,69.4444,212.5000,1,16,43.7500,5586,34.5686,9.1814,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,69.4444,247.5000,5,29,31.0345,9261,34.3375,-3.3031,True,False,True,51.8500,0.3105,below
+1630172,Patrick Williams,69.4444,282.5000,0,20,25.0000,6211,33.9237,-8.9237,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,97.2222,-32.5000,0,1,100.0000,750,44.2667,55.7333,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,97.2222,2.5000,0,7,28.5714,3349,43.2368,-14.6654,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,97.2222,37.5000,0,11,27.2727,5229,42.3025,-15.0298,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,97.2222,72.5000,0,3,33.3333,4520,44.0708,-10.7375,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,97.2222,107.5000,0,2,50.0000,4263,44.1004,5.8996,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,97.2222,142.5000,0,2,50.0000,3511,42.2102,7.7898,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,97.2222,177.5000,0,2,0.0000,2164,37.8466,-37.8466,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,97.2222,212.5000,0,38,39.4737,9255,34.5651,4.9086,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,97.2222,247.5000,4,42,40.4762,10847,34.0647,6.4115,True,False,True,51.8500,0.2778,above
+1630172,Patrick Williams,97.2222,282.5000,0,15,40.0000,5190,33.0443,6.9557,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,125.0000,-32.5000,0,1,100.0000,739,44.9256,55.0744,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,125.0000,2.5000,1,5,60.0000,2298,43.7772,16.2228,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,125.0000,37.5000,0,7,57.1429,3075,43.2195,13.9233,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,125.0000,72.5000,0,1,100.0000,2618,42.7044,57.2956,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,125.0000,107.5000,0,1,100.0000,2572,43.6236,56.3764,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,125.0000,142.5000,1,2,50.0000,2301,41.6775,8.3225,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,125.0000,177.5000,0,17,41.1765,5121,35.9891,5.1874,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,125.0000,212.5000,6,57,36.8421,11804,34.3358,2.5063,True,False,True,51.8500,0.3402,above
+1630172,Patrick Williams,125.0000,247.5000,6,51,33.3333,11287,34.0303,-0.6970,True,False,True,51.8500,0.3402,approximately average
+1630172,Patrick Williams,125.0000,282.5000,0,11,36.3636,2862,32.7044,3.6592,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,152.7778,-32.5000,0,1,100.0000,535,42.2430,57.7570,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,152.7778,2.5000,1,2,100.0000,1509,43.6713,56.3287,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,152.7778,37.5000,0,2,100.0000,1789,43.4880,56.5120,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,152.7778,72.5000,0,1,100.0000,1385,42.0939,57.9061,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,152.7778,107.5000,0,1,100.0000,1380,43.1159,56.8841,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,152.7778,142.5000,0,5,40.0000,2311,37.9922,2.0078,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,152.7778,177.5000,0,36,27.7778,8750,35.3486,-7.5708,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,152.7778,212.5000,8,55,30.9091,12007,34.6714,-3.7624,True,False,True,51.8500,0.3928,below
+1630172,Patrick Williams,152.7778,247.5000,1,47,31.9149,9088,34.1439,-2.2290,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,152.7778,282.5000,0,4,25.0000,1174,33.3901,-8.3901,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,180.5556,-32.5000,0,0,,326,35.2761,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,180.5556,2.5000,0,3,66.6667,1462,38.5089,28.1578,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,180.5556,37.5000,0,2,50.0000,1381,38.2332,11.7668,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,180.5556,72.5000,0,0,,929,42.0883,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,180.5556,107.5000,0,4,25.0000,2004,36.9261,-11.9261,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,180.5556,142.5000,0,12,33.3333,5563,36.1136,-2.7803,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,180.5556,177.5000,3,28,25.0000,8799,35.5950,-10.5950,True,False,True,51.8500,0.2500,well below
+1630172,Patrick Williams,180.5556,212.5000,2,42,23.8095,9536,34.8993,-11.0898,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,180.5556,247.5000,0,21,19.0476,3314,33.3736,-14.3259,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,180.5556,282.5000,0,1,0.0000,391,31.2020,-31.2020,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,208.3333,-32.5000,0,7,28.5714,3046,38.6408,-10.0694,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,208.3333,2.5000,0,15,40.0000,8522,38.3595,1.6405,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,208.3333,37.5000,0,12,41.6667,9286,38.8003,2.8663,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,208.3333,72.5000,0,9,33.3333,5224,38.1891,-4.8558,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,208.3333,107.5000,0,10,40.0000,4557,35.7472,4.2528,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,208.3333,142.5000,1,17,23.5294,5632,35.6357,-12.1062,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,208.3333,177.5000,1,17,17.6471,6658,35.3409,-17.6939,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,208.3333,212.5000,0,19,15.7895,4115,34.8238,-19.0343,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,208.3333,247.5000,0,6,16.6667,601,32.1131,-15.4465,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,208.3333,282.5000,0,0,,106,25.4717,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,236.1111,-32.5000,1,8,25.0000,4116,39.2614,-14.2614,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,236.1111,2.5000,4,15,40.0000,8888,38.7489,1.2511,True,False,False,51.8500,0.2778,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,236.1111,37.5000,2,15,40.0000,10116,38.7307,1.2693,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,236.1111,72.5000,1,10,50.0000,5928,37.9386,12.0614,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,236.1111,107.5000,1,10,40.0000,4220,35.7583,4.2417,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,236.1111,142.5000,0,11,27.2727,4091,35.3214,-8.0487,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,236.1111,177.5000,0,6,16.6667,2512,35.0717,-18.4050,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,236.1111,212.5000,0,2,0.0000,410,34.6341,-34.6341,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,236.1111,247.5000,0,1,0.0000,70,20.0000,-20.0000,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume
+1630172,Patrick Williams,236.1111,282.5000,0,0,,15,20.0000,,False,False,False,51.8500,0.0000,gray: insufficient exact-cell or nearby volume

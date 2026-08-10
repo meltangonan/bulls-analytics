@@ -299,6 +299,11 @@ These are the traps that produce silently wrong numbers rather than errors.
   step is part of the live report path**, not the rejected full-slide HTML renderer (`DESIGN.md`,
   Settled). `gt_extras` stays limited to the separate Great Tables spike.
 - Court graphics use `analysis.detailed_zones()`.
+- `bulls/graphics/court.py` owns the shot-chart dimensions and continuous restricted-area D path.
+  Conventional charts call `draw_half_court()`; rings, cells, and ladders keep their specialized
+  renderers for clipping and contrast but import the same constants and geometry primitive. A new
+  shot-chart renderer may change court color, opacity, clipping, and line weight—not landmark
+  positions or shapes.
 
 ## CLIs
 

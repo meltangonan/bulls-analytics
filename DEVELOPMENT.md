@@ -295,8 +295,9 @@ These are the traps that produce silently wrong numbers rather than errors.
 ## CLIs
 
 ```bash
-venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|rings|cells [--final]
+venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|rings|cells|ladder [--final]
 venv/bin/python scripts/make_shot_chart.py --team|--league --chart ladder --metric pps|fg-rel|pps-rel [--project <slug>]
+venv/bin/python scripts/make_shot_chart.py --team --chart ladder --blank [--project <slug>]
 venv/bin/python scripts/save_visual_version.py --project <slug> <files...>   # preserve a reviewed version
 ```
 
@@ -307,8 +308,8 @@ stand behind. On a ~950-attempt season about half the `cells` grid greys, which 
 a player genuinely has no mid-range game and misleading when he simply missed time — read the
 printed per-cell table before publishing either.
 
-`ladder` is the distance-only form, concentric distance bands and no angle at all, and it wants
-team-scale volume:
+`ladder` is the distance-only form, concentric distance bands and no angle at all. It gets its
+fullest read from team-scale volume, but it can also show a player's shot-value profile:
 `--team` pulls every Bulls shot (traded players included — this is the team's offence, not a
 roster), `--league` charts all 30 teams. `--metric pps` is the "Midrange Is Dead" chart and the one
 that carries an argument, because points per shot is the only scale on which a two and a three
@@ -316,6 +317,15 @@ compare; `fg-rel` and `pps-rel` measure each ring against the league at the same
 "did they shoot it well" versus "did the shot pay". `--league` rejects the `-rel` metrics, which
 would be all zeros. The colour scale is **clamped, not fitted** — the rim ring is a large enough
 outlier to squash every other ring into one shade if it sets the range.
+
+The default rating floor is 40 attempts for a team or league ladder and 15 for a player ladder.
+Fifteen matches the fine shot-cell chart's floor: it reveals player midrange bands without assigning
+meaning to a result built from only a few makes or misses. Pass `--min-fga` only when the post has an
+explicitly justified alternative; the graphic prints the actual floor in its grey-band key.
+
+`--blank` produces the same 2-foot ladder and court geometry entirely in neutral grey, with no
+values, scale, or methodology copy. It is a data-free cover asset for a carousel whose later slides
+reveal the colored analytical charts; it should not be presented as a player's result.
 
 **The split at 24 ft is the method, not a detail.** Inside it a ring counts two-point attempts only;
 outside it, threes only. Binning purely by distance makes the 22-24 ft rings ~95% corner threes, so

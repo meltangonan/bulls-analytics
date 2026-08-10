@@ -122,6 +122,30 @@ def test_render_and_archive_use_the_same_folder_shape():
     assert flat.parent.name == "output"
 
 
+def test_player_ladder_uses_a_lower_sample_floor_than_team_ladder():
+    import importlib.util as _ilu
+
+    spec = _ilu.spec_from_file_location("msc_floor", ROOT / "scripts" / "make_shot_chart.py")
+    msc = _ilu.module_from_spec(spec)
+    spec.loader.exec_module(msc)
+
+    assert msc.PLAYER_LADDER_MIN_FGA == 15
+    assert msc.PLAYER_LADDER_MIN_FGA < msc.sm.MIN_RING_FGA
+
+
+def test_blank_ladder_gets_a_distinct_output_name():
+    import argparse
+    import importlib.util as _ilu
+
+    spec = _ilu.spec_from_file_location("msc_blank", ROOT / "scripts" / "make_shot_chart.py")
+    msc = _ilu.module_from_spec(spec)
+    spec.loader.exec_module(msc)
+    args = argparse.Namespace(chart="ladder", metric="pps", focus="", blank=True,
+                              band=2.0, project="")
+
+    assert "ladder-blank" in msc._output_path(args, "bulls").name
+
+
 # --- finals ----------------------------------------------------------------
 def test_final_goes_to_final_and_is_not_versioned(visuals, tmp_path):
     """A published page is one snapshot, not a version history."""

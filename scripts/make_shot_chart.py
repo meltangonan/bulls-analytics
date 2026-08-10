@@ -587,6 +587,7 @@ LADDER_INK, LADDER_INK_DARK = "#FFFFFF", "#2A2118"
 # Warm neutral rather than near-white: the asset exports transparent and may
 # land on a pale Canva page, where a lighter grey would vanish into it.
 LADDER_THIN = "#C2BAAE"
+PLAYER_LADDER_MIN_FGA = 15
 
 # Fixed, round, symmetric scales -- never fitted to the data.
 #
@@ -673,16 +674,22 @@ def _signed2(v: float) -> str:
 
 
 def render_ladder(ctx, out: Path, final: bool):
+    if ctx.get("blank"):
+        _render_blank_ladder(out, final, ctx.get("band", sm.LADDER_STEP_FT))
+        return
+
     metric = LADDER_METRICS[ctx["metric"]]
     step = ctx.get("band", sm.LADDER_STEP_FT)
     edges = sm.ladder_edges(step)
-    rings = sm.distance_ladder(ctx["player"], ctx["league"], step=step)
+    min_fga = ctx.get("min_fga", sm.MIN_RING_FGA)
+    rings = sm.distance_ladder(ctx["player"], ctx["league"], step=step,
+                               min_fga=min_fga)
     col = metric["column"]
     # Coverage is told the ladder's REAL outer edge, not the nominal maximum:
     # at 2 ft wide the last band stops at 30, so 30-31 ft becomes excluded and
     # the "% shown" line has to say so.
     cover = sm.ladder_coverage(ctx["player"], max_ft=float(edges[-1]))
-    corner = sm.corner_split(ctx["player"], ctx["league"])
+    corner = sm.corner_split(ctx["player"], ctx["league"], min_fga=min_fga)
     for r in rings.itertuples():
         flag = "" if r.rated else "   (too few to rate)"
         kind = "3PT" if r.three else "2PT"
@@ -755,10 +762,52 @@ def render_ladder(ctx, out: Path, final: bool):
     grey = int((~rings.rated).sum()) + (0 if corner["rated"] else 1)
     key = f"{(1 - cover['excluded_share']) * 100:.0f}% OF ALL ATTEMPTS SHOWN"
     if grey:
-        key += (f"  ·  GREY = UNDER {sm.MIN_RING_FGA} ATTEMPTS, "
+        key += (f"  ·  GREY = UNDER {min_fga} ATTEMPTS, "
                 f"TOO FEW TO RATE ({grey} BANDS)")
     _fit_note(ax, 90, key)
 
+    out.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out, dpi=house.export_dpi(final), transparent=True)
+    plt.close(fig)
+    print(f"Saved {out}")
+
+
+def _render_blank_ladder(out: Path, final: bool, step: float):
+    """Render the ladder geometry as a neutral, data-free cover image."""
+    from types import SimpleNamespace
+
+    fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
+                              house.CANVAS_HEIGHT / house.DRAFT_DPI))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, house.CANVAS_WIDTH); ax.set_ylim(0, house.CANVAS_HEIGHT)
+    ax.set_aspect("equal"); ax.set_xticks([]); ax.set_yticks([])
+    ax.patch.set_alpha(0.0)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+
+    s, hx, hy = 2.0, house.CANVAS_WIDTH / 2, 470
+    base = hy + sm.BASELINE_Y * s
+    clip = Rectangle((hx - 250 * s, base), 500 * s, 1000 * s, transform=ax.transData)
+    cx = sm.CORNER_LINE_X
+    inner_clip = Rectangle((hx - cx * s, base), 2 * cx * s, 1000 * s,
+                           transform=ax.transData)
+    edges = sm.ladder_edges(step)
+    rings = [SimpleNamespace(lo=lo, hi=hi, three=bool(lo >= sm.LADDER_TWO_MAX_FT))
+             for lo, hi in zip(edges[:-1], edges[1:])]
+    for i, ring in enumerate(reversed(rings)):
+        _ladder_ring(ax, (hx, hy), ring, s, LADDER_THIN,
+                     clip if ring.three else inner_clip, shadow=i > 0)
+
+    # The corner pocket is part of the ladder's geometry even without data.
+    for side in (-1, 1):
+        strip = Rectangle((hx + side * cx * s if side > 0 else hx - 250 * s, base),
+                          (250 - cx) * s, 1000 * s, transform=ax.transData)
+        pocket = ax.add_patch(Wedge((hx, hy), sm.LADDER_TWO_MAX_FT * 10 * s,
+                                    0, 360, facecolor=LADDER_THIN,
+                                    edgecolor="none", zorder=3))
+        pocket.set_clip_path(strip)
+
+    _ladder_court(ax, hx, hy, s, clip)
     out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, dpi=house.export_dpi(final), transparent=True)
     plt.close(fig)
@@ -1050,7 +1099,8 @@ def _output_path(args, slug: str) -> Path:
     """
     from datetime import date
 
-    mode = args.metric if args.chart == "ladder" else args.focus.strip().lower()
+    mode = ("blank" if args.chart == "ladder" and getattr(args, "blank", False)
+            else args.metric if args.chart == "ladder" else args.focus.strip().lower())
     parts = [date.today().isoformat(), args.chart] + ([mode] if mode else [])
     if args.chart == "ladder" and args.band != sm.LADDER_STEP_FT:
         parts.append(f"{args.band:g}ft")
@@ -1083,11 +1133,19 @@ def main():
     ap.add_argument("--band", type=float, default=sm.LADDER_STEP_FT,
                     help="ladder only: band width in feet (1 for the league, "
                          "2 suits a single team's smaller sample)")
+    ap.add_argument("--min-fga", type=int,
+                    help="ladder only: attempts required to rate a band; defaults "
+                         "to 15 for a player and 40 for a team or the league")
+    ap.add_argument("--blank", action="store_true",
+                    help="ladder only: render neutral geometry with no data or legend for a cover")
     ap.add_argument("--project", default="",
                     help="visual project slug; renders into output/<slug>/ so scratch "
                          "mirrors docs/visuals/<slug>/")
     ap.add_argument("--output", default="")
     args = ap.parse_args()
+
+    if args.blank and args.chart != "ladder":
+        raise SystemExit("--blank is available only for --chart ladder")
 
     league = shot_data.league_shots(args.season, args.refresh)
     if args.team or args.league:
@@ -1125,7 +1183,12 @@ def main():
         "season": args.season,
         "metric": args.metric,
         "band": args.band,
+        "blank": args.blank,
     }
+    if args.chart == "ladder":
+        ctx["min_fga"] = args.min_fga if args.min_fga is not None else (
+            sm.MIN_RING_FGA if args.team or args.league else PLAYER_LADDER_MIN_FGA
+        )
     if args.chart == "rings":
         if args.team:
             raise SystemExit("rings needs per-75 rates, which are player-scoped")

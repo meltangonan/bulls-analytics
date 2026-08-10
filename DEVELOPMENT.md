@@ -244,6 +244,14 @@ These are the traps that produce silently wrong numbers rather than errors.
   Summing `AST` over a season's team game log costs one request and turns every bug above from
   something you must notice into a number that is not zero. All 26 Bulls seasons now sit at
   48,316/48,316. Report a gap, never force it away.
+- **Use pbpstats as a secondary parser and analysis surface, not an independent provider.** It
+  derives its results from NBA feeds, so it is most valuable for checking our event attribution and
+  for questions where its added structure saves substantial work: passer-to-scorer assist networks,
+  players on court, possession boundaries, corrected event order, and shot-zone breakdowns. Keep
+  NBA.com's structured endpoint as the production source when it answers the question. The public
+  pbpstats API is best-effort—it returned intermittent 500/503 errors and timeouts during the
+  assist-duos audit—so cache any result a post depends on in that post's tracked `data/` folder.
+  API reference: `https://api.pbpstats.com/docs`; parser: `https://github.com/dblackrun/pbpstats`.
 - **Two-man lineup minutes (`leaguedashlineups`) return zero rows before 2007-08.** Shared minutes
   are the better denominator than shared games, but they do not exist for the early 2000s, so a
   since-2000 post must use games played together. Choose a metric against the oldest season on the

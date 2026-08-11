@@ -42,6 +42,11 @@ Default to a 1080×1350 feed page when nothing else is implied.
 content, and a transparent chart asset (see `DESIGN.md` §3 for the export contract). Canva owns the
 `#FAF8F5` page, all typography, and editorial copy.
 
+**Preserve the original during Canva iteration.** When making substantive edits to an existing
+design, work in a clearly labeled separate QA copy or on duplicated draft pages by default. Do not
+overwrite the user's original pages or design unless they explicitly ask to promote the approved
+draft into it. The user should not need to request this isolation on each revision.
+
 The approved artifact is the **downloaded 1080×1350 page** — never the editable Canva design or the
 chart asset alone.
 

@@ -122,6 +122,7 @@ def test_season_marker_uses_compact_unstarred_label():
 
 
 def test_retired_players_with_nba_silhouettes_have_explicit_fallbacks():
+    assert historical_headshot_url(1724) is None
     assert historical_headshot_url(2430).endswith("/1703.png")
     assert historical_headshot_url(703).endswith("/846.png")
     assert historical_headshot_url(999999) is None
@@ -241,7 +242,7 @@ def test_heavy_header_rule_is_omitted():
 
 
 def test_light_row_rules_skip_ppg_but_extend_through_gp():
-    assert row_rule_segments() == ((100, PPG_LEFT), (GP_LEFT, GP_RIGHT))
+    assert row_rule_segments() == ((100, 211), (279, PPG_LEFT), (GP_LEFT, GP_RIGHT))
 
 
 

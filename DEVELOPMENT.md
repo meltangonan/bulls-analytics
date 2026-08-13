@@ -185,12 +185,37 @@ These are the traps that produce silently wrong numbers rather than errors.
   take the outer two. Verified against 7,463 labelled 2025-26 shots — a classifier built to this
   spec reproduces NBA's own labels on 99.8%, the rest being boundary rounding in NBA's integer
   coordinates.
-- **A zone chart that draws NBA's real sector geometry looks broken, so `scoring_by_location.py`
+- **The baseline/mid-range divider runs from the hoop through the corner break**, the point where
+  the arc meets the straight corner line, rather than at NBA's 36°. `shot_maps.CORNER_BREAK_DEG`
+  derives it (22.13°) instead of hard-coding it. Three lines then meet at one point — corner line,
+  arc, divider — so the boundary continues a mark already painted on the floor instead of sitting at
+  an angle nobody can name. It moves **44 of 7,417 Bulls shots (0.59%)** out of the baseline zones
+  into the mid-range ones, and changed **none** of `scoring_by_location.py`'s twelve zone leaders,
+  which was checked before the change landed.
+- **The two central mid-range cuts split what the baseline cuts leave into even thirds**
+  (`shot_maps.MID_SECTOR_CUTS`), not NBA's 72°/108°. Measured, not assumed: NBA's own angles gave the
+  centre sector 17.5% of the mid-range's area against 27.9% for each wing, because the paint pushes
+  the centre sector's inner edge out to the free-throw line — a ray is a poor proxy for area there.
+  Even thirds flattened both the area split (12.4% spread against 14.5%) and, more sharply, the split
+  of league three-point volume above the arc (31/33/36% against NBA's 35/26/39%). Rays through the
+  paint's own top corners were tried first and rejected — geometrically the more "principled" choice,
+  they overshoot badly and hand the centre 46.9% of above-the-break threes. The change moved 224 Bulls
+  shots (3.0%) and two of `scoring_by_location.py`'s zone leaders (Right Mid-Range, Top of Key 3);
+  both were checked and accepted as the archived post shipped under the old cuts, and a re-run under
+  the new ones would name different players there.
+  `shot_maps.ATB_CUTS` is `MID_SECTOR_CUTS[1:3]`, not a separate pair of numbers — the above-the-break
+  dividers are literally the same two rays continued past the arc, so they cannot drift apart from the
+  mid-range cuts they extend.
+- **A zone chart that draws NBA's real sector geometry looks broken, so the twelve-zone family
   deliberately does not.** The change in sector count at 16 ft makes each baseline/mid-range divider
   a stepped "tent" rather than a straight ray, and it reads as a rendering fault (flagged three times
-  in review). That prototype uses five sectors at *every* distance and classifies from `loc_x`/
-  `loc_y` with its own `zone_of`, so the drawn regions and the grouped numbers are the same object
-  and the chart cannot draw one set of regions while counting another. The divergence is measured,
+  in review). `shot_maps.zone_of` uses five sectors at *every* distance and classifies from `loc_x`/
+  `loc_y`, so the drawn regions and the grouped numbers are the same object
+  and the chart cannot draw one set of regions while counting another. It lives in `shot_maps`
+  rather than in a prototype because two posts now draw these regions — `scoring_by_location.py`
+  and `--chart zones` — and a second copy of a classifier is the same failure one level up: two
+  charts counting different regions while both claim to show NBA's zones. `scoring_by_location.py`
+  re-exports it under its original name. The divergence is measured,
   not assumed: 34 of 5,855 roster shots move (0.6%), almost all long twos near the 16 ft line, and
   one of twelve zone leaders changes. The script prints the live agreement rate against NBA's labels
   on every run — if that figure drifts, the geometry drifted. **This is a deliberate exception to
@@ -308,18 +333,97 @@ These are the traps that produce silently wrong numbers rather than errors.
 ## CLIs
 
 ```bash
-venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|rings|cells|ladder [--final]
+venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|rings|cells|zones|ladder [--final]
+venv/bin/python scripts/make_shot_chart.py --team --chart zones [--project <slug>]
 venv/bin/python scripts/make_shot_chart.py --team|--league --chart ladder --metric pps|fg-rel|pps-rel [--project <slug>]
 venv/bin/python scripts/make_shot_chart.py --team --chart ladder --blank [--project <slug>]
+venv/bin/python scripts/prototypes/current_roster_zone_charts.py    # the team plus every qualified player
 venv/bin/python scripts/save_visual_version.py --project <slug> <files...>   # preserve a reviewed version
 ```
 
-`rings` and `cells` answer the same question — how well he shoots by area, against the league — at
-four zones and at 18. Choose by sample. `rings` keeps every band large enough to carry volume as
-well as efficiency; `cells` locates a strength or a hole precisely but greys out what it cannot
-stand behind. On a ~950-attempt season about half the `cells` grid greys, which is informative when
-a player genuinely has no mid-range game and misleading when he simply missed time — read the
-printed per-cell table before publishing either.
+`rings`, `zones`, and `cells` answer the same question — how well he shoots by area, against the
+league — at four regions, twelve, and 18. Choose by sample. `rings` keeps every band large enough
+to carry volume as well as efficiency; `cells` locates a strength or a hole precisely but greys out
+what it cannot stand behind. On a ~950-attempt season about half the `cells` grid greys, which is
+informative when a player genuinely has no mid-range game and misleading when he simply missed time
+— read the printed per-cell table before publishing either.
+
+`zones` sits between them and is the only one of the three that fills the whole court, which is what
+makes it the colourful sibling of the hex chart rather than another sparse map. It uses NBA's twelve
+named regions via `shot_maps.zone_of`, colours each by FG% against the league across five bands, and
+prints attempts-per-75 under the shooting figure at the same type size — the two are meant to be read
+together, because a player can be excellent in a zone he never visits. Shooting is the top line
+because the fill is shooting; the colour and the first figure have to be the same thing. The scale
+runs red → yellow → green by default (`--palette hex` for the blue scale the hex carousel used);
+`DESIGN.md` owns why.
+
+**Points per shot is deliberately not on it.** Inside one zone the point value is a constant, so PPS
+is FG% times that constant and "his PPS vs the league's" ranks identically to "his FG% vs the
+league's". PPS earned its place on the scoring-by-location post because that chart compared *across*
+zones, where a 35% three really does beat a 52% long two. Here it would be a third figure repeating
+the first. `tests/test_zone_charts.py` pins the identity so nobody re-adds it.
+
+`zones` is the one chart in the family that accepts `--team` *and* needs a different denominator to
+do it. Five players share every team possession, so a team's attempt rate measured against the
+league's player-possession total reads about five times too high and still looks plausible. Each
+scope gets its own matching pair: `team_possessions` against `league_team_possessions`, or
+`player_possessions` against `league_possessions`. The raw rates are therefore not comparable
+between a team chart and a player chart, but the *gaps to the league* — which is what the colour and
+the printed delta encode — are. `--league` is rejected outright: the league cannot be its own
+baseline.
+
+**Every zone's pill prints makes over attempts** — `11 / 32 FG (34.4%)` — which changed what the
+colour floor has to protect. Early drafts hid the sample behind the floor entirely: a thin zone was
+greyed and only its attempt *rate* survived, because the reader had no way to judge the percentage
+for themselves. Once the raw count is on the page, the floor's only job is protecting the **colour**
+— a reader who can see "0 / 1" is not misled by a hatched zone the way they would be by a solid one.
+That is what let the floor come down from an evidence-grade bar to a display-grade one.
+
+**Both floors are solved, not chosen**, by asking the same question at a strength each subject's
+sample can support: *what must not be able to move a zone into the next colour band?*
+
+| Subject | Rule | Function | n | Why that rule |
+| --- | --- | --- | --- | --- |
+| Team chart | one standard error can't move it a band | `colour_floor(2.5)` | 400 | ~7,400 team shots can afford the strict reading |
+| Player chart | one **shot** can't move it a band | `single_shot_floor(5.0)` | 20 | a rotation player's ~500 shots across twelve zones cannot reach a standard-error bar anywhere but the rim |
+
+`single_shot_floor` is `⌈100 / band_width⌉`: one make out of *n* moves a percentage by `100/n`
+points, and a band is 5 points wide, so 20 is the smallest *n* where one shot cannot flip the colour.
+`tests/test_zone_charts.py` pins the arithmetic so the number stays checkable rather than becoming
+folklore.
+
+**This floor was 45 for several rounds** — solved the same way as the team's, `colour_floor(7.5)` —
+before the counts-in-the-pill change made it clearly too strict: at 45, 71% of the carousel printed
+grey, including every mid-range zone for every player, on a chart meant to be colourful and legible
+at a glance rather than to carry an evidence-grade claim on its own. Three fixes were costed and
+rejected before landing on the single-shot rule:
+
+| Idea | Why it fails |
+| --- | --- |
+| Flat floor of 25 | Margin of error ±19.6 points, wider than the whole ±7.5 outer band — the scale would be finer than its own noise |
+| Floor as a **share of the league's** volume in that zone | Anchored at the rim it gives the baseline zones a floor of 2 attempts (±65 points); anchored the other way the rim floor becomes 904. Precision depends on the raw count, not on how rare the zone is |
+| Floor as a **share of the player's own** attempts | Backwards: it sets the *loosest* bar for the player the chart knows *least* about (Miller's 5% floor is 13 shots; Buzelis's is 48), and it makes green mean a different margin of error on every slide in the carousel |
+| Floor solved per zone from the league's own FG% there | Correct, and worthless — the spread across all twelve zones is 4.7 attempts, because binomial variance is nearly flat over the 35–67% range basketball occupies |
+
+Merging the five mid-range zones into one band, and colouring the fill by volume instead of FG%,
+were also mocked and rejected on editorial grounds rather than statistical ones — twelve named zones
+and an efficiency-coded fill are the post. **Do not re-open any of these without new evidence; the
+arithmetic is above.**
+
+**A zone gets one of three treatments**, by attempt count:
+
+| Attempts | Treatment | Pill |
+| --- | --- | --- |
+| ≥ floor | solid band colour | full four-line pill |
+| 1 to floor−1 | band colour, hatched | full four-line pill, muted |
+| 0 | grey | `0 FGA` only |
+
+A hatched zone keeps its own colour rather than being greyed, because greying threw the finding away
+to signal the doubt; hatching says the same thing the way a footnote does. Grey now means exactly one
+thing — he never shot there — which a silent gap used not to say. `zone-chart-summary-<season>.csv`
+reports the rated share per subject so a thin chart (Claxton: 92% of attempts on 2 of 12 rated zones,
+because he takes 92% of his shots at the rim) can be checked before publishing rather than discovered
+after.
 
 `ladder` is the distance-only form, concentric distance bands and no angle at all. It gets its
 fullest read from team-scale volume, but it can also show a player's shot-value profile:

@@ -11,6 +11,11 @@ Two independent methods live here, and they answer different questions:
   with per-75 volume and FG% measured against the league in the same band.
   Answers *how often and how well, compared with everyone else*.
 
+* **Named zones** (``zone_of`` / ``zone12_split``) -- the same two questions over
+  NBA's twelve named regions rather than four concentric bands. Twelve zones
+  separate a baseline turnaround from a top-of-key pull-up, which four cannot,
+  at the cost of a thinner sample per region.
+
 * **Polar cells** (``polar_split``) -- the same efficiency question at high
   resolution: 4 ft distance bands crossed with angular sectors, 18 cells rather
   than 4. Answers *which spots specifically*, at the cost of a sample thin enough
@@ -430,6 +435,237 @@ def zone_split(player: pd.DataFrame, league: pd.DataFrame, player_poss: float,
     order = {z: i for i, z in enumerate(ZONE_ORDER)}
     return pd.DataFrame(rows).sort_values("zone", key=lambda c: c.map(order),
                                           ignore_index=True)
+
+
+# --- The twelve named zones ------------------------------------------------
+# NBA's own regions, five side sectors at every distance. This classifier was
+# written for the scoring-by-location post and lives here because two charts now
+# depend on it; the geometry must have exactly one owner or a chart can count one
+# set of regions while drawing another.
+#
+# The divergence from NBA's published labels is deliberate and measured. NBA
+# steps from three side sectors to five at 16 ft, which draws each baseline /
+# mid-range divider as a stepped "tent" rather than a straight ray -- the floor
+# has no line at 16 ft for the step to sit on, so it reads as a rendering fault.
+# Holding five sectors at every distance moves 34 of 5,855 roster shots (0.6%).
+RA_R = 40.0                 # restricted area, 4 ft
+PAINT_HALF = 80.0           # key half-width, 8 ft
+FT_Y = 142.5                # free-throw line
+ARC_R = 237.5               # three-point arc, 23.75 ft
+ZONE12_CORNER_X = 220.0     # corner-3 sideline, 22 ft
+CORNER_Y = float(np.sqrt(ARC_R ** 2 - ZONE12_CORNER_X ** 2))   # arc break, ~89.5
+
+ZONE12_ORDER = (
+    "Restricted Area", "In The Paint (Non-RA)",
+    "Left Baseline", "Left Mid-Range", "Center Mid-Range",
+    "Right Mid-Range", "Right Baseline",
+    "Left Corner 3", "Left Wing 3", "Top of Key 3",
+    "Right Wing 3", "Right Corner 3",
+)
+
+THREE_ZONES = frozenset({"Left Corner 3", "Left Wing 3", "Top of Key 3",
+                         "Right Wing 3", "Right Corner 3"})
+
+
+# --- What it takes to earn a colour ----------------------------------------
+# The floor is derived from the colour scale rather than chosen, because the
+# scale is the thing making the claim. Bands are cut at +/-2.5 and +/-7.5 FG
+# percentage points, so the question "how many attempts does a zone need" is
+# really "how precise must this estimate be before those cuts mean anything".
+#
+# A shooting percentage is a binomial proportion, so its standard error is
+# sqrt(p(1-p)/n). Fix the precision you need, solve for n:
+#
+#     n = p(1-p) / sigma^2
+#
+# p is unknown before the fact and p(1-p) peaks at p = 0.5, so 0.25 is the
+# assumption-free worst case -- it never under-counts the sample a zone needs.
+# That leaves one parameter, sigma, and it is a stated editorial choice rather
+# than a hidden constant: how far can this estimate wander before its colour is
+# a lie? Two answers are defensible, and which is reachable depends entirely on
+# how many shots the subject took.
+#
+#   sigma = 2.5 points -- one band half-width. One standard error cannot move a
+#           zone out of the band it was drawn in. n = 400.
+#   sigma = 7.5 points -- centre cut to outer cut. One standard error cannot
+#           fling a zone two whole bands, from average to "well above". n = 45.
+#
+# 400 is the honest bar and a team clears it in every zone it actually uses. A
+# player does not: a rotation player takes ~950 shots across twelve zones, so
+# requiring 400 would grey out everything except the rim. The looser bar is what
+# a player-season can support, and saying so is more useful than pretending a
+# single floor fits both. This is the whole reason the two charts differ.
+SIGMA_TEAM_POINTS = 2.5
+BAND_WIDTH_POINTS = 5.0     # one colour band, cut at +/-2.5 and +/-7.5
+
+
+def colour_floor(sigma_points: float) -> int:
+    """Attempts a zone needs before its FG% is precise to ``sigma_points``.
+
+    Worst-case binomial variance, so the answer holds whatever the zone's true
+    shooting percentage turns out to be.
+    """
+    return int(np.ceil(0.25 / (sigma_points / 100.0) ** 2))
+
+
+def single_shot_floor(band_points: float = BAND_WIDTH_POINTS) -> int:
+    """Attempts a zone needs before one make or miss cannot recolour it.
+
+    One shot out of n moves a percentage by 100/n points, so a band 5 points
+    wide needs 20 attempts. Below that a single shot changes which colour the
+    zone is, and colour stops being worth printing at all.
+    """
+    return int(np.ceil(100.0 / band_points))
+
+
+# Both floors answer the same question -- what must NOT be able to change this
+# zone's colour -- at the strength each subject's sample can actually support.
+#
+#   team    one standard error must not move it a band. A team shoots ~7,400
+#           times, so it can afford the strict reading. 400 attempts.
+#   player  one SHOT must not move it a band. A rotation player takes ~500 over
+#           twelve zones and cannot reach 400 anywhere but the rim, so the
+#           reachable version of the same instinct is the weaker one. 20.
+#
+# 45 was used first, from a standard-error reading at 7.5 points, and it was too
+# strict for what this chart is: it left 71% of the carousel grey, including
+# every mid-range zone for every player. What made 20 defensible is that the
+# pill now prints makes over attempts, so the sample is disclosed inline and the
+# floor only has to protect the COLOUR, not the number.
+MIN_ZONE12_FGA_TEAM = colour_floor(SIGMA_TEAM_POINTS)        # 400
+MIN_ZONE12_FGA_PLAYER = single_shot_floor()                  # 20
+# Volume survives a thin sample either way -- an attempt is counted, not
+# estimated -- so a zone below the floor keeps its rate and loses only its
+# colour and its shooting percentage.
+MIN_ZONE12_FGA = MIN_ZONE12_FGA_PLAYER
+
+
+# --- Where the baseline zone ends ------------------------------------------
+# The divider between a baseline shot and a mid-range one is the ray from the
+# hoop through the corner break -- the point where the three-point arc meets the
+# straight corner line, at (220, 89.5). Three lines then meet at one point: the
+# corner line, the arc, and this divider. The reader sees a boundary that
+# continues a mark already painted on the floor instead of a ray at an angle
+# nobody can name.
+#
+# It replaces a 36 degree cut, which was NBA's own and had nothing on the court
+# to sit on. The cost is measured on every run of the zone chart, the same way
+# the five-sector departure is.
+CORNER_BREAK_DEG = float(np.degrees(np.arctan2(CORNER_Y, ZONE12_CORNER_X)))
+
+# The three central sectors split the span between the baseline cuts evenly.
+#
+# NBA's own 72/108 was tried first and measured worse on both tests that matter.
+# A ray is a poor proxy for size here: the paint pushes the middle sector's inner
+# edge out to the free-throw line, so at 36 degrees it held 17.5% of the
+# mid-range area while each wing held 27.9%. Even thirds give the flattest
+# result available -- area spread 12.4% against 14.5%, shot spread 13.1% against
+# 14.9% -- and above the arc the improvement is dramatic: 31/33/36% of league
+# threes against 35/26/39%.
+#
+# Rays through the paint's own top corners (60.7 degrees) look like the
+# principled choice and overshoot badly, handing the middle 46.9% of
+# above-the-break threes. Measured, not assumed.
+MID_SECTOR_CUTS = tuple(
+    CORNER_BREAK_DEG + i * (180.0 - 2 * CORNER_BREAK_DEG) / 3.0
+    for i in range(4))
+
+# The above-the-break dividers ARE the two central mid-range dividers, continued
+# past the arc. Deriving them rather than repeating the numbers is what keeps
+# each one a single unbroken ray from the paint to the top of the chart; written
+# out twice they drift apart and put a kink in the line exactly where it crosses
+# the most-drawn arc on the floor.
+ATB_CUTS = MID_SECTOR_CUTS[1:3]
+
+
+def _angle(x, y) -> np.ndarray:
+    """Degrees measured at the hoop, 0 = viewer's right, 180 = viewer's left."""
+    a = np.degrees(np.arctan2(y, x))
+    return np.where(a < -90, a + 360, a)
+
+
+def zone_of(x, y) -> np.ndarray:
+    """Zone name for court coordinates, as an object array of the same shape."""
+    x = np.asarray(x, dtype=float)
+    y = np.asarray(y, dtype=float)
+    r = np.hypot(x, y)
+    a = _angle(x, y)
+
+    out = np.full(x.shape, "", dtype=object)
+
+    corner = (np.abs(x) >= ZONE12_CORNER_X) & (y <= CORNER_Y)
+    beyond_arc = (r >= ARC_R) & ~corner
+    paint = (np.abs(x) <= PAINT_HALF) & (y <= FT_Y) & (r > RA_R)
+
+    out[corner & (x < 0)] = "Left Corner 3"
+    out[corner & (x > 0)] = "Right Corner 3"
+    atb_low, atb_high = ATB_CUTS
+    out[beyond_arc & (a < atb_low)] = "Right Wing 3"
+    out[beyond_arc & (a >= atb_low) & (a < atb_high)] = "Top of Key 3"
+    out[beyond_arc & (a >= atb_high)] = "Left Wing 3"
+
+    mid = (out == "") & (r > RA_R) & ~paint
+    c1, c2, c3, c4 = MID_SECTOR_CUTS
+    out[mid & (a < c1)] = "Right Baseline"
+    out[mid & (a >= c1) & (a < c2)] = "Right Mid-Range"
+    out[mid & (a >= c2) & (a < c3)] = "Center Mid-Range"
+    out[mid & (a >= c3) & (a < c4)] = "Left Mid-Range"
+    out[mid & (a >= c4)] = "Left Baseline"
+
+    out[paint] = "In The Paint (Non-RA)"
+    out[r <= RA_R] = "Restricted Area"
+    return out
+
+
+def zone12_split(subject: pd.DataFrame, league: pd.DataFrame,
+                 subject_poss: float, league_poss: float,
+                 min_fga: int = MIN_ZONE12_FGA) -> pd.DataFrame:
+    """Per-zone volume and accuracy for all twelve zones, each vs the league.
+
+    The same two questions ``zone_split`` asks of four rings, asked of twelve
+    named regions. Every zone appears in the result even when the subject never
+    shot there, because a zone he avoids entirely is a finding -- dropping the
+    row would silently redraw the chart with a hole in it.
+
+    ``subject_poss`` and ``league_poss`` must be the same kind of possession.
+    Player charts pass player-possessions against the league's player-possession
+    total; a team chart passes team-possessions against all thirty teams'. Mixing
+    the two would compare a player's rate with a team's.
+    """
+    subject = subject.copy()
+    league = league.copy()
+    subject["zone12"] = zone_of(subject["loc_x"], subject["loc_y"])
+    league["zone12"] = zone_of(league["loc_x"], league["loc_y"])
+
+    lg = league.groupby("zone12")["shot_made"].agg(["size", "sum"])
+    mine = subject.groupby("zone12")["shot_made"].agg(["size", "sum"])
+
+    rows = []
+    for zone in ZONE12_ORDER:
+        fga = int(mine["size"].get(zone, 0))
+        fgm = int(mine["sum"].get(zone, 0))
+        lg_fga = int(lg["size"].get(zone, 0))
+        lg_fgm = int(lg["sum"].get(zone, 0))
+        fg = fgm / fga if fga else float("nan")
+        lg_fg = lg_fgm / lg_fga if lg_fga else float("nan")
+        per75 = fga / subject_poss * 75
+        lg_per75 = lg_fga / league_poss * 75
+        value = 3 if zone in THREE_ZONES else 2
+        rows.append({
+            "zone": zone, "fga": fga, "fgm": fgm,
+            "fg": fg, "lg_fg": lg_fg,
+            "fg_rel": (fg - lg_fg) * 100 if fga else float("nan"),
+            "per75": per75, "lg_per75": lg_per75,
+            "vol_rel": (per75 / lg_per75 - 1) * 100 if lg_per75 else float("nan"),
+            "pps": fg * value if fga else float("nan"),
+            "lg_pps": lg_fg * value if lg_fga else float("nan"),
+            "point_value": value,
+            # Colour is the claim "he is better here than the league". Volume is
+            # a count and needs no such guard, so a thin zone keeps its rate and
+            # loses only its fill.
+            "rated": bool(fga >= min_fga),
+        })
+    return pd.DataFrame(rows)
 
 
 def separable(made: int, attempts: int, league_rate: float,

@@ -155,6 +155,98 @@ overlapping colors distinct without turning the map into a white grid. Clip the 
 to the sidelines and baseline; edge-bin centers remain in their true locations, but no part of a
 shot mark may appear outside the court.
 
+**The twelve-zone chart reuses those exact five cuts as area fills, but runs them red → yellow →
+green rather than blue → yellow → red.** The cuts, the bands and the mark are otherwise the same;
+hexes float on cream and leave most of the court empty, while zones tile the whole half court.
+
+Green-means-better is only honest because every figure on that chart is measured against the league
+*in the same zone*. On a raw FG% map it would be nonsense — the rim would always be green and the
+arc always red. It also settles a clash the hex scale created: the zone chart already prints each
+gap in green or red beneath its figure, so a blue fill sat above a red delta with both meaning
+"below league". `--palette hex` still renders the blue scale for comparison.
+
+The cost is real and accepted: red and green are the common colour-blindness pair. It survives here
+because direction is carried redundantly in text — every rated zone prints a signed number — and
+because the two ends differ in lightness as well as hue. Keep that if the palette is ever retuned;
+equal-lightness ends would leave a dichromat unable to tell which extreme they were looking at.
+
+Three rules keep filled zones legible where floating marks needed none. **Type colour is computed
+from the fill's luminance, not chosen by hand**, because the scale runs dark blue → pale blue →
+yellow → orange → dark red and the readable ink therefore flips twice across it; a hand-kept list
+rots the moment a colour moves. **Neighbouring zones are separated by a cream hairline**, because two
+adjacent zones can land in the same band and would otherwise read as one region.
+Those hairlines are **solved from geometry, never traced from the classified
+grid** — tracing is right for a fill and wrong for a line, and it left white
+stubs hanging mid-zone where a contour closed on itself, plus a faint second
+edge beside every black court line it ran along. Only the dividers the floor
+does not already paint get a hairline: the mid-range rays, the two above-the-arc
+rays, and the corner break. The arc, corner lines, paint edges and free-throw
+line are drawn in black already, and a white seam beside them is a duplicate. And **the sidelines
+run the full drawn depth** on this chart alone: `draw_half_court` stops them at 11 ft, which is fine
+under floating marks and reads as a colour bleed under fills.
+
+**Zone blocks carry no zone name.** A court is a diagram the reader already knows, so a caption over
+the top of the key spends a line of type restating the picture — twelve times over. Position is the
+attribution instead, which makes position load-bearing: **every block must sit inside the region it
+reports**, and `tests/test_zone_charts.py` asserts it by running each anchor back through the
+classifier. The rim and the two corner blocks used to sit below the baseline, which only worked while
+they were captioned; removing the captions moved them onto their own zones.
+
+**Figures sit on cream pills, four lines:** makes over attempts with the shooting percentage in
+brackets (`11 / 32 FG (34.4%)`), its gap to league average in green above / red below ending in
+"vs LA", then attempts per 75 and its own gap the same way. Both figures take the same size, so
+neither shooting nor volume outranks the other — but **shooting leads, because the fill is
+shooting.** A zone's colour is its FG% against the league, so the first line of the pill has to be
+the figure that colour is about; leading with volume made the reader hunt past it for the number the
+region was already shouting.
+
+The makes and attempts sit in front of the percentage rather than behind a floor. "11 / 32 FG
+(34.4%)" lets a reader see how much to trust the 34.4% themselves, which is what makes a hatched
+zone legible instead of something they have to take on faith — the count explains the hatch. A
+compact two-line variant (`--pill counts`) drops to the shooting pair alone for a simpler chart that
+gives up the volume comparison.
+
+Gaps use a **true minus** (−, not a hyphen) and carry **no sign at all when they round to zero** —
+`+.0f` renders a −0.4% gap as "−0%", a direction the printed number contradicts, so the sign is
+decided after rounding rather than before.
+
+The pill is what makes one ink and one colour set possible. Type laid straight on the fill had to be
+recoloured per zone to stay legible, and the same figure changing colour zone to zone read as though
+the colour meant something. On cream, colour means direction and nothing else. Pills **stack** into
+one column rather than the rings chart's two: carrying "vs LA" on both gaps roughly doubles a row's
+width, and three side-by-side pills above the arc would need more room than the court has. A corner
+strip is 3 ft wide, so its pill overhangs onto the neighbouring zone and is attributed by being
+centred on the strip.
+
+**A gap only earns a colour when it is bigger than the doubt around it**, otherwise it prints grey.
+Shooting borrows the fill scale's own ±2.5-point neutral band, so a zone painted "about average"
+never carries a coloured gap — colour cannot contradict colour. Volume has no fill scale to borrow,
+so it uses the noise in its own count: attempts in a zone is a count, its standard error is the
+square root of itself, and a gap inside 1/√n is indistinguishable from the season landing
+differently.
+
+Line spacing is set against line height, not by eye. Spacing is in canvas units and type in points,
+and at this canvas's 150 dpi one point is 2.08 units, so a gap smaller than the type is an overlap —
+which is exactly what three drafts shipped. The gap under a figure is deliberately tighter than the
+gap to the next pair, so four lines read as two statements rather than one list.
+
+**A zone below the colour floor is hatched, not greyed** — the fill keeps its own band colour under
+a diagonal rule, and the pill keeps all four figures at a muted ink and alpha. Greying it outright was
+tried first and reversed: it threw the finding away to signal the doubt, where hatching says the same
+thing the way a footnote does — read this, but not as hard — and texture is a weaker channel than
+colour, which is the right ranking for a caveat against the thing it qualifies. **Grey is reserved for
+a zone with zero attempts**, and prints only `0 FGA`; that is the one state a silent gap used not to
+distinguish from "measured and unrated." The legend's hatch swatch sits on a neutral grey card rather
+than a band colour, because the hatch can fall on any of the five bands and a coloured card would
+suggest it belonged to that one.
+
+The **rim disc is 8 ft across**, and its pill is shrunk to fit inside — solved on every render from
+the pill's farthest point rather than tuned once, so a longer figure on another player's chart shrinks
+the type instead of bursting the disc. The rounded corners are load-bearing there: they pull that
+farthest point well inside the rectangle's diagonal, which is most of why a near-full-size pill fits
+at all. It is also the tightest fit on the carousel: the team chart's four-digit counts (`1651 / 2612
+FG`) push the rim pill's type down to roughly 60% of its normal size, against ~70% on a player chart.
+
 Keep the hex-chart key visual and sparse in one two-column row: **Volume** on the left, with one
 small and one large hex labeled **Less** and **More** beneath it; **FG% vs. NBA Avg** on the right,
 with the five efficiency colors labeled **Below** and **Above** beneath it. Do not print subject

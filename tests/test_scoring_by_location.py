@@ -201,12 +201,23 @@ def test_a_bearing_keeps_its_zone_at_every_distance():
 
 
 def test_every_mid_range_border_is_a_single_ray():
-    """Walk each divider bearing outward; the zone either side must never swap."""
+    """Walk each divider bearing outward; the zone either side must never swap.
+
+    None of the four sit where NBA puts them. The baseline cuts run from the hoop
+    through the corner break, where the arc meets the straight corner line, so
+    each continues a mark the floor already carries. The two central cuts split
+    what is left evenly, which measured flatter than NBA's 72/108 on both zone
+    area and league shot volume. The same two rays continue past the arc as the
+    above-the-break dividers, so every divider is one unbroken line.
+    """
+    from bulls.analysis.shot_maps import MID_SECTOR_CUTS
+
+    lower, mid_low, mid_high, upper = MID_SECTOR_CUTS
     for cut, inner_zone, outer_zone in [
-        (36.0, "Right Baseline", "Right Mid-Range"),
-        (72.0, "Right Mid-Range", "Center Mid-Range"),
-        (108.0, "Center Mid-Range", "Left Mid-Range"),
-        (144.0, "Left Mid-Range", "Left Baseline"),
+        (lower, "Right Baseline", "Right Mid-Range"),
+        (mid_low, "Right Mid-Range", "Center Mid-Range"),
+        (mid_high, "Center Mid-Range", "Left Mid-Range"),
+        (upper, "Left Mid-Range", "Left Baseline"),
     ]:
         for radius in np.arange(PAINT_HALF + 25, ARC_R - 5, 10.0):
             below = np.radians(cut - 4)

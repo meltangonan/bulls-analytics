@@ -50,6 +50,7 @@ from bulls.graphics.court import (
     BACKBOARD_HALF_WIDTH,
     BACKBOARD_Y,
     CORNER_X,
+    COURT_HALF_WIDTH,
     FT_LINE_Y,
     FT_RADIUS,
     HASH_FROM_BASELINE_FT,
@@ -1267,6 +1268,653 @@ def _footer(ax, theme, ctx):
             fontsize=9, color=theme.faint, fontproperties=helvetica())
 
 
+# ---------------------------------------------------------------------------
+# zones — the twelve named regions, volume and accuracy both vs league
+# ---------------------------------------------------------------------------
+# The rings chart's two questions asked of twelve regions instead of four, in the
+# hex chart's colours so the two posts read as one system. Fill answers "does he
+# score better here than the league"; the printed pair answers that and "does he
+# come here more often", weighted equally.
+#
+# Fill and hex colour share HEX_CUTS deliberately. A reader meeting both posts
+# learns one scale: blue below the league, yellow at it, red above. The cuts are
+# in FG-percentage points (2.5 and 7.5), which is a wider spread at zone level
+# than at hex level -- a whole zone rarely runs 8 points clear of the league, so
+# the outer bands stay reserved for genuine outliers.
+ZONE12_GREY = "#D8D2CA"          # only for a zone with no attempts at all
+# A zone below the colour floor keeps its own colour and is hatched instead of
+# greyed. Greying threw the finding away to signal the caveat; hatching says the
+# same thing as a footnote does -- read this, but not as hard. Texture is a
+# weaker visual channel than colour by design, which is exactly the ranking a
+# caveat should have against the thing it qualifies.
+ZONE12_HATCH = "///"
+ZONE12_HATCH_INK = "#FBF8F4"     # the seam cream, so the ruling reads as screening
+ZONE12_HATCH_WIDTH = 1.1
+ZONE12_HATCH_KEY = "#B9B3AB"     # the legend swatch behind the hatch
+plt.rcParams["hatch.linewidth"] = ZONE12_HATCH_WIDTH
+ZONE12_SEAM = "#FAF8F5"          # divider between neighbouring fills
+# Every figure sits on a cream pill, so there is one ink and one green-red pair
+# rather than one per fill. That is the real win of the pill: an earlier draft
+# recoloured type per zone to survive the band underneath it, and the same
+# figure changing colour from zone to zone read as though the colour meant
+# something. Here colour means direction, and nothing else.
+ZONE12_UP_ON_LIGHT, ZONE12_DOWN_ON_LIGHT = "#12693A", "#93150B"
+ZONE12_NEUTRAL_GAP = "#6E6963"   # a gap too small to call a direction
+
+# Two fill scales, same five bands and same cuts, different argument.
+#
+#   hex     blue -> yellow -> red, inherited from the hex carousel. Red is the
+#           high end because red is the Bulls' colour, so "more red" reads as
+#           "more Bulls", and nothing on the scale claims good or bad.
+#   rdylgn  red -> yellow -> green. Instantly legible, because green-is-good
+#           needs no legend at all -- at the cost of passing judgement in the
+#           colour, and of clashing with a Bulls-red page.
+ZONE12_PALETTES = {
+    "hex": HEX_COLORS,
+    "rdylgn": ("#A8322A", "#DC7B62", "#F1CC5B", "#8CBF63", "#357C41"),
+}
+ZONE12_DEFAULT_PALETTE = "rdylgn"
+
+
+
+def _zone12_band_color(rel: float, palette: str) -> str:
+    """One of five discrete bands around league-average FG%, in either scale."""
+    return ZONE12_PALETTES[palette][int(np.digitize(rel, HEX_CUTS))]
+ZONE12_TRACE_STEP = 1.0          # court units per grid sample when tracing fills
+ZONE12_TRACE_BLUR = 0.8          # softens the stair-stepping on radial dividers
+# How deep the court is drawn: 33.5 ft from the hoop, a few feet past the
+# deepest shots anyone takes on purpose. Drawing the whole half court to the
+# centre line was tried and pulled back -- it is honest, and it spent the top
+# third of the image on empty floor no shot ever reaches. This is the compromise
+# the pills actually need: enough room above the arc for a label with air around
+# it, and no more. Nothing is rescaled to make it fit; the court stays true.
+ZONE12_TOP = 335.0
+
+# Short names, kept for the printed table and the data exports. They are no
+# longer drawn: a court is a diagram a reader already knows, so "TOP OF KEY" over
+# the top of the key spends a line of type restating the picture. Dropping them
+# is what let every block shrink to two lines.
+ZONE12_SHORT = {
+    "Restricted Area": "RIM",
+    "In The Paint (Non-RA)": "PAINT",
+    "Left Baseline": "LEFT BASELINE",
+    "Left Mid-Range": "LEFT MID",
+    "Center Mid-Range": "CENTER MID",
+    "Right Mid-Range": "RIGHT MID",
+    "Right Baseline": "RIGHT BASELINE",
+    "Left Corner 3": "LEFT CORNER",
+    "Left Wing 3": "LEFT WING",
+    "Top of Key 3": "TOP OF KEY",
+    "Right Wing 3": "RIGHT WING",
+    "Right Corner 3": "RIGHT CORNER",
+}
+
+# Where each zone's block sits, in court coordinates with the hoop at the origin
+# and y running away from the baseline. EVERY block now sits inside the zone it
+# reports. It used to be that three did not -- the rim and the two corner strips
+# dropped below the baseline -- and that was only legible because each block was
+# captioned with its zone name. Removing the names removed the attribution, so a
+# figure parked off-court became a figure belonging to nothing. Position is now
+# the only thing saying which zone a number describes, which means position has
+# to be right.
+ZONE12_ANCHORS = {
+    # Dead centre of the restricted area. The pill fits inside the 8 ft disc
+    # only because its corners are rounded, which pulls its farthest point in
+    # well short of the rectangle's diagonal; _zone12_rim_fit checks that on
+    # every render and shrinks the type if a longer figure would burst it.
+    "Restricted Area":       (0, 0),
+    "In The Paint (Non-RA)": (0, 80),
+    # Twelve pills on one court is a packing problem, not a placement one, and
+    # the binding constraints are the arc and the paint rather than the zone
+    # centres. A pill centred in the mid-range wing overhangs the arc, because
+    # the zone narrows toward the top while the pill does not; these sit low and
+    # inboard of centre so all four corners stay inside their own region.
+    # Change one and check its neighbours, the arc, and the paint.
+    "Left Corner 3":         (-235, 46),
+    "Right Corner 3":        (235, 46),
+    "Left Baseline":         (-148, 4),
+    "Right Baseline":        (148, 4),
+    "Left Mid-Range":        (-130, 120),
+    "Right Mid-Range":       (130, 120),
+    "Center Mid-Range":      (0, 196),
+    # Clear of the arc by about 2 ft at the pill's INNER bottom corner, which is
+    # the point that reaches the line first -- measuring from the pill's centre
+    # put the corner on the arc while the centre looked fine.
+    "Left Wing 3":           (-166, 245),
+    "Right Wing 3":          (166, 245),
+    "Top of Key 3":          (0, 285),
+}
+
+
+
+
+def _zone12_grid():
+    """Sample grid over the drawn court, plus its zone classification."""
+    step = ZONE12_TRACE_STEP
+    xs = np.arange(-250.0, 250.0 + step, step)
+    ys = np.arange(sm.BASELINE_Y, ZONE12_TOP + step, step)
+    gx, gy = np.meshgrid(xs, ys)
+    return gx, gy, sm.zone_of(gx, gy)
+
+
+def _zone12_fill(ax, gx_px, gy_px, mask, color, zorder, hatched=False):
+    """Fill one zone by tracing its mask.
+
+    The regions are intersections of discs, rays, half-planes and the arc, and
+    assembling twelve exact paths by hand is where a chart starts counting one
+    set of regions while drawing another. Tracing the classifier itself makes
+    that impossible by construction: the drawn boundary IS the counted boundary.
+    The cost is a softened edge -- at this grid step and blur the traced line
+    stays within about an inch of true, well under a pixel at export size.
+    """
+    from scipy.ndimage import gaussian_filter
+
+    field = mask.astype(float)
+    if field.max() == 0:
+        return
+    smooth = gaussian_filter(field, sigma=ZONE12_TRACE_BLUR / ZONE12_TRACE_STEP,
+                             mode="nearest")
+    # The hatch keyword has to be absent rather than None: contourf iterates it
+    # unconditionally at draw time, so a None fails several frames inside the
+    # renderer rather than here.
+    extra = {"hatches": [ZONE12_HATCH]} if hatched else {}
+    filled = ax.contourf(gx_px, gy_px, smooth, levels=[0.5, 1.5], colors=[color],
+                         zorder=zorder, antialiased=True, **extra)
+    if hatched:
+        # contourf takes the hatch colour from the set's edge colour, and the
+        # edge itself must stay invisible or every zone grows an outline.
+        filled.set_edgecolor(ZONE12_HATCH_INK)
+        filled.set_linewidth(0.0)
+
+
+def render_zones(ctx, out: Path, final: bool):
+    min_fga = int(ctx.get("min_fga") or sm.MIN_ZONE12_FGA_PLAYER)
+    palette = ctx.get("palette") or ZONE12_DEFAULT_PALETTE
+    pill = str(ctx.get("pill") or "full")
+    # The floor still applies. It no longer decides whether a zone is drawn at
+    # all -- it decides whether the zone is hatched.
+    zones = sm.zone12_split(ctx["player"], ctx["league"], ctx["poss"],
+                            ctx["league_poss"], min_fga=min_fga)
+    scope = ctx.get("scope", "per 75 possessions")
+    for z in zones.itertuples():
+        rate = f"{z.fg * 100:5.1f}% FG ({z.fg_rel:+5.1f})" if z.fga else "     no attempts"
+        print(f"  {ZONE12_SHORT[z.zone]:<15}{z.fga:>5} FGA  {rate}   "
+              f"{z.per75:5.1f}/75 ({z.vol_rel:+4.0f}%)"
+              f"{'' if z.rated else '   too thin to colour'}")
+
+    theme = house.get_theme("jersey")
+    fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
+                              house.CANVAS_HEIGHT / house.DRAFT_DPI))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, house.CANVAS_WIDTH); ax.set_ylim(0, house.CANVAS_HEIGHT)
+    ax.set_aspect("equal"); ax.set_xticks([]); ax.set_yticks([])
+    ax.patch.set_alpha(0.0)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+
+    s = ZONE12_SCALE
+    x0, y0 = draw_half_court(ax, house.CANVAS_WIDTH / 2, ZONE12_COURT_Y, s,
+                             theme.ink, lw=1.2)
+
+    def to_px(cx, cy):
+        return x0 + (cx + 250.0) * s, y0 + (cy + 47.5) * s
+
+    gx, gy, grid = _zone12_grid()
+    gx_px, gy_px = to_px(gx, gy)
+    fills = {}
+    for z in zones.itertuples():
+        # Three states, and grey now means exactly one thing. A zone with
+        # attempts keeps its own colour whatever the sample; below the floor it
+        # is ruled over rather than replaced.
+        fills[z.zone] = (_zone12_band_color(z.fg_rel / 100, palette)
+                         if z.fga else ZONE12_GREY)
+        _zone12_fill(ax, gx_px, gy_px, grid == z.zone, fills[z.zone], 2.0,
+                     hatched=bool(z.fga and not z.rated))
+    # The restricted area is drawn exactly rather than traced, because tracing
+    # runs a blurred mask through a contour and pulls a convex boundary in by a
+    # pixel or two -- invisible on a large zone, visible on an 8 ft disc. It goes
+    # UNDER the court, at the same depth as every other fill, so the rim and
+    # backboard draw over it exactly as they do everywhere else. An earlier pass
+    # put it on top to clear room for type inside the disc; it read as the basket
+    # having been cut out of the chart, which is a worse trade than moving the
+    # label.
+    from matplotlib.patches import Circle as _Circle
+
+    rim = zones[zones.zone == "Restricted Area"].iloc[0]
+    rim_hatch = ZONE12_HATCH if rim.fga and not rim.rated else None
+    ax.add_patch(_Circle(to_px(0, 0), sm.RA_R * s,
+                         facecolor=fills["Restricted Area"], hatch=rim_hatch,
+                         edgecolor=ZONE12_SEAM, lw=1.4, zorder=2.5))
+    # Seams over every fill: two neighbouring zones can land in the same band,
+    # and without a divider they read as one region.
+    _zone12_seams(ax, to_px)
+    # draw_half_court stops the sidelines at 11 ft, which is enough when the
+    # data layer is floating marks. A filled court needs its edge: without it
+    # the wing colours run to nothing and the image reads as a bleed rather than
+    # a court. The top stays open and the crop lands on it, so the only added
+    # lines are real sidelines.
+    for side in (-250, 250):
+        ax.plot([to_px(side, 0)[0]] * 2,
+                [to_px(side, 110)[1], to_px(side, ZONE12_TOP)[1]],
+                color=theme.ink, lw=1.2, zorder=5)
+
+    for z in zones.itertuples():
+        _zone12_block(ax, to_px, z, fills[z.zone], theme, pill)
+
+    _zone12_legend(ax, theme, palette, min_fga)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    crop = Bbox.from_extents(0, ZONE12_CROP_BOTTOM / house.DRAFT_DPI,
+                             house.CANVAS_WIDTH / house.DRAFT_DPI,
+                             ZONE12_CROP_TOP / house.DRAFT_DPI)
+    fig.savefig(out, dpi=house.export_dpi(final), transparent=True,
+                bbox_inches=crop)
+    plt.close(fig)
+    print(f"Saved {out}")
+
+    thin = zones[~zones.rated]
+    total = len(ctx["player"])
+    made = int(ctx["player"].shot_made.sum())
+    # The chart carries the colour scale and nothing else, so everything the
+    # legend used to explain has to be typed in Canva. It is all here.
+    scale_words = ("Red below, yellow average, green above" if palette == "rdylgn"
+                   else "Blue below, yellow average, orange/red above")
+    print("\nCANVA COPY")
+    print(f"Subtitle: {ctx['season']} Regular Season")
+    print(f"Key: Colour = FG% vs the NBA in that zone · {scale_words}")
+    print("Reading it: vs LA = the gap to league average, in FG points for "
+          "shooting and in percent for attempt rate")
+    print("Grey figures: a gap too small to call — inside the margin of error "
+          "on its own sample")
+    print(f"Summary: {total:,} FGA · {made / total * 100:.1f}% FG · "
+          f"volume shown as attempts {scope}")
+    if len(thin):
+        print(f"Method: Grey zones are under {min_fga} attempts, too few to rate "
+              "the shooting percentage; their figures are shown but not coloured")
+        print("Thin zones: " + ", ".join(
+            f"{ZONE12_SHORT[z.zone]} ({z.fga})" for z in thin.itertuples()))
+    print("Source: NBA.com/stats")
+
+
+ZONE12_SCALE = 1.84
+ZONE12_COURT_Y = 771
+ZONE12_CROP_BOTTOM = 340
+ZONE12_CROP_TOP = 1180
+
+
+ZONE12_SEAM_WIDTH = 1.2          # the same weight as the court markings
+
+
+def _zone12_seam_segments() -> list[tuple[tuple[float, float], tuple[float, float]]]:
+    """Every zone divider that the court's own black lines do not already draw.
+
+    Solved from geometry rather than traced from the classified grid. Tracing
+    ran each zone's mask through a blur and a contour, which is fine for a fill
+    and wrong for a line: the blur pulled boundaries off true by a pixel or two,
+    left white stubs hanging in the middle of a zone where a contour closed on
+    itself, and drew a second faint edge alongside every black court line it ran
+    beside. Every divider here is a straight segment with exact endpoints.
+
+    Most boundaries need nothing. The arc, the corner lines, the paint edges and
+    the free-throw line are all painted on a real court and already drawn in
+    black, so a white seam beside them is a duplicate. What is left is the set of
+    rays the floor does not paint, plus the corner break.
+    """
+    segments = []
+
+    # Mid-range dividers: from where the ray leaves the paint out to the arc.
+    # The baseline cuts end exactly on the corner break, because that is the
+    # point the angle was derived from -- corner line, arc and divider meet.
+    for degrees in sm.MID_SECTOR_CUTS:
+        theta = np.radians(degrees)
+        cos, sin = np.cos(theta), np.sin(theta)
+        leaves_paint = min(sm.PAINT_HALF / abs(cos) if abs(cos) > 1e-9 else np.inf,
+                           sm.FT_Y / sin if sin > 1e-9 else np.inf)
+        meets_edge = min(sm.ARC_R,
+                         sm.ZONE12_CORNER_X / abs(cos) if abs(cos) > 1e-9 else np.inf)
+        if meets_edge > leaves_paint:
+            segments.append(((leaves_paint * cos, leaves_paint * sin),
+                             (meets_edge * cos, meets_edge * sin)))
+
+    # Above-the-break dividers: literally the same two rays continuing past the
+    # arc, taken from the same constant so they cannot drift apart.
+    for degrees in sm.ATB_CUTS:
+        theta = np.radians(degrees)
+        cos, sin = np.cos(theta), np.sin(theta)
+        far = min(ZONE12_TOP / sin,
+                  COURT_HALF_WIDTH / abs(cos) if abs(cos) > 1e-9 else np.inf)
+        segments.append(((sm.ARC_R * cos, sm.ARC_R * sin), (far * cos, far * sin)))
+
+    # The corner break itself: where a corner three becomes a wing three, along
+    # the strip between the corner line and the sideline.
+    for side in (-1.0, 1.0):
+        segments.append(((side * sm.ZONE12_CORNER_X, sm.CORNER_Y),
+                         (side * COURT_HALF_WIDTH, sm.CORNER_Y)))
+    return segments
+
+
+def _zone12_seams(ax, to_px):
+    """Draw the dividers, over the fills and under the court's black lines."""
+    for (x1, y1), (x2, y2) in _zone12_seam_segments():
+        p1, p2 = to_px(x1, y1), to_px(x2, y2)
+        ax.plot([p1[0], p2[0]], [p1[1], p2[1]], color=ZONE12_SEAM,
+                lw=ZONE12_SEAM_WIDTH, zorder=3, solid_capstyle="butt")
+
+
+# Rings-chart typography, unchanged: figure at 13, its gap to league average at
+# 10.5 underneath. Both figures take the same size there and here, because sizing
+# one larger would rank it above the other and the pair is meant to be read
+# together.
+ZONE12_FIGURE_SIZE = 8.0
+ZONE12_DELTA_SIZE = 6.5
+# Line spacing is in canvas units and type is in points, and at this canvas's
+# 150 dpi one point is 2.08 units. A 10 pt line therefore stands about 21 units
+# tall, so any gap smaller than that guarantees the overlap the earlier drafts
+# had: the gaps were set to 16 and 21 by eye against sizes of 11 and 13, which
+# was always less than one line. These are measured against the line height, not
+# guessed, and the two are deliberately unequal -- a gap belongs to the figure
+# above it, so it sits nearer that figure than the next pair does.
+ZONE12_PAIR_GAP = 15.0           # figure to its own gap
+ZONE12_BLOCK_GAP = 23.0          # gap to the next figure
+ZONE12_PILL_PAD_X = 13.0
+ZONE12_PILL_PAD_Y = 8.0
+ZONE12_PILL_INK = "#1F1D1A"      # the rings chart's pill text
+ZONE12_PILL_ROUND = 12.0         # corner radius, and what buys the rim its fit
+# How much of the restricted-area radius the rim pill may reach. Below 1.0 so
+# the disc still reads as a disc around its own label.
+ZONE12_RIM_FIT = 0.90
+# A pill on a zone the chart cannot rate keeps every figure but loses its
+# weight: muted type on a faded card. The reader still gets the numbers and the
+# comparison, and the pill still says at a glance that this one is not evidence
+# the way its neighbours are.
+ZONE12_THIN_PILL_ALPHA = 0.72
+ZONE12_THIN_INK = "#6B6660"
+
+# A gap only earns a colour when it is bigger than the doubt around it.
+#
+# Shooting uses the fill scale's own neutral band, +/-2.5 points: if the zone is
+# painted "about average" then its gap is grey too, and colour never contradicts
+# colour. Volume uses its own sampling noise instead, because there is no fill
+# scale to borrow -- a season's attempts in a zone is a count, whose standard
+# error is the square root of itself, so the relative noise is 1/sqrt(n). A zone
+# with 400 attempts is noisy to about 5%; one with 45, to about 15%. Below that,
+# a rate gap is indistinguishable from the season landing differently.
+ZONE12_FG_NEUTRAL_POINTS = 2.5
+
+
+def _zone12_rows(z, compact: bool = False) -> tuple[tuple[str, str, bool], ...]:
+    """The two (figure, gap, gap_is_meaningful) pairs a pill prints.
+
+    Shooting leads because the fill IS shooting: a zone's colour is its FG%
+    against the league, so the first line of the pill has to be the figure that
+    colour is about. Leading with volume made the reader hunt past it for the
+    number the region was already shouting. Volume follows at the same size,
+    because how often he goes there is what decides whether the first line is
+    worth anything.
+
+    The makes and attempts sit in front of the percentage rather than behind a
+    floor. "11 / 32 FG (34.4%)" lets a reader see how much to trust the 34.4%,
+    which is what makes a hatched zone legible instead of something they have to
+    take on faith -- the count explains the hatch.
+
+    ``compact`` drops to the counts line alone, for a simpler chart that gives up
+    the volume comparison.
+    """
+    shooting = (f"{z.fgm} / {z.fga} FG ({z.fg * 100:.1f}%)",
+                f"{_signed(z.fg_rel, 1)} vs LA",
+                abs(z.fg_rel) >= ZONE12_FG_NEUTRAL_POINTS, z.fg_rel)
+    if compact:
+        return (shooting,)
+    return (
+        shooting,
+        (f"{z.per75:.1f} FGA / 75", f"{_signed(z.vol_rel, 0)}% vs LA",
+         _volume_gap_is_real(z.vol_rel, z.fga), z.vol_rel),
+    )
+
+
+MINUS_SIGN = "−"
+
+
+def _signed(value: float, decimals: int) -> str:
+    """A gap with a true minus sign, and no sign at all when it rounds to zero.
+
+    Two things a format string cannot do. "-" is a hyphen: beside figures it sits
+    too high and too short, and next to a full-width "+" the pair reads as
+    misaligned. And "+.0f" renders a gap of -0.4 as "-0%", a direction the
+    printed number itself contradicts -- the sign has to follow the value the
+    reader can see, which means deciding it after rounding rather than before.
+    """
+    rounded = round(value, decimals)
+    body = f"{abs(rounded):.{decimals}f}"
+    if rounded > 0:
+        return f"+{body}"
+    if rounded < 0:
+        return f"{MINUS_SIGN}{body}"
+    return body
+
+
+def _volume_gap_is_real(vol_rel: float, fga: int) -> bool:
+    """Whether a rate gap is bigger than the noise in the count behind it."""
+    if fga <= 0:
+        return False
+    return abs(vol_rel) >= 100.0 / np.sqrt(fga)
+
+
+def _zone12_delta_ink(value, meaningful: bool = True) -> str:
+    """Green above, red below, grey when the gap is inside its own noise.
+
+    A gap of +0.2 points printed in green claims a direction the number cannot
+    support, and the reader has no way to know which greens to believe. Grey is
+    the chart declining to make the claim, and it is the most common colour on a
+    league-average team, which is itself the finding.
+    """
+    if not meaningful:
+        return ZONE12_NEUTRAL_GAP
+    return ZONE12_UP_ON_LIGHT if value >= 0 else ZONE12_DOWN_ON_LIGHT
+
+
+def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full"):
+    """One cream pill of figures, floating over the zone it describes.
+
+    A pill rather than type straight on the fill, for two reasons that both came
+    out of the draft before this one. Type on the fill had to be recoloured per
+    zone -- cream on dark bands, ink on pale ones -- and the same figure changing
+    colour zone to zone read as if the colour meant something. And an opaque card
+    can overhang a 3 ft corner strip and still be attributed to it, because it is
+    centred on it.
+
+    Every zone gets the same pill. A zone below the colour floor keeps all four
+    figures and loses its weight instead: muted type on a faded card. The grey
+    fill is what says the shooting percentage here is not evidence -- worth
+    knowing, since a 40-attempt zone carries roughly +/-15 points of swing on its
+    own, and the pill does not restate that.
+    """
+    px, py = to_px(*ZONE12_ANCHORS[z.zone])
+    if not z.fga:
+        # Grey now means one thing only: he never shot here. Saying so beats
+        # leaving a silent gap the reader has to interpret.
+        _zone12_empty_pill(ax, px, py, theme)
+        return
+
+    compact = pill == "counts"
+    rows = _zone12_rows(z, compact)
+    ink = ZONE12_PILL_INK if z.rated else ZONE12_THIN_INK
+    alpha = 1.0 if z.rated else ZONE12_THIN_PILL_ALPHA
+
+    # Measure before drawing, because the rim pill's type size depends on how
+    # wide the pill turns out to be.
+    strings = [t for row in rows for t in row[:2]]
+    half_w = _zone12_widest(ax, strings) / 2 + ZONE12_PILL_PAD_X
+    span = (ZONE12_PAIR_GAP if compact
+            else ZONE12_PAIR_GAP * 2 + ZONE12_BLOCK_GAP)
+    half_h = span / 2 + 7 + ZONE12_PILL_PAD_Y
+    scale = _zone12_rim_fit(z.zone, half_w, half_h, to_px)
+    half_w, half_h = half_w * scale, half_h * scale
+
+    ax.add_patch(FancyBboxPatch(
+        (px - half_w, py - half_h), 2 * half_w, 2 * half_h,
+        boxstyle=f"round,pad=0,rounding_size={ZONE12_PILL_ROUND * scale}",
+        facecolor=CREAM, edgecolor="none", alpha=alpha, zorder=10))
+
+    # One column, not the rings chart's two. Side by side, a pill runs about
+    # 330 px wide: the three above-the-arc zones alone would need 990 px of an
+    # 860 px court, and a corner pill would hang off the canvas. Stacked it is
+    # half that, every pill fits its own region, and it matches the reference
+    # cards this chart is modelled on.
+    pair, block = ZONE12_PAIR_GAP * scale, ZONE12_BLOCK_GAP * scale
+    top = py + span * scale / 2
+    for fig_text, gap, real, value in rows:
+        ax.text(px, top, fig_text, fontsize=ZONE12_FIGURE_SIZE * scale, zorder=11,
+                color=ink, alpha=alpha, ha="center", va="center",
+                fontproperties=helvetica("bold"))
+        top -= pair
+        ax.text(px, top, gap, fontsize=ZONE12_DELTA_SIZE * scale, zorder=11,
+                color=_zone12_delta_ink(value, real), alpha=alpha,
+                ha="center", va="center", fontproperties=helvetica("bold"))
+        top -= block
+
+
+def _zone12_rim_fit(zone: str, half_w: float, half_h: float, to_px) -> float:
+    """Shrink factor that keeps the rim pill inside the restricted-area disc.
+
+    The rim label belongs on the rim, and the restricted area is 8 ft across, so
+    the pill has to earn its place there rather than be given it. What matters is
+    the pill's farthest point from its own centre -- and because the corners are
+    rounded, that is nearer than the bare rectangle's diagonal, which is most of
+    why a full-size pill fits at all.
+
+    Solved rather than tuned, so a longer figure on some other player's chart
+    shrinks the pill instead of bursting the disc.
+    """
+    if zone != "Restricted Area":
+        return 1.0
+    court_scale = to_px(1.0, 0.0)[0] - to_px(0.0, 0.0)[0]
+    radius = ZONE12_PILL_ROUND
+    reach = np.hypot(max(half_w - radius, 0.0), max(half_h - radius, 0.0)) + radius
+    limit = ZONE12_RIM_FIT * sm.RA_R * court_scale
+    return float(min(1.0, limit / reach)) if reach else 1.0
+
+
+def _zone12_empty_pill(ax, px, py, theme):
+    """One muted line for a zone with no attempts at all."""
+    label = ax.text(px, py, "0 FGA", ha="center", va="center",
+                    fontsize=ZONE12_FIGURE_SIZE, zorder=11,
+                    color=ZONE12_THIN_INK, alpha=ZONE12_THIN_PILL_ALPHA,
+                    fontproperties=helvetica("bold"))
+    half_w = house.rendered_width(ax, label) / 2 + ZONE12_PILL_PAD_X
+    half_h = 7 + ZONE12_PILL_PAD_Y
+    ax.add_patch(FancyBboxPatch(
+        (px - half_w, py - half_h), 2 * half_w, 2 * half_h,
+        boxstyle=f"round,pad=0,rounding_size={ZONE12_PILL_ROUND}",
+        facecolor=CREAM, edgecolor="none", alpha=ZONE12_THIN_PILL_ALPHA,
+        zorder=10))
+
+
+ZONE12_TAIL_GAP = 6.0            # between the volume figure and its inline gap
+
+
+def _zone12_measure(ax, text: str, size: float) -> float:
+    """Rendered width of one string at one size."""
+    probe = ax.text(0, 0, text, fontsize=size, alpha=0.0,
+                    fontproperties=helvetica("bold"))
+    width = house.rendered_width(ax, probe)
+    probe.remove()
+    return width
+
+
+def _zone12_widest(ax, strings) -> float:
+    """Width of the longest of these strings, at the size each is drawn.
+
+    Measured off the renderer rather than estimated from character counts: a
+    pill sized by guesswork is either padded unevenly or clipping its own type,
+    and the strings vary from "40.0%" to "10.5 FGA / 75".
+    """
+    probes = []
+    for index, text in enumerate(strings):
+        size = ZONE12_FIGURE_SIZE if index % 2 == 0 else ZONE12_DELTA_SIZE
+        probes.append(ax.text(0, 0, text, fontsize=size, alpha=0.0,
+                              fontproperties=helvetica("bold")))
+    widest = max(house.rendered_width(ax, probe) for probe in probes)
+    for probe in probes:
+        probe.remove()
+    return widest
+
+
+def _zone12_thin_key(min_fga: int) -> str:
+    """What the grey swatch means, as a number rather than as a verdict.
+
+    "TOO FEW TO RATE" states a conclusion and hides the rule behind it; the
+    reader has to take the chart's word for what counts as too few. The
+    threshold is checkable against the figures in the grey pills themselves,
+    which is the whole point of printing their attempt counts.
+
+    It is set in the same muted grey as BELOW and ABOVE, deliberately not in the
+    accent red. The threshold is a footnote, and red on this chart already means
+    "below league average" -- a red figure in the key would read as the bad end
+    of the scale rather than as a caveat.
+    """
+    return f"UNDER {min_fga} SHOTS"
+
+
+def _zone12_legend(ax, theme, palette: str, min_fga: int):
+    """One row: the colour scale, then the grey that sits outside it.
+
+    Grey is a sixth state of the same encoding rather than a separate idea, so
+    it reads as the tail of the scale instead of its own keyed block with its
+    own heading. It prints on every chart whether or not a zone is currently
+    grey -- this is a carousel, and a key that changes shape from slide to slide
+    costs more than one redundant swatch. Its threshold does change between the
+    team slide and the player slides, at 400 and 45, and that is correct rather
+    than sloppy: the two are different subjects with different samples, and the
+    floor is solved from each.
+
+    What is NOT here: the lines explaining "vs LA" and the neutral grey gaps.
+    Those belong on the page rather than on the asset, and they print in the
+    Canva copy block instead, where they can be set once in the caption style.
+
+    Laid out from measured text widths so the whole row centres on the canvas.
+    The heading centres over the colour swatches alone, because those are what
+    it names.
+    """
+    y = ZONE12_LEGEND_Y
+    colors = ZONE12_PALETTES[palette]
+    swatch, gap, pad, group = 28, 4, 12, 34
+    scale_w = len(colors) * swatch + (len(colors) - 1) * gap
+    label = dict(fontsize=9, color=theme.muted, fontproperties=helvetica("bold"))
+
+    def width(text: str) -> float:
+        probe = ax.text(0, 0, text, alpha=0.0, **label)
+        measured = house.rendered_width(ax, probe)
+        probe.remove()
+        return measured
+
+    thin_key = _zone12_thin_key(min_fga)
+    below_w, above_w, thin_w = (width("BELOW"), width("ABOVE"),
+                                width(thin_key))
+    total = (below_w + pad + scale_w + pad + above_w + group + swatch + pad
+             + thin_w)
+    x = house.CANVAS_WIDTH / 2 - total / 2
+
+    ax.text(x + below_w, y, "BELOW", ha="right", va="center", **label)
+    x += below_w + pad
+    ax.text(x + scale_w / 2, y + 40, "FG% VS. NBA AVG", ha="center", va="center",
+            fontsize=10, color=theme.accent, fontproperties=helvetica("bold"))
+    for i, color in enumerate(colors):
+        ax.add_patch(Rectangle((x + i * (swatch + gap), y - 11), swatch, 22,
+                               facecolor=color, edgecolor="none", zorder=9))
+    x += scale_w + pad
+    ax.text(x, y, "ABOVE", ha="left", va="center", **label)
+    x += above_w + group
+    # Neutral grey behind the hatch. Any band colour here would suggest the
+    # hatch belongs to that band, when it can fall on any of the five.
+    ax.add_patch(Rectangle((x, y - 11), swatch, 22, facecolor=ZONE12_HATCH_KEY,
+                           hatch=ZONE12_HATCH, edgecolor=ZONE12_HATCH_INK,
+                           linewidth=0.0, zorder=9))
+    ax.text(x + swatch + pad, y, thin_key, ha="left", va="center", **label)
+
+
+ZONE12_LEGEND_Y = 400
+
+
 def _save(fig, out: Path, final: bool, facecolor: str):
     out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, dpi=house.export_dpi(final), facecolor=facecolor)
@@ -1275,10 +1923,10 @@ def _save(fig, out: Path, final: bool, facecolor: str):
 
 
 CHARTS = {"hotspot": render_hotspot, "hex": render_hex, "rings": render_rings,
-          "cells": render_cells, "ladder": render_ladder}
+          "cells": render_cells, "ladder": render_ladder, "zones": render_zones}
 # Charts that describe a shot profile rather than a shooter, so they accept
 # --team in place of --player.
-TEAM_CAPABLE = {"ladder", "hotspot", "hex", "cells"}
+TEAM_CAPABLE = {"ladder", "hotspot", "hex", "cells", "zones"}
 
 
 def _output_path(args, slug: str) -> Path:
@@ -1339,6 +1987,14 @@ def main():
     ap.add_argument("--project", default="",
                     help="visual project slug; renders into output/<slug>/ so scratch "
                          "mirrors docs/visuals/<slug>/")
+    ap.add_argument("--pill", default="full", choices=["full", "counts"],
+                    help="zones only: full prints makes/attempts, the shooting "
+                         "gap, attempts per 75 and its gap; counts drops to the "
+                         "shooting pair alone")
+    ap.add_argument("--palette", default=ZONE12_DEFAULT_PALETTE,
+                    choices=list(ZONE12_PALETTES),
+                    help="zones only: fill scale — hex (blue/yellow/red) or "
+                         "rdylgn (red/yellow/green)")
     ap.add_argument("--show-thin-gray", action="store_true",
                     help="hex only: draw occupied 1-2 shot cells in gray")
     ap.add_argument("--output", default="")
@@ -1390,6 +2046,28 @@ def main():
         ctx["min_fga"] = args.min_fga if args.min_fga is not None else (
             sm.MIN_RING_FGA if args.team or args.league else PLAYER_LADDER_MIN_FGA
         )
+    if args.chart == "zones":
+        # Per-75 needs a denominator of the same kind as its baseline. A team
+        # shares each possession among five players, so a team rate measured
+        # against the league's player-possession total would read five times
+        # too high. Each scope gets its own matching pair.
+        if args.league:
+            raise SystemExit("--chart zones compares against the league; "
+                             "the league cannot be its own subject")
+        if args.team:
+            ctx["poss"] = shot_data.team_possessions(season=args.season,
+                                                     refresh=args.refresh)
+            ctx["league_poss"] = shot_data.league_team_possessions(
+                args.season, args.refresh)
+            ctx["scope"] = "per 75 team possessions"
+            ctx["min_fga"] = args.min_fga or sm.MIN_ZONE12_FGA_TEAM
+        else:
+            ctx["poss"] = shot_data.player_possessions(pid, args.season)
+            ctx["league_poss"] = shot_data.league_possessions(args.season)
+            ctx["scope"] = "per 75 player possessions"
+            ctx["min_fga"] = args.min_fga or sm.MIN_ZONE12_FGA_PLAYER
+        ctx["palette"] = args.palette
+        ctx["pill"] = args.pill
     if args.chart == "rings":
         if args.team:
             raise SystemExit("rings needs per-75 rates, which are player-scoped")

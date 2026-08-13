@@ -36,6 +36,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from bulls import data
+from bulls.analysis import shot_maps as sm
 from bulls.analysis.stats import detailed_zones
 from bulls.config import CURRENT_SEASON
 from bulls.graphics import house
@@ -180,56 +181,22 @@ ZONE_TRACE_BLUR = 1.0
 # ---------------------------------------------------------------------------
 # Zone geometry — the single source of truth for BOTH the outlines and the numbers,
 # so the chart cannot draw one set of regions while counting another.
+#
+# The classifier itself now lives in bulls.analysis.shot_maps, because a second
+# post draws the same twelve regions. Two copies of this function is precisely
+# the failure the paragraph above warns about, one level up: two charts counting
+# different regions while both claim to show NBA's zones. It is re-exported here
+# under its original name so this module and its tests read unchanged.
+#
+# Why it departs from NBA's own labels, and what that costs: NBA changes how many
+# side sectors exist with distance — three inside 16 ft, five outside — which
+# draws each baseline/mid-range divider as a stepped "tent" rather than a
+# straight ray, and reads as a rendering fault. Holding five sectors at every
+# distance moves 34 of 5,855 roster shots (0.6%), almost all long twos near the
+# 16 ft line, and changes one of the twelve zone leaders. ``main`` prints the
+# live agreement rate on every run so the divergence cannot drift unnoticed.
 # ---------------------------------------------------------------------------
-def _angle(x, y):
-    """Degrees from the +x axis, wrapped so the left side below the hoop stays > 90."""
-    a = np.degrees(np.arctan2(y, x))
-    return np.where(a < -90, a + 360, a)
-
-
-def zone_of(x, y):
-    """Zone name for court coordinates: five side sectors at every distance.
-
-    NBA's own labelling changes how many sectors exist with distance — three inside
-    16 ft, five outside — which makes the baseline/mid-range divider a stepped
-    "tent" rather than a straight line, and reads as a drawing error. We use the
-    five-sector split (36/72/108/144 degrees) at every distance instead, so each
-    divider is one clean ray from the hoop, matching how these charts are usually
-    drawn. Above the break keeps three sectors because the corners take the outer
-    two, exactly as NBA does.
-
-    The cost is measured, not assumed: against NBA's own labels this moves 34 of
-    5,855 roster shots (0.6%), almost all of them long twos near the 16 ft line,
-    and changes one of the twelve zone leaders. ``main`` prints the live agreement
-    rate on every run so the divergence can never drift unnoticed.
-    """
-    x = np.asarray(x, dtype=float)
-    y = np.asarray(y, dtype=float)
-    r = np.hypot(x, y)
-    a = _angle(x, y)
-
-    out = np.full(x.shape, "", dtype=object)
-
-    corner = (np.abs(x) >= CORNER_X) & (y <= CORNER_Y)
-    beyond_arc = (r >= ARC_R) & ~corner
-    paint = (np.abs(x) <= PAINT_HALF) & (y <= FT_Y) & (r > RA_R)
-
-    out[corner & (x < 0)] = "Left Corner 3"
-    out[corner & (x > 0)] = "Right Corner 3"
-    out[beyond_arc & (a < 72)] = "Right Wing 3"
-    out[beyond_arc & (a >= 72) & (a < 108)] = "Top of Key 3"
-    out[beyond_arc & (a >= 108)] = "Left Wing 3"
-
-    mid = (out == "") & (r > RA_R) & ~paint
-    out[mid & (a < 36)] = "Right Baseline"
-    out[mid & (a >= 36) & (a < 72)] = "Right Mid-Range"
-    out[mid & (a >= 72) & (a < 108)] = "Center Mid-Range"
-    out[mid & (a >= 108) & (a < 144)] = "Left Mid-Range"
-    out[mid & (a >= 144)] = "Left Baseline"
-
-    out[paint] = "In The Paint (Non-RA)"
-    out[r <= RA_R] = "Restricted Area"
-    return out
+zone_of = sm.zone_of
 
 
 # ---------------------------------------------------------------------------

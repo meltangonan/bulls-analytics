@@ -1,0 +1,10 @@
+# Transcribed 2026-08-13 from the NBA's dated team-by-team schedule PDF.
+# One row is one Bulls regular-season game. NBC is simulcast on Peacock;
+# Peacock is simulcast on NBCSN; ABC/ESPN games are on ESPN's streaming app.
+# Source PDF: https://pr.nba.com/wp-content/uploads/sites/46/2026/08/2026-27-NBA-Regular-Season-Schedule-By-Team.pdf
+# Archived input: 2026-27-NBA-Regular-Season-Schedule-By-Team.pdf
+# SHA-256: 10a2b81388dcf79011b5405c43966446f5c3e4c35a0034f115c4cf124379bec3
+date_central,matchup,primary_network,simulcast,pdf_page
+2026-12-01,New York Knicks at Chicago Bulls,NBC,Peacock,5
+2027-01-04,Chicago Bulls at Indiana Pacers,Peacock,NBCSN,5
+2027-01-20,Chicago Bulls at Brooklyn Nets,ESPN,ESPN streaming app,5

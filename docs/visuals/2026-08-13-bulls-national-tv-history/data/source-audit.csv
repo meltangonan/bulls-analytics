@@ -1,0 +1,26 @@
+# Audited 2026-08-13 against contemporaneous first-party schedule-release evidence.
+# Source order: an official Bulls release with an explicit network breakdown is controlling;
+# otherwise, count directly from an original Bulls/NBA schedule PDF or Bulls media guide.
+# A Bulls article that announces a schedule but omits national networks is context, not count evidence.
+# "row_count" means qualifying Bulls games were counted in a dated NBA/Bulls PDF.
+# "release_count" means an official Bulls release explicitly states the network totals.
+# A team printable PDF is supporting evidence only when it actually labels every national
+# partner game; several older local-TV calendars omit non-exclusive national feeds.
+season,total,primary_evidence,archived_pdf,pdf_scope,cross_check,audit_result,notes
+2010-11,18,official Bulls release count,2010-11-bulls-tv-schedule.pdf,printable calendar does not encode the national feeds,official Bulls release gives ABC 2 / ESPN 9 / TNT 7,verified_release_count,PDF cannot independently reproduce this count
+2011-12,22,official Bulls release count,2011-12-bulls-media-guide.pdf,media guide schedule,official Bulls release gives ABC 5 / ESPN 10 / TNT 7,verified_release_count,lockout-shortened 66-game season
+2012-13,19,official Bulls release count,2012-13-bulls-tv-schedule.pdf,printable calendar labels only a subset of feeds,official Bulls release gives ABC 2 / ESPN 10 / TNT 7,verified_release_count,release count is the controlling evidence
+2013-14,24,official Bulls release count,2013-14-bulls-tv-schedule.pdf,printable calendar does not encode every national feed,official Bulls release gives ABC 5 / ESPN 10 / TNT 9,verified_release_count,release count is the controlling evidence
+2014-15,25,official Bulls release count,2014-15-bulls-tv-schedule.pdf,printable calendar does not label all ESPN feeds,official Bulls release gives ABC 5 / ESPN 10 / TNT 10,verified_release_count,release count is the controlling evidence
+2015-16,23,official Bulls release count,2015-16-bulls-tv-schedule.pdf,printable calendar does not encode every national feed,official Bulls release gives ABC 5 / ESPN 8 / TNT 10,verified_release_count,later media guide reflects flex changes and is not used for release-day count
+2016-17,25,official Bulls release count,2016-17-bulls-tv-schedule.pdf,printable calendar labels only nationally exclusive feeds,official Bulls release gives ABC 4 / ESPN 12 / TNT 9,verified_release_count,release count is the controlling evidence
+2017-18,1,official Bulls schedule plus media-guide row,2017-18-bulls-media-guide.pdf,schedule page directly labels one ESPN game,official Bulls TV release assigns all other games locally,verified_pdf_row_count,Feb. 10 Minnesota at Chicago on ESPN
+2018-19,2,official Bulls TV release plus media-guide rows,2018-19-bulls-media-guide.pdf,schedule page directly labels one TNT and one ESPN game,official release names both games and says every other game is local,verified_pdf_row_count,later flex addition excluded
+2019-20,1,official Bulls release-day story,2019-20-bulls-tv-schedule.pdf,printable calendar does not encode the national feed,official Bulls story identifies Jan. 17 at Philadelphia on ESPN,verified_release_count,season suspension does not alter original assignment count
+2020-21,3,dated Bulls and NBA schedule PDFs,2020-21-bulls-first-half-schedule.pdf + 2020-21-nba-second-half-schedule.pdf,one ESPN row in first half plus two ESPN rows in second half,official NBA split-release pages,verified_pdf_row_count,combines the two original pandemic schedule releases
+2021-22,5,official Bulls media-guide schedule rows,2021-22-bulls-media-guide.pdf,schedule page directly labels four ESPN and one TNT game,official NBA schedule release,verified_pdf_row_count,later flex additions excluded
+2022-23,10,official Bulls release count,2022-23-nba-schedule-by-team.pdf,Chicago page directly labels seven ESPN and three TNT games,official Bulls release gives ESPN 7 / TNT 3,verified_release_and_pdf,excludes four NBA TV games; Chicago is page 5
+2023-24,4,official Bulls release count,2023-24-bulls-schedule.pdf,directly labels three ESPN and one TNT game,official Bulls release gives ESPN 3 / TNT 1,verified_release_and_pdf,excludes three NBA TV games
+2024-25,2,official Bulls release count,2024-25-bulls-original-schedule.pdf,directly labels two ESPN games,official Bulls release names the same two ESPN games,verified_release_and_pdf,excludes three NBA TV games; corrected from 1 after replacing the later October broadcast document with the original August PDF
+2025-26,3,official Bulls release count,2025-26-NBA-Regular-Season-National-Games-Schedule-8-14-25.pdf,three Chicago rows across the national partner tables,official Bulls release names one ESPN / one Peacock / one Prime Video game,verified_release_and_pdf,all three games independently reconcile
+2026-27,3,official Bulls release count,2026-27-NBA-Regular-Season-Schedule-By-Team.pdf,Chicago page directly labels one NBC / one Peacock / one ESPN game,official Bulls release names the same three games,verified_release_and_pdf,simulcasts counted once; Knicks have 34

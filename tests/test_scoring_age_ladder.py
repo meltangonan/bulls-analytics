@@ -242,7 +242,7 @@ def test_heavy_header_rule_is_omitted():
 
 
 def test_light_row_rules_skip_ppg_but_extend_through_gp():
-    assert row_rule_segments() == ((100, 211), (279, PPG_LEFT), (GP_LEFT, GP_RIGHT))
+    assert row_rule_segments() == ((100, PPG_LEFT), (GP_LEFT, GP_RIGHT))
 
 
 

@@ -501,13 +501,11 @@ def row_rule_segments(
     headshot_x: float = HEADSHOT_X,
     headshot_half_size: float = ONE_SLIDE_LAYOUT.headshot_half_size,
 ) -> tuple[tuple[float, float], ...]:
-    """Rule plain columns, leaving the headshot and heat cells uninterrupted."""
-    portrait_pad = 4
-    return (
-        (row_rule_left, headshot_x - headshot_half_size - portrait_pad),
-        (headshot_x + headshot_half_size + portrait_pad, metric_left),
-        (games_left, games_right),
-    )
+    """Run the ruler behind portraits; leave only the heat column uninterrupted."""
+    # Faces draw later at zorder 4, above this zorder-3 rule. Keeping the ruler
+    # continuous matches the assist-duo and Game Score tables: the line remains
+    # legible as a table separator while the portrait naturally interrupts it.
+    return ((row_rule_left, metric_left), (games_left, games_right))
 
 
 def face_headshot_label(ax, image_path, x, y, half_size, *, zorder=4):

@@ -304,7 +304,9 @@ def test_shared_renderer_supports_season_sorted_table_without_age_column(tmp_pat
         CHART_HEIGHT
         - (SEASON_LEADERS_LAYOUT.first_row_y + SEASON_LEADERS_LAYOUT.row_height / 2)
     )
-    assert image.getpixel((round(PPG_LEFT), band_top_y))[3] == 0
+    # The shared table renderer now carries the full-width ruler under headers,
+    # so the top edge of the heat band is intentionally occupied by that rule.
+    assert image.getpixel((round(PPG_LEFT), band_top_y))[3] > 0
     assert image.getpixel((metric_center, band_top_y + 2))[3] > 0
 
 

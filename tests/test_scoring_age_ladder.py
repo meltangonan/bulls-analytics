@@ -237,8 +237,8 @@ def test_headshots_deliberately_overlap_adjacent_rows():
         assert layout.headshot_rise > 0
 
 
-def test_heavy_header_rule_is_omitted():
-    assert header_rule_segments() == ()
+def test_heavy_header_rule_spans_the_table_under_headers():
+    assert header_rule_segments() == ((100, GP_RIGHT),)
 
 
 def test_light_row_rules_skip_ppg_but_extend_through_gp():

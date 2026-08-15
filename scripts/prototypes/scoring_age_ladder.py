@@ -489,8 +489,8 @@ def _ppg_cells(
 
 
 def header_rule_segments() -> tuple[tuple[float, float], ...]:
-    """Omit the heavy header rule in the compact Basketball University layout."""
-    return ()
+    """Draw the full-width ruler directly beneath the column headers."""
+    return ((ROW_RULE_LEFT, GP_RIGHT),)
 
 
 def row_rule_segments(

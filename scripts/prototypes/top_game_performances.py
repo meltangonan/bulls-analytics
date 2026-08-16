@@ -10,6 +10,7 @@ the regular season; ``--playoffs`` switches the same analysis to playoff games.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import sys
 import time
 from dataclasses import dataclass
@@ -57,8 +58,10 @@ SEASON_TYPE_SLUGS = {"Regular Season": "regular-season", "Playoffs": "playoffs"}
 MIN_USABLE_HEADSHOT_BYTES = 5_000
 HISTORICAL_HEADSHOT_URLS = {
     1500: "https://basket-retro.com/wp-content/uploads/2016/05/ron.jpg",  # Ron Mercer
+    2430: "https://a.espncdn.com/i/headshots/nba/players/full/1703.png",  # Carlos Boozer
     2768: "https://a.espncdn.com/i/headshots/nba/players/full/2377.png",  # Chris Duhon
 }
+CDN_SILHOUETTE_MD5 = "e7f284977a49"
 
 CHART_WIDTH = 1500
 ROW_RULE_LEFT = 24
@@ -72,6 +75,18 @@ AST_LEFT, AST_RIGHT = 1153, 1230
 STL_LEFT, STL_RIGHT = 1230, 1307
 BLK_LEFT, BLK_RIGHT = 1307, 1384
 PLUS_MINUS_LEFT, PLUS_MINUS_RIGHT = 1384, 1461
+
+# Alternate shooting-context layout used when FT replaces TS%. These positions
+# match the settled playoff-performance table exactly.
+FT_TABLE_PTS_LEFT, FT_TABLE_PTS_RIGHT = 696, 766
+FT_TABLE_FG_LEFT, FT_TABLE_FG_RIGHT = 766, 871
+FT_TABLE_THREE_PT_LEFT, FT_TABLE_THREE_PT_RIGHT = 871, 976
+FT_TABLE_FT_LEFT, FT_TABLE_FT_RIGHT = 976, 1081
+FT_TABLE_REB_LEFT, FT_TABLE_REB_RIGHT = 1081, 1157
+FT_TABLE_AST_LEFT, FT_TABLE_AST_RIGHT = 1157, 1233
+FT_TABLE_STL_LEFT, FT_TABLE_STL_RIGHT = 1233, 1309
+FT_TABLE_BLK_LEFT, FT_TABLE_BLK_RIGHT = 1309, 1385
+FT_TABLE_PLUS_MINUS_LEFT, FT_TABLE_PLUS_MINUS_RIGHT = 1385, 1461
 
 GAME_SCORE_CARD_OUTSET_X = 8
 GAME_SCORE_CARD_OUTSET_Y = 9
@@ -601,7 +616,10 @@ def ensure_historical_headshot_fallbacks(player_ids: list[int]) -> None:
         if cache_path.exists() and cache_path.stat().st_size >= MIN_USABLE_HEADSHOT_BYTES:
             try:
                 with Image.open(cache_path) as image:
-                    usable_cache = image.format == "PNG"
+                    is_silhouette = hashlib.md5(cache_path.read_bytes()).hexdigest().startswith(
+                        CDN_SILHOUETTE_MD5
+                    )
+                    usable_cache = image.format == "PNG" and not is_silhouette
                     if player_id == 1500:
                         usable_cache = usable_cache and image.size == (188, 188)
             except (OSError, SyntaxError):
@@ -755,6 +773,7 @@ def render_chart(
     *,
     decade: str,
     season_type: str = "Regular Season",
+    show_free_throws: bool = False,
     final: bool = False,
 ) -> Path:
     """Render one transparent decade table in the settled ladder grammar."""
@@ -774,19 +793,39 @@ def render_chart(
     ax.axis("off")
     theme = DEFAULT_THEME
 
-    headers = (
-        (layout.name_x, "PLAYER", "left", theme.ink),
-        ((GMSC_LEFT + GMSC_RIGHT) / 2, "GMSC", "center", theme.accent),
-        ((TS_LEFT + TS_RIGHT) / 2, "TS%", "center", theme.ink),
-        ((PTS_LEFT + PTS_RIGHT) / 2, "PTS", "center", theme.ink),
-        ((FG_LEFT + FG_RIGHT) / 2, "FG", "center", theme.ink),
-        ((THREE_PT_LEFT + THREE_PT_RIGHT) / 2, "3PT", "center", theme.ink),
-        ((REB_LEFT + REB_RIGHT) / 2, "REB", "center", theme.ink),
-        ((AST_LEFT + AST_RIGHT) / 2, "AST", "center", theme.ink),
-        ((STL_LEFT + STL_RIGHT) / 2, "STL", "center", theme.ink),
-        ((BLK_LEFT + BLK_RIGHT) / 2, "BLK", "center", theme.ink),
-        ((PLUS_MINUS_LEFT + PLUS_MINUS_RIGHT) / 2, "+/-", "center", theme.ink),
-    )
+    if show_free_throws:
+        headers = (
+            (layout.name_x, "PLAYER", "left", theme.ink),
+            ((GMSC_LEFT + GMSC_RIGHT) / 2, "GMSC", "center", theme.accent),
+            ((FT_TABLE_PTS_LEFT + FT_TABLE_PTS_RIGHT) / 2, "PTS", "center", theme.ink),
+            ((FT_TABLE_FG_LEFT + FT_TABLE_FG_RIGHT) / 2, "FG", "center", theme.ink),
+            ((FT_TABLE_THREE_PT_LEFT + FT_TABLE_THREE_PT_RIGHT) / 2, "3PT", "center", theme.ink),
+            ((FT_TABLE_FT_LEFT + FT_TABLE_FT_RIGHT) / 2, "FT", "center", theme.ink),
+            ((FT_TABLE_REB_LEFT + FT_TABLE_REB_RIGHT) / 2, "REB", "center", theme.ink),
+            ((FT_TABLE_AST_LEFT + FT_TABLE_AST_RIGHT) / 2, "AST", "center", theme.ink),
+            ((FT_TABLE_STL_LEFT + FT_TABLE_STL_RIGHT) / 2, "STL", "center", theme.ink),
+            ((FT_TABLE_BLK_LEFT + FT_TABLE_BLK_RIGHT) / 2, "BLK", "center", theme.ink),
+            (
+                (FT_TABLE_PLUS_MINUS_LEFT + FT_TABLE_PLUS_MINUS_RIGHT) / 2,
+                "+/-",
+                "center",
+                theme.ink,
+            ),
+        )
+    else:
+        headers = (
+            (layout.name_x, "PLAYER", "left", theme.ink),
+            ((GMSC_LEFT + GMSC_RIGHT) / 2, "GMSC", "center", theme.accent),
+            ((TS_LEFT + TS_RIGHT) / 2, "TS%", "center", theme.ink),
+            ((PTS_LEFT + PTS_RIGHT) / 2, "PTS", "center", theme.ink),
+            ((FG_LEFT + FG_RIGHT) / 2, "FG", "center", theme.ink),
+            ((THREE_PT_LEFT + THREE_PT_RIGHT) / 2, "3PT", "center", theme.ink),
+            ((REB_LEFT + REB_RIGHT) / 2, "REB", "center", theme.ink),
+            ((AST_LEFT + AST_RIGHT) / 2, "AST", "center", theme.ink),
+            ((STL_LEFT + STL_RIGHT) / 2, "STL", "center", theme.ink),
+            ((BLK_LEFT + BLK_RIGHT) / 2, "BLK", "center", theme.ink),
+            ((PLUS_MINUS_LEFT + PLUS_MINUS_RIGHT) / 2, "+/-", "center", theme.ink),
+        )
     for x, label, alignment, color in headers:
         ax.text(
             x,
@@ -896,17 +935,39 @@ def render_chart(
             fontproperties=helvetica("bold"),
             zorder=5,
         )
-        for left, right, value in (
-            (TS_LEFT, TS_RIGHT, f"{float(row['ts_pct']):.1f}%"),
-            (PTS_LEFT, PTS_RIGHT, str(int(row["points"]))),
-            (FG_LEFT, FG_RIGHT, f"{int(row['fgm'])}–{int(row['fga'])}"),
-            (THREE_PT_LEFT, THREE_PT_RIGHT, f"{int(row['fg3m'])}–{int(row['fg3a'])}"),
-            (REB_LEFT, REB_RIGHT, str(int(row["reb"]))),
-            (AST_LEFT, AST_RIGHT, str(int(row["ast"]))),
-            (STL_LEFT, STL_RIGHT, str(int(row["stl"]))),
-            (BLK_LEFT, BLK_RIGHT, str(int(row["blk"]))),
-            (PLUS_MINUS_LEFT, PLUS_MINUS_RIGHT, _signed_box_score_value(row["plus_minus"])),
-        ):
+        if show_free_throws:
+            values = (
+                (FT_TABLE_PTS_LEFT, FT_TABLE_PTS_RIGHT, str(int(row["points"]))),
+                (FT_TABLE_FG_LEFT, FT_TABLE_FG_RIGHT, f"{int(row['fgm'])}–{int(row['fga'])}"),
+                (
+                    FT_TABLE_THREE_PT_LEFT,
+                    FT_TABLE_THREE_PT_RIGHT,
+                    f"{int(row['fg3m'])}–{int(row['fg3a'])}",
+                ),
+                (FT_TABLE_FT_LEFT, FT_TABLE_FT_RIGHT, f"{int(row['ftm'])}–{int(row['fta'])}"),
+                (FT_TABLE_REB_LEFT, FT_TABLE_REB_RIGHT, str(int(row["reb"]))),
+                (FT_TABLE_AST_LEFT, FT_TABLE_AST_RIGHT, str(int(row["ast"]))),
+                (FT_TABLE_STL_LEFT, FT_TABLE_STL_RIGHT, str(int(row["stl"]))),
+                (FT_TABLE_BLK_LEFT, FT_TABLE_BLK_RIGHT, str(int(row["blk"]))),
+                (
+                    FT_TABLE_PLUS_MINUS_LEFT,
+                    FT_TABLE_PLUS_MINUS_RIGHT,
+                    _signed_box_score_value(row["plus_minus"]),
+                ),
+            )
+        else:
+            values = (
+                (TS_LEFT, TS_RIGHT, f"{float(row['ts_pct']):.1f}%"),
+                (PTS_LEFT, PTS_RIGHT, str(int(row["points"]))),
+                (FG_LEFT, FG_RIGHT, f"{int(row['fgm'])}–{int(row['fga'])}"),
+                (THREE_PT_LEFT, THREE_PT_RIGHT, f"{int(row['fg3m'])}–{int(row['fg3a'])}"),
+                (REB_LEFT, REB_RIGHT, str(int(row["reb"]))),
+                (AST_LEFT, AST_RIGHT, str(int(row["ast"]))),
+                (STL_LEFT, STL_RIGHT, str(int(row["stl"]))),
+                (BLK_LEFT, BLK_RIGHT, str(int(row["blk"]))),
+                (PLUS_MINUS_LEFT, PLUS_MINUS_RIGHT, _signed_box_score_value(row["plus_minus"])),
+            )
+        for left, right, value in values:
             ax.text(
                 (left + right) / 2,
                 y,

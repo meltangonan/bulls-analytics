@@ -2,7 +2,11 @@ import pandas as pd
 import pytest
 
 from scripts.prototypes.top_game_performances import (
+    CDN_SILHOUETTE_MD5,
     DEFAULT_THEME,
+    FT_TABLE_FT_LEFT,
+    FT_TABLE_FT_RIGHT,
+    FT_TABLE_THREE_PT_RIGHT,
     GAME_SCORE_FILL,
     decade_for_end_year,
     game_score,
@@ -78,6 +82,15 @@ def test_source_urls_can_switch_to_playoffs_without_reusing_regular_season_urls(
 
 def test_game_score_uses_one_solid_bulls_red_fill():
     assert GAME_SCORE_FILL == DEFAULT_THEME.accent
+
+
+def test_known_nba_cdn_silhouette_fingerprint_is_stable():
+    assert CDN_SILHOUETTE_MD5 == "e7f284977a49"
+
+
+def test_free_throw_table_matches_the_settled_playoff_shooting_columns():
+    assert (FT_TABLE_FT_LEFT, FT_TABLE_FT_RIGHT) == (976, 1081)
+    assert FT_TABLE_FT_LEFT == FT_TABLE_THREE_PT_RIGHT
 
 
 def test_ten_row_table_uses_the_taller_row_spacing():

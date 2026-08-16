@@ -1,0 +1,27 @@
+game_id,game_date,matchup,result,team_points,team_plus_minus,season_end_year,team_source_url
+20000006,2000-10-31,CHI vs. SAC,L,81,-19,2001,https://www.nba.com/stats/teams/boxscores?Season=2000-01&SeasonType=Regular%20Season&TeamID=1610612741
+20100016,2001-10-31,CHI vs. IND,L,73,-27,2002,https://www.nba.com/stats/teams/boxscores?Season=2001-02&SeasonType=Regular%20Season&TeamID=1610612741
+20200004,2002-10-30,CHI @ BOS,W,99,3,2003,https://www.nba.com/stats/teams/boxscores?Season=2002-03&SeasonType=Regular%20Season&TeamID=1610612741
+20300010,2003-10-29,CHI vs. WAS,L,74,-25,2004,https://www.nba.com/stats/teams/boxscores?Season=2003-04&SeasonType=Regular%20Season&TeamID=1610612741
+20400025,2004-11-05,CHI vs. NJN,L,106,-5,2005,https://www.nba.com/stats/teams/boxscores?Season=2004-05&SeasonType=Regular%20Season&TeamID=1610612741
+20500012,2005-11-02,CHI vs. CHA,W,109,4,2006,https://www.nba.com/stats/teams/boxscores?Season=2005-06&SeasonType=Regular%20Season&TeamID=1610612741
+20600001,2006-10-31,CHI @ MIA,W,108,42,2007,https://www.nba.com/stats/teams/boxscores?Season=2006-07&SeasonType=Regular%20Season&TeamID=1610612741
+20700007,2007-10-31,CHI @ NJN,L,103,-9,2008,https://www.nba.com/stats/teams/boxscores?Season=2007-08&SeasonType=Regular%20Season&TeamID=1610612741
+20800002,2008-10-28,CHI vs. MIL,W,108,13,2009,https://www.nba.com/stats/teams/boxscores?Season=2008-09&SeasonType=Regular%20Season&TeamID=1610612741
+20900017,2009-10-29,CHI vs. SAS,W,92,7,2010,https://www.nba.com/stats/teams/boxscores?Season=2009-10&SeasonType=Regular%20Season&TeamID=1610612741
+21000011,2010-10-27,CHI @ OKC,L,95,-11,2011,https://www.nba.com/stats/teams/boxscores?Season=2010-11&SeasonType=Regular%20Season&TeamID=1610612741
+21100003,2011-12-25,CHI @ LAL,W,88,1,2012,https://www.nba.com/stats/teams/boxscores?Season=2011-12&SeasonType=Regular%20Season&TeamID=1610612741
+21200007,2012-10-31,CHI vs. SAC,W,93,6,2013,https://www.nba.com/stats/teams/boxscores?Season=2012-13&SeasonType=Regular%20Season&TeamID=1610612741
+21300002,2013-10-29,CHI @ MIA,L,95,-12,2014,https://www.nba.com/stats/teams/boxscores?Season=2013-14&SeasonType=Regular%20Season&TeamID=1610612741
+21400010,2014-10-29,CHI @ NYK,W,104,24,2015,https://www.nba.com/stats/teams/boxscores?Season=2014-15&SeasonType=Regular%20Season&TeamID=1610612741
+21500002,2015-10-27,CHI vs. CLE,W,97,2,2016,https://www.nba.com/stats/teams/boxscores?Season=2015-16&SeasonType=Regular%20Season&TeamID=1610612741
+21600015,2016-10-27,CHI vs. BOS,W,105,6,2017,https://www.nba.com/stats/teams/boxscores?Season=2016-17&SeasonType=Regular%20Season&TeamID=1610612741
+21700014,2017-10-19,CHI @ TOR,L,100,-17,2018,https://www.nba.com/stats/teams/boxscores?Season=2017-18&SeasonType=Regular%20Season&TeamID=1610612741
+21800014,2018-10-18,CHI @ PHI,L,108,-19,2019,https://www.nba.com/stats/teams/boxscores?Season=2018-19&SeasonType=Regular%20Season&TeamID=1610612741
+21900003,2019-10-23,CHI @ CHA,L,125,-1,2020,https://www.nba.com/stats/teams/boxscores?Season=2019-20&SeasonType=Regular%20Season&TeamID=1610612741
+22000015,2020-12-23,CHI vs. ATL,L,104,-20,2021,https://www.nba.com/stats/teams/boxscores?Season=2020-21&SeasonType=Regular%20Season&TeamID=1610612741
+22100004,2021-10-20,CHI @ DET,W,94,6,2022,https://www.nba.com/stats/teams/boxscores?Season=2021-22&SeasonType=Regular%20Season&TeamID=1610612741
+22200007,2022-10-19,CHI @ MIA,W,116,8,2023,https://www.nba.com/stats/teams/boxscores?Season=2022-23&SeasonType=Regular%20Season&TeamID=1610612741
+22300070,2023-10-25,CHI vs. OKC,L,104,-20,2024,https://www.nba.com/stats/teams/boxscores?Season=2023-24&SeasonType=Regular%20Season&TeamID=1610612741
+22400069,2024-10-23,CHI @ NOP,L,111,-12,2025,https://www.nba.com/stats/teams/boxscores?Season=2024-25&SeasonType=Regular%20Season&TeamID=1610612741
+22500084,2025-10-22,CHI vs. DET,W,115,4,2026,https://www.nba.com/stats/teams/boxscores?Season=2025-26&SeasonType=Regular%20Season&TeamID=1610612741

@@ -1,0 +1,27 @@
+season,league_ts_pct,method,source_url
+2000-01,0.5178567425403124,NBA.com aggregate team totals,https://www.nba.com/stats/teams/traditional?PerMode=Totals&Season=2000-01&SeasonType=Regular%20Season
+2001-02,0.5202897487957688,NBA.com aggregate team totals,https://www.nba.com/stats/teams/traditional?PerMode=Totals&Season=2001-02&SeasonType=Regular%20Season
+2002-03,0.5193584617606707,NBA.com aggregate team totals,https://www.nba.com/stats/teams/traditional?PerMode=Totals&Season=2002-03&SeasonType=Regular%20Season
+2003-04,0.51619672389625,NBA.com aggregate team totals,https://www.nba.com/stats/teams/traditional?PerMode=Totals&Season=2003-04&SeasonType=Regular%20Season
+2004-05,0.5294055913399502,NBA.com aggregate team totals,https://www.nba.com/stats/teams/traditional?PerMode=Totals&Season=2004-05&SeasonType=Regular%20Season
+2005-06,0.5355930910037615,NBA.com aggregate team totals,https://www.nba.com/stats/teams/traditional?PerMode=Totals&Season=2005-06&SeasonType=Regular%20Season
+2006-07,0.5414649261250658,NBA.com aggregate team totals,https://www.nba.com/stats/teams/traditional?PerMode=Totals&Season=2006-07&SeasonType=Regular%20Season
+2007-08,0.5402422462662976,NBA.com aggregate team totals,https://www.nba.com/stats/teams/traditional?PerMode=Totals&Season=2007-08&SeasonType=Regular%20Season
+2008-09,0.5443848603182649,NBA.com aggregate team totals,https://www.nba.com/stats/teams/traditional?PerMode=Totals&Season=2008-09&SeasonType=Regular%20Season
+2009-10,0.543,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2010_advanced.html
+2010-11,0.541,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2011_advanced.html
+2011-12,0.527,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2012_advanced.html
+2012-13,0.535,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2013_advanced.html
+2013-14,0.541,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2014_advanced.html
+2014-15,0.534,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2015_advanced.html
+2015-16,0.541,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2016_advanced.html
+2016-17,0.552,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2017_advanced.html
+2017-18,0.556,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2018_advanced.html
+2018-19,0.56,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2019_advanced.html
+2019-20,0.565,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2020_advanced.html
+2020-21,0.572,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2021_advanced.html
+2021-22,0.566,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2022_advanced.html
+2022-23,0.581,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2023_advanced.html
+2023-24,0.58,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2024_advanced.html
+2024-25,0.576,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2025_advanced.html
+2025-26,0.581,Basketball Reference displayed League Average TS%,https://www.basketball-reference.com/leagues/NBA_2026_advanced.html

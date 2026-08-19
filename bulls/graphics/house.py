@@ -11,6 +11,7 @@ that the visual grammar repeats.
 
 from __future__ import annotations
 
+import hashlib
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Sequence
@@ -18,7 +19,11 @@ from typing import Sequence
 import matplotlib.font_manager as fm
 import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
+import numpy as np
+import requests
+from matplotlib.colors import to_rgb
 from matplotlib.patches import FancyBboxPatch
+from PIL import Image, ImageFilter
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -463,6 +468,66 @@ def save_post(fig, output_path: str | Path, *, final: bool = False) -> Path:
 
 HEADSHOT_CACHE = REPO_ROOT / "cache" / "headshots"
 
+# NBA.com serves this exact generic silhouette for players it has no portrait
+# for. It is also the honest mark for a player whose only available photograph
+# still has its background: consistent, obviously a placeholder, and never
+# mistaken for the player himself.
+NBA_PLACEHOLDER_SHA256 = (
+    "e366885fc4212e3a4100f49ed48ad866fd05b32e2d25898c2c24205e789e2632"
+)
+SILHOUETTE_PATH = HEADSHOT_CACHE / "_silhouette.png"
+SILHOUETTE_SOURCE_URL = "https://cdn.nba.com/headshots/nba/latest/1040x760/1.png"
+# Cut-out portraits run 45-65% transparent; a photograph with its background
+# intact is 0%. Nothing observed on historical Bulls players falls between.
+MIN_TRANSPARENT_FRACTION = 0.15
+_BACKGROUND_REMOVED_CACHE: dict[Path, bool] = {}
+
+
+def ensure_silhouette(path: Path = SILHOUETTE_PATH) -> Path:
+    """Cache the league's generic silhouette, verified by its exact digest."""
+    if path.exists():
+        return path
+    response = requests.get(
+        SILHOUETTE_SOURCE_URL,
+        headers={"User-Agent": "bulls-analytics/1.0"},
+        timeout=30,
+    )
+    response.raise_for_status()
+    digest = hashlib.sha256(response.content).hexdigest()
+    if digest != NBA_PLACEHOLDER_SHA256:
+        raise ValueError(f"NBA silhouette digest changed: {digest}")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(response.content)
+    return path
+
+
+def background_removed(path: str | Path) -> bool:
+    """Report whether a portrait is a cut-out rather than a flat photograph.
+
+    Mixing the two in one chart is what makes a row or a dot look pasted in:
+    a rectangle of background reads as a different kind of mark, not as the
+    same mark with a worse source photo.
+    """
+    path = Path(path)
+    cached = _BACKGROUND_REMOVED_CACHE.get(path)
+    if cached is not None:
+        return cached
+    try:
+        alpha = np.array(Image.open(path).convert("RGBA"))[:, :, 3]
+    except (FileNotFoundError, OSError, ValueError):
+        result = False
+    else:
+        result = bool((alpha < 16).mean() >= MIN_TRANSPARENT_FRACTION)
+    _BACKGROUND_REMOVED_CACHE[path] = result
+    return result
+
+
+def portrait_path(player_id: int) -> Path:
+    """Give a player his cut-out portrait, or the silhouette when he has none."""
+    path = HEADSHOT_CACHE / f"{int(player_id)}.png"
+    return path if background_removed(path) else SILHOUETTE_PATH
+
+
 
 def square_headshot_label(
     ax,
@@ -472,8 +537,14 @@ def square_headshot_label(
     half_size: float,
     *,
     zorder: float = 8,
+    face_fraction: float | None = None,
 ):
     """Place a square center crop of a headshot, with no border ring.
+
+    ``face_fraction`` takes the square from the top of the portrait instead of
+    its middle, keeping the given fraction of the image height. Small marks
+    need it: a centre crop of an NBA portrait is mostly jersey, and at 40px the
+    face is the only part a reader can still identify.
 
     The landscape scatter family plots players as bare square faces; the red
     ring in ``craft.headshot_label`` means "this is the payoff" and would read
@@ -499,9 +570,13 @@ def square_headshot_label(
         )
 
     height, width = image.shape[:2]
-    side = min(height, width)
+    if face_fraction is None:
+        side = min(height, width)
+        top = max(0, (height - side) // 2)
+    else:
+        side = min(int(height * face_fraction), width)
+        top = 0
     left = max(0, (width - side) // 2)
-    top = max(0, (height - side) // 2)
     square = image[top:top + side, left:left + side]
     return ax.imshow(
         square,
@@ -519,3 +594,224 @@ def ensure_headshots(nba_ids) -> None:
         nba_id = int(nba_id)
         if not (HEADSHOT_CACHE / f"{nba_id}.png").exists():
             get_player_headshot(nba_id)
+
+
+# --- Conditional-fill scale for table posts (DESIGN.md) ------------------------
+#
+# The red-white-green cell scale shared by the Assist Leaders, Most Impactful and
+# rookie tables. The midpoint is the canvas colour rather than a yellow, so a
+# cell that says nothing remarkable disappears into the page.
+HEAT_RED = "#D64545"
+HEAT_MID = DEFAULT_THEME.canvas
+HEAT_GREEN = "#3FAE63"
+
+
+def _heat_mix(base: str, target: str, strength: float) -> tuple[float, float, float]:
+    """Blend two scale colours by a 0-1 strength."""
+    amount = min(max(float(strength), 0.0), 1.0)
+    base_rgb = np.array(to_rgb(base))
+    target_rgb = np.array(to_rgb(target))
+    return tuple(base_rgb * (1 - amount) + target_rgb * amount)
+
+
+def heat_fill(
+    value: float,
+    red_at: float,
+    neutral_low: float,
+    neutral_high: float,
+    green_at: float,
+) -> tuple[float, float, float]:
+    """Colour one cell against a fixed reference, not against its own column.
+
+    Anything between ``neutral_low`` and ``neutral_high`` stays the page colour.
+    That band is the point: with a single midpoint every cell except an exact
+    tie takes some tint, so a table shimmers at values that mean nothing.
+
+    Outside the band a value ramps toward whichever end it heads for, and the
+    ends may sit on either side of it — so a column where low is good runs green
+    downward with no separate inverted code path. Collapsing the band onto
+    ``red_at`` makes a column sequential, with no red end at all.
+
+    Calibrate the four numbers from the population the chart is about, never
+    from the chart's own minimum and maximum: a scale anchored on one outlier
+    describes the outlier rather than the field.
+    """
+    value = float(value)
+    green_span = green_at - neutral_high
+    red_span = red_at - neutral_low
+    green_offset = value - neutral_high
+    red_offset = value - neutral_low
+    if green_span and green_offset * green_span > 0:
+        return _heat_mix(HEAT_MID, HEAT_GREEN, min(green_offset / green_span, 1.0))
+    if red_span and red_offset * red_span > 0:
+        return _heat_mix(HEAT_MID, HEAT_RED, min(red_offset / red_span, 1.0))
+    return to_rgb(HEAT_MID)
+
+
+def heat_text_color(fill: tuple[float, float, float]) -> str:
+    """Black or white text, whichever survives on this fill."""
+    red, green, blue = fill
+    luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue
+    return "#FFFFFF" if luminance < 0.47 else DEFAULT_THEME.ink
+
+
+# --- Accent card behind a table's hero column (DESIGN.md) ---------------------
+#
+# The continuous rounded block the game-score table runs behind Game Score, and
+# the rookie leaderboard runs behind PRA/75. It marks the one column the table
+# is sorted by, so a reader knows what the ranking means before reading a label.
+ACCENT_CARD_OUTSET_X = 8
+ACCENT_CARD_OUTSET_Y = 9
+ACCENT_CARD_OVERLAP_Y = 7
+ACCENT_CARD_ROUNDING = 18
+ACCENT_CARD_SHADOW = "#8A1737"
+
+
+def accent_card_bounds(
+    left: float,
+    right: float,
+    first_row_y: float,
+    row_count: int,
+    row_height: float,
+    outset_y: float = ACCENT_CARD_OUTSET_Y,
+    overlap_y: float = ACCENT_CARD_OVERLAP_Y,
+) -> tuple[float, float, float, float]:
+    """Footprint of the hero card: one block spanning every row, slightly out.
+
+    It reaches a little past the column on all four sides, and further at the
+    top, so it overlaps the header rule instead of butting against it. That
+    overlap is what makes it read as a card sitting on the table rather than as
+    one more cell in it.
+    """
+    return (
+        left - ACCENT_CARD_OUTSET_X,
+        right + ACCENT_CARD_OUTSET_X,
+        first_row_y - (row_count - 1) * row_height - row_height / 2 - outset_y,
+        first_row_y + row_height / 2 + outset_y + overlap_y,
+    )
+
+
+def draw_accent_card(
+    ax,
+    left: float,
+    right: float,
+    first_row_y: float,
+    row_count: int,
+    row_height: float,
+    theme: str | Theme | None = None,
+    zorder: float = 4,
+    outset_y: float = ACCENT_CARD_OUTSET_Y,
+    overlap_y: float = ACCENT_CARD_OVERLAP_Y,
+) -> tuple[float, float, float, float]:
+    """Draw the rounded, shadowed accent card and return its bounds.
+
+    The fill is flat accent. What reads as a gradient is the drop shadow, offset
+    down-right and darkened toward a deeper red, which lifts the card off the
+    page without a second colour.
+    """
+    resolved = get_theme(theme)
+    bounds = accent_card_bounds(
+        left, right, first_row_y, row_count, row_height, outset_y, overlap_y
+    )
+    card_left, card_right, bottom, top = bounds
+    ax.add_patch(
+        FancyBboxPatch(
+            (card_left, bottom),
+            card_right - card_left,
+            top - bottom,
+            boxstyle=f"round,pad=0,rounding_size={ACCENT_CARD_ROUNDING}",
+            facecolor=resolved.accent,
+            edgecolor="none",
+            linewidth=0,
+            path_effects=[
+                pe.withSimplePatchShadow(
+                    offset=(2, -2),
+                    shadow_rgbFace=ACCENT_CARD_SHADOW,
+                    alpha=0.22,
+                    rho=0.8,
+                ),
+                pe.Normal(),
+            ],
+            zorder=zorder,
+        )
+    )
+    return bounds
+
+
+# --- Turning a flat portrait into a usable cut-out ----------------------------
+#
+# A portrait only earns a place beside NBA CDN cut-outs if its background is
+# genuinely gone (see `background_removed`). Some good historical photographs
+# arrive as a clean subject on flat white instead, which reads as pasted-in.
+# This converts one into the shape the renderer expects.
+NBA_PORTRAIT_SIZE = (1040, 760)
+# The face crop takes the top 74% of an NBA headshot, so a supplied portrait is
+# scaled into that square and the rest of the canvas left empty.
+PORTRAIT_CROP_FRACTION = 0.74
+
+
+def cut_out_flat_background(
+    source: str | Path,
+    destination: str | Path,
+    tolerance: int = 18,
+) -> Path:
+    """Make a portrait's flat surround transparent and frame it like an NBA one.
+
+    The background is found by flooding inward from the edges rather than by
+    erasing every pale pixel, so teeth, eyes and jersey highlights survive — a
+    plain "white becomes transparent" rule punches holes through the player.
+
+    The result is pasted into a canvas with NBA headshot proportions so the same
+    face crop that works on CDN portraits frames this one the same way.
+    """
+    from collections import deque
+
+    image = Image.open(source).convert("RGBA")
+    pixels = np.array(image)
+    height, width = pixels.shape[:2]
+    rgb = pixels[:, :, :3].astype(int)
+
+    pale = (rgb.min(axis=2) >= 255 - tolerance) & (np.ptp(rgb, axis=2) <= tolerance)
+    background = np.zeros((height, width), dtype=bool)
+    queue = deque()
+    for x in range(width):
+        for y in (0, height - 1):
+            if pale[y, x] and not background[y, x]:
+                background[y, x] = True
+                queue.append((y, x))
+    for y in range(height):
+        for x in (0, width - 1):
+            if pale[y, x] and not background[y, x]:
+                background[y, x] = True
+                queue.append((y, x))
+    while queue:
+        y, x = queue.popleft()
+        for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            ny, nx = y + dy, x + dx
+            if 0 <= ny < height and 0 <= nx < width and pale[ny, nx] and not background[ny, nx]:
+                background[ny, nx] = True
+                queue.append((ny, nx))
+
+    pixels[:, :, 3] = np.where(background, 0, 255)
+    cut_out = Image.fromarray(pixels)
+    # Feather the boundary so the edge does not read as cut with scissors.
+    alpha = cut_out.getchannel("A").filter(ImageFilter.GaussianBlur(0.8))
+    cut_out.putalpha(alpha)
+
+    canvas_w, canvas_h = NBA_PORTRAIT_SIZE
+    crop_side = int(canvas_h * PORTRAIT_CROP_FRACTION)
+    scale = min(crop_side / cut_out.width, crop_side / cut_out.height)
+    resized = cut_out.resize(
+        (max(1, int(cut_out.width * scale)), max(1, int(cut_out.height * scale))),
+        Image.LANCZOS,
+    )
+    canvas = Image.new("RGBA", NBA_PORTRAIT_SIZE, (0, 0, 0, 0))
+    canvas.paste(
+        resized,
+        ((canvas_w - resized.width) // 2, max(0, crop_side - resized.height)),
+        resized,
+    )
+    destination = Path(destination)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    canvas.save(destination)
+    return destination

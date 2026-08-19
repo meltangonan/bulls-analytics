@@ -39,6 +39,8 @@ from bulls.config import BULLS_TEAM_ID
 from bulls.data.fetch import _NBA_HEADERS
 from bulls.graphics.house import (
     DEFAULT_THEME,
+    accent_card_bounds,
+    draw_accent_card,
     HEADSHOT_CACHE,
     ensure_headshots,
     export_dpi,
@@ -701,21 +703,9 @@ def game_score_card_bounds(
     layout: TableLayout = DECADE_LAYOUT,
 ) -> tuple[float, float, float, float]:
     """Return the rounded card footprint behind the Game Score values."""
-    left = GMSC_LEFT - GAME_SCORE_CARD_OUTSET_X
-    right = GMSC_RIGHT + GAME_SCORE_CARD_OUTSET_X
-    top = (
-        first_row_y
-        + layout.row_height / 2
-        + GAME_SCORE_CARD_OUTSET_Y
-        + GAME_SCORE_CARD_OVERLAP_Y
+    return accent_card_bounds(
+        GMSC_LEFT, GMSC_RIGHT, first_row_y, row_count, layout.row_height
     )
-    bottom = (
-        first_row_y
-        - (row_count - 1) * layout.row_height
-        - layout.row_height / 2
-        - GAME_SCORE_CARD_OUTSET_Y
-    )
-    return left, right, bottom, top
 
 
 def game_score_card(
@@ -724,28 +714,13 @@ def game_score_card(
     first_row_y: float,
     layout: TableLayout = DECADE_LAYOUT,
 ) -> None:
-    """Draw one continuous, solid Bulls-red Game Score card."""
-    left, right, bottom, top = game_score_card_bounds(row_count, first_row_y, layout)
-    ax.add_patch(
-        FancyBboxPatch(
-            (left, bottom),
-            right - left,
-            top - bottom,
-            boxstyle="round,pad=0,rounding_size=18",
-            facecolor=GAME_SCORE_FILL,
-            edgecolor="none",
-            linewidth=0,
-            path_effects=[
-                PathEffects.withSimplePatchShadow(
-                    offset=(2, -2),
-                    shadow_rgbFace="#8A1737",
-                    alpha=0.22,
-                    rho=0.8,
-                ),
-                PathEffects.Normal(),
-            ],
-            zorder=4,
-        )
+    """Draw one continuous, solid Bulls-red Game Score card.
+
+    The shape now lives in `bulls.graphics.house` so the rookie leaderboard
+    draws the identical card behind its own ranking column (DESIGN.md).
+    """
+    draw_accent_card(
+        ax, GMSC_LEFT, GMSC_RIGHT, first_row_y, row_count, layout.row_height
     )
 
 

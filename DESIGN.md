@@ -287,6 +287,50 @@ being traced to the data instead of the renderer. Draw five sectors at every dis
 numbers with the *same* function that draws them — `DEVELOPMENT.md` records the measured cost of
 that divergence and why it is an exception rather than the rule.
 
+### Conditional cell fill in tables
+
+`bulls/graphics/house.py` owns the red-white-green cell scale used by the Assist Leaders, Most
+Impactful and rookie tables: `heat_fill(value, red_at, neutral_low, neutral_high, green_at)` plus
+`HEAT_RED` / `HEAT_MID` / `HEAT_GREEN` and `heat_text_color`. Three rules make it behave.
+
+**The midpoint is the canvas, not a yellow.** `HEAT_MID` is `#FAF8F5`, so a cell that says nothing
+remarkable disappears into the page. A yellow midpoint made every ordinary value shout.
+
+**Neutral is a band, not a point.** Everything between `neutral_low` and `neutral_high` stays blank.
+With a single midpoint every cell except an exact tie takes some tint, and the middle of a table
+shimmers pink and green at values that carry no meaning. The band is how a chart declines to comment.
+Collapse the band onto `red_at` to make a column sequential — no red end at all, which is right for
+counting stats where a low number is a role rather than a failure. A guard with 0.1 blocks is a
+guard.
+
+**Calibrate from the population, never from the chart's own range.** Min-to-max scaling hands the
+midpoint to whichever single row happens to be extreme, so the colour ends up describing that outlier
+instead of the field. Anchor on percentiles of the population the chart is about, or on a published
+basketball reference (replacement level, league average). Where a statistic has drifted across eras,
+colour on the gap to that season's league value and print the raw number — otherwise the scale ranks
+eras rather than players. Where a statistic has a meaningful zero, neutral belongs at zero; a
+negative number must never read as green.
+
+The ends may sit on either side of the band, so a column where low is good runs green downward with
+no separate inverted code path.
+
+### The accent card behind a ranking column
+
+A table sorted by one metric marks that column with a single continuous rounded card in the accent
+red — `draw_accent_card` in `bulls/graphics/house.py`. It tells a reader what the ranking means
+before they read a header. Used by the game-score decade tables (Game Score) and the rookie
+leaderboard (PRA/75).
+
+Three details carry it. The card **outsets** past its column on every side and further at the top, so
+it overlaps the header rule and reads as an object resting on the table rather than another cell in
+it. The row rules **stop at its edges** — a rule crossing the card would cut it back into cells and
+undo the shape. And the fill is **flat accent**: what reads as a gradient is a drop shadow offset
+down-right in a deeper red (`#8A1737` at 22%), which lifts the card without introducing a second
+colour.
+
+One card per table. If two columns both look like the answer, the table has not decided what it
+argues.
+
 ## 5. Faces (headshots)
 
 The highest-stopping-power object on a chart — use sparingly.

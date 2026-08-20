@@ -39,9 +39,15 @@ carries the title, headers, and framing.
 - Add or update tests for reusable data or analysis behavior.
 - Explain the analytical, production-path, and visual choices in plain language.
 
-**Save each version to `docs/visuals/YYYY-MM-DD-<slug>/assets/` as you show it, not only at the end.** Every state the
-user reviews is part of the record of how the post was made, and an image that only exists in
-gitignored `output/` can be deleted by routine worktree cleanup.
+**Promote decisions, not renders.** Render freely into `output/`; save to
+`docs/visuals/YYYY-MM-DD-<slug>/assets/` when a render carries a different metric, cohort, threshold,
+chart type, sort or claim — and always when the user approves one. Adjustments (moved, resized,
+recoloured, re-cropped) are overwritten in `output/`. Save as you go, not only at the end, and at the
+resolution that goes into Canva. When you cannot tell, promote: over-promoting costs 300 KB, while an
+image that exists only in gitignored `output/` dies with the worktree.
+
+**Know when to stop.** Three consecutive rounds that change only presentation mean the analysis is
+settled — say so and ask whether to ship rather than opening a fourth.
 
 Don't prepare promotional copy — `promote-bulls-post` owns that stage.
 

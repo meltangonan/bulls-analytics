@@ -6,7 +6,10 @@
 # "release_count" means an official Bulls release explicitly states the network totals.
 # A team printable PDF is supporting evidence only when it actually labels every national
 # partner game; several older local-TV calendars omit non-exclusive national feeds.
-season,total,primary_evidence,archived_pdf,pdf_scope,cross_check,audit_result,notes
+# The source PDFs named below were archived here until 2026-08-20, when they were removed:
+# 24 files, 209 MB, all public documents cited by name and URL. They remain in git history and
+# any one can be restored with:  git show 0d4b2fa:<path-to-pdf> > out.pdf
+season,total,primary_evidence,source_pdf,pdf_scope,cross_check,audit_result,notes
 2010-11,18,official Bulls release count,2010-11-bulls-tv-schedule.pdf,printable calendar does not encode the national feeds,official Bulls release gives ABC 2 / ESPN 9 / TNT 7,verified_release_count,PDF cannot independently reproduce this count
 2011-12,22,official Bulls release count,2011-12-bulls-media-guide.pdf,media guide schedule,official Bulls release gives ABC 5 / ESPN 10 / TNT 7,verified_release_count,lockout-shortened 66-game season
 2012-13,19,official Bulls release count,2012-13-bulls-tv-schedule.pdf,printable calendar labels only a subset of feeds,official Bulls release gives ABC 2 / ESPN 10 / TNT 7,verified_release_count,release count is the controlling evidence

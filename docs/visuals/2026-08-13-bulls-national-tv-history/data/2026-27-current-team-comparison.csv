@@ -1,5 +1,8 @@
 # Transcribed 2026-08-13 from the NBA's final-for-release team-by-team PDF.
 # Grain: one row per selected team. Counts exclude NBA TV and count simulcasts once.
+# The source PDFs named below were archived here until 2026-08-20, when they were removed:
+# 24 files, 209 MB, all public documents cited by name and URL. They remain in git history and
+# any one can be restored with:  git show 0d4b2fa:<path-to-pdf> > out.pdf
 team,national_games,source_url
 Chicago Bulls,3,https://pr.nba.com/wp-content/uploads/sites/46/2026/08/2026-27-NBA-Regular-Season-Schedule-By-Team.pdf
 New York Knicks,34,https://pr.nba.com/wp-content/uploads/sites/46/2026/08/2026-27-NBA-Regular-Season-Schedule-By-Team.pdf

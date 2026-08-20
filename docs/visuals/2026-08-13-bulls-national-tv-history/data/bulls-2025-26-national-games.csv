@@ -1,8 +1,11 @@
 # Transcribed 2026-08-13 from the NBA's dated national-games PDF published
 # with the 2025-26 schedule release. One row is one Bulls regular-season game.
 # Source PDF: https://pr.nba.com/wp-content/uploads/sites/46/2025/08/2025-26-NBA-Regular-Season-National-Games-Schedule-8-14-25.pdf
-# Archived input: 2025-26-NBA-Regular-Season-National-Games-Schedule-8-14-25.pdf
+# Source document: 2025-26-NBA-Regular-Season-National-Games-Schedule-8-14-25.pdf
 # SHA-256: 20212a62cb9e6e4066dad28271e56f9ff121dd10b1215d563d630cba3f95b4c3
+# The source PDFs named below were archived here until 2026-08-20, when they were removed:
+# 24 files, 209 MB, all public documents cited by name and URL. They remain in git history and
+# any one can be restored with:  git show 0d4b2fa:<path-to-pdf> > out.pdf
 date,matchup,network,pdf_page
 2025-12-01,Chicago Bulls at Orlando Magic,Peacock,1
 2026-01-16,Chicago Bulls at Brooklyn Nets,ESPN,2

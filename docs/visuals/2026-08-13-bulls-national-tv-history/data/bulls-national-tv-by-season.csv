@@ -8,6 +8,9 @@
 # 2020-21 is the exception to one release per season: the NBA published the
 # pandemic schedule in two halves, so its row combines the original first- and
 # second-half announcements (one ESPN game plus two ESPN games).
+# The source PDFs named below were archived here until 2026-08-20, when they were removed:
+# 24 files, 209 MB, all public documents cited by name and URL. They remain in git history and
+# any one can be restored with:  git show 0d4b2fa:<path-to-pdf> > out.pdf
 season,abc,espn,tnt,nbc,nbcsn,peacock,prime_video,total,release_type,source_url,secondary_source_url,source_note
 2010-11,2,9,7,0,0,0,0,18,full,https://www.nba.com/bulls/news/tvschedule_100902.html,,Official Bulls release lists ABC 2 / ESPN 9 / TNT 7; excludes NBA TV 9 and WGN America 15.
 2011-12,5,10,7,0,0,0,0,22,full,https://www.nba.com/bulls/bulls-announce-2011-12-regular-season-schedule-christmas-day-opener.html,,Official Bulls release lists ABC 5 / ESPN 10 / TNT 7; excludes NBA TV 4 and WGN America 10.

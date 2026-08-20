@@ -1,8 +1,11 @@
 # Transcribed 2026-08-13 from the Bulls' original schedule-release PDF dated
 # August 15, 2024. One row is one Bulls regular-season game on ABC/ESPN/TNT.
 # Source PDF: https://cdn.nba.com/teams/uploads/sites/1610612741/2024/08/Bulls_2425_Schedule_081524.pdf
-# Archived input: 2024-25-bulls-original-schedule.pdf
+# Source document: 2024-25-bulls-original-schedule.pdf
 # SHA-256: f7cdf7b05fc57743d1d2eeb25f8b8cb398b02f22bdbde49ccd00454c855b37d9
+# The source PDFs named below were archived here until 2026-08-20, when they were removed:
+# 24 files, 209 MB, all public documents cited by name and URL. They remain in git history and
+# any one can be restored with:  git show 0d4b2fa:<path-to-pdf> > out.pdf
 date,matchup,network,pdf_page
 2024-11-20,Chicago Bulls at Milwaukee Bucks,ESPN,1
 2025-01-17,Charlotte Hornets at Chicago Bulls,ESPN,1

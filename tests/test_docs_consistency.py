@@ -140,3 +140,28 @@ def test_prototypes_have_a_module_docstring():
         if not ast.get_docstring(ast.parse(p.read_text(errors="ignore"))):
             bare.append(p.name)
     assert not bare, "Prototypes with no module docstring:\n  " + "\n  ".join(bare)
+
+
+def test_section_titles_have_one_owner():
+    """The same section title must not exist in two guides.
+
+    Single ownership is the rule AGENTS.md states in prose; this makes it
+    checkable. A topic with two homes is a topic whose two copies will disagree,
+    and the disagreement surfaces as a routing claim that quietly goes stale —
+    "confirmed voice rules go to DESIGN.md" outlived the section it named.
+    """
+    seen: dict[str, str] = {}
+    clashes = []
+    for name in ROOT_DOCS:
+        path = ROOT / name
+        if not path.exists():
+            continue
+        for line in path.read_text().splitlines():
+            m = re.match(r'^##\s+(?:\d+\.\s*)?(.+?)\s*$', line)
+            if not m:
+                continue
+            title = m.group(1).strip().lower()
+            if title in seen and seen[title] != name:
+                clashes.append(f'"{m.group(1)}" in both {seen[title]} and {name}')
+            seen.setdefault(title, name)
+    assert not clashes, "Section titles owned by more than one guide:\n  " + "\n  ".join(clashes)

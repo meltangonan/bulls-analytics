@@ -28,8 +28,8 @@ If the user says "pick for me," choose and state the choice plainly.
 
 ## One Draft
 
-Build a single reviewable draft, not a set of options. Python builds the **chart**; the Canva page
-carries the title, headers, and framing.
+Build a single reviewable draft, not a set of options (`AGENTS.md` default 2 splits chart from
+page).
 
 - Reuse the established design system and existing helpers before inventing a new visual grammar.
 - When working from an F5 or similar tutorial, reproduce its styling and structure closely and swap
@@ -39,15 +39,11 @@ carries the title, headers, and framing.
 - Add or update tests for reusable data or analysis behavior.
 - Explain the analytical, production-path, and visual choices in plain language.
 
-**Promote decisions, not renders.** Render freely into `output/`; save to
-`docs/visuals/YYYY-MM-DD-<slug>/assets/` when a render carries a different metric, cohort, threshold,
-chart type, sort or claim — and always when the user approves one. Adjustments (moved, resized,
-recoloured, re-cropped) are overwritten in `output/`. Save as you go, not only at the end, and at the
-resolution that goes into Canva. When you cannot tell, promote: over-promoting costs 300 KB, while an
-image that exists only in gitignored `output/` dies with the worktree.
+Two rules govern the iteration loop, and this is the stage where both bite:
 
-**Know when to stop.** Three consecutive rounds that change only presentation mean the analysis is
-settled — say so and ask whether to ship rather than opening a fourth.
+- **Promote decisions, not renders** — `AGENTS.md` default 4. Promote as you go, not in a batch at
+  the end.
+- **Know when to stop** — `POSTING_WORKFLOW.md` caps presentation-only rounds at three.
 
 Don't prepare promotional copy — `promote-bulls-post` owns that stage.
 

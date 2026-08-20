@@ -36,8 +36,10 @@ weaken it — then leave it as a hypothesis rather than forcing a decision.
 Make the smallest set of updates that keeps the project current:
 
 - Post-specific feedback and results go compactly on the Notion page.
-- Confirmed visual or voice rules → `DESIGN.md`. Confirmed production behavior →
-  `POSTING_WORKFLOW.md`. Confirmed audience, metric, or distribution learning → `STRATEGY.md`.
+- Route each confirmed rule to its owner, per `AGENTS.md` (Read the Right Document): chart-layer
+  visual rules → `DESIGN.md`; production behaviour, caption voice, and hashtags →
+  `POSTING_WORKFLOW.md`; audience, metric, or distribution learning → `STRATEGY.md`; code, data
+  guardrails, and worktree mechanics → `DEVELOPMENT.md`.
 - A clear, distinct future idea → a new `Parked` Notion page.
 
 Note production mechanics (chart export, Canva assembly) only when they materially affected

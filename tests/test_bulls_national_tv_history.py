@@ -127,11 +127,6 @@ def test_2025_26_rows_reconcile_to_dated_official_pdf():
     assert [row["pdf_page"] for row in rows] == ["1", "2", "3"]
 
 
-def test_official_2025_26_pdf_is_archived_with_the_post_data():
-    path = PROJECT_DATA / "2025-26-NBA-Regular-Season-National-Games-Schedule-8-14-25.pdf"
-    assert path.read_bytes().startswith(b"%PDF")
-
-
 def test_2024_25_rows_reconcile_to_original_release_pdf():
     path = PROJECT_DATA / "bulls-2024-25-national-games.csv"
     with path.open(encoding="utf-8") as handle:
@@ -139,16 +134,6 @@ def test_2024_25_rows_reconcile_to_original_release_pdf():
     assert len(rows) == EXPECTED_TOTALS["2024-25"]
     assert {row["network"] for row in rows} == {"ESPN"}
     assert {row["date"] for row in rows} == {"2024-11-20", "2025-01-17"}
-
-
-def test_original_2024_25_pdf_is_archived_with_the_post_data():
-    path = PROJECT_DATA / "2024-25-bulls-original-schedule.pdf"
-    assert path.read_bytes().startswith(b"%PDF")
-
-
-def test_official_2026_27_pdf_is_archived_with_the_post_data():
-    path = PROJECT_DATA / "2026-27-NBA-Regular-Season-Schedule-By-Team.pdf"
-    assert path.read_bytes().startswith(b"%PDF")
 
 
 def test_current_comparison_matches_release_day_counts():

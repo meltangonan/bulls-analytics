@@ -182,6 +182,23 @@ silent-wrong-answer trap (see the guardrails below).
 
 These are the traps that produce silently wrong numbers rather than errors.
 
+- **⚠️ NBA.com does not publish where a foul happened, and no parameter adds it.** Verified
+  2026-08-07 against a full Bulls game: all 36 `PlayByPlayV3` foul rows return `xLegacy=0,
+  yLegacy=0`, while 180 of 181 shot rows in the same response carry real coordinates.
+  `ShotChartDetail` rejects `ContextMeasure=PFD` and `FTA` with HTTP 400 and 500s on `PF`; the
+  `cdn.nba.com` live feed answers 403 outside a browser session. **The tempting workaround is wrong
+  and looks right**: borrowing coordinates from the shot event beside each foul only reaches
+  and-ones, because NBA scoring charges no field-goal attempt when a player is fouled on a miss.
+  That covered 8 of 36 fouls in the test game, and the survivors are rim finishes by construction —
+  so the resulting "where they get fouled" map shows the sampling method, not the team. Use drive
+  tracking when the question is foul-drawing, and say the chart counts the situation rather than
+  locating it.
+- **`LeagueDashPtStats` drive fields cross-check each other, so use that.** `DRIVE_FTA` and
+  `DRIVE_PF_PCT` are published independently, and free throws per foul drawn must land just under
+  2.0, because a drive foul is nearly always a two-shot foul — measured at 1.971 (range 1.78–2.03)
+  across 125 qualified 2025-26 players. Assert the 1.5–2.5 band on every run; drift there means the
+  two fields stopped describing the same events and the rate axis is no longer trustworthy.
+
 - **`ShotChartDetail` filters by `league_id` server-side and defaults to the regular NBA**, so it
   returns zero rows for Summer League games without complaining. Use `get_game_shots`, which derives
   the league from the game-ID prefix (`00` NBA, `15` Summer League). Prefer the NBA's own `shot_zone`

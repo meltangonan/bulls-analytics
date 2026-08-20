@@ -39,6 +39,10 @@ name silently renders regular. `house.helvetica()` splits the requested face out
 collection into `cache/fonts/` and loads it by filename. The extraction stays in `cache/` so the
 licensed system font is never committed. On non-macOS it falls back to an installed sans-serif.
 
+⚠️ **Helvetica has no arrow glyph.** `→` (U+2192) renders as an empty box and matplotlib does not
+warn. En dashes, middle dots and accented Latin characters are all present, so only the arrows bite.
+Spell the transition (`13.1 to 20.0`) or draw a real `FancyArrowPatch`.
+
 ## 2. Color
 
 Red + black is the palette, unchanged. Avoid neutral grays for *meaningful* areas — gray reads
@@ -116,6 +120,13 @@ trivia — cut it.
 - **Callouts** — budget 3–4. Bold label with a thin straight connector (`arrowstyle="-"`, `MUTED`,
   1.0 lw) to the point. Names and context can live on the Canva page instead when the chart is dense.
 - **Emphasis is meaning-driven, never decorative.** At most one payoff element per chart.
+- **A quadrant key names an archetype, never a verdict.** A player in a low-volume, low-reward
+  corner is doing a different job, not failing at this one. "DRIVES A LOT, NO WHISTLE" describes a
+  pattern; "CAN'T FINISH" grades a player the data cannot grade.
+- **Size a quadrant panel from the data, not the data range.** A key pinned to a panel corner covers
+  the outlier that corner exists to describe — the league's most extreme foul-drawer once rendered
+  underneath his own quadrant pill and disappeared. The fix is axis headroom past the extreme point,
+  not moving the key somewhere it means less.
 - **Figures over a court diagram sit on a card, sized to the text it holds.** Page-coloured fill
   (`#FAF8F5`) with a hairline warm-grey edge, so the label reads as resting on the floor rather than
   as a second block of colour. Three treatments were tried on `scoring_by_location.py` before this
@@ -334,6 +345,14 @@ argues.
 ## 5. Faces (headshots)
 
 The highest-stopping-power object on a chart — use sparingly.
+
+⚠️ **The NBA CDN serves a player's *current* portrait, not the one from the season being charted.**
+A post spanning several eras arrives with players in the uniform of a team they joined years later —
+an all-time Bulls chart renders Butler in Warriors blue, Caruso in Thunder colors, Gibson and White
+in Hornets teal. Nothing warns you; every id resolves. **Portraits stay full colour on their
+transparent background** (confirmed 2026-08-05; desaturating them onto a warm tile was tried and
+rejected the same day). Anchor the crop to the top to keep the jersey small, and expect the
+off-brand colours rather than being surprised by them.
 
 Two crops, and the difference carries meaning:
 

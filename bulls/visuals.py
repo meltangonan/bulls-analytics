@@ -13,8 +13,14 @@ different reasons to exist.
 
 **Assets are versioned because they cannot be regenerated.** A chart rebuilt in
 October is not the same chart: the season has more games in it, and the code has
-moved. The PNG is the only record of what a given version actually showed, so
-every state put in front of someone is kept.
+moved. The PNG is the only record of what a given version actually showed.
+
+What earns a saved version is a decision, not a render: a different metric,
+cohort, threshold, chart type, sort or claim, plus whatever the user approved.
+Adjustments -- moved, resized, recolored, re-cropped -- are overwritten in
+``output/`` and never promoted. Saved versions stay at publish DPI so any one of
+them can go into Canva without a rebuild.
+``scripts/save_visual_version.py`` carries the full test.
 
 **Finals are a single snapshot because Canva is a live surface.** The design keeps
 being editable after the post goes out, so its link answers "what does this look

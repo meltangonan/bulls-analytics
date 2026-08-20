@@ -56,6 +56,12 @@ numbers come from the same run. Never retype a value from a chart into Canva by 
 The Python full-layout system (`house.draw_header` and friends) is legacy — maintain existing
 prototypes on it, don't start new posts there.
 
+**Know when the chart is done.** Three consecutive rounds that change only presentation — spacing,
+label placement, color, crop — mean the analysis is settled. Say so and ask whether to ship instead
+of opening a fourth. Polish is Canva's job: a chart asset carries no page furniture by contract
+(`DESIGN.md` §3), so presentation rounds in Python are usually redone by the layout surface anyway.
+Rounds that change what the chart *claims* are not polish and are not capped.
+
 ## Before Calling a Draft Approved
 
 - Every annotation, title, and subtitle is accurate, legible, and approved or redlined.

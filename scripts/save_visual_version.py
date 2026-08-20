@@ -12,10 +12,20 @@ with ``--data`` for the numbers a render was built from. That tree is **tracked*
 ``output/`` is scratch and stays ignored. ``bulls/visuals.py`` explains why the three
 kinds are kept differently.
 
-Run this every time a version is shown to the user for review -- that is the unit
-of a version, not every render. A render where a label moved two pixels is not a
-version anybody wants to scroll past a year from now, but every state that was
-actually put in front of someone is part of the record of how the visual was made.
+**Promote a decision, not a render.** Write the one line describing what changed
+since the last saved version. If it reads as moved, resized, recolored, renamed or
+re-cropped, overwrite in ``output/`` and save nothing -- that is an adjustment. If
+it reads as a different metric, cohort, threshold, chart type, sort or claim, save
+it. Always save the state the user approved.
+
+The earlier rule said to save every version shown for review, and in a chat
+workflow that is every render: one post reached 29 saved versions of the same
+chart, 40 MB, most of them a nudged label apart. "Shown to someone" measures
+attention, not change, and only change is worth scrolling back through.
+
+Saved versions stay at **publish DPI**. A version worth keeping is one you might
+put into Canva, and re-rendering it later is not free -- the season has more games
+in it and the code has moved.
 
 Two things this closes, both of which cost real work once:
 

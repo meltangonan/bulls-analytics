@@ -12,7 +12,10 @@ court geometry). Read the modules for signatures — this file covers only what 
 Any post task that changes repo files starts in its own linked worktree; the user does not need to
 request isolation. The primary checkout stays on `main` and is the integration copy — never switch
 it to a post branch. Use the visible sibling directory
-`../bulls-analytics-worktrees/<agent>-<post-slug>` and a matching temporary branch.
+`../bulls-analytics-worktrees/<post-slug>` with the branch `post/<post-slug>`. The directory names
+the post, never the agent or the model: which tool is driving can change mid-build, and often does.
+Worktrees created under the older `<agent>-<slug>` naming keep their names until their post lands —
+renaming a live worktree costs more than the inconsistency.
 
 Before editing, fetch and fast-forward a clean primary `main`, inspect `git worktree list`, and stop
 rather than switching, cleaning, or discarding unexpected work. Create the post worktree from that
@@ -66,6 +69,17 @@ in `cache/` is untidy, expensive single-owner data in `cache/` is a loss waiting
 a cheap refetch, the licensed Helvetica extraction `DESIGN.md` forbids committing, and third-party
 portraits. Prefer running a long fetch from the primary checkout regardless, since it writes only to
 ignored `cache/` and touches no tracked file.
+
+**Abandoned posts leave a reason, not files.** When an idea is dropped mid-build, the valuable part
+is why: "the cohort fell below the minutes threshold once I applied it" is what stops the same dead
+end being reopened in three months. Write that on the Notion page and set its status back. Then
+delete the branch and remove the worktree — nothing lands in `docs/visuals/`. A dropped post that
+leaves a stale worktree and no written reason has cost you twice.
+
+Run `scripts/check_worktrees.sh` at task start. It reports what is actually unsaved in each
+worktree — modified tracked files, renders sitting in ignored `output/`, and cache size — rather
+than whether a branch is merged. Those are different questions, and answering the wrong one is how
+a day of approved renders was deleted from a worktree whose branch had already landed.
 
 ## Conventions
 

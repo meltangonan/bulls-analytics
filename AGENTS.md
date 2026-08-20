@@ -26,21 +26,20 @@ metrics, qualifications, sources, and the final downloaded pages.
    (`DESIGN.md`) — maintain it, don't build new posts on it.
 3. Applicable thresholds, coverage windows, and sources stay visible on every data-bearing graphic.
    The user usually adds them manually in Canva.
-4. **Every visual version shown to the user is saved to `docs/visuals/YYYY-MM-DD-<slug>/assets/` and
-   committed**, with the published Canva page in `final/` alongside it and **the numbers behind the
-   render in `data/`**. That tree is tracked; `output/` is scratch and stays gitignored. Save with
-   `scripts/save_visual_version.py` (`--final`, `--data`) as each version goes out for review — not
-   only at the end. A version is a state someone actually saw, not every render. Untracked images
-   have been lost to worktree cleanup before: files under `docs/visuals/` make a worktree dirty, and
-   dirty worktrees are already protected.
-   **A graphic's data ships with the graphic.** Scope decides where a dataset lives: if exactly one
-   post consumes it, it belongs in that post's `data/` from the start — the analysis table the chart
-   was drawn from, and the fetched inputs behind it — whether or not it was expensive, because that
-   is what makes the numbers auditable later without refetching. Only genuinely shared material
-   stays in `cache/`, which is ignored: portraits, the licensed font extraction, the league shot
-   baseline, season game logs. Cost does not decide the folder, it decides the stakes — an ignored
-   `cache/` has already destroyed fifty minutes of play-by-play behind an already-published post.
-   `bulls/visuals.py` owns the full rule; `tests/test_data_locations.py` enforces it.
+4. **Promote decisions, not renders.** Renders go to `output/` — scratch, gitignored, disposable.
+   A render is promoted to `docs/visuals/YYYY-MM-DD-<slug>/assets/` and committed when it carries a
+   *decision*: a different metric, cohort, threshold, chart type, sort or claim. Always promote what
+   the user approves. Adjustments — moved, resized, recolored, re-cropped — are overwritten in
+   `output/` and never promoted. Promote at publish DPI, as it happens, not in a batch at the end.
+   The published Canva page goes in `final/`; the numbers behind the render go in `data/`. Save with
+   `scripts/save_visual_version.py` (`--final`, `--data`).
+   **A graphic's data ships with the graphic.** Scope decides where a dataset lives: a dataset with
+   exactly one consuming post belongs in that post's `data/` from the start, whether or not it was
+   expensive to fetch, because that is what makes the numbers auditable later without refetching.
+   Only genuinely shared material stays in ignored `cache/` — portraits, the licensed font
+   extraction, the league shot baseline, season game logs.
+   `scripts/save_visual_version.py` and `bulls/visuals.py` own the full rules and the reasons;
+   `tests/test_data_locations.py` enforces the data half.
 5. After completing and verifying work, show the user the result and wait for explicit approval
    before committing or pushing. Approval covers the work under review, not later work.
 6. Any post task that changes repo files automatically gets a temporary branch and linked worktree;

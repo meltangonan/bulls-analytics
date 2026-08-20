@@ -634,7 +634,7 @@ def _headshot_path(player: pd.Series):
     """Committed local crop if one exists, else the cached NBA CDN headshot.
 
     Local overrides live in assets/img/players/<personId>.png — used when the
-    CDN only has the gray rookie silhouette (DESIGN.md §8). Warns when falling
+    CDN only has the gray rookie silhouette (DESIGN.md §5). Warns when falling
     back to a file that looks like the silhouette.
     """
     person_id = int(_number(player["personId"]))

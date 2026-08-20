@@ -12,6 +12,7 @@ metrics, qualifications, sources, and the final downloaded pages.
 | Audience, editorial direction, metrics, distribution | `STRATEGY.md` |
 | Any visual, mock, or post iteration | `DESIGN.md`, then `POSTING_WORKFLOW.md` |
 | Analytical scope and fairness guardrails | `POSTING_WORKFLOW.md` |
+| Caption voice, hashtags, what a post says | `POSTING_WORKFLOW.md` |
 | The shelf of post ideas and post log | the Notion `chicagobullsdata posts` database |
 | A create / promote / review stage | the matching skill in `.agents/skills/` |
 | Fetchers, analysis, graphics code, scripts, tests | `DEVELOPMENT.md` |
@@ -31,6 +32,7 @@ metrics, qualifications, sources, and the final downloaded pages.
    *decision*: a different metric, cohort, threshold, chart type, sort or claim. Always promote what
    the user approves. Adjustments — moved, resized, recolored, re-cropped — are overwritten in
    `output/` and never promoted. Promote at publish DPI, as it happens, not in a batch at the end.
+   **When in doubt, promote** — over-promoting costs 300 KB, under-promoting loses the only copy.
    The published Canva page goes in `final/`; the numbers behind the render go in `data/`. Save with
    `scripts/save_visual_version.py` (`--final`, `--data`).
    **A graphic's data ships with the graphic.** Scope decides where a dataset lives: a dataset with
@@ -85,8 +87,10 @@ This is part of completing the work, not a separate request.
 
 **Design ownership is split.** Canva's Brand Kit owns post typography and page layout — that's
 upstream of this repo, so record changes in `DESIGN.md` rather than trying to reproduce them in
-Python. `DESIGN.md` owns the chart layer, and a chart-layer change must land in `DESIGN.md` and
-`bulls/graphics/house.py` together. `tests/test_design_tokens.py` catches color drift only.
+Python. `DESIGN.md` owns the chart layer — how a chart looks — and a chart-layer change must land in
+`DESIGN.md` and `bulls/graphics/house.py` together. It does not own what a post *says*: caption
+voice and hashtags live in `POSTING_WORKFLOW.md`, and the analytical reasoning behind the shot-chart
+family lives in `DEVELOPMENT.md` under Chart Family Notes. `tests/test_design_tokens.py` catches color drift only.
 The legacy full-layout HTML design-system companion has been retired; `DESIGN.md` and
 `bulls/graphics/house.py` retain only the code and rules needed to maintain older renderers.
 

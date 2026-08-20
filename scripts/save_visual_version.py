@@ -27,6 +27,14 @@ Saved versions stay at **publish DPI**. A version worth keeping is one you might
 put into Canva, and re-rendering it later is not free -- the season has more games
 in it and the code has moved.
 
+**When the two triggers disagree, promote.** A one-word font change is an
+adjustment by the first test and the final version by the second, and the second
+wins: what ships is always saved, however small the edit that produced it. The
+costs are not symmetric. Over-promoting costs 300 KB. Under-promoting loses the
+only copy of a state that cannot be rebuilt, because ``output/`` is ignored,
+disposable, and lives inside a worktree that gets removed. When you cannot tell,
+promote and let the next pass prune.
+
 Two things this closes, both of which cost real work once:
 
 * **Images stopped being deletable.** ``output/`` is gitignored, so a worktree

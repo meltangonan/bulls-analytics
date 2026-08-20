@@ -410,27 +410,7 @@ Visual outcomes, whichever tool composes the page:
 7. **Take the structure, not the look.** Adopt formats from the best accounts, rendered in our
    palette and type.
 
-## 8. Voice & Caption
-
-The single owner of how the account sounds.
-
-**On-graphic copy** is minimal. The analytical thesis, player names, and context live in the caption.
-On-chart annotations may carry a light "fan in the stands" voice — first-person, wry, a notch above
-meme-page — but the chart stays clean.
-
-**The user writes the caption.** Offer at most one short line as raw material; never a multi-sentence
-draft unless asked. Both of the account's first two data-viz posts used the user's own one-liner plus
-hashtags (confirmed 2026-07-11).
-
-Captions sound like a knowledgeable person who watches the Bulls: simple, direct, grounded in the
-actual basketball observation. **A plain factual caption is a successful result.** Preserve material
-qualifiers without turning the caption into methodology notes.
-
-Never add a hook, joke, fan slang, rhetorical question, or engagement bait to make copy feel
-distinctive. Use humor only when it's natural to the post or comes from the user. Never perform a
-social-media persona.
-
-## 9. Brand Identity
+## 8. Brand Identity
 
 - **Handle:** `@chicagobullsdata` · display name "Chicago Bulls + Data Viz"
 - **Watermark:** text-only (`@chicagobullsdata`), set in Canva.

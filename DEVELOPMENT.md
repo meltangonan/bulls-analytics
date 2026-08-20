@@ -17,21 +17,16 @@ the post, never the agent or the model: which tool is driving can change mid-bui
 Worktrees created under the older `<agent>-<slug>` naming keep their names until their post lands —
 renaming a live worktree costs more than the inconsistency.
 
-Before editing, fetch and fast-forward a clean primary `main`, inspect `git worktree list`, and stop
-rather than switching, cleaning, or discarding unexpected work. Create the post worktree from that
-current `main`. Copy the primary checkout's ignored `cache/` into the worktree when present: the
-small snapshot avoids duplicate NBA requests while keeping concurrent cache writes isolated. Do not
-copy `venv/`; run scripts with the primary checkout's `venv/bin/python`. `./run_tests.sh`
-automatically finds that shared interpreter while forcing imports to resolve from the current
-worktree.
+Before editing, fetch and fast-forward a clean primary `main`, run `scripts/check_worktrees.sh`, and
+stop rather than switching, cleaning, or discarding unexpected work. Create the post worktree from
+that current `main`. Copy the primary checkout's ignored `cache/` in when present: the small
+snapshot avoids duplicate NBA requests while keeping concurrent writes isolated. Do not copy
+`venv/`; run scripts with the primary checkout's `venv/bin/python`. `./run_tests.sh` finds that
+shared interpreter automatically while forcing imports to resolve from the current worktree.
 
-⚠️ **The primary checkout owns the cache. A cache built inside a worktree must be copied back to it
-before that worktree is removed, or it is destroyed with the directory.** `git worktree remove`
-refuses a directory holding scratch, and the `rm -rf` that follows takes `cache/` with it — that is
-how 26 seasons of assist-duos play-by-play, about fifty minutes of rate-limited fetching, were lost
-after the work had already been committed and pushed. Committed artifacts are safe; the data behind
-them is not. Prefer running a long fetch from the primary checkout in the first place, since it
-writes only to the ignored `cache/` and touches no tracked file.
+⚠️ **The primary checkout owns the cache.** A cache built inside a worktree must be copied back
+before that worktree is removed, or it goes with the directory. Prefer running long fetches from the
+primary checkout, which writes only to ignored `cache/` and touches no tracked file.
 
 Keep post-specific implementation, tests, outputs, and any required shared code or owner-doc changes
 in the worktree. Defer the shared `scripts/prototypes/README.md` index until integration. After the
@@ -44,31 +39,16 @@ user approves committing or pushing:
 3. Inspect the staged/final diff and commit file list; never use `git add -A` or `git commit -am`.
 4. Fast-forward the primary `main` to the post branch, push only with explicit approval, and prove
    local/remote SHA parity.
-5. After the project's images are committed under `docs/visuals/YYYY-MM-DD-<slug>/`, remove the worktree and delete
-   its now-merged branch. At the next task start, prune missing worktree metadata and clean any
-   clearly merged leftovers; preserve and report anything dirty, unmerged, or unclear.
+5. Remove the worktree and delete its branch only once `scripts/check_worktrees.sh` reports nothing
+   unsaved there. Preserve and report anything dirty, unmerged, or unclear.
 
-**Before removing any worktree, check `output/` for images that were never saved to
-`docs/visuals/`.** A merged branch does not mean the work is done — it means the *code* is done. This
-rule and the "preserve approved finals" rule key off different signals, and they came apart once: a
-worktree whose branch was merged looked like a clean leftover while its gitignored `output/` still
-held a day of approved renders, and removing it destroyed them. Saving versions as they are reviewed
-is what keeps the two signals aligned, because tracked files make the worktree dirty.
-
-**The same trap has a second mouth: ignored data.** That rule was written about images, and it was
-followed — while a `cache/` folder holding 2,132 rate-limited play-by-play requests, about fifty
-minutes of fetching, went into the same `rm -rf` and was destroyed after the post had shipped. A
-safety rule written for one kind of artifact quietly implies a category, and the next thing lost is
-whichever member of that category the rule did not name. So the rule is now about ownership:
-**a dataset with exactly one consuming post is written into that post's tracked
-`docs/visuals/<slug>/data/` folder from the start** — not copied there at the end, written there, so
-no one has to remember. That holds whether or not the fetch was expensive; shipping a post's inputs
-with the post is what lets someone answer "where did this number come from?" a year later without
-refetching anything. Cost is not the filing rule, it is the severity rule: cheap single-owner data
-in `cache/` is untidy, expensive single-owner data in `cache/` is a loss waiting to happen. `cache/` stays ignored, and stays correct for
-a cheap refetch, the licensed Helvetica extraction `DESIGN.md` forbids committing, and third-party
-portraits. Prefer running a long fetch from the primary checkout regardless, since it writes only to
-ignored `cache/` and touches no tracked file.
+**Ask what is unsaved, not what is merged.** A merged branch means the *code* landed. It says
+nothing about renders sitting in ignored `output/` or a `cache/` that took an hour to fetch, and
+both have been destroyed by cleanups that asked only the first question: a day of approved renders
+from a worktree whose branch had already landed, and 2,132 rate-limited play-by-play requests behind
+an already-published post. `scripts/check_worktrees.sh` asks the second question, and the filing
+rules remove the exposure — single-owner data is written to the post's tracked `data/` from the
+start, and tracked files make a worktree dirty, which is already protected (`bulls/visuals.py`).
 
 **Abandoned posts leave a reason, not files.** When an idea is dropped mid-build, the valuable part
 is why: "the cohort fell below the minutes threshold once I applied it" is what stops the same dead
@@ -109,34 +89,26 @@ a day of approved renders was deleted from a worktree whose branch had already l
   2015-16 Bulls payroll inflated by three players who joined the team the following offseason.
 - Keep the matching Notion page current as the idea, status, and post log.
 - **`docs/visuals/YYYY-MM-DD-<slug>/` is the tracked home for visual work**, whether it becomes a
-  post or remains a reviewed chart or exploration. It is split into `assets/` and optional `final/`.
-  Save with `scripts/save_visual_version.py --project <slug> <files...>` (add `--final` for a
-  page downloaded from Canva), then commit. Copying is not preservation; the commit is.
-  - `assets/` — our own renders, one numbered version per state shown to the user, stamped
-    `YYYY-MM-DD-vNN-<name>.png`. Zero-padded so v10 sorts after v9, numbered one past the highest
-    present so a rebuild never renumbers history. **These are versioned because they cannot be
-    regenerated** — the same command in October reads a season with more games in it, so the PNG is
-    the only record of what a version actually showed.
-    - **When a version is approved, save its `--final` export as the next version too.** Draft
-      renders are half-size previews; the export that actually goes into Canva is the one at full
-      resolution, and by the same cannot-be-regenerated logic it is the *most* important file in the
-      folder — yet the workflow used to track the preview and leave the shipped asset in scratch,
-      where it died with the worktree. Expect the approved draft and its final export to sit as two
-      adjacent, near-identical versions; that is the point, not duplication. The high-resolution one
-      is what you upload.
-    - ⚠️ Two different `--final` flags. On a prototype it means *render at 300 DPI*. On
-      `save_visual_version.py` it means *this is a page downloaded from Canva, put it in `final/`*.
-      Saving a chart asset with `--final` files it as a published page. Save chart renders with
-      `--project <slug>` alone, whatever DPI they are.
-  - `final/` — the page(s) downloaded from Canva at publish, one per slide, unversioned. Kept
-    because Canva stays editable after posting, so its link answers "what does this look like now",
-    never "what did we publish". A full export is already pulled for QA, so this costs nothing.
-  - The folder's date is fixed when the post starts and never moves; a later save finds the folder by
-    slug whatever date it carries, so a post spanning three days stays in one place.
-- A *version* is a state the user actually saw. A render made to check a two-pixel label offset is
-  not a version. Roughly a third of renders qualify.
-- `output/` remains gitignored scratch. Render there freely; promote what gets reviewed.
-- Legacy mocks have been migrated into `docs/visuals/`; there is one tracked home for visual work.
+  post or stays a reviewed chart. `assets/` holds our renders, `final/` the pages downloaded from
+  Canva, `data/` the numbers behind them. `bulls/visuals.py` explains why the three are kept
+  differently; `scripts/save_visual_version.py` carries the promotion test and performs the save.
+  Copying is not preservation — the commit is.
+  - **Promote decisions, not renders.** A render earns a version when it carries a different metric,
+    cohort, threshold, chart type, sort or claim, or when the user approves it. Adjustments — moved,
+    resized, recoloured, re-cropped — are overwritten in `output/`. When the two tests disagree,
+    promote: over-promoting costs 300 KB, under-promoting loses the only copy.
+  - Versions are stamped `YYYY-MM-DD-vNN-<name>.png`, zero-padded so v10 sorts after v9, numbered
+    one past the highest present so a rebuild never renumbers history.
+  - **Save the approved version at the resolution that goes into Canva.** Draft renders are often
+    half-size previews; the export you actually upload is the file worth keeping, and it used to be
+    left in scratch where it died with the worktree. Expect the approved draft and its full-size
+    export as two adjacent near-identical versions. That is the point, not duplication.
+  - ⚠️ Two different `--final` flags. On a prototype it means *render at 300 DPI*. On
+    `save_visual_version.py` it means *this is a page downloaded from Canva, put it in `final/`*.
+    Save chart renders with `--project <slug>` alone, whatever DPI they are.
+  - The folder's date is fixed when the post starts and never moves; a later save finds the folder
+    by slug whatever date it carries, so a post spanning three days stays in one place.
+- `output/` is gitignored scratch. Render there freely; promote what carries a decision.
 - Name renders `YYYY-MM-DD-{chart}-{mode}-{scope}.png` and pass `--project <slug>` so they land in
   `output/YYYY-MM-DD-<slug>/`, mirroring `docs/visuals/YYYY-MM-DD-<slug>/`. Omit `--project` only for
   disposable one-off exploration, which lands directly in `output/`.
@@ -371,6 +343,11 @@ venv/bin/python scripts/make_shot_chart.py --team --chart ladder --blank [--proj
 venv/bin/python scripts/prototypes/current_roster_zone_charts.py    # the team plus every qualified player
 venv/bin/python scripts/save_visual_version.py --project <slug> <files...>   # preserve a reviewed version
 ```
+
+## Chart Family Notes
+
+Why these charts are shaped the way they are. `DESIGN.md` owns how a chart looks; this covers the
+analytical choices behind the shot-chart family, which are easy to undo by accident.
 
 `rings`, `zones`, and `cells` answer the same question — how well he shoots by area, against the
 league — at four regions, twelve, and 18. Choose by sample. `rings` keeps every band large enough

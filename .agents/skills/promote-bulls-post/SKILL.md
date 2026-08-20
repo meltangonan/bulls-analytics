@@ -9,8 +9,8 @@ Prepare one approved post for a clean, accurate release without manufacturing a 
 
 ## Context
 
-Read `AGENTS.md`, `DESIGN.md` §8 (Voice & Caption — the owner of how the account sounds),
-`POSTING_WORKFLOW.md` for hashtags, and `STRATEGY.md` before recommending distribution.
+Read `AGENTS.md`, `POSTING_WORKFLOW.md` (Voice & Caption owns how the account sounds; Hashtags owns
+tagging), and `STRATEGY.md` before recommending distribution.
 
 **Inspect the actual artifacts**, not a summary: the approved final graphic, its analysis or
 prototype, and its Notion `chicagobullsdata posts` page. For Canva work that means every downloaded page in
@@ -38,7 +38,7 @@ verify any fact independently before it reaches copy or a graphic.
 
 ## Copy
 
-The user owns the caption; `DESIGN.md` §8 has the voice rules. Two things specific to this stage:
+The user owns the caption; `POSTING_WORKFLOW.md` (Voice & Caption) has the voice rules. Two things specific to this stage:
 
 - When they supply a draft, preserve its structure and voice and make the smallest useful edit. When
   they ask for help, offer **one** short line as raw material. A fuller draft or multiple variants

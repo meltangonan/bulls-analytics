@@ -53,8 +53,8 @@ Don't prepare promotional copy — `promote-bulls-post` owns that stage.
 2. **Inspect the actual downloaded files.** Run the checks in `POSTING_WORKFLOW.md` — approving the
    editable Canva design or the chart asset alone is the recurring failure here.
 3. Save every approved final page with
-   `scripts/save_visual_version.py --project <slug> --final` and commit it;
-   update the Notion page to `Mocked`.
+   `scripts/save_visual_version.py --project <slug> --final` — it joins the post's single commit,
+   made once at the end (`AGENTS.md` default 4). Update the Notion page to `Mocked`.
 4. Update the post's Notion page: the working detail, and the **data provenance** section defined in
    `DEVELOPMENT.md` — where the numbers came from and how a raw record becomes the published figure.
    Write it without being asked; the user should not have to request the trail back to a finding.

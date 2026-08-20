@@ -164,7 +164,8 @@ def main() -> None:
         what = f"as v{match.group(1)}"
     else:
         what = "as source data" if args.data else "as the published final"
-    print(f"\n{len(saved)} file(s) {what}. Commit them — that is what makes them safe.")
+    print(f"\n{len(saved)} file(s) {what}. They stay uncommitted until the post is "
+          "finished — one post is one commit.")
 
 
 if __name__ == "__main__":

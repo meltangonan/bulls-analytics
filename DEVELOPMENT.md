@@ -32,8 +32,10 @@ Keep post-specific implementation, tests, outputs, and any required shared code 
 in the worktree. Defer the shared `scripts/prototypes/README.md` index until integration. After the
 user approves committing or pushing:
 
-1. Commit only the reviewed implementation in the post worktree, update the primary `main`, and
-   rebase the post branch onto it. Resolve real shared-code conflicts there.
+1. Make **one commit** in the post worktree holding the whole reviewed post — implementation,
+   tests, saved versions, final pages, and data. A post is one unit of work however many iterations
+   it took. Then update the primary `main` and rebase the post branch onto it, resolving real
+   shared-code conflicts there.
 2. Add the deferred index updates in the rebased worktree, validate, and amend them into the same
    reviewed post commit when practical.
 3. Inspect the staged/final diff and commit file list; never use `git add -A` or `git commit -am`.
@@ -92,7 +94,8 @@ a day of approved renders was deleted from a worktree whose branch had already l
   post or stays a reviewed chart. `assets/` holds our renders, `final/` the pages downloaded from
   Canva, `data/` the numbers behind them. `bulls/visuals.py` explains why the three are kept
   differently; `scripts/save_visual_version.py` carries the promotion test and performs the save.
-  Copying is not preservation — the commit is.
+  Saving is continuous; committing is not. Promoted files accumulate uncommitted in the
+  worktree and land as one commit when the post is finished — see Post Worktrees.
   - **Promote decisions, not renders.** A render earns a version when it carries a different metric,
     cohort, threshold, chart type, sort or claim, or when the user approves it. Adjustments — moved,
     resized, recoloured, re-cropped — are overwritten in `output/`. When the two tests disagree,

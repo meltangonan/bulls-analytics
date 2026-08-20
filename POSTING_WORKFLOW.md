@@ -88,8 +88,9 @@ it. Fix resolution problems by exporting a larger source asset.
 ## After Approval
 
 1. Save the actual final page or carousel pages with
-   `scripts/save_visual_version.py --project <slug> --final` and commit them. They land in
-   `docs/visuals/YYYY-MM-DD-<slug>/final/`, beside the `assets/` versions that produced them. You have
+   `scripts/save_visual_version.py --project <slug> --final`. They land in
+   `docs/visuals/YYYY-MM-DD-<slug>/final/`, beside the `assets/` versions that produced them, and go
+   into the post's single commit along with everything else — not a commit of their own. You have
    already exported the page for the QA checks above, so this is the same file.
 2. Update the Notion page to `Mocked` and save the approved caption (or note the user supplies it).
 3. After the user confirms it is live, update the page to `Posted`. Never infer that a post is live.

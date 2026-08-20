@@ -28,11 +28,16 @@ metrics, qualifications, sources, and the final downloaded pages.
 3. Applicable thresholds, coverage windows, and sources stay visible on every data-bearing graphic.
    The user usually adds them manually in Canva.
 4. **Promote decisions, not renders.** Renders go to `output/` — scratch, gitignored, disposable.
-   A render is promoted to `docs/visuals/YYYY-MM-DD-<slug>/assets/` and committed when it carries a
-   *decision*: a different metric, cohort, threshold, chart type, sort or claim. Always promote what
-   the user approves. Adjustments — moved, resized, recolored, re-cropped — are overwritten in
-   `output/` and never promoted. Promote at publish DPI, as it happens, not in a batch at the end.
+   A render is promoted into `docs/visuals/YYYY-MM-DD-<slug>/assets/` when it carries a *decision*:
+   a different metric, cohort, threshold, chart type, sort or claim. Always promote what the user
+   approves. Adjustments — moved, resized, recolored, re-cropped — are overwritten in `output/` and
+   never promoted. Promote at publish DPI, as it happens.
    **When in doubt, promote** — over-promoting costs 300 KB, under-promoting loses the only copy.
+   **Saving is continuous; committing is not.** One post is one commit, made at the end once the
+   final graphic is settled, then pushed. Never commit a post's work in pieces — thirty iterations
+   are one piece of work, not thirty. Promoted files sit uncommitted in the worktree until then,
+   which is safe: `git worktree remove` refuses a dirty or untracked worktree, and
+   `scripts/check_worktrees.sh` reports what is unsaved before anything is removed.
    The published Canva page goes in `final/`; the numbers behind the render go in `data/`. Save with
    `scripts/save_visual_version.py` (`--final`, `--data`).
    **A graphic's data ships with the graphic.** Scope decides where a dataset lives: a dataset with

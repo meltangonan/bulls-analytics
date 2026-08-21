@@ -66,6 +66,8 @@ AHEAD_BEHIND = "Ahead or Behind"
 
 TABLE_ROWS = 15
 
+M = "−"
+
 NBA_CLUTCH_URL = (
     "https://www.nba.com/stats/players/clutch-traditional"
     "?PerMode=Totals&SeasonType=Regular%20Season"
@@ -208,19 +210,37 @@ def league_baselines(league: pd.DataFrame) -> pd.DataFrame:
 # between the two neutral values stays the page colour.
 CALIBRATION_MIN_TSA = 80
 COLUMN_SCALES = {
-    # Points of true shooting above or below the SAME SEASON's league clutch
-    # average, at the 5th / 25th / 75th / 95th percentile of that population.
-    # League clutch TS% climbed from .516 in 2000-01 to .569 in 2025-26, so a
-    # raw scale would have graded the 2000s red and the 2020s green and called
-    # it clutch shooting.
-    "ts_pct": (-10.5, -3.5, 4.9, 11.1),
-    # Diverging, and zero is where it belongs: the Bulls broke even over his
-    # clutch minutes. The band is deliberately wider than the population's own
-    # quartiles, because a single season's clutch plus-minus rests on roughly
-    # 300 possessions and a twenty-point swing over that is not a finding.
-    "PLUS_MINUS": (-80.0, -20.0, 20.0, 80.0),
+    # Symmetric around zero, because RTS is ALREADY a comparison and zero is
+    # the value it genuinely means something at: exactly the league's clutch
+    # average that season. The first version used the population's own 25th and
+    # 75th percentiles, which run -3.5 to +4.9 — an off-centre band that let a
+    # -3 read as unremarkable while a +3 did too, and buried the wholenegative side.
+    #
+    # The band is +/-1.0: about a fifth of the population, and the width below
+    # which two clutch seasons are not worth distinguishing. The ends are the
+    # population's 10th and 90th percentile magnitude (-6.99 / +7.69), rounded
+    # to +/-7.5. That puts +6 at roughly three-quarters strength — clearly good
+    # without claiming to be the best on the board — and gives a -2 a visible
+    # tint instead of nothing.
+    "ts_pct_relative": (-7.5, -1.0, 1.0, 7.5),
+    # Diverging, pivoting on zero: the Bulls broke even over his clutch
+    # minutes. The band is +/-10, about a sixth of the population and the width
+    # below which a clutch margin is not worth remarking on.
+    #
+    # The ends are ASYMMETRIC on purpose, each anchored at the same percentile
+    # of the actual distribution — the 10th (-41.7) and the 90th (+67.0). That
+    # distribution really is lopsided: its median is +12, not 0, because the
+    # players who take 100+ clutch shots are mostly on teams that win. Forcing
+    # symmetric ends would have flattered every negative season by grading it
+    # against a spread the population does not have.
+    #
+    # The previous +/-80 ends left a -25 at 8% tint, near-invisible, for a
+    # season sitting in the bottom sixth of the field.
+    "PLUS_MINUS": (-41.7, -10.0, 10.0, 67.0),
 }
-ERA_RELATIVE_METRICS = ("ts_pct",)
+# Nothing needs the raw-versus-coloured indirection any more: the cell prints
+# the same number the scale is calibrated on. `ts_pct` stays in the working CSV.
+ERA_RELATIVE_METRICS = ()
 
 
 def prepare_table(
@@ -447,10 +467,10 @@ STAT_COLUMNS = (
     ("MIN", "MIN", 0.76),
     ("fg_line", "FG", 1.06),
     ("ft_line", "FT", 0.96),
-    ("ts_pct", "TS%", 1.00),
+    ("ts_pct_relative", "RTS", 1.00),
     ("PLUS_MINUS", "+/−", 0.94),
 )
-SHADED_METRICS = ("ts_pct", "PLUS_MINUS")
+SHADED_METRICS = ("ts_pct_relative", "PLUS_MINUS")
 HERO_METRIC = "PTS"
 # The rookie leaderboard's values, and its whole treatment: the card reaches
 # past the header rule and is drawn ABOVE it, so it reads as an object resting
@@ -508,8 +528,13 @@ def cell_label(row: pd.Series, metric: str) -> str:
         return f"{int(row['FGM'])}\N{EN DASH}{int(row['FGA'])}"
     if metric == "ft_line":
         return f"{int(row['FTM'])}\N{EN DASH}{int(row['FTA'])}"
-    if metric == "ts_pct":
-        return f"{float(row['ts_pct']) * 100:.1f}%"
+    if metric == "ts_pct_relative":
+        # Points of true shooting above or below this season's league clutch
+        # average. Signed, with a true minus, and the sign decided AFTER
+        # rounding so a -0.04 never prints as a minus in front of a zero.
+        value = round(float(row["ts_pct_relative"]), 1)
+        sign = "+" if value > 0 else (M if value < 0 else "")
+        return f"{sign}{abs(value):.1f}"
     if metric == "pts_per_36":
         return f"{float(row['pts_per_36']):.1f}"
     if metric == "PLUS_MINUS":
@@ -726,18 +751,30 @@ def canva_copy_block(table: pd.DataFrame, report: dict) -> str:
                 "DEFINITIONS: Clutch = final 5:00 with the score within 5. "
                 "G and MIN are clutch games and clutch minutes. FG = clutch field "
                 "goals made-attempted. FT = clutch free throws made-attempted. "
-                "TS% = true "
-                "shooting, which counts free throws and the extra point on a "
-                "three, and is built only from clutch shooting. +/− = the "
+                "RTS = relative true shooting, in points above or below the "
+                "league's clutch average that same season. True shooting counts "
+                "free throws and the extra point on a three; every figure in it "
+                "is clutch only. +/− = the "
                 "Bulls' net points over the clutch minutes he was on the floor "
                 "for. It is a five-man team figure: everyone on the court "
                 "shares the same swing."
             ),
             "",
             (
-                "COLOUR: TS% is shaded against the league clutch average of its "
-                "own season, because that average rose from 51.6% in 2000-01 to "
-                "56.9% in 2025-26. +/− is shaded around zero. Green is better."
+                "COLOUR: RTS is already a comparison, so it is shaded on its "
+                "own value. The league's clutch true shooting rose from 51.6% in "
+                "2000-01 to 56.9% in 2025-26, which is why a raw percentage "
+                "would have ranked eras instead of players. +/− is shaded "
+                "around zero. Green is better."
+            ),
+            "",
+            (
+                "BASELINE NOTE: RTS compares each season to every clutch "
+                "possession played in the NBA that season, pooled from league "
+                "totals. The league's full-season shooting is deliberately not "
+                "the baseline: clutch shooting ran 0.6 points ABOVE it in "
+                "2004-05 and 1.6 points BELOW it in 2023-24, so that gap would "
+                "have smuggled its own era drift into every figure."
             ),
             "",
             (

@@ -169,25 +169,43 @@ def test_true_shooting_colour_is_judged_against_its_own_season():
     )
     rated["ts_pct_relative"] = (rated["ts_pct"] - rated["league_ts_pct"]) * 100
     assert rated.iloc[0]["ts_pct"] == pytest.approx(rated.iloc[1]["ts_pct"])
-    assert shaded_value(rated.iloc[0], "ts_pct") > shaded_value(rated.iloc[1], "ts_pct")
+    # Identical raw shooting, different achievement — and now the CELL says so
+    # rather than only its colour.
+    assert (
+        shaded_value(rated.iloc[0], "ts_pct_relative")
+        > shaded_value(rated.iloc[1], "ts_pct_relative")
+    )
+    assert cell_label(rated.iloc[0], "ts_pct_relative").startswith("+")
+    assert cell_label(rated.iloc[1], "ts_pct_relative").startswith("\N{MINUS SIGN}")
 
 
 def test_the_neutral_band_leaves_an_ordinary_season_uncoloured():
     """A cell that says nothing remarkable disappears into the page."""
     from bulls.graphics.house import heat_fill
 
-    red_at, low, high, green_at = COLUMN_SCALES["ts_pct"]
+    red_at, low, high, green_at = COLUMN_SCALES["ts_pct_relative"]
     middle = (low + high) / 2
     assert heat_fill(middle, red_at, low, high, green_at) == to_rgb(HEAT_MID)
     assert heat_fill(green_at, red_at, low, high, green_at) != to_rgb(HEAT_MID)
 
 
-def test_plus_minus_band_is_centred_on_breaking_even():
-    """Zero is the value clutch plus-minus genuinely means something at."""
+def test_plus_minus_pivots_on_zero_but_its_ends_need_not_match():
+    """The BAND is centred on breaking even; the ENDS follow the population.
+
+    Zero is the value clutch plus-minus means something at, so the dead band
+    straddles it symmetrically. The ends are a different question: the
+    distribution's median is +12, not 0, because the players who take 100+
+    clutch shots are mostly on winning teams. Anchoring each end at the same
+    percentile of that lopsided field is what keeps a poor season from being
+    graded against a spread the population does not actually have.
+    """
     red_at, low, high, green_at = COLUMN_SCALES["PLUS_MINUS"]
     assert low < 0 < high
-    assert -low == pytest.approx(high)
-    assert -red_at == pytest.approx(green_at)
+    assert -low == pytest.approx(high), "the dead band must straddle zero evenly"
+    assert red_at < low and green_at > high
+    # Asymmetric by design — assert the direction so a future 'tidy-up' that
+    # symmetrises them has to argue with this instead of looking like a fix.
+    assert abs(red_at) < abs(green_at)
 
 
 def test_the_scoring_rate_is_kept_in_the_data_but_off_the_chart():
@@ -296,8 +314,33 @@ def test_the_shooting_line_prints_the_sample_not_a_percentage():
     # Free throws are half of what makes a clutch scorer: DeRozan's 2023-24
     # leader has 65 of his 182 points at the line.
     assert cell_label(row, "ft_line") == "65\N{EN DASH}74"
-    assert cell_label(row, "ts_pct") == "62.5%"
     assert cell_label(row, "MIN") == "192"
+
+
+def test_relative_true_shooting_is_signed_and_never_a_signed_zero():
+    """The cell prints the comparison itself, not the raw percentage.
+
+    A raw 62.5% meant two different things in 2004-05 and 2023-24; this column
+    prints the difference so the reader does not have to know the era.
+    """
+    assert cell_label(pd.Series({"ts_pct_relative": 12.04}), "ts_pct_relative") == "+12.0"
+    assert cell_label(pd.Series({"ts_pct_relative": -6.26}), "ts_pct_relative") == "\N{MINUS SIGN}6.3"
+    # Python rounds exact halves to even, so -6.25 gives -6.2 rather than -6.3.
+    # Left alone deliberately: a tenth either way on a figure this noisy is not
+    # worth a custom rounder, and pinning it here stops it reading as a bug.
+    assert cell_label(pd.Series({"ts_pct_relative": -6.25}), "ts_pct_relative") == "\N{MINUS SIGN}6.2"
+    # Sign decided after rounding, so a -0.04 never prints as "-0.0".
+    assert cell_label(pd.Series({"ts_pct_relative": -0.04}), "ts_pct_relative") == "0.0"
+
+
+def test_the_raw_percentage_stays_in_the_data_but_off_the_chart():
+    """`ts_pct` is still computed and reconciled; it is just not a column."""
+    assert "ts_pct" not in [metric for metric, _, _ in STAT_COLUMNS]
+    assert "ts_pct" not in COLUMN_SCALES
+    frame = pd.DataFrame(
+        [_row("2023-24", 1, "Leader", "CHI", 40, 24, 182, 55, 113, 74, 191.8)]
+    )
+    assert add_rates(frame).iloc[0]["ts_pct"] == pytest.approx(182 / (2 * (113 + 0.44 * 74)))
 
 
 def test_plus_minus_prints_a_true_minus_and_never_a_signed_zero():

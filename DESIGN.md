@@ -317,10 +317,32 @@ guard.
 **Calibrate from the population, never from the chart's own range.** Min-to-max scaling hands the
 midpoint to whichever single row happens to be extreme, so the colour ends up describing that outlier
 instead of the field. Anchor on percentiles of the population the chart is about, or on a published
-basketball reference (replacement level, league average). Where a statistic has drifted across eras,
-colour on the gap to that season's league value and print the raw number — otherwise the scale ranks
-eras rather than players. Where a statistic has a meaningful zero, neutral belongs at zero; a
-negative number must never read as green.
+basketball reference (replacement level, league average). Where a statistic has a meaningful zero,
+neutral belongs at zero; a negative number must never read as green.
+
+**Where a statistic has drifted across eras, colour on the gap to that season's league value.** What
+the cell *prints* is a separate decision, and both answers are in use:
+
+- **Print the raw number** when the raw number is the one a reader recognises. The rookie table's
+  `TS%` does this — 57.1% means something on sight, and the colour carries the era adjustment
+  silently.
+- **Print the gap itself** when the comparison *is* the point. `clutch_seasons_table.py` prints
+  `RTS` — points above or below that season's league clutch average — because two identical 62.5%
+  seasons twenty years apart were different achievements, and a table whose whole subject is
+  cross-era ranking should say so rather than leave it to the shading.
+
+**A column that already expresses a difference changes what its scale should be.** Percentile anchors
+suit a raw measure with no natural midpoint; anything already relative pivots on zero, and its dead
+band must straddle zero evenly. Swapping a cell from raw to relative therefore obliges you to
+recalibrate — the old anchors keep *working*, which is exactly what hides the problem. Colouring
+`RTS` on the population's own 25th/75th (−3.5 to +4.9) left an off-centre band where a −3 read as
+unremarkable.
+
+**The two ends need not match, and forcing them to can flatter one side.** The band straddles zero;
+the ends are a separate question, each anchored at the same percentile of the real distribution. Clutch
+plus-minus has a median of +12, not 0, because the players who take 100+ clutch shots are mostly on
+winning teams — so its ends sit at −41.7 and +67.0, the 10th and 90th. Symmetric ends had graded every
+negative season against a spread the field does not have, leaving a −25 at an 8% tint.
 
 The ends may sit on either side of the band, so a column where low is good runs green downward with
 no separate inverted code path.

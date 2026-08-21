@@ -334,10 +334,27 @@ leaderboard (PRA/75).
 
 Three details carry it. The card **outsets** past its column on every side and further at the top, so
 it overlaps the header rule and reads as an object resting on the table rather than another cell in
-it. The row rules **stop at its edges** — a rule crossing the card would cut it back into cells and
-undo the shape. And the fill is **flat accent**: what reads as a gradient is a drop shadow offset
-down-right in a deeper red (`#8A1737` at 22%), which lifts the card without introducing a second
-colour.
+it. No rule may **cross** the card — a line ruled over it cuts the shape back into cells and undoes
+the point of drawing it as one block. And the fill is **flat accent**: what reads as a gradient is a
+drop shadow offset down-right in a deeper red (`#8A1737` at 22%), which lifts the card without
+introducing a second colour.
+
+**The overlap needs the stacking order and the broken rule together, and one without the other is a
+defect rather than depth.** The card must win the z-order against the header rule, *and* that rule
+must stop at the card's edges (`ACCENT_CARD_OUTSET_X`, 8 px) — otherwise the black line shows through
+the rounded corners the overlap exists to display. `clutch_seasons_table.py` shipped three wrong
+combinations before the right one: card under the rule (a black line ruled straight across the pill),
+then the card tucked entirely beneath the rule (no overlap at all), then the card raised without
+breaking the rule. `bulls_rookie_leaderboard.py` is the reference implementation.
+
+Row rules are the one line that may run **behind** the card rather than stopping at it, drawn below it
+in the z-order so the card hides the covered segment. Two stubs dying a few pixels short of a rounded
+corner read as a rendering fault; an unbroken rule under an opaque card looks identical where it
+shows and is simpler where it does not.
+
+**A column may claim a fixed margin off the card.** `clutch_seasons_table.py` reserves 22 px between
+the pill and the first ordinary column, subtracted before the width weights are shared out — so
+widening that margin narrows the ordinary columns instead of pushing the last one off the canvas.
 
 One card per table. If two columns both look like the answer, the table has not decided what it
 argues.

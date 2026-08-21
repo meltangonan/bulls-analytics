@@ -157,6 +157,28 @@ silent-wrong-answer trap (see the guardrails below).
 
 These are the traps that produce silently wrong numbers rather than errors.
 
+- **⚠️ NBA.com's clutch split stops at 1996-97, and asking for anything earlier returns an EMPTY
+  frame rather than an error.** The split is derived from play-by-play, and the play-by-play archive
+  starts in 1996-97 — the same floor as shot-location data. Verified 2026-08-21 against
+  `LeagueDashPlayerClutch`: 1995-96 and 1990-91 each returned 0 rows with nothing raised, while
+  1996-97 returned 13. Nothing in the response says the window was empty because the era is
+  unavailable, so an unchecked "since 1976" or "full Jordan era" table would ship a 1996-onward
+  leaderboard under a headline claiming decades it does not contain. Assert the row count per season
+  rather than trusting the call to fail. The same trap should be assumed for any other endpoint
+  derived from play-by-play.
+- **⚠️ A team-filtered `LeagueDash*` row is the right stint stamped with the wrong team.**
+  `team_id_nullable` correctly returns only what the player did for that team, but
+  `TEAM_ABBREVIATION` in the response names his *last* team of the season. Ron Mercer's 2001-02
+  Bulls stint comes back stamped `IND`, because Chicago traded him in February. Filtering the
+  response down to `CHI` therefore looks like an obvious safety check and silently deletes 45 real
+  Bulls clutch stints from 2000-01 onward, every one belonging to a traded player. Verified
+  2026-08-21: Mercer's 19 Bulls clutch games plus 4 Indiana clutch games equal the 23 in his
+  unfiltered row, and Brad Miller's 23 plus 10 equal 33 the same way. The reconciliation, not the
+  abbreviation, is the check worth writing — a stint must be a subset of the player's unfiltered
+  season. A stint can legitimately equal the whole season when the player recorded no clutch
+  minutes after the trade, so "strictly smaller" is too strong a rule; Coby White, Kirk Hinrich and
+  Cameron Payne each appear absent from their new team's clutch response.
+  `scripts/prototypes/clutch_seasons_table.py` owns the worked version.
 - **⚠️ NBA.com does not publish where a foul happened, and no parameter adds it.** Verified
   2026-08-07 against a full Bulls game: all 36 `PlayByPlayV3` foul rows return `xLegacy=0,
   yLegacy=0`, while 180 of 181 shot rows in the same response carry real coordinates.

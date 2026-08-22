@@ -3,7 +3,7 @@
 Bulls analysis and social-graphics production for `@chicagobullsdata`. **Posts are assembled in
 Canva**; Python owns the analysis and produces the verified chart assets that go into the page.
 Canva is a layout surface, never an analytical source — this repo stays the editor of record for
-metrics, qualifications, sources, and the final downloaded pages.
+metrics, qualifications, sources, and the verified chart assets.
 
 ## Read the Right Document
 
@@ -38,8 +38,10 @@ metrics, qualifications, sources, and the final downloaded pages.
    are one piece of work, not thirty. Promoted files sit uncommitted in the worktree until then,
    which is safe: `git worktree remove` refuses a dirty or untracked worktree, and
    `scripts/check_worktrees.sh` reports what is unsaved before anything is removed.
-   The published Canva page goes in `final/`; the numbers behind the render go in `data/`. Save with
-   `scripts/save_visual_version.py` (`--final`, `--data`).
+   The numbers behind the render go in `data/`. Save with `scripts/save_visual_version.py`
+   (`--data`). The repo does not archive the composed Canva page: Canva holds the editable design,
+   Instagram holds the published post, and the publish-DPI chart is already in `assets/`. QA still
+   works from a real export — download it, check it, don't file it.
    **A graphic's data ships with the graphic.** Scope decides where a dataset lives: a dataset with
    exactly one consuming post belongs in that post's `data/` from the start, whether or not it was
    expensive to fetch, because that is what makes the numbers auditable later without refetching.

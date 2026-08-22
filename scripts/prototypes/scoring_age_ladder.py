@@ -37,6 +37,7 @@ from bulls.config import BULLS_TEAM_ID
 from bulls.data.fetch import _NBA_HEADERS
 from bulls.graphics.house import (
     DEFAULT_THEME,
+    DRAFT_DPI,
     HEADSHOT_CACHE,
     ensure_headshots,
     export_dpi,
@@ -69,6 +70,9 @@ METRIC_FILL_SQUARE_CELLS = "square-cells"
 HEAT_RED = "#D64545"
 HEAT_YELLOW = "#F2D46B"
 HEAT_GREEN = "#3FAE63"
+# The header ruler is drawn at 2pt; keeping the conditional fill this far
+# below its centre stops the top cell bleeding into the black line.
+HEADER_RULE_CLEARANCE = 3.0
 MIN_USABLE_HEADSHOT_BYTES = 50_000
 FACE_CROP_HEIGHT_FRACTION = 0.72
 
@@ -77,6 +81,7 @@ FACE_CROP_HEIGHT_FRACTION = 0.72
 HISTORICAL_HEADSHOT_URLS = {
     2430: "https://a.espncdn.com/i/headshots/nba/players/full/1703.png",  # Carlos Boozer
     703: "https://a.espncdn.com/i/headshots/nba/players/full/846.png",  # Kurt Thomas
+    200748: "https://a.espncdn.com/i/headshots/nba/players/full/3032.png",  # Tyrus Thomas
 }
 
 
@@ -96,6 +101,24 @@ class TableLayout:
     ppg_font_size: float
     season_font_size: float
     season_rise: float
+
+
+@dataclass(frozen=True)
+class TrailingColumn:
+    """One narrow numeric column to the right of the heat cell.
+
+    The ladder family shows games played here by default.  A composite metric
+    such as stocks replaces it with its own components, so a reader can see
+    that a 2.4 came from steals rather than blocks (`POSTING_WORKFLOW.md`
+    fairness guardrails: expose important metric components).
+    """
+
+    header: str
+    column: str
+    decimals: int = 0
+
+
+GAMES_COLUMN = (TrailingColumn("GP", "games"),)
 
 
 ONE_SLIDE_LAYOUT = TableLayout(
@@ -409,10 +432,26 @@ def ppg_fill(
     minimum: float,
     maximum: float,
     color_scale: str = PPG_SCALE_RED_YELLOW_GREEN,
+    midpoint: float | None = None,
 ) -> tuple[float, float, float]:
-    """Map PPG to either the clutch red scale or a comparison heat scale."""
-    span = maximum - minimum
-    fraction = 1.0 if span <= 0 else (float(points_per_game) - minimum) / span
+    """Map PPG to either the clutch red scale or a comparison heat scale.
+
+    ``midpoint`` pins the scale's yellow to a stated value rather than to the
+    halfway point between the extremes. That is what lets yellow mean "league
+    average" instead of "middle of whatever happens to be on this chart", while
+    the two halves still stretch across the full observed spread.
+    """
+    value = float(points_per_game)
+    if midpoint is None:
+        span = maximum - minimum
+        fraction = 1.0 if span <= 0 else (value - minimum) / span
+    else:
+        if not minimum < midpoint < maximum:
+            raise ValueError("Heat-scale midpoint must sit between minimum and maximum.")
+        if value <= midpoint:
+            fraction = 0.5 * (value - minimum) / (midpoint - minimum)
+        else:
+            fraction = 0.5 + 0.5 * (value - midpoint) / (maximum - midpoint)
     fraction = min(max(fraction, 0.0), 1.0)
     if color_scale == PPG_SCALE_RED_YELLOW_GREEN:
         if fraction <= 0.5:
@@ -440,19 +479,21 @@ def _ppg_cells(
     metric_left: float = PPG_LEFT,
     metric_right: float = PPG_RIGHT,
     fill_style: str = METRIC_FILL_SQUARE_CELLS,
+    top_limit: float | None = None,
+    midpoint: float | None = None,
 ) -> None:
     """Draw a gapless conditional-format column with optional outer rounding."""
     if fill_style not in {METRIC_FILL_ROUNDED_BAND, METRIC_FILL_SQUARE_CELLS}:
         raise ValueError(f"Unknown metric fill style: {fill_style}")
 
+    top = layout.first_row_y + layout.row_height / 2
+    bottom = (
+        layout.first_row_y
+        - (len(players) - 1) * layout.row_height
+        - layout.row_height / 2
+    )
     clip_path = None
     if fill_style == METRIC_FILL_ROUNDED_BAND:
-        top = layout.first_row_y + layout.row_height / 2
-        bottom = (
-            layout.first_row_y
-            - (len(players) - 1) * layout.row_height
-            - layout.row_height / 2
-        )
         clip_path = FancyBboxPatch(
             (metric_left, bottom),
             metric_right - metric_left,
@@ -463,12 +504,26 @@ def _ppg_cells(
             linewidth=0,
             transform=ax.transData,
         )
+    elif top_limit is not None:
+        # Square outer corners, but still a clip: it lets every cell overlap its
+        # neighbour — which is what closes the hairline seams between rows —
+        # without the first cell growing up into the header rule.
+        clip_path = Rectangle(
+            (metric_left, bottom),
+            metric_right - metric_left,
+            min(top, top_limit) - bottom,
+            facecolor="none",
+            edgecolor="none",
+            linewidth=0,
+            transform=ax.transData,
+        )
+    if clip_path is not None:
         ax.add_patch(clip_path)
 
     # A small overlap prevents raster resampling from exposing hairline gaps
-    # between adjacent fills. The shared clip only rounds the full band's
-    # outside corners; every internal color transition stays square.
-    overlap = 0.75 if fill_style == METRIC_FILL_ROUNDED_BAND else 0.0
+    # between adjacent fills. It needs the clip to bound the band's outside
+    # edges, so the unclipped legacy path keeps its exact, abutting cells.
+    overlap = 0.75 if clip_path is not None else 0.0
     for index, value in enumerate(players["points_per_game"]):
         y = layout.first_row_y - index * layout.row_height
         cell = Rectangle(
@@ -476,11 +531,11 @@ def _ppg_cells(
             metric_right - metric_left,
             layout.row_height + 2 * overlap,
             facecolor=ppg_fill(
-                float(value), minimum_ppg, maximum_ppg, color_scale
+                float(value), minimum_ppg, maximum_ppg, color_scale, midpoint
             ),
             edgecolor="none",
             linewidth=0,
-            antialiased=False,
+            antialiased=clip_path is not None,
             zorder=2,
         )
         if clip_path is not None:
@@ -488,9 +543,9 @@ def _ppg_cells(
         ax.add_patch(cell)
 
 
-def header_rule_segments() -> tuple[tuple[float, float], ...]:
+def header_rule_segments(rule_right: float = GP_RIGHT) -> tuple[tuple[float, float], ...]:
     """Draw the full-width ruler directly beneath the column headers."""
-    return ((ROW_RULE_LEFT, GP_RIGHT),)
+    return ((ROW_RULE_LEFT, rule_right),)
 
 
 def row_rule_segments(
@@ -508,8 +563,25 @@ def row_rule_segments(
     return ((row_rule_left, metric_left), (games_left, games_right))
 
 
-def face_headshot_label(ax, image_path, x, y, half_size, *, zorder=4):
-    """Place the face-focused crop used by the account's recent tables."""
+def face_headshot_label(
+    ax,
+    image_path,
+    x,
+    y,
+    half_size,
+    *,
+    zorder=4,
+    crop_fraction=FACE_CROP_HEIGHT_FRACTION,
+    clip_bottom=None,
+):
+    """Place the face-focused crop used by the account's recent tables.
+
+    ``crop_fraction`` is the share of the source portrait's height kept from the
+    top.  Lower values cut shoulders and neck and leave more face, which is what
+    a larger portrait needs to stay a portrait rather than a torso.
+    ``clip_bottom`` trims the drawn image at a row separator so a bigger
+    portrait cannot bleed into the row beneath it (the rookie-table treatment).
+    """
     try:
         image = plt.imread(image_path)
     except (FileNotFoundError, OSError, ValueError):
@@ -525,15 +597,51 @@ def face_headshot_label(ax, image_path, x, y, half_size, *, zorder=4):
         )
 
     height, width = image.shape[:2]
-    side = min(int(height * FACE_CROP_HEIGHT_FRACTION), width)
+    side = min(int(height * crop_fraction), width)
     left = max(0, (width - side) // 2)
     square = image[:side, left:left + side]
-    return ax.imshow(
+    artist = ax.imshow(
         square,
         extent=[x - half_size, x + half_size, y - half_size, y + half_size],
         interpolation="bilinear",
         zorder=zorder,
     )
+    if clip_bottom is not None:
+        artist.set_clip_path(
+            Rectangle(
+                (x - half_size, clip_bottom),
+                2 * half_size,
+                (y + half_size) - clip_bottom,
+                transform=ax.transData,
+            )
+        )
+    return artist
+
+
+def name_block_width(ax, players, layout) -> float:
+    """Width of the widest name plus its season marker, measured not guessed.
+
+    Hardcoded column positions are what let a long name such as "Wendell Carter
+    Jr." run its season marker underneath the metric column.  Measuring the
+    real pool and starting the numbers after it removes the collision by
+    construction rather than by nudging a constant.
+    """
+    season_font = helvetica()
+    season_font.set_style("italic")
+    widest = 0.0
+    for _, player in players.iterrows():
+        name = ax.text(
+            0, 0, str(player["player"]),
+            fontsize=layout.name_font_size, fontproperties=helvetica("bold"), alpha=0,
+        )
+        season = ax.text(
+            0, 0, season_marker(str(player["season"])),
+            fontsize=layout.season_font_size, fontproperties=season_font, alpha=0,
+        )
+        widest = max(widest, rendered_width(ax, name) + 6 + rendered_width(ax, season))
+        name.remove()
+        season.remove()
+    return widest
 
 
 def render_chart(
@@ -546,7 +654,10 @@ def render_chart(
     scale_max: float | None = None,
     color_scale: str = PPG_SCALE_RED_YELLOW_GREEN,
     metric_column: str = "points_per_game",
+    fill_column: str | None = None,
+    fill_midpoint: float | None = None,
     metric_header: str = "PPG",
+    metric_decimals: int = 1,
     output_stem: str = "bulls-scoring-age-ladder",
     show_age: bool = True,
     headshot_x: float = HEADSHOT_X,
@@ -560,6 +671,15 @@ def render_chart(
     sort_ascending: bool | list[bool] = True,
     metric_fill_style: str = METRIC_FILL_SQUARE_CELLS,
     blank_headshot_ids: set[int] | None = None,
+    trailing_columns: tuple[TrailingColumn, ...] = GAMES_COLUMN,
+    chart_width: float = CHART_WIDTH,
+    chart_height: float = CHART_HEIGHT,
+    auto_name_column: bool = False,
+    name_column_gap: float = 0.0,
+    metric_width: float = PPG_RIGHT - PPG_LEFT,
+    trailing_slot_width: float = GP_RIGHT - GP_LEFT,
+    face_crop_fraction: float = FACE_CROP_HEIGHT_FRACTION,
+    clip_portraits_to_row: bool = False,
     final: bool = False,
 ) -> Path:
     """Render one transparent player-metric table for Canva."""
@@ -567,6 +687,19 @@ def render_chart(
         raise ValueError("Cannot render an empty age ladder.")
     if metric_column not in winners.columns:
         raise ValueError(f"Age ladder rows are missing metric column {metric_column!r}.")
+    # The printed number and the colour behind it need not be the same quantity:
+    # a raw rate reads plainly, while its standing against a league baseline is
+    # what makes the colour mean anything.
+    fill_source = metric_column if fill_column is None else fill_column
+    if fill_source not in winners.columns:
+        raise ValueError(f"Age ladder rows are missing fill column {fill_source!r}.")
+    if not trailing_columns:
+        raise ValueError("A ladder table needs at least one trailing column.")
+    missing_trailing = [
+        entry.column for entry in trailing_columns if entry.column not in winners.columns
+    ]
+    if missing_trailing:
+        raise ValueError(f"Age ladder rows are missing trailing columns {missing_trailing}.")
     sort_columns = ["age"] if sort_by is None else sort_by
     players = winners.sort_values(
         sort_columns,
@@ -575,17 +708,30 @@ def render_chart(
     ).reset_index(drop=True)
     if layout.first_row_y - (len(players) - 1) * layout.row_height - layout.row_height / 2 < 0:
         raise ValueError("Age ladder table does not fit the chart asset height.")
-    dpi = export_dpi(final)
+    # Geometry is fixed at the draft scale and only the export resolution
+    # changes, so --final is the same layout at twice the pixels. Sizing the
+    # figure by the export DPI instead kept the image 1080px wide and doubled
+    # every point-sized font, which is a different chart, not a sharper one.
     fig = plt.figure(
-        figsize=(CHART_WIDTH / dpi, CHART_HEIGHT / dpi),
+        figsize=(chart_width / DRAFT_DPI, chart_height / DRAFT_DPI),
         facecolor="none",
     )
     ax = fig.add_axes([0, 0, 1, 1])
-    ax.set_xlim(0, CHART_WIDTH)
-    ax.set_ylim(0, CHART_HEIGHT)
+    ax.set_xlim(0, chart_width)
+    ax.set_ylim(0, chart_height)
     ax.axis("off")
 
     theme = DEFAULT_THEME
+    if auto_name_column:
+        metric_left = name_x + name_block_width(ax, players, layout) + name_column_gap
+        metric_right = metric_left + metric_width
+        games_left = metric_right
+        games_right = games_left + trailing_slot_width * len(trailing_columns)
+        if games_right > chart_width:
+            raise ValueError(
+                f"Measured table is {games_right:.0f}px wide and overflows the "
+                f"{chart_width:.0f}px chart asset."
+            )
     if show_age:
         ax.text(
             AGE_X,
@@ -617,17 +763,23 @@ def render_chart(
         color=theme.accent,
         fontproperties=helvetica("bold"),
     )
-    ax.text(
-        (games_left + games_right) / 2,
-        layout.header_y,
-        "GP",
-        ha="center",
-        va="center",
-        fontsize=layout.header_font_size,
-        color=theme.ink,
-        fontproperties=helvetica("bold"),
-    )
-    for rule_left, rule_right in header_rule_segments():
+    slot_width = (games_right - games_left) / len(trailing_columns)
+    trailing_centres = [
+        games_left + (position + 0.5) * slot_width
+        for position in range(len(trailing_columns))
+    ]
+    for entry, centre in zip(trailing_columns, trailing_centres):
+        ax.text(
+            centre,
+            layout.header_y,
+            entry.header,
+            ha="center",
+            va="center",
+            fontsize=layout.header_font_size,
+            color=theme.ink,
+            fontproperties=helvetica("bold"),
+        )
+    for rule_left, rule_right in header_rule_segments(games_right):
         ax.plot(
             [rule_left, rule_right],
             [layout.header_rule_y, layout.header_rule_y],
@@ -635,7 +787,7 @@ def render_chart(
             linewidth=2.0,
         )
 
-    metric_players = players.rename(columns={metric_column: "points_per_game"})
+    metric_players = players.rename(columns={fill_source: "points_per_game"})
     minimum_ppg = float(metric_players["points_per_game"].min()) if scale_min is None else float(scale_min)
     maximum_ppg = float(metric_players["points_per_game"].max()) if scale_max is None else float(scale_max)
     _ppg_cells(
@@ -648,6 +800,8 @@ def render_chart(
         metric_left,
         metric_right,
         metric_fill_style,
+        top_limit=layout.header_rule_y - HEADER_RULE_CLEARANCE,
+        midpoint=fill_midpoint,
     )
 
     season_font = helvetica()
@@ -670,6 +824,10 @@ def render_chart(
                     [divider_y, divider_y],
                     color=theme.rule,
                     linewidth=1.0,
+                    # Matplotlib projects a solid line half a linewidth past each
+                    # end by default, which painted a pale notch into the
+                    # conditional fill's corners at every row boundary.
+                    solid_capstyle="butt",
                     zorder=3,
                 )
 
@@ -686,6 +844,8 @@ def render_chart(
             y + layout.headshot_rise,
             layout.headshot_half_size,
             zorder=4,
+            crop_fraction=face_crop_fraction,
+            clip_bottom=(y - layout.row_height / 2) if clip_portraits_to_row else None,
         )
         if show_age:
             ax.text(
@@ -725,15 +885,16 @@ def render_chart(
 
         metric_value = float(player[metric_column])
         fill = ppg_fill(
-            metric_value,
+            float(player[fill_source]),
             minimum_ppg,
             maximum_ppg,
             color_scale,
+            fill_midpoint,
         )
         ax.text(
             (metric_left + metric_right) / 2,
             y,
-            f"{metric_value:.1f}",
+            f"{metric_value:.{metric_decimals}f}",
             ha="center",
             va="center",
             fontsize=layout.ppg_font_size,
@@ -741,22 +902,25 @@ def render_chart(
             fontproperties=helvetica("bold"),
             zorder=4,
         )
-        ax.text(
-            (games_left + games_right) / 2,
-            y,
-            str(int(player["games"])),
-            ha="center",
-            va="center",
-            fontsize=layout.ppg_font_size,
-            color=theme.ink,
-            fontproperties=helvetica(),
-            zorder=4,
-        )
+        for entry, centre in zip(trailing_columns, trailing_centres):
+            raw = float(player[entry.column])
+            label = f"{raw:.{entry.decimals}f}" if entry.decimals else str(int(round(raw)))
+            ax.text(
+                centre,
+                y,
+                label,
+                ha="center",
+                va="center",
+                fontsize=layout.ppg_font_size,
+                color=theme.ink,
+                fontproperties=helvetica(),
+                zorder=4,
+            )
 
     OUT.mkdir(parents=True, exist_ok=True)
     suffix = "final" if final else "draft"
     path = OUT / f"{date}-{output_stem}-{slug}-{suffix}.png"
-    fig.savefig(path, dpi=dpi, transparent=True, pad_inches=0)
+    fig.savefig(path, dpi=export_dpi(final), transparent=True, pad_inches=0)
     plt.close(fig)
     return path
 

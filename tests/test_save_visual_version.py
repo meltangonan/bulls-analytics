@@ -146,31 +146,6 @@ def test_blank_ladder_gets_a_distinct_output_name():
     assert "ladder-blank" in msc._output_path(args, "bulls").name
 
 
-# --- finals ----------------------------------------------------------------
-def test_final_goes_to_final_and_is_not_versioned(visuals, tmp_path):
-    """A published page is one snapshot, not a version history."""
-    saved = svp.save("shot-value-ladder", [_png(tmp_path, "slide-1.png")],
-                     when="2026-08-12", final=True)
-    assert saved[0].parent.name == "final"
-    assert saved[0].name == "2026-08-12-slide-1.png"
-    assert "-v0" not in saved[0].name
-
-
-def test_final_shares_the_project_folder_with_its_assets(visuals, tmp_path):
-    """Assets and the page they produced belong to one project, one folder."""
-    svp.save("shot-value-ladder", [_png(tmp_path, "chart.png")], when="2026-08-07")
-    final = svp.save("shot-value-ladder", [_png(tmp_path, "slide-1.png")],
-                     when="2026-08-12", final=True)
-    assert final[0].parent.parent.name == "2026-08-07-shot-value-ladder"
-
-
-def test_resaving_a_final_replaces_rather_than_accumulates(visuals, tmp_path):
-    src = _png(tmp_path, "slide-1.png")
-    for _ in range(3):
-        svp.save("p", [src], when="2026-08-12", final=True)
-    assert len(list((visuals / "2026-08-12-p" / "final").glob("*.png"))) == 1
-
-
 def test_data_goes_to_data_and_is_not_versioned(visuals, tmp_path):
     """The numbers behind a render are current truth, not a version history."""
     src = tmp_path / "pairs.csv"
@@ -203,11 +178,3 @@ def test_data_shares_the_project_folder_with_its_assets(visuals, tmp_path):
     src.write_text("a,b\n1,2\n")
     data = svp.save("shot-value-ladder", [src], when="2026-08-12", data=True)
     assert data[0].parent.parent.name == "2026-08-07-shot-value-ladder"
-
-
-def test_final_and_data_together_are_rejected(visuals, tmp_path):
-    """They are different destinations; silently picking one would lose the other."""
-    src = tmp_path / "pairs.csv"
-    src.write_text("a,b\n1,2\n")
-    with pytest.raises(SystemExit):
-        svp.save("p", [src], when="2026-08-12", final=True, data=True)

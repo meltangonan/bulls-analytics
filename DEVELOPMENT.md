@@ -91,8 +91,8 @@ a day of approved renders was deleted from a worktree whose branch had already l
   2015-16 Bulls payroll inflated by three players who joined the team the following offseason.
 - Keep the matching Notion page current as the idea, status, and post log.
 - **`docs/visuals/YYYY-MM-DD-<slug>/` is the tracked home for visual work**, whether it becomes a
-  post or stays a reviewed chart. `assets/` holds our renders, `final/` the pages downloaded from
-  Canva, `data/` the numbers behind them. `bulls/visuals.py` explains why the three are kept
+  post or stays a reviewed chart. `assets/` holds our renders including the publish-DPI export;
+  `data/` holds the numbers behind them. `bulls/visuals.py` explains why the two are kept
   differently; `scripts/save_visual_version.py` carries the promotion test and performs the save.
   Saving is continuous; committing is not. Promoted files accumulate uncommitted in the
   worktree and land as one commit when the post is finished — see Post Worktrees.
@@ -106,8 +106,8 @@ a day of approved renders was deleted from a worktree whose branch had already l
     half-size previews; the export you actually upload is the file worth keeping, and it used to be
     left in scratch where it died with the worktree. Expect the approved draft and its full-size
     export as two adjacent near-identical versions. That is the point, not duplication.
-  - ⚠️ Two different `--final` flags. On a prototype it means *render at 300 DPI*. On
-    `save_visual_version.py` it means *this is a page downloaded from Canva, put it in `final/`*.
+  - `--final` now means one thing only: on a prototype it renders at 300 DPI. The clashing
+    `save_visual_version.py --final` flag was removed with the `final/` folder on 2026-08-22.
     Save chart renders with `--project <slug>` alone, whatever DPI they are.
   - The folder's date is fixed when the post starts and never moves; a later save finds the folder
     by slug whatever date it carries, so a post spanning three days stays in one place.

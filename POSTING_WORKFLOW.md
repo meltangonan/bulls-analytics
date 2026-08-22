@@ -40,7 +40,7 @@ Default to a 1080×1350 feed page when nothing else is implied.
 
 **Python builds the chart; Canva builds the page.** Python owns verified calculations, display-ready
 content, and a transparent chart asset (see `DESIGN.md` §3 for the export contract). Canva owns the
-`#FAF8F5` page, all typography, and editorial copy.
+page canvas, all typography, and editorial copy.
 
 **Preserve the original during Canva iteration.** When making substantive edits to an existing
 design, work in a clearly labeled separate QA copy or on duplicated draft pages by default. Do not
@@ -74,10 +74,8 @@ anything past the model's knowledge cutoff. Never draw a guessed date.
 
 **Check the downloaded pages, not the Canva design:**
 
-- every page is exactly 1080×1350 on the `#FAF8F5` canvas;
+- every page is exactly 1080×1350;
 - charts aren't cropped and labels stay readable at feed size;
-- typography is the Brand Kit set — Clarendon Narrow title, Yearbook Solid headers, Helvetica Bold
-  body;
 - thresholds, coverage, sources, attribution, names, dates, and handles match the latest Python
   output;
 - no placeholder, duplicate frame, draft note, or previous-post copy survived.
@@ -87,11 +85,12 @@ it. Fix resolution problems by exporting a larger source asset.
 
 ## After Approval
 
-1. Save the actual final page or carousel pages with
-   `scripts/save_visual_version.py --project <slug> --final`. They land in
-   `docs/visuals/YYYY-MM-DD-<slug>/final/`, beside the `assets/` versions that produced them, and go
-   into the post's single commit along with everything else — not a commit of their own. You have
-   already exported the page for the QA checks above, so this is the same file.
+1. Export the chart at publish DPI and save it with `scripts/save_visual_version.py --project
+   <slug>`; it lands in `assets/` with a `-final` suffix and goes into the post's single commit
+   along with everything else — not a commit of its own. The composed Canva page is **not** archived
+   here (retired 2026-08-22): Canva holds the editable design and Instagram the published post, so a
+   downloaded copy duplicated both. The QA export above is a temporary file — check it, don't file
+   it. Keep the Canva URL on the Notion page; that is the pointer to the composed page.
 2. Update the Notion page to `Mocked` and save the approved caption (or note the user supplies it).
 3. After the user confirms it is live, update the page to `Posted`. Never infer that a post is live.
 

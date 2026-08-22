@@ -19,15 +19,12 @@ When a chart-layer decision changes, update this file, `house.py`/`craft.py`, an
 
 ## 1. Typography
 
-**Canva Brand Kit (posts):**
+**Canva Brand Kit (posts):** the page's faces are chosen in Canva and change as the look evolves.
+Recent posts have used Clarendon Narrow titles, Yearbook Solid headers and Helvetica Bold body, but
+that is a record of what was used, not a rule to check a page against. The typography of a finished
+page is the user's call at assembly time.
 
-| Role | Face |
-|---|---|
-| Titles | **Clarendon Narrow** |
-| Subtitles and section headers | **Yearbook Solid** |
-| Body | **Helvetica Bold** |
-
-Clarendon Narrow and Yearbook Solid are Canva faces — they aren't installed locally and Python never
+Canva faces such as Clarendon Narrow and Yearbook Solid aren't installed locally, and Python never
 renders them. Don't try to approximate them in a chart; if a chart seems to need a title, that title
 belongs on the Canva page.
 
@@ -60,8 +57,10 @@ off-brand and flat. Grays are scaffolding: gridlines, muted labels, separators.
 | `GRIDLINE` | `#F0F0F0` | Chart gridlines |
 | `WHITE` | `#FFFFFF` | The `white` theme's canvas — not the post default |
 
-**Post canvas is `#FAF8F5`** (warm off-white — the `jersey` theme). Charts are exported transparent
-and sit on that Canva background, so chart colors must be chosen to read against it.
+**Post canvas is chosen in Canva and varies.** It has usually been a warm off-white near `#FAF8F5`
+(the `jersey` theme). Charts are exported transparent and sit on whatever background the page uses,
+so chart colors need to read against a light, low-saturation ground — that constraint is real; the
+exact hex is not. Don't fail a page for missing a specific canvas value.
 
 **Magnitude colormap** (`craft.MAGNITUDE_CMAP`): light neutral `#F2EAE8` → `#CE1141` → deep red
 `#7E0C2B`. Use when a bar or cell fill encodes magnitude.
@@ -97,7 +96,7 @@ ground, so black becomes the meaningful color), and `blackout` brightens it to `
 
 ## 3. Chart Asset Contract
 
-- **Export transparent.** The chart carries no background; the Canva page supplies `#FAF8F5`.
+- **Export transparent.** The chart carries no background; the Canva page supplies the canvas.
 - **Export larger than the placed size.** Canva-rendered output is judged from the downloaded page at
   feed size, and an undersized asset can't be recovered by DPI metadata.
 - **The chart carries data, not framing.** Axis labels, value labels, player names, medians, and
@@ -434,11 +433,11 @@ sit on top of saturated data and should locate the reader rather than compete.
 
 Visual outcomes, whichever tool composes the page:
 
-1. `#FAF8F5` canvas, 1080×1350 (4:5). No other backgrounds, no textures.
+1. A light, low-saturation canvas at 1080×1350 (4:5). The exact background is Canva's to choose.
 2. Red/black as the only *meaningful* colors — a thumbnail should read red + black + off-white before
    the title is legible.
-3. Clarendon Narrow title, Yearbook Solid supporting headers, Helvetica Bold body, with deliberate
-   red emphasis.
+3. A consistent type hierarchy with deliberate red emphasis. The faces themselves are set in Canva
+   and may change between posts.
 4. Visible authorship on every page; visible source, qualification, and coverage on every
    data-bearing page. These may move to fit the composition but never disappear — analytical honesty
    has to survive reposts and screenshots.

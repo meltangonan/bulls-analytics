@@ -5,11 +5,16 @@ thing:
 
     docs/visuals/2026-08-07-shot-value-ladder/
         assets/   our own renders, versioned v01, v02, ... as each is reviewed
-        final/    the page(s) downloaded from Canva once it publishes
         data/     the numbers the renders were built from
 
-The split is not filing for its own sake -- the three have different lifetimes and
+The split is not filing for its own sake -- the two have different lifetimes and
 different reasons to exist.
+
+A third folder, `final/`, once held the composed page downloaded from Canva. That
+was retired on 2026-08-22 as duplicated effort: Canva holds the editable design
+and Instagram holds the published post, while the publish-DPI chart already
+lands in `assets/` with a `-final` suffix. Fourteen older projects still carry a
+`final/` folder; they stay as they are. Don't create new ones.
 
 **Assets are versioned because they cannot be regenerated.** A chart rebuilt in
 October is not the same chart: the season has more games in it, and the code has
@@ -74,7 +79,8 @@ import re
 from datetime import date
 from pathlib import Path
 
-ASSETS, FINAL, DATA = "assets", "final", "data"
+ASSETS, DATA = "assets", "data"
+FINAL = "final"  # legacy: read by older projects, never written to now
 _DATE_PREFIX = re.compile(r"^\d{4}-\d{2}-\d{2}-")
 
 

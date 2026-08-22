@@ -3,11 +3,11 @@
 
     venv/bin/python scripts/save_visual_version.py --project shot-value-ladder \
         output/2026-08-07-shot-value-ladder/*.png
-    venv/bin/python scripts/save_visual_version.py --project shot-value-ladder --final \
+    venv/bin/python scripts/save_visual_version.py --project shot-value-ladder \
         ~/Downloads/slide-1.png
 
 Copies into ``docs/visuals/YYYY-MM-DD-<slug>/assets/`` as ``YYYY-MM-DD-vNN-<name>.png``,
-into ``final/`` with ``--final`` for pages downloaded from Canva, or into ``data/``
+into ``data/``
 with ``--data`` for the numbers a render was built from. That tree is **tracked**;
 ``output/`` is scratch and stays ignored. ``bulls/visuals.py`` explains why the three
 kinds are kept differently.
@@ -62,7 +62,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from bulls.visuals import ASSETS, DATA, FINAL, visual_dir, slugify  # noqa: E402
+from bulls.visuals import ASSETS, DATA, visual_dir, slugify  # noqa: E402
 
 VISUALS = ROOT / "docs" / "visuals"
 VERSION_RE = re.compile(r"^\d{4}-\d{2}-\d{2}-v(\d+)-")
@@ -92,8 +92,7 @@ def strip_stamp(name: str) -> str:
 
 
 def save(project: str, files: list[Path], when: str | None = None,
-         version: int | None = None, final: bool = False,
-         data: bool = False) -> list[Path]:
+         version: int | None = None, data: bool = False) -> list[Path]:
     try:
         slugify(project)
     except ValueError as exc:
@@ -103,9 +102,7 @@ def save(project: str, files: list[Path], when: str | None = None,
     if missing:
         raise SystemExit("Not found: " + ", ".join(str(m) for m in missing))
 
-    if final and data:
-        raise SystemExit("--final and --data are different destinations; pick one")
-    subfolder = FINAL if final else DATA if data else ASSETS
+    subfolder = DATA if data else ASSETS
     target = visual_dir(VISUALS, project, when) / subfolder
     target.mkdir(parents=True, exist_ok=True)
     stamp_date = when or date.today().isoformat()
@@ -113,20 +110,11 @@ def save(project: str, files: list[Path], when: str | None = None,
     saved = []
     if data:
         # Unversioned, and the name is kept verbatim. Data answers "what are the
-        # numbers now", the way final/ answers "what did we publish" -- the version
+        # numbers now" rather than "what did a given draft show" -- the version
         # history of what was *shown* lives in assets/. Keeping the source filename
         # means a rebuild overwrites its own file instead of piling up near-copies.
         for src in files:
             dest = target / src.name
-            shutil.copy2(src, dest)
-            saved.append(dest)
-        return saved
-
-    if final:
-        # Finals are not versioned. One published page is one file; a second
-        # download of the same slide replaces it rather than accumulating.
-        for src in files:
-            dest = target / f"{stamp_date}-{strip_stamp(src.name)}"
             shutil.copy2(src, dest)
             saved.append(dest)
         return saved
@@ -148,22 +136,20 @@ def main() -> None:
     ap.add_argument("--date", default="", help="override the date stamp (YYYY-MM-DD)")
     ap.add_argument("--version", type=int, default=None,
                     help="force a version number instead of auto-incrementing")
-    ap.add_argument("--final", action="store_true",
-                    help="a page downloaded from Canva: goes to final/, unversioned")
     ap.add_argument("--data", action="store_true",
                     help="the numbers behind a render: goes to data/, unversioned")
     ap.add_argument("files", nargs="+", type=Path)
     args = ap.parse_args()
 
     saved = save(args.project, args.files, args.date or None, args.version,
-                 args.final, args.data)
+                 args.data)
     for path in saved:
         print(f"Saved {path.relative_to(ROOT)}")
     match = VERSION_RE.match(saved[0].name)
     if match:
         what = f"as v{match.group(1)}"
     else:
-        what = "as source data" if args.data else "as the published final"
+        what = "as source data"
     print(f"\n{len(saved)} file(s) {what}. They stay uncommitted until the post is "
           "finished — one post is one commit.")
 

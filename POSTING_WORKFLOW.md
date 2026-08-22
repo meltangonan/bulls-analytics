@@ -69,6 +69,19 @@ Rounds that change what the chart *claims* are not polish and are not capped.
 - Fan voice matches the settled amount for this post.
 - Posting copy is either saved on the Notion page or the user has chosen to write it.
 
+**Check what the numbers imply about each other, not only whether each is right.** When a graphic
+shows a composite beside its components — stocks with steals and blocks, rebounds with the
+offensive/defensive split, a total beside its parts — independently rounded cells will often fail to
+add up. On the stocks age ladder that was 6 of 20 rows including the headline (1.4 + 2.0 printed
+against 3.5), and every cell was individually correct. A value-by-value check against the Python
+output is blind to this, because the defect lives in the relationship between correct cells.
+
+Rounding the parts to force the sum is usually the wrong repair: it prints a component that is
+checkable-wrong against every other source, which reads as bad data rather than as rounding. The
+options that keep every cell true are a one-line "components rounded independently" note, showing
+the components in different units (season totals beside a per-game composite, where no arithmetic is
+implied), or accepting it. Decide deliberately and record the decision on the Notion page.
+
 **Verify every fact printed on a graphic** — dates, picks, trades, injuries, records. Web-search
 anything past the model's knowledge cutoff. Never draw a guessed date.
 

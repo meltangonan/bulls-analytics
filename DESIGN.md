@@ -204,17 +204,20 @@ they were captioned; removing the captions moved them onto their own zones.
 
 **Figures sit on cream pills, four lines:** makes over attempts with the shooting percentage in
 brackets (`11 / 32 FG (34.4%)`), its gap to league average in green above / red below ending in
-"vs LA", then attempts per 75 and its own gap the same way. Both figures take the same size, so
-neither shooting nor volume outranks the other — but **shooting leads, because the fill is
-shooting.** A zone's colour is its FG% against the league, so the first line of the pill has to be
-the figure that colour is about; leading with volume made the reader hunt past it for the number the
-region was already shouting.
+"vs LA", then the zone's share of all subject FGA and its signed gap to the NBA share, also ending
+in "vs LA". Both figures take
+the same size, so neither shooting nor shot diet outranks the other — but **shooting leads, because
+the fill is shooting.** A zone's colour is its FG% against the league, so the first line of the pill
+has to be the figure that colour is about; leading with shot share made the reader hunt past it for
+the number the region was already shouting. Shot share is the better complement here because it
+isolates location preference; attempts per 75 mixed that preference with the player's overall usage.
 
 The makes and attempts sit in front of the percentage rather than behind a floor. "11 / 32 FG
-(34.4%)" lets a reader see how much to trust the 34.4% themselves, which is what makes a hatched
-zone legible instead of something they have to take on faith — the count explains the hatch. A
+(34.4%)" lets a reader see how much to trust the 34.4% themselves, which is what makes a grey
+zone informative instead of something they have to take on faith — the count explains why the zone
+did not earn an efficiency colour. A
 compact two-line variant (`--pill counts`) drops to the shooting pair alone for a simpler chart that
-gives up the volume comparison.
+gives up the shot-diet comparison.
 
 Gaps use a **true minus** (−, not a hyphen) and carry **no sign at all when they round to zero** —
 `+.0f` renders a −0.4% gap as "−0%", a direction the printed number contradicts, so the sign is
@@ -223,39 +226,37 @@ decided after rounding rather than before.
 The pill is what makes one ink and one colour set possible. Type laid straight on the fill had to be
 recoloured per zone to stay legible, and the same figure changing colour zone to zone read as though
 the colour meant something. On cream, colour means direction and nothing else. Pills **stack** into
-one column rather than the rings chart's two: carrying "vs LA" on both gaps roughly doubles a row's
-width, and three side-by-side pills above the arc would need more room than the court has. A corner
-strip is 3 ft wide, so its pill overhangs onto the neighbouring zone and is attributed by being
-centred on the strip.
+one column rather than the rings chart's two: the four lines need less width than side-by-side pairs,
+and three wide pills above the arc would need more room than the court has. A corner strip is 3 ft
+wide, so its pill overhangs onto the neighbouring zone and is attributed by being centred on the
+strip.
 
-**A gap only earns a colour when it is bigger than the doubt around it**, otherwise it prints grey.
-Shooting borrows the fill scale's own ±2.5-point neutral band, so a zone painted "about average"
-never carries a coloured gap — colour cannot contradict colour. Volume has no fill scale to borrow,
-so it uses the noise in its own count: attempts in a zone is a count, its standard error is the
-square root of itself, and a gap inside 1/√n is indistinguishable from the season landing
-differently.
+**A shooting gap only earns a colour when it is bigger than the doubt around it**, otherwise it
+prints grey. Shooting borrows the fill scale's own ±2.5-point neutral band, so a zone painted
+"about average" never carries a coloured gap — colour cannot contradict colour. Shot share uses the
+same signed comparison grammar and green/red direction (`−10.6 vs LA`) because the comparison itself
+is the point of the second pair.
 
 Line spacing is set against line height, not by eye. Spacing is in canvas units and type in points,
 and at this canvas's 150 dpi one point is 2.08 units, so a gap smaller than the type is an overlap —
 which is exactly what three drafts shipped. The gap under a figure is deliberately tighter than the
 gap to the next pair, so four lines read as two statements rather than one list.
 
-**A zone below the colour floor is hatched, not greyed** — the fill keeps its own band colour under
-a diagonal rule, and the pill keeps all four figures at a muted ink and alpha. Greying it outright was
-tried first and reversed: it threw the finding away to signal the doubt, where hatching says the same
-thing the way a footnote does — read this, but not as hard — and texture is a weaker channel than
-colour, which is the right ranking for a caveat against the thing it qualifies. **Grey is reserved for
-a zone with zero attempts**, and prints only `0 FGA`; that is the one state a silent gap used not to
-distinguish from "measured and unrated." The legend's hatch swatch sits on a neutral grey card rather
-than a band colour, because the hatch can fall on any of the five bands and a coloured card would
-suggest it belonged to that one.
+**A zone below the colour floor is grey**, while its pill keeps all four figures at muted ink and
+alpha. The pill preserves the descriptive result and exposes the sample; the ground declines to make
+an efficiency judgement the sample cannot support. A zone with zero attempts uses the same grey but
+prints only `0 FGA`, so it remains distinct from "measured and unrated." The legend keys the actual
+floor as `Under N FGA`, making the rule checkable against every pill rather than hiding it behind a
+verdict.
 
-The **rim disc is 8 ft across**, and its pill is shrunk to fit inside — solved on every render from
-the pill's farthest point rather than tuned once, so a longer figure on another player's chart shrinks
-the type instead of bursting the disc. The rounded corners are load-bearing there: they pull that
-farthest point well inside the rectangle's diagonal, which is most of why a near-full-size pill fits
-at all. It is also the tightest fit on the carousel: the team chart's four-digit counts (`1651 / 2612
-FG`) push the rim pill's type down to roughly 60% of its normal size, against ~70% on a player chart.
+Zone-chart labels use sentence case rather than all caps: `11.6% of FGA`, `Below`, `Above`, and
+`Under 400 FGA`. Basketball acronyms remain uppercase (`FG`, `FGA`, `NBA`).
+
+The **rim disc is 8 ft across**, but its pill uses the same type scale as every other zone. Earlier
+drafts shrank it until the whole card fit inside the disc; the team chart fell to roughly 60% of the
+standard size and became the hardest figure to read. The cream card may now cross the restricted-area
+boundary slightly, just as corner pills overhang their narrow strips. Tight padding limits the
+overlap, while the pill centre still attributes the figures to the rim.
 
 Keep the hex-chart key visual and sparse in one two-column row: **Volume** on the left, with one
 small and one large hex labeled **Less** and **More** beneath it; **FG% vs. NBA Avg** on the right,

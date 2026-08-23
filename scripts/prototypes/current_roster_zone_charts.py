@@ -7,9 +7,10 @@ this one partitions the whole half court into NBA's twelve named regions and
 fills every one, so the reader gets a shot profile rather than a scatter.
 
 Each zone carries two figures, weighted equally: how well he shoots there against
-the league, and how often he goes there against the league. The colour encodes
-the first. Neither is derivable from the other, which is the reason both are
-printed -- a player can be excellent in a zone he almost never visits.
+the league, and the share of his attempts that came from there against the NBA's
+share. The colour encodes the first. Neither is derivable from the other, which
+is the reason both are printed -- a player can be excellent in a zone he almost
+never visits.
 
 Points per shot is deliberately absent. Inside one zone the point value is fixed,
 so PPS is FG% times a constant and "his PPS vs the league's" ranks identically to
@@ -85,8 +86,6 @@ def summarise(subject: str, scope: str, shots: pd.DataFrame,
 
 def build(args: argparse.Namespace) -> list[Path]:
     league = shot_data.league_shots(args.season, args.refresh)
-    league_player_poss = shot_data.league_possessions(args.season, args.refresh)
-    league_team_poss = shot_data.league_team_possessions(args.season, args.refresh)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     args.data_dir.mkdir(parents=True, exist_ok=True)
 
@@ -95,18 +94,16 @@ def build(args: argparse.Namespace) -> list[Path]:
     zone_tables: list[pd.DataFrame] = []
     stamp = date.today().isoformat()
 
-    def render(subject: str, slug: str, shots: pd.DataFrame, poss: float,
-               league_poss: float, scope: str, min_fga: int) -> None:
+    def render(subject: str, slug: str, shots: pd.DataFrame,
+               scope: str, min_fga: int) -> None:
         ctx = {"player": shots, "league": league, "name": subject,
-               "season": args.season, "poss": poss, "league_poss": league_poss,
-               "scope": scope, "min_fga": min_fga}
+               "season": args.season, "min_fga": min_fga}
         out = args.output_dir / f"{stamp}-zones-{slug}.png"
         print(f"\n{subject}: {len(shots):,} FGA")
         shot_chart.render_zones(ctx, out, args.final)
         outputs.append(out)
 
-        zones = sm.zone12_split(shots, league, poss, league_poss,
-                                min_fga=min_fga)
+        zones = sm.zone12_split(shots, league, min_fga=min_fga)
         summary_rows.append(summarise(subject, scope, shots, zones, min_fga))
         table = zones.copy()
         table.insert(0, "subject", subject)
@@ -117,14 +114,11 @@ def build(args: argparse.Namespace) -> list[Path]:
         # worktree cleanup away from being unauditable.
         shots.to_csv(args.data_dir / f"{slug}-shots-{args.season}.csv", index=False)
 
-    # The team first: it is the carousel's opener, and it is the one chart where
-    # every zone clears the sample floor, which makes it the sanity check on the
-    # player charts that follow.
+    # The team first because it is the carousel's opener; team and player shot
+    # shares now use the same all-attempts denominator logic.
     render("Chicago Bulls", "bulls",
            shot_data.team_shots(BULLS_TEAM_ID, args.season, args.refresh),
-           shot_data.team_possessions(BULLS_TEAM_ID, args.season, args.refresh),
-           league_team_poss, "per 75 team possessions",
-           sm.MIN_ZONE12_FGA_TEAM)
+           "Chicago attempts", sm.MIN_ZONE12_FGA_TEAM)
 
     roster = get_current_roster()
     prepared = []
@@ -137,10 +131,7 @@ def build(args: argparse.Namespace) -> list[Path]:
             excluded.append((str(player.official_roster_name), len(shots)))
 
     for name, shots in sorted(prepared, key=lambda item: (-len(item[1]), item[0])):
-        pid = int(roster.loc[roster.official_roster_name == name, "nba_id"].iloc[0])
-        render(name, player_slug(name), shots,
-               shot_data.player_possessions(pid, args.season, args.refresh),
-               league_player_poss, "per 75 player possessions",
+        render(name, player_slug(name), shots, "Full season, all teams",
                sm.MIN_ZONE12_FGA_PLAYER)
 
     zones_path = args.data_dir / f"zone-splits-{args.season}.csv"
@@ -149,15 +140,6 @@ def build(args: argparse.Namespace) -> list[Path]:
     summary_path = args.data_dir / f"zone-chart-summary-{args.season}.csv"
     summary = pd.DataFrame(summary_rows)
     summary.to_csv(summary_path, index=False, float_format="%.1f")
-    # The denominators are the one input a reader cannot recompute from the shot
-    # rows, and the one most easily got wrong -- a team rate against a
-    # player-possession baseline reads five times too high.
-    pd.DataFrame([
-        {"denominator": "league player-possessions", "value": league_player_poss},
-        {"denominator": "league team-possessions", "value": league_team_poss},
-    ]).to_csv(args.data_dir / f"possession-denominators-{args.season}.csv",
-              index=False, float_format="%.2f")
-
     print("\nROSTER ZONE SUMMARY")
     print(f"Roster as of: {stamp}")
     print(f"Qualifier: {args.min_fga}+ FGA in the {args.season} NBA regular season")

@@ -1,133 +1,133 @@
-subject,scope,zone,fga,fgm,fg,lg_fg,fg_rel,per75,lg_per75,vol_rel,pps,lg_pps,point_value,rated
-Chicago Bulls,per 75 team possessions,Restricted Area,2612,1651,0.6321,0.6709,-3.8844,23.0315,18.8477,22.1983,1.2642,1.3419,2,True
-Chicago Bulls,per 75 team possessions,In The Paint (Non-RA),1188,524,0.4411,0.4452,-0.4082,10.4753,13.4017,-21.8361,0.8822,0.8903,2,True
-Chicago Bulls,per 75 team possessions,Left Baseline,56,26,0.4643,0.4261,3.8153,0.4938,0.9751,-49.3605,0.9286,0.8523,2,False
-Chicago Bulls,per 75 team possessions,Left Mid-Range,77,28,0.3636,0.3942,-3.0546,0.6790,1.5501,-56.1996,0.7273,0.7884,2,False
-Chicago Bulls,per 75 team possessions,Center Mid-Range,78,25,0.3205,0.4260,-10.5529,0.6878,1.5038,-54.2646,0.6410,0.8521,2,False
-Chicago Bulls,per 75 team possessions,Right Mid-Range,52,21,0.4038,0.4184,-1.4531,0.4585,1.5776,-70.9369,0.8077,0.8368,2,False
-Chicago Bulls,per 75 team possessions,Right Baseline,67,33,0.4925,0.4276,6.4980,0.5908,0.9379,-37.0088,0.9851,0.8551,2,False
-Chicago Bulls,per 75 team possessions,Left Corner 3,464,160,0.3448,0.3866,-4.1750,4.0914,3.7249,9.8392,1.0345,1.1597,3,True
-Chicago Bulls,per 75 team possessions,Left Wing 3,856,306,0.3575,0.3543,0.3223,7.5478,7.2427,4.2129,1.0724,1.0628,3,True
-Chicago Bulls,per 75 team possessions,Top of Key 3,857,308,0.3594,0.3478,1.1569,7.5567,6.7945,11.2172,1.0782,1.0435,3,True
-Chicago Bulls,per 75 team possessions,Right Wing 3,696,226,0.3247,0.3482,-2.3460,6.1370,6.3018,-2.6149,0.9741,1.0445,3,True
-Chicago Bulls,per 75 team possessions,Right Corner 3,414,168,0.4058,0.3857,2.0108,3.6505,3.4682,5.2549,1.2174,1.1571,3,True
-Matas Buzelis,per 75 player possessions,Restricted Area,349,225,0.6447,0.6709,-2.6228,5.3546,3.7224,43.8491,1.2894,1.3419,2,True
-Matas Buzelis,per 75 player possessions,In The Paint (Non-RA),100,40,0.4000,0.4452,-4.5160,1.5343,2.6468,-42.0332,0.8000,0.8903,2,True
-Matas Buzelis,per 75 player possessions,Left Baseline,1,0,0.0000,0.4261,-42.6133,0.0153,0.1926,-92.0331,0.0000,0.8523,2,False
-Matas Buzelis,per 75 player possessions,Left Mid-Range,4,2,0.5000,0.3942,10.5818,0.0614,0.3061,-79.9536,1.0000,0.7884,2,False
-Matas Buzelis,per 75 player possessions,Center Mid-Range,7,3,0.4286,0.4260,0.2530,0.1074,0.2970,-63.8386,0.8571,0.8521,2,False
-Matas Buzelis,per 75 player possessions,Right Mid-Range,1,0,0.0000,0.4184,-41.8377,0.0153,0.3116,-95.0759,0.0000,0.8368,2,False
-Matas Buzelis,per 75 player possessions,Right Baseline,6,3,0.5000,0.4276,7.2443,0.0921,0.1852,-50.3012,1.0000,0.8551,2,False
-Matas Buzelis,per 75 player possessions,Left Corner 3,80,30,0.3750,0.3866,-1.1578,1.2274,0.7357,66.8471,1.1250,1.1597,3,True
-Matas Buzelis,per 75 player possessions,Left Wing 3,158,59,0.3734,0.3543,1.9164,2.4241,1.4304,69.4706,1.1203,1.0628,3,True
-Matas Buzelis,per 75 player possessions,Top of Key 3,112,39,0.3482,0.3478,0.0390,1.7184,1.3419,28.0556,1.0446,1.0435,3,True
-Matas Buzelis,per 75 player possessions,Right Wing 3,91,26,0.2857,0.3482,-6.2458,1.3962,1.2446,12.1797,0.8571,1.0445,3,True
-Matas Buzelis,per 75 player possessions,Right Corner 3,54,19,0.3519,0.3857,-3.3838,0.8285,0.6850,20.9554,1.0556,1.1571,3,True
-Norman Powell,per 75 player possessions,Restricted Area,229,144,0.6288,0.6709,-4.2106,4.5288,3.7224,21.6651,1.2576,1.3419,2,True
-Norman Powell,per 75 player possessions,In The Paint (Non-RA),167,86,0.5150,0.4452,6.9811,3.3027,2.6468,24.7799,1.0299,0.8903,2,True
-Norman Powell,per 75 player possessions,Left Baseline,24,10,0.4167,0.4261,-0.9466,0.4746,0.1926,146.4626,0.8333,0.8523,2,True
-Norman Powell,per 75 player possessions,Left Mid-Range,36,15,0.4167,0.3942,2.2485,0.7120,0.3061,132.5564,0.8333,0.7884,2,True
-Norman Powell,per 75 player possessions,Center Mid-Range,11,2,0.1818,0.4260,-24.4223,0.2175,0.2970,-26.7531,0.3636,0.8521,2,False
-Norman Powell,per 75 player possessions,Right Mid-Range,10,5,0.5000,0.4184,8.1623,0.1978,0.3116,-36.5287,1.0000,0.8368,2,False
-Norman Powell,per 75 player possessions,Right Baseline,8,3,0.3750,0.4276,-5.2557,0.1582,0.1852,-14.5851,0.7500,0.8551,2,False
-Norman Powell,per 75 player possessions,Left Corner 3,39,13,0.3333,0.3866,-5.3245,0.7713,0.7357,4.8437,1.0000,1.1597,3,True
-Norman Powell,per 75 player possessions,Left Wing 3,137,56,0.4088,0.3543,5.4505,2.7094,1.4304,89.4117,1.2263,1.0628,3,True
-Norman Powell,per 75 player possessions,Top of Key 3,105,38,0.3619,0.3478,1.4081,2.0765,1.3419,54.7458,1.0857,1.0435,3,True
-Norman Powell,per 75 player possessions,Right Wing 3,104,41,0.3942,0.3482,4.6058,2.0568,1.2446,65.2553,1.1827,1.0445,3,True
-Norman Powell,per 75 player possessions,Right Corner 3,25,8,0.3200,0.3857,-6.5689,0.4944,0.6850,-27.8194,0.9600,1.1571,3,True
-Josh Giddey,per 75 player possessions,Restricted Area,221,127,0.5747,0.6709,-9.6266,4.3923,3.7224,17.9963,1.1493,1.3419,2,True
-Josh Giddey,per 75 player possessions,In The Paint (Non-RA),171,81,0.4737,0.4452,2.8525,3.3985,2.6468,28.4014,0.9474,0.8903,2,True
-Josh Giddey,per 75 player possessions,Left Baseline,4,0,0.0000,0.4261,-42.6133,0.0795,0.1926,-58.7195,0.0000,0.8523,2,False
-Josh Giddey,per 75 player possessions,Left Mid-Range,11,2,0.1818,0.3942,-21.2364,0.2186,0.3061,-28.5892,0.3636,0.7884,2,False
-Josh Giddey,per 75 player possessions,Center Mid-Range,10,1,0.1000,0.4260,-32.6041,0.1987,0.2970,-33.0822,0.2000,0.8521,2,False
-Josh Giddey,per 75 player possessions,Right Mid-Range,10,3,0.3000,0.4184,-11.8377,0.1987,0.3116,-36.2143,0.6000,0.8368,2,False
-Josh Giddey,per 75 player possessions,Right Baseline,7,4,0.5714,0.4276,14.3871,0.1391,0.1852,-24.8918,1.1429,0.8551,2,False
-Josh Giddey,per 75 player possessions,Left Corner 3,20,6,0.3000,0.3866,-8.6578,0.3975,0.7357,-45.9677,0.9000,1.1597,3,True
-Josh Giddey,per 75 player possessions,Left Wing 3,89,33,0.3708,0.3543,1.6533,1.7688,1.4304,23.6579,1.1124,1.0628,3,True
-Josh Giddey,per 75 player possessions,Top of Key 3,100,35,0.3500,0.3478,0.2176,1.9874,1.3419,48.1068,1.0500,1.0435,3,True
-Josh Giddey,per 75 player possessions,Right Wing 3,56,22,0.3929,0.3482,4.4684,1.1130,1.2446,-10.5757,1.1786,1.0445,3,True
-Josh Giddey,per 75 player possessions,Right Corner 3,18,7,0.3889,0.3857,0.3200,0.3577,0.6850,-47.7726,1.1667,1.1571,3,False
-Tre Jones,per 75 player possessions,Restricted Area,324,224,0.6914,0.6709,2.0431,6.2621,3.7224,68.2281,1.3827,1.3419,2,True
-Tre Jones,per 75 player possessions,In The Paint (Non-RA),140,66,0.4714,0.4452,2.6269,2.7058,2.6468,2.2302,0.9429,0.8903,2,True
-Tre Jones,per 75 player possessions,Left Baseline,6,2,0.3333,0.4261,-9.2800,0.1160,0.1926,-39.7837,0.6667,0.8523,2,False
-Tre Jones,per 75 player possessions,Left Mid-Range,4,2,0.5000,0.3942,10.5818,0.0773,0.3061,-74.7472,1.0000,0.7884,2,False
-Tre Jones,per 75 player possessions,Center Mid-Range,4,2,0.5000,0.4260,7.3959,0.0773,0.2970,-73.9697,1.0000,0.8521,2,False
-Tre Jones,per 75 player possessions,Right Mid-Range,3,1,0.3333,0.4184,-8.5044,0.0580,0.3116,-81.3911,0.6667,0.8368,2,False
-Tre Jones,per 75 player possessions,Right Baseline,6,3,0.5000,0.4276,7.2443,0.1160,0.1852,-37.3937,1.0000,0.8551,2,False
-Tre Jones,per 75 player possessions,Left Corner 3,36,11,0.3056,0.3866,-8.1022,0.6958,0.7357,-5.4191,0.9167,1.1597,3,True
-Tre Jones,per 75 player possessions,Left Wing 3,29,10,0.3448,0.3543,-0.9426,0.5605,1.4304,-60.8161,1.0345,1.0628,3,True
-Tre Jones,per 75 player possessions,Top of Key 3,29,8,0.2759,0.3478,-7.1962,0.5605,1.3419,-58.2313,0.8276,1.0435,3,True
-Tre Jones,per 75 player possessions,Right Wing 3,25,8,0.3200,0.3482,-2.8173,0.4832,1.2446,-61.1774,0.9600,1.0445,3,True
-Tre Jones,per 75 player possessions,Right Corner 3,11,4,0.3636,0.3857,-2.2053,0.2126,0.6850,-68.9618,1.0909,1.1571,3,False
-Nic Claxton,per 75 player possessions,Restricted Area,351,245,0.6980,0.6709,2.7079,6.6828,3.7224,79.5320,1.3960,1.3419,2,True
-Nic Claxton,per 75 player possessions,In The Paint (Non-RA),187,72,0.3850,0.4452,-6.0133,3.5604,2.6468,34.5160,0.7701,0.8903,2,True
-Nic Claxton,per 75 player possessions,Left Baseline,4,2,0.5000,0.4261,7.3867,0.0762,0.1926,-60.4539,1.0000,0.8523,2,False
-Nic Claxton,per 75 player possessions,Left Mid-Range,9,4,0.4444,0.3942,5.0262,0.1714,0.3061,-44.0278,0.8889,0.7884,2,False
-Nic Claxton,per 75 player possessions,Center Mid-Range,7,3,0.4286,0.4260,0.2530,0.1333,0.2970,-55.1256,0.8571,0.8521,2,False
-Nic Claxton,per 75 player possessions,Right Mid-Range,4,3,0.7500,0.4184,33.1623,0.0762,0.3116,-75.5577,1.5000,0.8368,2,False
-Nic Claxton,per 75 player possessions,Right Baseline,2,1,0.5000,0.4276,7.2443,0.0381,0.1852,-79.4421,1.0000,0.8551,2,False
-Nic Claxton,per 75 player possessions,Left Corner 3,1,0,0.0000,0.3866,-38.6578,0.0190,0.7357,-97.4119,0.0000,1.1597,3,False
-Nic Claxton,per 75 player possessions,Left Wing 3,5,1,0.2000,0.3543,-15.4254,0.0952,1.4304,-93.3448,0.6000,1.0628,3,False
-Nic Claxton,per 75 player possessions,Top of Key 3,12,2,0.1667,0.3478,-18.1157,0.2285,1.3419,-82.9739,0.5000,1.0435,3,False
-Nic Claxton,per 75 player possessions,Right Wing 3,1,0,0.0000,0.3482,-34.8173,0.0190,1.2446,-98.4702,0.0000,1.0445,3,False
-Nic Claxton,per 75 player possessions,Right Corner 3,0,0,,0.3857,,0.0000,0.6850,-100.0000,,1.1571,3,False
-Patrick Williams,per 75 player possessions,Restricted Area,107,52,0.4860,0.6709,-18.4946,2.4679,3.7224,-33.6998,0.9720,1.3419,2,True
-Patrick Williams,per 75 player possessions,In The Paint (Non-RA),76,20,0.2632,0.4452,-18.2002,1.7529,2.6468,-33.7719,0.5263,0.8903,2,True
-Patrick Williams,per 75 player possessions,Left Baseline,2,1,0.5000,0.4261,7.3867,0.0461,0.1926,-76.0464,1.0000,0.8523,2,False
-Patrick Williams,per 75 player possessions,Left Mid-Range,4,2,0.5000,0.3942,10.5818,0.0923,0.3061,-69.8640,1.0000,0.7884,2,False
-Patrick Williams,per 75 player possessions,Center Mid-Range,6,3,0.5000,0.4260,7.3959,0.1384,0.2970,-53.4041,1.0000,0.8521,2,False
-Patrick Williams,per 75 player possessions,Right Mid-Range,3,2,0.6667,0.4184,24.8290,0.0692,0.3116,-77.7925,1.3333,0.8368,2,False
-Patrick Williams,per 75 player possessions,Right Baseline,6,3,0.5000,0.4276,7.2443,0.1384,0.1852,-25.2871,1.0000,0.8551,2,False
-Patrick Williams,per 75 player possessions,Left Corner 3,27,9,0.3333,0.3866,-5.3245,0.6228,0.7357,-15.3471,1.0000,1.1597,3,True
-Patrick Williams,per 75 player possessions,Left Wing 3,77,29,0.3766,0.3543,2.2370,1.7760,1.4304,24.1588,1.1299,1.0628,3,True
-Patrick Williams,per 75 player possessions,Top of Key 3,66,24,0.3636,0.3478,1.5812,1.5223,1.3419,13.4420,1.0909,1.0435,3,True
-Patrick Williams,per 75 player possessions,Right Wing 3,84,25,0.2976,0.3482,-5.0554,1.9374,1.2446,55.6689,0.8929,1.0445,3,True
-Patrick Williams,per 75 player possessions,Right Corner 3,20,8,0.4000,0.3857,1.4311,0.4613,0.6850,-32.6541,1.2000,1.1571,3,True
-Isaac Okoro,per 75 player possessions,Restricted Area,203,128,0.6305,0.6709,-4.0385,4.1794,3.7224,12.2782,1.2611,1.3419,2,True
-Isaac Okoro,per 75 player possessions,In The Paint (Non-RA),34,10,0.2941,0.4452,-15.1042,0.7000,2.6468,-73.5530,0.5882,0.8903,2,True
-Isaac Okoro,per 75 player possessions,Left Baseline,2,1,0.5000,0.4261,7.3867,0.0412,0.1926,-78.6185,1.0000,0.8523,2,False
-Isaac Okoro,per 75 player possessions,Left Mid-Range,0,0,,0.3942,,0.0000,0.3061,-100.0000,,0.7884,2,False
-Isaac Okoro,per 75 player possessions,Center Mid-Range,0,0,,0.4260,,0.0000,0.2970,-100.0000,,0.8521,2,False
-Isaac Okoro,per 75 player possessions,Right Mid-Range,0,0,,0.4184,,0.0000,0.3116,-100.0000,,0.8368,2,False
-Isaac Okoro,per 75 player possessions,Right Baseline,0,0,,0.4276,,0.0000,0.1852,-100.0000,,0.8551,2,False
-Isaac Okoro,per 75 player possessions,Left Corner 3,67,21,0.3134,0.3866,-7.3145,1.3794,0.7357,87.5087,0.9403,1.1597,3,True
-Isaac Okoro,per 75 player possessions,Left Wing 3,43,10,0.2326,0.3543,-12.1696,0.8853,1.4304,-38.1095,0.6977,1.0628,3,True
-Isaac Okoro,per 75 player possessions,Top of Key 3,10,6,0.6000,0.3478,25.2176,0.2059,1.3419,-84.6574,1.8000,1.0435,3,False
-Isaac Okoro,per 75 player possessions,Right Wing 3,40,12,0.3000,0.3482,-4.8173,0.8235,1.2446,-33.8316,0.9000,1.0445,3,True
-Isaac Okoro,per 75 player possessions,Right Corner 3,60,23,0.3833,0.3857,-0.2356,1.2353,0.6850,80.3436,1.1500,1.1571,3,True
-Rob Dillingham,per 75 player possessions,Restricted Area,128,67,0.5234,0.6709,-14.7490,4.4738,3.7224,20.1865,1.0469,1.3419,2,True
-Rob Dillingham,per 75 player possessions,In The Paint (Non-RA),92,29,0.3152,0.4452,-12.9942,3.2155,2.6468,21.4874,0.6304,0.8903,2,True
-Rob Dillingham,per 75 player possessions,Left Baseline,2,2,1.0000,0.4261,57.3867,0.0699,0.1926,-63.7018,2.0000,0.8523,2,False
-Rob Dillingham,per 75 player possessions,Left Mid-Range,16,6,0.3750,0.3942,-1.9182,0.5592,0.3061,82.6673,0.7500,0.7884,2,False
-Rob Dillingham,per 75 player possessions,Center Mid-Range,29,9,0.3103,0.4260,-11.5697,1.0136,0.2970,241.2788,0.6207,0.8521,2,True
-Rob Dillingham,per 75 player possessions,Right Mid-Range,6,5,0.8333,0.4184,41.4956,0.2097,0.3116,-32.6955,1.6667,0.8368,2,False
-Rob Dillingham,per 75 player possessions,Right Baseline,6,3,0.5000,0.4276,7.2443,0.2097,0.1852,13.2166,1.0000,0.8551,2,False
-Rob Dillingham,per 75 player possessions,Left Corner 3,12,8,0.6667,0.3866,28.0089,0.4194,0.7357,-42.9870,2.0000,1.1597,3,False
-Rob Dillingham,per 75 player possessions,Left Wing 3,41,15,0.3659,0.3543,1.1600,1.4330,1.4304,0.1810,1.0976,1.0628,3,True
-Rob Dillingham,per 75 player possessions,Top of Key 3,41,10,0.2439,0.3478,-10.3922,1.4330,1.3419,6.7895,0.7317,1.0435,3,True
-Rob Dillingham,per 75 player possessions,Right Wing 3,22,6,0.2727,0.3482,-7.5445,0.7689,1.2446,-38.2183,0.8182,1.0445,3,True
-Rob Dillingham,per 75 player possessions,Right Corner 3,17,3,0.1765,0.3857,-20.9219,0.5942,0.6850,-13.2550,0.5294,1.1571,3,False
-Jalen Smith,per 75 player possessions,Restricted Area,149,99,0.6644,0.6709,-0.6498,4.7024,3.7224,26.3268,1.3289,1.3419,2,True
-Jalen Smith,per 75 player possessions,In The Paint (Non-RA),25,11,0.4400,0.4452,-0.5160,0.7890,2.6468,-70.1910,0.8800,0.8903,2,True
-Jalen Smith,per 75 player possessions,Left Baseline,1,0,0.0000,0.4261,-42.6133,0.0316,0.1926,-83.6123,0.0000,0.8523,2,False
-Jalen Smith,per 75 player possessions,Left Mid-Range,2,0,0.0000,0.3942,-39.4182,0.0631,0.3061,-79.3826,0.0000,0.7884,2,False
-Jalen Smith,per 75 player possessions,Center Mid-Range,2,0,0.0000,0.4260,-42.6041,0.0631,0.2970,-78.7478,0.0000,0.8521,2,False
-Jalen Smith,per 75 player possessions,Right Mid-Range,1,1,1.0000,0.4184,58.1623,0.0316,0.3116,-89.8712,2.0000,0.8368,2,False
-Jalen Smith,per 75 player possessions,Right Baseline,3,2,0.6667,0.4276,23.9109,0.0947,0.1852,-48.8856,1.3333,0.8551,2,False
-Jalen Smith,per 75 player possessions,Left Corner 3,24,10,0.4167,0.3866,3.0089,0.7574,0.7357,2.9598,1.2500,1.1597,3,True
-Jalen Smith,per 75 player possessions,Left Wing 3,43,17,0.3953,0.3543,4.1095,1.3571,1.4304,-5.1290,1.1860,1.0628,3,True
-Jalen Smith,per 75 player possessions,Top of Key 3,71,22,0.3099,0.3478,-3.7965,2.2407,1.3419,66.9808,0.9296,1.0435,3,True
-Jalen Smith,per 75 player possessions,Right Wing 3,51,22,0.4314,0.3482,8.3200,1.6095,1.2446,29.3215,1.2941,1.0445,3,True
-Jalen Smith,per 75 player possessions,Right Corner 3,32,11,0.3438,0.3857,-4.1939,1.0099,0.6850,47.4379,1.0312,1.1571,3,True
-Leonard Miller,per 75 player possessions,Restricted Area,136,102,0.7500,0.6709,7.9073,6.3458,3.7224,70.4774,1.5000,1.3419,2,True
-Leonard Miller,per 75 player possessions,In The Paint (Non-RA),23,9,0.3913,0.4452,-5.3855,1.0732,2.6468,-59.4535,0.7826,0.8903,2,True
-Leonard Miller,per 75 player possessions,Left Baseline,0,0,,0.4261,,0.0000,0.1926,-100.0000,,0.8523,2,False
-Leonard Miller,per 75 player possessions,Left Mid-Range,0,0,,0.3942,,0.0000,0.3061,-100.0000,,0.7884,2,False
-Leonard Miller,per 75 player possessions,Center Mid-Range,3,2,0.6667,0.4260,24.0625,0.1400,0.2970,-52.8681,1.3333,0.8521,2,False
-Leonard Miller,per 75 player possessions,Right Mid-Range,0,0,,0.4184,,0.0000,0.3116,-100.0000,,0.8368,2,False
-Leonard Miller,per 75 player possessions,Right Baseline,1,0,0.0000,0.4276,-42.7557,0.0467,0.1852,-74.8093,0.0000,0.8551,2,False
-Leonard Miller,per 75 player possessions,Left Corner 3,23,7,0.3043,0.3866,-8.2230,1.0732,0.7357,45.8824,0.9130,1.1597,3,True
-Leonard Miller,per 75 player possessions,Left Wing 3,13,1,0.0769,0.3543,-27.7331,0.6066,1.4304,-57.5940,0.2308,1.0628,3,False
-Leonard Miller,per 75 player possessions,Top of Key 3,24,8,0.3333,0.3478,-1.4491,1.1198,1.3419,-16.5477,1.0000,1.0435,3,True
-Leonard Miller,per 75 player possessions,Right Wing 3,13,3,0.2308,0.3482,-11.7403,0.6066,1.2446,-51.2626,0.6923,1.0445,3,False
-Leonard Miller,per 75 player possessions,Right Corner 3,26,13,0.5000,0.3857,11.4311,1.2132,0.6850,77.1134,1.5000,1.1571,3,True
+subject,scope,zone,fga,fgm,fg,lg_fg,fg_rel,fga_share_pct,lg_fga_share_pct,pps,lg_pps,point_value,rated
+Chicago Bulls,Chicago attempts,Restricted Area,2612,1651,0.6321,0.6709,-3.8844,35.2164,28.4167,1.2642,1.3419,2,True
+Chicago Bulls,Chicago attempts,In The Paint (Non-RA),1188,524,0.4411,0.4452,-0.4082,16.0173,20.2058,0.8822,0.8903,2,True
+Chicago Bulls,Chicago attempts,Left Baseline,56,26,0.4643,0.4261,3.8153,0.7550,1.4702,0.9286,0.8523,2,False
+Chicago Bulls,Chicago attempts,Left Mid-Range,77,28,0.3636,0.3942,-3.0546,1.0382,2.3371,0.7273,0.7884,2,False
+Chicago Bulls,Chicago attempts,Center Mid-Range,78,25,0.3205,0.4260,-10.5529,1.0516,2.2673,0.6410,0.8521,2,False
+Chicago Bulls,Chicago attempts,Right Mid-Range,52,21,0.4038,0.4184,-1.4531,0.7011,2.3786,0.8077,0.8368,2,False
+Chicago Bulls,Chicago attempts,Right Baseline,67,33,0.4925,0.4276,6.4980,0.9033,1.4140,0.9851,0.8551,2,False
+Chicago Bulls,Chicago attempts,Left Corner 3,464,160,0.3448,0.3866,-4.1750,6.2559,5.6160,1.0345,1.1597,3,True
+Chicago Bulls,Chicago attempts,Left Wing 3,856,306,0.3575,0.3543,0.3223,11.5411,10.9199,1.0724,1.0628,3,True
+Chicago Bulls,Chicago attempts,Top of Key 3,857,308,0.3594,0.3478,1.1569,11.5545,10.2441,1.0782,1.0435,3,True
+Chicago Bulls,Chicago attempts,Right Wing 3,696,226,0.3247,0.3482,-2.3460,9.3838,9.5013,0.9741,1.0445,3,True
+Chicago Bulls,Chicago attempts,Right Corner 3,414,168,0.4058,0.3857,2.0108,5.5818,5.2291,1.2174,1.1571,3,True
+Matas Buzelis,"Full season, all teams",Restricted Area,349,225,0.6447,0.6709,-2.6228,36.2409,28.4167,1.2894,1.3419,2,True
+Matas Buzelis,"Full season, all teams",In The Paint (Non-RA),100,40,0.4000,0.4452,-4.5160,10.3842,20.2058,0.8000,0.8903,2,True
+Matas Buzelis,"Full season, all teams",Left Baseline,1,0,0.0000,0.4261,-42.6133,0.1038,1.4702,0.0000,0.8523,2,False
+Matas Buzelis,"Full season, all teams",Left Mid-Range,4,2,0.5000,0.3942,10.5818,0.4154,2.3371,1.0000,0.7884,2,False
+Matas Buzelis,"Full season, all teams",Center Mid-Range,7,3,0.4286,0.4260,0.2530,0.7269,2.2673,0.8571,0.8521,2,False
+Matas Buzelis,"Full season, all teams",Right Mid-Range,1,0,0.0000,0.4184,-41.8377,0.1038,2.3786,0.0000,0.8368,2,False
+Matas Buzelis,"Full season, all teams",Right Baseline,6,3,0.5000,0.4276,7.2443,0.6231,1.4140,1.0000,0.8551,2,False
+Matas Buzelis,"Full season, all teams",Left Corner 3,80,30,0.3750,0.3866,-1.1578,8.3074,5.6160,1.1250,1.1597,3,True
+Matas Buzelis,"Full season, all teams",Left Wing 3,158,59,0.3734,0.3543,1.9164,16.4071,10.9199,1.1203,1.0628,3,True
+Matas Buzelis,"Full season, all teams",Top of Key 3,112,39,0.3482,0.3478,0.0390,11.6303,10.2441,1.0446,1.0435,3,True
+Matas Buzelis,"Full season, all teams",Right Wing 3,91,26,0.2857,0.3482,-6.2458,9.4496,9.5013,0.8571,1.0445,3,True
+Matas Buzelis,"Full season, all teams",Right Corner 3,54,19,0.3519,0.3857,-3.3838,5.6075,5.2291,1.0556,1.1571,3,True
+Norman Powell,"Full season, all teams",Restricted Area,229,144,0.6288,0.6709,-4.2106,25.5866,28.4167,1.2576,1.3419,2,True
+Norman Powell,"Full season, all teams",In The Paint (Non-RA),167,86,0.5150,0.4452,6.9811,18.6592,20.2058,1.0299,0.8903,2,True
+Norman Powell,"Full season, all teams",Left Baseline,24,10,0.4167,0.4261,-0.9466,2.6816,1.4702,0.8333,0.8523,2,True
+Norman Powell,"Full season, all teams",Left Mid-Range,36,15,0.4167,0.3942,2.2485,4.0223,2.3371,0.8333,0.7884,2,True
+Norman Powell,"Full season, all teams",Center Mid-Range,11,2,0.1818,0.4260,-24.4223,1.2291,2.2673,0.3636,0.8521,2,False
+Norman Powell,"Full season, all teams",Right Mid-Range,10,5,0.5000,0.4184,8.1623,1.1173,2.3786,1.0000,0.8368,2,False
+Norman Powell,"Full season, all teams",Right Baseline,8,3,0.3750,0.4276,-5.2557,0.8939,1.4140,0.7500,0.8551,2,False
+Norman Powell,"Full season, all teams",Left Corner 3,39,13,0.3333,0.3866,-5.3245,4.3575,5.6160,1.0000,1.1597,3,True
+Norman Powell,"Full season, all teams",Left Wing 3,137,56,0.4088,0.3543,5.4505,15.3073,10.9199,1.2263,1.0628,3,True
+Norman Powell,"Full season, all teams",Top of Key 3,105,38,0.3619,0.3478,1.4081,11.7318,10.2441,1.0857,1.0435,3,True
+Norman Powell,"Full season, all teams",Right Wing 3,104,41,0.3942,0.3482,4.6058,11.6201,9.5013,1.1827,1.0445,3,True
+Norman Powell,"Full season, all teams",Right Corner 3,25,8,0.3200,0.3857,-6.5689,2.7933,5.2291,0.9600,1.1571,3,True
+Josh Giddey,"Full season, all teams",Restricted Area,221,127,0.5747,0.6709,-9.6266,30.8229,28.4167,1.1493,1.3419,2,True
+Josh Giddey,"Full season, all teams",In The Paint (Non-RA),171,81,0.4737,0.4452,2.8525,23.8494,20.2058,0.9474,0.8903,2,True
+Josh Giddey,"Full season, all teams",Left Baseline,4,0,0.0000,0.4261,-42.6133,0.5579,1.4702,0.0000,0.8523,2,False
+Josh Giddey,"Full season, all teams",Left Mid-Range,11,2,0.1818,0.3942,-21.2364,1.5342,2.3371,0.3636,0.7884,2,False
+Josh Giddey,"Full season, all teams",Center Mid-Range,10,1,0.1000,0.4260,-32.6041,1.3947,2.2673,0.2000,0.8521,2,False
+Josh Giddey,"Full season, all teams",Right Mid-Range,10,3,0.3000,0.4184,-11.8377,1.3947,2.3786,0.6000,0.8368,2,False
+Josh Giddey,"Full season, all teams",Right Baseline,7,4,0.5714,0.4276,14.3871,0.9763,1.4140,1.1429,0.8551,2,False
+Josh Giddey,"Full season, all teams",Left Corner 3,20,6,0.3000,0.3866,-8.6578,2.7894,5.6160,0.9000,1.1597,3,True
+Josh Giddey,"Full season, all teams",Left Wing 3,89,33,0.3708,0.3543,1.6533,12.4128,10.9199,1.1124,1.0628,3,True
+Josh Giddey,"Full season, all teams",Top of Key 3,100,35,0.3500,0.3478,0.2176,13.9470,10.2441,1.0500,1.0435,3,True
+Josh Giddey,"Full season, all teams",Right Wing 3,56,22,0.3929,0.3482,4.4684,7.8103,9.5013,1.1786,1.0445,3,True
+Josh Giddey,"Full season, all teams",Right Corner 3,18,7,0.3889,0.3857,0.3200,2.5105,5.2291,1.1667,1.1571,3,False
+Tre Jones,"Full season, all teams",Restricted Area,324,224,0.6914,0.6709,2.0431,52.5122,28.4167,1.3827,1.3419,2,True
+Tre Jones,"Full season, all teams",In The Paint (Non-RA),140,66,0.4714,0.4452,2.6269,22.6904,20.2058,0.9429,0.8903,2,True
+Tre Jones,"Full season, all teams",Left Baseline,6,2,0.3333,0.4261,-9.2800,0.9724,1.4702,0.6667,0.8523,2,False
+Tre Jones,"Full season, all teams",Left Mid-Range,4,2,0.5000,0.3942,10.5818,0.6483,2.3371,1.0000,0.7884,2,False
+Tre Jones,"Full season, all teams",Center Mid-Range,4,2,0.5000,0.4260,7.3959,0.6483,2.2673,1.0000,0.8521,2,False
+Tre Jones,"Full season, all teams",Right Mid-Range,3,1,0.3333,0.4184,-8.5044,0.4862,2.3786,0.6667,0.8368,2,False
+Tre Jones,"Full season, all teams",Right Baseline,6,3,0.5000,0.4276,7.2443,0.9724,1.4140,1.0000,0.8551,2,False
+Tre Jones,"Full season, all teams",Left Corner 3,36,11,0.3056,0.3866,-8.1022,5.8347,5.6160,0.9167,1.1597,3,True
+Tre Jones,"Full season, all teams",Left Wing 3,29,10,0.3448,0.3543,-0.9426,4.7002,10.9199,1.0345,1.0628,3,True
+Tre Jones,"Full season, all teams",Top of Key 3,29,8,0.2759,0.3478,-7.1962,4.7002,10.2441,0.8276,1.0435,3,True
+Tre Jones,"Full season, all teams",Right Wing 3,25,8,0.3200,0.3482,-2.8173,4.0519,9.5013,0.9600,1.0445,3,True
+Tre Jones,"Full season, all teams",Right Corner 3,11,4,0.3636,0.3857,-2.2053,1.7828,5.2291,1.0909,1.1571,3,False
+Nic Claxton,"Full season, all teams",Restricted Area,351,245,0.6980,0.6709,2.7079,60.2058,28.4167,1.3960,1.3419,2,True
+Nic Claxton,"Full season, all teams",In The Paint (Non-RA),187,72,0.3850,0.4452,-6.0133,32.0755,20.2058,0.7701,0.8903,2,True
+Nic Claxton,"Full season, all teams",Left Baseline,4,2,0.5000,0.4261,7.3867,0.6861,1.4702,1.0000,0.8523,2,False
+Nic Claxton,"Full season, all teams",Left Mid-Range,9,4,0.4444,0.3942,5.0262,1.5437,2.3371,0.8889,0.7884,2,False
+Nic Claxton,"Full season, all teams",Center Mid-Range,7,3,0.4286,0.4260,0.2530,1.2007,2.2673,0.8571,0.8521,2,False
+Nic Claxton,"Full season, all teams",Right Mid-Range,4,3,0.7500,0.4184,33.1623,0.6861,2.3786,1.5000,0.8368,2,False
+Nic Claxton,"Full season, all teams",Right Baseline,2,1,0.5000,0.4276,7.2443,0.3431,1.4140,1.0000,0.8551,2,False
+Nic Claxton,"Full season, all teams",Left Corner 3,1,0,0.0000,0.3866,-38.6578,0.1715,5.6160,0.0000,1.1597,3,False
+Nic Claxton,"Full season, all teams",Left Wing 3,5,1,0.2000,0.3543,-15.4254,0.8576,10.9199,0.6000,1.0628,3,False
+Nic Claxton,"Full season, all teams",Top of Key 3,12,2,0.1667,0.3478,-18.1157,2.0583,10.2441,0.5000,1.0435,3,False
+Nic Claxton,"Full season, all teams",Right Wing 3,1,0,0.0000,0.3482,-34.8173,0.1715,9.5013,0.0000,1.0445,3,False
+Nic Claxton,"Full season, all teams",Right Corner 3,0,0,,0.3857,,0.0000,5.2291,,1.1571,3,False
+Patrick Williams,"Full season, all teams",Restricted Area,107,52,0.4860,0.6709,-18.4946,22.3849,28.4167,0.9720,1.3419,2,True
+Patrick Williams,"Full season, all teams",In The Paint (Non-RA),76,20,0.2632,0.4452,-18.2002,15.8996,20.2058,0.5263,0.8903,2,True
+Patrick Williams,"Full season, all teams",Left Baseline,2,1,0.5000,0.4261,7.3867,0.4184,1.4702,1.0000,0.8523,2,False
+Patrick Williams,"Full season, all teams",Left Mid-Range,4,2,0.5000,0.3942,10.5818,0.8368,2.3371,1.0000,0.7884,2,False
+Patrick Williams,"Full season, all teams",Center Mid-Range,6,3,0.5000,0.4260,7.3959,1.2552,2.2673,1.0000,0.8521,2,False
+Patrick Williams,"Full season, all teams",Right Mid-Range,3,2,0.6667,0.4184,24.8290,0.6276,2.3786,1.3333,0.8368,2,False
+Patrick Williams,"Full season, all teams",Right Baseline,6,3,0.5000,0.4276,7.2443,1.2552,1.4140,1.0000,0.8551,2,False
+Patrick Williams,"Full season, all teams",Left Corner 3,27,9,0.3333,0.3866,-5.3245,5.6485,5.6160,1.0000,1.1597,3,True
+Patrick Williams,"Full season, all teams",Left Wing 3,77,29,0.3766,0.3543,2.2370,16.1088,10.9199,1.1299,1.0628,3,True
+Patrick Williams,"Full season, all teams",Top of Key 3,66,24,0.3636,0.3478,1.5812,13.8075,10.2441,1.0909,1.0435,3,True
+Patrick Williams,"Full season, all teams",Right Wing 3,84,25,0.2976,0.3482,-5.0554,17.5732,9.5013,0.8929,1.0445,3,True
+Patrick Williams,"Full season, all teams",Right Corner 3,20,8,0.4000,0.3857,1.4311,4.1841,5.2291,1.2000,1.1571,3,True
+Isaac Okoro,"Full season, all teams",Restricted Area,203,128,0.6305,0.6709,-4.0385,44.2266,28.4167,1.2611,1.3419,2,True
+Isaac Okoro,"Full season, all teams",In The Paint (Non-RA),34,10,0.2941,0.4452,-15.1042,7.4074,20.2058,0.5882,0.8903,2,True
+Isaac Okoro,"Full season, all teams",Left Baseline,2,1,0.5000,0.4261,7.3867,0.4357,1.4702,1.0000,0.8523,2,False
+Isaac Okoro,"Full season, all teams",Left Mid-Range,0,0,,0.3942,,0.0000,2.3371,,0.7884,2,False
+Isaac Okoro,"Full season, all teams",Center Mid-Range,0,0,,0.4260,,0.0000,2.2673,,0.8521,2,False
+Isaac Okoro,"Full season, all teams",Right Mid-Range,0,0,,0.4184,,0.0000,2.3786,,0.8368,2,False
+Isaac Okoro,"Full season, all teams",Right Baseline,0,0,,0.4276,,0.0000,1.4140,,0.8551,2,False
+Isaac Okoro,"Full season, all teams",Left Corner 3,67,21,0.3134,0.3866,-7.3145,14.5969,5.6160,0.9403,1.1597,3,True
+Isaac Okoro,"Full season, all teams",Left Wing 3,43,10,0.2326,0.3543,-12.1696,9.3682,10.9199,0.6977,1.0628,3,True
+Isaac Okoro,"Full season, all teams",Top of Key 3,10,6,0.6000,0.3478,25.2176,2.1786,10.2441,1.8000,1.0435,3,False
+Isaac Okoro,"Full season, all teams",Right Wing 3,40,12,0.3000,0.3482,-4.8173,8.7146,9.5013,0.9000,1.0445,3,True
+Isaac Okoro,"Full season, all teams",Right Corner 3,60,23,0.3833,0.3857,-0.2356,13.0719,5.2291,1.1500,1.1571,3,True
+Rob Dillingham,"Full season, all teams",Restricted Area,128,67,0.5234,0.6709,-14.7490,31.0680,28.4167,1.0469,1.3419,2,True
+Rob Dillingham,"Full season, all teams",In The Paint (Non-RA),92,29,0.3152,0.4452,-12.9942,22.3301,20.2058,0.6304,0.8903,2,True
+Rob Dillingham,"Full season, all teams",Left Baseline,2,2,1.0000,0.4261,57.3867,0.4854,1.4702,2.0000,0.8523,2,False
+Rob Dillingham,"Full season, all teams",Left Mid-Range,16,6,0.3750,0.3942,-1.9182,3.8835,2.3371,0.7500,0.7884,2,False
+Rob Dillingham,"Full season, all teams",Center Mid-Range,29,9,0.3103,0.4260,-11.5697,7.0388,2.2673,0.6207,0.8521,2,True
+Rob Dillingham,"Full season, all teams",Right Mid-Range,6,5,0.8333,0.4184,41.4956,1.4563,2.3786,1.6667,0.8368,2,False
+Rob Dillingham,"Full season, all teams",Right Baseline,6,3,0.5000,0.4276,7.2443,1.4563,1.4140,1.0000,0.8551,2,False
+Rob Dillingham,"Full season, all teams",Left Corner 3,12,8,0.6667,0.3866,28.0089,2.9126,5.6160,2.0000,1.1597,3,False
+Rob Dillingham,"Full season, all teams",Left Wing 3,41,15,0.3659,0.3543,1.1600,9.9515,10.9199,1.0976,1.0628,3,True
+Rob Dillingham,"Full season, all teams",Top of Key 3,41,10,0.2439,0.3478,-10.3922,9.9515,10.2441,0.7317,1.0435,3,True
+Rob Dillingham,"Full season, all teams",Right Wing 3,22,6,0.2727,0.3482,-7.5445,5.3398,9.5013,0.8182,1.0445,3,True
+Rob Dillingham,"Full season, all teams",Right Corner 3,17,3,0.1765,0.3857,-20.9219,4.1262,5.2291,0.5294,1.1571,3,False
+Jalen Smith,"Full season, all teams",Restricted Area,149,99,0.6644,0.6709,-0.6498,36.8812,28.4167,1.3289,1.3419,2,True
+Jalen Smith,"Full season, all teams",In The Paint (Non-RA),25,11,0.4400,0.4452,-0.5160,6.1881,20.2058,0.8800,0.8903,2,True
+Jalen Smith,"Full season, all teams",Left Baseline,1,0,0.0000,0.4261,-42.6133,0.2475,1.4702,0.0000,0.8523,2,False
+Jalen Smith,"Full season, all teams",Left Mid-Range,2,0,0.0000,0.3942,-39.4182,0.4950,2.3371,0.0000,0.7884,2,False
+Jalen Smith,"Full season, all teams",Center Mid-Range,2,0,0.0000,0.4260,-42.6041,0.4950,2.2673,0.0000,0.8521,2,False
+Jalen Smith,"Full season, all teams",Right Mid-Range,1,1,1.0000,0.4184,58.1623,0.2475,2.3786,2.0000,0.8368,2,False
+Jalen Smith,"Full season, all teams",Right Baseline,3,2,0.6667,0.4276,23.9109,0.7426,1.4140,1.3333,0.8551,2,False
+Jalen Smith,"Full season, all teams",Left Corner 3,24,10,0.4167,0.3866,3.0089,5.9406,5.6160,1.2500,1.1597,3,True
+Jalen Smith,"Full season, all teams",Left Wing 3,43,17,0.3953,0.3543,4.1095,10.6436,10.9199,1.1860,1.0628,3,True
+Jalen Smith,"Full season, all teams",Top of Key 3,71,22,0.3099,0.3478,-3.7965,17.5743,10.2441,0.9296,1.0435,3,True
+Jalen Smith,"Full season, all teams",Right Wing 3,51,22,0.4314,0.3482,8.3200,12.6238,9.5013,1.2941,1.0445,3,True
+Jalen Smith,"Full season, all teams",Right Corner 3,32,11,0.3438,0.3857,-4.1939,7.9208,5.2291,1.0312,1.1571,3,True
+Leonard Miller,"Full season, all teams",Restricted Area,136,102,0.7500,0.6709,7.9073,51.9084,28.4167,1.5000,1.3419,2,True
+Leonard Miller,"Full season, all teams",In The Paint (Non-RA),23,9,0.3913,0.4452,-5.3855,8.7786,20.2058,0.7826,0.8903,2,True
+Leonard Miller,"Full season, all teams",Left Baseline,0,0,,0.4261,,0.0000,1.4702,,0.8523,2,False
+Leonard Miller,"Full season, all teams",Left Mid-Range,0,0,,0.3942,,0.0000,2.3371,,0.7884,2,False
+Leonard Miller,"Full season, all teams",Center Mid-Range,3,2,0.6667,0.4260,24.0625,1.1450,2.2673,1.3333,0.8521,2,False
+Leonard Miller,"Full season, all teams",Right Mid-Range,0,0,,0.4184,,0.0000,2.3786,,0.8368,2,False
+Leonard Miller,"Full season, all teams",Right Baseline,1,0,0.0000,0.4276,-42.7557,0.3817,1.4140,0.0000,0.8551,2,False
+Leonard Miller,"Full season, all teams",Left Corner 3,23,7,0.3043,0.3866,-8.2230,8.7786,5.6160,0.9130,1.1597,3,True
+Leonard Miller,"Full season, all teams",Left Wing 3,13,1,0.0769,0.3543,-27.7331,4.9618,10.9199,0.2308,1.0628,3,False
+Leonard Miller,"Full season, all teams",Top of Key 3,24,8,0.3333,0.3478,-1.4491,9.1603,10.2441,1.0000,1.0435,3,True
+Leonard Miller,"Full season, all teams",Right Wing 3,13,3,0.2308,0.3482,-11.7403,4.9618,9.5013,0.6923,1.0445,3,False
+Leonard Miller,"Full season, all teams",Right Corner 3,26,13,0.5000,0.3857,11.4311,9.9237,5.2291,1.5000,1.1571,3,True

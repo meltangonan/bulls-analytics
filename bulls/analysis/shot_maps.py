@@ -534,9 +534,9 @@ def single_shot_floor(band_points: float = BAND_WIDTH_POINTS) -> int:
 # floor only has to protect the COLOUR, not the number.
 MIN_ZONE12_FGA_TEAM = colour_floor(SIGMA_TEAM_POINTS)        # 400
 MIN_ZONE12_FGA_PLAYER = single_shot_floor()                  # 20
-# Volume survives a thin sample either way -- an attempt is counted, not
-# estimated -- so a zone below the floor keeps its rate and loses only its
-# colour and its shooting percentage.
+# The pill preserves every measured figure below the floor, but the zone loses
+# its efficiency colour. The sample count stays visible so the reader can judge
+# the printed shooting percentage without mistaking it for a rated result.
 MIN_ZONE12_FGA = MIN_ZONE12_FGA_PLAYER
 
 
@@ -618,19 +618,18 @@ def zone_of(x, y) -> np.ndarray:
 
 
 def zone12_split(subject: pd.DataFrame, league: pd.DataFrame,
-                 subject_poss: float, league_poss: float,
                  min_fga: int = MIN_ZONE12_FGA) -> pd.DataFrame:
-    """Per-zone volume and accuracy for all twelve zones, each vs the league.
+    """Per-zone shot share and accuracy for all twelve zones vs the league.
 
     The same two questions ``zone_split`` asks of four rings, asked of twelve
     named regions. Every zone appears in the result even when the subject never
     shot there, because a zone he avoids entirely is a finding -- dropping the
     row would silently redraw the chart with a hole in it.
 
-    ``subject_poss`` and ``league_poss`` must be the same kind of possession.
-    Player charts pass player-possessions against the league's player-possession
-    total; a team chart passes team-possessions against all thirty teams'. Mixing
-    the two would compare a player's rate with a team's.
+    Shot share is a zone's attempts divided by all of that subject's attempts.
+    The league reference uses the same calculation over all league attempts, so
+    team and player charts share one directly comparable baseline without a
+    possession estimate.
     """
     subject = subject.copy()
     league = league.copy()
@@ -639,6 +638,8 @@ def zone12_split(subject: pd.DataFrame, league: pd.DataFrame,
 
     lg = league.groupby("zone12")["shot_made"].agg(["size", "sum"])
     mine = subject.groupby("zone12")["shot_made"].agg(["size", "sum"])
+    subject_fga = len(subject)
+    league_fga = len(league)
 
     rows = []
     for zone in ZONE12_ORDER:
@@ -648,21 +649,21 @@ def zone12_split(subject: pd.DataFrame, league: pd.DataFrame,
         lg_fgm = int(lg["sum"].get(zone, 0))
         fg = fgm / fga if fga else float("nan")
         lg_fg = lg_fgm / lg_fga if lg_fga else float("nan")
-        per75 = fga / subject_poss * 75
-        lg_per75 = lg_fga / league_poss * 75
+        fga_share = fga / subject_fga * 100 if subject_fga else 0.0
+        lg_fga_share = lg_fga / league_fga * 100 if league_fga else 0.0
         value = 3 if zone in THREE_ZONES else 2
         rows.append({
             "zone": zone, "fga": fga, "fgm": fgm,
             "fg": fg, "lg_fg": lg_fg,
             "fg_rel": (fg - lg_fg) * 100 if fga else float("nan"),
-            "per75": per75, "lg_per75": lg_per75,
-            "vol_rel": (per75 / lg_per75 - 1) * 100 if lg_per75 else float("nan"),
+            "fga_share_pct": fga_share,
+            "lg_fga_share_pct": lg_fga_share,
             "pps": fg * value if fga else float("nan"),
             "lg_pps": lg_fg * value if lg_fga else float("nan"),
             "point_value": value,
-            # Colour is the claim "he is better here than the league". Volume is
-            # a count and needs no such guard, so a thin zone keeps its rate and
-            # loses only its fill.
+            # Colour is the claim "he is better here than the league". Shot
+            # share is a count ratio and needs no such guard, so a thin zone
+            # keeps its diet figures and loses only its fill.
             "rated": bool(fga >= min_fga),
         })
     return pd.DataFrame(rows)

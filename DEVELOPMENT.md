@@ -384,11 +384,11 @@ informative when a player genuinely has no mid-range game and misleading when he
 `zones` sits between them and is the only one of the three that fills the whole court, which is what
 makes it the colourful sibling of the hex chart rather than another sparse map. It uses NBA's twelve
 named regions via `shot_maps.zone_of`, colours each by FG% against the league across five bands, and
-prints attempts-per-75 under the shooting figure at the same type size — the two are meant to be read
-together, because a player can be excellent in a zone he never visits. Shooting is the top line
-because the fill is shooting; the colour and the first figure have to be the same thing. The scale
-runs red → yellow → green by default (`--palette hex` for the blue scale the hex carousel used);
-`DESIGN.md` owns why.
+prints the zone's share of all subject FGA under the shooting figure, followed by its signed gap to
+the NBA share in the same `vs LA` grammar. The two are meant to be read together because a player can
+be excellent in a zone he rarely visits. Shooting is the top line because the fill is shooting; the
+colour and the first figure have to be the same thing. The scale runs red → yellow → green by default
+(`--palette hex` for the blue scale the hex carousel used); `DESIGN.md` owns why.
 
 **Points per shot is deliberately not on it.** Inside one zone the point value is a constant, so PPS
 is FG% times that constant and "his PPS vs the league's" ranks identically to "his FG% vs the
@@ -396,21 +396,19 @@ league's". PPS earned its place on the scoring-by-location post because that cha
 zones, where a 35% three really does beat a 52% long two. Here it would be a third figure repeating
 the first. `tests/test_zone_charts.py` pins the identity so nobody re-adds it.
 
-`zones` is the one chart in the family that accepts `--team` *and* needs a different denominator to
-do it. Five players share every team possession, so a team's attempt rate measured against the
-league's player-possession total reads about five times too high and still looks plausible. Each
-scope gets its own matching pair: `team_possessions` against `league_team_possessions`, or
-`player_possessions` against `league_possessions`. The raw rates are therefore not comparable
-between a team chart and a player chart, but the *gaps to the league* — which is what the colour and
-the printed delta encode — are. `--league` is rejected outright: the league cannot be its own
-baseline.
+`zones` accepts `--team` because shot share has one denominator at either scope: attempts in the zone
+divided by all attempts by that team or player. The NBA reference repeats the same calculation over
+all league attempts, so the team opener and player slides are directly comparable and the chart no
+longer needs possession endpoints. The raw attempt count in the shooting line preserves absolute
+volume. `--league` is still rejected: the league cannot be its own efficiency baseline.
 
 **Every zone's pill prints makes over attempts** — `11 / 32 FG (34.4%)` — which changed what the
 colour floor has to protect. Early drafts hid the sample behind the floor entirely: a thin zone was
 greyed and only its attempt *rate* survived, because the reader had no way to judge the percentage
 for themselves. Once the raw count is on the page, the floor's only job is protecting the **colour**
-— a reader who can see "0 / 1" is not misled by a hatched zone the way they would be by a solid one.
-That is what let the floor come down from an evidence-grade bar to a display-grade one.
+— a reader who can see "0 / 1" still learns what happened without the chart assigning that result
+an efficiency band. That is what let the floor come down from an evidence-grade bar to a
+display-grade one.
 
 **Both floors are solved, not chosen**, by asking the same question at a strength each subject's
 sample can support: *what must not be able to move a zone into the next colour band?*
@@ -448,15 +446,14 @@ arithmetic is above.**
 | Attempts | Treatment | Pill |
 | --- | --- | --- |
 | ≥ floor | solid band colour | full four-line pill |
-| 1 to floor−1 | band colour, hatched | full four-line pill, muted |
+| 1 to floor−1 | grey | full four-line pill, muted |
 | 0 | grey | `0 FGA` only |
 
-A hatched zone keeps its own colour rather than being greyed, because greying threw the finding away
-to signal the doubt; hatching says the same thing the way a footnote does. Grey now means exactly one
-thing — he never shot there — which a silent gap used not to say. `zone-chart-summary-<season>.csv`
-reports the rated share per subject so a thin chart (Claxton: 92% of attempts on 2 of 12 rated zones,
-because he takes 92% of his shots at the rim) can be checked before publishing rather than discovered
-after.
+Grey means the zone has not earned an efficiency colour. A nonzero zone keeps the full descriptive
+pill, while a zero-attempt zone says `0 FGA`; the labels distinguish those two states without asking
+texture to carry the caveat. `zone-chart-summary-<season>.csv` reports the rated share per subject so
+a thin chart (Claxton: 92% of attempts on 2 of 12 rated zones, because he takes 92% of his shots at
+the rim) can be checked before publishing rather than discovered after.
 
 `ladder` is the distance-only form, concentric distance bands and no angle at all. It gets its
 fullest read from team-scale volume, but it can also show a player's shot-value profile:

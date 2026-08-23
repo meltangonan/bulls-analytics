@@ -1,11 +1,11 @@
-"""The twelve-zone chart: geometry, denominators, and what it refuses to claim.
+"""The twelve-zone chart: geometry, shot diet, and what it refuses to claim.
 
 Three things can go wrong here and none of them look wrong in the output:
 
 * the classifier and the drawn fills could disagree, so the chart counts one set
   of regions and paints another;
-* a team rate could be measured against a player-possession baseline, which
-  reads about five times too high and still looks like a plausible number;
+* a zone's attempts could be divided by the wrong total, so its printed share
+  no longer participates in one shot diet that sums to 100%;
 * a zone holding two attempts could print "0.0%", which reads as a cold streak
   rather than as nothing known.
 """
@@ -82,21 +82,22 @@ def test_every_zone_appears_even_when_the_subject_never_shot_there():
     """A zone he avoids entirely is a finding; dropping the row hides it."""
     subject = _shots([(0, 0, 1), (0, 0, 1), (0, 0, 0)])
     league = _shots([(0, 0, 1), (0, 200, 1), (-230, 0, 0), (0, 100, 1)])
-    table = sm.zone12_split(subject, league, 100.0, 1000.0)
+    table = sm.zone12_split(subject, league)
     assert list(table.zone) == list(sm.ZONE12_ORDER)
     empty = table[table.zone == "Top of Key 3"].iloc[0]
     assert empty.fga == 0 and np.isnan(empty.fg)
 
 
-def test_a_thin_zone_keeps_its_volume_and_loses_only_its_rating():
-    """Volume is counted, not estimated, so a small sample does not damage it."""
+def test_a_thin_zone_keeps_its_shot_share_and_loses_only_its_rating():
+    """Shot share is counted, so a small sample does not erase the shot diet."""
     subject = _shots([(-210, 0, 0), (-210, 0, 0)])
     league = _shots([(-210, 0, 1), (-210, 0, 0)] * 50)
-    row = sm.zone12_split(subject, league, 100.0, 1000.0)
+    row = sm.zone12_split(subject, league)
     baseline = row[row.zone == "Left Baseline"].iloc[0]
     assert baseline.fga == 2
     assert not baseline.rated
-    assert baseline.per75 == pytest.approx(2 / 100.0 * 75)
+    assert baseline.fga_share_pct == pytest.approx(100.0)
+    assert baseline.lg_fga_share_pct == pytest.approx(100.0)
 
 
 # --- The colour floor ------------------------------------------------------
@@ -151,11 +152,11 @@ def test_a_zone_clears_the_floor_at_the_threshold_exactly():
     n = sm.MIN_ZONE12_FGA
     subject = _shots([(0, 0, 1)] * n)
     league = _shots([(0, 0, 1), (0, 0, 0)] * 50)
-    rim = sm.zone12_split(subject, league, 100.0, 1000.0)
+    rim = sm.zone12_split(subject, league)
     assert rim[rim.zone == "Restricted Area"].iloc[0].rated
 
     fewer = _shots([(0, 0, 1)] * (n - 1))
-    rim = sm.zone12_split(fewer, league, 100.0, 1000.0)
+    rim = sm.zone12_split(fewer, league)
     assert not rim[rim.zone == "Restricted Area"].iloc[0].rated
 
 
@@ -163,13 +164,13 @@ def test_points_per_shot_carries_the_right_point_value_per_zone():
     """A three-point zone is worth 3 and a two-point zone 2, or PPS is nonsense."""
     subject = _shots([(0, 0, 1)] * 30 + [(0, 240, 1)] * 30)
     league = _shots([(0, 0, 1), (0, 240, 0)] * 50)
-    table = sm.zone12_split(subject, league, 100.0, 1000.0).set_index("zone")
+    table = sm.zone12_split(subject, league).set_index("zone")
     assert table.loc["Restricted Area", "pps"] == pytest.approx(2.0)
     assert table.loc["Top of Key 3", "pps"] == pytest.approx(3.0)
 
 
 def test_relative_fg_and_relative_pps_rank_identically_inside_one_zone():
-    """The reason the chart prints FG% and volume rather than PPS and volume.
+    """The reason the chart prints FG% and shot share rather than PPS too.
 
     Within a zone the point value is a constant, so PPS is FG% times that
     constant and the two "vs league" figures carry exactly the same ordering.
@@ -177,24 +178,20 @@ def test_relative_fg_and_relative_pps_rank_identically_inside_one_zone():
     """
     subject = _shots([(0, 240, 1)] * 40 + [(0, 240, 0)] * 60)
     league = _shots([(0, 240, 1)] * 35 + [(0, 240, 0)] * 65)
-    row = sm.zone12_split(subject, league, 100.0, 1000.0)
+    row = sm.zone12_split(subject, league)
     three = row[row.zone == "Top of Key 3"].iloc[0]
     assert three.fg_rel > 0
     assert (three.pps - three.lg_pps) > 0
     assert (three.pps - three.lg_pps) == pytest.approx(three.fg_rel / 100 * 3)
 
 
-def test_per75_scales_with_the_possession_denominator_it_is_given():
-    """Halving the denominator doubles the rate — the check that catches a team
-    rate measured against a player-possession baseline."""
+def test_shot_shares_sum_to_100_and_use_one_league_baseline():
+    """A shot diet tiles all attempts and needs no possession denominator."""
     subject = _shots([(0, 0, 1)] * 30)
     league = _shots([(0, 0, 1), (0, 0, 0)] * 50)
-    wide = sm.zone12_split(subject, league, 1000.0, 10_000.0)
-    narrow = sm.zone12_split(subject, league, 500.0, 10_000.0)
-    wide_rim = wide[wide.zone == "Restricted Area"].iloc[0]
-    narrow_rim = narrow[narrow.zone == "Restricted Area"].iloc[0]
-    assert narrow_rim.per75 == pytest.approx(wide_rim.per75 * 2)
-    assert narrow_rim.lg_per75 == pytest.approx(wide_rim.lg_per75)
+    table = sm.zone12_split(subject, league)
+    assert table.fga_share_pct.sum() == pytest.approx(100.0)
+    assert table.lg_fga_share_pct.sum() == pytest.approx(100.0)
 
 
 
@@ -236,12 +233,11 @@ def test_a_zone_below_the_floor_keeps_every_figure():
     thin, and the grey is what tells them how much to trust it.
     """
     thin = sm.zone12_split(_shots([(-210, 0, 0), (-210, 0, 1)] * 6),
-                           _shots([(-210, 0, 1), (-210, 0, 0)] * 50),
-                           100.0, 1000.0)
+                           _shots([(-210, 0, 1), (-210, 0, 0)] * 50))
     row, texts, _, pills = _rendered("Left Baseline", thin, fill="#D8D2CA")
     assert not row.rated
     assert len(texts) == 4 and pills == 1
-    assert "FG (" in texts[0] and "FGA / 75" in texts[2]
+    assert "FG (" in texts[0] and "% of FGA" in texts[2]
 
 
 def test_a_thin_pill_is_set_apart_from_a_rated_one():
@@ -264,8 +260,8 @@ def test_a_thin_pill_is_set_apart_from_a_rated_one():
         return out
 
     league = _shots([(-210, 0, 1), (-210, 0, 0)] * 300)
-    thin = sm.zone12_split(_shots([(-210, 0, 1)] * 6), league, 100.0, 1000.0)
-    fat = sm.zone12_split(_shots([(-210, 0, 1)] * 300), league, 100.0, 1000.0)
+    thin = sm.zone12_split(_shots([(-210, 0, 1)] * 6), league)
+    fat = sm.zone12_split(_shots([(-210, 0, 1)] * 300), league)
 
     thin_ink, thin_alpha = draw(thin, "Left Baseline", "#D8D2CA")
     rated_ink, rated_alpha = draw(fat, "Left Baseline", "#F1CC5B")
@@ -292,20 +288,6 @@ def test_a_shooting_gap_inside_the_average_band_is_grey_not_green():
         "the neutral band must match the fill scale's own average band"
 
 
-def test_a_volume_gap_is_measured_against_the_noise_in_its_own_count():
-    """A season's attempts in a zone is a count, so its standard error is the
-    square root of itself and the relative noise is 1/sqrt(n). That makes the
-    threshold scale with the zone rather than being picked: about 5% at 400
-    attempts, about 15% at 45."""
-    import scripts.make_shot_chart as shot_chart
-
-    assert not shot_chart._volume_gap_is_real(4.0, 400)    # inside 5% noise
-    assert shot_chart._volume_gap_is_real(6.0, 400)
-    assert not shot_chart._volume_gap_is_real(12.0, 45)    # inside 15% noise
-    assert shot_chart._volume_gap_is_real(20.0, 45)
-    assert not shot_chart._volume_gap_is_real(50.0, 0)
-
-
 def test_a_zone_with_no_attempts_says_so():
     """Grey now means one thing only — he never shot here — so it can say it.
 
@@ -313,45 +295,47 @@ def test_a_zone_with_no_attempts_says_so():
     simply unused; "0 FGA" settles it in three characters.
     """
     empty = sm.zone12_split(_shots([(0, 0, 1)] * 60),
-                            _shots([(0, 0, 1), (0, 240, 0)] * 60),
-                            100.0, 1000.0)
+                            _shots([(0, 0, 1), (0, 240, 0)] * 60))
     _, texts, _, pills = _rendered("Top of Key 3", empty)
     assert texts == ["0 FGA"] and pills == 1
 
 
-def test_a_rated_zone_prints_shooting_first_then_attempts():
+def test_a_rated_zone_prints_shooting_first_then_shot_share():
     """Shooting leads because the fill is shooting.
 
     The zone's colour is its FG% against the league, so the first line of the
     pill has to be the figure that colour is about. With volume on top the
     reader had to hunt past it for the number the region was already shouting.
     """
+    import scripts.make_shot_chart as shot_chart
+
     table = sm.zone12_split(_shots([(0, 0, 1)] * 40 + [(0, 0, 0)] * 20),
-                            _shots([(0, 0, 1), (0, 0, 0)] * 200),
-                            100.0, 1000.0)
-    _, texts, _, pills = _rendered("Restricted Area", table)
+                            _shots([(0, 0, 1), (0, 0, 0)] * 200))
+    _, texts, colours, pills = _rendered("Restricted Area", table)
     assert pills == 1
     assert len(texts) == 4
     # The shooting figure names itself. "66.7%" alone was ambiguous next to a
     # neighbouring "+5% vs LA" -- both are percentages of different things.
     assert "FG (" in texts[0], f"shooting must come first, got {texts}"
     assert texts[0].startswith("40 / 60"), "makes and attempts lead the line"
-    assert "FGA / 75" in texts[2], f"volume must come second, got {texts}"
+    assert texts[2] == "100.0% of FGA", f"shot share must come second, got {texts}"
+    assert texts[3] == "0.0 vs LA", f"shot share must use the comparison grammar, got {texts}"
+    assert colours[3] == shot_chart.ZONE12_NEUTRAL_GAP
 
 
-def test_both_gaps_say_what_they_are_a_gap_to_and_carry_direction():
-    """"+0.8" alone does not say what it is measured against, and a gap that
-    never changes colour makes the reader do the sign arithmetic."""
+def test_shooting_and_share_use_the_same_coloured_comparison_grammar():
+    """Both questions show the subject figure, then its signed gap to LA."""
     import scripts.make_shot_chart as shot_chart
 
     table = sm.zone12_split(_shots([(0, 240, 1)] * 60 + [(0, 240, 0)] * 40),
-                            _shots([(0, 240, 1)] * 30 + [(0, 240, 0)] * 70),
-                            100.0, 1000.0)
+                            _shots([(0, 240, 1)] * 30 + [(0, 240, 0)] * 70
+                                   + [(0, 0, 1)] * 100))
     _, texts, colours, _ = _rendered("Top of Key 3", table)
-    gaps = [text for text in texts if "vs LA" in text]
-    assert len(gaps) == 2, f"expected one gap per figure, got {texts}"
-    assert all("vs LA" in text for text in gaps)
-    assert shot_chart.ZONE12_UP_ON_LIGHT in colours, "an above-average gap is green"
+    assert sum("vs LA" in text for text in texts) == 2
+    assert texts[2] == "100.0% of FGA"
+    assert texts[3] == "+50.0 vs LA"
+    assert colours[1] == shot_chart.ZONE12_UP_ON_LIGHT
+    assert colours[3] == shot_chart.ZONE12_UP_ON_LIGHT
 
 
 def test_no_pill_prints_its_zone_name():
@@ -359,7 +343,7 @@ def test_no_pill_prints_its_zone_name():
     import scripts.make_shot_chart as shot_chart
 
     table = sm.zone12_split(_shots([(0, 0, 1)] * 60),
-                            _shots([(0, 0, 1), (0, 0, 0)] * 200), 100.0, 1000.0)
+                            _shots([(0, 0, 1), (0, 0, 0)] * 200))
     _, texts, _, _ = _rendered("Restricted Area", table)
     assert not any(name in texts for name in shot_chart.ZONE12_SHORT.values())
 
@@ -378,34 +362,29 @@ def test_every_pill_sits_inside_the_zone_it_reports():
         assert landed == zone, f"the {zone} pill sits in {landed}"
 
 
-def test_the_rim_pill_is_shrunk_to_fit_inside_the_restricted_area():
-    """Solved on every render, not tuned once.
+def test_the_rim_uses_the_same_type_scale_as_every_other_zone():
+    """Readability wins over trapping the whole cream card inside the RA."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
 
-    The disc is 8 ft across and the pill is nearly that wide, so the margin is
-    thin enough that a longer figure on some other player's chart would burst it
-    if the size were fixed. What is checked is the pill's farthest point from its
-    own centre, which the rounded corners pull in well short of the rectangle's
-    diagonal -- that rounding is most of why it fits at all.
-    """
     import scripts.make_shot_chart as shot_chart
 
-    court_scale = shot_chart.ZONE12_SCALE
-
-    def to_px(x, y):
-        return (540.0 + x * court_scale, 600.0 + y * court_scale)
-
-    half_w, half_h = 62.0, 42.0
-    scale = shot_chart._zone12_rim_fit("Restricted Area", half_w, half_h, to_px)
-    radius = shot_chart.ZONE12_PILL_ROUND * scale
-    reach = np.hypot(max(half_w * scale - radius, 0),
-                     max(half_h * scale - radius, 0)) + radius
-    assert reach <= sm.RA_R * court_scale, "the rim pill escapes its own zone"
-    assert scale <= 1.0
-
-    # A wider pill shrinks further; every other zone is left alone.
-    assert shot_chart._zone12_rim_fit("Restricted Area", 90.0, 42.0, to_px) < scale
-    assert shot_chart._zone12_rim_fit("In The Paint (Non-RA)", 200.0, 90.0,
-                                      to_px) == 1.0
+    table = sm.zone12_split(_shots([(0, 0, 1)] * 40 + [(0, 0, 0)] * 20),
+                            _shots([(0, 0, 1), (0, 0, 0)] * 200))
+    row = next(r for r in table.itertuples() if r.zone == "Restricted Area")
+    fig = plt.figure(figsize=(7.2, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+    shot_chart._zone12_block(ax, lambda x, y: (540.0, 600.0), row, "#F1CC5B",
+                             shot_chart.house.get_theme("jersey"))
+    sizes = [text.get_fontsize() for text in ax.texts]
+    plt.close(fig)
+    assert sizes == [shot_chart.ZONE12_FIGURE_SIZE,
+                     shot_chart.ZONE12_DELTA_SIZE,
+                     shot_chart.ZONE12_FIGURE_SIZE,
+                     shot_chart.ZONE12_DELTA_SIZE]
+    assert shot_chart.ZONE12_PILL_PAD_X < 10
+    assert shot_chart.ZONE12_PILL_PAD_Y < 8
 
 
 def test_gap_colour_carries_direction_and_nothing_else():
@@ -458,8 +437,7 @@ def test_the_rendered_gaps_use_the_same_signs():
     import scripts.make_shot_chart as shot_chart
 
     worse = sm.zone12_split(_shots([(0, 240, 1)] * 20 + [(0, 240, 0)] * 80),
-                            _shots([(0, 240, 1)] * 40 + [(0, 240, 0)] * 60),
-                            100.0, 1000.0)
+                            _shots([(0, 240, 1)] * 40 + [(0, 240, 0)] * 60))
     _, texts, _, _ = _rendered("Top of Key 3", worse)
     assert any(text.startswith("−") for text in texts), texts
     assert not any(text.startswith("-") for text in texts), texts
@@ -488,7 +466,7 @@ def test_the_legend_is_one_row_of_swatches_and_no_prose():
     swatches = [tuple(patch.get_facecolor()) for patch in ax.patches]
     plt.close(fig)
 
-    assert texts == ["BELOW", "FG% VS. NBA AVG", "ABOVE",
+    assert texts == ["Below", "FG% vs. NBA avg", "Above",
                      shot_chart._zone12_thin_key(sm.MIN_ZONE12_FGA_TEAM)]
     assert not any(len(text.split()) > 4 for text in texts), \
         f"the legend grew a sentence: {texts}"
@@ -496,12 +474,8 @@ def test_the_legend_is_one_row_of_swatches_and_no_prose():
     assert len(swatches) == len(shot_chart.ZONE12_PALETTES["rdylgn"]) + 1
 
 
-def test_the_thin_key_is_a_hatch_on_a_neutral_swatch():
-    """Hatched, because that is what a thin zone now looks like on the court.
-
-    The swatch sits on neutral grey rather than a band colour: the hatch can
-    fall on any of the five, and a yellow swatch suggested it belonged to yellow.
-    """
+def test_the_thin_key_is_a_plain_neutral_swatch():
+    """The key must match the plain grey used for every below-floor zone."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -512,12 +486,12 @@ def test_the_thin_key_is_a_hatch_on_a_neutral_swatch():
     ax = fig.add_axes([0, 0, 1, 1])
     shot_chart._zone12_legend(ax, shot_chart.house.get_theme("jersey"), "rdylgn",
                               sm.MIN_ZONE12_FGA_PLAYER)
-    hatched = [p for p in ax.patches if p.get_hatch()]
-    faces = {matplotlib.colors.to_hex(p.get_facecolor()).upper() for p in hatched}
+    neutral = ax.patches[-1]
+    face = matplotlib.colors.to_hex(neutral.get_facecolor()).upper()
     plt.close(fig)
-    assert len(hatched) == 1, "one hatched swatch, on the end of the scale"
-    assert faces == {shot_chart.ZONE12_HATCH_KEY.upper()}
-    assert faces.isdisjoint({c.upper() for c in shot_chart.ZONE12_PALETTES["rdylgn"]})
+    assert not neutral.get_hatch()
+    assert face == shot_chart.ZONE12_GREY.upper()
+    assert face not in {c.upper() for c in shot_chart.ZONE12_PALETTES["rdylgn"]}
 
 
 def test_the_grey_key_states_the_threshold_rather_than_a_verdict():
@@ -525,8 +499,8 @@ def test_the_grey_key_states_the_threshold_rather_than_a_verdict():
     attempt counts printed in the grey pills themselves."""
     import scripts.make_shot_chart as shot_chart
 
-    assert shot_chart._zone12_thin_key(400) == "UNDER 400 SHOTS"
-    assert shot_chart._zone12_thin_key(45) == "UNDER 45 SHOTS"
+    assert shot_chart._zone12_thin_key(400) == "Under 400 FGA"
+    assert shot_chart._zone12_thin_key(20) == "Under 20 FGA"
 
 
 def test_the_threshold_in_the_key_matches_the_floor_the_chart_used():
@@ -564,21 +538,15 @@ def test_the_threshold_is_muted_not_accent_red():
     fig = plt.figure(figsize=(7.2, 9))
     ax = fig.add_axes([0, 0, 1, 1])
     shot_chart._zone12_legend(ax, theme, "rdylgn", 400)
-    thin = next(t for t in ax.texts if "UNDER" in t.get_text())
+    thin = next(t for t in ax.texts if t.get_text().startswith("Under "))
     plt.close(fig)
     assert thin.get_color() == theme.muted
     assert thin.get_color() != theme.accent
 
 
-# --- Hatching --------------------------------------------------------------
-def test_a_thin_zone_is_hatched_in_its_own_colour_not_greyed():
-    """The finding survives the caveat.
-
-    Greying a thin zone threw its colour away to signal the doubt. Hatching says
-    the same thing the way a footnote does — read this, but not as hard — and
-    texture is a weaker visual channel than colour by design, which is the right
-    ranking for a caveat against the thing it qualifies.
-    """
+# --- Below-floor fill ------------------------------------------------------
+def test_a_thin_zone_is_plain_grey():
+    """The full pill preserves the finding; the ground declines to rate it."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -589,19 +557,16 @@ def test_a_thin_zone_is_hatched_in_its_own_colour_not_greyed():
     ax = fig.add_axes([0, 0, 1, 1])
     gx, gy = np.meshgrid(np.linspace(0, 100, 40), np.linspace(0, 100, 40))
     mask = gx < 50
-    shot_chart._zone12_fill(ax, gx, gy, mask, "#8CBF63", 2.0, hatched=True)
-    # A filled contour keeps its hatch on `.hatches`; get_hatch() reports None
-    # for a QuadContourSet even when it renders the pattern.
-    hatched = [c for c in ax.collections if getattr(c, "hatches", [None])[0]]
-    faces = [matplotlib.colors.to_hex(c.get_facecolor()[0]).upper()
-             for c in hatched]
+    shot_chart._zone12_fill(ax, gx, gy, mask, shot_chart.ZONE12_GREY, 2.0)
+    fills = [c for c in ax.collections if len(c.get_facecolor())]
+    faces = [matplotlib.colors.to_hex(c.get_facecolor()[0]).upper() for c in fills]
     plt.close(fig)
-    assert hatched, "a thin zone must carry a hatch"
-    assert faces == ["#8CBF63"], "and must keep its own band colour"
+    assert faces == [shot_chart.ZONE12_GREY.upper()]
+    assert not any(getattr(c, "hatches", [None])[0] for c in fills)
 
 
-def test_only_a_zone_below_the_floor_is_hatched():
-    """Above the floor the fill is solid; grey is reserved for no attempts."""
+def test_a_rated_zone_keeps_its_solid_band_colour():
+    """Changing the caveat must not mute a zone that clears the floor."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -611,7 +576,10 @@ def test_only_a_zone_below_the_floor_is_hatched():
     fig = plt.figure(figsize=(7.2, 9))
     ax = fig.add_axes([0, 0, 1, 1])
     gx, gy = np.meshgrid(np.linspace(0, 100, 40), np.linspace(0, 100, 40))
-    shot_chart._zone12_fill(ax, gx, gy, gx < 50, "#8CBF63", 2.0, hatched=False)
+    shot_chart._zone12_fill(ax, gx, gy, gx < 50, "#8CBF63", 2.0)
+    fills = [c for c in ax.collections if len(c.get_facecolor())]
+    faces = [matplotlib.colors.to_hex(c.get_facecolor()[0]).upper() for c in fills]
+    assert faces == ["#8CBF63"]
     assert not any(getattr(c, "hatches", [None])[0] for c in ax.collections)
     plt.close(fig)
 

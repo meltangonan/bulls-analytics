@@ -33,7 +33,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from matplotlib.colors import LinearSegmentedColormap, Normalize, to_rgb
+from matplotlib.colors import LinearSegmentedColormap, Normalize, to_rgb, to_rgba
 from matplotlib.patches import FancyBboxPatch, Rectangle, RegularPolygon, Wedge
 from matplotlib.transforms import Bbox
 
@@ -336,6 +336,85 @@ def render_hex(ctx, out: Path, final: bool):
               f"{sparse} in sub-{MIN_ATT}-attempt hexes and {off_map} beyond the "
               "30-ft court window omitted")
     print("Source: NBA.com/stats")
+
+
+def _render_cover_zones(out: Path, final: bool, fills: dict[str, str],
+                        fill_alpha: float):
+    """Render a data-free twelve-zone cover treatment from supplied fills."""
+    theme = house.get_theme("jersey")
+    fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
+                              house.CANVAS_HEIGHT / house.DRAFT_DPI))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, house.CANVAS_WIDTH); ax.set_ylim(0, house.CANVAS_HEIGHT)
+    ax.set_aspect("equal"); ax.set_xticks([]); ax.set_yticks([])
+    ax.patch.set_alpha(0.0)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+
+    s = ZONE12_SCALE
+    court_ink = "#242424"
+    x0, y0 = draw_half_court(ax, house.CANVAS_WIDTH / 2, ZONE12_COURT_Y, s,
+                             court_ink, lw=1.2)
+
+    def to_px(cx, cy):
+        return x0 + (cx + 250.0) * s, y0 + (cy + 47.5) * s
+
+    gx, gy, grid = _zone12_grid()
+    gx_px, gy_px = to_px(gx, gy)
+    for zone in sm.ZONE12_ORDER:
+        _zone12_fill(
+            ax, gx_px, gy_px, grid == zone,
+            to_rgba(fills[zone], fill_alpha), 2.0,
+        )
+
+    from matplotlib.patches import Circle as _Circle
+    ax.add_patch(_Circle(
+        to_px(0, 0), sm.RA_R * s,
+        facecolor=to_rgba(fills["Restricted Area"], fill_alpha),
+        edgecolor=to_rgba(ZONE12_SEAM, 0.72), lw=1.4, zorder=2.5,
+    ))
+    _zone12_seams(ax, to_px, color=to_rgba(ZONE12_SEAM, 0.72))
+    for side in (-250, 250):
+        ax.plot([to_px(side, 0)[0]] * 2,
+                [to_px(side, 110)[1], to_px(side, ZONE12_TOP)[1]],
+                color=court_ink, lw=1.2, zorder=5)
+    _zone12_close_top(ax, to_px, theme, color=court_ink)
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    crop = Bbox.from_extents(0, ZONE12_CROP_BOTTOM / house.DRAFT_DPI,
+                             house.CANVAS_WIDTH / house.DRAFT_DPI,
+                             ZONE12_CROP_TOP / house.DRAFT_DPI)
+    fig.savefig(out, dpi=house.export_dpi(final), transparent=True,
+                bbox_inches=crop)
+    plt.close(fig)
+    print(f"Saved {out}")
+
+
+def render_blank_zones(out: Path, final: bool):
+    """Render the twelve-zone court as a quiet, data-free cover silhouette."""
+    _render_cover_zones(
+        out, final, {zone: ZONE12_GREY for zone in sm.ZONE12_ORDER}, 0.58
+    )
+
+
+def render_preview_zones(out: Path, final: bool):
+    """Render a solid illustrative palette preview with no analytical data."""
+    colors = ZONE12_PALETTES[ZONE12_DEFAULT_PALETTE]
+    # Fixed placement makes the teaser reproducible. These bands are purely
+    # illustrative and do not encode DeRozan's actual results.
+    band_by_zone = (4, 3, 1, 0, 4, 2, 1, 0, 1, 3, 0, 3)
+    fills = {
+        zone: colors[band]
+        for zone, band in zip(sm.ZONE12_ORDER, band_by_zone, strict=True)
+    }
+    _render_cover_zones(out, final, fills, 1.0)
+
+
+def render_solid_cover_zones(out: Path, final: bool, fill: str):
+    """Render a reusable player-neutral cover court in one opaque color."""
+    _render_cover_zones(
+        out, final, {zone: fill for zone in sm.ZONE12_ORDER}, 1.0
+    )
 
 
 def _hex_legend(ax, theme):
@@ -1276,13 +1355,15 @@ def _footer(ax, theme, ctx):
 # score better here than the league"; the printed pair answers that and "does he
 # come here more often", weighted equally.
 #
-# Fill and hex colour share HEX_CUTS deliberately. A reader meeting both posts
-# learns one scale: blue below the league, yellow at it, red above. The cuts are
-# in FG-percentage points (2.5 and 7.5), which is a wider spread at zone level
-# than at hex level -- a whole zone rarely runs 8 points clear of the league, so
-# the outer bands stay reserved for genuine outliers.
+# The zone chart keeps the hex chart's five-band grammar but uses tighter outer
+# cuts. A five-point gap inside one named region is already material: about 10
+# points per 100 attempts for a two and 15 for a three. The hex chart stays at
+# +/-7.5 because its smoothed local cells are a different, noisier mark.
+ZONE12_CUTS = (-0.05, -0.025, 0.025, 0.05)
 ZONE12_GREY = "#D8D2CA"          # below the colour floor, including zero attempts
 ZONE12_SEAM = "#FAF8F5"          # divider between neighbouring fills
+ZONE12_BULLS_RED = house.RED
+ZONE12_BULLS_RED_LIGHT = "#E67C96"
 # Every figure sits on a cream pill, so there is one ink and one green-red pair
 # rather than one per fill. That is the real win of the pill: an earlier draft
 # recoloured type per zone to survive the band underneath it, and the same
@@ -1291,7 +1372,7 @@ ZONE12_SEAM = "#FAF8F5"          # divider between neighbouring fills
 ZONE12_UP_ON_LIGHT, ZONE12_DOWN_ON_LIGHT = "#12693A", "#93150B"
 ZONE12_NEUTRAL_GAP = "#6E6963"   # a gap too small to call a direction
 
-# Two fill scales, same five bands and same cuts, different argument.
+# Two fill palettes, using the zone chart's five bands and cuts.
 #
 #   hex     blue -> yellow -> red, inherited from the hex carousel. Red is the
 #           high end because red is the Bulls' colour, so "more red" reads as
@@ -1309,7 +1390,16 @@ ZONE12_DEFAULT_PALETTE = "rdylgn"
 
 def _zone12_band_color(rel: float, palette: str) -> str:
     """One of five discrete bands around league-average FG%, in either scale."""
-    return ZONE12_PALETTES[palette][int(np.digitize(rel, HEX_CUTS))]
+    colors = ZONE12_PALETTES[palette]
+    if rel <= ZONE12_CUTS[0]:
+        return colors[0]
+    if rel < ZONE12_CUTS[1]:
+        return colors[1]
+    if rel <= ZONE12_CUTS[2]:
+        return colors[2]
+    if rel < ZONE12_CUTS[3]:
+        return colors[3]
+    return colors[4]
 ZONE12_TRACE_STEP = 1.0          # court units per grid sample when tracing fills
 ZONE12_TRACE_BLUR = 0.8          # softens the stair-stepping on radial dividers
 # How deep the court is drawn: 33.5 ft from the hoop, a few feet past the
@@ -1415,6 +1505,8 @@ def render_zones(ctx, out: Path, final: bool):
     palette = ctx.get("palette") or ZONE12_DEFAULT_PALETTE
     pill = str(ctx.get("pill") or "full")
     show_summary = bool(ctx.get("summary_metrics"))
+    show_details = bool(ctx.get("show_details", True))
+    court_ink = ctx.get("court_ink") or house.get_theme("jersey").ink
     # The floor still applies. It no longer decides whether a zone is drawn at
     # all -- it decides whether the zone earns an efficiency colour.
     zones = sm.zone12_split(ctx["player"], ctx["league"], min_fga=min_fga)
@@ -1436,7 +1528,7 @@ def render_zones(ctx, out: Path, final: bool):
 
     s = ZONE12_SCALE
     x0, y0 = draw_half_court(ax, house.CANVAS_WIDTH / 2, ZONE12_COURT_Y, s,
-                             theme.ink, lw=1.2)
+                             court_ink, lw=1.2)
 
     def to_px(cx, cy):
         return x0 + (cx + 250.0) * s, y0 + (cy + 47.5) * s
@@ -1477,15 +1569,15 @@ def render_zones(ctx, out: Path, final: bool):
     for side in (-250, 250):
         ax.plot([to_px(side, 0)[0]] * 2,
                 [to_px(side, 110)[1], to_px(side, ZONE12_TOP)[1]],
-                color=theme.ink, lw=1.2, zorder=5)
-    _zone12_close_top(ax, to_px, theme)
+                color=court_ink, lw=1.2, zorder=5)
+    _zone12_close_top(ax, to_px, theme, color=court_ink)
 
-    for z in zones.itertuples():
-        _zone12_block(ax, to_px, z, fills[z.zone], theme, pill)
-
-    _zone12_legend(ax, theme, palette, min_fga)
-    if show_summary:
-        _zone12_summary_cards(ax, ctx["player"], ctx["league"], theme)
+    if show_details:
+        for z in zones.itertuples():
+            _zone12_block(ax, to_px, z, fills[z.zone], theme, pill)
+        _zone12_legend(ax, theme, palette, min_fga)
+        if show_summary:
+            _zone12_summary_cards(ax, ctx["player"], ctx["league"], theme)
     out.parent.mkdir(parents=True, exist_ok=True)
     crop = Bbox.from_extents(0, ZONE12_CROP_BOTTOM / house.DRAFT_DPI,
                              house.CANVAS_WIDTH / house.DRAFT_DPI,
@@ -1580,20 +1672,20 @@ def _zone12_seam_segments() -> list[tuple[tuple[float, float], tuple[float, floa
     return segments
 
 
-def _zone12_seams(ax, to_px):
+def _zone12_seams(ax, to_px, color=ZONE12_SEAM):
     """Draw the dividers, over the fills and under the court's black lines."""
     for (x1, y1), (x2, y2) in _zone12_seam_segments():
         p1, p2 = to_px(x1, y1), to_px(x2, y2)
-        ax.plot([p1[0], p2[0]], [p1[1], p2[1]], color=ZONE12_SEAM,
+        ax.plot([p1[0], p2[0]], [p1[1], p2[1]], color=color,
                 lw=ZONE12_SEAM_WIDTH, zorder=3, solid_capstyle="butt")
 
 
-def _zone12_close_top(ax, to_px, theme):
+def _zone12_close_top(ax, to_px, theme, color=None):
     """Draw the missing horizontal edge across the cropped court."""
     left = to_px(-250, ZONE12_TOP)
     right = to_px(250, ZONE12_TOP)
     ax.plot([left[0], right[0]], [left[1], right[1]],
-            color=theme.ink, lw=1.2, zorder=5)
+            color=color or theme.ink, lw=1.2, zorder=5)
 
 
 # Rings-chart typography, unchanged: figure at 13, its gap to league average at

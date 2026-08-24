@@ -469,7 +469,7 @@ THREE_ZONES = frozenset({"Left Corner 3", "Left Wing 3", "Top of Key 3",
 
 # --- What it takes to earn a colour ----------------------------------------
 # The floor is derived from the colour scale rather than chosen, because the
-# scale is the thing making the claim. Bands are cut at +/-2.5 and +/-7.5 FG
+# scale is the thing making the claim. Zone bands are cut at +/-2.5 and +/-5 FG
 # percentage points, so the question "how many attempts does a zone need" is
 # really "how precise must this estimate be before those cuts mean anything".
 #
@@ -487,16 +487,16 @@ THREE_ZONES = frozenset({"Left Corner 3", "Left Wing 3", "Top of Key 3",
 #
 #   sigma = 2.5 points -- one band half-width. One standard error cannot move a
 #           zone out of the band it was drawn in. n = 400.
-#   sigma = 7.5 points -- centre cut to outer cut. One standard error cannot
-#           fling a zone two whole bands, from average to "well above". n = 45.
-#
 # 400 is the honest bar and a team clears it in every zone it actually uses. A
 # player does not: a rotation player takes ~950 shots across twelve zones, so
 # requiring 400 would grey out everything except the rim. The looser bar is what
 # a player-season can support, and saying so is more useful than pretending a
 # single floor fits both. This is the whole reason the two charts differ.
 SIGMA_TEAM_POINTS = 2.5
-BAND_WIDTH_POINTS = 5.0     # one colour band, cut at +/-2.5 and +/-7.5
+NEUTRAL_WIDTH_POINTS = 5.0  # full neutral span, from -2.5 to +2.5
+# Compatibility name: the player floor remains based on the full neutral span,
+# not the narrower 2.5-point light band introduced by the +/-5 outer cuts.
+BAND_WIDTH_POINTS = NEUTRAL_WIDTH_POINTS
 
 
 def colour_floor(sigma_points: float) -> int:
@@ -509,11 +509,12 @@ def colour_floor(sigma_points: float) -> int:
 
 
 def single_shot_floor(band_points: float = BAND_WIDTH_POINTS) -> int:
-    """Attempts a zone needs before one make or miss cannot recolour it.
+    """Attempts needed to limit one shot to ``band_points`` percentage points.
 
-    One shot out of n moves a percentage by 100/n points, so a band 5 points
-    wide needs 20 attempts. Below that a single shot changes which colour the
-    zone is, and colour stops being worth printing at all.
+    One shot out of n moves a percentage by 100/n points. Twenty attempts cap
+    that movement at five points, the full width of the neutral band. With the
+    tighter +/-5 outer cuts, one shot can cross a 2.5-point light band; the raw
+    makes and attempts printed in every pill expose that remaining uncertainty.
     """
     return int(np.ceil(100.0 / band_points))
 
@@ -523,9 +524,9 @@ def single_shot_floor(band_points: float = BAND_WIDTH_POINTS) -> int:
 #
 #   team    one standard error must not move it a band. A team shoots ~7,400
 #           times, so it can afford the strict reading. 400 attempts.
-#   player  one SHOT must not move it a band. A rotation player takes ~500 over
-#           twelve zones and cannot reach 400 anywhere but the rim, so the
-#           reachable version of the same instinct is the weaker one. 20.
+#   player  one SHOT must not move it farther than the full neutral span. A
+#           rotation player takes ~500 over twelve zones and cannot reach 400
+#           anywhere but the rim, so the reachable display-grade bar is 20.
 #
 # 45 was used first, from a standard-error reading at 7.5 points, and it was too
 # strict for what this chart is: it left 71% of the carousel grey, including

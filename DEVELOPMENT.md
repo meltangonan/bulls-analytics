@@ -415,16 +415,19 @@ for themselves. Once the raw count is on the page, the floor's only job is prote
 an efficiency band. That is what let the floor come down from an evidence-grade bar to a
 display-grade one.
 
-**Both floors are solved, not chosen**, by asking the same question at a strength each subject's
-sample can support: *what must not be able to move a zone into the next colour band?*
+**Both floors are solved, not chosen**, by asking a precision question at a strength each subject's
+sample can support.
 
 | Subject | Rule | Function | n | Why that rule |
 | --- | --- | --- | --- | --- |
 | Team chart | one standard error can't move it a band | `colour_floor(2.5)` | 400 | ~7,400 team shots can afford the strict reading |
-| Player chart | one **shot** can't move it a band | `single_shot_floor(5.0)` | 20 | a rotation player's ~500 shots across twelve zones cannot reach a standard-error bar anywhere but the rim |
+| Player chart | one **shot** can't move it farther than the full neutral span | `single_shot_floor(5.0)` | 20 | a rotation player's ~500 shots across twelve zones cannot reach a standard-error bar anywhere but the rim |
 
 `single_shot_floor` is `⌈100 / band_width⌉`: one make out of *n* moves a percentage by `100/n`
-points, and a band is 5 points wide, so 20 is the smallest *n* where one shot cannot flip the colour.
+points, and the neutral band spans 5 points from −2.5 to +2.5, so 20 caps one shot's movement at
+that full span. The ±5 outer cuts make each light band 2.5 points wide, so one shot can still cross
+one of those narrower bands at the floor. That is accepted because the count is printed inline and
+20 is explicitly a display-grade bar rather than an evidence-grade confidence threshold.
 `tests/test_zone_charts.py` pins the arithmetic so the number stays checkable rather than becoming
 folklore.
 
@@ -436,7 +439,7 @@ rejected before landing on the single-shot rule:
 
 | Idea | Why it fails |
 | --- | --- |
-| Flat floor of 25 | Margin of error ±19.6 points, wider than the whole ±7.5 outer band — the scale would be finer than its own noise |
+| Flat floor of 25 | Margin of error ±19.6 points, far wider than the ±5 outer cut — the scale would be finer than its own noise |
 | Floor as a **share of the league's** volume in that zone | Anchored at the rim it gives the baseline zones a floor of 2 attempts (±65 points); anchored the other way the rim floor becomes 904. Precision depends on the raw count, not on how rare the zone is |
 | Floor as a **share of the player's own** attempts | Backwards: it sets the *loosest* bar for the player the chart knows *least* about (Miller's 5% floor is 13 shots; Buzelis's is 48), and it makes green mean a different margin of error on every slide in the carousel |
 | Floor solved per zone from the league's own FG% there | Correct, and worthless — the spread across all twelve zones is 4.7 attempts, because binomial variance is nearly flat over the 35–67% range basketball occupies |

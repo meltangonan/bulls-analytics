@@ -112,7 +112,7 @@ def test_both_floors_are_solved_rather_than_chosen():
     # team: one standard error must not move it a band
     assert sm.colour_floor(2.5) == 400
     assert sm.MIN_ZONE12_FGA_TEAM == sm.colour_floor(sm.SIGMA_TEAM_POINTS)
-    # player: one SHOT must not move it a band
+    # player: one SHOT must not move it farther than the full neutral span
     assert sm.single_shot_floor(5.0) == 20
     assert sm.MIN_ZONE12_FGA_PLAYER == sm.single_shot_floor()
 
@@ -125,11 +125,25 @@ def test_a_wider_band_needs_fewer_shots_to_hold_its_colour():
     assert sm.single_shot_floor(sm.BAND_WIDTH_POINTS) == sm.MIN_ZONE12_FGA_PLAYER
 
 
-def test_at_the_player_floor_one_shot_moves_exactly_one_band():
+def test_at_the_player_floor_one_shot_moves_exactly_the_neutral_span():
     """The rule stated as arithmetic the reader could check."""
     n = sm.MIN_ZONE12_FGA_PLAYER
     assert 100.0 / n == pytest.approx(sm.BAND_WIDTH_POINTS)
     assert 100.0 / (n - 1) > sm.BAND_WIDTH_POINTS   # one fewer and it overshoots
+
+
+def test_zone_outer_bands_begin_at_five_points_but_hex_stays_at_seven_and_a_half():
+    """Named zones and smoothed hex cells deliberately use different outer cuts."""
+    from scripts import make_shot_chart as shot_chart
+
+    assert shot_chart.ZONE12_CUTS == (-0.05, -0.025, 0.025, 0.05)
+    assert shot_chart.HEX_CUTS == (-0.075, -0.025, 0.025, 0.075)
+    assert shot_chart._zone12_band_color(0.049, "rdylgn") == \
+        shot_chart.ZONE12_PALETTES["rdylgn"][3]
+    assert shot_chart._zone12_band_color(0.05, "rdylgn") == \
+        shot_chart.ZONE12_PALETTES["rdylgn"][4]
+    assert shot_chart._zone12_band_color(-0.05, "rdylgn") == \
+        shot_chart.ZONE12_PALETTES["rdylgn"][0]
 
 
 def test_a_tighter_precision_demands_more_attempts():
@@ -600,6 +614,70 @@ def test_a_rated_zone_keeps_its_solid_band_colour():
     assert faces == ["#8CBF63"]
     assert not any(getattr(c, "hatches", [None])[0] for c in ax.collections)
     plt.close(fig)
+
+
+def test_blank_zone_cover_has_no_data_layer_or_legend(tmp_path):
+    """The cover teases the exact geometry without pretending to show results."""
+    import inspect
+    from scripts import make_shot_chart as shot_chart
+
+    blank = inspect.getsource(shot_chart.render_blank_zones)
+    assert "_zone12_block" not in blank
+    assert "_zone12_legend" not in blank
+    assert "_zone12_summary_cards" not in blank
+    helper = inspect.getsource(shot_chart._render_cover_zones)
+    assert 'court_ink = "#242424"' in helper
+
+    out = tmp_path / "blank.png"
+    shot_chart.render_blank_zones(out, final=False)
+    assert out.exists()
+
+
+def test_color_preview_cover_is_solid_reproducible_and_data_free(tmp_path):
+    """The colorful teaser previews the grammar without inventing results."""
+    import inspect
+    from scripts import make_shot_chart as shot_chart
+
+    preview = inspect.getsource(shot_chart.render_preview_zones)
+    assert "_zone12_block" not in preview
+    assert "_zone12_legend" not in preview
+    assert "_zone12_summary_cards" not in preview
+    assert "band_by_zone" in preview
+    assert "1.0" in preview
+    assert "(4, 3, 1, 0, 4, 2, 1, 0, 1, 3, 0, 3)" in preview
+
+    out = tmp_path / "preview.png"
+    shot_chart.render_preview_zones(out, final=False)
+    assert out.exists()
+
+
+def test_solid_cover_variants_use_canonical_reusable_red_tokens(tmp_path):
+    """Solid covers remain player-neutral and use settled Bulls-family reds."""
+    from scripts import make_shot_chart as shot_chart
+
+    assert shot_chart.ZONE12_BULLS_RED == "#CE1141"
+    assert shot_chart.ZONE12_BULLS_RED_LIGHT == "#E67C96"
+    for name, fill in (
+        ("red", shot_chart.ZONE12_BULLS_RED),
+        ("light-red", shot_chart.ZONE12_BULLS_RED_LIGHT),
+    ):
+        out = tmp_path / f"zone-cover-{name}.png"
+        shot_chart.render_solid_cover_zones(out, final=False, fill=fill)
+        assert out.exists()
+
+
+def test_zone_renderer_can_hide_all_detail_overlays_for_a_data_cover():
+    """Real zone colors can stand alone without pills, legend, or summaries."""
+    import inspect
+    from scripts import make_shot_chart as shot_chart
+
+    source = inspect.getsource(shot_chart.render_zones)
+    assert 'show_details = bool(ctx.get("show_details", True))' in source
+    assert "if show_details:" in source
+    detail_branch = source.split("if show_details:", 1)[1]
+    assert "_zone12_block" in detail_branch
+    assert "_zone12_legend" in detail_branch
+    assert "_zone12_summary_cards" in detail_branch
 
 
 def test_the_above_the_break_dividers_are_the_mid_range_rays_continued():

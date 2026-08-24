@@ -165,9 +165,13 @@ overlapping colors distinct without turning the map into a white grid. Clip the 
 to the sidelines and baseline; edge-bin centers remain in their true locations, but no part of a
 shot mark may appear outside the court.
 
-**The twelve-zone chart reuses those exact five cuts as area fills, but runs them red → yellow →
-green rather than blue → yellow → red.** The cuts, the bands and the mark are otherwise the same;
-hexes float on cream and leave most of the court empty, while zones tile the whole half court.
+**The twelve-zone chart reuses the same five-band grammar as area fills, but tightens the outer
+cuts to ±5 percentage points and runs them red → yellow → green.** Dark red is −5 or worse, light
+red is −5 to −2.5, yellow is −2.5 to +2.5, light green is +2.5 to +5, and dark green is +5 or
+better. Five points within one named zone is already substantial: about 10 points per 100 attempts
+for a two-point zone and 15 for a three-point zone. The symmetric cuts keep praise and criticism at
+the same bar. Hexes retain their ±7.5 outer cuts because smoothed local cells are a different,
+noisier mark; zones pool an entire named region and print the exact gap and raw count.
 
 Green-means-better is only honest because every figure on that chart is measured against the league
 *in the same zone*. On a raw FG% map it would be nonsense — the rim would always be green and the
@@ -261,6 +265,30 @@ an efficiency judgement the sample cannot support. A zone with zero attempts use
 prints only `0 FGA`, so it remains distinct from "measured and unrated." The legend keys the actual
 floor as `Under N FGA`, making the rule checkable against every pill rather than hiding it behind a
 verdict.
+
+A **data-free cover silhouette** may reuse the exact twelve-zone geometry with every region in
+semi-transparent neutral grey. It carries no pills, values, legend, or summary cards: its only job
+is to preview the chart form before the next slide reveals the data. Court landmarks use solid
+`#242424`, matching cover typography, while the analytical zone seams remain white. The silhouette
+therefore reads as the same chart switching on, not as a different illustration.
+
+A **data-free colour teaser** is the more energetic cover variant. It uses opaque fills sampled
+from the established five-band zone palette in a fixed, illustrative arrangement, with the same
+`#242424` court landmarks and white zone seams. It carries no analytical labels or legend because
+the placement does not represent player results; reproducible placement keeps the asset stable
+across reruns while previewing how the completed chart will feel.
+
+A reusable **single-colour cover court** may instead fill all twelve zones with one opaque Bulls
+family red while retaining white seams and `#242424` court landmarks. The canonical options are
+Bulls red (`#CE1141`) and its established light-red companion (`#E67C96`). These assets stay
+player-neutral: filenames and the chart itself carry no player identity, values, or analytical
+meaning, so Canva can reuse them as framing across future zone-chart posts.
+
+A player-specific **data-colour cover** may use the real qualified zone fills while suppressing
+every pill, value, legend, and summary card. Unlike the decorative teasers, its colors remain an
+analytical claim: use the same player window, league baseline, palette, and low-volume floor as the
+corresponding detail chart. It previews the actual pattern while reserving its interpretation and
+supporting numbers for the data page.
 
 Zone-chart labels use sentence case rather than all caps: `11.6% of FGA`, `Below`, `Above`, and
 `Under 400 FGA`. Basketball acronyms remain uppercase (`FG`, `FGA`, `NBA`).

@@ -33,7 +33,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from matplotlib.colors import LinearSegmentedColormap, Normalize
+from matplotlib.colors import LinearSegmentedColormap, Normalize, to_rgb
 from matplotlib.patches import FancyBboxPatch, Rectangle, RegularPolygon, Wedge
 from matplotlib.transforms import Bbox
 
@@ -1362,16 +1362,18 @@ ZONE12_ANCHORS = {
     # Change one and check its neighbours, the arc, and the paint.
     "Left Corner 3":         (-235, 46),
     "Right Corner 3":        (235, 46),
-    "Left Baseline":         (-148, 4),
-    "Right Baseline":        (148, 4),
-    "Left Mid-Range":        (-130, 120),
-    "Right Mid-Range":       (130, 120),
+    # Pulled slightly inward so the optional large four-line card keeps a real
+    # gap from the adjacent corner card on every carousel slide.
+    "Left Baseline":         (-140, -8),
+    "Right Baseline":        (140, -8),
+    "Left Mid-Range":        (-133, 120),
+    "Right Mid-Range":       (133, 120),
     "Center Mid-Range":      (0, 196),
     # Clear of the arc by about 2 ft at the pill's INNER bottom corner, which is
     # the point that reaches the line first -- measuring from the pill's centre
     # put the corner on the arc while the centre looked fine.
-    "Left Wing 3":           (-166, 245),
-    "Right Wing 3":          (166, 245),
+    "Left Wing 3":           (-169, 245),
+    "Right Wing 3":          (169, 245),
     "Top of Key 3":          (0, 285),
 }
 
@@ -1412,6 +1414,7 @@ def render_zones(ctx, out: Path, final: bool):
     min_fga = int(ctx.get("min_fga") or sm.MIN_ZONE12_FGA_PLAYER)
     palette = ctx.get("palette") or ZONE12_DEFAULT_PALETTE
     pill = str(ctx.get("pill") or "full")
+    show_summary = bool(ctx.get("summary_metrics"))
     # The floor still applies. It no longer decides whether a zone is drawn at
     # all -- it decides whether the zone earns an efficiency colour.
     zones = sm.zone12_split(ctx["player"], ctx["league"], min_fga=min_fga)
@@ -1468,16 +1471,21 @@ def render_zones(ctx, out: Path, final: bool):
     # data layer is floating marks. A filled court needs its edge: without it
     # the wing colours run to nothing and the image reads as a bleed rather than
     # a court. The top stays open and the crop lands on it, so the only added
-    # lines are real sidelines.
+    # lines are real sidelines. Close the cropped court across its top as well:
+    # without that edge the filled zones read as though they bleed out of the
+    # asset rather than belonging to one bounded court diagram.
     for side in (-250, 250):
         ax.plot([to_px(side, 0)[0]] * 2,
                 [to_px(side, 110)[1], to_px(side, ZONE12_TOP)[1]],
                 color=theme.ink, lw=1.2, zorder=5)
+    _zone12_close_top(ax, to_px, theme)
 
     for z in zones.itertuples():
         _zone12_block(ax, to_px, z, fills[z.zone], theme, pill)
 
     _zone12_legend(ax, theme, palette, min_fga)
+    if show_summary:
+        _zone12_summary_cards(ax, ctx["player"], ctx["league"], theme)
     out.parent.mkdir(parents=True, exist_ok=True)
     crop = Bbox.from_extents(0, ZONE12_CROP_BOTTOM / house.DRAFT_DPI,
                              house.CANVAS_WIDTH / house.DRAFT_DPI,
@@ -1500,8 +1508,13 @@ def render_zones(ctx, out: Path, final: bool):
     print("Reading it: vs LA = the percentage-point gap to league average — "
           "FG% on the first pair, share of FGA on the second")
     print("Grey FG gap: inside the chart's ±2.5-point average band")
-    print(f"Summary: {total:,} FGA · {made / total * 100:.1f}% FG · "
-          "shot diet shown as each zone's share of all FGA")
+    if show_summary:
+        overall = _zone12_overall_metrics(ctx["player"])
+        print(f"Summary: {total:,} FGA · {overall['efg_pct']:.1f}% eFG · "
+              f"{overall['three_pct']:.1f}% 3PT")
+    else:
+        print(f"Summary: {total:,} FGA · {made / total * 100:.1f}% FG · "
+              "shot diet shown as each zone's share of all FGA")
     if len(thin):
         print(f"Method: Grey zones are under {min_fga} attempts, too few to rate "
               "the shooting percentage; their figures are shown but not coloured")
@@ -1512,7 +1525,7 @@ def render_zones(ctx, out: Path, final: bool):
 
 ZONE12_SCALE = 1.84
 ZONE12_COURT_Y = 771
-ZONE12_CROP_BOTTOM = 340
+ZONE12_CROP_BOTTOM = 205
 ZONE12_CROP_TOP = 1180
 
 
@@ -1575,12 +1588,22 @@ def _zone12_seams(ax, to_px):
                 lw=ZONE12_SEAM_WIDTH, zorder=3, solid_capstyle="butt")
 
 
+def _zone12_close_top(ax, to_px, theme):
+    """Draw the missing horizontal edge across the cropped court."""
+    left = to_px(-250, ZONE12_TOP)
+    right = to_px(250, ZONE12_TOP)
+    ax.plot([left[0], right[0]], [left[1], right[1]],
+            color=theme.ink, lw=1.2, zorder=5)
+
+
 # Rings-chart typography, unchanged: figure at 13, its gap to league average at
 # 10.5 underneath. Both figures take the same size there and here, because sizing
 # one larger would rank it above the other and the pair is meant to be read
 # together.
 ZONE12_FIGURE_SIZE = 8.0
 ZONE12_DELTA_SIZE = 6.5
+ZONE12_LARGE_FIGURE_SIZE = 10.0
+ZONE12_LARGE_DELTA_SIZE = 7.5
 # Line spacing is in canvas units and type is in points, and at this canvas's
 # 150 dpi one point is 2.08 units. A 10 pt line therefore stands about 21 units
 # tall, so any gap smaller than that guarantees the overlap the earlier drafts
@@ -1621,14 +1644,14 @@ def _zone12_rows(
     came from here?
 
     The makes and attempts sit in front of the percentage rather than behind a
-    floor. "11 / 32 FG (34.4%)" lets a reader see how much to trust the 34.4%,
+    floor. "11/32 FG (34.4%)" lets a reader see how much to trust the 34.4%,
     which is what makes a grey zone informative instead of something they have
     to take on faith -- the count explains why it did not earn a colour.
 
     ``compact`` drops to the counts line alone, for a simpler chart that gives up
     the shot-diet comparison.
     """
-    shooting = (f"{z.fgm} / {z.fga} FG ({z.fg * 100:.1f}%)",
+    shooting = (f"{z.fgm}/{z.fga} FG ({z.fg * 100:.1f}%)",
                 f"{_signed(z.fg_rel, 1)} vs LA",
                 abs(z.fg_rel) >= ZONE12_FG_NEUTRAL_POINTS, z.fg_rel)
     if compact:
@@ -1700,6 +1723,7 @@ def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full"):
         return
 
     compact = pill == "counts"
+    large = pill == "large"
     rows = _zone12_rows(z, compact)
     ink = ZONE12_PILL_INK if z.rated else ZONE12_THIN_INK
     alpha = 1.0 if z.rated else ZONE12_THIN_PILL_ALPHA
@@ -1709,10 +1733,15 @@ def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full"):
     # little, just as the corner cards overhang their narrow strips. Readability
     # is more important than trapping the whole card inside the region.
     strings = [t for row in rows for t in row[:2]]
-    half_w = _zone12_widest(ax, strings) / 2 + ZONE12_PILL_PAD_X
-    span = (ZONE12_PAIR_GAP if compact
-            else ZONE12_PAIR_GAP * 2 + ZONE12_BLOCK_GAP)
-    half_h = span / 2 + 7 + ZONE12_PILL_PAD_Y
+    figure_size = ZONE12_LARGE_FIGURE_SIZE if large else ZONE12_FIGURE_SIZE
+    delta_size = ZONE12_LARGE_DELTA_SIZE if large else ZONE12_DELTA_SIZE
+    pair = 20.0 if large else ZONE12_PAIR_GAP
+    block = 25.0 if large else ZONE12_BLOCK_GAP
+    half_w = _zone12_widest(
+        ax, strings, figure_size=figure_size, delta_size=delta_size
+    ) / 2 + ZONE12_PILL_PAD_X
+    span = pair if compact else pair * 2 + block
+    half_h = span / 2 + 8 + ZONE12_PILL_PAD_Y
 
     ax.add_patch(FancyBboxPatch(
         (px - half_w, py - half_h), 2 * half_w, 2 * half_h,
@@ -1724,14 +1753,16 @@ def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full"):
     # 860 px court, and a corner pill would hang off the canvas. Stacked it is
     # half that, every pill fits its own region, and it matches the reference
     # cards this chart is modelled on.
-    pair, block = ZONE12_PAIR_GAP, ZONE12_BLOCK_GAP
-    top = py + span / 2
+    # The larger top figure has more visible height than the smaller bottom
+    # comparison line. A slight downward optical correction balances the cream
+    # above line one with the cream below line four.
+    top = py + span / 2 - (1.5 if large else 0.0)
     for fig_text, reference, directional, value in rows:
-        ax.text(px, top, fig_text, fontsize=ZONE12_FIGURE_SIZE, zorder=11,
+        ax.text(px, top, fig_text, fontsize=figure_size, zorder=11,
                 color=ink, alpha=alpha, ha="center", va="center",
                 fontproperties=helvetica("bold"))
         top -= pair
-        ax.text(px, top, reference, fontsize=ZONE12_DELTA_SIZE, zorder=11,
+        ax.text(px, top, reference, fontsize=delta_size, zorder=11,
                 color=_zone12_delta_ink(value, directional), alpha=alpha,
                 ha="center", va="center", fontproperties=helvetica("bold"))
         top -= block
@@ -1764,16 +1795,19 @@ def _zone12_measure(ax, text: str, size: float) -> float:
     return width
 
 
-def _zone12_widest(ax, strings) -> float:
+def _zone12_widest(
+    ax, strings, figure_size: float = ZONE12_FIGURE_SIZE,
+    delta_size: float = ZONE12_DELTA_SIZE,
+) -> float:
     """Width of the longest of these strings, at the size each is drawn.
 
     Measured off the renderer rather than estimated from character counts: a
     pill sized by guesswork is either padded unevenly or clipping its own type,
-    and the strings vary from "LA: 1.0%" to "11 / 32 FG (34.4%)".
+    and the strings vary from "LA: 1.0%" to "11/32 FG (34.4%)".
     """
     probes = []
     for index, text in enumerate(strings):
-        size = ZONE12_FIGURE_SIZE if index % 2 == 0 else ZONE12_DELTA_SIZE
+        size = figure_size if index % 2 == 0 else delta_size
         probes.append(ax.text(0, 0, text, fontsize=size, alpha=0.0,
                               fontproperties=helvetica("bold")))
     widest = max(house.rendered_width(ax, probe) for probe in probes)
@@ -1853,6 +1887,62 @@ def _zone12_legend(ax, theme, palette: str, min_fga: int):
 
 
 ZONE12_LEGEND_Y = 400
+
+ZONE12_SUMMARY_Y = 270
+ZONE12_SUMMARY_CARD_W = 210
+ZONE12_SUMMARY_CARD_H = 76
+
+
+def _zone12_overall_metrics(shots) -> dict[str, float]:
+    """Overall volume, eFG%, and 3PT% from one shot-attempt table."""
+    fga = len(shots)
+    if not fga:
+        raise ValueError("zone summary needs at least one field-goal attempt")
+    threes = shots["shot_type"].astype(str).str.startswith("3PT")
+    three_pa = int(threes.sum())
+    three_pm = int(shots.loc[threes, "shot_made"].sum())
+    fgm = int(shots["shot_made"].sum())
+    return {
+        "fga": fga,
+        "efg_pct": (fgm + 0.5 * three_pm) / fga * 100,
+        "three_pct": three_pm / three_pa * 100 if three_pa else float("nan"),
+    }
+
+
+def _zone12_summary_cards(ax, player, _league, theme):
+    """Three one-line overall cards in the national-TV Bulls-red gradient."""
+    subject = _zone12_overall_metrics(player)
+    cards = (
+        f"{int(subject['fga']):,} FGA",
+        f"{subject['efg_pct']:.1f}% eFG",
+        f"{subject['three_pct']:.1f}% 3PT",
+    )
+    gap = 22
+    total_w = len(cards) * ZONE12_SUMMARY_CARD_W + (len(cards) - 1) * gap
+    left = house.CANVAS_WIDTH / 2 - total_w / 2
+    gradient_top = np.array(to_rgb("#B5123C"))
+    gradient_bottom = np.array(to_rgb("#7E0C2B"))
+    ramp = np.linspace(gradient_bottom, gradient_top, 256).reshape(256, 1, 3)
+    for index, headline in enumerate(cards):
+        x = left + index * (ZONE12_SUMMARY_CARD_W + gap)
+        clip = FancyBboxPatch(
+            (x, ZONE12_SUMMARY_Y - ZONE12_SUMMARY_CARD_H / 2),
+            ZONE12_SUMMARY_CARD_W, ZONE12_SUMMARY_CARD_H,
+            boxstyle="round,pad=0,rounding_size=14",
+            facecolor="none", edgecolor="none", zorder=10)
+        ax.add_patch(clip)
+        image = ax.imshow(
+            ramp,
+            extent=(x, x + ZONE12_SUMMARY_CARD_W,
+                    ZONE12_SUMMARY_Y - ZONE12_SUMMARY_CARD_H / 2,
+                    ZONE12_SUMMARY_Y + ZONE12_SUMMARY_CARD_H / 2),
+            origin="lower", aspect="auto", interpolation="bicubic", zorder=10,
+        )
+        image.set_clip_path(clip)
+        center = x + ZONE12_SUMMARY_CARD_W / 2
+        ax.text(center, ZONE12_SUMMARY_Y, headline,
+                ha="center", va="center", fontsize=14, color="#FFFFFF",
+                fontproperties=helvetica("bold"), zorder=11)
 
 
 def _save(fig, out: Path, final: bool, facecolor: str):

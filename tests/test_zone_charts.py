@@ -197,7 +197,8 @@ def test_shot_shares_sum_to_100_and_use_one_league_baseline():
 
 
 # --- The label layer -------------------------------------------------------
-def _rendered(zone: str, table: pd.DataFrame, fill: str = "#F1CC5B"):
+def _rendered(zone: str, table: pd.DataFrame, fill: str = "#F1CC5B",
+              pill: str = "full"):
     """Draw one zone's pill on a real axes and report what landed on it.
 
     A real axes rather than a mock, because the pill measures its own type off
@@ -216,12 +217,29 @@ def _rendered(zone: str, table: pd.DataFrame, fill: str = "#F1CC5B"):
     ax.set_xlim(0, 1080)
     ax.set_ylim(0, 1350)
     shot_chart._zone12_block(ax, lambda x, y: (540.0, 600.0), row, fill,
-                             shot_chart.house.get_theme("jersey"))
+                             shot_chart.house.get_theme("jersey"), pill)
     texts = [artist.get_text() for artist in ax.texts]
     colours = [artist.get_color() for artist in ax.texts]
     pills = len(ax.patches)
     plt.close(fig)
     return row, texts, colours, pills
+
+
+def test_the_large_pill_keeps_four_lines_and_enlarges_only_the_figures():
+    import scripts.make_shot_chart as shot_chart
+
+    table = sm.zone12_split(_shots([(0, 240, 1)] * 60 + [(0, 240, 0)] * 40),
+                            _shots([(0, 240, 1)] * 50 + [(0, 240, 0)] * 50))
+    _, texts, _, pills = _rendered("Top of Key 3", table, pill="large")
+
+    assert pills == 1
+    assert len(texts) == 4
+    assert texts[0] == "60/100 FG (60.0%)"
+    assert texts[1].endswith("vs LA")
+    assert texts[2] == "100.0% of FGA"
+    assert texts[3].endswith("vs LA")
+    assert shot_chart.ZONE12_LARGE_FIGURE_SIZE > shot_chart.ZONE12_FIGURE_SIZE
+    assert shot_chart.ZONE12_LARGE_DELTA_SIZE == shot_chart.ZONE12_DELTA_SIZE + 1
 
 
 def test_a_zone_below_the_floor_keeps_every_figure():
@@ -317,7 +335,7 @@ def test_a_rated_zone_prints_shooting_first_then_shot_share():
     # The shooting figure names itself. "66.7%" alone was ambiguous next to a
     # neighbouring "+5% vs LA" -- both are percentages of different things.
     assert "FG (" in texts[0], f"shooting must come first, got {texts}"
-    assert texts[0].startswith("40 / 60"), "makes and attempts lead the line"
+    assert texts[0].startswith("40/60"), "makes and attempts lead the line"
     assert texts[2] == "100.0% of FGA", f"shot share must come second, got {texts}"
     assert texts[3] == "0.0 vs LA", f"shot share must use the comparison grammar, got {texts}"
     assert colours[3] == shot_chart.ZONE12_NEUTRAL_GAP
@@ -607,3 +625,62 @@ def test_the_three_central_sectors_are_equal_width():
     assert all(abs(w - widths[0]) < 1e-9 for w in widths)
     assert cuts[0] == pytest.approx(sm.CORNER_BREAK_DEG)
     assert cuts[3] == pytest.approx(180 - sm.CORNER_BREAK_DEG)
+
+
+def test_overall_cards_compute_efg_and_three_point_percentage_from_attempts():
+    import scripts.make_shot_chart as shot_chart
+
+    shots = pd.DataFrame({
+        "shot_type": ["2PT Field Goal", "2PT Field Goal",
+                      "3PT Field Goal", "3PT Field Goal"],
+        "shot_made": [1, 0, 1, 0],
+    })
+    metrics = shot_chart._zone12_overall_metrics(shots)
+
+    assert metrics["fga"] == 4
+    assert metrics["efg_pct"] == pytest.approx(62.5)
+    assert metrics["three_pct"] == pytest.approx(50.0)
+
+
+def test_overall_cards_are_three_red_gradient_pills_without_league_deltas():
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import scripts.make_shot_chart as shot_chart
+
+    shots = pd.DataFrame({
+        "shot_type": ["2PT Field Goal", "2PT Field Goal",
+                      "3PT Field Goal", "3PT Field Goal"],
+        "shot_made": [1, 0, 1, 0],
+    })
+    fig, ax = plt.subplots()
+    ax.set_xlim(0, 1080)
+    ax.set_ylim(0, 1350)
+    shot_chart._zone12_summary_cards(
+        ax, shots, shots, shot_chart.house.get_theme("jersey")
+    )
+    labels = [text.get_text() for text in ax.texts]
+    colors = [text.get_color() for text in ax.texts]
+    plt.close(fig)
+
+    assert labels == ["4 FGA", "62.5% eFG", "50.0% 3PT"]
+    assert not any("LA" in label for label in labels)
+    assert colors == ["#FFFFFF"] * 3
+    assert len(ax.images) == 3
+
+
+def test_the_filled_zone_court_has_a_closed_horizontal_top_edge():
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import scripts.make_shot_chart as shot_chart
+
+    fig, ax = plt.subplots()
+    theme = shot_chart.house.get_theme("jersey")
+    shot_chart._zone12_close_top(ax, lambda x, y: (x, y), theme)
+    line = ax.lines[-1]
+    plt.close(fig)
+
+    assert tuple(line.get_xdata()) == (-250, 250)
+    assert tuple(line.get_ydata()) == (shot_chart.ZONE12_TOP,) * 2
+    assert line.get_color() == theme.ink

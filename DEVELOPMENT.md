@@ -402,7 +402,12 @@ all league attempts, so the team opener and player slides are directly comparabl
 longer needs possession endpoints. The raw attempt count in the shooting line preserves absolute
 volume. `--league` is still rejected: the league cannot be its own efficiency baseline.
 
-**Every zone's pill prints makes over attempts** — `11 / 32 FG (34.4%)` — which changed what the
+The optional carousel summary below a zone chart reports total FGA, eFG%, and 3PT%. eFG% is
+`(FGM + 0.5 × 3PM) / FGA`; 3PT% is `3PM / 3PA`. The summary cards are descriptive and carry no
+league comparison; the zone figures remain the chart's comparison layer. Mid-range share remains in
+the zone pills and editorial interpretation rather than becoming a fourth headline card.
+
+**Every zone's pill prints makes over attempts** — `11/32 FG (34.4%)` — which changed what the
 colour floor has to protect. Early drafts hid the sample behind the floor entirely: a thin zone was
 greyed and only its attempt *rate* survived, because the reader had no way to judge the percentage
 for themselves. Once the raw count is on the page, the floor's only job is protecting the **colour**

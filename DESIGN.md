@@ -203,7 +203,7 @@ classifier. The rim and the two corner blocks used to sit below the baseline, wh
 they were captioned; removing the captions moved them onto their own zones.
 
 **Figures sit on cream pills, four lines:** makes over attempts with the shooting percentage in
-brackets (`11 / 32 FG (34.4%)`), its gap to league average in green above / red below ending in
+brackets (`11/32 FG (34.4%)`), its gap to league average in green above / red below ending in
 "vs LA", then the zone's share of all subject FGA and its signed gap to the NBA share, also ending
 in "vs LA". Both figures take
 the same size, so neither shooting nor shot diet outranks the other — but **shooting leads, because
@@ -212,12 +212,25 @@ has to be the figure that colour is about; leading with shot share made the read
 the number the region was already shouting. Shot share is the better complement here because it
 isolates location preference; attempts per 75 mixed that preference with the player's overall usage.
 
-The makes and attempts sit in front of the percentage rather than behind a floor. "11 / 32 FG
+The makes and attempts sit in front of the percentage rather than behind a floor. "11/32 FG
 (34.4%)" lets a reader see how much to trust the 34.4% themselves, which is what makes a grey
 zone informative instead of something they have to take on faith — the count explains why the zone
 did not earn an efficiency colour. A
 compact two-line variant (`--pill counts`) drops to the shooting pair alone for a simpler chart that
 gives up the shot-diet comparison.
+
+For a chart placed smaller inside a carousel page, the optional **large pill** keeps the same four
+lines but increases the first and third figure lines to 10 points while leaving both comparison
+lines at 7.5 points. The comparison lines sit slightly farther from the figures above them, and the
+four-line text block receives a small downward optical correction so its visible top and bottom
+padding read as balanced.
+Its vertical spacing grows with the type, and the card is measured from the rendered strings before
+drawing, so larger figures never sacrifice padding. The standard four-line pill remains the default.
+
+An optional overall-summary row may sit below the legend when the page needs the player's headline
+line carried by the verified asset rather than retyped in Canva. It contains total FGA, eFG%, and
+3PT%, with no league comparisons. The three one-line cards use the national-TV chart's darker
+Bulls-red vertical gradient (`#B5123C` to `#7E0C2B`) and white type.
 
 Gaps use a **true minus** (−, not a hyphen) and carry **no sign at all when they round to zero** —
 `+.0f` renders a −0.4% gap as "−0%", a direction the printed number contradicts, so the sign is
@@ -251,6 +264,9 @@ verdict.
 
 Zone-chart labels use sentence case rather than all caps: `11.6% of FGA`, `Below`, `Above`, and
 `Under 400 FGA`. Basketball acronyms remain uppercase (`FG`, `FGA`, `NBA`).
+
+The filled court is closed across the top of its cropped depth. That horizontal rule is a chart
+boundary, not a claim that the 33.5-foot analytical crop is the literal half-court line.
 
 The **rim disc is 8 ft across**, but its pill uses the same type scale as every other zone. Earlier
 drafts shrank it until the whole card fit inside the disc; the team chart fell to roughly 60% of the

@@ -25,11 +25,14 @@ for w in "$WORKTREES"/*/; do
     [ -d "$w" ] || continue
     name="$(basename "$w")"
 
-    edits="$(git -C "$w" status --porcelain 2>/dev/null | wc -l | tr -d ' ')"
-    renders="$(find "$w/output" -type f ! -name '.gitkeep' 2>/dev/null | wc -l | tr -d ' ')"
+    edits="$( { git -C "$w" status --porcelain 2>/dev/null || true; } | wc -l | tr -d ' ')"
+    # ⚠️ `set -euo pipefail` is on, so a `find` over a directory that does not
+    # exist fails the whole pipeline and kills the run. A worktree with no
+    # output/ or no docs/visuals/ is normal, not an error — count it as zero.
+    renders="$( { find "$w/output" -type f ! -name '.gitkeep' 2>/dev/null || true; } | wc -l | tr -d ' ')"
     # Renders in output/ with nothing in assets/ means nothing was ever saved.
     # Every render shown to the user should already be here (AGENTS.md default 4).
-    saved="$(find "$w/docs/visuals" -path '*/assets/*' -type f 2>/dev/null | wc -l | tr -d ' ')"
+    saved="$( { find "$w/docs/visuals" -path '*/assets/*' -type f 2>/dev/null || true; } | wc -l | tr -d ' ')"
     cache="$(du -sh "$w/cache" 2>/dev/null | cut -f1 || echo '-')"
     branch="$(git -C "$w" rev-parse --abbrev-ref HEAD 2>/dev/null || echo '?')"
 

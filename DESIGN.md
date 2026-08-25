@@ -36,6 +36,16 @@ name silently renders regular. `house.helvetica()` splits the requested face out
 collection into `cache/fonts/` and loads it by filename. The extraction stays in `cache/` so the
 licensed system font is never committed. On non-macOS it falls back to an installed sans-serif.
 
+`helvetica()` accepts `regular`, `bold`, `oblique` and `bold_oblique`. Helvetica has no true
+italic — **Oblique is its slanted face**, and it is what "italic" means for this account. The same
+trap as bold applies: matplotlib registers only Regular from `Helvetica.ttc`, so asking for
+`style="italic"` by family name silently renders upright. Ask for the face by name instead.
+
+**Slant is available as a row-level qualifier.** The height ladder sets a whole row in oblique to
+mark a row that met a weaker standard than the rest, in place of an asterisk on one field: the
+slant marks every field at once and leaves the footnote to the Canva page. Use it that way — as a
+property of an entire row — rather than as emphasis on a single label.
+
 ⚠️ **Helvetica has no arrow glyph.** `→` (U+2192) renders as an empty box and matplotlib does not
 warn. En dashes, middle dots and accented Latin characters are all present, so only the arrows bite.
 Spell the transition (`13.1 to 20.0`) or draw a real `FancyArrowPatch`.

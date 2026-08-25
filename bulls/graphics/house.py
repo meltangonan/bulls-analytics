@@ -194,8 +194,25 @@ def body_font(weight: str = "regular") -> fm.FontProperties:
 
 
 _HELVETICA_TTC = Path("/System/Library/Fonts/Helvetica.ttc")
-_HELVETICA_FACES = {"regular": 0, "bold": 1}
+# Face index within Helvetica.ttc. Oblique is Helvetica's italic — the family
+# has no true italic, and asking matplotlib for style="italic" by family name
+# silently renders upright, exactly as asking for bold does.
+_HELVETICA_FACES = {
+    "regular": 0,
+    "bold": 1,
+    "oblique": 2,
+    "bold_oblique": 3,
+}
 _FONT_CACHE_DIR = REPO_ROOT / "cache" / "fonts"
+
+
+def _helvetica_fallback(weight: str) -> fm.FontProperties:
+    """Installed-sans fallback that still honours slant (non-macOS)."""
+    return fm.FontProperties(
+        family=["Helvetica", "Arial", "DejaVu Sans"],
+        weight="bold" if weight.startswith("bold") else "normal",
+        style="italic" if weight.endswith("oblique") else "normal",
+    )
 
 
 def helvetica(weight: str = "regular") -> fm.FontProperties:
@@ -209,9 +226,13 @@ def helvetica(weight: str = "regular") -> fm.FontProperties:
     instead. Extraction stays in ``cache/`` so the licensed system font is never
     copied into the repository. Falls back to an installed sans-serif when
     Helvetica is unavailable (non-macOS).
+
+    Accepts ``regular``, ``bold``, ``oblique`` and ``bold_oblique``. Helvetica
+    has no true italic; Oblique is its slanted face and is what "italic" means
+    for this account.
     """
     if not _HELVETICA_TTC.exists():
-        return fm.FontProperties(family=["Helvetica", "Arial", "DejaVu Sans"], weight=weight)
+        return _helvetica_fallback(weight)
     extracted = _FONT_CACHE_DIR / f"Helvetica-{weight}.ttf"
     if not extracted.exists():
         try:
@@ -221,7 +242,7 @@ def helvetica(weight: str = "regular") -> fm.FontProperties:
             _FONT_CACHE_DIR.mkdir(parents=True, exist_ok=True)
             collection.fonts[_HELVETICA_FACES.get(weight, 0)].save(str(extracted))
         except Exception:
-            return fm.FontProperties(family=["Helvetica", "Arial", "DejaVu Sans"], weight=weight)
+            return _helvetica_fallback(weight)
     return fm.FontProperties(fname=str(extracted))
 
 

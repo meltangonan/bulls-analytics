@@ -27,12 +27,17 @@ metrics, qualifications, sources, and the verified chart assets.
    (`DESIGN.md`) — maintain it, don't build new posts on it.
 3. Applicable thresholds, coverage windows, and sources stay visible on every data-bearing graphic.
    The user usually adds them manually in Canva.
-4. **Promote decisions, not renders.** Renders go to `output/` — scratch, gitignored, disposable.
-   A render is promoted into `docs/visuals/YYYY-MM-DD-<slug>/assets/` when it carries a *decision*:
-   a different metric, cohort, threshold, chart type, sort or claim. Always promote what the user
-   approves. Adjustments — moved, resized, recolored, re-cropped — are overwritten in `output/` and
-   never promoted. Promote at publish DPI, as it happens.
-   **When in doubt, promote** — over-promoting costs 300 KB, under-promoting loses the only copy.
+4. **Promote every render you show the user; prune before the commit.** Renders go to `output/` —
+   scratch, gitignored, disposable. The moment a render goes to the user, promote it into
+   `docs/visuals/YYYY-MM-DD-<slug>/assets/`. The trigger is the act of showing, not a judgment about
+   whether the render mattered — **whether something was "only an adjustment" is settled by what
+   replaces it, so it cannot be known when the render is made.** A rule that asks for that judgment
+   up front fails silently, and did.
+   Classify in hindsight instead. Before the post's single commit, delete the promoted versions that
+   turned out to be adjustments — moved, resized, recolored, re-cropped. Keep every version that
+   carries a *decision* — a different metric, cohort, threshold, chart type, sort or claim — and
+   every version the user approved. Promote at publish DPI.
+   **When in doubt, keep** — a spare version costs 300 KB, a missing one loses the only copy.
    **Saving is continuous; committing is not.** One post is one commit, made at the end once the
    final graphic is settled, then pushed. Never commit a post's work in pieces — thirty iterations
    are one piece of work, not thirty. Promoted files sit uncommitted in the worktree until then,

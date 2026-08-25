@@ -41,8 +41,9 @@ page).
 
 Two rules govern the iteration loop, and this is the stage where both bite:
 
-- **Promote decisions, not renders** — `AGENTS.md` default 4. Promote as you go, not in a batch at
-  the end.
+- **Save every render you show the user** — `AGENTS.md` default 4. Saving is part of showing, not a
+  later batch: run `scripts/save_visual_version.py --project <slug>` before the render goes out.
+  Prune the ones that turned out to be adjustments before the post's single commit.
 - **Know when to stop** — `POSTING_WORKFLOW.md` caps presentation-only rounds at three.
 
 Don't prepare promotional copy — `promote-bulls-post` owns that stage.

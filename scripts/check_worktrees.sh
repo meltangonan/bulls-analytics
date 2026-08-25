@@ -16,16 +16,20 @@ if [ ! -d "$WORKTREES" ]; then
     exit 0
 fi
 
-printf '%-44s %7s %8s %7s  %s\n' "WORKTREE" "EDITS" "RENDERS" "CACHE" "STATUS"
-printf '%s\n' "$(printf '%.0s-' {1..100})"
+printf '%-40s %6s %8s %6s %6s  %s\n' "WORKTREE" "EDITS" "RENDERS" "SAVED" "CACHE" "STATUS"
+printf '%s\n' "$(printf '%.0s-' {1..104})"
 
 removable=0
+unsaved_renders=()
 for w in "$WORKTREES"/*/; do
     [ -d "$w" ] || continue
     name="$(basename "$w")"
 
     edits="$(git -C "$w" status --porcelain 2>/dev/null | wc -l | tr -d ' ')"
     renders="$(find "$w/output" -type f ! -name '.gitkeep' 2>/dev/null | wc -l | tr -d ' ')"
+    # Renders in output/ with nothing in assets/ means nothing was ever saved.
+    # Every render shown to the user should already be here (AGENTS.md default 4).
+    saved="$(find "$w/docs/visuals" -path '*/assets/*' -type f 2>/dev/null | wc -l | tr -d ' ')"
     cache="$(du -sh "$w/cache" 2>/dev/null | cut -f1 || echo '-')"
     branch="$(git -C "$w" rev-parse --abbrev-ref HEAD 2>/dev/null || echo '?')"
 
@@ -44,10 +48,21 @@ for w in "$WORKTREES"/*/; do
         removable=$((removable + 1))
     fi
 
-    printf '%-44s %7s %8s %7s  %s\n' "$name" "$edits" "$renders" "${cache:--}" "$status"
+    if [ "$renders" -gt 0 ] && [ "$saved" -eq 0 ]; then
+        unsaved_renders+=("$name")
+    fi
+
+    printf '%-40s %6s %8s %6s %6s  %s\n' \
+        "$name" "$edits" "$renders" "$saved" "${cache:--}" "$status"
 done
 
 echo
+if [ ${#unsaved_renders[@]} -gt 0 ]; then
+    echo "⚠️  Renders in output/ but nothing in assets/: ${unsaved_renders[*]}"
+    echo "    output/ overwrites on every re-run, so an unsaved render is one run from gone."
+    echo "    Save with scripts/save_visual_version.py --project <slug>, then prune at commit."
+    echo
+fi
 if [ "$removable" -eq 0 ]; then
     echo "Nothing is safe to remove. Every worktree holds unsaved work or unmerged commits."
 else
@@ -56,7 +71,8 @@ fi
 cat <<'NOTE'
 
 Before removing any worktree, regardless of what this says:
-  - promote anything in output/ that carries a decision (scripts/save_visual_version.py)
+  - save anything in output/ the user has seen (scripts/save_visual_version.py); prune the
+    adjustments before the post's commit, not before the render is safe
   - copy cache/ back to the primary checkout if the fetch was expensive
   - `git worktree remove <path>` first; it refuses when scratch is present, which is a
     warning worth reading rather than a reason to reach for `rm -rf`

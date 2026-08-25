@@ -96,10 +96,13 @@ a day of approved renders was deleted from a worktree whose branch had already l
   differently; `scripts/save_visual_version.py` carries the promotion test and performs the save.
   Saving is continuous; committing is not. Promoted files accumulate uncommitted in the
   worktree and land as one commit when the post is finished — see Post Worktrees.
-  - **Promote decisions, not renders.** A render earns a version when it carries a different metric,
-    cohort, threshold, chart type, sort or claim, or when the user approves it. Adjustments — moved,
-    resized, recoloured, re-cropped — are overwritten in `output/`. When the two tests disagree,
-    promote: over-promoting costs 300 KB, under-promoting loses the only copy.
+  - **Save on the send; prune before the commit.** Every render shown to the user is saved at that
+    moment — the trigger is the act of showing, because whether a render was "only an adjustment" is
+    settled by what replaces it and cannot be judged when it is made. Before the post's single
+    commit, delete what turned out to be an adjustment — moved, resized, recoloured, re-cropped —
+    and keep every version carrying a different metric, cohort, threshold, chart type, sort or
+    claim, plus every version the user approved. When in doubt at prune time, keep: a spare version
+    costs 300 KB, a missing one loses the only copy.
   - Versions are stamped `YYYY-MM-DD-vNN-<name>.png`, zero-padded so v10 sorts after v9, numbered
     one past the highest present so a rebuild never renumbers history.
   - **Save the approved version at the resolution that goes into Canva.** Draft renders are often

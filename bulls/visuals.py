@@ -20,12 +20,15 @@ lands in `assets/` with a `-final` suffix. Fourteen older projects still carry a
 October is not the same chart: the season has more games in it, and the code has
 moved. The PNG is the only record of what a given version actually showed.
 
-What earns a saved version is a decision, not a render: a different metric,
-cohort, threshold, chart type, sort or claim, plus whatever the user approved.
-Adjustments -- moved, resized, recolored, re-cropped -- are overwritten in
-``output/`` and never promoted. Saved versions stay at publish DPI so any one of
-them can go into Canva without a rebuild.
-``scripts/save_visual_version.py`` carries the full test.
+Every render shown to the user is saved here at that moment, because whether a
+render was "only an adjustment" is settled by what replaces it and so cannot be
+judged when it is made. What does not survive is pruned before the post's single
+commit, in hindsight, where the whole sequence is visible: adjustments -- moved,
+resized, recolored, re-cropped -- are deleted, and versions carrying a decision
+or approved by the user are kept. Saved versions stay at publish DPI so any one
+of them can go into Canva without a rebuild.
+``scripts/save_visual_version.py`` carries the full rule and the two ways it has
+already failed.
 
 **Finals are a single snapshot because Canva is a live surface.** The design keeps
 being editable after the post goes out, so its link answers "what does this look

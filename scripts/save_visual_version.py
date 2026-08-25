@@ -12,28 +12,42 @@ with ``--data`` for the numbers a render was built from. That tree is **tracked*
 ``output/`` is scratch and stays ignored. ``bulls/visuals.py`` explains why the three
 kinds are kept differently.
 
-**Promote a decision, not a render.** Write the one line describing what changed
-since the last saved version. If it reads as moved, resized, recolored, renamed or
-re-cropped, overwrite in ``output/`` and save nothing -- that is an adjustment. If
-it reads as a different metric, cohort, threshold, chart type, sort or claim, save
-it. Always save the state the user approved.
+**Save on the send; prune before the commit.** Every render that goes to the user
+is saved here at that moment. The trigger is the act of showing, which is an action
+you take and therefore cannot forget to notice.
 
-The earlier rule said to save every version shown for review, and in a chat
-workflow that is every render: one post reached 29 saved versions of the same
-chart, 40 MB, most of them a nudged label apart. "Shown to someone" measures
-attention, not change, and only change is worth scrolling back through.
+This is the second version of the rule, and the history matters because both
+failure modes are real.
+
+The first rule said to save every version shown for review. In a chat workflow that
+is every render, so it meant "save everything": one post reached 29 saved versions
+of the same chart, 40 MB, most of them a nudged label apart.
+
+The second rule made the unit a decision -- a different metric, cohort, threshold,
+chart type, sort or claim -- and asked you to judge at render time. That lost the
+only copy of a superseded chart format within a day of shipping, because the
+judgment is not available when it is needed: **whether a render was "only an
+adjustment" is settled by what replaces it.** A draft looks like a decision until
+the next round supersedes it, which has not happened yet. Asking for the
+classification up front asks you to read the future, and when you cannot, nothing
+prompts you -- you simply save nothing and find out weeks later.
+
+So keep the volume fix but move the judgment to where the information is. Before
+the post's single commit, look at the whole sequence and delete what turned out to
+be an adjustment -- moved, resized, recolored, renamed, re-cropped. Keep every
+version carrying a decision and every version the user approved. In hindsight that
+call takes seconds and is almost never wrong.
 
 Saved versions stay at **publish DPI**. A version worth keeping is one you might
 put into Canva, and re-rendering it later is not free -- the season has more games
 in it and the code has moved.
 
-**When the two triggers disagree, promote.** A one-word font change is an
-adjustment by the first test and the final version by the second, and the second
-wins: what ships is always saved, however small the edit that produced it. The
-costs are not symmetric. Over-promoting costs 300 KB. Under-promoting loses the
-only copy of a state that cannot be rebuilt, because ``output/`` is ignored,
-disposable, and lives inside a worktree that gets removed. When you cannot tell,
-promote and let the next pass prune.
+**When in doubt at prune time, keep.** A one-word font change is an adjustment by
+the first test and the final version by the second, and the second wins: what ships
+is always kept, however small the edit that produced it. The costs are not
+symmetric. A spare version costs 300 KB. A missing one loses the only copy of a
+state that cannot be rebuilt, because ``output/`` is ignored, disposable, and lives
+inside a worktree that gets removed.
 
 Two things this closes, both of which cost real work once:
 
@@ -44,7 +58,9 @@ Two things this closes, both of which cost real work once:
   already protected.
 * **Iterations stopped being anonymous.** One flat ``output/`` with
   overwriting filenames kept only the newest state, so "show me what it looked
-  like before" had no answer.
+  like before" had no answer. Prototypes still write fixed filenames, so a re-run
+  overwrites: ``output/`` protects nothing on its own, and saving here is what
+  makes an iteration survive the next render.
 
 Version numbers are per project and never reused: the next number is one past the
 highest already on disk, so re-running after a rebuild does not renumber history.

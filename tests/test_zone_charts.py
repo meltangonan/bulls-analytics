@@ -53,8 +53,8 @@ def test_every_point_on_the_drawn_court_belongs_to_exactly_one_zone():
     (0, 0, "Restricted Area"),            # the hoop itself
     (0, 39, "Restricted Area"),           # just inside the 4 ft arc
     (0, 41, "In The Paint (Non-RA)"),     # just outside it
-    (0, 141, "In The Paint (Non-RA)"),    # just inside the free-throw line
-    (0, 144, "Center Mid-Range"),         # just beyond it
+    (0, 137, "In The Paint (Non-RA)"),    # just inside the free-throw line
+    (0, 138, "Center Mid-Range"),         # just beyond its 137.5 coordinate
     (-230, 0, "Left Corner 3"),           # past the corner line, level with hoop
     (230, 0, "Right Corner 3"),
     (-210, 0, "Left Baseline"),           # inside the corner line is still a two
@@ -62,6 +62,31 @@ def test_every_point_on_the_drawn_court_belongs_to_exactly_one_zone():
 ])
 def test_named_landmarks_land_in_the_zone_a_fan_would_name(x, y, expected):
     assert sm.zone_of(np.array([x]), np.array([y]))[0] == expected
+
+
+def test_nba_basic_zone_owns_physical_region_while_custom_angles_own_sector():
+    """A source-labeled mid-range shot must not leak back into geometric paint."""
+    shots = pd.DataFrame({
+        "loc_x": [0, 0, -100, 100],
+        "loc_y": [142, 142, 180, 180],
+        "shot_zone": [
+            "Mid-Range", "In The Paint (Non-RA)",
+            "Mid-Range", "Mid-Range",
+        ],
+    })
+
+    zones = sm.zone12_of_shots(shots)
+    assert zones.tolist() == [
+        "Center Mid-Range", "In The Paint (Non-RA)",
+        "Left Mid-Range", "Right Mid-Range",
+    ]
+
+
+def test_backcourt_is_explicitly_excluded_from_the_twelve_court_zones():
+    shots = pd.DataFrame({
+        "loc_x": [0], "loc_y": [450], "shot_zone": ["Backcourt"]
+    })
+    assert sm.zone12_of_shots(shots).tolist() == ["Backcourt"]
 
 
 def test_a_shot_inside_the_arc_radius_but_past_the_corner_line_is_a_three():
@@ -181,6 +206,20 @@ def test_points_per_shot_carries_the_right_point_value_per_zone():
     table = sm.zone12_split(subject, league).set_index("zone")
     assert table.loc["Restricted Area", "pps"] == pytest.approx(2.0)
     assert table.loc["Top of Key 3", "pps"] == pytest.approx(3.0)
+
+
+def test_nba_zone_value_conflict_is_reported_and_points_follow_scoreboard_value():
+    """NBA zone labels can round across the arc; do not turn an official two into three points."""
+    subject = pd.DataFrame({
+        "loc_x": [0, 0], "loc_y": [238, 238], "shot_made": [1, 0],
+        "shot_type": ["2PT", "2PT"], "shot_zone": ["Above the Break 3"] * 2,
+    })
+    league = subject.copy()
+    table = sm.zone12_split(subject, league).set_index("zone")
+
+    assert sm.source_zone_value_conflicts(subject).sum() == 2
+    assert table.loc["Top of Key 3", "subject_source_conflict_fga"] == 2
+    assert table.loc["Top of Key 3", "pps"] == pytest.approx(1.0)
 
 
 def test_relative_fg_and_relative_pps_rank_identically_inside_one_zone():
@@ -392,6 +431,20 @@ def test_every_pill_sits_inside_the_zone_it_reports():
     for zone, (x, y) in shot_chart.ZONE12_ANCHORS.items():
         landed = sm.zone_of(np.array([float(x)]), np.array([float(y)]))[0]
         assert landed == zone, f"the {zone} pill sits in {landed}"
+
+
+def test_left_and_right_zone_pills_follow_basket_bottom_orientation():
+    """Regression: source Left renders right; source Right renders left."""
+    import scripts.make_shot_chart as shot_chart
+    from bulls.graphics.court import nba_to_basket_bottom_px
+
+    def display_x(zone):
+        x, y = shot_chart.ZONE12_ANCHORS[zone]
+        return nba_to_basket_bottom_px(0.0, 0.0, 1.0, x, y)[0]
+
+    for pair in ("Corner 3", "Baseline", "Mid-Range", "Wing 3"):
+        assert display_x(f"Left {pair}") > 250.0
+        assert display_x(f"Right {pair}") < 250.0
 
 
 def test_the_rim_uses_the_same_type_scale_as_every_other_zone():

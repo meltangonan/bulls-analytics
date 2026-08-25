@@ -4,7 +4,7 @@ The hotspot, hex, roster-hot-spots, and zone-deep-dive renderers use this court.
 Concentric rings and ladders draw specialized overlays in ``make_shot_chart.py``
 because their markings need different clipping, layering, and opacity. Everything
 here works in raw NBA shot-chart coordinates: tenths of a foot, hoop at the
-origin, court 500 units wide, baseline at y=-47.5.
+origin, court 500 units wide, regulation baseline at y=-52.5.
 """
 from __future__ import annotations
 
@@ -16,12 +16,14 @@ from matplotlib.patches import Arc, Circle, FancyBboxPatch, PathPatch
 # Court constants, tenths of a foot.
 ARC = 237.5              # three-point radius
 CORNER_X = 220.0         # where the arc meets the corner lines
-BASELINE_Y = -47.5
+BASELINE_Y = -52.5
 PAINT_HALF_WIDTH = 80.0
-FT_LINE_Y = 142.5
+FT_LINE_Y = 137.5
 COURT_HALF_WIDTH = 250.0
 HOOP_RADIUS = 7.5
-# The board is 1.25 ft behind the hoop center. Its connector stops at the
+# The board is 1.25 ft behind the hoop center. The baseline is four feet behind
+# the board and the free-throw line is fifteen feet in front of it, matching
+# NBA Rule No. 1. Its connector stops at the
 # rear edge of the 18-inch rim rather than continuing through the circle.
 BACKBOARD_Y = -12.5
 BACKBOARD_HALF_WIDTH = 30.0
@@ -61,6 +63,23 @@ def restricted_area_patch(ax, hoop_x: float, hoop_y: float, s: float,
     ax.add_patch(patch)
     return patch
 
+def nba_to_basket_bottom_px(x0: float, y0: float, s: float, loc_x, loc_y):
+    """Map NBA shot coordinates onto a court whose basket is at the bottom.
+
+    NBA's left/right zone names use the league's basket-at-the-top view. Turning
+    that court around to put the basket at the bottom reverses the horizontal
+    screen position: NBA ``Left`` belongs on the viewer's right, and NBA
+    ``Right`` belongs on the viewer's left. Keep the source labels and figures
+    unchanged; this render-boundary mirror is the only conversion required.
+
+    ``loc_x`` and ``loc_y`` may be scalars, NumPy arrays, or pandas Series.
+    """
+    return (
+        x0 + (COURT_HALF_WIDTH - loc_x) * s,
+        y0 + (loc_y - BASELINE_Y) * s,
+    )
+
+
 def draw_half_court(ax, center_x: float, center_y: float, s: float,
                     color: str = COURT_LINE, lw: float = 1.1, zorder: int = 5):
     """Draw a half court centred at (center_x, center_y), hoop toward the bottom.
@@ -69,8 +88,11 @@ def draw_half_court(ax, center_x: float, center_y: float, s: float,
     Returns the ``(x0, y0)`` origin so callers can map shot coordinates into the
     same pixel space::
 
-        px = x0 + (loc_x + 250) * s
-        py = y0 + (loc_y + 47.5) * s
+        px, py = nba_to_basket_bottom_px(x0, y0, s, loc_x, loc_y)
+
+    Do not reproduce the old ``x0 + (loc_x + 250) * s`` shortcut. It puts NBA
+    Left on the viewer's left even though rotating the basket to the bottom
+    requires Left to appear on the viewer's right.
     """
     top_y = 280.0
     x0 = center_x - COURT_HALF_WIDTH * s
@@ -85,7 +107,8 @@ def draw_half_court(ax, center_x: float, center_y: float, s: float,
         ax.plot([t(side, BASELINE_Y)[0]] * 2,
                 [t(side, BASELINE_Y)[1], t(side, 110)[1]], **line)
     ax.add_patch(FancyBboxPatch(
-        t(-PAINT_HALF_WIDTH, BASELINE_Y), 2 * PAINT_HALF_WIDTH * s, 190 * s,
+        t(-PAINT_HALF_WIDTH, BASELINE_Y), 2 * PAINT_HALF_WIDTH * s,
+        (FT_LINE_Y - BASELINE_Y) * s,
         boxstyle="square,pad=0", facecolor="none", edgecolor=color,
         lw=lw, zorder=zorder))
 
@@ -130,7 +153,7 @@ def draw_half_court(ax, center_x: float, center_y: float, s: float,
     for side in (-CORNER_X, CORNER_X):
         ax.plot([t(side, BASELINE_Y)[0]] * 2,
                 [t(side, BASELINE_Y)[1], t(side, corner_top)[1]], **line)
-    theta = 22.1  # angle where the arc meets the corner lines
+    theta = float(np.degrees(np.arctan2(corner_top, CORNER_X)))
     ax.add_patch(Arc((hoop_x, hoop_y), 2 * ARC * s, 2 * ARC * s, theta1=theta,
                      theta2=180 - theta, color=color, lw=lw, zorder=zorder))
     return x0, y0

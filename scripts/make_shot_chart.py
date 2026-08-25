@@ -58,6 +58,7 @@ from bulls.graphics.court import (
     LANE_MARKS_FT,
     PAINT_HALF_WIDTH,
     draw_half_court,
+    nba_to_basket_bottom_px,
     restricted_area_patch,
 )
 from bulls.graphics.house import helvetica
@@ -128,7 +129,7 @@ def _contour_field(ax, x0, y0, s, field, fill_colors, line_color, alpha):
         return
     xe, ye = sm.edges()
     cx, cy = np.meshgrid((xe[:-1] + xe[1:]) / 2, (ye[:-1] + ye[1:]) / 2)
-    px, py = x0 + (cx + 250.0) * s, y0 + (cy + 47.5) * s
+    px, py = nba_to_basket_bottom_px(x0, y0, s, cx, cy)
     z = np.sqrt(field.T)
     levels = np.sqrt(np.linspace(thr, fmax, len(fill_colors) + 1))
     levels[-1] += 1e-9
@@ -285,8 +286,9 @@ def render_hex(ctx, out: Path, final: bool):
         r = hex_r * s * row.radius_fraction
         color = ("#D8D2CA" if not row.color_rated else
                  _hex_color(row.subject_vs_nba_fg_pct_points / 100))
-        px = x0 + (row.hex_center_x + 250.0) * s
-        py = y0 + (row.hex_center_y + 47.5) * s
+        px, py = nba_to_basket_bottom_px(
+            x0, y0, s, row.hex_center_x, row.hex_center_y
+        )
         z = 2.0 + 2.0 * index / total
         shadow = ax.add_patch(RegularPolygon(
             (px + HEX_SHADOW_OFFSET, py - HEX_SHADOW_OFFSET), numVertices=6,
@@ -357,7 +359,7 @@ def _render_cover_zones(out: Path, final: bool, fills: dict[str, str],
                              court_ink, lw=1.2)
 
     def to_px(cx, cy):
-        return x0 + (cx + 250.0) * s, y0 + (cy + 47.5) * s
+        return nba_to_basket_bottom_px(x0, y0, s, cx, cy)
 
     gx, gy, grid = _zone12_grid()
     gx_px, gy_px = to_px(gx, gy)
@@ -1510,6 +1512,7 @@ def render_zones(ctx, out: Path, final: bool):
     # The floor still applies. It no longer decides whether a zone is drawn at
     # all -- it decides whether the zone earns an efficiency colour.
     zones = sm.zone12_split(ctx["player"], ctx["league"], min_fga=min_fga)
+    excluded = int(zones.subject_excluded_fga.iloc[0])
     for z in zones.itertuples():
         rate = f"{z.fg * 100:5.1f}% FG ({z.fg_rel:+5.1f})" if z.fga else "     no attempts"
         print(f"  {ZONE12_SHORT[z.zone]:<15}{z.fga:>5} FGA  {rate}   "
@@ -1531,7 +1534,7 @@ def render_zones(ctx, out: Path, final: bool):
                              court_ink, lw=1.2)
 
     def to_px(cx, cy):
-        return x0 + (cx + 250.0) * s, y0 + (cy + 47.5) * s
+        return nba_to_basket_bottom_px(x0, y0, s, cx, cy)
 
     gx, gy, grid = _zone12_grid()
     gx_px, gy_px = to_px(gx, gy)
@@ -1612,6 +1615,8 @@ def render_zones(ctx, out: Path, final: bool):
               "the shooting percentage; their figures are shown but not coloured")
         print("Thin zones: " + ", ".join(
             f"{ZONE12_SHORT[z.zone]} ({z.fga})" for z in thin.itertuples()))
+    if excluded:
+        print(f"Coverage: {excluded} backcourt FGA excluded from the half-court zones")
     print("Source: NBA.com/stats")
 
 

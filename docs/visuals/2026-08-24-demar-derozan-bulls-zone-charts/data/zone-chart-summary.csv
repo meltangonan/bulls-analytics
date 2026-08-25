@@ -1,5 +1,5 @@
-window,player_id,player,included_seasons,games,minutes,bulls_fga,shot_rows,fgm,fg_pct,efg_pct,three_pct,zones_rated,zones_grey,rated_fga_share_pct,min_zone_fga,scope
-2021-22,201942,DeMar DeRozan,2021-22,76,2742.9,1535,1535,774,50.4,52.1,35.2,11,1,99.0,20,Chicago attempts only
-2022-23,201942,DeMar DeRozan,2022-23,74,2681.6,1303,1303,657,50.4,52.2,32.4,10,2,98.9,20,Chicago attempts only
-2023-24,201942,DeMar DeRozan,2023-24,79,2988.6,1355,1355,650,48.0,50.7,33.3,12,0,100.0,20,Chicago attempts only
-Bulls tenure,201942,DeMar DeRozan,"2021-22, 2022-23, 2023-24",229,8413.1,4193,4193,2081,49.6,51.7,33.6,10,2,97.3,60,Chicago attempts only
+window,player_id,player,included_seasons,games,minutes,bulls_fga,shot_rows,fgm,fg_pct,efg_pct,three_pct,zones_rated,zones_grey,rated_fga_share_pct,mapped_zone_fga,excluded_backcourt_fga,source_zone_value_conflicts,league_zone_value_conflicts,min_zone_fga,scope
+2021-22,201942,DeMar DeRozan,2021-22,76,2742.9,1535,1535,774,50.4,52.1,35.2,11,1,98.7,1531,4,0,210,20,Chicago attempts only
+2022-23,201942,DeMar DeRozan,2022-23,74,2681.6,1303,1303,657,50.4,52.2,32.4,10,2,98.8,1302,1,3,144,20,Chicago attempts only
+2023-24,201942,DeMar DeRozan,2023-24,79,2988.6,1355,1355,650,48.0,50.7,33.3,12,0,99.9,1354,1,2,21,20,Chicago attempts only
+Bulls tenure,201942,DeMar DeRozan,"2021-22, 2022-23, 2023-24",229,8413.1,4193,4193,2081,49.6,51.7,33.6,10,2,97.2,4187,6,5,375,60,Chicago attempts only

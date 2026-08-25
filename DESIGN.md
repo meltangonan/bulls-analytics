@@ -173,6 +173,14 @@ for a two-point zone and 15 for a three-point zone. The symmetric cuts keep prai
 the same bar. Hexes retain their ±7.5 outer cuts because smoothed local cells are a different,
 noisier mark; zones pool an entire named region and print the exact gap and raw count.
 
+**Left and right follow NBA's source labels, not the viewer's screen.** NBA defines those labels in
+its basket-at-the-top shot-chart view. Our conventional court puts the basket at the bottom, which
+is the same court turned around: NBA Left therefore appears on the viewer's right, and NBA Right
+appears on the viewer's left. Keep the source label, makes, attempts, and league comparison intact;
+mirror the horizontal coordinate only once, at the shared render boundary in
+`bulls.graphics.court.nba_to_basket_bottom_px`. Tests pin all four left/right zone pairs so a future
+renderer cannot quietly restore the unmirrored shortcut.
+
 Green-means-better is only honest because every figure on that chart is measured against the league
 *in the same zone*. On a raw FG% map it would be nonsense — the rim would always be green and the
 arc always red. It also settles a clash the hex scale created: the zone chart already prints each
@@ -335,12 +343,14 @@ and because the paint is a ring around it, tracing the paint's own mask redraws 
 an inner edge. Merge the rim into the paint's mask before tracing, or the D arrives with a circle
 stamped over it.
 
-**Every zone divider must be a single straight ray from the hoop.** NBA's own geometry changes how
-many side sectors exist at 16 ft, which turns each baseline/mid-range border into a stepped tent. It
-reads as a drawing bug rather than a zone, and it was flagged three separate times in review before
-being traced to the data instead of the renderer. Draw five sectors at every distance, and group the
-numbers with the *same* function that draws them — `DEVELOPMENT.md` records the measured cost of
-that divergence and why it is an exception rather than the rule.
+**Physical court families are NBA-owned; only the angular cuts are custom.** The black markings and
+the coloured shapes share the regulation 4 ft restricted radius, 16 ft lane, free-throw line 15 ft
+from the backboard, 23 ft 9 in arc, and 22 ft corner lines. For production rows, NBA.com's
+`shot_zone` decides whether an attempt is restricted-area, paint, mid-range, corner three,
+above-the-break three, or backcourt. Our continuous straight rays only subdivide Mid-Range into five
+sectors and Above the Break 3 into three. This keeps the readable custom angles without moving a
+shot across a real physical boundary. Backcourt attempts are excluded from the twelve half-court
+fills and reported as coverage rather than silently assigned to the top of the key.
 
 ### Conditional cell fill in tables
 

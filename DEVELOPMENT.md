@@ -133,8 +133,12 @@ Six questions, and a section that cannot answer all six is incomplete:
    only. A reader who cannot see the literal call cannot tell what was scoped in or out.
 2. **The grain.** What one raw row represents, with a real sample. "One row per field-goal attempt"
    is the fact everything else rests on.
-3. **Units and coordinate systems.** NBA shot coordinates are tenths of a foot with the hoop at the
-   origin and the baseline at `loc_y = -47.5`; every court constant in the code derives from that.
+3. **Units and coordinate systems.** NBA shot coordinates are integer tenths of a foot with the hoop
+   at the origin. Draw the regulation court from the physical dimensions: backboard `y = -12.5`,
+   baseline `y = -52.5` (4 ft behind the board), and free-throw line `y = 137.5` (15 ft in front of
+   it). Integer shot coordinates can round across a half-unit boundary, so NBA.com's supplied basic
+   zone label adjudicates production rows at an edge; coordinates draw the ideal court and custom
+   angular subdivisions.
 4. **Derived versus measured fields.** State which columns the provider computed, and verify the
    relationship rather than assuming it. `shot_distance` is exactly `floor(hypot(loc_x, loc_y)/10)`,
    confirmed at 100% across 219,160 rows — which is what made "did they bin differently?" answerable.
@@ -200,10 +204,11 @@ These are the traps that produce silently wrong numbers rather than errors.
   returns zero rows for Summer League games without complaining. Use `get_game_shots`, which derives
   the league from the game-ID prefix (`00` NBA, `15` Summer League). Prefer the NBA's own `shot_zone`
   labels over re-deriving zones from distance or coordinates.
-- **The 12 detailed zones need `shot_zone_area`, and a fetcher that drops it fails silently** —
-  `detailed_zones` returns the six basic zones unchanged rather than raising. All three shot
-  fetchers now pass the column through when the API supplies it, but a cache written before that
-  will quietly collapse to six zones. Refetch rather than reuse.
+- **Keep both NBA zone columns, but do not confuse their jobs.** The current twelve-zone chart needs
+  `shot_zone` for its physical families and coordinates for its custom angular cuts.
+  `shot_zone_area` remains necessary for analyses that reproduce NBA's own detailed sectors through
+  `detailed_zones`; without it that helper returns the six basic zones unchanged. The shared shot
+  caches require both fields, so an older trimmed cache is automatically refetched.
 - **NBA's `SHOT_ZONE_AREA` sectors are angular from the hoop, but the number of sectors depends on
   distance**: one inside 8 ft (all `Center(C)`), three from 8–16 ft (cuts at 60°/120°), five beyond
   16 ft (cuts at 36°/72°/108°/144°). Pool the bands and the angle ranges overlap and look
@@ -234,21 +239,42 @@ These are the traps that produce silently wrong numbers rather than errors.
   `shot_maps.ATB_CUTS` is `MID_SECTOR_CUTS[1:3]`, not a separate pair of numbers — the above-the-break
   dividers are literally the same two rays continued past the arc, so they cannot drift apart from the
   mid-range cuts they extend.
-- **A zone chart that draws NBA's real sector geometry looks broken, so the twelve-zone family
-  deliberately does not.** The change in sector count at 16 ft makes each baseline/mid-range divider
-  a stepped "tent" rather than a straight ray, and it reads as a rendering fault (flagged three times
-  in review). `shot_maps.zone_of` uses five sectors at *every* distance and classifies from `loc_x`/
-  `loc_y`, so the drawn regions and the grouped numbers are the same object
-  and the chart cannot draw one set of regions while counting another. It lives in `shot_maps`
-  rather than in a prototype because two posts now draw these regions — `scoring_by_location.py`
-  and `--chart zones` — and a second copy of a classifier is the same failure one level up: two
-  charts counting different regions while both claim to show NBA's zones. `scoring_by_location.py`
-  re-exports it under its original name. The divergence is measured,
-  not assumed: 34 of 5,855 roster shots move (0.6%), almost all long twos near the 16 ft line, and
-  one of twelve zone leaders changes. The script prints the live agreement rate against NBA's labels
-  on every run — if that figure drifts, the geometry drifted. **This is a deliberate exception to
-  preferring NBA's labels, and it is only safe because the divergence is measured and reported.**
+- **The twelve-zone chart is source-faithful about physical regions and custom only about angles.**
+  `shot_maps.zone12_of_shots` trusts NBA.com's basic `shot_zone` for Restricted Area, In The Paint
+  (Non-RA), Mid-Range, both Corner 3s, Above the Break 3, and Backcourt. It then applies the chart's
+  continuous rays only inside Mid-Range and Above the Break 3. `shot_maps.zone_of` draws the same
+  regulation-sized physical shapes and custom rays and is only a coordinate fallback for synthetic
+  or non-NBA inputs. Backcourt is explicit and excluded from the twelve half-court zones; coverage
+  reports the omitted attempts. The contract is regression-tested by collapsing all twelve custom
+  zones back to their seven NBA basic families and requiring exact equality for each DeRozan Bulls
+  season.
+
+  This replaced the old coordinate-only physical classifier after a 2021-22 DeRozan audit. NBA.com
+  reported 293 restricted-area plus 359 paint attempts (652), while the old `y <= 142.5` cutoff
+  counted 671. The extra 19 are all NBA-labelled Mid-Range attempts at integer `loc_y = 139..142`;
+  the regulation line is `137.5`, so they are truly mid-range. Seven NBA-labelled paint attempts
+  across the three seasons sit at integer `loc_y = 138`, within one rounded coordinate unit of the
+  theoretical line; the source label correctly adjudicates that edge instead of moving the court
+  marking away from its regulation dimension.
   Any other post should still group by NBA's own `shot_zone`.
+- **NBA's zone family and official shot value can disagree at the three-point boundary.** In the
+  DeRozan Bulls sample, five of 4,193 rows do: four official 2PT attempts are labelled `Above the
+  Break 3`, and one official 3PT attempt is labelled `Mid-Range`. All five were independently traced
+  to `PlayByPlayV3`, whose `shotValue` confirms the 2/3 ruling. The matching league pools contain 375
+  such rows out of 652,642. For a chart intended to reproduce NBA.com's **By Zone** table,
+  `shot_zone` remains the grouping authority; `shot_type` remains the authority for 3PA, 3PM, eFG%,
+  and points. `source_zone_value_conflicts` exposes the disagreement, and `zone12_split` calculates
+  points per shot from the official shot type rather than assuming every row inherited its displayed
+  zone's nominal value. Never derive scoring totals from zone membership.
+- **A basket-bottom court must mirror NBA's horizontal coordinate at rendering time.** NBA's Left
+  and Right names come from its basket-at-the-top source view; turning that court around puts NBA
+  Left on the viewer's right and NBA Right on the viewer's left. Do not swap labels or mutate the
+  data, because that breaks provenance. Use
+  `bulls.graphics.court.nba_to_basket_bottom_px` for the display transform. The 2021-22 DeMar
+  DeRozan audit is the regression example: NBA Left Corner 3 is 11/29 and must appear on the
+  viewer-right corner of our basket-bottom chart; NBA Right Corner 3 is 7/28 and must appear on the
+  viewer-left corner. Center zones do not move. `tests/test_court.py`, `tests/test_zone_charts.py`,
+  and `tests/test_demar_derozan_bulls_zone_charts.py` enforce the general rule and that real case.
 - **`shot_maps.polar_cells()` is the second deliberate exception, and it solves the 16 ft step
   differently.** Rather than flattening the sector count, it keeps NBA's angular cuts — three
   sectors inside, five outside — and moves the change from 16 ft to the three-point line, where the

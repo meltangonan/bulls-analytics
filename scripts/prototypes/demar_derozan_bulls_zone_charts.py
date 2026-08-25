@@ -101,7 +101,7 @@ def reconcile_shot_count(season: str, totals: pd.Series,
 
 def league_zone_baseline(label: str, league: pd.DataFrame) -> pd.DataFrame:
     working = league.copy()
-    working["zone"] = sm.zone_of(working.loc_x, working.loc_y)
+    working["zone"] = sm.zone12_of_shots(working)
     grouped = working.groupby("zone", as_index=False)["shot_made"].agg(
         fga="size", fgm="sum"
     )
@@ -132,6 +132,14 @@ def summary_row(label: str, totals: pd.Series, shots: pd.DataFrame,
         "zones_rated": len(rated),
         "zones_grey": len(zones) - len(rated),
         "rated_fga_share_pct": round(rated.fga.sum() / len(shots) * 100, 1),
+        "mapped_zone_fga": int(zones.fga.sum()),
+        "excluded_backcourt_fga": int(zones.subject_excluded_fga.iloc[0]),
+        "source_zone_value_conflicts": int(
+            zones.subject_source_conflict_fga.iloc[0]
+        ),
+        "league_zone_value_conflicts": int(
+            zones.league_source_conflict_fga.iloc[0]
+        ),
         "min_zone_fga": min_zone_fga,
         "scope": "Chicago attempts only",
     }
@@ -182,6 +190,11 @@ def print_canva_copy(summary: pd.DataFrame) -> None:
             "Qualifier: Chicago attempts only · Grey zones are under "
             f"{row.min_zone_fga} FGA"
         )
+        if row.excluded_backcourt_fga:
+            print(
+                "Coverage: "
+                f"{row.excluded_backcourt_fga} backcourt FGA excluded from the half-court zones"
+            )
         print("Source: NBA.com/stats")
 
 

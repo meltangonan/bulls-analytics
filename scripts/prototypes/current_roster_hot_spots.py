@@ -57,7 +57,7 @@ from bulls.analysis.shot_maps import (
 from bulls.config import CURRENT_SEASON
 from bulls.data.fetch import _NBA_HEADERS
 from bulls.graphics import house
-from bulls.graphics.court import draw_half_court
+from bulls.graphics.court import draw_half_court, nba_to_basket_bottom_px
 from bulls.graphics.house import helvetica
 
 CACHE = ROOT / "cache" / "hot_spots"
@@ -216,8 +216,7 @@ def _draw_field(ax, x0, y0, s, field, fill_colors, line_color, alpha):
     xc = (xe[:-1] + xe[1:]) / 2.0
     yc = (ye[:-1] + ye[1:]) / 2.0
     cx, cy = np.meshgrid(xc, yc)          # (ny, nx)
-    px = x0 + (cx + 250.0) * s
-    py = y0 + (cy + 47.5) * s
+    px, py = nba_to_basket_bottom_px(x0, y0, s, cx, cy)
     z = np.sqrt(field.T)                  # (ny, nx), sqrt transform
 
     edges = np.sqrt(np.linspace(thr, fmax, len(fill_colors) + 1))

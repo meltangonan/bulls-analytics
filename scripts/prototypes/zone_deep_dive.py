@@ -36,7 +36,7 @@ if str(ROOT) not in sys.path:
 
 from bulls import data
 from bulls.graphics import house
-from bulls.graphics.court import draw_half_court
+from bulls.graphics.court import BASELINE_Y, draw_half_court, nba_to_basket_bottom_px
 from bulls.graphics.house import helvetica
 
 CACHE = ROOT / "cache" / "hot_spots"
@@ -117,7 +117,7 @@ def render(rows, zone_title, zone_rule, player_name, subtitle, out, final):
     x0, y0 = draw_half_court(ax, house.CANVAS_WIDTH / 2, 700, s, "#B4AEA6")
 
     def t(cx, cy):
-        return x0 + (cx + 250.0) * s, y0 + (cy + 47.5) * s
+        return nba_to_basket_bottom_px(x0, y0, s, cx, cy)
 
     hoop = t(0, 0)
     norm = Normalize(-DIFF_CLAMP, DIFF_CLAMP)
@@ -127,7 +127,12 @@ def render(rows, zone_title, zone_rule, player_name, subtitle, out, final):
         kind = r["geom"][0]
         if kind == "wedge":
             _, r_in, r_out, t1, t2 = r["geom"]
-            ax.add_patch(Wedge(hoop, r_out * s, t1, t2, width=(r_out - r_in) * s,
+            # Mirroring x maps an angle theta to 180-theta and reverses the
+            # interval endpoints. The label and the filled sector must rotate
+            # together or Left/Right would disagree inside one chart.
+            display_t1, display_t2 = 180 - t2, 180 - t1
+            ax.add_patch(Wedge(hoop, r_out * s, display_t1, display_t2,
+                               width=(r_out - r_in) * s,
                                facecolor=color, edgecolor="#FAF8F5", lw=1.4,
                                alpha=0.9, zorder=2))
             mid_a = np.radians((t1 + t2) / 2)
@@ -135,8 +140,12 @@ def render(rows, zone_title, zone_rule, player_name, subtitle, out, final):
             lx, ly = t(mid_r * np.cos(mid_a), mid_r * np.sin(mid_a))
         else:
             side = r["geom"][1]
-            xl = 220 if side > 0 else -250
-            ax.add_patch(Rectangle(t(xl, -47.5), 30 * s, 140 * s, facecolor=color,
+            source_x1, source_x2 = ((220, 250) if side > 0 else (-250, -220))
+            display_x1 = t(source_x1, BASELINE_Y)[0]
+            display_x2 = t(source_x2, BASELINE_Y)[0]
+            ax.add_patch(Rectangle(
+                (min(display_x1, display_x2), t(0, BASELINE_Y)[1]),
+                abs(display_x2 - display_x1), 140 * s, facecolor=color,
                                    edgecolor="#FAF8F5", lw=1.4, alpha=0.9, zorder=2))
             lx, ly = t(side * 235, 30)
         _label(ax, lx, ly, r, theme)

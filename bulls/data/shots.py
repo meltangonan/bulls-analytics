@@ -19,15 +19,26 @@ from bulls.config import BULLS_TEAM_ID, CURRENT_SEASON
 from bulls.data import fetch
 
 CACHE = Path(__file__).resolve().parents[2] / "cache" / "shot_charts"
-SHOT_COLUMNS = ["loc_x", "loc_y", "shot_distance", "shot_made", "shot_type"]
+SHOT_COLUMNS = [
+    "loc_x", "loc_y", "shot_distance", "shot_made", "shot_type",
+    "shot_zone", "shot_zone_area",
+]
+
+
+def _usable_cache(path: Path) -> pd.DataFrame | None:
+    """Read a cache only when it carries the NBA labels zone charts require."""
+    if not path.exists():
+        return None
+    cached = pd.read_csv(path)
+    return cached if set(SHOT_COLUMNS).issubset(cached.columns) else None
 
 
 def player_shots(player_id: int, season: str = CURRENT_SEASON,
                  refresh: bool = False) -> pd.DataFrame:
     """One player's full season of shots, wherever he played."""
     path = CACHE / f"player_{player_id}_{season}.csv"
-    if path.exists() and not refresh:
-        return pd.read_csv(path)
+    if not refresh and (cached := _usable_cache(path)) is not None:
+        return cached
     df = fetch.get_player_shots(player_id, team_id=0, season=season)
     df = df[SHOT_COLUMNS] if not df.empty else pd.DataFrame(columns=SHOT_COLUMNS)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -45,8 +56,8 @@ def team_shots(team_id: int = BULLS_TEAM_ID, season: str = CURRENT_SEASON,
     the man who took it is still here.
     """
     path = CACHE / f"team_{team_id}_{season}.csv"
-    if path.exists() and not refresh:
-        return pd.read_csv(path)
+    if not refresh and (cached := _usable_cache(path)) is not None:
+        return cached
     df = fetch.get_team_shots(team_id=team_id, season=season)
     df = df[SHOT_COLUMNS] if not df.empty else pd.DataFrame(columns=SHOT_COLUMNS)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -57,8 +68,8 @@ def team_shots(team_id: int = BULLS_TEAM_ID, season: str = CURRENT_SEASON,
 def league_shots(season: str = CURRENT_SEASON, refresh: bool = False) -> pd.DataFrame:
     """Every shot from all 30 teams -- the baseline every comparison uses."""
     path = CACHE / f"league_{season}.csv"
-    if path.exists() and not refresh:
-        return pd.read_csv(path)
+    if not refresh and (cached := _usable_cache(path)) is not None:
+        return cached
     df = fetch.get_league_shots(season=season)[SHOT_COLUMNS]
     path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(path, index=False)

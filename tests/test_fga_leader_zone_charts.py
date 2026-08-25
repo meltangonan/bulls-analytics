@@ -122,6 +122,7 @@ def test_large_four_line_pills_stay_separate_and_inside_the_asset():
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     from scripts import make_shot_chart as shot_chart
+    from bulls.graphics.court import nba_to_basket_bottom_px
 
     splits = pd.read_csv(DATA / "fga-leader-zone-splits.csv")
     assert tuple(splits.season.drop_duplicates()) == charts.SEASONS
@@ -135,8 +136,9 @@ def test_large_four_line_pills_stay_separate_and_inside_the_asset():
         y0 = 400
 
         def to_px(x, y):
-            return (x0 + (x + 250) * shot_chart.ZONE12_SCALE,
-                    y0 + (y + 47.5) * shot_chart.ZONE12_SCALE)
+            return nba_to_basket_bottom_px(
+                x0, y0, shot_chart.ZONE12_SCALE, x, y
+            )
 
         for row in table.itertuples():
             shot_chart._zone12_block(

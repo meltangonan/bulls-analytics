@@ -5,13 +5,11 @@ court: EFFICIENCY crowns the best points per shot among a zone's real users, VOL
 crowns whoever shoots it most. Chart assets only — Canva supplies the title,
 subtitle, qualifier, and source line.
 
-Zones are classified from shot coordinates by ``zone_of``, the same function that
-draws the outlines, so the chart cannot count one set of regions while drawing
-another. That is a deliberate departure from NBA's own labels, which change how
-many side sectors exist at 16 ft and so draw each baseline/mid-range border as a
-stepped "tent" rather than a straight ray. The cost is measured and reported on
-every run: 34 of 5,855 roster shots move (0.6%), and ``main`` prints the live
-agreement rate. See DEVELOPMENT.md for why this is an exception, not the rule.
+NBA.com's basic label owns each physical family: restricted area, paint,
+mid-range, corner three, above-the-break three, and backcourt. Our custom rays
+only subdivide Mid-Range into five sectors and Above the Break 3 into three.
+``zone_of`` draws the regulation physical boundaries and those same custom rays;
+``zone12_of_shots`` groups the numbers. See DEVELOPMENT.md for the contract.
 
 Usage:
     python scripts/prototypes/scoring_by_location.py            # both slides
@@ -40,6 +38,7 @@ from bulls.analysis import shot_maps as sm
 from bulls.analysis.stats import detailed_zones
 from bulls.config import CURRENT_SEASON
 from bulls.graphics import house
+from bulls.graphics.court import BACKBOARD_Y, BASELINE_Y
 from bulls.graphics.house import helvetica
 
 CACHE = REPO_ROOT / "cache" / "scoring_by_location"
@@ -82,14 +81,14 @@ MODES = ("efficiency", "volume")
 MIN_FGA_CONFIDENT = 10
 
 # NBA zone geometry, in raw API units (tenths of a foot, hoop at the origin).
-RA_R = 40.0             # restricted area, 4 ft
-PAINT_HALF = 80.0       # key half-width, 8 ft
-FT_Y = 142.5            # free-throw line
-ARC_R = 237.5           # three-point arc, 23.75 ft
-CORNER_X = 220.0        # corner-3 sideline, 22 ft
+# Import the classifier's constants so the markers and computed boundaries
+# cannot drift into two almost-identical courts again.
+RA_R = sm.RA_R
+PAINT_HALF = sm.PAINT_HALF
+FT_Y = sm.FT_Y
+ARC_R = sm.ARC_R
+CORNER_X = sm.ZONE12_CORNER_X
 CORNER_Y = float(np.sqrt(ARC_R ** 2 - CORNER_X ** 2))   # arc/corner break, ~89.5
-BASELINE_Y = -47.5
-BACKBOARD_Y = -7.5      # where the restricted-area sides close onto the board
 BAND_R = 160.0          # 16 ft, where NBA's own scheme changes sector count.
                         # Ours does not; kept as the landmark the tests probe around.
 COURT_DEPTH = 344.0     # how much of the half court is drawn; past this is empty floor
@@ -125,7 +124,7 @@ SHORT_LABEL = {
 # that no leader line is needed — the corners just outside their sideline, the rim
 # directly above the basket with its figures between the backboard and the baseline.
 CHIP_LAYOUT = {
-    "Restricted Area":       ((0, -52), None),
+    "Restricted Area":       ((0, -55), None),
     "Left Corner 3":         ((-254, 16), None),
     "Right Corner 3":        ((254, 16), None),
     "Left Baseline":         ((-150, 35), None),
@@ -179,8 +178,8 @@ ZONE_TRACE_BLUR = 1.0
 
 
 # ---------------------------------------------------------------------------
-# Zone geometry — the single source of truth for BOTH the outlines and the numbers,
-# so the chart cannot draw one set of regions while counting another.
+# Zone geometry — one coordinate model draws the regulation boundaries and the
+# custom rays. Source labels own production rows' physical families.
 #
 # The classifier itself now lives in bulls.analysis.shot_maps, because a second
 # post draws the same twelve regions. Two copies of this function is precisely
@@ -188,13 +187,9 @@ ZONE_TRACE_BLUR = 1.0
 # different regions while both claim to show NBA's zones. It is re-exported here
 # under its original name so this module and its tests read unchanged.
 #
-# Why it departs from NBA's own labels, and what that costs: NBA changes how many
-# side sectors exist with distance — three inside 16 ft, five outside — which
-# draws each baseline/mid-range divider as a stepped "tent" rather than a
-# straight ray, and reads as a rendering fault. Holding five sectors at every
-# distance moves 34 of 5,855 roster shots (0.6%), almost all long twos near the
-# 16 ft line, and changes one of the twelve zone leaders. ``main`` prints the
-# live agreement rate on every run so the divergence cannot drift unnoticed.
+# The physical families are not custom. Only the angular subdivisions differ
+# from NBA's detailed ``shot_zone_area`` labels, so ``zone_agreement`` measures
+# that editorial subdivision rather than paint/arc accuracy.
 # ---------------------------------------------------------------------------
 zone_of = sm.zone_of
 
@@ -230,26 +225,25 @@ class ZoneLeader:
 
 
 def roster_shots(refresh: bool) -> pd.DataFrame:
-    """Every roster shot, zoned by our own geometry and carrying NBA's label too."""
+    """Every roster shot with source-faithful families and custom angular sectors."""
     frames = []
     for pid, name, short in ROSTER:
         df = load_shots(pid, refresh)
         if df.empty:
             print(f"  no {CURRENT_SEASON} shots: {name}")
             continue
-        missing = {"loc_x", "loc_y", "shot_zone_area"} - set(df.columns)
+        missing = {"loc_x", "loc_y", "shot_zone", "shot_zone_area"} - set(df.columns)
         if missing:
             raise SystemExit(f"{name}: cached shots are missing {sorted(missing)}; rerun --refresh")
+        df["custom_zone"] = sm.zone12_of_shots(df)
         df = detailed_zones(df)                      # NBA's own 12-zone label
         df = df.rename(columns={"shot_zone": "nba_zone"})
         df["nba_id"], df["name"], df["short"] = pid, name, short
         frames.append(df)
 
     shots = pd.concat(frames, ignore_index=True)
-    # NBA's label is the reliable way to drop half-court heaves, which our own
-    # geometry would otherwise happily score against Top of Key.
-    shots = shots[shots["nba_zone"] != "Backcourt"]
-    shots["shot_zone"] = zone_of(shots["loc_x"].values, shots["loc_y"].values)
+    shots = shots[shots["custom_zone"] != "Backcourt"].copy()
+    shots["shot_zone"] = shots.pop("custom_zone")
     # Points per shot: a made three is 3, a made two is 2, a miss is 0.
     shots["points"] = np.where(
         shots["shot_made"] & (shots["shot_type"] == "3PT"), 3,
@@ -259,7 +253,7 @@ def roster_shots(refresh: bool) -> pd.DataFrame:
 
 
 def zone_agreement(shots: pd.DataFrame) -> tuple[int, int]:
-    """How many shots our geometry places exactly where NBA's own labels do."""
+    """How often our custom angular sector matches NBA's detailed area label."""
     same = int((shots["shot_zone"] == shots["nba_zone"]).sum())
     return same, len(shots)
 

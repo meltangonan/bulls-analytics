@@ -3,26 +3,64 @@
 from __future__ import annotations
 
 import matplotlib.pyplot as plt
+import numpy as np
 import pytest
 from matplotlib.patches import Circle
 
 from bulls.graphics.court import (
+    ARC,
     BACKBOARD_HALF_WIDTH,
     BACKBOARD_Y,
     BASELINE_Y,
     COURT_HALF_WIDTH,
+    CORNER_X,
     HASH_FROM_BASELINE_FT,
+    FT_LINE_Y,
     HOOP_RADIUS,
     LANE_MARKS_FT,
     PAINT_HALF_WIDTH,
     RESTRICTED_RADIUS,
     draw_half_court,
+    nba_to_basket_bottom_px,
     restricted_area_patch,
 )
+from bulls.analysis import shot_maps as sm
 
 
 def _segment(line):
     return tuple(line.get_xdata()), tuple(line.get_ydata())
+
+
+def test_basket_bottom_mapping_puts_nba_left_on_viewer_right():
+    """Rotating NBA's basket-top source view reverses screen left and right."""
+    px, py = nba_to_basket_bottom_px(
+        x0=100.0,
+        y0=200.0,
+        s=2.0,
+        loc_x=np.array([-220.0, 0.0, 220.0]),
+        loc_y=np.array([0.0, 0.0, 0.0]),
+    )
+
+    court_center = 100.0 + COURT_HALF_WIDTH * 2.0
+    assert px[0] > court_center  # NBA Left is viewer-right.
+    assert px[1] == pytest.approx(court_center)
+    assert px[2] < court_center  # NBA Right is viewer-left.
+    assert np.all(py == pytest.approx(200.0 - BASELINE_Y * 2.0))
+
+
+def test_baseline_backboard_and_free_throw_line_match_nba_dimensions():
+    """Backboard is 4 ft from baseline; free-throw line is 15 ft beyond it."""
+    assert BACKBOARD_Y - BASELINE_Y == pytest.approx(40.0)
+    assert FT_LINE_Y - BACKBOARD_Y == pytest.approx(150.0)
+
+
+def test_court_markers_and_zone_geometry_share_the_same_physical_constants():
+    """Black court lines and coloured-zone boundaries must never drift apart."""
+    assert PAINT_HALF_WIDTH == sm.PAINT_HALF
+    assert FT_LINE_Y == sm.FT_Y
+    assert RESTRICTED_RADIUS == sm.RA_R
+    assert ARC == sm.ARC_R
+    assert CORNER_X == sm.ZONE12_CORNER_X
 
 
 def test_standard_court_includes_ladder_lane_and_sideline_marks():

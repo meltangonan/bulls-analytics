@@ -34,10 +34,10 @@ from scipy.ndimage import gaussian_filter
 
 # --- Density grid, in raw NBA coordinates (tenths of a foot) ----------------
 GRID_X = (-250.0, 250.0)
-GRID_Y = (-50.0, 300.0)     # baseline at -47.5, out to ~30 ft
+GRID_Y = (-55.0, 300.0)     # include the -52.5 regulation baseline, out to ~30 ft
 CELL = 5.0                  # half-foot cells
 BLUR_FT = 3.8               # Gaussian bandwidth, feet
-BASELINE_Y = -47.5
+BASELINE_Y = -52.5
 MAX_DIST_FT = 35            # drop half-court heaves, matching the F5 filter
 
 # --- Zone taxonomy ---------------------------------------------------------
@@ -438,19 +438,16 @@ def zone_split(player: pd.DataFrame, league: pd.DataFrame, player_poss: float,
 
 
 # --- The twelve named zones ------------------------------------------------
-# NBA's own regions, five side sectors at every distance. This classifier was
-# written for the scoring-by-location post and lives here because two charts now
-# depend on it; the geometry must have exactly one owner or a chart can count one
-# set of regions while drawing another.
-#
-# The divergence from NBA's published labels is deliberate and measured. NBA
-# steps from three side sectors to five at 16 ft, which draws each baseline /
-# mid-range divider as a stepped "tent" rather than a straight ray -- the floor
-# has no line at 16 ft for the step to sit on, so it reads as a rendering fault.
-# Holding five sectors at every distance moves 34 of 5,855 roster shots (0.6%).
+# NBA.com owns the physical families: restricted area, paint, mid-range, both
+# corner threes, above-the-break three, and backcourt. The constants below draw
+# their regulation-sized shapes and provide a coordinate fallback. Our only
+# custom geometry is angular: five continuous sectors subdivide NBA Mid-Range,
+# and three subdivide NBA Above the Break 3. Keeping those responsibilities
+# separate preserves the readable straight rays without moving a shot across a
+# load-bearing NBA boundary such as paint versus mid-range.
 RA_R = 40.0                 # restricted area, 4 ft
 PAINT_HALF = 80.0           # key half-width, 8 ft
-FT_Y = 142.5                # free-throw line
+FT_Y = 137.5                # free-throw line, 15 ft from backboard at y=-12.5
 ARC_R = 237.5               # three-point arc, 23.75 ft
 ZONE12_CORNER_X = 220.0     # corner-3 sideline, 22 ft
 CORNER_Y = float(np.sqrt(ARC_R ** 2 - ZONE12_CORNER_X ** 2))   # arc break, ~89.5
@@ -580,13 +577,19 @@ ATB_CUTS = MID_SECTOR_CUTS[1:3]
 
 
 def _angle(x, y) -> np.ndarray:
-    """Degrees measured at the hoop, 0 = viewer's right, 180 = viewer's left."""
+    """NBA-coordinate degrees: 0 = NBA Right, 180 = NBA Left."""
     a = np.degrees(np.arctan2(y, x))
     return np.where(a < -90, a + 360, a)
 
 
 def zone_of(x, y) -> np.ndarray:
-    """Zone name for court coordinates, as an object array of the same shape."""
+    """Zone name from geometry alone, used to draw the twelve region shapes.
+
+    Real NBA.com shot rows should be classified with ``zone12_of_shots`` so the
+    physical bucket (paint, mid-range, corner three, above the break, backcourt)
+    follows the source label. This coordinate-only form owns the matching drawn
+    geometry and remains the fallback for synthetic grids and old inputs.
+    """
     x = np.asarray(x, dtype=float)
     y = np.asarray(y, dtype=float)
     r = np.hypot(x, y)
@@ -618,6 +621,93 @@ def zone_of(x, y) -> np.ndarray:
     return out
 
 
+NBA_BASIC_ZONES = frozenset({
+    "Restricted Area", "In The Paint (Non-RA)", "Mid-Range",
+    "Left Corner 3", "Right Corner 3", "Above the Break 3", "Backcourt",
+})
+NBA_TWO_POINT_BASIC_ZONES = frozenset({
+    "Restricted Area", "In The Paint (Non-RA)", "Mid-Range",
+})
+NBA_THREE_POINT_BASIC_ZONES = frozenset({
+    "Left Corner 3", "Right Corner 3", "Above the Break 3", "Backcourt",
+})
+
+
+def source_zone_value_conflicts(shots: pd.DataFrame) -> pd.Series:
+    """Rows where NBA's basic zone family conflicts with official shot value.
+
+    Integer coordinates and NBA's derived ``shot_zone`` occasionally straddle
+    the three-point line even though the scoreboard's 2PT/3PT ruling is clear.
+    Zone charts keep ``shot_zone`` as the grouping authority so they reproduce
+    NBA.com's By Zone table; scoring summaries and points must use ``shot_type``.
+    Returning the mask makes that source disagreement auditable instead of
+    silently pretending the two NBA fields always agree.
+    """
+    if not {"shot_zone", "shot_type"}.issubset(shots.columns):
+        return pd.Series(False, index=shots.index, dtype=bool)
+    basic = shots["shot_zone"]
+    value = shots["shot_type"]
+    return (
+        (basic.isin(NBA_TWO_POINT_BASIC_ZONES) & value.ne("2PT"))
+        | (basic.isin(NBA_THREE_POINT_BASIC_ZONES) & value.ne("3PT"))
+    )
+
+
+def zone12_of_shots(shots: pd.DataFrame) -> np.ndarray:
+    """Source-faithful physical buckets with our custom angular subdivisions.
+
+    NBA.com already supplies the load-bearing physical classification in
+    ``shot_zone``. Trust it for restricted area, paint, mid-range, corner three,
+    above-the-break three, and backcourt. Within the two broad regions that need
+    more detail, split Mid-Range into five and Above the Break 3 into three using
+    this chart family's continuous custom rays.
+
+    Inputs without ``shot_zone`` use coordinate geometry as a compatibility
+    fallback for synthetic tests and non-NBA data. Production NBA rows with an
+    unknown basic label fail loudly rather than being silently put in a plausible
+    but false region.
+    """
+    coordinate = zone_of(shots["loc_x"], shots["loc_y"])
+    if "shot_zone" not in shots.columns:
+        return coordinate
+
+    basic = shots["shot_zone"].astype("string")
+    unknown = set(basic.dropna().unique()) - NBA_BASIC_ZONES
+    if unknown:
+        raise ValueError("unknown NBA shot_zone values: " + ", ".join(sorted(unknown)))
+    if basic.isna().any():
+        raise ValueError("NBA shot rows contain missing shot_zone values")
+
+    x = shots["loc_x"].to_numpy(dtype=float)
+    y = shots["loc_y"].to_numpy(dtype=float)
+    angle = _angle(x, y)
+    out = np.full(len(shots), "", dtype=object)
+
+    out[basic.eq("Restricted Area").to_numpy()] = "Restricted Area"
+    out[basic.eq("In The Paint (Non-RA)").to_numpy()] = "In The Paint (Non-RA)"
+    out[basic.eq("Left Corner 3").to_numpy()] = "Left Corner 3"
+    out[basic.eq("Right Corner 3").to_numpy()] = "Right Corner 3"
+    out[basic.eq("Backcourt").to_numpy()] = "Backcourt"
+
+    mid = basic.eq("Mid-Range").to_numpy()
+    c1, c2, c3, c4 = MID_SECTOR_CUTS
+    out[mid & (angle < c1)] = "Right Baseline"
+    out[mid & (angle >= c1) & (angle < c2)] = "Right Mid-Range"
+    out[mid & (angle >= c2) & (angle < c3)] = "Center Mid-Range"
+    out[mid & (angle >= c3) & (angle < c4)] = "Left Mid-Range"
+    out[mid & (angle >= c4)] = "Left Baseline"
+
+    atb = basic.eq("Above the Break 3").to_numpy()
+    atb_low, atb_high = ATB_CUTS
+    out[atb & (angle < atb_low)] = "Right Wing 3"
+    out[atb & (angle >= atb_low) & (angle < atb_high)] = "Top of Key 3"
+    out[atb & (angle >= atb_high)] = "Left Wing 3"
+
+    if np.any(out == ""):
+        raise ValueError(f"{int(np.sum(out == ''))} NBA shot rows were not classified")
+    return out
+
+
 def zone12_split(subject: pd.DataFrame, league: pd.DataFrame,
                  min_fga: int = MIN_ZONE12_FGA) -> pd.DataFrame:
     """Per-zone shot share and accuracy for all twelve zones vs the league.
@@ -634,13 +724,25 @@ def zone12_split(subject: pd.DataFrame, league: pd.DataFrame,
     """
     subject = subject.copy()
     league = league.copy()
-    subject["zone12"] = zone_of(subject["loc_x"], subject["loc_y"])
-    league["zone12"] = zone_of(league["loc_x"], league["loc_y"])
+    subject["zone12"] = zone12_of_shots(subject)
+    league["zone12"] = zone12_of_shots(league)
 
-    lg = league.groupby("zone12")["shot_made"].agg(["size", "sum"])
-    mine = subject.groupby("zone12")["shot_made"].agg(["size", "sum"])
+    subject["_points"] = subject["shot_made"].astype(int) * np.where(
+        subject["shot_type"].eq("3PT"), 3, 2)
+    league["_points"] = league["shot_made"].astype(int) * np.where(
+        league["shot_type"].eq("3PT"), 3, 2)
+    lg = league.groupby("zone12").agg(
+        size=("shot_made", "size"), sum=("shot_made", "sum"),
+        points=("_points", "sum"))
+    mine = subject.groupby("zone12").agg(
+        size=("shot_made", "size"), sum=("shot_made", "sum"),
+        points=("_points", "sum"))
     subject_fga = len(subject)
     league_fga = len(league)
+    subject_excluded = int((~subject.zone12.isin(ZONE12_ORDER)).sum())
+    league_excluded = int((~league.zone12.isin(ZONE12_ORDER)).sum())
+    subject_conflicts = int(source_zone_value_conflicts(subject).sum())
+    league_conflicts = int(source_zone_value_conflicts(league).sum())
 
     rows = []
     for zone in ZONE12_ORDER:
@@ -648,6 +750,8 @@ def zone12_split(subject: pd.DataFrame, league: pd.DataFrame,
         fgm = int(mine["sum"].get(zone, 0))
         lg_fga = int(lg["size"].get(zone, 0))
         lg_fgm = int(lg["sum"].get(zone, 0))
+        points = int(mine["points"].get(zone, 0))
+        lg_points = int(lg["points"].get(zone, 0))
         fg = fgm / fga if fga else float("nan")
         lg_fg = lg_fgm / lg_fga if lg_fga else float("nan")
         fga_share = fga / subject_fga * 100 if subject_fga else 0.0
@@ -659,8 +763,12 @@ def zone12_split(subject: pd.DataFrame, league: pd.DataFrame,
             "fg_rel": (fg - lg_fg) * 100 if fga else float("nan"),
             "fga_share_pct": fga_share,
             "lg_fga_share_pct": lg_fga_share,
-            "pps": fg * value if fga else float("nan"),
-            "lg_pps": lg_fg * value if lg_fga else float("nan"),
+            "subject_excluded_fga": subject_excluded,
+            "league_excluded_fga": league_excluded,
+            "subject_source_conflict_fga": subject_conflicts,
+            "league_source_conflict_fga": league_conflicts,
+            "pps": points / fga if fga else float("nan"),
+            "lg_pps": lg_points / lg_fga if lg_fga else float("nan"),
             "point_value": value,
             # Colour is the claim "he is better here than the league". Shot
             # share is a count ratio and needs no such guard, so a thin zone

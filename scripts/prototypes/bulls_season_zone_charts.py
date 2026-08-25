@@ -144,7 +144,7 @@ def reconcile_shot_count(season: str, player: pd.Series,
 def league_zone_baseline(season: str, league: pd.DataFrame) -> pd.DataFrame:
     """Derive the twelve same-season NBA reference values used for colour."""
     working = league.copy()
-    working["zone"] = sm.zone_of(working.loc_x, working.loc_y)
+    working["zone"] = sm.zone12_of_shots(working)
     grouped = (
         working.groupby("zone", as_index=False)["shot_made"]
         .agg(fga="size", fgm="sum")

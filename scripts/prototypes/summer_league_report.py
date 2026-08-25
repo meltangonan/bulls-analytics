@@ -45,6 +45,7 @@ from nba_api.stats.endpoints import (
 from bulls.config import BULLS_TEAM_ID, NBA_TEAMS
 from bulls.data.fetch import _NBA_HEADERS, get_game_shots, get_player_headshot
 from bulls.graphics.craft import headshot_label
+from bulls.graphics.court import draw_half_court, nba_to_basket_bottom_px
 from bulls.graphics.house import (
     CANVAS_HEIGHT as H,
     CANVAS_WIDTH as W,
@@ -690,9 +691,9 @@ def _draw_shot_map(
 ):
     """Draw a half-court with attempts, hoop at the bottom.
 
-    Shot-chart coordinates are tenths of a foot with the hoop at the origin:
-    court 500 wide, baseline at y=-47.5, paint |x|<=80 up to y=142.5, three-point
-    arc radius 237.5 meeting the corner lines at x=+/-220. ``s`` scales the
+    Shot-chart coordinates are tenths of a foot with the hoop at the origin.
+    The shared renderer supplies the regulation 50 ft court, 16 ft lane,
+    free-throw line 15 ft from the backboard, 23 ft 9 in arc, and 22 ft corners. ``s`` scales the
     500-unit court width (0.42 -> 210 px card inset; 1.5 -> 750 px slide court).
     The caller prepares the team or player attempt set before drawing.
     """
@@ -725,40 +726,14 @@ def _draw_shot_map(
 
 
 def _draw_half_court(ax, right: float, y_center: float, s: float, line_color: str):
-    """Draw the reusable court geometry and return its coordinate transform."""
+    """Draw court geometry; return the basket-bottom NBA data transform."""
     top_y = 280
-    x0 = right - 500 * s
-    y0 = y_center - (top_y + 47.5) * s / 2
+    center_x = right - 250 * s
+    x0, y0 = draw_half_court(ax, center_x, y_center, s, line_color)
 
-    def t(cx, cy):
-        return x0 + (cx + 250) * s, y0 + (cy + 47.5) * s
-
-    court = dict(color=line_color, lw=1.1)
-    ax.plot([t(-250, -47.5)[0], t(250, -47.5)[0]], [y0, y0], **court)
-    for side in (-250, 250):
-        ax.plot([t(side, -47.5)[0]] * 2, [t(side, -47.5)[1], t(side, 110)[1]], **court)
-    paint_w, paint_h = 160 * s, 190 * s
-    ax.add_patch(
-        FancyBboxPatch((t(-80, -47.5)), paint_w, paint_h, boxstyle="square,pad=0", facecolor="none", edgecolor=line_color, lw=1.1)
-    )
-    hoop_x, hoop_y = t(0, 0)
-    ax.add_patch(Circle((hoop_x, hoop_y), 7.5 * s * 2, facecolor="none", edgecolor=line_color, lw=1.1))
-    # Backboard: 6 ft wide, 4 ft from the baseline (1 ft behind the rim).
-    ax.plot([t(-30, -7.5)[0], t(30, -7.5)[0]], [t(0, -7.5)[1]] * 2, **court)
-    # Restricted-area arc under the rim.
-    ax.add_patch(Arc((hoop_x, hoop_y), 2 * 40 * s, 2 * 40 * s, theta1=0, theta2=180, color=line_color, lw=1.1))
-    # Free-throw circle on the top of the key: solid above the line, dashed below.
-    ft_x, ft_y = t(0, 142.5)
-    ax.add_patch(Arc((ft_x, ft_y), 2 * 60 * s, 2 * 60 * s, theta1=0, theta2=180, color=line_color, lw=1.1))
-    ax.add_patch(Arc((ft_x, ft_y), 2 * 60 * s, 2 * 60 * s, theta1=180, theta2=360, color=line_color, lw=1.1, linestyle=(0, (4, 3))))
-    corner_top = (237.5**2 - 220**2) ** 0.5
-    for side in (-220, 220):
-        ax.plot([t(side, -47.5)[0]] * 2, [t(side, -47.5)[1], t(side, corner_top)[1]], **court)
-    theta = 22.1  # angle where the arc meets the corner lines
-    ax.add_patch(
-        Arc((hoop_x, hoop_y), 2 * 237.5 * s, 2 * 237.5 * s, theta1=theta, theta2=180 - theta, color=line_color, lw=1.1)
-    )
-    return t, x0, y0, top_y
+    def data_t(cx, cy):
+        return nba_to_basket_bottom_px(x0, y0, s, cx, cy)
+    return data_t, x0, y0, top_y
 
 
 def _draw_player_row(ax, player: pd.Series, lens: str, team: pd.Series, shots: pd.DataFrame, y_top: float, first: bool):

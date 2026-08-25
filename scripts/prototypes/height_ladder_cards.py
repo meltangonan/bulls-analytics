@@ -138,14 +138,15 @@ def striped_box(ax, x, y, w, h, colour, fill, fig_h, zorder):
     ))
 
 
-def place_portrait(ax, path, x, bottom, height_frac, fig_h, zorder):
+def place_portrait(ax, path, x, bottom, height_frac, fig_h, zorder, face_crop_fraction=None):
     """Draw a portrait sitting on `bottom`, tall enough to break its row."""
     try:
         image = plt.imread(path)
     except (FileNotFoundError, OSError, ValueError):
         return None
     h, w = image.shape[:2]
-    side = min(int(h * FACE_CROP_FRACTION), w)
+    crop_fraction = FACE_CROP_FRACTION if face_crop_fraction is None else face_crop_fraction
+    side = min(int(h * crop_fraction), w)
     left = max(0, (w - side) // 2)
     square = image[0:side, left:left + side]
 

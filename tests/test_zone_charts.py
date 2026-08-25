@@ -815,3 +815,58 @@ def test_the_filled_zone_court_has_a_closed_horizontal_top_edge():
     assert tuple(line.get_xdata()) == (-250, 250)
     assert tuple(line.get_ydata()) == (shot_chart.ZONE12_TOP,) * 2
     assert line.get_color() == theme.ink
+
+
+# --- Which side is which ---------------------------------------------------
+# The family totals cannot catch a left/right swap: mid-range still sums to the
+# same number with its wings exchanged, and the pill anchors still sit on the
+# correct sides of the court. What would move is the pair of numbers printed in
+# them. These pin the whole chain instead -- NBA's sign, our zone name, and the
+# pixel the fill lands on -- because it is only wrong at the ends.
+def _nba_row(loc_x, loc_y, shot_zone):
+    return pd.DataFrame({"loc_x": [loc_x], "loc_y": [loc_y],
+                         "shot_zone": [shot_zone], "shot_made": [1]})
+
+
+# Sectors are wedges measured at the hoop, so a baseline zone is reached by a
+# shot close to the baseline -- not by one far out to the side.
+@pytest.mark.parametrize("loc_x,loc_y,shot_zone,expected", [
+    (-120.0, 120.0, "Mid-Range", "Left Mid-Range"),
+    (120.0, 120.0, "Mid-Range", "Right Mid-Range"),
+    (-200.0, 40.0, "Mid-Range", "Left Baseline"),
+    (200.0, 40.0, "Mid-Range", "Right Baseline"),
+    (-150.0, 220.0, "Above the Break 3", "Left Wing 3"),
+    (150.0, 220.0, "Above the Break 3", "Right Wing 3"),
+])
+def test_a_zone_named_left_holds_the_shots_nba_calls_left(loc_x, loc_y, shot_zone,
+                                                          expected):
+    """Negative ``loc_x`` is NBA's Left Side; our zone names must agree with it.
+
+    Verified against NBA's own ``shot_zone_area`` on DeRozan's 4,193 Bulls
+    attempts: no shot NBA labels Left Side or Left Side Center falls in one of
+    our Right zones, or the reverse. Only neighbouring sectors disagree, which
+    is expected -- our rays sit at different angles than NBA's on purpose.
+    """
+    assert sm.zone12_of_shots(_nba_row(loc_x, loc_y, shot_zone))[0] == expected
+
+
+def test_each_zone_fill_is_painted_on_the_side_its_own_shots_map_to():
+    """The fills, not just the pills. A pill can be right while the fill is not."""
+    import scripts.make_shot_chart as shot_chart
+    from bulls.graphics.court import nba_to_basket_bottom_px
+
+    gx, gy, grid = shot_chart._zone12_grid()
+    gx_px, _ = nba_to_basket_bottom_px(0.0, 0.0, 1.0, gx, gy)
+    hoop_px, _ = nba_to_basket_bottom_px(0.0, 0.0, 1.0, 0.0, 0.0)
+
+    for zone in sm.ZONE12_ORDER:
+        mask = grid == zone
+        assert mask.any(), zone
+        # Where the region's own shots sit in NBA coordinates, and where it is
+        # painted. A basket-bottom court must put those on opposite signs.
+        source_x = gx[mask].mean()
+        drawn_offset = gx_px[mask].mean() - hoop_px
+        if abs(source_x) < 15.0:
+            assert abs(drawn_offset) < 8.0, zone
+        else:
+            assert np.sign(drawn_offset) == -np.sign(source_x), zone

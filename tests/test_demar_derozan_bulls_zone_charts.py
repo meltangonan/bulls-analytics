@@ -141,3 +141,31 @@ def test_the_nineteen_disputed_2021_22_attempts_are_nba_mid_range():
     assert len(disputed) == 19
     assert disputed.loc_y.min() == 139
     assert disputed.loc_y.max() == 142
+
+
+@pytest.mark.parametrize("season", charts.SEASONS)
+def test_custom_sectors_never_cross_the_centre_line_nba_drew(season):
+    """Our rays may sit at different angles than NBA's; they may not change side.
+
+    The family reconciliation test above cannot see a left/right swap -- mid-range
+    still totals 741 with its two wings exchanged, and only the pair of numbers
+    printed in each half would move. NBA's own ``shot_zone_area`` is an
+    independent angular labelling of the same shots, so it is the check that can
+    see it: a shot NBA puts on the Left Side or Left Side Center must never land
+    in a zone we name Right, or the reverse. Disagreement between *neighbouring*
+    sectors is expected and allowed -- the cut angles differ deliberately.
+    """
+    shots = pd.read_csv(DATA / f"{season}-demar-derozan-bulls-shots.csv")
+    ours = pd.Series(charts.sm.zone12_of_shots(shots), index=shots.index)
+    area = shots.shot_zone_area
+
+    nba_left = area.isin(["Left Side(L)", "Left Side Center(LC)"])
+    nba_right = area.isin(["Right Side(R)", "Right Side Center(RC)"])
+    ours_left = ours.str.startswith("Left ")
+    ours_right = ours.str.startswith("Right ")
+
+    assert int((nba_left & ours_right).sum()) == 0
+    assert int((nba_right & ours_left).sum()) == 0
+    # And the check is not vacuous: both sides carry real volume.
+    assert int((nba_left & ours_left).sum()) > 100
+    assert int((nba_right & ours_right).sum()) > 100

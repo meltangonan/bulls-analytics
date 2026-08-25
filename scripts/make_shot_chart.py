@@ -758,8 +758,17 @@ def render_cells(ctx, out: Path, final: bool):
 def _cell_angles(cell) -> tuple[float, float]:
     """Matplotlib start/end angles for a cell's wedge, in degrees.
 
-    ``sector_index`` counts from the viewer's left while Wedge measures
-    anticlockwise from the +x axis, so the index has to be mirrored.
+    ``sector_index`` counts from NBA's left -- the negative ``loc_x`` side --
+    while Wedge measures anticlockwise from the +x axis, so the index first has
+    to be turned into a source angle.
+
+    That source angle is then mirrored, for the same reason
+    ``nba_to_basket_bottom_px`` mirrors a shot: this court is drawn with the
+    basket at the bottom, which puts NBA Left on the viewer's right. A wedge
+    that skipped the flip would sit opposite the fills every other chart in the
+    family draws, so one player's LEFT CORNER would appear on two different
+    sides depending on which chart he was rendered into. Mirroring maps an angle
+    to ``180 - theta`` and reverses the interval, which is why the endpoints swap.
 
     The two outermost sectors are extended below the hoop line, to 270 and -90,
     which fills the strip between the hoop and the baseline. That is not a
@@ -772,7 +781,7 @@ def _cell_angles(cell) -> tuple[float, float]:
     step = 180.0 / cell.n_sectors
     t1 = -90.0 if cell.sector == cell.n_sectors - 1 else 180.0 - (cell.sector + 1) * step
     t2 = 270.0 if cell.sector == 0 else 180.0 - cell.sector * step
-    return t1, t2
+    return 180.0 - t2, 180.0 - t1
 
 
 def _cell_wedge(ax, centre, cell, s, color, clip):
@@ -802,13 +811,18 @@ def _label_anchor(cell, hx, hy, s) -> tuple[float, float]:
     geometric centroid falls off the canvas entirely. Those get a fixed anchor
     inside the pocket instead. Angles come from the *unextended* sector span --
     the below-hoop extension is drawn area, not where a reader looks.
+
+    Anchors carry the same basket-at-the-bottom mirror as ``_cell_angles``, and
+    for the same reason: a number printed on the opposite side from its own
+    wedge is worse than no number at all. Sector 0 is NBA Left, so it anchors on
+    the viewer's right.
     """
     if _is_corner(cell):
-        return hx + (-1 if cell.sector == 0 else 1) * CORNER_X * s, hy + CORNER_Y * s
+        return hx + (1 if cell.sector == 0 else -1) * CORNER_X * s, hy + CORNER_Y * s
     if cell.n_sectors == 1:
         mid = np.radians(90.0)
     else:
-        mid = np.radians(180.0 - (cell.sector + 0.5) * (180.0 / cell.n_sectors))
+        mid = np.radians((cell.sector + 0.5) * (180.0 / cell.n_sectors))
     r = (cell.r_in + 2.4) if cell.three else (cell.r_in + cell.r_out) / 2
     return hx + np.cos(mid) * r * 10 * s, hy + np.sin(mid) * r * 10 * s
 
@@ -824,15 +838,18 @@ def _cell_label(ax, hx, hy, cell, s):
         return
     x, y = _label_anchor(cell, hx, hy, s)
     corner = _is_corner(cell)
-    rot = 0 if not corner else (90 if cell.sector == 0 else -90)
+    # Which sideline the pocket is drawn against, not which NBA label it carries:
+    # sector 0 is NBA Left and the mirrored court puts it on the viewer's right.
+    on_viewer_right = cell.sector == 0
+    rot = 0 if not corner else (-90 if on_viewer_right else 90)
     # Rotated, the stacking axis turns with the text: "above" and "below" become
     # sideways on the page, so the two lines stay stacked as the reader sees them.
     if not corner:
         top, under = (0.0, 9.0), (0.0, -13.0)
-    elif cell.sector == 0:
-        top, under = (-9.0, 0.0), (13.0, 0.0)
-    else:
+    elif on_viewer_right:
         top, under = (9.0, 0.0), (-13.0, 0.0)
+    else:
+        top, under = (-9.0, 0.0), (13.0, 0.0)
 
     if cell.rated:
         ax.text(x + top[0], y + top[1], f"{cell.fg * 100:.0f}%", ha="center",

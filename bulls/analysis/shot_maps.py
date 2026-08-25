@@ -80,7 +80,11 @@ SECTOR_NAMES = {
 
 
 def sector_index(loc_x, loc_y, n_sectors: int) -> np.ndarray:
-    """Which angular sector a shot falls in, 0 = the viewer's left.
+    """Which angular sector a shot falls in, 0 = NBA's left (negative ``loc_x``).
+
+    Sector 0 is a *source*-side index, not a screen-side one. On a court drawn
+    with the basket at the bottom it renders on the viewer's right; see
+    ``bulls.graphics.court.nba_to_basket_bottom_px``.
 
     Angle is measured at the hoop, so a sector is a wedge rather than a vertical
     slab -- which is how a defence is arranged and how NBA's own zones work.

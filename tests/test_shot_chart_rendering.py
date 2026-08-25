@@ -138,3 +138,78 @@ def test_specialized_courts_reuse_the_shared_smooth_restricted_area(draw):
                  if isinstance(patch, PathPatch) and patch.get_snap() is False]
     assert len(smooth_ds) == 1
     plt.close(fig)
+
+
+def _Cell(cell: dict):
+    """``polar_cells`` returns dicts; the renderers take itertuples rows."""
+    from types import SimpleNamespace
+
+    return SimpleNamespace(**cell)
+
+
+def _viewer_side(px: float, hoop_px: float, tol: float = 1e-6) -> str:
+    """Which side of the hoop something sits on, with a centred case.
+
+    The middle sector straddles the hoop line exactly, so a bare ``>`` would let
+    floating-point noise decide its side and the comparison would be meaningless.
+    """
+    delta = px - hoop_px
+    if abs(delta) <= tol:
+        return "centre"
+    return "right" if delta > 0 else "left"
+
+
+def test_every_polar_cell_is_drawn_on_the_side_its_own_shots_map_to():
+    """The cells chart must agree with the shared coordinate mirror.
+
+    The wedges and the dot/fill layers are drawn by different code paths, so
+    nothing but a test stops one of them from being mirrored and the other not.
+    That happened once already: NBA's Left Corner appeared on the viewer's left
+    here while the zone chart put it on the viewer's right, which meant one
+    player had two contradictory charts. Each cell is checked by taking a shot
+    that genuinely falls inside it and asking whether the pixel it maps to sits
+    on the same side of the hoop as the wedge that is supposed to contain it.
+    """
+    from bulls.analysis import shot_maps as sm
+    from bulls.graphics.court import nba_to_basket_bottom_px
+
+    s = 1.0
+    hoop_px, _ = nba_to_basket_bottom_px(0.0, 0.0, s, 0.0, 0.0)
+
+    for cell in (c for c in sm.polar_cells() if c["n_sectors"] > 1):
+        step = 180.0 / cell["n_sectors"]
+        # A point on the sector's own midline, at a radius inside the cell.
+        source_angle = np.radians(180.0 - (cell["sector"] + 0.5) * step)
+        radius = (cell["r_in"] + cell["r_out"]) / 2 * 10
+        loc_x, loc_y = radius * np.cos(source_angle), radius * np.sin(source_angle)
+        assert sm.sector_index(loc_x, loc_y, cell["n_sectors"]) == cell["sector"]
+
+        px, _ = nba_to_basket_bottom_px(0.0, 0.0, s, loc_x, loc_y)
+        t1, t2 = msc._cell_angles(_Cell(cell))
+        wedge_x = np.cos(np.radians((max(t1, -90.0) + min(t2, 270.0)) / 2))
+
+        assert _viewer_side(px, hoop_px) == _viewer_side(wedge_x, 0.0), cell["name"]
+
+
+def test_polar_cell_labels_sit_inside_their_own_wedge():
+    """A number printed opposite its wedge is worse than no number at all."""
+    from bulls.graphics.court import nba_to_basket_bottom_px
+    from bulls.analysis import shot_maps as sm
+
+    s, hx, hy = 1.0, 0.0, 0.0
+    for cell in (c for c in sm.polar_cells() if c["n_sectors"] > 1):
+        c = _Cell(cell)
+        t1, t2 = msc._cell_angles(c)
+        wedge_x = np.cos(np.radians((max(t1, -90.0) + min(t2, 270.0)) / 2))
+        label_x, _ = msc._label_anchor(c, hx, hy, s)
+        assert _viewer_side(label_x, hx) == _viewer_side(wedge_x, 0.0), cell["name"]
+
+
+def test_nba_left_corner_lands_on_the_viewer_right_in_the_cells_chart():
+    """The concrete case the audit turned up, pinned by name."""
+    from bulls.analysis import shot_maps as sm
+
+    left_corner = next(c for c in sm.polar_cells() if c["name"] == "LEFT CORNER 3")
+    t1, t2 = msc._cell_angles(_Cell(left_corner))
+    assert np.cos(np.radians((max(t1, -90.0) + min(t2, 270.0)) / 2)) > 0
+    assert msc._label_anchor(_Cell(left_corner), 0.0, 0.0, 1.0)[0] > 0

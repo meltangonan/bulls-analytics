@@ -249,6 +249,17 @@ These are the traps that produce silently wrong numbers rather than errors.
   zones back to their seven NBA basic families and requiring exact equality for each DeRozan Bulls
   season.
 
+  **That reconciliation is blind to a left/right swap, so it is not the whole check.** Collapsing the
+  five mid-range sectors back to Mid-Range gives 741 either way; exchanging the two wings only moves
+  the pair of numbers printed in each half, and the pill anchors stay on their correct sides. NBA's
+  `shot_zone_area` is an independent angular labelling of the same rows and is the check that can see
+  it: no attempt NBA calls `Left Side(L)`/`Left Side Center(LC)` may land in a zone we name Right, or
+  the reverse. Measured across DeRozan's 4,193 Bulls attempts the crosstab is perfectly banded —
+  disagreement only ever between *neighbouring* sectors, which is expected because our rays sit at
+  different angles on purpose. Verified: swapping the baseline pair or the wing pair used to pass the
+  entire suite; `tests/test_zone_charts.py` and `tests/test_demar_derozan_bulls_zone_charts.py` now
+  fail on either.
+
   This replaced the old coordinate-only physical classifier after a 2021-22 DeRozan audit. NBA.com
   reported 293 restricted-area plus 359 paint attempts (652), while the old `y <= 142.5` cutoff
   counted 671. The extra 19 are all NBA-labelled Mid-Range attempts at integer `loc_y = 139..142`;
@@ -275,6 +286,25 @@ These are the traps that produce silently wrong numbers rather than errors.
   viewer-right corner of our basket-bottom chart; NBA Right Corner 3 is 7/28 and must appear on the
   viewer-left corner. Center zones do not move. `tests/test_court.py`, `tests/test_zone_charts.py`,
   and `tests/test_demar_derozan_bulls_zone_charts.py` enforce the general rule and that real case.
+
+  Confirmed against the source, not inferred: NBA.com's own Shot Zones chart for a player draws the
+  basket at the **top** and prints its Left Corner 3 figure on the viewer's left. Our basket-bottom
+  court is that same court turned around — a 180 degree rotation, which reverses left and right.
+  A vertical flip would not; it would draw a court seen from under the floor. Independently, four
+  documented shots put NBA's positive `loc_x` on the side basketball language calls right: Ray Allen
+  2013 Finals G6 (+168), Kyrie Irving 2016 Finals G7 (+86), Derrick Rose 2015 ECR1 G3 (+84), and
+  Kawhi Leonard 2019 ECSF G7 (+149, a 15 ft baseline shot). Four different arenas, so a
+  camera-relative reading of those descriptions would not have agreed with itself.
+- **A renderer that positions marks by *angle* needs the mirror too, and it is easy to miss.**
+  `nba_to_basket_bottom_px` only covers code that maps a coordinate. The `cells` chart places its
+  wedges and its number anchors from sector angles instead, so it kept drawing NBA Left on the
+  viewer's left for a while after every coordinate-mapping chart had been corrected — the same
+  player's LEFT CORNER appeared on opposite sides of `--chart cells` and `--chart zones`. Mirroring
+  an angle maps it to `180 - theta` and reverses the interval, so wedge endpoints swap; the label
+  anchor, its rotation, and its two-line stacking all have to turn with it.
+  `tests/test_shot_chart_rendering.py` now checks every polar cell against the shared coordinate
+  mapping, which is the check that generalises: take a shot that genuinely falls in the cell, map it,
+  and require the wedge and its label to be on that same side.
 - **`shot_maps.polar_cells()` is the second deliberate exception, and it solves the 16 ft step
   differently.** Rather than flattening the sector count, it keeps NBA's angular cuts — three
   sectors inside, five outside — and moves the change from 16 ft to the three-point line, where the

@@ -29,6 +29,16 @@ def test_selection_is_descending_and_deterministic():
     assert list(selected.PLAYER_NAME) == ["Tie A", "Tie B"]
 
 
+def test_nonpositive_limit_returns_every_qualified_player():
+    table = pd.DataFrame([
+        {"PLAYER_ID": 30, "PLAYER_NAME": "Lower", "FGA": 99, "MIN": 1900},
+        {"PLAYER_ID": 20, "PLAYER_NAME": "Second", "FGA": 200, "MIN": 2000},
+        {"PLAYER_ID": 10, "PLAYER_NAME": "First", "FGA": 300, "MIN": 2100},
+    ])
+    selected = charts.select_players(table, minimum=100, limit=0)
+    assert list(selected.PLAYER_NAME) == ["First", "Second"]
+
+
 def test_selection_rejects_a_carousel_without_nine_qualified_players():
     table = pd.DataFrame([
         {"PLAYER_ID": i, "PLAYER_NAME": str(i), "FGA": 300, "MIN": 1}
@@ -45,6 +55,22 @@ def test_raw_shots_must_reconstruct_the_selecting_bulls_fga():
 
     with pytest.raises(ValueError, match="shot rows 2 != Bulls FGA 3"):
         charts.reconcile_shot_count("2021-22", player, shots.iloc[:2])
+
+
+def test_unclassifiable_league_shots_are_preserved_not_guessed():
+    league = pd.DataFrame({
+        "loc_x": [0, 10, None],
+        "loc_y": [0, 20, None],
+        "shot_zone": ["Restricted Area", "Mid-Range", None],
+        "shot_made": [True, False, False],
+    })
+    complete, excluded = charts.separate_unclassifiable_league_shots(
+        league, maximum_share=0.5
+    )
+
+    assert len(complete) == 2
+    assert len(excluded) == 1
+    assert pd.isna(excluded.iloc[0].shot_zone)
 
 
 def test_saved_selection_and_shot_logs_reconstruct_the_carousel():

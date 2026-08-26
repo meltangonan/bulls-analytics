@@ -27,6 +27,7 @@ Add a chart by writing one render function here; the data layer is already done.
 from __future__ import annotations
 
 import argparse
+import random
 import sys
 from pathlib import Path
 
@@ -410,6 +411,80 @@ def render_preview_zones(out: Path, final: bool):
         for zone, band in zip(sm.ZONE12_ORDER, band_by_zone, strict=True)
     }
     _render_cover_zones(out, final, fills, 1.0)
+
+
+# Physical neighbors in the twelve-zone half court. Cover colors are decorative,
+# but equal neighboring fills merge visually into one region, so the cover
+# generator treats this as a small graph-coloring problem.
+ZONE12_COVER_ADJACENCY = (
+    ("Restricted Area", "In The Paint (Non-RA)"),
+    ("In The Paint (Non-RA)", "Left Baseline"),
+    ("In The Paint (Non-RA)", "Left Mid-Range"),
+    ("In The Paint (Non-RA)", "Center Mid-Range"),
+    ("In The Paint (Non-RA)", "Right Mid-Range"),
+    ("In The Paint (Non-RA)", "Right Baseline"),
+    ("Left Baseline", "Left Mid-Range"),
+    ("Left Mid-Range", "Center Mid-Range"),
+    ("Center Mid-Range", "Right Mid-Range"),
+    ("Right Mid-Range", "Right Baseline"),
+    ("Left Baseline", "Left Corner 3"),
+    ("Left Mid-Range", "Left Wing 3"),
+    ("Center Mid-Range", "Top of Key 3"),
+    ("Right Mid-Range", "Right Wing 3"),
+    ("Right Baseline", "Right Corner 3"),
+    ("Left Corner 3", "Left Wing 3"),
+    ("Left Wing 3", "Top of Key 3"),
+    ("Top of Key 3", "Right Wing 3"),
+    ("Right Wing 3", "Right Corner 3"),
+)
+
+
+def randomized_cover_fills(seed: int) -> dict[str, str]:
+    """Shuffle a green-forward cover while separating neighboring shades."""
+    rng = random.Random(seed)
+    colors = list(ZONE12_PALETTES[ZONE12_DEFAULT_PALETTE])
+    # Twelve zones cannot split evenly across five colors. Give the two green
+    # bands one extra region apiece, then use each warm band twice.
+    target_counts = dict(zip(colors, (2, 2, 2, 3, 3), strict=True))
+    neighbors = {zone: set() for zone in sm.ZONE12_ORDER}
+    for left, right in ZONE12_COVER_ADJACENCY:
+        neighbors[left].add(right)
+        neighbors[right].add(left)
+    candidate_orders = {}
+    for zone in sm.ZONE12_ORDER:
+        order = colors.copy()
+        rng.shuffle(order)
+        candidate_orders[zone] = order
+
+    assigned: dict[str, str] = {}
+    assigned_counts = {color: 0 for color in colors}
+
+    def place(index: int) -> bool:
+        if index == len(sm.ZONE12_ORDER):
+            return assigned_counts == target_counts
+        zone = sm.ZONE12_ORDER[index]
+        for color in candidate_orders[zone]:
+            if assigned_counts[color] >= target_counts[color]:
+                continue
+            if any(assigned.get(neighbor) == color
+                   for neighbor in neighbors[zone]):
+                continue
+            assigned[zone] = color
+            assigned_counts[color] += 1
+            if place(index + 1):
+                return True
+            assigned_counts[color] -= 1
+            assigned.pop(zone)
+        return False
+
+    if not place(0):
+        raise ValueError("could not separate adjacent cover-zone colors")
+    return assigned
+
+
+def render_randomized_cover_zones(out: Path, final: bool, seed: int):
+    """Render a reproducible decorative cover with separated zone colors."""
+    _render_cover_zones(out, final, randomized_cover_fills(seed), 1.0)
 
 
 def render_solid_cover_zones(out: Path, final: bool, fill: str):
@@ -1595,7 +1670,10 @@ def render_zones(ctx, out: Path, final: bool):
     if show_details:
         for z in zones.itertuples():
             _zone12_block(ax, to_px, z, fills[z.zone], theme, pill)
-        _zone12_legend(ax, theme, palette, min_fga)
+        _zone12_legend(
+            ax, theme, palette, min_fga,
+            show_thin=bool(ctx.get("show_thin_legend", True)),
+        )
         if show_summary:
             _zone12_summary_cards(ax, ctx["player"], ctx["league"], theme)
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -1623,7 +1701,7 @@ def render_zones(ctx, out: Path, final: bool):
     if show_summary:
         overall = _zone12_overall_metrics(ctx["player"])
         print(f"Summary: {total:,} FGA · {overall['efg_pct']:.1f}% eFG · "
-              f"{overall['three_pct']:.1f}% 3PT")
+              f"{_zone12_three_label(overall)}")
     else:
         print(f"Summary: {total:,} FGA · {made / total * 100:.1f}% FG · "
               "shot diet shown as each zone's share of all FGA")
@@ -1946,7 +2024,8 @@ def _zone12_thin_key(min_fga: int) -> str:
     return f"Under {min_fga} FGA"
 
 
-def _zone12_legend(ax, theme, palette: str, min_fga: int):
+def _zone12_legend(ax, theme, palette: str, min_fga: int,
+                   show_thin: bool = True):
     """One row: the colour scale, then the grey that sits outside it.
 
     Grey is a sixth state of the same encoding rather than a separate idea, so
@@ -1979,10 +2058,11 @@ def _zone12_legend(ax, theme, palette: str, min_fga: int):
         return measured
 
     thin_key = _zone12_thin_key(min_fga)
-    below_w, above_w, thin_w = (width("Below"), width("Above"),
-                                width(thin_key))
-    total = (below_w + pad + scale_w + pad + above_w + group + swatch + pad
-             + thin_w)
+    below_w, above_w = width("Below"), width("Above")
+    thin_w = width(thin_key) if show_thin else 0
+    total = below_w + pad + scale_w + pad + above_w
+    if show_thin:
+        total += group + swatch + pad + thin_w
     x = house.CANVAS_WIDTH / 2 - total / 2
 
     ax.text(x + below_w, y, "Below", ha="right", va="center", **label)
@@ -1994,10 +2074,11 @@ def _zone12_legend(ax, theme, palette: str, min_fga: int):
                                facecolor=color, edgecolor="none", zorder=9))
     x += scale_w + pad
     ax.text(x, y, "Above", ha="left", va="center", **label)
-    x += above_w + group
-    ax.add_patch(Rectangle((x, y - 11), swatch, 22, facecolor=ZONE12_GREY,
-                           edgecolor="none", zorder=9))
-    ax.text(x + swatch + pad, y, thin_key, ha="left", va="center", **label)
+    if show_thin:
+        x += above_w + group
+        ax.add_patch(Rectangle((x, y - 11), swatch, 22, facecolor=ZONE12_GREY,
+                               edgecolor="none", zorder=9))
+        ax.text(x + swatch + pad, y, thin_key, ha="left", va="center", **label)
 
 
 ZONE12_LEGEND_Y = 400
@@ -2007,7 +2088,7 @@ ZONE12_SUMMARY_CARD_W = 210
 ZONE12_SUMMARY_CARD_H = 76
 
 
-def _zone12_overall_metrics(shots) -> dict[str, float]:
+def _zone12_overall_metrics(shots) -> dict[str, float | int]:
     """Overall volume, eFG%, and 3PT% from one shot-attempt table."""
     fga = len(shots)
     if not fga:
@@ -2019,8 +2100,17 @@ def _zone12_overall_metrics(shots) -> dict[str, float]:
     return {
         "fga": fga,
         "efg_pct": (fgm + 0.5 * three_pm) / fga * 100,
+        "three_pa": three_pa,
         "three_pct": three_pm / three_pa * 100 if three_pa else float("nan"),
     }
+
+
+def _zone12_three_label(subject: dict[str, float | int]) -> str:
+    """Avoid presenting a season 3PT% on fewer than 20 attempts."""
+    three_pa = int(subject["three_pa"])
+    if three_pa < 20:
+        return f"{three_pa} 3PA"
+    return f"{float(subject['three_pct']):.1f}% 3PT"
 
 
 def _zone12_summary_cards(ax, player, _league, theme):
@@ -2029,7 +2119,7 @@ def _zone12_summary_cards(ax, player, _league, theme):
     cards = (
         f"{int(subject['fga']):,} FGA",
         f"{subject['efg_pct']:.1f}% eFG",
-        f"{subject['three_pct']:.1f}% 3PT",
+        _zone12_three_label(subject),
     )
     gap = 22
     total_w = len(cards) * ZONE12_SUMMARY_CARD_W + (len(cards) - 1) * gap

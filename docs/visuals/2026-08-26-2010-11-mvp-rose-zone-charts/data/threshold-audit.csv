@@ -1,0 +1,12 @@
+rank,player_id,player,games,minutes,fgm,fga,fg_pct,rated_zones,rated_fga,rated_fga_share_pct,largest_zone_fga,qualifies_300_fga
+1,201565,Derrick Rose,81,3025.8,711,1597,44.5,10,1568,98.2,542,True
+2,2736,Luol Deng,82,3207.9,531,1155,46.0,12,1153,99.8,353,True
+3,2430,Carlos Boozer,59,1881.8,431,845,51.0,7,845,100.0,399,True
+4,2594,Kyle Korver,82,1649.1,242,557,43.4,11,550,98.7,97,True
+5,201959,Taj Gibson,80,1742.2,234,502,46.6,7,494,98.4,218,True
+6,200758,Ronnie Brewer,81,1781.4,205,427,48.0,7,400,93.7,195,True
+7,201149,Joakim Noah,48,1575.5,211,402,52.5,3,367,91.3,281,True
+8,201228,C.J. Watson,82,1090.7,146,394,37.1,9,354,89.8,69,True
+9,2586,Keith Bogans,82,1461.3,124,307,40.4,6,281,91.5,66,True
+10,703,Kurt Thomas,52,1178.2,95,186,51.1,5,153,82.3,41,False
+11,201600,Omer Asik,82,989.4,78,141,55.3,1,135,95.7,135,False

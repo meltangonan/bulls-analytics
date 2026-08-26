@@ -559,6 +559,29 @@ def test_the_legend_is_one_row_of_swatches_and_no_prose():
     assert len(swatches) == len(shot_chart.ZONE12_PALETTES["rdylgn"]) + 1
 
 
+def test_the_legend_can_omit_the_thin_key_when_every_zone_is_rated():
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    import scripts.make_shot_chart as shot_chart
+
+    fig = plt.figure(figsize=(7.2, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, 1080)
+    ax.set_ylim(0, 1350)
+    shot_chart._zone12_legend(
+        ax, shot_chart.house.get_theme("jersey"), "rdylgn", 1,
+        show_thin=False,
+    )
+    texts = [artist.get_text() for artist in ax.texts]
+    swatches = [tuple(patch.get_facecolor()) for patch in ax.patches]
+    plt.close(fig)
+
+    assert texts == ["Below", "FG% vs. NBA avg", "Above"]
+    assert len(swatches) == len(shot_chart.ZONE12_PALETTES["rdylgn"])
+
+
 def test_the_thin_key_is_a_plain_neutral_swatch():
     """The key must match the plain grey used for every below-floor zone."""
     import matplotlib
@@ -704,6 +727,27 @@ def test_color_preview_cover_is_solid_reproducible_and_data_free(tmp_path):
     assert out.exists()
 
 
+def test_randomized_cover_is_reproducible_and_separates_adjacent_shades(tmp_path):
+    from scripts import make_shot_chart as shot_chart
+
+    first = shot_chart.randomized_cover_fills(201011)
+    second = shot_chart.randomized_cover_fills(201011)
+
+    assert first == second
+    assert set(first) == set(sm.ZONE12_ORDER)
+    assert set(first.values()) == set(
+        shot_chart.ZONE12_PALETTES[shot_chart.ZONE12_DEFAULT_PALETTE]
+    )
+    colors = shot_chart.ZONE12_PALETTES[shot_chart.ZONE12_DEFAULT_PALETTE]
+    assert [list(first.values()).count(color) for color in colors] == [2, 2, 2, 3, 3]
+    for left, right in shot_chart.ZONE12_COVER_ADJACENCY:
+        assert first[left] != first[right]
+
+    out = tmp_path / "randomized-cover.png"
+    shot_chart.render_randomized_cover_zones(out, final=False, seed=201011)
+    assert out.exists()
+
+
 def test_solid_cover_variants_use_canonical_reusable_red_tokens(tmp_path):
     """Solid covers remain player-neutral and use settled Bulls-family reds."""
     from scripts import make_shot_chart as shot_chart
@@ -770,7 +814,22 @@ def test_overall_cards_compute_efg_and_three_point_percentage_from_attempts():
 
     assert metrics["fga"] == 4
     assert metrics["efg_pct"] == pytest.approx(62.5)
+    assert metrics["three_pa"] == 2
     assert metrics["three_pct"] == pytest.approx(50.0)
+
+
+def test_overall_cards_replace_low_sample_three_pct_with_attempt_count():
+    import scripts.make_shot_chart as shot_chart
+
+    assert shot_chart._zone12_three_label(
+        {"three_pa": 0, "three_pct": float("nan")}
+    ) == "0 3PA"
+    assert shot_chart._zone12_three_label(
+        {"three_pa": 19, "three_pct": 100.0}
+    ) == "19 3PA"
+    assert shot_chart._zone12_three_label(
+        {"three_pa": 20, "three_pct": 35.0}
+    ) == "35.0% 3PT"
 
 
 def test_overall_cards_are_three_red_gradient_pills_without_league_deltas():
@@ -794,7 +853,7 @@ def test_overall_cards_are_three_red_gradient_pills_without_league_deltas():
     colors = [text.get_color() for text in ax.texts]
     plt.close(fig)
 
-    assert labels == ["4 FGA", "62.5% eFG", "50.0% 3PT"]
+    assert labels == ["4 FGA", "62.5% eFG", "2 3PA"]
     assert not any("LA" in label for label in labels)
     assert colors == ["#FFFFFF"] * 3
     assert len(ax.images) == 3

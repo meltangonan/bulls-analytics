@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build a 10-slide 2021-22 Bulls season zone-shot-chart carousel.
+"""Build a Bulls single-season zone-shot-chart carousel.
 
-The carousel answers a single-team question: how did Chicago's nine highest-
-volume regular-season shooters divide the court? Selection and chart data use
-the same Chicago stint, so attempts for another team never enter the page.
+The carousel answers a single-team question: how did Chicago's qualified
+regular-season shooters divide the court? Selection and chart data use the
+same Chicago stint, so attempts for another team never enter the page.
 
 Usage:
     venv/bin/python scripts/prototypes/bulls_season_zone_charts.py
@@ -17,7 +17,7 @@ from pathlib import Path
 import sys
 
 import pandas as pd
-from nba_api.stats.endpoints import leaguedashplayerstats
+from nba_api.stats.endpoints import leaguedashplayerstats, leaguedashteamstats
 
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
@@ -33,6 +33,11 @@ from scripts import make_shot_chart as shot_chart
 SEASON = "2021-22"
 MIN_PLAYER_FGA = 250
 MAX_PLAYER_PAGES = 9
+# Post-specific team treatment: every 2010-11 Bulls zone has at least 188 FGA.
+# Colour all observed team zones against the same-season NBA instead of carrying
+# the 400-attempt current-season floor backward into a lower-volume era.
+TEAM_ZONE_MIN_FGA = 1
+COVER_COLOR_SEED = 201011
 PROJECT = "2021-22-bulls-season-zone-charts"
 START_DATE = "2026-08-24"
 SLUG = f"{START_DATE}-{PROJECT}"
@@ -72,6 +77,25 @@ def fetch_leaderboard(season: str = SEASON) -> pd.DataFrame:
     return out
 
 
+def fetch_team_totals(season: str = SEASON) -> pd.DataFrame:
+    """Fetch Chicago's official regular-season FGM and FGA reconciliation row."""
+    table = leaguedashteamstats.LeagueDashTeamStats(
+        season=season,
+        season_type_all_star="Regular Season",
+        team_id_nullable=BULLS_TEAM_ID,
+        per_mode_detailed="Totals",
+        timeout=60,
+        headers=fetch._NBA_HEADERS,
+    ).get_data_frames()[0]
+    row = table.loc[table.TEAM_ID == BULLS_TEAM_ID, [
+        "TEAM_ID", "TEAM_NAME", "GP", "FGM", "FGA", "FG_PCT"
+    ]].copy()
+    if len(row) != 1:
+        raise ValueError(f"expected one {season} Bulls team row, found {len(row)}")
+    row.insert(0, "season", season)
+    return row
+
+
 def load_leaderboard(season: str, data_dir: Path,
                      refresh: bool = False) -> pd.DataFrame:
     """Load the post-owned table, fetching it only when needed."""
@@ -101,6 +125,8 @@ def select_players(table: pd.DataFrame, minimum: int = MIN_PLAYER_FGA,
         ascending=[False, False, True],
         kind="stable",
     )
+    if limit <= 0:
+        return ranked.reset_index(drop=True)
     if len(ranked) < limit:
         raise ValueError(
             f"only {len(ranked)} players clear the {minimum}+ FGA qualifier; "
@@ -155,6 +181,31 @@ def league_zone_baseline(season: str, league: pd.DataFrame) -> pd.DataFrame:
     return grouped
 
 
+def separate_unclassifiable_league_shots(
+    league: pd.DataFrame, maximum_share: float = 0.001
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Separate source rows that have no coordinates or basic NBA zone.
+
+    A tiny number of historical NBA attempts have a made/missed result but no
+    location. They belong in league totals, but cannot honestly be assigned to
+    one of twelve court zones. Preserve them as an audit rather than guessing.
+    """
+    required = ["loc_x", "loc_y", "shot_zone"]
+    missing_columns = set(required) - set(league.columns)
+    if missing_columns:
+        raise ValueError(
+            "league shots missing: " + ", ".join(sorted(missing_columns))
+        )
+    incomplete = league[required].isna().any(axis=1)
+    excluded = league.loc[incomplete].copy()
+    if len(excluded) / len(league) > maximum_share:
+        raise ValueError(
+            f"{len(excluded):,} of {len(league):,} league shots lack a zone "
+            "or coordinates; refusing to build a partial baseline"
+        )
+    return league.loc[~incomplete].copy(), excluded
+
+
 def summary_row(rank: int, player: pd.Series, shots: pd.DataFrame,
                 zones: pd.DataFrame, season: str = SEASON,
                 minimum: int = MIN_PLAYER_FGA) -> dict[str, object]:
@@ -189,22 +240,25 @@ def summary_row(rank: int, player: pd.Series, shots: pd.DataFrame,
     }
 
 
-def print_canva_copy(summary: pd.DataFrame) -> None:
-    print("\nCANVA COPY — 10-SLIDE CAROUSEL")
+def print_canva_copy(summary: pd.DataFrame, season: str = SEASON,
+                     minimum: int = MIN_PLAYER_FGA) -> None:
+    print(f"\nCANVA COPY — {len(summary) + 1}-SLIDE CAROUSEL")
     print("PAGE 1 — COVER")
-    print("Title: The 2021-22 Bulls through zone shot charts")
-    print("Subtitle: Where Chicago's nine highest-volume shooters took their shots")
-    print("Coverage: 2021-22 regular season · Chicago attempts only")
+    print(f"Title: The {season} Bulls through zone shot charts")
+    print("Subtitle: Where Chicago's qualified shooters took their shots")
+    print(f"Coverage: {season} regular season · Chicago attempts only")
     for page, row in enumerate(summary.itertuples(index=False), start=2):
         print(f"\nPAGE {page} — {row.player}")
         print(f"Title: {row.player}")
         print(
-            f"Subtitle: 2021-22 regular season · {row.bulls_fga:,} Bulls FGA · "
+            f"Subtitle: {season} regular season · {row.bulls_fga:,} Bulls FGA · "
             f"{row.games} games"
         )
         print("Key: Colour = FG% vs the NBA in that zone")
         print("Reading it: vs LA = percentage-point gap to that season's league average")
-        print("Qualifier: 250+ Bulls FGA · Grey zones are under 20 FGA")
+        print(
+            f"Qualifier: {minimum}+ Bulls FGA · Grey zones are under 20 FGA"
+        )
         print("Source: NBA.com/stats")
 
 
@@ -214,9 +268,19 @@ def build(args: argparse.Namespace) -> list[Path]:
 
     leaderboard = load_leaderboard(args.season, args.data_dir, args.refresh)
     selected = select_players(leaderboard, args.min_fga, args.limit)
-    league = shot_data.league_shots(args.season, args.refresh_league)
-    if league.empty:
+    league_raw = shot_data.league_shots(args.season, args.refresh_league)
+    if league_raw.empty:
         raise ValueError(f"NBA.com returned no league shots for {args.season}")
+    league, unclassifiable = separate_unclassifiable_league_shots(league_raw)
+    unclassifiable.to_csv(
+        args.data_dir / f"league-unclassifiable-shots-{args.season}.csv",
+        index=False,
+    )
+    if not unclassifiable.empty:
+        print(
+            f"League location coverage: {len(league):,}/{len(league_raw):,} "
+            f"shots ({len(unclassifiable):,} source rows preserved but excluded)"
+        )
     league_zone_baseline(args.season, league).to_csv(
         args.data_dir / f"league-zone-baseline-{args.season}.csv",
         index=False,
@@ -227,6 +291,68 @@ def build(args: argparse.Namespace) -> list[Path]:
     outputs: list[Path] = []
     summaries: list[dict[str, object]] = []
     zone_tables: list[pd.DataFrame] = []
+
+    if args.include_cover:
+        cover_out = args.output_dir / (
+            f"{date.today().isoformat()}-zone-season-{args.season}-cover-decorative.png"
+        )
+        shot_chart.render_randomized_cover_zones(
+            cover_out, args.final, COVER_COLOR_SEED
+        )
+        outputs.append(cover_out)
+
+    if args.include_team:
+        team = shot_data.team_shots(BULLS_TEAM_ID, args.season, args.refresh)
+        totals = fetch_team_totals(args.season)
+        expected_fga = int(totals.iloc[0].FGA)
+        expected_fgm = int(totals.iloc[0].FGM)
+        if len(team) != expected_fga:
+            raise ValueError(
+                f"{args.season} Bulls: shot rows {len(team)} != team FGA "
+                f"{expected_fga}"
+            )
+        if int(team.shot_made.sum()) != expected_fgm:
+            raise ValueError(
+                f"{args.season} Bulls: shot makes {int(team.shot_made.sum())} "
+                f"!= team FGM {expected_fgm}"
+            )
+        totals.to_csv(
+            args.data_dir / f"bulls-team-totals-{args.season}.csv", index=False
+        )
+        team.to_csv(
+            args.data_dir / f"bulls-team-shots-{args.season}.csv", index=False
+        )
+        team_zones = sm.zone12_split(
+            team, league, min_fga=TEAM_ZONE_MIN_FGA
+        )
+        team_zones.to_csv(
+            args.data_dir / f"bulls-team-zone-splits-{args.season}.csv",
+            index=False,
+            float_format="%.4f",
+        )
+        team_out = args.output_dir / (
+            f"{date.today().isoformat()}-zone-season-{args.season}-00-chicago-bulls.png"
+        )
+        shot_chart.render_zones(
+            {
+                "player": team,
+                "league": league,
+                "name": "Chicago Bulls",
+                "season": args.season,
+                "min_fga": TEAM_ZONE_MIN_FGA,
+                "pill": "large",
+                "summary_metrics": True,
+                "show_thin_legend": False,
+            },
+            team_out,
+            args.final,
+        )
+        outputs.append(team_out)
+        print(
+            f"\nChicago Bulls team chart: {len(team):,} FGA · "
+            f"{int(team.shot_made.sum()):,} FGM · "
+            f"{int(team_zones.rated.sum())}/12 rated zones"
+        )
 
     for rank, player in enumerate(selected.itertuples(index=False), start=1):
         player_series = pd.Series(player._asdict())
@@ -279,7 +405,7 @@ def build(args: argparse.Namespace) -> list[Path]:
     print("\nQUALIFIED BULLS")
     print(f"Qualifier: {args.min_fga}+ Bulls FGA in the {args.season} regular season")
     print(summary.to_string(index=False))
-    print_canva_copy(summary)
+    print_canva_copy(summary, args.season, args.min_fga)
     print(f"\nData: {args.data_dir}")
     return outputs
 
@@ -291,6 +417,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--season", default=SEASON)
     parser.add_argument("--min-fga", type=int, default=MIN_PLAYER_FGA)
     parser.add_argument("--limit", type=int, default=MAX_PLAYER_PAGES)
+    parser.add_argument("--include-team", action="store_true",
+                        help="also render all Bulls attempts as one team chart")
+    parser.add_argument("--include-cover", action="store_true",
+                        help="also render the data-free decorative cover court")
     parser.add_argument("--refresh", action="store_true",
                         help="refetch the leaderboard and player shot logs")
     parser.add_argument("--refresh-league", action="store_true",

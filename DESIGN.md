@@ -251,7 +251,9 @@ drawing, so larger figures never sacrifice padding. The standard four-line pill 
 
 An optional overall-summary row may sit below the legend when the page needs the player's headline
 line carried by the verified asset rather than retyped in Canva. It contains total FGA, eFG%, and
-3PT%, with no league comparisons. The three one-line cards use the national-TV chart's darker
+3PT%, with no league comparisons. When a player has fewer than 20 total three-point attempts, the
+third card prints the 3PA count instead; a percentage on that sample would add false precision and
+prints `nan` for a player with no threes. The three one-line cards use the national-TV chart's darker
 Bulls-red vertical gradient (`#B5123C` to `#7E0C2B`) and white type.
 
 Gaps use a **true minus** (−, not a hyphen) and carry **no sign at all when they round to zero** —
@@ -291,10 +293,11 @@ is to preview the chart form before the next slide reveals the data. Court landm
 therefore reads as the same chart switching on, not as a different illustration.
 
 A **data-free colour teaser** is the more energetic cover variant. It uses opaque fills sampled
-from the established five-band zone palette in a fixed, illustrative arrangement, with the same
-`#242424` court landmarks and white zone seams. It carries no analytical labels or legend because
-the placement does not represent player results; reproducible placement keeps the asset stable
-across reruns while previewing how the completed chart will feel.
+from the established five-band zone palette in a seeded, illustrative shuffle, with the same
+`#242424` court landmarks and white zone seams. Neighboring regions may not share a shade, because
+they would visually merge into one zone. It carries no analytical labels or legend because the
+placement does not represent player results; the fixed seed keeps the asset stable across reruns
+while previewing how the completed chart will feel.
 
 A reusable **single-colour cover court** may instead fill all twelve zones with one opaque Bulls
 family red while retaining white seams and `#242424` court landmarks. The canonical options are

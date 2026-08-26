@@ -251,10 +251,12 @@ drawing, so larger figures never sacrifice padding. The standard four-line pill 
 
 An optional overall-summary row may sit below the legend when the page needs the player's headline
 line carried by the verified asset rather than retyped in Canva. It contains total FGA, eFG%, and
-3PT%, with no league comparisons. When a player has fewer than 20 total three-point attempts, the
-third card prints the 3PA count instead; a percentage on that sample would add false precision and
-prints `nan` for a player with no threes. The three one-line cards use the national-TV chart's darker
-Bulls-red vertical gradient (`#B5123C` to `#7E0C2B`) and white type.
+3PT%, with no league comparisons. A post may add PPG as a leading fourth card when scoring context
+belongs in that summary; it must come from official box-score points and games because the shot log
+contains no free throws. When a player has fewer than 20 total three-point attempts, the 3PT card
+prints the 3PA count instead; a percentage on that sample would add false precision and prints `nan`
+for a player with no threes. The one-line cards use the national-TV chart's darker Bulls-red vertical
+gradient (`#B5123C` to `#7E0C2B`) and white type.
 
 Gaps use a **true minus** (−, not a hyphen) and carry **no sign at all when they round to zero** —
 `+.0f` renders a −0.4% gap as "−0%", a direction the printed number contradicts, so the sign is

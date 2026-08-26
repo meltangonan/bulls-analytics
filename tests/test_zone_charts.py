@@ -832,7 +832,7 @@ def test_overall_cards_replace_low_sample_three_pct_with_attempt_count():
     ) == "35.0% 3PT"
 
 
-def test_overall_cards_are_three_red_gradient_pills_without_league_deltas():
+def test_overall_cards_default_to_three_red_gradient_pills_without_league_deltas():
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -857,6 +857,30 @@ def test_overall_cards_are_three_red_gradient_pills_without_league_deltas():
     assert not any("LA" in label for label in labels)
     assert colors == ["#FFFFFF"] * 3
     assert len(ax.images) == 3
+
+
+def test_overall_cards_put_supplied_ppg_immediately_before_fga():
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import scripts.make_shot_chart as shot_chart
+
+    shots = pd.DataFrame({
+        "shot_type": ["2PT Field Goal", "2PT Field Goal",
+                      "3PT Field Goal", "3PT Field Goal"],
+        "shot_made": [1, 0, 1, 0],
+    })
+    fig, ax = plt.subplots()
+    ax.set_xlim(0, 1080)
+    ax.set_ylim(0, 1350)
+    shot_chart._zone12_summary_cards(
+        ax, shots, shots, shot_chart.house.get_theme("jersey"), ppg=25.012
+    )
+    labels = [text.get_text() for text in ax.texts]
+    plt.close(fig)
+
+    assert labels == ["25.0 PPG", "4 FGA", "62.5% eFG", "2 3PA"]
+    assert len(ax.images) == 4
 
 
 def test_the_filled_zone_court_has_a_closed_horizontal_top_edge():

@@ -69,6 +69,21 @@ def test_every_qualified_shot_log_reconciles_to_official_fga_and_fgm():
         assert int(shots.shot_made.sum()) == int(player.FGM)
 
 
+def test_official_totals_supply_points_and_the_saved_ppg_summary():
+    leaderboard = pd.read_csv(DATA / "bulls-season-fga-leaderboard-2010-11.csv")
+    summary = pd.read_csv(DATA / "zone-chart-summary-2010-11.csv")
+    selected = charts.select_players(
+        leaderboard, minimum=MIN_TOTAL_FGA, limit=0
+    )
+
+    assert selected.PTS.notna().all()
+    assert summary.points.tolist() == selected.PTS.astype(int).tolist()
+    assert summary.ppg.tolist() == pytest.approx(
+        (selected.PTS / selected.GP).round(1).tolist()
+    )
+    assert summary.loc[summary.player == "Derrick Rose", "ppg"].item() == 25.0
+
+
 def test_historical_league_location_gap_is_explicit_and_bounded():
     path = DATA / "league-unclassifiable-shots-2010-11.csv"
     if not path.exists():
@@ -89,6 +104,8 @@ def test_team_chart_uses_every_bulls_attempt_and_reconciles_official_totals():
 
     assert len(shots) == int(totals.FGA) == 6587
     assert int(shots.shot_made.sum()) == int(totals.FGM) == 3042
+    assert int(totals.PTS) == 8087
+    assert round(float(totals.PTS) / int(totals.GP), 1) == 98.6
 
 
 def test_team_zone_audit_colours_every_observed_zone():

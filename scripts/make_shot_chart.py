@@ -1675,7 +1675,13 @@ def render_zones(ctx, out: Path, final: bool):
             show_thin=bool(ctx.get("show_thin_legend", True)),
         )
         if show_summary:
-            _zone12_summary_cards(ax, ctx["player"], ctx["league"], theme)
+            _zone12_summary_cards(
+                ax,
+                ctx["player"],
+                ctx["league"],
+                theme,
+                ppg=ctx.get("summary_ppg"),
+            )
     out.parent.mkdir(parents=True, exist_ok=True)
     crop = Bbox.from_extents(0, ZONE12_CROP_BOTTOM / house.DRAFT_DPI,
                              house.CANVAS_WIDTH / house.DRAFT_DPI,
@@ -1700,8 +1706,15 @@ def render_zones(ctx, out: Path, final: bool):
     print("Grey FG gap: inside the chart's ±2.5-point average band")
     if show_summary:
         overall = _zone12_overall_metrics(ctx["player"])
-        print(f"Summary: {total:,} FGA · {overall['efg_pct']:.1f}% eFG · "
-              f"{_zone12_three_label(overall)}")
+        summary_parts = []
+        if ctx.get("summary_ppg") is not None:
+            summary_parts.append(f"{float(ctx['summary_ppg']):.1f} PPG")
+        summary_parts.extend((
+            f"{total:,} FGA",
+            f"{overall['efg_pct']:.1f}% eFG",
+            _zone12_three_label(overall),
+        ))
+        print("Summary: " + " · ".join(summary_parts))
     else:
         print(f"Summary: {total:,} FGA · {made / total * 100:.1f}% FG · "
               "shot diet shown as each zone's share of all FGA")
@@ -2113,14 +2126,21 @@ def _zone12_three_label(subject: dict[str, float | int]) -> str:
     return f"{float(subject['three_pct']):.1f}% 3PT"
 
 
-def _zone12_summary_cards(ax, player, _league, theme):
-    """Three one-line overall cards in the national-TV Bulls-red gradient."""
+def _zone12_summary_cards(ax, player, _league, theme, ppg=None):
+    """Three or four one-line overall cards in a Bulls-red gradient.
+
+    PPG is optional because shot-attempt tables do not contain free throws. A
+    caller that wants the scoring card must supply PPG from official box-score
+    totals rather than asking this renderer to invent it from field goals.
+    """
     subject = _zone12_overall_metrics(player)
-    cards = (
+    cards = [
         f"{int(subject['fga']):,} FGA",
         f"{subject['efg_pct']:.1f}% eFG",
         _zone12_three_label(subject),
-    )
+    ]
+    if ppg is not None:
+        cards.insert(0, f"{float(ppg):.1f} PPG")
     gap = 22
     total_w = len(cards) * ZONE12_SUMMARY_CARD_W + (len(cards) - 1) * gap
     left = house.CANVAS_WIDTH / 2 - total_w / 2

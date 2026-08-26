@@ -47,6 +47,7 @@ LEADERBOARD_COLUMNS = (
     "TEAM_ABBREVIATION",
     "GP",
     "MIN",
+    "PTS",
     "FGM",
     "FGA",
     "FG_PCT",
@@ -73,12 +74,17 @@ def fetch_leaderboard(season: str = SEASON) -> pd.DataFrame:
             f"{season} leaderboard missing: " + ", ".join(sorted(missing))
         )
     out = table.loc[:, LEADERBOARD_COLUMNS].copy()
+    out = out.sort_values(
+        ["FGA", "MIN", "PLAYER_ID"],
+        ascending=[False, False, True],
+        kind="stable",
+    ).reset_index(drop=True)
     out.insert(0, "season", season)
     return out
 
 
 def fetch_team_totals(season: str = SEASON) -> pd.DataFrame:
-    """Fetch Chicago's official regular-season FGM and FGA reconciliation row."""
+    """Fetch Chicago's official regular-season scoring and FGA totals."""
     table = leaguedashteamstats.LeagueDashTeamStats(
         season=season,
         season_type_all_star="Regular Season",
@@ -88,7 +94,7 @@ def fetch_team_totals(season: str = SEASON) -> pd.DataFrame:
         headers=fetch._NBA_HEADERS,
     ).get_data_frames()[0]
     row = table.loc[table.TEAM_ID == BULLS_TEAM_ID, [
-        "TEAM_ID", "TEAM_NAME", "GP", "FGM", "FGA", "FG_PCT"
+        "TEAM_ID", "TEAM_NAME", "GP", "PTS", "FGM", "FGA", "FG_PCT"
     ]].copy()
     if len(row) != 1:
         raise ValueError(f"expected one {season} Bulls team row, found {len(row)}")
@@ -101,7 +107,9 @@ def load_leaderboard(season: str, data_dir: Path,
     """Load the post-owned table, fetching it only when needed."""
     path = data_dir / f"bulls-season-fga-leaderboard-{season}.csv"
     if path.exists() and not refresh:
-        return pd.read_csv(path)
+        table = pd.read_csv(path)
+        if set(LEADERBOARD_COLUMNS).issubset(table.columns):
+            return table
     table = fetch_leaderboard(season)
     data_dir.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False)
@@ -222,6 +230,8 @@ def summary_row(rank: int, player: pd.Series, shots: pd.DataFrame,
         "player": str(player.PLAYER_NAME),
         "games": int(player.GP),
         "minutes": round(float(player.MIN), 1),
+        "points": int(player.PTS),
+        "ppg": round(float(player.PTS) / int(player.GP), 1),
         "bulls_fga": int(player.FGA),
         "shot_rows": fga,
         "fgm": made,
@@ -241,8 +251,11 @@ def summary_row(rank: int, player: pd.Series, shots: pd.DataFrame,
 
 
 def print_canva_copy(summary: pd.DataFrame, season: str = SEASON,
-                     minimum: int = MIN_PLAYER_FGA) -> None:
-    print(f"\nCANVA COPY — {len(summary) + 1}-SLIDE CAROUSEL")
+                     minimum: int = MIN_PLAYER_FGA,
+                     team_ppg: float | None = None,
+                     team_fga: int | None = None) -> None:
+    team_pages = int(team_ppg is not None and team_fga is not None)
+    print(f"\nCANVA COPY — {len(summary) + 1 + team_pages}-SLIDE CAROUSEL")
     print("PAGE 1 — COVER")
     print(f"Title: The {season} Bulls through zone shot charts")
     print("Subtitle: Where Chicago's qualified shooters took their shots")
@@ -251,14 +264,25 @@ def print_canva_copy(summary: pd.DataFrame, season: str = SEASON,
         print(f"\nPAGE {page} — {row.player}")
         print(f"Title: {row.player}")
         print(
-            f"Subtitle: {season} regular season · {row.bulls_fga:,} Bulls FGA · "
-            f"{row.games} games"
+            f"Subtitle: {season} regular season · {row.ppg:.1f} PPG · "
+            f"{row.bulls_fga:,} Bulls FGA · {row.games} games"
         )
         print("Key: Colour = FG% vs the NBA in that zone")
         print("Reading it: vs LA = percentage-point gap to that season's league average")
         print(
             f"Qualifier: {minimum}+ Bulls FGA · Grey zones are under 20 FGA"
         )
+        print("Source: NBA.com/stats")
+    if team_pages:
+        print(f"\nPAGE {len(summary) + 2} — Chicago Bulls")
+        print("Title: Chicago Bulls")
+        print(
+            f"Subtitle: {season} regular season · {team_ppg:.1f} PPG · "
+            f"{team_fga:,} Bulls FGA"
+        )
+        print("Key: Colour = FG% vs the NBA in that zone")
+        print("Reading it: vs LA = percentage-point gap to that season's league average")
+        print("Scope: All Chicago FGA · Every observed team zone is coloured")
         print("Source: NBA.com/stats")
 
 
@@ -291,6 +315,8 @@ def build(args: argparse.Namespace) -> list[Path]:
     outputs: list[Path] = []
     summaries: list[dict[str, object]] = []
     zone_tables: list[pd.DataFrame] = []
+    team_ppg: float | None = None
+    team_fga: int | None = None
 
     if args.include_cover:
         cover_out = args.output_dir / (
@@ -306,6 +332,8 @@ def build(args: argparse.Namespace) -> list[Path]:
         totals = fetch_team_totals(args.season)
         expected_fga = int(totals.iloc[0].FGA)
         expected_fgm = int(totals.iloc[0].FGM)
+        team_ppg = float(totals.iloc[0].PTS) / int(totals.iloc[0].GP)
+        team_fga = expected_fga
         if len(team) != expected_fga:
             raise ValueError(
                 f"{args.season} Bulls: shot rows {len(team)} != team FGA "
@@ -342,6 +370,7 @@ def build(args: argparse.Namespace) -> list[Path]:
                 "min_fga": TEAM_ZONE_MIN_FGA,
                 "pill": "large",
                 "summary_metrics": True,
+                "summary_ppg": team_ppg,
                 "show_thin_legend": False,
             },
             team_out,
@@ -384,6 +413,7 @@ def build(args: argparse.Namespace) -> list[Path]:
                 "min_fga": sm.MIN_ZONE12_FGA_PLAYER,
                 "pill": "large",
                 "summary_metrics": True,
+                "summary_ppg": float(player.PTS) / int(player.GP),
             },
             out,
             args.final,
@@ -405,7 +435,9 @@ def build(args: argparse.Namespace) -> list[Path]:
     print("\nQUALIFIED BULLS")
     print(f"Qualifier: {args.min_fga}+ Bulls FGA in the {args.season} regular season")
     print(summary.to_string(index=False))
-    print_canva_copy(summary, args.season, args.min_fga)
+    print_canva_copy(
+        summary, args.season, args.min_fga, team_ppg=team_ppg, team_fga=team_fga
+    )
     print(f"\nData: {args.data_dir}")
     return outputs
 

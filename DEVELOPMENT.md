@@ -461,10 +461,13 @@ all league attempts, so the team opener and player slides are directly comparabl
 longer needs possession endpoints. The raw attempt count in the shooting line preserves absolute
 volume. `--league` is still rejected: the league cannot be its own efficiency baseline.
 
-The optional carousel summary below a zone chart reports total FGA, eFG%, and 3PT%. eFG% is
+The optional carousel summary below a zone chart reports total FGA, eFG%, and 3PT%. A post may put
+PPG immediately before those three cards when the season's scoring context is part of the page.
+That PPG must be `PTS / GP` from the official player or team totals endpoint: `ShotChartDetail`
+contains field-goal attempts but not free throws, so it cannot reconstruct total points. eFG% is
 `(FGM + 0.5 × 3PM) / FGA`; 3PT% is `3PM / 3PA`. The summary cards are descriptive and carry no
 league comparison; the zone figures remain the chart's comparison layer. Mid-range share remains in
-the zone pills and editorial interpretation rather than becoming a fourth headline card.
+the zone pills and editorial interpretation rather than becoming another headline card.
 
 **Every zone's pill prints makes over attempts** — `11/32 FG (34.4%)` — which changed what the
 colour floor has to protect. Early drafts hid the sample behind the floor entirely: a thin zone was

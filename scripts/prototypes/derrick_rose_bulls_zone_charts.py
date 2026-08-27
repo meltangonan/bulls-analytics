@@ -35,7 +35,7 @@ START_DATE = "2026-08-25"
 SLUG = f"{START_DATE}-{PROJECT}"
 TOTAL_COLUMNS = (
     "PLAYER_ID", "PLAYER_NAME", "TEAM_ABBREVIATION", "GP", "MIN",
-    "FGM", "FGA", "FG_PCT",
+    "PTS", "FGM", "FGA", "FG_PCT",
 )
 
 
@@ -62,12 +62,15 @@ def load_bulls_totals(season: str, data_dir: Path,
     path = data_dir / f"{season}-derrick-rose-bulls-totals.csv"
     if path.exists() and not refresh:
         row = pd.read_csv(path).iloc[0]
-    else:
-        row = fetch_bulls_totals(season)
-        out = row.to_frame().T
-        out.insert(0, "season", season)
-        out.to_csv(path, index=False)
-        row = out.iloc[0]
+        if set(TOTAL_COLUMNS).issubset(row.index):
+            if int(row.PLAYER_ID) != PLAYER_ID:
+                raise ValueError(f"{season}: saved totals are not {PLAYER_NAME}")
+            return row
+    row = fetch_bulls_totals(season)
+    out = row.to_frame().T
+    out.insert(0, "season", season)
+    out.to_csv(path, index=False)
+    row = out.iloc[0]
     if int(row.PLAYER_ID) != PLAYER_ID:
         raise ValueError(f"{season}: saved totals are not {PLAYER_NAME}")
     return row
@@ -162,6 +165,8 @@ def summary_row(label: str, totals: pd.Series, shots: pd.DataFrame,
         "window": label,
         "games": int(totals.GP),
         "minutes": round(float(totals.MIN), 1),
+        "points": int(totals.PTS),
+        "ppg": round(float(totals.PTS) / int(totals.GP), 1),
         "bulls_fga": int(totals.FGA),
         "shot_rows": len(shots),
         "fgm": int(shots.shot_made.sum()),
@@ -188,12 +193,14 @@ def pooled_totals(rows: list[pd.Series]) -> pd.Series:
     return pd.Series({
         "GP": sum(int(row.GP) for row in rows),
         "MIN": sum(float(row.MIN) for row in rows),
+        "PTS": sum(int(row.PTS) for row in rows),
         "FGA": sum(int(row.FGA) for row in rows),
     })
 
 
 def render(label: str, shots: pd.DataFrame, league: pd.DataFrame,
-           min_zone_fga: int, output_dir: Path, final: bool) -> Path:
+           min_zone_fga: int, output_dir: Path, final: bool,
+           ppg: float) -> Path:
     suffix = label.lower().replace("–", "-").replace(" ", "-")
     out = output_dir / f"{date.today().isoformat()}-zone-derrick-rose-{suffix}.png"
     shot_chart.render_zones(
@@ -205,6 +212,7 @@ def render(label: str, shots: pd.DataFrame, league: pd.DataFrame,
             "min_fga": min_zone_fga,
             "pill": "large",
             "summary_metrics": True,
+            "summary_ppg": ppg,
         },
         out,
         final,
@@ -236,6 +244,7 @@ def build(args: argparse.Namespace) -> list[Path]:
         outputs.append(render(
             season, shots, league, SEASON_MIN_ZONE_FGA,
             args.output_dir, args.final,
+            float(totals.PTS) / int(totals.GP),
         ))
         all_shots.append(shots.assign(source_season=season))
         all_league.append(league.assign(source_season=season))
@@ -258,6 +267,7 @@ def build(args: argparse.Namespace) -> list[Path]:
     outputs.append(render(
         "Bulls tenure", tenure_shots, tenure_league, TENURE_MIN_ZONE_FGA,
         args.output_dir, args.final,
+        float(totals.PTS) / int(totals.GP),
     ))
 
     summary = pd.DataFrame(summaries)

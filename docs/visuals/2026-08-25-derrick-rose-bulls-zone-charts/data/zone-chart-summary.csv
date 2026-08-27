@@ -1,9 +1,9 @@
-window,games,minutes,bulls_fga,shot_rows,fgm,efg_pct,three_pct,zones_rated,zones_grey,rated_fga_share_pct,mapped_zone_fga,excluded_backcourt_fga,source_zone_value_conflicts,league_zone_value_conflicts,league_unlocated_fga,min_zone_fga,scope
-2008-09,81,3000.0,1208,1208,574,48.2,22.2,9,3,97.5,1201,7,0,143,24,20,Chicago attempts only
-2009-10,78,2870.9,1373,1373,672,49.5,26.7,8,4,97.5,1371,2,0,10,23,20,Chicago attempts only
-2010-11,81,3025.8,1597,1597,711,48.5,33.2,10,2,98.2,1588,9,0,16,29,20,Chicago attempts only
-2011-12,39,1374.5,695,695,302,47.3,31.2,9,3,96.7,690,5,0,5,20,20,Chicago attempts only
-2013-14,10,310.9,164,164,58,40.2,34.0,2,10,51.8,164,0,0,11,46,20,Chicago attempts only
-2014-15,51,1529.9,835,835,338,45.0,28.0,10,2,97.8,829,6,0,10,20,20,Chicago attempts only
-2015-16,66,2097.4,1048,1048,447,44.8,29.3,10,2,97.6,1046,2,0,18,156,20,Chicago attempts only
-Bulls tenure,406,14209.5,6920,6920,3102,47.4,30.2,10,2,98.3,6889,31,0,213,318,140,Chicago attempts only
+window,games,minutes,points,ppg,bulls_fga,shot_rows,fgm,efg_pct,three_pct,zones_rated,zones_grey,rated_fga_share_pct,mapped_zone_fga,excluded_backcourt_fga,source_zone_value_conflicts,league_zone_value_conflicts,league_unlocated_fga,min_zone_fga,scope
+2008-09,81,3000.0,1361,16.8,1208,1208,574,48.2,22.2,9,3,97.5,1201,7,0,143,24,20,Chicago attempts only
+2009-10,78,2870.9,1619,20.8,1373,1373,672,49.5,26.7,8,4,97.5,1371,2,0,10,23,20,Chicago attempts only
+2010-11,81,3025.8,2026,25.0,1597,1597,711,48.5,33.2,10,2,98.2,1588,9,0,16,29,20,Chicago attempts only
+2011-12,39,1374.5,852,21.8,695,695,302,47.3,31.2,9,3,96.7,690,5,0,5,20,20,Chicago attempts only
+2013-14,10,310.9,159,15.9,164,164,58,40.2,34.0,2,10,51.8,164,0,0,11,46,20,Chicago attempts only
+2014-15,51,1529.9,904,17.7,835,835,338,45.0,28.0,10,2,97.8,829,6,0,10,20,20,Chicago attempts only
+2015-16,66,2097.4,1080,16.4,1048,1048,447,44.8,29.3,10,2,97.6,1046,2,0,18,156,20,Chicago attempts only
+Bulls tenure,406,14209.5,8001,19.7,6920,6920,3102,47.4,30.2,10,2,98.3,6889,31,0,213,318,140,Chicago attempts only

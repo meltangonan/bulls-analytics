@@ -76,6 +76,9 @@ def test_saved_data_reconstructs_every_page_and_tenure_total():
     summary = pd.read_csv(DATA / "zone-chart-summary.csv")
     assert summary.window.tolist() == [*charts.SEASONS, "Bulls tenure"]
     assert summary.min_zone_fga.tolist() == [20] * 7 + [140]
+    assert summary.ppg.round(1).tolist() == (
+        (summary.points / summary.games).round(1).tolist()
+    )
     total = 0
     for season in charts.SEASONS:
         totals = pd.read_csv(
@@ -90,6 +93,7 @@ def test_saved_data_reconstructs_every_page_and_tenure_total():
     tenure = summary[summary.window.eq("Bulls tenure")].iloc[0]
     assert int(tenure.bulls_fga) == total
     assert int(tenure.shot_rows) == total
+    assert int(tenure.points) == int(summary.iloc[:-1].points.sum())
 
 
 def test_saved_zone_tables_are_complete_and_cover_each_mapped_attempt():

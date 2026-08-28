@@ -679,6 +679,8 @@ def render_chart(
     metric_width: float = PPG_RIGHT - PPG_LEFT,
     trailing_slot_width: float = GP_RIGHT - GP_LEFT,
     face_crop_fraction: float = FACE_CROP_HEIGHT_FRACTION,
+    portrait_crop_overrides: dict[int, float] | None = None,
+    portrait_rise_overrides: dict[int, float] | None = None,
     clip_portraits_to_row: bool = False,
     final: bool = False,
 ) -> Path:
@@ -841,10 +843,10 @@ def render_chart(
             ax,
             headshot_path,
             headshot_x,
-            y + layout.headshot_rise,
+            y + (portrait_rise_overrides or {}).get(player_id, layout.headshot_rise),
             layout.headshot_half_size,
             zorder=4,
-            crop_fraction=face_crop_fraction,
+            crop_fraction=(portrait_crop_overrides or {}).get(player_id, face_crop_fraction),
             clip_bottom=(y - layout.row_height / 2) if clip_portraits_to_row else None,
         )
         if show_age:

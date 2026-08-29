@@ -1,0 +1,9 @@
+# Source: linked player pages on https://www.2kratings.com/teams/chicago-bulls
+# Captured: 2026-08-17 America/Chicago
+# Six group ratings are the category values displayed on each player page; blanks mean the site displayed --
+# ovr_change is derived as nba_2k27_ovr minus nba_2k26_ovr; blank means no NBA 2K26 row exists
+player_name,slug,source_url,portrait_url,nba_2k27_ovr,nba_2k26_ovr,ovr_change,official_confirmed,detailed_ratings_available,archetype,inside_scoring,outside_scoring,athleticism,playmaking,defense,rebounding
+Norman Powell,norman-powell,https://www.2kratings.com/norman-powell,https://www.2kratings.com/wp-content/uploads/Norman-Powell-2K-Rating.png,84,84,0,TRUE,TRUE,Crafty 3PT Sniper,54,85,78,71,65,42
+Josh Giddey,josh-giddey,https://www.2kratings.com/josh-giddey,https://www.2kratings.com/wp-content/uploads/Josh-Giddey-2K-Rating.png,84,82,2,TRUE,TRUE,Crafty Playmaking Cleaner,69,75,79,87,52,65
+Matas Buzelis,matas-buzelis,https://www.2kratings.com/matas-buzelis,https://www.2kratings.com/wp-content/uploads/Matas-Buzelis-2K-Rating.png,81,79,2,TRUE,TRUE,Shot-Erasing 3-Level Creator,74,85,79,64,60,56
+Caleb Wilson,caleb-wilson,https://www.2kratings.com/caleb-wilson,https://www.2kratings.com/wp-content/uploads/Caleb-Wilson-2K-Rating.png,77,,,TRUE,FALSE,,,,,,,

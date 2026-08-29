@@ -1,0 +1,19 @@
+# Source: https://www.2kratings.com/teams/chicago-bulls
+# Method: Bulls roster table plus the official-player-rating icon on each linked player page
+# Captured: 2026-08-17 America/Chicago
+# Qualification: official_confirmed is TRUE only when the player page contains /wp-content/uploads/official-icon.svg beside the NBA 2K27 overall rating
+player_name,nba_2k27_ovr,official_confirmed,detailed_ratings_available,source_url
+Norman Powell,84,TRUE,TRUE,https://www.2kratings.com/norman-powell
+Josh Giddey,84,TRUE,TRUE,https://www.2kratings.com/josh-giddey
+Nic Claxton,81,FALSE,TRUE,https://www.2kratings.com/nicolas-claxton
+Tre Jones,81,FALSE,TRUE,https://www.2kratings.com/tre-jones
+Matas Buzelis,81,TRUE,TRUE,https://www.2kratings.com/matas-buzelis
+Jalen Smith,79,FALSE,TRUE,https://www.2kratings.com/jalen-smith
+Zach Collins,77,FALSE,TRUE,https://www.2kratings.com/zach-collins
+Isaac Okoro,77,FALSE,TRUE,https://www.2kratings.com/isaac-okoro
+Caleb Wilson,77,TRUE,FALSE,https://www.2kratings.com/caleb-wilson
+Leonard Miller,76,FALSE,TRUE,https://www.2kratings.com/leonard-miller
+Patrick Williams,75,FALSE,TRUE,https://www.2kratings.com/patrick-williams
+Nick Richards,75,FALSE,TRUE,https://www.2kratings.com/nick-richards
+Rob Dillingham,73,FALSE,TRUE,https://www.2kratings.com/rob-dillingham
+Noa Essengue,72,FALSE,TRUE,https://www.2kratings.com/noa-essengue

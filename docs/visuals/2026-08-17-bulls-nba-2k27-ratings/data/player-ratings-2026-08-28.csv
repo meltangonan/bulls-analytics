@@ -1,0 +1,23 @@
+# Source: linked player pages on https://www.2kratings.com/teams/chicago-bulls
+# Captured: 2026-08-28 America/Chicago
+# Grain: one row per player listed on the Chicago Bulls NBA 2K27 roster page
+# Six group ratings are the category values displayed on each linked player page
+# nba_2k26_ovr is blank when the player did not have an NBA 2K26 rating
+# ovr_change is derived as nba_2k27_ovr minus nba_2k26_ovr
+player_name,slug,source_url,portrait_url,nba_2k27_ovr,nba_2k26_ovr,ovr_change,official_confirmed,detailed_ratings_available,archetype,inside_scoring,outside_scoring,athleticism,playmaking,defense,rebounding
+Norman Powell,norman-powell,https://www.2kratings.com/norman-powell,https://www.2kratings.com/wp-content/uploads/Norman-Powell-2K-Rating.png,84,84,0,TRUE,TRUE,2-Way Crafty Sniper,55,86,80,71,65,42
+Josh Giddey,josh-giddey,https://www.2kratings.com/josh-giddey,https://www.2kratings.com/wp-content/uploads/Josh-Giddey-2K-Rating.png,84,82,2,TRUE,TRUE,Grab & Go Playmaker,69,76,79,87,52,65
+Matas Buzelis,matas-buzelis,https://www.2kratings.com/matas-buzelis,https://www.2kratings.com/wp-content/uploads/Matas-Buzelis-2K-Rating.png,81,79,2,TRUE,TRUE,3-Level Shot Eraser,74,84,82,64,60,56
+Nicolas Claxton,nicolas-claxton,https://www.2kratings.com/nicolas-claxton,https://www.2kratings.com/wp-content/uploads/Nic-Claxton-2K-Rating.png,80,79,1,TRUE,TRUE,Switch Defender,72,72,80,50,73,72
+Tre Jones,tre-jones,https://www.2kratings.com/tre-jones,https://www.2kratings.com/wp-content/uploads/Tre-Jones-2K-Rating.png,79,76,3,TRUE,TRUE,Middy Scooper,51,83,76,81,58,43
+Caleb Wilson,caleb-wilson,https://www.2kratings.com/caleb-wilson,https://www.2kratings.com/wp-content/uploads/Caleb-Wilson-2K-Rating.png,77,,,TRUE,TRUE,2-Way Rim-Rocking Slasher,71,66,80,61,73,71
+Jalen Smith,jalen-smith,https://www.2kratings.com/jalen-smith,https://www.2kratings.com/wp-content/uploads/Jalen-Smith-2K-Rating.png,76,75,1,TRUE,TRUE,Stretch Riser,73,74,76,39,56,77
+Zach Collins,zach-collins,https://www.2kratings.com/zach-collins,https://www.2kratings.com/wp-content/uploads/Zach-Collins-2K-Rating.png,75,75,0,TRUE,TRUE,Post-Scoring Stretch,72,73,70,36,53,75
+Isaac Okoro,isaac-okoro,https://www.2kratings.com/isaac-okoro,https://www.2kratings.com/wp-content/uploads/Isaac-Okoro-2K-Rating.png,75,74,1,TRUE,TRUE,2-Way Silky Iso Sniper,60,64,82,62,70,44
+Patrick Williams,patrick-williams,https://www.2kratings.com/patrick-williams,https://www.2kratings.com/wp-content/uploads/Patrick-Williams-2K-Rating.png,74,75,-1,TRUE,TRUE,2-Way Stretch,55,68,76,58,64,49
+Leonard Miller,leonard-miller,https://www.2kratings.com/leonard-miller,https://www.2kratings.com/wp-content/uploads/Leonard-Miller-2K-Rating.png,74,70,4,TRUE,TRUE,Off-Ball Cutter,69,75,78,55,53,69
+Robert Dillingham,rob-dillingham,https://www.2kratings.com/rob-dillingham,https://www.2kratings.com/wp-content/uploads/Rob-Dillingham-2K-Rating.png,73,74,-1,TRUE,TRUE,Open-Lane Burner,53,72,80,77,53,45
+Noa Essengue,noa-essengue,https://www.2kratings.com/noa-essengue,https://www.2kratings.com/wp-content/uploads/Noa-Essengue-2K-Rating.png,72,72,0,TRUE,TRUE,Rim-Running Hammer,69,65,73,60,58,55
+Dailyn Swain,dailyn-swain,https://www.2kratings.com/dailyn-swain,https://www.2kratings.com/wp-content/uploads/Dailyn-Swain-2K-Rating.png,71,,,TRUE,TRUE,2-Way Burner,59,62,77,66,60,54
+Tobe Awaka,tobe-awaka,https://www.2kratings.com/tobe-awaka,https://www.2kratings.com/wp-content/uploads/Tobe-Awaka-2K-Rating.png,68,,,TRUE,TRUE,Possession Extender,58,55,80,47,51,73
+Jaylin Sellers,jaylin-sellers,https://www.2kratings.com/jaylin-sellers,https://www.2kratings.com/wp-content/uploads/Jaylin-Sellers-2K-Rating.png,68,,,TRUE,TRUE,Ball-Hawking Bomber,54,67,75,60,59,61

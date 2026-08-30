@@ -1,0 +1,4069 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2007-08",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2007-08",
+    "RowsReturned": 462,
+    "RowsWithOffPoss": 444,
+    "RowsSkippedMissingMetrics": 39,
+    "LastRowOffPoss": 0,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2550-2732-2736-693",
+      "Name": "Ben Wallace, Kirk Hinrich, Ben Gordon, Luol Deng, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 11675.0,
+      "GamesPlayed": 20,
+      "OffPoss": 362,
+      "Points": 394
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201149-2400-2550-2736",
+      "Name": "Larry Hughes, Joakim Noah, Drew Gooden, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9978.0,
+      "GamesPlayed": 14,
+      "OffPoss": 319,
+      "Points": 339
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2550-2732-2736-2804",
+      "Name": "Ben Wallace, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8448.0,
+      "GamesPlayed": 19,
+      "OffPoss": 273,
+      "Points": 304
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2550-2732-2736",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6976.0,
+      "GamesPlayed": 17,
+      "OffPoss": 219,
+      "Points": 210
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-201149-2550-2736",
+      "Name": "Larry Hughes, Tyrus Thomas, Joakim Noah, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6626.0,
+      "GamesPlayed": 11,
+      "OffPoss": 209,
+      "Points": 218
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2768-2804-693",
+      "Name": "Ben Wallace, Thabo Sefolosha, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4962.0,
+      "GamesPlayed": 7,
+      "OffPoss": 155,
+      "Points": 156
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201149-2550-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4435.0,
+      "GamesPlayed": 7,
+      "OffPoss": 140,
+      "Points": 130
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2550-2732-2804-693",
+      "Name": "Ben Wallace, Kirk Hinrich, Ben Gordon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4366.0,
+      "GamesPlayed": 13,
+      "OffPoss": 143,
+      "Points": 121
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2550-2804-693",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4107.0,
+      "GamesPlayed": 7,
+      "OffPoss": 132,
+      "Points": 134
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2550-2736-2768-693",
+      "Name": "Ben Wallace, Kirk Hinrich, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3799.0,
+      "GamesPlayed": 10,
+      "OffPoss": 111,
+      "Points": 125
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201149-2400-2732-2736",
+      "Name": "Larry Hughes, Joakim Noah, Drew Gooden, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3395.0,
+      "GamesPlayed": 13,
+      "OffPoss": 111,
+      "Points": 110
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2550-2768-2804-693",
+      "Name": "Ben Wallace, Kirk Hinrich, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3319.0,
+      "GamesPlayed": 8,
+      "OffPoss": 101,
+      "Points": 104
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2732-2768-2804",
+      "Name": "Thabo Sefolosha, Aaron Gray, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2527.0,
+      "GamesPlayed": 9,
+      "OffPoss": 85,
+      "Points": 88
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2736-2768-693",
+      "Name": "Ben Wallace, Thabo Sefolosha, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2429.0,
+      "GamesPlayed": 5,
+      "OffPoss": 74,
+      "Points": 81
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-2400-2732-2736-2804",
+      "Name": "Larry Hughes, Drew Gooden, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2280.0,
+      "GamesPlayed": 9,
+      "OffPoss": 83,
+      "Points": 99
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2732-2736-2768-693",
+      "Name": "Ben Wallace, Ben Gordon, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2274.0,
+      "GamesPlayed": 10,
+      "OffPoss": 72,
+      "Points": 76
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2732-2736-2768-2804",
+      "Name": "Joakim Noah, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2231.0,
+      "GamesPlayed": 9,
+      "OffPoss": 74,
+      "Points": 103
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "2550-2732-2736-2804-693",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2196.0,
+      "GamesPlayed": 9,
+      "OffPoss": 73,
+      "Points": 73
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "2400-2550-2732-2736-2804",
+      "Name": "Drew Gooden, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2162.0,
+      "GamesPlayed": 8,
+      "OffPoss": 64,
+      "Points": 84
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201149-2550-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2053.0,
+      "GamesPlayed": 5,
+      "OffPoss": 71,
+      "Points": 91
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2550-2732-2736-2804",
+      "Name": "Joakim Noah, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2026.0,
+      "GamesPlayed": 17,
+      "OffPoss": 62,
+      "Points": 73
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201189-2550-2732-2736-2804",
+      "Name": "Aaron Gray, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1891.0,
+      "GamesPlayed": 14,
+      "OffPoss": 67,
+      "Points": 79
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2732-2736-2768-2804",
+      "Name": "Ben Wallace, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1844.0,
+      "GamesPlayed": 12,
+      "OffPoss": 56,
+      "Points": 47
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2550-2736-2768-2804",
+      "Name": "Ben Wallace, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1792.0,
+      "GamesPlayed": 6,
+      "OffPoss": 59,
+      "Points": 63
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201149-2550-2736-2804",
+      "Name": "Larry Hughes, Joakim Noah, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1736.0,
+      "GamesPlayed": 8,
+      "OffPoss": 58,
+      "Points": 66
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-2550-2732-2804",
+      "Name": "Tyrus Thomas, Aaron Gray, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1616.0,
+      "GamesPlayed": 13,
+      "OffPoss": 53,
+      "Points": 62
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2732-2736-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1556.0,
+      "GamesPlayed": 7,
+      "OffPoss": 54,
+      "Points": 75
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201149-2550-2732-2804",
+      "Name": "Ben Wallace, Joakim Noah, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1522.0,
+      "GamesPlayed": 8,
+      "OffPoss": 50,
+      "Points": 54
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2550-2768-2804-693",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1501.0,
+      "GamesPlayed": 7,
+      "OffPoss": 47,
+      "Points": 52
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201149-201189-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Aaron Gray, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1476.0,
+      "GamesPlayed": 4,
+      "OffPoss": 45,
+      "Points": 51
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2732-2768-2804-693",
+      "Name": "Ben Wallace, Ben Gordon, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1464.0,
+      "GamesPlayed": 12,
+      "OffPoss": 44,
+      "Points": 54
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2550-2732-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1442.0,
+      "GamesPlayed": 8,
+      "OffPoss": 47,
+      "Points": 47
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201149-2550-2732-2736",
+      "Name": "Ben Wallace, Joakim Noah, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1433.0,
+      "GamesPlayed": 8,
+      "OffPoss": 43,
+      "Points": 40
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-2732-2768-2804",
+      "Name": "Tyrus Thomas, Aaron Gray, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1425.0,
+      "GamesPlayed": 10,
+      "OffPoss": 45,
+      "Points": 34
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2732-2768-2804",
+      "Name": "Thabo Sefolosha, Joakim Noah, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1390.0,
+      "GamesPlayed": 10,
+      "OffPoss": 46,
+      "Points": 42
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2768-2804-693",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1388.0,
+      "GamesPlayed": 4,
+      "OffPoss": 50,
+      "Points": 59
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "2732-2736-2768-2804-693",
+      "Name": "Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1374.0,
+      "GamesPlayed": 8,
+      "OffPoss": 47,
+      "Points": 49
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2550-2732-2736-2804",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1318.0,
+      "GamesPlayed": 6,
+      "OffPoss": 46,
+      "Points": 45
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-201189-2550-2736",
+      "Name": "Larry Hughes, Tyrus Thomas, Aaron Gray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1307.0,
+      "GamesPlayed": 2,
+      "OffPoss": 45,
+      "Points": 46
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200757-201149-201189-2768",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Joakim Noah, Aaron Gray, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1305.0,
+      "GamesPlayed": 5,
+      "OffPoss": 42,
+      "Points": 45
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2550-2732-2804",
+      "Name": "Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1240.0,
+      "GamesPlayed": 6,
+      "OffPoss": 42,
+      "Points": 38
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2550-2736-2768-2804",
+      "Name": "Joakim Noah, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1199.0,
+      "GamesPlayed": 4,
+      "OffPoss": 39,
+      "Points": 51
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-2400-2732-2736",
+      "Name": "Larry Hughes, Tyrus Thomas, Drew Gooden, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1198.0,
+      "GamesPlayed": 7,
+      "OffPoss": 43,
+      "Points": 46
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2732-2736-2804",
+      "Name": "Thabo Sefolosha, Joakim Noah, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1113.0,
+      "GamesPlayed": 6,
+      "OffPoss": 34,
+      "Points": 42
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2732-2768-2804-693",
+      "Name": "Joakim Noah, Ben Gordon, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1106.0,
+      "GamesPlayed": 7,
+      "OffPoss": 34,
+      "Points": 25
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201149-2550-2736",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1094.0,
+      "GamesPlayed": 4,
+      "OffPoss": 37,
+      "Points": 36
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201189-2732-2736-2768-2804",
+      "Name": "Aaron Gray, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1092.0,
+      "GamesPlayed": 9,
+      "OffPoss": 34,
+      "Points": 42
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2550-2736-693",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Luol Deng, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1061.0,
+      "GamesPlayed": 2,
+      "OffPoss": 30,
+      "Points": 36
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2550-2736-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1059.0,
+      "GamesPlayed": 3,
+      "OffPoss": 37,
+      "Points": 37
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2550-2732-2804-693",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Ben Gordon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1045.0,
+      "GamesPlayed": 8,
+      "OffPoss": 34,
+      "Points": 34
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201149-2732-2804",
+      "Name": "Larry Hughes, Thabo Sefolosha, Joakim Noah, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1042.0,
+      "GamesPlayed": 2,
+      "OffPoss": 31,
+      "Points": 38
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201149-2732-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 994.0,
+      "GamesPlayed": 4,
+      "OffPoss": 28,
+      "Points": 32
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201149-2732-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 976.0,
+      "GamesPlayed": 4,
+      "OffPoss": 30,
+      "Points": 37
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2550-2768-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 957.0,
+      "GamesPlayed": 5,
+      "OffPoss": 33,
+      "Points": 36
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201189-2550-2732",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 937.0,
+      "GamesPlayed": 4,
+      "OffPoss": 31,
+      "Points": 32
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2732-2768-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 875.0,
+      "GamesPlayed": 5,
+      "OffPoss": 32,
+      "Points": 33
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201149-2400-2732-2804",
+      "Name": "Larry Hughes, Joakim Noah, Drew Gooden, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 868.0,
+      "GamesPlayed": 7,
+      "OffPoss": 32,
+      "Points": 19
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201149-2732-2736",
+      "Name": "Larry Hughes, Thabo Sefolosha, Joakim Noah, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 865.0,
+      "GamesPlayed": 4,
+      "OffPoss": 29,
+      "Points": 31
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-2400-2550-2736",
+      "Name": "Larry Hughes, Thabo Sefolosha, Drew Gooden, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 850.0,
+      "GamesPlayed": 6,
+      "OffPoss": 28,
+      "Points": 36
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-2400-2550-2732-2736",
+      "Name": "Larry Hughes, Drew Gooden, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 844.0,
+      "GamesPlayed": 5,
+      "OffPoss": 29,
+      "Points": 34
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2550-2768-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 831.0,
+      "GamesPlayed": 6,
+      "OffPoss": 26,
+      "Points": 27
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-2550-2732-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 830.0,
+      "GamesPlayed": 2,
+      "OffPoss": 27,
+      "Points": 21
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201149-2732-2736-2804",
+      "Name": "Larry Hughes, Joakim Noah, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 826.0,
+      "GamesPlayed": 5,
+      "OffPoss": 27,
+      "Points": 35
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-2550-2732-2804",
+      "Name": "Tyrus Thomas, Joakim Noah, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 824.0,
+      "GamesPlayed": 5,
+      "OffPoss": 26,
+      "Points": 36
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201149-2550-2732-2736",
+      "Name": "Larry Hughes, Joakim Noah, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 822.0,
+      "GamesPlayed": 4,
+      "OffPoss": 29,
+      "Points": 37
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-2400-2550-2736-2804",
+      "Name": "Larry Hughes, Drew Gooden, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 820.0,
+      "GamesPlayed": 6,
+      "OffPoss": 28,
+      "Points": 18
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201189-2732-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 815.0,
+      "GamesPlayed": 4,
+      "OffPoss": 25,
+      "Points": 31
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201149-2550-2768-2804",
+      "Name": "Ben Wallace, Joakim Noah, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 814.0,
+      "GamesPlayed": 4,
+      "OffPoss": 24,
+      "Points": 28
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2732-2736-693",
+      "Name": "Ben Wallace, Thabo Sefolosha, Ben Gordon, Luol Deng, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 807.0,
+      "GamesPlayed": 4,
+      "OffPoss": 22,
+      "Points": 18
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201149-2732-2736-2768",
+      "Name": "Ben Wallace, Joakim Noah, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 806.0,
+      "GamesPlayed": 4,
+      "OffPoss": 25,
+      "Points": 23
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200757-201149-2550-2804",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 801.0,
+      "GamesPlayed": 1,
+      "OffPoss": 26,
+      "Points": 36
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2732-2768-693",
+      "Name": "Ben Wallace, Thabo Sefolosha, Ben Gordon, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 800.0,
+      "GamesPlayed": 3,
+      "OffPoss": 26,
+      "Points": 35
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201149-2732-2768-2804",
+      "Name": "Ben Wallace, Joakim Noah, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 797.0,
+      "GamesPlayed": 7,
+      "OffPoss": 25,
+      "Points": 33
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201149-2550-2732",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 794.0,
+      "GamesPlayed": 7,
+      "OffPoss": 24,
+      "Points": 28
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2550-2732-2736-693",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Ben Gordon, Luol Deng, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 775.0,
+      "GamesPlayed": 6,
+      "OffPoss": 24,
+      "Points": 21
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-2768-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 764.0,
+      "GamesPlayed": 4,
+      "OffPoss": 24,
+      "Points": 33
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-2550-2732-2736",
+      "Name": "Tyrus Thomas, Joakim Noah, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 742.0,
+      "GamesPlayed": 8,
+      "OffPoss": 24,
+      "Points": 27
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201189-2400-2732-2736",
+      "Name": "Larry Hughes, Aaron Gray, Drew Gooden, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 725.0,
+      "GamesPlayed": 4,
+      "OffPoss": 24,
+      "Points": 16
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2400-2550-2732-2736",
+      "Name": "Thabo Sefolosha, Drew Gooden, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 721.0,
+      "GamesPlayed": 5,
+      "OffPoss": 24,
+      "Points": 32
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-201149-2751",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 720.0,
+      "GamesPlayed": 1,
+      "OffPoss": 22,
+      "Points": 26
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-201189-201242-2768",
+      "Name": "Thabo Sefolosha, Joakim Noah, Aaron Gray, Thomas Gardner, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 720.0,
+      "GamesPlayed": 1,
+      "OffPoss": 25,
+      "Points": 22
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2550-2732-2804-693",
+      "Name": "Joakim Noah, Kirk Hinrich, Ben Gordon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 715.0,
+      "GamesPlayed": 6,
+      "OffPoss": 21,
+      "Points": 26
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2550-2732-2736",
+      "Name": "Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 707.0,
+      "GamesPlayed": 6,
+      "OffPoss": 21,
+      "Points": 16
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2550-2732-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 704.0,
+      "GamesPlayed": 4,
+      "OffPoss": 25,
+      "Points": 23
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201149-2732-2736-2768",
+      "Name": "Larry Hughes, Joakim Noah, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 704.0,
+      "GamesPlayed": 4,
+      "OffPoss": 28,
+      "Points": 32
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2732-2736-2768",
+      "Name": "Thabo Sefolosha, Joakim Noah, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 702.0,
+      "GamesPlayed": 4,
+      "OffPoss": 24,
+      "Points": 24
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-2550-2768-2804",
+      "Name": "Tyrus Thomas, Aaron Gray, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 699.0,
+      "GamesPlayed": 3,
+      "OffPoss": 21,
+      "Points": 20
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2550-2732-693",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Ben Gordon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 695.0,
+      "GamesPlayed": 3,
+      "OffPoss": 23,
+      "Points": 11
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201149-2550-2736",
+      "Name": "Larry Hughes, Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 679.0,
+      "GamesPlayed": 5,
+      "OffPoss": 25,
+      "Points": 25
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201149-2768-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Joakim Noah, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 676.0,
+      "GamesPlayed": 6,
+      "OffPoss": 20,
+      "Points": 16
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-2550-2768-2804",
+      "Name": "Tyrus Thomas, Joakim Noah, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 673.0,
+      "GamesPlayed": 5,
+      "OffPoss": 22,
+      "Points": 19
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2550-2732-2768-693",
+      "Name": "Ben Wallace, Kirk Hinrich, Ben Gordon, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 645.0,
+      "GamesPlayed": 5,
+      "OffPoss": 20,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-2400-2732-2804",
+      "Name": "Larry Hughes, Tyrus Thomas, Drew Gooden, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 645.0,
+      "GamesPlayed": 5,
+      "OffPoss": 19,
+      "Points": 23
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2732-2768-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 623.0,
+      "GamesPlayed": 5,
+      "OffPoss": 21,
+      "Points": 17
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2732-2768-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 621.0,
+      "GamesPlayed": 4,
+      "OffPoss": 21,
+      "Points": 31
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2400-2550-2732-2736",
+      "Name": "Joakim Noah, Drew Gooden, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 607.0,
+      "GamesPlayed": 5,
+      "OffPoss": 21,
+      "Points": 13
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-2550-2732-2736",
+      "Name": "Tyrus Thomas, Aaron Gray, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 603.0,
+      "GamesPlayed": 4,
+      "OffPoss": 19,
+      "Points": 25
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-201189-2751-2768",
+      "Name": "Thabo Sefolosha, Joakim Noah, Aaron Gray, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 598.0,
+      "GamesPlayed": 3,
+      "OffPoss": 22,
+      "Points": 20
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2732-2736-2768-2804",
+      "Name": "Tyrus Thomas, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 586.0,
+      "GamesPlayed": 4,
+      "OffPoss": 22,
+      "Points": 21
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-2732-2736-2768",
+      "Name": "Tyrus Thomas, Joakim Noah, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 576.0,
+      "GamesPlayed": 4,
+      "OffPoss": 17,
+      "Points": 23
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-2732-2768-2804",
+      "Name": "Tyrus Thomas, Joakim Noah, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 575.0,
+      "GamesPlayed": 4,
+      "OffPoss": 16,
+      "Points": 11
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2751-2768-2804",
+      "Name": "Thabo Sefolosha, Joakim Noah, Viktor Khryapa, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 575.0,
+      "GamesPlayed": 1,
+      "OffPoss": 20,
+      "Points": 12
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2400-2732-2736",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Drew Gooden, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 571.0,
+      "GamesPlayed": 6,
+      "OffPoss": 19,
+      "Points": 19
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2550-2732-693",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 561.0,
+      "GamesPlayed": 4,
+      "OffPoss": 17,
+      "Points": 14
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201149-2732-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Joakim Noah, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 558.0,
+      "GamesPlayed": 2,
+      "OffPoss": 19,
+      "Points": 30
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-201149-2732-2804",
+      "Name": "Larry Hughes, Tyrus Thomas, Joakim Noah, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 536.0,
+      "GamesPlayed": 2,
+      "OffPoss": 17,
+      "Points": 23
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2732-2736-2804-693",
+      "Name": "Thabo Sefolosha, Ben Gordon, Luol Deng, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 535.0,
+      "GamesPlayed": 4,
+      "OffPoss": 18,
+      "Points": 11
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2550-2732-2736-2768",
+      "Name": "Joakim Noah, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 529.0,
+      "GamesPlayed": 3,
+      "OffPoss": 18,
+      "Points": 15
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201189-2550-2732-2736-693",
+      "Name": "Aaron Gray, Kirk Hinrich, Ben Gordon, Luol Deng, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 519.0,
+      "GamesPlayed": 2,
+      "OffPoss": 17,
+      "Points": 12
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-2550-2732",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 515.0,
+      "GamesPlayed": 4,
+      "OffPoss": 19,
+      "Points": 16
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2732-2768-2804-693",
+      "Name": "Tyrus Thomas, Ben Gordon, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 509.0,
+      "GamesPlayed": 5,
+      "OffPoss": 18,
+      "Points": 19
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2550-2732-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 507.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 16
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2400-2732-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Drew Gooden, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 505.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 20
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2732-2751-2768-693",
+      "Name": "Tyrus Thomas, Ben Gordon, Viktor Khryapa, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 502.0,
+      "GamesPlayed": 1,
+      "OffPoss": 19,
+      "Points": 19
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-201149-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 501.0,
+      "GamesPlayed": 4,
+      "OffPoss": 15,
+      "Points": 18
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2550-2768-693",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 500.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 20
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201189-2732-2736",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 497.0,
+      "GamesPlayed": 4,
+      "OffPoss": 16,
+      "Points": 19
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2550-2732-2736-693",
+      "Name": "Joakim Noah, Kirk Hinrich, Ben Gordon, Luol Deng, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 488.0,
+      "GamesPlayed": 4,
+      "OffPoss": 17,
+      "Points": 17
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-2400-2550-2736",
+      "Name": "Larry Hughes, Tyrus Thomas, Drew Gooden, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 482.0,
+      "GamesPlayed": 5,
+      "OffPoss": 15,
+      "Points": 24
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-201189-2732-2768-2804",
+      "Name": "Joakim Noah, Aaron Gray, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 462.0,
+      "GamesPlayed": 5,
+      "OffPoss": 15,
+      "Points": 16
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-201149-2736-2768",
+      "Name": "Larry Hughes, Tyrus Thomas, Joakim Noah, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 458.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 16
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-201149-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 455.0,
+      "GamesPlayed": 4,
+      "OffPoss": 15,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2550-2804-693",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 455.0,
+      "GamesPlayed": 1,
+      "OffPoss": 18,
+      "Points": 22
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-201149-2550-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Joakim Noah, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 450.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2400-2732-2736-2804",
+      "Name": "Thabo Sefolosha, Drew Gooden, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 444.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 13
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2400-2550-2732",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Drew Gooden, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 442.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 15
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201189-2550-2736-2768-2804",
+      "Name": "Aaron Gray, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 441.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 19
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-2550-2736-2804",
+      "Name": "Larry Hughes, Tyrus Thomas, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 440.0,
+      "GamesPlayed": 4,
+      "OffPoss": 15,
+      "Points": 20
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201149-2550-2751",
+      "Name": "Ben Wallace, Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 436.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 16
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2732-2736-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 434.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 17
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-2732-2736-2768",
+      "Name": "Tyrus Thomas, Aaron Gray, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 431.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 14
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201189-2732-2768-2804-693",
+      "Name": "Aaron Gray, Ben Gordon, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 421.0,
+      "GamesPlayed": 5,
+      "OffPoss": 16,
+      "Points": 15
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2550-2732-2768-2804",
+      "Name": "Ben Wallace, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 419.0,
+      "GamesPlayed": 4,
+      "OffPoss": 19,
+      "Points": 20
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-201149-2550-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Joakim Noah, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 418.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 15
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201149-2732-2736",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 416.0,
+      "GamesPlayed": 3,
+      "OffPoss": 14,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-201189-2732-2768",
+      "Name": "Thabo Sefolosha, Joakim Noah, Aaron Gray, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 413.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 14
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200757-201149-2751-2768",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Joakim Noah, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 408.0,
+      "GamesPlayed": 1,
+      "OffPoss": 15,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201149-2550-2804",
+      "Name": "Larry Hughes, Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 407.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 21
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2736-2768-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 381.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2400-2550-2732-2736",
+      "Name": "Tyrus Thomas, Drew Gooden, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 380.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-201189-2804",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 378.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 17
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-201149-2732-2736",
+      "Name": "Larry Hughes, Tyrus Thomas, Joakim Noah, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 378.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201189-2550-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 377.0,
+      "GamesPlayed": 3,
+      "OffPoss": 14,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2751-2768-2804",
+      "Name": "Thabo Sefolosha, Aaron Gray, Viktor Khryapa, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 377.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-2400-2736-2804",
+      "Name": "Larry Hughes, Thabo Sefolosha, Drew Gooden, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 372.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 17
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-201189-2768-2804",
+      "Name": "Thabo Sefolosha, Joakim Noah, Aaron Gray, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 369.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 16
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2736-2768-693",
+      "Name": "Thabo Sefolosha, Joakim Noah, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 365.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-201189-2550-2804",
+      "Name": "Thabo Sefolosha, Joakim Noah, Aaron Gray, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 364.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-201149-693",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 358.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 13
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-2732-2736",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 357.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201189-2732-2736-2768-693",
+      "Name": "Aaron Gray, Ben Gordon, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 356.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 14
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201149-2550-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 351.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2732-2736-2768",
+      "Name": "Thabo Sefolosha, Aaron Gray, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 342.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 21
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2550-2768-2804-693",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 341.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201149-2550-2736-2768",
+      "Name": "Ben Wallace, Joakim Noah, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 338.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 16
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201189-2751-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 338.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201242-2732-2768-2804",
+      "Name": "Ben Wallace, Thomas Gardner, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 11
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-2400-2550-2732",
+      "Name": "Larry Hughes, Thabo Sefolosha, Drew Gooden, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-201149-2804",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 330.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 14
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-201189-2550-2732-2736",
+      "Name": "Joakim Noah, Aaron Gray, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 327.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2550-2736-2768-2804",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 321.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 14
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-2550-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 320.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-201189-2732-2736-2768",
+      "Name": "Joakim Noah, Aaron Gray, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 318.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 17
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2736-2768-2804",
+      "Name": "Thabo Sefolosha, Aaron Gray, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 317.0,
+      "GamesPlayed": 4,
+      "OffPoss": 10,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2732-2736-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 316.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 14
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-2550-2736",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 313.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 11
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-201189-2732-2804",
+      "Name": "Larry Hughes, Tyrus Thomas, Aaron Gray, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 311.0,
+      "GamesPlayed": 4,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2550-2804-693",
+      "Name": "Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 307.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201149-2736-2768-2804",
+      "Name": "Larry Hughes, Joakim Noah, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 304.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-2400-2732-2736",
+      "Name": "Larry Hughes, Thabo Sefolosha, Drew Gooden, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 303.0,
+      "GamesPlayed": 4,
+      "OffPoss": 10,
+      "Points": 11
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-201149-2550-2732",
+      "Name": "Ben Wallace, Tyrus Thomas, Joakim Noah, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201189-2768-2804",
+      "Name": "Larry Hughes, Thabo Sefolosha, Aaron Gray, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 299.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 19
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201242-2732-693",
+      "Name": "Ben Wallace, Thabo Sefolosha, Thomas Gardner, Ben Gordon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 294.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-2732-2736-2804",
+      "Name": "Larry Hughes, Tyrus Thomas, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 13
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200759-200769-201189-2550-2768",
+      "Name": "Cedric Simmons, Shannon Brown, Aaron Gray, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 288.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201189-2732-2736-2804",
+      "Name": "Larry Hughes, Aaron Gray, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 286.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 14
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-201149-2550-2732",
+      "Name": "Ben Wallace, Adrian Griffin, Joakim Noah, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 285.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-2400-2550",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Drew Gooden, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 282.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 13
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-200748-2768-693",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-201189-2732-2736",
+      "Name": "Larry Hughes, Tyrus Thomas, Aaron Gray, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 4,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2732-2736-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 278.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2732-2804-693",
+      "Name": "Ben Wallace, Thabo Sefolosha, Ben Gordon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 278.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 12
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201189-2400-2550-2732-2736",
+      "Name": "Aaron Gray, Drew Gooden, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 278.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-200757-2768-693",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 273.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-201149-2768-693",
+      "Name": "Adrian Griffin, Tyrus Thomas, Joakim Noah, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201149-201189-2550",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Aaron Gray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201189-2550-2736-2804",
+      "Name": "Larry Hughes, Aaron Gray, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 265.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2550-2732-2804-693",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-201189-2550-2732",
+      "Name": "Tyrus Thomas, Joakim Noah, Aaron Gray, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 14
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-201189-2550-2768",
+      "Name": "Tyrus Thomas, Joakim Noah, Aaron Gray, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201149-2400-2732",
+      "Name": "Larry Hughes, Thabo Sefolosha, Joakim Noah, Drew Gooden, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2732-2768-693",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 257.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2732-2768-2804-693",
+      "Name": "Thabo Sefolosha, Ben Gordon, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200769-201149-2400-2736",
+      "Name": "Larry Hughes, Shannon Brown, Joakim Noah, Drew Gooden, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 252.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-2732-2736-2804",
+      "Name": "Larry Hughes, Thabo Sefolosha, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 251.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 14
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-2736-2768-2804",
+      "Name": "Tyrus Thomas, Aaron Gray, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 251.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-201242-2732-2804",
+      "Name": "Tyrus Thomas, Aaron Gray, Thomas Gardner, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 248.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-200748-2550-2751",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Kirk Hinrich, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 12
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2736-2768-2804-693",
+      "Name": "Thabo Sefolosha, Luol Deng, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 246.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201149-2400-2736",
+      "Name": "Larry Hughes, Thabo Sefolosha, Joakim Noah, Drew Gooden, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-201193-2768-2804",
+      "Name": "Thabo Sefolosha, Joakim Noah, Demetris Nichols, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 11
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2400-2732-2804",
+      "Name": "Thabo Sefolosha, Aaron Gray, Drew Gooden, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 241.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 14
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "2550-2732-2736-2768-2804",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 239.0,
+      "GamesPlayed": 5,
+      "OffPoss": 12,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2550-2736-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-201189-2550-2751",
+      "Name": "Adrian Griffin, Tyrus Thomas, Aaron Gray, Kirk Hinrich, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 234.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2550-2732-2768-693",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Ben Gordon, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201149-2400-2550-2732",
+      "Name": "Larry Hughes, Joakim Noah, Drew Gooden, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 231.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-2732-2736",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-2732-2768-693",
+      "Name": "Ben Wallace, Adrian Griffin, Ben Gordon, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201189-201193-2732",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Demetris Nichols, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-201193-2550-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Demetris Nichols, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "2550-2732-2768-2804-693",
+      "Name": "Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 4,
+      "OffPoss": 12,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2736-2768-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 12
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-201189-2550-2732-2804",
+      "Name": "Joakim Noah, Aaron Gray, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201149-2550-2732-2751",
+      "Name": "Ben Wallace, Joakim Noah, Kirk Hinrich, Ben Gordon, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2550-2736-2768-693",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 218.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2732-2736-2768",
+      "Name": "Ben Wallace, Thabo Sefolosha, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 217.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-2550-2736-2804",
+      "Name": "Tyrus Thomas, Joakim Noah, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-200748-201149-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Joakim Noah, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 214.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-201149-2768-2804",
+      "Name": "Adrian Griffin, Tyrus Thomas, Joakim Noah, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 214.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201149-2768-2804",
+      "Name": "Larry Hughes, Thabo Sefolosha, Joakim Noah, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 208.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 12
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201149-2400-2550-2804",
+      "Name": "Larry Hughes, Joakim Noah, Drew Gooden, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 208.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-200759-200769-201149-2768",
+      "Name": "Thabo Sefolosha, Cedric Simmons, Shannon Brown, Joakim Noah, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2550-2732-2736",
+      "Name": "Thabo Sefolosha, Aaron Gray, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201149-2732-2736-2804",
+      "Name": "Ben Wallace, Joakim Noah, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-201149-2732",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201189-2732-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-200757-2550-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-200759-201149-201193-2732",
+      "Name": "Thabo Sefolosha, Cedric Simmons, Joakim Noah, Demetris Nichols, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2768-2804-693",
+      "Name": "Thabo Sefolosha, Joakim Noah, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 11
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-201149-201189",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Aaron Gray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-201149-2768-2804-693",
+      "Name": "Adrian Griffin, Joakim Noah, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200757-201189-2768-2804",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Aaron Gray, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-2768-2804-693",
+      "Name": "Ben Wallace, Adrian Griffin, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-2732-2768-693",
+      "Name": "Adrian Griffin, Tyrus Thomas, Ben Gordon, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 194.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2550-2736-2804-693",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Luol Deng, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-2550-2751-2768",
+      "Name": "Tyrus Thomas, Aaron Gray, Kirk Hinrich, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-201149-2768",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2732-2736-693",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Luol Deng, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2732-2804-693",
+      "Name": "Thabo Sefolosha, Joakim Noah, Ben Gordon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-201189-2550",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201149-2736-2768",
+      "Name": "Larry Hughes, Thabo Sefolosha, Joakim Noah, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2550-2768-2804",
+      "Name": "Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201189-2768-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2550-2732-2736-2804",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-2550-2736",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201149-201189-2804",
+      "Name": "Larry Hughes, Thabo Sefolosha, Joakim Noah, Aaron Gray, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2550-2768-2804-693",
+      "Name": "Joakim Noah, Kirk Hinrich, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201149-201242-2732",
+      "Name": "Ben Wallace, Thabo Sefolosha, Joakim Noah, Thomas Gardner, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-201149-2732-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Joakim Noah, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2400-2732-2768-2804",
+      "Name": "Tyrus Thomas, Drew Gooden, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2550-2768-693",
+      "Name": "Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2732-2736-693",
+      "Name": "Thabo Sefolosha, Joakim Noah, Ben Gordon, Luol Deng, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-2400-2736-2768",
+      "Name": "Larry Hughes, Thabo Sefolosha, Drew Gooden, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2550-2732-693",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-200748-2732-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2550-2768-693",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-201242-2550-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Thomas Gardner, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201189-2732-2768",
+      "Name": "Ben Wallace, Thabo Sefolosha, Aaron Gray, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201189-2550-2732-2736",
+      "Name": "Ben Wallace, Aaron Gray, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2550-2736-2804",
+      "Name": "Thabo Sefolosha, Aaron Gray, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201149-2400-2550",
+      "Name": "Larry Hughes, Thabo Sefolosha, Joakim Noah, Drew Gooden, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201149-2550-2732-2804",
+      "Name": "Larry Hughes, Joakim Noah, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "2550-2732-2736-2768-693",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2550-2732-2736",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2732-2736-2804",
+      "Name": "Thabo Sefolosha, Aaron Gray, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-2550-2732-693",
+      "Name": "Tyrus Thomas, Joakim Noah, Kirk Hinrich, Ben Gordon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-200757-201149-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Joakim Noah, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-201149-201189-2736-2768",
+      "Name": "Adrian Griffin, Joakim Noah, Aaron Gray, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-201189-2550-2804",
+      "Name": "Adrian Griffin, Tyrus Thomas, Aaron Gray, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-2400-2732",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Drew Gooden, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2732-2751-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Ben Gordon, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-201149-2736",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "2550-2736-2768-2804-693",
+      "Name": "Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-2732-2768-693",
+      "Name": "Tyrus Thomas, Joakim Noah, Ben Gordon, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-2550-2732-2736-2768",
+      "Name": "Ben Wallace, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201189-2732-2736",
+      "Name": "Larry Hughes, Thabo Sefolosha, Aaron Gray, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 3,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2400-2550-2736",
+      "Name": "Thabo Sefolosha, Joakim Noah, Drew Gooden, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201189-2732-2804",
+      "Name": "Larry Hughes, Thabo Sefolosha, Aaron Gray, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-201189-2550-2732-2768",
+      "Name": "Joakim Noah, Aaron Gray, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 10
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-2736-2768-2804",
+      "Name": "Tyrus Thomas, Joakim Noah, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 159.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2550-2736-2768-693",
+      "Name": "Joakim Noah, Kirk Hinrich, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 159.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201189-2550-2732-2768",
+      "Name": "Larry Hughes, Aaron Gray, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2550-2736-2804",
+      "Name": "Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2732-2736-2768-693",
+      "Name": "Tyrus Thomas, Ben Gordon, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-2751-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-201189-2732-2751",
+      "Name": "Adrian Griffin, Tyrus Thomas, Aaron Gray, Ben Gordon, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 9
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-200757-2550-693",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Kirk Hinrich, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-2736-2768-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-201189-2732-2751-2768",
+      "Name": "Joakim Noah, Aaron Gray, Ben Gordon, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2736-2768-2804-693",
+      "Name": "Tyrus Thomas, Luol Deng, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2400-2732-2736",
+      "Name": "Thabo Sefolosha, Joakim Noah, Drew Gooden, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2400-2550-2736-2804",
+      "Name": "Thabo Sefolosha, Drew Gooden, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201242-2736-2768-2804",
+      "Name": "Ben Wallace, Thomas Gardner, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-2550-2768-693",
+      "Name": "Adrian Griffin, Tyrus Thomas, Kirk Hinrich, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201189-2550-2751",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Kirk Hinrich, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-2550-2751",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-2732-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-201149-2550",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2550-2736-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201189-2732-693",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Ben Gordon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-200759-2732-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Cedric Simmons, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201149-2550-2732",
+      "Name": "Ben Wallace, Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-201149-201189-2768-2804",
+      "Name": "Adrian Griffin, Joakim Noah, Aaron Gray, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-2550-2732-2768-2804",
+      "Name": "Larry Hughes, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201149-2768-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-201193-2732-2768",
+      "Name": "Tyrus Thomas, Aaron Gray, Demetris Nichols, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-201149-2550-2804",
+      "Name": "Adrian Griffin, Tyrus Thomas, Joakim Noah, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201189-2550-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Aaron Gray, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-201189-2804",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2550-2732-2804",
+      "Name": "Thabo Sefolosha, Aaron Gray, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-2550-2732-2768",
+      "Name": "Tyrus Thomas, Joakim Noah, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2550-2736-2768",
+      "Name": "Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2732-2736-2768-693",
+      "Name": "Thabo Sefolosha, Ben Gordon, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200757-201149-201189-2732",
+      "Name": "Larry Hughes, Thabo Sefolosha, Joakim Noah, Aaron Gray, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-201193-2768-2804",
+      "Name": "Tyrus Thomas, Aaron Gray, Demetris Nichols, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-2732-2804",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-201193-2550-2804",
+      "Name": "Tyrus Thomas, Aaron Gray, Demetris Nichols, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-2550-2732-693",
+      "Name": "Tyrus Thomas, Aaron Gray, Kirk Hinrich, Ben Gordon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2550-2751-2804",
+      "Name": "Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Viktor Khryapa, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-201189-2550-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Aaron Gray, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-2732-2768",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2550-2732-693",
+      "Name": "Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Ben Gordon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-2550-2732-2804-693",
+      "Name": "Adrian Griffin, Kirk Hinrich, Ben Gordon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201189-2550-2732-2736-2768",
+      "Name": "Aaron Gray, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-201149-2804",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-2550-2736-2768",
+      "Name": "Tyrus Thomas, Joakim Noah, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2550-2732-2736-693",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Luol Deng, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201242-2768-2804-693",
+      "Name": "Ben Wallace, Thomas Gardner, Chris Duhon, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200757-201149-201242-2768",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Joakim Noah, Thomas Gardner, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2736-2768-693",
+      "Name": "Thabo Sefolosha, Aaron Gray, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2400-2550-2736-2768",
+      "Name": "Thabo Sefolosha, Drew Gooden, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-2550-2732-2736-2804",
+      "Name": "Larry Hughes, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-200769-201149-201193-2768",
+      "Name": "Thabo Sefolosha, Shannon Brown, Joakim Noah, Demetris Nichols, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2732-2768-693",
+      "Name": "Thabo Sefolosha, Joakim Noah, Ben Gordon, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201189-2400-2550-2732-2804",
+      "Name": "Aaron Gray, Drew Gooden, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-201189-2732-2768",
+      "Name": "Larry Hughes, Tyrus Thomas, Aaron Gray, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 11
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-200748-200757-693",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-201242-2732-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Thomas Gardner, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-201149-2550",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-201149-2550-2732-693",
+      "Name": "Adrian Griffin, Joakim Noah, Kirk Hinrich, Ben Gordon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2550-2732-2751-693",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Ben Gordon, Viktor Khryapa, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-2550-2804-693",
+      "Name": "Adrian Griffin, Tyrus Thomas, Kirk Hinrich, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-2400-2550-2804",
+      "Name": "Larry Hughes, Tyrus Thomas, Drew Gooden, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201189-2550-2732-2768-693",
+      "Name": "Aaron Gray, Kirk Hinrich, Ben Gordon, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201242-2732-2736-693",
+      "Name": "Tyrus Thomas, Thomas Gardner, Ben Gordon, Luol Deng, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-200748-2550-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201242-2732-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Thomas Gardner, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2400-2550-2736-2804",
+      "Name": "Joakim Noah, Drew Gooden, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-2732-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201189-2732-2768-2804",
+      "Name": "Ben Wallace, Aaron Gray, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2400-2550-2732-2804",
+      "Name": "Joakim Noah, Drew Gooden, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201193-2736-2768-2804",
+      "Name": "Tyrus Thomas, Demetris Nichols, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-2550-2804-693",
+      "Name": "Ben Wallace, Adrian Griffin, Kirk Hinrich, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 1
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-201189-2736-2768",
+      "Name": "Thabo Sefolosha, Joakim Noah, Aaron Gray, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2550-2732-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200757-201149-2804-693",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Joakim Noah, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200759-200769-201189-2732-2736",
+      "Name": "Cedric Simmons, Shannon Brown, Aaron Gray, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201189-2550-2768",
+      "Name": "Ben Wallace, Thabo Sefolosha, Aaron Gray, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-2550-2732-693",
+      "Name": "Ben Wallace, Adrian Griffin, Kirk Hinrich, Ben Gordon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-2550-2768-693",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 2,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-2768-2804",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-2736-2768-693",
+      "Name": "Ben Wallace, Adrian Griffin, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200769-201189-2400-2804",
+      "Name": "Larry Hughes, Shannon Brown, Aaron Gray, Drew Gooden, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 1
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201189-2400-2732-2804",
+      "Name": "Larry Hughes, Aaron Gray, Drew Gooden, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201149-2550-2732-2768",
+      "Name": "Ben Wallace, Joakim Noah, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 75.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-2736-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200757-201149-201189-2804",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Joakim Noah, Aaron Gray, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2550-2736-693",
+      "Name": "Thabo Sefolosha, Joakim Noah, Kirk Hinrich, Luol Deng, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201189-2400-2550-2732",
+      "Name": "Larry Hughes, Aaron Gray, Drew Gooden, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-2732-2736-2768-693",
+      "Name": "Joakim Noah, Ben Gordon, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-201189-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Aaron Gray, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-2732-2804",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-201149-201189-2732",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Aaron Gray, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-2550-2732-2751",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Ben Gordon, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201149-201189-2732-2768",
+      "Name": "Tyrus Thomas, Joakim Noah, Aaron Gray, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-201189-2550-2768-2804",
+      "Name": "Joakim Noah, Aaron Gray, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-201149-201193-2768-693",
+      "Name": "Adrian Griffin, Joakim Noah, Demetris Nichols, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2550-2804-693",
+      "Name": "Thabo Sefolosha, Aaron Gray, Kirk Hinrich, Andres Nocioni, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201189-2550-2732-2804",
+      "Name": "Ben Wallace, Aaron Gray, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-1559-200757-201149-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Joakim Noah, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200757-201189-2732-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Aaron Gray, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-2400-2550-2732",
+      "Name": "Tyrus Thomas, Aaron Gray, Drew Gooden, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201242-2550-2732-2804",
+      "Name": "Ben Wallace, Thomas Gardner, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200757-201149-2732-2736",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Joakim Noah, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 1
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-201149-2732-2751",
+      "Name": "Adrian Griffin, Tyrus Thomas, Joakim Noah, Ben Gordon, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-201189-2550-2768-693",
+      "Name": "Tyrus Thomas, Aaron Gray, Kirk Hinrich, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200769-201149-2550-2804",
+      "Name": "Tyrus Thomas, Shannon Brown, Joakim Noah, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 1
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200757-2400-2804",
+      "Name": "Larry Hughes, Tyrus Thomas, Thabo Sefolosha, Drew Gooden, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-201149-2732",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-200757-2400-2550-2736",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Drew Gooden, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-200769-201189-2804",
+      "Name": "Larry Hughes, Tyrus Thomas, Shannon Brown, Aaron Gray, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 1
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201189-2732-2751-2768",
+      "Name": "Ben Wallace, Aaron Gray, Ben Gordon, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201149-2400-2732-2804",
+      "Name": "Thabo Sefolosha, Joakim Noah, Drew Gooden, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1559-200748-200757-2550-2751",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 1
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-201149-201189-2550",
+      "Name": "Larry Hughes, Tyrus Thomas, Joakim Noah, Aaron Gray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201149-201193-2550-2732-2804",
+      "Name": "Joakim Noah, Demetris Nichols, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-201189-2550-2732-2804",
+      "Name": "Larry Hughes, Aaron Gray, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-200748-200757-201149-2732",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Joakim Noah, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 29.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-201189-2732-2768-693",
+      "Name": "Thabo Sefolosha, Aaron Gray, Ben Gordon, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "201189-2550-2736-2768-693",
+      "Name": "Aaron Gray, Kirk Hinrich, Luol Deng, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 26.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200748-2550-2732-2768-2804",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 20.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1112-201189-2550-2732-2768",
+      "Name": "Ben Wallace, Aaron Gray, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 19.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "1716-200748-2732-2736-2768",
+      "Name": "Larry Hughes, Tyrus Thomas, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2007-08",
+      "EntityId": "200757-2550-2732-2768-693",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Chris Duhon, Joe Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    }
+  ]
+}

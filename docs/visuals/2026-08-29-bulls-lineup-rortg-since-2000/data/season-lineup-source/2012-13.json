@@ -1,0 +1,1889 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2012-13",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2012-13",
+    "RowsReturned": 230,
+    "RowsWithOffPoss": 212,
+    "RowsSkippedMissingMetrics": 25,
+    "LastRowOffPoss": 0,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201149-2430-2550-2736",
+      "Name": "Richard Hamilton, Joakim Noah, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 25737.0,
+      "GamesPlayed": 25,
+      "OffPoss": 802,
+      "Points": 834
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-2430-2550-2736",
+      "Name": "Joakim Noah, Marco Belinelli, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 17776.0,
+      "GamesPlayed": 23,
+      "OffPoss": 567,
+      "Points": 554
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201158-2430-2736",
+      "Name": "Nate Robinson, Joakim Noah, Marco Belinelli, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 14204.0,
+      "GamesPlayed": 33,
+      "OffPoss": 449,
+      "Points": 436
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201149-2430-2736",
+      "Name": "Nate Robinson, Richard Hamilton, Joakim Noah, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13127.0,
+      "GamesPlayed": 19,
+      "OffPoss": 411,
+      "Points": 384
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-202710-2430-2550-2736",
+      "Name": "Nazr Mohammed, Jimmy Butler, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8868.0,
+      "GamesPlayed": 9,
+      "OffPoss": 268,
+      "Points": 275
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201158-201959-202710",
+      "Name": "Nate Robinson, Joakim Noah, Marco Belinelli, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7773.0,
+      "GamesPlayed": 32,
+      "OffPoss": 224,
+      "Points": 264
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201149-202710-2430-2550",
+      "Name": "Richard Hamilton, Joakim Noah, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7722.0,
+      "GamesPlayed": 14,
+      "OffPoss": 241,
+      "Points": 237
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201158-201959-2736",
+      "Name": "Nate Robinson, Joakim Noah, Marco Belinelli, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6356.0,
+      "GamesPlayed": 28,
+      "OffPoss": 198,
+      "Points": 192
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201959-202710-2736",
+      "Name": "Nate Robinson, Marco Belinelli, Taj Gibson, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5156.0,
+      "GamesPlayed": 12,
+      "OffPoss": 159,
+      "Points": 166
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201959-202710-2736",
+      "Name": "Nate Robinson, Joakim Noah, Taj Gibson, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4766.0,
+      "GamesPlayed": 24,
+      "OffPoss": 146,
+      "Points": 143
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201959-202710-2430",
+      "Name": "Nate Robinson, Marco Belinelli, Taj Gibson, Jimmy Butler, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4205.0,
+      "GamesPlayed": 20,
+      "OffPoss": 120,
+      "Points": 123
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201158-201959-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Marco Belinelli, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3971.0,
+      "GamesPlayed": 16,
+      "OffPoss": 112,
+      "Points": 110
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201158-202710-2736",
+      "Name": "Nate Robinson, Joakim Noah, Marco Belinelli, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3933.0,
+      "GamesPlayed": 17,
+      "OffPoss": 128,
+      "Points": 143
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201959-202710-2430-2736",
+      "Name": "Nate Robinson, Taj Gibson, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3930.0,
+      "GamesPlayed": 21,
+      "OffPoss": 120,
+      "Points": 131
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201158-202710-2430",
+      "Name": "Nate Robinson, Joakim Noah, Marco Belinelli, Jimmy Butler, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3692.0,
+      "GamesPlayed": 24,
+      "OffPoss": 112,
+      "Points": 117
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201959-202710-2550-2736",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3213.0,
+      "GamesPlayed": 20,
+      "OffPoss": 105,
+      "Points": 117
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201158-201959-202710",
+      "Name": "Nate Robinson, Nazr Mohammed, Marco Belinelli, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3176.0,
+      "GamesPlayed": 12,
+      "OffPoss": 93,
+      "Points": 117
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-202710-2430-2736",
+      "Name": "Nate Robinson, Joakim Noah, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2971.0,
+      "GamesPlayed": 14,
+      "OffPoss": 92,
+      "Points": 111
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-202710-2430-2550-2736",
+      "Name": "Joakim Noah, Jimmy Butler, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2762.0,
+      "GamesPlayed": 13,
+      "OffPoss": 85,
+      "Points": 88
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-202710-2430-2550",
+      "Name": "Joakim Noah, Marco Belinelli, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2745.0,
+      "GamesPlayed": 13,
+      "OffPoss": 85,
+      "Points": 82
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-202710-2430-2550-2736",
+      "Name": "Marco Belinelli, Jimmy Butler, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2659.0,
+      "GamesPlayed": 6,
+      "OffPoss": 80,
+      "Points": 82
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-201959-2550-2736",
+      "Name": "Joakim Noah, Marco Belinelli, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2428.0,
+      "GamesPlayed": 18,
+      "OffPoss": 80,
+      "Points": 101
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201161-202710-203104-2209",
+      "Name": "Nazr Mohammed, Daequan Cook, Jimmy Butler, Marquis Teague, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2421.0,
+      "GamesPlayed": 9,
+      "OffPoss": 75,
+      "Points": 74
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-201959-202710-2736",
+      "Name": "Nate Robinson, Daequan Cook, Taj Gibson, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2393.0,
+      "GamesPlayed": 7,
+      "OffPoss": 75,
+      "Points": 92
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-202710-2430-2550-2736",
+      "Name": "Nate Robinson, Jimmy Butler, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2312.0,
+      "GamesPlayed": 9,
+      "OffPoss": 76,
+      "Points": 73
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201149-201959-2550-2736",
+      "Name": "Richard Hamilton, Joakim Noah, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2271.0,
+      "GamesPlayed": 8,
+      "OffPoss": 71,
+      "Points": 66
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201959-2430-2736",
+      "Name": "Nate Robinson, Marco Belinelli, Taj Gibson, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2093.0,
+      "GamesPlayed": 15,
+      "OffPoss": 71,
+      "Points": 75
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201959-2430-2550-2736",
+      "Name": "Richard Hamilton, Taj Gibson, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2000.0,
+      "GamesPlayed": 9,
+      "OffPoss": 60,
+      "Points": 81
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201959-202710-2736",
+      "Name": "Nate Robinson, Richard Hamilton, Taj Gibson, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1928.0,
+      "GamesPlayed": 3,
+      "OffPoss": 57,
+      "Points": 63
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-201959-2430-2550-2736",
+      "Name": "Marco Belinelli, Taj Gibson, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1799.0,
+      "GamesPlayed": 8,
+      "OffPoss": 56,
+      "Points": 61
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-202710-2430-2550",
+      "Name": "Nazr Mohammed, Marco Belinelli, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1788.0,
+      "GamesPlayed": 4,
+      "OffPoss": 53,
+      "Points": 46
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201959-202710-203104-2736",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1687.0,
+      "GamesPlayed": 7,
+      "OffPoss": 54,
+      "Points": 59
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-202710-2430-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1597.0,
+      "GamesPlayed": 7,
+      "OffPoss": 51,
+      "Points": 54
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-202710-203104-2736",
+      "Name": "Joakim Noah, Marco Belinelli, Jimmy Butler, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1524.0,
+      "GamesPlayed": 8,
+      "OffPoss": 46,
+      "Points": 49
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-202710-2430-2550",
+      "Name": "Nate Robinson, Joakim Noah, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1417.0,
+      "GamesPlayed": 3,
+      "OffPoss": 44,
+      "Points": 52
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201959-2430-2736",
+      "Name": "Nate Robinson, Richard Hamilton, Taj Gibson, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1397.0,
+      "GamesPlayed": 7,
+      "OffPoss": 42,
+      "Points": 33
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201149-202710-2430",
+      "Name": "Nate Robinson, Richard Hamilton, Joakim Noah, Jimmy Butler, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1390.0,
+      "GamesPlayed": 7,
+      "OffPoss": 41,
+      "Points": 47
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201149-201959-2736",
+      "Name": "Nate Robinson, Richard Hamilton, Joakim Noah, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1365.0,
+      "GamesPlayed": 10,
+      "OffPoss": 43,
+      "Points": 45
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-201959-202710-203104",
+      "Name": "Joakim Noah, Marco Belinelli, Taj Gibson, Jimmy Butler, Marquis Teague",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1359.0,
+      "GamesPlayed": 7,
+      "OffPoss": 38,
+      "Points": 37
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201959-202710-2430-2550-2736",
+      "Name": "Taj Gibson, Jimmy Butler, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1196.0,
+      "GamesPlayed": 12,
+      "OffPoss": 38,
+      "Points": 44
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-201959-202710-2430",
+      "Name": "Nate Robinson, Daequan Cook, Taj Gibson, Jimmy Butler, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1179.0,
+      "GamesPlayed": 6,
+      "OffPoss": 35,
+      "Points": 37
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-201959-203104-2736",
+      "Name": "Joakim Noah, Marco Belinelli, Taj Gibson, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1164.0,
+      "GamesPlayed": 9,
+      "OffPoss": 34,
+      "Points": 35
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-201959-202710-2430-2550",
+      "Name": "Marco Belinelli, Taj Gibson, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1163.0,
+      "GamesPlayed": 9,
+      "OffPoss": 32,
+      "Points": 28
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-203104-2430-2736",
+      "Name": "Joakim Noah, Marco Belinelli, Marquis Teague, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1142.0,
+      "GamesPlayed": 7,
+      "OffPoss": 34,
+      "Points": 37
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201149-201959-202710",
+      "Name": "Nate Robinson, Richard Hamilton, Joakim Noah, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1098.0,
+      "GamesPlayed": 7,
+      "OffPoss": 37,
+      "Points": 30
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201959-202710-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Taj Gibson, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1075.0,
+      "GamesPlayed": 8,
+      "OffPoss": 32,
+      "Points": 33
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201158-202710-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Marco Belinelli, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1069.0,
+      "GamesPlayed": 7,
+      "OffPoss": 35,
+      "Points": 45
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201158-2430-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Marco Belinelli, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1062.0,
+      "GamesPlayed": 4,
+      "OffPoss": 33,
+      "Points": 36
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-202710-2550-2736",
+      "Name": "Nate Robinson, Joakim Noah, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1043.0,
+      "GamesPlayed": 4,
+      "OffPoss": 36,
+      "Points": 44
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-202710-203104-2209",
+      "Name": "Nazr Mohammed, Marco Belinelli, Jimmy Butler, Marquis Teague, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1042.0,
+      "GamesPlayed": 5,
+      "OffPoss": 35,
+      "Points": 32
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-202710-2430-2550",
+      "Name": "Nate Robinson, Nazr Mohammed, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1023.0,
+      "GamesPlayed": 3,
+      "OffPoss": 31,
+      "Points": 40
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-202710-2550-2736",
+      "Name": "Joakim Noah, Marco Belinelli, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1013.0,
+      "GamesPlayed": 6,
+      "OffPoss": 32,
+      "Points": 38
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-2430-2550-2736",
+      "Name": "Nazr Mohammed, Marco Belinelli, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 986.0,
+      "GamesPlayed": 3,
+      "OffPoss": 29,
+      "Points": 33
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-201959-203104-2736",
+      "Name": "Nazr Mohammed, Marco Belinelli, Taj Gibson, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 976.0,
+      "GamesPlayed": 4,
+      "OffPoss": 27,
+      "Points": 30
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201149-203104-2430-2736",
+      "Name": "Richard Hamilton, Joakim Noah, Marquis Teague, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 893.0,
+      "GamesPlayed": 2,
+      "OffPoss": 25,
+      "Points": 25
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-201959-202710-203104",
+      "Name": "Nazr Mohammed, Marco Belinelli, Taj Gibson, Jimmy Butler, Marquis Teague",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 887.0,
+      "GamesPlayed": 7,
+      "OffPoss": 26,
+      "Points": 36
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-202710-203104-2430",
+      "Name": "Joakim Noah, Marco Belinelli, Jimmy Butler, Marquis Teague, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 874.0,
+      "GamesPlayed": 6,
+      "OffPoss": 25,
+      "Points": 19
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-202710-203104-2430",
+      "Name": "Nazr Mohammed, Marco Belinelli, Jimmy Butler, Marquis Teague, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 866.0,
+      "GamesPlayed": 7,
+      "OffPoss": 30,
+      "Points": 26
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201959-202710-2550-2736",
+      "Name": "Nate Robinson, Taj Gibson, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 836.0,
+      "GamesPlayed": 5,
+      "OffPoss": 28,
+      "Points": 30
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-201959-202710-2550",
+      "Name": "Joakim Noah, Marco Belinelli, Taj Gibson, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 823.0,
+      "GamesPlayed": 8,
+      "OffPoss": 24,
+      "Points": 24
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-202710-2430-2736",
+      "Name": "Nate Robinson, Marco Belinelli, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 808.0,
+      "GamesPlayed": 2,
+      "OffPoss": 24,
+      "Points": 33
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-202710-203104-2736",
+      "Name": "Nazr Mohammed, Marco Belinelli, Jimmy Butler, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 808.0,
+      "GamesPlayed": 4,
+      "OffPoss": 23,
+      "Points": 21
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201959-202710-2550",
+      "Name": "Nate Robinson, Joakim Noah, Taj Gibson, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 791.0,
+      "GamesPlayed": 4,
+      "OffPoss": 22,
+      "Points": 24
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201959-2430-2550-2736",
+      "Name": "Nate Robinson, Taj Gibson, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 783.0,
+      "GamesPlayed": 5,
+      "OffPoss": 22,
+      "Points": 33
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201161-201959-202710-203104-2736",
+      "Name": "Daequan Cook, Taj Gibson, Jimmy Butler, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 758.0,
+      "GamesPlayed": 3,
+      "OffPoss": 23,
+      "Points": 26
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201959-202710-2430-2550",
+      "Name": "Nate Robinson, Taj Gibson, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 722.0,
+      "GamesPlayed": 7,
+      "OffPoss": 19,
+      "Points": 20
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-202710-2430-2736",
+      "Name": "Joakim Noah, Marco Belinelli, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 722.0,
+      "GamesPlayed": 5,
+      "OffPoss": 21,
+      "Points": 21
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201158-202710-2430",
+      "Name": "Nate Robinson, Nazr Mohammed, Marco Belinelli, Jimmy Butler, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 718.0,
+      "GamesPlayed": 3,
+      "OffPoss": 23,
+      "Points": 22
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-1888-201959-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Richard Hamilton, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 658.0,
+      "GamesPlayed": 3,
+      "OffPoss": 19,
+      "Points": 15
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201161-202710-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Daequan Cook, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 643.0,
+      "GamesPlayed": 4,
+      "OffPoss": 23,
+      "Points": 11
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-202710-202952-2430",
+      "Name": "Nate Robinson, Richard Hamilton, Jimmy Butler, Malcolm Thomas, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 617.0,
+      "GamesPlayed": 1,
+      "OffPoss": 17,
+      "Points": 21
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201161-201959-202710",
+      "Name": "Nate Robinson, Joakim Noah, Daequan Cook, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 610.0,
+      "GamesPlayed": 1,
+      "OffPoss": 18,
+      "Points": 18
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-202710-2209-2430-2736",
+      "Name": "Nate Robinson, Jimmy Butler, Vladimir Radmanovic, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 609.0,
+      "GamesPlayed": 2,
+      "OffPoss": 17,
+      "Points": 22
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-202710-203104-2209",
+      "Name": "Nate Robinson, Nazr Mohammed, Jimmy Butler, Marquis Teague, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 535.0,
+      "GamesPlayed": 2,
+      "OffPoss": 18,
+      "Points": 17
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-201959-202710-203104-2736",
+      "Name": "Marco Belinelli, Taj Gibson, Jimmy Butler, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 532.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 21
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-202710-2550-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 512.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 14
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201161-202710-2430",
+      "Name": "Nate Robinson, Marco Belinelli, Daequan Cook, Jimmy Butler, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 493.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 18
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-202710-2209-2430-2550",
+      "Name": "Nate Robinson, Jimmy Butler, Vladimir Radmanovic, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 482.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 15
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-201959-202710-203104-2430",
+      "Name": "Marco Belinelli, Taj Gibson, Jimmy Butler, Marquis Teague, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 480.0,
+      "GamesPlayed": 4,
+      "OffPoss": 15,
+      "Points": 14
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201161-202710-2736",
+      "Name": "Nate Robinson, Joakim Noah, Daequan Cook, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 478.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 13
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-201959-202710-2736",
+      "Name": "Joakim Noah, Marco Belinelli, Taj Gibson, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 465.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 17
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201161-201959-202710",
+      "Name": "Nate Robinson, Nazr Mohammed, Daequan Cook, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 446.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 11
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201149-201959-203104-2736",
+      "Name": "Richard Hamilton, Joakim Noah, Taj Gibson, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 439.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 8
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-202710-2430-2550",
+      "Name": "Nate Robinson, Richard Hamilton, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 428.0,
+      "GamesPlayed": 1,
+      "OffPoss": 14,
+      "Points": 17
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201959-202710-203104",
+      "Name": "Nate Robinson, Marco Belinelli, Taj Gibson, Jimmy Butler, Marquis Teague",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 427.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 18
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-1888-202710-2430",
+      "Name": "Nate Robinson, Nazr Mohammed, Richard Hamilton, Jimmy Butler, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 424.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 9
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201158-202710-2430-2550",
+      "Name": "Richard Hamilton, Marco Belinelli, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 422.0,
+      "GamesPlayed": 1,
+      "OffPoss": 15,
+      "Points": 19
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-202710-2430-2736",
+      "Name": "Nate Robinson, Daequan Cook, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 407.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 13
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-2430-2550-2736",
+      "Name": "Nate Robinson, Daequan Cook, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 407.0,
+      "GamesPlayed": 1,
+      "OffPoss": 14,
+      "Points": 23
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201959-202710-2209",
+      "Name": "Nate Robinson, Marco Belinelli, Taj Gibson, Jimmy Butler, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 396.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 15
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-201959-2550-2736",
+      "Name": "Nazr Mohammed, Marco Belinelli, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 381.0,
+      "GamesPlayed": 4,
+      "OffPoss": 13,
+      "Points": 17
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201161-2430-2736",
+      "Name": "Nate Robinson, Joakim Noah, Daequan Cook, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 373.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 12
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201959-202710-2430-2550",
+      "Name": "Richard Hamilton, Taj Gibson, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 369.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201158-203104-2736",
+      "Name": "Nate Robinson, Joakim Noah, Marco Belinelli, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 355.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 19
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-201161-202710-203104",
+      "Name": "Nazr Mohammed, Marco Belinelli, Daequan Cook, Jimmy Butler, Marquis Teague",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 353.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 10
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201161-202710-2430",
+      "Name": "Nate Robinson, Joakim Noah, Daequan Cook, Jimmy Butler, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 351.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 13
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-201959-2430-2550",
+      "Name": "Nate Robinson, Daequan Cook, Taj Gibson, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 350.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 14
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201959-202710-2430",
+      "Name": "Nate Robinson, Richard Hamilton, Taj Gibson, Jimmy Butler, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 11
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201959-202710-203104",
+      "Name": "Nate Robinson, Nazr Mohammed, Taj Gibson, Jimmy Butler, Marquis Teague",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 341.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 8
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-2430-2550-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 341.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 20
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201161-201959-202710-2550-2736",
+      "Name": "Daequan Cook, Taj Gibson, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 329.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 10
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-1888-202710-2550-2736",
+      "Name": "Nazr Mohammed, Richard Hamilton, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 299.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 5
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-202710-2430-2550",
+      "Name": "Nate Robinson, Daequan Cook, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 288.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 12
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201149-201158-202710",
+      "Name": "Nate Robinson, Nazr Mohammed, Joakim Noah, Marco Belinelli, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 287.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 11
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-202710-2550-2736",
+      "Name": "Nate Robinson, Richard Hamilton, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 281.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 15
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201161-202710-2209",
+      "Name": "Nate Robinson, Nazr Mohammed, Daequan Cook, Jimmy Butler, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 276.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 6
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-2209-2550-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Vladimir Radmanovic, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201158-2430-2550",
+      "Name": "Nate Robinson, Joakim Noah, Marco Belinelli, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 11
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-201959-2550-2736",
+      "Name": "Nate Robinson, Daequan Cook, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 16
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-202710-203104-2736",
+      "Name": "Nate Robinson, Joakim Noah, Jimmy Butler, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 269.0,
+      "GamesPlayed": 4,
+      "OffPoss": 9,
+      "Points": 7
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-202710-202952-2430-2550",
+      "Name": "Nate Robinson, Jimmy Butler, Malcolm Thomas, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 269.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 13
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-202710-2430-2550",
+      "Name": "Nate Robinson, Marco Belinelli, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201161-2430-2550",
+      "Name": "Nate Robinson, Nazr Mohammed, Daequan Cook, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 252.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 6
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-202710-2209-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Jimmy Butler, Vladimir Radmanovic, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 242.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-201161-2430-2550-2736",
+      "Name": "Marco Belinelli, Daequan Cook, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201161-201959-202710-203104",
+      "Name": "Nazr Mohammed, Daequan Cook, Taj Gibson, Jimmy Butler, Marquis Teague",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201959-2430-2550",
+      "Name": "Nate Robinson, Marco Belinelli, Taj Gibson, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 223.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201959-202710-203104",
+      "Name": "Nate Robinson, Joakim Noah, Taj Gibson, Jimmy Butler, Marquis Teague",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-202710-202952-2550",
+      "Name": "Nate Robinson, Nazr Mohammed, Jimmy Butler, Malcolm Thomas, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201158-201959-2430",
+      "Name": "Nate Robinson, Richard Hamilton, Marco Belinelli, Taj Gibson, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201959-203104-2430-2736",
+      "Name": "Richard Hamilton, Taj Gibson, Marquis Teague, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 10
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-202710-202952-2430-2550",
+      "Name": "Marco Belinelli, Jimmy Butler, Malcolm Thomas, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 13
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-1888-201158-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Richard Hamilton, Marco Belinelli, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 194.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201161-202710-203104-2736",
+      "Name": "Joakim Noah, Daequan Cook, Jimmy Butler, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201161-202710-203104-2736",
+      "Name": "Nazr Mohammed, Daequan Cook, Jimmy Butler, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-202710-2550-2736",
+      "Name": "Nazr Mohammed, Marco Belinelli, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-2209-2430-2736",
+      "Name": "Nate Robinson, Daequan Cook, Vladimir Radmanovic, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-202710-202952-2430",
+      "Name": "Nate Robinson, Marco Belinelli, Jimmy Butler, Malcolm Thomas, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201161-201959-202710-203104-2209",
+      "Name": "Daequan Cook, Taj Gibson, Jimmy Butler, Marquis Teague, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-202710-2430-2736",
+      "Name": "Nate Robinson, Richard Hamilton, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-202710-203104-2209-2736",
+      "Name": "Marco Belinelli, Jimmy Butler, Marquis Teague, Vladimir Radmanovic, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201158-202952-2430",
+      "Name": "Nate Robinson, Richard Hamilton, Marco Belinelli, Malcolm Thomas, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201158-202710-2209",
+      "Name": "Nate Robinson, Joakim Noah, Marco Belinelli, Jimmy Butler, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-202710-203104-2430-2736",
+      "Name": "Nazr Mohammed, Jimmy Butler, Marquis Teague, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-2430-2550-2736",
+      "Name": "Nate Robinson, Richard Hamilton, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-2209-2430-2550-2736",
+      "Name": "Nate Robinson, Vladimir Radmanovic, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-201959-202710-2550-2736",
+      "Name": "Marco Belinelli, Taj Gibson, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 4,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201149-202710-2736",
+      "Name": "Nate Robinson, Richard Hamilton, Joakim Noah, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201959-202710-203104-2430-2736",
+      "Name": "Taj Gibson, Jimmy Butler, Marquis Teague, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-202710-2209-2430",
+      "Name": "Nate Robinson, Daequan Cook, Jimmy Butler, Vladimir Radmanovic, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-202710-203104-2430-2736",
+      "Name": "Marco Belinelli, Jimmy Butler, Marquis Teague, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-2430-2550-2736",
+      "Name": "Nate Robinson, Joakim Noah, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 4,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201149-201158-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Joakim Noah, Marco Belinelli, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-202710-2209-2736",
+      "Name": "Nate Robinson, Daequan Cook, Jimmy Butler, Vladimir Radmanovic, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-201959-203104-2430-2736",
+      "Name": "Marco Belinelli, Taj Gibson, Marquis Teague, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201959-2550-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201161-2430-2736",
+      "Name": "Nate Robinson, Marco Belinelli, Daequan Cook, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-201959-202710-203104-2209",
+      "Name": "Marco Belinelli, Taj Gibson, Jimmy Butler, Marquis Teague, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201161-201959-202710-203104",
+      "Name": "Joakim Noah, Daequan Cook, Taj Gibson, Jimmy Butler, Marquis Teague",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-202710-2550-2736",
+      "Name": "Nate Robinson, Marco Belinelli, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201161-202952-2550",
+      "Name": "Nate Robinson, Nazr Mohammed, Daequan Cook, Malcolm Thomas, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201959-202710-2550",
+      "Name": "Nate Robinson, Nazr Mohammed, Taj Gibson, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201158-202710-2209",
+      "Name": "Nate Robinson, Nazr Mohammed, Marco Belinelli, Jimmy Butler, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201161-201959-2430",
+      "Name": "Nate Robinson, Marco Belinelli, Daequan Cook, Taj Gibson, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201161-201959-203104-2430-2736",
+      "Name": "Daequan Cook, Taj Gibson, Marquis Teague, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-2209-2430-2550",
+      "Name": "Nate Robinson, Daequan Cook, Vladimir Radmanovic, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-201161-202710-2550",
+      "Name": "Nazr Mohammed, Marco Belinelli, Daequan Cook, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201959-202710-203104-2736",
+      "Name": "Nazr Mohammed, Taj Gibson, Jimmy Butler, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201158-201161-201959-2430-2550",
+      "Name": "Marco Belinelli, Daequan Cook, Taj Gibson, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-202710-202952-2736",
+      "Name": "Nate Robinson, Marco Belinelli, Jimmy Butler, Malcolm Thomas, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-201149-202710-2736",
+      "Name": "Nate Robinson, Nazr Mohammed, Joakim Noah, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201959-203104-2736",
+      "Name": "Nate Robinson, Marco Belinelli, Taj Gibson, Marquis Teague, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 7
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201161-202710-2209",
+      "Name": "Nate Robinson, Marco Belinelli, Daequan Cook, Jimmy Butler, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-201161-2430-2550",
+      "Name": "Joakim Noah, Marco Belinelli, Daequan Cook, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-201161-201959-2550",
+      "Name": "Nazr Mohammed, Marco Belinelli, Daequan Cook, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-202952-203104-2209",
+      "Name": "Nate Robinson, Nazr Mohammed, Malcolm Thomas, Marquis Teague, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201158-202710-2550",
+      "Name": "Nate Robinson, Richard Hamilton, Marco Belinelli, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-1888-201959-202710",
+      "Name": "Nate Robinson, Nazr Mohammed, Richard Hamilton, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201158-201959-2209",
+      "Name": "Nate Robinson, Richard Hamilton, Marco Belinelli, Taj Gibson, Vladimir Radmanovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201158-201959-2736",
+      "Name": "Nate Robinson, Richard Hamilton, Marco Belinelli, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201161-201959-202710-203104",
+      "Name": "Richard Hamilton, Daequan Cook, Taj Gibson, Jimmy Butler, Marquis Teague",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 1
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201149-202710-2550-2736",
+      "Name": "Richard Hamilton, Joakim Noah, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 44.0,
+      "GamesPlayed": 3,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-202710-203104-2430-2736",
+      "Name": "Joakim Noah, Jimmy Butler, Marquis Teague, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 44.0,
+      "GamesPlayed": 2,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1737-202710-2209-2550",
+      "Name": "Nate Robinson, Nazr Mohammed, Jimmy Butler, Vladimir Radmanovic, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201158-202710-2430-2736",
+      "Name": "Nazr Mohammed, Marco Belinelli, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 32.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201149-201959-202710-203104",
+      "Name": "Richard Hamilton, Joakim Noah, Taj Gibson, Jimmy Butler, Marquis Teague",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 31.0,
+      "GamesPlayed": 2,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201158-202710-2550",
+      "Name": "Nate Robinson, Joakim Noah, Marco Belinelli, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 26.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-201959-2209-2736",
+      "Name": "Nate Robinson, Marco Belinelli, Taj Gibson, Vladimir Radmanovic, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 26.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1888-201149-201158-2430-2550",
+      "Name": "Richard Hamilton, Joakim Noah, Marco Belinelli, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 24.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201149-201959-2550-2736",
+      "Name": "Nate Robinson, Joakim Noah, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 17.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "1737-201161-202710-2430-2736",
+      "Name": "Nazr Mohammed, Daequan Cook, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 17.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 1
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-202710-203104-2430-2550",
+      "Name": "Joakim Noah, Jimmy Butler, Marquis Teague, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 17.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201161-201959-2430-2736",
+      "Name": "Nate Robinson, Daequan Cook, Taj Gibson, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 15.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201149-201158-2430",
+      "Name": "Nate Robinson, Richard Hamilton, Joakim Noah, Marco Belinelli, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-201158-2209-2430-2550",
+      "Name": "Nate Robinson, Marco Belinelli, Vladimir Radmanovic, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "201149-201158-201161-202710-2550",
+      "Name": "Joakim Noah, Marco Belinelli, Daequan Cook, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2012-13",
+      "EntityId": "101126-1888-201149-2550-2736",
+      "Name": "Nate Robinson, Richard Hamilton, Joakim Noah, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7.0,
+      "GamesPlayed": 3,
+      "OffPoss": 2,
+      "Points": 5
+    }
+  ]
+}

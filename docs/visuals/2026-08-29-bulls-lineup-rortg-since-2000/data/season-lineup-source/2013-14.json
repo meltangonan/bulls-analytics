@@ -1,0 +1,1709 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2013-14",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2013-14",
+    "RowsReturned": 208,
+    "RowsWithOffPoss": 193,
+    "RowsSkippedMissingMetrics": 24,
+    "LastRowOffPoss": 0,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-202710-2399-2430-2550",
+      "Name": "Joakim Noah, Jimmy Butler, Mike Dunleavy, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40884.0,
+      "GamesPlayed": 42,
+      "OffPoss": 1277,
+      "Points": 1297
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201959-202710-2550",
+      "Name": "Joakim Noah, D.J. Augustin, Taj Gibson, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13602.0,
+      "GamesPlayed": 35,
+      "OffPoss": 405,
+      "Points": 450
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201959-202710-2399",
+      "Name": "Joakim Noah, D.J. Augustin, Taj Gibson, Jimmy Butler, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12696.0,
+      "GamesPlayed": 36,
+      "OffPoss": 380,
+      "Points": 436
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-201959-202710-2399-2430",
+      "Name": "D.J. Augustin, Taj Gibson, Jimmy Butler, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 10977.0,
+      "GamesPlayed": 43,
+      "OffPoss": 363,
+      "Points": 356
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201959-202710-203503",
+      "Name": "Joakim Noah, D.J. Augustin, Taj Gibson, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8718.0,
+      "GamesPlayed": 34,
+      "OffPoss": 260,
+      "Points": 265
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-202710-2399-2430",
+      "Name": "Joakim Noah, D.J. Augustin, Jimmy Butler, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8604.0,
+      "GamesPlayed": 29,
+      "OffPoss": 269,
+      "Points": 312
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-202710-2430-2736",
+      "Name": "Joakim Noah, Derrick Rose, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7779.0,
+      "GamesPlayed": 8,
+      "OffPoss": 240,
+      "Points": 256
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201959-202710-203503",
+      "Name": "Nazr Mohammed, D.J. Augustin, Taj Gibson, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7089.0,
+      "GamesPlayed": 31,
+      "OffPoss": 210,
+      "Points": 218
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-202710-2399-2550",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6585.0,
+      "GamesPlayed": 21,
+      "OffPoss": 210,
+      "Points": 235
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-203503-2399-2430-2550",
+      "Name": "Joakim Noah, Tony Snell, Mike Dunleavy, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5684.0,
+      "GamesPlayed": 14,
+      "OffPoss": 175,
+      "Points": 178
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201959-2399-2550",
+      "Name": "Joakim Noah, D.J. Augustin, Taj Gibson, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4907.0,
+      "GamesPlayed": 23,
+      "OffPoss": 154,
+      "Points": 181
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-203503-2430-2550-2736",
+      "Name": "Joakim Noah, Tony Snell, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4789.0,
+      "GamesPlayed": 5,
+      "OffPoss": 148,
+      "Points": 150
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201959-202710-2399",
+      "Name": "Nazr Mohammed, D.J. Augustin, Taj Gibson, Jimmy Butler, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4429.0,
+      "GamesPlayed": 19,
+      "OffPoss": 131,
+      "Points": 130
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201959-203503-2399",
+      "Name": "Joakim Noah, D.J. Augustin, Taj Gibson, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4421.0,
+      "GamesPlayed": 23,
+      "OffPoss": 135,
+      "Points": 155
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201959-203503-2550",
+      "Name": "Joakim Noah, D.J. Augustin, Taj Gibson, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4194.0,
+      "GamesPlayed": 22,
+      "OffPoss": 130,
+      "Points": 138
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-201959-202710-203503-2430",
+      "Name": "D.J. Augustin, Taj Gibson, Jimmy Butler, Tony Snell, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3892.0,
+      "GamesPlayed": 19,
+      "OffPoss": 123,
+      "Points": 116
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201959-203503-2399",
+      "Name": "Nazr Mohammed, D.J. Augustin, Taj Gibson, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3618.0,
+      "GamesPlayed": 20,
+      "OffPoss": 110,
+      "Points": 92
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-2399-2430-2550-2736",
+      "Name": "Taj Gibson, Mike Dunleavy, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3542.0,
+      "GamesPlayed": 13,
+      "OffPoss": 114,
+      "Points": 127
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-2399-2550-2736",
+      "Name": "Nazr Mohammed, Taj Gibson, Mike Dunleavy, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3429.0,
+      "GamesPlayed": 8,
+      "OffPoss": 100,
+      "Points": 99
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-2399-2550-2736",
+      "Name": "Joakim Noah, Taj Gibson, Mike Dunleavy, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3288.0,
+      "GamesPlayed": 13,
+      "OffPoss": 105,
+      "Points": 96
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-202710-2430-2550-2736",
+      "Name": "Joakim Noah, Jimmy Butler, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3140.0,
+      "GamesPlayed": 4,
+      "OffPoss": 101,
+      "Points": 109
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-201959-203503-2399-2430",
+      "Name": "D.J. Augustin, Taj Gibson, Tony Snell, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2563.0,
+      "GamesPlayed": 11,
+      "OffPoss": 80,
+      "Points": 87
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-203503-2399-2430",
+      "Name": "Joakim Noah, D.J. Augustin, Tony Snell, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2546.0,
+      "GamesPlayed": 10,
+      "OffPoss": 88,
+      "Points": 70
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-202710-2399-2430-2550",
+      "Name": "Taj Gibson, Jimmy Butler, Mike Dunleavy, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2506.0,
+      "GamesPlayed": 16,
+      "OffPoss": 84,
+      "Points": 89
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-2399-2430-2736",
+      "Name": "Joakim Noah, Derrick Rose, Mike Dunleavy, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2253.0,
+      "GamesPlayed": 5,
+      "OffPoss": 75,
+      "Points": 71
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-203503-2399-2430-2550",
+      "Name": "Taj Gibson, Tony Snell, Mike Dunleavy, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1948.0,
+      "GamesPlayed": 8,
+      "OffPoss": 63,
+      "Points": 53
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-2399-2430-2550-2736",
+      "Name": "Joakim Noah, Mike Dunleavy, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1942.0,
+      "GamesPlayed": 5,
+      "OffPoss": 63,
+      "Points": 63
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-202710-2430-2550",
+      "Name": "Joakim Noah, D.J. Augustin, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1816.0,
+      "GamesPlayed": 9,
+      "OffPoss": 53,
+      "Points": 43
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-202710-2430-2736",
+      "Name": "Joakim Noah, D.J. Augustin, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1795.0,
+      "GamesPlayed": 4,
+      "OffPoss": 61,
+      "Points": 60
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-202710-2550-2736",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1570.0,
+      "GamesPlayed": 5,
+      "OffPoss": 52,
+      "Points": 53
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-202710-203104-2430-2736",
+      "Name": "Joakim Noah, Jimmy Butler, Marquis Teague, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1502.0,
+      "GamesPlayed": 2,
+      "OffPoss": 44,
+      "Points": 34
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-202710-203503-2550",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1422.0,
+      "GamesPlayed": 13,
+      "OffPoss": 45,
+      "Points": 41
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-202710-2430-2550",
+      "Name": "Joakim Noah, Derrick Rose, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1397.0,
+      "GamesPlayed": 6,
+      "OffPoss": 47,
+      "Points": 52
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-202710-2399-2550",
+      "Name": "Nazr Mohammed, Taj Gibson, Jimmy Butler, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1364.0,
+      "GamesPlayed": 9,
+      "OffPoss": 38,
+      "Points": 41
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201959-2399-2736",
+      "Name": "Joakim Noah, D.J. Augustin, Taj Gibson, Mike Dunleavy, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1244.0,
+      "GamesPlayed": 5,
+      "OffPoss": 38,
+      "Points": 38
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201959-202710-2736",
+      "Name": "Joakim Noah, D.J. Augustin, Taj Gibson, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1124.0,
+      "GamesPlayed": 5,
+      "OffPoss": 36,
+      "Points": 31
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-2399-2430-2550",
+      "Name": "Joakim Noah, D.J. Augustin, Mike Dunleavy, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1104.0,
+      "GamesPlayed": 9,
+      "OffPoss": 35,
+      "Points": 34
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-202710-203503-2430-2550",
+      "Name": "Joakim Noah, Jimmy Butler, Tony Snell, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1089.0,
+      "GamesPlayed": 4,
+      "OffPoss": 34,
+      "Points": 31
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-203104-2399-2736",
+      "Name": "Nazr Mohammed, Taj Gibson, Marquis Teague, Mike Dunleavy, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1030.0,
+      "GamesPlayed": 4,
+      "OffPoss": 30,
+      "Points": 30
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-203104-203503-2399",
+      "Name": "Nazr Mohammed, Taj Gibson, Marquis Teague, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 999.0,
+      "GamesPlayed": 7,
+      "OffPoss": 30,
+      "Points": 26
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-203104-2399-2550",
+      "Name": "Joakim Noah, Taj Gibson, Marquis Teague, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 987.0,
+      "GamesPlayed": 2,
+      "OffPoss": 32,
+      "Points": 40
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-201959-2399-2430-2736",
+      "Name": "D.J. Augustin, Taj Gibson, Mike Dunleavy, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 979.0,
+      "GamesPlayed": 3,
+      "OffPoss": 29,
+      "Points": 22
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-203503-2399-2550",
+      "Name": "Joakim Noah, Taj Gibson, Tony Snell, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 935.0,
+      "GamesPlayed": 11,
+      "OffPoss": 30,
+      "Points": 29
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-202710-203503-2399",
+      "Name": "Joakim Noah, D.J. Augustin, Jimmy Butler, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 911.0,
+      "GamesPlayed": 6,
+      "OffPoss": 31,
+      "Points": 37
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-2430-2550-2736",
+      "Name": "Joakim Noah, Derrick Rose, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 867.0,
+      "GamesPlayed": 5,
+      "OffPoss": 29,
+      "Points": 33
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-203503-2430-2550",
+      "Name": "Joakim Noah, Taj Gibson, Tony Snell, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 856.0,
+      "GamesPlayed": 1,
+      "OffPoss": 28,
+      "Points": 21
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-203104-2399-2430-2736",
+      "Name": "Taj Gibson, Marquis Teague, Mike Dunleavy, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 801.0,
+      "GamesPlayed": 5,
+      "OffPoss": 26,
+      "Points": 31
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201565-201959-202710-2430-2736",
+      "Name": "Derrick Rose, Taj Gibson, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 737.0,
+      "GamesPlayed": 6,
+      "OffPoss": 27,
+      "Points": 34
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-203104-2399-2736",
+      "Name": "Joakim Noah, Taj Gibson, Marquis Teague, Mike Dunleavy, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 723.0,
+      "GamesPlayed": 5,
+      "OffPoss": 21,
+      "Points": 18
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-201959-2399-2550",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 716.0,
+      "GamesPlayed": 6,
+      "OffPoss": 25,
+      "Points": 22
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-203503-2430-2550-2736",
+      "Name": "Taj Gibson, Tony Snell, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 698.0,
+      "GamesPlayed": 6,
+      "OffPoss": 21,
+      "Points": 30
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-203503-2399-2430-2550",
+      "Name": "Nazr Mohammed, Tony Snell, Mike Dunleavy, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 691.0,
+      "GamesPlayed": 1,
+      "OffPoss": 23,
+      "Points": 15
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-203104-203503-2399-2430",
+      "Name": "Taj Gibson, Marquis Teague, Tony Snell, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 684.0,
+      "GamesPlayed": 2,
+      "OffPoss": 21,
+      "Points": 20
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-202710-203503-2229",
+      "Name": "Nazr Mohammed, Taj Gibson, Jimmy Butler, Tony Snell, Mike James",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 669.0,
+      "GamesPlayed": 4,
+      "OffPoss": 19,
+      "Points": 28
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-203104-203503-2399",
+      "Name": "Joakim Noah, Taj Gibson, Marquis Teague, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 663.0,
+      "GamesPlayed": 4,
+      "OffPoss": 18,
+      "Points": 18
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-202710-203104-2399",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, Marquis Teague, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 647.0,
+      "GamesPlayed": 3,
+      "OffPoss": 20,
+      "Points": 26
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201959-202690-203503",
+      "Name": "Nazr Mohammed, D.J. Augustin, Taj Gibson, Jimmer Fredette, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 642.0,
+      "GamesPlayed": 3,
+      "OffPoss": 20,
+      "Points": 31
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-203104-2399-2430-2550",
+      "Name": "Taj Gibson, Marquis Teague, Mike Dunleavy, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 622.0,
+      "GamesPlayed": 1,
+      "OffPoss": 16,
+      "Points": 18
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-203503-2550-2736",
+      "Name": "Joakim Noah, Taj Gibson, Tony Snell, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 611.0,
+      "GamesPlayed": 4,
+      "OffPoss": 17,
+      "Points": 21
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-201959-202710-2736",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Jimmy Butler, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 596.0,
+      "GamesPlayed": 4,
+      "OffPoss": 19,
+      "Points": 19
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201858-201959-2550",
+      "Name": "Joakim Noah, D.J. Augustin, Cartier Martin, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 595.0,
+      "GamesPlayed": 1,
+      "OffPoss": 16,
+      "Points": 19
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-202690-203503-2399",
+      "Name": "Joakim Noah, Taj Gibson, Jimmer Fredette, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 594.0,
+      "GamesPlayed": 1,
+      "OffPoss": 19,
+      "Points": 21
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-203104-203503-203513-2229",
+      "Name": "Nazr Mohammed, Marquis Teague, Tony Snell, Erik Murphy, Mike James",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 592.0,
+      "GamesPlayed": 4,
+      "OffPoss": 19,
+      "Points": 10
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-201858-201959-2399-2430",
+      "Name": "D.J. Augustin, Cartier Martin, Taj Gibson, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 592.0,
+      "GamesPlayed": 1,
+      "OffPoss": 19,
+      "Points": 19
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-203503-203513-2399-2550",
+      "Name": "Taj Gibson, Tony Snell, Erik Murphy, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 576.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 16
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-2229-2399-2736",
+      "Name": "Nazr Mohammed, Taj Gibson, Mike James, Mike Dunleavy, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 541.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 23
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-202710-203104-203503",
+      "Name": "Nazr Mohammed, Taj Gibson, Jimmy Butler, Marquis Teague, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 525.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 17
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-202710-203503-2229",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, Tony Snell, Mike James",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 519.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 16
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-2399-2430-2550",
+      "Name": "Joakim Noah, Derrick Rose, Mike Dunleavy, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 512.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 13
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-203503-2430-2550",
+      "Name": "Joakim Noah, D.J. Augustin, Tony Snell, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 496.0,
+      "GamesPlayed": 3,
+      "OffPoss": 14,
+      "Points": 21
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-203104-2550-2736",
+      "Name": "Nazr Mohammed, Taj Gibson, Marquis Teague, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 477.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 12
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-202710-2399-2550-2736",
+      "Name": "Taj Gibson, Jimmy Butler, Mike Dunleavy, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 447.0,
+      "GamesPlayed": 1,
+      "OffPoss": 14,
+      "Points": 21
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-2229-2399-2736",
+      "Name": "Joakim Noah, Taj Gibson, Mike James, Mike Dunleavy, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 443.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 15
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201565-201959-2399-2430-2550",
+      "Name": "Derrick Rose, Taj Gibson, Mike Dunleavy, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 436.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 12
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201565-201959-2399-2430-2736",
+      "Name": "Derrick Rose, Taj Gibson, Mike Dunleavy, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 430.0,
+      "GamesPlayed": 4,
+      "OffPoss": 16,
+      "Points": 19
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-203104-203503-2736",
+      "Name": "Nazr Mohammed, Taj Gibson, Marquis Teague, Tony Snell, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 422.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 14
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-202710-203503-2430",
+      "Name": "Joakim Noah, D.J. Augustin, Jimmy Butler, Tony Snell, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 419.0,
+      "GamesPlayed": 7,
+      "OffPoss": 12,
+      "Points": 18
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201565-201959-2399-2550",
+      "Name": "Nazr Mohammed, Derrick Rose, Taj Gibson, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 411.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 11
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201959-203503-2550",
+      "Name": "Nazr Mohammed, D.J. Augustin, Taj Gibson, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 403.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-203503-2399-2430",
+      "Name": "Nazr Mohammed, D.J. Augustin, Tony Snell, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 366.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 7
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-203129-203503-203513",
+      "Name": "Nazr Mohammed, D.J. Augustin, Tornike Shengelia, Tony Snell, Erik Murphy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 363.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 7
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-203104-203503-203513",
+      "Name": "Nazr Mohammed, Taj Gibson, Marquis Teague, Tony Snell, Erik Murphy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 354.0,
+      "GamesPlayed": 4,
+      "OffPoss": 10,
+      "Points": 7
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-203503-2229-2399-2430",
+      "Name": "Nazr Mohammed, Tony Snell, Mike James, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 352.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 10
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-2399-2430-2736",
+      "Name": "Joakim Noah, D.J. Augustin, Mike Dunleavy, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 352.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 15
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201565-201959-202710-2430-2550",
+      "Name": "Derrick Rose, Taj Gibson, Jimmy Butler, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 348.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 14
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-203104-2399-2430-2550",
+      "Name": "Joakim Noah, Marquis Teague, Mike Dunleavy, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 333.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 8
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-202710-2430-2550-2736",
+      "Name": "Taj Gibson, Jimmy Butler, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 323.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 6
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-201959-202710-2399",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Jimmy Butler, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 321.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-203503-2430-2550",
+      "Name": "Joakim Noah, Derrick Rose, Tony Snell, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 316.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 13
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-201959-203503-2399-2736",
+      "Name": "D.J. Augustin, Taj Gibson, Tony Snell, Mike Dunleavy, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 311.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201858-2399-2430",
+      "Name": "Joakim Noah, D.J. Augustin, Cartier Martin, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 307.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 13
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-203104-2430-2550-2736",
+      "Name": "Taj Gibson, Marquis Teague, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 303.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 10
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-203503-2229-2399",
+      "Name": "Joakim Noah, Taj Gibson, Tony Snell, Mike James, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 298.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 15
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201959-203104-203503",
+      "Name": "Nazr Mohammed, D.J. Augustin, Taj Gibson, Marquis Teague, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 295.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 8
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-203503-2229-2399",
+      "Name": "Nazr Mohammed, Taj Gibson, Tony Snell, Mike James, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 287.0,
+      "GamesPlayed": 3,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201565-201959-2430-2550-2736",
+      "Name": "Derrick Rose, Taj Gibson, Carlos Boozer, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 282.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 7
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-203104-203503-2430-2736",
+      "Name": "Joakim Noah, Marquis Teague, Tony Snell, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 276.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 6
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-201959-202710-203503-2399",
+      "Name": "D.J. Augustin, Taj Gibson, Jimmy Butler, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 275.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201858-201959-2399",
+      "Name": "Joakim Noah, D.J. Augustin, Cartier Martin, Taj Gibson, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 269.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 10
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201858-203503-203513",
+      "Name": "Nazr Mohammed, D.J. Augustin, Cartier Martin, Tony Snell, Erik Murphy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 8
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-202690-202710-2399-2430",
+      "Name": "Taj Gibson, Jimmer Fredette, Jimmy Butler, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 13
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-202690-203503-2430-2550",
+      "Name": "Joakim Noah, Jimmer Fredette, Tony Snell, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 258.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 14
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-203104-203503-2430-2736",
+      "Name": "Taj Gibson, Marquis Teague, Tony Snell, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 3,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-202690-202710-2399",
+      "Name": "Nazr Mohammed, Taj Gibson, Jimmer Fredette, Jimmy Butler, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 255.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 12
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-203503-2399-2736",
+      "Name": "Joakim Noah, D.J. Augustin, Tony Snell, Mike Dunleavy, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 250.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201149-201571-202710-2399",
+      "Name": "Nazr Mohammed, Joakim Noah, D.J. Augustin, Jimmy Butler, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 13
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201959-202690-202710",
+      "Name": "Joakim Noah, D.J. Augustin, Taj Gibson, Jimmer Fredette, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-202710-2399-2550-2736",
+      "Name": "Joakim Noah, Jimmy Butler, Mike Dunleavy, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-202710-2399-2430",
+      "Name": "Joakim Noah, Derrick Rose, Jimmy Butler, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 229.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201959-203503-203513",
+      "Name": "Nazr Mohammed, D.J. Augustin, Taj Gibson, Tony Snell, Erik Murphy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-202710-203503-2550",
+      "Name": "Nazr Mohammed, Taj Gibson, Jimmy Butler, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 221.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-202710-2399-2430",
+      "Name": "Nazr Mohammed, D.J. Augustin, Jimmy Butler, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 217.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-203104-203503-203513-2399",
+      "Name": "Nazr Mohammed, Marquis Teague, Tony Snell, Erik Murphy, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 4
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-203104-2550-2736",
+      "Name": "Joakim Noah, Taj Gibson, Marquis Teague, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201959-2399-2736",
+      "Name": "Nazr Mohammed, D.J. Augustin, Taj Gibson, Mike Dunleavy, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-202710-203503-2430-2550",
+      "Name": "Taj Gibson, Jimmy Butler, Tony Snell, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 4,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-202710-203503-2229-2399",
+      "Name": "Joakim Noah, Jimmy Butler, Tony Snell, Mike James, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-202690-203129-203503-203513",
+      "Name": "D.J. Augustin, Jimmer Fredette, Tornike Shengelia, Tony Snell, Erik Murphy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-201959-202710-2430-2736",
+      "Name": "D.J. Augustin, Taj Gibson, Jimmy Butler, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-202710-2399-2550",
+      "Name": "Joakim Noah, D.J. Augustin, Jimmy Butler, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 4,
+      "OffPoss": 10,
+      "Points": 16
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-201959-2550-2736",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 1
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-2229-2399-2430-2736",
+      "Name": "Taj Gibson, Mike James, Mike Dunleavy, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201565-201959-2550-2736",
+      "Name": "Nazr Mohammed, Derrick Rose, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201565-201959-202710-2550",
+      "Name": "Nazr Mohammed, Derrick Rose, Taj Gibson, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201858-201959-2550",
+      "Name": "Nazr Mohammed, D.J. Augustin, Cartier Martin, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 10
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-202710-203503-2430",
+      "Name": "Nazr Mohammed, D.J. Augustin, Jimmy Butler, Tony Snell, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201959-202710-2550",
+      "Name": "Nazr Mohammed, D.J. Augustin, Taj Gibson, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-202690-202710-2399-2430",
+      "Name": "Joakim Noah, Jimmer Fredette, Jimmy Butler, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 10
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-202690-202710-203503-2430",
+      "Name": "Joakim Noah, Jimmer Fredette, Jimmy Butler, Tony Snell, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-202710-2550-2736",
+      "Name": "Joakim Noah, Derrick Rose, Jimmy Butler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-203503-2550-2736",
+      "Name": "Nazr Mohammed, Taj Gibson, Tony Snell, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-203503-203513-2430",
+      "Name": "Nazr Mohammed, D.J. Augustin, Tony Snell, Erik Murphy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-202710-203104-2399",
+      "Name": "Nazr Mohammed, Taj Gibson, Jimmy Butler, Marquis Teague, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-203104-203503-2399-2430",
+      "Name": "Joakim Noah, Marquis Teague, Tony Snell, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201959-203129-203503",
+      "Name": "Nazr Mohammed, D.J. Augustin, Taj Gibson, Tornike Shengelia, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-203104-2399-2430",
+      "Name": "Joakim Noah, D.J. Augustin, Marquis Teague, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-202363-203129-203503-203513",
+      "Name": "Nazr Mohammed, Jarvis Varnado, Tornike Shengelia, Tony Snell, Erik Murphy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201858-202710-203503",
+      "Name": "Joakim Noah, D.J. Augustin, Cartier Martin, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 1
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-203104-203503-2736",
+      "Name": "Joakim Noah, Taj Gibson, Marquis Teague, Tony Snell, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201858-201959-2399",
+      "Name": "Nazr Mohammed, D.J. Augustin, Cartier Martin, Taj Gibson, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-201959-2399-2550",
+      "Name": "Nazr Mohammed, D.J. Augustin, Taj Gibson, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201858-201959-203503",
+      "Name": "Joakim Noah, D.J. Augustin, Cartier Martin, Taj Gibson, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-202690-203129-203503",
+      "Name": "Nazr Mohammed, D.J. Augustin, Jimmer Fredette, Tornike Shengelia, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-201959-202710-2550",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201858-201959-203503-2229",
+      "Name": "Joakim Noah, Cartier Martin, Taj Gibson, Tony Snell, Mike James",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-203104-203503-2430-2550",
+      "Name": "Taj Gibson, Marquis Teague, Tony Snell, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201959-203104-2399",
+      "Name": "Joakim Noah, D.J. Augustin, Taj Gibson, Marquis Teague, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-201959-203104-203503-2430",
+      "Name": "D.J. Augustin, Taj Gibson, Marquis Teague, Tony Snell, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-201959-2399-2430-2550",
+      "Name": "D.J. Augustin, Taj Gibson, Mike Dunleavy, Carlos Boozer, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201565-201959-2399-2736",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Mike Dunleavy, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-202690-203129-203503-203513",
+      "Name": "Nazr Mohammed, Jimmer Fredette, Tornike Shengelia, Tony Snell, Erik Murphy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-202710-203104-203503-2430",
+      "Name": "Taj Gibson, Jimmy Butler, Marquis Teague, Tony Snell, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201565-201959-202710-2399-2736",
+      "Name": "Derrick Rose, Taj Gibson, Jimmy Butler, Mike Dunleavy, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201959-202710-203104-203503",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, Marquis Teague, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 75.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201959-203104-2399-2550",
+      "Name": "Nazr Mohammed, Taj Gibson, Marquis Teague, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-202690-202710-2399-2430",
+      "Name": "Nazr Mohammed, Jimmer Fredette, Jimmy Butler, Mike Dunleavy, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 1
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-200758-200811-202690-203503",
+      "Name": "Nazr Mohammed, Ronnie Brewer, Lou Amundson, Jimmer Fredette, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "200758-201149-201959-202690-203503",
+      "Name": "Ronnie Brewer, Joakim Noah, Taj Gibson, Jimmer Fredette, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-202710-203104-203503-2399",
+      "Name": "Joakim Noah, Jimmy Butler, Marquis Teague, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-202690-202710-2430",
+      "Name": "Joakim Noah, D.J. Augustin, Jimmer Fredette, Jimmy Butler, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201571-201959-203503-203513-2550",
+      "Name": "D.J. Augustin, Taj Gibson, Tony Snell, Erik Murphy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 47.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201959-203104-203503-203513-2399",
+      "Name": "Taj Gibson, Marquis Teague, Tony Snell, Erik Murphy, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-202690-203503-203513",
+      "Name": "Nazr Mohammed, D.J. Augustin, Jimmer Fredette, Tony Snell, Erik Murphy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "1737-201571-203503-203513-2550",
+      "Name": "Nazr Mohammed, D.J. Augustin, Tony Snell, Erik Murphy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 26.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-201858-2399-2550",
+      "Name": "Joakim Noah, D.J. Augustin, Cartier Martin, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-203503-2399-2550-2736",
+      "Name": "Joakim Noah, Tony Snell, Mike Dunleavy, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201858-201959-2399-2550",
+      "Name": "Joakim Noah, Cartier Martin, Taj Gibson, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 10.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 1
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-203503-2399-2550",
+      "Name": "Joakim Noah, D.J. Augustin, Tony Snell, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2013-14",
+      "EntityId": "201149-201571-202710-2229-2399",
+      "Name": "Joakim Noah, D.J. Augustin, Jimmy Butler, Mike James, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    }
+  ]
+}

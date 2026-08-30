@@ -1,0 +1,1669 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2010-11",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2010-11",
+    "RowsReturned": 191,
+    "RowsWithOffPoss": 183,
+    "RowsSkippedMissingMetrics": 18,
+    "LastRowOffPoss": 0,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-2430-2586-2736",
+      "Name": "Joakim Noah, Derrick Rose, Carlos Boozer, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 25184.0,
+      "GamesPlayed": 29,
+      "OffPoss": 783,
+      "Points": 831
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-2430-2586-2736-703",
+      "Name": "Derrick Rose, Carlos Boozer, Keith Bogans, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 24187.0,
+      "GamesPlayed": 30,
+      "OffPoss": 746,
+      "Points": 847
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-201959-2586-2736",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12685.0,
+      "GamesPlayed": 19,
+      "OffPoss": 401,
+      "Points": 438
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201600-201959-2594",
+      "Name": "Ronnie Brewer, C.J. Watson, Omer Asik, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 10685.0,
+      "GamesPlayed": 46,
+      "OffPoss": 335,
+      "Points": 318
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201600-201959-2736",
+      "Name": "Ronnie Brewer, C.J. Watson, Omer Asik, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 10109.0,
+      "GamesPlayed": 45,
+      "OffPoss": 285,
+      "Points": 280
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-2430-2594-2736",
+      "Name": "Joakim Noah, Derrick Rose, Carlos Boozer, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9985.0,
+      "GamesPlayed": 28,
+      "OffPoss": 317,
+      "Points": 388
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201600-201959-2736",
+      "Name": "Ronnie Brewer, Derrick Rose, Omer Asik, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8743.0,
+      "GamesPlayed": 39,
+      "OffPoss": 269,
+      "Points": 316
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-2430-2594-2736-703",
+      "Name": "Derrick Rose, Carlos Boozer, Kyle Korver, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6729.0,
+      "GamesPlayed": 26,
+      "OffPoss": 227,
+      "Points": 224
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201959-2736-703",
+      "Name": "Ronnie Brewer, Derrick Rose, Taj Gibson, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6206.0,
+      "GamesPlayed": 36,
+      "OffPoss": 194,
+      "Points": 229
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-2430-2736-703",
+      "Name": "Ronnie Brewer, Derrick Rose, Carlos Boozer, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6047.0,
+      "GamesPlayed": 24,
+      "OffPoss": 187,
+      "Points": 194
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-201959-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5165.0,
+      "GamesPlayed": 27,
+      "OffPoss": 166,
+      "Points": 165
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-201959-2430-2594-2736",
+      "Name": "Derrick Rose, Taj Gibson, Carlos Boozer, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5014.0,
+      "GamesPlayed": 22,
+      "OffPoss": 165,
+      "Points": 189
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-201959-2586-2736-703",
+      "Name": "Derrick Rose, Taj Gibson, Keith Bogans, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4912.0,
+      "GamesPlayed": 15,
+      "OffPoss": 144,
+      "Points": 163
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201959-2430-2594",
+      "Name": "Ronnie Brewer, C.J. Watson, Taj Gibson, Carlos Boozer, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3873.0,
+      "GamesPlayed": 24,
+      "OffPoss": 116,
+      "Points": 143
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-2594-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3504.0,
+      "GamesPlayed": 8,
+      "OffPoss": 112,
+      "Points": 120
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201600-2594-2736",
+      "Name": "Ronnie Brewer, C.J. Watson, Omer Asik, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3436.0,
+      "GamesPlayed": 11,
+      "OffPoss": 108,
+      "Points": 117
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-201600-2430-2586-2736",
+      "Name": "Derrick Rose, Omer Asik, Carlos Boozer, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3383.0,
+      "GamesPlayed": 13,
+      "OffPoss": 102,
+      "Points": 126
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-2586-2736-703",
+      "Name": "Joakim Noah, Derrick Rose, Keith Bogans, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3306.0,
+      "GamesPlayed": 5,
+      "OffPoss": 99,
+      "Points": 107
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201959-2430-2736",
+      "Name": "Ronnie Brewer, Derrick Rose, Taj Gibson, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3213.0,
+      "GamesPlayed": 17,
+      "OffPoss": 103,
+      "Points": 117
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-201959-2594-2736",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2959.0,
+      "GamesPlayed": 18,
+      "OffPoss": 93,
+      "Points": 101
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-2430-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2810.0,
+      "GamesPlayed": 18,
+      "OffPoss": 92,
+      "Points": 95
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-201959-2594",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2458.0,
+      "GamesPlayed": 14,
+      "OffPoss": 74,
+      "Points": 78
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-201959-2430-2586-2736",
+      "Name": "Derrick Rose, Taj Gibson, Carlos Boozer, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2454.0,
+      "GamesPlayed": 10,
+      "OffPoss": 75,
+      "Points": 95
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-201959-2594-2736-703",
+      "Name": "Derrick Rose, Taj Gibson, Kyle Korver, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2438.0,
+      "GamesPlayed": 10,
+      "OffPoss": 73,
+      "Points": 81
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-201959-2594",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2073.0,
+      "GamesPlayed": 12,
+      "OffPoss": 69,
+      "Points": 79
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-2430-2594-703",
+      "Name": "Ronnie Brewer, Derrick Rose, Carlos Boozer, Kyle Korver, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1879.0,
+      "GamesPlayed": 19,
+      "OffPoss": 59,
+      "Points": 55
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201959-2594-703",
+      "Name": "Ronnie Brewer, C.J. Watson, Taj Gibson, Kyle Korver, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1717.0,
+      "GamesPlayed": 9,
+      "OffPoss": 54,
+      "Points": 53
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201959-2594-2736",
+      "Name": "Ronnie Brewer, C.J. Watson, Taj Gibson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1714.0,
+      "GamesPlayed": 9,
+      "OffPoss": 49,
+      "Points": 54
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201600-2430-2594",
+      "Name": "Ronnie Brewer, C.J. Watson, Omer Asik, Carlos Boozer, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1709.0,
+      "GamesPlayed": 13,
+      "OffPoss": 53,
+      "Points": 62
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201600-2594-2736",
+      "Name": "Ronnie Brewer, Derrick Rose, Omer Asik, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1704.0,
+      "GamesPlayed": 9,
+      "OffPoss": 51,
+      "Points": 66
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-2430-2594-703",
+      "Name": "Ronnie Brewer, C.J. Watson, Carlos Boozer, Kyle Korver, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1662.0,
+      "GamesPlayed": 15,
+      "OffPoss": 48,
+      "Points": 34
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-2594-2736-703",
+      "Name": "Joakim Noah, Derrick Rose, Kyle Korver, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1587.0,
+      "GamesPlayed": 5,
+      "OffPoss": 50,
+      "Points": 56
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201959-2594-703",
+      "Name": "Ronnie Brewer, Derrick Rose, Taj Gibson, Kyle Korver, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1573.0,
+      "GamesPlayed": 11,
+      "OffPoss": 49,
+      "Points": 55
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201600-2430-2736",
+      "Name": "Ronnie Brewer, Derrick Rose, Omer Asik, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1511.0,
+      "GamesPlayed": 13,
+      "OffPoss": 52,
+      "Points": 74
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-2594-2736-703",
+      "Name": "Ronnie Brewer, Derrick Rose, Kyle Korver, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1478.0,
+      "GamesPlayed": 9,
+      "OffPoss": 46,
+      "Points": 50
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-2594-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1408.0,
+      "GamesPlayed": 9,
+      "OffPoss": 45,
+      "Points": 38
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-2430-2594-2736",
+      "Name": "Ronnie Brewer, Derrick Rose, Carlos Boozer, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1392.0,
+      "GamesPlayed": 9,
+      "OffPoss": 49,
+      "Points": 54
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201600-201959-2594",
+      "Name": "Ronnie Brewer, Derrick Rose, Omer Asik, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1382.0,
+      "GamesPlayed": 14,
+      "OffPoss": 42,
+      "Points": 49
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-201600-2430-2594-2736",
+      "Name": "Derrick Rose, Omer Asik, Carlos Boozer, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1364.0,
+      "GamesPlayed": 9,
+      "OffPoss": 41,
+      "Points": 50
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-2586-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1362.0,
+      "GamesPlayed": 6,
+      "OffPoss": 43,
+      "Points": 35
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-201600-2586-2736",
+      "Name": "Joakim Noah, Derrick Rose, Omer Asik, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1356.0,
+      "GamesPlayed": 6,
+      "OffPoss": 43,
+      "Points": 46
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201959-2430-2594",
+      "Name": "Ronnie Brewer, Derrick Rose, Taj Gibson, Carlos Boozer, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1287.0,
+      "GamesPlayed": 14,
+      "OffPoss": 41,
+      "Points": 38
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201565-2594-2736",
+      "Name": "Joakim Noah, C.J. Watson, Derrick Rose, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1181.0,
+      "GamesPlayed": 11,
+      "OffPoss": 45,
+      "Points": 61
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-2430-2594",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Carlos Boozer, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1105.0,
+      "GamesPlayed": 12,
+      "OffPoss": 33,
+      "Points": 36
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-2430-2594",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, Carlos Boozer, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1087.0,
+      "GamesPlayed": 9,
+      "OffPoss": 33,
+      "Points": 39
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201959-2586-2736",
+      "Name": "Joakim Noah, C.J. Watson, Taj Gibson, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1014.0,
+      "GamesPlayed": 3,
+      "OffPoss": 33,
+      "Points": 30
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201959-2736-703",
+      "Name": "Ronnie Brewer, C.J. Watson, Taj Gibson, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 980.0,
+      "GamesPlayed": 10,
+      "OffPoss": 34,
+      "Points": 27
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-201959-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 854.0,
+      "GamesPlayed": 6,
+      "OffPoss": 27,
+      "Points": 28
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-2430-2594-2736",
+      "Name": "C.J. Watson, Derrick Rose, Carlos Boozer, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 827.0,
+      "GamesPlayed": 7,
+      "OffPoss": 31,
+      "Points": 40
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201565-2430-2736",
+      "Name": "Joakim Noah, C.J. Watson, Derrick Rose, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 798.0,
+      "GamesPlayed": 3,
+      "OffPoss": 26,
+      "Points": 29
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-2243-2594-2736",
+      "Name": "Joakim Noah, Derrick Rose, Brian Scalabrine, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 789.0,
+      "GamesPlayed": 4,
+      "OffPoss": 26,
+      "Points": 30
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-201959-2594-2736",
+      "Name": "C.J. Watson, Omer Asik, Taj Gibson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 788.0,
+      "GamesPlayed": 8,
+      "OffPoss": 23,
+      "Points": 31
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-201600-201959-2586-2736",
+      "Name": "Derrick Rose, Omer Asik, Taj Gibson, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 771.0,
+      "GamesPlayed": 6,
+      "OffPoss": 23,
+      "Points": 21
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-2586-2594-2736",
+      "Name": "Joakim Noah, Derrick Rose, Keith Bogans, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 749.0,
+      "GamesPlayed": 5,
+      "OffPoss": 24,
+      "Points": 25
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-201949-2594-2736",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 744.0,
+      "GamesPlayed": 2,
+      "OffPoss": 22,
+      "Points": 27
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-201959-2430-2594",
+      "Name": "C.J. Watson, Derrick Rose, Taj Gibson, Carlos Boozer, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 670.0,
+      "GamesPlayed": 4,
+      "OffPoss": 18,
+      "Points": 21
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-201949-2243-2594",
+      "Name": "C.J. Watson, Omer Asik, James Johnson, Brian Scalabrine, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 604.0,
+      "GamesPlayed": 5,
+      "OffPoss": 21,
+      "Points": 22
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-2594-2736-703",
+      "Name": "Ronnie Brewer, C.J. Watson, Kyle Korver, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 601.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 12
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-2243-2586-2736",
+      "Name": "Joakim Noah, Derrick Rose, Brian Scalabrine, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 600.0,
+      "GamesPlayed": 2,
+      "OffPoss": 22,
+      "Points": 22
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201959-2594-2736",
+      "Name": "Ronnie Brewer, Derrick Rose, Taj Gibson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 580.0,
+      "GamesPlayed": 7,
+      "OffPoss": 18,
+      "Points": 19
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201600-2594-2736",
+      "Name": "Joakim Noah, C.J. Watson, Omer Asik, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 553.0,
+      "GamesPlayed": 5,
+      "OffPoss": 19,
+      "Points": 29
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-201959-2586",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Taj Gibson, Keith Bogans",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 532.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 24
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-201600-201959-2594-2736",
+      "Name": "Derrick Rose, Omer Asik, Taj Gibson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 528.0,
+      "GamesPlayed": 10,
+      "OffPoss": 15,
+      "Points": 15
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201565-201959-2594",
+      "Name": "Joakim Noah, C.J. Watson, Derrick Rose, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 507.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 13
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201600-2586-2736",
+      "Name": "Ronnie Brewer, Derrick Rose, Omer Asik, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 504.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 20
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-201600-2594-2736",
+      "Name": "C.J. Watson, Derrick Rose, Omer Asik, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 487.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 17
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-201600-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Omer Asik, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 485.0,
+      "GamesPlayed": 5,
+      "OffPoss": 16,
+      "Points": 10
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201959-2446-2594-703",
+      "Name": "C.J. Watson, Taj Gibson, Rasual Butler, Kyle Korver, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 467.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 18
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201565-2736-703",
+      "Name": "Ronnie Brewer, C.J. Watson, Derrick Rose, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 460.0,
+      "GamesPlayed": 6,
+      "OffPoss": 15,
+      "Points": 10
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-201600-2594-2736",
+      "Name": "Joakim Noah, Derrick Rose, Omer Asik, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 460.0,
+      "GamesPlayed": 5,
+      "OffPoss": 14,
+      "Points": 20
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201565-201959-703",
+      "Name": "Ronnie Brewer, C.J. Watson, Derrick Rose, Taj Gibson, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 459.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 14
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201949-201959-2594",
+      "Name": "Ronnie Brewer, C.J. Watson, James Johnson, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 434.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 11
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201600-201949-2736",
+      "Name": "Joakim Noah, C.J. Watson, Omer Asik, James Johnson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 429.0,
+      "GamesPlayed": 1,
+      "OffPoss": 16,
+      "Points": 17
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201949-2594-2736",
+      "Name": "Joakim Noah, C.J. Watson, James Johnson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 394.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 8
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201600-2586-2736",
+      "Name": "Joakim Noah, C.J. Watson, Omer Asik, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 390.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 18
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201600-2430-2594",
+      "Name": "Ronnie Brewer, Derrick Rose, Omer Asik, Carlos Boozer, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 375.0,
+      "GamesPlayed": 7,
+      "OffPoss": 12,
+      "Points": 6
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201959-2594-2736",
+      "Name": "Joakim Noah, C.J. Watson, Taj Gibson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 359.0,
+      "GamesPlayed": 6,
+      "OffPoss": 14,
+      "Points": 7
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201600-2586-2594",
+      "Name": "Ronnie Brewer, C.J. Watson, Omer Asik, Keith Bogans, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 358.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 14
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-201959-2446-2594",
+      "Name": "C.J. Watson, Omer Asik, Taj Gibson, Rasual Butler, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 356.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 13
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-201959-2430-2736",
+      "Name": "C.J. Watson, Derrick Rose, Taj Gibson, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 350.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 9
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201600-201949-2594",
+      "Name": "Ronnie Brewer, C.J. Watson, Omer Asik, James Johnson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 348.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 22
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-2430-2594-2736",
+      "Name": "C.J. Watson, Omer Asik, Carlos Boozer, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 10
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "101249-201228-201600-201949-2243",
+      "Name": "John Lucas III, C.J. Watson, Omer Asik, James Johnson, Brian Scalabrine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 341.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 7
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-201949-2594-2736",
+      "Name": "C.J. Watson, Omer Asik, James Johnson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 341.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 13
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201565-2430-703",
+      "Name": "Ronnie Brewer, C.J. Watson, Derrick Rose, Carlos Boozer, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 335.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 13
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-201600-201949-2586",
+      "Name": "Joakim Noah, Derrick Rose, Omer Asik, James Johnson, Keith Bogans",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 333.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 17
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-2430-2586-703",
+      "Name": "Ronnie Brewer, Derrick Rose, Carlos Boozer, Keith Bogans, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 325.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 13
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-2594-2736-703",
+      "Name": "C.J. Watson, Derrick Rose, Kyle Korver, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 325.0,
+      "GamesPlayed": 7,
+      "OffPoss": 15,
+      "Points": 18
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201600-2243-2594",
+      "Name": "Ronnie Brewer, C.J. Watson, Omer Asik, Brian Scalabrine, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 324.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 12
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-2430-2594-2736",
+      "Name": "Joakim Noah, C.J. Watson, Carlos Boozer, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 320.0,
+      "GamesPlayed": 5,
+      "OffPoss": 9,
+      "Points": 11
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-201600-201949-2736",
+      "Name": "Joakim Noah, Derrick Rose, Omer Asik, James Johnson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 312.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 12
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201565-201600-201959",
+      "Name": "Ronnie Brewer, C.J. Watson, Derrick Rose, Omer Asik, Taj Gibson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 310.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-2430-2594-2736-703",
+      "Name": "C.J. Watson, Carlos Boozer, Kyle Korver, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 309.0,
+      "GamesPlayed": 6,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-2243-2736-703",
+      "Name": "Ronnie Brewer, Derrick Rose, Brian Scalabrine, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 306.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 12
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-201949-2243-2594",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, Brian Scalabrine, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 291.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 16
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201949-201959-2594",
+      "Name": "Ronnie Brewer, Derrick Rose, James Johnson, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 286.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 5
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-2586-2594-2736-703",
+      "Name": "Derrick Rose, Keith Bogans, Kyle Korver, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 285.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201959-2430-2594-2736",
+      "Name": "C.J. Watson, Taj Gibson, Carlos Boozer, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 273.0,
+      "GamesPlayed": 3,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201600-2430-2736",
+      "Name": "Ronnie Brewer, C.J. Watson, Omer Asik, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "101249-200758-201149-201949-2594",
+      "Name": "John Lucas III, Ronnie Brewer, Joakim Noah, James Johnson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201600-201949-2736",
+      "Name": "Ronnie Brewer, C.J. Watson, Omer Asik, James Johnson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-2586-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 7
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-2446-2594-703",
+      "Name": "C.J. Watson, Omer Asik, Rasual Butler, Kyle Korver, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 17
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201565-201600-2736",
+      "Name": "Ronnie Brewer, C.J. Watson, Derrick Rose, Omer Asik, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 234.0,
+      "GamesPlayed": 5,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-201949-201959-2594",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 14
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201565-201959-2736",
+      "Name": "Joakim Noah, C.J. Watson, Derrick Rose, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 4,
+      "OffPoss": 8,
+      "Points": 4
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-2586-2594-2736",
+      "Name": "C.J. Watson, Omer Asik, Keith Bogans, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 1
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-201959-2586-2594",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Keith Bogans, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 11
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-201600-2594",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, Omer Asik, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-2736-703",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201565-201959-2736",
+      "Name": "Ronnie Brewer, C.J. Watson, Derrick Rose, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 7,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201959-2586-2736",
+      "Name": "Ronnie Brewer, Derrick Rose, Taj Gibson, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 4,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201959-2430-2736",
+      "Name": "Ronnie Brewer, C.J. Watson, Taj Gibson, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 212.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201600-2586-2736",
+      "Name": "Ronnie Brewer, C.J. Watson, Omer Asik, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 10
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-201600-201949-201959-2594",
+      "Name": "Derrick Rose, Omer Asik, James Johnson, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201949-201959-2594-703",
+      "Name": "C.J. Watson, James Johnson, Taj Gibson, Kyle Korver, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 8
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-201600-201949-2594-2736",
+      "Name": "Derrick Rose, Omer Asik, James Johnson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-2430-2594-2736",
+      "Name": "Ronnie Brewer, C.J. Watson, Carlos Boozer, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201565-2586-2736",
+      "Name": "Joakim Noah, C.J. Watson, Derrick Rose, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 11
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-201565-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, Derrick Rose, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 5,
+      "OffPoss": 9,
+      "Points": 6
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-2243-2594",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Brian Scalabrine, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 11
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201600-2243-2594",
+      "Name": "Ronnie Brewer, Derrick Rose, Omer Asik, Brian Scalabrine, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201565-2430-2736",
+      "Name": "Ronnie Brewer, C.J. Watson, Derrick Rose, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-201949-2594",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, James Johnson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 3
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201600-201949-2594",
+      "Name": "Joakim Noah, C.J. Watson, Omer Asik, James Johnson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201565-2243-2736",
+      "Name": "Joakim Noah, C.J. Watson, Derrick Rose, Brian Scalabrine, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201949-2243-2594",
+      "Name": "Joakim Noah, C.J. Watson, James Johnson, Brian Scalabrine, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-201600-2594",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Omer Asik, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-2430-2586-2736",
+      "Name": "Ronnie Brewer, Derrick Rose, Carlos Boozer, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201565-2430-2594",
+      "Name": "Joakim Noah, C.J. Watson, Derrick Rose, Carlos Boozer, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-201600-2243-2594",
+      "Name": "C.J. Watson, Derrick Rose, Omer Asik, Brian Scalabrine, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201959-2594-2736-703",
+      "Name": "C.J. Watson, Taj Gibson, Kyle Korver, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 159.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-201565-201959",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, Derrick Rose, Taj Gibson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-201959-2586-2736",
+      "Name": "C.J. Watson, Omer Asik, Taj Gibson, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-201600-2586-2736-703",
+      "Name": "Derrick Rose, Omer Asik, Keith Bogans, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-201949-201959-2594",
+      "Name": "C.J. Watson, Omer Asik, James Johnson, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-2430-2736-703",
+      "Name": "C.J. Watson, Derrick Rose, Carlos Boozer, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-2243-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, Brian Scalabrine, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201959-2586-2594-703",
+      "Name": "C.J. Watson, Taj Gibson, Keith Bogans, Kyle Korver, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 7
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-2243-2586-2736",
+      "Name": "Joakim Noah, C.J. Watson, Brian Scalabrine, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-2430-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, Carlos Boozer, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201959-2243-2586",
+      "Name": "Ronnie Brewer, Derrick Rose, Taj Gibson, Brian Scalabrine, Keith Bogans",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201565-201959-2243-2594",
+      "Name": "Ronnie Brewer, Derrick Rose, Taj Gibson, Brian Scalabrine, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201565-201959-2430",
+      "Name": "Ronnie Brewer, C.J. Watson, Derrick Rose, Taj Gibson, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-201600-201959-2736",
+      "Name": "C.J. Watson, Derrick Rose, Omer Asik, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201228-201565-2430",
+      "Name": "Ronnie Brewer, Joakim Noah, C.J. Watson, Derrick Rose, Carlos Boozer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-2586-2594-2736-703",
+      "Name": "C.J. Watson, Keith Bogans, Kyle Korver, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-201565-201959-2594",
+      "Name": "Ronnie Brewer, C.J. Watson, Derrick Rose, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-2446-2594-703",
+      "Name": "Joakim Noah, Derrick Rose, Rasual Butler, Kyle Korver, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-2430-2736-703",
+      "Name": "Ronnie Brewer, C.J. Watson, Carlos Boozer, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201565-201949-2243-2586",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, Brian Scalabrine, Keith Bogans",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-201949-2586-2736",
+      "Name": "C.J. Watson, Omer Asik, James Johnson, Keith Bogans, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-2243-2446-2594",
+      "Name": "C.J. Watson, Omer Asik, Brian Scalabrine, Rasual Butler, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-2594-703",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Kyle Korver, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 2,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-201959-2243-2594",
+      "Name": "C.J. Watson, Omer Asik, Taj Gibson, Brian Scalabrine, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201228-2243-2446-2594",
+      "Name": "Ronnie Brewer, C.J. Watson, Brian Scalabrine, Rasual Butler, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 1
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "200758-201149-201565-2243-2736",
+      "Name": "Ronnie Brewer, Joakim Noah, Derrick Rose, Brian Scalabrine, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-201600-201959-2594",
+      "Name": "C.J. Watson, Derrick Rose, Omer Asik, Taj Gibson, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201149-201228-201600-201949-2586",
+      "Name": "Joakim Noah, C.J. Watson, Omer Asik, James Johnson, Keith Bogans",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201600-201949-2586-2594",
+      "Name": "C.J. Watson, Omer Asik, James Johnson, Keith Bogans, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 5
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201565-2243-2430-2594-2736",
+      "Name": "Derrick Rose, Brian Scalabrine, Carlos Boozer, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-2430-2594-703",
+      "Name": "C.J. Watson, Derrick Rose, Carlos Boozer, Kyle Korver, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201959-2430-2446-2594",
+      "Name": "C.J. Watson, Taj Gibson, Carlos Boozer, Rasual Butler, Kyle Korver",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 21.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-201959-2594-2736",
+      "Name": "C.J. Watson, Derrick Rose, Taj Gibson, Kyle Korver, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 11.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2010-11",
+      "EntityId": "201228-201565-201959-2736-703",
+      "Name": "C.J. Watson, Derrick Rose, Taj Gibson, Luol Deng, Kurt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 11.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    }
+  ]
+}

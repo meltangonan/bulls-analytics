@@ -1,0 +1,3499 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2006-07",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2006-07",
+    "RowsReturned": 392,
+    "RowsWithOffPoss": 377,
+    "RowsSkippedMissingMetrics": 29,
+    "LastRowOffPoss": 0,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-2550-2732-2736",
+      "Name": "Ben Wallace, P.J. Brown, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37042.0,
+      "GamesPlayed": 52,
+      "OffPoss": 1172,
+      "Points": 1214
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2550-2736-2768-2804",
+      "Name": "Ben Wallace, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 20988.0,
+      "GamesPlayed": 36,
+      "OffPoss": 663,
+      "Points": 671
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2550-2732-2736-2804",
+      "Name": "Ben Wallace, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12723.0,
+      "GamesPlayed": 40,
+      "OffPoss": 434,
+      "Points": 471
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-2550-2732-2736",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 10395.0,
+      "GamesPlayed": 33,
+      "OffPoss": 341,
+      "Points": 370
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2550-2732-2736-2768",
+      "Name": "Ben Wallace, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6173.0,
+      "GamesPlayed": 24,
+      "OffPoss": 212,
+      "Points": 241
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2732-2736-2768-2804",
+      "Name": "Ben Wallace, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5079.0,
+      "GamesPlayed": 23,
+      "OffPoss": 169,
+      "Points": 192
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-2550-2736-2768",
+      "Name": "Ben Wallace, P.J. Brown, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3899.0,
+      "GamesPlayed": 20,
+      "OffPoss": 125,
+      "Points": 124
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2124-2550-2732-2736",
+      "Name": "Ben Wallace, Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3629.0,
+      "GamesPlayed": 15,
+      "OffPoss": 110,
+      "Points": 107
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-2550-2736-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3569.0,
+      "GamesPlayed": 27,
+      "OffPoss": 114,
+      "Points": 115
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-2732-2736-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3412.0,
+      "GamesPlayed": 25,
+      "OffPoss": 106,
+      "Points": 117
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2732-2736-2804",
+      "Name": "P.J. Brown, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3091.0,
+      "GamesPlayed": 21,
+      "OffPoss": 98,
+      "Points": 109
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2550-2732-2736",
+      "Name": "Ben Wallace, Adrian Griffin, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3083.0,
+      "GamesPlayed": 12,
+      "OffPoss": 96,
+      "Points": 112
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-2732-2736-2768",
+      "Name": "Ben Wallace, P.J. Brown, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3026.0,
+      "GamesPlayed": 19,
+      "OffPoss": 96,
+      "Points": 94
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-2550-2732-2736",
+      "Name": "P.J. Brown, Tyrus Thomas, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2656.0,
+      "GamesPlayed": 13,
+      "OffPoss": 87,
+      "Points": 106
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2732-2736-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2506.0,
+      "GamesPlayed": 12,
+      "OffPoss": 82,
+      "Points": 84
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2124-2550-2732-2736",
+      "Name": "P.J. Brown, Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2240.0,
+      "GamesPlayed": 10,
+      "OffPoss": 71,
+      "Points": 73
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2736-2768-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2148.0,
+      "GamesPlayed": 8,
+      "OffPoss": 66,
+      "Points": 50
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2550-2736-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1937.0,
+      "GamesPlayed": 11,
+      "OffPoss": 55,
+      "Points": 63
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2732-2736-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1900.0,
+      "GamesPlayed": 9,
+      "OffPoss": 65,
+      "Points": 70
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-2550-2736-2768",
+      "Name": "P.J. Brown, Tyrus Thomas, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1797.0,
+      "GamesPlayed": 14,
+      "OffPoss": 55,
+      "Points": 67
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2124-2732-2736-2768",
+      "Name": "P.J. Brown, Malik Allen, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1709.0,
+      "GamesPlayed": 6,
+      "OffPoss": 52,
+      "Points": 70
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-2550-2732-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1692.0,
+      "GamesPlayed": 16,
+      "OffPoss": 57,
+      "Points": 60
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2550-2732-2736",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1542.0,
+      "GamesPlayed": 13,
+      "OffPoss": 58,
+      "Points": 68
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2550-2736-2768",
+      "Name": "P.J. Brown, Thabo Sefolosha, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1533.0,
+      "GamesPlayed": 3,
+      "OffPoss": 48,
+      "Points": 52
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2550-2732-2736",
+      "Name": "P.J. Brown, Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1373.0,
+      "GamesPlayed": 5,
+      "OffPoss": 42,
+      "Points": 49
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2124-2550-2736-2768",
+      "Name": "Ben Wallace, Malik Allen, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1357.0,
+      "GamesPlayed": 11,
+      "OffPoss": 45,
+      "Points": 39
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2550-2736-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1175.0,
+      "GamesPlayed": 3,
+      "OffPoss": 36,
+      "Points": 35
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2124-2732-2736-2768",
+      "Name": "Ben Wallace, Malik Allen, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1145.0,
+      "GamesPlayed": 10,
+      "OffPoss": 39,
+      "Points": 42
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2736-2768-2804",
+      "Name": "P.J. Brown, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1031.0,
+      "GamesPlayed": 5,
+      "OffPoss": 37,
+      "Points": 45
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2550-2732-2736-2751",
+      "Name": "Ben Wallace, Kirk Hinrich, Ben Gordon, Luol Deng, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1011.0,
+      "GamesPlayed": 5,
+      "OffPoss": 38,
+      "Points": 33
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2550-2552-2732-2736-2804",
+      "Name": "Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 984.0,
+      "GamesPlayed": 6,
+      "OffPoss": 35,
+      "Points": 38
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-200757-2550-2804",
+      "Name": "P.J. Brown, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 978.0,
+      "GamesPlayed": 2,
+      "OffPoss": 34,
+      "Points": 25
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2552-2751-2768",
+      "Name": "Thabo Sefolosha, Malik Allen, Michael Sweetney, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 978.0,
+      "GamesPlayed": 3,
+      "OffPoss": 30,
+      "Points": 23
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2732-2736-2768-2804",
+      "Name": "P.J. Brown, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 973.0,
+      "GamesPlayed": 8,
+      "OffPoss": 30,
+      "Points": 32
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-2732-2768-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 951.0,
+      "GamesPlayed": 9,
+      "OffPoss": 30,
+      "Points": 25
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-200757-2751-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 931.0,
+      "GamesPlayed": 4,
+      "OffPoss": 31,
+      "Points": 38
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2550-2552-2732-2736",
+      "Name": "Ben Wallace, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 841.0,
+      "GamesPlayed": 5,
+      "OffPoss": 26,
+      "Points": 34
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-2732-2736-2768",
+      "Name": "P.J. Brown, Tyrus Thomas, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 832.0,
+      "GamesPlayed": 7,
+      "OffPoss": 28,
+      "Points": 35
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2550-2732-2736-2768-2804",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 822.0,
+      "GamesPlayed": 10,
+      "OffPoss": 36,
+      "Points": 39
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-2550-2732-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 814.0,
+      "GamesPlayed": 6,
+      "OffPoss": 30,
+      "Points": 47
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-200757-2124-2552",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Malik Allen, Michael Sweetney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 780.0,
+      "GamesPlayed": 2,
+      "OffPoss": 29,
+      "Points": 34
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2124-2550-2732-2736-2804",
+      "Name": "Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 779.0,
+      "GamesPlayed": 8,
+      "OffPoss": 34,
+      "Points": 40
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-200757-2732-2736",
+      "Name": "Ben Wallace, P.J. Brown, Thabo Sefolosha, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 752.0,
+      "GamesPlayed": 4,
+      "OffPoss": 25,
+      "Points": 29
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2550-2732-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 744.0,
+      "GamesPlayed": 6,
+      "OffPoss": 27,
+      "Points": 30
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-200757-2736-2768",
+      "Name": "Ben Wallace, P.J. Brown, Thabo Sefolosha, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 742.0,
+      "GamesPlayed": 7,
+      "OffPoss": 26,
+      "Points": 28
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-2550-2732-2804",
+      "Name": "Ben Wallace, P.J. Brown, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 739.0,
+      "GamesPlayed": 7,
+      "OffPoss": 24,
+      "Points": 17
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2732-2736-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 734.0,
+      "GamesPlayed": 7,
+      "OffPoss": 27,
+      "Points": 28
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2124-2732-2736-2768",
+      "Name": "Tyrus Thomas, Malik Allen, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 720.0,
+      "GamesPlayed": 5,
+      "OffPoss": 22,
+      "Points": 21
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2124-2550-2736-2768-2804",
+      "Name": "Malik Allen, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 719.0,
+      "GamesPlayed": 2,
+      "OffPoss": 22,
+      "Points": 29
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200748-2732-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 701.0,
+      "GamesPlayed": 7,
+      "OffPoss": 23,
+      "Points": 28
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2732-2736-2768",
+      "Name": "P.J. Brown, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 701.0,
+      "GamesPlayed": 5,
+      "OffPoss": 23,
+      "Points": 33
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2550-2732-2804",
+      "Name": "P.J. Brown, Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 680.0,
+      "GamesPlayed": 4,
+      "OffPoss": 20,
+      "Points": 16
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2550-2736-2751-2768",
+      "Name": "Ben Wallace, Kirk Hinrich, Luol Deng, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 658.0,
+      "GamesPlayed": 5,
+      "OffPoss": 24,
+      "Points": 16
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2550-2732-2736-2804",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 644.0,
+      "GamesPlayed": 3,
+      "OffPoss": 23,
+      "Points": 33
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2124-2732-2736",
+      "Name": "Ben Wallace, Thabo Sefolosha, Malik Allen, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 641.0,
+      "GamesPlayed": 2,
+      "OffPoss": 20,
+      "Points": 24
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2732-2736-2751",
+      "Name": "P.J. Brown, Kirk Hinrich, Ben Gordon, Luol Deng, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 629.0,
+      "GamesPlayed": 6,
+      "OffPoss": 24,
+      "Points": 28
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2550-2736-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 628.0,
+      "GamesPlayed": 6,
+      "OffPoss": 19,
+      "Points": 18
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-200757-2732-2804",
+      "Name": "P.J. Brown, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 628.0,
+      "GamesPlayed": 4,
+      "OffPoss": 19,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2732-2736-2768",
+      "Name": "Ben Wallace, Thabo Sefolosha, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 613.0,
+      "GamesPlayed": 7,
+      "OffPoss": 22,
+      "Points": 21
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2124-2732-2736-2768",
+      "Name": "Adrian Griffin, Malik Allen, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 612.0,
+      "GamesPlayed": 3,
+      "OffPoss": 19,
+      "Points": 27
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2732-2736-2804",
+      "Name": "Thabo Sefolosha, Malik Allen, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 610.0,
+      "GamesPlayed": 1,
+      "OffPoss": 18,
+      "Points": 27
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-2550-2732-2768",
+      "Name": "Ben Wallace, P.J. Brown, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 608.0,
+      "GamesPlayed": 2,
+      "OffPoss": 22,
+      "Points": 28
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200757-2550-2736",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 605.0,
+      "GamesPlayed": 2,
+      "OffPoss": 18,
+      "Points": 27
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-200757-2550-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 605.0,
+      "GamesPlayed": 4,
+      "OffPoss": 21,
+      "Points": 23
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-1559-2732-2768",
+      "Name": "Ben Wallace, P.J. Brown, Adrian Griffin, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 603.0,
+      "GamesPlayed": 4,
+      "OffPoss": 17,
+      "Points": 15
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200748-2550-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 593.0,
+      "GamesPlayed": 4,
+      "OffPoss": 18,
+      "Points": 22
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2550-2732-2736",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 591.0,
+      "GamesPlayed": 4,
+      "OffPoss": 21,
+      "Points": 21
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200757-2736-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 587.0,
+      "GamesPlayed": 7,
+      "OffPoss": 18,
+      "Points": 25
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200748-2550-2732",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 585.0,
+      "GamesPlayed": 6,
+      "OffPoss": 19,
+      "Points": 21
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200748-200757-2732",
+      "Name": "P.J. Brown, Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 582.0,
+      "GamesPlayed": 2,
+      "OffPoss": 18,
+      "Points": 17
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2550-2732-2736-2804",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 564.0,
+      "GamesPlayed": 2,
+      "OffPoss": 19,
+      "Points": 23
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2732-2736-2804",
+      "Name": "P.J. Brown, Thabo Sefolosha, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 551.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 21
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2124-2552-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Malik Allen, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 551.0,
+      "GamesPlayed": 2,
+      "OffPoss": 17,
+      "Points": 15
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2550-2732-2736-2768",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 551.0,
+      "GamesPlayed": 5,
+      "OffPoss": 19,
+      "Points": 29
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2124-2550-2732",
+      "Name": "Ben Wallace, Thabo Sefolosha, Malik Allen, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 550.0,
+      "GamesPlayed": 4,
+      "OffPoss": 16,
+      "Points": 16
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2732-2768-2804",
+      "Name": "P.J. Brown, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 528.0,
+      "GamesPlayed": 4,
+      "OffPoss": 18,
+      "Points": 16
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2550-2732-2736",
+      "Name": "Thabo Sefolosha, Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 524.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 19
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-200757-2550-2736",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 519.0,
+      "GamesPlayed": 4,
+      "OffPoss": 19,
+      "Points": 20
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-200757-2552-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 508.0,
+      "GamesPlayed": 4,
+      "OffPoss": 16,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2124-2732-2736",
+      "Name": "Ben Wallace, Adrian Griffin, Malik Allen, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 490.0,
+      "GamesPlayed": 1,
+      "OffPoss": 16,
+      "Points": 20
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2552-2736-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 488.0,
+      "GamesPlayed": 1,
+      "OffPoss": 16,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-2550-2768-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 476.0,
+      "GamesPlayed": 4,
+      "OffPoss": 18,
+      "Points": 19
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2552-2732-2736",
+      "Name": "P.J. Brown, Thabo Sefolosha, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 476.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 14
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-200757-2550-2732",
+      "Name": "P.J. Brown, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 475.0,
+      "GamesPlayed": 2,
+      "OffPoss": 17,
+      "Points": 24
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2552-2732-2804",
+      "Name": "P.J. Brown, Kirk Hinrich, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 473.0,
+      "GamesPlayed": 3,
+      "OffPoss": 14,
+      "Points": 19
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2124-2751-2804",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Malik Allen, Viktor Khryapa, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 463.0,
+      "GamesPlayed": 1,
+      "OffPoss": 16,
+      "Points": 19
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2552-2732-2736-2768",
+      "Name": "Tyrus Thomas, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 463.0,
+      "GamesPlayed": 5,
+      "OffPoss": 15,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2550-2768-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 462.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2124-2550-2736-2768",
+      "Name": "P.J. Brown, Malik Allen, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 461.0,
+      "GamesPlayed": 4,
+      "OffPoss": 17,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2124-2550-2736-2768",
+      "Name": "Tyrus Thomas, Malik Allen, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 460.0,
+      "GamesPlayed": 4,
+      "OffPoss": 15,
+      "Points": 15
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2732-2768-2804",
+      "Name": "Thabo Sefolosha, Malik Allen, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 459.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 15
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-2124-2550-2732",
+      "Name": "Ben Wallace, Tyrus Thomas, Malik Allen, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 458.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 19
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2124-2550-2732-2736",
+      "Name": "Adrian Griffin, Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 458.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 18
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2732-2768-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 450.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 14
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-1559-2550-2732",
+      "Name": "Ben Wallace, P.J. Brown, Adrian Griffin, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 444.0,
+      "GamesPlayed": 5,
+      "OffPoss": 11,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2552-2732-2736-2768-2804",
+      "Name": "Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 442.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2550-2552-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Michael Sweetney, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 439.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2124-2552-2732-2736-2768",
+      "Name": "Malik Allen, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 434.0,
+      "GamesPlayed": 4,
+      "OffPoss": 13,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-2732-2736-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 433.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 17
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2732-2768-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 431.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 18
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-200757-2732-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 429.0,
+      "GamesPlayed": 6,
+      "OffPoss": 16,
+      "Points": 16
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2124-2550-2768-2804",
+      "Name": "Ben Wallace, Malik Allen, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 428.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 16
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2732-2736-2751-2768",
+      "Name": "Ben Wallace, Ben Gordon, Luol Deng, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 424.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200757-2552-2768",
+      "Name": "P.J. Brown, Adrian Griffin, Thabo Sefolosha, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 420.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 17
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2124-2732-2768-2804",
+      "Name": "Ben Wallace, Malik Allen, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 414.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2550-2552-2736-2768-2804",
+      "Name": "Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 411.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 14
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-200757-2550-2804",
+      "Name": "Ben Wallace, P.J. Brown, Thabo Sefolosha, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 410.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2550-2732-2768-2804",
+      "Name": "Ben Wallace, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 409.0,
+      "GamesPlayed": 3,
+      "OffPoss": 14,
+      "Points": 13
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-200757-2732-2768",
+      "Name": "Ben Wallace, P.J. Brown, Thabo Sefolosha, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 406.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 19
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2550-2736-2804",
+      "Name": "Thabo Sefolosha, Malik Allen, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 406.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2124-2550-2552-2736-2768",
+      "Name": "Malik Allen, Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 405.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 19
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-200757-2732-2804",
+      "Name": "Ben Wallace, P.J. Brown, Thabo Sefolosha, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 401.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 15
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-2732-2768-2804",
+      "Name": "Ben Wallace, P.J. Brown, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 395.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 13
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-200757-2732-2736",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 389.0,
+      "GamesPlayed": 5,
+      "OffPoss": 13,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-2550-2732-2804",
+      "Name": "P.J. Brown, Tyrus Thomas, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 388.0,
+      "GamesPlayed": 5,
+      "OffPoss": 13,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-2732-2768-2804",
+      "Name": "P.J. Brown, Tyrus Thomas, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 379.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 13
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2124-2550-2732-2736",
+      "Name": "Tyrus Thomas, Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 379.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2124-2550-2732-2736-2768",
+      "Name": "Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 378.0,
+      "GamesPlayed": 4,
+      "OffPoss": 12,
+      "Points": 22
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2732-2736-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 377.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 13
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2124-2732-2736-2768-2804",
+      "Name": "Malik Allen, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 375.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2124-2550-2732",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Malik Allen, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 373.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2550-2552-2736-2768",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 372.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 17
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2550-2552-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 369.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2552-2732-2768-2804",
+      "Name": "Tyrus Thomas, Michael Sweetney, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 366.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 16
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-1559-2550-2768",
+      "Name": "Ben Wallace, P.J. Brown, Adrian Griffin, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 364.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2552-2732-2736-2768",
+      "Name": "P.J. Brown, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 364.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2552-2768-2804",
+      "Name": "Thabo Sefolosha, Malik Allen, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 362.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 16
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2124-2550-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Malik Allen, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 360.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 14
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2552-2732-2768-2804",
+      "Name": "Thabo Sefolosha, Michael Sweetney, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 359.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2124-2751-2768",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Malik Allen, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 349.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 16
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-2550-2552-2732",
+      "Name": "P.J. Brown, Tyrus Thomas, Kirk Hinrich, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2550-2552-2732-2804",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 339.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2550-2552-2736-2804",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Michael Sweetney, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 337.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 16
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2732-2768-2804",
+      "Name": "P.J. Brown, Adrian Griffin, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2732-2751-2768",
+      "Name": "P.J. Brown, Kirk Hinrich, Ben Gordon, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 325.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2552-2732-2736-2768",
+      "Name": "Thabo Sefolosha, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 325.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2124-2550-2736-2768",
+      "Name": "Adrian Griffin, Malik Allen, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 324.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 13
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2124-2550-2732",
+      "Name": "Ben Wallace, Adrian Griffin, Malik Allen, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 323.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-2550-2552-2732",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 320.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2552-2732-2736-2768",
+      "Name": "Adrian Griffin, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 320.0,
+      "GamesPlayed": 5,
+      "OffPoss": 11,
+      "Points": 14
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-200757-2732-2768",
+      "Name": "P.J. Brown, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 318.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2552-2736-2768",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 318.0,
+      "GamesPlayed": 5,
+      "OffPoss": 11,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2124-2768-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Malik Allen, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 317.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 13
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-200757-2124-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Malik Allen, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200748-2732-2736",
+      "Name": "P.J. Brown, Adrian Griffin, Tyrus Thomas, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 311.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2124-2732-2736",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Malik Allen, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 307.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 8
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2124-2550-2732-2804",
+      "Name": "Tyrus Thomas, Malik Allen, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 305.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2550-2552-2732-2736-2751",
+      "Name": "Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 304.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 13
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2124-2552-2768",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Malik Allen, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2124-2550-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Malik Allen, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 299.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 15
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2550-2768-2804",
+      "Name": "Thabo Sefolosha, Malik Allen, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 298.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 13
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2732-2736-2768-2804",
+      "Name": "Tyrus Thomas, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 295.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2124-2732-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Malik Allen, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 291.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-2124-2751-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Malik Allen, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 289.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2552-2751-2857",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Michael Sweetney, Viktor Khryapa, Andre Barrett",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 288.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2552-2732-2768-2804",
+      "Name": "Ben Wallace, Michael Sweetney, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 285.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 13
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2552-2751-2768",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Michael Sweetney, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 285.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-2550-2768-2804",
+      "Name": "Ben Wallace, P.J. Brown, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 284.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2732-2751-2768",
+      "Name": "P.J. Brown, Adrian Griffin, Ben Gordon, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 12
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2124-2550-2768",
+      "Name": "Ben Wallace, Thabo Sefolosha, Malik Allen, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 277.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2124-2732-2768",
+      "Name": "P.J. Brown, Thabo Sefolosha, Malik Allen, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 276.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200748-2552-2768",
+      "Name": "P.J. Brown, Adrian Griffin, Tyrus Thomas, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-200757-2732-2736",
+      "Name": "P.J. Brown, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 14
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2550-2552-2736-2768",
+      "Name": "Ben Wallace, Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 269.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 8
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-2550-2768-2804",
+      "Name": "P.J. Brown, Tyrus Thomas, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2550-2552-2732-2736-2768",
+      "Name": "Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 267.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-2552-2732-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 266.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2124-2732-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Malik Allen, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 265.0,
+      "GamesPlayed": 4,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-200757-2550-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2124-2550-2751-2768-2804",
+      "Name": "Malik Allen, Kirk Hinrich, Viktor Khryapa, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2124-2732-2768",
+      "Name": "Ben Wallace, Thabo Sefolosha, Malik Allen, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 261.0,
+      "GamesPlayed": 4,
+      "OffPoss": 9,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2124-2550-2732",
+      "Name": "P.J. Brown, Adrian Griffin, Malik Allen, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 257.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-1559-2736-2768",
+      "Name": "Ben Wallace, P.J. Brown, Adrian Griffin, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2732-2736-2768",
+      "Name": "P.J. Brown, Thabo Sefolosha, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 4,
+      "OffPoss": 8,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2552-2732-2736",
+      "Name": "P.J. Brown, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2124-2550-2768",
+      "Name": "P.J. Brown, Thabo Sefolosha, Malik Allen, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 250.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 8
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200748-2732-2768",
+      "Name": "P.J. Brown, Adrian Griffin, Tyrus Thomas, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 248.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2550-2732-2736",
+      "Name": "P.J. Brown, Adrian Griffin, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 248.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200748-2736-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 245.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200757-2550-2736",
+      "Name": "P.J. Brown, Adrian Griffin, Thabo Sefolosha, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200748-2550-2768",
+      "Name": "P.J. Brown, Adrian Griffin, Tyrus Thomas, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 242.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2550-2732-2804",
+      "Name": "Thabo Sefolosha, Malik Allen, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 241.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2732-2736-2768",
+      "Name": "Thabo Sefolosha, Malik Allen, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 241.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2552-2751-2768-2857",
+      "Name": "Thabo Sefolosha, Michael Sweetney, Viktor Khryapa, Chris Duhon, Andre Barrett",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-200757-2550-2732",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 239.0,
+      "GamesPlayed": 4,
+      "OffPoss": 9,
+      "Points": 8
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2124-2550-2552-2732-2736",
+      "Name": "Malik Allen, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 238.0,
+      "GamesPlayed": 3,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2552-2768-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2124-2550-2732-2768",
+      "Name": "Tyrus Thomas, Malik Allen, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-200757-2552-2857",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Michael Sweetney, Andre Barrett",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 234.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2124-2550-2751-2768",
+      "Name": "Ben Wallace, Malik Allen, Kirk Hinrich, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 231.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2550-2736-2768",
+      "Name": "Thabo Sefolosha, Malik Allen, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 231.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2124-2550-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Malik Allen, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2550-2732-2804",
+      "Name": "P.J. Brown, Adrian Griffin, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 3,
+      "OffPoss": 9,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-2550-2732-2751",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Ben Gordon, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 223.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 11
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-200757-2550-2736",
+      "Name": "Ben Wallace, P.J. Brown, Thabo Sefolosha, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-1559-2732-2736",
+      "Name": "Ben Wallace, P.J. Brown, Adrian Griffin, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 214.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2550-2736-2768",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2552-2732-2751",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Michael Sweetney, Ben Gordon, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200748-2732-2736",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2550-2552-2732-2736",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2552-2732-2736",
+      "Name": "Ben Wallace, Adrian Griffin, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2124-2736-2751",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Malik Allen, Luol Deng, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2550-2751-2768-2804",
+      "Name": "Ben Wallace, Kirk Hinrich, Viktor Khryapa, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-200757-2124-2732",
+      "Name": "P.J. Brown, Tyrus Thomas, Thabo Sefolosha, Malik Allen, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2552-2751-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Michael Sweetney, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200757-2550-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2736-2768-2804",
+      "Name": "P.J. Brown, Adrian Griffin, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 201.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2736-2751-2768",
+      "Name": "P.J. Brown, Kirk Hinrich, Luol Deng, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2550-2732-2751-2804",
+      "Name": "Ben Wallace, Kirk Hinrich, Ben Gordon, Viktor Khryapa, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-2732-2751-2768",
+      "Name": "Ben Wallace, P.J. Brown, Ben Gordon, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2736-2751-2768",
+      "Name": "Ben Wallace, Thabo Sefolosha, Luol Deng, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2124-2732-2736-2804",
+      "Name": "Adrian Griffin, Malik Allen, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2732-2736-2804-2857",
+      "Name": "Ben Wallace, Ben Gordon, Luol Deng, Andres Nocioni, Andre Barrett",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2732-2736-2751-2768",
+      "Name": "P.J. Brown, Ben Gordon, Luol Deng, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2736-2751-2768",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Luol Deng, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2550-2552-2768",
+      "Name": "P.J. Brown, Adrian Griffin, Kirk Hinrich, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-200757-2732-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2124-2751-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Malik Allen, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2124-2550-2732-2768",
+      "Name": "P.J. Brown, Malik Allen, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-200757-2768-2804",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 3,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2550-2736-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-200757-2550-2768",
+      "Name": "P.J. Brown, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2550-2736-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2124-2732-2751-2768-2804",
+      "Name": "Malik Allen, Ben Gordon, Viktor Khryapa, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 1
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2552-2732-2768",
+      "Name": "P.J. Brown, Thabo Sefolosha, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2124-2550-2732-2751",
+      "Name": "P.J. Brown, Malik Allen, Kirk Hinrich, Ben Gordon, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2124-2751-2857",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Malik Allen, Viktor Khryapa, Andre Barrett",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2550-2552-2768",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Kirk Hinrich, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2751-2768-2857",
+      "Name": "Thabo Sefolosha, Malik Allen, Viktor Khryapa, Chris Duhon, Andre Barrett",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2124-2550-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Malik Allen, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2552-2732-2736",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2124-2550-2768-2804",
+      "Name": "Adrian Griffin, Malik Allen, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2550-2552-2732-2751",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Michael Sweetney, Ben Gordon, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2550-2552-2751-2804",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Michael Sweetney, Viktor Khryapa, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2732-2751-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Viktor Khryapa, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2124-2732-2768",
+      "Name": "P.J. Brown, Adrian Griffin, Malik Allen, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2124-2732-2736",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Malik Allen, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2124-2552-2732-2768",
+      "Name": "Adrian Griffin, Malik Allen, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2550-2768-2804",
+      "Name": "P.J. Brown, Adrian Griffin, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2552-2751-2768",
+      "Name": "P.J. Brown, Kirk Hinrich, Michael Sweetney, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-200757-2550-2736",
+      "Name": "P.J. Brown, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-2550-2552-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Kirk Hinrich, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2550-2552-2732-2736",
+      "Name": "Adrian Griffin, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2550-2552-2732-2804",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 3,
+      "OffPoss": 4,
+      "Points": 10
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2736-2751-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Luol Deng, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200748-200757-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 3,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200748-200757-2736-2768",
+      "Name": "Ben Wallace, Tyrus Thomas, Thabo Sefolosha, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2732-2736-2768",
+      "Name": "P.J. Brown, Adrian Griffin, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200757-2124-2768",
+      "Name": "P.J. Brown, Adrian Griffin, Thabo Sefolosha, Malik Allen, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-200757-2124-2732",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Malik Allen, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2552-2732-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2124-2550-2736",
+      "Name": "Ben Wallace, Adrian Griffin, Malik Allen, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2124-2550-2732-2804",
+      "Name": "Ben Wallace, Malik Allen, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2732-2751-2804",
+      "Name": "P.J. Brown, Kirk Hinrich, Ben Gordon, Viktor Khryapa, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2550-2736-2768-2804",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 1
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2124-2736-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Malik Allen, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2124-2552-2751",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Malik Allen, Michael Sweetney, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2552-2736-2768-2804",
+      "Name": "Thabo Sefolosha, Michael Sweetney, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2124-2732-2768-2804",
+      "Name": "Adrian Griffin, Malik Allen, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 1
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2124-2732-2768-2804",
+      "Name": "Tyrus Thomas, Malik Allen, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2550-2732-2768",
+      "Name": "Thabo Sefolosha, Malik Allen, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2550-2732-2768",
+      "Name": "P.J. Brown, Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2124-2550-2552-2732",
+      "Name": "Adrian Griffin, Malik Allen, Kirk Hinrich, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2550-2732-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2552-2732-2804",
+      "Name": "P.J. Brown, Thabo Sefolosha, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2124-2732-2751-2768",
+      "Name": "P.J. Brown, Malik Allen, Ben Gordon, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2550-2732-2736-2751-2804",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, Viktor Khryapa, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200748-200757-2552-2732",
+      "Name": "P.J. Brown, Tyrus Thomas, Thabo Sefolosha, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2550-2552-2736-2768",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200748-200757-2550",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200757-2732-2736",
+      "Name": "P.J. Brown, Adrian Griffin, Thabo Sefolosha, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2124-2732-2804",
+      "Name": "P.J. Brown, Thabo Sefolosha, Malik Allen, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200757-2124-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Malik Allen, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200757-2732-2736",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2550-2768-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2124-2732-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Malik Allen, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2552-2736-2768-2804",
+      "Name": "Ben Wallace, Michael Sweetney, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2124-2550-2804",
+      "Name": "P.J. Brown, Thabo Sefolosha, Malik Allen, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2732-2768-2804",
+      "Name": "P.J. Brown, Thabo Sefolosha, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-200748-2550-2732",
+      "Name": "Ben Wallace, P.J. Brown, Tyrus Thomas, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2550-2736-2751",
+      "Name": "P.J. Brown, Thabo Sefolosha, Kirk Hinrich, Luol Deng, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2552-2732-2736-2804",
+      "Name": "Thabo Sefolosha, Michael Sweetney, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-200757-2552-2732",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2550-2552-2732-2751-2768",
+      "Name": "Kirk Hinrich, Michael Sweetney, Ben Gordon, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2124-2751-2768-2857",
+      "Name": "Adrian Griffin, Malik Allen, Viktor Khryapa, Chris Duhon, Andre Barrett",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-2732-2768-2804",
+      "Name": "Adrian Griffin, Tyrus Thomas, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2124-2751-2768-2804",
+      "Name": "Adrian Griffin, Malik Allen, Viktor Khryapa, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2552-2732-2736-2804",
+      "Name": "Adrian Griffin, Michael Sweetney, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200748-2550-2736",
+      "Name": "Ben Wallace, Adrian Griffin, Tyrus Thomas, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2124-2732-2751",
+      "Name": "P.J. Brown, Thabo Sefolosha, Malik Allen, Ben Gordon, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2550-2552-2751-2768",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Michael Sweetney, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-200757-2768-2804",
+      "Name": "Ben Wallace, P.J. Brown, Thabo Sefolosha, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2550-2552-2732",
+      "Name": "Thabo Sefolosha, Malik Allen, Kirk Hinrich, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2550-2552-2732",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2550-2552-2732-2768",
+      "Name": "Adrian Griffin, Kirk Hinrich, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2550-2732-2751",
+      "Name": "P.J. Brown, Adrian Griffin, Kirk Hinrich, Ben Gordon, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2552-2736-2768-2804",
+      "Name": "P.J. Brown, Michael Sweetney, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-136-200757-2550-2732",
+      "Name": "Ben Wallace, P.J. Brown, Thabo Sefolosha, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2552-2732-2768-2804",
+      "Name": "P.J. Brown, Michael Sweetney, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2751-2768-2804",
+      "Name": "Ben Wallace, Adrian Griffin, Viktor Khryapa, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200748-2732-2804",
+      "Name": "P.J. Brown, Adrian Griffin, Tyrus Thomas, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2124-2768-2804",
+      "Name": "P.J. Brown, Thabo Sefolosha, Malik Allen, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2550-2751-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Kirk Hinrich, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2552-2732-2736-2768",
+      "Name": "Ben Wallace, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2732-2751-2804",
+      "Name": "Thabo Sefolosha, Malik Allen, Ben Gordon, Viktor Khryapa, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2124-2550-2732-2768-2804",
+      "Name": "Malik Allen, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 1
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2550-2552-2732-2768-2804",
+      "Name": "Kirk Hinrich, Michael Sweetney, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-2550-2552-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Kirk Hinrich, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-2552-2768-2857",
+      "Name": "Adrian Griffin, Tyrus Thomas, Michael Sweetney, Chris Duhon, Andre Barrett",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2550-2736-2804-2857",
+      "Name": "Ben Wallace, Kirk Hinrich, Luol Deng, Andres Nocioni, Andre Barrett",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-2124-2768-2804",
+      "Name": "Adrian Griffin, Tyrus Thomas, Malik Allen, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 1
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2552-2732-2768",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2550-2732-2768-2804",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 6
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-200757-2550-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2550-2552-2768-2804",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-2124-2550-2732-2768",
+      "Name": "Ben Wallace, Malik Allen, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2552-2732-2736",
+      "Name": "Ben Wallace, Thabo Sefolosha, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2736-2768-2804",
+      "Name": "Thabo Sefolosha, Malik Allen, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200748-2552-2732",
+      "Name": "P.J. Brown, Adrian Griffin, Tyrus Thomas, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2550-2732-2736-2768",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 61.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2732-2768-2857",
+      "Name": "Ben Wallace, Thabo Sefolosha, Ben Gordon, Chris Duhon, Andre Barrett",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2550-2552-2732-2736",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200757-2550-2552",
+      "Name": "P.J. Brown, Adrian Griffin, Thabo Sefolosha, Kirk Hinrich, Michael Sweetney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-200748-200757-2124",
+      "Name": "P.J. Brown, Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Malik Allen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2550-2768-2804",
+      "Name": "P.J. Brown, Thabo Sefolosha, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 5
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-2736-2751-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Luol Deng, Viktor Khryapa, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2736-2768-2804",
+      "Name": "P.J. Brown, Thabo Sefolosha, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 51.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-2550-2768-2804",
+      "Name": "Adrian Griffin, Tyrus Thomas, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 51.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2550-2768-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 49.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-200757-2732-2736-2804",
+      "Name": "Tyrus Thomas, Thabo Sefolosha, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-2124-2732-2768",
+      "Name": "Adrian Griffin, Tyrus Thomas, Malik Allen, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2124-2550-2732-2736-2751",
+      "Name": "Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2550-2732-2751-2768-2857",
+      "Name": "Kirk Hinrich, Ben Gordon, Viktor Khryapa, Chris Duhon, Andre Barrett",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 39.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2124-2732-2736-2751",
+      "Name": "Thabo Sefolosha, Malik Allen, Ben Gordon, Luol Deng, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200748-200757-2550-2552",
+      "Name": "Adrian Griffin, Tyrus Thomas, Thabo Sefolosha, Kirk Hinrich, Michael Sweetney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 36.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200757-2550-2732",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 35.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-200757-2124-2550-2751",
+      "Name": "Adrian Griffin, Thabo Sefolosha, Malik Allen, Kirk Hinrich, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-200757-2124-2550",
+      "Name": "Ben Wallace, Adrian Griffin, Thabo Sefolosha, Malik Allen, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 28.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-200757-2124-2732-2804",
+      "Name": "Ben Wallace, Thabo Sefolosha, Malik Allen, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 28.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2552-2736-2804",
+      "Name": "P.J. Brown, Kirk Hinrich, Michael Sweetney, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 28.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200757-2550-2552-2736-2751",
+      "Name": "Thabo Sefolosha, Kirk Hinrich, Michael Sweetney, Luol Deng, Viktor Khryapa",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-200757-2124-2550-2732",
+      "Name": "P.J. Brown, Thabo Sefolosha, Malik Allen, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 24.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-1559-2552-2736-2768",
+      "Name": "P.J. Brown, Adrian Griffin, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 23.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1112-1559-2550-2732-2768",
+      "Name": "Ben Wallace, Adrian Griffin, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 18.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "136-2550-2552-2732-2768",
+      "Name": "P.J. Brown, Kirk Hinrich, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 16.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "1559-2550-2732-2736-2768",
+      "Name": "Adrian Griffin, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 10.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "200748-2550-2732-2768-2804",
+      "Name": "Tyrus Thomas, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2006-07",
+      "EntityId": "2550-2736-2751-2768-2804",
+      "Name": "Kirk Hinrich, Luol Deng, Viktor Khryapa, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    }
+  ]
+}

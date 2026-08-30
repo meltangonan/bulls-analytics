@@ -1,0 +1,3959 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2016-17",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2016-17",
+    "RowsReturned": 475,
+    "RowsWithOffPoss": 455,
+    "RowsSkippedMissingMetrics": 61,
+    "LastRowOffPoss": 0,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-201959-202710-2548",
+      "Name": "Rajon Rondo, Robin Lopez, Taj Gibson, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 23429.0,
+      "GamesPlayed": 28,
+      "OffPoss": 765,
+      "Points": 840
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-201577-202703-202710",
+      "Name": "Paul Zipser, Rajon Rondo, Robin Lopez, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8157.0,
+      "GamesPlayed": 15,
+      "OffPoss": 268,
+      "Points": 335
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-201959-202710-2548",
+      "Name": "Jerian Grant, Robin Lopez, Taj Gibson, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7961.0,
+      "GamesPlayed": 12,
+      "OffPoss": 263,
+      "Points": 306
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-200765-201577-202703-202710",
+      "Name": "Denzel Valentine, Rajon Rondo, Robin Lopez, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5858.0,
+      "GamesPlayed": 17,
+      "OffPoss": 190,
+      "Points": 219
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-201959-202710-203487-2548",
+      "Name": "Robin Lopez, Taj Gibson, Jimmy Butler, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5766.0,
+      "GamesPlayed": 8,
+      "OffPoss": 185,
+      "Points": 180
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-201959-202710-203926",
+      "Name": "Rajon Rondo, Robin Lopez, Taj Gibson, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5597.0,
+      "GamesPlayed": 22,
+      "OffPoss": 187,
+      "Points": 177
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-201577-202710-2548",
+      "Name": "Jerian Grant, Bobby Portis, Robin Lopez, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4887.0,
+      "GamesPlayed": 9,
+      "OffPoss": 159,
+      "Points": 166
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-202703-203926-2548",
+      "Name": "Jerian Grant, Cristiano Felicio, Nikola Mirotic, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3953.0,
+      "GamesPlayed": 10,
+      "OffPoss": 129,
+      "Points": 143
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-201577-202710-2548",
+      "Name": "Bobby Portis, Rajon Rondo, Robin Lopez, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3278.0,
+      "GamesPlayed": 9,
+      "OffPoss": 114,
+      "Points": 114
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-202703-202710-203926",
+      "Name": "Rajon Rondo, Robin Lopez, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2841.0,
+      "GamesPlayed": 15,
+      "OffPoss": 87,
+      "Points": 118
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-201959-202710-203487-203926",
+      "Name": "Robin Lopez, Taj Gibson, Jimmy Butler, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2804.0,
+      "GamesPlayed": 8,
+      "OffPoss": 97,
+      "Points": 113
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1627835-201577-202710",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, Robin Lopez, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2493.0,
+      "GamesPlayed": 5,
+      "OffPoss": 84,
+      "Points": 95
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-202703-203477-203926-2548",
+      "Name": "Cristiano Felicio, Nikola Mirotic, Isaiah Canaan, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2328.0,
+      "GamesPlayed": 6,
+      "OffPoss": 76,
+      "Points": 76
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627835-201577-202703-202710",
+      "Name": "Jerian Grant, Paul Zipser, Robin Lopez, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2182.0,
+      "GamesPlayed": 5,
+      "OffPoss": 79,
+      "Points": 92
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-202703-202710-2548",
+      "Name": "Jerian Grant, Robin Lopez, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2139.0,
+      "GamesPlayed": 11,
+      "OffPoss": 70,
+      "Points": 79
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627835-200765-202703-203926",
+      "Name": "Cristiano Felicio, Paul Zipser, Rajon Rondo, Nikola Mirotic, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2126.0,
+      "GamesPlayed": 7,
+      "OffPoss": 69,
+      "Points": 73
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201959-202703-202710-2548",
+      "Name": "Rajon Rondo, Taj Gibson, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2076.0,
+      "GamesPlayed": 15,
+      "OffPoss": 77,
+      "Points": 74
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-202703-202710-2548",
+      "Name": "Rajon Rondo, Robin Lopez, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2056.0,
+      "GamesPlayed": 14,
+      "OffPoss": 74,
+      "Points": 77
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-202703-202710-203926-2548",
+      "Name": "Cristiano Felicio, Nikola Mirotic, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1949.0,
+      "GamesPlayed": 10,
+      "OffPoss": 62,
+      "Points": 80
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-1627835-203487-203530",
+      "Name": "Bobby Portis, Denzel Valentine, Paul Zipser, Michael Carter-Williams, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1913.0,
+      "GamesPlayed": 7,
+      "OffPoss": 62,
+      "Points": 68
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-201959-203487-2548",
+      "Name": "Jerian Grant, Robin Lopez, Taj Gibson, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1882.0,
+      "GamesPlayed": 2,
+      "OffPoss": 59,
+      "Points": 81
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-202703-203477-2548",
+      "Name": "Bobby Portis, Denzel Valentine, Nikola Mirotic, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1854.0,
+      "GamesPlayed": 6,
+      "OffPoss": 61,
+      "Points": 73
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-201959-202710-203477",
+      "Name": "Rajon Rondo, Robin Lopez, Taj Gibson, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1837.0,
+      "GamesPlayed": 9,
+      "OffPoss": 64,
+      "Points": 75
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-200765-202703-202710",
+      "Name": "Cristiano Felicio, Denzel Valentine, Rajon Rondo, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1789.0,
+      "GamesPlayed": 8,
+      "OffPoss": 60,
+      "Points": 90
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-201959-202710-203487",
+      "Name": "Jerian Grant, Robin Lopez, Taj Gibson, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1776.0,
+      "GamesPlayed": 2,
+      "OffPoss": 53,
+      "Points": 60
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-200765-201577-202710",
+      "Name": "Bobby Portis, Denzel Valentine, Rajon Rondo, Robin Lopez, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1709.0,
+      "GamesPlayed": 10,
+      "OffPoss": 55,
+      "Points": 47
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201959-202703-202710-203477",
+      "Name": "Rajon Rondo, Taj Gibson, Nikola Mirotic, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1684.0,
+      "GamesPlayed": 8,
+      "OffPoss": 55,
+      "Points": 59
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201959-202703-202710-203926",
+      "Name": "Rajon Rondo, Taj Gibson, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1617.0,
+      "GamesPlayed": 8,
+      "OffPoss": 55,
+      "Points": 65
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-201577-202710-203926",
+      "Name": "Bobby Portis, Rajon Rondo, Robin Lopez, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1557.0,
+      "GamesPlayed": 10,
+      "OffPoss": 48,
+      "Points": 41
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627835-200765-201577-202710",
+      "Name": "Bobby Portis, Paul Zipser, Rajon Rondo, Robin Lopez, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1456.0,
+      "GamesPlayed": 8,
+      "OffPoss": 49,
+      "Points": 42
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-201959-202710-203477",
+      "Name": "Jerian Grant, Robin Lopez, Taj Gibson, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1440.0,
+      "GamesPlayed": 7,
+      "OffPoss": 42,
+      "Points": 41
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-201959-202710-203926-2548",
+      "Name": "Robin Lopez, Taj Gibson, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1390.0,
+      "GamesPlayed": 11,
+      "OffPoss": 45,
+      "Points": 55
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-201959-203487-203926",
+      "Name": "Jerian Grant, Robin Lopez, Taj Gibson, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1365.0,
+      "GamesPlayed": 2,
+      "OffPoss": 47,
+      "Points": 38
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-202703-203926-2548",
+      "Name": "Cristiano Felicio, Rajon Rondo, Nikola Mirotic, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1352.0,
+      "GamesPlayed": 9,
+      "OffPoss": 46,
+      "Points": 44
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-202710-203487-203530",
+      "Name": "Bobby Portis, Denzel Valentine, Jimmy Butler, Michael Carter-Williams, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1348.0,
+      "GamesPlayed": 7,
+      "OffPoss": 47,
+      "Points": 47
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-202703-202710-203926",
+      "Name": "Jerian Grant, Robin Lopez, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1314.0,
+      "GamesPlayed": 10,
+      "OffPoss": 44,
+      "Points": 55
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-200765-203926",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Rajon Rondo, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1313.0,
+      "GamesPlayed": 5,
+      "OffPoss": 44,
+      "Points": 57
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-202703-202710-2548",
+      "Name": "Cristiano Felicio, Rajon Rondo, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1299.0,
+      "GamesPlayed": 5,
+      "OffPoss": 42,
+      "Points": 48
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-201959-202703-202710",
+      "Name": "Rajon Rondo, Robin Lopez, Taj Gibson, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1243.0,
+      "GamesPlayed": 3,
+      "OffPoss": 40,
+      "Points": 31
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-1627756-1627835",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Denzel Valentine, Paul Zipser",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1241.0,
+      "GamesPlayed": 5,
+      "OffPoss": 38,
+      "Points": 39
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-202703-202710-203530",
+      "Name": "Paul Zipser, Rajon Rondo, Nikola Mirotic, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1227.0,
+      "GamesPlayed": 4,
+      "OffPoss": 38,
+      "Points": 48
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-201577-202703-202710-203477",
+      "Name": "Denzel Valentine, Robin Lopez, Nikola Mirotic, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1210.0,
+      "GamesPlayed": 7,
+      "OffPoss": 36,
+      "Points": 42
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-1627835-203487",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Paul Zipser, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1202.0,
+      "GamesPlayed": 3,
+      "OffPoss": 38,
+      "Points": 44
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-202703-202710-203926",
+      "Name": "Jerian Grant, Cristiano Felicio, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1201.0,
+      "GamesPlayed": 10,
+      "OffPoss": 41,
+      "Points": 40
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-202703-202710-203477-2548",
+      "Name": "Robin Lopez, Nikola Mirotic, Jimmy Butler, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1196.0,
+      "GamesPlayed": 6,
+      "OffPoss": 40,
+      "Points": 48
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-200765-203477",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Rajon Rondo, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1190.0,
+      "GamesPlayed": 3,
+      "OffPoss": 37,
+      "Points": 35
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-202703-203487-203926-2548",
+      "Name": "Cristiano Felicio, Nikola Mirotic, Michael Carter-Williams, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1182.0,
+      "GamesPlayed": 4,
+      "OffPoss": 40,
+      "Points": 43
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201577-202710-203487-2548",
+      "Name": "Paul Zipser, Robin Lopez, Jimmy Butler, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1175.0,
+      "GamesPlayed": 3,
+      "OffPoss": 40,
+      "Points": 34
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-202703-202710-203477-203926",
+      "Name": "Robin Lopez, Nikola Mirotic, Jimmy Butler, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1114.0,
+      "GamesPlayed": 6,
+      "OffPoss": 37,
+      "Points": 40
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201577-201959-203487-2548",
+      "Name": "Paul Zipser, Robin Lopez, Taj Gibson, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1066.0,
+      "GamesPlayed": 2,
+      "OffPoss": 33,
+      "Points": 30
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-200765-201577-201959-202710",
+      "Name": "Denzel Valentine, Rajon Rondo, Robin Lopez, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1050.0,
+      "GamesPlayed": 6,
+      "OffPoss": 33,
+      "Points": 33
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-200765-202703-2548",
+      "Name": "Cristiano Felicio, Denzel Valentine, Rajon Rondo, Nikola Mirotic, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1049.0,
+      "GamesPlayed": 4,
+      "OffPoss": 37,
+      "Points": 38
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201959-202703-202710-203487-203926",
+      "Name": "Taj Gibson, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1042.0,
+      "GamesPlayed": 4,
+      "OffPoss": 37,
+      "Points": 48
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-201959-202710-203477-2548",
+      "Name": "Robin Lopez, Taj Gibson, Jimmy Butler, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1010.0,
+      "GamesPlayed": 9,
+      "OffPoss": 32,
+      "Points": 29
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201577-201959-202710-2548",
+      "Name": "Paul Zipser, Robin Lopez, Taj Gibson, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 989.0,
+      "GamesPlayed": 4,
+      "OffPoss": 33,
+      "Points": 41
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-202703-203477-203926-2548",
+      "Name": "Bobby Portis, Nikola Mirotic, Isaiah Canaan, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 971.0,
+      "GamesPlayed": 5,
+      "OffPoss": 31,
+      "Points": 27
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201577-201959-202710-203487",
+      "Name": "Paul Zipser, Robin Lopez, Taj Gibson, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 951.0,
+      "GamesPlayed": 2,
+      "OffPoss": 31,
+      "Points": 32
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-200765-201577-202710-203530",
+      "Name": "Denzel Valentine, Rajon Rondo, Robin Lopez, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 949.0,
+      "GamesPlayed": 2,
+      "OffPoss": 29,
+      "Points": 33
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-1627835-2548",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Paul Zipser, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 922.0,
+      "GamesPlayed": 2,
+      "OffPoss": 26,
+      "Points": 36
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627835-200765-202703-202710",
+      "Name": "Cristiano Felicio, Paul Zipser, Rajon Rondo, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 905.0,
+      "GamesPlayed": 6,
+      "OffPoss": 33,
+      "Points": 39
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-200765-203926-2548",
+      "Name": "Bobby Portis, Cristiano Felicio, Rajon Rondo, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 904.0,
+      "GamesPlayed": 3,
+      "OffPoss": 32,
+      "Points": 34
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-202703-202710-203487-203926",
+      "Name": "Robin Lopez, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 901.0,
+      "GamesPlayed": 7,
+      "OffPoss": 29,
+      "Points": 29
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-202703-202710-203477",
+      "Name": "Rajon Rondo, Robin Lopez, Nikola Mirotic, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 881.0,
+      "GamesPlayed": 7,
+      "OffPoss": 32,
+      "Points": 41
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-201959-202710-203926",
+      "Name": "Jerian Grant, Robin Lopez, Taj Gibson, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 866.0,
+      "GamesPlayed": 7,
+      "OffPoss": 27,
+      "Points": 35
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-201577-202710-203487",
+      "Name": "Bobby Portis, Denzel Valentine, Robin Lopez, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 821.0,
+      "GamesPlayed": 5,
+      "OffPoss": 29,
+      "Points": 34
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-202703-202710-203926",
+      "Name": "Cristiano Felicio, Rajon Rondo, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 805.0,
+      "GamesPlayed": 8,
+      "OffPoss": 30,
+      "Points": 28
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-201627-203487-203530",
+      "Name": "Bobby Portis, Denzel Valentine, Anthony Morrow, Michael Carter-Williams, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 801.0,
+      "GamesPlayed": 2,
+      "OffPoss": 29,
+      "Points": 30
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-201627-202710-203487",
+      "Name": "Bobby Portis, Denzel Valentine, Anthony Morrow, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 797.0,
+      "GamesPlayed": 1,
+      "OffPoss": 27,
+      "Points": 35
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-202703-202710-203477",
+      "Name": "Jerian Grant, Robin Lopez, Nikola Mirotic, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 787.0,
+      "GamesPlayed": 5,
+      "OffPoss": 24,
+      "Points": 24
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-200765-202710-203926",
+      "Name": "Bobby Portis, Cristiano Felicio, Rajon Rondo, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 753.0,
+      "GamesPlayed": 7,
+      "OffPoss": 28,
+      "Points": 34
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-200765-201577-201959-202710",
+      "Name": "Jerian Grant, Rajon Rondo, Robin Lopez, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 719.0,
+      "GamesPlayed": 5,
+      "OffPoss": 23,
+      "Points": 23
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-203926-2548",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 715.0,
+      "GamesPlayed": 2,
+      "OffPoss": 24,
+      "Points": 21
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-202703-202710-203487",
+      "Name": "Jerian Grant, Robin Lopez, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 712.0,
+      "GamesPlayed": 3,
+      "OffPoss": 24,
+      "Points": 14
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-202703-202710-203477",
+      "Name": "Bobby Portis, Denzel Valentine, Nikola Mirotic, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 694.0,
+      "GamesPlayed": 5,
+      "OffPoss": 26,
+      "Points": 20
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-201959-202710-203487-2548",
+      "Name": "Cristiano Felicio, Taj Gibson, Jimmy Butler, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 683.0,
+      "GamesPlayed": 3,
+      "OffPoss": 23,
+      "Points": 31
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-202703-202710-203487-2548",
+      "Name": "Robin Lopez, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 675.0,
+      "GamesPlayed": 5,
+      "OffPoss": 21,
+      "Points": 19
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627835-200765-202703-2548",
+      "Name": "Cristiano Felicio, Paul Zipser, Rajon Rondo, Nikola Mirotic, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 663.0,
+      "GamesPlayed": 3,
+      "OffPoss": 21,
+      "Points": 15
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627756-201577-201959-203487",
+      "Name": "Jerian Grant, Denzel Valentine, Robin Lopez, Taj Gibson, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 652.0,
+      "GamesPlayed": 2,
+      "OffPoss": 25,
+      "Points": 30
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627835-200765-202703-203926",
+      "Name": "Bobby Portis, Paul Zipser, Rajon Rondo, Nikola Mirotic, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 652.0,
+      "GamesPlayed": 2,
+      "OffPoss": 23,
+      "Points": 26
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-201577-202703-202710-2548",
+      "Name": "Denzel Valentine, Robin Lopez, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 641.0,
+      "GamesPlayed": 2,
+      "OffPoss": 24,
+      "Points": 37
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-202703-203477-2548",
+      "Name": "Jerian Grant, Bobby Portis, Nikola Mirotic, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 639.0,
+      "GamesPlayed": 4,
+      "OffPoss": 18,
+      "Points": 19
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-203477-203487",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Isaiah Canaan, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 622.0,
+      "GamesPlayed": 2,
+      "OffPoss": 19,
+      "Points": 24
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-201959-202710-203926",
+      "Name": "Cristiano Felicio, Rajon Rondo, Taj Gibson, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 618.0,
+      "GamesPlayed": 5,
+      "OffPoss": 18,
+      "Points": 26
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-200765-202703-202710-203530",
+      "Name": "Denzel Valentine, Rajon Rondo, Nikola Mirotic, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 614.0,
+      "GamesPlayed": 5,
+      "OffPoss": 19,
+      "Points": 30
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-1627756-200765-202703",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Rajon Rondo, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 599.0,
+      "GamesPlayed": 3,
+      "OffPoss": 20,
+      "Points": 25
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-201959-202710-203477-203926",
+      "Name": "Robin Lopez, Taj Gibson, Jimmy Butler, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 598.0,
+      "GamesPlayed": 5,
+      "OffPoss": 19,
+      "Points": 17
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-1627756-200765-203530",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Rajon Rondo, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 585.0,
+      "GamesPlayed": 1,
+      "OffPoss": 18,
+      "Points": 16
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-1627835-203477",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Paul Zipser, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 585.0,
+      "GamesPlayed": 3,
+      "OffPoss": 19,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-201577-202710-203487-2548",
+      "Name": "Bobby Portis, Robin Lopez, Jimmy Butler, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 583.0,
+      "GamesPlayed": 2,
+      "OffPoss": 22,
+      "Points": 15
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-202703-202710-203487-203926",
+      "Name": "Cristiano Felicio, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 557.0,
+      "GamesPlayed": 3,
+      "OffPoss": 18,
+      "Points": 22
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627835-202710-2548",
+      "Name": "Bobby Portis, Cristiano Felicio, Paul Zipser, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 547.0,
+      "GamesPlayed": 1,
+      "OffPoss": 20,
+      "Points": 21
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627835-201577-201959-203487",
+      "Name": "Jerian Grant, Paul Zipser, Robin Lopez, Taj Gibson, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 543.0,
+      "GamesPlayed": 3,
+      "OffPoss": 19,
+      "Points": 15
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-1627835-200765-202710-203530",
+      "Name": "Denzel Valentine, Paul Zipser, Rajon Rondo, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 542.0,
+      "GamesPlayed": 2,
+      "OffPoss": 21,
+      "Points": 14
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-202703-203926-2548",
+      "Name": "Bobby Portis, Rajon Rondo, Nikola Mirotic, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 539.0,
+      "GamesPlayed": 3,
+      "OffPoss": 18,
+      "Points": 24
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-1627835-203477",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Paul Zipser, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 535.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 20
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-1627756-202703-2548",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 531.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 19
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-200765-201959-202703-202710",
+      "Name": "Jerian Grant, Rajon Rondo, Taj Gibson, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 531.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 25
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201959-202710-203926-2548",
+      "Name": "Rajon Rondo, Taj Gibson, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 525.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 23
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1627756-1627835-202703",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Paul Zipser, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 524.0,
+      "GamesPlayed": 1,
+      "OffPoss": 20,
+      "Points": 29
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-200765-202703-203926",
+      "Name": "Cristiano Felicio, Denzel Valentine, Rajon Rondo, Nikola Mirotic, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 521.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-201959-202710-203487-203926",
+      "Name": "Cristiano Felicio, Taj Gibson, Jimmy Butler, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 521.0,
+      "GamesPlayed": 3,
+      "OffPoss": 18,
+      "Points": 21
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-202703-202710-203926-2548",
+      "Name": "Robin Lopez, Nikola Mirotic, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 518.0,
+      "GamesPlayed": 6,
+      "OffPoss": 20,
+      "Points": 18
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-201577-202703-202710-203487",
+      "Name": "Denzel Valentine, Robin Lopez, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 511.0,
+      "GamesPlayed": 3,
+      "OffPoss": 20,
+      "Points": 23
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-202703-202710-2548",
+      "Name": "Jerian Grant, Cristiano Felicio, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 507.0,
+      "GamesPlayed": 4,
+      "OffPoss": 19,
+      "Points": 22
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-201959-202710-2548",
+      "Name": "Bobby Portis, Rajon Rondo, Taj Gibson, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 506.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 15
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-202703-202710-203477-203926",
+      "Name": "Cristiano Felicio, Nikola Mirotic, Jimmy Butler, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 500.0,
+      "GamesPlayed": 4,
+      "OffPoss": 16,
+      "Points": 17
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-1627835-200765-202703",
+      "Name": "Cristiano Felicio, Denzel Valentine, Paul Zipser, Rajon Rondo, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 497.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 19
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-1627756-202703-203487",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 494.0,
+      "GamesPlayed": 1,
+      "OffPoss": 17,
+      "Points": 13
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-201627-202703-202710",
+      "Name": "Jerian Grant, Robin Lopez, Anthony Morrow, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 493.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 18
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627835-200765-202710-203530",
+      "Name": "Bobby Portis, Paul Zipser, Rajon Rondo, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 483.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 13
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201959-202703-202710-203477-203926",
+      "Name": "Taj Gibson, Nikola Mirotic, Jimmy Butler, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 480.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 20
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-203487-2548",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 478.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 13
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627756-201577-201959-202710",
+      "Name": "Jerian Grant, Denzel Valentine, Robin Lopez, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 471.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 18
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-202703-203477-203926",
+      "Name": "Cristiano Felicio, Rajon Rondo, Nikola Mirotic, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 458.0,
+      "GamesPlayed": 1,
+      "OffPoss": 14,
+      "Points": 20
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-1627835-202710",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Paul Zipser, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 456.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 18
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-202703-202710-203487-203530",
+      "Name": "Paul Zipser, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 454.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 20
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-202703-203487-2548",
+      "Name": "Jerian Grant, Cristiano Felicio, Nikola Mirotic, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 446.0,
+      "GamesPlayed": 1,
+      "OffPoss": 14,
+      "Points": 17
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627835-200765-202710-203926",
+      "Name": "Cristiano Felicio, Paul Zipser, Rajon Rondo, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 441.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-201959-203477-2548",
+      "Name": "Bobby Portis, Rajon Rondo, Taj Gibson, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 436.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-201959-203487-203926-2548",
+      "Name": "Robin Lopez, Taj Gibson, Michael Carter-Williams, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 432.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 18
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627835-202703-203926-2548",
+      "Name": "Cristiano Felicio, Paul Zipser, Nikola Mirotic, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 431.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627835-203487-2548",
+      "Name": "Bobby Portis, Cristiano Felicio, Paul Zipser, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 424.0,
+      "GamesPlayed": 1,
+      "OffPoss": 14,
+      "Points": 14
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-200765-201577-202710-203530",
+      "Name": "Jerian Grant, Rajon Rondo, Robin Lopez, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 420.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-201627-202710-203530",
+      "Name": "Bobby Portis, Denzel Valentine, Anthony Morrow, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 408.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 19
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-201577-201959-2548",
+      "Name": "Paul Zipser, Rajon Rondo, Robin Lopez, Taj Gibson, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 405.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 13
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-202710-203926-2548",
+      "Name": "Bobby Portis, Cristiano Felicio, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 398.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-1627756-203477",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Denzel Valentine, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 390.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-201959-203487-203926",
+      "Name": "Rajon Rondo, Robin Lopez, Taj Gibson, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 389.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-202703-202710-203487",
+      "Name": "Bobby Portis, Denzel Valentine, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 384.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 15
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627835-202703-202710-203926",
+      "Name": "Cristiano Felicio, Paul Zipser, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 384.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 19
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627756-201577-202703-202710",
+      "Name": "Jerian Grant, Denzel Valentine, Robin Lopez, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 378.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-202703-203477-203926",
+      "Name": "Jerian Grant, Bobby Portis, Nikola Mirotic, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 363.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-202710-203477",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 354.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 13
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-1627835-202703-203487",
+      "Name": "Bobby Portis, Denzel Valentine, Paul Zipser, Nikola Mirotic, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 354.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-200765-202703-202710-203530",
+      "Name": "Jerian Grant, Rajon Rondo, Nikola Mirotic, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 351.0,
+      "GamesPlayed": 1,
+      "OffPoss": 14,
+      "Points": 16
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-200765-202703-202710",
+      "Name": "Bobby Portis, Denzel Valentine, Rajon Rondo, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 347.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 14
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-200765-201577-202703-202710",
+      "Name": "Jerian Grant, Rajon Rondo, Robin Lopez, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-202703-203477-203487-203926",
+      "Name": "Cristiano Felicio, Nikola Mirotic, Isaiah Canaan, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 344.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 13
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201959-202703-203926-2548",
+      "Name": "Jerian Grant, Taj Gibson, Nikola Mirotic, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 343.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-202703-202710-203487",
+      "Name": "Rajon Rondo, Robin Lopez, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 340.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-202703-203487-203926",
+      "Name": "Jerian Grant, Cristiano Felicio, Nikola Mirotic, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 339.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 15
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-203487-203926",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 338.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 17
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-201627-203477-203530",
+      "Name": "Cristiano Felicio, Denzel Valentine, Anthony Morrow, Isaiah Canaan, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 337.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 17
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-1627835-200765-202703-202710",
+      "Name": "Denzel Valentine, Paul Zipser, Rajon Rondo, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 337.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201577-202710-203926-2548",
+      "Name": "Paul Zipser, Robin Lopez, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 337.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 17
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-201959-202710-2548",
+      "Name": "Cristiano Felicio, Rajon Rondo, Taj Gibson, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 328.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-1627835-202710-203530",
+      "Name": "Bobby Portis, Denzel Valentine, Paul Zipser, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 327.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 14
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-200765-202703-202710-2548",
+      "Name": "Denzel Valentine, Rajon Rondo, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 327.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-202703-202710-203477-2548",
+      "Name": "Bobby Portis, Nikola Mirotic, Jimmy Butler, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 325.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 17
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-201959-202710-203926",
+      "Name": "Jerian Grant, Bobby Portis, Taj Gibson, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 324.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1627756-1627835-203487",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Paul Zipser, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 319.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-202703-202710-2548",
+      "Name": "Bobby Portis, Rajon Rondo, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 319.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-1627835-200765-202710",
+      "Name": "Cristiano Felicio, Denzel Valentine, Paul Zipser, Rajon Rondo, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 317.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1627756-201577-202710",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Robin Lopez, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 14
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627835-201577-201959-203926",
+      "Name": "Jerian Grant, Paul Zipser, Robin Lopez, Taj Gibson, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 307.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 15
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-1627756-201577-202710",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Robin Lopez, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 302.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-201577-202710-203926",
+      "Name": "Paul Zipser, Rajon Rondo, Robin Lopez, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 301.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 16
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-202703-203487-203926-2548",
+      "Name": "Robin Lopez, Nikola Mirotic, Michael Carter-Williams, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 301.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626170-1626171-1626245-1627756",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Cristiano Felicio, Denzel Valentine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 15
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-201627-202703-202710-203487",
+      "Name": "Robin Lopez, Anthony Morrow, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-201959-202710-203926-2548",
+      "Name": "Cristiano Felicio, Taj Gibson, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 296.0,
+      "GamesPlayed": 4,
+      "OffPoss": 9,
+      "Points": 18
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-1627756-1627835-203477",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Paul Zipser, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-1627756-202703-203926",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201959-202703-203477-2548",
+      "Name": "Rajon Rondo, Taj Gibson, Nikola Mirotic, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-202703-203926-2548",
+      "Name": "Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 291.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-1626245-1627756-200765",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, Denzel Valentine, Rajon Rondo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 288.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-1627756-202703-202710",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 286.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-201959-202703-203477-2548",
+      "Name": "Denzel Valentine, Taj Gibson, Nikola Mirotic, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 285.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627835-201577-201959-202710",
+      "Name": "Jerian Grant, Paul Zipser, Robin Lopez, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 284.0,
+      "GamesPlayed": 3,
+      "OffPoss": 9,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-200765-203487-203926",
+      "Name": "Cristiano Felicio, Denzel Valentine, Rajon Rondo, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 283.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-1627835-202703-203487",
+      "Name": "Cristiano Felicio, Denzel Valentine, Paul Zipser, Nikola Mirotic, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-1627835-200765-201577-202703",
+      "Name": "Denzel Valentine, Paul Zipser, Rajon Rondo, Robin Lopez, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-202703-203487-2548",
+      "Name": "Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 278.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 13
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-200765-201959-202703-202710",
+      "Name": "Denzel Valentine, Rajon Rondo, Taj Gibson, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 278.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 17
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-1627835-203477-203487",
+      "Name": "Cameron Payne, Cristiano Felicio, Paul Zipser, Isaiah Canaan, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-201577-201627-202710",
+      "Name": "Jerian Grant, Bobby Portis, Robin Lopez, Anthony Morrow, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627835-201959-202710-2548",
+      "Name": "Cristiano Felicio, Paul Zipser, Taj Gibson, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201959-202703-202710-203477-2548",
+      "Name": "Taj Gibson, Nikola Mirotic, Jimmy Butler, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 265.0,
+      "GamesPlayed": 6,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-202703-202710-203477",
+      "Name": "Jerian Grant, Bobby Portis, Nikola Mirotic, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-202703-203477-2548",
+      "Name": "Jerian Grant, Cristiano Felicio, Nikola Mirotic, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-1627835-200765-2548",
+      "Name": "Cristiano Felicio, Denzel Valentine, Paul Zipser, Rajon Rondo, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-202703-202710-203477-2548",
+      "Name": "Cristiano Felicio, Nikola Mirotic, Jimmy Butler, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-200765-202703-203477",
+      "Name": "Bobby Portis, Denzel Valentine, Rajon Rondo, Nikola Mirotic, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-200765-201577-203926",
+      "Name": "Bobby Portis, Denzel Valentine, Rajon Rondo, Robin Lopez, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 3,
+      "OffPoss": 9,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-1627756-203530-2548",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Joffrey Lauvergne, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-202703-202710-203477",
+      "Name": "Cristiano Felicio, Rajon Rondo, Nikola Mirotic, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627835-200765-201577-202703",
+      "Name": "Jerian Grant, Paul Zipser, Rajon Rondo, Robin Lopez, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 252.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-201577-201627-202710",
+      "Name": "Bobby Portis, Denzel Valentine, Robin Lopez, Anthony Morrow, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 251.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-1627756-202703-202710",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-1627756-201627-203530",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Anthony Morrow, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 245.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-1627835-202703-2548",
+      "Name": "Cameron Payne, Cristiano Felicio, Paul Zipser, Nikola Mirotic, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 245.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-202703-202710-203487-2548",
+      "Name": "Cristiano Felicio, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 245.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-202703-202710-2548",
+      "Name": "Cameron Payne, Cristiano Felicio, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 3,
+      "OffPoss": 9,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-202710-203487",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-202703-203477-2548",
+      "Name": "Jerian Grant, Robin Lopez, Nikola Mirotic, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-1627756-202703-203487",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 242.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-200765-202710-203926",
+      "Name": "Cristiano Felicio, Denzel Valentine, Rajon Rondo, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 238.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-201577-202710-2548",
+      "Name": "Cameron Payne, Bobby Portis, Robin Lopez, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-201577-201959-202710-203477",
+      "Name": "Denzel Valentine, Robin Lopez, Taj Gibson, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201577-202703-202710-203487",
+      "Name": "Paul Zipser, Robin Lopez, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-202703-203477-2548",
+      "Name": "Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201959-202703-202710-203487",
+      "Name": "Rajon Rondo, Taj Gibson, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201959-202710-203487-2548",
+      "Name": "Rajon Rondo, Taj Gibson, Jimmy Butler, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-1627835-202703-202710",
+      "Name": "Jerian Grant, Cristiano Felicio, Paul Zipser, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 4,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-1627835-203477-203926",
+      "Name": "Cristiano Felicio, Denzel Valentine, Paul Zipser, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627835-202703-203487-2548",
+      "Name": "Cristiano Felicio, Paul Zipser, Nikola Mirotic, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-1627835-202703-203487-203530",
+      "Name": "Denzel Valentine, Paul Zipser, Nikola Mirotic, Michael Carter-Williams, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 231.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-200765-203926",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Rajon Rondo, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1627835-201577-202703-202710",
+      "Name": "Cameron Payne, Paul Zipser, Robin Lopez, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 229.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1627756-200765-201577",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Rajon Rondo, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 229.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 14
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-202710-203926",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 229.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626154-1626171-1626245-1627756-1627835",
+      "Name": "RJ Hunter, Bobby Portis, Cristiano Felicio, Denzel Valentine, Paul Zipser",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627835-200765-201577-201959",
+      "Name": "Jerian Grant, Paul Zipser, Rajon Rondo, Robin Lopez, Taj Gibson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 14
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-202703-203477-203926",
+      "Name": "Bobby Portis, Denzel Valentine, Nikola Mirotic, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-202703-203926-2548",
+      "Name": "Jerian Grant, Robin Lopez, Nikola Mirotic, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-202703-203487-2548",
+      "Name": "Jerian Grant, Robin Lopez, Nikola Mirotic, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627835-202710-203487",
+      "Name": "Bobby Portis, Cristiano Felicio, Paul Zipser, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-201627-202703-203487",
+      "Name": "Bobby Portis, Denzel Valentine, Anthony Morrow, Nikola Mirotic, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627835-201577-202710-203487",
+      "Name": "Bobby Portis, Paul Zipser, Robin Lopez, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627835-200765-201959-203926",
+      "Name": "Cristiano Felicio, Paul Zipser, Rajon Rondo, Taj Gibson, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 13
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-202703-202710-203487",
+      "Name": "Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 1
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-201577-201959-203926",
+      "Name": "Paul Zipser, Rajon Rondo, Robin Lopez, Taj Gibson, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-201959-203926-2548",
+      "Name": "Jerian Grant, Cristiano Felicio, Taj Gibson, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-1627756-202703-203477",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 218.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-1627835-200765-2548",
+      "Name": "Cameron Payne, Cristiano Felicio, Paul Zipser, Rajon Rondo, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626170-1626171-201577-202710",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Robin Lopez, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-202703-203477-203926-2548",
+      "Name": "Robin Lopez, Nikola Mirotic, Isaiah Canaan, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-202703-203477-2548",
+      "Name": "Bobby Portis, Rajon Rondo, Nikola Mirotic, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 212.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1627756-201577-202703-202710",
+      "Name": "Cameron Payne, Denzel Valentine, Robin Lopez, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-200765-201577-201959-203477",
+      "Name": "Jerian Grant, Rajon Rondo, Robin Lopez, Taj Gibson, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-201577-202703-202710-2548",
+      "Name": "Cameron Payne, Robin Lopez, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-1626245-1627756-202710",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, Denzel Valentine, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201959-202703-202710-203926-2548",
+      "Name": "Taj Gibson, Nikola Mirotic, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 5,
+      "OffPoss": 8,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627835-201577-203487-2548",
+      "Name": "Jerian Grant, Paul Zipser, Robin Lopez, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1627835-203477-203487",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, Isaiah Canaan, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-202710-203926-2548",
+      "Name": "Rajon Rondo, Robin Lopez, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-200765-201577-203477",
+      "Name": "Bobby Portis, Denzel Valentine, Rajon Rondo, Robin Lopez, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-201959-202703-202710-2548",
+      "Name": "Cristiano Felicio, Taj Gibson, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627835-200765-201959-202703",
+      "Name": "Jerian Grant, Paul Zipser, Rajon Rondo, Taj Gibson, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 201.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-202710-203487-203926",
+      "Name": "Cristiano Felicio, Denzel Valentine, Jimmy Butler, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 201.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-202710-203487-203530-2548",
+      "Name": "Robin Lopez, Jimmy Butler, Michael Carter-Williams, Joffrey Lauvergne, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 201.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-1627756-202710-2548",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-201577-202710-203477",
+      "Name": "Bobby Portis, Denzel Valentine, Robin Lopez, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-203477-203926",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-201959-203477-203487",
+      "Name": "Jerian Grant, Robin Lopez, Taj Gibson, Isaiah Canaan, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-1626245-1627835-203487",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, Paul Zipser, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-1627835-201577-202710-203487",
+      "Name": "Denzel Valentine, Paul Zipser, Robin Lopez, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-201627-2548",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Anthony Morrow, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627756-200765-201577-202703",
+      "Name": "Jerian Grant, Denzel Valentine, Rajon Rondo, Robin Lopez, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 14
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-203487-203926-2548",
+      "Name": "Bobby Portis, Cristiano Felicio, Michael Carter-Williams, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-201959-202710-203487",
+      "Name": "Rajon Rondo, Robin Lopez, Taj Gibson, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-201577-201959-202710-203487",
+      "Name": "Denzel Valentine, Robin Lopez, Taj Gibson, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201577-202703-202710-2548",
+      "Name": "Paul Zipser, Robin Lopez, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-203477-203926-2548",
+      "Name": "Bobby Portis, Cristiano Felicio, Isaiah Canaan, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-202710-203926",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-200765-203926-2548",
+      "Name": "Jerian Grant, Cristiano Felicio, Rajon Rondo, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-201627-203477-203530",
+      "Name": "Jerian Grant, Bobby Portis, Anthony Morrow, Isaiah Canaan, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627835-203477-203487",
+      "Name": "Bobby Portis, Cristiano Felicio, Paul Zipser, Isaiah Canaan, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-201959-202710-203477",
+      "Name": "Bobby Portis, Rajon Rondo, Taj Gibson, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-202710-203926-2548",
+      "Name": "Cristiano Felicio, Rajon Rondo, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-202703-203477-2548",
+      "Name": "Cristiano Felicio, Rajon Rondo, Nikola Mirotic, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-201959-202703-203477-2548",
+      "Name": "Bobby Portis, Taj Gibson, Nikola Mirotic, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-201959-202703-202710-203477",
+      "Name": "Robin Lopez, Taj Gibson, Nikola Mirotic, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201959-202703-203487-2548",
+      "Name": "Rajon Rondo, Taj Gibson, Nikola Mirotic, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1627835-201577-201627-202710",
+      "Name": "Cameron Payne, Paul Zipser, Robin Lopez, Anthony Morrow, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1627835-203487-203530",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, Michael Carter-Williams, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627756-200765-202710",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Rajon Rondo, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-202703-202710-203487-203530",
+      "Name": "Denzel Valentine, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 11
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-1626245-1627835-2548",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, Paul Zipser, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-1627756-202703-2548",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201577-202710-203530-2548",
+      "Name": "Jerian Grant, Robin Lopez, Jimmy Butler, Joffrey Lauvergne, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-202703-202710-203477-2548",
+      "Name": "Jerian Grant, Nikola Mirotic, Jimmy Butler, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201959-202703-202710-203487-2548",
+      "Name": "Taj Gibson, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-201627-202710",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Anthony Morrow, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-1627756-201959-202710",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 14
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-1627835-200765-201577-202710",
+      "Name": "Denzel Valentine, Paul Zipser, Rajon Rondo, Robin Lopez, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-1626245-202710-2548",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-200765-201577-202710",
+      "Name": "Jerian Grant, Bobby Portis, Rajon Rondo, Robin Lopez, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-201577-203487-203926",
+      "Name": "Jerian Grant, Bobby Portis, Robin Lopez, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201959-202710-203477-2548",
+      "Name": "Rajon Rondo, Taj Gibson, Jimmy Butler, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-1627756-1627835-202703",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Paul Zipser, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627756-200765-201577-201959",
+      "Name": "Jerian Grant, Denzel Valentine, Rajon Rondo, Robin Lopez, Taj Gibson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-202710-203487-203530-2548",
+      "Name": "Paul Zipser, Jimmy Butler, Michael Carter-Williams, Joffrey Lauvergne, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-1627756-203487",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Denzel Valentine, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-202710-203926-2548",
+      "Name": "Cristiano Felicio, Denzel Valentine, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 159.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1627756-202703-203530-2548",
+      "Name": "Cameron Payne, Denzel Valentine, Nikola Mirotic, Joffrey Lauvergne, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 1
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-202703-203477-203926",
+      "Name": "Cristiano Felicio, Denzel Valentine, Nikola Mirotic, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 12
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-200765-201959-202710-203477",
+      "Name": "Denzel Valentine, Rajon Rondo, Taj Gibson, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201577-202703-203477-203487-203926",
+      "Name": "Robin Lopez, Nikola Mirotic, Isaiah Canaan, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-201577-202710-2548",
+      "Name": "Paul Zipser, Rajon Rondo, Robin Lopez, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-200765-203487-203926",
+      "Name": "Bobby Portis, Cristiano Felicio, Rajon Rondo, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-202710-203487-203530",
+      "Name": "Cristiano Felicio, Denzel Valentine, Jimmy Butler, Michael Carter-Williams, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-201577-202710-203487-203530",
+      "Name": "Denzel Valentine, Robin Lopez, Jimmy Butler, Michael Carter-Williams, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-201959-203926-2548",
+      "Name": "Bobby Portis, Rajon Rondo, Taj Gibson, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201959-202710-203926-2548",
+      "Name": "Jerian Grant, Taj Gibson, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-202710-203487-2548",
+      "Name": "Cristiano Felicio, Denzel Valentine, Jimmy Butler, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201959-202703-202710-2548",
+      "Name": "Jerian Grant, Taj Gibson, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627756-201959-202710-2548",
+      "Name": "Jerian Grant, Denzel Valentine, Taj Gibson, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201959-202703-202710-203926",
+      "Name": "Jerian Grant, Taj Gibson, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-201577-203477-2548",
+      "Name": "Bobby Portis, Rajon Rondo, Robin Lopez, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 10
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627835-201577-202703-203487",
+      "Name": "Jerian Grant, Paul Zipser, Robin Lopez, Nikola Mirotic, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627756-201959-202703-203477",
+      "Name": "Jerian Grant, Denzel Valentine, Taj Gibson, Nikola Mirotic, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-201959-203926-2548",
+      "Name": "Rajon Rondo, Robin Lopez, Taj Gibson, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-200765-201577-202703-203477",
+      "Name": "Jerian Grant, Rajon Rondo, Robin Lopez, Nikola Mirotic, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "201959-202710-203477-203926-2548",
+      "Name": "Taj Gibson, Jimmy Butler, Isaiah Canaan, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-1627835-200765-202710",
+      "Name": "Bobby Portis, Cristiano Felicio, Paul Zipser, Rajon Rondo, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-201959-202710-203926",
+      "Name": "Bobby Portis, Rajon Rondo, Taj Gibson, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626170-1626171-1627756-203530",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Denzel Valentine, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-200765-201577-201959-203487",
+      "Name": "Denzel Valentine, Rajon Rondo, Robin Lopez, Taj Gibson, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-201959-202710-203477-2548",
+      "Name": "Bobby Portis, Taj Gibson, Jimmy Butler, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-202703-203477-203487",
+      "Name": "Cristiano Felicio, Rajon Rondo, Nikola Mirotic, Isaiah Canaan, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-201959-202703-202710-203487",
+      "Name": "Cristiano Felicio, Taj Gibson, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-201627-202703-202710-203530",
+      "Name": "Denzel Valentine, Anthony Morrow, Nikola Mirotic, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-201959-202703-203926",
+      "Name": "Paul Zipser, Rajon Rondo, Taj Gibson, Nikola Mirotic, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-202710-203530-2548",
+      "Name": "Cameron Payne, Bobby Portis, Jimmy Butler, Joffrey Lauvergne, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-201959-203477-203926",
+      "Name": "Cristiano Felicio, Rajon Rondo, Taj Gibson, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-200765-201577-203926",
+      "Name": "Jerian Grant, Bobby Portis, Rajon Rondo, Robin Lopez, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-1627835-200765-202710",
+      "Name": "Bobby Portis, Denzel Valentine, Paul Zipser, Rajon Rondo, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-201959-202710-203487",
+      "Name": "Cristiano Felicio, Denzel Valentine, Taj Gibson, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-200765-202710-203530",
+      "Name": "Bobby Portis, Denzel Valentine, Rajon Rondo, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-201577-202703-203926",
+      "Name": "Paul Zipser, Rajon Rondo, Robin Lopez, Nikola Mirotic, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-200765-201959-203926",
+      "Name": "Jerian Grant, Cristiano Felicio, Rajon Rondo, Taj Gibson, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-203477-203487-203926",
+      "Name": "Bobby Portis, Cristiano Felicio, Isaiah Canaan, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627835-200765-202703-203487",
+      "Name": "Cristiano Felicio, Paul Zipser, Rajon Rondo, Nikola Mirotic, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-201959-203487-203926-2548",
+      "Name": "Cristiano Felicio, Taj Gibson, Michael Carter-Williams, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201959-202703-203926-2548",
+      "Name": "Rajon Rondo, Taj Gibson, Nikola Mirotic, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-200765-201577-202703-203487",
+      "Name": "Jerian Grant, Rajon Rondo, Robin Lopez, Nikola Mirotic, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-202703-203487-203926",
+      "Name": "Rajon Rondo, Robin Lopez, Nikola Mirotic, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-1627835-201577-202710",
+      "Name": "Cameron Payne, Bobby Portis, Paul Zipser, Robin Lopez, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627835-201577-201627-202710",
+      "Name": "Jerian Grant, Paul Zipser, Robin Lopez, Anthony Morrow, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-201577-202710-203487-203926",
+      "Name": "Cristiano Felicio, Robin Lopez, Jimmy Butler, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-200765-202703-2548",
+      "Name": "Jerian Grant, Bobby Portis, Rajon Rondo, Nikola Mirotic, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1627756-202703-203926",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Nikola Mirotic, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-201577-202703-203477-203926",
+      "Name": "Rajon Rondo, Robin Lopez, Nikola Mirotic, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-1627756-202710-203530",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 7
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-201577-202710-203477",
+      "Name": "Jerian Grant, Bobby Portis, Robin Lopez, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201959-202703-202710-203926",
+      "Name": "Paul Zipser, Taj Gibson, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-202703-203477-203926",
+      "Name": "Bobby Portis, Rajon Rondo, Nikola Mirotic, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-202703-202710-2548",
+      "Name": "Paul Zipser, Rajon Rondo, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-203926-2548",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627756-202703-202710-203530",
+      "Name": "Jerian Grant, Denzel Valentine, Nikola Mirotic, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-203487-203530-2548",
+      "Name": "Bobby Portis, Denzel Valentine, Michael Carter-Williams, Joffrey Lauvergne, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-202703-202710-203926-2548",
+      "Name": "Bobby Portis, Nikola Mirotic, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-201959-202710-2548",
+      "Name": "Cristiano Felicio, Denzel Valentine, Taj Gibson, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626245-202703-202710-203487",
+      "Name": "Cameron Payne, Cristiano Felicio, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-201577-202703-203487",
+      "Name": "Paul Zipser, Rajon Rondo, Robin Lopez, Nikola Mirotic, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-1627835-203487",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Paul Zipser, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-1627756-201959-203487",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Taj Gibson, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-200765-202703-203926",
+      "Name": "Bobby Portis, Denzel Valentine, Rajon Rondo, Nikola Mirotic, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-203487-2548",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1627756-200765-201959",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Rajon Rondo, Taj Gibson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-201577-203477-203487",
+      "Name": "Bobby Portis, Denzel Valentine, Robin Lopez, Isaiah Canaan, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201577-201959-203926-2548",
+      "Name": "Paul Zipser, Robin Lopez, Taj Gibson, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-203477-203487-203530",
+      "Name": "Cristiano Felicio, Denzel Valentine, Isaiah Canaan, Michael Carter-Williams, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-1627835-201959-203487",
+      "Name": "Jerian Grant, Cristiano Felicio, Paul Zipser, Taj Gibson, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-202703-203487-203926",
+      "Name": "Cristiano Felicio, Rajon Rondo, Nikola Mirotic, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 1
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627756-201577-202710-203477",
+      "Name": "Jerian Grant, Denzel Valentine, Robin Lopez, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "202703-202710-203487-203530-2548",
+      "Name": "Nikola Mirotic, Jimmy Butler, Michael Carter-Williams, Joffrey Lauvergne, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-201577-202703-203477-2548",
+      "Name": "Denzel Valentine, Robin Lopez, Nikola Mirotic, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-200765-201577-202703-2548",
+      "Name": "Jerian Grant, Rajon Rondo, Robin Lopez, Nikola Mirotic, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-201577-202703-2548",
+      "Name": "Paul Zipser, Rajon Rondo, Robin Lopez, Nikola Mirotic, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627835-201959-203487-2548",
+      "Name": "Jerian Grant, Paul Zipser, Taj Gibson, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-1627835-201627-203487",
+      "Name": "Bobby Portis, Denzel Valentine, Paul Zipser, Anthony Morrow, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-201577-203487-203926",
+      "Name": "Bobby Portis, Rajon Rondo, Robin Lopez, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 5
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1626245-200765-202710-2548",
+      "Name": "Bobby Portis, Cristiano Felicio, Rajon Rondo, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626171-1626245-203487-203926",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627835-202703-202710-2548",
+      "Name": "Cristiano Felicio, Paul Zipser, Nikola Mirotic, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-201577-203477-2548",
+      "Name": "Bobby Portis, Denzel Valentine, Robin Lopez, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-200765-201577-202710-203487",
+      "Name": "Bobby Portis, Rajon Rondo, Robin Lopez, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-200765-201959-202703-203477",
+      "Name": "Jerian Grant, Rajon Rondo, Taj Gibson, Nikola Mirotic, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 61.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1627756-200765-202703-202710",
+      "Name": "Cameron Payne, Denzel Valentine, Rajon Rondo, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 1
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-200765-202703-202710",
+      "Name": "Jerian Grant, Cristiano Felicio, Rajon Rondo, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-200765-201577-202710-203926",
+      "Name": "Denzel Valentine, Rajon Rondo, Robin Lopez, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627756-201959-202703-202710-203477",
+      "Name": "Denzel Valentine, Taj Gibson, Nikola Mirotic, Jimmy Butler, Isaiah Canaan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201959-202703-202710-203487",
+      "Name": "Paul Zipser, Taj Gibson, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-200765-201959-202710",
+      "Name": "Jerian Grant, Cristiano Felicio, Rajon Rondo, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 1
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-202703-202710-203477-203926",
+      "Name": "Bobby Portis, Nikola Mirotic, Jimmy Butler, Isaiah Canaan, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-202703-202710-203926-2548",
+      "Name": "Jerian Grant, Nikola Mirotic, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-201577-202710-203530",
+      "Name": "Paul Zipser, Rajon Rondo, Robin Lopez, Jimmy Butler, Joffrey Lauvergne",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1626245-201959-202710-2548",
+      "Name": "Jerian Grant, Cristiano Felicio, Taj Gibson, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-200765-202710-2548",
+      "Name": "Cameron Payne, Bobby Portis, Rajon Rondo, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-201959-202710-203477-2548",
+      "Name": "Jerian Grant, Taj Gibson, Jimmy Butler, Isaiah Canaan, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 39.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-1627756-200765-201959-203926",
+      "Name": "Cristiano Felicio, Denzel Valentine, Rajon Rondo, Taj Gibson, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-1627756-201959-202703-2548",
+      "Name": "Jerian Grant, Denzel Valentine, Taj Gibson, Nikola Mirotic, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "200765-202703-202710-203926-2548",
+      "Name": "Rajon Rondo, Nikola Mirotic, Jimmy Butler, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 35.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-200765-201959-202710-2548",
+      "Name": "Jerian Grant, Rajon Rondo, Taj Gibson, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 2,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626171-1627756-201577-202710-2548",
+      "Name": "Bobby Portis, Denzel Valentine, Robin Lopez, Jimmy Butler, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626245-200765-201959-202710-203487",
+      "Name": "Cristiano Felicio, Rajon Rondo, Taj Gibson, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 31.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 1
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1627756-201627-202703-202710",
+      "Name": "Cameron Payne, Denzel Valentine, Anthony Morrow, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 21.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626166-1626171-201577-202710-203487",
+      "Name": "Cameron Payne, Bobby Portis, Robin Lopez, Jimmy Butler, Michael Carter-Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 20.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201577-202703-203487-2548",
+      "Name": "Paul Zipser, Robin Lopez, Nikola Mirotic, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 17.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-201959-202710-203487-2548",
+      "Name": "Paul Zipser, Taj Gibson, Jimmy Butler, Michael Carter-Williams, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 14.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1627835-200765-201577-203926-2548",
+      "Name": "Paul Zipser, Rajon Rondo, Robin Lopez, Doug McDermott, Dwyane Wade",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2016-17",
+      "EntityId": "1626170-202703-202710-203487-203926",
+      "Name": "Jerian Grant, Nikola Mirotic, Jimmy Butler, Michael Carter-Williams, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    }
+  ]
+}

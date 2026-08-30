@@ -1,0 +1,4029 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2023-24",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2023-24",
+    "RowsReturned": 460,
+    "RowsWithOffPoss": 447,
+    "RowsSkippedMissingMetrics": 46,
+    "LastRowOffPoss": 1,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630245-201942-202696",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 26002.0,
+      "GamesPlayed": 30,
+      "OffPoss": 889,
+      "Points": 964
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-201942-202696-203897",
+      "Name": "Alex Caruso, Coby White, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13614.0,
+      "GamesPlayed": 18,
+      "OffPoss": 464,
+      "Points": 503
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630172-201942-202696",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9169.0,
+      "GamesPlayed": 14,
+      "OffPoss": 305,
+      "Points": 358
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1630245-201942-202696",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8350.0,
+      "GamesPlayed": 20,
+      "OffPoss": 282,
+      "Points": 338
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-201942-202696-203897",
+      "Name": "Coby White, Patrick Williams, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7349.0,
+      "GamesPlayed": 15,
+      "OffPoss": 246,
+      "Points": 291
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-201942-202696-203897",
+      "Name": "Torrey Craig, Coby White, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5859.0,
+      "GamesPlayed": 11,
+      "OffPoss": 194,
+      "Points": 194
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630245-201942-202696",
+      "Name": "Torrey Craig, Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5116.0,
+      "GamesPlayed": 21,
+      "OffPoss": 174,
+      "Points": 203
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-201942-202696-203083",
+      "Name": "Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4287.0,
+      "GamesPlayed": 12,
+      "OffPoss": 145,
+      "Points": 160
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1629750-201942-202696",
+      "Name": "Alex Caruso, Coby White, Javonte Green, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4015.0,
+      "GamesPlayed": 4,
+      "OffPoss": 134,
+      "Points": 170
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630245-201942-203083",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3707.0,
+      "GamesPlayed": 18,
+      "OffPoss": 122,
+      "Points": 145
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1630245-201942-202696",
+      "Name": "Alex Caruso, Torrey Craig, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3678.0,
+      "GamesPlayed": 9,
+      "OffPoss": 121,
+      "Points": 145
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630172-201942-203083",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3606.0,
+      "GamesPlayed": 9,
+      "OffPoss": 122,
+      "Points": 132
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630245-201942-203083",
+      "Name": "Torrey Craig, Jevon Carter, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3380.0,
+      "GamesPlayed": 17,
+      "OffPoss": 116,
+      "Points": 101
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630172-202696-203897",
+      "Name": "Torrey Craig, Coby White, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2374.0,
+      "GamesPlayed": 10,
+      "OffPoss": 81,
+      "Points": 88
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-201942-202696-203083",
+      "Name": "Alex Caruso, Coby White, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2344.0,
+      "GamesPlayed": 7,
+      "OffPoss": 73,
+      "Points": 99
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-201942-203083",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2322.0,
+      "GamesPlayed": 16,
+      "OffPoss": 76,
+      "Points": 83
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1631207-201942-203083",
+      "Name": "Alex Caruso, Jevon Carter, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1987.0,
+      "GamesPlayed": 9,
+      "OffPoss": 68,
+      "Points": 83
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630172-201942-203083",
+      "Name": "Alex Caruso, Jevon Carter, Patrick Williams, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1973.0,
+      "GamesPlayed": 7,
+      "OffPoss": 64,
+      "Points": 72
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-201942-202696",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1924.0,
+      "GamesPlayed": 10,
+      "OffPoss": 58,
+      "Points": 79
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630245-201942-203083",
+      "Name": "Alex Caruso, Jevon Carter, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1914.0,
+      "GamesPlayed": 14,
+      "OffPoss": 64,
+      "Points": 81
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1631207-201942-203083",
+      "Name": "Alex Caruso, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1861.0,
+      "GamesPlayed": 16,
+      "OffPoss": 65,
+      "Points": 68
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630172-1630245-201942-203083",
+      "Name": "Jevon Carter, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1790.0,
+      "GamesPlayed": 10,
+      "OffPoss": 58,
+      "Points": 80
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630172-202696-203897",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1750.0,
+      "GamesPlayed": 10,
+      "OffPoss": 55,
+      "Points": 67
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630172-1630245-202696",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1748.0,
+      "GamesPlayed": 6,
+      "OffPoss": 61,
+      "Points": 55
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630172-201942-203083",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1626.0,
+      "GamesPlayed": 10,
+      "OffPoss": 54,
+      "Points": 77
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1628975-201942-203083",
+      "Name": "Alex Caruso, Torrey Craig, Jevon Carter, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1588.0,
+      "GamesPlayed": 6,
+      "OffPoss": 52,
+      "Points": 60
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-201942-203083",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1555.0,
+      "GamesPlayed": 13,
+      "OffPoss": 53,
+      "Points": 68
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1631207-201942-203083",
+      "Name": "Jevon Carter, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1554.0,
+      "GamesPlayed": 11,
+      "OffPoss": 53,
+      "Points": 60
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1630245-202696-203897",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1423.0,
+      "GamesPlayed": 9,
+      "OffPoss": 49,
+      "Points": 72
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630245-202696-203897",
+      "Name": "Torrey Craig, Coby White, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1416.0,
+      "GamesPlayed": 7,
+      "OffPoss": 47,
+      "Points": 55
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630172-1630245-202696",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1406.0,
+      "GamesPlayed": 9,
+      "OffPoss": 42,
+      "Points": 50
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1641763-201942-202696",
+      "Name": "Coby White, Ayo Dosunmu, Julian Phillips, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1380.0,
+      "GamesPlayed": 10,
+      "OffPoss": 48,
+      "Points": 60
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1630245-201942-203083",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1364.0,
+      "GamesPlayed": 13,
+      "OffPoss": 50,
+      "Points": 44
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1631207-201942-203083",
+      "Name": "Alex Caruso, Coby White, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1237.0,
+      "GamesPlayed": 10,
+      "OffPoss": 36,
+      "Points": 56
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1641931-201942-202696",
+      "Name": "Alex Caruso, Ayo Dosunmu, Onuralp Bitim, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1231.0,
+      "GamesPlayed": 5,
+      "OffPoss": 40,
+      "Points": 50
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-201942-202696-203897",
+      "Name": "Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1227.0,
+      "GamesPlayed": 5,
+      "OffPoss": 37,
+      "Points": 47
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-1631207-201942-203083",
+      "Name": "Patrick Williams, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1200.0,
+      "GamesPlayed": 9,
+      "OffPoss": 39,
+      "Points": 35
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1629750-1630245-201942-202696",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1184.0,
+      "GamesPlayed": 5,
+      "OffPoss": 34,
+      "Points": 38
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1631207-201942-203083",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1150.0,
+      "GamesPlayed": 6,
+      "OffPoss": 35,
+      "Points": 46
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630172-1630245-201942-203083",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1144.0,
+      "GamesPlayed": 7,
+      "OffPoss": 37,
+      "Points": 45
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630172-201942-202696",
+      "Name": "Torrey Craig, Coby White, Patrick Williams, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1114.0,
+      "GamesPlayed": 4,
+      "OffPoss": 37,
+      "Points": 41
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630172-1630245-202696",
+      "Name": "Torrey Craig, Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1072.0,
+      "GamesPlayed": 6,
+      "OffPoss": 33,
+      "Points": 55
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-201942-202696-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1061.0,
+      "GamesPlayed": 6,
+      "OffPoss": 37,
+      "Points": 40
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-201942-202696-203897",
+      "Name": "Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1049.0,
+      "GamesPlayed": 4,
+      "OffPoss": 34,
+      "Points": 46
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630172-1630245-203083",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Ayo Dosunmu, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1027.0,
+      "GamesPlayed": 9,
+      "OffPoss": 33,
+      "Points": 38
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629750-1630245-201942-202696",
+      "Name": "Alex Caruso, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1016.0,
+      "GamesPlayed": 3,
+      "OffPoss": 34,
+      "Points": 50
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1631207-201942-203083",
+      "Name": "Coby White, Patrick Williams, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1014.0,
+      "GamesPlayed": 9,
+      "OffPoss": 32,
+      "Points": 49
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-202696-203897",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 988.0,
+      "GamesPlayed": 5,
+      "OffPoss": 31,
+      "Points": 35
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630245-201942-203083",
+      "Name": "Torrey Craig, Coby White, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 976.0,
+      "GamesPlayed": 8,
+      "OffPoss": 30,
+      "Points": 53
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630245-201942-203083",
+      "Name": "Jevon Carter, Coby White, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 934.0,
+      "GamesPlayed": 11,
+      "OffPoss": 31,
+      "Points": 34
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1641763-201942-203083",
+      "Name": "Jevon Carter, Coby White, Julian Phillips, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 898.0,
+      "GamesPlayed": 7,
+      "OffPoss": 30,
+      "Points": 55
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1631207-201942-203083",
+      "Name": "Torrey Craig, Coby White, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 890.0,
+      "GamesPlayed": 7,
+      "OffPoss": 30,
+      "Points": 42
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-201942-202696-203083",
+      "Name": "Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 889.0,
+      "GamesPlayed": 8,
+      "OffPoss": 28,
+      "Points": 38
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1630245-1631207-203083",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 883.0,
+      "GamesPlayed": 7,
+      "OffPoss": 26,
+      "Points": 33
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630245-201942-202696",
+      "Name": "Torrey Craig, Jevon Carter, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 876.0,
+      "GamesPlayed": 9,
+      "OffPoss": 30,
+      "Points": 36
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1630245-1631207-202696",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 852.0,
+      "GamesPlayed": 5,
+      "OffPoss": 29,
+      "Points": 34
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1628975-1630245-202696",
+      "Name": "Alex Caruso, Torrey Craig, Jevon Carter, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 829.0,
+      "GamesPlayed": 5,
+      "OffPoss": 28,
+      "Points": 25
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630172-1630245-201942-203083",
+      "Name": "Torrey Craig, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 804.0,
+      "GamesPlayed": 6,
+      "OffPoss": 23,
+      "Points": 23
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-201942-203083",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 767.0,
+      "GamesPlayed": 8,
+      "OffPoss": 24,
+      "Points": 22
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-1631207-202696",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 745.0,
+      "GamesPlayed": 3,
+      "OffPoss": 25,
+      "Points": 30
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1630245-201942-203083",
+      "Name": "Alex Caruso, Torrey Craig, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 726.0,
+      "GamesPlayed": 6,
+      "OffPoss": 21,
+      "Points": 28
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1628975-1629632-203083",
+      "Name": "Alex Caruso, Torrey Craig, Jevon Carter, Coby White, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 712.0,
+      "GamesPlayed": 5,
+      "OffPoss": 25,
+      "Points": 36
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630172-1630245-201942",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 702.0,
+      "GamesPlayed": 5,
+      "OffPoss": 24,
+      "Points": 18
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630245-1631207-202696",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 688.0,
+      "GamesPlayed": 4,
+      "OffPoss": 23,
+      "Points": 37
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1641763-201942-203083",
+      "Name": "Alex Caruso, Coby White, Julian Phillips, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 680.0,
+      "GamesPlayed": 5,
+      "OffPoss": 22,
+      "Points": 29
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630172-1630245-202696",
+      "Name": "Torrey Craig, Jevon Carter, Patrick Williams, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 680.0,
+      "GamesPlayed": 5,
+      "OffPoss": 24,
+      "Points": 19
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630245-1630678-201942",
+      "Name": "Alex Caruso, Jevon Carter, Ayo Dosunmu, Terry Taylor, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 637.0,
+      "GamesPlayed": 4,
+      "OffPoss": 23,
+      "Points": 21
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-201942-202696-203897",
+      "Name": "Alex Caruso, Torrey Craig, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 631.0,
+      "GamesPlayed": 5,
+      "OffPoss": 21,
+      "Points": 22
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1631207-201942-202696",
+      "Name": "Torrey Craig, Coby White, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 617.0,
+      "GamesPlayed": 3,
+      "OffPoss": 19,
+      "Points": 30
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1630678-1631207-1641763",
+      "Name": "Jevon Carter, Ayo Dosunmu, Terry Taylor, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 611.0,
+      "GamesPlayed": 5,
+      "OffPoss": 21,
+      "Points": 25
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630172-202696-203897",
+      "Name": "Alex Caruso, Jevon Carter, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 607.0,
+      "GamesPlayed": 6,
+      "OffPoss": 23,
+      "Points": 22
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1630245-1641763-202696",
+      "Name": "Alex Caruso, Torrey Craig, Ayo Dosunmu, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 606.0,
+      "GamesPlayed": 3,
+      "OffPoss": 26,
+      "Points": 27
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1631207-201942-203083",
+      "Name": "Alex Caruso, Torrey Craig, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 605.0,
+      "GamesPlayed": 6,
+      "OffPoss": 20,
+      "Points": 30
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630245-1631207-201942-203083",
+      "Name": "Torrey Craig, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 594.0,
+      "GamesPlayed": 3,
+      "OffPoss": 21,
+      "Points": 27
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1641763-201942-202696",
+      "Name": "Jevon Carter, Ayo Dosunmu, Julian Phillips, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 594.0,
+      "GamesPlayed": 4,
+      "OffPoss": 19,
+      "Points": 19
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630172-1630245-1630678",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Ayo Dosunmu, Terry Taylor",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 575.0,
+      "GamesPlayed": 4,
+      "OffPoss": 16,
+      "Points": 18
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630245-1641931-202696",
+      "Name": "Alex Caruso, Jevon Carter, Ayo Dosunmu, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 569.0,
+      "GamesPlayed": 4,
+      "OffPoss": 21,
+      "Points": 29
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630172-202696-203897",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 568.0,
+      "GamesPlayed": 5,
+      "OffPoss": 18,
+      "Points": 23
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1630678-201942-203083",
+      "Name": "Coby White, Ayo Dosunmu, Terry Taylor, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 561.0,
+      "GamesPlayed": 5,
+      "OffPoss": 17,
+      "Points": 24
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630245-1641763-202696",
+      "Name": "Torrey Craig, Coby White, Ayo Dosunmu, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 554.0,
+      "GamesPlayed": 6,
+      "OffPoss": 20,
+      "Points": 23
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1628975-203083-203897",
+      "Name": "Alex Caruso, Torrey Craig, Jevon Carter, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 552.0,
+      "GamesPlayed": 4,
+      "OffPoss": 17,
+      "Points": 22
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1628975-201942-202696",
+      "Name": "Alex Caruso, Torrey Craig, Jevon Carter, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 551.0,
+      "GamesPlayed": 5,
+      "OffPoss": 18,
+      "Points": 15
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1629750-201942-203083",
+      "Name": "Alex Caruso, Coby White, Javonte Green, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 543.0,
+      "GamesPlayed": 3,
+      "OffPoss": 18,
+      "Points": 18
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630245-201942-202696",
+      "Name": "Jevon Carter, Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 533.0,
+      "GamesPlayed": 7,
+      "OffPoss": 17,
+      "Points": 22
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-1630172-202696",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 525.0,
+      "GamesPlayed": 3,
+      "OffPoss": 18,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1630678-201942-202696",
+      "Name": "Coby White, Ayo Dosunmu, Terry Taylor, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 523.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 20
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-201942-202696",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 519.0,
+      "GamesPlayed": 5,
+      "OffPoss": 13,
+      "Points": 21
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1631207-201942-202696",
+      "Name": "Alex Caruso, Coby White, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 499.0,
+      "GamesPlayed": 4,
+      "OffPoss": 18,
+      "Points": 16
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-1641763-202696",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 491.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 17
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1641763-1641931-203083",
+      "Name": "Coby White, Ayo Dosunmu, Julian Phillips, Onuralp Bitim, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 491.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 17
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1631207-201942-202696",
+      "Name": "Alex Caruso, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 489.0,
+      "GamesPlayed": 8,
+      "OffPoss": 14,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630172-201942-202696-203897",
+      "Name": "Alex Caruso, Patrick Williams, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 488.0,
+      "GamesPlayed": 3,
+      "OffPoss": 18,
+      "Points": 17
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-1631207-203083",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 485.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 25
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1641931-201942-202696",
+      "Name": "Coby White, Ayo Dosunmu, Onuralp Bitim, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 483.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 18
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630678-1631207-1641763-1641931",
+      "Name": "Jevon Carter, Terry Taylor, Dalen Terry, Julian Phillips, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 482.0,
+      "GamesPlayed": 3,
+      "OffPoss": 18,
+      "Points": 19
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1641931-201942-203083",
+      "Name": "Jevon Carter, Coby White, Onuralp Bitim, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 475.0,
+      "GamesPlayed": 1,
+      "OffPoss": 17,
+      "Points": 20
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630245-1641931-202696",
+      "Name": "Torrey Craig, Jevon Carter, Ayo Dosunmu, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 472.0,
+      "GamesPlayed": 5,
+      "OffPoss": 17,
+      "Points": 18
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630245-1631207-201942-202696",
+      "Name": "Torrey Craig, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 466.0,
+      "GamesPlayed": 5,
+      "OffPoss": 11,
+      "Points": 15
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1641931-201942-203083",
+      "Name": "Coby White, Ayo Dosunmu, Onuralp Bitim, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 459.0,
+      "GamesPlayed": 2,
+      "OffPoss": 17,
+      "Points": 23
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1641763-1641931-202696",
+      "Name": "Coby White, Ayo Dosunmu, Julian Phillips, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 453.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 28
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630245-203083-203897",
+      "Name": "Torrey Craig, Jevon Carter, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 451.0,
+      "GamesPlayed": 3,
+      "OffPoss": 14,
+      "Points": 14
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630245-202696-203897",
+      "Name": "Jevon Carter, Coby White, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 449.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 14
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-1630245-202696",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 448.0,
+      "GamesPlayed": 6,
+      "OffPoss": 16,
+      "Points": 15
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-1630172-202696",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 446.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 22
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630678-201942-203083",
+      "Name": "Alex Caruso, Coby White, Terry Taylor, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 430.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 15
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1630678-1631207-201942",
+      "Name": "Alex Caruso, Ayo Dosunmu, Terry Taylor, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 429.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 18
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630678-1631207-1641763-1641766",
+      "Name": "Jevon Carter, Terry Taylor, Dalen Terry, Julian Phillips, Adama Sanogo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 429.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1641931-201942-203083",
+      "Name": "Alex Caruso, Jevon Carter, Onuralp Bitim, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 424.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 15
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630172-201942-202696",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 421.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 21
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630172-201942-203897",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 416.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 19
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-203083-203897",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 416.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 16
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-201942-202696-203897",
+      "Name": "Jevon Carter, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 416.0,
+      "GamesPlayed": 1,
+      "OffPoss": 15,
+      "Points": 18
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630245-1641931-201942-202696",
+      "Name": "Torrey Craig, Ayo Dosunmu, Onuralp Bitim, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 409.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 16
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629750-1631207-201942-202696",
+      "Name": "Alex Caruso, Javonte Green, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 403.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1631207-202696-203083",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 401.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 24
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1630245-1631207-202696",
+      "Name": "Alex Caruso, Torrey Craig, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 387.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 17
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1641763-201942-202696",
+      "Name": "Alex Caruso, Coby White, Julian Phillips, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 382.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630245-1641763-202696",
+      "Name": "Torrey Craig, Jevon Carter, Ayo Dosunmu, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 377.0,
+      "GamesPlayed": 5,
+      "OffPoss": 12,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630245-1631207-202696",
+      "Name": "Jevon Carter, Coby White, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 376.0,
+      "GamesPlayed": 4,
+      "OffPoss": 12,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1629750-1630245-201942-203083",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 376.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 21
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630245-1631207-202696",
+      "Name": "Torrey Craig, Coby White, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 374.0,
+      "GamesPlayed": 4,
+      "OffPoss": 12,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1641763-201942-203083",
+      "Name": "Coby White, Ayo Dosunmu, Julian Phillips, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 374.0,
+      "GamesPlayed": 5,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1630678-1641763-203083",
+      "Name": "Coby White, Ayo Dosunmu, Terry Taylor, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 369.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 24
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630245-201942-203083-203897",
+      "Name": "Torrey Craig, Ayo Dosunmu, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 368.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1630245-1631207-203083",
+      "Name": "Alex Caruso, Torrey Craig, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 365.0,
+      "GamesPlayed": 4,
+      "OffPoss": 14,
+      "Points": 16
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1631207-201942-203083",
+      "Name": "Jevon Carter, Coby White, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 365.0,
+      "GamesPlayed": 4,
+      "OffPoss": 12,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630245-1630678-201942",
+      "Name": "Jevon Carter, Coby White, Ayo Dosunmu, Terry Taylor, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 362.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 14
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1631207-201942-202696",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 357.0,
+      "GamesPlayed": 4,
+      "OffPoss": 13,
+      "Points": 23
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630172-1630245-203083-203897",
+      "Name": "Jevon Carter, Patrick Williams, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 349.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630245-202696-203083",
+      "Name": "Torrey Craig, Coby White, Ayo Dosunmu, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 347.0,
+      "GamesPlayed": 4,
+      "OffPoss": 9,
+      "Points": 11
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630245-203083-203897",
+      "Name": "Alex Caruso, Jevon Carter, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 343.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 11
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630245-1641763-1641931-202696",
+      "Name": "Torrey Craig, Ayo Dosunmu, Julian Phillips, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 341.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-1630678-1631207-1641763",
+      "Name": "Patrick Williams, Ayo Dosunmu, Terry Taylor, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 329.0,
+      "GamesPlayed": 6,
+      "OffPoss": 14,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630172-1630245-201942-202696",
+      "Name": "Jevon Carter, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 326.0,
+      "GamesPlayed": 3,
+      "OffPoss": 9,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629750-1630245-201942-202696-203083",
+      "Name": "Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 322.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1631207-201942-202696",
+      "Name": "Jevon Carter, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 320.0,
+      "GamesPlayed": 4,
+      "OffPoss": 12,
+      "Points": 15
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1630245-203083-203897",
+      "Name": "Alex Caruso, Torrey Craig, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 14
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630245-1631207-1641931-201942-202696",
+      "Name": "Ayo Dosunmu, Dalen Terry, Onuralp Bitim, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 11
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1629750-1630929-1641766",
+      "Name": "Jevon Carter, Coby White, Javonte Green, Henri Drell, Adama Sanogo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 313.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 22
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629750-1631207-1641931",
+      "Name": "Torrey Craig, Jevon Carter, Javonte Green, Dalen Terry, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 309.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 16
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630245-1641931-203083",
+      "Name": "Torrey Craig, Jevon Carter, Ayo Dosunmu, Onuralp Bitim, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 307.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1641763-202696-203083",
+      "Name": "Coby White, Ayo Dosunmu, Julian Phillips, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 306.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1631207-202696-203897",
+      "Name": "Jevon Carter, Ayo Dosunmu, Dalen Terry, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 302.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-201942-203083-203897",
+      "Name": "Coby White, Ayo Dosunmu, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 301.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 13
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630172-201942-203083",
+      "Name": "Torrey Craig, Coby White, Patrick Williams, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630245-1641931-202696",
+      "Name": "Torrey Craig, Coby White, Ayo Dosunmu, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 4,
+      "OffPoss": 10,
+      "Points": 13
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630172-1631207-201942",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 298.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 15
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630929-1631207-1641766",
+      "Name": "Torrey Craig, Jevon Carter, Henri Drell, Dalen Terry, Adama Sanogo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 297.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 19
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630245-1641931-202696",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 294.0,
+      "GamesPlayed": 4,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1630245-1641931-202696",
+      "Name": "Alex Caruso, Torrey Craig, Ayo Dosunmu, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 287.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-1631207-202696",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 285.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 11
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1630245-1631207-201942",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 285.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 11
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630245-202696-203897",
+      "Name": "Torrey Craig, Jevon Carter, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 284.0,
+      "GamesPlayed": 5,
+      "OffPoss": 9,
+      "Points": 16
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629750-201942-202696",
+      "Name": "Alex Caruso, Jevon Carter, Javonte Green, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 283.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1629750-1631207-1641931",
+      "Name": "Torrey Craig, Coby White, Javonte Green, Dalen Terry, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 282.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-1631207-1641763-203083",
+      "Name": "Patrick Williams, Ayo Dosunmu, Dalen Terry, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 280.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 11
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1631207-1641766-201942",
+      "Name": "Torrey Craig, Coby White, Dalen Terry, Adama Sanogo, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 14
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630172-1630245-203083-203897",
+      "Name": "Torrey Craig, Patrick Williams, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 3,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630678-201942-203083",
+      "Name": "Jevon Carter, Coby White, Terry Taylor, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 271.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630245-1630678-201942",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Terry Taylor, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 14
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-1641763-203083",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 269.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 14
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1641763-201942-202696",
+      "Name": "Jevon Carter, Coby White, Julian Phillips, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 267.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630245-1641763-203083",
+      "Name": "Alex Caruso, Jevon Carter, Ayo Dosunmu, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 266.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630172-203083-203897",
+      "Name": "Alex Caruso, Jevon Carter, Patrick Williams, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 14
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-1631207-1641763-202696",
+      "Name": "Patrick Williams, Ayo Dosunmu, Dalen Terry, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1628975-202696-203897",
+      "Name": "Alex Caruso, Torrey Craig, Jevon Carter, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-1630245-203083",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Ayo Dosunmu, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-202696-203897",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1629750-1631207-201942-203083",
+      "Name": "Coby White, Javonte Green, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-1641763-203083",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630245-202696-203897",
+      "Name": "Alex Caruso, Jevon Carter, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 252.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-201942-203083-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 251.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1641931-202696-203083",
+      "Name": "Coby White, Ayo Dosunmu, Onuralp Bitim, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 249.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1630245-1630678-201942",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Terry Taylor, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 248.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1641931-201942-202696",
+      "Name": "Alex Caruso, Coby White, Onuralp Bitim, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 245.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630245-1641931-202696",
+      "Name": "Jevon Carter, Coby White, Ayo Dosunmu, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1629750-1630245-202696",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 241.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 11
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1629750-1631207-201942",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629750-1630245-1631207-203083",
+      "Name": "Alex Caruso, Javonte Green, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 238.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-1630245-202696",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1631207-202696-203897",
+      "Name": "Jevon Carter, Coby White, Dalen Terry, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630245-1630678-203083",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Terry Taylor, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630172-1630245-201942-202696",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 234.0,
+      "GamesPlayed": 5,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630245-1631207-1641931-202696",
+      "Name": "Torrey Craig, Ayo Dosunmu, Dalen Terry, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 234.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 15
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1641931-201942-203083",
+      "Name": "Alex Caruso, Coby White, Onuralp Bitim, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630172-1630245-201942-202696",
+      "Name": "Torrey Craig, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630929-1631207-1641766-1641847-1641931",
+      "Name": "Henri Drell, Dalen Terry, Adama Sanogo, Andrew Funk, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630172-1631207-203083",
+      "Name": "Torrey Craig, Coby White, Patrick Williams, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1629750-1641931-201942-202696",
+      "Name": "Coby White, Javonte Green, Onuralp Bitim, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-201942-203083-203897",
+      "Name": "Coby White, Patrick Williams, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-1630172-203083",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Patrick Williams, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 224.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1641763-202696-203083",
+      "Name": "Torrey Craig, Coby White, Julian Phillips, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 224.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629750-1631207-201942-202696",
+      "Name": "Jevon Carter, Javonte Green, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 224.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630172-1630245-1631207-201942",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 221.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629750-1630245-1631207-201942-202696",
+      "Name": "Javonte Green, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-1630245-203083",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, Ayo Dosunmu, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-1641931-203083",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Onuralp Bitim, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630172-1630245-1641763-201942",
+      "Name": "Torrey Craig, Patrick Williams, Ayo Dosunmu, Julian Phillips, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 214.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-1630172-203083",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Patrick Williams, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 13
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630245-1641763-201942-202696-203083",
+      "Name": "Ayo Dosunmu, Julian Phillips, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1631207-1641763-201942-203083",
+      "Name": "Coby White, Dalen Terry, Julian Phillips, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 13
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630245-1631207-1641931-201942-203083",
+      "Name": "Ayo Dosunmu, Dalen Terry, Onuralp Bitim, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 14
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1641763-201942-202696",
+      "Name": "Alex Caruso, Ayo Dosunmu, Julian Phillips, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630245-201942-202696-203897",
+      "Name": "Torrey Craig, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-1631207-201942-202696",
+      "Name": "Patrick Williams, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 4,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-1629750-202696",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Javonte Green, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630172-203083-203897",
+      "Name": "Torrey Craig, Coby White, Patrick Williams, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630245-1641763-201942-202696",
+      "Name": "Torrey Craig, Ayo Dosunmu, Julian Phillips, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1631207-1641931-202696",
+      "Name": "Jevon Carter, Ayo Dosunmu, Dalen Terry, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1631207-1641763-203083",
+      "Name": "Jevon Carter, Ayo Dosunmu, Dalen Terry, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630172-203083-203897",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1628975-1629632-202696",
+      "Name": "Alex Caruso, Torrey Craig, Jevon Carter, Coby White, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630172-1630245-202696-203897",
+      "Name": "Torrey Craig, Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-201942-202696-203083-203897",
+      "Name": "Alex Caruso, DeMar DeRozan, Nikola Vucevic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630172-1630245-203083",
+      "Name": "Torrey Craig, Jevon Carter, Patrick Williams, Ayo Dosunmu, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1630245-203083-203897",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-201942-202696-203083",
+      "Name": "Coby White, Patrick Williams, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630678-1631207-1641763-1641931",
+      "Name": "Patrick Williams, Terry Taylor, Dalen Terry, Julian Phillips, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1641931-201942-203083",
+      "Name": "Alex Caruso, Torrey Craig, Onuralp Bitim, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 12
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1641763-1641931-202696",
+      "Name": "Alex Caruso, Coby White, Julian Phillips, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-1631207-202696",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-1641763-203083",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630172-1630245-202696-203897",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630245-201942-202696",
+      "Name": "Alex Caruso, Jevon Carter, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1631207-1641763-202696",
+      "Name": "Alex Caruso, Ayo Dosunmu, Dalen Terry, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1630245-1641763-203083",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1631207-1641763-203083",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-202696-203083-203897",
+      "Name": "Coby White, Ayo Dosunmu, Nikola Vucevic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-1630929-1641766",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Henri Drell, Adama Sanogo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1631207-202696-203897",
+      "Name": "Coby White, Patrick Williams, Dalen Terry, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1630245-202696-203083",
+      "Name": "Alex Caruso, Torrey Craig, Ayo Dosunmu, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629750-1630678-1631207-1641931",
+      "Name": "Torrey Craig, Javonte Green, Terry Taylor, Dalen Terry, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1641931-201942-202696",
+      "Name": "Jevon Carter, Ayo Dosunmu, Onuralp Bitim, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-1641766-1641931",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Adama Sanogo, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1631207-1641931-202696",
+      "Name": "Alex Caruso, Ayo Dosunmu, Dalen Terry, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1629750-1630245-1631207-202696",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1631207-1641763-201942-203083",
+      "Name": "Alex Caruso, Dalen Terry, Julian Phillips, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1629750-1630929-1631207-1641766",
+      "Name": "Coby White, Javonte Green, Henri Drell, Dalen Terry, Adama Sanogo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1631207-1641763-203083",
+      "Name": "Alex Caruso, Coby White, Dalen Terry, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1629750-1630245-202696-203083",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1630678-1641763-202696",
+      "Name": "Coby White, Ayo Dosunmu, Terry Taylor, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1629750-1631207-202696",
+      "Name": "Jevon Carter, Coby White, Javonte Green, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1629750-1631207-203083",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1631207-203083-203897",
+      "Name": "Jevon Carter, Coby White, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-201942-202696-203083",
+      "Name": "Alex Caruso, Jevon Carter, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1630245-202696-203897",
+      "Name": "Alex Caruso, Torrey Craig, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1631207-201942-202696",
+      "Name": "Alex Caruso, Torrey Craig, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630678-1631207-201942",
+      "Name": "Alex Caruso, Jevon Carter, Terry Taylor, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1631207-1641766-201942",
+      "Name": "Alex Caruso, Coby White, Dalen Terry, Adama Sanogo, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1630245-1631207-1641763",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1631207-1641931-201942-203083",
+      "Name": "Alex Caruso, Dalen Terry, Onuralp Bitim, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1631207-1641931-201942-203083",
+      "Name": "Jevon Carter, Dalen Terry, Onuralp Bitim, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1641763-201942-203083",
+      "Name": "Jevon Carter, Ayo Dosunmu, Julian Phillips, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 159.0,
+      "GamesPlayed": 4,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630245-1631207-1641763-201942-202696",
+      "Name": "Ayo Dosunmu, Dalen Terry, Julian Phillips, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-201942-203083-203897",
+      "Name": "Torrey Craig, Coby White, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1630678-1641763-202696",
+      "Name": "Jevon Carter, Ayo Dosunmu, Terry Taylor, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1628975-1631207-201942",
+      "Name": "Alex Caruso, Torrey Craig, Jevon Carter, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630172-203083-203897",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-201942-202696-203897",
+      "Name": "Jevon Carter, Coby White, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630245-202696-203083",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1631207-1641763-202696",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630929-1641766-1641847",
+      "Name": "Torrey Craig, Jevon Carter, Henri Drell, Adama Sanogo, Andrew Funk",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1641763-201942-202696",
+      "Name": "Torrey Craig, Coby White, Julian Phillips, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630678-202696-203897",
+      "Name": "Jevon Carter, Coby White, Terry Taylor, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630172-1630245-1630678-1641763",
+      "Name": "Jevon Carter, Patrick Williams, Ayo Dosunmu, Terry Taylor, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630172-201942-202696",
+      "Name": "Alex Caruso, Jevon Carter, Patrick Williams, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-1630678-1631207-201942",
+      "Name": "Patrick Williams, Ayo Dosunmu, Terry Taylor, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-1631207-203083",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1641763-202696-203083",
+      "Name": "Jevon Carter, Ayo Dosunmu, Julian Phillips, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1631207-1641763-202696",
+      "Name": "Alex Caruso, Coby White, Dalen Terry, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630172-1630245-202696-203897",
+      "Name": "Jevon Carter, Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629750-1630245-1641931-201942-203083",
+      "Name": "Javonte Green, Ayo Dosunmu, Onuralp Bitim, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1629750-1631207-202696",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629750-1630245-1631207-202696",
+      "Name": "Alex Caruso, Javonte Green, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1631207-1641766-1641931",
+      "Name": "Torrey Craig, Jevon Carter, Dalen Terry, Adama Sanogo, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1641931-201942-203083",
+      "Name": "Torrey Craig, Coby White, Onuralp Bitim, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630678-1631207-1641763-1641931-203083",
+      "Name": "Terry Taylor, Dalen Terry, Julian Phillips, Onuralp Bitim, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 1
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-1631207-201942",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-1641766-201942",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Adama Sanogo, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1630678-1631207-202696",
+      "Name": "Coby White, Ayo Dosunmu, Terry Taylor, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1631207-1641931-202696",
+      "Name": "Alex Caruso, Coby White, Dalen Terry, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1629750-1641766-201942",
+      "Name": "Jevon Carter, Coby White, Javonte Green, Adama Sanogo, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629750-1641766-1641931",
+      "Name": "Torrey Craig, Jevon Carter, Javonte Green, Adama Sanogo, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630678-1631207-1641931-203083",
+      "Name": "Jevon Carter, Terry Taylor, Dalen Terry, Onuralp Bitim, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1631207-202696-203897",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1631207-1641931-203083",
+      "Name": "Alex Caruso, Ayo Dosunmu, Dalen Terry, Onuralp Bitim, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630172-1630678-201942",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Terry Taylor, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630172-201942-202696-203897",
+      "Name": "Jevon Carter, Patrick Williams, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-201942-202696",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 3,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630245-1641931-201942-202696-203083",
+      "Name": "Ayo Dosunmu, Onuralp Bitim, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629750-1630929-1641847",
+      "Name": "Torrey Craig, Jevon Carter, Javonte Green, Henri Drell, Andrew Funk",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630172-1631207-201942-203083",
+      "Name": "Jevon Carter, Patrick Williams, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630678-1631207-1641766-1641931",
+      "Name": "Jevon Carter, Terry Taylor, Dalen Terry, Adama Sanogo, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630172-1631207-201942",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-202696-203083",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630172-1630245-203083",
+      "Name": "Torrey Craig, Coby White, Patrick Williams, Ayo Dosunmu, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1629750-1641766-1641931",
+      "Name": "Torrey Craig, Coby White, Javonte Green, Adama Sanogo, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1641763-1641931-201942-203083",
+      "Name": "Coby White, Julian Phillips, Onuralp Bitim, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630245-1631207-203083",
+      "Name": "Alex Caruso, Jevon Carter, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-201942-202696-203083",
+      "Name": "Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-202696-203083",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630245-1630678-1631207-1641763-201942",
+      "Name": "Ayo Dosunmu, Terry Taylor, Dalen Terry, Julian Phillips, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-1630245-202696",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-1630245-1630678",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Ayo Dosunmu, Terry Taylor",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630245-1641763-1641931-203083",
+      "Name": "Torrey Craig, Ayo Dosunmu, Julian Phillips, Onuralp Bitim, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630172-202696-203897",
+      "Name": "Torrey Craig, Jevon Carter, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630172-1630678-201942",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Terry Taylor, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1629750-1631207-201942",
+      "Name": "Torrey Craig, Coby White, Javonte Green, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1631207-1641763-202696",
+      "Name": "Jevon Carter, Coby White, Dalen Terry, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 8
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630245-1641763-203083",
+      "Name": "Torrey Craig, Jevon Carter, Ayo Dosunmu, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1641763-1641931-201942-202696",
+      "Name": "Coby White, Julian Phillips, Onuralp Bitim, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630245-1630678-1631207-201942-202696",
+      "Name": "Ayo Dosunmu, Terry Taylor, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-202696-203083",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1641763-201942-203083",
+      "Name": "Alex Caruso, Jevon Carter, Julian Phillips, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-201942-202696-203083",
+      "Name": "Torrey Craig, Coby White, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630172-1630245-1631207-202696",
+      "Name": "Torrey Craig, Patrick Williams, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1631207-1641766-1641931",
+      "Name": "Jevon Carter, Coby White, Dalen Terry, Adama Sanogo, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 1
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1630678-202696-203897",
+      "Name": "Coby White, Ayo Dosunmu, Terry Taylor, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1631207-1641763-202696",
+      "Name": "Jevon Carter, Ayo Dosunmu, Dalen Terry, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630245-1631207-203083",
+      "Name": "Torrey Craig, Coby White, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-1641931-202696",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1641763-1641931-203083",
+      "Name": "Torrey Craig, Coby White, Julian Phillips, Onuralp Bitim, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 1
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630245-1641763-202696",
+      "Name": "Alex Caruso, Jevon Carter, Ayo Dosunmu, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1630678-1631207-1641766",
+      "Name": "Jevon Carter, Ayo Dosunmu, Terry Taylor, Dalen Terry, Adama Sanogo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-201942-203083-203897",
+      "Name": "Torrey Craig, Jevon Carter, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-201942-202696-203083-203897",
+      "Name": "Coby White, DeMar DeRozan, Nikola Vucevic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-201942-203083-203897",
+      "Name": "Alex Caruso, Coby White, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1630678-201942-202696",
+      "Name": "Jevon Carter, Ayo Dosunmu, Terry Taylor, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1629750-1631207-1641766-1641931",
+      "Name": "Coby White, Javonte Green, Dalen Terry, Adama Sanogo, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-1631207-202696-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Dalen Terry, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630245-1631207-203083",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1629750-1630245-1631207-203083",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630172-201942-203897",
+      "Name": "Torrey Craig, Jevon Carter, Patrick Williams, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630678-201942-202696-203897",
+      "Name": "Coby White, Terry Taylor, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630245-203083-203897",
+      "Name": "Torrey Craig, Coby White, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630678-1630929-1631207-1641931",
+      "Name": "Jevon Carter, Terry Taylor, Henri Drell, Dalen Terry, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630245-1630678-1641763-1641931-202696",
+      "Name": "Ayo Dosunmu, Terry Taylor, Julian Phillips, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630172-1641763-203083",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630678-1631207-201942",
+      "Name": "Jevon Carter, Coby White, Terry Taylor, Dalen Terry, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1628975-1630245-203083",
+      "Name": "Alex Caruso, Torrey Craig, Jevon Carter, Ayo Dosunmu, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630678-1630929-1631207-1641847-1641931",
+      "Name": "Terry Taylor, Henri Drell, Dalen Terry, Andrew Funk, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630172-1630678-201942",
+      "Name": "Alex Caruso, Jevon Carter, Patrick Williams, Terry Taylor, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630172-201942-203083",
+      "Name": "Torrey Craig, Jevon Carter, Patrick Williams, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630245-1630678-1631207",
+      "Name": "Jevon Carter, Coby White, Ayo Dosunmu, Terry Taylor, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1630245-1631207-203083",
+      "Name": "Torrey Craig, Jevon Carter, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1631207-1641931-203083",
+      "Name": "Torrey Craig, Coby White, Dalen Terry, Onuralp Bitim, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630172-1630245-1631207",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630678-1631207-203083-203897",
+      "Name": "Coby White, Terry Taylor, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630245-1641763-202696",
+      "Name": "Jevon Carter, Coby White, Ayo Dosunmu, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1631207-1641763-203083",
+      "Name": "Torrey Craig, Coby White, Dalen Terry, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1630678-1641763-1641766",
+      "Name": "Jevon Carter, Ayo Dosunmu, Terry Taylor, Julian Phillips, Adama Sanogo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1630245-1641931-203083",
+      "Name": "Alex Caruso, Torrey Craig, Ayo Dosunmu, Onuralp Bitim, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1629632-203083-203897",
+      "Name": "Alex Caruso, Jevon Carter, Coby White, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1641763-201942-203083",
+      "Name": "Alex Caruso, Ayo Dosunmu, Julian Phillips, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630172-1630245-1631207",
+      "Name": "Torrey Craig, Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630245-1641763-1641931-201942-202696",
+      "Name": "Ayo Dosunmu, Julian Phillips, Onuralp Bitim, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1629750-1631207-202696",
+      "Name": "Torrey Craig, Coby White, Javonte Green, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630678-1631207-1641763",
+      "Name": "Jevon Carter, Coby White, Terry Taylor, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1641763-201942-202696",
+      "Name": "Alex Caruso, Torrey Craig, Julian Phillips, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1641931-202696-203083",
+      "Name": "Jevon Carter, Coby White, Onuralp Bitim, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630172-1630245-1631207-1641763",
+      "Name": "Jevon Carter, Patrick Williams, Ayo Dosunmu, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630245-1630678-1631207-1641931",
+      "Name": "Jevon Carter, Ayo Dosunmu, Terry Taylor, Dalen Terry, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 75.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 7
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1630172-202696-203897",
+      "Name": "Alex Caruso, Torrey Craig, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630929-1641766-1641931",
+      "Name": "Jevon Carter, Coby White, Henri Drell, Adama Sanogo, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629750-1631207-1641766-201942",
+      "Name": "Jevon Carter, Javonte Green, Dalen Terry, Adama Sanogo, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1631207-203083-203897",
+      "Name": "Coby White, Patrick Williams, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-1631207-203083-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1629750-201942-203083",
+      "Name": "Jevon Carter, Coby White, Javonte Green, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1629750-1631207-201942-202696",
+      "Name": "Coby White, Javonte Green, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1631207-1641766-1641847",
+      "Name": "Torrey Craig, Jevon Carter, Dalen Terry, Adama Sanogo, Andrew Funk",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630678-1631207-1641766-1641847-1641931",
+      "Name": "Terry Taylor, Dalen Terry, Adama Sanogo, Andrew Funk, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1630245-201942-202696-203083",
+      "Name": "Torrey Craig, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630245-1631207-201942-202696-203083",
+      "Name": "Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1631207-202696-203083",
+      "Name": "Alex Caruso, Ayo Dosunmu, Dalen Terry, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1628975-1629632-1631207-1641931",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Dalen Terry, Onuralp Bitim",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1630678-1641763-202696",
+      "Name": "Alex Caruso, Ayo Dosunmu, Terry Taylor, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1641931-201942-202696",
+      "Name": "Torrey Craig, Coby White, Onuralp Bitim, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1631207-1641931-202696",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1631207-1641763-203083",
+      "Name": "Coby White, Patrick Williams, Dalen Terry, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 2,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1629632-1630678-1641763-201942",
+      "Name": "Jevon Carter, Coby White, Terry Taylor, Julian Phillips, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628975-1630172-1630245-1631207-203083",
+      "Name": "Jevon Carter, Patrick Williams, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 2,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630678-1631207-202696-203897",
+      "Name": "Coby White, Terry Taylor, Dalen Terry, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1631207-203083-203897",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1631207-1641763-201942-202696",
+      "Name": "Coby White, Dalen Terry, Julian Phillips, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630172-1630245-1641763-201942-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Julian Phillips, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1630245-1631207-1641931-202696-203083",
+      "Name": "Ayo Dosunmu, Dalen Terry, Onuralp Bitim, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630245-1641763-203083",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Julian Phillips, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 1
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1631207-1641763-202696",
+      "Name": "Torrey Craig, Coby White, Dalen Terry, Julian Phillips, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629750-1630245-1631207-201942-203083",
+      "Name": "Javonte Green, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 49.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630172-1630245-1630678-1631207",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Terry Taylor, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630245-203083-203897",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 44.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1641763-201942-202696-203083",
+      "Name": "Coby White, Julian Phillips, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 4
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628975-1630245-1631207-202696",
+      "Name": "Alex Caruso, Jevon Carter, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 30.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1630245-1641763-1641931-202696",
+      "Name": "Alex Caruso, Ayo Dosunmu, Julian Phillips, Onuralp Bitim, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-1630172-201942",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, Patrick Williams, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 26.0,
+      "GamesPlayed": 1,
+      "OffPoss": 2,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630245-1630678-202696",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Terry Taylor, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 25.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1629632-1630172-1630245-1631207",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 21.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1628975-1629632-201942",
+      "Name": "Alex Caruso, Torrey Craig, Jevon Carter, Coby White, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 18.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1627936-1628470-1629632-201942-203897",
+      "Name": "Alex Caruso, Torrey Craig, Coby White, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12.0,
+      "GamesPlayed": 2,
+      "OffPoss": 1,
+      "Points": 2
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1628470-1629632-1630245-1641931-203083",
+      "Name": "Torrey Craig, Coby White, Ayo Dosunmu, Onuralp Bitim, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 11.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 1
+    },
+    {
+      "Season": "2023-24",
+      "EntityId": "1629632-1630245-1641763-1641931-201942",
+      "Name": "Coby White, Ayo Dosunmu, Julian Phillips, Onuralp Bitim, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1.0,
+      "GamesPlayed": 1,
+      "OffPoss": 1,
+      "Points": 3
+    }
+  ]
+}

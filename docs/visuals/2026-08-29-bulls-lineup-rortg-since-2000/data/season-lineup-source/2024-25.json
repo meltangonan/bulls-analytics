@@ -1,0 +1,4869 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2024-25",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2024-25",
+    "RowsReturned": 500,
+    "RowsWithOffPoss": 500,
+    "RowsSkippedMissingMetrics": 15,
+    "LastRowOffPoss": 3,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630581-202696-203897",
+      "Name": "Coby White, Patrick Williams, Josh Giddey, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 15022.0,
+      "GamesPlayed": 22,
+      "OffPoss": 541,
+      "Points": 602
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630581-1641824-202696",
+      "Name": "Kevin Huerter, Coby White, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8030.0,
+      "GamesPlayed": 9,
+      "OffPoss": 289,
+      "Points": 360
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630245-202696-203897",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6311.0,
+      "GamesPlayed": 15,
+      "OffPoss": 233,
+      "Points": 259
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1630581-202696-203897",
+      "Name": "Coby White, Ayo Dosunmu, Josh Giddey, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6258.0,
+      "GamesPlayed": 13,
+      "OffPoss": 224,
+      "Points": 273
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1630581-202696-203897",
+      "Name": "Lonzo Ball, Patrick Williams, Josh Giddey, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4711.0,
+      "GamesPlayed": 13,
+      "OffPoss": 164,
+      "Points": 194
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1630581-1641824-202696",
+      "Name": "Coby White, Ayo Dosunmu, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3722.0,
+      "GamesPlayed": 8,
+      "OffPoss": 126,
+      "Points": 125
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630245-1630581-202696",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3456.0,
+      "GamesPlayed": 7,
+      "OffPoss": 119,
+      "Points": 142
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630245-1630581-1641763-202696-203897",
+      "Name": "Ayo Dosunmu, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3308.0,
+      "GamesPlayed": 16,
+      "OffPoss": 116,
+      "Points": 145
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630200-1641824-202696",
+      "Name": "Kevin Huerter, Coby White, Tre Jones, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3267.0,
+      "GamesPlayed": 7,
+      "OffPoss": 115,
+      "Points": 122
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630245-1630581-202696",
+      "Name": "Lonzo Ball, Coby White, Ayo Dosunmu, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3122.0,
+      "GamesPlayed": 6,
+      "OffPoss": 109,
+      "Points": 120
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630245-1630581-202696-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Josh Giddey, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3047.0,
+      "GamesPlayed": 16,
+      "OffPoss": 112,
+      "Points": 123
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630245-1631207-1641824",
+      "Name": "Coby White, Jalen Smith, Ayo Dosunmu, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2313.0,
+      "GamesPlayed": 9,
+      "OffPoss": 82,
+      "Points": 95
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630245-1631207-1641763",
+      "Name": "Coby White, Jalen Smith, Ayo Dosunmu, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2229.0,
+      "GamesPlayed": 12,
+      "OffPoss": 87,
+      "Points": 86
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630200-1630581-1641824",
+      "Name": "Zach Collins, Coby White, Tre Jones, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2097.0,
+      "GamesPlayed": 5,
+      "OffPoss": 69,
+      "Points": 66
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630172-1631207-1641763",
+      "Name": "Zach Collins, Coby White, Patrick Williams, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2000.0,
+      "GamesPlayed": 10,
+      "OffPoss": 73,
+      "Points": 71
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630172-202696-203897",
+      "Name": "Lonzo Ball, Coby White, Patrick Williams, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1965.0,
+      "GamesPlayed": 7,
+      "OffPoss": 69,
+      "Points": 93
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630581-1641824-202696",
+      "Name": "Lonzo Ball, Coby White, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1685.0,
+      "GamesPlayed": 3,
+      "OffPoss": 61,
+      "Points": 61
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1641824-202696-203897",
+      "Name": "Coby White, Ayo Dosunmu, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1665.0,
+      "GamesPlayed": 9,
+      "OffPoss": 57,
+      "Points": 72
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630188-1631207-1641824",
+      "Name": "Coby White, Talen Horton-Tucker, Jalen Smith, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1450.0,
+      "GamesPlayed": 6,
+      "OffPoss": 57,
+      "Points": 52
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630245-1641824-202696-203897",
+      "Name": "Lonzo Ball, Ayo Dosunmu, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1441.0,
+      "GamesPlayed": 7,
+      "OffPoss": 51,
+      "Points": 68
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630172-1630581-202696",
+      "Name": "Kevin Huerter, Coby White, Patrick Williams, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1423.0,
+      "GamesPlayed": 9,
+      "OffPoss": 54,
+      "Points": 79
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1630245-202696-203897",
+      "Name": "Lonzo Ball, Patrick Williams, Ayo Dosunmu, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1354.0,
+      "GamesPlayed": 7,
+      "OffPoss": 48,
+      "Points": 53
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630245-1631207-1641763-202696-203897",
+      "Name": "Ayo Dosunmu, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1352.0,
+      "GamesPlayed": 10,
+      "OffPoss": 47,
+      "Points": 64
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630245-1630581-1641824-202696-203897",
+      "Name": "Ayo Dosunmu, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1349.0,
+      "GamesPlayed": 10,
+      "OffPoss": 50,
+      "Points": 51
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628380-1629632-1630581-1641824",
+      "Name": "Lonzo Ball, Zach Collins, Coby White, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1293.0,
+      "GamesPlayed": 3,
+      "OffPoss": 48,
+      "Points": 54
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630245-1630581-1641763",
+      "Name": "Coby White, Jalen Smith, Ayo Dosunmu, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1246.0,
+      "GamesPlayed": 11,
+      "OffPoss": 46,
+      "Points": 42
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630581-1631207-202696-203897",
+      "Name": "Patrick Williams, Josh Giddey, Dalen Terry, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1245.0,
+      "GamesPlayed": 5,
+      "OffPoss": 40,
+      "Points": 48
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630245-1631207-1641824-202696-203897",
+      "Name": "Ayo Dosunmu, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1236.0,
+      "GamesPlayed": 9,
+      "OffPoss": 44,
+      "Points": 52
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1641763-1641824-202696",
+      "Name": "Kevin Huerter, Coby White, Julian Phillips, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1232.0,
+      "GamesPlayed": 4,
+      "OffPoss": 46,
+      "Points": 62
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630245-202696-203897",
+      "Name": "Lonzo Ball, Coby White, Ayo Dosunmu, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1210.0,
+      "GamesPlayed": 6,
+      "OffPoss": 45,
+      "Points": 64
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630172-1630581-1641824-202696",
+      "Name": "Kevin Huerter, Patrick Williams, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1191.0,
+      "GamesPlayed": 4,
+      "OffPoss": 43,
+      "Points": 46
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630200-1641763-202696",
+      "Name": "Kevin Huerter, Coby White, Tre Jones, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1118.0,
+      "GamesPlayed": 6,
+      "OffPoss": 38,
+      "Points": 50
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630581-1641824-202696-203897",
+      "Name": "Lonzo Ball, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1066.0,
+      "GamesPlayed": 6,
+      "OffPoss": 39,
+      "Points": 50
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630581-202696-203897",
+      "Name": "Lonzo Ball, Coby White, Josh Giddey, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1062.0,
+      "GamesPlayed": 4,
+      "OffPoss": 41,
+      "Points": 72
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1629659-1630188-1641763",
+      "Name": "Jevon Carter, Coby White, Talen Horton-Tucker, Jalen Smith, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1045.0,
+      "GamesPlayed": 3,
+      "OffPoss": 37,
+      "Points": 53
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630245-1630581-202696-203897",
+      "Name": "Lonzo Ball, Ayo Dosunmu, Josh Giddey, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1027.0,
+      "GamesPlayed": 5,
+      "OffPoss": 37,
+      "Points": 41
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630245-1630581-203897",
+      "Name": "Coby White, Jalen Smith, Ayo Dosunmu, Josh Giddey, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1023.0,
+      "GamesPlayed": 2,
+      "OffPoss": 35,
+      "Points": 40
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630188-1630245-1641763",
+      "Name": "Coby White, Talen Horton-Tucker, Jalen Smith, Ayo Dosunmu, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1022.0,
+      "GamesPlayed": 5,
+      "OffPoss": 33,
+      "Points": 49
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630245-1630581-1641824-202696",
+      "Name": "Patrick Williams, Ayo Dosunmu, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1011.0,
+      "GamesPlayed": 7,
+      "OffPoss": 35,
+      "Points": 36
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630200-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Tre Jones, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1008.0,
+      "GamesPlayed": 4,
+      "OffPoss": 37,
+      "Points": 48
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630581-1641763-202696-203897",
+      "Name": "Lonzo Ball, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 994.0,
+      "GamesPlayed": 7,
+      "OffPoss": 37,
+      "Points": 38
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630581-1631207-1641824-202696",
+      "Name": "Kevin Huerter, Josh Giddey, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 952.0,
+      "GamesPlayed": 4,
+      "OffPoss": 35,
+      "Points": 45
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1641763-202696-203897",
+      "Name": "Lonzo Ball, Coby White, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 921.0,
+      "GamesPlayed": 4,
+      "OffPoss": 32,
+      "Points": 44
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630245-1641763-202696-203897",
+      "Name": "Lonzo Ball, Ayo Dosunmu, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 892.0,
+      "GamesPlayed": 4,
+      "OffPoss": 30,
+      "Points": 38
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1641763-202696-203897",
+      "Name": "Coby White, Ayo Dosunmu, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 888.0,
+      "GamesPlayed": 9,
+      "OffPoss": 29,
+      "Points": 33
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1630245-1641763",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Ayo Dosunmu, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 835.0,
+      "GamesPlayed": 6,
+      "OffPoss": 25,
+      "Points": 21
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1630200-1630581-1641824",
+      "Name": "Zach Collins, Kevin Huerter, Tre Jones, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 828.0,
+      "GamesPlayed": 4,
+      "OffPoss": 32,
+      "Points": 44
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630581-1631207-1641763",
+      "Name": "Coby White, Jalen Smith, Josh Giddey, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 822.0,
+      "GamesPlayed": 6,
+      "OffPoss": 30,
+      "Points": 42
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630581-1631207-1641763-202696-203897",
+      "Name": "Josh Giddey, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 818.0,
+      "GamesPlayed": 5,
+      "OffPoss": 29,
+      "Points": 29
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1629659-1630200-1641824",
+      "Name": "Zach Collins, Coby White, Talen Horton-Tucker, Tre Jones, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 815.0,
+      "GamesPlayed": 2,
+      "OffPoss": 30,
+      "Points": 31
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630581-1631207-1641824",
+      "Name": "Zach Collins, Coby White, Josh Giddey, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 797.0,
+      "GamesPlayed": 3,
+      "OffPoss": 28,
+      "Points": 35
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1629632-1630581-202696-203897",
+      "Name": "Torrey Craig, Coby White, Josh Giddey, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 796.0,
+      "GamesPlayed": 1,
+      "OffPoss": 27,
+      "Points": 31
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630172-202696-203897",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 784.0,
+      "GamesPlayed": 1,
+      "OffPoss": 31,
+      "Points": 41
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630200-1631207-1641824",
+      "Name": "Zach Collins, Coby White, Tre Jones, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 780.0,
+      "GamesPlayed": 3,
+      "OffPoss": 28,
+      "Points": 29
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1630581-1631207",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 776.0,
+      "GamesPlayed": 5,
+      "OffPoss": 27,
+      "Points": 24
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1631207-202696-203897",
+      "Name": "Coby White, Patrick Williams, Dalen Terry, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 776.0,
+      "GamesPlayed": 4,
+      "OffPoss": 29,
+      "Points": 35
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630581-1631207-1641824-202696",
+      "Name": "Coby White, Josh Giddey, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 772.0,
+      "GamesPlayed": 5,
+      "OffPoss": 30,
+      "Points": 23
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630581-1641824-202696-203897",
+      "Name": "Patrick Williams, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 765.0,
+      "GamesPlayed": 5,
+      "OffPoss": 29,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1629659-1630172-1641763",
+      "Name": "Zach Collins, Jevon Carter, Talen Horton-Tucker, Patrick Williams, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 760.0,
+      "GamesPlayed": 4,
+      "OffPoss": 26,
+      "Points": 42
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630172-1631207-202696",
+      "Name": "Kevin Huerter, Coby White, Patrick Williams, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 743.0,
+      "GamesPlayed": 6,
+      "OffPoss": 26,
+      "Points": 23
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630581-1641824",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 741.0,
+      "GamesPlayed": 3,
+      "OffPoss": 27,
+      "Points": 43
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630245-1641824-202696",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 709.0,
+      "GamesPlayed": 4,
+      "OffPoss": 26,
+      "Points": 45
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630172-1630581-202696",
+      "Name": "Lonzo Ball, Coby White, Patrick Williams, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 706.0,
+      "GamesPlayed": 3,
+      "OffPoss": 25,
+      "Points": 40
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1631207-1641763-1641824",
+      "Name": "Kevin Huerter, Coby White, Dalen Terry, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 704.0,
+      "GamesPlayed": 2,
+      "OffPoss": 26,
+      "Points": 33
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630581-1641763-202696-203897",
+      "Name": "Talen Horton-Tucker, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 702.0,
+      "GamesPlayed": 6,
+      "OffPoss": 23,
+      "Points": 29
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630245-1641763-202696-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 671.0,
+      "GamesPlayed": 3,
+      "OffPoss": 24,
+      "Points": 31
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630581-1631207-1641824",
+      "Name": "Coby White, Jalen Smith, Josh Giddey, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 663.0,
+      "GamesPlayed": 8,
+      "OffPoss": 26,
+      "Points": 25
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1630245-1631207-1641824",
+      "Name": "Talen Horton-Tucker, Jalen Smith, Ayo Dosunmu, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 662.0,
+      "GamesPlayed": 4,
+      "OffPoss": 26,
+      "Points": 33
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630188-1630581-1641763",
+      "Name": "Coby White, Talen Horton-Tucker, Jalen Smith, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 659.0,
+      "GamesPlayed": 4,
+      "OffPoss": 24,
+      "Points": 36
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1630245-1631207",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 652.0,
+      "GamesPlayed": 3,
+      "OffPoss": 22,
+      "Points": 29
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1629659-1630172-1631207",
+      "Name": "Zach Collins, Coby White, Talen Horton-Tucker, Patrick Williams, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 651.0,
+      "GamesPlayed": 3,
+      "OffPoss": 25,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630537-1631207-1641824",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Chris Duarte, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 638.0,
+      "GamesPlayed": 3,
+      "OffPoss": 21,
+      "Points": 25
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630188-1630245-1641824",
+      "Name": "Coby White, Talen Horton-Tucker, Jalen Smith, Ayo Dosunmu, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 632.0,
+      "GamesPlayed": 4,
+      "OffPoss": 20,
+      "Points": 26
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628989-1630581-1641824-202696",
+      "Name": "Lonzo Ball, Kevin Huerter, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 625.0,
+      "GamesPlayed": 1,
+      "OffPoss": 24,
+      "Points": 22
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630172-1630188-1630200",
+      "Name": "Kevin Huerter, Coby White, Patrick Williams, Jalen Smith, Tre Jones",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 625.0,
+      "GamesPlayed": 3,
+      "OffPoss": 23,
+      "Points": 29
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630581-1641763-202696",
+      "Name": "Coby White, Patrick Williams, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 608.0,
+      "GamesPlayed": 3,
+      "OffPoss": 22,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1641824-202696-203897",
+      "Name": "Lonzo Ball, Coby White, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 599.0,
+      "GamesPlayed": 4,
+      "OffPoss": 22,
+      "Points": 24
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1631207-1641824-202696-203897",
+      "Name": "Lonzo Ball, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 587.0,
+      "GamesPlayed": 4,
+      "OffPoss": 25,
+      "Points": 31
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1630581-1631207-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Josh Giddey, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 586.0,
+      "GamesPlayed": 4,
+      "OffPoss": 18,
+      "Points": 24
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630172-1630200-202696",
+      "Name": "Kevin Huerter, Coby White, Patrick Williams, Tre Jones, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 575.0,
+      "GamesPlayed": 4,
+      "OffPoss": 21,
+      "Points": 27
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630188-1630581-1641824-203897",
+      "Name": "Lonzo Ball, Jalen Smith, Josh Giddey, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 573.0,
+      "GamesPlayed": 2,
+      "OffPoss": 24,
+      "Points": 26
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630172-1630188-1641824",
+      "Name": "Coby White, Talen Horton-Tucker, Patrick Williams, Jalen Smith, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 557.0,
+      "GamesPlayed": 3,
+      "OffPoss": 18,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628380-1628989-1629632-1630581",
+      "Name": "Lonzo Ball, Zach Collins, Kevin Huerter, Coby White, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 554.0,
+      "GamesPlayed": 2,
+      "OffPoss": 20,
+      "Points": 27
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1629659-1630172-1641824",
+      "Name": "Zach Collins, Coby White, Talen Horton-Tucker, Patrick Williams, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 554.0,
+      "GamesPlayed": 2,
+      "OffPoss": 21,
+      "Points": 27
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1629659-1631207-1641763",
+      "Name": "Zach Collins, Jevon Carter, Talen Horton-Tucker, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 549.0,
+      "GamesPlayed": 2,
+      "OffPoss": 21,
+      "Points": 26
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1630245-1641824",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Ayo Dosunmu, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 549.0,
+      "GamesPlayed": 6,
+      "OffPoss": 19,
+      "Points": 21
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630172-1641824-202696",
+      "Name": "Lonzo Ball, Coby White, Patrick Williams, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 548.0,
+      "GamesPlayed": 2,
+      "OffPoss": 20,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1631207-1641763",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 541.0,
+      "GamesPlayed": 3,
+      "OffPoss": 19,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1630581-1641824",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 539.0,
+      "GamesPlayed": 7,
+      "OffPoss": 20,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630581-1641763-203897",
+      "Name": "Coby White, Jalen Smith, Josh Giddey, Julian Phillips, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 537.0,
+      "GamesPlayed": 6,
+      "OffPoss": 21,
+      "Points": 23
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630172-1630581-1631207-202696",
+      "Name": "Kevin Huerter, Patrick Williams, Josh Giddey, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 521.0,
+      "GamesPlayed": 5,
+      "OffPoss": 17,
+      "Points": 13
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630188-1630581-1641824",
+      "Name": "Lonzo Ball, Coby White, Jalen Smith, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 520.0,
+      "GamesPlayed": 2,
+      "OffPoss": 19,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630581-1641824-202696-203897",
+      "Name": "Talen Horton-Tucker, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 519.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1631207-1641763-1641824",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Dalen Terry, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 514.0,
+      "GamesPlayed": 5,
+      "OffPoss": 16,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630537-1641763-1641824",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Chris Duarte, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 511.0,
+      "GamesPlayed": 3,
+      "OffPoss": 19,
+      "Points": 22
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630172-1630200-1641824-202696",
+      "Name": "Kevin Huerter, Patrick Williams, Tre Jones, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 509.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 21
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630581-1641763-202696-203897",
+      "Name": "Patrick Williams, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 503.0,
+      "GamesPlayed": 5,
+      "OffPoss": 15,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630581-1631207-1641824-202696-203897",
+      "Name": "Josh Giddey, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 502.0,
+      "GamesPlayed": 6,
+      "OffPoss": 17,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630172-1641763-202696",
+      "Name": "Kevin Huerter, Coby White, Patrick Williams, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 500.0,
+      "GamesPlayed": 2,
+      "OffPoss": 18,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630200-1641763-1641824-202696",
+      "Name": "Kevin Huerter, Tre Jones, Julian Phillips, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 497.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628380-1628989-1630581-1641824",
+      "Name": "Lonzo Ball, Zach Collins, Kevin Huerter, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 492.0,
+      "GamesPlayed": 3,
+      "OffPoss": 19,
+      "Points": 26
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630200-1630581-1641763-1641824",
+      "Name": "Coby White, Tre Jones, Josh Giddey, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 491.0,
+      "GamesPlayed": 1,
+      "OffPoss": 16,
+      "Points": 22
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630581-1641824-202696",
+      "Name": "Coby White, Patrick Williams, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 488.0,
+      "GamesPlayed": 4,
+      "OffPoss": 20,
+      "Points": 21
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630537-1630604-1641824",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Chris Duarte, E.J. Liddell, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 484.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 21
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630188-1630200-1641763",
+      "Name": "Coby White, Talen Horton-Tucker, Jalen Smith, Tre Jones, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 483.0,
+      "GamesPlayed": 2,
+      "OffPoss": 16,
+      "Points": 26
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1629632-1630581-1631207-202696",
+      "Name": "Torrey Craig, Coby White, Josh Giddey, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 482.0,
+      "GamesPlayed": 3,
+      "OffPoss": 14,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630581-1641763-202696",
+      "Name": "Lonzo Ball, Coby White, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 481.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 22
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630245-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Ayo Dosunmu, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 481.0,
+      "GamesPlayed": 2,
+      "OffPoss": 17,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630172-1630188-1631207-1641824",
+      "Name": "Jevon Carter, Patrick Williams, Jalen Smith, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 477.0,
+      "GamesPlayed": 1,
+      "OffPoss": 16,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1629632-1630245-202696-203897",
+      "Name": "Torrey Craig, Coby White, Ayo Dosunmu, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 476.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630188-1630245-1631207-1641763",
+      "Name": "Patrick Williams, Jalen Smith, Ayo Dosunmu, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 476.0,
+      "GamesPlayed": 4,
+      "OffPoss": 18,
+      "Points": 21
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630245-1631207-202696-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Dalen Terry, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 476.0,
+      "GamesPlayed": 7,
+      "OffPoss": 20,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630200-1630581-1641763",
+      "Name": "Zach Collins, Coby White, Tre Jones, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 474.0,
+      "GamesPlayed": 3,
+      "OffPoss": 14,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1641824-202696-203897",
+      "Name": "Coby White, Patrick Williams, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 473.0,
+      "GamesPlayed": 4,
+      "OffPoss": 17,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1629659-1630172",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Talen Horton-Tucker, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 468.0,
+      "GamesPlayed": 1,
+      "OffPoss": 16,
+      "Points": 22
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630581-1641763-202696",
+      "Name": "Kevin Huerter, Coby White, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 467.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1630245-1630581-202696",
+      "Name": "Lonzo Ball, Patrick Williams, Ayo Dosunmu, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 466.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630172-1630200-1641763",
+      "Name": "Zach Collins, Coby White, Patrick Williams, Tre Jones, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 464.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1641763-202696-203897",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 464.0,
+      "GamesPlayed": 1,
+      "OffPoss": 17,
+      "Points": 27
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628380-1629632-1630245-1630581",
+      "Name": "Lonzo Ball, Zach Collins, Coby White, Ayo Dosunmu, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 453.0,
+      "GamesPlayed": 1,
+      "OffPoss": 16,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1630604-1641801-1642443",
+      "Name": "Zach Collins, Jevon Carter, E.J. Liddell, Emanuel Miller, Jahmir Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 452.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 20
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630581-202696-203897",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Josh Giddey, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 451.0,
+      "GamesPlayed": 2,
+      "OffPoss": 17,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630172-1631207",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Patrick Williams, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 451.0,
+      "GamesPlayed": 3,
+      "OffPoss": 16,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630188-1630581-1631207",
+      "Name": "Coby White, Talen Horton-Tucker, Jalen Smith, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 449.0,
+      "GamesPlayed": 4,
+      "OffPoss": 15,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1630581-1641824-203897",
+      "Name": "Talen Horton-Tucker, Jalen Smith, Josh Giddey, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 446.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 21
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1631207-1641763-202696",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 441.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 13
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630188-1631207-1641763-1641824",
+      "Name": "Jevon Carter, Jalen Smith, Dalen Terry, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 440.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1630245-1630581-1641763",
+      "Name": "Talen Horton-Tucker, Jalen Smith, Ayo Dosunmu, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 437.0,
+      "GamesPlayed": 3,
+      "OffPoss": 18,
+      "Points": 20
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1631207-1641824-202696",
+      "Name": "Kevin Huerter, Coby White, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 430.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630188-1631207-1641763",
+      "Name": "Kevin Huerter, Coby White, Jalen Smith, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 427.0,
+      "GamesPlayed": 3,
+      "OffPoss": 14,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630188-1631207-1641824",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Jalen Smith, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 426.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1631207-1641824",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 423.0,
+      "GamesPlayed": 4,
+      "OffPoss": 13,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630188-1631207-1641763",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Jalen Smith, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 422.0,
+      "GamesPlayed": 3,
+      "OffPoss": 18,
+      "Points": 27
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630245-1641824-202696",
+      "Name": "Lonzo Ball, Coby White, Ayo Dosunmu, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 421.0,
+      "GamesPlayed": 4,
+      "OffPoss": 16,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630188-1631207-1641763",
+      "Name": "Lonzo Ball, Coby White, Jalen Smith, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 413.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630537-1631207-1641763-1641824",
+      "Name": "Jevon Carter, Chris Duarte, Dalen Terry, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 412.0,
+      "GamesPlayed": 3,
+      "OffPoss": 17,
+      "Points": 12
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630245-1630581-1631207-1641824-202696",
+      "Name": "Ayo Dosunmu, Josh Giddey, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 410.0,
+      "GamesPlayed": 5,
+      "OffPoss": 14,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630172-1631207-1641824",
+      "Name": "Zach Collins, Coby White, Patrick Williams, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 409.0,
+      "GamesPlayed": 4,
+      "OffPoss": 16,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630245-1630581-1641763-202696",
+      "Name": "Talen Horton-Tucker, Ayo Dosunmu, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 402.0,
+      "GamesPlayed": 3,
+      "OffPoss": 14,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1631207-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 396.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 22
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630172-1641824-202696",
+      "Name": "Kevin Huerter, Coby White, Patrick Williams, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 396.0,
+      "GamesPlayed": 6,
+      "OffPoss": 11,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630188-1630245-1630581-1631207-1641763",
+      "Name": "Jalen Smith, Ayo Dosunmu, Josh Giddey, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 396.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 13
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630172-1630188-1630245",
+      "Name": "Coby White, Talen Horton-Tucker, Patrick Williams, Jalen Smith, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 392.0,
+      "GamesPlayed": 4,
+      "OffPoss": 15,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630188-1630581-1631207",
+      "Name": "Kevin Huerter, Coby White, Jalen Smith, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 390.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 25
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630245-1641763-202696-203897",
+      "Name": "Talen Horton-Tucker, Ayo Dosunmu, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 387.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 12
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630172-1630581-1641824",
+      "Name": "Zach Collins, Coby White, Patrick Williams, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 381.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630172-1630188-1641763",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Patrick Williams, Jalen Smith, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 381.0,
+      "GamesPlayed": 1,
+      "OffPoss": 15,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630172-1641824",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Patrick Williams, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 380.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630188-1630581-1641763",
+      "Name": "Jevon Carter, Coby White, Jalen Smith, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 378.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 12
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1641824-202696-203897",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 377.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630188-1630581-1631207-1641824",
+      "Name": "Lonzo Ball, Jalen Smith, Josh Giddey, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 374.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630581-1631207-1641824-202696",
+      "Name": "Patrick Williams, Josh Giddey, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 374.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1628975-1629632-1629659-1630188",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Talen Horton-Tucker, Jalen Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 371.0,
+      "GamesPlayed": 1,
+      "OffPoss": 14,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630188-1630245-1630581-1641824",
+      "Name": "Patrick Williams, Jalen Smith, Ayo Dosunmu, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 370.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 24
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630188-1630581-1641824",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Jalen Smith, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 360.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630200-1630581-202696",
+      "Name": "Kevin Huerter, Coby White, Tre Jones, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 359.0,
+      "GamesPlayed": 3,
+      "OffPoss": 15,
+      "Points": 29
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630172-1630200-1641763-202696",
+      "Name": "Kevin Huerter, Patrick Williams, Tre Jones, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 359.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1631207-1641763-202696",
+      "Name": "Kevin Huerter, Coby White, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 357.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 20
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630188-1630245-1641763",
+      "Name": "Kevin Huerter, Coby White, Jalen Smith, Ayo Dosunmu, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 355.0,
+      "GamesPlayed": 3,
+      "OffPoss": 13,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628470-1629632-1630172-202696",
+      "Name": "Lonzo Ball, Torrey Craig, Coby White, Patrick Williams, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 350.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628470-1630245-202696-203897",
+      "Name": "Lonzo Ball, Torrey Craig, Ayo Dosunmu, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 350.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630200-1630581",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Tre Jones, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1629659-1641763-1641824",
+      "Name": "Zach Collins, Coby White, Talen Horton-Tucker, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1630200-1630581-1631207-1641824",
+      "Name": "Zach Collins, Tre Jones, Josh Giddey, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 343.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1630537-1631207-1641824",
+      "Name": "Talen Horton-Tucker, Jalen Smith, Chris Duarte, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 343.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1629632-1630188-1630581-1631207",
+      "Name": "Torrey Craig, Coby White, Jalen Smith, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 341.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630172-1631207-202696",
+      "Name": "Coby White, Talen Horton-Tucker, Patrick Williams, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 339.0,
+      "GamesPlayed": 4,
+      "OffPoss": 12,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630581-1641763-1641824-202696",
+      "Name": "Coby White, Josh Giddey, Julian Phillips, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 337.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1630188-1630581-1641824",
+      "Name": "Lonzo Ball, Patrick Williams, Jalen Smith, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 335.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1631207-1641763-1641824",
+      "Name": "Zach Collins, Coby White, Dalen Terry, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 335.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 21
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630172-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Patrick Williams, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 4,
+      "OffPoss": 13,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1630581-1641763-202696",
+      "Name": "Coby White, Ayo Dosunmu, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 2,
+      "OffPoss": 14,
+      "Points": 12
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630200-1641824",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Tre Jones, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 331.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630537-1630604-1641763",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Chris Duarte, E.J. Liddell, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 329.0,
+      "GamesPlayed": 2,
+      "OffPoss": 15,
+      "Points": 20
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1630200-1630245-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Tre Jones, Ayo Dosunmu, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 327.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630172-1641824-202696",
+      "Name": "Coby White, Talen Horton-Tucker, Patrick Williams, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 324.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630172-1630188-1631207",
+      "Name": "Lonzo Ball, Coby White, Patrick Williams, Jalen Smith, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 323.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630245-202696-203897",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Ayo Dosunmu, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 323.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630200-1631207-1641763",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Tre Jones, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 323.0,
+      "GamesPlayed": 1,
+      "OffPoss": 13,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630188-1630245-1630581-1631207-1641824",
+      "Name": "Jalen Smith, Ayo Dosunmu, Josh Giddey, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 323.0,
+      "GamesPlayed": 3,
+      "OffPoss": 12,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630188-1630581-1641824",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Jalen Smith, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 321.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 19
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630172-1630581-1641763",
+      "Name": "Zach Collins, Coby White, Patrick Williams, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 321.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630188-1630245-1630581-1641824",
+      "Name": "Kevin Huerter, Jalen Smith, Ayo Dosunmu, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 320.0,
+      "GamesPlayed": 3,
+      "OffPoss": 10,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630172-1630188-1641801",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Patrick Williams, Jalen Smith, Emanuel Miller",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 319.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 20
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629659-1630604-1641763-1642443",
+      "Name": "Zach Collins, Talen Horton-Tucker, E.J. Liddell, Julian Phillips, Jahmir Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 317.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630172-1630200-1631207",
+      "Name": "Zach Collins, Coby White, Patrick Williams, Tre Jones, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 316.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630172-1630245-202696",
+      "Name": "Coby White, Talen Horton-Tucker, Patrick Williams, Ayo Dosunmu, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 316.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630172-1630245-202696",
+      "Name": "Lonzo Ball, Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1630172-1630581-1631207-1641824",
+      "Name": "Zach Collins, Patrick Williams, Josh Giddey, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630245-1630581-1641824",
+      "Name": "Coby White, Jalen Smith, Ayo Dosunmu, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 311.0,
+      "GamesPlayed": 7,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630172-1630188-1630200-1631207",
+      "Name": "Kevin Huerter, Patrick Williams, Jalen Smith, Tre Jones, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 310.0,
+      "GamesPlayed": 1,
+      "OffPoss": 12,
+      "Points": 13
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630200-1630581-1641824-202696",
+      "Name": "Kevin Huerter, Tre Jones, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 308.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1630245-1630581-202696-203897",
+      "Name": "Torrey Craig, Ayo Dosunmu, Josh Giddey, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 307.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630172-1630188-1630581-1641763",
+      "Name": "Jevon Carter, Patrick Williams, Jalen Smith, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 301.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 12
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1630245-1630581",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Ayo Dosunmu, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 301.0,
+      "GamesPlayed": 4,
+      "OffPoss": 11,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630172-1630188-1641763",
+      "Name": "Coby White, Talen Horton-Tucker, Patrick Williams, Jalen Smith, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628380-1630200-1630581-1641824",
+      "Name": "Lonzo Ball, Zach Collins, Tre Jones, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 299.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630172-1630188-1630581",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Jalen Smith, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 298.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630172-1630188-1641763",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Patrick Williams, Jalen Smith, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 296.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 12
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1630581-1631207-1641824",
+      "Name": "Talen Horton-Tucker, Jalen Smith, Josh Giddey, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 296.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1630245-1630581-1641824",
+      "Name": "Talen Horton-Tucker, Jalen Smith, Ayo Dosunmu, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 295.0,
+      "GamesPlayed": 2,
+      "OffPoss": 13,
+      "Points": 12
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630581-1641763-1641824-202696",
+      "Name": "Kevin Huerter, Josh Giddey, Julian Phillips, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 294.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629659-1630172-1630581-202696",
+      "Name": "Kevin Huerter, Talen Horton-Tucker, Patrick Williams, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 293.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1630200-1630581-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Tre Jones, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 20
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1629632-1629659-1630188-1630581",
+      "Name": "Torrey Craig, Coby White, Talen Horton-Tucker, Jalen Smith, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1630245-1631207-1641763",
+      "Name": "Talen Horton-Tucker, Jalen Smith, Ayo Dosunmu, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 290.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1630172-1630200-1641824",
+      "Name": "Zach Collins, Kevin Huerter, Patrick Williams, Tre Jones, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 289.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630188-1630245-1641763",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Jalen Smith, Ayo Dosunmu, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 288.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1630245-1630581-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Ayo Dosunmu, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 284.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 12
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630245-1630581-1630604-1641763-1641824",
+      "Name": "Ayo Dosunmu, Josh Giddey, E.J. Liddell, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 283.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 16
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630172-1630188-1641824",
+      "Name": "Lonzo Ball, Coby White, Patrick Williams, Jalen Smith, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 280.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630188-1630581-1641763",
+      "Name": "Lonzo Ball, Coby White, Jalen Smith, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 280.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630581-1631207-202696",
+      "Name": "Kevin Huerter, Coby White, Josh Giddey, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 280.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630188-1630245-1630581-1641763-203897",
+      "Name": "Jalen Smith, Ayo Dosunmu, Josh Giddey, Julian Phillips, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 278.0,
+      "GamesPlayed": 4,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1629659-1630188-1641824",
+      "Name": "Zach Collins, Jevon Carter, Talen Horton-Tucker, Jalen Smith, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 277.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1629659-1630188-1641763",
+      "Name": "Kevin Huerter, Coby White, Talen Horton-Tucker, Jalen Smith, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 275.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 12
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630581-1641824-202696-203897",
+      "Name": "Coby White, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 275.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 22
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630172-1630188-1631207",
+      "Name": "Zach Collins, Coby White, Patrick Williams, Jalen Smith, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 273.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630245-1630581-1641763",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 273.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630188-1630245-1630581-203897",
+      "Name": "Patrick Williams, Jalen Smith, Ayo Dosunmu, Josh Giddey, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 273.0,
+      "GamesPlayed": 4,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630188-1630245-1631207-1641824",
+      "Name": "Patrick Williams, Jalen Smith, Ayo Dosunmu, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 273.0,
+      "GamesPlayed": 3,
+      "OffPoss": 11,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1631207-1641824",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1630581-203897",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Josh Giddey, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 13
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630172-1630200-1630581-202696",
+      "Name": "Kevin Huerter, Patrick Williams, Tre Jones, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 267.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630188-1630245-1641824",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Jalen Smith, Ayo Dosunmu, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 2,
+      "OffPoss": 12,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630172-1630188-1641763",
+      "Name": "Lonzo Ball, Coby White, Patrick Williams, Jalen Smith, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630172-1630581-1631207",
+      "Name": "Zach Collins, Coby White, Patrick Williams, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630188-1630245-1631207-1641763",
+      "Name": "Lonzo Ball, Jalen Smith, Ayo Dosunmu, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 257.0,
+      "GamesPlayed": 1,
+      "OffPoss": 10,
+      "Points": 17
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1628975-1630537-1641763-1641824",
+      "Name": "Torrey Craig, Jevon Carter, Chris Duarte, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 257.0,
+      "GamesPlayed": 1,
+      "OffPoss": 11,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630245-1641763-1641824-202696-203897",
+      "Name": "Ayo Dosunmu, Julian Phillips, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 2,
+      "OffPoss": 10,
+      "Points": 18
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630581-1631207",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630188-1641763-202696",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Jalen Smith, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 12
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630172-1630581-1641824-202696",
+      "Name": "Jevon Carter, Patrick Williams, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630581-1641763-202696-203897",
+      "Name": "Coby White, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 4,
+      "OffPoss": 8,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630188-1630581-1631207",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Jalen Smith, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630245-1641763-203897",
+      "Name": "Coby White, Jalen Smith, Ayo Dosunmu, Julian Phillips, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 252.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629659-1630172-1630581-1631207",
+      "Name": "Zach Collins, Talen Horton-Tucker, Patrick Williams, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 251.0,
+      "GamesPlayed": 2,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630188-1630245-1630581-1641824-203897",
+      "Name": "Jalen Smith, Ayo Dosunmu, Josh Giddey, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 249.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1641763-203897",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Julian Phillips, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630200-1630245-1630581-1641824-202696",
+      "Name": "Tre Jones, Ayo Dosunmu, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 2,
+      "OffPoss": 11,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1630172-1630200-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Patrick Williams, Tre Jones, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 245.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630581-202696-203897",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Josh Giddey, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630581-1641763-202696",
+      "Name": "Coby White, Talen Horton-Tucker, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630172-1630188-1641824",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Patrick Williams, Jalen Smith, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 241.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630245-1630581-1641763-202696",
+      "Name": "Patrick Williams, Ayo Dosunmu, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 241.0,
+      "GamesPlayed": 3,
+      "OffPoss": 9,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630188-1631207-1641763",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Jalen Smith, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630245-1630581-1631207-1641763-202696",
+      "Name": "Ayo Dosunmu, Josh Giddey, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 4,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630188-1630200-1630581-1641763",
+      "Name": "Kevin Huerter, Jalen Smith, Tre Jones, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 239.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630245-1630581-1641824-202696",
+      "Name": "Lonzo Ball, Ayo Dosunmu, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 235.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630188-1630200-1631207-1641763",
+      "Name": "Jevon Carter, Jalen Smith, Tre Jones, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629659-1641763-1641824-202696",
+      "Name": "Kevin Huerter, Talen Horton-Tucker, Julian Phillips, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 231.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630188-1630581-1641824",
+      "Name": "Kevin Huerter, Coby White, Jalen Smith, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 229.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630200-1630581-1641824",
+      "Name": "Kevin Huerter, Coby White, Tre Jones, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628380-1628989-1630200-1630581",
+      "Name": "Lonzo Ball, Zach Collins, Kevin Huerter, Tre Jones, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 224.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1631207-1641824-202696",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 224.0,
+      "GamesPlayed": 4,
+      "OffPoss": 9,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629659-1630172-1641824",
+      "Name": "Zach Collins, Kevin Huerter, Talen Horton-Tucker, Patrick Williams, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 221.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1630200-1631207-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Tre Jones, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630188-1641763-203897",
+      "Name": "Coby White, Talen Horton-Tucker, Jalen Smith, Julian Phillips, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630200-1630581-1641824",
+      "Name": "Coby White, Jalen Smith, Tre Jones, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630172-1630200",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Patrick Williams, Tre Jones",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 218.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630172-1630245-202696",
+      "Name": "Kevin Huerter, Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630200-1641763-1641824",
+      "Name": "Coby White, Jalen Smith, Tre Jones, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630245-1631207-1641763-202696",
+      "Name": "Talen Horton-Tucker, Ayo Dosunmu, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1631207-202696-203897",
+      "Name": "Lonzo Ball, Patrick Williams, Dalen Terry, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630188-1630200-1630581-1631207-1641824",
+      "Name": "Jalen Smith, Tre Jones, Josh Giddey, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 212.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630172-1630188-1630200",
+      "Name": "Zach Collins, Coby White, Patrick Williams, Jalen Smith, Tre Jones",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630172-1630245-1641763",
+      "Name": "Coby White, Talen Horton-Tucker, Patrick Williams, Ayo Dosunmu, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630245-1630581-1631207",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630188-1630245-1641763",
+      "Name": "Lonzo Ball, Coby White, Jalen Smith, Ayo Dosunmu, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630188-1630200-1630581",
+      "Name": "Kevin Huerter, Coby White, Jalen Smith, Tre Jones, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1629659-1630188-1641824",
+      "Name": "Lonzo Ball, Coby White, Talen Horton-Tucker, Jalen Smith, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630172-1630245-202696",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 208.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1630188-1630245-1630581",
+      "Name": "Lonzo Ball, Patrick Williams, Jalen Smith, Ayo Dosunmu, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630188-1630604-1631207-1641801",
+      "Name": "Jevon Carter, Jalen Smith, E.J. Liddell, Dalen Terry, Emanuel Miller",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1628975-1630245-202696-203897",
+      "Name": "Torrey Craig, Jevon Carter, Ayo Dosunmu, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630172-1641763-202696",
+      "Name": "Coby White, Talen Horton-Tucker, Patrick Williams, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630188-1630245-1631207-1641763-203897",
+      "Name": "Jalen Smith, Ayo Dosunmu, Dalen Terry, Julian Phillips, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 3,
+      "OffPoss": 8,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628380-1630200-1630581-1631207",
+      "Name": "Lonzo Ball, Zach Collins, Tre Jones, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629659-1630188-1630581-1631207",
+      "Name": "Kevin Huerter, Talen Horton-Tucker, Jalen Smith, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630188-1630581-1641824",
+      "Name": "Coby White, Talen Horton-Tucker, Jalen Smith, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630188-1631207-1641824",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Jalen Smith, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1631207-202696-203897",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628470-1629659-1631207-202696",
+      "Name": "Lonzo Ball, Torrey Craig, Talen Horton-Tucker, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630172-1630188-203897",
+      "Name": "Lonzo Ball, Coby White, Patrick Williams, Jalen Smith, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1631207-1641763-202696",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1630200-1631207-1641824",
+      "Name": "Zach Collins, Jevon Carter, Tre Jones, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 2,
+      "OffPoss": 8,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630537-202696-203897",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Chris Duarte, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630188-1630245-1641763-1641824",
+      "Name": "Jevon Carter, Jalen Smith, Ayo Dosunmu, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1630581-1631207-1641763",
+      "Name": "Talen Horton-Tucker, Jalen Smith, Josh Giddey, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 194.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630188-1630245-1641824",
+      "Name": "Lonzo Ball, Coby White, Jalen Smith, Ayo Dosunmu, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630188-1641824-203897",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Jalen Smith, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630581-1641824-202696",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 12
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1631207-1641824-202696-203897",
+      "Name": "Patrick Williams, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630200-1641763-1641824",
+      "Name": "Kevin Huerter, Coby White, Tre Jones, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630172-1630188-1630581",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Patrick Williams, Jalen Smith, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1630172-1630581-1641824",
+      "Name": "Zach Collins, Kevin Huerter, Patrick Williams, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630188-1630245-1641763",
+      "Name": "Jevon Carter, Coby White, Jalen Smith, Ayo Dosunmu, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1629659-1641824-202696",
+      "Name": "Kevin Huerter, Coby White, Talen Horton-Tucker, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630245-1630581-202696",
+      "Name": "Coby White, Talen Horton-Tucker, Ayo Dosunmu, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 1,
+      "OffPoss": 9,
+      "Points": 15
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630188-1630200-1630245-1630581",
+      "Name": "Kevin Huerter, Jalen Smith, Tre Jones, Ayo Dosunmu, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630245-1631207-1641763",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 4,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629659-1630200-1630581-1641824",
+      "Name": "Zach Collins, Talen Horton-Tucker, Tre Jones, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630245-1631207-202696",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630245-1630581-1631207-202696-203897",
+      "Name": "Ayo Dosunmu, Josh Giddey, Dalen Terry, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1629659-1630200-1641824",
+      "Name": "Zach Collins, Jevon Carter, Talen Horton-Tucker, Tre Jones, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1641824-202696-203897",
+      "Name": "Coby White, Talen Horton-Tucker, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628380-1629632-1630581-1631207",
+      "Name": "Lonzo Ball, Zach Collins, Coby White, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1631207-1641763-1641766",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Julian Phillips, Adama Sanogo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1630245-1630537-1641824",
+      "Name": "Talen Horton-Tucker, Jalen Smith, Ayo Dosunmu, Chris Duarte, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 13
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630245-1631207-1641824-202696",
+      "Name": "Patrick Williams, Ayo Dosunmu, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 13
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1629659-1630172-1630581-203897",
+      "Name": "Torrey Craig, Talen Horton-Tucker, Patrick Williams, Josh Giddey, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 177.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630188-1641824-203897",
+      "Name": "Lonzo Ball, Coby White, Jalen Smith, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 13
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1630188-1641824-203897",
+      "Name": "Lonzo Ball, Patrick Williams, Jalen Smith, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630200-1630245-1641763-202696",
+      "Name": "Coby White, Tre Jones, Ayo Dosunmu, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1630581-1641763",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 4,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630245-1641763-1641824",
+      "Name": "Coby White, Jalen Smith, Ayo Dosunmu, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630188-1630581-203897",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Jalen Smith, Josh Giddey, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630581-1631207-1641824",
+      "Name": "Kevin Huerter, Coby White, Josh Giddey, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 1,
+      "OffPoss": 8,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1629659-1630581-202696",
+      "Name": "Kevin Huerter, Coby White, Talen Horton-Tucker, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630245-1641824-202696-203897",
+      "Name": "Jevon Carter, Ayo Dosunmu, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 11
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630172-1630245-1630581-202696",
+      "Name": "Kevin Huerter, Patrick Williams, Ayo Dosunmu, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630245-1641766-1641824",
+      "Name": "Coby White, Talen Horton-Tucker, Ayo Dosunmu, Adama Sanogo, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630188-1630581-1641763",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Jalen Smith, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630188-1630200-1630245-1641824",
+      "Name": "Kevin Huerter, Jalen Smith, Tre Jones, Ayo Dosunmu, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1628989-1629632-1630172",
+      "Name": "Zach Collins, Jevon Carter, Kevin Huerter, Coby White, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630172-1630245-203897",
+      "Name": "Lonzo Ball, Coby White, Patrick Williams, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628380-1628989-1629632-1641824",
+      "Name": "Lonzo Ball, Zach Collins, Kevin Huerter, Coby White, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630188-1630581-1631207-1641763-203897",
+      "Name": "Jalen Smith, Josh Giddey, Dalen Terry, Julian Phillips, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1641763-202696-203897",
+      "Name": "Lonzo Ball, Patrick Williams, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1631207-1641824-202696",
+      "Name": "Coby White, Patrick Williams, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630245-1641763-202696",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Ayo Dosunmu, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1629659-1641763-1641824",
+      "Name": "Zach Collins, Jevon Carter, Talen Horton-Tucker, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630581-1630604-1641763-203897",
+      "Name": "Coby White, Josh Giddey, E.J. Liddell, Julian Phillips, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630188-1630581-1641824-203897",
+      "Name": "Patrick Williams, Jalen Smith, Josh Giddey, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1641763-1641824-1642443",
+      "Name": "Zach Collins, Jevon Carter, Julian Phillips, Matas Buzelis, Jahmir Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630188-1630245-1631207",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Jalen Smith, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630188-1630200-1630581-1641824",
+      "Name": "Kevin Huerter, Jalen Smith, Tre Jones, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630172-202696-203897",
+      "Name": "Coby White, Talen Horton-Tucker, Patrick Williams, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630200-1630581-1641763-1641824",
+      "Name": "Kevin Huerter, Tre Jones, Josh Giddey, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 14
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629659-1630172-1630581-1641763",
+      "Name": "Zach Collins, Talen Horton-Tucker, Patrick Williams, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630200-1631207-1641824",
+      "Name": "Coby White, Patrick Williams, Tre Jones, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630581-1631207-202696",
+      "Name": "Coby White, Patrick Williams, Josh Giddey, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630172-1630188-1630245",
+      "Name": "Lonzo Ball, Coby White, Patrick Williams, Jalen Smith, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630188-1630581-203897",
+      "Name": "Coby White, Talen Horton-Tucker, Jalen Smith, Josh Giddey, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630188-1631207-1641763",
+      "Name": "Coby White, Talen Horton-Tucker, Jalen Smith, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 3,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1631207-1641763-202696-203897",
+      "Name": "Coby White, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1630200-1630581-1641763",
+      "Name": "Talen Horton-Tucker, Jalen Smith, Tre Jones, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628975-1629659-1630581-202696",
+      "Name": "Lonzo Ball, Jevon Carter, Talen Horton-Tucker, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630188-1630245-1641824",
+      "Name": "Jevon Carter, Coby White, Jalen Smith, Ayo Dosunmu, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630581-1631207-1641763-202696",
+      "Name": "Patrick Williams, Josh Giddey, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1630581-1641763-202696",
+      "Name": "Lonzo Ball, Patrick Williams, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1630188-1630245-1631207-203897",
+      "Name": "Torrey Craig, Jalen Smith, Ayo Dosunmu, Dalen Terry, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630245-1630581-1641763-202696",
+      "Name": "Lonzo Ball, Ayo Dosunmu, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1630581-1641824-202696",
+      "Name": "Coby White, Talen Horton-Tucker, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1629659-1641763-202696",
+      "Name": "Lonzo Ball, Coby White, Talen Horton-Tucker, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630188-1630245-1641824-203897",
+      "Name": "Lonzo Ball, Jalen Smith, Ayo Dosunmu, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630188-1631207-1641763",
+      "Name": "Zach Collins, Coby White, Jalen Smith, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629659-1630581-1641824-202696",
+      "Name": "Kevin Huerter, Talen Horton-Tucker, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 2,
+      "OffPoss": 6,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630200-1641763-202696",
+      "Name": "Coby White, Patrick Williams, Tre Jones, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630581-1641824-203897",
+      "Name": "Coby White, Jalen Smith, Josh Giddey, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1629659-1641763-1642443",
+      "Name": "Zach Collins, Jevon Carter, Talen Horton-Tucker, Julian Phillips, Jahmir Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1630245-203897",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 3,
+      "OffPoss": 6,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630188-1631207-1642443",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Jalen Smith, Dalen Terry, Jahmir Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1629659-1630172-1630581",
+      "Name": "Zach Collins, Coby White, Talen Horton-Tucker, Patrick Williams, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1630604-1641801-1642443",
+      "Name": "Talen Horton-Tucker, Jalen Smith, E.J. Liddell, Emanuel Miller, Jahmir Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630245-1631207-1641824-202696",
+      "Name": "Talen Horton-Tucker, Ayo Dosunmu, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630172-1641824-202696",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 3,
+      "OffPoss": 7,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630188-1630581-1641763-1641824",
+      "Name": "Kevin Huerter, Jalen Smith, Josh Giddey, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630245-1630581-1631207-1641763",
+      "Name": "Patrick Williams, Ayo Dosunmu, Josh Giddey, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630581-1631207-202696",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Josh Giddey, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 2,
+      "OffPoss": 7,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630604-1631207-1641763-1641801-1642443",
+      "Name": "E.J. Liddell, Dalen Terry, Julian Phillips, Emanuel Miller, Jahmir Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1629632-1629659-1630188-1630245",
+      "Name": "Torrey Craig, Coby White, Talen Horton-Tucker, Jalen Smith, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1631207-1641766-1641824",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Adama Sanogo, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630172-1630188-1630581",
+      "Name": "Lonzo Ball, Coby White, Patrick Williams, Jalen Smith, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630188-1641763-1641824",
+      "Name": "Jevon Carter, Coby White, Jalen Smith, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630172-1630245-1641763-1641824",
+      "Name": "Jevon Carter, Patrick Williams, Ayo Dosunmu, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630200-1630581-1641763-202696",
+      "Name": "Kevin Huerter, Tre Jones, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630245-1641766-1641824",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Adama Sanogo, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630245-1641763-202696",
+      "Name": "Jevon Carter, Coby White, Ayo Dosunmu, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1631207-1641824-202696-203897",
+      "Name": "Talen Horton-Tucker, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629659-1630200-1631207-1641824",
+      "Name": "Zach Collins, Talen Horton-Tucker, Tre Jones, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630245-1630581-1641824-202696",
+      "Name": "Kevin Huerter, Ayo Dosunmu, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628380-1628989-1630581-1641763",
+      "Name": "Lonzo Ball, Zach Collins, Kevin Huerter, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628975-1630581-1631207-202696",
+      "Name": "Lonzo Ball, Jevon Carter, Josh Giddey, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630188-1630581-203897",
+      "Name": "Lonzo Ball, Coby White, Jalen Smith, Josh Giddey, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1630188-1630245-1631207",
+      "Name": "Lonzo Ball, Patrick Williams, Jalen Smith, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1629659-1630188-1630581",
+      "Name": "Jevon Carter, Coby White, Talen Horton-Tucker, Jalen Smith, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630188-1630581-1631207-1641763",
+      "Name": "Patrick Williams, Jalen Smith, Josh Giddey, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630537-1641824-202696-203897",
+      "Name": "Lonzo Ball, Chris Duarte, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1631207-1641763-202696",
+      "Name": "Coby White, Talen Horton-Tucker, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1631207-1641763-1641824-202696",
+      "Name": "Coby White, Dalen Terry, Julian Phillips, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628470-1629632-1630581-202696",
+      "Name": "Lonzo Ball, Torrey Craig, Coby White, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1629659-1630245-202696",
+      "Name": "Lonzo Ball, Coby White, Talen Horton-Tucker, Ayo Dosunmu, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1630581-1641824-202696",
+      "Name": "Lonzo Ball, Patrick Williams, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630188-1630200-1630581-1631207",
+      "Name": "Kevin Huerter, Jalen Smith, Tre Jones, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630188-1630245-1641763-203897",
+      "Name": "Lonzo Ball, Jalen Smith, Ayo Dosunmu, Julian Phillips, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 3,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1629632-1630581-1631207-1641824",
+      "Name": "Torrey Craig, Coby White, Josh Giddey, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630188-1630200-1641763",
+      "Name": "Kevin Huerter, Coby White, Jalen Smith, Tre Jones, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1630581-1641763-1641824",
+      "Name": "Lonzo Ball, Patrick Williams, Josh Giddey, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "OffPoss": 7,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630581-1641763-1641824-202696",
+      "Name": "Lonzo Ball, Josh Giddey, Julian Phillips, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1630188-1630581-1641824",
+      "Name": "Zach Collins, Coby White, Jalen Smith, Josh Giddey, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630188-1630200-1641763",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Jalen Smith, Tre Jones, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630537-1631207-1641763-1641824",
+      "Name": "Talen Horton-Tucker, Chris Duarte, Dalen Terry, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630581-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630245-1630604-203897",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Ayo Dosunmu, E.J. Liddell, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1631207-1641763-202696-203897",
+      "Name": "Lonzo Ball, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1628975-1629659-1630537-1641824",
+      "Name": "Torrey Craig, Jevon Carter, Talen Horton-Tucker, Chris Duarte, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "OffPoss": 6,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629632-1630172-1630581",
+      "Name": "Zach Collins, Kevin Huerter, Coby White, Patrick Williams, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 9
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1631207-1641763-202696",
+      "Name": "Jevon Carter, Coby White, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630245-1630581-1631207-202696",
+      "Name": "Patrick Williams, Ayo Dosunmu, Josh Giddey, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630188-1630537-1641824",
+      "Name": "Lonzo Ball, Coby White, Jalen Smith, Chris Duarte, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1629659-1630581-1641763",
+      "Name": "Zach Collins, Coby White, Talen Horton-Tucker, Josh Giddey, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1630581-1631207-1641763-1641824",
+      "Name": "Zach Collins, Josh Giddey, Dalen Terry, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630172-1631207-1641824",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630172-1641763-1641824",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630172-1630200-1631207-1641763",
+      "Name": "Kevin Huerter, Patrick Williams, Tre Jones, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630537-1630604-1631207-1641824",
+      "Name": "Jevon Carter, Chris Duarte, E.J. Liddell, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629659-1630188-1641763-1641824",
+      "Name": "Kevin Huerter, Talen Horton-Tucker, Jalen Smith, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630188-1641763-203897",
+      "Name": "Lonzo Ball, Coby White, Jalen Smith, Julian Phillips, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630172-1630245-1641824-202696",
+      "Name": "Lonzo Ball, Patrick Williams, Ayo Dosunmu, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1630188-1630245-1630581-203897",
+      "Name": "Torrey Craig, Jalen Smith, Ayo Dosunmu, Josh Giddey, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630172-1630188-1630200-1641824",
+      "Name": "Kevin Huerter, Patrick Williams, Jalen Smith, Tre Jones, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1631207-1641763-202696",
+      "Name": "Coby White, Patrick Williams, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1631207-1641763-202696",
+      "Name": "Coby White, Jalen Smith, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1630581-1641766-1641824",
+      "Name": "Coby White, Ayo Dosunmu, Josh Giddey, Adama Sanogo, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630188-1630245-202696-203897",
+      "Name": "Patrick Williams, Jalen Smith, Ayo Dosunmu, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629659-1630188-1631207-1641824",
+      "Name": "Jevon Carter, Talen Horton-Tucker, Jalen Smith, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 2,
+      "OffPoss": 5,
+      "Points": 10
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1631207-1641824-203897",
+      "Name": "Coby White, Jalen Smith, Dalen Terry, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630245-1630581-1630604-1641824",
+      "Name": "Coby White, Ayo Dosunmu, Josh Giddey, E.J. Liddell, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630172-1631207-1641763-202696",
+      "Name": "Kevin Huerter, Patrick Williams, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630188-1631207-1641824-203897",
+      "Name": "Talen Horton-Tucker, Jalen Smith, Dalen Terry, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1629659-1641763-1641824",
+      "Name": "Zach Collins, Kevin Huerter, Talen Horton-Tucker, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1628975-1630172-202696-203897",
+      "Name": "Torrey Craig, Jevon Carter, Patrick Williams, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1641763-202696-203897",
+      "Name": "Coby White, Patrick Williams, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1630172-1630188-1631207",
+      "Name": "Zach Collins, Jevon Carter, Patrick Williams, Jalen Smith, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630200-1631207-1641763-202696",
+      "Name": "Kevin Huerter, Tre Jones, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630200-1631207-202696",
+      "Name": "Coby White, Patrick Williams, Tre Jones, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630200-1630581-1641824-202696",
+      "Name": "Coby White, Tre Jones, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630172-1630188-203897",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Patrick Williams, Jalen Smith, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630188-1630200-1641824",
+      "Name": "Coby White, Patrick Williams, Jalen Smith, Tre Jones, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1629632-1630172-202696-203897",
+      "Name": "Torrey Craig, Coby White, Patrick Williams, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630188-1630581-1631207-203897",
+      "Name": "Patrick Williams, Jalen Smith, Josh Giddey, Dalen Terry, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630172-1630200-1630581-1641824-202696",
+      "Name": "Patrick Williams, Tre Jones, Josh Giddey, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "OffPoss": 5,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629659-1630172-1630200-202696",
+      "Name": "Kevin Huerter, Talen Horton-Tucker, Patrick Williams, Tre Jones, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1629659-1630172-1630188",
+      "Name": "Zach Collins, Jevon Carter, Talen Horton-Tucker, Patrick Williams, Jalen Smith",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1629659-1630172-1641824",
+      "Name": "Zach Collins, Jevon Carter, Talen Horton-Tucker, Patrick Williams, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1630172-1631207-1641763",
+      "Name": "Zach Collins, Kevin Huerter, Patrick Williams, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1641766-1641824-203897",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Adama Sanogo, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1630245-1641763-202696",
+      "Name": "Lonzo Ball, Coby White, Ayo Dosunmu, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630188-1631207-1641824-203897",
+      "Name": "Lonzo Ball, Jalen Smith, Dalen Terry, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630245-1631207-1641824",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630581-1641766-1641824-203897",
+      "Name": "Coby White, Josh Giddey, Adama Sanogo, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630188-1630581-1641763-203897",
+      "Name": "Lonzo Ball, Jalen Smith, Josh Giddey, Julian Phillips, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629632-1629659-1630172-202696",
+      "Name": "Lonzo Ball, Coby White, Talen Horton-Tucker, Patrick Williams, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630172-1630188-1630245",
+      "Name": "Kevin Huerter, Coby White, Patrick Williams, Jalen Smith, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630245-1630581-202696",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Ayo Dosunmu, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630245-1631207-1641766",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry, Adama Sanogo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1629632-1629659-1630172-1641763",
+      "Name": "Zach Collins, Coby White, Talen Horton-Tucker, Patrick Williams, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1628975-1629632-1630581-202696",
+      "Name": "Lonzo Ball, Jevon Carter, Coby White, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630581-1631207-1641763-202696",
+      "Name": "Jevon Carter, Josh Giddey, Dalen Terry, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1641763-1641824-202696-203897",
+      "Name": "Lonzo Ball, Julian Phillips, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630172-1630188-203897",
+      "Name": "Jevon Carter, Coby White, Patrick Williams, Jalen Smith, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1641763-202696-203897",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Julian Phillips, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 2,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630188-1630200-1630245-1641763",
+      "Name": "Coby White, Jalen Smith, Tre Jones, Ayo Dosunmu, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628470-1628975-1629632-1630188-1630581",
+      "Name": "Torrey Craig, Jevon Carter, Coby White, Jalen Smith, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 7
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630245-1630581-202696",
+      "Name": "Kevin Huerter, Coby White, Ayo Dosunmu, Josh Giddey, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630172-1630581-1631207-1641763",
+      "Name": "Coby White, Patrick Williams, Josh Giddey, Dalen Terry, Julian Phillips",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630245-1630581-1630604-203897",
+      "Name": "Talen Horton-Tucker, Ayo Dosunmu, Josh Giddey, E.J. Liddell, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 1
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1629659-1630245-1641824-202696",
+      "Name": "Lonzo Ball, Talen Horton-Tucker, Ayo Dosunmu, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630245-1630581-1641763-202696",
+      "Name": "Kevin Huerter, Ayo Dosunmu, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628975-1629659-1630172-1630581",
+      "Name": "Zach Collins, Jevon Carter, Talen Horton-Tucker, Patrick Williams, Josh Giddey",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630172-1630537-1641763-1641824",
+      "Name": "Jevon Carter, Patrick Williams, Chris Duarte, Julian Phillips, Matas Buzelis",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1629632-1630581-1642443-202696",
+      "Name": "Kevin Huerter, Coby White, Josh Giddey, Jahmir Young, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1630245-1631207-1641766-1641824-203897",
+      "Name": "Ayo Dosunmu, Dalen Terry, Adama Sanogo, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628366-1630188-1630245-1630581-203897",
+      "Name": "Lonzo Ball, Jalen Smith, Ayo Dosunmu, Josh Giddey, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630172-1630581-1641763-202696",
+      "Name": "Kevin Huerter, Patrick Williams, Josh Giddey, Julian Phillips, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 2,
+      "OffPoss": 3,
+      "Points": 8
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628989-1630200-1631207-1641824-202696",
+      "Name": "Kevin Huerter, Tre Jones, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1630537-1641824-202696-203897",
+      "Name": "Coby White, Chris Duarte, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630172-1630200-1631207-202696",
+      "Name": "Talen Horton-Tucker, Patrick Williams, Tre Jones, Dalen Terry, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 3
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1630172-1630188-1631207-1642443",
+      "Name": "Jevon Carter, Patrick Williams, Jalen Smith, Dalen Terry, Jahmir Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 2
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628975-1629632-1630188-1641824-203897",
+      "Name": "Jevon Carter, Coby White, Jalen Smith, Matas Buzelis, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1629659-1631207-1641824-202696",
+      "Name": "Coby White, Talen Horton-Tucker, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629659-1630245-1641824-202696-203897",
+      "Name": "Talen Horton-Tucker, Ayo Dosunmu, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 6
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1629632-1631207-1641824-202696-203897",
+      "Name": "Coby White, Dalen Terry, Matas Buzelis, Nikola Vu\u010devi\u0107, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "OffPoss": 4,
+      "Points": 4
+    },
+    {
+      "Season": "2024-25",
+      "EntityId": "1628380-1628989-1630172-1630581-1631207",
+      "Name": "Zach Collins, Kevin Huerter, Patrick Williams, Josh Giddey, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "OffPoss": 3,
+      "Points": 5
+    }
+  ]
+}

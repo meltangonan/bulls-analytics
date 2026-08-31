@@ -1,0 +1,4809 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2003-04",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2003-04",
+    "RowsReturned": 500,
+    "RowsWithDefPoss": 500,
+    "RowsSkippedMissingMetrics": 21,
+    "LastRowDefPoss": 2,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-383-966",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13797.0,
+      "GamesPlayed": 18,
+      "DefPoss": 423,
+      "OpponentPoints": 450
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2550-966",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13382.0,
+      "GamesPlayed": 21,
+      "DefPoss": 410,
+      "OpponentPoints": 456
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2550-2669",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Kirk Hinrich, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12695.0,
+      "GamesPlayed": 18,
+      "DefPoss": 403,
+      "OpponentPoints": 392
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2550-2648",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8344.0,
+      "GamesPlayed": 20,
+      "DefPoss": 268,
+      "OpponentPoints": 304
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2550-383",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5384.0,
+      "GamesPlayed": 10,
+      "DefPoss": 161,
+      "OpponentPoints": 167
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-2201-2550",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Eddy Curry, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3913.0,
+      "GamesPlayed": 17,
+      "DefPoss": 121,
+      "OpponentPoints": 143
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2201-2550-383-923",
+      "Name": "Jalen Rose, Eddy Curry, Kirk Hinrich, Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3891.0,
+      "GamesPlayed": 5,
+      "DefPoss": 120,
+      "OpponentPoints": 125
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-2550-966",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3276.0,
+      "GamesPlayed": 13,
+      "DefPoss": 103,
+      "OpponentPoints": 95
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2199-2201-383",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Eddy Curry, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3230.0,
+      "GamesPlayed": 4,
+      "DefPoss": 107,
+      "OpponentPoints": 99
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-383-916",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3020.0,
+      "GamesPlayed": 6,
+      "DefPoss": 96,
+      "OpponentPoints": 81
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2669-383",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2894.0,
+      "GamesPlayed": 5,
+      "DefPoss": 88,
+      "OpponentPoints": 85
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2199-2201-383-937",
+      "Name": "Jalen Rose, Tyson Chandler, Eddy Curry, Kendall Gill, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2646.0,
+      "GamesPlayed": 5,
+      "DefPoss": 92,
+      "OpponentPoints": 109
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2550-937",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Kirk Hinrich, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2598.0,
+      "GamesPlayed": 5,
+      "DefPoss": 77,
+      "OpponentPoints": 93
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2457-2669",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Jannero Pargo, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2015.0,
+      "GamesPlayed": 3,
+      "DefPoss": 68,
+      "OpponentPoints": 63
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2199-2201-2550",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Eddy Curry, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1961.0,
+      "GamesPlayed": 6,
+      "DefPoss": 62,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-2550-966",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1872.0,
+      "GamesPlayed": 9,
+      "DefPoss": 57,
+      "OpponentPoints": 60
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2199-2550-383",
+      "Name": "Jamal Crawford, Antonio Davis, Tyson Chandler, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1559.0,
+      "GamesPlayed": 4,
+      "DefPoss": 50,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2550-383-923",
+      "Name": "Eddie Robinson, Eddy Curry, Kirk Hinrich, Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1522.0,
+      "GamesPlayed": 3,
+      "DefPoss": 50,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2199-2201-923",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Eddy Curry, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1441.0,
+      "GamesPlayed": 2,
+      "DefPoss": 43,
+      "OpponentPoints": 51
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-916-966",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1437.0,
+      "GamesPlayed": 6,
+      "DefPoss": 46,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2550-2648-2669",
+      "Name": "Marcus Fizer, Jamal Crawford, Kirk Hinrich, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1396.0,
+      "GamesPlayed": 1,
+      "DefPoss": 45,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2423-2550-2669",
+      "Name": "Marcus Fizer, Jamal Crawford, Chris Jefferies, Kirk Hinrich, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1360.0,
+      "GamesPlayed": 3,
+      "DefPoss": 43,
+      "OpponentPoints": 56
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2201-383-916",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1344.0,
+      "GamesPlayed": 2,
+      "DefPoss": 43,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2199-2550-2669",
+      "Name": "Jamal Crawford, Antonio Davis, Tyson Chandler, Kirk Hinrich, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1305.0,
+      "GamesPlayed": 8,
+      "DefPoss": 46,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2201-2457-2648",
+      "Name": "Marcus Fizer, Jamal Crawford, Eddy Curry, Jannero Pargo, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1282.0,
+      "GamesPlayed": 6,
+      "DefPoss": 45,
+      "OpponentPoints": 51
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2201-2550-2669",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Kirk Hinrich, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1272.0,
+      "GamesPlayed": 7,
+      "DefPoss": 41,
+      "OpponentPoints": 55
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-213-2457-2550-2648",
+      "Name": "Marcus Fizer, Antonio Davis, Jannero Pargo, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1261.0,
+      "GamesPlayed": 4,
+      "DefPoss": 41,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2550-383-916-966",
+      "Name": "Jamal Crawford, Kirk Hinrich, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1235.0,
+      "GamesPlayed": 4,
+      "DefPoss": 38,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2201-383-923",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1230.0,
+      "GamesPlayed": 4,
+      "DefPoss": 38,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2550-2648-916",
+      "Name": "Eddie Robinson, Eddy Curry, Kirk Hinrich, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1156.0,
+      "GamesPlayed": 3,
+      "DefPoss": 33,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2201-2550-966",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1139.0,
+      "GamesPlayed": 8,
+      "DefPoss": 41,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-2648-966",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1119.0,
+      "GamesPlayed": 5,
+      "DefPoss": 32,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2457-2550",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1107.0,
+      "GamesPlayed": 3,
+      "DefPoss": 37,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2199-916-923",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1093.0,
+      "GamesPlayed": 2,
+      "DefPoss": 35,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-213-2550-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Antonio Davis, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1080.0,
+      "GamesPlayed": 2,
+      "DefPoss": 29,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-213-2550-383",
+      "Name": "Marcus Fizer, Jamal Crawford, Antonio Davis, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1050.0,
+      "GamesPlayed": 4,
+      "DefPoss": 35,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2037-2199-916",
+      "Name": "Rick Brunson, Eddie Robinson, Jamal Crawford, Tyson Chandler, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1046.0,
+      "GamesPlayed": 6,
+      "DefPoss": 30,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-2550-916",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1033.0,
+      "GamesPlayed": 8,
+      "DefPoss": 31,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-383-916",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1017.0,
+      "GamesPlayed": 4,
+      "DefPoss": 31,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2201-2437-937",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Lonny Baxter, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1000.0,
+      "GamesPlayed": 3,
+      "DefPoss": 33,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2201-2550-383-966",
+      "Name": "Antonio Davis, Eddy Curry, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 972.0,
+      "GamesPlayed": 4,
+      "DefPoss": 32,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-2648-916",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 936.0,
+      "GamesPlayed": 3,
+      "DefPoss": 31,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2033-2199-2648",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Tyson Chandler, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 934.0,
+      "GamesPlayed": 3,
+      "DefPoss": 31,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2201-2550-2648",
+      "Name": "Eddie Robinson, Antonio Davis, Eddy Curry, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 916.0,
+      "GamesPlayed": 5,
+      "DefPoss": 30,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2423-2550",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Chris Jefferies, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 913.0,
+      "GamesPlayed": 1,
+      "DefPoss": 33,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-2669-966",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Linton Johnson, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 896.0,
+      "GamesPlayed": 2,
+      "DefPoss": 30,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2457-2648",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Jannero Pargo, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 894.0,
+      "GamesPlayed": 5,
+      "DefPoss": 32,
+      "OpponentPoints": 41
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2199-2550-966",
+      "Name": "Jamal Crawford, Antonio Davis, Tyson Chandler, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 867.0,
+      "GamesPlayed": 6,
+      "DefPoss": 24,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-2199-2550",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Tyson Chandler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 858.0,
+      "GamesPlayed": 4,
+      "DefPoss": 26,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2201-383-923-937",
+      "Name": "Jalen Rose, Eddy Curry, Kendall Gill, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 850.0,
+      "GamesPlayed": 1,
+      "DefPoss": 23,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2199-2550-916",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 778.0,
+      "GamesPlayed": 3,
+      "DefPoss": 23,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-213-2550-916",
+      "Name": "Marcus Fizer, Jamal Crawford, Antonio Davis, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 774.0,
+      "GamesPlayed": 3,
+      "DefPoss": 23,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2033-2423-966",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Chris Jefferies, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 763.0,
+      "GamesPlayed": 2,
+      "DefPoss": 23,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2033-2037-916",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Jamal Crawford, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 762.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2550-916-966",
+      "Name": "Jamal Crawford, Eddy Curry, Kirk Hinrich, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 762.0,
+      "GamesPlayed": 5,
+      "DefPoss": 23,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2423-2457-2550-2648-2669",
+      "Name": "Chris Jefferies, Jannero Pargo, Kirk Hinrich, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 751.0,
+      "GamesPlayed": 1,
+      "DefPoss": 29,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-213-2550-383-966",
+      "Name": "Marcus Fizer, Antonio Davis, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 742.0,
+      "GamesPlayed": 4,
+      "DefPoss": 23,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2201-923-937",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 738.0,
+      "GamesPlayed": 3,
+      "DefPoss": 25,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2201-2550-383",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 737.0,
+      "GamesPlayed": 5,
+      "DefPoss": 24,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2550-2648-966",
+      "Name": "Jamal Crawford, Eddy Curry, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 723.0,
+      "GamesPlayed": 5,
+      "DefPoss": 26,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-213-2201",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Antonio Davis, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 705.0,
+      "GamesPlayed": 2,
+      "DefPoss": 23,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2201-2457-2550-2648",
+      "Name": "Antonio Davis, Eddy Curry, Jannero Pargo, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 704.0,
+      "GamesPlayed": 4,
+      "DefPoss": 23,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2199-2550-2648",
+      "Name": "Jamal Crawford, Antonio Davis, Tyson Chandler, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 703.0,
+      "GamesPlayed": 3,
+      "DefPoss": 23,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2201-2437-2550-383",
+      "Name": "Jalen Rose, Eddy Curry, Lonny Baxter, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 701.0,
+      "GamesPlayed": 3,
+      "DefPoss": 23,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2201-2550-2648-383",
+      "Name": "Antonio Davis, Eddy Curry, Kirk Hinrich, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 698.0,
+      "GamesPlayed": 5,
+      "DefPoss": 21,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2199-2550-2669-383",
+      "Name": "Antonio Davis, Tyson Chandler, Kirk Hinrich, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 695.0,
+      "GamesPlayed": 4,
+      "DefPoss": 23,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2669-383-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Linton Johnson, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 686.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-213-2550-966",
+      "Name": "Rick Brunson, Eddie Robinson, Antonio Davis, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 681.0,
+      "GamesPlayed": 3,
+      "DefPoss": 22,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-213-2457-2648",
+      "Name": "Marcus Fizer, Jamal Crawford, Antonio Davis, Jannero Pargo, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 674.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2201-2550-2648-2669",
+      "Name": "Antonio Davis, Eddy Curry, Kirk Hinrich, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 674.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-213-2550-966",
+      "Name": "Rick Brunson, Jamal Crawford, Antonio Davis, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 672.0,
+      "GamesPlayed": 3,
+      "DefPoss": 22,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2033-383-916",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 668.0,
+      "GamesPlayed": 1,
+      "DefPoss": 19,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2550-916-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Kirk Hinrich, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 665.0,
+      "GamesPlayed": 1,
+      "DefPoss": 22,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2201-2550-916",
+      "Name": "Marcus Fizer, Jamal Crawford, Eddy Curry, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 651.0,
+      "GamesPlayed": 4,
+      "DefPoss": 24,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2201-2457-2550-2648-2669",
+      "Name": "Eddy Curry, Jannero Pargo, Kirk Hinrich, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 650.0,
+      "GamesPlayed": 1,
+      "DefPoss": 21,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2037-2201-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Eddy Curry, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 643.0,
+      "GamesPlayed": 5,
+      "DefPoss": 22,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-213-2199-2669",
+      "Name": "Rick Brunson, Jamal Crawford, Antonio Davis, Tyson Chandler, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 630.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-2550-923",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Kirk Hinrich, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 623.0,
+      "GamesPlayed": 1,
+      "DefPoss": 22,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2423-2457-2550-2648",
+      "Name": "Marcus Fizer, Chris Jefferies, Jannero Pargo, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 623.0,
+      "GamesPlayed": 1,
+      "DefPoss": 19,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2550-916-966",
+      "Name": "Eddie Robinson, Jamal Crawford, Kirk Hinrich, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 619.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2550-383-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 615.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-213-2550-383-966",
+      "Name": "Rick Brunson, Antonio Davis, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 614.0,
+      "GamesPlayed": 2,
+      "DefPoss": 19,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2201-2648-916",
+      "Name": "Rick Brunson, Marcus Fizer, Eddy Curry, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 610.0,
+      "GamesPlayed": 1,
+      "DefPoss": 21,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2201-2550-2648",
+      "Name": "Marcus Fizer, Jamal Crawford, Eddy Curry, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 604.0,
+      "GamesPlayed": 6,
+      "DefPoss": 21,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2199-2648-2669",
+      "Name": "Jamal Crawford, Antonio Davis, Tyson Chandler, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 603.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2321-2457-2648-966",
+      "Name": "Tyson Chandler, Paul Shirley, Jannero Pargo, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 590.0,
+      "GamesPlayed": 1,
+      "DefPoss": 19,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2199-2457-2550",
+      "Name": "Marcus Fizer, Jamal Crawford, Tyson Chandler, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 571.0,
+      "GamesPlayed": 1,
+      "DefPoss": 17,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2550-383-916",
+      "Name": "Eddie Robinson, Eddy Curry, Kirk Hinrich, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 570.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2550-2648-966",
+      "Name": "Eddie Robinson, Eddy Curry, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 565.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2033-2199-937",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Tyson Chandler, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 559.0,
+      "GamesPlayed": 1,
+      "DefPoss": 19,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2201-2550-916",
+      "Name": "Rick Brunson, Eddie Robinson, Eddy Curry, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 558.0,
+      "GamesPlayed": 1,
+      "DefPoss": 16,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-213-2423-2550",
+      "Name": "Marcus Fizer, Jamal Crawford, Antonio Davis, Chris Jefferies, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 545.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2648-2669",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 545.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2199-383-916-937",
+      "Name": "Jalen Rose, Tyson Chandler, Kendall Gill, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 540.0,
+      "GamesPlayed": 2,
+      "DefPoss": 20,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2199-2550-2648-2669",
+      "Name": "Antonio Davis, Tyson Chandler, Kirk Hinrich, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 539.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2033-2037-966",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Jamal Crawford, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 527.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2201-2550-2648",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 521.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2423-2457-2648",
+      "Name": "Marcus Fizer, Jamal Crawford, Chris Jefferies, Jannero Pargo, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 516.0,
+      "GamesPlayed": 1,
+      "DefPoss": 17,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2423-2550-916",
+      "Name": "Jamal Crawford, Antonio Davis, Chris Jefferies, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 514.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2201-2550-2669-383",
+      "Name": "Antonio Davis, Eddy Curry, Kirk Hinrich, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 510.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2037-2201-966",
+      "Name": "Rick Brunson, Eddie Robinson, Jamal Crawford, Eddy Curry, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 506.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2550-383-966",
+      "Name": "Eddie Robinson, Antonio Davis, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 499.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-383-916-923",
+      "Name": "Jamal Crawford, Tyson Chandler, Kendall Gill, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 497.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-213-2201-2550",
+      "Name": "Eddie Robinson, Marcus Fizer, Antonio Davis, Eddy Curry, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 493.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-2550-916",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 492.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2037-2199-2201",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Tyson Chandler, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 486.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2199-2550-2648",
+      "Name": "Eddie Robinson, Antonio Davis, Tyson Chandler, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 475.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2201-923-937",
+      "Name": "Jalen Rose, Eddie Robinson, Eddy Curry, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 471.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-383-916-923",
+      "Name": "Jalen Rose, Jamal Crawford, Kendall Gill, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 462.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2201-2648-2669",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 462.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2550-2669-383-966",
+      "Name": "Tyson Chandler, Kirk Hinrich, Linton Johnson, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 460.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2423-2550-916-966",
+      "Name": "Jamal Crawford, Chris Jefferies, Kirk Hinrich, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 458.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2201-2550-2648-2669",
+      "Name": "Tyson Chandler, Eddy Curry, Kirk Hinrich, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 453.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2201-916-937",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 452.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2037-213-383",
+      "Name": "Rick Brunson, Marcus Fizer, Jamal Crawford, Antonio Davis, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 450.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2321-2648-383",
+      "Name": "Jamal Crawford, Tyson Chandler, Paul Shirley, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 445.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2037-2201-916",
+      "Name": "Rick Brunson, Eddie Robinson, Jamal Crawford, Eddy Curry, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 433.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-2648-916",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 433.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2201-2550-2648-966",
+      "Name": "Antonio Davis, Eddy Curry, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 433.0,
+      "GamesPlayed": 1,
+      "DefPoss": 15,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-213-383-966",
+      "Name": "Rick Brunson, Jamal Crawford, Antonio Davis, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 432.0,
+      "GamesPlayed": 4,
+      "DefPoss": 11,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-2437-2550",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Lonny Baxter, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 432.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2037-213-966",
+      "Name": "Rick Brunson, Eddie Robinson, Jamal Crawford, Antonio Davis, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 419.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2199-2201-937",
+      "Name": "Jalen Rose, Eddie Robinson, Tyson Chandler, Eddy Curry, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 411.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2201-2550-383-966",
+      "Name": "Marcus Fizer, Eddy Curry, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 405.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2201-2437-923",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Lonny Baxter, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 404.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-213-2550-383",
+      "Name": "Rick Brunson, Marcus Fizer, Antonio Davis, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 400.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2321-2550-2669-383",
+      "Name": "Antonio Davis, Paul Shirley, Kirk Hinrich, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 397.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2201-2423-2550",
+      "Name": "Marcus Fizer, Jamal Crawford, Eddy Curry, Chris Jefferies, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 393.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2321-2550-2669-383",
+      "Name": "Tyson Chandler, Paul Shirley, Kirk Hinrich, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 392.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2550-383-966",
+      "Name": "Rick Brunson, Marcus Fizer, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 389.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-2201-383",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Eddy Curry, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 389.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-2550-916",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 387.0,
+      "GamesPlayed": 5,
+      "DefPoss": 13,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2550-383-916-937-966",
+      "Name": "Kirk Hinrich, Kendall Gill, Corie Blount, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 387.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2201-2550-923-937",
+      "Name": "Jalen Rose, Eddy Curry, Kirk Hinrich, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 382.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2199-2321-2648-383",
+      "Name": "Rick Brunson, Tyson Chandler, Paul Shirley, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 381.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2199-2201-2550-383",
+      "Name": "Jalen Rose, Tyson Chandler, Eddy Curry, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 380.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2201-2550-383",
+      "Name": "Eddie Robinson, Antonio Davis, Eddy Curry, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 375.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2550-937-966",
+      "Name": "Jamal Crawford, Eddy Curry, Kirk Hinrich, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 368.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2199-383-923-937",
+      "Name": "Jalen Rose, Tyson Chandler, Kendall Gill, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 366.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2201-2550-383",
+      "Name": "Marcus Fizer, Jamal Crawford, Eddy Curry, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 362.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2199-383-923",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 358.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2550-383-916",
+      "Name": "Eddie Robinson, Antonio Davis, Kirk Hinrich, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 358.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2201-2457-2648-383",
+      "Name": "Marcus Fizer, Eddy Curry, Jannero Pargo, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 357.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-2201-2550",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Eddy Curry, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 355.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2437-2550-383",
+      "Name": "Eddie Robinson, Eddy Curry, Lonny Baxter, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 351.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2437-923-937",
+      "Name": "Eddie Robinson, Jamal Crawford, Lonny Baxter, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 350.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-213-2201-2457",
+      "Name": "Marcus Fizer, Jamal Crawford, Antonio Davis, Eddy Curry, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 344.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2550-383-966",
+      "Name": "Jamal Crawford, Eddy Curry, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 342.0,
+      "GamesPlayed": 5,
+      "DefPoss": 13,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2199-2321-2669-383",
+      "Name": "Rick Brunson, Tyson Chandler, Paul Shirley, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 339.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-383-966",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 339.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-923-937",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 333.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-213-2199-2550",
+      "Name": "Marcus Fizer, Jamal Crawford, Antonio Davis, Tyson Chandler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-213-2201-2550",
+      "Name": "Marcus Fizer, Jamal Crawford, Antonio Davis, Eddy Curry, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2201-2648-383",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 329.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-2648-966",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 326.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-383-923-937",
+      "Name": "Jamal Crawford, Eddy Curry, Kendall Gill, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 322.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2550-383-966",
+      "Name": "Eddie Robinson, Eddy Curry, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 319.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2550-916-923",
+      "Name": "Jalen Rose, Jamal Crawford, Kirk Hinrich, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 318.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2199-2550-383-923",
+      "Name": "Jalen Rose, Tyson Chandler, Kirk Hinrich, Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 318.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2199-383-916",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 317.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2201-2550-2669",
+      "Name": "Marcus Fizer, Jamal Crawford, Eddy Curry, Kirk Hinrich, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 317.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2550-2648-383-966",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ronald Dupree, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 317.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2037-2201-916",
+      "Name": "Rick Brunson, Marcus Fizer, Jamal Crawford, Eddy Curry, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2427-383-923",
+      "Name": "Eddie Robinson, Marcus Fizer, Roger Mason Jr., Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 314.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2457-2648-2669-966",
+      "Name": "Eddie Robinson, Jannero Pargo, Ronald Dupree, Linton Johnson, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 312.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-383-966",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 311.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2457-2550-2648",
+      "Name": "Marcus Fizer, Jamal Crawford, Jannero Pargo, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 310.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2550-2669-916-966",
+      "Name": "Jamal Crawford, Kirk Hinrich, Linton Johnson, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 310.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-923-937",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 306.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-383-916-937-966",
+      "Name": "Marcus Fizer, Kendall Gill, Corie Blount, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 306.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2199-2201-2550-2648",
+      "Name": "Eddie Robinson, Tyson Chandler, Eddy Curry, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 302.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2423-2550-2669-966",
+      "Name": "Jamal Crawford, Chris Jefferies, Kirk Hinrich, Linton Johnson, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 301.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2199-2648-916",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 299.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2437-2550-916-923",
+      "Name": "Eddie Robinson, Lonny Baxter, Kirk Hinrich, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 296.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2550-2648-916",
+      "Name": "Jamal Crawford, Eddy Curry, Kirk Hinrich, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 296.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-916-923-937",
+      "Name": "Jalen Rose, Eddie Robinson, Corie Blount, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 295.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2199-2201-2550",
+      "Name": "Eddie Robinson, Marcus Fizer, Tyson Chandler, Eddy Curry, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 295.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2457-2648-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Jannero Pargo, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 293.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-2423-2648-966",
+      "Name": "Rick Brunson, Jamal Crawford, Chris Jefferies, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 290.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2201-2550-966",
+      "Name": "Eddie Robinson, Marcus Fizer, Eddy Curry, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 289.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2457-2648-2669",
+      "Name": "Marcus Fizer, Jamal Crawford, Jannero Pargo, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 288.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2423-916-966",
+      "Name": "Rick Brunson, Eddie Robinson, Chris Jefferies, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 281.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2201-2550-2648-383-966",
+      "Name": "Eddy Curry, Kirk Hinrich, Ronald Dupree, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-213-2550",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Antonio Davis, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-213-2199-2550",
+      "Name": "Eddie Robinson, Marcus Fizer, Antonio Davis, Tyson Chandler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-213-2457-2669-383",
+      "Name": "Marcus Fizer, Antonio Davis, Jannero Pargo, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2437-2550-923",
+      "Name": "Eddie Robinson, Eddy Curry, Lonny Baxter, Kirk Hinrich, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 271.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2199-2201-2648",
+      "Name": "Jamal Crawford, Antonio Davis, Tyson Chandler, Eddy Curry, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 271.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2199-2550-2648-966",
+      "Name": "Eddie Robinson, Tyson Chandler, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2648-966",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-213-2199-2648",
+      "Name": "Rick Brunson, Jamal Crawford, Antonio Davis, Tyson Chandler, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 269.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-2550-2648",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 269.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-2550-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Kirk Hinrich, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 269.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2033-937-966",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2033-213-2201",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Antonio Davis, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 266.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2550-2669-966",
+      "Name": "Rick Brunson, Marcus Fizer, Kirk Hinrich, Linton Johnson, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 266.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2437-2669-916",
+      "Name": "Jalen Rose, Jamal Crawford, Lonny Baxter, Linton Johnson, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 264.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2457-2550-2648-2669",
+      "Name": "Marcus Fizer, Jannero Pargo, Kirk Hinrich, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2201-2457-2648-2669",
+      "Name": "Marcus Fizer, Eddy Curry, Jannero Pargo, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 261.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2201-2550-2648-916-937",
+      "Name": "Eddy Curry, Kirk Hinrich, Ronald Dupree, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-2437-937",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Lonny Baxter, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 258.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2427-2437-383",
+      "Name": "Eddie Robinson, Eddy Curry, Roger Mason Jr., Lonny Baxter, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 258.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2321-2457-2648-2669-383",
+      "Name": "Paul Shirley, Jannero Pargo, Ronald Dupree, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 257.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-383-916-923-937",
+      "Name": "Jalen Rose, Kendall Gill, Corie Blount, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2201-2550-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Eddy Curry, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2201-2550-916",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2037-383-966",
+      "Name": "Rick Brunson, Marcus Fizer, Jamal Crawford, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2037-2423-2669",
+      "Name": "Rick Brunson, Marcus Fizer, Jamal Crawford, Chris Jefferies, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2201-2550-2648-383",
+      "Name": "Tyson Chandler, Eddy Curry, Kirk Hinrich, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-2199-2201-966",
+      "Name": "Rick Brunson, Jamal Crawford, Tyson Chandler, Eddy Curry, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 251.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2199-2550-916-937",
+      "Name": "Jalen Rose, Tyson Chandler, Kirk Hinrich, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 249.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2199-2427-2437",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Roger Mason Jr., Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 249.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2550-2648-2669",
+      "Name": "Jamal Crawford, Eddy Curry, Kirk Hinrich, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 246.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-2423-2669-966",
+      "Name": "Rick Brunson, Jamal Crawford, Chris Jefferies, Linton Johnson, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 245.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2437-916-937",
+      "Name": "Jalen Rose, Jamal Crawford, Lonny Baxter, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2437-2550-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Lonny Baxter, Kirk Hinrich, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2427-916-923",
+      "Name": "Eddie Robinson, Marcus Fizer, Roger Mason Jr., Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2321-2648-2669",
+      "Name": "Jamal Crawford, Tyson Chandler, Paul Shirley, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2550-2648-383-966",
+      "Name": "Antonio Davis, Kirk Hinrich, Ronald Dupree, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2550-383-923-937",
+      "Name": "Jalen Rose, Kirk Hinrich, Kendall Gill, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 242.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2199-2550-916",
+      "Name": "Eddie Robinson, Marcus Fizer, Tyson Chandler, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 242.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2321-2457-2648-2669",
+      "Name": "Eddie Robinson, Paul Shirley, Jannero Pargo, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2550-383-916",
+      "Name": "Jamal Crawford, Eddy Curry, Kirk Hinrich, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2037-916-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 239.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2427-2437-383-923",
+      "Name": "Eddie Robinson, Roger Mason Jr., Lonny Baxter, Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 238.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2201-2550-383-923-937",
+      "Name": "Eddy Curry, Kirk Hinrich, Kendall Gill, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 238.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2550-2669-383-916-966",
+      "Name": "Kirk Hinrich, Linton Johnson, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-383-923",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-916-923-937",
+      "Name": "Eddie Robinson, Jamal Crawford, Corie Blount, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2201-2457-2648",
+      "Name": "Eddie Robinson, Antonio Davis, Eddy Curry, Jannero Pargo, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 234.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2201-2457-2550-2648-966",
+      "Name": "Eddy Curry, Jannero Pargo, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2201-383-916",
+      "Name": "Rick Brunson, Marcus Fizer, Eddy Curry, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-2437-937",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Lonny Baxter, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-213-2457-2648-2669",
+      "Name": "Marcus Fizer, Antonio Davis, Jannero Pargo, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2457-2550-2648-383",
+      "Name": "Antonio Davis, Jannero Pargo, Kirk Hinrich, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-213-383-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Antonio Davis, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2201-2648-937-966",
+      "Name": "Marcus Fizer, Eddy Curry, Ronald Dupree, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2199-2201-383-937",
+      "Name": "Eddie Robinson, Tyson Chandler, Eddy Curry, Kendall Gill, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 224.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2199-2427-2437-937",
+      "Name": "Eddie Robinson, Tyson Chandler, Roger Mason Jr., Lonny Baxter, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 224.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2550-2648-937",
+      "Name": "Eddie Robinson, Antonio Davis, Kirk Hinrich, Ronald Dupree, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2033-2037-916-937",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2199-2201-2648",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Eddy Curry, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2201-2457-2550-2648",
+      "Name": "Marcus Fizer, Eddy Curry, Jannero Pargo, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2457-2550-2669-383",
+      "Name": "Marcus Fizer, Jannero Pargo, Kirk Hinrich, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2550-916-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Kirk Hinrich, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2199-2648-966",
+      "Name": "Rick Brunson, Marcus Fizer, Tyson Chandler, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 217.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-213-2550-916",
+      "Name": "Rick Brunson, Eddie Robinson, Antonio Davis, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2201-2550-383-916",
+      "Name": "Marcus Fizer, Eddy Curry, Kirk Hinrich, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2550-383-966",
+      "Name": "Jamal Crawford, Tyson Chandler, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2201-2550-966",
+      "Name": "Eddie Robinson, Antonio Davis, Eddy Curry, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2423-2648-916",
+      "Name": "Rick Brunson, Eddie Robinson, Chris Jefferies, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2201-2550-923",
+      "Name": "Jalen Rose, Eddie Robinson, Eddy Curry, Kirk Hinrich, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 212.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2199-2648-383-966",
+      "Name": "Rick Brunson, Tyson Chandler, Ronald Dupree, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2550-383-937-966",
+      "Name": "Eddie Robinson, Kirk Hinrich, Kendall Gill, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2648-937",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Ronald Dupree, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-2201-937-966",
+      "Name": "Rick Brunson, Jamal Crawford, Eddy Curry, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2201-2457-2550",
+      "Name": "Marcus Fizer, Jamal Crawford, Eddy Curry, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2550-2669-383-916",
+      "Name": "Jamal Crawford, Kirk Hinrich, Linton Johnson, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2199-2550-2648-383",
+      "Name": "Antonio Davis, Tyson Chandler, Kirk Hinrich, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2037-213-2201",
+      "Name": "Rick Brunson, Eddie Robinson, Jamal Crawford, Antonio Davis, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2423-2648-916",
+      "Name": "Rick Brunson, Marcus Fizer, Chris Jefferies, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2437-2550-2669-383-916",
+      "Name": "Lonny Baxter, Kirk Hinrich, Linton Johnson, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2550-2648-916-966",
+      "Name": "Rick Brunson, Kirk Hinrich, Ronald Dupree, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2423-2550-2648",
+      "Name": "Marcus Fizer, Jamal Crawford, Chris Jefferies, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2550-2648-916-937-966",
+      "Name": "Kirk Hinrich, Ronald Dupree, Corie Blount, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-2550-2648",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2199-2457-2648",
+      "Name": "Jamal Crawford, Antonio Davis, Tyson Chandler, Jannero Pargo, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2550-383-966",
+      "Name": "Eddie Robinson, Marcus Fizer, Kirk Hinrich, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-383-916-923-937",
+      "Name": "Jamal Crawford, Kendall Gill, Corie Blount, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2201-2427-2437",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Roger Mason Jr., Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 201.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2201-2550-2648-383-937",
+      "Name": "Eddy Curry, Kirk Hinrich, Ronald Dupree, Kendall Gill, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 201.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2423-2550-916-966",
+      "Name": "Rick Brunson, Chris Jefferies, Kirk Hinrich, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2550-2648-966",
+      "Name": "Jamal Crawford, Tyson Chandler, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2201-2457-2648-2669",
+      "Name": "Antonio Davis, Eddy Curry, Jannero Pargo, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2033-2037-2201-937",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Eddy Curry, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2201-2423-2550",
+      "Name": "Eddie Robinson, Marcus Fizer, Eddy Curry, Chris Jefferies, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2037-2437-937",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Lonny Baxter, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2199-2201-2550",
+      "Name": "Rick Brunson, Eddie Robinson, Tyson Chandler, Eddy Curry, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2669-383-916-966",
+      "Name": "Rick Brunson, Linton Johnson, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2427-383-923",
+      "Name": "Jamal Crawford, Eddy Curry, Roger Mason Jr., Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2457-2550-2648-966",
+      "Name": "Antonio Davis, Jannero Pargo, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2199-2201-2550-937",
+      "Name": "Jalen Rose, Tyson Chandler, Eddy Curry, Kirk Hinrich, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-2201-2648",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Eddy Curry, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2321-2550-2648-2669",
+      "Name": "Tyson Chandler, Paul Shirley, Kirk Hinrich, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2550-2669-916-966",
+      "Name": "Rick Brunson, Kirk Hinrich, Linton Johnson, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-213-2457-2550-383",
+      "Name": "Marcus Fizer, Antonio Davis, Jannero Pargo, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-213-2457-2648-383",
+      "Name": "Marcus Fizer, Antonio Davis, Jannero Pargo, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2199-2201-2550",
+      "Name": "Jamal Crawford, Antonio Davis, Tyson Chandler, Eddy Curry, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2321-2457-2669-383",
+      "Name": "Tyson Chandler, Paul Shirley, Jannero Pargo, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2201-2550-916",
+      "Name": "Eddie Robinson, Marcus Fizer, Eddy Curry, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-2669-937",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Linton Johnson, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2550-383-916-923",
+      "Name": "Eddie Robinson, Kirk Hinrich, Kendall Gill, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2199-2423-2648-916",
+      "Name": "Rick Brunson, Tyson Chandler, Chris Jefferies, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2201-2648-383",
+      "Name": "Jamal Crawford, Antonio Davis, Eddy Curry, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-213-2201-2457-2550",
+      "Name": "Marcus Fizer, Antonio Davis, Eddy Curry, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2199-2648-383",
+      "Name": "Jamal Crawford, Antonio Davis, Tyson Chandler, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2201-2550-2669-383",
+      "Name": "Tyson Chandler, Eddy Curry, Kirk Hinrich, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-213-916",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Antonio Davis, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 177.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-213-2423-2550-916",
+      "Name": "Rick Brunson, Antonio Davis, Chris Jefferies, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2437-2550-916",
+      "Name": "Eddie Robinson, Eddy Curry, Lonny Baxter, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2199-2457-2648",
+      "Name": "Marcus Fizer, Jamal Crawford, Tyson Chandler, Jannero Pargo, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-2201-383-966",
+      "Name": "Rick Brunson, Jamal Crawford, Eddy Curry, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2199-2437-937",
+      "Name": "Jalen Rose, Eddie Robinson, Tyson Chandler, Lonny Baxter, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2648-937-966",
+      "Name": "Jamal Crawford, Antonio Davis, Ronald Dupree, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2669-383-966",
+      "Name": "Jamal Crawford, Eddy Curry, Linton Johnson, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2199-2550-2648",
+      "Name": "Eddie Robinson, Marcus Fizer, Tyson Chandler, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2550-2648-916-966",
+      "Name": "Eddie Robinson, Kirk Hinrich, Ronald Dupree, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2321-2457-2648-2669",
+      "Name": "Tyson Chandler, Paul Shirley, Jannero Pargo, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2201-2550-966",
+      "Name": "Rick Brunson, Marcus Fizer, Eddy Curry, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2201-2457-2550-2648",
+      "Name": "Tyson Chandler, Eddy Curry, Jannero Pargo, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2033-2550-916",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2199-2427-916-923",
+      "Name": "Eddie Robinson, Tyson Chandler, Roger Mason Jr., Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2199-2550-2648-916",
+      "Name": "Eddie Robinson, Tyson Chandler, Kirk Hinrich, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2437-2550-916",
+      "Name": "Jalen Rose, Jamal Crawford, Lonny Baxter, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-213-2550-2669-383",
+      "Name": "Marcus Fizer, Antonio Davis, Kirk Hinrich, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2201-2423-2457-2648",
+      "Name": "Antonio Davis, Eddy Curry, Chris Jefferies, Jannero Pargo, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2550-916-966",
+      "Name": "Rick Brunson, Marcus Fizer, Kirk Hinrich, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2199-2648-916",
+      "Name": "Rick Brunson, Eddie Robinson, Tyson Chandler, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2427-2437-383-916",
+      "Name": "Eddie Robinson, Roger Mason Jr., Lonny Baxter, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2648-383-966",
+      "Name": "Jamal Crawford, Antonio Davis, Ronald Dupree, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2033-2201-2550",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Eddy Curry, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-213-2550-2648",
+      "Name": "Marcus Fizer, Jamal Crawford, Antonio Davis, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 3,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-937-966",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2199-2550-2648-966",
+      "Name": "Antonio Davis, Tyson Chandler, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2550-383-916-966",
+      "Name": "Antonio Davis, Kirk Hinrich, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-213-2457-2648",
+      "Name": "Eddie Robinson, Marcus Fizer, Antonio Davis, Jannero Pargo, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2199-916-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2201-2648-2669",
+      "Name": "Marcus Fizer, Jamal Crawford, Eddy Curry, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2550-383-916-966",
+      "Name": "Marcus Fizer, Kirk Hinrich, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2199-923-937",
+      "Name": "Jalen Rose, Eddie Robinson, Tyson Chandler, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2199-2201-2550-383",
+      "Name": "Eddie Robinson, Tyson Chandler, Eddy Curry, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2550-383-916-966",
+      "Name": "Eddie Robinson, Kirk Hinrich, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2199-2427-383-923",
+      "Name": "Jalen Rose, Tyson Chandler, Roger Mason Jr., Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2648-937-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Ronald Dupree, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2033-923-937",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2201-2437-383",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Lonny Baxter, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2550-2669-966",
+      "Name": "Jamal Crawford, Eddy Curry, Kirk Hinrich, Linton Johnson, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-213-2201-2550-383",
+      "Name": "Marcus Fizer, Antonio Davis, Eddy Curry, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2321-2457-2648-2669",
+      "Name": "Jamal Crawford, Paul Shirley, Jannero Pargo, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2550-2648-383-916-966",
+      "Name": "Kirk Hinrich, Ronald Dupree, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-2550-966",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2201-2648-966",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-383-916-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Kendall Gill, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2437-2550-383-916",
+      "Name": "Eddie Robinson, Lonny Baxter, Kirk Hinrich, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-213-2201-2550-383",
+      "Name": "Rick Brunson, Antonio Davis, Eddy Curry, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2033-2037-2199",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jamal Crawford, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-213-2550-2648",
+      "Name": "Rick Brunson, Eddie Robinson, Antonio Davis, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2648-916-937",
+      "Name": "Jamal Crawford, Eddy Curry, Ronald Dupree, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2201-2321-2550-383",
+      "Name": "Antonio Davis, Eddy Curry, Paul Shirley, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2437-916-937",
+      "Name": "Eddie Robinson, Jamal Crawford, Lonny Baxter, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2423-2550-916",
+      "Name": "Eddie Robinson, Eddy Curry, Chris Jefferies, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2199-2457-2550-2648",
+      "Name": "Marcus Fizer, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2550-2648-383-937-966",
+      "Name": "Kirk Hinrich, Ronald Dupree, Kendall Gill, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-383-966",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2648-916-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Ronald Dupree, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2037-916-966",
+      "Name": "Rick Brunson, Eddie Robinson, Jamal Crawford, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2550-383-916-966",
+      "Name": "Rick Brunson, Kirk Hinrich, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-383-916",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-2201-2648-916",
+      "Name": "Rick Brunson, Jamal Crawford, Eddy Curry, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-383-937-966",
+      "Name": "Jamal Crawford, Antonio Davis, Kendall Gill, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2423-2457-2550-2669",
+      "Name": "Antonio Davis, Chris Jefferies, Jannero Pargo, Kirk Hinrich, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-213-2648-966",
+      "Name": "Rick Brunson, Eddie Robinson, Antonio Davis, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-2648-383",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2199-2201-383-923",
+      "Name": "Jalen Rose, Tyson Chandler, Eddy Curry, Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-213-2201-2669",
+      "Name": "Rick Brunson, Jamal Crawford, Antonio Davis, Eddy Curry, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2669-383-916",
+      "Name": "Jamal Crawford, Eddy Curry, Linton Johnson, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2648-916-937",
+      "Name": "Jamal Crawford, Antonio Davis, Ronald Dupree, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2437-2550-383-916",
+      "Name": "Jamal Crawford, Lonny Baxter, Kirk Hinrich, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2033-2437-2550-383",
+      "Name": "Jalen Rose, Marcus Fizer, Lonny Baxter, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2321-2457-2550-2669-383",
+      "Name": "Paul Shirley, Jannero Pargo, Kirk Hinrich, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2550-2669-916",
+      "Name": "Jamal Crawford, Eddy Curry, Kirk Hinrich, Linton Johnson, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-383-937",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Kendall Gill, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2550-2669-916",
+      "Name": "Rick Brunson, Eddie Robinson, Kirk Hinrich, Linton Johnson, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2201-2550-2648-937-966",
+      "Name": "Eddy Curry, Kirk Hinrich, Ronald Dupree, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2423-2550-383-916-966",
+      "Name": "Chris Jefferies, Kirk Hinrich, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2037-2437-916",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2199-2201-2550-2669",
+      "Name": "Rick Brunson, Tyson Chandler, Eddy Curry, Kirk Hinrich, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2201-2550-916",
+      "Name": "Jalen Rose, Eddie Robinson, Eddy Curry, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-383-923-937",
+      "Name": "Eddie Robinson, Marcus Fizer, Kendall Gill, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-2201-2648",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Eddy Curry, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2550-2648-916-966",
+      "Name": "Jamal Crawford, Kirk Hinrich, Ronald Dupree, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-213-2423-966",
+      "Name": "Rick Brunson, Jamal Crawford, Antonio Davis, Chris Jefferies, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-916-937",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2199-383-937",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Kendall Gill, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2037-213-2199",
+      "Name": "Rick Brunson, Eddie Robinson, Jamal Crawford, Antonio Davis, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2199-2457-2669",
+      "Name": "Marcus Fizer, Jamal Crawford, Tyson Chandler, Jannero Pargo, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2037-2201-937",
+      "Name": "Rick Brunson, Marcus Fizer, Jamal Crawford, Eddy Curry, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-2199-2550",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Tyson Chandler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2199-2648-966",
+      "Name": "Jamal Crawford, Antonio Davis, Tyson Chandler, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2648-916-966",
+      "Name": "Eddie Robinson, Jamal Crawford, Ronald Dupree, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2201-383-966",
+      "Name": "Rick Brunson, Eddie Robinson, Eddy Curry, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2550-937-966",
+      "Name": "Eddie Robinson, Antonio Davis, Kirk Hinrich, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2423-2550-2648-916",
+      "Name": "Marcus Fizer, Chris Jefferies, Kirk Hinrich, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2199-2550-937",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Kirk Hinrich, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2201-383-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-916-937",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2033-2037-923",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jamal Crawford, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-2550-383",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2037-2550-966",
+      "Name": "Rick Brunson, Marcus Fizer, Jamal Crawford, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2550-2648-937-966",
+      "Name": "Jamal Crawford, Kirk Hinrich, Ronald Dupree, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-383-916",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2423-2550-966",
+      "Name": "Jamal Crawford, Antonio Davis, Chris Jefferies, Kirk Hinrich, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2201-383-937",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Kendall Gill, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-2201-2550-923",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Kirk Hinrich, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2201-2427-383-923",
+      "Name": "Jalen Rose, Eddy Curry, Roger Mason Jr., Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-213-2550-2669",
+      "Name": "Marcus Fizer, Jamal Crawford, Antonio Davis, Kirk Hinrich, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2423-2550-916",
+      "Name": "Jamal Crawford, Eddy Curry, Chris Jefferies, Kirk Hinrich, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2550-2648-966",
+      "Name": "Eddie Robinson, Antonio Davis, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-916-937",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2423-383-966",
+      "Name": "Jamal Crawford, Antonio Davis, Chris Jefferies, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2321-2550-2669",
+      "Name": "Jamal Crawford, Tyson Chandler, Paul Shirley, Kirk Hinrich, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2550-2648-937",
+      "Name": "Jamal Crawford, Eddy Curry, Kirk Hinrich, Ronald Dupree, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-2457-2669",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Jannero Pargo, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-213-916-937",
+      "Name": "Rick Brunson, Jamal Crawford, Antonio Davis, Corie Blount, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2321-2550-383",
+      "Name": "Jamal Crawford, Tyson Chandler, Paul Shirley, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-2201-916",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Eddy Curry, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2550-916-923",
+      "Name": "Eddie Robinson, Eddy Curry, Kirk Hinrich, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-916-937-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Corie Blount, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2550-916-966",
+      "Name": "Eddie Robinson, Marcus Fizer, Kirk Hinrich, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2037-2201-916",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Eddy Curry, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2037-213-2423",
+      "Name": "Rick Brunson, Marcus Fizer, Jamal Crawford, Antonio Davis, Chris Jefferies",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2550-383-916",
+      "Name": "Jamal Crawford, Tyson Chandler, Kirk Hinrich, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2033-2201-383",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Eddy Curry, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-383-916-923-937",
+      "Name": "Eddie Robinson, Kendall Gill, Corie Blount, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2201-2550-383",
+      "Name": "Eddie Robinson, Marcus Fizer, Eddy Curry, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-213-2648-383",
+      "Name": "Eddie Robinson, Jamal Crawford, Antonio Davis, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2550-2669-383-966",
+      "Name": "Marcus Fizer, Kirk Hinrich, Linton Johnson, Kendall Gill, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2037-2201-2648",
+      "Name": "Rick Brunson, Marcus Fizer, Jamal Crawford, Eddy Curry, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-213-2648",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Antonio Davis, Ronald Dupree",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-937-966",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2423-383-916-966",
+      "Name": "Jamal Crawford, Chris Jefferies, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2437-2550-383-923",
+      "Name": "Jalen Rose, Lonny Baxter, Kirk Hinrich, Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2550-2669-383-916",
+      "Name": "Antonio Davis, Kirk Hinrich, Linton Johnson, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2550-383-916",
+      "Name": "Rick Brunson, Marcus Fizer, Kirk Hinrich, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2199-2550-937",
+      "Name": "Eddie Robinson, Marcus Fizer, Tyson Chandler, Kirk Hinrich, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2423-2648-966",
+      "Name": "Eddie Robinson, Jamal Crawford, Chris Jefferies, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "213-2321-2550-2648-383",
+      "Name": "Antonio Davis, Paul Shirley, Kirk Hinrich, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2033-2199-2550",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Tyson Chandler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-383-916-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-916-937-966",
+      "Name": "Jamal Crawford, Antonio Davis, Corie Blount, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2199-2321-2457-2648-383",
+      "Name": "Tyson Chandler, Paul Shirley, Jannero Pargo, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-2037-383-923-937",
+      "Name": "Jalen Rose, Jamal Crawford, Kendall Gill, Donyell Marshall, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2199-2201-2550-937",
+      "Name": "Eddie Robinson, Tyson Chandler, Eddy Curry, Kirk Hinrich, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2199-2550-2648-916",
+      "Name": "Marcus Fizer, Tyson Chandler, Kirk Hinrich, Ronald Dupree, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2457-2550-2648-2669",
+      "Name": "Jamal Crawford, Jannero Pargo, Kirk Hinrich, Ronald Dupree, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2423-2550-2669-966",
+      "Name": "Eddie Robinson, Chris Jefferies, Kirk Hinrich, Linton Johnson, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-383-916-966",
+      "Name": "Rick Brunson, Jamal Crawford, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 75.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2201-2550-937",
+      "Name": "Eddie Robinson, Antonio Davis, Eddy Curry, Kirk Hinrich, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2201-2550-2648-383-916",
+      "Name": "Eddy Curry, Kirk Hinrich, Ronald Dupree, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2199-2437-2550-937",
+      "Name": "Eddie Robinson, Tyson Chandler, Lonny Baxter, Kirk Hinrich, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2033-2037-2201-937",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Eddy Curry, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2457-2550-2669",
+      "Name": "Jamal Crawford, Eddy Curry, Jannero Pargo, Kirk Hinrich, Linton Johnson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2423-2669-966",
+      "Name": "Marcus Fizer, Jamal Crawford, Chris Jefferies, Linton Johnson, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-213-2550-2648-383",
+      "Name": "Rick Brunson, Antonio Davis, Kirk Hinrich, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-213-2550-2648-966",
+      "Name": "Rick Brunson, Antonio Davis, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-213-2201-937",
+      "Name": "Rick Brunson, Eddie Robinson, Antonio Davis, Eddy Curry, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2423-2648-966",
+      "Name": "Rick Brunson, Eddie Robinson, Chris Jefferies, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2199-2437-2550-383",
+      "Name": "Eddie Robinson, Tyson Chandler, Lonny Baxter, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2201-2321-2550-383",
+      "Name": "Jamal Crawford, Eddy Curry, Paul Shirley, Kirk Hinrich, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2033-213-916",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Antonio Davis, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2037-2199-916-966",
+      "Name": "Rick Brunson, Jamal Crawford, Tyson Chandler, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2648-916-966",
+      "Name": "Rick Brunson, Eddie Robinson, Ronald Dupree, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-213-2550-383-916",
+      "Name": "Marcus Fizer, Antonio Davis, Kirk Hinrich, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-213-2648-937-966",
+      "Name": "Eddie Robinson, Antonio Davis, Ronald Dupree, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-2199-2550-916-966",
+      "Name": "Jamal Crawford, Tyson Chandler, Kirk Hinrich, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2037-2423-966",
+      "Name": "Rick Brunson, Eddie Robinson, Jamal Crawford, Chris Jefferies, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-2669-383",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-213-2550-2669-383",
+      "Name": "Rick Brunson, Antonio Davis, Kirk Hinrich, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-2033-2550-2648-966",
+      "Name": "Rick Brunson, Marcus Fizer, Kirk Hinrich, Ronald Dupree, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2201-383-937-966",
+      "Name": "Marcus Fizer, Eddy Curry, Kendall Gill, Scottie Pippen, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "147-1944-2033-383-916",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Kendall Gill, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2457-2648-2669-383",
+      "Name": "Marcus Fizer, Jannero Pargo, Ronald Dupree, Linton Johnson, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2037-2437-383-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Lonny Baxter, Kendall Gill, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2321-2457-2550-2648-383",
+      "Name": "Paul Shirley, Jannero Pargo, Kirk Hinrich, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 44.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1594-1944-2033-916-966",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2033-2037-2423-2457-2550",
+      "Name": "Marcus Fizer, Jamal Crawford, Chris Jefferies, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2648-383-916-966",
+      "Name": "Eddie Robinson, Ronald Dupree, Kendall Gill, Corie Blount, Jerome Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "2037-213-2550-2648-937",
+      "Name": "Jamal Crawford, Antonio Davis, Kirk Hinrich, Ronald Dupree, Scottie Pippen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 35.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2003-04",
+      "EntityId": "1944-2201-2550-2648-383",
+      "Name": "Eddie Robinson, Eddy Curry, Kirk Hinrich, Ronald Dupree, Kendall Gill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 24.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    }
+  ]
+}

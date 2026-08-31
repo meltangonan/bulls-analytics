@@ -1,0 +1,3979 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2017-18",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2017-18",
+    "RowsReturned": 457,
+    "RowsWithDefPoss": 440,
+    "RowsSkippedMissingMetrics": 44,
+    "LastRowDefPoss": 0,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1628374-201577-203200",
+      "Name": "Kris Dunn, Denzel Valentine, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 30257.0,
+      "GamesPlayed": 33,
+      "DefPoss": 1028,
+      "OpponentPoints": 1133
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-1628374-201577-203200",
+      "Name": "Jerian Grant, Denzel Valentine, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 11805.0,
+      "GamesPlayed": 29,
+      "DefPoss": 383,
+      "OpponentPoints": 411
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-1628021-202703",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, David Nwaba, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6776.0,
+      "GamesPlayed": 16,
+      "DefPoss": 216,
+      "OpponentPoints": 235
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1628374-201577-203200-203897",
+      "Name": "Jerian Grant, Lauri Markkanen, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6353.0,
+      "GamesPlayed": 8,
+      "DefPoss": 217,
+      "OpponentPoints": 216
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627835-1628374-201577-203200",
+      "Name": "Jerian Grant, Paul Zipser, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5999.0,
+      "GamesPlayed": 12,
+      "DefPoss": 191,
+      "OpponentPoints": 239
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1628021-1628374-201577-203200",
+      "Name": "Jerian Grant, David Nwaba, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5369.0,
+      "GamesPlayed": 16,
+      "DefPoss": 184,
+      "OpponentPoints": 174
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1628021-1628374-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, David Nwaba, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4092.0,
+      "GamesPlayed": 5,
+      "DefPoss": 142,
+      "OpponentPoints": 169
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1628021-1628374-203200",
+      "Name": "Cameron Payne, Cristiano Felicio, David Nwaba, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4024.0,
+      "GamesPlayed": 6,
+      "DefPoss": 139,
+      "OpponentPoints": 150
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1628021-1628374-201577-203200",
+      "Name": "Kris Dunn, David Nwaba, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3683.0,
+      "GamesPlayed": 10,
+      "DefPoss": 121,
+      "OpponentPoints": 116
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1628021-1628374-203897",
+      "Name": "Bobby Portis, Kris Dunn, David Nwaba, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3561.0,
+      "GamesPlayed": 8,
+      "DefPoss": 123,
+      "OpponentPoints": 144
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1628374-201577-203200-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3292.0,
+      "GamesPlayed": 5,
+      "DefPoss": 114,
+      "OpponentPoints": 136
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-201577-202703-203200",
+      "Name": "Kris Dunn, Denzel Valentine, Robin Lopez, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3263.0,
+      "GamesPlayed": 13,
+      "DefPoss": 111,
+      "OpponentPoints": 113
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-1628021-203943",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, David Nwaba, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3206.0,
+      "GamesPlayed": 9,
+      "DefPoss": 112,
+      "OpponentPoints": 114
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1628374-203200",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2914.0,
+      "GamesPlayed": 19,
+      "DefPoss": 104,
+      "OpponentPoints": 106
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1627756-1627835-203200",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Paul Zipser, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2313.0,
+      "GamesPlayed": 3,
+      "DefPoss": 79,
+      "OpponentPoints": 100
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1628021-202703-203200",
+      "Name": "Jerian Grant, Bobby Portis, David Nwaba, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2211.0,
+      "GamesPlayed": 17,
+      "DefPoss": 85,
+      "OpponentPoints": 93
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1627835-1628021",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Paul Zipser, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2188.0,
+      "GamesPlayed": 8,
+      "DefPoss": 68,
+      "OpponentPoints": 69
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1628021-202703",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, David Nwaba, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2089.0,
+      "GamesPlayed": 10,
+      "DefPoss": 69,
+      "OpponentPoints": 53
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1628021-201577-202703-203200",
+      "Name": "Kris Dunn, David Nwaba, Robin Lopez, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2075.0,
+      "GamesPlayed": 13,
+      "DefPoss": 71,
+      "OpponentPoints": 78
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1628021-1628469-203943",
+      "Name": "Jerian Grant, Bobby Portis, David Nwaba, Antonio Blakeney, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1915.0,
+      "GamesPlayed": 2,
+      "DefPoss": 64,
+      "OpponentPoints": 84
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-201577-203200",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1718.0,
+      "GamesPlayed": 12,
+      "DefPoss": 57,
+      "OpponentPoints": 69
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1628374-203897",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1718.0,
+      "GamesPlayed": 8,
+      "DefPoss": 64,
+      "OpponentPoints": 76
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627853-201600-203930",
+      "Name": "Jerian Grant, Bobby Portis, Ryan Arcidiacono, Omer Asik, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1621.0,
+      "GamesPlayed": 4,
+      "DefPoss": 53,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627835-201577-203200-203897",
+      "Name": "Jerian Grant, Paul Zipser, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1613.0,
+      "GamesPlayed": 2,
+      "DefPoss": 55,
+      "OpponentPoints": 66
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1628021-202703-203200",
+      "Name": "Bobby Portis, Kris Dunn, David Nwaba, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1599.0,
+      "GamesPlayed": 10,
+      "DefPoss": 58,
+      "OpponentPoints": 65
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1628021-1628374-202703-203200",
+      "Name": "Kris Dunn, David Nwaba, Lauri Markkanen, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1479.0,
+      "GamesPlayed": 10,
+      "DefPoss": 57,
+      "OpponentPoints": 82
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1627756-1627770",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, Denzel Valentine, Kay Felder",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1452.0,
+      "GamesPlayed": 3,
+      "DefPoss": 52,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1628374-202703-203200",
+      "Name": "Kris Dunn, Denzel Valentine, Lauri Markkanen, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1425.0,
+      "GamesPlayed": 8,
+      "DefPoss": 47,
+      "OpponentPoints": 65
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-201577-203200-203897",
+      "Name": "Jerian Grant, Bobby Portis, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1410.0,
+      "GamesPlayed": 3,
+      "DefPoss": 47,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1627756-1628021-203943",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, David Nwaba, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1368.0,
+      "GamesPlayed": 6,
+      "DefPoss": 49,
+      "OpponentPoints": 51
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-203930-203943",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Sean Kilpatrick, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1311.0,
+      "GamesPlayed": 4,
+      "DefPoss": 46,
+      "OpponentPoints": 53
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-1628374-202703-203200",
+      "Name": "Jerian Grant, Denzel Valentine, Lauri Markkanen, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1291.0,
+      "GamesPlayed": 8,
+      "DefPoss": 43,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1626245-1628021-203200",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, David Nwaba, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1229.0,
+      "GamesPlayed": 6,
+      "DefPoss": 42,
+      "OpponentPoints": 52
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627835-1627853-1628021",
+      "Name": "Bobby Portis, Denzel Valentine, Paul Zipser, Ryan Arcidiacono, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1181.0,
+      "GamesPlayed": 3,
+      "DefPoss": 41,
+      "OpponentPoints": 55
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1628021-1628374-203200",
+      "Name": "Cristiano Felicio, Kris Dunn, David Nwaba, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1148.0,
+      "GamesPlayed": 2,
+      "DefPoss": 40,
+      "OpponentPoints": 51
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1628021-1628374",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1132.0,
+      "GamesPlayed": 10,
+      "DefPoss": 34,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1628021-1628374-203200",
+      "Name": "Cameron Payne, Bobby Portis, David Nwaba, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1107.0,
+      "GamesPlayed": 4,
+      "DefPoss": 41,
+      "OpponentPoints": 58
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627853-1628021-203930",
+      "Name": "Jerian Grant, Cristiano Felicio, Ryan Arcidiacono, David Nwaba, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1098.0,
+      "GamesPlayed": 4,
+      "DefPoss": 38,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-1628469-203943",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Antonio Blakeney, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1095.0,
+      "GamesPlayed": 3,
+      "DefPoss": 37,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1627835-202703",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Paul Zipser, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1094.0,
+      "GamesPlayed": 5,
+      "DefPoss": 35,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1628021-202703-203897",
+      "Name": "Bobby Portis, Denzel Valentine, David Nwaba, Nikola Mirotic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1078.0,
+      "GamesPlayed": 5,
+      "DefPoss": 41,
+      "OpponentPoints": 58
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627835-1628021",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Paul Zipser, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1063.0,
+      "GamesPlayed": 4,
+      "DefPoss": 33,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1626245-1627756-1628469",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, Denzel Valentine, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1047.0,
+      "GamesPlayed": 3,
+      "DefPoss": 36,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1628021-201577-202703-203200",
+      "Name": "Jerian Grant, David Nwaba, Robin Lopez, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1040.0,
+      "GamesPlayed": 7,
+      "DefPoss": 32,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1627835-1628469",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Paul Zipser, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1038.0,
+      "GamesPlayed": 3,
+      "DefPoss": 34,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627756-1628374-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Denzel Valentine, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1010.0,
+      "GamesPlayed": 6,
+      "DefPoss": 32,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1627835-201577-203200",
+      "Name": "Kris Dunn, Denzel Valentine, Paul Zipser, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1002.0,
+      "GamesPlayed": 4,
+      "DefPoss": 35,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627835-1628021-202703",
+      "Name": "Bobby Portis, Kris Dunn, Paul Zipser, David Nwaba, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 986.0,
+      "GamesPlayed": 5,
+      "DefPoss": 36,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627853-203930-203943",
+      "Name": "Jerian Grant, Cristiano Felicio, Ryan Arcidiacono, Sean Kilpatrick, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 984.0,
+      "GamesPlayed": 2,
+      "DefPoss": 29,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1628021-1628374-202703-203200",
+      "Name": "Jerian Grant, David Nwaba, Lauri Markkanen, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 964.0,
+      "GamesPlayed": 6,
+      "DefPoss": 34,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1627756-1628374-203200",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 962.0,
+      "GamesPlayed": 2,
+      "DefPoss": 30,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1628374-203200",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 950.0,
+      "GamesPlayed": 5,
+      "DefPoss": 30,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627853-203930-203943",
+      "Name": "Jerian Grant, Bobby Portis, Ryan Arcidiacono, Sean Kilpatrick, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 923.0,
+      "GamesPlayed": 3,
+      "DefPoss": 32,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1628021-1628374-203200",
+      "Name": "Bobby Portis, Kris Dunn, David Nwaba, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 913.0,
+      "GamesPlayed": 7,
+      "DefPoss": 35,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627739-1628374-201577-203200",
+      "Name": "Jerian Grant, Kris Dunn, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 907.0,
+      "GamesPlayed": 3,
+      "DefPoss": 33,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1628374-203200-203897",
+      "Name": "Jerian Grant, Bobby Portis, Lauri Markkanen, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 893.0,
+      "GamesPlayed": 3,
+      "DefPoss": 26,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627853-1628021-202703-203897",
+      "Name": "Bobby Portis, Ryan Arcidiacono, David Nwaba, Nikola Mirotic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 888.0,
+      "GamesPlayed": 3,
+      "DefPoss": 31,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1628021-203897-203943",
+      "Name": "Cristiano Felicio, Kris Dunn, David Nwaba, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 866.0,
+      "GamesPlayed": 2,
+      "DefPoss": 29,
+      "OpponentPoints": 41
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627853-1628021-202703",
+      "Name": "Bobby Portis, Denzel Valentine, Ryan Arcidiacono, David Nwaba, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 865.0,
+      "GamesPlayed": 3,
+      "DefPoss": 27,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627756-1628021-1628374",
+      "Name": "Cristiano Felicio, Kris Dunn, Denzel Valentine, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 861.0,
+      "GamesPlayed": 6,
+      "DefPoss": 30,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627835-1628469",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Paul Zipser, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 846.0,
+      "GamesPlayed": 3,
+      "DefPoss": 25,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627756-1627835-1628021",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Paul Zipser, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 834.0,
+      "GamesPlayed": 5,
+      "DefPoss": 27,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627756-1627835-202347",
+      "Name": "Cristiano Felicio, Kris Dunn, Denzel Valentine, Paul Zipser, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 816.0,
+      "GamesPlayed": 3,
+      "DefPoss": 25,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627770-1628021-202347",
+      "Name": "Cristiano Felicio, Denzel Valentine, Kay Felder, David Nwaba, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 810.0,
+      "GamesPlayed": 3,
+      "DefPoss": 26,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1628469-202347",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, Antonio Blakeney, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 800.0,
+      "GamesPlayed": 2,
+      "DefPoss": 26,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1628021-201577-203200",
+      "Name": "Jerian Grant, Bobby Portis, David Nwaba, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 795.0,
+      "GamesPlayed": 6,
+      "DefPoss": 29,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1628021-1628374-203930",
+      "Name": "Cameron Payne, Cristiano Felicio, David Nwaba, Lauri Markkanen, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 779.0,
+      "GamesPlayed": 2,
+      "DefPoss": 24,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1628021-1628374-201577-203200",
+      "Name": "Cameron Payne, David Nwaba, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 778.0,
+      "GamesPlayed": 1,
+      "DefPoss": 25,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627756-1628469",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Denzel Valentine, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 775.0,
+      "GamesPlayed": 5,
+      "DefPoss": 25,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1627835-1628469-203943",
+      "Name": "Cameron Payne, Cristiano Felicio, Paul Zipser, Antonio Blakeney, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 773.0,
+      "GamesPlayed": 2,
+      "DefPoss": 25,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1628469-203200",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Antonio Blakeney, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 773.0,
+      "GamesPlayed": 4,
+      "DefPoss": 26,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-1628374-203897",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 770.0,
+      "GamesPlayed": 5,
+      "DefPoss": 27,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627853-1628021-201600-203930",
+      "Name": "Jerian Grant, Ryan Arcidiacono, David Nwaba, Omer Asik, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 768.0,
+      "GamesPlayed": 2,
+      "DefPoss": 27,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626245-1627756-203943",
+      "Name": "Cameron Payne, Jerian Grant, Cristiano Felicio, Denzel Valentine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 764.0,
+      "GamesPlayed": 3,
+      "DefPoss": 25,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1628021-202703-203897",
+      "Name": "Jerian Grant, Bobby Portis, David Nwaba, Nikola Mirotic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 762.0,
+      "GamesPlayed": 2,
+      "DefPoss": 24,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-201577-203200",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 762.0,
+      "GamesPlayed": 5,
+      "DefPoss": 27,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1627756-1628021-1628374",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 752.0,
+      "GamesPlayed": 4,
+      "DefPoss": 26,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1628469-201577-203200",
+      "Name": "Jerian Grant, Bobby Portis, Antonio Blakeney, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 740.0,
+      "GamesPlayed": 5,
+      "DefPoss": 23,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1628021-201577-203897-203943",
+      "Name": "Kris Dunn, David Nwaba, Robin Lopez, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 736.0,
+      "GamesPlayed": 2,
+      "DefPoss": 24,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-203200-203897",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 720.0,
+      "GamesPlayed": 1,
+      "DefPoss": 22,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1627835-203200",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Paul Zipser, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 703.0,
+      "GamesPlayed": 6,
+      "DefPoss": 23,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1628021-201577-203200-203943",
+      "Name": "Cameron Payne, David Nwaba, Robin Lopez, Justin Holiday, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 678.0,
+      "GamesPlayed": 1,
+      "DefPoss": 25,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-202703-203200",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 677.0,
+      "GamesPlayed": 7,
+      "DefPoss": 23,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1626245-1627756-203200",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, Denzel Valentine, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 663.0,
+      "GamesPlayed": 5,
+      "DefPoss": 24,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627756-1628021-202347",
+      "Name": "Cristiano Felicio, Kris Dunn, Denzel Valentine, David Nwaba, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 649.0,
+      "GamesPlayed": 1,
+      "DefPoss": 21,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627756-1627835-1628021",
+      "Name": "Cristiano Felicio, Kris Dunn, Denzel Valentine, Paul Zipser, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 648.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1628021-201577-203200",
+      "Name": "Bobby Portis, Kris Dunn, David Nwaba, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 641.0,
+      "GamesPlayed": 3,
+      "DefPoss": 24,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627835-1627853-1628021",
+      "Name": "Cristiano Felicio, Denzel Valentine, Paul Zipser, Ryan Arcidiacono, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 639.0,
+      "GamesPlayed": 2,
+      "DefPoss": 19,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627835-1628021-202703",
+      "Name": "Bobby Portis, Denzel Valentine, Paul Zipser, David Nwaba, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 638.0,
+      "GamesPlayed": 1,
+      "DefPoss": 20,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627835-1628021-1628374",
+      "Name": "Bobby Portis, Kris Dunn, Paul Zipser, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 616.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1628021-203200",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, David Nwaba, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 614.0,
+      "GamesPlayed": 4,
+      "DefPoss": 21,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1628021-1628374",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 611.0,
+      "GamesPlayed": 7,
+      "DefPoss": 18,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627756-1627853-1628021",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 606.0,
+      "GamesPlayed": 2,
+      "DefPoss": 21,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-1627835-201577-203200",
+      "Name": "Jerian Grant, Denzel Valentine, Paul Zipser, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 600.0,
+      "GamesPlayed": 6,
+      "DefPoss": 20,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1628021-203943",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, David Nwaba, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 591.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627756-1627835-202347",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Paul Zipser, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 588.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1627756-201577-203200-203943",
+      "Name": "Cameron Payne, Denzel Valentine, Robin Lopez, Justin Holiday, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 584.0,
+      "GamesPlayed": 1,
+      "DefPoss": 19,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1628374-203200-203897",
+      "Name": "Bobby Portis, Kris Dunn, Lauri Markkanen, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 577.0,
+      "GamesPlayed": 1,
+      "DefPoss": 20,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-1628021-1628374",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 567.0,
+      "GamesPlayed": 5,
+      "DefPoss": 19,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1628021-202703",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, David Nwaba, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 540.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627853-203200-203930",
+      "Name": "Jerian Grant, Cristiano Felicio, Ryan Arcidiacono, Justin Holiday, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 529.0,
+      "GamesPlayed": 2,
+      "DefPoss": 22,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627770-1627835-1628021",
+      "Name": "Cristiano Felicio, Denzel Valentine, Kay Felder, Paul Zipser, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 524.0,
+      "GamesPlayed": 2,
+      "DefPoss": 19,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1626245-1627756-203897",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, Denzel Valentine, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 505.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1628021-201577",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, David Nwaba, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 500.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1628374-201577-202347",
+      "Name": "Kris Dunn, Denzel Valentine, Lauri Markkanen, Robin Lopez, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 489.0,
+      "GamesPlayed": 1,
+      "DefPoss": 17,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627739-201577-203200",
+      "Name": "Jerian Grant, Bobby Portis, Kris Dunn, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 467.0,
+      "GamesPlayed": 1,
+      "DefPoss": 15,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1627756-203200-203943",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Justin Holiday, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 466.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627853-203930",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Ryan Arcidiacono, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 464.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-1627835-1628469",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Paul Zipser, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 461.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-1628021-203200",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, David Nwaba, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 458.0,
+      "GamesPlayed": 6,
+      "DefPoss": 17,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627853-202703-203200",
+      "Name": "Bobby Portis, Denzel Valentine, Ryan Arcidiacono, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 458.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1628021-1628374-201577",
+      "Name": "Kris Dunn, Denzel Valentine, David Nwaba, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 456.0,
+      "GamesPlayed": 6,
+      "DefPoss": 13,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627835-1628374-1628469",
+      "Name": "Cristiano Felicio, Kris Dunn, Paul Zipser, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 447.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-202703-203897",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Nikola Mirotic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 442.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627739-1628374-1628469",
+      "Name": "Jerian Grant, Bobby Portis, Kris Dunn, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 440.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1628021-201577-202703",
+      "Name": "Kris Dunn, Denzel Valentine, David Nwaba, Robin Lopez, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 431.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-1628469-201577",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 428.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1626245-1627756-1628021",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, Denzel Valentine, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 426.0,
+      "GamesPlayed": 5,
+      "DefPoss": 12,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627739-1628374-201577-202347",
+      "Name": "Jerian Grant, Kris Dunn, Lauri Markkanen, Robin Lopez, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 418.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-203200-203897",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 414.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-201577-203200",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 413.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627756-1628374-203200",
+      "Name": "Cristiano Felicio, Kris Dunn, Denzel Valentine, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 412.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1628021-1628374-201577-203897",
+      "Name": "Kris Dunn, David Nwaba, Lauri Markkanen, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 410.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627835-1628374-201577-203200",
+      "Name": "Kris Dunn, Paul Zipser, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 408.0,
+      "GamesPlayed": 5,
+      "DefPoss": 14,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1628469-203897-203943",
+      "Name": "Cristiano Felicio, Kris Dunn, Antonio Blakeney, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 388.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627835-1627853-1628469-202347",
+      "Name": "Cristiano Felicio, Paul Zipser, Ryan Arcidiacono, Antonio Blakeney, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 386.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-1627835-203943",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Paul Zipser, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 384.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627853-1628021-201600",
+      "Name": "Jerian Grant, Bobby Portis, Ryan Arcidiacono, David Nwaba, Omer Asik",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 367.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1627756-203200",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, Denzel Valentine, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 367.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1627835-203897",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Paul Zipser, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 366.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1627770-202347",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, Kay Felder, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 366.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627770-1628021-1628374",
+      "Name": "Cristiano Felicio, Denzel Valentine, Kay Felder, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 366.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1627835-202347",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Paul Zipser, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 359.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1628021-202703-203200",
+      "Name": "Bobby Portis, Denzel Valentine, David Nwaba, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 359.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1628374-1628469-201577-203200",
+      "Name": "Kris Dunn, Lauri Markkanen, Antonio Blakeney, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 357.0,
+      "GamesPlayed": 5,
+      "DefPoss": 15,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-1628374-203930-203943",
+      "Name": "Jerian Grant, Denzel Valentine, Lauri Markkanen, Sean Kilpatrick, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 356.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-1626245-203200",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Cristiano Felicio, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 354.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627853-1628021-203943",
+      "Name": "Jerian Grant, Bobby Portis, Ryan Arcidiacono, David Nwaba, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 353.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627770-1627835-202347",
+      "Name": "Jerian Grant, Cristiano Felicio, Kay Felder, Paul Zipser, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 351.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627739-1627756-1627835",
+      "Name": "Jerian Grant, Bobby Portis, Kris Dunn, Denzel Valentine, Paul Zipser",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 346.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1628469-201577-203200",
+      "Name": "Bobby Portis, Kris Dunn, Antonio Blakeney, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 342.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-201577-203930",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Robin Lopez, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 339.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1628374-203200-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Lauri Markkanen, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 337.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-201577-202703-203200",
+      "Name": "Jerian Grant, Denzel Valentine, Robin Lopez, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 335.0,
+      "GamesPlayed": 5,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1627756-1628469",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, Denzel Valentine, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 331.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1628469-201577",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 330.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627770-1628021-201577-202347-203200",
+      "Name": "Kay Felder, David Nwaba, Robin Lopez, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 329.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627853-1628021-203943",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, David Nwaba, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 323.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1628021-201577",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, David Nwaba, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 321.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627835-1628021-203897",
+      "Name": "Bobby Portis, Denzel Valentine, Paul Zipser, David Nwaba, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 318.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627756-1628021-1628374",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 317.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1628469-202347",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Antonio Blakeney, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 316.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627835-1628021-201577-203200",
+      "Name": "Jerian Grant, Paul Zipser, David Nwaba, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627770-1627835-1628469-202347",
+      "Name": "Cristiano Felicio, Kay Felder, Paul Zipser, Antonio Blakeney, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627853-1628021-1628374-202703-203200",
+      "Name": "Ryan Arcidiacono, David Nwaba, Lauri Markkanen, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 312.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627739-202347",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Kris Dunn, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 309.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1628374-1628469-201577-203200",
+      "Name": "Jerian Grant, Lauri Markkanen, Antonio Blakeney, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 309.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627756-1627835-203200",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Paul Zipser, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 308.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627770-1627835-202347",
+      "Name": "Cristiano Felicio, Denzel Valentine, Kay Felder, Paul Zipser, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 308.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-201600-203930",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Omer Asik, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 305.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627770-1628374-202347",
+      "Name": "Bobby Portis, Kris Dunn, Kay Felder, Lauri Markkanen, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 304.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1628021-203200-203943",
+      "Name": "Cameron Payne, Bobby Portis, David Nwaba, Justin Holiday, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 303.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1627853-1628021-203930-203943",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, David Nwaba, Sean Kilpatrick, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-203897-203943",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 298.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1628021-1628469",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, David Nwaba, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 297.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627756-1627770-202347",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Kay Felder, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 297.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-1626245-1627853",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Cristiano Felicio, Ryan Arcidiacono",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 296.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-1627835-1628021",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Paul Zipser, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 295.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-203200-203943",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Justin Holiday, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 291.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1628021-203897",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, David Nwaba, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 289.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-201577-203200",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 286.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627853-1628021-203200",
+      "Name": "Jerian Grant, Cristiano Felicio, Ryan Arcidiacono, David Nwaba, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 285.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1628021-1628374-201577-203200-203897",
+      "Name": "David Nwaba, Lauri Markkanen, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 285.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627835-1628021-1628469",
+      "Name": "Jerian Grant, Cristiano Felicio, Paul Zipser, David Nwaba, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 276.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627756-1628374-203200",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 4,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627756-1628021",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Denzel Valentine, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 271.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627835-1628021-203897",
+      "Name": "Cristiano Felicio, Denzel Valentine, Paul Zipser, David Nwaba, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627835-1628374-203200",
+      "Name": "Jerian Grant, Cristiano Felicio, Paul Zipser, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 267.0,
+      "GamesPlayed": 4,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1628374-201577-202347-203200",
+      "Name": "Jerian Grant, Lauri Markkanen, Robin Lopez, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 267.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1628374-202347",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Lauri Markkanen, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 267.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627853-1628021",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Ryan Arcidiacono, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 265.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627756-1627835-1628374",
+      "Name": "Cristiano Felicio, Kris Dunn, Denzel Valentine, Paul Zipser, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 265.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1628021-1628469",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, David Nwaba, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 264.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627770-1627835-203200",
+      "Name": "Cristiano Felicio, Denzel Valentine, Kay Felder, Paul Zipser, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 257.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1628021-1628374-203200",
+      "Name": "Jerian Grant, Bobby Portis, David Nwaba, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627739-1627756-1628374-201577",
+      "Name": "Jerian Grant, Kris Dunn, Denzel Valentine, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-1628021-201577",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, David Nwaba, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627853-1628374-203930",
+      "Name": "Jerian Grant, Bobby Portis, Ryan Arcidiacono, Lauri Markkanen, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 252.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1628021-1628469-203943",
+      "Name": "Cameron Payne, Cristiano Felicio, David Nwaba, Antonio Blakeney, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 248.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-1627853-1628021",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, Ryan Arcidiacono, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627756-203200",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Denzel Valentine, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 5,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626245-1627853-1628021",
+      "Name": "Cameron Payne, Jerian Grant, Cristiano Felicio, Ryan Arcidiacono, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 241.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627853-1628374-203930",
+      "Name": "Jerian Grant, Cristiano Felicio, Ryan Arcidiacono, Lauri Markkanen, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 241.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627835-1628021-201577-202703",
+      "Name": "Jerian Grant, Paul Zipser, David Nwaba, Robin Lopez, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 239.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1628021-1628374-201600-203930",
+      "Name": "Cameron Payne, David Nwaba, Lauri Markkanen, Omer Asik, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627739-1628469",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Kris Dunn, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627770-1628374-201577-202347-203200",
+      "Name": "Kay Felder, Lauri Markkanen, Robin Lopez, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 229.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-201577-203200-203897",
+      "Name": "Bobby Portis, Denzel Valentine, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1628374-202703-203200-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Nikola Mirotic, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 224.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1627756-1628374-203897",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1628021-1628469",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, David Nwaba, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 218.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1628021-201577-203200",
+      "Name": "Bobby Portis, Denzel Valentine, David Nwaba, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 217.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-1628021-201577",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, David Nwaba, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1628469-203943",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Antonio Blakeney, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1628374-203200-203897",
+      "Name": "Bobby Portis, Denzel Valentine, Lauri Markkanen, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 214.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-202703-203200",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1627756-1627835-1628021",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Paul Zipser, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1627756-1628021-201577-203943",
+      "Name": "Cameron Payne, Denzel Valentine, David Nwaba, Robin Lopez, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-202347-202703",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, Quincy Pondexter, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-1628374-1628469-201577",
+      "Name": "Jerian Grant, Denzel Valentine, Lauri Markkanen, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627853-203200-203930",
+      "Name": "Bobby Portis, Cristiano Felicio, Ryan Arcidiacono, Justin Holiday, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627835-1628021-203200",
+      "Name": "Jerian Grant, Cristiano Felicio, Paul Zipser, David Nwaba, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1627770-1628374-201577-203200",
+      "Name": "Denzel Valentine, Kay Felder, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1628021-201577-202703-203897",
+      "Name": "Denzel Valentine, David Nwaba, Robin Lopez, Nikola Mirotic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-202347-203200",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627835-1628021-1628374-201577",
+      "Name": "Kris Dunn, Paul Zipser, David Nwaba, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626245-1628374-203930",
+      "Name": "Cameron Payne, Jerian Grant, Cristiano Felicio, Lauri Markkanen, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627756-202347",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Denzel Valentine, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-1628469-203200",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, Antonio Blakeney, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-1628021-1628374-201577",
+      "Name": "Jerian Grant, Denzel Valentine, David Nwaba, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1628469-203897-203943",
+      "Name": "Cameron Payne, Bobby Portis, Antonio Blakeney, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1628021-1628374-203200",
+      "Name": "Jerian Grant, Cristiano Felicio, David Nwaba, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626245-1628021-1628374",
+      "Name": "Cameron Payne, Jerian Grant, Cristiano Felicio, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626245-203943-204067",
+      "Name": "Cameron Payne, Jerian Grant, Cristiano Felicio, Noah Vonleh, Jarell Eddie",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-203200-203943",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Justin Holiday, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1627770-201577-202347-203200",
+      "Name": "Denzel Valentine, Kay Felder, Robin Lopez, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 177.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-1626245-1627756",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Cristiano Felicio, Denzel Valentine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627835-1628374-202703-203200",
+      "Name": "Jerian Grant, Paul Zipser, Lauri Markkanen, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-203897-203943",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 3,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627756-1627770-1628374",
+      "Name": "Cristiano Felicio, Kris Dunn, Denzel Valentine, Kay Felder, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1627756-1628469-203943",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Antonio Blakeney, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1627756-1628374-203930-203943",
+      "Name": "Cameron Payne, Denzel Valentine, Lauri Markkanen, Sean Kilpatrick, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627853-1628021-203943",
+      "Name": "Jerian Grant, Cristiano Felicio, Ryan Arcidiacono, David Nwaba, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627756-1628021-202347",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, David Nwaba, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1627835-1627853",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Paul Zipser, Ryan Arcidiacono",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1627835-201577",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Paul Zipser, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627853-203200-203930",
+      "Name": "Jerian Grant, Bobby Portis, Ryan Arcidiacono, Justin Holiday, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627770-1627835",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Kay Felder, Paul Zipser",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1628021-203943",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, David Nwaba, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1628021-1628374-202703-203200",
+      "Name": "Denzel Valentine, David Nwaba, Lauri Markkanen, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1628374-201600-203200",
+      "Name": "Cameron Payne, Jerian Grant, Lauri Markkanen, Omer Asik, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627835-201577-202703-203200",
+      "Name": "Kris Dunn, Paul Zipser, Robin Lopez, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1627770-1627835-201577-203200",
+      "Name": "Denzel Valentine, Kay Felder, Paul Zipser, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627756-202347-203200",
+      "Name": "Cristiano Felicio, Kris Dunn, Denzel Valentine, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627853-1628021-202347",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, David Nwaba, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627739-1627756-203943",
+      "Name": "Cameron Payne, Bobby Portis, Kris Dunn, Denzel Valentine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1628021-1628469-203200",
+      "Name": "Jerian Grant, Bobby Portis, David Nwaba, Antonio Blakeney, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627835-1628021-1628374",
+      "Name": "Jerian Grant, Cristiano Felicio, Paul Zipser, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627853-201577-203200",
+      "Name": "Bobby Portis, Denzel Valentine, Ryan Arcidiacono, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627853-1628021-203200-203943",
+      "Name": "Bobby Portis, Ryan Arcidiacono, David Nwaba, Justin Holiday, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627853-1628374-203200-203930",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Lauri Markkanen, Justin Holiday, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1628021-203200-203943",
+      "Name": "Jerian Grant, Bobby Portis, David Nwaba, Justin Holiday, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627835-1628469-203943",
+      "Name": "Cameron Payne, Bobby Portis, Paul Zipser, Antonio Blakeney, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627835-1628374-203200",
+      "Name": "Bobby Portis, Kris Dunn, Paul Zipser, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627835-1627853-202347",
+      "Name": "Bobby Portis, Cristiano Felicio, Paul Zipser, Ryan Arcidiacono, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627853-1628021-201577-203200-203943",
+      "Name": "Ryan Arcidiacono, David Nwaba, Robin Lopez, Justin Holiday, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1628469-203897",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, Antonio Blakeney, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1627770-1627835-201577",
+      "Name": "Kris Dunn, Denzel Valentine, Kay Felder, Paul Zipser, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626245-1628021-203200",
+      "Name": "Cameron Payne, Jerian Grant, Cristiano Felicio, David Nwaba, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627853-1628021-202347-203200",
+      "Name": "Bobby Portis, Ryan Arcidiacono, David Nwaba, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1628021-203200-203943",
+      "Name": "Cameron Payne, Cristiano Felicio, David Nwaba, Justin Holiday, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1628021-203897-203943",
+      "Name": "Cameron Payne, Cristiano Felicio, David Nwaba, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1628374-203200-203897",
+      "Name": "Cameron Payne, Cristiano Felicio, Lauri Markkanen, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1628374-1628469",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-1628021-1628374",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1628021-1628374-203897",
+      "Name": "Jerian Grant, Bobby Portis, David Nwaba, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1628374-203897-203943",
+      "Name": "Kris Dunn, Denzel Valentine, Lauri Markkanen, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-201577-203897-203943",
+      "Name": "Kris Dunn, Denzel Valentine, Robin Lopez, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1627853-1628374-203930-203943",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Sean Kilpatrick, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1628469-201577",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627835-1627853-1628021-203897",
+      "Name": "Bobby Portis, Paul Zipser, Ryan Arcidiacono, David Nwaba, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627853-1628021-203930",
+      "Name": "Jerian Grant, Bobby Portis, Ryan Arcidiacono, David Nwaba, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627835-1628021-202347",
+      "Name": "Jerian Grant, Cristiano Felicio, Paul Zipser, David Nwaba, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627835-203897-203943",
+      "Name": "Bobby Portis, Kris Dunn, Paul Zipser, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-201577-202347-203200",
+      "Name": "Kris Dunn, Denzel Valentine, Robin Lopez, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-1628021-201577-202703",
+      "Name": "Jerian Grant, Denzel Valentine, David Nwaba, Robin Lopez, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627835-203200-203897",
+      "Name": "Bobby Portis, Denzel Valentine, Paul Zipser, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1628021-1628374-202703-203897",
+      "Name": "Denzel Valentine, David Nwaba, Lauri Markkanen, Nikola Mirotic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627835-1628021-1628374",
+      "Name": "Bobby Portis, Denzel Valentine, Paul Zipser, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627739-1628374-203200",
+      "Name": "Jerian Grant, Bobby Portis, Kris Dunn, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627853-202703-203897",
+      "Name": "Bobby Portis, Denzel Valentine, Ryan Arcidiacono, Nikola Mirotic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1628021-201577-202703-203200",
+      "Name": "Denzel Valentine, David Nwaba, Robin Lopez, Nikola Mirotic, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1628374-203200-203930",
+      "Name": "Cameron Payne, Cristiano Felicio, Lauri Markkanen, Justin Holiday, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1627770-201577",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Kay Felder, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1628374-201577-203200-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-201577-202347-203200",
+      "Name": "Jerian Grant, Denzel Valentine, Robin Lopez, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-201600-203200-203930",
+      "Name": "Cameron Payne, Bobby Portis, Omer Asik, Justin Holiday, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1628021-203897-203943",
+      "Name": "Cameron Payne, Bobby Portis, David Nwaba, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627853-1628021-1628374",
+      "Name": "Bobby Portis, Denzel Valentine, Ryan Arcidiacono, David Nwaba, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1628469-203200",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, Antonio Blakeney, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627770-1627835-1628021-203200",
+      "Name": "Cristiano Felicio, Kay Felder, Paul Zipser, David Nwaba, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627853-1628021-1628374-201577-203200",
+      "Name": "Ryan Arcidiacono, David Nwaba, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627853-1628021-1628374-203930",
+      "Name": "Bobby Portis, Ryan Arcidiacono, David Nwaba, Lauri Markkanen, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627756-1628021-203897",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, David Nwaba, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1628021-201577-202347-203200",
+      "Name": "Jerian Grant, David Nwaba, Robin Lopez, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1628021-1628374-202703",
+      "Name": "Kris Dunn, Denzel Valentine, David Nwaba, Lauri Markkanen, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627739-1627756-203943",
+      "Name": "Jerian Grant, Bobby Portis, Kris Dunn, Denzel Valentine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627835-1627853-203200",
+      "Name": "Cristiano Felicio, Denzel Valentine, Paul Zipser, Ryan Arcidiacono, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626245-1628374-203200",
+      "Name": "Cameron Payne, Jerian Grant, Cristiano Felicio, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-201577-203930",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Robin Lopez, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1627835-1628374-201577-203200",
+      "Name": "Denzel Valentine, Paul Zipser, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1626245-1628469-203897",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, Antonio Blakeney, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627756-1627835-203200",
+      "Name": "Cristiano Felicio, Kris Dunn, Denzel Valentine, Paul Zipser, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-1628374-201577-202703",
+      "Name": "Jerian Grant, Denzel Valentine, Lauri Markkanen, Robin Lopez, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1628021-201577-203930",
+      "Name": "Cameron Payne, Bobby Portis, David Nwaba, Robin Lopez, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1628021-1628374-203897-203943",
+      "Name": "Cameron Payne, David Nwaba, Lauri Markkanen, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627835-1628021-1628374-202703",
+      "Name": "Jerian Grant, Paul Zipser, David Nwaba, Lauri Markkanen, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1628021-1628374-201577-203897",
+      "Name": "Jerian Grant, David Nwaba, Lauri Markkanen, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627835-203200",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Paul Zipser, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1626245-1627739-1627756",
+      "Name": "Jerian Grant, Bobby Portis, Cristiano Felicio, Kris Dunn, Denzel Valentine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1627756-1627835",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, Denzel Valentine, Paul Zipser",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627835-1627853-1628021-202347",
+      "Name": "Cristiano Felicio, Paul Zipser, Ryan Arcidiacono, David Nwaba, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1627770-1627835-201577-202347",
+      "Name": "Denzel Valentine, Kay Felder, Paul Zipser, Robin Lopez, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627756-1628374-202347",
+      "Name": "Jerian Grant, Cristiano Felicio, Denzel Valentine, Lauri Markkanen, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627770-1628374-203200",
+      "Name": "Cristiano Felicio, Denzel Valentine, Kay Felder, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1626245-1628021-203897",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, David Nwaba, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-1628469-201577",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1628374-1628469-203897-203943",
+      "Name": "Kris Dunn, Lauri Markkanen, Antonio Blakeney, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-1626245-203930",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Cristiano Felicio, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627770-1628021-202347-203200",
+      "Name": "Cristiano Felicio, Kay Felder, David Nwaba, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-1628021-203943",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, David Nwaba, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-1628021-203930",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, David Nwaba, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1627835-1628469",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Paul Zipser, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-1627756-203943",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Denzel Valentine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-1627835-1628374-201577",
+      "Name": "Jerian Grant, Denzel Valentine, Paul Zipser, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627835-1628021-1628374-202703",
+      "Name": "Kris Dunn, Paul Zipser, David Nwaba, Lauri Markkanen, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-1626245-1628021",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Cristiano Felicio, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1627756-1627835-203897",
+      "Name": "Cameron Payne, Bobby Portis, Denzel Valentine, Paul Zipser, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1628021-1628374-203200-203943",
+      "Name": "Cameron Payne, David Nwaba, Lauri Markkanen, Justin Holiday, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 75.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627756-1627835-1627853",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Paul Zipser, Ryan Arcidiacono",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627853-1628021-1628469-202347",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, David Nwaba, Antonio Blakeney, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627835-1628021-201577-203200",
+      "Name": "Kris Dunn, Paul Zipser, David Nwaba, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1628374-1628469-203200",
+      "Name": "Jerian Grant, Bobby Portis, Lauri Markkanen, Antonio Blakeney, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627739-1627770-1627835-1628374",
+      "Name": "Cristiano Felicio, Kris Dunn, Kay Felder, Paul Zipser, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1627835-201577-202703",
+      "Name": "Kris Dunn, Denzel Valentine, Paul Zipser, Robin Lopez, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1627770-1628021-1628374-202347",
+      "Name": "Denzel Valentine, Kay Felder, David Nwaba, Lauri Markkanen, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627853-203930-203943",
+      "Name": "Bobby Portis, Denzel Valentine, Ryan Arcidiacono, Sean Kilpatrick, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627770-1627835-1628374-201577-203200",
+      "Name": "Kay Felder, Paul Zipser, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627835-1628021-1628374-201577",
+      "Name": "Jerian Grant, Paul Zipser, David Nwaba, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1628021-1628374-202703-203897",
+      "Name": "Jerian Grant, David Nwaba, Lauri Markkanen, Nikola Mirotic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627770-1628374-201577-203200",
+      "Name": "Kris Dunn, Kay Felder, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626245-1628021-203943",
+      "Name": "Cameron Payne, Jerian Grant, Cristiano Felicio, David Nwaba, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-1628374-201577-202347",
+      "Name": "Jerian Grant, Denzel Valentine, Lauri Markkanen, Robin Lopez, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 61.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1627835-1628374",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Paul Zipser, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 61.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1626245-1628021-1628469",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, David Nwaba, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1628021-1628374-203930",
+      "Name": "Cameron Payne, Bobby Portis, David Nwaba, Lauri Markkanen, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1628021-201577-203943",
+      "Name": "Kris Dunn, Denzel Valentine, David Nwaba, Robin Lopez, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1628021-1628374-203897-203943",
+      "Name": "Kris Dunn, David Nwaba, Lauri Markkanen, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1628374-203897",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627770-1627835-1628374-201577",
+      "Name": "Kris Dunn, Kay Felder, Paul Zipser, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627739-1627835-1628374-203200",
+      "Name": "Jerian Grant, Kris Dunn, Paul Zipser, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626245-1627756-1627770-1627835-1628374",
+      "Name": "Cristiano Felicio, Denzel Valentine, Kay Felder, Paul Zipser, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1628469-201577-202347",
+      "Name": "Bobby Portis, Kris Dunn, Antonio Blakeney, Robin Lopez, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-1627853-1628021",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Ryan Arcidiacono, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627739-1627756-1628374",
+      "Name": "Jerian Grant, Cristiano Felicio, Kris Dunn, Denzel Valentine, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627770-1627835-202347",
+      "Name": "Jerian Grant, Bobby Portis, Kay Felder, Paul Zipser, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627835-1628021-203200",
+      "Name": "Bobby Portis, Kris Dunn, Paul Zipser, David Nwaba, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627835-1628021-203897",
+      "Name": "Bobby Portis, Kris Dunn, Paul Zipser, David Nwaba, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1628021-1628374-203200-203897",
+      "Name": "Bobby Portis, David Nwaba, Lauri Markkanen, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1628021-201577-202703-203897",
+      "Name": "Kris Dunn, David Nwaba, Robin Lopez, Nikola Mirotic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 51.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1628021-201577-203200",
+      "Name": "Cameron Payne, Bobby Portis, David Nwaba, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627770-1627835-1628469",
+      "Name": "Jerian Grant, Bobby Portis, Kay Felder, Paul Zipser, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627739-1627835-1628469",
+      "Name": "Jerian Grant, Bobby Portis, Kris Dunn, Paul Zipser, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 49.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627756-1627853-203897",
+      "Name": "Bobby Portis, Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1627835-202703",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Paul Zipser, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627756-1627853-201577-203930",
+      "Name": "Bobby Portis, Denzel Valentine, Ryan Arcidiacono, Robin Lopez, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 47.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1628021-203200-203930",
+      "Name": "Cameron Payne, Bobby Portis, David Nwaba, Justin Holiday, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1627756-1628021",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, Denzel Valentine, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627739-1627756-1628374",
+      "Name": "Jerian Grant, Bobby Portis, Kris Dunn, Denzel Valentine, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-1627756-1628021",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Denzel Valentine, David Nwaba",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-201600-203200",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Omer Asik, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1626245-1627739-1627756-203897",
+      "Name": "Bobby Portis, Cristiano Felicio, Kris Dunn, Denzel Valentine, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1627835-203943",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Paul Zipser, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627853-201600-203200-203930",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Omer Asik, Justin Holiday, Sean Kilpatrick",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627756-1627835-1628374-201577",
+      "Name": "Kris Dunn, Denzel Valentine, Paul Zipser, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1628374-201577-202703-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Robin Lopez, Nikola Mirotic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-1628021-203897",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, David Nwaba, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 35.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1627756-1628374-201577-203200",
+      "Name": "Cameron Payne, Denzel Valentine, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1628374-202703-203200-203897",
+      "Name": "Jerian Grant, Lauri Markkanen, Nikola Mirotic, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626245-1627756-203897-203943",
+      "Name": "Cameron Payne, Cristiano Felicio, Denzel Valentine, Zach LaVine, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1628021-203930-203943",
+      "Name": "Cameron Payne, Bobby Portis, David Nwaba, Sean Kilpatrick, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 32.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627835-1628374-203200",
+      "Name": "Jerian Grant, Bobby Portis, Paul Zipser, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 31.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627739-1627756-1627835-201577",
+      "Name": "Jerian Grant, Kris Dunn, Denzel Valentine, Paul Zipser, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 31.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627739-1627835-1628021-1628374-203200",
+      "Name": "Kris Dunn, Paul Zipser, David Nwaba, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 29.0,
+      "GamesPlayed": 3,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626245-1627835-203200-203897",
+      "Name": "Jerian Grant, Cristiano Felicio, Paul Zipser, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627770-1627835-1628021-1628374-203200",
+      "Name": "Kay Felder, Paul Zipser, David Nwaba, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-201577-202347-203200",
+      "Name": "Bobby Portis, Kris Dunn, Robin Lopez, Quincy Pondexter, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 25.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-201577-202347",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Robin Lopez, Quincy Pondexter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 21.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626170-1626171-1628374-203200",
+      "Name": "Cameron Payne, Jerian Grant, Bobby Portis, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 17.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626166-1626171-1628021-1628374-203897",
+      "Name": "Cameron Payne, Bobby Portis, David Nwaba, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 15.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626171-1627739-1627756-1628469-203943",
+      "Name": "Bobby Portis, Kris Dunn, Denzel Valentine, Antonio Blakeney, Noah Vonleh",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 15.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1626171-1627756-203200-203897",
+      "Name": "Jerian Grant, Bobby Portis, Denzel Valentine, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 14.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1628021-1628374-202703-203200-203897",
+      "Name": "David Nwaba, Lauri Markkanen, Nikola Mirotic, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1627756-1627770-1627835-1628374-201577",
+      "Name": "Denzel Valentine, Kay Felder, Paul Zipser, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1628021-201577-203200-203897",
+      "Name": "Jerian Grant, David Nwaba, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2017-18",
+      "EntityId": "1626170-1627756-1628021-1628374-203200",
+      "Name": "Jerian Grant, Denzel Valentine, David Nwaba, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    }
+  ]
+}

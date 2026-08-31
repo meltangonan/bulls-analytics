@@ -1,0 +1,4089 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2001-02",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2001-02",
+    "RowsReturned": 455,
+    "RowsWithDefPoss": 439,
+    "RowsSkippedMissingMetrics": 32,
+    "LastRowDefPoss": 0,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-2033-21-2239",
+      "Name": "Ron Mercer, Brad Miller, Marcus Fizer, Greg Anthony, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 10160.0,
+      "GamesPlayed": 15,
+      "DefPoss": 324,
+      "OpponentPoints": 353
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-21-2239-891",
+      "Name": "Ron Mercer, Brad Miller, Greg Anthony, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8590.0,
+      "GamesPlayed": 18,
+      "DefPoss": 259,
+      "OpponentPoints": 269
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2199-2201-2239-696",
+      "Name": "Jalen Rose, Tyson Chandler, Eddy Curry, Trenton Hassell, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8008.0,
+      "GamesPlayed": 19,
+      "DefPoss": 259,
+      "OpponentPoints": 307
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2239-696-891",
+      "Name": "Jalen Rose, Marcus Fizer, Trenton Hassell, Travis Best, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6420.0,
+      "GamesPlayed": 13,
+      "DefPoss": 193,
+      "OpponentPoints": 204
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2199-2201-2239",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6216.0,
+      "GamesPlayed": 13,
+      "DefPoss": 195,
+      "OpponentPoints": 217
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2201-2239-696",
+      "Name": "Jalen Rose, Marcus Fizer, Eddy Curry, Trenton Hassell, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5938.0,
+      "GamesPlayed": 15,
+      "DefPoss": 180,
+      "OpponentPoints": 214
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1897-1944-2199",
+      "Name": "Kevin Ollie, Brad Miller, Metta World Peace, Eddie Robinson, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4681.0,
+      "GamesPlayed": 6,
+      "DefPoss": 145,
+      "OpponentPoints": 170
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-1897-21-891",
+      "Name": "Ron Mercer, Brad Miller, Metta World Peace, Greg Anthony, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4218.0,
+      "GamesPlayed": 7,
+      "DefPoss": 130,
+      "OpponentPoints": 132
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2062-2199-2201-2239",
+      "Name": "Jalen Rose, A.J. Guyton, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4098.0,
+      "GamesPlayed": 7,
+      "DefPoss": 132,
+      "OpponentPoints": 145
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-1897-891",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Metta World Peace, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4032.0,
+      "GamesPlayed": 7,
+      "DefPoss": 126,
+      "OpponentPoints": 102
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-1944-21-891",
+      "Name": "Ron Mercer, Brad Miller, Eddie Robinson, Greg Anthony, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3674.0,
+      "GamesPlayed": 3,
+      "DefPoss": 128,
+      "OpponentPoints": 128
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-21-697-891",
+      "Name": "Ron Mercer, Brad Miller, Greg Anthony, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3406.0,
+      "GamesPlayed": 11,
+      "DefPoss": 109,
+      "OpponentPoints": 114
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1897-1944-891",
+      "Name": "Kevin Ollie, Brad Miller, Metta World Peace, Eddie Robinson, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2876.0,
+      "GamesPlayed": 4,
+      "DefPoss": 89,
+      "OpponentPoints": 103
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2053-2239-696",
+      "Name": "Jalen Rose, Marcus Fizer, Dalibor Bagaric, Trenton Hassell, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2647.0,
+      "GamesPlayed": 13,
+      "DefPoss": 85,
+      "OpponentPoints": 97
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-1897-2033-21",
+      "Name": "Ron Mercer, Brad Miller, Metta World Peace, Marcus Fizer, Greg Anthony",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2464.0,
+      "GamesPlayed": 6,
+      "DefPoss": 76,
+      "OpponentPoints": 84
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-21-2239-697-891",
+      "Name": "Brad Miller, Greg Anthony, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2450.0,
+      "GamesPlayed": 5,
+      "DefPoss": 77,
+      "OpponentPoints": 87
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2062-2201-2239-697",
+      "Name": "Marcus Fizer, A.J. Guyton, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2272.0,
+      "GamesPlayed": 7,
+      "DefPoss": 66,
+      "OpponentPoints": 61
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-1897-2033",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Metta World Peace, Marcus Fizer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2217.0,
+      "GamesPlayed": 11,
+      "DefPoss": 71,
+      "OpponentPoints": 63
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2201-2239-697",
+      "Name": "Kevin Ollie, Marcus Fizer, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2138.0,
+      "GamesPlayed": 14,
+      "DefPoss": 59,
+      "OpponentPoints": 70
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-2033-2239",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Marcus Fizer, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2105.0,
+      "GamesPlayed": 9,
+      "DefPoss": 64,
+      "OpponentPoints": 71
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2033-2201-2239",
+      "Name": "Ron Mercer, Kevin Ollie, Marcus Fizer, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2093.0,
+      "GamesPlayed": 10,
+      "DefPoss": 66,
+      "OpponentPoints": 71
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2053-2199-2239",
+      "Name": "Jalen Rose, Jamal Crawford, Dalibor Bagaric, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2062.0,
+      "GamesPlayed": 5,
+      "DefPoss": 65,
+      "OpponentPoints": 76
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-2033-21-891",
+      "Name": "Ron Mercer, Brad Miller, Marcus Fizer, Greg Anthony, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1894.0,
+      "GamesPlayed": 5,
+      "DefPoss": 59,
+      "OpponentPoints": 81
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1897-2033-2062-2239",
+      "Name": "Brad Miller, Metta World Peace, Marcus Fizer, A.J. Guyton, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1889.0,
+      "GamesPlayed": 5,
+      "DefPoss": 51,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-2239-891",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1867.0,
+      "GamesPlayed": 7,
+      "DefPoss": 56,
+      "OpponentPoints": 56
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2033-891",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Marcus Fizer, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1783.0,
+      "GamesPlayed": 6,
+      "DefPoss": 62,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2201-2239-696-891",
+      "Name": "Jalen Rose, Eddy Curry, Trenton Hassell, Travis Best, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1737.0,
+      "GamesPlayed": 5,
+      "DefPoss": 51,
+      "OpponentPoints": 59
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2199-2201-696-697",
+      "Name": "Jalen Rose, Tyson Chandler, Eddy Curry, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1589.0,
+      "GamesPlayed": 5,
+      "DefPoss": 50,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2201-696-697",
+      "Name": "Jalen Rose, Marcus Fizer, Eddy Curry, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1574.0,
+      "GamesPlayed": 9,
+      "DefPoss": 48,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-2033-697",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Marcus Fizer, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1521.0,
+      "GamesPlayed": 9,
+      "DefPoss": 44,
+      "OpponentPoints": 47
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2037-2201-2239",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1519.0,
+      "GamesPlayed": 8,
+      "DefPoss": 55,
+      "OpponentPoints": 59
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2053-2062-2239-697",
+      "Name": "Marcus Fizer, Dalibor Bagaric, A.J. Guyton, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1507.0,
+      "GamesPlayed": 6,
+      "DefPoss": 41,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2199-2201-2239-697",
+      "Name": "Kevin Ollie, Tyson Chandler, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1485.0,
+      "GamesPlayed": 4,
+      "DefPoss": 46,
+      "OpponentPoints": 51
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-2033-2062-2239-697",
+      "Name": "Brad Miller, Marcus Fizer, A.J. Guyton, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1426.0,
+      "GamesPlayed": 7,
+      "DefPoss": 45,
+      "OpponentPoints": 56
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-21-2239-891",
+      "Name": "Ron Mercer, Marcus Fizer, Greg Anthony, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1418.0,
+      "GamesPlayed": 8,
+      "DefPoss": 47,
+      "OpponentPoints": 58
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2199-2201-696",
+      "Name": "Jalen Rose, Eddie Robinson, Tyson Chandler, Eddy Curry, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1417.0,
+      "GamesPlayed": 3,
+      "DefPoss": 45,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-2199-2239-697",
+      "Name": "Kevin Ollie, Brad Miller, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1380.0,
+      "GamesPlayed": 6,
+      "DefPoss": 40,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2037-2053-2239",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Dalibor Bagaric, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1346.0,
+      "GamesPlayed": 8,
+      "DefPoss": 45,
+      "OpponentPoints": 52
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2199-2239-696-697",
+      "Name": "Jalen Rose, Tyson Chandler, Trenton Hassell, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1339.0,
+      "GamesPlayed": 8,
+      "DefPoss": 45,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-2239-697-891",
+      "Name": "Kevin Ollie, Brad Miller, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1323.0,
+      "GamesPlayed": 8,
+      "DefPoss": 37,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2199-2239-696",
+      "Name": "Jalen Rose, Marcus Fizer, Tyson Chandler, Trenton Hassell, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1316.0,
+      "GamesPlayed": 6,
+      "DefPoss": 41,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2062-2199-2239-697",
+      "Name": "Marcus Fizer, A.J. Guyton, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1307.0,
+      "GamesPlayed": 4,
+      "DefPoss": 38,
+      "OpponentPoints": 55
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2199-697-891",
+      "Name": "Ron Mercer, Kevin Ollie, Tyson Chandler, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1295.0,
+      "GamesPlayed": 5,
+      "DefPoss": 39,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2053-2369-696-697",
+      "Name": "Marcus Fizer, Dalibor Bagaric, Norman Richardson, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1237.0,
+      "GamesPlayed": 4,
+      "DefPoss": 38,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2053-2062-2199-697",
+      "Name": "Eddie Robinson, Dalibor Bagaric, A.J. Guyton, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1203.0,
+      "GamesPlayed": 4,
+      "DefPoss": 40,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-2033-21-697",
+      "Name": "Ron Mercer, Brad Miller, Marcus Fizer, Greg Anthony, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1202.0,
+      "GamesPlayed": 10,
+      "DefPoss": 35,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2033-2239-891",
+      "Name": "Ron Mercer, Kevin Ollie, Marcus Fizer, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1157.0,
+      "GamesPlayed": 6,
+      "DefPoss": 33,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-697-891",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1151.0,
+      "GamesPlayed": 6,
+      "DefPoss": 33,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2033-21-891",
+      "Name": "Ron Mercer, Metta World Peace, Marcus Fizer, Greg Anthony, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1151.0,
+      "GamesPlayed": 3,
+      "DefPoss": 34,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2037-2053-697-891",
+      "Name": "Eddie Robinson, Jamal Crawford, Dalibor Bagaric, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1149.0,
+      "GamesPlayed": 5,
+      "DefPoss": 34,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2033-696-891",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Travis Best, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1146.0,
+      "GamesPlayed": 4,
+      "DefPoss": 35,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-21-2199-697-891",
+      "Name": "Ron Mercer, Greg Anthony, Tyson Chandler, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1137.0,
+      "GamesPlayed": 3,
+      "DefPoss": 35,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2037-2053-891",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Dalibor Bagaric, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1102.0,
+      "GamesPlayed": 4,
+      "DefPoss": 32,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2199-2239-697-891",
+      "Name": "Kevin Ollie, Tyson Chandler, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1092.0,
+      "GamesPlayed": 6,
+      "DefPoss": 33,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2053-2199-2239-696",
+      "Name": "Jalen Rose, Dalibor Bagaric, Tyson Chandler, Trenton Hassell, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1087.0,
+      "GamesPlayed": 9,
+      "DefPoss": 37,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-696-697-891",
+      "Name": "Jalen Rose, Marcus Fizer, Travis Best, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1048.0,
+      "GamesPlayed": 4,
+      "DefPoss": 36,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2053-2239-697",
+      "Name": "Kevin Ollie, Marcus Fizer, Dalibor Bagaric, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1032.0,
+      "GamesPlayed": 6,
+      "DefPoss": 29,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2037-697-891",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1031.0,
+      "GamesPlayed": 4,
+      "DefPoss": 29,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2033-2201-697",
+      "Name": "Ron Mercer, Kevin Ollie, Marcus Fizer, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1021.0,
+      "GamesPlayed": 7,
+      "DefPoss": 33,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-21-697-891",
+      "Name": "Ron Mercer, Marcus Fizer, Greg Anthony, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1013.0,
+      "GamesPlayed": 5,
+      "DefPoss": 29,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2053-696-697",
+      "Name": "Jalen Rose, Marcus Fizer, Dalibor Bagaric, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1010.0,
+      "GamesPlayed": 5,
+      "DefPoss": 28,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-21-2199-2239",
+      "Name": "Ron Mercer, Marcus Fizer, Greg Anthony, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 987.0,
+      "GamesPlayed": 6,
+      "DefPoss": 30,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2033-21-2199",
+      "Name": "Ron Mercer, Metta World Peace, Marcus Fizer, Greg Anthony, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 980.0,
+      "GamesPlayed": 3,
+      "DefPoss": 33,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-2033-2062-2239",
+      "Name": "Ron Mercer, Brad Miller, Marcus Fizer, A.J. Guyton, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 957.0,
+      "GamesPlayed": 4,
+      "DefPoss": 30,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2037-2053-697",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Dalibor Bagaric, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 948.0,
+      "GamesPlayed": 5,
+      "DefPoss": 31,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2062-2199-2201-2239-697",
+      "Name": "A.J. Guyton, Tyson Chandler, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 940.0,
+      "GamesPlayed": 5,
+      "DefPoss": 30,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2037-2053-2199",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Dalibor Bagaric, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 937.0,
+      "GamesPlayed": 4,
+      "DefPoss": 31,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2199-2201-2239",
+      "Name": "Kevin Ollie, Metta World Peace, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 911.0,
+      "GamesPlayed": 1,
+      "DefPoss": 30,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2033-21-2201",
+      "Name": "Ron Mercer, Metta World Peace, Marcus Fizer, Greg Anthony, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 901.0,
+      "GamesPlayed": 1,
+      "DefPoss": 27,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2053-2239-696-697",
+      "Name": "Marcus Fizer, Dalibor Bagaric, Trenton Hassell, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 901.0,
+      "GamesPlayed": 2,
+      "DefPoss": 24,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-2033-697-891",
+      "Name": "Kevin Ollie, Brad Miller, Marcus Fizer, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 896.0,
+      "GamesPlayed": 4,
+      "DefPoss": 27,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-2033-2239-697",
+      "Name": "Kevin Ollie, Brad Miller, Marcus Fizer, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 861.0,
+      "GamesPlayed": 10,
+      "DefPoss": 24,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2033-697-891",
+      "Name": "Ron Mercer, Kevin Ollie, Marcus Fizer, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 854.0,
+      "GamesPlayed": 5,
+      "DefPoss": 22,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-21-2201-2239-891",
+      "Name": "Ron Mercer, Greg Anthony, Eddy Curry, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 844.0,
+      "GamesPlayed": 6,
+      "DefPoss": 30,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2062-2201-2239",
+      "Name": "Jalen Rose, Marcus Fizer, A.J. Guyton, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 833.0,
+      "GamesPlayed": 3,
+      "DefPoss": 23,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2037-2239-891",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 807.0,
+      "GamesPlayed": 4,
+      "DefPoss": 27,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2037-2199-2239",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 790.0,
+      "GamesPlayed": 4,
+      "DefPoss": 29,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2053-2239-696-891",
+      "Name": "Jalen Rose, Dalibor Bagaric, Trenton Hassell, Travis Best, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 773.0,
+      "GamesPlayed": 4,
+      "DefPoss": 26,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2053-2062-2199-2239",
+      "Name": "Jalen Rose, Dalibor Bagaric, A.J. Guyton, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 762.0,
+      "GamesPlayed": 3,
+      "DefPoss": 26,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2062-2199-2201-697",
+      "Name": "Marcus Fizer, A.J. Guyton, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 748.0,
+      "GamesPlayed": 2,
+      "DefPoss": 27,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2199-696-697",
+      "Name": "Jalen Rose, Marcus Fizer, Tyson Chandler, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 746.0,
+      "GamesPlayed": 5,
+      "DefPoss": 24,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1944-2033-697",
+      "Name": "Kevin Ollie, Brad Miller, Eddie Robinson, Marcus Fizer, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 741.0,
+      "GamesPlayed": 2,
+      "DefPoss": 23,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2201-697-891",
+      "Name": "Ron Mercer, Kevin Ollie, Eddy Curry, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 737.0,
+      "GamesPlayed": 5,
+      "DefPoss": 19,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-1897-21-2199",
+      "Name": "Ron Mercer, Brad Miller, Metta World Peace, Greg Anthony, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 725.0,
+      "GamesPlayed": 5,
+      "DefPoss": 25,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2033-2199",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Marcus Fizer, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 705.0,
+      "GamesPlayed": 3,
+      "DefPoss": 22,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2033-2199-2239",
+      "Name": "Ron Mercer, Kevin Ollie, Marcus Fizer, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 697.0,
+      "GamesPlayed": 4,
+      "DefPoss": 19,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2199-697",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 691.0,
+      "GamesPlayed": 2,
+      "DefPoss": 21,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2053-2062-2239",
+      "Name": "Jalen Rose, Marcus Fizer, Dalibor Bagaric, A.J. Guyton, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 688.0,
+      "GamesPlayed": 3,
+      "DefPoss": 25,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2053-2062-2201-2239-697",
+      "Name": "Dalibor Bagaric, A.J. Guyton, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 684.0,
+      "GamesPlayed": 2,
+      "DefPoss": 22,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2037-2199-891",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Tyson Chandler, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 682.0,
+      "GamesPlayed": 3,
+      "DefPoss": 22,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2053-2062-697",
+      "Name": "Kevin Ollie, Marcus Fizer, Dalibor Bagaric, A.J. Guyton, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 679.0,
+      "GamesPlayed": 1,
+      "DefPoss": 22,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-21-2199-2239",
+      "Name": "Ron Mercer, Brad Miller, Greg Anthony, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 672.0,
+      "GamesPlayed": 4,
+      "DefPoss": 25,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2053-2199-2239-697",
+      "Name": "Kevin Ollie, Dalibor Bagaric, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 639.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1944-2033-2239",
+      "Name": "Kevin Ollie, Brad Miller, Eddie Robinson, Marcus Fizer, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 605.0,
+      "GamesPlayed": 6,
+      "DefPoss": 18,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2033-2199-697",
+      "Name": "Ron Mercer, Kevin Ollie, Marcus Fizer, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 598.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-21-2199-891",
+      "Name": "Ron Mercer, Brad Miller, Greg Anthony, Tyson Chandler, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 594.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-21-2199-2239-891",
+      "Name": "Ron Mercer, Greg Anthony, Tyson Chandler, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 593.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1897-1944-2033",
+      "Name": "Kevin Ollie, Brad Miller, Metta World Peace, Eddie Robinson, Marcus Fizer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 581.0,
+      "GamesPlayed": 5,
+      "DefPoss": 18,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2033-2199-2239",
+      "Name": "Kevin Ollie, Metta World Peace, Marcus Fizer, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 580.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2037-2053-2369-697",
+      "Name": "Marcus Fizer, Jamal Crawford, Dalibor Bagaric, Norman Richardson, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 567.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-21-2201-697-891",
+      "Name": "Ron Mercer, Greg Anthony, Eddy Curry, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 556.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2033-2062-2239-697",
+      "Name": "Metta World Peace, Marcus Fizer, A.J. Guyton, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 555.0,
+      "GamesPlayed": 2,
+      "DefPoss": 19,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-2033-2239-891",
+      "Name": "Kevin Ollie, Brad Miller, Marcus Fizer, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 547.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2033-2037-891",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jamal Crawford, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 543.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2062-2199-2239-697-891",
+      "Name": "A.J. Guyton, Tyson Chandler, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 537.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1897-2033-697",
+      "Name": "Kevin Ollie, Brad Miller, Metta World Peace, Marcus Fizer, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 526.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1944-2033-2199-2239",
+      "Name": "Kevin Ollie, Eddie Robinson, Marcus Fizer, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 524.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2033-2037-2053",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jamal Crawford, Dalibor Bagaric",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 506.0,
+      "GamesPlayed": 5,
+      "DefPoss": 14,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2053-2062-2199-2201-2239",
+      "Name": "Dalibor Bagaric, A.J. Guyton, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 503.0,
+      "GamesPlayed": 2,
+      "DefPoss": 19,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2239-696-697",
+      "Name": "Jalen Rose, Marcus Fizer, Trenton Hassell, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 501.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2053-2062-2199-2239",
+      "Name": "Kevin Ollie, Dalibor Bagaric, A.J. Guyton, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 493.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2199-2201-2239-697",
+      "Name": "Metta World Peace, Tyson Chandler, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 493.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2033-2062-2199-697",
+      "Name": "Metta World Peace, Marcus Fizer, A.J. Guyton, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 492.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2053-21-697-891",
+      "Name": "Ron Mercer, Dalibor Bagaric, Greg Anthony, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 490.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1897-1944-2033-2062",
+      "Name": "Brad Miller, Metta World Peace, Eddie Robinson, Marcus Fizer, A.J. Guyton",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 483.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2199-2201-697",
+      "Name": "Kevin Ollie, Marcus Fizer, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 479.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2037-2053-2239-891",
+      "Name": "Eddie Robinson, Jamal Crawford, Dalibor Bagaric, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 477.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-1944-2033-2062-2199",
+      "Name": "Metta World Peace, Eddie Robinson, Marcus Fizer, A.J. Guyton, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 463.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2053-2062-2239",
+      "Name": "Kevin Ollie, Marcus Fizer, Dalibor Bagaric, A.J. Guyton, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 461.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-2033-2199",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Marcus Fizer, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 453.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-1944-891",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Eddie Robinson, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 450.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2199-2201-697",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 449.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2239-696-697-891",
+      "Name": "Marcus Fizer, Trenton Hassell, Travis Best, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 447.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2201-2239-696-697",
+      "Name": "Marcus Fizer, Eddy Curry, Trenton Hassell, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 441.0,
+      "GamesPlayed": 6,
+      "DefPoss": 18,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-2199-2239",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 431.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2053-2199-696-697",
+      "Name": "Jalen Rose, Dalibor Bagaric, Tyson Chandler, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 429.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2037-2201-697",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 416.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2033-697",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Marcus Fizer, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 412.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-21-2201-2239",
+      "Name": "Ron Mercer, Marcus Fizer, Greg Anthony, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 411.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2037-2053-2239-697",
+      "Name": "Marcus Fizer, Jamal Crawford, Dalibor Bagaric, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 408.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1897-2033-2239",
+      "Name": "Kevin Ollie, Brad Miller, Metta World Peace, Marcus Fizer, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 407.0,
+      "GamesPlayed": 5,
+      "DefPoss": 13,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2053-2199-2201-2239",
+      "Name": "Kevin Ollie, Dalibor Bagaric, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 402.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2199-2239-696-891",
+      "Name": "Jalen Rose, Tyson Chandler, Trenton Hassell, Travis Best, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 397.0,
+      "GamesPlayed": 5,
+      "DefPoss": 15,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-1897-2199",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Metta World Peace, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 395.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2033-2062-697",
+      "Name": "Ron Mercer, Metta World Peace, Marcus Fizer, A.J. Guyton, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 392.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1944-2199-2239",
+      "Name": "Kevin Ollie, Brad Miller, Eddie Robinson, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 387.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2199-2201-2239-697",
+      "Name": "Eddie Robinson, Tyson Chandler, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 387.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2053-2062-2201-2239",
+      "Name": "Kevin Ollie, Dalibor Bagaric, A.J. Guyton, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 386.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1897-2033-2062-697",
+      "Name": "Brad Miller, Metta World Peace, Marcus Fizer, A.J. Guyton, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 385.0,
+      "GamesPlayed": 4,
+      "DefPoss": 11,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2062-2201-697",
+      "Name": "Kevin Ollie, Marcus Fizer, A.J. Guyton, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 384.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2201-2239-697-891",
+      "Name": "Kevin Ollie, Eddy Curry, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 384.0,
+      "GamesPlayed": 4,
+      "DefPoss": 11,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-1944-2033-2199",
+      "Name": "Kevin Ollie, Metta World Peace, Eddie Robinson, Marcus Fizer, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 382.0,
+      "GamesPlayed": 1,
+      "DefPoss": 15,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2062-697-891",
+      "Name": "Jalen Rose, Marcus Fizer, A.J. Guyton, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 379.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2033-2053-2239",
+      "Name": "Kevin Ollie, Metta World Peace, Marcus Fizer, Dalibor Bagaric, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 372.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2033-2201-2239",
+      "Name": "Kevin Ollie, Metta World Peace, Marcus Fizer, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 372.0,
+      "GamesPlayed": 4,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2199-2201-697",
+      "Name": "Kevin Ollie, Metta World Peace, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 364.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2199-2239-891",
+      "Name": "Ron Mercer, Kevin Ollie, Tyson Chandler, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 362.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2199-2201-697",
+      "Name": "Ron Mercer, Kevin Ollie, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 355.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1944-2033-2201-697",
+      "Name": "Ron Mercer, Eddie Robinson, Marcus Fizer, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 352.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2239-697-891",
+      "Name": "Kevin Ollie, Marcus Fizer, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 352.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1944-697-891",
+      "Name": "Kevin Ollie, Brad Miller, Eddie Robinson, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2033-2062-891",
+      "Name": "Ron Mercer, Metta World Peace, Marcus Fizer, A.J. Guyton, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2053-697-891",
+      "Name": "Jalen Rose, Jamal Crawford, Dalibor Bagaric, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 330.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2033-2062-2199-2239",
+      "Name": "Eddie Robinson, Marcus Fizer, A.J. Guyton, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 324.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2053-2239-891",
+      "Name": "Jalen Rose, Jamal Crawford, Dalibor Bagaric, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 321.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2033-2053-2062-2239",
+      "Name": "Metta World Peace, Marcus Fizer, Dalibor Bagaric, A.J. Guyton, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1897-1944-2062-2199",
+      "Name": "Brad Miller, Metta World Peace, Eddie Robinson, A.J. Guyton, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 311.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1897-2062-2239-697",
+      "Name": "Brad Miller, Metta World Peace, A.J. Guyton, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 305.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-21-2239-891",
+      "Name": "Ron Mercer, Metta World Peace, Greg Anthony, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 302.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2199-2201-697",
+      "Name": "Ron Mercer, Metta World Peace, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2033-2201-2239-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 298.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2053-2199-2239",
+      "Name": "Kevin Ollie, Marcus Fizer, Dalibor Bagaric, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 295.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2053-2199-697",
+      "Name": "Ron Mercer, Metta World Peace, Dalibor Bagaric, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 293.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2053-2199-2239-696-697",
+      "Name": "Dalibor Bagaric, Tyson Chandler, Trenton Hassell, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 287.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-1944-2033",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Eddie Robinson, Marcus Fizer",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 284.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-21-2199-2201",
+      "Name": "Ron Mercer, Marcus Fizer, Greg Anthony, Tyson Chandler, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 282.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2037-2053-2239-2369",
+      "Name": "Marcus Fizer, Jamal Crawford, Dalibor Bagaric, Trenton Hassell, Norman Richardson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 271.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2033-2239-891",
+      "Name": "Kevin Ollie, Metta World Peace, Marcus Fizer, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-21-2199-891",
+      "Name": "Ron Mercer, Metta World Peace, Greg Anthony, Tyson Chandler, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 269.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2037-2199-2201",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Tyson Chandler, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 266.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2037-2201-2239",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 264.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2037-2199-2201-2239-697",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 264.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2037-2201-697-891",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2037-2053-2062-2199-2201",
+      "Name": "Jamal Crawford, Dalibor Bagaric, A.J. Guyton, Tyson Chandler, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-2053-21-697",
+      "Name": "Ron Mercer, Marcus Fizer, Dalibor Bagaric, Greg Anthony, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2033-2037-2053-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Dalibor Bagaric, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2062-2199-2201-697",
+      "Name": "Metta World Peace, A.J. Guyton, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2201-2239-696-891",
+      "Name": "Eddie Robinson, Eddy Curry, Trenton Hassell, Travis Best, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 257.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2062-2199-2201-697",
+      "Name": "Eddie Robinson, A.J. Guyton, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-1944-2033-21",
+      "Name": "Ron Mercer, Brad Miller, Eddie Robinson, Marcus Fizer, Greg Anthony",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2199-2239-696-697",
+      "Name": "Marcus Fizer, Tyson Chandler, Trenton Hassell, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2199-2201-2369-696-697",
+      "Name": "Tyson Chandler, Eddy Curry, Norman Richardson, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 251.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-2033-2062-2239",
+      "Name": "Kevin Ollie, Brad Miller, Marcus Fizer, A.J. Guyton, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1897-2033-2239-697",
+      "Name": "Brad Miller, Metta World Peace, Marcus Fizer, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1944-2033-2201",
+      "Name": "Ron Mercer, Kevin Ollie, Eddie Robinson, Marcus Fizer, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 245.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2062-2201-697-891",
+      "Name": "Ron Mercer, A.J. Guyton, Eddy Curry, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2037-2053-2062-2199",
+      "Name": "Eddie Robinson, Jamal Crawford, Dalibor Bagaric, A.J. Guyton, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1944-2033-2199-697",
+      "Name": "Ron Mercer, Eddie Robinson, Marcus Fizer, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2033-2037-2199-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 241.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2033-2037-697-891",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 241.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-1944-2033-2201",
+      "Name": "Kevin Ollie, Metta World Peace, Eddie Robinson, Marcus Fizer, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 235.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2062-2201-2239-697",
+      "Name": "Jalen Rose, A.J. Guyton, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 234.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-2199-891",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Tyson Chandler, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-2033-891",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Marcus Fizer, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1944-2053-2199-2239",
+      "Name": "Kevin Ollie, Eddie Robinson, Dalibor Bagaric, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2037-2199-2201-2239",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2033-2037-2199",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jamal Crawford, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2201-2239-891",
+      "Name": "Ron Mercer, Kevin Ollie, Eddy Curry, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2199-2239-697",
+      "Name": "Kevin Ollie, Marcus Fizer, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2037-2201-891",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Eddy Curry, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2062-2199-2201-2239",
+      "Name": "Kevin Ollie, A.J. Guyton, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 224.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-21-2239-697-891",
+      "Name": "Marcus Fizer, Greg Anthony, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 223.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2053-2239-696-697",
+      "Name": "Jalen Rose, Dalibor Bagaric, Trenton Hassell, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-2053-21-2239",
+      "Name": "Ron Mercer, Marcus Fizer, Dalibor Bagaric, Greg Anthony, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2033-21-697-891",
+      "Name": "Metta World Peace, Marcus Fizer, Greg Anthony, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2053-696-891",
+      "Name": "Jalen Rose, Eddie Robinson, Dalibor Bagaric, Travis Best, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 218.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2199-697-891",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 218.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-1944-2201-2239",
+      "Name": "Kevin Ollie, Metta World Peace, Eddie Robinson, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 218.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-21-2199-2201-2239",
+      "Name": "Jalen Rose, Greg Anthony, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-1944-21-2199",
+      "Name": "Ron Mercer, Brad Miller, Eddie Robinson, Greg Anthony, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-2062-2239-891",
+      "Name": "Ron Mercer, Marcus Fizer, A.J. Guyton, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-21-2199-2201",
+      "Name": "Kevin Ollie, Marcus Fizer, Greg Anthony, Tyson Chandler, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-2033-21-2199",
+      "Name": "Ron Mercer, Brad Miller, Marcus Fizer, Greg Anthony, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 212.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2033-2062-2199",
+      "Name": "Ron Mercer, Metta World Peace, Marcus Fizer, A.J. Guyton, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 212.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1944-2199-2201-697",
+      "Name": "Kevin Ollie, Eddie Robinson, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2199-2201-2239-696",
+      "Name": "Eddie Robinson, Tyson Chandler, Eddy Curry, Trenton Hassell, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2199-2369-696-697",
+      "Name": "Jalen Rose, Tyson Chandler, Norman Richardson, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2201-2239-697",
+      "Name": "Kevin Ollie, Metta World Peace, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2037-2199-2201-697",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2199-2201-2239",
+      "Name": "Kevin Ollie, Marcus Fizer, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 208.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2033-2053-697",
+      "Name": "Ron Mercer, Kevin Ollie, Marcus Fizer, Dalibor Bagaric, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1944-2199-2201-697",
+      "Name": "Ron Mercer, Eddie Robinson, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2053-2062-2199-2239-697",
+      "Name": "Dalibor Bagaric, A.J. Guyton, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2053-2199-696",
+      "Name": "Jalen Rose, Eddie Robinson, Dalibor Bagaric, Tyson Chandler, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1897-2062-2199-697",
+      "Name": "Brad Miller, Metta World Peace, A.J. Guyton, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2033-2037-2239-891",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1897-1944-2062-891",
+      "Name": "Brad Miller, Metta World Peace, Eddie Robinson, A.J. Guyton, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1897-2239-697",
+      "Name": "Kevin Ollie, Brad Miller, Metta World Peace, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2062-2199-696",
+      "Name": "Jalen Rose, Marcus Fizer, A.J. Guyton, Tyson Chandler, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-21-2199-697",
+      "Name": "Ron Mercer, Brad Miller, Greg Anthony, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 194.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2062-2201-2239",
+      "Name": "Kevin Ollie, Marcus Fizer, A.J. Guyton, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2037-2199-697",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2062-2199-2201-2239",
+      "Name": "Ron Mercer, A.J. Guyton, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2053-2062-2239-697",
+      "Name": "Jalen Rose, Dalibor Bagaric, A.J. Guyton, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-1944-2053-2199",
+      "Name": "Kevin Ollie, Metta World Peace, Eddie Robinson, Dalibor Bagaric, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2053-2199-2201-697",
+      "Name": "Kevin Ollie, Dalibor Bagaric, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2033-2053-2062-697",
+      "Name": "Metta World Peace, Marcus Fizer, Dalibor Bagaric, A.J. Guyton, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2062-2199-696-697",
+      "Name": "Jalen Rose, A.J. Guyton, Tyson Chandler, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2033-2053-891",
+      "Name": "Ron Mercer, Kevin Ollie, Marcus Fizer, Dalibor Bagaric, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-1944-2199",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Eddie Robinson, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2053-2199-2239",
+      "Name": "Kevin Ollie, Metta World Peace, Dalibor Bagaric, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2033-2053-696",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Dalibor Bagaric, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-21-2199-697",
+      "Name": "Ron Mercer, Marcus Fizer, Greg Anthony, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-2033-2199-697",
+      "Name": "Ron Mercer, Brad Miller, Marcus Fizer, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2201-697",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 177.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-1944-2053-2201",
+      "Name": "Kevin Ollie, Metta World Peace, Eddie Robinson, Dalibor Bagaric, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2062-2199-697",
+      "Name": "Jalen Rose, Marcus Fizer, A.J. Guyton, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2053-2369-697",
+      "Name": "Jalen Rose, Jamal Crawford, Dalibor Bagaric, Norman Richardson, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-21-2239-891",
+      "Name": "Kevin Ollie, Marcus Fizer, Greg Anthony, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1944-2033-2239-697",
+      "Name": "Brad Miller, Eddie Robinson, Marcus Fizer, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2037-2199-2201-2369-697",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Norman Richardson, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2199-696-891",
+      "Name": "Jalen Rose, Eddie Robinson, Tyson Chandler, Travis Best, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-1944-2199-2239",
+      "Name": "Kevin Ollie, Metta World Peace, Eddie Robinson, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-21-2201-2239-697",
+      "Name": "Marcus Fizer, Greg Anthony, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-2199-2201-697",
+      "Name": "Ron Mercer, Marcus Fizer, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-2033-21-2239",
+      "Name": "Kevin Ollie, Brad Miller, Marcus Fizer, Greg Anthony, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2239-891",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2053-2062-2199-2201-2369",
+      "Name": "Dalibor Bagaric, A.J. Guyton, Tyson Chandler, Eddy Curry, Norman Richardson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-1944-2033-891",
+      "Name": "Kevin Ollie, Metta World Peace, Eddie Robinson, Marcus Fizer, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-2053-2062-21",
+      "Name": "Ron Mercer, Marcus Fizer, Dalibor Bagaric, A.J. Guyton, Greg Anthony",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-1944-2199",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Eddie Robinson, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-2062-2199-2201",
+      "Name": "Ron Mercer, Marcus Fizer, A.J. Guyton, Tyson Chandler, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2201-696-697",
+      "Name": "Jalen Rose, Eddie Robinson, Eddy Curry, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2199-2239-891",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-2062-2199-697",
+      "Name": "Kevin Ollie, Brad Miller, A.J. Guyton, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2053-2062-2201-697",
+      "Name": "Kevin Ollie, Dalibor Bagaric, A.J. Guyton, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-21-2199-2239-891",
+      "Name": "Metta World Peace, Greg Anthony, Tyson Chandler, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2033-2037-2201-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2053-696-697-891",
+      "Name": "Eddie Robinson, Dalibor Bagaric, Travis Best, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2199-891",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Tyson Chandler, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2033-2053-696-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Dalibor Bagaric, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-2033-21",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Marcus Fizer, Greg Anthony",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2053-2062-697-891",
+      "Name": "Kevin Ollie, Dalibor Bagaric, A.J. Guyton, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1897-1944-2062-2239",
+      "Name": "Brad Miller, Metta World Peace, Eddie Robinson, A.J. Guyton, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2062-696-891",
+      "Name": "Jalen Rose, Marcus Fizer, A.J. Guyton, Travis Best, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 159.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2033-2201-697",
+      "Name": "Ron Mercer, Metta World Peace, Marcus Fizer, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2053-21-2239-891",
+      "Name": "Ron Mercer, Dalibor Bagaric, Greg Anthony, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2033-2199-2201",
+      "Name": "Ron Mercer, Kevin Ollie, Marcus Fizer, Tyson Chandler, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-2053-2062-2239",
+      "Name": "Ron Mercer, Marcus Fizer, Dalibor Bagaric, A.J. Guyton, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-2062-2239-697-891",
+      "Name": "Brad Miller, A.J. Guyton, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2239-697-891",
+      "Name": "Jalen Rose, Jamal Crawford, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-1944-2199-697",
+      "Name": "Ron Mercer, Metta World Peace, Eddie Robinson, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2062-2201-697",
+      "Name": "Jalen Rose, Marcus Fizer, A.J. Guyton, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2053-2062-2201-696",
+      "Name": "Marcus Fizer, Dalibor Bagaric, A.J. Guyton, Eddy Curry, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-1897-2239",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Metta World Peace, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2037-2239-697-891",
+      "Name": "Marcus Fizer, Jamal Crawford, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2053-2199-2369-696-697",
+      "Name": "Dalibor Bagaric, Tyson Chandler, Norman Richardson, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-1897-2062-891",
+      "Name": "Ron Mercer, Brad Miller, Metta World Peace, A.J. Guyton, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2201-697-891",
+      "Name": "Kevin Ollie, Marcus Fizer, Eddy Curry, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2062-2199-2201-697",
+      "Name": "Jalen Rose, A.J. Guyton, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-21-2201-891",
+      "Name": "Ron Mercer, Metta World Peace, Greg Anthony, Eddy Curry, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-21-2199-2201-2239",
+      "Name": "Ron Mercer, Greg Anthony, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2033-21-2201-697",
+      "Name": "Metta World Peace, Marcus Fizer, Greg Anthony, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2199-696-697-891",
+      "Name": "Jalen Rose, Tyson Chandler, Travis Best, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2201-2239-696-697",
+      "Name": "Jalen Rose, Eddy Curry, Trenton Hassell, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2201-696-697-891",
+      "Name": "Jalen Rose, Eddy Curry, Travis Best, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1944-2033-21-2199",
+      "Name": "Ron Mercer, Eddie Robinson, Marcus Fizer, Greg Anthony, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-2033-21-697",
+      "Name": "Kevin Ollie, Brad Miller, Marcus Fizer, Greg Anthony, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2062-2199-2201",
+      "Name": "Jalen Rose, Eddie Robinson, A.J. Guyton, Tyson Chandler, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2053-2062-2199-697",
+      "Name": "Kevin Ollie, Dalibor Bagaric, A.J. Guyton, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2062-2199-2201",
+      "Name": "Kevin Ollie, Marcus Fizer, A.J. Guyton, Tyson Chandler, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2037-2369-697-891",
+      "Name": "Marcus Fizer, Jamal Crawford, Norman Richardson, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2199-2239-697",
+      "Name": "Jalen Rose, Marcus Fizer, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2201-2239",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-1897-21-697",
+      "Name": "Ron Mercer, Brad Miller, Metta World Peace, Greg Anthony, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-1897-1944",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Metta World Peace, Eddie Robinson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2033-2053-2062-2239",
+      "Name": "Eddie Robinson, Marcus Fizer, Dalibor Bagaric, A.J. Guyton, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-21-2201-697",
+      "Name": "Ron Mercer, Marcus Fizer, Greg Anthony, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2199-697-891",
+      "Name": "Ron Mercer, Metta World Peace, Tyson Chandler, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-2033-2062-697",
+      "Name": "Kevin Ollie, Brad Miller, Marcus Fizer, A.J. Guyton, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2053-2062-697",
+      "Name": "Jalen Rose, Marcus Fizer, Dalibor Bagaric, A.J. Guyton, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2033-2201-2239-697",
+      "Name": "Metta World Peace, Marcus Fizer, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2201-2369-696-697",
+      "Name": "Jalen Rose, Eddy Curry, Norman Richardson, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "21-2199-2201-2239-697",
+      "Name": "Greg Anthony, Tyson Chandler, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2033-2239",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Marcus Fizer, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2201-2239-697",
+      "Name": "Ron Mercer, Metta World Peace, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2037-2053-2199-2369-697",
+      "Name": "Jamal Crawford, Dalibor Bagaric, Tyson Chandler, Norman Richardson, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1944-2062-2199-697",
+      "Name": "Brad Miller, Eddie Robinson, A.J. Guyton, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1944-2053-21-891",
+      "Name": "Ron Mercer, Eddie Robinson, Dalibor Bagaric, Greg Anthony, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2199-2201-2239",
+      "Name": "Ron Mercer, Kevin Ollie, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2053-21-2199-2239",
+      "Name": "Ron Mercer, Dalibor Bagaric, Greg Anthony, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1944-2033-2062-2239",
+      "Name": "Brad Miller, Eddie Robinson, Marcus Fizer, A.J. Guyton, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2033-2199-696",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Tyson Chandler, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-1944-2201-891",
+      "Name": "Kevin Ollie, Metta World Peace, Eddie Robinson, Eddy Curry, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1897-2033-21-697",
+      "Name": "Brad Miller, Metta World Peace, Marcus Fizer, Greg Anthony, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-1944-2201",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Eddie Robinson, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1944-2199-697",
+      "Name": "Kevin Ollie, Brad Miller, Eddie Robinson, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2033-2062-2201-2239",
+      "Name": "Metta World Peace, Marcus Fizer, A.J. Guyton, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2033-2239-697-891",
+      "Name": "Metta World Peace, Marcus Fizer, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-1944-2199-697",
+      "Name": "Ron Mercer, Brad Miller, Eddie Robinson, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-2199-2239-697",
+      "Name": "Ron Mercer, Brad Miller, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2053-21-2199-697",
+      "Name": "Ron Mercer, Dalibor Bagaric, Greg Anthony, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2053-21-2199-2239-697",
+      "Name": "Dalibor Bagaric, Greg Anthony, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-2033-2053-21",
+      "Name": "Ron Mercer, Metta World Peace, Marcus Fizer, Dalibor Bagaric, Greg Anthony",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2033-2201",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Marcus Fizer, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2239-697-891",
+      "Name": "Kevin Ollie, Metta World Peace, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2033-2201-696",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Eddy Curry, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2053-21-2199-697",
+      "Name": "Jalen Rose, Dalibor Bagaric, Greg Anthony, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-21-2199-2239",
+      "Name": "Ron Mercer, Metta World Peace, Greg Anthony, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2199-2201-2239-696-697",
+      "Name": "Tyson Chandler, Eddy Curry, Trenton Hassell, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2201-696-697-891",
+      "Name": "Eddie Robinson, Eddy Curry, Travis Best, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2037-2053-2199-2239-697",
+      "Name": "Jamal Crawford, Dalibor Bagaric, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2062-2199-697-891",
+      "Name": "Ron Mercer, A.J. Guyton, Tyson Chandler, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-2033-21-2239-697",
+      "Name": "Brad Miller, Marcus Fizer, Greg Anthony, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2033-2062-2199-2239",
+      "Name": "Metta World Peace, Marcus Fizer, A.J. Guyton, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2037-2199-2239-891",
+      "Name": "Marcus Fizer, Jamal Crawford, Tyson Chandler, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2033-2053",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Marcus Fizer, Dalibor Bagaric",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2037-2053-2199-2239",
+      "Name": "Eddie Robinson, Jamal Crawford, Dalibor Bagaric, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2201-697-891",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2053-696-697-891",
+      "Name": "Jalen Rose, Dalibor Bagaric, Travis Best, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-21-2199-697",
+      "Name": "Ron Mercer, Metta World Peace, Greg Anthony, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-2199-697",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2037-2201-2369",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Eddy Curry, Norman Richardson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2201-891",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Eddy Curry, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1944-2239-891",
+      "Name": "Kevin Ollie, Brad Miller, Eddie Robinson, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2037-2201-2239-697",
+      "Name": "Marcus Fizer, Jamal Crawford, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2199-2239-891",
+      "Name": "Kevin Ollie, Marcus Fizer, Tyson Chandler, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-2033-2199-2239-697",
+      "Name": "Brad Miller, Marcus Fizer, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-2062-697-891",
+      "Name": "Ron Mercer, Brad Miller, A.J. Guyton, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-2033-2062-2201-2239",
+      "Name": "Ron Mercer, Marcus Fizer, A.J. Guyton, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1944-2033-2053-697",
+      "Name": "Kevin Ollie, Eddie Robinson, Marcus Fizer, Dalibor Bagaric, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2037-2201-2239-697-891",
+      "Name": "Jamal Crawford, Eddy Curry, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2239-696-891",
+      "Name": "Jalen Rose, Eddie Robinson, Trenton Hassell, Travis Best, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1897-1944-697",
+      "Name": "Kevin Ollie, Brad Miller, Metta World Peace, Eddie Robinson, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1944-2033-697",
+      "Name": "Ron Mercer, Kevin Ollie, Eddie Robinson, Marcus Fizer, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2053-2062-2199",
+      "Name": "Jalen Rose, Eddie Robinson, Dalibor Bagaric, A.J. Guyton, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2199-2239-891",
+      "Name": "Kevin Ollie, Metta World Peace, Tyson Chandler, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2053-2201-2239",
+      "Name": "Ron Mercer, Kevin Ollie, Dalibor Bagaric, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-1944-2199-891",
+      "Name": "Kevin Ollie, Metta World Peace, Eddie Robinson, Tyson Chandler, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2037-2239-697",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 3,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1897-2201-2239-697-891",
+      "Name": "Metta World Peace, Eddy Curry, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1944-2199-2201-696-697",
+      "Name": "Eddie Robinson, Tyson Chandler, Eddy Curry, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2062-2239-697",
+      "Name": "Jalen Rose, Marcus Fizer, A.J. Guyton, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 61.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-2062-2199-2239-697",
+      "Name": "Brad Miller, A.J. Guyton, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1897-2239-891",
+      "Name": "Kevin Ollie, Brad Miller, Metta World Peace, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-1897-2033-2062",
+      "Name": "Ron Mercer, Brad Miller, Metta World Peace, Marcus Fizer, A.J. Guyton",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-21-891",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Greg Anthony, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2062-2199-2201-697",
+      "Name": "Kevin Ollie, A.J. Guyton, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-1944-2033-697",
+      "Name": "Ron Mercer, Metta World Peace, Eddie Robinson, Marcus Fizer, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-1897-2199-2239",
+      "Name": "Kevin Ollie, Brad Miller, Metta World Peace, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2037-2053-2199-2239-2369",
+      "Name": "Jamal Crawford, Dalibor Bagaric, Tyson Chandler, Trenton Hassell, Norman Richardson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2033-2239-697",
+      "Name": "Kevin Ollie, Metta World Peace, Marcus Fizer, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2037-2053-2062-2239-697",
+      "Name": "Jamal Crawford, Dalibor Bagaric, A.J. Guyton, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2053-21-2239-697",
+      "Name": "Marcus Fizer, Dalibor Bagaric, Greg Anthony, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 47.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-1897-697",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Metta World Peace, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 2,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1944-2062-697-891",
+      "Name": "Brad Miller, Eddie Robinson, A.J. Guyton, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1897-2239-697",
+      "Name": "Ron Mercer, Kevin Ollie, Metta World Peace, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "2033-2201-2369-696-697",
+      "Name": "Marcus Fizer, Eddy Curry, Norman Richardson, Travis Best, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1802-2199-2201-2239",
+      "Name": "Kevin Ollie, Brad Miller, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-1897-1944-2033-697",
+      "Name": "Brad Miller, Metta World Peace, Eddie Robinson, Marcus Fizer, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "21-2201-2239-697-891",
+      "Name": "Greg Anthony, Eddy Curry, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2062-2239-696",
+      "Name": "Jalen Rose, Marcus Fizer, A.J. Guyton, Trenton Hassell, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-1802-21-891",
+      "Name": "Ron Mercer, Kevin Ollie, Brad Miller, Greg Anthony, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 25.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2033-2201-2369-696",
+      "Name": "Jalen Rose, Marcus Fizer, Eddy Curry, Norman Richardson, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 24.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1944-2033-2239-697",
+      "Name": "Ron Mercer, Eddie Robinson, Marcus Fizer, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 24.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2199-2201-2369",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Eddy Curry, Norman Richardson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 20.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2199-2239-697",
+      "Name": "Kevin Ollie, Metta World Peace, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 18.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-21-2239-697",
+      "Name": "Ron Mercer, Kevin Ollie, Greg Anthony, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 17.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2033-2239-696",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Trenton Hassell, Travis Best",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 16.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1897-21-2239-697",
+      "Name": "Ron Mercer, Metta World Peace, Greg Anthony, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 16.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1802-2239-697-891",
+      "Name": "Ron Mercer, Brad Miller, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 14.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-2037-2201-2239-891",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-2033-2062-2239-697",
+      "Name": "Kevin Ollie, Marcus Fizer, A.J. Guyton, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1500-1563-2239-697-891",
+      "Name": "Ron Mercer, Kevin Ollie, Trenton Hassell, Fred Hoiberg, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1563-1897-2033-2062-2239",
+      "Name": "Kevin Ollie, Metta World Peace, Marcus Fizer, A.J. Guyton, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "1802-2033-21-2239-891",
+      "Name": "Brad Miller, Marcus Fizer, Greg Anthony, Trenton Hassell, Charles Oakley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 11.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2001-02",
+      "EntityId": "147-1944-2037-2199-2239",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 10.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    }
+  ]
+}

@@ -1,0 +1,3669 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2005-06",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2005-06",
+    "RowsReturned": 418,
+    "RowsWithDefPoss": 407,
+    "RowsSkippedMissingMetrics": 42,
+    "LastRowDefPoss": 0,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2552-2736-2768-2804",
+      "Name": "Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 11193.0,
+      "GamesPlayed": 33,
+      "DefPoss": 355,
+      "OpponentPoints": 391
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2732-2736-970",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 11168.0,
+      "GamesPlayed": 31,
+      "DefPoss": 345,
+      "OpponentPoints": 355
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2550-2732-2736",
+      "Name": "Tyson Chandler, Darius Songaila, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8599.0,
+      "GamesPlayed": 34,
+      "DefPoss": 273,
+      "OpponentPoints": 261
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2550-2732-2736",
+      "Name": "Malik Allen, Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8428.0,
+      "GamesPlayed": 18,
+      "DefPoss": 257,
+      "OpponentPoints": 260
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2732-2736-2804",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8199.0,
+      "GamesPlayed": 35,
+      "DefPoss": 271,
+      "OpponentPoints": 279
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2736-2768-2804",
+      "Name": "Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7280.0,
+      "GamesPlayed": 31,
+      "DefPoss": 242,
+      "OpponentPoints": 275
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2552-2768-2804",
+      "Name": "Tyson Chandler, Kirk Hinrich, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7034.0,
+      "GamesPlayed": 21,
+      "DefPoss": 213,
+      "OpponentPoints": 238
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2550-2768-2804",
+      "Name": "Tyson Chandler, Darius Songaila, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5077.0,
+      "GamesPlayed": 17,
+      "DefPoss": 152,
+      "OpponentPoints": 145
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2732-2736-2768",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4890.0,
+      "GamesPlayed": 15,
+      "DefPoss": 163,
+      "OpponentPoints": 183
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2552-2732-2736-970",
+      "Name": "Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4028.0,
+      "GamesPlayed": 15,
+      "DefPoss": 128,
+      "OpponentPoints": 130
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2550-2732-2804",
+      "Name": "Malik Allen, Tyson Chandler, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3770.0,
+      "GamesPlayed": 16,
+      "DefPoss": 124,
+      "OpponentPoints": 136
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2552-2732-2736-2804",
+      "Name": "Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3714.0,
+      "GamesPlayed": 19,
+      "DefPoss": 118,
+      "OpponentPoints": 126
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2736-2768-2804",
+      "Name": "Darius Songaila, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3301.0,
+      "GamesPlayed": 19,
+      "DefPoss": 110,
+      "OpponentPoints": 105
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2732-2736-2804",
+      "Name": "Darius Songaila, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3242.0,
+      "GamesPlayed": 17,
+      "DefPoss": 107,
+      "OpponentPoints": 140
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2552-2732-2736",
+      "Name": "Tyson Chandler, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3041.0,
+      "GamesPlayed": 24,
+      "DefPoss": 100,
+      "OpponentPoints": 96
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2732-2736-2768",
+      "Name": "Tyson Chandler, Darius Songaila, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3039.0,
+      "GamesPlayed": 18,
+      "DefPoss": 93,
+      "OpponentPoints": 96
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2552-2732-2804",
+      "Name": "Malik Allen, Kirk Hinrich, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3029.0,
+      "GamesPlayed": 8,
+      "DefPoss": 107,
+      "OpponentPoints": 109
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2550-2732-2804",
+      "Name": "Tyson Chandler, Darius Songaila, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2938.0,
+      "GamesPlayed": 17,
+      "DefPoss": 90,
+      "OpponentPoints": 112
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2732-2768-2804",
+      "Name": "Tyson Chandler, Darius Songaila, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2883.0,
+      "GamesPlayed": 20,
+      "DefPoss": 89,
+      "OpponentPoints": 96
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2552-2732-2736",
+      "Name": "Darius Songaila, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2702.0,
+      "GamesPlayed": 18,
+      "DefPoss": 81,
+      "OpponentPoints": 93
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2550-2736-2768",
+      "Name": "Tyson Chandler, Darius Songaila, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2629.0,
+      "GamesPlayed": 17,
+      "DefPoss": 88,
+      "OpponentPoints": 90
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2552-2732-2736-2768-2804",
+      "Name": "Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2597.0,
+      "GamesPlayed": 18,
+      "DefPoss": 91,
+      "OpponentPoints": 89
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2732-2736-2768-2804",
+      "Name": "Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2595.0,
+      "GamesPlayed": 19,
+      "DefPoss": 91,
+      "OpponentPoints": 110
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2736-2768-970",
+      "Name": "Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2321.0,
+      "GamesPlayed": 12,
+      "DefPoss": 70,
+      "OpponentPoints": 80
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2732-2736-970",
+      "Name": "Darius Songaila, Kirk Hinrich, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2241.0,
+      "GamesPlayed": 14,
+      "DefPoss": 68,
+      "OpponentPoints": 70
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2736-2768-2804",
+      "Name": "Malik Allen, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2127.0,
+      "GamesPlayed": 14,
+      "DefPoss": 71,
+      "OpponentPoints": 55
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2732-2736-2768-2804",
+      "Name": "Darius Songaila, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2085.0,
+      "GamesPlayed": 10,
+      "DefPoss": 63,
+      "OpponentPoints": 66
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2552-2732-2736-2768",
+      "Name": "Tyson Chandler, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2002.0,
+      "GamesPlayed": 11,
+      "DefPoss": 58,
+      "OpponentPoints": 70
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2732-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1974.0,
+      "GamesPlayed": 9,
+      "DefPoss": 58,
+      "OpponentPoints": 64
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2552-2732-2768-2804",
+      "Name": "Tyson Chandler, Michael Sweetney, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1910.0,
+      "GamesPlayed": 10,
+      "DefPoss": 57,
+      "OpponentPoints": 52
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2732-2768-2804",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1875.0,
+      "GamesPlayed": 10,
+      "DefPoss": 57,
+      "OpponentPoints": 68
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2552-2732-2804",
+      "Name": "Tyson Chandler, Kirk Hinrich, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1810.0,
+      "GamesPlayed": 13,
+      "DefPoss": 58,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2552-2768-2804",
+      "Name": "Darius Songaila, Kirk Hinrich, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1774.0,
+      "GamesPlayed": 14,
+      "DefPoss": 55,
+      "OpponentPoints": 69
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2552-2736-2768",
+      "Name": "Tyson Chandler, Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1614.0,
+      "GamesPlayed": 15,
+      "DefPoss": 49,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2732-2736-2804-970",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1583.0,
+      "GamesPlayed": 12,
+      "DefPoss": 50,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2552-2736-2768",
+      "Name": "Darius Songaila, Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1571.0,
+      "GamesPlayed": 12,
+      "DefPoss": 50,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2732-2768-2804",
+      "Name": "Darius Songaila, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1556.0,
+      "GamesPlayed": 11,
+      "DefPoss": 52,
+      "OpponentPoints": 66
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2552-2732-2768-2804",
+      "Name": "Darius Songaila, Michael Sweetney, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1515.0,
+      "GamesPlayed": 13,
+      "DefPoss": 50,
+      "OpponentPoints": 53
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2550-2768-2804",
+      "Name": "Malik Allen, Darius Songaila, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1505.0,
+      "GamesPlayed": 10,
+      "DefPoss": 46,
+      "OpponentPoints": 52
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2732-2736-2768",
+      "Name": "Darius Songaila, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1489.0,
+      "GamesPlayed": 7,
+      "DefPoss": 52,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2732-2736-2768-970",
+      "Name": "Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1413.0,
+      "GamesPlayed": 10,
+      "DefPoss": 48,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2457-2768-2804",
+      "Name": "Malik Allen, Darius Songaila, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1410.0,
+      "GamesPlayed": 7,
+      "DefPoss": 46,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2552-2732-2736-2768",
+      "Name": "Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1409.0,
+      "GamesPlayed": 6,
+      "DefPoss": 46,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2768-2804-970",
+      "Name": "Tyson Chandler, Kirk Hinrich, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1394.0,
+      "GamesPlayed": 12,
+      "DefPoss": 49,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2732-2736-2768-970",
+      "Name": "Darius Songaila, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1345.0,
+      "GamesPlayed": 9,
+      "DefPoss": 42,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2732-2804-970",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1311.0,
+      "GamesPlayed": 12,
+      "DefPoss": 46,
+      "OpponentPoints": 60
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2736-2768-2804-970",
+      "Name": "Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1266.0,
+      "GamesPlayed": 9,
+      "DefPoss": 36,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2732-2736-2768",
+      "Name": "Malik Allen, Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1181.0,
+      "GamesPlayed": 11,
+      "DefPoss": 39,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2552-2732-2736-2768",
+      "Name": "Darius Songaila, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1167.0,
+      "GamesPlayed": 12,
+      "DefPoss": 36,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2736-2768-970",
+      "Name": "Darius Songaila, Kirk Hinrich, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1166.0,
+      "GamesPlayed": 11,
+      "DefPoss": 39,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2550-2736-2768",
+      "Name": "Malik Allen, Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1161.0,
+      "GamesPlayed": 6,
+      "DefPoss": 36,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2736-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1158.0,
+      "GamesPlayed": 6,
+      "DefPoss": 38,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2552-2768-2804",
+      "Name": "Malik Allen, Kirk Hinrich, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1130.0,
+      "GamesPlayed": 2,
+      "DefPoss": 36,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2732-2736-2768-2804",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1122.0,
+      "GamesPlayed": 10,
+      "DefPoss": 42,
+      "OpponentPoints": 52
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2732-2736-2768-2804-970",
+      "Name": "Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1028.0,
+      "GamesPlayed": 7,
+      "DefPoss": 37,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2732-2736-970",
+      "Name": "Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1018.0,
+      "GamesPlayed": 5,
+      "DefPoss": 39,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2552-2732-2768-2804",
+      "Name": "Kirk Hinrich, Michael Sweetney, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 978.0,
+      "GamesPlayed": 7,
+      "DefPoss": 29,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2552-2732-2804",
+      "Name": "Darius Songaila, Kirk Hinrich, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 952.0,
+      "GamesPlayed": 9,
+      "DefPoss": 29,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2736-2768-2804",
+      "Name": "Darius Songaila, Jannero Pargo, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 876.0,
+      "GamesPlayed": 3,
+      "DefPoss": 29,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2732-2768-2804-970",
+      "Name": "Darius Songaila, Ben Gordon, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 873.0,
+      "GamesPlayed": 9,
+      "DefPoss": 28,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2552-2732-2768",
+      "Name": "Darius Songaila, Kirk Hinrich, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 829.0,
+      "GamesPlayed": 4,
+      "DefPoss": 24,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2732-2736-2804",
+      "Name": "Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 820.0,
+      "GamesPlayed": 9,
+      "DefPoss": 33,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2732-2768-2804",
+      "Name": "Malik Allen, Darius Songaila, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 796.0,
+      "GamesPlayed": 7,
+      "DefPoss": 29,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2732-2736-2768-2804",
+      "Name": "Luke Schenscher, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 772.0,
+      "GamesPlayed": 4,
+      "DefPoss": 25,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2457-2550-2804",
+      "Name": "Tyson Chandler, Darius Songaila, Jannero Pargo, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 746.0,
+      "GamesPlayed": 6,
+      "DefPoss": 25,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2736-2768-970",
+      "Name": "Tyson Chandler, Jannero Pargo, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 709.0,
+      "GamesPlayed": 5,
+      "DefPoss": 20,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2732-2768-2804-970",
+      "Name": "Tyson Chandler, Ben Gordon, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 692.0,
+      "GamesPlayed": 6,
+      "DefPoss": 20,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2552-2768-2804-970",
+      "Name": "Kirk Hinrich, Michael Sweetney, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 692.0,
+      "GamesPlayed": 6,
+      "DefPoss": 24,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2457-2550-2736",
+      "Name": "Tyson Chandler, Darius Songaila, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 686.0,
+      "GamesPlayed": 5,
+      "DefPoss": 19,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2550-2736-2768",
+      "Name": "Malik Allen, Darius Songaila, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 682.0,
+      "GamesPlayed": 7,
+      "DefPoss": 21,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2550-2732-2736-2804",
+      "Name": "Luke Schenscher, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 661.0,
+      "GamesPlayed": 5,
+      "DefPoss": 19,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2552-2732-2768-2804-970",
+      "Name": "Michael Sweetney, Ben Gordon, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 655.0,
+      "GamesPlayed": 6,
+      "DefPoss": 20,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2443-2550-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Darius Songaila, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 653.0,
+      "GamesPlayed": 1,
+      "DefPoss": 21,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2768-2804-970",
+      "Name": "Darius Songaila, Kirk Hinrich, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 653.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2550-2768-2804",
+      "Name": "Darius Songaila, Jannero Pargo, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 652.0,
+      "GamesPlayed": 2,
+      "DefPoss": 20,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2732-2768-2804",
+      "Name": "Malik Allen, Tyson Chandler, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 625.0,
+      "GamesPlayed": 8,
+      "DefPoss": 21,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2550-2732-2804",
+      "Name": "Malik Allen, Darius Songaila, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 615.0,
+      "GamesPlayed": 5,
+      "DefPoss": 20,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2768-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 591.0,
+      "GamesPlayed": 5,
+      "DefPoss": 21,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2457-2550-2736-2804",
+      "Name": "Luke Schenscher, Jannero Pargo, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 586.0,
+      "GamesPlayed": 4,
+      "DefPoss": 21,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2457-2768-2804",
+      "Name": "Tyson Chandler, Darius Songaila, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 561.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2552-2736-2768-970",
+      "Name": "Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 557.0,
+      "GamesPlayed": 5,
+      "DefPoss": 15,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2550-2732-2736",
+      "Name": "Malik Allen, Darius Songaila, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 550.0,
+      "GamesPlayed": 4,
+      "DefPoss": 18,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2552-2768-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 549.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2443-2732-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Darius Songaila, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 544.0,
+      "GamesPlayed": 1,
+      "DefPoss": 19,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2736-2768-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 543.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2552-2736-2804",
+      "Name": "Jannero Pargo, Kirk Hinrich, Michael Sweetney, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 543.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2732-2736-2768-2804",
+      "Name": "Malik Allen, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 533.0,
+      "GamesPlayed": 7,
+      "DefPoss": 17,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2457-2550-2732",
+      "Name": "Tyson Chandler, Darius Songaila, Jannero Pargo, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 513.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2457-2736-2768",
+      "Name": "Tyson Chandler, Darius Songaila, Jannero Pargo, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 508.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2552-2732-2736-2768-970",
+      "Name": "Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 506.0,
+      "GamesPlayed": 5,
+      "DefPoss": 16,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2552-2736-2768-2804",
+      "Name": "Jannero Pargo, Michael Sweetney, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 495.0,
+      "GamesPlayed": 5,
+      "DefPoss": 16,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2550-2732-2768",
+      "Name": "Tyson Chandler, Darius Songaila, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 494.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2457-2732-2736",
+      "Name": "Tyson Chandler, Darius Songaila, Jannero Pargo, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 491.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2552-2732-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 476.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2550-2732-2736",
+      "Name": "Eddie Basden, Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 472.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2732-2736",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 453.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2732-2736-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 446.0,
+      "GamesPlayed": 5,
+      "DefPoss": 16,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2457-2732-2804",
+      "Name": "Malik Allen, Tyson Chandler, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 444.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2552-2732-2736",
+      "Name": "Darius Songaila, Jannero Pargo, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 444.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2552-2732-2768",
+      "Name": "Tyson Chandler, Kirk Hinrich, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 440.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-101195-15-2457-970",
+      "Name": "Eddie Basden, Luke Schenscher, Eric Piatkowski, Jannero Pargo, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 437.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2732-2768-970",
+      "Name": "Darius Songaila, Kirk Hinrich, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 434.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101211-2199-2550-2732-970",
+      "Name": "Stephen Graham, Tyson Chandler, Kirk Hinrich, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 421.0,
+      "GamesPlayed": 1,
+      "DefPoss": 15,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2732-2736-2768",
+      "Name": "Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 420.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2124-2199-2457-2804",
+      "Name": "Eric Piatkowski, Malik Allen, Tyson Chandler, Jannero Pargo, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 415.0,
+      "GamesPlayed": 1,
+      "DefPoss": 16,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2457-2732-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 414.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2736-2768-2804",
+      "Name": "Malik Allen, Jannero Pargo, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 408.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2550-2736-2768-2804",
+      "Name": "Luke Schenscher, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 407.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2732-2736-2804",
+      "Name": "Malik Allen, Jannero Pargo, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 404.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2552-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Michael Sweetney, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 397.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2552-2732-2736",
+      "Name": "Malik Allen, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 388.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2732-2736-2768",
+      "Name": "Malik Allen, Darius Songaila, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 383.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2124-2450-2457-2552",
+      "Name": "Eddie Basden, Malik Allen, Randy Holcomb, Jannero Pargo, Michael Sweetney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 374.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2457-2732-2804",
+      "Name": "Malik Allen, Darius Songaila, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 368.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2552-2732-2736-970",
+      "Name": "Jannero Pargo, Michael Sweetney, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 362.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2550-2736-2804",
+      "Name": "Darius Songaila, Jannero Pargo, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 352.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2457-2550-2552-970",
+      "Name": "Eddie Basden, Jannero Pargo, Kirk Hinrich, Michael Sweetney, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 351.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2732-2804-970",
+      "Name": "Darius Songaila, Kirk Hinrich, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 348.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2550-2768-970",
+      "Name": "Eddie Basden, Darius Songaila, Kirk Hinrich, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 347.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2732-2736-970",
+      "Name": "Tyson Chandler, Jannero Pargo, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 341.0,
+      "GamesPlayed": 5,
+      "DefPoss": 11,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2457-2552-2732",
+      "Name": "Eric Piatkowski, Darius Songaila, Jannero Pargo, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 337.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-15-2732-2736-2768",
+      "Name": "Luke Schenscher, Eric Piatkowski, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 326.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2124-2550-2732-2736",
+      "Name": "Eric Piatkowski, Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 309.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2199-2550-2732-970",
+      "Name": "Tim Thomas, Tyson Chandler, Kirk Hinrich, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 297.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2732-2736-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 293.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2550-2768-2804",
+      "Name": "Malik Allen, Tyson Chandler, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2550-2732-2768-970",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2550-2552-2736",
+      "Name": "Eddie Basden, Darius Songaila, Kirk Hinrich, Michael Sweetney, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 286.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-101195-2457-2732-2804",
+      "Name": "Eddie Basden, Luke Schenscher, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 276.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2457-2552-2768",
+      "Name": "Eric Piatkowski, Darius Songaila, Jannero Pargo, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 273.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2124-2457-2552-2736",
+      "Name": "Eric Piatkowski, Malik Allen, Jannero Pargo, Michael Sweetney, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 266.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2457-2550-2736",
+      "Name": "Malik Allen, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 264.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2124-2457-2804-970",
+      "Name": "Eric Piatkowski, Malik Allen, Jannero Pargo, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 261.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2457-2732-2804",
+      "Name": "Tyson Chandler, Darius Songaila, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2732-2736-970",
+      "Name": "Eddie Basden, Darius Songaila, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2550-2552-2732-2736",
+      "Name": "Eddie Basden, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2732-2768",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 258.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2732-2768-970",
+      "Name": "Eric Piatkowski, Darius Songaila, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 257.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2552-2768",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2736-2768-2804-2839",
+      "Name": "Jannero Pargo, Luol Deng, Chris Duhon, Andres Nocioni, James Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2550-2552-2736",
+      "Name": "Eric Piatkowski, Darius Songaila, Kirk Hinrich, Michael Sweetney, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 250.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2550-2552-2768-2804",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 250.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2443-2550-2736-2768",
+      "Name": "Luke Schenscher, Darius Songaila, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 249.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2457-2550-2804",
+      "Name": "Malik Allen, Darius Songaila, Jannero Pargo, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 248.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2457-2732-2736-970",
+      "Name": "Tim Thomas, Jannero Pargo, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 245.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2443-2550-2732-2736",
+      "Name": "Luke Schenscher, Darius Songaila, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2736-2768-2804",
+      "Name": "Jannero Pargo, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 4,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2550-2736-2804",
+      "Name": "Malik Allen, Jannero Pargo, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 239.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2552-2732-2736-2768",
+      "Name": "Malik Allen, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-15-2443-2457-970",
+      "Name": "Eddie Basden, Eric Piatkowski, Darius Songaila, Jannero Pargo, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2457-2732-2768",
+      "Name": "Malik Allen, Tyson Chandler, Jannero Pargo, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2552-2732-2736",
+      "Name": "Eric Piatkowski, Darius Songaila, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2552-2768-970",
+      "Name": "Jannero Pargo, Kirk Hinrich, Michael Sweetney, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2550-2736-2768-970",
+      "Name": "Luke Schenscher, Kirk Hinrich, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-15-2457-2736-2804",
+      "Name": "Luke Schenscher, Eric Piatkowski, Jannero Pargo, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2550-2736-2804-970",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Luol Deng, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2550-2732-2804",
+      "Name": "Malik Allen, Jannero Pargo, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2443-2550-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Darius Songaila, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 221.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2736-2768-2804",
+      "Name": "Eddie Basden, Tyson Chandler, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-101195-2124-2732-988",
+      "Name": "Eddie Basden, Luke Schenscher, Malik Allen, Ben Gordon, Randy Livingston",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2457-2732-2804-970",
+      "Name": "Luke Schenscher, Jannero Pargo, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2732-2736-2768-970",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101211-2124-2550-2768-2804",
+      "Name": "Stephen Graham, Malik Allen, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 212.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2457-2550-970",
+      "Name": "Eddie Basden, Darius Songaila, Jannero Pargo, Kirk Hinrich, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2550-2768-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2768-2804-970",
+      "Name": "Malik Allen, Kirk Hinrich, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-15-2443-2768-2804",
+      "Name": "Luke Schenscher, Eric Piatkowski, Darius Songaila, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2443-2736-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Darius Songaila, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2550-2736-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2552-2736-2804",
+      "Name": "Darius Songaila, Jannero Pargo, Michael Sweetney, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2736-970",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2732-2736-970",
+      "Name": "Darius Songaila, Jannero Pargo, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2550-2552-2804",
+      "Name": "Eddie Basden, Darius Songaila, Kirk Hinrich, Michael Sweetney, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-15-2550-2736-2804",
+      "Name": "Luke Schenscher, Eric Piatkowski, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2457-2552-2732-2736",
+      "Name": "Tim Thomas, Jannero Pargo, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2552-2736-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Michael Sweetney, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2124-2457-2732-970",
+      "Name": "Eric Piatkowski, Malik Allen, Jannero Pargo, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2552-2732-2768",
+      "Name": "Eric Piatkowski, Darius Songaila, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2443-2550-2768",
+      "Name": "Eddie Basden, Tyson Chandler, Darius Songaila, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2124-2550-2732-2736",
+      "Name": "Luke Schenscher, Malik Allen, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2550-2768-2804",
+      "Name": "Malik Allen, Jannero Pargo, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2804-970",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101211-2124-2732-2768-2804",
+      "Name": "Stephen Graham, Malik Allen, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2550-2552-2732-2736",
+      "Name": "Tim Thomas, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2550-2732-2736",
+      "Name": "Malik Allen, Jannero Pargo, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2550-2732-2804",
+      "Name": "Eddie Basden, Tyson Chandler, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2457-2550-2732-2804",
+      "Name": "Luke Schenscher, Jannero Pargo, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2550-2552-2804",
+      "Name": "Darius Songaila, Jannero Pargo, Kirk Hinrich, Michael Sweetney, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2457-2552-2736-2768",
+      "Name": "Eddie Basden, Jannero Pargo, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2443-2732-2736",
+      "Name": "Eric Piatkowski, Tyson Chandler, Darius Songaila, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2732-970-988",
+      "Name": "Jannero Pargo, Kirk Hinrich, Ben Gordon, Othella Harrington, Randy Livingston",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-15-2457-2732-2804",
+      "Name": "Luke Schenscher, Eric Piatkowski, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2552-2736-2768",
+      "Name": "Darius Songaila, Jannero Pargo, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2732-2804-970",
+      "Name": "Darius Songaila, Jannero Pargo, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2732-2736-970",
+      "Name": "Eric Piatkowski, Darius Songaila, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2550-2736-2804",
+      "Name": "Eddie Basden, Tyson Chandler, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 177.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2124-2550-2736-2768",
+      "Name": "Luke Schenscher, Malik Allen, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 177.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2736-2768-2804-988",
+      "Name": "Tyson Chandler, Luol Deng, Chris Duhon, Andres Nocioni, Randy Livingston",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2550-2736-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2199-2732-2736-2768",
+      "Name": "Luke Schenscher, Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2443-2732-2768-970",
+      "Name": "Tim Thomas, Darius Songaila, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2457-2736-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2732-2736-2768",
+      "Name": "Eric Piatkowski, Darius Songaila, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2457-2550-2804-970",
+      "Name": "Luke Schenscher, Jannero Pargo, Kirk Hinrich, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2550-2552-2804",
+      "Name": "Eric Piatkowski, Darius Songaila, Kirk Hinrich, Michael Sweetney, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2552-2732",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101211-2124-2443-2457-2768",
+      "Name": "Stephen Graham, Malik Allen, Darius Songaila, Jannero Pargo, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2732-2736-2768-970",
+      "Name": "Tim Thomas, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2457-2736-2768",
+      "Name": "Eddie Basden, Darius Songaila, Jannero Pargo, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2768-970",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2457-2732-2768",
+      "Name": "Eddie Basden, Tyson Chandler, Jannero Pargo, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2550-2768-2804-970",
+      "Name": "Eddie Basden, Kirk Hinrich, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2736-2768-970",
+      "Name": "Darius Songaila, Jannero Pargo, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2552-2736-2768-970",
+      "Name": "Jannero Pargo, Michael Sweetney, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-15-2124-2457-2768",
+      "Name": "Luke Schenscher, Eric Piatkowski, Malik Allen, Jannero Pargo, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2124-2550-2736-2768",
+      "Name": "Tim Thomas, Malik Allen, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2124-2732-2768-2804",
+      "Name": "Luke Schenscher, Malik Allen, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2552-2732-2736-2804",
+      "Name": "Jannero Pargo, Michael Sweetney, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2443-2768-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Darius Songaila, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2550-2736-970",
+      "Name": "Eric Piatkowski, Darius Songaila, Kirk Hinrich, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2732-2768-2804-970",
+      "Name": "Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2732-2804-970",
+      "Name": "Malik Allen, Kirk Hinrich, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2552-2732-2736-2804",
+      "Name": "Tyson Chandler, Michael Sweetney, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2457-2736-2768-970",
+      "Name": "Luke Schenscher, Jannero Pargo, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2768-2804-2839",
+      "Name": "Malik Allen, Jannero Pargo, Chris Duhon, Andres Nocioni, James Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2550-2732-2804",
+      "Name": "Darius Songaila, Jannero Pargo, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2550-2732-970",
+      "Name": "Darius Songaila, Jannero Pargo, Kirk Hinrich, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2732-2736-2804",
+      "Name": "Darius Songaila, Jannero Pargo, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2732-2736-2768",
+      "Name": "Malik Allen, Jannero Pargo, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2552-2732-2804",
+      "Name": "Darius Songaila, Jannero Pargo, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2552-2732-2768",
+      "Name": "Jannero Pargo, Kirk Hinrich, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2732-2768-970",
+      "Name": "Eddie Basden, Darius Songaila, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2457-2736-2768-2804",
+      "Name": "Luke Schenscher, Jannero Pargo, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2550-2732-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2124-2550-2732-2804",
+      "Name": "Luke Schenscher, Malik Allen, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 4,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2552-2732-2736-988",
+      "Name": "Jannero Pargo, Michael Sweetney, Ben Gordon, Luol Deng, Randy Livingston",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2736-2768",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2457-2552-2768",
+      "Name": "Eddie Basden, Darius Songaila, Jannero Pargo, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-15-2457-2804-970",
+      "Name": "Luke Schenscher, Eric Piatkowski, Jannero Pargo, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2457-2736-2768",
+      "Name": "Malik Allen, Darius Songaila, Jannero Pargo, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2552-2736",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Michael Sweetney, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2552-2732-2804-970",
+      "Name": "Kirk Hinrich, Michael Sweetney, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2768-2804-970",
+      "Name": "Jannero Pargo, Kirk Hinrich, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101211-2124-2550-2736-2768",
+      "Name": "Stephen Graham, Malik Allen, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2732-2736-2768-970",
+      "Name": "Malik Allen, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2552-2768-2804",
+      "Name": "Darius Songaila, Jannero Pargo, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-15-2550-2552-2736",
+      "Name": "Eddie Basden, Eric Piatkowski, Kirk Hinrich, Michael Sweetney, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2732-2768-2804",
+      "Name": "Eddie Basden, Darius Songaila, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2552-2732-2804",
+      "Name": "Malik Allen, Jannero Pargo, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2768-2804-970",
+      "Name": "Darius Songaila, Jannero Pargo, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2552-2732-2804",
+      "Name": "Jannero Pargo, Kirk Hinrich, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2550-2552-2732-2736",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2732-2736-2768",
+      "Name": "Eddie Basden, Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2457-2550-2552-2736",
+      "Name": "Eddie Basden, Jannero Pargo, Kirk Hinrich, Michael Sweetney, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2550-2732-2736-970",
+      "Name": "Tim Thomas, Kirk Hinrich, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2550-2736-2768",
+      "Name": "Eddie Basden, Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2457-2550-2552-2732",
+      "Name": "Eric Piatkowski, Jannero Pargo, Kirk Hinrich, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2552-2732-2768-2804",
+      "Name": "Malik Allen, Michael Sweetney, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2457-2732-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2550-2732-2804",
+      "Name": "Eric Piatkowski, Darius Songaila, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2732-2736-2804-988",
+      "Name": "Tyson Chandler, Ben Gordon, Luol Deng, Andres Nocioni, Randy Livingston",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2124-2457-2550-2804",
+      "Name": "Eric Piatkowski, Malik Allen, Jannero Pargo, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2457-2736-2804",
+      "Name": "Eddie Basden, Tyson Chandler, Jannero Pargo, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2732-2768-2839",
+      "Name": "Jannero Pargo, Kirk Hinrich, Ben Gordon, Chris Duhon, James Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2732-2736-2804-2839",
+      "Name": "Jannero Pargo, Ben Gordon, Luol Deng, Andres Nocioni, James Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2732-2736-2768-970",
+      "Name": "Luke Schenscher, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2550-2552-2736",
+      "Name": "Darius Songaila, Jannero Pargo, Kirk Hinrich, Michael Sweetney, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2457-2550-2732",
+      "Name": "Malik Allen, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2550-2732-2736-2839-970",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, James Thomas, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2199-2550-2768-2804",
+      "Name": "Luke Schenscher, Tyson Chandler, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2443-2732-2736-2768",
+      "Name": "Luke Schenscher, Darius Songaila, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2124-2443-2457-2804",
+      "Name": "Eric Piatkowski, Malik Allen, Darius Songaila, Jannero Pargo, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-15-2457-2768-970",
+      "Name": "Luke Schenscher, Eric Piatkowski, Jannero Pargo, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2124-2457-2550-2804",
+      "Name": "Luke Schenscher, Malik Allen, Jannero Pargo, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2124-2199-2457-2732",
+      "Name": "Eric Piatkowski, Malik Allen, Tyson Chandler, Jannero Pargo, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2552-2732-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2552-2768-2804",
+      "Name": "Malik Allen, Jannero Pargo, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2457-2550-2804",
+      "Name": "Malik Allen, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2768-2804-2839",
+      "Name": "Darius Songaila, Jannero Pargo, Chris Duhon, Andres Nocioni, James Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2552-2804-988",
+      "Name": "Malik Allen, Kirk Hinrich, Michael Sweetney, Andres Nocioni, Randy Livingston",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2732-2768-2804-2839",
+      "Name": "Darius Songaila, Ben Gordon, Chris Duhon, Andres Nocioni, James Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2550-2732-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2550-2732-2804-970",
+      "Name": "Eddie Basden, Kirk Hinrich, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2550-2732-2804-970",
+      "Name": "Luke Schenscher, Kirk Hinrich, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2732-2768-2804",
+      "Name": "Jannero Pargo, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2457-2768-2804",
+      "Name": "Malik Allen, Tyson Chandler, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2457-2552-2732-2736",
+      "Name": "Eddie Basden, Jannero Pargo, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2550-2732-2736-2804",
+      "Name": "Eddie Basden, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2199-2732-2768-2804",
+      "Name": "Luke Schenscher, Tyson Chandler, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2124-2199-2732-2736",
+      "Name": "Eric Piatkowski, Malik Allen, Tyson Chandler, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2552-2736-2768-2804",
+      "Name": "Eric Piatkowski, Michael Sweetney, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2736-2768-970",
+      "Name": "Jannero Pargo, Kirk Hinrich, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2732-2768-2804",
+      "Name": "Malik Allen, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2457-2550-2804",
+      "Name": "Eddie Basden, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2736-2768-2804",
+      "Name": "Malik Allen, Darius Songaila, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2552-2732-2736-2804-988",
+      "Name": "Michael Sweetney, Ben Gordon, Luol Deng, Andres Nocioni, Randy Livingston",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2736-2768-2804-970",
+      "Name": "Eric Piatkowski, Luol Deng, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2457-2732-2736",
+      "Name": "Malik Allen, Tyson Chandler, Jannero Pargo, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2457-2732-2736-2768",
+      "Name": "Darius Songaila, Jannero Pargo, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2443-2550-2732-2768",
+      "Name": "Malik Allen, Darius Songaila, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2443-2550-2732",
+      "Name": "Eddie Basden, Tyson Chandler, Darius Songaila, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2550-2736-2768",
+      "Name": "Malik Allen, Jannero Pargo, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2732-2804-970",
+      "Name": "Jannero Pargo, Kirk Hinrich, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2550-2736-2768",
+      "Name": "Eddie Basden, Darius Songaila, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2199-2457-2736-2768",
+      "Name": "Luke Schenscher, Tyson Chandler, Jannero Pargo, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2550-2552-2768",
+      "Name": "Eddie Basden, Darius Songaila, Kirk Hinrich, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2732-2736-2768-2839-970",
+      "Name": "Ben Gordon, Luol Deng, Chris Duhon, James Thomas, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2457-2552-2804",
+      "Name": "Eric Piatkowski, Darius Songaila, Jannero Pargo, Michael Sweetney, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2457-2732-2804-970",
+      "Name": "Eric Piatkowski, Jannero Pargo, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2552-2736-2768",
+      "Name": "Tyson Chandler, Jannero Pargo, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2124-2199-2457-2732",
+      "Name": "Eddie Basden, Malik Allen, Tyson Chandler, Jannero Pargo, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2552-2736-2768",
+      "Name": "Eddie Basden, Darius Songaila, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2199-2550-2732-2768",
+      "Name": "Luke Schenscher, Tyson Chandler, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2457-2736-2768",
+      "Name": "Malik Allen, Tyson Chandler, Jannero Pargo, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2199-2732-2804-988",
+      "Name": "Malik Allen, Tyson Chandler, Ben Gordon, Andres Nocioni, Randy Livingston",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2552-2732-2736-2768",
+      "Name": "Tim Thomas, Michael Sweetney, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2550-2552-2768",
+      "Name": "Eric Piatkowski, Darius Songaila, Kirk Hinrich, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2457-2552-2732-2804",
+      "Name": "Eric Piatkowski, Jannero Pargo, Michael Sweetney, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2732-2736-2804",
+      "Name": "Jannero Pargo, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2124-2550-2732-2804",
+      "Name": "Eric Piatkowski, Malik Allen, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2450-2732-2768-2804-970",
+      "Name": "Randy Holcomb, Ben Gordon, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2457-2550-2736",
+      "Name": "Eddie Basden, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2768-2804-970",
+      "Name": "Tyson Chandler, Jannero Pargo, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2443-2550-2732-2736-2839",
+      "Name": "Darius Songaila, Kirk Hinrich, Ben Gordon, Luol Deng, James Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2550-2768-2839",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Chris Duhon, James Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2550-2732-2736-970",
+      "Name": "Luke Schenscher, Kirk Hinrich, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101211-2124-2732-2736-2804",
+      "Name": "Stephen Graham, Malik Allen, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2550-2552-2736-2768",
+      "Name": "Tim Thomas, Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2450-2550-2736-2768-970",
+      "Name": "Randy Holcomb, Kirk Hinrich, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2550-2804-970",
+      "Name": "Eric Piatkowski, Darius Songaila, Kirk Hinrich, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-15-2457-2550-2736",
+      "Name": "Luke Schenscher, Eric Piatkowski, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2550-2732-2804-970",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-101195-2768-970-988",
+      "Name": "Eddie Basden, Luke Schenscher, Chris Duhon, Othella Harrington, Randy Livingston",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2550-2552-2736-2768",
+      "Name": "Eddie Basden, Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2550-2804-988",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Andres Nocioni, Randy Livingston",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2732-2768-2804-2839",
+      "Name": "Tyson Chandler, Ben Gordon, Chris Duhon, Andres Nocioni, James Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2552-2732-2736",
+      "Name": "Jannero Pargo, Kirk Hinrich, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-2550-2732-2736-2768",
+      "Name": "Luke Schenscher, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 51.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2732-2736-2804-970",
+      "Name": "Jannero Pargo, Ben Gordon, Luol Deng, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 51.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2124-2457-2550-2736",
+      "Name": "Eric Piatkowski, Malik Allen, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2457-2550-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 47.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2736-2804-970",
+      "Name": "Jannero Pargo, Kirk Hinrich, Luol Deng, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 47.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2552-2732-2768",
+      "Name": "Malik Allen, Kirk Hinrich, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-101195-2457-2768-988",
+      "Name": "Eddie Basden, Luke Schenscher, Jannero Pargo, Chris Duhon, Randy Livingston",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2550-2552-2768-2804",
+      "Name": "Tim Thomas, Kirk Hinrich, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2443-2550-2804",
+      "Name": "Eddie Basden, Tyson Chandler, Darius Songaila, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 39.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2443-2457-2768-2804",
+      "Name": "Eric Piatkowski, Darius Songaila, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2552-2732-2736-2804",
+      "Name": "Eric Piatkowski, Michael Sweetney, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2550-2732-2736",
+      "Name": "Eddie Basden, Darius Songaila, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2457-2732-2804-970",
+      "Name": "Eddie Basden, Jannero Pargo, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2550-2732-2736-2768",
+      "Name": "Jannero Pargo, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2550-2552-2732-2768",
+      "Name": "Eddie Basden, Kirk Hinrich, Michael Sweetney, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 36.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101195-15-2457-2550-2804",
+      "Name": "Luke Schenscher, Eric Piatkowski, Jannero Pargo, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 36.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2457-2732-2736-2768-2804",
+      "Name": "Jannero Pargo, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 36.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2457-2550-2736-2804",
+      "Name": "Eddie Basden, Jannero Pargo, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 35.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "1501-2199-2550-2736-2768",
+      "Name": "Tim Thomas, Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 35.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2457-2550-2552-2768",
+      "Name": "Malik Allen, Jannero Pargo, Kirk Hinrich, Michael Sweetney, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2450-2457-2552-2768-2804",
+      "Name": "Randy Holcomb, Jannero Pargo, Michael Sweetney, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 25.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2457-2552-2732-2736",
+      "Name": "Tyson Chandler, Jannero Pargo, Michael Sweetney, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 24.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "15-2199-2550-2552-2732",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Michael Sweetney, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 20.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2443-2457-2768-2804",
+      "Name": "Eddie Basden, Darius Songaila, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 18.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2199-2443-2550-2736-2839",
+      "Name": "Tyson Chandler, Darius Songaila, Kirk Hinrich, Luol Deng, James Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 14.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2732-2736-2768-2804",
+      "Name": "Eddie Basden, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "2124-2550-2552-2736-2768",
+      "Name": "Malik Allen, Kirk Hinrich, Michael Sweetney, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2005-06",
+      "EntityId": "101188-2199-2732-2736-2804",
+      "Name": "Eddie Basden, Tyson Chandler, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    }
+  ]
+}

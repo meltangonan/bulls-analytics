@@ -1,0 +1,2719 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2014-15",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2014-15",
+    "RowsReturned": 300,
+    "RowsWithDefPoss": 292,
+    "RowsSkippedMissingMetrics": 22,
+    "LastRowDefPoss": 1,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202710-2200-2399",
+      "Name": "Joakim Noah, Derrick Rose, Jimmy Butler, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 21210.0,
+      "GamesPlayed": 21,
+      "DefPoss": 689,
+      "OpponentPoints": 728
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-203503-2200-2399",
+      "Name": "Joakim Noah, Aaron Brooks, Tony Snell, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8916.0,
+      "GamesPlayed": 11,
+      "DefPoss": 282,
+      "OpponentPoints": 315
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202710-2200-2550",
+      "Name": "Derrick Rose, Taj Gibson, Jimmy Butler, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7944.0,
+      "GamesPlayed": 20,
+      "DefPoss": 257,
+      "OpponentPoints": 269
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202710-2200-2399",
+      "Name": "Derrick Rose, Taj Gibson, Jimmy Butler, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7570.0,
+      "GamesPlayed": 14,
+      "DefPoss": 242,
+      "OpponentPoints": 243
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202710-2200-2550",
+      "Name": "Joakim Noah, Derrick Rose, Jimmy Butler, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7459.0,
+      "GamesPlayed": 15,
+      "DefPoss": 256,
+      "OpponentPoints": 249
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202710-203503-2200",
+      "Name": "Joakim Noah, Derrick Rose, Jimmy Butler, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7255.0,
+      "GamesPlayed": 14,
+      "DefPoss": 238,
+      "OpponentPoints": 251
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202710-2200-2399",
+      "Name": "Joakim Noah, Aaron Brooks, Jimmy Butler, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7254.0,
+      "GamesPlayed": 13,
+      "DefPoss": 218,
+      "OpponentPoints": 232
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202710-2200-2399-2550",
+      "Name": "Joakim Noah, Jimmy Butler, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7165.0,
+      "GamesPlayed": 10,
+      "DefPoss": 228,
+      "OpponentPoints": 251
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202710-2200-2399",
+      "Name": "Aaron Brooks, Taj Gibson, Jimmy Butler, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5924.0,
+      "GamesPlayed": 20,
+      "DefPoss": 188,
+      "OpponentPoints": 202
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-203503-2200-2399",
+      "Name": "Aaron Brooks, Nikola Mirotic, Tony Snell, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4005.0,
+      "GamesPlayed": 15,
+      "DefPoss": 123,
+      "OpponentPoints": 112
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202710-203503-2200",
+      "Name": "Derrick Rose, Taj Gibson, Jimmy Butler, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3672.0,
+      "GamesPlayed": 13,
+      "DefPoss": 118,
+      "OpponentPoints": 134
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-202710-2550",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3322.0,
+      "GamesPlayed": 14,
+      "DefPoss": 102,
+      "OpponentPoints": 103
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201565-202710-2200",
+      "Name": "Joakim Noah, Aaron Brooks, Derrick Rose, Jimmy Butler, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3244.0,
+      "GamesPlayed": 10,
+      "DefPoss": 111,
+      "OpponentPoints": 99
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202710-2200-2399-2550",
+      "Name": "Taj Gibson, Jimmy Butler, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3156.0,
+      "GamesPlayed": 14,
+      "DefPoss": 93,
+      "OpponentPoints": 90
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-202710-2200-2399",
+      "Name": "Aaron Brooks, Nikola Mirotic, Jimmy Butler, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3115.0,
+      "GamesPlayed": 13,
+      "DefPoss": 96,
+      "OpponentPoints": 105
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-202710-2200-2550",
+      "Name": "Aaron Brooks, Nikola Mirotic, Jimmy Butler, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3040.0,
+      "GamesPlayed": 17,
+      "DefPoss": 105,
+      "OpponentPoints": 135
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202703-202710-2200-2399-2550",
+      "Name": "Nikola Mirotic, Jimmy Butler, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2845.0,
+      "GamesPlayed": 14,
+      "DefPoss": 92,
+      "OpponentPoints": 75
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201959-202710-2399-2550",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2709.0,
+      "GamesPlayed": 4,
+      "DefPoss": 87,
+      "OpponentPoints": 76
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202710-2200-2550",
+      "Name": "Aaron Brooks, Taj Gibson, Jimmy Butler, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2705.0,
+      "GamesPlayed": 17,
+      "DefPoss": 89,
+      "OpponentPoints": 95
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-202710-202734",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Jimmy Butler, E'Twaun Moore",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2610.0,
+      "GamesPlayed": 10,
+      "DefPoss": 79,
+      "OpponentPoints": 80
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-203503-2200-2399",
+      "Name": "Joakim Noah, Derrick Rose, Tony Snell, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2264.0,
+      "GamesPlayed": 5,
+      "DefPoss": 70,
+      "OpponentPoints": 63
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-202734-203503",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, E'Twaun Moore, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2114.0,
+      "GamesPlayed": 9,
+      "DefPoss": 66,
+      "OpponentPoints": 52
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-203503-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2080.0,
+      "GamesPlayed": 10,
+      "DefPoss": 61,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-2200-2399-2550",
+      "Name": "Joakim Noah, Derrick Rose, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2056.0,
+      "GamesPlayed": 2,
+      "DefPoss": 63,
+      "OpponentPoints": 58
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-202710-2200",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Jimmy Butler, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2042.0,
+      "GamesPlayed": 9,
+      "DefPoss": 67,
+      "OpponentPoints": 72
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202710-203503-2200",
+      "Name": "Aaron Brooks, Taj Gibson, Jimmy Butler, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2010.0,
+      "GamesPlayed": 11,
+      "DefPoss": 69,
+      "OpponentPoints": 83
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202703-2200-2550",
+      "Name": "Joakim Noah, Derrick Rose, Nikola Mirotic, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1988.0,
+      "GamesPlayed": 2,
+      "DefPoss": 68,
+      "OpponentPoints": 59
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-203503-2550",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1958.0,
+      "GamesPlayed": 11,
+      "DefPoss": 62,
+      "OpponentPoints": 59
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-202710-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1812.0,
+      "GamesPlayed": 8,
+      "DefPoss": 57,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-203503-203926",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Tony Snell, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1793.0,
+      "GamesPlayed": 8,
+      "DefPoss": 56,
+      "OpponentPoints": 64
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-202734-203926-2550",
+      "Name": "Joakim Noah, Nikola Mirotic, E'Twaun Moore, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1688.0,
+      "GamesPlayed": 7,
+      "DefPoss": 55,
+      "OpponentPoints": 58
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-202734-2200-2399",
+      "Name": "Aaron Brooks, Nikola Mirotic, E'Twaun Moore, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1662.0,
+      "GamesPlayed": 8,
+      "DefPoss": 55,
+      "OpponentPoints": 62
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-202703-203503",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Nikola Mirotic, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1659.0,
+      "GamesPlayed": 6,
+      "DefPoss": 48,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-202710-203503",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1628.0,
+      "GamesPlayed": 8,
+      "DefPoss": 49,
+      "OpponentPoints": 41
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-202710-203503-2200",
+      "Name": "Aaron Brooks, Nikola Mirotic, Jimmy Butler, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1624.0,
+      "GamesPlayed": 8,
+      "DefPoss": 53,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201565-201959-202710-2200",
+      "Name": "Aaron Brooks, Derrick Rose, Taj Gibson, Jimmy Butler, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1612.0,
+      "GamesPlayed": 9,
+      "DefPoss": 50,
+      "OpponentPoints": 51
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202710-203503-2200-2550",
+      "Name": "Taj Gibson, Jimmy Butler, Tony Snell, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1609.0,
+      "GamesPlayed": 10,
+      "DefPoss": 46,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-202710-203503",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1584.0,
+      "GamesPlayed": 7,
+      "DefPoss": 51,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201959-202703-202710-202734",
+      "Name": "Joakim Noah, Taj Gibson, Nikola Mirotic, Jimmy Butler, E'Twaun Moore",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1534.0,
+      "GamesPlayed": 4,
+      "DefPoss": 44,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-203503-203926-2550",
+      "Name": "Joakim Noah, Nikola Mirotic, Tony Snell, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1523.0,
+      "GamesPlayed": 7,
+      "DefPoss": 49,
+      "OpponentPoints": 55
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-202710-2399",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Jimmy Butler, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1508.0,
+      "GamesPlayed": 4,
+      "DefPoss": 48,
+      "OpponentPoints": 58
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-203503-2399-2550",
+      "Name": "Joakim Noah, Nikola Mirotic, Tony Snell, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1478.0,
+      "GamesPlayed": 5,
+      "DefPoss": 47,
+      "OpponentPoints": 52
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-202710-2399",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, Jimmy Butler, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1471.0,
+      "GamesPlayed": 7,
+      "DefPoss": 42,
+      "OpponentPoints": 41
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202710-203503-2200-2550",
+      "Name": "Joakim Noah, Jimmy Butler, Tony Snell, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1413.0,
+      "GamesPlayed": 4,
+      "DefPoss": 47,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-2399-2550",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1360.0,
+      "GamesPlayed": 5,
+      "DefPoss": 41,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-202734-203503-2200",
+      "Name": "Aaron Brooks, Nikola Mirotic, E'Twaun Moore, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1349.0,
+      "GamesPlayed": 6,
+      "DefPoss": 46,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-2200-2399-2550",
+      "Name": "Aaron Brooks, Nikola Mirotic, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1289.0,
+      "GamesPlayed": 12,
+      "DefPoss": 43,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-202710-2550",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1275.0,
+      "GamesPlayed": 8,
+      "DefPoss": 43,
+      "OpponentPoints": 57
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201959-202703-203503-2550",
+      "Name": "Joakim Noah, Taj Gibson, Nikola Mirotic, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1271.0,
+      "GamesPlayed": 5,
+      "DefPoss": 41,
+      "OpponentPoints": 47
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-202710-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1261.0,
+      "GamesPlayed": 9,
+      "DefPoss": 37,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202703-202734-203503-203926",
+      "Name": "Nazr Mohammed, Nikola Mirotic, E'Twaun Moore, Tony Snell, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1252.0,
+      "GamesPlayed": 3,
+      "DefPoss": 41,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-203503-2200-2399",
+      "Name": "Aaron Brooks, Taj Gibson, Tony Snell, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1210.0,
+      "GamesPlayed": 5,
+      "DefPoss": 36,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-202703-202710-2200-2399",
+      "Name": "Derrick Rose, Nikola Mirotic, Jimmy Butler, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1187.0,
+      "GamesPlayed": 9,
+      "DefPoss": 42,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-202734-2399-2550",
+      "Name": "Joakim Noah, Nikola Mirotic, E'Twaun Moore, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1164.0,
+      "GamesPlayed": 6,
+      "DefPoss": 36,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202703-203503-2200-2399-2550",
+      "Name": "Nikola Mirotic, Tony Snell, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1110.0,
+      "GamesPlayed": 8,
+      "DefPoss": 37,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-203503-2200-2399",
+      "Name": "Derrick Rose, Taj Gibson, Tony Snell, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1071.0,
+      "GamesPlayed": 3,
+      "DefPoss": 32,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-202703-202734",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Nikola Mirotic, E'Twaun Moore",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1053.0,
+      "GamesPlayed": 5,
+      "DefPoss": 33,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-202734-203503-2550",
+      "Name": "Joakim Noah, Nikola Mirotic, E'Twaun Moore, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1050.0,
+      "GamesPlayed": 5,
+      "DefPoss": 34,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-203503-2200-2550",
+      "Name": "Joakim Noah, Derrick Rose, Tony Snell, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1048.0,
+      "GamesPlayed": 1,
+      "DefPoss": 37,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-203503-2200-2550",
+      "Name": "Derrick Rose, Taj Gibson, Tony Snell, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1000.0,
+      "GamesPlayed": 7,
+      "DefPoss": 34,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-2399-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 986.0,
+      "GamesPlayed": 5,
+      "DefPoss": 32,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-202703-202710",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 960.0,
+      "GamesPlayed": 6,
+      "DefPoss": 27,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-203503-2200",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 918.0,
+      "GamesPlayed": 7,
+      "DefPoss": 29,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202703-203503-203926-2200-2550",
+      "Name": "Nikola Mirotic, Tony Snell, Doug McDermott, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 904.0,
+      "GamesPlayed": 5,
+      "DefPoss": 33,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-203503-203926-2200",
+      "Name": "Aaron Brooks, Nikola Mirotic, Tony Snell, Doug McDermott, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 888.0,
+      "GamesPlayed": 5,
+      "DefPoss": 28,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-203503-2200-2550",
+      "Name": "Aaron Brooks, Nikola Mirotic, Tony Snell, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 870.0,
+      "GamesPlayed": 7,
+      "DefPoss": 33,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201565-202703-202710",
+      "Name": "Joakim Noah, Aaron Brooks, Derrick Rose, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 863.0,
+      "GamesPlayed": 6,
+      "DefPoss": 32,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-202703-2550",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Nikola Mirotic, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 863.0,
+      "GamesPlayed": 5,
+      "DefPoss": 31,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-2200-2550",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 859.0,
+      "GamesPlayed": 3,
+      "DefPoss": 25,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-203503-2399",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 844.0,
+      "GamesPlayed": 5,
+      "DefPoss": 27,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-202703-202710-2200-2550",
+      "Name": "Derrick Rose, Nikola Mirotic, Jimmy Butler, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 841.0,
+      "GamesPlayed": 7,
+      "DefPoss": 27,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201565-201959-202703",
+      "Name": "Joakim Noah, Aaron Brooks, Derrick Rose, Taj Gibson, Nikola Mirotic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 815.0,
+      "GamesPlayed": 4,
+      "DefPoss": 27,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202703-202710-203503-2550",
+      "Name": "Taj Gibson, Nikola Mirotic, Jimmy Butler, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 809.0,
+      "GamesPlayed": 2,
+      "DefPoss": 25,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202703-202710-2200",
+      "Name": "Joakim Noah, Derrick Rose, Nikola Mirotic, Jimmy Butler, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 807.0,
+      "GamesPlayed": 2,
+      "DefPoss": 25,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-203503-203926",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, Tony Snell, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 801.0,
+      "GamesPlayed": 3,
+      "DefPoss": 25,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-202703-202710-203503-2200",
+      "Name": "Derrick Rose, Nikola Mirotic, Jimmy Butler, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 785.0,
+      "GamesPlayed": 3,
+      "DefPoss": 27,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-203926-2550",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 781.0,
+      "GamesPlayed": 3,
+      "DefPoss": 29,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-203503-2200-2550",
+      "Name": "Aaron Brooks, Taj Gibson, Tony Snell, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 776.0,
+      "GamesPlayed": 6,
+      "DefPoss": 25,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202710-203946-2200-2399-2550",
+      "Name": "Jimmy Butler, Cameron Bairstow, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 760.0,
+      "GamesPlayed": 2,
+      "DefPoss": 23,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202710-202734-2200",
+      "Name": "Aaron Brooks, Taj Gibson, Jimmy Butler, E'Twaun Moore, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 723.0,
+      "GamesPlayed": 7,
+      "DefPoss": 24,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-202710-2399",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Jimmy Butler, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 720.0,
+      "GamesPlayed": 4,
+      "DefPoss": 23,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-202703-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Nikola Mirotic, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 707.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201565-201959-202710",
+      "Name": "Joakim Noah, Aaron Brooks, Derrick Rose, Taj Gibson, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 686.0,
+      "GamesPlayed": 6,
+      "DefPoss": 24,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-202710-2399",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Jimmy Butler, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 677.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202710-202734-2200",
+      "Name": "Joakim Noah, Derrick Rose, Jimmy Butler, E'Twaun Moore, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 643.0,
+      "GamesPlayed": 3,
+      "DefPoss": 23,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201565-201959-2200-2550",
+      "Name": "Aaron Brooks, Derrick Rose, Taj Gibson, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 636.0,
+      "GamesPlayed": 4,
+      "DefPoss": 19,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-202710-203926",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 623.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202710-203926-2200",
+      "Name": "Aaron Brooks, Taj Gibson, Jimmy Butler, Doug McDermott, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 615.0,
+      "GamesPlayed": 4,
+      "DefPoss": 19,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-202710-203926",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 592.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-202703-202710",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 578.0,
+      "GamesPlayed": 6,
+      "DefPoss": 18,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-203503-2200-2399",
+      "Name": "Nazr Mohammed, Aaron Brooks, Tony Snell, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 568.0,
+      "GamesPlayed": 4,
+      "DefPoss": 19,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-2200-2399-2550",
+      "Name": "Aaron Brooks, Taj Gibson, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 563.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-203926-2200-2399",
+      "Name": "Aaron Brooks, Taj Gibson, Doug McDermott, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 548.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-202710-202734-2200",
+      "Name": "Aaron Brooks, Nikola Mirotic, Jimmy Butler, E'Twaun Moore, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 533.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-202734-203926-2200",
+      "Name": "Aaron Brooks, Nikola Mirotic, E'Twaun Moore, Doug McDermott, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 531.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-203503-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 520.0,
+      "GamesPlayed": 5,
+      "DefPoss": 17,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-202734-203503",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, E'Twaun Moore, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 515.0,
+      "GamesPlayed": 1,
+      "DefPoss": 16,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-203503-2200",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 512.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-202710-202734",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, Jimmy Butler, E'Twaun Moore",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 504.0,
+      "GamesPlayed": 5,
+      "DefPoss": 15,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201565-201959-203503",
+      "Name": "Joakim Noah, Aaron Brooks, Derrick Rose, Taj Gibson, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 502.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-203926-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 496.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202703-202710-2399-2550",
+      "Name": "Taj Gibson, Nikola Mirotic, Jimmy Butler, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 492.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202710-2200-2399-2550",
+      "Name": "Aaron Brooks, Jimmy Butler, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 490.0,
+      "GamesPlayed": 1,
+      "DefPoss": 17,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-2399-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 488.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202703-203926-2550",
+      "Name": "Nazr Mohammed, Aaron Brooks, Nikola Mirotic, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 477.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-202734-2399",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, E'Twaun Moore, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 472.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202703-202734-203503-203926-203946",
+      "Name": "Nikola Mirotic, E'Twaun Moore, Tony Snell, Doug McDermott, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 463.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201959-203503-2399-2550",
+      "Name": "Joakim Noah, Taj Gibson, Tony Snell, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 457.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202703-203503-203926-2550",
+      "Name": "Nazr Mohammed, Nikola Mirotic, Tony Snell, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 456.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202703-203503-2200-2550",
+      "Name": "Taj Gibson, Nikola Mirotic, Tony Snell, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 450.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201565-201959-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Derrick Rose, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 438.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201565-201959-202703-202710",
+      "Name": "Aaron Brooks, Derrick Rose, Taj Gibson, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 434.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201959-202703-202734-203503",
+      "Name": "Nazr Mohammed, Taj Gibson, Nikola Mirotic, E'Twaun Moore, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 415.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-2399-2550",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 414.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-202734-2550",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, E'Twaun Moore, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 405.0,
+      "GamesPlayed": 5,
+      "DefPoss": 15,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-203503-203926-2200",
+      "Name": "Aaron Brooks, Taj Gibson, Tony Snell, Doug McDermott, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 403.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-2200-2550",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 398.0,
+      "GamesPlayed": 5,
+      "DefPoss": 16,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-202710-203926",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 395.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202734-203503-2200-2399",
+      "Name": "Taj Gibson, E'Twaun Moore, Tony Snell, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 395.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-203503-2200",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 385.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-203503-2399",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 384.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202710-203503-2399-2550",
+      "Name": "Joakim Noah, Jimmy Butler, Tony Snell, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 383.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202703-202734-203503-2200-2550",
+      "Name": "Nikola Mirotic, E'Twaun Moore, Tony Snell, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 378.0,
+      "GamesPlayed": 6,
+      "DefPoss": 16,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-202710-203946-2200-2399",
+      "Name": "Derrick Rose, Jimmy Butler, Cameron Bairstow, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 373.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-202710-203503",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 356.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202703-202710-2200-2550",
+      "Name": "Taj Gibson, Nikola Mirotic, Jimmy Butler, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 356.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202703-203503-2399-2550",
+      "Name": "Taj Gibson, Nikola Mirotic, Tony Snell, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 352.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202703-202734-2200-2399-2550",
+      "Name": "Nikola Mirotic, E'Twaun Moore, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 350.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-202710-203503",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202710-203946-2399-2550",
+      "Name": "Joakim Noah, Jimmy Butler, Cameron Bairstow, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 330.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202703-202710-203503-2550",
+      "Name": "Nazr Mohammed, Nikola Mirotic, Jimmy Butler, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 328.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-202710-202734",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Jimmy Butler, E'Twaun Moore",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 324.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202710-2200-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Jimmy Butler, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 322.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-202734-2399",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, E'Twaun Moore, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 318.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-202703-202710-202734-2200",
+      "Name": "Derrick Rose, Nikola Mirotic, Jimmy Butler, E'Twaun Moore, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 318.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-202703-203503-2200-2399",
+      "Name": "Derrick Rose, Nikola Mirotic, Tony Snell, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 318.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-203503-203926-2200",
+      "Name": "Joakim Noah, Aaron Brooks, Tony Snell, Doug McDermott, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 307.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202703-202710-203503-2200-2550",
+      "Name": "Nikola Mirotic, Jimmy Butler, Tony Snell, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 305.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201959-202703-202710-2550",
+      "Name": "Joakim Noah, Taj Gibson, Nikola Mirotic, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 304.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201959-203503-203926-2550",
+      "Name": "Joakim Noah, Taj Gibson, Tony Snell, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 303.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202710-203503-2399",
+      "Name": "Joakim Noah, Aaron Brooks, Jimmy Butler, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 302.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-203926-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 295.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-202734-2200",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, E'Twaun Moore, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 293.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202703-202710-202734-2399",
+      "Name": "Nazr Mohammed, Nikola Mirotic, Jimmy Butler, E'Twaun Moore, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202734-203503-2200",
+      "Name": "Joakim Noah, Aaron Brooks, E'Twaun Moore, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 284.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202734-203503-203946",
+      "Name": "Nazr Mohammed, Aaron Brooks, E'Twaun Moore, Tony Snell, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 277.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201565-201959-2200-2399",
+      "Name": "Aaron Brooks, Derrick Rose, Taj Gibson, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 277.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201565-202703-203503",
+      "Name": "Joakim Noah, Aaron Brooks, Derrick Rose, Nikola Mirotic, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-202710-2399",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, Jimmy Butler, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 273.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202734-2200-2399-2550",
+      "Name": "Nazr Mohammed, E'Twaun Moore, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 261.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-202703-203503",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Nikola Mirotic, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 4,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-202734-203926-203946",
+      "Name": "Aaron Brooks, Nikola Mirotic, E'Twaun Moore, Doug McDermott, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-202710-2200",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, Jimmy Butler, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-201959-203503-2550",
+      "Name": "Nazr Mohammed, Aaron Brooks, Taj Gibson, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 250.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201565-202703-202710-2200",
+      "Name": "Aaron Brooks, Derrick Rose, Nikola Mirotic, Jimmy Butler, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 249.0,
+      "GamesPlayed": 4,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-2200-2399-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 248.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202703-202710-2550",
+      "Name": "Joakim Noah, Derrick Rose, Nikola Mirotic, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-203503-2200-2399-2550",
+      "Name": "Taj Gibson, Tony Snell, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-202703-202734",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Nikola Mirotic, E'Twaun Moore",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202710-202734-2200",
+      "Name": "Derrick Rose, Taj Gibson, Jimmy Butler, E'Twaun Moore, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201565-201959-202703-2550",
+      "Name": "Aaron Brooks, Derrick Rose, Taj Gibson, Nikola Mirotic, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-202710-2550",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 221.0,
+      "GamesPlayed": 4,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202703-202734-203503-203946",
+      "Name": "Nazr Mohammed, Nikola Mirotic, E'Twaun Moore, Tony Snell, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201565-201959-202703-203503",
+      "Name": "Aaron Brooks, Derrick Rose, Taj Gibson, Nikola Mirotic, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202710-203503-2200",
+      "Name": "Joakim Noah, Aaron Brooks, Jimmy Butler, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-203503-203926",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Tony Snell, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-203946-2200-2399-2550",
+      "Name": "Derrick Rose, Cameron Bairstow, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-202710-202734-2399",
+      "Name": "Joakim Noah, Nikola Mirotic, Jimmy Butler, E'Twaun Moore, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202703-202734-2399-2550",
+      "Name": "Nazr Mohammed, Nikola Mirotic, E'Twaun Moore, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201565-201959-203503-2200",
+      "Name": "Aaron Brooks, Derrick Rose, Taj Gibson, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202703-203926-2399",
+      "Name": "Aaron Brooks, Taj Gibson, Nikola Mirotic, Doug McDermott, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202734-203503-2200",
+      "Name": "Joakim Noah, Derrick Rose, E'Twaun Moore, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-202734-203503-203946",
+      "Name": "Aaron Brooks, Nikola Mirotic, E'Twaun Moore, Tony Snell, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201565-203503-2200",
+      "Name": "Joakim Noah, Aaron Brooks, Derrick Rose, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 4,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-202710-203503-2200-2550",
+      "Name": "Derrick Rose, Jimmy Butler, Tony Snell, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-202734-2550",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, E'Twaun Moore, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202703-203503-203926",
+      "Name": "Nazr Mohammed, Aaron Brooks, Nikola Mirotic, Tony Snell, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202710-203926-2399",
+      "Name": "Joakim Noah, Aaron Brooks, Jimmy Butler, Doug McDermott, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-202710-202734",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Jimmy Butler, E'Twaun Moore",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202703-202734-203926",
+      "Name": "Nazr Mohammed, Aaron Brooks, Nikola Mirotic, E'Twaun Moore, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202734-2200-2399",
+      "Name": "Aaron Brooks, Taj Gibson, E'Twaun Moore, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201959-202734-203503-203946",
+      "Name": "Nazr Mohammed, Taj Gibson, E'Twaun Moore, Tony Snell, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201565-201959-2399",
+      "Name": "Joakim Noah, Aaron Brooks, Derrick Rose, Taj Gibson, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-201565-202703-202710",
+      "Name": "Nazr Mohammed, Aaron Brooks, Derrick Rose, Nikola Mirotic, Jimmy Butler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-202710-202734",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, Jimmy Butler, E'Twaun Moore",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202734-2200-2399",
+      "Name": "Joakim Noah, Aaron Brooks, E'Twaun Moore, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202734-203503-2200",
+      "Name": "Derrick Rose, Taj Gibson, E'Twaun Moore, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-203503-203926-2200-2550",
+      "Name": "Nazr Mohammed, Tony Snell, Doug McDermott, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "203503-203926-2200-2399-2550",
+      "Name": "Tony Snell, Doug McDermott, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-202710-202734-203503",
+      "Name": "Joakim Noah, Nikola Mirotic, Jimmy Butler, E'Twaun Moore, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202703-202734-203503-2550",
+      "Name": "Taj Gibson, Nikola Mirotic, E'Twaun Moore, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-203503-2200-2399-2550",
+      "Name": "Nazr Mohammed, Tony Snell, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202710-203503-2399-2550",
+      "Name": "Nazr Mohammed, Jimmy Butler, Tony Snell, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-203503-2399",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201959-202734-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Taj Gibson, E'Twaun Moore, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-202734-2200-2550",
+      "Name": "Aaron Brooks, Nikola Mirotic, E'Twaun Moore, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-2399-2550",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202703-203503-203926-2550",
+      "Name": "Taj Gibson, Nikola Mirotic, Tony Snell, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202703-203503-2399-2550",
+      "Name": "Nazr Mohammed, Nikola Mirotic, Tony Snell, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202710-202734-2200-2399",
+      "Name": "Taj Gibson, Jimmy Butler, E'Twaun Moore, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-202710-203503",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202703-203503-2399",
+      "Name": "Nazr Mohammed, Aaron Brooks, Nikola Mirotic, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-202710-2200-2550",
+      "Name": "Joakim Noah, Nikola Mirotic, Jimmy Butler, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-2200-2399",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202710-203503-2550",
+      "Name": "Nazr Mohammed, Aaron Brooks, Jimmy Butler, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202703-202734-203503-2399",
+      "Name": "Taj Gibson, Nikola Mirotic, E'Twaun Moore, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202703-202710-203503",
+      "Name": "Nazr Mohammed, Aaron Brooks, Nikola Mirotic, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202703-202710-203503",
+      "Name": "Joakim Noah, Derrick Rose, Nikola Mirotic, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-202734-203503",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, E'Twaun Moore, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202703-2200-2399-2550",
+      "Name": "Taj Gibson, Nikola Mirotic, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202703-202710-203926-2550",
+      "Name": "Nazr Mohammed, Nikola Mirotic, Jimmy Butler, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201959-202734-203503-2200",
+      "Name": "Aaron Brooks, Taj Gibson, E'Twaun Moore, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201959-202710-203926-2550",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-2200-2399-2550",
+      "Name": "Derrick Rose, Taj Gibson, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202734-203503-203926-203946",
+      "Name": "Nazr Mohammed, E'Twaun Moore, Tony Snell, Doug McDermott, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-203503-2200-2399-2550",
+      "Name": "Aaron Brooks, Tony Snell, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201959-202734-203503-203926",
+      "Name": "Nazr Mohammed, Taj Gibson, E'Twaun Moore, Tony Snell, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-202734-203503",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, E'Twaun Moore, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201565-202703-2200",
+      "Name": "Joakim Noah, Aaron Brooks, Derrick Rose, Nikola Mirotic, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-202710-203946-2200-2550",
+      "Name": "Derrick Rose, Jimmy Butler, Cameron Bairstow, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202703-202710-202734-2200",
+      "Name": "Taj Gibson, Nikola Mirotic, Jimmy Butler, E'Twaun Moore, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-203926-2200-2550",
+      "Name": "Aaron Brooks, Nikola Mirotic, Doug McDermott, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202703-202710-202734-2399",
+      "Name": "Taj Gibson, Nikola Mirotic, Jimmy Butler, E'Twaun Moore, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202703-202734-203926-2200-2550",
+      "Name": "Nikola Mirotic, E'Twaun Moore, Doug McDermott, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202703-202710-202734",
+      "Name": "Joakim Noah, Derrick Rose, Nikola Mirotic, Jimmy Butler, E'Twaun Moore",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202703-203926-2399",
+      "Name": "Derrick Rose, Taj Gibson, Nikola Mirotic, Doug McDermott, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201959-202710-203503-2550",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-202734-203503-2200-2550",
+      "Name": "Nazr Mohammed, E'Twaun Moore, Tony Snell, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202710-203503-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Jimmy Butler, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201959-202703-202734-2550",
+      "Name": "Joakim Noah, Taj Gibson, Nikola Mirotic, E'Twaun Moore, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-202710-203926-2200",
+      "Name": "Aaron Brooks, Nikola Mirotic, Jimmy Butler, Doug McDermott, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-202703-202710-203926-2200",
+      "Name": "Derrick Rose, Nikola Mirotic, Jimmy Butler, Doug McDermott, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202703-202710-2550",
+      "Name": "Nazr Mohammed, Aaron Brooks, Nikola Mirotic, Jimmy Butler, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202734-203503-203946-2200",
+      "Name": "Aaron Brooks, E'Twaun Moore, Tony Snell, Cameron Bairstow, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-203503-2550",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201565-202703-2200-2399",
+      "Name": "Aaron Brooks, Derrick Rose, Nikola Mirotic, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-201959-202710-203503",
+      "Name": "Nazr Mohammed, Aaron Brooks, Taj Gibson, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202734-203926-203946",
+      "Name": "Nazr Mohammed, Aaron Brooks, E'Twaun Moore, Doug McDermott, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201565-202703-2200-2550",
+      "Name": "Aaron Brooks, Derrick Rose, Nikola Mirotic, Pau Gasol, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-202710-2200-2399-2550",
+      "Name": "Derrick Rose, Jimmy Butler, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201959-202734-203926-203946",
+      "Name": "Nazr Mohammed, Taj Gibson, E'Twaun Moore, Doug McDermott, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202703-202710-203926",
+      "Name": "Nazr Mohammed, Aaron Brooks, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-202734-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, E'Twaun Moore, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 51.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-203926-2550",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Doug McDermott, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202703-202710-202734-203503-2200",
+      "Name": "Nikola Mirotic, Jimmy Butler, E'Twaun Moore, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202703-202710-203926",
+      "Name": "Joakim Noah, Derrick Rose, Nikola Mirotic, Jimmy Butler, Doug McDermott",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202703-202734-203503",
+      "Name": "Joakim Noah, Aaron Brooks, Nikola Mirotic, E'Twaun Moore, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-202703-2399-2550",
+      "Name": "Joakim Noah, Derrick Rose, Nikola Mirotic, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202703-202734-203503-2200-2399",
+      "Name": "Nikola Mirotic, E'Twaun Moore, Tony Snell, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-202703-2200-2399-2550",
+      "Name": "Derrick Rose, Nikola Mirotic, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-201565-202703-203503-2200",
+      "Name": "Aaron Brooks, Derrick Rose, Nikola Mirotic, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202710-203946-2200-2399",
+      "Name": "Aaron Brooks, Jimmy Butler, Cameron Bairstow, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 36.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202710-203503-203946",
+      "Name": "Nazr Mohammed, Aaron Brooks, Jimmy Butler, Tony Snell, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 35.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-201565-2200-2399",
+      "Name": "Joakim Noah, Aaron Brooks, Derrick Rose, Pau Gasol, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201565-201959-203926-2399",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Doug McDermott, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201166-202710-202734-2550",
+      "Name": "Joakim Noah, Aaron Brooks, Jimmy Butler, E'Twaun Moore, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-202734-203503-2399",
+      "Name": "Joakim Noah, Nikola Mirotic, E'Twaun Moore, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 31.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-203926-2399-2550",
+      "Name": "Joakim Noah, Nikola Mirotic, Doug McDermott, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 31.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201166-202703-203503-203926-203946",
+      "Name": "Aaron Brooks, Nikola Mirotic, Tony Snell, Doug McDermott, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 31.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201565-201959-202710-203503",
+      "Name": "Nazr Mohammed, Derrick Rose, Taj Gibson, Jimmy Butler, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202703-202734-203503",
+      "Name": "Nazr Mohammed, Aaron Brooks, Nikola Mirotic, E'Twaun Moore, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 23.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201565-201959-202710-203503-2550",
+      "Name": "Derrick Rose, Taj Gibson, Jimmy Butler, Tony Snell, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 22.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201959-202710-202734-203503",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, E'Twaun Moore, Tony Snell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 21.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-202710-202734-2550",
+      "Name": "Joakim Noah, Nikola Mirotic, Jimmy Butler, E'Twaun Moore, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 20.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202710-202734-203503-2200",
+      "Name": "Taj Gibson, Jimmy Butler, E'Twaun Moore, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 18.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "202710-203503-2200-2399-2550",
+      "Name": "Jimmy Butler, Tony Snell, Pau Gasol, Mike Dunleavy, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 15.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-201959-202710-202734-2550",
+      "Name": "Joakim Noah, Taj Gibson, Jimmy Butler, E'Twaun Moore, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 14.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201149-202703-202734-203503-2200",
+      "Name": "Joakim Noah, Nikola Mirotic, E'Twaun Moore, Tony Snell, Pau Gasol",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 11.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "1737-201166-202703-203503-203946",
+      "Name": "Nazr Mohammed, Aaron Brooks, Nikola Mirotic, Tony Snell, Cameron Bairstow",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2014-15",
+      "EntityId": "201959-202710-202734-203503-2399",
+      "Name": "Taj Gibson, Jimmy Butler, E'Twaun Moore, Tony Snell, Mike Dunleavy",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    }
+  ]
+}

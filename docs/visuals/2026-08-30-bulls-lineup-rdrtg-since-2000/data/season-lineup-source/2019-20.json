@@ -1,0 +1,3129 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2019-20",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2019-20",
+    "RowsReturned": 359,
+    "RowsWithDefPoss": 346,
+    "RowsSkippedMissingMetrics": 35,
+    "LastRowDefPoss": 1,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628976-203107-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 19005.0,
+      "GamesPlayed": 21,
+      "DefPoss": 640,
+      "OpponentPoints": 641
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628976-203107-203490-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7165.0,
+      "GamesPlayed": 9,
+      "DefPoss": 246,
+      "OpponentPoints": 275
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628436-203107-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Luke Kornet, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5112.0,
+      "GamesPlayed": 11,
+      "DefPoss": 174,
+      "OpponentPoints": 201
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1629655-203107-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Daniel Gafford, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4691.0,
+      "GamesPlayed": 12,
+      "DefPoss": 156,
+      "OpponentPoints": 172
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628976-1629632-203107-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4597.0,
+      "GamesPlayed": 22,
+      "DefPoss": 161,
+      "OpponentPoints": 201
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628976-1629632-201152",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Wendell Carter Jr., Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4262.0,
+      "GamesPlayed": 14,
+      "DefPoss": 146,
+      "OpponentPoints": 147
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628976-1628990-203107-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Chandler Hutchison, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4009.0,
+      "GamesPlayed": 7,
+      "DefPoss": 150,
+      "OpponentPoints": 151
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628374-1628976-203107-203897",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3897.0,
+      "GamesPlayed": 10,
+      "DefPoss": 129,
+      "OpponentPoints": 131
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1629632-201152-203107-203897",
+      "Name": "Cristiano Felicio, Coby White, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3547.0,
+      "GamesPlayed": 14,
+      "DefPoss": 115,
+      "OpponentPoints": 148
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1629632-1629655-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Coby White, Daniel Gafford, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3517.0,
+      "GamesPlayed": 12,
+      "DefPoss": 121,
+      "OpponentPoints": 114
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628436-201152-203107-203897",
+      "Name": "Kris Dunn, Luke Kornet, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3267.0,
+      "GamesPlayed": 9,
+      "DefPoss": 109,
+      "OpponentPoints": 107
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628436-1628990-201152-203107-203897",
+      "Name": "Luke Kornet, Chandler Hutchison, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3128.0,
+      "GamesPlayed": 6,
+      "DefPoss": 109,
+      "OpponentPoints": 141
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1629632-1629655-201152-203107-203897",
+      "Name": "Coby White, Daniel Gafford, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2707.0,
+      "GamesPlayed": 16,
+      "DefPoss": 100,
+      "OpponentPoints": 119
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-201152-203107-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2526.0,
+      "GamesPlayed": 11,
+      "DefPoss": 90,
+      "OpponentPoints": 112
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628436-1628990-1629632-201152",
+      "Name": "Ryan Arcidiacono, Luke Kornet, Chandler Hutchison, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2366.0,
+      "GamesPlayed": 8,
+      "DefPoss": 82,
+      "OpponentPoints": 86
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1629632-1629655-201152",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Coby White, Daniel Gafford, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2195.0,
+      "GamesPlayed": 8,
+      "DefPoss": 79,
+      "OpponentPoints": 98
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1629632-201152-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2160.0,
+      "GamesPlayed": 14,
+      "DefPoss": 77,
+      "OpponentPoints": 88
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628374-1628976-1629632",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1885.0,
+      "GamesPlayed": 7,
+      "DefPoss": 66,
+      "OpponentPoints": 65
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628976-201152-203107-203897",
+      "Name": "Kris Dunn, Wendell Carter Jr., Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1801.0,
+      "GamesPlayed": 7,
+      "DefPoss": 60,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628976-1629632-201152-203897",
+      "Name": "Kris Dunn, Wendell Carter Jr., Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1760.0,
+      "GamesPlayed": 13,
+      "DefPoss": 59,
+      "OpponentPoints": 58
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628976-1629632-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Wendell Carter Jr., Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1756.0,
+      "GamesPlayed": 9,
+      "DefPoss": 60,
+      "OpponentPoints": 84
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1628374-1628976-203107",
+      "Name": "Denzel Valentine, Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1639.0,
+      "GamesPlayed": 4,
+      "DefPoss": 51,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628976-1629632-201152-203107-203897",
+      "Name": "Wendell Carter Jr., Coby White, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1631.0,
+      "GamesPlayed": 15,
+      "DefPoss": 55,
+      "OpponentPoints": 59
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628976-1629632-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1601.0,
+      "GamesPlayed": 12,
+      "DefPoss": 51,
+      "OpponentPoints": 52
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1629632-201152-203107-203897",
+      "Name": "Lauri Markkanen, Coby White, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1564.0,
+      "GamesPlayed": 10,
+      "DefPoss": 57,
+      "OpponentPoints": 56
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628374-1629632-201152",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1513.0,
+      "GamesPlayed": 7,
+      "DefPoss": 58,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1629655-201152-203107-203897",
+      "Name": "Ryan Arcidiacono, Daniel Gafford, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1488.0,
+      "GamesPlayed": 4,
+      "DefPoss": 47,
+      "OpponentPoints": 67
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1628990-201152-203107-203897",
+      "Name": "Cristiano Felicio, Chandler Hutchison, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1484.0,
+      "GamesPlayed": 5,
+      "DefPoss": 50,
+      "OpponentPoints": 74
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1629632-1629655-201152-203897",
+      "Name": "Kris Dunn, Coby White, Daniel Gafford, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1472.0,
+      "GamesPlayed": 13,
+      "DefPoss": 48,
+      "OpponentPoints": 62
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628436-1629632-201152-203897",
+      "Name": "Kris Dunn, Luke Kornet, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1468.0,
+      "GamesPlayed": 10,
+      "DefPoss": 49,
+      "OpponentPoints": 62
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-201152-203107-203897",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1401.0,
+      "GamesPlayed": 6,
+      "DefPoss": 49,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1627885-1628436-1628990-1629632",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Luke Kornet, Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1395.0,
+      "GamesPlayed": 5,
+      "DefPoss": 49,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1629632-201152-203897",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1314.0,
+      "GamesPlayed": 8,
+      "DefPoss": 52,
+      "OpponentPoints": 63
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628990-203107-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Chandler Hutchison, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1301.0,
+      "GamesPlayed": 4,
+      "DefPoss": 46,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627739-201152-203107-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1283.0,
+      "GamesPlayed": 4,
+      "DefPoss": 46,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627739-1629632-201152-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1242.0,
+      "GamesPlayed": 6,
+      "DefPoss": 39,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628436-1628990-1629632",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1208.0,
+      "GamesPlayed": 6,
+      "DefPoss": 43,
+      "OpponentPoints": 51
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628436-1629632-201152-203107-203897",
+      "Name": "Luke Kornet, Coby White, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1166.0,
+      "GamesPlayed": 8,
+      "DefPoss": 37,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1629632-1629655-201152",
+      "Name": "Kris Dunn, Denzel Valentine, Coby White, Daniel Gafford, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1124.0,
+      "GamesPlayed": 5,
+      "DefPoss": 39,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628436-1629632-201152",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Luke Kornet, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1086.0,
+      "GamesPlayed": 8,
+      "DefPoss": 36,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628990-201152-203107-203897",
+      "Name": "Lauri Markkanen, Chandler Hutchison, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1083.0,
+      "GamesPlayed": 6,
+      "DefPoss": 42,
+      "OpponentPoints": 51
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628436-1628990-1629632-201152",
+      "Name": "Kris Dunn, Luke Kornet, Chandler Hutchison, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1060.0,
+      "GamesPlayed": 5,
+      "DefPoss": 38,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628436-1629632-201152-203897",
+      "Name": "Ryan Arcidiacono, Luke Kornet, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1052.0,
+      "GamesPlayed": 6,
+      "DefPoss": 35,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1629632-1629655-203107-203897",
+      "Name": "Lauri Markkanen, Coby White, Daniel Gafford, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1033.0,
+      "GamesPlayed": 9,
+      "DefPoss": 39,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628976-201152-203107-203490-203897",
+      "Name": "Wendell Carter Jr., Thaddeus Young, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1024.0,
+      "GamesPlayed": 3,
+      "DefPoss": 39,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628436-201152-203107-203490-203897",
+      "Name": "Luke Kornet, Thaddeus Young, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1023.0,
+      "GamesPlayed": 4,
+      "DefPoss": 32,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628436-201152-203107-203897",
+      "Name": "Ryan Arcidiacono, Luke Kornet, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1020.0,
+      "GamesPlayed": 4,
+      "DefPoss": 35,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1629632-1629655-201152-203107",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 996.0,
+      "GamesPlayed": 7,
+      "DefPoss": 31,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-1627853-1628990-1629632",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 985.0,
+      "GamesPlayed": 5,
+      "DefPoss": 33,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628976-1629632-201152-203490",
+      "Name": "Shaquille Harrison, Wendell Carter Jr., Coby White, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 968.0,
+      "GamesPlayed": 3,
+      "DefPoss": 41,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628976-1629632-201152-203897",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 931.0,
+      "GamesPlayed": 7,
+      "DefPoss": 32,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1629632-1629655-201152-203897",
+      "Name": "Ryan Arcidiacono, Coby White, Daniel Gafford, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 911.0,
+      "GamesPlayed": 11,
+      "DefPoss": 29,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-201152-203107-203490-203897",
+      "Name": "Lauri Markkanen, Thaddeus Young, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 875.0,
+      "GamesPlayed": 7,
+      "DefPoss": 31,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628374-1628976-1629632-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Wendell Carter Jr., Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 835.0,
+      "GamesPlayed": 4,
+      "DefPoss": 30,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1627885-1629632-1629690",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Coby White, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 815.0,
+      "GamesPlayed": 3,
+      "DefPoss": 30,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1628374-1628976-1629632",
+      "Name": "Denzel Valentine, Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 784.0,
+      "GamesPlayed": 2,
+      "DefPoss": 30,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1629632-1629655-201152-203107",
+      "Name": "Shaquille Harrison, Coby White, Daniel Gafford, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 765.0,
+      "GamesPlayed": 2,
+      "DefPoss": 27,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1628990-1629632-201152-203897",
+      "Name": "Cristiano Felicio, Chandler Hutchison, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 755.0,
+      "GamesPlayed": 6,
+      "DefPoss": 26,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627885-1629632-201152-203897",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 720.0,
+      "GamesPlayed": 5,
+      "DefPoss": 29,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628374-1629632-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 719.0,
+      "GamesPlayed": 5,
+      "DefPoss": 27,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1628976-1629632-201152",
+      "Name": "Denzel Valentine, Shaquille Harrison, Wendell Carter Jr., Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 719.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1628990-1629632-201152",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Chandler Hutchison, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 707.0,
+      "GamesPlayed": 5,
+      "DefPoss": 22,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628436-1629632-203107-203897",
+      "Name": "Lauri Markkanen, Luke Kornet, Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 705.0,
+      "GamesPlayed": 7,
+      "DefPoss": 24,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1627885-1628990-1629632",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 695.0,
+      "GamesPlayed": 4,
+      "DefPoss": 24,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1629632-1629655-201152-203490",
+      "Name": "Shaquille Harrison, Coby White, Daniel Gafford, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 687.0,
+      "GamesPlayed": 3,
+      "DefPoss": 25,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628436-203107-203490-203897",
+      "Name": "Lauri Markkanen, Luke Kornet, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 673.0,
+      "GamesPlayed": 4,
+      "DefPoss": 24,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628976-1629632-201152-203107",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 667.0,
+      "GamesPlayed": 5,
+      "DefPoss": 24,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1628976-1629632-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 642.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1628976-203107-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 639.0,
+      "GamesPlayed": 6,
+      "DefPoss": 19,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1628990-1629632-201152",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 638.0,
+      "GamesPlayed": 4,
+      "DefPoss": 23,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1629632-1629655-201152-203107",
+      "Name": "Kris Dunn, Coby White, Daniel Gafford, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 618.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627739-1628374-203107-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Lauri Markkanen, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 599.0,
+      "GamesPlayed": 4,
+      "DefPoss": 21,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1629632-1629655-201152-203107-203490",
+      "Name": "Coby White, Daniel Gafford, Thaddeus Young, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 598.0,
+      "GamesPlayed": 3,
+      "DefPoss": 22,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628976-201152-203107-203897",
+      "Name": "Shaquille Harrison, Wendell Carter Jr., Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 589.0,
+      "GamesPlayed": 2,
+      "DefPoss": 20,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628374-1628976-1629632",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 562.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628374-1629632-1629655-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Daniel Gafford, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 544.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627885-1629632-1629690-203107",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Coby White, Adam Mokoka, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 542.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627885-201152-203107-203897",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 542.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1627885-1629632-1629655-1629690",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Coby White, Daniel Gafford, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 536.0,
+      "GamesPlayed": 1,
+      "DefPoss": 19,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628990-1629632-1629655-201152",
+      "Name": "Ryan Arcidiacono, Chandler Hutchison, Coby White, Daniel Gafford, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 534.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1629655-201152-203107-203897",
+      "Name": "Kris Dunn, Daniel Gafford, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 511.0,
+      "GamesPlayed": 4,
+      "DefPoss": 21,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1628976-201152-203107",
+      "Name": "Denzel Valentine, Shaquille Harrison, Wendell Carter Jr., Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 500.0,
+      "GamesPlayed": 1,
+      "DefPoss": 16,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1627885-1629632-201152",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 497.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628374-1629655-203107-203897",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Daniel Gafford, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 490.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-201152-203107-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 486.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1629632-201152-203107",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 480.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628976-1629632-203107-203897",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 476.0,
+      "GamesPlayed": 1,
+      "DefPoss": 17,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628374-1629632-201152-203897",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 471.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1628374-1628976-203897",
+      "Name": "Kris Dunn, Denzel Valentine, Lauri Markkanen, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 470.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1628990-1629632-1629655",
+      "Name": "Denzel Valentine, Shaquille Harrison, Chandler Hutchison, Coby White, Daniel Gafford",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 469.0,
+      "GamesPlayed": 1,
+      "DefPoss": 17,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628436-1629632-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Luke Kornet, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 460.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628976-201152-203897",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Wendell Carter Jr., Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 449.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1629632-203107-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 449.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1629632-1629655-203107-203490",
+      "Name": "Lauri Markkanen, Coby White, Daniel Gafford, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 420.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1628976-1629632-201152",
+      "Name": "Kris Dunn, Denzel Valentine, Wendell Carter Jr., Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 417.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628374-1628976-203107-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 404.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628976-1629632-201152-203490",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Coby White, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 400.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628976-1629632-1629690-203490",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Coby White, Adam Mokoka, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 392.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1629632-1629655-1629690-203107",
+      "Name": "Shaquille Harrison, Coby White, Daniel Gafford, Adam Mokoka, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 386.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628374-1628976-1629632-203490",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Coby White, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 382.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1628990-1629632-203897",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Chandler Hutchison, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 381.0,
+      "GamesPlayed": 5,
+      "DefPoss": 16,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1627885-1628976-1629632",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Wendell Carter Jr., Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 377.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1629655-201152-203107-203897",
+      "Name": "Shaquille Harrison, Daniel Gafford, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 372.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628976-1629632-201152-203897",
+      "Name": "Shaquille Harrison, Wendell Carter Jr., Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 360.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1627885-1628436-1629632-1629655",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Luke Kornet, Coby White, Daniel Gafford",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 358.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-1628990-1629632-203897",
+      "Name": "Cristiano Felicio, Denzel Valentine, Chandler Hutchison, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 357.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1627885-1628436-1629690",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Luke Kornet, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 355.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628990-1629632-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Chandler Hutchison, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 348.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628976-1629632-1629690",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Coby White, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 340.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1629632-201152-203107-203897",
+      "Name": "Ryan Arcidiacono, Coby White, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 340.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628990-1629632-201152-203107-203897",
+      "Name": "Chandler Hutchison, Coby White, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 339.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628436-1628976-1629632",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Wendell Carter Jr., Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 336.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1627885-1628436-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Luke Kornet, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 334.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628976-201152-203107-203490",
+      "Name": "Shaquille Harrison, Wendell Carter Jr., Thaddeus Young, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 329.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628976-1629632-201152-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 322.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628436-201152-203107-203897",
+      "Name": "Lauri Markkanen, Luke Kornet, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 321.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628374-1628976-203897",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 320.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1629690-203107-203897",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Adam Mokoka, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 316.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1628976-1629632-203490",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Coby White, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628990-1629632-1629655-201152-203897",
+      "Name": "Chandler Hutchison, Coby White, Daniel Gafford, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 312.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628976-1629632-201152-203107",
+      "Name": "Kris Dunn, Wendell Carter Jr., Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 304.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1628436-1628990-1629632",
+      "Name": "Kris Dunn, Denzel Valentine, Luke Kornet, Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 298.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1629632-1629655-201152-203897",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 298.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628990-1629632-1629655-201152-203107",
+      "Name": "Chandler Hutchison, Coby White, Daniel Gafford, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 298.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628976-1628990-201152",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Wendell Carter Jr., Chandler Hutchison, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 297.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1627885-1629622-1629655",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Max Strus, Daniel Gafford",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 295.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628976-1629632-201152-203490",
+      "Name": "Kris Dunn, Wendell Carter Jr., Coby White, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 284.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1629632-1629655-201152-203107",
+      "Name": "Ryan Arcidiacono, Coby White, Daniel Gafford, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 284.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1629632-1629655-201152-203897",
+      "Name": "Lauri Markkanen, Coby White, Daniel Gafford, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 284.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627739-1628374-1629632-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Lauri Markkanen, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 275.0,
+      "GamesPlayed": 4,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628976-201152-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Wendell Carter Jr., Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 275.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1627885-1629655-201152",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Shaquille Harrison, Daniel Gafford, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1629632-1629655-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Coby White, Daniel Gafford, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628976-201152-203107-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1629632-1629655-1629690",
+      "Name": "Denzel Valentine, Shaquille Harrison, Coby White, Daniel Gafford, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 266.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-201152-203107-203897",
+      "Name": "Cristiano Felicio, Denzel Valentine, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-201152-203490-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Thaddeus Young, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628436-1629632-203490",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Luke Kornet, Coby White, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 261.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1629632-201152-203107",
+      "Name": "Kris Dunn, Lauri Markkanen, Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 261.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628374-1629632-201152-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 258.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627885-1628436-1629632-203490",
+      "Name": "Kris Dunn, Shaquille Harrison, Luke Kornet, Coby White, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1629632-1629655-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Coby White, Daniel Gafford, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628436-1628990-1629632-203107-203897",
+      "Name": "Luke Kornet, Chandler Hutchison, Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 250.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628990-201152-203107-203897",
+      "Name": "Kris Dunn, Chandler Hutchison, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 248.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628374-1628436-1629632",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Luke Kornet, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 246.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627739-1628990-1629632-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Chandler Hutchison, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1628436-1628990-203897",
+      "Name": "Kris Dunn, Denzel Valentine, Luke Kornet, Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627885-1629632-1629690-203897",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Coby White, Adam Mokoka, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 239.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1627885-1629632-201152-203490",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Coby White, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 238.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1629632-1629655-201152-203897",
+      "Name": "Shaquille Harrison, Coby White, Daniel Gafford, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628990-1629632-1629655-203107",
+      "Name": "Ryan Arcidiacono, Chandler Hutchison, Coby White, Daniel Gafford, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 234.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628374-1629655-203107-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Gafford, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628976-1629632-1629690-201152-203107",
+      "Name": "Wendell Carter Jr., Coby White, Adam Mokoka, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 231.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628976-1629632-201152-203107",
+      "Name": "Shaquille Harrison, Wendell Carter Jr., Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-1629632-201152-203107",
+      "Name": "Cristiano Felicio, Denzel Valentine, Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 223.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627739-1628374-1628990-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Lauri Markkanen, Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-1628990-1629632-203107",
+      "Name": "Cristiano Felicio, Denzel Valentine, Chandler Hutchison, Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 221.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1628990-203107-203897",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Chandler Hutchison, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1629632-1629655-1629690-203107-203897",
+      "Name": "Coby White, Daniel Gafford, Adam Mokoka, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1629632-1629655-1629690-203490",
+      "Name": "Ryan Arcidiacono, Coby White, Daniel Gafford, Adam Mokoka, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 217.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1628436-1629632-1629690",
+      "Name": "Denzel Valentine, Shaquille Harrison, Luke Kornet, Coby White, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628976-1629632-201152-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1629655-201152-203107-203490",
+      "Name": "Shaquille Harrison, Daniel Gafford, Thaddeus Young, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628976-1628990-1629632-201152",
+      "Name": "Kris Dunn, Wendell Carter Jr., Chandler Hutchison, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 212.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1628374-1629632-201152",
+      "Name": "Denzel Valentine, Shaquille Harrison, Lauri Markkanen, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1627885-1629632-201152-203107",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1628976-1629632-203107",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628990-1629655-203107-203897",
+      "Name": "Lauri Markkanen, Chandler Hutchison, Daniel Gafford, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 208.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1628374-1629632-203107-203897",
+      "Name": "Cristiano Felicio, Lauri Markkanen, Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1629655-203107-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Daniel Gafford, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628436-1628990-1629632-201152-203897",
+      "Name": "Luke Kornet, Chandler Hutchison, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1628976-1628990-1629632",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1628374-1629632-1629655",
+      "Name": "Denzel Valentine, Shaquille Harrison, Lauri Markkanen, Coby White, Daniel Gafford",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1629632-201152-203107-203490",
+      "Name": "Lauri Markkanen, Coby White, Thaddeus Young, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1628436-203107-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Luke Kornet, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1629632-1629655-201152",
+      "Name": "Denzel Valentine, Shaquille Harrison, Coby White, Daniel Gafford, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-1627853-1629632-1629690",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Coby White, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1629632-203107-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1629632-201152-203107-203490-203897",
+      "Name": "Coby White, Thaddeus Young, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1629632-201152-203490",
+      "Name": "Kris Dunn, Lauri Markkanen, Coby White, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628374-1629632-201152-203490",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Coby White, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628374-1629632-203897",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1628374-1629655-203107",
+      "Name": "Denzel Valentine, Shaquille Harrison, Lauri Markkanen, Daniel Gafford, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628436-1628990-1629632-203107",
+      "Name": "Denzel Valentine, Luke Kornet, Chandler Hutchison, Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1628990-1629632-203107-203897",
+      "Name": "Cristiano Felicio, Chandler Hutchison, Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628990-201152-203107-203897",
+      "Name": "Denzel Valentine, Chandler Hutchison, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 177.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-1627853-1628990-203897",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628436-201152-203490-203897",
+      "Name": "Kris Dunn, Luke Kornet, Thaddeus Young, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 4,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628976-1629632-203897",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Wendell Carter Jr., Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-1627853-1627885-1629690",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1628374-1629632-1629655",
+      "Name": "Kris Dunn, Denzel Valentine, Lauri Markkanen, Coby White, Daniel Gafford",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628976-1629632-201152-203107-203490",
+      "Name": "Wendell Carter Jr., Coby White, Thaddeus Young, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1628436-201152-203897",
+      "Name": "Kris Dunn, Denzel Valentine, Luke Kornet, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628374-1628990-1629632",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628436-1628990-1629632",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Luke Kornet, Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628976-1629632-203490-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1629655-201152-203107",
+      "Name": "Denzel Valentine, Shaquille Harrison, Daniel Gafford, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628374-201152-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1627885-1628976-201152",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Shaquille Harrison, Wendell Carter Jr., Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1627885-1628374-1628976-203107",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628990-1629632-1629655-203897",
+      "Name": "Kris Dunn, Chandler Hutchison, Coby White, Daniel Gafford, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1627885-1628436-1628990",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Luke Kornet, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1629655-201152-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Daniel Gafford, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1629655-201152-203490",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Daniel Gafford, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1629632-1629655-1629690-201152-203107",
+      "Name": "Coby White, Daniel Gafford, Adam Mokoka, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627885-1628990-1629632-201152",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Chandler Hutchison, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628990-1629632-201152",
+      "Name": "Kris Dunn, Lauri Markkanen, Chandler Hutchison, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628976-201152-203490-203897",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Thaddeus Young, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628436-1629632-201152-203107",
+      "Name": "Ryan Arcidiacono, Luke Kornet, Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628374-201152-203107-203897",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1627885-1628436-1629632",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Luke Kornet, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628990-1629632-201152-203897",
+      "Name": "Ryan Arcidiacono, Chandler Hutchison, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628436-1629632-203107",
+      "Name": "Kris Dunn, Lauri Markkanen, Luke Kornet, Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627885-1629632-203107-203897",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1627885-1628436-1629632",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Shaquille Harrison, Luke Kornet, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1627853-1628976-201152",
+      "Name": "Kris Dunn, Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628976-1628990-203107-203897",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Chandler Hutchison, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1629632-1629690-203107-203897",
+      "Name": "Cristiano Felicio, Coby White, Adam Mokoka, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1629632-1629655-1629690-203897",
+      "Name": "Shaquille Harrison, Coby White, Daniel Gafford, Adam Mokoka, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1628374-1628990-1629632",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628436-1629632-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628374-1628976-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1629632-201152-203107-203490",
+      "Name": "Shaquille Harrison, Coby White, Thaddeus Young, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1629655-201152-203107-203897",
+      "Name": "Lauri Markkanen, Daniel Gafford, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628976-1628990-201152-203107-203897",
+      "Name": "Wendell Carter Jr., Chandler Hutchison, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628990-1629632-1629655-201152",
+      "Name": "Kris Dunn, Chandler Hutchison, Coby White, Daniel Gafford, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1629632-1629655-201152-203490",
+      "Name": "Ryan Arcidiacono, Coby White, Daniel Gafford, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627885-1628436-1629632-203897",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Luke Kornet, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628374-1629632-1629655-203490",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Coby White, Daniel Gafford, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-1627853-1627885-1629632",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628374-1628436-1629632-203897",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Luke Kornet, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1629632-1629655-203107",
+      "Name": "Kris Dunn, Lauri Markkanen, Coby White, Daniel Gafford, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-1627853-1627885-1628990",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-201152-203107-203897",
+      "Name": "Kris Dunn, Denzel Valentine, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627885-1628374-201152-203897",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628374-1629632-1629655",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Coby White, Daniel Gafford",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628374-1629655-203490",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Daniel Gafford, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1629632-201152-203107-203897",
+      "Name": "Kris Dunn, Coby White, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628976-1628990-1629632",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Wendell Carter Jr., Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-1627853-1629632-203897",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627739-1627756-1628990-1629632",
+      "Name": "Cristiano Felicio, Kris Dunn, Denzel Valentine, Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1627885-1629690-203897",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Adam Mokoka, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1627853-1627885-1629655",
+      "Name": "Kris Dunn, Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Daniel Gafford",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1627885-1628436-201152-203897",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Luke Kornet, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1628374-1629632-201152-203897",
+      "Name": "Cristiano Felicio, Lauri Markkanen, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628990-1629632-203490",
+      "Name": "Kris Dunn, Lauri Markkanen, Chandler Hutchison, Coby White, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1629632-1629690-203107-203897",
+      "Name": "Ryan Arcidiacono, Coby White, Adam Mokoka, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627739-1628990-201152-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Chandler Hutchison, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628976-1628990-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Wendell Carter Jr., Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628990-1629632-201152-203897",
+      "Name": "Lauri Markkanen, Chandler Hutchison, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628374-1628976-1629632-203107",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628436-1628990-203107-203897",
+      "Name": "Denzel Valentine, Luke Kornet, Chandler Hutchison, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628976-1629632-203107",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Wendell Carter Jr., Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627885-1628436-1629632-201152",
+      "Name": "Denzel Valentine, Shaquille Harrison, Luke Kornet, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628990-1629632-201152-203107",
+      "Name": "Lauri Markkanen, Chandler Hutchison, Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1627885-1628990-1629655",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison, Daniel Gafford",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628436-1628990-203107-203897",
+      "Name": "Lauri Markkanen, Luke Kornet, Chandler Hutchison, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628374-1628976-1629632-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Wendell Carter Jr., Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628976-1629632-201152-203107",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1628990-203107-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1629632-201152-203490-203897",
+      "Name": "Ryan Arcidiacono, Coby White, Thaddeus Young, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1627885-1628374-1629655-203107",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Daniel Gafford, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627739-1629632-203107-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1629655-1629690-203490",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Daniel Gafford, Adam Mokoka, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-1628990-1629632-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1627885-201152-203897",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 75.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1629632-1629655-1629690-203897",
+      "Name": "Ryan Arcidiacono, Coby White, Daniel Gafford, Adam Mokoka, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1628976-201152-203897",
+      "Name": "Kris Dunn, Denzel Valentine, Wendell Carter Jr., Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628374-1629632-1629655-203107",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Coby White, Daniel Gafford, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 2,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628436-1628990-1629632-203107",
+      "Name": "Ryan Arcidiacono, Luke Kornet, Chandler Hutchison, Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1627885-1628436-1629655-203897",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Luke Kornet, Daniel Gafford, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628436-1628990-203107-203897",
+      "Name": "Ryan Arcidiacono, Luke Kornet, Chandler Hutchison, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628976-201152-203107-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628436-1629655-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Luke Kornet, Daniel Gafford, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 61.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628976-201152-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 61.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628436-1629632-203107",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Luke Kornet, Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628374-203107-203897",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1628374-201152-203490-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Thaddeus Young, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628436-1628990-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Chandler Hutchison, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1629632-1629690-201152-203897",
+      "Name": "Shaquille Harrison, Coby White, Adam Mokoka, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628436-1628990-1629632-203897",
+      "Name": "Denzel Valentine, Luke Kornet, Chandler Hutchison, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1628976-1629690-203490",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Adam Mokoka, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627853-1627885-1628436-1629655-203107",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Luke Kornet, Daniel Gafford, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1628374-1628990-1629632-1629655-201152",
+      "Name": "Lauri Markkanen, Chandler Hutchison, Coby White, Daniel Gafford, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627756-1627853-201152-203107",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1629655-1629690-203107-203897",
+      "Name": "Shaquille Harrison, Daniel Gafford, Adam Mokoka, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1629632-1629655-1629690",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Coby White, Daniel Gafford, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 51.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627739-1627853-1628990-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Ryan Arcidiacono, Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627853-1629632-1629690-203897",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Coby White, Adam Mokoka, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1628374-1628976-203107-203490",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 49.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628976-1629632-203107",
+      "Name": "Kris Dunn, Lauri Markkanen, Wendell Carter Jr., Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628976-1628990-1629632-203897",
+      "Name": "Kris Dunn, Wendell Carter Jr., Chandler Hutchison, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628374-1629655-203897",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Daniel Gafford, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 47.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627853-1628374-1629632-203107",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628436-1629632-201152-203490",
+      "Name": "Kris Dunn, Luke Kornet, Coby White, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1629655-201152-203897",
+      "Name": "Kris Dunn, Denzel Valentine, Daniel Gafford, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628436-1628990-203107-203897",
+      "Name": "Kris Dunn, Luke Kornet, Chandler Hutchison, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 29.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1629655-201152-203107-203897",
+      "Name": "Denzel Valentine, Daniel Gafford, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 29.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627885-1628976-201152-203897",
+      "Name": "Kris Dunn, Shaquille Harrison, Wendell Carter Jr., Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 26.0,
+      "GamesPlayed": 2,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1628374-1629632-1629655-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Daniel Gafford, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 24.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628976-1628990-1629632",
+      "Name": "Kris Dunn, Lauri Markkanen, Wendell Carter Jr., Chandler Hutchison, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 22.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1627885-1629632-1629655",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Coby White, Daniel Gafford",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 21.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627885-1629632-1629655-203107-203897",
+      "Name": "Shaquille Harrison, Coby White, Daniel Gafford, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 20.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1627885-1628436-1629655",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Luke Kornet, Daniel Gafford",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 18.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1628374-1628990-201152-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Chandler Hutchison, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 17.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627756-1627853-1629632-201152",
+      "Name": "Kris Dunn, Denzel Valentine, Ryan Arcidiacono, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 11.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1626245-1627885-1629690-203107-203897",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Adam Mokoka, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 10.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627885-201152-203107-203897",
+      "Name": "Kris Dunn, Shaquille Harrison, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627756-1627853-1627885-1629632-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Shaquille Harrison, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627885-1628990-1629632-201152",
+      "Name": "Kris Dunn, Shaquille Harrison, Chandler Hutchison, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2019-20",
+      "EntityId": "1627739-1627885-1628374-1629632-203107",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    }
+  ]
+}

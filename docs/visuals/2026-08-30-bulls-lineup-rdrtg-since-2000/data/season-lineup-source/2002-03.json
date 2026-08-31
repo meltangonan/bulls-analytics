@@ -1,0 +1,2779 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2002-03",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2002-03",
+    "RowsReturned": 306,
+    "RowsWithDefPoss": 297,
+    "RowsSkippedMissingMetrics": 21,
+    "LastRowDefPoss": 1,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2239-2398-923",
+      "Name": "Jalen Rose, Tyson Chandler, Trenton Hassell, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 20691.0,
+      "GamesPlayed": 44,
+      "DefPoss": 658,
+      "OpponentPoints": 689
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-2239-923",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Trenton Hassell, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 15323.0,
+      "GamesPlayed": 29,
+      "DefPoss": 488,
+      "OpponentPoints": 499
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2201-2239-2398",
+      "Name": "Jalen Rose, Tyson Chandler, Eddy Curry, Trenton Hassell, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13982.0,
+      "GamesPlayed": 25,
+      "DefPoss": 462,
+      "OpponentPoints": 531
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2201-2239-2398-923",
+      "Name": "Jalen Rose, Eddy Curry, Trenton Hassell, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9586.0,
+      "GamesPlayed": 23,
+      "DefPoss": 315,
+      "OpponentPoints": 352
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-2201-923",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Eddy Curry, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8929.0,
+      "GamesPlayed": 10,
+      "DefPoss": 293,
+      "OpponentPoints": 303
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2199-2398-923",
+      "Name": "Jalen Rose, Eddie Robinson, Tyson Chandler, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7894.0,
+      "GamesPlayed": 23,
+      "DefPoss": 263,
+      "OpponentPoints": 276
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2199-2201",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Tyson Chandler, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5513.0,
+      "GamesPlayed": 9,
+      "DefPoss": 180,
+      "OpponentPoints": 209
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2201-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Eddy Curry, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5222.0,
+      "GamesPlayed": 12,
+      "DefPoss": 170,
+      "OpponentPoints": 182
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2201-2398-923",
+      "Name": "Jalen Rose, Eddie Robinson, Eddy Curry, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4156.0,
+      "GamesPlayed": 16,
+      "DefPoss": 137,
+      "OpponentPoints": 150
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2239-2398-2437-923",
+      "Name": "Jalen Rose, Trenton Hassell, Jay Williams, Lonny Baxter, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4070.0,
+      "GamesPlayed": 15,
+      "DefPoss": 145,
+      "OpponentPoints": 146
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2037-2201",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jamal Crawford, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3711.0,
+      "GamesPlayed": 16,
+      "DefPoss": 110,
+      "OpponentPoints": 115
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2201-2239-923",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Trenton Hassell, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3548.0,
+      "GamesPlayed": 20,
+      "DefPoss": 114,
+      "OpponentPoints": 110
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2037-2239-923",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Trenton Hassell, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3510.0,
+      "GamesPlayed": 19,
+      "DefPoss": 117,
+      "OpponentPoints": 133
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2239-2398-923",
+      "Name": "Jalen Rose, Marcus Fizer, Trenton Hassell, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3201.0,
+      "GamesPlayed": 14,
+      "DefPoss": 112,
+      "OpponentPoints": 141
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2239-2398-916-923",
+      "Name": "Jalen Rose, Trenton Hassell, Jay Williams, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2858.0,
+      "GamesPlayed": 14,
+      "DefPoss": 89,
+      "OpponentPoints": 93
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2201-2398-916",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2783.0,
+      "GamesPlayed": 3,
+      "DefPoss": 99,
+      "OpponentPoints": 100
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2037-923",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jamal Crawford, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2737.0,
+      "GamesPlayed": 18,
+      "DefPoss": 93,
+      "OpponentPoints": 68
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2199-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Tyson Chandler, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2673.0,
+      "GamesPlayed": 15,
+      "DefPoss": 88,
+      "OpponentPoints": 112
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2239-916-923",
+      "Name": "Jalen Rose, Jamal Crawford, Trenton Hassell, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2671.0,
+      "GamesPlayed": 14,
+      "DefPoss": 87,
+      "OpponentPoints": 90
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-916-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2464.0,
+      "GamesPlayed": 11,
+      "DefPoss": 79,
+      "OpponentPoints": 81
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2037-697-923",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2440.0,
+      "GamesPlayed": 9,
+      "DefPoss": 80,
+      "OpponentPoints": 86
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2398-916-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jay Williams, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2435.0,
+      "GamesPlayed": 10,
+      "DefPoss": 81,
+      "OpponentPoints": 78
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2201-916",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Eddy Curry, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2367.0,
+      "GamesPlayed": 6,
+      "DefPoss": 76,
+      "OpponentPoints": 82
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2437-697-923",
+      "Name": "Jalen Rose, Jamal Crawford, Lonny Baxter, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2294.0,
+      "GamesPlayed": 7,
+      "DefPoss": 71,
+      "OpponentPoints": 71
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2437-697-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Lonny Baxter, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2076.0,
+      "GamesPlayed": 5,
+      "DefPoss": 68,
+      "OpponentPoints": 72
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-1944-2033-916",
+      "Name": "Jalen Rose, Rick Brunson, Eddie Robinson, Marcus Fizer, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2058.0,
+      "GamesPlayed": 5,
+      "DefPoss": 62,
+      "OpponentPoints": 66
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-697-923",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2051.0,
+      "GamesPlayed": 13,
+      "DefPoss": 62,
+      "OpponentPoints": 66
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2398-923",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2007.0,
+      "GamesPlayed": 8,
+      "DefPoss": 65,
+      "OpponentPoints": 68
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-2201-2239",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1992.0,
+      "GamesPlayed": 12,
+      "DefPoss": 63,
+      "OpponentPoints": 63
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2037-916",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jamal Crawford, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1967.0,
+      "GamesPlayed": 8,
+      "DefPoss": 55,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2398-697-923",
+      "Name": "Jalen Rose, Tyson Chandler, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1888.0,
+      "GamesPlayed": 11,
+      "DefPoss": 63,
+      "OpponentPoints": 62
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2199-2239-2398",
+      "Name": "Jalen Rose, Marcus Fizer, Tyson Chandler, Trenton Hassell, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1729.0,
+      "GamesPlayed": 8,
+      "DefPoss": 58,
+      "OpponentPoints": 70
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2037-697-916",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1673.0,
+      "GamesPlayed": 4,
+      "DefPoss": 54,
+      "OpponentPoints": 56
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-2239-2437",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Trenton Hassell, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1614.0,
+      "GamesPlayed": 4,
+      "DefPoss": 49,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2201-2239-916",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Trenton Hassell, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1583.0,
+      "GamesPlayed": 9,
+      "DefPoss": 45,
+      "OpponentPoints": 58
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2037-2199-2239",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Tyson Chandler, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1485.0,
+      "GamesPlayed": 9,
+      "DefPoss": 45,
+      "OpponentPoints": 52
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2037-2199",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jamal Crawford, Tyson Chandler",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1291.0,
+      "GamesPlayed": 8,
+      "DefPoss": 40,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2201-2239-2437",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Trenton Hassell, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1290.0,
+      "GamesPlayed": 7,
+      "DefPoss": 43,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2037-2199-697",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1278.0,
+      "GamesPlayed": 6,
+      "DefPoss": 39,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2201-2398-697-916",
+      "Name": "Eddie Robinson, Eddy Curry, Jay Williams, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1258.0,
+      "GamesPlayed": 4,
+      "DefPoss": 39,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2239-2398-2437-916",
+      "Name": "Jalen Rose, Trenton Hassell, Jay Williams, Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1226.0,
+      "GamesPlayed": 10,
+      "DefPoss": 40,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2437-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Lonny Baxter, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1206.0,
+      "GamesPlayed": 8,
+      "DefPoss": 40,
+      "OpponentPoints": 51
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2398-2437-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jay Williams, Lonny Baxter, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1197.0,
+      "GamesPlayed": 10,
+      "DefPoss": 40,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2037-2201-697",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1106.0,
+      "GamesPlayed": 5,
+      "DefPoss": 39,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2199-2398-2437",
+      "Name": "Jalen Rose, Eddie Robinson, Tyson Chandler, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1077.0,
+      "GamesPlayed": 3,
+      "DefPoss": 35,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2201-2398-916",
+      "Name": "Jalen Rose, Eddie Robinson, Eddy Curry, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1071.0,
+      "GamesPlayed": 7,
+      "DefPoss": 34,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2037-2201-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1069.0,
+      "GamesPlayed": 5,
+      "DefPoss": 35,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2239-2398-2437",
+      "Name": "Jalen Rose, Tyson Chandler, Trenton Hassell, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1036.0,
+      "GamesPlayed": 6,
+      "DefPoss": 32,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2201-2398",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Eddy Curry, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1023.0,
+      "GamesPlayed": 7,
+      "DefPoss": 31,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2239-2398-2427-2437-916",
+      "Name": "Trenton Hassell, Jay Williams, Roger Mason Jr., Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1011.0,
+      "GamesPlayed": 5,
+      "DefPoss": 28,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2239-2437-923",
+      "Name": "Jalen Rose, Jamal Crawford, Trenton Hassell, Lonny Baxter, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1005.0,
+      "GamesPlayed": 7,
+      "DefPoss": 33,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2201-2398-923",
+      "Name": "Jalen Rose, Tyson Chandler, Eddy Curry, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 992.0,
+      "GamesPlayed": 5,
+      "DefPoss": 32,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2398-916-923",
+      "Name": "Jalen Rose, Jamal Crawford, Jay Williams, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 984.0,
+      "GamesPlayed": 3,
+      "DefPoss": 31,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2398-2437-697-923",
+      "Name": "Jalen Rose, Jay Williams, Lonny Baxter, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 984.0,
+      "GamesPlayed": 4,
+      "DefPoss": 33,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2201-697-923",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 981.0,
+      "GamesPlayed": 5,
+      "DefPoss": 32,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-2201-697",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 970.0,
+      "GamesPlayed": 5,
+      "DefPoss": 31,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2201-2398-697",
+      "Name": "Jalen Rose, Tyson Chandler, Eddy Curry, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 928.0,
+      "GamesPlayed": 6,
+      "DefPoss": 27,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2398-697-916-923",
+      "Name": "Jalen Rose, Jay Williams, Fred Hoiberg, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 905.0,
+      "GamesPlayed": 3,
+      "DefPoss": 30,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2239-2437-916",
+      "Name": "Jalen Rose, Jamal Crawford, Trenton Hassell, Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 903.0,
+      "GamesPlayed": 6,
+      "DefPoss": 32,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-697-916-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Fred Hoiberg, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 887.0,
+      "GamesPlayed": 2,
+      "DefPoss": 28,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2033-2239-923",
+      "Name": "Jalen Rose, Rick Brunson, Marcus Fizer, Trenton Hassell, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 854.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2201-2239-2398",
+      "Name": "Jalen Rose, Marcus Fizer, Eddy Curry, Trenton Hassell, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 844.0,
+      "GamesPlayed": 5,
+      "DefPoss": 28,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-1944-2033-2201",
+      "Name": "Jalen Rose, Rick Brunson, Eddie Robinson, Marcus Fizer, Eddy Curry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 832.0,
+      "GamesPlayed": 5,
+      "DefPoss": 25,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2037-916-923",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 827.0,
+      "GamesPlayed": 1,
+      "DefPoss": 22,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2437-916",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 773.0,
+      "GamesPlayed": 3,
+      "DefPoss": 24,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2201-2398-697-923",
+      "Name": "Jalen Rose, Eddy Curry, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 734.0,
+      "GamesPlayed": 5,
+      "DefPoss": 23,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2398-697-923",
+      "Name": "Jalen Rose, Marcus Fizer, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 729.0,
+      "GamesPlayed": 6,
+      "DefPoss": 24,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-916-923",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 701.0,
+      "GamesPlayed": 3,
+      "DefPoss": 27,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2398-2437-916",
+      "Name": "Jalen Rose, Jamal Crawford, Jay Williams, Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 695.0,
+      "GamesPlayed": 2,
+      "DefPoss": 23,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-1944-2033-2201-697",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 694.0,
+      "GamesPlayed": 4,
+      "DefPoss": 23,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2037-2201-2239",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 677.0,
+      "GamesPlayed": 6,
+      "DefPoss": 22,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2199-2201-2398",
+      "Name": "Jalen Rose, Eddie Robinson, Tyson Chandler, Eddy Curry, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 674.0,
+      "GamesPlayed": 6,
+      "DefPoss": 23,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2037-2239-916",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Trenton Hassell, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 673.0,
+      "GamesPlayed": 6,
+      "DefPoss": 20,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2239-2398-2437-916-923",
+      "Name": "Trenton Hassell, Jay Williams, Lonny Baxter, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 672.0,
+      "GamesPlayed": 2,
+      "DefPoss": 19,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2427-2437-697-923",
+      "Name": "Jamal Crawford, Roger Mason Jr., Lonny Baxter, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 671.0,
+      "GamesPlayed": 3,
+      "DefPoss": 22,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2037-2201-2239-2437",
+      "Name": "Rick Brunson, Jamal Crawford, Eddy Curry, Trenton Hassell, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 670.0,
+      "GamesPlayed": 1,
+      "DefPoss": 20,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2201-2437",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Eddy Curry, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 652.0,
+      "GamesPlayed": 6,
+      "DefPoss": 22,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2053-2239-2398-2427-2437",
+      "Name": "Dalibor Bagaric, Trenton Hassell, Jay Williams, Roger Mason Jr., Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 646.0,
+      "GamesPlayed": 2,
+      "DefPoss": 20,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2037-697-916",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 630.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2037-2053-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Dalibor Bagaric, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 622.0,
+      "GamesPlayed": 2,
+      "DefPoss": 20,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2199-2437",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Tyson Chandler, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 614.0,
+      "GamesPlayed": 3,
+      "DefPoss": 23,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2239-2437-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Trenton Hassell, Lonny Baxter, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 556.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-2239-916",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Trenton Hassell, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 551.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-697-916-923",
+      "Name": "Jalen Rose, Eddie Robinson, Fred Hoiberg, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 544.0,
+      "GamesPlayed": 1,
+      "DefPoss": 20,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2201-2239-2398-923",
+      "Name": "Eddie Robinson, Eddy Curry, Trenton Hassell, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 538.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2199-2201-2239-2398-697",
+      "Name": "Tyson Chandler, Eddy Curry, Trenton Hassell, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 538.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2201-2437-697",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 537.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2239-2398-916",
+      "Name": "Jalen Rose, Marcus Fizer, Trenton Hassell, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 529.0,
+      "GamesPlayed": 4,
+      "DefPoss": 19,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-2201-2398",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Eddy Curry, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 513.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2201-2239-2398-2427-2437",
+      "Name": "Eddy Curry, Trenton Hassell, Jay Williams, Roger Mason Jr., Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 500.0,
+      "GamesPlayed": 1,
+      "DefPoss": 17,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2199-2239-2398-697-923",
+      "Name": "Tyson Chandler, Trenton Hassell, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 491.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2201-2239-2398-2437",
+      "Name": "Jalen Rose, Eddy Curry, Trenton Hassell, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 485.0,
+      "GamesPlayed": 5,
+      "DefPoss": 15,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2201-2239-2398-916",
+      "Name": "Jalen Rose, Eddy Curry, Trenton Hassell, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 475.0,
+      "GamesPlayed": 8,
+      "DefPoss": 15,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2201-2239-2437-697",
+      "Name": "Jamal Crawford, Eddy Curry, Trenton Hassell, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 465.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2199-2239-697-916",
+      "Name": "Jamal Crawford, Tyson Chandler, Trenton Hassell, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 458.0,
+      "GamesPlayed": 1,
+      "DefPoss": 15,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2239-697-923",
+      "Name": "Jalen Rose, Tyson Chandler, Trenton Hassell, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 451.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-697-916-923",
+      "Name": "Jalen Rose, Jamal Crawford, Fred Hoiberg, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 426.0,
+      "GamesPlayed": 5,
+      "DefPoss": 11,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2201-2398-2437-697",
+      "Name": "Jalen Rose, Eddy Curry, Jay Williams, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 424.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2239-2398-2437-916",
+      "Name": "Jamal Crawford, Trenton Hassell, Jay Williams, Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 419.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2037-2199-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 406.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2437-697-916",
+      "Name": "Eddie Robinson, Jamal Crawford, Lonny Baxter, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 404.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2199-916",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Tyson Chandler, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 401.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2037-2437-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 398.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2398-697-916",
+      "Name": "Eddie Robinson, Marcus Fizer, Jay Williams, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 383.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2239-2398-916-923",
+      "Name": "Rick Brunson, Trenton Hassell, Jay Williams, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 382.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2201-2239-2398-697-923",
+      "Name": "Eddy Curry, Trenton Hassell, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 379.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2033-2037-2239-2437-697",
+      "Name": "Marcus Fizer, Jamal Crawford, Trenton Hassell, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 376.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2201-2398-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Eddy Curry, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 369.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-2437-923",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Lonny Baxter, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 359.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2201-2398-2437-697",
+      "Name": "Rick Brunson, Eddy Curry, Jay Williams, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 356.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2398-697-923",
+      "Name": "Eddie Robinson, Marcus Fizer, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 355.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2199-2201-2398-2437-697",
+      "Name": "Tyson Chandler, Eddy Curry, Jay Williams, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 354.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-1944-2033-923",
+      "Name": "Jalen Rose, Rick Brunson, Eddie Robinson, Marcus Fizer, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 353.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2239-2398-916",
+      "Name": "Jalen Rose, Tyson Chandler, Trenton Hassell, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 6,
+      "DefPoss": 9,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2398-2437-916",
+      "Name": "Jalen Rose, Eddie Robinson, Jay Williams, Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 343.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2199-2398-697-923",
+      "Name": "Eddie Robinson, Tyson Chandler, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 342.0,
+      "GamesPlayed": 5,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2398-2437-697-923",
+      "Name": "Eddie Robinson, Jay Williams, Lonny Baxter, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 333.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2239-697-916",
+      "Name": "Jalen Rose, Marcus Fizer, Trenton Hassell, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2199-2239-697-923",
+      "Name": "Jamal Crawford, Tyson Chandler, Trenton Hassell, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 331.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2201-2398-697-923",
+      "Name": "Eddie Robinson, Eddy Curry, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 326.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2199-2239-2398-697-916",
+      "Name": "Tyson Chandler, Trenton Hassell, Jay Williams, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 326.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2201-916-923",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 325.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2053-2437-697",
+      "Name": "Eddie Robinson, Jamal Crawford, Dalibor Bagaric, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 325.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2201-2398-697",
+      "Name": "Jalen Rose, Marcus Fizer, Eddy Curry, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 323.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2053-2239-2437",
+      "Name": "Jalen Rose, Jamal Crawford, Dalibor Bagaric, Trenton Hassell, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 322.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2053-2398-2427-2437",
+      "Name": "Jamal Crawford, Dalibor Bagaric, Jay Williams, Roger Mason Jr., Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 320.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2201-2239-2427-916",
+      "Name": "Jamal Crawford, Eddy Curry, Trenton Hassell, Roger Mason Jr., Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 318.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-1944-2033-2199-697",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 310.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2398-697-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 303.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2199-2239-2398-2437",
+      "Name": "Jamal Crawford, Tyson Chandler, Trenton Hassell, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 302.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2199-2201-2239",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 293.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2201-2239-2398-2427-923",
+      "Name": "Eddy Curry, Trenton Hassell, Jay Williams, Roger Mason Jr., Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 286.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2033-2239-916",
+      "Name": "Jalen Rose, Rick Brunson, Marcus Fizer, Trenton Hassell, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 283.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-1944-697-916-923",
+      "Name": "Rick Brunson, Eddie Robinson, Fred Hoiberg, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 283.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2201-697-916",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2239-2398-2437-923",
+      "Name": "Eddie Robinson, Trenton Hassell, Jay Williams, Lonny Baxter, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 277.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2037-2437",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jamal Crawford, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 271.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2199-697-923",
+      "Name": "Jalen Rose, Rick Brunson, Tyson Chandler, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-2437-697",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 265.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2053-2398-2427-2437",
+      "Name": "Rick Brunson, Dalibor Bagaric, Jay Williams, Roger Mason Jr., Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2239-2398-2437",
+      "Name": "Jalen Rose, Marcus Fizer, Trenton Hassell, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 252.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2239-2398-697-923",
+      "Name": "Jalen Rose, Trenton Hassell, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 249.0,
+      "GamesPlayed": 8,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2199-2398-697",
+      "Name": "Jalen Rose, Marcus Fizer, Tyson Chandler, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 4,
+      "DefPoss": 8,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2199-2201-2239-697",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 245.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2199-2398-916",
+      "Name": "Jalen Rose, Eddie Robinson, Tyson Chandler, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2239-2398-2427-916-923",
+      "Name": "Trenton Hassell, Jay Williams, Roger Mason Jr., Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2201-2398-2437",
+      "Name": "Jalen Rose, Eddie Robinson, Eddy Curry, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 234.0,
+      "GamesPlayed": 4,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2199-2201-2398-697",
+      "Name": "Eddie Robinson, Tyson Chandler, Eddy Curry, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 234.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2398-2427-2437-916",
+      "Name": "Rick Brunson, Jay Williams, Roger Mason Jr., Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 231.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2239-697-916",
+      "Name": "Jalen Rose, Tyson Chandler, Trenton Hassell, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 229.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2199-2398",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Tyson Chandler, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 4,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2199-2398-916",
+      "Name": "Jalen Rose, Rick Brunson, Tyson Chandler, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2201-2437-697",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2201-2239-697",
+      "Name": "Jalen Rose, Marcus Fizer, Eddy Curry, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2398-2427-2437-916",
+      "Name": "Jamal Crawford, Jay Williams, Roger Mason Jr., Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2239-2398-2427-2437",
+      "Name": "Eddie Robinson, Trenton Hassell, Jay Williams, Roger Mason Jr., Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2037-2201-2398-2437",
+      "Name": "Rick Brunson, Jamal Crawford, Eddy Curry, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2201-2239-2398-916-923",
+      "Name": "Eddy Curry, Trenton Hassell, Jay Williams, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2201-2239-697-916",
+      "Name": "Jamal Crawford, Eddy Curry, Trenton Hassell, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2437-697",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2239-916",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Trenton Hassell, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2239-916",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Trenton Hassell, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2037-697-923",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 208.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2201-2239-2398-2437",
+      "Name": "Rick Brunson, Eddy Curry, Trenton Hassell, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-2398-923",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2053-2239-2398-916",
+      "Name": "Jalen Rose, Dalibor Bagaric, Trenton Hassell, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2239-2398-2437-916",
+      "Name": "Eddie Robinson, Trenton Hassell, Jay Williams, Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2199-2239-2437-697",
+      "Name": "Jamal Crawford, Tyson Chandler, Trenton Hassell, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2239-697-916-923",
+      "Name": "Jamal Crawford, Trenton Hassell, Fred Hoiberg, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2201-2239-2398-916",
+      "Name": "Jamal Crawford, Eddy Curry, Trenton Hassell, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2239-697-923",
+      "Name": "Jalen Rose, Marcus Fizer, Trenton Hassell, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2201-697",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2199-2239-2398-923",
+      "Name": "Rick Brunson, Tyson Chandler, Trenton Hassell, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2033-2201-2239",
+      "Name": "Jalen Rose, Rick Brunson, Marcus Fizer, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 4,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2053-2239-916",
+      "Name": "Jalen Rose, Jamal Crawford, Dalibor Bagaric, Trenton Hassell, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2199-2201-2398-2427",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Jay Williams, Roger Mason Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2427-2437-697-916",
+      "Name": "Jamal Crawford, Roger Mason Jr., Lonny Baxter, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2239-2437-697-923",
+      "Name": "Jalen Rose, Trenton Hassell, Lonny Baxter, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2398-697-916-923",
+      "Name": "Eddie Robinson, Jay Williams, Fred Hoiberg, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2199-2201-2398",
+      "Name": "Jalen Rose, Rick Brunson, Tyson Chandler, Eddy Curry, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2199-2239-2398-2427-923",
+      "Name": "Tyson Chandler, Trenton Hassell, Jay Williams, Roger Mason Jr., Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2201-2239-2427-2437",
+      "Name": "Jamal Crawford, Eddy Curry, Trenton Hassell, Roger Mason Jr., Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 177.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2033-2037-2239-697-916",
+      "Name": "Marcus Fizer, Jamal Crawford, Trenton Hassell, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2199-2239-697",
+      "Name": "Jalen Rose, Marcus Fizer, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2398-916",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2199-2427-697-916",
+      "Name": "Jamal Crawford, Tyson Chandler, Roger Mason Jr., Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2053-2398-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Dalibor Bagaric, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2201-2398-2437-697-923",
+      "Name": "Eddy Curry, Jay Williams, Lonny Baxter, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2199-2201-2398-2427-2437",
+      "Name": "Tyson Chandler, Eddy Curry, Jay Williams, Roger Mason Jr., Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-1944-2199-923",
+      "Name": "Jalen Rose, Rick Brunson, Eddie Robinson, Tyson Chandler, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2199-2239-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Trenton Hassell, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2053-2437",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Dalibor Bagaric, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 159.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2053-2398-2437",
+      "Name": "Jalen Rose, Jamal Crawford, Dalibor Bagaric, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2053-2201-2398-697",
+      "Name": "Jamal Crawford, Dalibor Bagaric, Eddy Curry, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2053-2398-2437-697",
+      "Name": "Jalen Rose, Dalibor Bagaric, Jay Williams, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2199-2201-2239-2427",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Trenton Hassell, Roger Mason Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2199-2239-2398-916",
+      "Name": "Rick Brunson, Tyson Chandler, Trenton Hassell, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2199-2201-697",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Eddy Curry, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2037-2239-2437",
+      "Name": "Jalen Rose, Marcus Fizer, Jamal Crawford, Trenton Hassell, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-1944-2053-2239-2437",
+      "Name": "Rick Brunson, Eddie Robinson, Dalibor Bagaric, Trenton Hassell, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2199-2398-2427-2437-697",
+      "Name": "Tyson Chandler, Jay Williams, Roger Mason Jr., Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2201-697-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2199-697-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Tyson Chandler, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2033-2037-2199-2239-697",
+      "Name": "Marcus Fizer, Jamal Crawford, Tyson Chandler, Trenton Hassell, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2239-2398-916-923",
+      "Name": "Eddie Robinson, Trenton Hassell, Jay Williams, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2201-2239-2398-2427-916",
+      "Name": "Eddy Curry, Trenton Hassell, Jay Williams, Roger Mason Jr., Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2037-2201-2239-916",
+      "Name": "Rick Brunson, Jamal Crawford, Eddy Curry, Trenton Hassell, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2201-2239-923",
+      "Name": "Jalen Rose, Rick Brunson, Eddy Curry, Trenton Hassell, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2199-2239-2398-923",
+      "Name": "Eddie Robinson, Tyson Chandler, Trenton Hassell, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2199-2201-2398-697",
+      "Name": "Rick Brunson, Tyson Chandler, Eddy Curry, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2199-2239-923",
+      "Name": "Jalen Rose, Rick Brunson, Tyson Chandler, Trenton Hassell, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2037-2201-2239",
+      "Name": "Eddie Robinson, Marcus Fizer, Jamal Crawford, Eddy Curry, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2239-2398-2437-697-916",
+      "Name": "Trenton Hassell, Jay Williams, Lonny Baxter, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2053-2201-2239-2398",
+      "Name": "Jamal Crawford, Dalibor Bagaric, Eddy Curry, Trenton Hassell, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2199-2201-697-923",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-1944-2037-2199-916",
+      "Name": "Rick Brunson, Eddie Robinson, Jamal Crawford, Tyson Chandler, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2398-2437-697",
+      "Name": "Jalen Rose, Tyson Chandler, Jay Williams, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2239-2437-697-916",
+      "Name": "Jamal Crawford, Trenton Hassell, Lonny Baxter, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-697-916",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2398-2437",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2037-2053-2239",
+      "Name": "Jalen Rose, Rick Brunson, Jamal Crawford, Dalibor Bagaric, Trenton Hassell",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2033-2239-2398-697",
+      "Name": "Jalen Rose, Marcus Fizer, Trenton Hassell, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-1944-2201-923",
+      "Name": "Jalen Rose, Rick Brunson, Eddie Robinson, Eddy Curry, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2037-2199-2201-2398",
+      "Name": "Rick Brunson, Jamal Crawford, Tyson Chandler, Eddy Curry, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2033-2239-2398-697-923",
+      "Name": "Marcus Fizer, Trenton Hassell, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2201-697-916",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2199-2239-2398-923",
+      "Name": "Jamal Crawford, Tyson Chandler, Trenton Hassell, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2201-2398-2437",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2199-2239-2398-916-923",
+      "Name": "Tyson Chandler, Trenton Hassell, Jay Williams, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2033-2199-697",
+      "Name": "Jalen Rose, Eddie Robinson, Marcus Fizer, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-1944-2033-697-916",
+      "Name": "Rick Brunson, Eddie Robinson, Marcus Fizer, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-1944-2398-916-923",
+      "Name": "Rick Brunson, Eddie Robinson, Jay Williams, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2201-2239-923",
+      "Name": "Eddie Robinson, Jamal Crawford, Eddy Curry, Trenton Hassell, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-1944-2199-697-923",
+      "Name": "Rick Brunson, Eddie Robinson, Tyson Chandler, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2053-2239-2398-2437",
+      "Name": "Jalen Rose, Dalibor Bagaric, Trenton Hassell, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2033-2199-2398-697",
+      "Name": "Eddie Robinson, Marcus Fizer, Tyson Chandler, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2201-2239-2398-2437",
+      "Name": "Jamal Crawford, Eddy Curry, Trenton Hassell, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-1944-916-923",
+      "Name": "Jalen Rose, Rick Brunson, Eddie Robinson, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2201-2239-697-923",
+      "Name": "Jamal Crawford, Eddy Curry, Trenton Hassell, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2398-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Jay Williams, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2199-2201-2239-2398",
+      "Name": "Jamal Crawford, Tyson Chandler, Eddy Curry, Trenton Hassell, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2398-2437-923",
+      "Name": "Jalen Rose, Tyson Chandler, Jay Williams, Lonny Baxter, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2239-2398-916",
+      "Name": "Jalen Rose, Eddie Robinson, Trenton Hassell, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2437-916-923",
+      "Name": "Jalen Rose, Jamal Crawford, Lonny Baxter, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2037-2053-2199-697",
+      "Name": "Eddie Robinson, Jamal Crawford, Dalibor Bagaric, Tyson Chandler, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 61.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2398-916-923",
+      "Name": "Jalen Rose, Tyson Chandler, Jay Williams, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2239-2437-697-923",
+      "Name": "Jamal Crawford, Trenton Hassell, Lonny Baxter, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2201-2398-916-923",
+      "Name": "Jalen Rose, Eddy Curry, Jay Williams, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2201-2239-2437-697",
+      "Name": "Rick Brunson, Eddy Curry, Trenton Hassell, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2053-2201-2239-2398-2427",
+      "Name": "Dalibor Bagaric, Eddy Curry, Trenton Hassell, Jay Williams, Roger Mason Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2239-2437-916",
+      "Name": "Jalen Rose, Rick Brunson, Trenton Hassell, Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 44.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2201-2398-697",
+      "Name": "Jalen Rose, Jamal Crawford, Eddy Curry, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2398-2437-916-923",
+      "Name": "Jalen Rose, Jay Williams, Lonny Baxter, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2199-2398-2437-697",
+      "Name": "Eddie Robinson, Tyson Chandler, Jay Williams, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-1944-2239-923",
+      "Name": "Jalen Rose, Rick Brunson, Eddie Robinson, Trenton Hassell, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2201-2398-2427-923",
+      "Name": "Jalen Rose, Eddy Curry, Jay Williams, Roger Mason Jr., Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2199-2201-2398-697-923",
+      "Name": "Tyson Chandler, Eddy Curry, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 39.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2398-697-923",
+      "Name": "Jalen Rose, Jamal Crawford, Jay Williams, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 3,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2053-2239-2398",
+      "Name": "Jalen Rose, Jamal Crawford, Dalibor Bagaric, Trenton Hassell, Jay Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2199-697-916",
+      "Name": "Jalen Rose, Jamal Crawford, Tyson Chandler, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-1944-2201-2239-2437",
+      "Name": "Rick Brunson, Eddie Robinson, Eddy Curry, Trenton Hassell, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "2037-2053-2398-2437-697",
+      "Name": "Jamal Crawford, Dalibor Bagaric, Jay Williams, Lonny Baxter, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2037-2053-2427-2437",
+      "Name": "Rick Brunson, Jamal Crawford, Dalibor Bagaric, Roger Mason Jr., Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 36.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2199-2398-2437",
+      "Name": "Jalen Rose, Rick Brunson, Tyson Chandler, Jay Williams, Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2427-916",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Roger Mason Jr., Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2199-2201-2398-2427",
+      "Name": "Jalen Rose, Tyson Chandler, Eddy Curry, Jay Williams, Roger Mason Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2398-2437-697-916",
+      "Name": "Jalen Rose, Jay Williams, Lonny Baxter, Fred Hoiberg, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 30.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-2037-2239-697-923",
+      "Name": "Jalen Rose, Jamal Crawford, Trenton Hassell, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 29.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2239-2427-2437-916",
+      "Name": "Rick Brunson, Trenton Hassell, Roger Mason Jr., Lonny Baxter, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 29.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1594-2037-2201-2427-2437",
+      "Name": "Rick Brunson, Jamal Crawford, Eddy Curry, Roger Mason Jr., Lonny Baxter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 28.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2239-916-923",
+      "Name": "Jalen Rose, Eddie Robinson, Trenton Hassell, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 22.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "1944-2201-2239-2398-916",
+      "Name": "Eddie Robinson, Eddy Curry, Trenton Hassell, Jay Williams, Corie Blount",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 20.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-697-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Fred Hoiberg, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 17.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1594-2239-916-923",
+      "Name": "Jalen Rose, Rick Brunson, Trenton Hassell, Corie Blount, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2239-2398-697",
+      "Name": "Jalen Rose, Eddie Robinson, Trenton Hassell, Jay Williams, Fred Hoiberg",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2002-03",
+      "EntityId": "147-1944-2037-2239-923",
+      "Name": "Jalen Rose, Eddie Robinson, Jamal Crawford, Trenton Hassell, Donyell Marshall",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8.0,
+      "GamesPlayed": 3,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    }
+  ]
+}

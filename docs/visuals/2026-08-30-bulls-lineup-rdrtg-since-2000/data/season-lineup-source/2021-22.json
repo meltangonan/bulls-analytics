@@ -1,0 +1,4669 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2021-22",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2021-22",
+    "RowsReturned": 500,
+    "RowsWithDefPoss": 497,
+    "RowsSkippedMissingMetrics": 32,
+    "LastRowDefPoss": 2,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2021-22",
+      "EntityId": "1629750-1630245-201942-202696-203897",
+      "Name": "Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 15108.0,
+      "GamesPlayed": 23,
+      "DefPoss": 509,
+      "OpponentPoints": 625
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1629750-201942-202696-203897",
+      "Name": "Lonzo Ball, Javonte Green, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9143.0,
+      "GamesPlayed": 13,
+      "DefPoss": 317,
+      "OpponentPoints": 345
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629750-201942-202696-203897",
+      "Name": "Coby White, Javonte Green, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6325.0,
+      "GamesPlayed": 11,
+      "DefPoss": 218,
+      "OpponentPoints": 250
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-201942-202696-203897",
+      "Name": "Alex Caruso, Lonzo Ball, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5722.0,
+      "GamesPlayed": 16,
+      "DefPoss": 197,
+      "OpponentPoints": 194
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1630245-201942-202696-203897",
+      "Name": "Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5544.0,
+      "GamesPlayed": 10,
+      "DefPoss": 183,
+      "OpponentPoints": 237
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1630245-202696-203897",
+      "Name": "Troy Brown Jr., Coby White, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4261.0,
+      "GamesPlayed": 18,
+      "DefPoss": 148,
+      "OpponentPoints": 194
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628396-201942-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Tony Bradley, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4071.0,
+      "GamesPlayed": 5,
+      "DefPoss": 135,
+      "OpponentPoints": 128
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-201942-202696-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3900.0,
+      "GamesPlayed": 7,
+      "DefPoss": 127,
+      "OpponentPoints": 146
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1630172-201942-202696-203897",
+      "Name": "Lonzo Ball, Patrick Williams, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3802.0,
+      "GamesPlayed": 5,
+      "DefPoss": 131,
+      "OpponentPoints": 119
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1630245-201942-202696-203897",
+      "Name": "Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3717.0,
+      "GamesPlayed": 20,
+      "DefPoss": 128,
+      "OpponentPoints": 127
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629750-201942-202696-203897",
+      "Name": "Alex Caruso, Javonte Green, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3235.0,
+      "GamesPlayed": 10,
+      "DefPoss": 107,
+      "OpponentPoints": 112
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1630245-202696-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3234.0,
+      "GamesPlayed": 6,
+      "DefPoss": 109,
+      "OpponentPoints": 116
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629750-1630245-201942-202696",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3024.0,
+      "GamesPlayed": 7,
+      "DefPoss": 106,
+      "OpponentPoints": 118
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1630245-201942-202696",
+      "Name": "Troy Brown Jr., Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2950.0,
+      "GamesPlayed": 12,
+      "DefPoss": 99,
+      "OpponentPoints": 122
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629750-1630245-202696-203897",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2927.0,
+      "GamesPlayed": 18,
+      "DefPoss": 96,
+      "OpponentPoints": 95
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629632-1630245-201942-202696",
+      "Name": "Alfonzo McKinnie, Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2398.0,
+      "GamesPlayed": 4,
+      "DefPoss": 76,
+      "OpponentPoints": 86
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1629632-1629744-201942",
+      "Name": "Troy Brown Jr., Tyler Cook, Coby White, Matt Thomas, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2367.0,
+      "GamesPlayed": 10,
+      "DefPoss": 80,
+      "OpponentPoints": 85
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1630245-201942-202696",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2152.0,
+      "GamesPlayed": 6,
+      "DefPoss": 75,
+      "OpponentPoints": 67
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629750-1630245-202696-203897",
+      "Name": "Alex Caruso, Javonte Green, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2081.0,
+      "GamesPlayed": 9,
+      "DefPoss": 69,
+      "OpponentPoints": 94
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629750-1630245-201942-202696",
+      "Name": "Troy Brown Jr., Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2047.0,
+      "GamesPlayed": 4,
+      "DefPoss": 69,
+      "OpponentPoints": 84
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1630172-1630245-201942-202696-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2026.0,
+      "GamesPlayed": 6,
+      "DefPoss": 63,
+      "OpponentPoints": 92
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1629750-201942-202696",
+      "Name": "Alex Caruso, Lonzo Ball, Javonte Green, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2002.0,
+      "GamesPlayed": 4,
+      "DefPoss": 74,
+      "OpponentPoints": 73
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628366-201942-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Lonzo Ball, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1857.0,
+      "GamesPlayed": 8,
+      "DefPoss": 64,
+      "OpponentPoints": 87
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1629632-201942-202696-203897",
+      "Name": "Lonzo Ball, Coby White, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1833.0,
+      "GamesPlayed": 6,
+      "DefPoss": 60,
+      "OpponentPoints": 67
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629076-1629632-1630245-201942-202696",
+      "Name": "Tyler Cook, Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1610.0,
+      "GamesPlayed": 2,
+      "DefPoss": 52,
+      "OpponentPoints": 52
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1629744-1630245-201942",
+      "Name": "Troy Brown Jr., Tyler Cook, Matt Thomas, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1568.0,
+      "GamesPlayed": 6,
+      "DefPoss": 51,
+      "OpponentPoints": 62
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1630172-201942-202696-203897",
+      "Name": "Alex Caruso, Patrick Williams, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1546.0,
+      "GamesPlayed": 8,
+      "DefPoss": 57,
+      "OpponentPoints": 60
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-201942-202696-203897",
+      "Name": "Derrick Jones Jr., Coby White, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1503.0,
+      "GamesPlayed": 7,
+      "DefPoss": 52,
+      "OpponentPoints": 68
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1630172-201942-202696-203897",
+      "Name": "Coby White, Patrick Williams, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1486.0,
+      "GamesPlayed": 3,
+      "DefPoss": 48,
+      "OpponentPoints": 73
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-201942-202684",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1479.0,
+      "GamesPlayed": 6,
+      "DefPoss": 48,
+      "OpponentPoints": 67
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1629750-201942-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Javonte Green, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1462.0,
+      "GamesPlayed": 10,
+      "DefPoss": 53,
+      "OpponentPoints": 63
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1629750-1630245-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Javonte Green, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1417.0,
+      "GamesPlayed": 6,
+      "DefPoss": 51,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-201942-202684",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1387.0,
+      "GamesPlayed": 5,
+      "DefPoss": 45,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1630172-201942-202684",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1381.0,
+      "GamesPlayed": 6,
+      "DefPoss": 41,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1630172-1630245-201942-202684",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1366.0,
+      "GamesPlayed": 6,
+      "DefPoss": 46,
+      "OpponentPoints": 59
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629750-1630245-201942-202684-203897",
+      "Name": "Javonte Green, Ayo Dosunmu, DeMar DeRozan, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1310.0,
+      "GamesPlayed": 5,
+      "DefPoss": 43,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1629750-202696-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Javonte Green, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1286.0,
+      "GamesPlayed": 10,
+      "DefPoss": 41,
+      "OpponentPoints": 62
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1630245-201942-202684",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1281.0,
+      "GamesPlayed": 9,
+      "DefPoss": 47,
+      "OpponentPoints": 53
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1630245-202696-203897",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1258.0,
+      "GamesPlayed": 9,
+      "DefPoss": 42,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629750-1630245-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1248.0,
+      "GamesPlayed": 7,
+      "DefPoss": 45,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1629750-201942-202684",
+      "Name": "Alex Caruso, Coby White, Javonte Green, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1226.0,
+      "GamesPlayed": 6,
+      "DefPoss": 41,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1629750-202696-203897",
+      "Name": "Troy Brown Jr., Coby White, Javonte Green, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1197.0,
+      "GamesPlayed": 8,
+      "DefPoss": 41,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1630245-201942-202696",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1162.0,
+      "GamesPlayed": 7,
+      "DefPoss": 36,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628396-1630245-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Tony Bradley, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1147.0,
+      "GamesPlayed": 6,
+      "DefPoss": 39,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1629750-202696-203897",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1115.0,
+      "GamesPlayed": 8,
+      "DefPoss": 36,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629744-1629750-1630245-202696-203897",
+      "Name": "Matt Thomas, Javonte Green, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1114.0,
+      "GamesPlayed": 5,
+      "DefPoss": 39,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1630245-202696-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1068.0,
+      "GamesPlayed": 7,
+      "DefPoss": 35,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629744-1629750-1630245-201942-202696",
+      "Name": "Matt Thomas, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1064.0,
+      "GamesPlayed": 4,
+      "DefPoss": 34,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1629632-1630245-201942",
+      "Name": "Lonzo Ball, Tony Bradley, Coby White, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1045.0,
+      "GamesPlayed": 5,
+      "DefPoss": 35,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-201942-202696-203897",
+      "Name": "Troy Brown Jr., Coby White, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1010.0,
+      "GamesPlayed": 4,
+      "DefPoss": 35,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1630172-1630245-202696-203897",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1000.0,
+      "GamesPlayed": 7,
+      "DefPoss": 33,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-201942-202684-203897",
+      "Name": "Derrick Jones Jr., Coby White, DeMar DeRozan, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 942.0,
+      "GamesPlayed": 6,
+      "DefPoss": 29,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628972-202696-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Troy Brown Jr., Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 938.0,
+      "GamesPlayed": 2,
+      "DefPoss": 30,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-201942-202696-203897",
+      "Name": "Alex Caruso, Coby White, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 936.0,
+      "GamesPlayed": 6,
+      "DefPoss": 31,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1630245-201942-202696-203897",
+      "Name": "Troy Brown Jr., Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 936.0,
+      "GamesPlayed": 6,
+      "DefPoss": 34,
+      "OpponentPoints": 41
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629750-1630245-202696-203897",
+      "Name": "Troy Brown Jr., Javonte Green, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 927.0,
+      "GamesPlayed": 5,
+      "DefPoss": 34,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1629750-1630245-202696-203897",
+      "Name": "Lonzo Ball, Javonte Green, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 914.0,
+      "GamesPlayed": 7,
+      "DefPoss": 30,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1628993-1629750-201942",
+      "Name": "Alex Caruso, Troy Brown Jr., Alize Johnson, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 909.0,
+      "GamesPlayed": 5,
+      "DefPoss": 32,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1630245-201942-202684-202696-203897",
+      "Name": "Ayo Dosunmu, DeMar DeRozan, Tristan Thompson, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 896.0,
+      "GamesPlayed": 2,
+      "DefPoss": 31,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1629750-201942-202684",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 878.0,
+      "GamesPlayed": 3,
+      "DefPoss": 29,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1628396-1630245-201942",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Tony Bradley, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 874.0,
+      "GamesPlayed": 6,
+      "DefPoss": 28,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629744-1630245-1630792-202696",
+      "Name": "Troy Brown Jr., Matt Thomas, Ayo Dosunmu, Malcolm Hill, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 862.0,
+      "GamesPlayed": 4,
+      "DefPoss": 32,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-1630245-201942",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 840.0,
+      "GamesPlayed": 8,
+      "DefPoss": 29,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1629750-202696-203897",
+      "Name": "Alex Caruso, Troy Brown Jr., Javonte Green, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 837.0,
+      "GamesPlayed": 6,
+      "DefPoss": 25,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629744-1630245-202696-203897",
+      "Name": "Troy Brown Jr., Matt Thomas, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 823.0,
+      "GamesPlayed": 5,
+      "DefPoss": 29,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629632-1629744-1630792-201942",
+      "Name": "Tony Bradley, Coby White, Matt Thomas, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 816.0,
+      "GamesPlayed": 2,
+      "DefPoss": 28,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628366-1628396-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Lonzo Ball, Tony Bradley, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 809.0,
+      "GamesPlayed": 5,
+      "DefPoss": 29,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1629632-1630245-202696-203897",
+      "Name": "Lonzo Ball, Coby White, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 806.0,
+      "GamesPlayed": 6,
+      "DefPoss": 27,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1630245-201942-202696-203897",
+      "Name": "Lonzo Ball, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 796.0,
+      "GamesPlayed": 5,
+      "DefPoss": 27,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629632-1630245-201942",
+      "Name": "Tony Bradley, Troy Brown Jr., Coby White, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 758.0,
+      "GamesPlayed": 5,
+      "DefPoss": 30,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629632-1629744-201942",
+      "Name": "Tony Bradley, Troy Brown Jr., Coby White, Matt Thomas, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 750.0,
+      "GamesPlayed": 4,
+      "DefPoss": 23,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629632-1629750-201942",
+      "Name": "Tony Bradley, Troy Brown Jr., Coby White, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 744.0,
+      "GamesPlayed": 7,
+      "DefPoss": 24,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629750-1630172-1630245-202684",
+      "Name": "Troy Brown Jr., Javonte Green, Patrick Williams, Ayo Dosunmu, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 733.0,
+      "GamesPlayed": 1,
+      "DefPoss": 25,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629750-1630245-201942-202684",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 733.0,
+      "GamesPlayed": 6,
+      "DefPoss": 23,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1630245-201942-202696-203897",
+      "Name": "Derrick Jones Jr., Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 712.0,
+      "GamesPlayed": 4,
+      "DefPoss": 24,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1630172-1630245-202696-203897",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 695.0,
+      "GamesPlayed": 5,
+      "DefPoss": 26,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629653-1629744-1630245-1630250",
+      "Name": "Troy Brown Jr., Devon Dotson, Matt Thomas, Ayo Dosunmu, Marko Simonovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 694.0,
+      "GamesPlayed": 3,
+      "DefPoss": 25,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-1629750-1630245",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, Javonte Green, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 688.0,
+      "GamesPlayed": 3,
+      "DefPoss": 22,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629750-1630172-1630245",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Javonte Green, Patrick Williams, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 688.0,
+      "GamesPlayed": 1,
+      "DefPoss": 25,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1629750-201942-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Javonte Green, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 685.0,
+      "GamesPlayed": 5,
+      "DefPoss": 27,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628396-1629632-1630245-201942",
+      "Name": "Alex Caruso, Tony Bradley, Coby White, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 666.0,
+      "GamesPlayed": 4,
+      "DefPoss": 21,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629632-1630245-201942-203897",
+      "Name": "Tony Bradley, Coby White, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 665.0,
+      "GamesPlayed": 4,
+      "DefPoss": 24,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629744-1630792-201942",
+      "Name": "Tony Bradley, Troy Brown Jr., Matt Thomas, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 651.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1629632-201942-203897",
+      "Name": "Lonzo Ball, Tony Bradley, Coby White, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 645.0,
+      "GamesPlayed": 1,
+      "DefPoss": 22,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628366-1629632-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Lonzo Ball, Coby White, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 644.0,
+      "GamesPlayed": 3,
+      "DefPoss": 23,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628366-201942-202696-203897",
+      "Name": "Alfonzo McKinnie, Lonzo Ball, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 637.0,
+      "GamesPlayed": 1,
+      "DefPoss": 21,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1629632-1630245-201942",
+      "Name": "Troy Brown Jr., Tyler Cook, Coby White, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 635.0,
+      "GamesPlayed": 4,
+      "DefPoss": 23,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1629750-201942-202684",
+      "Name": "Troy Brown Jr., Coby White, Javonte Green, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 632.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1629750-201942-203897",
+      "Name": "Lonzo Ball, Tony Bradley, Javonte Green, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 630.0,
+      "GamesPlayed": 2,
+      "DefPoss": 23,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1629750-1630245-203897",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 612.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1630245-202684-203897",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 611.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628993-1629750-201942",
+      "Name": "Alex Caruso, Lonzo Ball, Alize Johnson, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 607.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629744-1630245-201942",
+      "Name": "Tony Bradley, Troy Brown Jr., Matt Thomas, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 595.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1629750-1630245-201942",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 584.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628396-1630245-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Tony Bradley, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 583.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628366-1628972-202696-203897",
+      "Name": "Alfonzo McKinnie, Lonzo Ball, Troy Brown Jr., Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 562.0,
+      "GamesPlayed": 1,
+      "DefPoss": 19,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629750-1630172-1630245-202696-203897",
+      "Name": "Javonte Green, Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 552.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628993-201942-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Alize Johnson, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 543.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629750-1630245-201942-202696",
+      "Name": "Alex Caruso, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 539.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1629632-201942-202696",
+      "Name": "Alex Caruso, Lonzo Ball, Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 534.0,
+      "GamesPlayed": 2,
+      "DefPoss": 19,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1629744-1630245",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 520.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1630245-1630792-202696",
+      "Name": "Troy Brown Jr., Coby White, Ayo Dosunmu, Malcolm Hill, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 507.0,
+      "GamesPlayed": 2,
+      "DefPoss": 20,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1628993-1629632-1629744-1630245",
+      "Name": "Troy Brown Jr., Alize Johnson, Coby White, Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 504.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1630172-1630245-201942-202696",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 498.0,
+      "GamesPlayed": 1,
+      "DefPoss": 18,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-1629750-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 495.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1629744-201942-202696",
+      "Name": "Troy Brown Jr., Coby White, Matt Thomas, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 483.0,
+      "GamesPlayed": 5,
+      "DefPoss": 16,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1630172-1630245-202684-203897",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 482.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1630245-201942-202696",
+      "Name": "Derrick Jones Jr., Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 479.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1628972-1630245-201942",
+      "Name": "Lonzo Ball, Tony Bradley, Troy Brown Jr., Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 472.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629744-1630245-1630792-201942-202696",
+      "Name": "Matt Thomas, Ayo Dosunmu, Malcolm Hill, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 470.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628035-1629632-1629750-202696",
+      "Name": "Alex Caruso, Alfonzo McKinnie, Coby White, Javonte Green, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 467.0,
+      "GamesPlayed": 1,
+      "DefPoss": 15,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1629750-202684-203897",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 458.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628366-1629632-201942-202696",
+      "Name": "Alfonzo McKinnie, Lonzo Ball, Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 447.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1629750-202696-203897",
+      "Name": "Lonzo Ball, Troy Brown Jr., Javonte Green, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 445.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1629750-1630172-201942",
+      "Name": "Alex Caruso, Lonzo Ball, Javonte Green, Patrick Williams, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 438.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1629744-1630245-202696",
+      "Name": "Troy Brown Jr., Coby White, Matt Thomas, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 438.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629632-1629744-1630245",
+      "Name": "Tony Bradley, Troy Brown Jr., Coby White, Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 435.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1629632-1629750-201942-202696",
+      "Name": "Lonzo Ball, Coby White, Javonte Green, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 433.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1630172-202696-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 430.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1630245-201942-202696",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 423.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1629750-1630245-202696",
+      "Name": "Troy Brown Jr., Coby White, Javonte Green, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 423.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628396-1630245-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Tony Bradley, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 417.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1630245-201942-202684-203897",
+      "Name": "Derrick Jones Jr., Ayo Dosunmu, DeMar DeRozan, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 413.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1629632-1629744-202696",
+      "Name": "Alex Caruso, Troy Brown Jr., Coby White, Matt Thomas, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 412.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628396-1629632-1630245-201942",
+      "Name": "Alfonzo McKinnie, Tony Bradley, Coby White, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 409.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1629744-202696-203897",
+      "Name": "Troy Brown Jr., Coby White, Matt Thomas, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 409.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628366-1628396-1629632-201942",
+      "Name": "Alfonzo McKinnie, Lonzo Ball, Tony Bradley, Coby White, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 408.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628366-1629750-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Lonzo Ball, Javonte Green, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 407.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-1629750-201942",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 407.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-1630245-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 406.0,
+      "GamesPlayed": 5,
+      "DefPoss": 14,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1630245-201942-202684-203897",
+      "Name": "Coby White, Ayo Dosunmu, DeMar DeRozan, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 406.0,
+      "GamesPlayed": 5,
+      "DefPoss": 12,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628366-1630245-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Lonzo Ball, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 404.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628396-1628972-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Tony Bradley, Troy Brown Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 399.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629744-1629750-1630792-201942",
+      "Name": "Tony Bradley, Matt Thomas, Javonte Green, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 399.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629744-1630245-201942-202696",
+      "Name": "Troy Brown Jr., Matt Thomas, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 397.0,
+      "GamesPlayed": 6,
+      "DefPoss": 10,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628366-1628396-1629076-201942",
+      "Name": "Alfonzo McKinnie, Lonzo Ball, Tony Bradley, Tyler Cook, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 391.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629750-1630172-201942-202684",
+      "Name": "Coby White, Javonte Green, Patrick Williams, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 391.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629632-1629750-1630245-201942",
+      "Name": "Tony Bradley, Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 390.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628366-1629632-202696-203897",
+      "Name": "Alfonzo McKinnie, Lonzo Ball, Coby White, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 389.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1628972-1630245-201942",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Troy Brown Jr., Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 385.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1630245-201942-202696",
+      "Name": "Lonzo Ball, Troy Brown Jr., Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 384.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628366-202696-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Lonzo Ball, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 382.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-201942-202696",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 375.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1628972-1629744-1630245",
+      "Name": "Lonzo Ball, Tony Bradley, Troy Brown Jr., Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 375.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1630245-202696-203897",
+      "Name": "Lonzo Ball, Troy Brown Jr., Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 373.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628366-1628993-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Lonzo Ball, Alize Johnson, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 371.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1630245-1630792-201942-202696",
+      "Name": "Coby White, Ayo Dosunmu, Malcolm Hill, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 367.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628972-1629653-1629744-1630250",
+      "Name": "Alfonzo McKinnie, Troy Brown Jr., Devon Dotson, Matt Thomas, Marko Simonovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 366.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629076-1629744-1630245-201942",
+      "Name": "Derrick Jones Jr., Tyler Cook, Matt Thomas, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 365.0,
+      "GamesPlayed": 1,
+      "DefPoss": 15,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1629750-201942-202696",
+      "Name": "Troy Brown Jr., Coby White, Javonte Green, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 365.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1628972-1629744-203897",
+      "Name": "Lonzo Ball, Tony Bradley, Troy Brown Jr., Matt Thomas, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 363.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1630172-202696-203897",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 360.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629744-1629750-1630245-202696",
+      "Name": "Troy Brown Jr., Matt Thomas, Javonte Green, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 351.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-201942-202696-203897",
+      "Name": "Lonzo Ball, Troy Brown Jr., DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 349.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1628972-1630245-203897",
+      "Name": "Lonzo Ball, Tony Bradley, Troy Brown Jr., Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 348.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628396-1628972-1629744-1630792",
+      "Name": "Alfonzo McKinnie, Tony Bradley, Troy Brown Jr., Matt Thomas, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 346.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1628993-1629653-1630245",
+      "Name": "Tony Bradley, Troy Brown Jr., Alize Johnson, Devon Dotson, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628972-201942-202684",
+      "Name": "Derrick Jones Jr., Alex Caruso, Troy Brown Jr., DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 343.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1630792-202696-203897",
+      "Name": "Troy Brown Jr., Coby White, Malcolm Hill, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 343.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629076-1629632-1629744-1629750-201942",
+      "Name": "Tyler Cook, Coby White, Matt Thomas, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 341.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629632-1630245-202696-203897",
+      "Name": "Alfonzo McKinnie, Coby White, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 339.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629750-201942-202684-203897",
+      "Name": "Coby White, Javonte Green, DeMar DeRozan, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 337.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1628972-1630245-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Troy Brown Jr., Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 326.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1629750-1630245-203897",
+      "Name": "Lonzo Ball, Tony Bradley, Javonte Green, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 314.0,
+      "GamesPlayed": 4,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628366-1628396-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Lonzo Ball, Tony Bradley, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 313.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629744-1630245-1630792-201942",
+      "Name": "Tony Bradley, Matt Thomas, Ayo Dosunmu, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 312.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1630172-1630245",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Patrick Williams, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 311.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628993-1629750-1630245-201942",
+      "Name": "Alex Caruso, Alize Johnson, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 310.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629750-1630245-202684-203897",
+      "Name": "Alex Caruso, Javonte Green, Ayo Dosunmu, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 310.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629632-1630245-1630792-202696",
+      "Name": "Alfonzo McKinnie, Coby White, Ayo Dosunmu, Malcolm Hill, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 310.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629750-1630245-201942",
+      "Name": "Tony Bradley, Troy Brown Jr., Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 308.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628035-1628366-1628396-203897",
+      "Name": "Alex Caruso, Alfonzo McKinnie, Lonzo Ball, Tony Bradley, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 305.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1630245-1630792-202696-203897",
+      "Name": "Troy Brown Jr., Ayo Dosunmu, Malcolm Hill, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 304.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1630172-1630245-202696",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 299.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1628993-1630245-201942",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Alize Johnson, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 298.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629632-1629744-1629750-201942",
+      "Name": "Tony Bradley, Coby White, Matt Thomas, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 290.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-201942-202684-202696-203897",
+      "Name": "Coby White, DeMar DeRozan, Tristan Thompson, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 289.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629653-1629744-1630245",
+      "Name": "Tony Bradley, Troy Brown Jr., Devon Dotson, Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 286.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628993-1629076-1629653-1630250",
+      "Name": "Alfonzo McKinnie, Alize Johnson, Tyler Cook, Devon Dotson, Marko Simonovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 284.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-202696-203897",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 283.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629750-1630172-1630245",
+      "Name": "Tony Bradley, Troy Brown Jr., Javonte Green, Patrick Williams, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 280.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629076-1629632-1629744-1630245-201942",
+      "Name": "Tyler Cook, Coby White, Matt Thomas, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629744-1630245-201942",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Matt Thomas, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 275.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1630245-202696-203897",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 275.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1630172-1630245-202696-203897",
+      "Name": "Lonzo Ball, Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 275.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1629076-201942-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Tyler Cook, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-201942-202696",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-1630245-202696",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1630172-1630245-202684",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Patrick Williams, Ayo Dosunmu, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628396-1628972-1630245-201942",
+      "Name": "Alex Caruso, Tony Bradley, Troy Brown Jr., Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1629632-1630245-203897",
+      "Name": "Lonzo Ball, Tony Bradley, Coby White, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 4,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1630172-1630245-202684",
+      "Name": "Troy Brown Jr., Coby White, Patrick Williams, Ayo Dosunmu, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1630172-201942-202684",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1629632-1629750-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Coby White, Javonte Green, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 261.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1629750-1630245-201942",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629076-1629744-1630245",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Tyler Cook, Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 258.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1628972-1629653-203897",
+      "Name": "Lonzo Ball, Tony Bradley, Troy Brown Jr., Devon Dotson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 257.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1630172-202684-203897",
+      "Name": "Troy Brown Jr., Coby White, Patrick Williams, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1630172-201942-202696",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 255.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-1630245-203897",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629632-1629744-1630245-201942",
+      "Name": "Tony Bradley, Coby White, Matt Thomas, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 252.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-1630172-1630245",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, Patrick Williams, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 248.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629750-1630245-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Javonte Green, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1629744-201942",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Matt Thomas, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628396-1629750-201942-203897",
+      "Name": "Alex Caruso, Tony Bradley, Javonte Green, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 242.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1629750-1630245-202696",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 242.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1629750-1630245",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Javonte Green, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1628972-202696-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Troy Brown Jr., Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 239.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1629750-1630245-1630792",
+      "Name": "Derrick Jones Jr., Tony Bradley, Javonte Green, Ayo Dosunmu, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 238.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628972-1630245-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Troy Brown Jr., Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-1630245-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 235.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1628396-1629632-201942",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Tony Bradley, Coby White, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 235.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1629750-201942-203897",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 235.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-202684-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1628993-1630245-201942",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Alize Johnson, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628366-1629632-1629750-202696",
+      "Name": "Alfonzo McKinnie, Lonzo Ball, Coby White, Javonte Green, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628396-1629744-1630245-201942",
+      "Name": "Alex Caruso, Tony Bradley, Matt Thomas, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1628972-1629632-201942",
+      "Name": "Lonzo Ball, Tony Bradley, Troy Brown Jr., Coby White, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 223.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1629744-1629750-202696",
+      "Name": "Troy Brown Jr., Coby White, Matt Thomas, Javonte Green, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 223.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1629744-1630792-202696",
+      "Name": "Troy Brown Jr., Coby White, Matt Thomas, Malcolm Hill, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 4,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629750-1630245-201942-203897",
+      "Name": "Derrick Jones Jr., Javonte Green, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1629632-1630245",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Coby White, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1629750-201942-202696",
+      "Name": "Alex Caruso, Coby White, Javonte Green, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 217.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-201942-202684-202696",
+      "Name": "Troy Brown Jr., Coby White, DeMar DeRozan, Tristan Thompson, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628993-1630172-201942",
+      "Name": "Alex Caruso, Lonzo Ball, Alize Johnson, Patrick Williams, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 4,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1630245-1630792-201942",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629744-1630245-1630250-1630792",
+      "Name": "Troy Brown Jr., Matt Thomas, Ayo Dosunmu, Marko Simonovic, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628396-1630245-201942",
+      "Name": "Alex Caruso, Lonzo Ball, Tony Bradley, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 208.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629750-201942-202684-203897",
+      "Name": "Alex Caruso, Javonte Green, DeMar DeRozan, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 208.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1629744-1630245-202696",
+      "Name": "Lonzo Ball, Troy Brown Jr., Matt Thomas, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1629632-202696-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Coby White, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629750-1630245-1630792-201942-202696",
+      "Name": "Javonte Green, Ayo Dosunmu, Malcolm Hill, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629750-1630172-201942-202696-203897",
+      "Name": "Javonte Green, Patrick Williams, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1629750-1630245-201942",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629076-1629632-1629653-202696",
+      "Name": "Alfonzo McKinnie, Tyler Cook, Coby White, Devon Dotson, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1629632-1630245-202696",
+      "Name": "Lonzo Ball, Troy Brown Jr., Coby White, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1630172-201942-202696",
+      "Name": "Lonzo Ball, Troy Brown Jr., Patrick Williams, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1629632-1630245-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Coby White, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1629632-201942",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Coby White, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 194.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628993-1630172-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Alize Johnson, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628366-1629076-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Lonzo Ball, Tyler Cook, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-1630172-202696",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1629750-202684-203897",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1630245-201942-202684",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Ayo Dosunmu, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629750-201942-202696-203897",
+      "Name": "Troy Brown Jr., Javonte Green, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1630172-1630245-201942-202696",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629076-1629744-1630245-201942",
+      "Name": "Alex Caruso, Tyler Cook, Matt Thomas, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1630172-201942-202696",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629632-1630792-201942",
+      "Name": "Tony Bradley, Troy Brown Jr., Coby White, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1628972-1629750-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Troy Brown Jr., Javonte Green, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1630172-201942-202696",
+      "Name": "Alex Caruso, Lonzo Ball, Patrick Williams, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1630172-202696-203897",
+      "Name": "Alex Caruso, Troy Brown Jr., Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1629632-201942-202696",
+      "Name": "Lonzo Ball, Troy Brown Jr., Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1628972-1630245-202696",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Troy Brown Jr., Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1629632-1629744",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Coby White, Matt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629750-1630172-1630245-201942",
+      "Name": "Alex Caruso, Javonte Green, Patrick Williams, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628396-1629632-1629744-1630245",
+      "Name": "Alfonzo McKinnie, Tony Bradley, Coby White, Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629653-1629744-1630250",
+      "Name": "Tony Bradley, Troy Brown Jr., Devon Dotson, Matt Thomas, Marko Simonovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628396-1628972-1629744-1630245",
+      "Name": "Alfonzo McKinnie, Tony Bradley, Troy Brown Jr., Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629750-1630245-202684-202696-203897",
+      "Name": "Javonte Green, Ayo Dosunmu, Tristan Thompson, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-1629744-202696",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, Matt Thomas, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1630245-202696-203897",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1629632-1629750-202696-203897",
+      "Name": "Lonzo Ball, Coby White, Javonte Green, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629744-1630245-1630792",
+      "Name": "Tony Bradley, Troy Brown Jr., Matt Thomas, Ayo Dosunmu, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1628993-1629750-203897",
+      "Name": "Alex Caruso, Troy Brown Jr., Alize Johnson, Javonte Green, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 159.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1630172-201942-202684-203897",
+      "Name": "Coby White, Patrick Williams, DeMar DeRozan, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628396-1629632-1629750-201942",
+      "Name": "Alex Caruso, Tony Bradley, Coby White, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1629744-1630245-202696",
+      "Name": "Alex Caruso, Troy Brown Jr., Matt Thomas, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1629750-1630245-202684",
+      "Name": "Troy Brown Jr., Coby White, Javonte Green, Ayo Dosunmu, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1629632-1630245-201942",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Coby White, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629653-1629744-1630644",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Devon Dotson, Matt Thomas, Mac McClung",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629076-1629632-1629744-1629750",
+      "Name": "Alfonzo McKinnie, Tyler Cook, Coby White, Matt Thomas, Javonte Green",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629632-1629653-1629750-202696",
+      "Name": "Alfonzo McKinnie, Coby White, Devon Dotson, Javonte Green, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629750-1630245-202684-203897",
+      "Name": "Derrick Jones Jr., Javonte Green, Ayo Dosunmu, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1630245-1630792-201942-202696",
+      "Name": "Troy Brown Jr., Ayo Dosunmu, Malcolm Hill, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1630245-1630792",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Ayo Dosunmu, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628366-1629653-202696-203897",
+      "Name": "Alfonzo McKinnie, Lonzo Ball, Devon Dotson, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1629744-1630245-203897",
+      "Name": "Troy Brown Jr., Tyler Cook, Matt Thomas, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1629744-1630245-202696",
+      "Name": "Alex Caruso, Coby White, Matt Thomas, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628396-1628972-1629744-201942",
+      "Name": "Alex Caruso, Tony Bradley, Troy Brown Jr., Matt Thomas, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629076-1629632-1629744-201942",
+      "Name": "Derrick Jones Jr., Tyler Cook, Coby White, Matt Thomas, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1629632-1630245-203897",
+      "Name": "Troy Brown Jr., Tyler Cook, Coby White, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 3,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629750-1630792-201942-202696",
+      "Name": "Troy Brown Jr., Javonte Green, Malcolm Hill, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1629076-1629632-1629744",
+      "Name": "Alex Caruso, Troy Brown Jr., Tyler Cook, Coby White, Matt Thomas",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1628972-1628993-1629653",
+      "Name": "Lonzo Ball, Tony Bradley, Troy Brown Jr., Alize Johnson, Devon Dotson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1629632-1629750-203897",
+      "Name": "Troy Brown Jr., Tyler Cook, Coby White, Javonte Green, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629750-1630172-1630245-1630792",
+      "Name": "Tony Bradley, Javonte Green, Patrick Williams, Ayo Dosunmu, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629744-201942-202696-203897",
+      "Name": "Coby White, Matt Thomas, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629750-201942-202696-203897",
+      "Name": "Derrick Jones Jr., Javonte Green, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629750-1630245-202684-203897",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 141.0,
+      "GamesPlayed": 3,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628972-1630245-202696",
+      "Name": "Derrick Jones Jr., Alex Caruso, Troy Brown Jr., Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628993-1630245-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Alize Johnson, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1629632-1630245-202696",
+      "Name": "Alex Caruso, Troy Brown Jr., Coby White, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629076-1629632-1629750-201942-203897",
+      "Name": "Tyler Cook, Coby White, Javonte Green, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629744-1629750-202696-203897",
+      "Name": "Coby White, Matt Thomas, Javonte Green, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629632-1629750-201942-202696",
+      "Name": "Alfonzo McKinnie, Coby White, Javonte Green, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629750-1630172-1630245-202684",
+      "Name": "Coby White, Javonte Green, Patrick Williams, Ayo Dosunmu, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1630245-1630792-202696",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Malcolm Hill, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1629632-1629750-201942-203897",
+      "Name": "Lonzo Ball, Coby White, Javonte Green, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1629750-1630172-1630245",
+      "Name": "Troy Brown Jr., Tyler Cook, Javonte Green, Patrick Williams, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1630245-1630792-203897",
+      "Name": "Troy Brown Jr., Tyler Cook, Ayo Dosunmu, Malcolm Hill, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628366-1628972-1629653-202696",
+      "Name": "Alfonzo McKinnie, Lonzo Ball, Troy Brown Jr., Devon Dotson, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629744-1630245-202696-203897",
+      "Name": "Coby White, Matt Thomas, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1630172-1630792",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Patrick Williams, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628993-1630245-201942-203897",
+      "Name": "Lonzo Ball, Alize Johnson, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1628972-201942-203897",
+      "Name": "Lonzo Ball, Tony Bradley, Troy Brown Jr., DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1628993-1630245-201942",
+      "Name": "Lonzo Ball, Troy Brown Jr., Alize Johnson, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628993-1630245-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Alize Johnson, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628035-1629632-201942-202696",
+      "Name": "Alex Caruso, Alfonzo McKinnie, Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1629653-1629750-201942",
+      "Name": "Lonzo Ball, Tony Bradley, Devon Dotson, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1629632-1629750-201942",
+      "Name": "Troy Brown Jr., Tyler Cook, Coby White, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628972-1630172-201942",
+      "Name": "Alex Caruso, Lonzo Ball, Troy Brown Jr., Patrick Williams, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629632-201942-202696-203897",
+      "Name": "Alfonzo McKinnie, Coby White, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-201942-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-1629744-201942",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, Matt Thomas, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1630245-201942-203897",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1629750-1630245-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Javonte Green, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-201942-202684-203897",
+      "Name": "Troy Brown Jr., Coby White, DeMar DeRozan, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1630245-201942-202684-203897",
+      "Name": "Troy Brown Jr., Ayo Dosunmu, DeMar DeRozan, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629632-1629750-203897",
+      "Name": "Tony Bradley, Troy Brown Jr., Coby White, Javonte Green, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629632-1629744-1630792",
+      "Name": "Tony Bradley, Troy Brown Jr., Coby White, Matt Thomas, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629750-1630172-201942-202696",
+      "Name": "Coby White, Javonte Green, Patrick Williams, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629744-1630245-202696-203897",
+      "Name": "Derrick Jones Jr., Matt Thomas, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1630245-201942",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628366-1630245-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Lonzo Ball, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629076-1629632-1629653-1630250",
+      "Name": "Alfonzo McKinnie, Tyler Cook, Coby White, Devon Dotson, Marko Simonovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1630172-1630245-202696-203897",
+      "Name": "Troy Brown Jr., Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1629076-1629632-1629750",
+      "Name": "Alex Caruso, Lonzo Ball, Tyler Cook, Coby White, Javonte Green",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628396-1628972-1629632-1630245",
+      "Name": "Alfonzo McKinnie, Tony Bradley, Troy Brown Jr., Coby White, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628993-1629632-1630245-201942-203897",
+      "Name": "Alize Johnson, Coby White, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629076-1629744-1629750-1630792-201942",
+      "Name": "Tyler Cook, Matt Thomas, Javonte Green, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-1629750-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Javonte Green, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629744-1630245-201942-203897",
+      "Name": "Tony Bradley, Matt Thomas, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1630172-1630245-201942-202696",
+      "Name": "Lonzo Ball, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1630245-202696-203897",
+      "Name": "Alex Caruso, Troy Brown Jr., Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628972-1629744-1630245-202696",
+      "Name": "Alfonzo McKinnie, Troy Brown Jr., Matt Thomas, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1629076-1629632-201942-202696",
+      "Name": "Lonzo Ball, Tyler Cook, Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1630245-1630792-201942-202696",
+      "Name": "Derrick Jones Jr., Ayo Dosunmu, Malcolm Hill, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628993-1629653-202696-203897",
+      "Name": "Lonzo Ball, Alize Johnson, Devon Dotson, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629744-201942-203897",
+      "Name": "Tony Bradley, Troy Brown Jr., Matt Thomas, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628993-1630245-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Alize Johnson, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628972-1629632-1629744-202696",
+      "Name": "Alfonzo McKinnie, Troy Brown Jr., Coby White, Matt Thomas, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1628396-1630245-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Tony Bradley, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628972-1629653-202696-203897",
+      "Name": "Alfonzo McKinnie, Troy Brown Jr., Devon Dotson, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629076-1629632-201942-203897",
+      "Name": "Derrick Jones Jr., Tyler Cook, Coby White, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628396-1628972-1629744-1630245",
+      "Name": "Alex Caruso, Tony Bradley, Troy Brown Jr., Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629076-1629632-201942-202696",
+      "Name": "Alfonzo McKinnie, Tyler Cook, Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629076-1629750-1630245-201942-203897",
+      "Name": "Tyler Cook, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628035-1628972-1629632-201942",
+      "Name": "Derrick Jones Jr., Alfonzo McKinnie, Troy Brown Jr., Coby White, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628035-1628972-1629653-202696",
+      "Name": "Alex Caruso, Alfonzo McKinnie, Troy Brown Jr., Devon Dotson, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628993-1630245-201942",
+      "Name": "Alex Caruso, Lonzo Ball, Alize Johnson, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629653-1629744-1630245-1630250",
+      "Name": "Alfonzo McKinnie, Devon Dotson, Matt Thomas, Ayo Dosunmu, Marko Simonovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628993-1629632-1629750-203897",
+      "Name": "Lonzo Ball, Alize Johnson, Coby White, Javonte Green, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629744-1629750-1630245-1630792-202696",
+      "Name": "Matt Thomas, Javonte Green, Ayo Dosunmu, Malcolm Hill, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628035-1628366-1629653-202696",
+      "Name": "Alex Caruso, Alfonzo McKinnie, Lonzo Ball, Devon Dotson, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1630245-202684-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Ayo Dosunmu, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628035-1628366-1628396-1629632",
+      "Name": "Derrick Jones Jr., Alfonzo McKinnie, Lonzo Ball, Tony Bradley, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629744-1629750-1630245-201942",
+      "Name": "Tony Bradley, Matt Thomas, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1629632-1629750",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Coby White, Javonte Green",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1629750-1630172-1630245",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, Patrick Williams, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1629632-1629750-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Coby White, Javonte Green, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-201942-202684-203897",
+      "Name": "Alex Caruso, Coby White, DeMar DeRozan, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629076-1629632-1630245-1630792-202696",
+      "Name": "Tyler Cook, Coby White, Ayo Dosunmu, Malcolm Hill, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629076-1629744-1630245-1630792-201942",
+      "Name": "Tyler Cook, Matt Thomas, Ayo Dosunmu, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629750-1630172-202684-203897",
+      "Name": "Coby White, Javonte Green, Patrick Williams, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628366-1629750-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Lonzo Ball, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-1630245-202696",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628035-1628366-1629632-201942",
+      "Name": "Derrick Jones Jr., Alfonzo McKinnie, Lonzo Ball, Coby White, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629632-1629750-201942-203897",
+      "Name": "Tony Bradley, Coby White, Javonte Green, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629744-1629750-1630792-201942-202696",
+      "Name": "Matt Thomas, Javonte Green, Malcolm Hill, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628972-1630245-202696-203897",
+      "Name": "Alfonzo McKinnie, Troy Brown Jr., Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1628993-1630172-203897",
+      "Name": "Lonzo Ball, Troy Brown Jr., Alize Johnson, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628395-1628972-1629632-1630245-201942",
+      "Name": "Jordan Bell, Troy Brown Jr., Coby White, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629750-1630245-201942-202684",
+      "Name": "Troy Brown Jr., Javonte Green, Ayo Dosunmu, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-1630245-202684",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Ayo Dosunmu, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628396-1629632-1630245-1630792",
+      "Name": "Alfonzo McKinnie, Tony Bradley, Coby White, Ayo Dosunmu, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1628972-1629632-1630245",
+      "Name": "Lonzo Ball, Tony Bradley, Troy Brown Jr., Coby White, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628972-202696-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Troy Brown Jr., Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1629632-201942-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Coby White, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628396-1629744-1630245-201942",
+      "Name": "Alfonzo McKinnie, Tony Bradley, Matt Thomas, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1629632-202696-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628972-1628993-1630172",
+      "Name": "Alex Caruso, Lonzo Ball, Troy Brown Jr., Alize Johnson, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1628993-1629750-1630245",
+      "Name": "Alex Caruso, Troy Brown Jr., Alize Johnson, Javonte Green, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1628972-1629653-1630245",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Troy Brown Jr., Devon Dotson, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1630172-202684-203897",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1629632-1630245-201942-202696",
+      "Name": "Lonzo Ball, Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1629632-1630172-202696",
+      "Name": "Alex Caruso, Troy Brown Jr., Coby White, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629632-201942-203897",
+      "Name": "Tony Bradley, Troy Brown Jr., Coby White, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1629632-202696-203897",
+      "Name": "Lonzo Ball, Troy Brown Jr., Coby White, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1629750-1630245-201942",
+      "Name": "Alex Caruso, Lonzo Ball, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1629632-1629750-1630245-203897",
+      "Name": "Lonzo Ball, Coby White, Javonte Green, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1628993-1629632-1629653-1630245",
+      "Name": "Troy Brown Jr., Alize Johnson, Coby White, Devon Dotson, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1630245-1630792-201942",
+      "Name": "Derrick Jones Jr., Tony Bradley, Ayo Dosunmu, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629744-1630172-1630245",
+      "Name": "Tony Bradley, Troy Brown Jr., Matt Thomas, Patrick Williams, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1630792-201942-203897",
+      "Name": "Tony Bradley, Troy Brown Jr., Malcolm Hill, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629632-1630172-202696-203897",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628993-1629750-1630245-203897",
+      "Name": "Alex Caruso, Alize Johnson, Javonte Green, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629632-1629744-1629750-202696",
+      "Name": "Alfonzo McKinnie, Coby White, Matt Thomas, Javonte Green, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629750-1630172-201942-203897",
+      "Name": "Alex Caruso, Javonte Green, Patrick Williams, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 75.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628035-1628366-1629632-203897",
+      "Name": "Derrick Jones Jr., Alfonzo McKinnie, Lonzo Ball, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629744-1630245-201942-202696",
+      "Name": "Derrick Jones Jr., Matt Thomas, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1629744-1630792-201942",
+      "Name": "Troy Brown Jr., Tyler Cook, Matt Thomas, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628396-1629744-1630792-201942",
+      "Name": "Alfonzo McKinnie, Tony Bradley, Matt Thomas, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629076-1629744-1629750-1630245-201942",
+      "Name": "Tyler Cook, Matt Thomas, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1629750-1630792-201942-203897",
+      "Name": "Tony Bradley, Javonte Green, Malcolm Hill, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629076-1630172-1630245",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Tyler Cook, Patrick Williams, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629750-1630245-202696",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Javonte Green, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1628993-1629653-203897",
+      "Name": "Lonzo Ball, Troy Brown Jr., Alize Johnson, Devon Dotson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1629653-203897",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Devon Dotson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628396-1629750-201942",
+      "Name": "Alex Caruso, Lonzo Ball, Tony Bradley, Javonte Green, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1629632-1630172-202684",
+      "Name": "Alex Caruso, Troy Brown Jr., Coby White, Patrick Williams, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1629632-1629653-1629750",
+      "Name": "Lonzo Ball, Tony Bradley, Coby White, Devon Dotson, Javonte Green",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629750-1630172-1630792",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Javonte Green, Patrick Williams, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1630245-201942-202696",
+      "Name": "Alex Caruso, Lonzo Ball, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628972-1629632-1630245-1630250",
+      "Name": "Alfonzo McKinnie, Troy Brown Jr., Coby White, Ayo Dosunmu, Marko Simonovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1630172-1630245-1630792",
+      "Name": "Derrick Jones Jr., Tony Bradley, Patrick Williams, Ayo Dosunmu, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628972-1629632-202696",
+      "Name": "Derrick Jones Jr., Alex Caruso, Troy Brown Jr., Coby White, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1628396-201942-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Tony Bradley, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628396-1629653-1629744-1630245",
+      "Name": "Alfonzo McKinnie, Tony Bradley, Devon Dotson, Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1629750-201942-202696",
+      "Name": "Alex Caruso, Troy Brown Jr., Javonte Green, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1628993-1629653-1629744-1630245",
+      "Name": "Troy Brown Jr., Alize Johnson, Devon Dotson, Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629076-1629744-1630245-201942-203897",
+      "Name": "Tyler Cook, Matt Thomas, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1628993-1630172-203897",
+      "Name": "Alex Caruso, Troy Brown Jr., Alize Johnson, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628993-1630245-201942-203897",
+      "Name": "Alex Caruso, Alize Johnson, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1628972-1629744-1630792",
+      "Name": "Derrick Jones Jr., Tony Bradley, Troy Brown Jr., Matt Thomas, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628993-1630172-201942-203897",
+      "Name": "Lonzo Ball, Alize Johnson, Patrick Williams, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629632-1629653-1629750-1630250",
+      "Name": "Alfonzo McKinnie, Coby White, Devon Dotson, Javonte Green, Marko Simonovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629632-1629750-202684-203897",
+      "Name": "Troy Brown Jr., Coby White, Javonte Green, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629744-1630245-1630792-201942",
+      "Name": "Derrick Jones Jr., Matt Thomas, Ayo Dosunmu, Malcolm Hill, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629750-1630172-202696-203897",
+      "Name": "Alex Caruso, Javonte Green, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1629750-1630245-201942",
+      "Name": "Lonzo Ball, Tony Bradley, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628366-1628396-1629076-1629632",
+      "Name": "Alfonzo McKinnie, Lonzo Ball, Tony Bradley, Tyler Cook, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1628366-1629632-1630245-202696",
+      "Name": "Alfonzo McKinnie, Lonzo Ball, Coby White, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629076-1629632-1630245-1630792",
+      "Name": "Alfonzo McKinnie, Tyler Cook, Coby White, Ayo Dosunmu, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1630245-201942-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629653-1629744-1630245-1630250",
+      "Name": "Derrick Jones Jr., Devon Dotson, Matt Thomas, Ayo Dosunmu, Marko Simonovic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 49.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628396-1630245-201942-203897",
+      "Name": "Derrick Jones Jr., Tony Bradley, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 47.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629750-1630172-1630245-1630792",
+      "Name": "Derrick Jones Jr., Javonte Green, Patrick Williams, Ayo Dosunmu, Malcolm Hill",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 47.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1630245-201942-203897",
+      "Name": "Lonzo Ball, Tony Bradley, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 47.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1629632-1629744-203897",
+      "Name": "Troy Brown Jr., Tyler Cook, Coby White, Matt Thomas, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629750-1630172-1630245-202684-203897",
+      "Name": "Javonte Green, Patrick Williams, Ayo Dosunmu, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628972-1628993-1630172-201942",
+      "Name": "Lonzo Ball, Troy Brown Jr., Alize Johnson, Patrick Williams, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629632-1629744-203897",
+      "Name": "Tony Bradley, Troy Brown Jr., Coby White, Matt Thomas, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 44.0,
+      "GamesPlayed": 2,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629076-1629632-1629750-1630245-201942",
+      "Name": "Tyler Cook, Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 44.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628035-1628366-1629632-202696",
+      "Name": "Alex Caruso, Alfonzo McKinnie, Lonzo Ball, Coby White, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1628993-1629744-1630245",
+      "Name": "Tony Bradley, Troy Brown Jr., Alize Johnson, Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628035-1629632-1629744-201942-202696",
+      "Name": "Alfonzo McKinnie, Coby White, Matt Thomas, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629750-1630245-203897",
+      "Name": "Tony Bradley, Troy Brown Jr., Javonte Green, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629632-202684-203897",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Coby White, Tristan Thompson, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 37.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1628396-1628972-1629653-1630245",
+      "Name": "Lonzo Ball, Tony Bradley, Troy Brown Jr., Devon Dotson, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628396-1628972-1629632-1630245-203897",
+      "Name": "Tony Bradley, Troy Brown Jr., Coby White, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1629632-1629750-1630172-202696",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 32.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628972-1629653-1629744-1630245",
+      "Name": "Derrick Jones Jr., Troy Brown Jr., Devon Dotson, Matt Thomas, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 30.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628366-1629632-1629653-1629750-202696",
+      "Name": "Lonzo Ball, Coby White, Devon Dotson, Javonte Green, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 29.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628395-1628972-1629632-1630245-203897",
+      "Name": "Jordan Bell, Troy Brown Jr., Coby White, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 29.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1629653-1629744-1630245-202696",
+      "Name": "Derrick Jones Jr., Devon Dotson, Matt Thomas, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1628993-1629750-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Alize Johnson, Javonte Green, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 26.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1630245-201942-202684",
+      "Name": "Derrick Jones Jr., Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Tristan Thompson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 24.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628972-1629076-1629744-201942",
+      "Name": "Alex Caruso, Troy Brown Jr., Tyler Cook, Matt Thomas, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 23.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628993-1630172-1630245-201942",
+      "Name": "Alex Caruso, Alize Johnson, Patrick Williams, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 21.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1627936-1628993-201942-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Alize Johnson, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 19.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627936-1628366-1630172-201942-203897",
+      "Name": "Alex Caruso, Lonzo Ball, Patrick Williams, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 19.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1628972-1629076-1629750-1630245-201942",
+      "Name": "Troy Brown Jr., Tyler Cook, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 19.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1629632-1629750-1630245-201942-203897",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 16.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2021-22",
+      "EntityId": "1627884-1628366-1630245-201942-203897",
+      "Name": "Derrick Jones Jr., Lonzo Ball, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    }
+  ]
+}

@@ -1,0 +1,3639 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2004-05",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2004-05",
+    "RowsReturned": 398,
+    "RowsWithDefPoss": 382,
+    "RowsSkippedMissingMetrics": 20,
+    "LastRowDefPoss": 0,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2550-2736-2768",
+      "Name": "Antonio Davis, Eddy Curry, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 21766.0,
+      "GamesPlayed": 34,
+      "DefPoss": 669,
+      "OpponentPoints": 623
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2550-2732-2804",
+      "Name": "Tyson Chandler, Eddy Curry, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9616.0,
+      "GamesPlayed": 40,
+      "DefPoss": 306,
+      "OpponentPoints": 332
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2550-2732-2736",
+      "Name": "Tyson Chandler, Eddy Curry, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8896.0,
+      "GamesPlayed": 37,
+      "DefPoss": 290,
+      "OpponentPoints": 274
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2550-2736-2768-970",
+      "Name": "Eddy Curry, Kirk Hinrich, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7826.0,
+      "GamesPlayed": 14,
+      "DefPoss": 247,
+      "OpponentPoints": 262
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2550-2768-2804-970",
+      "Name": "Antonio Davis, Kirk Hinrich, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7563.0,
+      "GamesPlayed": 13,
+      "DefPoss": 237,
+      "OpponentPoints": 237
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2550-2732-2804",
+      "Name": "Antonio Davis, Tyson Chandler, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7011.0,
+      "GamesPlayed": 32,
+      "DefPoss": 225,
+      "OpponentPoints": 222
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2732-2804-970",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6272.0,
+      "GamesPlayed": 31,
+      "DefPoss": 201,
+      "OpponentPoints": 212
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2550-2768-2804",
+      "Name": "Antonio Davis, Eddy Curry, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5968.0,
+      "GamesPlayed": 13,
+      "DefPoss": 183,
+      "OpponentPoints": 192
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2201-2550-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Eddy Curry, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4621.0,
+      "GamesPlayed": 17,
+      "DefPoss": 141,
+      "OpponentPoints": 153
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2732-2768-2804-970",
+      "Name": "Tyson Chandler, Ben Gordon, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4222.0,
+      "GamesPlayed": 23,
+      "DefPoss": 129,
+      "OpponentPoints": 126
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2550-2732-2736",
+      "Name": "Antonio Davis, Eddy Curry, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4220.0,
+      "GamesPlayed": 18,
+      "DefPoss": 130,
+      "OpponentPoints": 122
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2550-2768-2804",
+      "Name": "Antonio Davis, Tyson Chandler, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3891.0,
+      "GamesPlayed": 19,
+      "DefPoss": 123,
+      "OpponentPoints": 140
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2732-2768-2804",
+      "Name": "Antonio Davis, Tyson Chandler, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3341.0,
+      "GamesPlayed": 21,
+      "DefPoss": 106,
+      "OpponentPoints": 101
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2550-2736-2768",
+      "Name": "Tyson Chandler, Eddy Curry, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3289.0,
+      "GamesPlayed": 26,
+      "DefPoss": 109,
+      "OpponentPoints": 129
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2732-2768-2804",
+      "Name": "Tyson Chandler, Eddy Curry, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3260.0,
+      "GamesPlayed": 23,
+      "DefPoss": 104,
+      "OpponentPoints": 107
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2550-2736-2768",
+      "Name": "Antonio Davis, Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2797.0,
+      "GamesPlayed": 11,
+      "DefPoss": 83,
+      "OpponentPoints": 69
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2550-2732-2768",
+      "Name": "Antonio Davis, Tyson Chandler, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2540.0,
+      "GamesPlayed": 10,
+      "DefPoss": 83,
+      "OpponentPoints": 67
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2201-2768-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Eddy Curry, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2538.0,
+      "GamesPlayed": 6,
+      "DefPoss": 79,
+      "OpponentPoints": 71
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2550-2732-2736",
+      "Name": "Antonio Davis, Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2482.0,
+      "GamesPlayed": 15,
+      "DefPoss": 79,
+      "OpponentPoints": 97
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2550-2768-2804",
+      "Name": "Tyson Chandler, Eddy Curry, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2343.0,
+      "GamesPlayed": 16,
+      "DefPoss": 78,
+      "OpponentPoints": 85
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2550-2732-2804",
+      "Name": "Adrian Griffin, Tyson Chandler, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2323.0,
+      "GamesPlayed": 13,
+      "DefPoss": 74,
+      "OpponentPoints": 65
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2732-2736-2768",
+      "Name": "Tyson Chandler, Eddy Curry, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2136.0,
+      "GamesPlayed": 16,
+      "DefPoss": 68,
+      "OpponentPoints": 56
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2201-2550-2736",
+      "Name": "Eric Piatkowski, Tyson Chandler, Eddy Curry, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2130.0,
+      "GamesPlayed": 16,
+      "DefPoss": 75,
+      "OpponentPoints": 76
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2550-2732-2736-970",
+      "Name": "Eddy Curry, Kirk Hinrich, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1724.0,
+      "GamesPlayed": 7,
+      "DefPoss": 56,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2457-2732-2736-970",
+      "Name": "Tyson Chandler, Jannero Pargo, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1530.0,
+      "GamesPlayed": 5,
+      "DefPoss": 47,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2201-2550-2736",
+      "Name": "Eric Piatkowski, Antonio Davis, Eddy Curry, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1498.0,
+      "GamesPlayed": 8,
+      "DefPoss": 52,
+      "OpponentPoints": 58
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2201-2550-2732",
+      "Name": "Adrian Griffin, Tyson Chandler, Eddy Curry, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1493.0,
+      "GamesPlayed": 6,
+      "DefPoss": 47,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2732-2768-970",
+      "Name": "Adrian Griffin, Tyson Chandler, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1481.0,
+      "GamesPlayed": 12,
+      "DefPoss": 44,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2768-2804-970",
+      "Name": "Eric Piatkowski, Antonio Davis, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1429.0,
+      "GamesPlayed": 6,
+      "DefPoss": 42,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2768-2804-970",
+      "Name": "Tyson Chandler, Kirk Hinrich, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1405.0,
+      "GamesPlayed": 12,
+      "DefPoss": 47,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2550-2736-2768-2804",
+      "Name": "Antonio Davis, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1351.0,
+      "GamesPlayed": 3,
+      "DefPoss": 37,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2732-2736-970",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1332.0,
+      "GamesPlayed": 15,
+      "DefPoss": 43,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2732-2736-2768",
+      "Name": "Antonio Davis, Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1287.0,
+      "GamesPlayed": 6,
+      "DefPoss": 38,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2550-2732-2804",
+      "Name": "Antonio Davis, Eddy Curry, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1264.0,
+      "GamesPlayed": 12,
+      "DefPoss": 37,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2732-2768-2804",
+      "Name": "Antonio Davis, Eddy Curry, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1260.0,
+      "GamesPlayed": 11,
+      "DefPoss": 44,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2550-2736-2768-970",
+      "Name": "Antonio Davis, Kirk Hinrich, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1252.0,
+      "GamesPlayed": 5,
+      "DefPoss": 36,
+      "OpponentPoints": 41
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2732-2768-970",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1240.0,
+      "GamesPlayed": 6,
+      "DefPoss": 39,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2732-2736-2768-970",
+      "Name": "Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1213.0,
+      "GamesPlayed": 9,
+      "DefPoss": 38,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2201-2550-2736-2804",
+      "Name": "Eric Piatkowski, Eddy Curry, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1199.0,
+      "GamesPlayed": 6,
+      "DefPoss": 37,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2550-2732-2804-970",
+      "Name": "Antonio Davis, Kirk Hinrich, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1182.0,
+      "GamesPlayed": 13,
+      "DefPoss": 44,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2732-2768-2804-970",
+      "Name": "Antonio Davis, Ben Gordon, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1147.0,
+      "GamesPlayed": 7,
+      "DefPoss": 40,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2732-2768-2804",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1127.0,
+      "GamesPlayed": 9,
+      "DefPoss": 44,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2550-2732-970",
+      "Name": "Adrian Griffin, Tyson Chandler, Kirk Hinrich, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1101.0,
+      "GamesPlayed": 10,
+      "DefPoss": 35,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2732-2736-2768",
+      "Name": "Antonio Davis, Eddy Curry, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1100.0,
+      "GamesPlayed": 10,
+      "DefPoss": 42,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2201-2550-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Eddy Curry, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1059.0,
+      "GamesPlayed": 8,
+      "DefPoss": 33,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2732-2736-2804",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1057.0,
+      "GamesPlayed": 9,
+      "DefPoss": 35,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2550-2804-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 989.0,
+      "GamesPlayed": 9,
+      "DefPoss": 30,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2550-2732",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 979.0,
+      "GamesPlayed": 6,
+      "DefPoss": 29,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2457-2732-2736",
+      "Name": "Tyson Chandler, Eddy Curry, Jannero Pargo, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 960.0,
+      "GamesPlayed": 3,
+      "DefPoss": 32,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2550-2732-2736-2804",
+      "Name": "Eddy Curry, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 960.0,
+      "GamesPlayed": 9,
+      "DefPoss": 37,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2199-2550-2732",
+      "Name": "Adrian Griffin, Antonio Davis, Tyson Chandler, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 945.0,
+      "GamesPlayed": 8,
+      "DefPoss": 31,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2550-2736-2768-970",
+      "Name": "Adrian Griffin, Kirk Hinrich, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 927.0,
+      "GamesPlayed": 4,
+      "DefPoss": 30,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2550-2732-2736-970",
+      "Name": "Antonio Davis, Kirk Hinrich, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 912.0,
+      "GamesPlayed": 8,
+      "DefPoss": 27,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2550-2768-970",
+      "Name": "Adrian Griffin, Antonio Davis, Kirk Hinrich, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 910.0,
+      "GamesPlayed": 3,
+      "DefPoss": 31,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2457-2732-2736",
+      "Name": "Antonio Davis, Tyson Chandler, Jannero Pargo, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 885.0,
+      "GamesPlayed": 3,
+      "DefPoss": 29,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2201-2736-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Eddy Curry, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 862.0,
+      "GamesPlayed": 5,
+      "DefPoss": 28,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2550-2736-2768-2804-970",
+      "Name": "Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 834.0,
+      "GamesPlayed": 2,
+      "DefPoss": 22,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2768-2804-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 826.0,
+      "GamesPlayed": 6,
+      "DefPoss": 23,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2457-2732",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Jannero Pargo, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 819.0,
+      "GamesPlayed": 6,
+      "DefPoss": 24,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2550-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 806.0,
+      "GamesPlayed": 6,
+      "DefPoss": 27,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2550-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Kirk Hinrich, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 764.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2550-2732-2804",
+      "Name": "Adrian Griffin, Antonio Davis, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 735.0,
+      "GamesPlayed": 6,
+      "DefPoss": 30,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2732-2736-2768-2804",
+      "Name": "Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 726.0,
+      "GamesPlayed": 7,
+      "DefPoss": 27,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2732-2768-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 720.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2550-2732-2768",
+      "Name": "Antonio Davis, Eddy Curry, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 719.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2550-2732-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 713.0,
+      "GamesPlayed": 7,
+      "DefPoss": 25,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2199-2732-2768",
+      "Name": "Adrian Griffin, Antonio Davis, Tyson Chandler, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 704.0,
+      "GamesPlayed": 6,
+      "DefPoss": 23,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2732-2768-2804-970",
+      "Name": "Eddy Curry, Ben Gordon, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 704.0,
+      "GamesPlayed": 5,
+      "DefPoss": 22,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2732-2736-2768",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 703.0,
+      "GamesPlayed": 4,
+      "DefPoss": 26,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2550-2736-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 689.0,
+      "GamesPlayed": 2,
+      "DefPoss": 19,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2457-2732-970",
+      "Name": "Adrian Griffin, Tyson Chandler, Jannero Pargo, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 686.0,
+      "GamesPlayed": 5,
+      "DefPoss": 25,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2457-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Jannero Pargo, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 682.0,
+      "GamesPlayed": 3,
+      "DefPoss": 25,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2550-2732-2768-970",
+      "Name": "Antonio Davis, Kirk Hinrich, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 678.0,
+      "GamesPlayed": 5,
+      "DefPoss": 20,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2732-2768-2804",
+      "Name": "Adrian Griffin, Tyson Chandler, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 677.0,
+      "GamesPlayed": 6,
+      "DefPoss": 21,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2550-2732-2736-2804",
+      "Name": "Antonio Davis, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 667.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2457-2732-2804",
+      "Name": "Adrian Griffin, Tyson Chandler, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 652.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2550-2736-970",
+      "Name": "Adrian Griffin, Antonio Davis, Kirk Hinrich, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 651.0,
+      "GamesPlayed": 2,
+      "DefPoss": 19,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2550-2736-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 650.0,
+      "GamesPlayed": 5,
+      "DefPoss": 23,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2199-2457-2732",
+      "Name": "Adrian Griffin, Antonio Davis, Tyson Chandler, Jannero Pargo, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 647.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2201-2768-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Eddy Curry, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 629.0,
+      "GamesPlayed": 6,
+      "DefPoss": 21,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2201-2732-2768",
+      "Name": "Adrian Griffin, Tyson Chandler, Eddy Curry, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 628.0,
+      "GamesPlayed": 7,
+      "DefPoss": 19,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2736-2768-970",
+      "Name": "Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 626.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2550-2768-2804-2876",
+      "Name": "Antonio Davis, Kirk Hinrich, Chris Duhon, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 598.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2201-2732-2736",
+      "Name": "Eric Piatkowski, Tyson Chandler, Eddy Curry, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 593.0,
+      "GamesPlayed": 2,
+      "DefPoss": 20,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2457-2768-2804",
+      "Name": "Antonio Davis, Tyson Chandler, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 565.0,
+      "GamesPlayed": 4,
+      "DefPoss": 21,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2457-2768-2876",
+      "Name": "Eric Piatkowski, Adrian Griffin, Jannero Pargo, Chris Duhon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 561.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2550-2736-2768-2804",
+      "Name": "Adrian Griffin, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 560.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2732-2736-2768-2804-970",
+      "Name": "Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 549.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2732-2736-2768-2804",
+      "Name": "Eddy Curry, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 527.0,
+      "GamesPlayed": 5,
+      "DefPoss": 18,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2550-2732-2736-2804-970",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 527.0,
+      "GamesPlayed": 5,
+      "DefPoss": 17,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2457-2732-2804",
+      "Name": "Antonio Davis, Tyson Chandler, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 522.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2457-2768-2804-970",
+      "Name": "Eric Piatkowski, Jannero Pargo, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 519.0,
+      "GamesPlayed": 1,
+      "DefPoss": 19,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2421-2732-970",
+      "Name": "Adrian Griffin, Tyson Chandler, Frank Williams, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 519.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2732-2768-970",
+      "Name": "Adrian Griffin, Antonio Davis, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 507.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2201-2550-2732",
+      "Name": "Eric Piatkowski, Tyson Chandler, Eddy Curry, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 502.0,
+      "GamesPlayed": 5,
+      "DefPoss": 13,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2550-2732-970",
+      "Name": "Adrian Griffin, Antonio Davis, Kirk Hinrich, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 498.0,
+      "GamesPlayed": 6,
+      "DefPoss": 15,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2457-2550-2732",
+      "Name": "Antonio Davis, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 481.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2457-2550-2732",
+      "Name": "Adrian Griffin, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 478.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2768-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 476.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2457-2804-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Jannero Pargo, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 474.0,
+      "GamesPlayed": 1,
+      "DefPoss": 15,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2732-2736-2768-2804-2876",
+      "Name": "Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 471.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2550-2804",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 464.0,
+      "GamesPlayed": 5,
+      "DefPoss": 18,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2550-2732-2768-970",
+      "Name": "Eddy Curry, Kirk Hinrich, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 462.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2201-2550-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Eddy Curry, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 457.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1444-15-1559-2457-2876",
+      "Name": "Lawrence Funderburke, Eric Piatkowski, Adrian Griffin, Jannero Pargo, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 442.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2201-2732-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Eddy Curry, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 442.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2201-2550-2768",
+      "Name": "Eric Piatkowski, Antonio Davis, Eddy Curry, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 436.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2736-2768-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 432.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2768-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 426.0,
+      "GamesPlayed": 5,
+      "DefPoss": 13,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2736-2768-970",
+      "Name": "Adrian Griffin, Antonio Davis, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 417.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2421-2768-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Frank Williams, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 412.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2457-2804-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 402.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2457-2550-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 400.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2457-2768-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 395.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2457-2732-2804-2876",
+      "Name": "Adrian Griffin, Jannero Pargo, Ben Gordon, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 383.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2457-2732-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 382.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2732-2768-2804-970",
+      "Name": "Adrian Griffin, Ben Gordon, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 382.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2550-2732-2768",
+      "Name": "Tyson Chandler, Eddy Curry, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 372.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2732-2736-2768-970",
+      "Name": "Eddy Curry, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 372.0,
+      "GamesPlayed": 5,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2550-2768-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 371.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2550-2768-2804",
+      "Name": "Adrian Griffin, Tyson Chandler, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 369.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2550-2732-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 366.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2732-2768-2804-970",
+      "Name": "Eric Piatkowski, Ben Gordon, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 364.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2201-2550-2768",
+      "Name": "Adrian Griffin, Antonio Davis, Eddy Curry, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 354.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-213-2201-2550",
+      "Name": "Eric Piatkowski, Adrian Griffin, Antonio Davis, Eddy Curry, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 353.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2550-2736-2804",
+      "Name": "Antonio Davis, Eddy Curry, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 353.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2201-2736-2768",
+      "Name": "Eric Piatkowski, Antonio Davis, Eddy Curry, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 352.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2732-2736-2876",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 351.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2732-2768-970",
+      "Name": "Adrian Griffin, Eddy Curry, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 350.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2550-2732-2804-970",
+      "Name": "Eddy Curry, Kirk Hinrich, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 348.0,
+      "GamesPlayed": 4,
+      "DefPoss": 11,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2457-2768-970",
+      "Name": "Adrian Griffin, Tyson Chandler, Jannero Pargo, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 342.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2550-2768-2804",
+      "Name": "Adrian Griffin, Antonio Davis, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 340.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2550-2736-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Kirk Hinrich, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 337.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2550-2732-2768-2876",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Ben Gordon, Chris Duhon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 331.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2457-2732-2736-970",
+      "Name": "Antonio Davis, Jannero Pargo, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 329.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2421-2736-2768-970",
+      "Name": "Tyson Chandler, Frank Williams, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 328.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2736-2804-970",
+      "Name": "Tyson Chandler, Kirk Hinrich, Luol Deng, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 326.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2550-2732-2876",
+      "Name": "Adrian Griffin, Antonio Davis, Kirk Hinrich, Ben Gordon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 325.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2421-2768-970",
+      "Name": "Adrian Griffin, Tyson Chandler, Frank Williams, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 325.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2457-2732-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 316.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2732-2736-970",
+      "Name": "Adrian Griffin, Antonio Davis, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 307.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2550-2768-970",
+      "Name": "Adrian Griffin, Tyson Chandler, Kirk Hinrich, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 305.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2550-2732-2736-2768-970",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2457-2732-2736-2804",
+      "Name": "Antonio Davis, Jannero Pargo, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 294.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2457-2736",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 293.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2550-2804-970",
+      "Name": "Eric Piatkowski, Antonio Davis, Kirk Hinrich, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2736-2768-2804",
+      "Name": "Tyson Chandler, Eddy Curry, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2732-2736-2768-970",
+      "Name": "Adrian Griffin, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 285.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2457-2732-2768",
+      "Name": "Adrian Griffin, Tyson Chandler, Jannero Pargo, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 283.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2457-2768-2804",
+      "Name": "Eric Piatkowski, Adrian Griffin, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2550-2736-2804",
+      "Name": "Tyson Chandler, Eddy Curry, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 278.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2550-2768-2804-970",
+      "Name": "Eddy Curry, Kirk Hinrich, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 278.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2421-2732-2804",
+      "Name": "Antonio Davis, Tyson Chandler, Frank Williams, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 276.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2457-2550-2768-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2421-2732-970",
+      "Name": "Adrian Griffin, Antonio Davis, Frank Williams, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2421-2732-2804",
+      "Name": "Tyson Chandler, Eddy Curry, Frank Williams, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2201-2732-2768",
+      "Name": "Adrian Griffin, Antonio Davis, Eddy Curry, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2732-2768",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 266.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2457-2736-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 265.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2199-2550-2804",
+      "Name": "Adrian Griffin, Antonio Davis, Tyson Chandler, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2550-2732-2804",
+      "Name": "Adrian Griffin, Eddy Curry, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2732-2804",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 261.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2550-2768-970",
+      "Name": "Adrian Griffin, Eddy Curry, Kirk Hinrich, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2736-2768-2804-970",
+      "Name": "Antonio Davis, Luol Deng, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 256.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2550-2732-970",
+      "Name": "Eric Piatkowski, Antonio Davis, Kirk Hinrich, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 255.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2201-2550-2736-970",
+      "Name": "Eric Piatkowski, Eddy Curry, Kirk Hinrich, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 255.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2732-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2457-2768-2876",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Chris Duhon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2550-2736-2804-2876",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Luol Deng, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2732-2768-2804",
+      "Name": "Adrian Griffin, Antonio Davis, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 250.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2550-2736-2804",
+      "Name": "Adrian Griffin, Tyson Chandler, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 249.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1444-1559-2457-2732-2876",
+      "Name": "Lawrence Funderburke, Adrian Griffin, Jannero Pargo, Ben Gordon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2457-2804-2876",
+      "Name": "Eric Piatkowski, Adrian Griffin, Jannero Pargo, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2457-2550-2732-970",
+      "Name": "Eric Piatkowski, Jannero Pargo, Kirk Hinrich, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2768-2804-2876",
+      "Name": "Tyson Chandler, Kirk Hinrich, Chris Duhon, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2732-2736-2768",
+      "Name": "Adrian Griffin, Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 245.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2199-2732-2804",
+      "Name": "Adrian Griffin, Antonio Davis, Tyson Chandler, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2421-2732-970",
+      "Name": "Adrian Griffin, Eddy Curry, Frank Williams, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2457-2550-2804",
+      "Name": "Antonio Davis, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 243.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2201-2457-2732",
+      "Name": "Adrian Griffin, Tyson Chandler, Eddy Curry, Jannero Pargo, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 242.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2736-2768-2804",
+      "Name": "Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 242.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2421-2768-970",
+      "Name": "Eric Piatkowski, Antonio Davis, Frank Williams, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2550-2736",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2457-2768-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 235.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2457-2550-970",
+      "Name": "Adrian Griffin, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 235.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2550-2736-2804-970",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Luol Deng, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2201-2457-2736",
+      "Name": "Eric Piatkowski, Antonio Davis, Eddy Curry, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2550-2736-2768-970",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2550-2736-2804-970",
+      "Name": "Adrian Griffin, Kirk Hinrich, Luol Deng, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2736-2804-2876",
+      "Name": "Tyson Chandler, Kirk Hinrich, Luol Deng, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2550-2732-2804-2876",
+      "Name": "Eddy Curry, Kirk Hinrich, Ben Gordon, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 227.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2550-2768-970",
+      "Name": "Eric Piatkowski, Antonio Davis, Kirk Hinrich, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2457-2732-970",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 223.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2732-2736-2768-2804",
+      "Name": "Antonio Davis, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2201-2550-2732",
+      "Name": "Adrian Griffin, Antonio Davis, Eddy Curry, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2457-2550-2732-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2550-2732-2876",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Ben Gordon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 214.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2457-2768",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Jannero Pargo, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 212.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2732-2736-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 211.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2457-2768-2804-970",
+      "Name": "Eddy Curry, Jannero Pargo, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2550-2732-2876",
+      "Name": "Eric Piatkowski, Antonio Davis, Kirk Hinrich, Ben Gordon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2421-2768-2804",
+      "Name": "Antonio Davis, Tyson Chandler, Frank Williams, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2457-2732-2804-970",
+      "Name": "Tyson Chandler, Jannero Pargo, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 4,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2550-2736-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 208.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2550-2736-970",
+      "Name": "Eric Piatkowski, Antonio Davis, Kirk Hinrich, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2421-2736-2768",
+      "Name": "Antonio Davis, Tyson Chandler, Frank Williams, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-213-2199-2457",
+      "Name": "Eric Piatkowski, Adrian Griffin, Antonio Davis, Tyson Chandler, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2736-2768",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2732-2736-2768-970",
+      "Name": "Antonio Davis, Ben Gordon, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2457-2876-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Jannero Pargo, Jared Reiner, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2201-2732-2768",
+      "Name": "Eric Piatkowski, Antonio Davis, Eddy Curry, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2457-2732",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Jannero Pargo, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 201.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2421-2768-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Frank Williams, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 201.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2201-2732-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Eddy Curry, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2457-2550-2804-970",
+      "Name": "Adrian Griffin, Jannero Pargo, Kirk Hinrich, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2457-2736-2768",
+      "Name": "Adrian Griffin, Antonio Davis, Jannero Pargo, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2457-2550-970",
+      "Name": "Adrian Griffin, Eddy Curry, Jannero Pargo, Kirk Hinrich, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2457-2550-2804-970",
+      "Name": "Antonio Davis, Jannero Pargo, Kirk Hinrich, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2421-2550-2736-2768",
+      "Name": "Tyson Chandler, Frank Williams, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1444-1559-2457-2732-2804",
+      "Name": "Lawrence Funderburke, Adrian Griffin, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-213-2199-2421",
+      "Name": "Eric Piatkowski, Adrian Griffin, Antonio Davis, Tyson Chandler, Frank Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2457-2550-970",
+      "Name": "Adrian Griffin, Antonio Davis, Jannero Pargo, Kirk Hinrich, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 4,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2457-2768-2804",
+      "Name": "Tyson Chandler, Eddy Curry, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2457-2550-2768-970",
+      "Name": "Antonio Davis, Jannero Pargo, Kirk Hinrich, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1444-1559-2457-2732-970",
+      "Name": "Lawrence Funderburke, Adrian Griffin, Jannero Pargo, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-213-2768-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Antonio Davis, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2201-2550",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Eddy Curry, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 3,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2732-2804-2876",
+      "Name": "Tyson Chandler, Kirk Hinrich, Ben Gordon, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2732-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2550-2804-2876",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2457-2732-2804-970",
+      "Name": "Adrian Griffin, Jannero Pargo, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2199-2457-2550",
+      "Name": "Adrian Griffin, Antonio Davis, Tyson Chandler, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2457-2768-970",
+      "Name": "Adrian Griffin, Antonio Davis, Jannero Pargo, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2732-2768-2804",
+      "Name": "Adrian Griffin, Eddy Curry, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2457-2550",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2550-2736-2804",
+      "Name": "Antonio Davis, Tyson Chandler, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2732-2768-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2457-2736-2768-970",
+      "Name": "Tyson Chandler, Jannero Pargo, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2457-2550-2768",
+      "Name": "Antonio Davis, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2732-2768-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 159.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2457-2732-2804-970",
+      "Name": "Eric Piatkowski, Jannero Pargo, Ben Gordon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 159.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2550-2732-2736-970",
+      "Name": "Adrian Griffin, Kirk Hinrich, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2457-2732-2736",
+      "Name": "Antonio Davis, Eddy Curry, Jannero Pargo, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2550-2732-2768-2876",
+      "Name": "Antonio Davis, Kirk Hinrich, Ben Gordon, Chris Duhon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2457-2736-2768-2804",
+      "Name": "Eddy Curry, Jannero Pargo, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2550-2768-2804-970",
+      "Name": "Adrian Griffin, Kirk Hinrich, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2201-2457-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Eddy Curry, Jannero Pargo, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2457-2732-2768-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2550-2732-2768",
+      "Name": "Adrian Griffin, Antonio Davis, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2457-2550-970",
+      "Name": "Antonio Davis, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2457-2732-2768-970",
+      "Name": "Eric Piatkowski, Jannero Pargo, Ben Gordon, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2550-2768",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2457-2550-2732",
+      "Name": "Antonio Davis, Eddy Curry, Jannero Pargo, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-213-2201-2768",
+      "Name": "Eric Piatkowski, Adrian Griffin, Antonio Davis, Eddy Curry, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2550-2732-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2201-2768-2804-970",
+      "Name": "Eric Piatkowski, Eddy Curry, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2457-2732-970",
+      "Name": "Adrian Griffin, Antonio Davis, Jannero Pargo, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-213-2550-2732",
+      "Name": "Eric Piatkowski, Adrian Griffin, Antonio Davis, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2550-2768",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2550-2804-970",
+      "Name": "Adrian Griffin, Tyson Chandler, Kirk Hinrich, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2550-2732-2804-2876",
+      "Name": "Adrian Griffin, Kirk Hinrich, Ben Gordon, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2201-2736-2768-2804",
+      "Name": "Eric Piatkowski, Eddy Curry, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2732-2768-2876",
+      "Name": "Adrian Griffin, Antonio Davis, Ben Gordon, Chris Duhon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2457-2550-2732",
+      "Name": "Eric Piatkowski, Antonio Davis, Jannero Pargo, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2732-2736-2804",
+      "Name": "Eric Piatkowski, Tyson Chandler, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2732-2768-2804-2876",
+      "Name": "Tyson Chandler, Ben Gordon, Chris Duhon, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2201-2457-2550-2736",
+      "Name": "Tyson Chandler, Eddy Curry, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2457-2732-2804",
+      "Name": "Antonio Davis, Eddy Curry, Jannero Pargo, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2457-2550-2768",
+      "Name": "Adrian Griffin, Antonio Davis, Jannero Pargo, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2457-2732-970",
+      "Name": "Eric Piatkowski, Antonio Davis, Jannero Pargo, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2550-2732-2736-970",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Ben Gordon, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2199-2457-2768",
+      "Name": "Adrian Griffin, Antonio Davis, Tyson Chandler, Jannero Pargo, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2199-2550-2768",
+      "Name": "Adrian Griffin, Antonio Davis, Tyson Chandler, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2550-2732-2768-2804",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2550-2736-2768-2876",
+      "Name": "Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2550-2736-2768-2804",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2457-2768-970",
+      "Name": "Eric Piatkowski, Antonio Davis, Jannero Pargo, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2457-2768-2804",
+      "Name": "Antonio Davis, Eddy Curry, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2550-2736-2768-2804",
+      "Name": "Eddy Curry, Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2457-2732-970",
+      "Name": "Adrian Griffin, Eddy Curry, Jannero Pargo, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2457-2550-2804-970",
+      "Name": "Tyson Chandler, Jannero Pargo, Kirk Hinrich, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2550-2804-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Kirk Hinrich, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2457-2732-2876",
+      "Name": "Eric Piatkowski, Tyson Chandler, Jannero Pargo, Ben Gordon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2201-2457-2736-2768-970",
+      "Name": "Eddy Curry, Jannero Pargo, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2736-2768-970",
+      "Name": "Eric Piatkowski, Antonio Davis, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2457-2732-2768-2804",
+      "Name": "Antonio Davis, Jannero Pargo, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2736-2768-2804",
+      "Name": "Antonio Davis, Tyson Chandler, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2732-2736-2768-2876",
+      "Name": "Eric Piatkowski, Ben Gordon, Luol Deng, Chris Duhon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2201-2550-2768",
+      "Name": "Eric Piatkowski, Adrian Griffin, Eddy Curry, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2550-2732-2768-2804",
+      "Name": "Antonio Davis, Kirk Hinrich, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 4,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2550-2768-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Kirk Hinrich, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1444-15-2550-2732-970",
+      "Name": "Lawrence Funderburke, Eric Piatkowski, Kirk Hinrich, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2550-2732-2736",
+      "Name": "Adrian Griffin, Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2201-2457-2550-2736",
+      "Name": "Antonio Davis, Eddy Curry, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2421-2736-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Frank Williams, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2736-2768-2804-970",
+      "Name": "Eric Piatkowski, Luol Deng, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2550-2732-2768",
+      "Name": "Adrian Griffin, Tyson Chandler, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2550-2736-2768-2804-2876",
+      "Name": "Kirk Hinrich, Luol Deng, Chris Duhon, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2550-2736-2876",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Luol Deng, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2550-2768-2876",
+      "Name": "Eric Piatkowski, Antonio Davis, Kirk Hinrich, Chris Duhon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2457-2732-2768-2804",
+      "Name": "Adrian Griffin, Jannero Pargo, Ben Gordon, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2457-2804",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Jannero Pargo, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2550-2732-970",
+      "Name": "Adrian Griffin, Eddy Curry, Kirk Hinrich, Ben Gordon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2457-2550-2804",
+      "Name": "Adrian Griffin, Tyson Chandler, Jannero Pargo, Kirk Hinrich, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2550-2736-2768-2876-970",
+      "Name": "Kirk Hinrich, Luol Deng, Chris Duhon, Jared Reiner, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-213-2768-2804",
+      "Name": "Eric Piatkowski, Adrian Griffin, Antonio Davis, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2736-2768",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2201-2736-2768",
+      "Name": "Adrian Griffin, Tyson Chandler, Eddy Curry, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2457-2732-2736-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-213-2736-2768",
+      "Name": "Eric Piatkowski, Adrian Griffin, Antonio Davis, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2550-2732",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Kirk Hinrich, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2768-2804",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2457-2768-2804-970",
+      "Name": "Antonio Davis, Jannero Pargo, Chris Duhon, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2201-2457-2550",
+      "Name": "Adrian Griffin, Tyson Chandler, Eddy Curry, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2550-2732-2804-2876",
+      "Name": "Eric Piatkowski, Kirk Hinrich, Ben Gordon, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2550-2736-2768",
+      "Name": "Adrian Griffin, Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2457-2768-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2201-2457-2768",
+      "Name": "Adrian Griffin, Antonio Davis, Eddy Curry, Jannero Pargo, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2201-2550-2768",
+      "Name": "Adrian Griffin, Tyson Chandler, Eddy Curry, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2457-2550-2732-2804",
+      "Name": "Adrian Griffin, Jannero Pargo, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2457-2732-2876",
+      "Name": "Adrian Griffin, Tyson Chandler, Jannero Pargo, Ben Gordon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1444-213-2457-2768-2804",
+      "Name": "Lawrence Funderburke, Antonio Davis, Jannero Pargo, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2550-2732-2736",
+      "Name": "Adrian Griffin, Eddy Curry, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2732-2736-2768-2876",
+      "Name": "Tyson Chandler, Ben Gordon, Luol Deng, Chris Duhon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2736-2768-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2199-2550-2736",
+      "Name": "Adrian Griffin, Antonio Davis, Tyson Chandler, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2550-2732-2876",
+      "Name": "Adrian Griffin, Tyson Chandler, Kirk Hinrich, Ben Gordon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2550-2736-2804",
+      "Name": "Adrian Griffin, Eddy Curry, Kirk Hinrich, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2457-2804-970",
+      "Name": "Eric Piatkowski, Antonio Davis, Jannero Pargo, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2732-2768-2876",
+      "Name": "Adrian Griffin, Tyson Chandler, Ben Gordon, Chris Duhon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2199-2421-2732-2736",
+      "Name": "Antonio Davis, Tyson Chandler, Frank Williams, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2421-2736-970",
+      "Name": "Adrian Griffin, Eddy Curry, Frank Williams, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 51.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2457-2550-2732-2804",
+      "Name": "Antonio Davis, Jannero Pargo, Kirk Hinrich, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2457-2732-2804-2876",
+      "Name": "Antonio Davis, Jannero Pargo, Ben Gordon, Andres Nocioni, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 49.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2199-2201-2768",
+      "Name": "Eric Piatkowski, Adrian Griffin, Tyson Chandler, Eddy Curry, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2457-2736-2768-2804",
+      "Name": "Tyson Chandler, Jannero Pargo, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2457-2736-2768-2804",
+      "Name": "Antonio Davis, Jannero Pargo, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 44.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-213-2201-2457",
+      "Name": "Eric Piatkowski, Adrian Griffin, Antonio Davis, Eddy Curry, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2201-2550-2732-2736",
+      "Name": "Eric Piatkowski, Eddy Curry, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 41.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1444-2550-2732-2768-2876",
+      "Name": "Lawrence Funderburke, Kirk Hinrich, Ben Gordon, Chris Duhon, Jared Reiner",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2199-2421-2736-2768-2804",
+      "Name": "Tyson Chandler, Frank Williams, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-213-2550-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Antonio Davis, Kirk Hinrich, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 34.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "213-2457-2736-2768-970",
+      "Name": "Antonio Davis, Jannero Pargo, Luol Deng, Chris Duhon, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2550-2732-2736-2768-2804",
+      "Name": "Kirk Hinrich, Ben Gordon, Luol Deng, Chris Duhon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2550-2732-2736",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Ben Gordon, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 29.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2550-2732-2768",
+      "Name": "Eric Piatkowski, Antonio Davis, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2201-2457-2550",
+      "Name": "Eric Piatkowski, Adrian Griffin, Eddy Curry, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 26.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2457-2732-2768",
+      "Name": "Eric Piatkowski, Antonio Davis, Jannero Pargo, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 25.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2457-2804-970",
+      "Name": "Adrian Griffin, Antonio Davis, Jannero Pargo, Andres Nocioni, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 24.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2199-2457-2804",
+      "Name": "Eric Piatkowski, Antonio Davis, Tyson Chandler, Jannero Pargo, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 23.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-213-2201-2421-2732",
+      "Name": "Adrian Griffin, Antonio Davis, Eddy Curry, Frank Williams, Ben Gordon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 22.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1444-15-2457-2550-970",
+      "Name": "Lawrence Funderburke, Eric Piatkowski, Jannero Pargo, Kirk Hinrich, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 15.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2421-2732-2804",
+      "Name": "Adrian Griffin, Tyson Chandler, Frank Williams, Ben Gordon, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 15.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-1559-2201-2550-970",
+      "Name": "Eric Piatkowski, Adrian Griffin, Eddy Curry, Kirk Hinrich, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 14.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2201-2550-2732-2768",
+      "Name": "Eric Piatkowski, Eddy Curry, Kirk Hinrich, Ben Gordon, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 14.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "2732-2736-2768-2876-970",
+      "Name": "Ben Gordon, Luol Deng, Chris Duhon, Jared Reiner, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 14.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2201-2550-2736-970",
+      "Name": "Adrian Griffin, Eddy Curry, Kirk Hinrich, Luol Deng, Othella Harrington",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-2199-2550-2736-2768",
+      "Name": "Eric Piatkowski, Tyson Chandler, Kirk Hinrich, Luol Deng, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2550-2732-2736-2804",
+      "Name": "Adrian Griffin, Kirk Hinrich, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 10.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2199-2201-2421-2768",
+      "Name": "Adrian Griffin, Tyson Chandler, Eddy Curry, Frank Williams, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "1559-2457-2732-2736-2804",
+      "Name": "Adrian Griffin, Jannero Pargo, Ben Gordon, Luol Deng, Andres Nocioni",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2004-05",
+      "EntityId": "15-213-2457-2550-2768",
+      "Name": "Eric Piatkowski, Antonio Davis, Jannero Pargo, Kirk Hinrich, Chris Duhon",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    }
+  ]
+}

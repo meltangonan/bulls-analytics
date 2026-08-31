@@ -1,0 +1,4879 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2018-19",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2018-19",
+    "RowsReturned": 500,
+    "RowsWithDefPoss": 500,
+    "RowsSkippedMissingMetrics": 14,
+    "LastRowDefPoss": 1,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628976-203200-203897-203953",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13705.0,
+      "GamesPlayed": 17,
+      "DefPoss": 476,
+      "OpponentPoints": 511
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-201577-203490-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Robin Lopez, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12251.0,
+      "GamesPlayed": 12,
+      "DefPoss": 426,
+      "OpponentPoints": 507
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1628374-1628976-203200",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6074.0,
+      "GamesPlayed": 8,
+      "DefPoss": 194,
+      "OpponentPoints": 209
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628976-203200-203897-203953",
+      "Name": "Cameron Payne, Wendell Carter Jr., Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5993.0,
+      "GamesPlayed": 13,
+      "DefPoss": 197,
+      "OpponentPoints": 244
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1628374-201577-203897",
+      "Name": "Kris Dunn, Wayne Selden, Lauri Markkanen, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5460.0,
+      "GamesPlayed": 13,
+      "DefPoss": 181,
+      "OpponentPoints": 191
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-1628976-1628990-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Wendell Carter Jr., Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5058.0,
+      "GamesPlayed": 6,
+      "DefPoss": 172,
+      "OpponentPoints": 200
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-1628976-203200-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4805.0,
+      "GamesPlayed": 7,
+      "DefPoss": 162,
+      "OpponentPoints": 181
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-1628976-203200-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Wendell Carter Jr., Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4315.0,
+      "GamesPlayed": 6,
+      "DefPoss": 144,
+      "OpponentPoints": 152
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1628374-1628990-203897",
+      "Name": "Bobby Portis, Kris Dunn, Lauri Markkanen, Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3393.0,
+      "GamesPlayed": 6,
+      "DefPoss": 117,
+      "OpponentPoints": 142
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-201577-203490-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Robin Lopez, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3174.0,
+      "GamesPlayed": 9,
+      "DefPoss": 102,
+      "OpponentPoints": 86
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-201577-203897",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3108.0,
+      "GamesPlayed": 8,
+      "DefPoss": 109,
+      "OpponentPoints": 122
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628976-1628990-203200-203897",
+      "Name": "Cameron Payne, Wendell Carter Jr., Chandler Hutchison, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2931.0,
+      "GamesPlayed": 7,
+      "DefPoss": 104,
+      "OpponentPoints": 114
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-1628990-201577-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Chandler Hutchison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2696.0,
+      "GamesPlayed": 5,
+      "DefPoss": 95,
+      "OpponentPoints": 94
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1628976-203200-203897",
+      "Name": "Cameron Payne, Bobby Portis, Wendell Carter Jr., Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2396.0,
+      "GamesPlayed": 4,
+      "DefPoss": 82,
+      "OpponentPoints": 96
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-201577-203200-203897-203953",
+      "Name": "Ryan Arcidiacono, Robin Lopez, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2337.0,
+      "GamesPlayed": 12,
+      "DefPoss": 83,
+      "OpponentPoints": 82
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627789-1627853-1627885",
+      "Name": "Cristiano Felicio, Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2322.0,
+      "GamesPlayed": 11,
+      "DefPoss": 82,
+      "OpponentPoints": 81
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-1628469-201577",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2185.0,
+      "GamesPlayed": 4,
+      "DefPoss": 74,
+      "OpponentPoints": 78
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1628374-201577-203897",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2154.0,
+      "GamesPlayed": 9,
+      "DefPoss": 73,
+      "OpponentPoints": 95
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-1627885-1628469-1628990",
+      "Name": "Cameron Payne, Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2043.0,
+      "GamesPlayed": 8,
+      "DefPoss": 78,
+      "OpponentPoints": 82
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627853-1627885-201577",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2019.0,
+      "GamesPlayed": 11,
+      "DefPoss": 71,
+      "OpponentPoints": 103
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627789-1627885-1628469",
+      "Name": "Cristiano Felicio, Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1851.0,
+      "GamesPlayed": 4,
+      "DefPoss": 68,
+      "OpponentPoints": 71
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1628374-201577-203490",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Robin Lopez, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1714.0,
+      "GamesPlayed": 2,
+      "DefPoss": 58,
+      "OpponentPoints": 72
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1628374-203490-203897",
+      "Name": "Kris Dunn, Wayne Selden, Lauri Markkanen, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1462.0,
+      "GamesPlayed": 10,
+      "DefPoss": 57,
+      "OpponentPoints": 80
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1628469-1628990-203953",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Antonio Blakeney, Chandler Hutchison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1388.0,
+      "GamesPlayed": 5,
+      "DefPoss": 45,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628990-201577-203200",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1373.0,
+      "GamesPlayed": 5,
+      "DefPoss": 43,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627789-1627853-1628469",
+      "Name": "Cristiano Felicio, Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1369.0,
+      "GamesPlayed": 3,
+      "DefPoss": 46,
+      "OpponentPoints": 51
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627782-1627789-1627885-201577",
+      "Name": "Walter Lemon Jr., Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1354.0,
+      "GamesPlayed": 3,
+      "DefPoss": 49,
+      "OpponentPoints": 60
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1628469-203200-203953",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Antonio Blakeney, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1338.0,
+      "GamesPlayed": 6,
+      "DefPoss": 48,
+      "OpponentPoints": 60
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627789-1628374-201577-203897",
+      "Name": "Kris Dunn, Timothe Luwawu-Cabarrot, Lauri Markkanen, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1333.0,
+      "GamesPlayed": 3,
+      "DefPoss": 49,
+      "OpponentPoints": 64
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1628374-203490-203897",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1310.0,
+      "GamesPlayed": 5,
+      "DefPoss": 44,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-203200-203897-203953",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1293.0,
+      "GamesPlayed": 9,
+      "DefPoss": 43,
+      "OpponentPoints": 55
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627782-1627853-1627885-203953",
+      "Name": "Bobby Portis, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1232.0,
+      "GamesPlayed": 5,
+      "DefPoss": 44,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-201577-203490-203897",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Robin Lopez, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1224.0,
+      "GamesPlayed": 6,
+      "DefPoss": 41,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1627885-1628469",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1142.0,
+      "GamesPlayed": 4,
+      "DefPoss": 40,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-201577-203897",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1142.0,
+      "GamesPlayed": 8,
+      "DefPoss": 37,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1628976-203200-203897",
+      "Name": "Bobby Portis, Kris Dunn, Wendell Carter Jr., Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 35,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627853-1628976-203200-203953",
+      "Name": "Cameron Payne, Ryan Arcidiacono, Wendell Carter Jr., Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1123.0,
+      "GamesPlayed": 3,
+      "DefPoss": 38,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627782-1628374-203897",
+      "Name": "Bobby Portis, Kris Dunn, Wayne Selden, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1059.0,
+      "GamesPlayed": 3,
+      "DefPoss": 35,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1627885-1628374-201577",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1058.0,
+      "GamesPlayed": 6,
+      "DefPoss": 30,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1628469-1628990-203897",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Antonio Blakeney, Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1031.0,
+      "GamesPlayed": 3,
+      "DefPoss": 34,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628469-201577-203200-203953",
+      "Name": "Shaquille Harrison, Antonio Blakeney, Robin Lopez, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1021.0,
+      "GamesPlayed": 6,
+      "DefPoss": 37,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1627885-1629102-201577",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1019.0,
+      "GamesPlayed": 2,
+      "DefPoss": 36,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-1628976-203200-203953",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Wendell Carter Jr., Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1014.0,
+      "GamesPlayed": 7,
+      "DefPoss": 36,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628990-201577-203200-203897",
+      "Name": "Ryan Arcidiacono, Chandler Hutchison, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1014.0,
+      "GamesPlayed": 4,
+      "DefPoss": 36,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1627885-1628469-203953",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 999.0,
+      "GamesPlayed": 3,
+      "DefPoss": 37,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628990-201577-203953",
+      "Name": "Cameron Payne, Shaquille Harrison, Chandler Hutchison, Robin Lopez, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 979.0,
+      "GamesPlayed": 4,
+      "DefPoss": 32,
+      "OpponentPoints": 52
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1628469-1628990-203200",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Antonio Blakeney, Chandler Hutchison, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 972.0,
+      "GamesPlayed": 4,
+      "DefPoss": 33,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627789-1627853-1628374-201577-203897",
+      "Name": "Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Lauri Markkanen, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 961.0,
+      "GamesPlayed": 1,
+      "DefPoss": 32,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-201577-203200-203953",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Robin Lopez, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 957.0,
+      "GamesPlayed": 3,
+      "DefPoss": 34,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1627885-1628469-1628990",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 951.0,
+      "GamesPlayed": 4,
+      "DefPoss": 33,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627853-1627885-1628374",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 928.0,
+      "GamesPlayed": 9,
+      "DefPoss": 32,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628469-1628990-201577-203897",
+      "Name": "Shaquille Harrison, Antonio Blakeney, Chandler Hutchison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 918.0,
+      "GamesPlayed": 4,
+      "DefPoss": 34,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-201577-203200-203897-203953",
+      "Name": "Cameron Payne, Robin Lopez, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 906.0,
+      "GamesPlayed": 3,
+      "DefPoss": 29,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1627885-1628469-203953",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 879.0,
+      "GamesPlayed": 3,
+      "DefPoss": 35,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-1628976-203897",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 850.0,
+      "GamesPlayed": 5,
+      "DefPoss": 28,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627782-1627885-1628959-201577",
+      "Name": "Walter Lemon Jr., Wayne Selden, Shaquille Harrison, Rawle Alkins, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 846.0,
+      "GamesPlayed": 2,
+      "DefPoss": 29,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627789-1627853-1627885-201577-203960",
+      "Name": "Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 845.0,
+      "GamesPlayed": 3,
+      "DefPoss": 28,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1629102-203960",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Brandon Sampson, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 841.0,
+      "GamesPlayed": 2,
+      "DefPoss": 26,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1627885-203897-203953",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Shaquille Harrison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 825.0,
+      "GamesPlayed": 3,
+      "DefPoss": 29,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627789-1627885-201577-203960",
+      "Name": "Walter Lemon Jr., Timothe Luwawu-Cabarrot, Shaquille Harrison, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 820.0,
+      "GamesPlayed": 3,
+      "DefPoss": 33,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627885-1628469-1629102-201577",
+      "Name": "Wayne Selden, Shaquille Harrison, Antonio Blakeney, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 810.0,
+      "GamesPlayed": 1,
+      "DefPoss": 25,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628469-1628990-201577-203200",
+      "Name": "Shaquille Harrison, Antonio Blakeney, Chandler Hutchison, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 803.0,
+      "GamesPlayed": 4,
+      "DefPoss": 31,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628990-201577-203897",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 801.0,
+      "GamesPlayed": 3,
+      "DefPoss": 24,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628976-1628990-203897-203953",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Chandler Hutchison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 797.0,
+      "GamesPlayed": 4,
+      "DefPoss": 25,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627789-1627885-1629102",
+      "Name": "Cristiano Felicio, Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 749.0,
+      "GamesPlayed": 2,
+      "DefPoss": 25,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-201577-203200-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 729.0,
+      "GamesPlayed": 4,
+      "DefPoss": 26,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-203200-203897-203953",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 725.0,
+      "GamesPlayed": 2,
+      "DefPoss": 24,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-1628990-201577",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 722.0,
+      "GamesPlayed": 3,
+      "DefPoss": 22,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627853-1628374-201577",
+      "Name": "Kris Dunn, Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 721.0,
+      "GamesPlayed": 1,
+      "DefPoss": 23,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627782-1627885-201577-203960",
+      "Name": "Walter Lemon Jr., Wayne Selden, Shaquille Harrison, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 719.0,
+      "GamesPlayed": 1,
+      "DefPoss": 22,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627782-1627885-203953",
+      "Name": "Bobby Portis, Kris Dunn, Wayne Selden, Shaquille Harrison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 713.0,
+      "GamesPlayed": 5,
+      "DefPoss": 25,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628469-201577-203953",
+      "Name": "Cameron Payne, Shaquille Harrison, Antonio Blakeney, Robin Lopez, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 680.0,
+      "GamesPlayed": 4,
+      "DefPoss": 27,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628976-1628990-203897-203953",
+      "Name": "Cameron Payne, Wendell Carter Jr., Chandler Hutchison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 677.0,
+      "GamesPlayed": 6,
+      "DefPoss": 20,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-201577-203897-203953",
+      "Name": "Kris Dunn, Wayne Selden, Robin Lopez, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 662.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627782-1627853-1627885-1628374",
+      "Name": "Bobby Portis, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 647.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628976-1628990-203200-203897",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Chandler Hutchison, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 643.0,
+      "GamesPlayed": 7,
+      "DefPoss": 25,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1627885-203490",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 638.0,
+      "GamesPlayed": 5,
+      "DefPoss": 22,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-201577-203490-203897",
+      "Name": "Kris Dunn, Wayne Selden, Robin Lopez, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 633.0,
+      "GamesPlayed": 3,
+      "DefPoss": 23,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627885-1628374-201577",
+      "Name": "Kris Dunn, Wayne Selden, Shaquille Harrison, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 619.0,
+      "GamesPlayed": 5,
+      "DefPoss": 22,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627885-1628469-203897-203953",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 615.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628469-1628990-201577",
+      "Name": "Kris Dunn, Shaquille Harrison, Antonio Blakeney, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 599.0,
+      "GamesPlayed": 2,
+      "DefPoss": 20,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627853-1628374-203897",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 598.0,
+      "GamesPlayed": 6,
+      "DefPoss": 23,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-201577-203897-203953",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Robin Lopez, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 596.0,
+      "GamesPlayed": 4,
+      "DefPoss": 18,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627853-201577-203897",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 593.0,
+      "GamesPlayed": 6,
+      "DefPoss": 21,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-203200-203897-203953",
+      "Name": "Cameron Payne, Cristiano Felicio, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 587.0,
+      "GamesPlayed": 6,
+      "DefPoss": 21,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628990-201577-203897",
+      "Name": "Cameron Payne, Shaquille Harrison, Chandler Hutchison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 583.0,
+      "GamesPlayed": 1,
+      "DefPoss": 19,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627789-1627853-1629102",
+      "Name": "Cristiano Felicio, Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 583.0,
+      "GamesPlayed": 2,
+      "DefPoss": 22,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1628990-203897-203953",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Chandler Hutchison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 576.0,
+      "GamesPlayed": 5,
+      "DefPoss": 20,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-201577-203200-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 564.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-1628990-201577-203897",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Chandler Hutchison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 557.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627789-1627853-1628959",
+      "Name": "Cristiano Felicio, Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Rawle Alkins",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 556.0,
+      "GamesPlayed": 1,
+      "DefPoss": 20,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628469-1628990-201577",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 555.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1626245-1627885-1628469-1628990",
+      "Name": "Bobby Portis, Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 554.0,
+      "GamesPlayed": 2,
+      "DefPoss": 19,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628469-201577-203953",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Robin Lopez, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 554.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-203200-203897-203953",
+      "Name": "Cameron Payne, Bobby Portis, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 550.0,
+      "GamesPlayed": 2,
+      "DefPoss": 20,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627789-1627885-1628374",
+      "Name": "Cristiano Felicio, Kris Dunn, Timothe Luwawu-Cabarrot, Shaquille Harrison, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 549.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627782-1627789-1627853",
+      "Name": "Cristiano Felicio, Kris Dunn, Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 546.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-1628976-203897-203953",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Wendell Carter Jr., Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 541.0,
+      "GamesPlayed": 7,
+      "DefPoss": 18,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627789-1627885-1628374",
+      "Name": "Kris Dunn, Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 532.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1627885-1628374-201577",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 532.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1628469-1628990",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Antonio Blakeney, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 526.0,
+      "GamesPlayed": 1,
+      "DefPoss": 17,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628976-203200-203953",
+      "Name": "Cameron Payne, Shaquille Harrison, Wendell Carter Jr., Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 525.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1628469-201577-203897",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Antonio Blakeney, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 525.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1627739-201577-203200",
+      "Name": "Cameron Payne, Bobby Portis, Kris Dunn, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 520.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627782-1627789-1627885",
+      "Name": "Cristiano Felicio, Kris Dunn, Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 518.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627885-1628469-1629102",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Shaquille Harrison, Antonio Blakeney, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 516.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1627885-1628374-203490",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 515.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627789-1628469-1628959",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Timothe Luwawu-Cabarrot, Antonio Blakeney, Rawle Alkins",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 508.0,
+      "GamesPlayed": 1,
+      "DefPoss": 16,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627885-201577-203953",
+      "Name": "Bobby Portis, Kris Dunn, Shaquille Harrison, Robin Lopez, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 505.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1628374-201577-203200",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 505.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1627885-203490",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 504.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628976-203200-203897-203953",
+      "Name": "Kris Dunn, Wendell Carter Jr., Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 504.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1627739-1627885-201577",
+      "Name": "Cameron Payne, Bobby Portis, Kris Dunn, Shaquille Harrison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 500.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1627885-1628990-201577",
+      "Name": "Cameron Payne, Bobby Portis, Shaquille Harrison, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 495.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627853-1628374-203897",
+      "Name": "Bobby Portis, Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 492.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1627885-1628374",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 491.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627885-1628959-203960",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Shaquille Harrison, Rawle Alkins, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 480.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-1628976-1628990-203897",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Wendell Carter Jr., Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 474.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-201577-203200-203953",
+      "Name": "Cameron Payne, Shaquille Harrison, Robin Lopez, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 468.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-1627885-1628469-203953",
+      "Name": "Cameron Payne, Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 464.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-1628990-201577-203200",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Chandler Hutchison, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 459.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1626245-1627853-1627885-1629102",
+      "Name": "Bobby Portis, Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 458.0,
+      "GamesPlayed": 1,
+      "DefPoss": 15,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-1628976-203897-203953",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 447.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1628374-1628976-203897",
+      "Name": "Kris Dunn, Wayne Selden, Lauri Markkanen, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 435.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627789-1628959-1629102",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Timothe Luwawu-Cabarrot, Rawle Alkins, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 426.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627789-1627885-203490",
+      "Name": "Cristiano Felicio, Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 425.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1628469-1629102-203960",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Antonio Blakeney, Brandon Sampson, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 425.0,
+      "GamesPlayed": 1,
+      "DefPoss": 15,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1628959-1629102-203960",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Rawle Alkins, Brandon Sampson, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 424.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627782-1628959-1629102",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Wayne Selden, Rawle Alkins, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 418.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627885-1628374-203897",
+      "Name": "Bobby Portis, Kris Dunn, Shaquille Harrison, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 417.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-1628469-201577",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 415.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1628990-201577-203953",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Chandler Hutchison, Robin Lopez, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 408.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-1628469-1628976-1628990",
+      "Name": "Kris Dunn, Lauri Markkanen, Antonio Blakeney, Wendell Carter Jr., Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 406.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-203200-203897",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 405.0,
+      "GamesPlayed": 1,
+      "DefPoss": 15,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1627885-201577-203490",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Robin Lopez, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 405.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627782-1628374-1628990",
+      "Name": "Bobby Portis, Kris Dunn, Wayne Selden, Lauri Markkanen, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 402.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627789-1629102-203960",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Timothe Luwawu-Cabarrot, Brandon Sampson, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 400.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628976-1628990-203897-203953",
+      "Name": "Shaquille Harrison, Wendell Carter Jr., Chandler Hutchison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 396.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-203897-203953",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 386.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-203200-203897-203953",
+      "Name": "Bobby Portis, Kris Dunn, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 383.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627789-1627853-203490",
+      "Name": "Cristiano Felicio, Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 382.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-201577-203490-203897",
+      "Name": "Kris Dunn, Shaquille Harrison, Robin Lopez, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 375.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627853-1627885-203490",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 375.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-203490-203897",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 375.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-1628469-1628976-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Antonio Blakeney, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 373.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-1628990-203200",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Chandler Hutchison, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 372.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1627885-201577-203953",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Robin Lopez, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 371.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627885-201577-203897",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 367.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627789-1627885-201577",
+      "Name": "Kris Dunn, Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 366.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628469-1628990-201577-203953",
+      "Name": "Shaquille Harrison, Antonio Blakeney, Chandler Hutchison, Robin Lopez, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 364.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1629102-201577-203960",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Brandon Sampson, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 352.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628990-201577-203897-203953",
+      "Name": "Ryan Arcidiacono, Chandler Hutchison, Robin Lopez, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 351.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627853-1628374-201577-203200",
+      "Name": "Cameron Payne, Ryan Arcidiacono, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 349.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1628976-1628990-203200-203897-203953",
+      "Name": "Wendell Carter Jr., Chandler Hutchison, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 348.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628976-203200-203897-203953",
+      "Name": "Shaquille Harrison, Wendell Carter Jr., Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-201577-203200-203897",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 342.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627885-201577-203897",
+      "Name": "Bobby Portis, Kris Dunn, Shaquille Harrison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 340.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627782-1627885-203490",
+      "Name": "Cristiano Felicio, Kris Dunn, Wayne Selden, Shaquille Harrison, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 339.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-1627853-1627885-1628990",
+      "Name": "Cameron Payne, Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 338.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1628469-203897-203953",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Antonio Blakeney, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 335.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1628469-201577",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 335.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1627885-1628469-201577",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1628959-1629102-203960",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Rawle Alkins, Brandon Sampson, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-1628990-203897-203953",
+      "Name": "Cameron Payne, Cristiano Felicio, Chandler Hutchison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 329.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627853-1628976-203200-203897",
+      "Name": "Cameron Payne, Ryan Arcidiacono, Wendell Carter Jr., Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 329.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627789-1628374-1628469-201577",
+      "Name": "Kris Dunn, Timothe Luwawu-Cabarrot, Lauri Markkanen, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 329.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627782-1627853-1628374",
+      "Name": "Bobby Portis, Kris Dunn, Wayne Selden, Ryan Arcidiacono, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 328.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627853-201577-203200",
+      "Name": "Bobby Portis, Kris Dunn, Ryan Arcidiacono, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 328.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-201577-203490",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Robin Lopez, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 328.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627853-201577-203200-203953",
+      "Name": "Cameron Payne, Ryan Arcidiacono, Robin Lopez, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 326.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1627885-203897",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 317.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1627885-1628374-1629102",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 316.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627885-1629102-203953",
+      "Name": "Bobby Portis, Kris Dunn, Shaquille Harrison, Brandon Sampson, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 308.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627885-1628959-201577-203960",
+      "Name": "Walter Lemon Jr., Shaquille Harrison, Rawle Alkins, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 308.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1628374-1628976-1628990",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 307.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1627885-1628374-1628469",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 305.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627789-1627853-203897",
+      "Name": "Cristiano Felicio, Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 304.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628374-203200-203953",
+      "Name": "Cameron Payne, Shaquille Harrison, Lauri Markkanen, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 301.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-1628976-1628990-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 301.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-201577-203200",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627782-1628959-1629102-201577",
+      "Name": "Walter Lemon Jr., Wayne Selden, Rawle Alkins, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 299.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627782-1627853-203897-203953",
+      "Name": "Bobby Portis, Wayne Selden, Ryan Arcidiacono, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 298.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627885-201577-203490",
+      "Name": "Kris Dunn, Wayne Selden, Shaquille Harrison, Robin Lopez, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 297.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628469-201577-203897-203953",
+      "Name": "Shaquille Harrison, Antonio Blakeney, Robin Lopez, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 297.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-1628976-203200-203897",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Wendell Carter Jr., Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 295.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1628469-1629102",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Antonio Blakeney, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627853-1628374-203200",
+      "Name": "Bobby Portis, Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 291.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1627885-1628374-1628469",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 287.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628976-1628990-203897-203953",
+      "Name": "Kris Dunn, Wendell Carter Jr., Chandler Hutchison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 286.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1628990-203897-203953",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Chandler Hutchison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 283.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1627885-1628374-1628990",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 281.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1628374-1629102",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627885-1628469-1628990",
+      "Name": "Cristiano Felicio, Wayne Selden, Shaquille Harrison, Antonio Blakeney, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-1628469-1628976",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney, Wendell Carter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-1628469-1628990",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-1628976-203200",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-1628990-203897-203953",
+      "Name": "Kris Dunn, Lauri Markkanen, Chandler Hutchison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1627885-1628374-203200",
+      "Name": "Cameron Payne, Bobby Portis, Shaquille Harrison, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-201577-203200-203897",
+      "Name": "Cameron Payne, Bobby Portis, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627885-1628374-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Shaquille Harrison, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628976-203897-203953",
+      "Name": "Cameron Payne, Shaquille Harrison, Wendell Carter Jr., Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627885-1628469-1628959-1628990",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Rawle Alkins, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628990-201577-203200-203953",
+      "Name": "Cameron Payne, Chandler Hutchison, Robin Lopez, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 267.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627885-1628990-203953",
+      "Name": "Bobby Portis, Kris Dunn, Shaquille Harrison, Chandler Hutchison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 266.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1627885-1628374-1628469",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 266.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1626245-1627782-1627853-203897",
+      "Name": "Bobby Portis, Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 264.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-201577-203200-203897",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 264.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627853-1628374-203897",
+      "Name": "Kris Dunn, Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1628374-201577-203897",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-1628976-1628990-203953",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Wendell Carter Jr., Chandler Hutchison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1627885-203960",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627885-1628469-201577",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627853-1627885-1628374",
+      "Name": "Cristiano Felicio, Kris Dunn, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 258.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627782-1628469-1629102",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Wayne Selden, Antonio Blakeney, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-1628469-1628990-201577",
+      "Name": "Kris Dunn, Lauri Markkanen, Antonio Blakeney, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1627885-1628374-1628990",
+      "Name": "Cameron Payne, Bobby Portis, Shaquille Harrison, Lauri Markkanen, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 250.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-1628990-203897-203953",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 250.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627789-1627885-1628469",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Timothe Luwawu-Cabarrot, Shaquille Harrison, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 241.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628990-201577-203200",
+      "Name": "Cameron Payne, Shaquille Harrison, Chandler Hutchison, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1627885-201577-203200",
+      "Name": "Cameron Payne, Bobby Portis, Shaquille Harrison, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 239.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-1628469-203200-203953",
+      "Name": "Cameron Payne, Cristiano Felicio, Antonio Blakeney, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 239.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627782-1627853-1628469-1628990",
+      "Name": "Bobby Portis, Wayne Selden, Ryan Arcidiacono, Antonio Blakeney, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 236.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-201577-203200-203897",
+      "Name": "Bobby Portis, Kris Dunn, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 235.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1628374-1628990-201577",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1628469-203200-203897",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Antonio Blakeney, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 231.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627885-1628374-1629102",
+      "Name": "Bobby Portis, Kris Dunn, Shaquille Harrison, Lauri Markkanen, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-201577-203200-203897-203953",
+      "Name": "Shaquille Harrison, Robin Lopez, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627782-1627885-1628374",
+      "Name": "Bobby Portis, Kris Dunn, Wayne Selden, Shaquille Harrison, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1628976-203200-203953",
+      "Name": "Bobby Portis, Kris Dunn, Wendell Carter Jr., Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 221.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628976-1628990-203200",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Wendell Carter Jr., Chandler Hutchison, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 221.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627789-1627853-1629102",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627782-1627853-1628374-1628990",
+      "Name": "Bobby Portis, Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-1628976-203200",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628469-201577-203200-203953",
+      "Name": "Cameron Payne, Antonio Blakeney, Robin Lopez, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 217.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627853-201577-203960",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 217.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1627853-1628374-203200",
+      "Name": "Cameron Payne, Bobby Portis, Ryan Arcidiacono, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-1628469-203897-203953",
+      "Name": "Cameron Payne, Cristiano Felicio, Antonio Blakeney, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1627885-1628976-203200",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Shaquille Harrison, Wendell Carter Jr., Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627885-1628469-201577",
+      "Name": "Cristiano Felicio, Wayne Selden, Shaquille Harrison, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628976-1628990-203200-203897",
+      "Name": "Kris Dunn, Wendell Carter Jr., Chandler Hutchison, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1628990-201577-203200",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Chandler Hutchison, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 212.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1628374-1628976-203897",
+      "Name": "Bobby Portis, Kris Dunn, Lauri Markkanen, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628990-201577-203200-203897",
+      "Name": "Shaquille Harrison, Chandler Hutchison, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627789-1627853-1627885-201577",
+      "Name": "Walter Lemon Jr., Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 208.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628374-201577-203490-203897",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Robin Lopez, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627885-1628374-1628469-1628990",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627789-201577-203490-203897",
+      "Name": "Kris Dunn, Timothe Luwawu-Cabarrot, Robin Lopez, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-201577-203200-203953",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Robin Lopez, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-1628469-1628976-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Antonio Blakeney, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628374-1628976-203200-203897",
+      "Name": "Cameron Payne, Lauri Markkanen, Wendell Carter Jr., Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627885-1628374-203200",
+      "Name": "Bobby Portis, Kris Dunn, Shaquille Harrison, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628469-1628976-203200-203953",
+      "Name": "Cameron Payne, Antonio Blakeney, Wendell Carter Jr., Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-1628469-201577-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Antonio Blakeney, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627885-1628374-1628469",
+      "Name": "Cristiano Felicio, Wayne Selden, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1628374-1628976-203897",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 201.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-1628990-203200-203897",
+      "Name": "Cameron Payne, Cristiano Felicio, Chandler Hutchison, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1628469-201577-203200",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Antonio Blakeney, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1627885-1628990",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627885-1628469-1628976-1628990",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Wendell Carter Jr., Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1627885-1629102",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627885-1628374-1628990",
+      "Name": "Bobby Portis, Kris Dunn, Shaquille Harrison, Lauri Markkanen, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1627853-201577-203200",
+      "Name": "Cameron Payne, Bobby Portis, Ryan Arcidiacono, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 194.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1627885-1628990-201577",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 194.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628469-1628976-1628990-203897",
+      "Name": "Shaquille Harrison, Antonio Blakeney, Wendell Carter Jr., Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628469-1628990-201577-203200",
+      "Name": "Kris Dunn, Antonio Blakeney, Chandler Hutchison, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628374-201577-203200-203897",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628990-201577-203897-203953",
+      "Name": "Cameron Payne, Chandler Hutchison, Robin Lopez, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627782-1628374-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Wayne Selden, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627782-1628469-1628959",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Wayne Selden, Antonio Blakeney, Rawle Alkins",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627782-1627853-203953",
+      "Name": "Bobby Portis, Kris Dunn, Wayne Selden, Ryan Arcidiacono, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1628469-1628959-1629102",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Antonio Blakeney, Rawle Alkins, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-1628976-1628990",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-201577-203897-203953",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Robin Lopez, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1627885-1628374-203897",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1628990-203200-203953",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Chandler Hutchison, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627782-1627853-1628959-201577",
+      "Name": "Walter Lemon Jr., Wayne Selden, Ryan Arcidiacono, Rawle Alkins, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1628374-203897",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 177.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1628374-203490-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Lauri Markkanen, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-201577-203490",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Robin Lopez, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 3,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627782-1627853-1628374-203897",
+      "Name": "Bobby Portis, Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1628469-201577-203200",
+      "Name": "Cameron Payne, Bobby Portis, Antonio Blakeney, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 173.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627885-203897-203953",
+      "Name": "Bobby Portis, Kris Dunn, Shaquille Harrison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628976-203897-203953",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Wendell Carter Jr., Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1628469-201577-203897",
+      "Name": "Cameron Payne, Bobby Portis, Antonio Blakeney, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627789-1627885-1628374-201577",
+      "Name": "Kris Dunn, Timothe Luwawu-Cabarrot, Shaquille Harrison, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627853-1628374-203490",
+      "Name": "Kris Dunn, Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1628959-1629102",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Rawle Alkins, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1627885-1628990-203953",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-1628976-1628990-203200",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Wendell Carter Jr., Chandler Hutchison, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 4,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628374-1628469-1628990-201577",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Antonio Blakeney, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 166.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627853-1628990-201577-203953",
+      "Name": "Cameron Payne, Ryan Arcidiacono, Chandler Hutchison, Robin Lopez, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627789-1627885-1629102-201577",
+      "Name": "Walter Lemon Jr., Timothe Luwawu-Cabarrot, Shaquille Harrison, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1627885-201577-203200",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Shaquille Harrison, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627853-1627885-201577-203960",
+      "Name": "Walter Lemon Jr., Ryan Arcidiacono, Shaquille Harrison, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1628469-1628976-203897",
+      "Name": "Bobby Portis, Kris Dunn, Antonio Blakeney, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627885-1628374-1628469-201577",
+      "Name": "Wayne Selden, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627789-1627885-1628374-1628469-201577",
+      "Name": "Timothe Luwawu-Cabarrot, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1627885-201577-203897",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Shaquille Harrison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627885-1628374-201577-203897",
+      "Name": "Wayne Selden, Shaquille Harrison, Lauri Markkanen, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 156.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-1628469-201577-203897",
+      "Name": "Kris Dunn, Lauri Markkanen, Antonio Blakeney, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1627885-1628374-203953",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627885-1628469-201577-203897",
+      "Name": "Wayne Selden, Shaquille Harrison, Antonio Blakeney, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1628374-1628469-203897",
+      "Name": "Bobby Portis, Kris Dunn, Lauri Markkanen, Antonio Blakeney, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1628959-203960",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Rawle Alkins, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628469-1628976-1628990",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Wendell Carter Jr., Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627789-1627853-1628374",
+      "Name": "Cristiano Felicio, Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1628959-1629102",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Rawle Alkins, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628469-1628990-201577-203897",
+      "Name": "Kris Dunn, Antonio Blakeney, Chandler Hutchison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628469-201577-203200",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1627885-1628469-1628976",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Wendell Carter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627885-1628374-1628469",
+      "Name": "Cristiano Felicio, Kris Dunn, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-1628976-1628990",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1628976-1628990-203897",
+      "Name": "Bobby Portis, Kris Dunn, Wendell Carter Jr., Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1627885-1628374",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627885-1628374-1628469",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-1628469-201577-203490",
+      "Name": "Kris Dunn, Lauri Markkanen, Antonio Blakeney, Robin Lopez, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627789-1627885-1628959-1629102-201577",
+      "Name": "Timothe Luwawu-Cabarrot, Shaquille Harrison, Rawle Alkins, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628469-1628976-1628990-203953",
+      "Name": "Cameron Payne, Antonio Blakeney, Wendell Carter Jr., Chandler Hutchison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1628469-1629102-203953",
+      "Name": "Bobby Portis, Kris Dunn, Antonio Blakeney, Brandon Sampson, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627782-1627789-1628469",
+      "Name": "Cristiano Felicio, Kris Dunn, Wayne Selden, Timothe Luwawu-Cabarrot, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627782-1627885-1629102-201577",
+      "Name": "Walter Lemon Jr., Wayne Selden, Shaquille Harrison, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628990-201577-203897-203953",
+      "Name": "Shaquille Harrison, Chandler Hutchison, Robin Lopez, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628469-201577-203200-203897",
+      "Name": "Shaquille Harrison, Antonio Blakeney, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627885-1628469-1628990-203953",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Chandler Hutchison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627885-1628374-1628976-1628990-203897",
+      "Name": "Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627885-1628374-1628469",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 4,
+      "DefPoss": 6,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627885-201577-203897-203953",
+      "Name": "Wayne Selden, Shaquille Harrison, Robin Lopez, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627853-1628469-201577-203200",
+      "Name": "Cameron Payne, Ryan Arcidiacono, Antonio Blakeney, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627885-1628976-1628990",
+      "Name": "Bobby Portis, Kris Dunn, Shaquille Harrison, Wendell Carter Jr., Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1627885-1628990-201577",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627789-1627885-1628959-201577",
+      "Name": "Walter Lemon Jr., Timothe Luwawu-Cabarrot, Shaquille Harrison, Rawle Alkins, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627789-1627853-1629102-201577-203960",
+      "Name": "Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Brandon Sampson, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1628374-1628990-203897",
+      "Name": "Kris Dunn, Wayne Selden, Lauri Markkanen, Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-201577-203200",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627782-1628990-203897",
+      "Name": "Bobby Portis, Kris Dunn, Wayne Selden, Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627853-1628976-203897",
+      "Name": "Bobby Portis, Kris Dunn, Ryan Arcidiacono, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627782-1627789-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Wayne Selden, Timothe Luwawu-Cabarrot, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627789-1627853-1628374-203490-203897",
+      "Name": "Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Lauri Markkanen, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628374-1628990-201577-203897",
+      "Name": "Cameron Payne, Lauri Markkanen, Chandler Hutchison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-203490-203897",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 3,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627853-1628990-203897",
+      "Name": "Bobby Portis, Kris Dunn, Ryan Arcidiacono, Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628976-1628990-203200",
+      "Name": "Kris Dunn, Shaquille Harrison, Wendell Carter Jr., Chandler Hutchison, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628990-201577-203200-203897",
+      "Name": "Cameron Payne, Chandler Hutchison, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1627885-1628959-203960",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Rawle Alkins, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628976-201577-203200",
+      "Name": "Cameron Payne, Shaquille Harrison, Wendell Carter Jr., Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1626245-1627739-1628990",
+      "Name": "Cameron Payne, Bobby Portis, Cristiano Felicio, Kris Dunn, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1628990-203200-203953",
+      "Name": "Cameron Payne, Bobby Portis, Chandler Hutchison, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1627885-1629102",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1628374-1628990-201577",
+      "Name": "Kris Dunn, Wayne Selden, Lauri Markkanen, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627885-1628990-201577",
+      "Name": "Bobby Portis, Kris Dunn, Shaquille Harrison, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1627885-1628959",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, Rawle Alkins",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627885-1629102-201577",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628374-1628990-203200-203953",
+      "Name": "Cameron Payne, Lauri Markkanen, Chandler Hutchison, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627789-1627885-1628374",
+      "Name": "Cristiano Felicio, Wayne Selden, Timothe Luwawu-Cabarrot, Shaquille Harrison, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-1628976-1628990-203200",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Chandler Hutchison, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1628469-1628976-203897",
+      "Name": "Cameron Payne, Bobby Portis, Antonio Blakeney, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627789-1627885-1628469-1629102-201577",
+      "Name": "Timothe Luwawu-Cabarrot, Shaquille Harrison, Antonio Blakeney, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628469-1628976-203200-203897",
+      "Name": "Cameron Payne, Antonio Blakeney, Wendell Carter Jr., Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628469-1628976-203953",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Wendell Carter Jr., Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627782-1627853-1627885-201577",
+      "Name": "Bobby Portis, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627853-203490-203897",
+      "Name": "Kris Dunn, Wayne Selden, Ryan Arcidiacono, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627853-1628374-1628469",
+      "Name": "Bobby Portis, Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1628374-203200-203897",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Lauri Markkanen, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627885-1628469-1628959-1629102",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Rawle Alkins, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628374-1628990-203953",
+      "Name": "Cameron Payne, Shaquille Harrison, Lauri Markkanen, Chandler Hutchison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627782-201577-203897",
+      "Name": "Bobby Portis, Kris Dunn, Wayne Selden, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627782-1627853-1627885",
+      "Name": "Cristiano Felicio, Kris Dunn, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627853-1628374-1628990",
+      "Name": "Kris Dunn, Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-201577-203897-203953",
+      "Name": "Cameron Payne, Shaquille Harrison, Robin Lopez, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628976-203200-203897",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Wendell Carter Jr., Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627782-203897-203953",
+      "Name": "Bobby Portis, Kris Dunn, Wayne Selden, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1628374-1628990-203953",
+      "Name": "Kris Dunn, Wayne Selden, Lauri Markkanen, Chandler Hutchison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627789-1628374-203490-203897",
+      "Name": "Kris Dunn, Timothe Luwawu-Cabarrot, Lauri Markkanen, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627885-201577-203897",
+      "Name": "Kris Dunn, Wayne Selden, Shaquille Harrison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1628990-201577-203897",
+      "Name": "Kris Dunn, Wayne Selden, Chandler Hutchison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628976-1628990-203953",
+      "Name": "Cameron Payne, Shaquille Harrison, Wendell Carter Jr., Chandler Hutchison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627885-1628374-1628990-203897",
+      "Name": "Bobby Portis, Shaquille Harrison, Lauri Markkanen, Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627853-1628469-203960",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Antonio Blakeney, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1628976-203200-203897",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Wendell Carter Jr., Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 3,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628374-1628990-201577-203200",
+      "Name": "Kris Dunn, Lauri Markkanen, Chandler Hutchison, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1627885-1628976-203953",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Wendell Carter Jr., Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628990-201577-203200-203953",
+      "Name": "Ryan Arcidiacono, Chandler Hutchison, Robin Lopez, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628976-203200-203897",
+      "Name": "Cameron Payne, Shaquille Harrison, Wendell Carter Jr., Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628469-1628976-203897-203953",
+      "Name": "Cameron Payne, Antonio Blakeney, Wendell Carter Jr., Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-1628990-201577",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1628374-1628469-1628976",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Antonio Blakeney, Wendell Carter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1628976-1628990-203200",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Wendell Carter Jr., Chandler Hutchison, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627853-203490-203897",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627853-1628374-203200-203953",
+      "Name": "Cameron Payne, Ryan Arcidiacono, Lauri Markkanen, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627789-1628469-1629102",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Timothe Luwawu-Cabarrot, Antonio Blakeney, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627782-1627789-1629102-201577",
+      "Name": "Walter Lemon Jr., Wayne Selden, Timothe Luwawu-Cabarrot, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627789-1627853-1628374",
+      "Name": "Kris Dunn, Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628469-203200-203953",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1628374-203897-203953",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627789-1627853-1628959",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Rawle Alkins",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627885-1628469-1628959",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Shaquille Harrison, Antonio Blakeney, Rawle Alkins",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627885-203490-203897",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Shaquille Harrison, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627782-1629102-201577-203960",
+      "Name": "Walter Lemon Jr., Wayne Selden, Brandon Sampson, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-201577-203200-203897",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-1628990-203200-203953",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627789-1627853-1627885-1629102-201577",
+      "Name": "Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627853-201577-203897",
+      "Name": "Kris Dunn, Wayne Selden, Ryan Arcidiacono, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1628990-201577-203953",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Chandler Hutchison, Robin Lopez, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628959-201577-203960",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Rawle Alkins, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627789-1628469-1628959-201577",
+      "Name": "Walter Lemon Jr., Timothe Luwawu-Cabarrot, Antonio Blakeney, Rawle Alkins, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1627885-1628990-201577",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-203200-203897-203953",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1627885-1628374-203897",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-1628976-203897",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Wendell Carter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627885-201577-203200-203897",
+      "Name": "Bobby Portis, Shaquille Harrison, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627789-1628374-201577",
+      "Name": "Kris Dunn, Wayne Selden, Timothe Luwawu-Cabarrot, Lauri Markkanen, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627782-1627853-1627885-1628990",
+      "Name": "Bobby Portis, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627853-1627885-1628959",
+      "Name": "Cristiano Felicio, Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Rawle Alkins",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627789-1627853-1627885-1628469-201577",
+      "Name": "Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1628374-203490",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Lauri Markkanen, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1628469-1628976-203200",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Antonio Blakeney, Wendell Carter Jr., Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627885-1628469-203200-203953",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1628374-203490-203897",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Lauri Markkanen, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627782-1628959-201577-203960",
+      "Name": "Walter Lemon Jr., Wayne Selden, Rawle Alkins, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1628469-201577-203897",
+      "Name": "Bobby Portis, Kris Dunn, Antonio Blakeney, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628990-201577-203200",
+      "Name": "Kris Dunn, Shaquille Harrison, Chandler Hutchison, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1628469-1628976-1628990-203897",
+      "Name": "Kris Dunn, Antonio Blakeney, Wendell Carter Jr., Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628374-1628990-201577",
+      "Name": "Cameron Payne, Shaquille Harrison, Lauri Markkanen, Chandler Hutchison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628374-203200-203897-203953",
+      "Name": "Cameron Payne, Lauri Markkanen, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-201577-203490-203897",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Robin Lopez, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628469-203200-203897-203953",
+      "Name": "Ryan Arcidiacono, Antonio Blakeney, Justin Holiday, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627782-203490-203897",
+      "Name": "Cristiano Felicio, Kris Dunn, Wayne Selden, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627789-201577-203897",
+      "Name": "Kris Dunn, Wayne Selden, Timothe Luwawu-Cabarrot, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627853-1628374-1628976-203200",
+      "Name": "Cameron Payne, Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627789-1627853-1628374",
+      "Name": "Cristiano Felicio, Kris Dunn, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Lauri Markkanen",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-201577-203897-203953",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Robin Lopez, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627885-1628469-203897",
+      "Name": "Cristiano Felicio, Wayne Selden, Shaquille Harrison, Antonio Blakeney, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1628374-1628469",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-201577-203897-203953",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Robin Lopez, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627853-203897-203953",
+      "Name": "Bobby Portis, Kris Dunn, Ryan Arcidiacono, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627739-1627789-1627853-203490",
+      "Name": "Cristiano Felicio, Kris Dunn, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627789-1627885-1628469-201577",
+      "Name": "Walter Lemon Jr., Timothe Luwawu-Cabarrot, Shaquille Harrison, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627789-1628374-1628469",
+      "Name": "Kris Dunn, Wayne Selden, Timothe Luwawu-Cabarrot, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627853-1628976-1628990-203953",
+      "Name": "Cameron Payne, Ryan Arcidiacono, Wendell Carter Jr., Chandler Hutchison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1627885-1628374-203200",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627782-1627853-1628374-1628469",
+      "Name": "Bobby Portis, Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627789-1627853-201577-203490-203897",
+      "Name": "Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Robin Lopez, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627789-1627885-1628959",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Timothe Luwawu-Cabarrot, Shaquille Harrison, Rawle Alkins",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 75.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1628469-1628976-203200",
+      "Name": "Cameron Payne, Bobby Portis, Antonio Blakeney, Wendell Carter Jr., Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627789-1629102-201577-203960",
+      "Name": "Walter Lemon Jr., Timothe Luwawu-Cabarrot, Brandon Sampson, Robin Lopez, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627853-1628469-201577-203953",
+      "Name": "Cameron Payne, Ryan Arcidiacono, Antonio Blakeney, Robin Lopez, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1627853-1627885-201577",
+      "Name": "Bobby Portis, Kris Dunn, Ryan Arcidiacono, Shaquille Harrison, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627885-1628469-1628990-203897",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Chandler Hutchison, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628976-1628990-203200-203953",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Chandler Hutchison, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627215-1627782-1627885-1629102",
+      "Name": "Cristiano Felicio, Walter Lemon Jr., Wayne Selden, Shaquille Harrison, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-201577-203490-203897",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Robin Lopez, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1628374-1628990-203953",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627853-1628990-203200-203953",
+      "Name": "Bobby Portis, Ryan Arcidiacono, Chandler Hutchison, Justin Holiday, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627885-1628374-203897",
+      "Name": "Cristiano Felicio, Wayne Selden, Shaquille Harrison, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626171-1628976-1628990-203200",
+      "Name": "Cameron Payne, Bobby Portis, Wendell Carter Jr., Chandler Hutchison, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627885-1628374-203200-203897",
+      "Name": "Bobby Portis, Shaquille Harrison, Lauri Markkanen, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627853-1628976-203953",
+      "Name": "Kris Dunn, Wayne Selden, Ryan Arcidiacono, Wendell Carter Jr., Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-1628469-1628990-203200",
+      "Name": "Cameron Payne, Cristiano Felicio, Antonio Blakeney, Chandler Hutchison, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627885-1628374-203897",
+      "Name": "Kris Dunn, Wayne Selden, Shaquille Harrison, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 4,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627853-201577-203200-203897",
+      "Name": "Cameron Payne, Ryan Arcidiacono, Robin Lopez, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627853-1628469-201577",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627853-1627885-1628374-1628990",
+      "Name": "Wayne Selden, Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1627885-1628374-1628469-203953",
+      "Name": "Ryan Arcidiacono, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628469-1628976-203953",
+      "Name": "Cameron Payne, Shaquille Harrison, Antonio Blakeney, Wendell Carter Jr., Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627782-1627885-1628469-1629102",
+      "Name": "Cristiano Felicio, Wayne Selden, Shaquille Harrison, Antonio Blakeney, Brandon Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628374-1628990-201577-203200",
+      "Name": "Cameron Payne, Lauri Markkanen, Chandler Hutchison, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627885-1628469-1628990-203200",
+      "Name": "Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Chandler Hutchison, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627853-1627885-1628469-203200",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Shaquille Harrison, Antonio Blakeney, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 61.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-1627885-1628469-1628976",
+      "Name": "Cameron Payne, Cristiano Felicio, Shaquille Harrison, Antonio Blakeney, Wendell Carter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627782-1627885-1628469-201577",
+      "Name": "Walter Lemon Jr., Wayne Selden, Shaquille Harrison, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1628374-1628990-203897-203953",
+      "Name": "Cameron Payne, Lauri Markkanen, Chandler Hutchison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627885-1628374-1629102-201577",
+      "Name": "Kris Dunn, Shaquille Harrison, Lauri Markkanen, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1627789-1627853-1628374-1628469",
+      "Name": "Wayne Selden, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626245-1627789-1627853-1628374-203897",
+      "Name": "Cristiano Felicio, Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Lauri Markkanen, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-1627853-203200-203897",
+      "Name": "Cameron Payne, Cristiano Felicio, Ryan Arcidiacono, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 51.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627739-1628990-203897-203953",
+      "Name": "Bobby Portis, Kris Dunn, Chandler Hutchison, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628469-201577-203200",
+      "Name": "Cameron Payne, Shaquille Harrison, Antonio Blakeney, Robin Lopez, Justin Holiday",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627215-1627782-1627789-1628469-203960",
+      "Name": "Walter Lemon Jr., Wayne Selden, Timothe Luwawu-Cabarrot, Antonio Blakeney, JaKarr Sampson",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 44.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627782-1627885-1628469-201577",
+      "Name": "Kris Dunn, Wayne Selden, Shaquille Harrison, Antonio Blakeney, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627739-1627853-1627885-1628976-1628990",
+      "Name": "Kris Dunn, Ryan Arcidiacono, Shaquille Harrison, Wendell Carter Jr., Chandler Hutchison",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627789-1627853-1628469-1629102-201577",
+      "Name": "Timothe Luwawu-Cabarrot, Ryan Arcidiacono, Antonio Blakeney, Brandon Sampson, Robin Lopez",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1626245-1627885-1628374-1628469",
+      "Name": "Cameron Payne, Cristiano Felicio, Shaquille Harrison, Lauri Markkanen, Antonio Blakeney",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 39.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627853-1628374-1628990-201577-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison, Robin Lopez, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626166-1627885-1628990-203200-203897",
+      "Name": "Cameron Payne, Shaquille Harrison, Chandler Hutchison, Justin Holiday, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1626171-1627782-1628374-203897-203953",
+      "Name": "Bobby Portis, Wayne Selden, Lauri Markkanen, Zach LaVine, Jabari Parker",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 20.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2018-19",
+      "EntityId": "1627782-1628374-1628469-203490-203897",
+      "Name": "Wayne Selden, Lauri Markkanen, Antonio Blakeney, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 14.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    }
+  ]
+}

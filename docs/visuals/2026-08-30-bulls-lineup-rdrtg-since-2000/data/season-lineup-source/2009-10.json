@@ -1,0 +1,3249 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2009-10",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2009-10",
+    "RowsReturned": 360,
+    "RowsWithDefPoss": 349,
+    "RowsSkippedMissingMetrics": 26,
+    "LastRowDefPoss": 0,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201959-2550-2736",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27109.0,
+      "GamesPlayed": 39,
+      "DefPoss": 882,
+      "OpponentPoints": 912
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201959-2422-2736",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 18859.0,
+      "GamesPlayed": 37,
+      "DefPoss": 586,
+      "OpponentPoints": 630
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201959-2550-2736",
+      "Name": "Brad Miller, Derrick Rose, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 17448.0,
+      "GamesPlayed": 38,
+      "DefPoss": 567,
+      "OpponentPoints": 591
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-2422-2736",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 10072.0,
+      "GamesPlayed": 17,
+      "DefPoss": 323,
+      "OpponentPoints": 327
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-2422-2550-2736",
+      "Name": "Joakim Noah, Derrick Rose, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 9641.0,
+      "GamesPlayed": 28,
+      "DefPoss": 311,
+      "OpponentPoints": 318
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-2550-2736",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5319.0,
+      "GamesPlayed": 15,
+      "DefPoss": 169,
+      "OpponentPoints": 182
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201565-2422-2736",
+      "Name": "Tyrus Thomas, Joakim Noah, Derrick Rose, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5168.0,
+      "GamesPlayed": 17,
+      "DefPoss": 166,
+      "OpponentPoints": 181
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201949-201959-2550",
+      "Name": "Brad Miller, Derrick Rose, James Johnson, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4834.0,
+      "GamesPlayed": 12,
+      "DefPoss": 159,
+      "OpponentPoints": 146
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201565-2550-2736",
+      "Name": "Tyrus Thomas, Joakim Noah, Derrick Rose, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4032.0,
+      "GamesPlayed": 11,
+      "DefPoss": 141,
+      "OpponentPoints": 134
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-201959-2457-2550",
+      "Name": "Brad Miller, James Johnson, Taj Gibson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3573.0,
+      "GamesPlayed": 6,
+      "DefPoss": 117,
+      "OpponentPoints": 117
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201959-2422-2550-2736",
+      "Name": "Brad Miller, Taj Gibson, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3437.0,
+      "GamesPlayed": 17,
+      "DefPoss": 109,
+      "OpponentPoints": 103
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201959-2422-2736",
+      "Name": "Brad Miller, Derrick Rose, Taj Gibson, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3404.0,
+      "GamesPlayed": 19,
+      "DefPoss": 106,
+      "OpponentPoints": 98
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-2422-2736",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3252.0,
+      "GamesPlayed": 20,
+      "DefPoss": 104,
+      "OpponentPoints": 94
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201949-2422-2550",
+      "Name": "Brad Miller, Tyrus Thomas, James Johnson, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3210.0,
+      "GamesPlayed": 15,
+      "DefPoss": 111,
+      "OpponentPoints": 100
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-2422-2550-2736",
+      "Name": "Brad Miller, Derrick Rose, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3170.0,
+      "GamesPlayed": 18,
+      "DefPoss": 96,
+      "OpponentPoints": 121
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-2422-2550-2736",
+      "Name": "Brad Miller, Tyrus Thomas, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2931.0,
+      "GamesPlayed": 17,
+      "DefPoss": 91,
+      "OpponentPoints": 91
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201959-2422-2550-2736",
+      "Name": "Joakim Noah, Taj Gibson, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2601.0,
+      "GamesPlayed": 13,
+      "DefPoss": 85,
+      "OpponentPoints": 81
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201959-2422-2550",
+      "Name": "Brad Miller, Derrick Rose, Taj Gibson, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2309.0,
+      "GamesPlayed": 14,
+      "DefPoss": 69,
+      "OpponentPoints": 71
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-2422-2550-2736",
+      "Name": "Brad Miller, Joakim Noah, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2142.0,
+      "GamesPlayed": 11,
+      "DefPoss": 69,
+      "OpponentPoints": 69
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201565-2550-2736",
+      "Name": "Hakim Warrick, Brad Miller, Derrick Rose, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2141.0,
+      "GamesPlayed": 9,
+      "DefPoss": 70,
+      "OpponentPoints": 81
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201959-2436-2550",
+      "Name": "Brad Miller, Derrick Rose, Taj Gibson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2094.0,
+      "GamesPlayed": 9,
+      "DefPoss": 63,
+      "OpponentPoints": 67
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-2550-2736",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1930.0,
+      "GamesPlayed": 11,
+      "DefPoss": 67,
+      "OpponentPoints": 85
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-201949-2422",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, James Johnson, John Salmons",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1737.0,
+      "GamesPlayed": 11,
+      "DefPoss": 58,
+      "OpponentPoints": 62
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201949-201959-2550",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1589.0,
+      "GamesPlayed": 6,
+      "DefPoss": 49,
+      "OpponentPoints": 73
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-2422-2550",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1496.0,
+      "GamesPlayed": 11,
+      "DefPoss": 43,
+      "OpponentPoints": 47
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201565-201959-2550-2736",
+      "Name": "Hakim Warrick, Derrick Rose, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1495.0,
+      "GamesPlayed": 6,
+      "DefPoss": 49,
+      "OpponentPoints": 70
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201565-2436-2736",
+      "Name": "Hakim Warrick, Brad Miller, Derrick Rose, Flip Murray, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1284.0,
+      "GamesPlayed": 9,
+      "DefPoss": 43,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-2422-2484-2550",
+      "Name": "Brad Miller, Tyrus Thomas, John Salmons, Devin Brown, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1237.0,
+      "GamesPlayed": 3,
+      "DefPoss": 44,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-201565-2436-2736",
+      "Name": "Hakim Warrick, Joakim Noah, Derrick Rose, Flip Murray, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1235.0,
+      "GamesPlayed": 6,
+      "DefPoss": 37,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201959-2436-2736",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Flip Murray, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1229.0,
+      "GamesPlayed": 4,
+      "DefPoss": 42,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-2422-2736-283",
+      "Name": "Joakim Noah, Derrick Rose, John Salmons, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1166.0,
+      "GamesPlayed": 3,
+      "DefPoss": 37,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-201959-2436-2550",
+      "Name": "Brad Miller, James Johnson, Taj Gibson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1148.0,
+      "GamesPlayed": 5,
+      "DefPoss": 34,
+      "OpponentPoints": 56
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201959-2457-2550",
+      "Name": "Brad Miller, Derrick Rose, Taj Gibson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1143.0,
+      "GamesPlayed": 3,
+      "DefPoss": 36,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201565-201959-2422-2736",
+      "Name": "Tyrus Thomas, Derrick Rose, Taj Gibson, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1112.0,
+      "GamesPlayed": 6,
+      "DefPoss": 37,
+      "OpponentPoints": 40
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201959-2422-2550",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1093.0,
+      "GamesPlayed": 9,
+      "DefPoss": 36,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201151-201959-2436-2457",
+      "Name": "Brad Miller, Acie Law, Taj Gibson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1092.0,
+      "GamesPlayed": 2,
+      "DefPoss": 35,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201959-2436-2736",
+      "Name": "Brad Miller, Derrick Rose, Taj Gibson, Flip Murray, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1076.0,
+      "GamesPlayed": 7,
+      "DefPoss": 35,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201959-2436-2457",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1076.0,
+      "GamesPlayed": 3,
+      "DefPoss": 33,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201181-201949-2457-2484",
+      "Name": "Tyrus Thomas, Chris Richard, James Johnson, Jannero Pargo, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1074.0,
+      "GamesPlayed": 2,
+      "DefPoss": 38,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201959-2422-2550-2736",
+      "Name": "Tyrus Thomas, Taj Gibson, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1049.0,
+      "GamesPlayed": 6,
+      "DefPoss": 32,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201565-201959-2436-2550",
+      "Name": "Hakim Warrick, Derrick Rose, Taj Gibson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1013.0,
+      "GamesPlayed": 5,
+      "DefPoss": 33,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-2422-2457-2550-2736",
+      "Name": "Brad Miller, John Salmons, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1012.0,
+      "GamesPlayed": 4,
+      "DefPoss": 32,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201959-2436-2457",
+      "Name": "Brad Miller, Derrick Rose, Taj Gibson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 906.0,
+      "GamesPlayed": 5,
+      "DefPoss": 27,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201959-2457-2550-2736",
+      "Name": "Brad Miller, Taj Gibson, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 894.0,
+      "GamesPlayed": 10,
+      "DefPoss": 32,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201949-2422-2457",
+      "Name": "Brad Miller, Tyrus Thomas, James Johnson, John Salmons, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 882.0,
+      "GamesPlayed": 3,
+      "DefPoss": 32,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-2436-2550",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 874.0,
+      "GamesPlayed": 6,
+      "DefPoss": 29,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201949-201959-2457-283",
+      "Name": "Joakim Noah, James Johnson, Taj Gibson, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 873.0,
+      "GamesPlayed": 3,
+      "DefPoss": 29,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201181-2436-2457",
+      "Name": "Hakim Warrick, Acie Law, Chris Richard, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 842.0,
+      "GamesPlayed": 5,
+      "DefPoss": 25,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-2457-2550-2736",
+      "Name": "Brad Miller, Derrick Rose, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 815.0,
+      "GamesPlayed": 6,
+      "DefPoss": 26,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201565-2436-2550",
+      "Name": "Hakim Warrick, Brad Miller, Derrick Rose, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 812.0,
+      "GamesPlayed": 10,
+      "DefPoss": 25,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-201565-2436-2457",
+      "Name": "Hakim Warrick, Joakim Noah, Derrick Rose, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 781.0,
+      "GamesPlayed": 5,
+      "DefPoss": 25,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201565-2422-2550",
+      "Name": "Tyrus Thomas, Joakim Noah, Derrick Rose, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 770.0,
+      "GamesPlayed": 5,
+      "DefPoss": 25,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-201949-2436-2457",
+      "Name": "Hakim Warrick, Joakim Noah, James Johnson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 755.0,
+      "GamesPlayed": 4,
+      "DefPoss": 24,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201181-201565-201959-2436-2550",
+      "Name": "Chris Richard, Derrick Rose, Taj Gibson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 736.0,
+      "GamesPlayed": 4,
+      "DefPoss": 23,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-2422-2550",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 728.0,
+      "GamesPlayed": 9,
+      "DefPoss": 20,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201959-2422-2457-2550",
+      "Name": "Brad Miller, Taj Gibson, John Salmons, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 728.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201565-2436-2457",
+      "Name": "Hakim Warrick, Brad Miller, Derrick Rose, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 713.0,
+      "GamesPlayed": 4,
+      "DefPoss": 23,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201189-201949-201959-2457-283",
+      "Name": "Aaron Gray, James Johnson, Taj Gibson, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 698.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201959-2436-2550-2736",
+      "Name": "Hakim Warrick, Taj Gibson, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 683.0,
+      "GamesPlayed": 4,
+      "DefPoss": 19,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-2422-2457-2736",
+      "Name": "Brad Miller, Derrick Rose, John Salmons, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 678.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-2436-2457-2550",
+      "Name": "Hakim Warrick, Brad Miller, Flip Murray, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 676.0,
+      "GamesPlayed": 3,
+      "DefPoss": 26,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-201959-2422-2550",
+      "Name": "Brad Miller, James Johnson, Taj Gibson, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 668.0,
+      "GamesPlayed": 5,
+      "DefPoss": 23,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201949-201959-2457",
+      "Name": "Brad Miller, Derrick Rose, James Johnson, Taj Gibson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 666.0,
+      "GamesPlayed": 4,
+      "DefPoss": 18,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201959-2436-2457",
+      "Name": "Hakim Warrick, Brad Miller, Taj Gibson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 643.0,
+      "GamesPlayed": 2,
+      "DefPoss": 20,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-2436-2457-2550",
+      "Name": "Hakim Warrick, Joakim Noah, Flip Murray, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 642.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-2457-2550-2736",
+      "Name": "Brad Miller, Joakim Noah, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 639.0,
+      "GamesPlayed": 5,
+      "DefPoss": 20,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-2422-2550-2736",
+      "Name": "Brad Miller, James Johnson, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 631.0,
+      "GamesPlayed": 4,
+      "DefPoss": 18,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201959-2436-2550",
+      "Name": "Hakim Warrick, Brad Miller, Taj Gibson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 608.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201565-201959-2457-2550-2736",
+      "Name": "Derrick Rose, Taj Gibson, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 588.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-2436-2457-2736",
+      "Name": "Brad Miller, Derrick Rose, Flip Murray, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 582.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-2422-2550-2736",
+      "Name": "Tyrus Thomas, Joakim Noah, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 581.0,
+      "GamesPlayed": 8,
+      "DefPoss": 18,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201565-201959-2436-2736",
+      "Name": "Hakim Warrick, Derrick Rose, Taj Gibson, Flip Murray, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 574.0,
+      "GamesPlayed": 5,
+      "DefPoss": 22,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201959-2436-2550",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 555.0,
+      "GamesPlayed": 6,
+      "DefPoss": 22,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-2436-2550-2736",
+      "Name": "Brad Miller, Derrick Rose, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 546.0,
+      "GamesPlayed": 5,
+      "DefPoss": 17,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-2436-2457-2550",
+      "Name": "Hakim Warrick, Chris Richard, Flip Murray, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 545.0,
+      "GamesPlayed": 6,
+      "DefPoss": 18,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201565-2457-2736",
+      "Name": "Tyrus Thomas, Joakim Noah, Derrick Rose, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 534.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201949-2436-2550",
+      "Name": "Hakim Warrick, Brad Miller, James Johnson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 527.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-201959-2436-2457",
+      "Name": "Brad Miller, James Johnson, Taj Gibson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 522.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201949-2436-2457",
+      "Name": "Hakim Warrick, Brad Miller, James Johnson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 521.0,
+      "GamesPlayed": 5,
+      "DefPoss": 21,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201949-2436-2457",
+      "Name": "Hakim Warrick, Chris Richard, James Johnson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 516.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201949-201959-2436-2457",
+      "Name": "Hakim Warrick, James Johnson, Taj Gibson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 516.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201189-201949-2422-2457-283",
+      "Name": "Aaron Gray, James Johnson, John Salmons, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 502.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-2422-2457-2550",
+      "Name": "Brad Miller, James Johnson, John Salmons, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 489.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201959-2436-2457-2550",
+      "Name": "Hakim Warrick, Taj Gibson, Flip Murray, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 488.0,
+      "GamesPlayed": 5,
+      "DefPoss": 15,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201949-201959-2422-2550",
+      "Name": "Joakim Noah, James Johnson, Taj Gibson, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 488.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201949-2457-2550",
+      "Name": "Brad Miller, Tyrus Thomas, James Johnson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 478.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201959-2457-2736",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 466.0,
+      "GamesPlayed": 5,
+      "DefPoss": 15,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201181-201949-201959-2457-2550",
+      "Name": "Chris Richard, James Johnson, Taj Gibson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 464.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-201949-2436-2550",
+      "Name": "Hakim Warrick, Joakim Noah, James Johnson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 463.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201565-201959-2436-2550-2736",
+      "Name": "Derrick Rose, Taj Gibson, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 463.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201151-2436-2457",
+      "Name": "Hakim Warrick, Brad Miller, Acie Law, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 457.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201565-201959-2436-2457",
+      "Name": "Hakim Warrick, Derrick Rose, Taj Gibson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 455.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201181-201949-2436",
+      "Name": "Hakim Warrick, Acie Law, Chris Richard, James Johnson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 454.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-2436-2550-2736",
+      "Name": "Hakim Warrick, Brad Miller, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 450.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-2457-2736",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 447.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-201959-2550",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 438.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201959-2436-2457-2550",
+      "Name": "Brad Miller, Taj Gibson, Flip Murray, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 438.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201949-201959-2736",
+      "Name": "Brad Miller, Derrick Rose, James Johnson, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 427.0,
+      "GamesPlayed": 4,
+      "DefPoss": 16,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201959-2436-2457-2550-2736",
+      "Name": "Taj Gibson, Flip Murray, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 418.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-201949-2550",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, James Johnson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 417.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201181-2436-2550",
+      "Name": "Hakim Warrick, Acie Law, Chris Richard, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 414.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201181-201565-2550-2736",
+      "Name": "Brad Miller, Chris Richard, Derrick Rose, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 413.0,
+      "GamesPlayed": 2,
+      "DefPoss": 14,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201181-2422-2550-2736",
+      "Name": "Tyrus Thomas, Chris Richard, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 413.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201181-201959-2436",
+      "Name": "Hakim Warrick, Acie Law, Chris Richard, Taj Gibson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 410.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-2436-2457",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 407.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201189-201959-2422-2457-283",
+      "Name": "Aaron Gray, Taj Gibson, John Salmons, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 407.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201565-201959-2422-2550-2736",
+      "Name": "Derrick Rose, Taj Gibson, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 405.0,
+      "GamesPlayed": 4,
+      "DefPoss": 18,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201565-201959-2550-2736",
+      "Name": "Tyrus Thomas, Derrick Rose, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 390.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201949-201959-2422-2550",
+      "Name": "Tyrus Thomas, James Johnson, Taj Gibson, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 390.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201181-2422-2484-2550",
+      "Name": "Tyrus Thomas, Chris Richard, John Salmons, Devin Brown, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 389.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-2422-2457-2550",
+      "Name": "Brad Miller, Tyrus Thomas, John Salmons, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 384.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201565-201949-201959-2436",
+      "Name": "Hakim Warrick, Derrick Rose, James Johnson, Taj Gibson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 375.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201565-201959-2457-2550",
+      "Name": "Hakim Warrick, Derrick Rose, Taj Gibson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 374.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201565-201949-2422",
+      "Name": "Tyrus Thomas, Joakim Noah, Derrick Rose, James Johnson, John Salmons",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 372.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-2436-2550-2736",
+      "Name": "Joakim Noah, Derrick Rose, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 363.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201959-2457-2550-2736",
+      "Name": "Joakim Noah, Taj Gibson, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 348.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201959-2457-2736",
+      "Name": "Brad Miller, Derrick Rose, Taj Gibson, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 346.0,
+      "GamesPlayed": 4,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-2457-2736-283",
+      "Name": "Brad Miller, James Johnson, Jannero Pargo, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 345.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-201959-2422",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, Taj Gibson, John Salmons",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 343.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201189-2422-2457-283",
+      "Name": "Tyrus Thomas, Aaron Gray, John Salmons, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 340.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201959-2457-2550",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 339.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-201959-2457-283",
+      "Name": "Brad Miller, James Johnson, Taj Gibson, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 333.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201181-201949-2436-2550",
+      "Name": "Brad Miller, Chris Richard, James Johnson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201181-201570-2484",
+      "Name": "Hakim Warrick, Acie Law, Chris Richard, Joe Alexander, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 330.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201565-201959-2736",
+      "Name": "Tyrus Thomas, Joakim Noah, Derrick Rose, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 320.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201959-2422-2457-2736",
+      "Name": "Joakim Noah, Taj Gibson, John Salmons, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 319.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201565-201949-2422-2736",
+      "Name": "Tyrus Thomas, Derrick Rose, James Johnson, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 316.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-2422-2457",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, John Salmons, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 308.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201151-201959-2436-2550",
+      "Name": "Brad Miller, Acie Law, Taj Gibson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 308.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-201565-201959-2436",
+      "Name": "Hakim Warrick, Joakim Noah, Derrick Rose, Taj Gibson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 306.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-2422-2457-2550",
+      "Name": "Brad Miller, Joakim Noah, John Salmons, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 306.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-201565-2436-2550",
+      "Name": "Hakim Warrick, Joakim Noah, Derrick Rose, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 303.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-201565-2550-2736",
+      "Name": "Hakim Warrick, Joakim Noah, Derrick Rose, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 303.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201565-201959-2422",
+      "Name": "Tyrus Thomas, Joakim Noah, Derrick Rose, Taj Gibson, John Salmons",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 303.0,
+      "GamesPlayed": 4,
+      "DefPoss": 11,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-2436-2550-2736",
+      "Name": "Hakim Warrick, Joakim Noah, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 302.0,
+      "GamesPlayed": 4,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201949-201959-2457",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, Taj Gibson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 300.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201959-2422-2550",
+      "Name": "Brad Miller, Tyrus Thomas, Taj Gibson, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 287.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201565-201949-2436",
+      "Name": "Hakim Warrick, Chris Richard, Derrick Rose, James Johnson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 282.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201181-201565-2422-2550-2736",
+      "Name": "Chris Richard, Derrick Rose, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 281.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201181-201565-2422-2736",
+      "Name": "Brad Miller, Chris Richard, Derrick Rose, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 280.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201949-201959-2422",
+      "Name": "Brad Miller, Derrick Rose, James Johnson, Taj Gibson, John Salmons",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 5,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201565-201949-2550",
+      "Name": "Hakim Warrick, Brad Miller, Derrick Rose, James Johnson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201949-201959-2436",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, Taj Gibson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 272.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201570-201949-2436",
+      "Name": "Hakim Warrick, Acie Law, Joe Alexander, James Johnson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201565-2436-2736",
+      "Name": "Hakim Warrick, Chris Richard, Derrick Rose, Flip Murray, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201949-2457-2484",
+      "Name": "Hakim Warrick, Chris Richard, James Johnson, Jannero Pargo, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 267.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201181-2422-2457-2550",
+      "Name": "Tyrus Thomas, Chris Richard, John Salmons, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 266.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-2422-2484-2736",
+      "Name": "Brad Miller, Derrick Rose, John Salmons, Devin Brown, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 264.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201151-201949-2436",
+      "Name": "Hakim Warrick, Brad Miller, Acie Law, James Johnson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201570-201949-2484",
+      "Name": "Hakim Warrick, Acie Law, Joe Alexander, James Johnson, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201565-2422-2550-2736",
+      "Name": "Tyrus Thomas, Derrick Rose, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-2457-2550-2736",
+      "Name": "Brad Miller, James Johnson, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 257.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201181-201570-2457",
+      "Name": "Hakim Warrick, Acie Law, Chris Richard, Joe Alexander, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 255.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201949-2422-2736",
+      "Name": "Brad Miller, Derrick Rose, James Johnson, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201181-201565-201959-2550-2736",
+      "Name": "Chris Richard, Derrick Rose, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 251.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-2457-2550-2736",
+      "Name": "Hakim Warrick, Brad Miller, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201949-2422-2550",
+      "Name": "Tyrus Thomas, Joakim Noah, James Johnson, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 4,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201151-201949-201959-2457-2484",
+      "Name": "Acie Law, James Johnson, Taj Gibson, Jannero Pargo, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201949-201959-2422",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, Taj Gibson, John Salmons",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 246.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201959-2422-2457-283",
+      "Name": "Brad Miller, Taj Gibson, John Salmons, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-201959-2422-2457",
+      "Name": "Brad Miller, James Johnson, Taj Gibson, John Salmons, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 238.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-201565-201949-2550",
+      "Name": "Hakim Warrick, Joakim Noah, Derrick Rose, James Johnson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 234.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201949-201959-2436",
+      "Name": "Brad Miller, Derrick Rose, James Johnson, Taj Gibson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 3,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201565-201959-2422-2550",
+      "Name": "Tyrus Thomas, Derrick Rose, Taj Gibson, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201949-2422-2736",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-201959-2736",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, Taj Gibson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201565-2436-2457",
+      "Name": "Hakim Warrick, Chris Richard, Derrick Rose, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201949-2422-2457-2550",
+      "Name": "Joakim Noah, James Johnson, John Salmons, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201949-201959-2457-2550-2736",
+      "Name": "James Johnson, Taj Gibson, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 216.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201949-2457-2736",
+      "Name": "Brad Miller, Tyrus Thomas, James Johnson, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201959-2422-2484-2550",
+      "Name": "Tyrus Thomas, Taj Gibson, John Salmons, Devin Brown, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 214.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201959-2436-2550-2736",
+      "Name": "Brad Miller, Taj Gibson, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201151-2436-2550",
+      "Name": "Hakim Warrick, Brad Miller, Acie Law, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 212.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-2436-2457-2550",
+      "Name": "Brad Miller, Joakim Noah, Flip Murray, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201565-201959-2436-2457-2550",
+      "Name": "Derrick Rose, Taj Gibson, Flip Murray, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201189-201565-201949-2457",
+      "Name": "Brad Miller, Aaron Gray, Derrick Rose, James Johnson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201565-2457-2550",
+      "Name": "Hakim Warrick, Brad Miller, Derrick Rose, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-2436-2550-2736",
+      "Name": "Brad Miller, Joakim Noah, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201181-201949-201959-2436-2550",
+      "Name": "Chris Richard, James Johnson, Taj Gibson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 202.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-2436-2457-2736",
+      "Name": "Hakim Warrick, Chris Richard, Flip Murray, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 201.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201565-201959-2436",
+      "Name": "Hakim Warrick, Brad Miller, Derrick Rose, Taj Gibson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 200.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201949-2422-283",
+      "Name": "Brad Miller, Joakim Noah, James Johnson, John Salmons, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201949-2436-2550",
+      "Name": "Hakim Warrick, Chris Richard, James Johnson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-201959-2457",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, Taj Gibson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201181-201949-2484",
+      "Name": "Hakim Warrick, Acie Law, Chris Richard, James Johnson, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-2422-2457-283",
+      "Name": "Brad Miller, James Johnson, John Salmons, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201949-2422-2550-2736",
+      "Name": "Tyrus Thomas, James Johnson, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201949-2422-2550",
+      "Name": "Brad Miller, Joakim Noah, James Johnson, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201181-201565-2422-2736",
+      "Name": "Tyrus Thomas, Chris Richard, Derrick Rose, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201959-2422-2484",
+      "Name": "Brad Miller, Derrick Rose, Taj Gibson, John Salmons, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201565-2457-2736",
+      "Name": "Hakim Warrick, Brad Miller, Derrick Rose, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-2422-2457-2736",
+      "Name": "Joakim Noah, Derrick Rose, John Salmons, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 4,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201949-2457-2550-2736",
+      "Name": "Joakim Noah, James Johnson, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201565-201959-2436",
+      "Name": "Hakim Warrick, Acie Law, Derrick Rose, Taj Gibson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-2422-2457-2736",
+      "Name": "Brad Miller, Joakim Noah, John Salmons, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-2457-2550",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201949-2457-2550",
+      "Name": "Hakim Warrick, Brad Miller, James Johnson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201151-201959-2457",
+      "Name": "Hakim Warrick, Brad Miller, Acie Law, Taj Gibson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201565-2436-2550-2736",
+      "Name": "Hakim Warrick, Derrick Rose, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 182.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201565-2436-2550",
+      "Name": "Hakim Warrick, Chris Richard, Derrick Rose, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201151-201570-201949-2436-2457",
+      "Name": "Acie Law, Joe Alexander, James Johnson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201949-201959-2457-2550",
+      "Name": "Joakim Noah, James Johnson, Taj Gibson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 177.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201949-2436-2457-2550",
+      "Name": "Hakim Warrick, James Johnson, Flip Murray, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-201949-2550",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, James Johnson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 176.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201151-2457-2550",
+      "Name": "Brad Miller, Joakim Noah, Acie Law, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201959-2422-2484-2550",
+      "Name": "Brad Miller, Taj Gibson, John Salmons, Devin Brown, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201949-2457-2736",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-2457-2736",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201949-201959-2422-2550-2736",
+      "Name": "James Johnson, Taj Gibson, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-201565-2457-2736",
+      "Name": "Hakim Warrick, Joakim Noah, Derrick Rose, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201189-201565-201949-201959-2457",
+      "Name": "Aaron Gray, Derrick Rose, James Johnson, Taj Gibson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201959-2422-2457-2550",
+      "Name": "Tyrus Thomas, Taj Gibson, John Salmons, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-2436-2550-2736",
+      "Name": "Hakim Warrick, Chris Richard, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201565-201949-201959-2457-283",
+      "Name": "Derrick Rose, James Johnson, Taj Gibson, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-2457-2550-2736",
+      "Name": "Joakim Noah, Derrick Rose, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201189-2422-2457-283",
+      "Name": "Brad Miller, Aaron Gray, John Salmons, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201181-201949-2550",
+      "Name": "Hakim Warrick, Acie Law, Chris Richard, James Johnson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201565-201959-2550",
+      "Name": "Hakim Warrick, Chris Richard, Derrick Rose, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201959-2457-2736-283",
+      "Name": "Joakim Noah, Taj Gibson, Jannero Pargo, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201570-201949-2457",
+      "Name": "Hakim Warrick, Acie Law, Joe Alexander, James Johnson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 146.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201565-201949-2436",
+      "Name": "Hakim Warrick, Brad Miller, Derrick Rose, James Johnson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201959-2436-2457-2736",
+      "Name": "Hakim Warrick, Taj Gibson, Flip Murray, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201565-201949-201959-2422-2736",
+      "Name": "Derrick Rose, James Johnson, Taj Gibson, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-2422-2457-2736",
+      "Name": "Brad Miller, Tyrus Thomas, John Salmons, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-2422-2457-2736-283",
+      "Name": "Brad Miller, John Salmons, Jannero Pargo, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201959-2736-283",
+      "Name": "Brad Miller, Derrick Rose, Taj Gibson, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201181-201565-201959-2457-2736",
+      "Name": "Chris Richard, Derrick Rose, Taj Gibson, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-2457-2550-2736",
+      "Name": "Tyrus Thomas, Joakim Noah, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201959-2736-283",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201949-2436-2550-2736",
+      "Name": "Hakim Warrick, James Johnson, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201181-201565-201959-2422-2736",
+      "Name": "Chris Richard, Derrick Rose, Taj Gibson, John Salmons, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201949-2436-2550",
+      "Name": "Brad Miller, Joakim Noah, James Johnson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201949-201959-2457",
+      "Name": "Hakim Warrick, Acie Law, James Johnson, Taj Gibson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201949-2457-2550",
+      "Name": "Brad Miller, Joakim Noah, James Johnson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201949-2550-2736",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201189-201949-201959-2422-2457",
+      "Name": "Aaron Gray, James Johnson, Taj Gibson, John Salmons, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 131.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201151-201181-201570-201949-2457",
+      "Name": "Acie Law, Chris Richard, Joe Alexander, James Johnson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201949-2422-2550-2736",
+      "Name": "Joakim Noah, James Johnson, John Salmons, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201959-2422-2736-283",
+      "Name": "Joakim Noah, Taj Gibson, John Salmons, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-2422-2457",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, John Salmons, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201181-201949-2457-2550",
+      "Name": "Tyrus Thomas, Chris Richard, James Johnson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201959-2422-2457",
+      "Name": "Brad Miller, Tyrus Thomas, Taj Gibson, John Salmons, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201565-201959-2457-2736",
+      "Name": "Tyrus Thomas, Derrick Rose, Taj Gibson, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-201565-201959-2550",
+      "Name": "Hakim Warrick, Joakim Noah, Derrick Rose, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201959-2422-2457",
+      "Name": "Joakim Noah, Derrick Rose, Taj Gibson, John Salmons, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201181-2422-2484-2550-2736",
+      "Name": "Chris Richard, John Salmons, Devin Brown, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-2457-2550",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201189-201949-2457-2550",
+      "Name": "Tyrus Thomas, Aaron Gray, James Johnson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-2436-2736",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, Flip Murray, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-2457-2736-283",
+      "Name": "Brad Miller, Joakim Noah, Jannero Pargo, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201151-201181-201959-2436-2457",
+      "Name": "Acie Law, Chris Richard, Taj Gibson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 115.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201959-2457-2550",
+      "Name": "Hakim Warrick, Chris Richard, Taj Gibson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201149-201565-2422",
+      "Name": "Brad Miller, Tyrus Thomas, Joakim Noah, Derrick Rose, John Salmons",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 113.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201959-2550-2736",
+      "Name": "Brad Miller, Tyrus Thomas, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201151-201949-2550",
+      "Name": "Hakim Warrick, Brad Miller, Acie Law, James Johnson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201949-201959-2436-2550",
+      "Name": "Hakim Warrick, James Johnson, Taj Gibson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201565-201959-2550",
+      "Name": "Hakim Warrick, Brad Miller, Derrick Rose, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201181-2422-2457-2736",
+      "Name": "Tyrus Thomas, Chris Richard, John Salmons, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-2422-2736-283",
+      "Name": "Brad Miller, James Johnson, John Salmons, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-2422-2457-2550-2736",
+      "Name": "Joakim Noah, John Salmons, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201181-201949-2422-2457",
+      "Name": "Tyrus Thomas, Chris Richard, James Johnson, John Salmons, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201949-201959-2550-2736",
+      "Name": "Joakim Noah, James Johnson, Taj Gibson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 99.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201949-2550-2736",
+      "Name": "Brad Miller, Derrick Rose, James Johnson, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201959-2436-2550-2736",
+      "Name": "Joakim Noah, Taj Gibson, Flip Murray, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 96.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201949-2736-283",
+      "Name": "Brad Miller, Joakim Noah, James Johnson, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201565-201949-201959-2457-2736",
+      "Name": "Derrick Rose, James Johnson, Taj Gibson, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 94.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201181-201959-2436-2457-2550",
+      "Name": "Chris Richard, Taj Gibson, Flip Murray, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201565-201949-2457",
+      "Name": "Brad Miller, Tyrus Thomas, Derrick Rose, James Johnson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201949-201959-2484",
+      "Name": "Hakim Warrick, Acie Law, James Johnson, Taj Gibson, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201189-2457-283",
+      "Name": "Brad Miller, Tyrus Thomas, Aaron Gray, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-201949-2736",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, James Johnson, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201565-201949-2457",
+      "Name": "Tyrus Thomas, Joakim Noah, Derrick Rose, James Johnson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201959-2422-2457-283",
+      "Name": "Joakim Noah, Taj Gibson, John Salmons, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-2436-2457-2736",
+      "Name": "Hakim Warrick, Joakim Noah, Flip Murray, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201959-2436-2457",
+      "Name": "Hakim Warrick, Acie Law, Taj Gibson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201565-2550-2736",
+      "Name": "Hakim Warrick, Chris Richard, Derrick Rose, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201959-2422-2457-2550",
+      "Name": "Joakim Noah, Taj Gibson, John Salmons, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201949-201959-283",
+      "Name": "Brad Miller, Derrick Rose, James Johnson, Taj Gibson, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201949-201959-2550",
+      "Name": "Hakim Warrick, Acie Law, James Johnson, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201949-2436-2457",
+      "Name": "Brad Miller, Derrick Rose, James Johnson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-201959-2736-283",
+      "Name": "Brad Miller, James Johnson, Taj Gibson, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201181-201565-201949-2457",
+      "Name": "Tyrus Thomas, Chris Richard, Derrick Rose, James Johnson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201565-2422-2457",
+      "Name": "Tyrus Thomas, Joakim Noah, Derrick Rose, John Salmons, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-2736-283",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201565-201959-2436",
+      "Name": "Hakim Warrick, Chris Richard, Derrick Rose, Taj Gibson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201189-201949-201959-2422-2550",
+      "Name": "Aaron Gray, James Johnson, Taj Gibson, John Salmons, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201949-2422-2457-2550",
+      "Name": "Tyrus Thomas, James Johnson, John Salmons, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201949-201959-2422-2457-283",
+      "Name": "James Johnson, Taj Gibson, John Salmons, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201565-201959-2422-2484",
+      "Name": "Tyrus Thomas, Derrick Rose, Taj Gibson, John Salmons, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201181-201949-2457-2550",
+      "Name": "Brad Miller, Chris Richard, James Johnson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201151-201181-201570-2457-2484",
+      "Name": "Acie Law, Chris Richard, Joe Alexander, Jannero Pargo, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201949-201959-2422-2457",
+      "Name": "Joakim Noah, James Johnson, Taj Gibson, John Salmons, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201949-2457-2550",
+      "Name": "Tyrus Thomas, Joakim Noah, James Johnson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-201151-201959-2436",
+      "Name": "Hakim Warrick, Brad Miller, Acie Law, Taj Gibson, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201565-201949-201959-2550",
+      "Name": "Hakim Warrick, Derrick Rose, James Johnson, Taj Gibson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 57.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201189-201949-2422-283",
+      "Name": "Brad Miller, Aaron Gray, James Johnson, John Salmons, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201570-2457-2550",
+      "Name": "Hakim Warrick, Chris Richard, Joe Alexander, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-201959-2422-283",
+      "Name": "Brad Miller, James Johnson, Taj Gibson, John Salmons, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201149-201959-2436-2550",
+      "Name": "Hakim Warrick, Joakim Noah, Taj Gibson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201959-2436-2550",
+      "Name": "Hakim Warrick, Acie Law, Taj Gibson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-201565-201949-2422",
+      "Name": "Brad Miller, Joakim Noah, Derrick Rose, James Johnson, John Salmons",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201949-2436-2736",
+      "Name": "Brad Miller, Derrick Rose, James Johnson, Flip Murray, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-201949-2436-2550",
+      "Name": "Brad Miller, Derrick Rose, James Johnson, Flip Murray, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 49.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201181-201565-201959-2436-2457",
+      "Name": "Chris Richard, Derrick Rose, Taj Gibson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201189-201949-2422-2457-2550",
+      "Name": "Aaron Gray, James Johnson, John Salmons, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201959-2436-2457-2550",
+      "Name": "Joakim Noah, Taj Gibson, Flip Murray, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201181-201949-2457-2550",
+      "Name": "Hakim Warrick, Chris Richard, James Johnson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-200748-201959-2457-2550",
+      "Name": "Brad Miller, Tyrus Thomas, Taj Gibson, Jannero Pargo, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201149-2422-2457-283",
+      "Name": "Brad Miller, Joakim Noah, John Salmons, Jannero Pargo, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201181-201565-2436-2736",
+      "Name": "Brad Miller, Chris Richard, Derrick Rose, Flip Murray, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 36.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201949-201959-2457-2484",
+      "Name": "Hakim Warrick, James Johnson, Taj Gibson, Jannero Pargo, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 33.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "200748-201149-201565-201949-2550",
+      "Name": "Tyrus Thomas, Joakim Noah, Derrick Rose, James Johnson, Kirk Hinrich",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 29.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-1802-2436-2457-2484",
+      "Name": "Hakim Warrick, Brad Miller, Flip Murray, Jannero Pargo, Devin Brown",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 26.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201949-2436-2457-2736",
+      "Name": "Brad Miller, James Johnson, Flip Murray, Jannero Pargo, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 25.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201181-201570-2436",
+      "Name": "Hakim Warrick, Acie Law, Chris Richard, Joe Alexander, Flip Murray",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 23.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201181-201949-2436-2457",
+      "Name": "Brad Miller, Chris Richard, James Johnson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 18.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201181-201565-2422-2484-2736",
+      "Name": "Chris Richard, Derrick Rose, John Salmons, Devin Brown, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 18.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201959-2422-2484-2550-2736",
+      "Name": "Taj Gibson, John Salmons, Devin Brown, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 14.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "1802-201565-2422-2736-283",
+      "Name": "Brad Miller, Derrick Rose, John Salmons, Luol Deng, Lindsey Hunter",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13.0,
+      "GamesPlayed": 2,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "201149-201565-201949-2436-2457",
+      "Name": "Joakim Noah, Derrick Rose, James Johnson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201151-201181-201959-2457",
+      "Name": "Hakim Warrick, Acie Law, Chris Richard, Taj Gibson, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-2436-2457-2550-2736",
+      "Name": "Hakim Warrick, Flip Murray, Jannero Pargo, Kirk Hinrich, Luol Deng",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2009-10",
+      "EntityId": "101124-201570-201949-2436-2457",
+      "Name": "Hakim Warrick, Joe Alexander, James Johnson, Flip Murray, Jannero Pargo",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    }
+  ]
+}

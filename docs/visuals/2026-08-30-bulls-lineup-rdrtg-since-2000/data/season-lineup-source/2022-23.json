@@ -1,0 +1,2859 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2022-23",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2022-23",
+    "RowsReturned": 321,
+    "RowsWithDefPoss": 311,
+    "RowsSkippedMissingMetrics": 27,
+    "LastRowDefPoss": 1,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-201942-202696-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 35487.0,
+      "GamesPlayed": 48,
+      "DefPoss": 1217,
+      "OpponentPoints": 1373
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-201942-201976-202696-203897",
+      "Name": "Alex Caruso, DeMar DeRozan, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 16042.0,
+      "GamesPlayed": 16,
+      "DefPoss": 512,
+      "OpponentPoints": 537
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-201942-202696-203897",
+      "Name": "Alex Caruso, Patrick Williams, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12052.0,
+      "GamesPlayed": 27,
+      "DefPoss": 405,
+      "OpponentPoints": 453
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630245-202696-203897",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8895.0,
+      "GamesPlayed": 39,
+      "DefPoss": 304,
+      "OpponentPoints": 349
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630245-201942-203083",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7881.0,
+      "GamesPlayed": 24,
+      "DefPoss": 269,
+      "OpponentPoints": 294
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-201942-201976-202696-203897",
+      "Name": "Patrick Williams, DeMar DeRozan, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7729.0,
+      "GamesPlayed": 14,
+      "DefPoss": 253,
+      "OpponentPoints": 334
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630245-201942-202696-203897",
+      "Name": "Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6260.0,
+      "GamesPlayed": 29,
+      "DefPoss": 210,
+      "OpponentPoints": 236
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-1630245-202696-203897",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5858.0,
+      "GamesPlayed": 16,
+      "DefPoss": 195,
+      "OpponentPoints": 224
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-201942-202696-203897",
+      "Name": "Coby White, Patrick Williams, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4880.0,
+      "GamesPlayed": 23,
+      "DefPoss": 167,
+      "OpponentPoints": 201
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-1630245-201942-202696",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4337.0,
+      "GamesPlayed": 17,
+      "DefPoss": 151,
+      "OpponentPoints": 179
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-201976-202696-203897",
+      "Name": "Coby White, Patrick Williams, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3728.0,
+      "GamesPlayed": 19,
+      "DefPoss": 128,
+      "OpponentPoints": 148
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-201609-201942-203083",
+      "Name": "Derrick Jones Jr., Coby White, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3640.0,
+      "GamesPlayed": 14,
+      "DefPoss": 125,
+      "OpponentPoints": 132
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-201942-202696-203897",
+      "Name": "Alex Caruso, Coby White, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3155.0,
+      "GamesPlayed": 14,
+      "DefPoss": 112,
+      "OpponentPoints": 126
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-202696-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2730.0,
+      "GamesPlayed": 11,
+      "DefPoss": 99,
+      "OpponentPoints": 118
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630245-201942-202696",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2667.0,
+      "GamesPlayed": 26,
+      "DefPoss": 91,
+      "OpponentPoints": 98
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-201609-203083-203897",
+      "Name": "Alex Caruso, Javonte Green, Goran Dragic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2458.0,
+      "GamesPlayed": 9,
+      "DefPoss": 89,
+      "OpponentPoints": 97
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630245-203083-203897",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2369.0,
+      "GamesPlayed": 22,
+      "DefPoss": 79,
+      "OpponentPoints": 109
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630172-1630245-201942",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2305.0,
+      "GamesPlayed": 13,
+      "DefPoss": 77,
+      "OpponentPoints": 86
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-202696-203897",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2122.0,
+      "GamesPlayed": 14,
+      "DefPoss": 72,
+      "OpponentPoints": 93
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-201609-203083-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Goran Dragic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2086.0,
+      "GamesPlayed": 5,
+      "DefPoss": 68,
+      "OpponentPoints": 55
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630172-202696-203897",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2000.0,
+      "GamesPlayed": 16,
+      "DefPoss": 69,
+      "OpponentPoints": 75
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-1630245-201942-202696",
+      "Name": "Alex Caruso, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1966.0,
+      "GamesPlayed": 14,
+      "DefPoss": 63,
+      "OpponentPoints": 76
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1630172-201609-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Patrick Williams, Goran Dragic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1793.0,
+      "GamesPlayed": 7,
+      "DefPoss": 64,
+      "OpponentPoints": 84
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-1630245-201942-202696",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1543.0,
+      "GamesPlayed": 5,
+      "DefPoss": 50,
+      "OpponentPoints": 66
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-201609-203083-203897",
+      "Name": "Derrick Jones Jr., Coby White, Goran Dragic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1530.0,
+      "GamesPlayed": 7,
+      "DefPoss": 53,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630245-201942-202696-203897",
+      "Name": "Derrick Jones Jr., Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1527.0,
+      "GamesPlayed": 12,
+      "DefPoss": 53,
+      "OpponentPoints": 64
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-201609-201942-202696-203897",
+      "Name": "Patrick Williams, Goran Dragic, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1470.0,
+      "GamesPlayed": 9,
+      "DefPoss": 50,
+      "OpponentPoints": 62
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-201609-201942-203083",
+      "Name": "Coby White, Javonte Green, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1449.0,
+      "GamesPlayed": 8,
+      "DefPoss": 52,
+      "OpponentPoints": 60
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629750-201609-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Javonte Green, Goran Dragic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1392.0,
+      "GamesPlayed": 5,
+      "DefPoss": 53,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-203083-203897",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1381.0,
+      "GamesPlayed": 7,
+      "DefPoss": 49,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-201942-203083",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1337.0,
+      "GamesPlayed": 7,
+      "DefPoss": 46,
+      "OpponentPoints": 47
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630245-201942-202696-203897",
+      "Name": "Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1303.0,
+      "GamesPlayed": 9,
+      "DefPoss": 54,
+      "OpponentPoints": 67
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630245-202696-203897",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1300.0,
+      "GamesPlayed": 11,
+      "DefPoss": 45,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1629750-201942-202696",
+      "Name": "Alex Caruso, Coby White, Javonte Green, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1238.0,
+      "GamesPlayed": 7,
+      "DefPoss": 40,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-201942-201976-202696-203897",
+      "Name": "Coby White, DeMar DeRozan, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1234.0,
+      "GamesPlayed": 10,
+      "DefPoss": 37,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-201942-202696-203897",
+      "Name": "Derrick Jones Jr., Coby White, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1201.0,
+      "GamesPlayed": 7,
+      "DefPoss": 38,
+      "OpponentPoints": 59
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630245-201942-201976-202696-203897",
+      "Name": "Ayo Dosunmu, DeMar DeRozan, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1145.0,
+      "GamesPlayed": 2,
+      "DefPoss": 38,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630245-201942-202696-203897",
+      "Name": "Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1064.0,
+      "GamesPlayed": 7,
+      "DefPoss": 39,
+      "OpponentPoints": 45
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-201942-203083-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1059.0,
+      "GamesPlayed": 8,
+      "DefPoss": 35,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-1630172-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1042.0,
+      "GamesPlayed": 8,
+      "DefPoss": 30,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-201609-201942-202696",
+      "Name": "Derrick Jones Jr., Coby White, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1032.0,
+      "GamesPlayed": 6,
+      "DefPoss": 36,
+      "OpponentPoints": 49
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-201976-202696-203897",
+      "Name": "Alex Caruso, Patrick Williams, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1025.0,
+      "GamesPlayed": 5,
+      "DefPoss": 33,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630245-201942-202696",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1007.0,
+      "GamesPlayed": 8,
+      "DefPoss": 35,
+      "OpponentPoints": 41
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630172-1630245-1631207",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1000.0,
+      "GamesPlayed": 8,
+      "DefPoss": 33,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-201942-203083",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 988.0,
+      "GamesPlayed": 7,
+      "DefPoss": 31,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-201609-201942-203083",
+      "Name": "Coby White, Patrick Williams, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 949.0,
+      "GamesPlayed": 7,
+      "DefPoss": 35,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630245-1631207-203083-203897",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 945.0,
+      "GamesPlayed": 4,
+      "DefPoss": 31,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-1630172-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Patrick Williams, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 926.0,
+      "GamesPlayed": 3,
+      "DefPoss": 31,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630172-1630245-201942-202696",
+      "Name": "Javonte Green, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 926.0,
+      "GamesPlayed": 8,
+      "DefPoss": 33,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-201942-202696",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 913.0,
+      "GamesPlayed": 5,
+      "DefPoss": 33,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630172-201609-201942",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, Goran Dragic, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 912.0,
+      "GamesPlayed": 6,
+      "DefPoss": 31,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-201609-201942-202696",
+      "Name": "Patrick Williams, Ayo Dosunmu, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 911.0,
+      "GamesPlayed": 9,
+      "DefPoss": 32,
+      "OpponentPoints": 38
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-201609-202696-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Goran Dragic, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 881.0,
+      "GamesPlayed": 9,
+      "DefPoss": 33,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-201609-201942-202696",
+      "Name": "Alex Caruso, Javonte Green, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 871.0,
+      "GamesPlayed": 7,
+      "DefPoss": 25,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630245-201942-203083",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 864.0,
+      "GamesPlayed": 6,
+      "DefPoss": 27,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-201609-201942-203083",
+      "Name": "Alex Caruso, Javonte Green, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 853.0,
+      "GamesPlayed": 5,
+      "DefPoss": 29,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630172-1630245-202696",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 847.0,
+      "GamesPlayed": 1,
+      "DefPoss": 30,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-201976-202696-203897",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 845.0,
+      "GamesPlayed": 4,
+      "DefPoss": 27,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630172-203083-203897",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 845.0,
+      "GamesPlayed": 5,
+      "DefPoss": 27,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-201609-201942-202696-203897",
+      "Name": "Alex Caruso, Goran Dragic, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 843.0,
+      "GamesPlayed": 4,
+      "DefPoss": 32,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630245-201609-201942-203083",
+      "Name": "Derrick Jones Jr., Ayo Dosunmu, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 818.0,
+      "GamesPlayed": 6,
+      "DefPoss": 29,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630172-1630245-201609-201942",
+      "Name": "Derrick Jones Jr., Patrick Williams, Ayo Dosunmu, Goran Dragic, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 794.0,
+      "GamesPlayed": 6,
+      "DefPoss": 27,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-201942-202696",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 782.0,
+      "GamesPlayed": 8,
+      "DefPoss": 25,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630172-201942-202696",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 782.0,
+      "GamesPlayed": 7,
+      "DefPoss": 25,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-201609-203083-203897",
+      "Name": "Coby White, Patrick Williams, Goran Dragic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 750.0,
+      "GamesPlayed": 9,
+      "DefPoss": 26,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-201942-202696-203897",
+      "Name": "Alex Caruso, Javonte Green, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 736.0,
+      "GamesPlayed": 3,
+      "DefPoss": 27,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1629750-201942-203083",
+      "Name": "Alex Caruso, Coby White, Javonte Green, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 728.0,
+      "GamesPlayed": 4,
+      "DefPoss": 24,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630172-1630245-201609-203897",
+      "Name": "Derrick Jones Jr., Patrick Williams, Ayo Dosunmu, Goran Dragic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 725.0,
+      "GamesPlayed": 6,
+      "DefPoss": 26,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630172-1630245-203897",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 698.0,
+      "GamesPlayed": 9,
+      "DefPoss": 27,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630172-201609-203083",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Goran Dragic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 693.0,
+      "GamesPlayed": 3,
+      "DefPoss": 24,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-1631207-202696",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 672.0,
+      "GamesPlayed": 1,
+      "DefPoss": 20,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630245-1630250-1630637-1630678-1631207",
+      "Name": "Ayo Dosunmu, Marko Simonovic, Carlik Jones, Terry Taylor, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 671.0,
+      "GamesPlayed": 2,
+      "DefPoss": 27,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-201609-201942-202696-203083",
+      "Name": "Coby White, Goran Dragic, DeMar DeRozan, Nikola Vucevic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 648.0,
+      "GamesPlayed": 1,
+      "DefPoss": 20,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-201942-201976-203083-203897",
+      "Name": "Patrick Williams, DeMar DeRozan, Patrick Beverley, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 646.0,
+      "GamesPlayed": 3,
+      "DefPoss": 22,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-201609-203083-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Goran Dragic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 643.0,
+      "GamesPlayed": 6,
+      "DefPoss": 23,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-201976-202696-203897",
+      "Name": "Alex Caruso, Coby White, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 633.0,
+      "GamesPlayed": 5,
+      "DefPoss": 19,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630172-201609-203083",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, Goran Dragic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 593.0,
+      "GamesPlayed": 3,
+      "DefPoss": 21,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-201609-203083-203897",
+      "Name": "Coby White, Javonte Green, Goran Dragic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 568.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-201609-201942-202696",
+      "Name": "Coby White, Patrick Williams, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 561.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-201609-201942-203083",
+      "Name": "Derrick Jones Jr., Alex Caruso, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 536.0,
+      "GamesPlayed": 6,
+      "DefPoss": 18,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1630172-1630245-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Patrick Williams, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 532.0,
+      "GamesPlayed": 4,
+      "DefPoss": 18,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-201609-202696",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Goran Dragic, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 528.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-201609-201942",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Goran Dragic, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 518.0,
+      "GamesPlayed": 1,
+      "DefPoss": 21,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-201942-203083-203897",
+      "Name": "Coby White, Patrick Williams, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 518.0,
+      "GamesPlayed": 7,
+      "DefPoss": 19,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-201942-202696-203897",
+      "Name": "Coby White, Javonte Green, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 506.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630172-201942-202696-203897",
+      "Name": "Javonte Green, Patrick Williams, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 497.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-201609-201942-203083",
+      "Name": "Patrick Williams, Ayo Dosunmu, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 496.0,
+      "GamesPlayed": 7,
+      "DefPoss": 17,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-201609-203083",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Goran Dragic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 469.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1629750-203083-203897",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 459.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-201609-202696-203897",
+      "Name": "Coby White, Patrick Williams, Goran Dragic, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 453.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630245-1631207-203083",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 449.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1631207-201942-202696",
+      "Name": "Coby White, Patrick Williams, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 446.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-201609-203083-203897",
+      "Name": "Alex Caruso, Patrick Williams, Goran Dragic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 444.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-201609-202696-203897",
+      "Name": "Derrick Jones Jr., Coby White, Goran Dragic, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 437.0,
+      "GamesPlayed": 5,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630245-1631207-202696",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 437.0,
+      "GamesPlayed": 5,
+      "DefPoss": 18,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630245-1630637-1630678",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Carlik Jones, Terry Taylor",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 435.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630245-203083-203897",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 427.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1628396-1629632-1630245-1631207",
+      "Name": "Derrick Jones Jr., Tony Bradley, Coby White, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 422.0,
+      "GamesPlayed": 2,
+      "DefPoss": 18,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630245-201609-201942-202696",
+      "Name": "Derrick Jones Jr., Ayo Dosunmu, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 422.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-1630172-202696-203897",
+      "Name": "Coby White, Javonte Green, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 421.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1630245-202696-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 411.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630172-201609-203897",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, Goran Dragic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 411.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-203083-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 408.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630172-1630245-202696",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 407.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630245-201609-201942-202696",
+      "Name": "Alex Caruso, Ayo Dosunmu, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 406.0,
+      "GamesPlayed": 5,
+      "DefPoss": 14,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-201609-202696-203897",
+      "Name": "Coby White, Javonte Green, Goran Dragic, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 402.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-201609-203083-203897",
+      "Name": "Alex Caruso, Coby White, Goran Dragic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 396.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-201609-201942-202696",
+      "Name": "Alex Caruso, Patrick Williams, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 396.0,
+      "GamesPlayed": 5,
+      "DefPoss": 14,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630245-201609-202696",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Goran Dragic, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 371.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-201609-201942-203083",
+      "Name": "Alex Caruso, Patrick Williams, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 363.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-1630245-201942-203083",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 359.0,
+      "GamesPlayed": 5,
+      "DefPoss": 12,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1630245-201609-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Ayo Dosunmu, Goran Dragic, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 358.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629750-1630172-201609-203897",
+      "Name": "Derrick Jones Jr., Javonte Green, Patrick Williams, Goran Dragic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 348.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629750-1630172-1630245-1631207",
+      "Name": "Derrick Jones Jr., Javonte Green, Patrick Williams, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 343.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630172-1630245-1630678-1631207",
+      "Name": "Derrick Jones Jr., Patrick Williams, Ayo Dosunmu, Terry Taylor, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 343.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-201942-201976-203083-203897",
+      "Name": "Alex Caruso, DeMar DeRozan, Patrick Beverley, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 342.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630245-1631207-201942-203083",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 333.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-201609-201942-202696",
+      "Name": "Derrick Jones Jr., Alex Caruso, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 330.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-201609-202696-203897",
+      "Name": "Alex Caruso, Javonte Green, Goran Dragic, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 329.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-201942-201976-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, DeMar DeRozan, Patrick Beverley, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 321.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630245-201609-201942-202696",
+      "Name": "Javonte Green, Ayo Dosunmu, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 318.0,
+      "GamesPlayed": 4,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1629750-1630245-201942",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 315.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630172-201609-201942-202696",
+      "Name": "Javonte Green, Patrick Williams, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 310.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1628396-1629632-1630172-1630245-1631207",
+      "Name": "Tony Bradley, Coby White, Patrick Williams, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 306.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1631207-203083-203897",
+      "Name": "Coby White, Patrick Williams, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 306.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-1630172-201942-202696",
+      "Name": "Coby White, Javonte Green, Patrick Williams, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 301.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1630172-1630245-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Patrick Williams, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 299.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630245-201609-201942-202696-203897",
+      "Name": "Ayo Dosunmu, Goran Dragic, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 296.0,
+      "GamesPlayed": 5,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-201609-201942-203083-203897",
+      "Name": "Patrick Williams, Goran Dragic, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 291.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1629750-202696-203897",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 289.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-201609-201942-203083",
+      "Name": "Alex Caruso, Coby White, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 284.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1629750-201609-203083",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Goran Dragic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 282.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630245-201976-202696-203897",
+      "Name": "Alex Caruso, Ayo Dosunmu, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 282.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629750-1630245-201609-203897",
+      "Name": "Derrick Jones Jr., Javonte Green, Ayo Dosunmu, Goran Dragic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 279.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-201942-202696-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 273.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-201609-201942-202696",
+      "Name": "Coby White, Javonte Green, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 271.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630245-1630637-202696",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Carlik Jones, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 269.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1628396-1629632-1629750-1630245",
+      "Name": "Derrick Jones Jr., Tony Bradley, Coby White, Javonte Green, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630172-1630245-201942-203897",
+      "Name": "Derrick Jones Jr., Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 264.0,
+      "GamesPlayed": 4,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-201609-203083",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Goran Dragic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-201609-202696",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Goran Dragic, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630172-201609-201942-203083",
+      "Name": "Javonte Green, Patrick Williams, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630245-1630637-1631207-203083-203897",
+      "Name": "Ayo Dosunmu, Carlik Jones, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 261.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-1630637-1631207-202696",
+      "Name": "Patrick Williams, Ayo Dosunmu, Carlik Jones, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-201609-201942-202696-203897",
+      "Name": "Javonte Green, Goran Dragic, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1629750-1630637-1631207",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, Carlik Jones, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 258.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-1630245-201609-203083",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, Goran Dragic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 251.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1629750-201609-201942",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, Goran Dragic, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 249.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630245-1631207-202696-203897",
+      "Name": "Coby White, Ayo Dosunmu, Dalen Terry, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 247.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-1630172-1630245-202696",
+      "Name": "Alex Caruso, Javonte Green, Patrick Williams, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 246.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629750-1630245-201942-202696",
+      "Name": "Derrick Jones Jr., Javonte Green, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 240.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630172-1630245-203083",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Ayo Dosunmu, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630245-1631207-201942-202696",
+      "Name": "Javonte Green, Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 228.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630245-1630637-1630678-1631207",
+      "Name": "Derrick Jones Jr., Ayo Dosunmu, Carlik Jones, Terry Taylor, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 226.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-1630245-202696-203897",
+      "Name": "Alex Caruso, Javonte Green, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 225.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630172-1630245-201942-202696",
+      "Name": "Derrick Jones Jr., Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 223.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1630172-201609-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Patrick Williams, Goran Dragic, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 220.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630245-201609-203083-203897",
+      "Name": "Derrick Jones Jr., Ayo Dosunmu, Goran Dragic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 219.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630172-201942-203897",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 5,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630172-1630245-202696-203897",
+      "Name": "Javonte Green, Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 210.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-201609-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Goran Dragic, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 208.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1628396-1629750-1630172-1630245-1631207",
+      "Name": "Tony Bradley, Javonte Green, Patrick Williams, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630245-201609-203083",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Goran Dragic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630172-201942-203083-203897",
+      "Name": "Javonte Green, Patrick Williams, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630245-201609-201942-203083",
+      "Name": "Javonte Green, Ayo Dosunmu, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-201976-203083-203897",
+      "Name": "Alex Caruso, Patrick Williams, Patrick Beverley, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-201976-202696-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 195.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1630245-201942-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-201609-201942-202696",
+      "Name": "Alex Caruso, Coby White, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-1630678-1631207",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Terry Taylor, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 183.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629750-1630245-201609-201942",
+      "Name": "Derrick Jones Jr., Javonte Green, Ayo Dosunmu, Goran Dragic, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1631207-203083-203897",
+      "Name": "Alex Caruso, Coby White, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-201609-201942-203083-203897",
+      "Name": "Javonte Green, Goran Dragic, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 179.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-1631207-201942-202696",
+      "Name": "Coby White, Javonte Green, Dalen Terry, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630792-1631207-203083-203897",
+      "Name": "Coby White, Malcolm Hill, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1628396-1630250-1630637-1630792-1631207",
+      "Name": "Tony Bradley, Marko Simonovic, Carlik Jones, Malcolm Hill, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1631207-201976-202696-203897",
+      "Name": "Coby White, Dalen Terry, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-1630245-203083-203897",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 172.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630245-201609-201942-202696",
+      "Name": "Coby White, Ayo Dosunmu, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630245-201609-201942-203083",
+      "Name": "Coby White, Ayo Dosunmu, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-201942-203083-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1631207-201609-203083-203897",
+      "Name": "Javonte Green, Dalen Terry, Goran Dragic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-201976-203083-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Patrick Beverley, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1630172-1631207-201609",
+      "Name": "Derrick Jones Jr., Alex Caruso, Patrick Williams, Dalen Terry, Goran Dragic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 159.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1630172-201942-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Patrick Williams, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 158.0,
+      "GamesPlayed": 4,
+      "DefPoss": 7,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630245-1630637-1631207-203083",
+      "Name": "Coby White, Ayo Dosunmu, Carlik Jones, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-201609-201942-203083-203897",
+      "Name": "Derrick Jones Jr., Goran Dragic, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630172-201609-201942-203897",
+      "Name": "Derrick Jones Jr., Patrick Williams, Goran Dragic, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-1630245-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630172-1630245-203083",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, Ayo Dosunmu, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-201942-201976-202696-203897",
+      "Name": "Derrick Jones Jr., DeMar DeRozan, Patrick Beverley, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1629750-201942-202696",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629750-201609-201942",
+      "Name": "Derrick Jones Jr., Alex Caruso, Javonte Green, Goran Dragic, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 3,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1631207-202696-203897",
+      "Name": "Alex Caruso, Coby White, Dalen Terry, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630637-202696-203897",
+      "Name": "Coby White, Patrick Williams, Carlik Jones, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 148.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-1630172-201609",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Patrick Williams, Goran Dragic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-201976-203083-203897",
+      "Name": "Coby White, Patrick Williams, Patrick Beverley, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1628396-1629632-1630172-1631207",
+      "Name": "Derrick Jones Jr., Tony Bradley, Coby White, Patrick Williams, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630245-201609-202696-203897",
+      "Name": "Derrick Jones Jr., Ayo Dosunmu, Goran Dragic, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630172-201942-203083",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 140.0,
+      "GamesPlayed": 3,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629750-1630245-201942-203897",
+      "Name": "Derrick Jones Jr., Javonte Green, Ayo Dosunmu, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-201942-201976-202696",
+      "Name": "Alex Caruso, Coby White, DeMar DeRozan, Patrick Beverley, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1631207-201609-201942-202696",
+      "Name": "Coby White, Dalen Terry, Goran Dragic, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-1631207-201609-202696",
+      "Name": "Alex Caruso, Javonte Green, Dalen Terry, Goran Dragic, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-1630245-202696-203897",
+      "Name": "Coby White, Javonte Green, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 3,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-1630245-203083",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Ayo Dosunmu, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630172-1631207-202696",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1628396-1629632-1630172-1630245",
+      "Name": "Derrick Jones Jr., Tony Bradley, Coby White, Patrick Williams, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-201942-201976-202696",
+      "Name": "Coby White, Patrick Williams, DeMar DeRozan, Patrick Beverley, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-1630250-1631207",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Marko Simonovic, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630245-201609-202696-203897",
+      "Name": "Alex Caruso, Ayo Dosunmu, Goran Dragic, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630245-201942-203083-203897",
+      "Name": "Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 124.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630245-1631207-203083",
+      "Name": "Alex Caruso, Coby White, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-1631207-203083",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1629750-201609-203897",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, Goran Dragic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1628396-1629750-1630245-1631207",
+      "Name": "Derrick Jones Jr., Tony Bradley, Javonte Green, Ayo Dosunmu, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 114.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-1630245-202696",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Ayo Dosunmu, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-1630637-1630678",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Carlik Jones, Terry Taylor",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-1630172-1631207-202696",
+      "Name": "Alex Caruso, Javonte Green, Patrick Williams, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 111.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-201942-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-201942-201976-203083-203897",
+      "Name": "Coby White, DeMar DeRozan, Patrick Beverley, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630172-202696-203897",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 109.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-202696-203083-203897",
+      "Name": "Alex Caruso, Coby White, Nikola Vucevic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630245-201609-202696-203897",
+      "Name": "Coby White, Ayo Dosunmu, Goran Dragic, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 108.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1631207-201942-202696-203897",
+      "Name": "Coby White, Dalen Terry, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1630172-201609-202696",
+      "Name": "Alex Caruso, Coby White, Patrick Williams, Goran Dragic, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-201609-201942-202696-203897",
+      "Name": "Coby White, Goran Dragic, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1628396-1629632-1630172-1630250-1631207",
+      "Name": "Tony Bradley, Coby White, Patrick Williams, Marko Simonovic, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630245-201609-203083",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Goran Dragic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629750-1630245-201609-202696",
+      "Name": "Derrick Jones Jr., Javonte Green, Ayo Dosunmu, Goran Dragic, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 103.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629750-201609-201942-203897",
+      "Name": "Derrick Jones Jr., Javonte Green, Goran Dragic, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-201609-202696-203897",
+      "Name": "Alex Caruso, Patrick Williams, Goran Dragic, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1628396-1629632-1630637-1630792-1631207",
+      "Name": "Tony Bradley, Coby White, Carlik Jones, Malcolm Hill, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630245-201609-203083-203897",
+      "Name": "Javonte Green, Ayo Dosunmu, Goran Dragic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630245-201609-201942-203083",
+      "Name": "Alex Caruso, Ayo Dosunmu, Goran Dragic, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629750-1630172-1630245-201942",
+      "Name": "Derrick Jones Jr., Javonte Green, Patrick Williams, Ayo Dosunmu, DeMar DeRozan",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 92.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630245-1631207-201942-202696-203897",
+      "Name": "Ayo Dosunmu, Dalen Terry, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1630245-201942-202696",
+      "Name": "Derrick Jones Jr., Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-1630245-201942-203083",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-1631207-202696-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Dalen Terry, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-1630172-1631207-202696",
+      "Name": "Coby White, Javonte Green, Patrick Williams, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-201942-201976",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, DeMar DeRozan, Patrick Beverley",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630172-1630245-1631207-203083",
+      "Name": "Javonte Green, Patrick Williams, Ayo Dosunmu, Dalen Terry, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-1630245-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Ayo Dosunmu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-201609-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Goran Dragic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-201609-202696-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Goran Dragic, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-201942-203083-203897",
+      "Name": "Alex Caruso, Javonte Green, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630172-1630245-202696-203897",
+      "Name": "Derrick Jones Jr., Patrick Williams, Ayo Dosunmu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1629750-1630172-1631207",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, Patrick Williams, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1629750-1630172-201942-203897",
+      "Name": "Coby White, Javonte Green, Patrick Williams, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 75.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629750-1630245-1630678-1631207",
+      "Name": "Derrick Jones Jr., Javonte Green, Ayo Dosunmu, Terry Taylor, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 73.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-201942-203083-203897",
+      "Name": "Alex Caruso, Patrick Williams, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-201942-201976-203897",
+      "Name": "Alex Caruso, Patrick Williams, DeMar DeRozan, Patrick Beverley, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630637-1631207-202696",
+      "Name": "Derrick Jones Jr., Coby White, Carlik Jones, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1631207-201609-201942-202696-203897",
+      "Name": "Dalen Terry, Goran Dragic, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629750-1630245-1631207-201609",
+      "Name": "Derrick Jones Jr., Javonte Green, Ayo Dosunmu, Dalen Terry, Goran Dragic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1630245-201976-203083",
+      "Name": "Coby White, Patrick Williams, Ayo Dosunmu, Patrick Beverley, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-1630250-1630637-1631207",
+      "Name": "Patrick Williams, Ayo Dosunmu, Marko Simonovic, Carlik Jones, Dalen Terry",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 61.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1629750-201609-202696",
+      "Name": "Derrick Jones Jr., Coby White, Javonte Green, Goran Dragic, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-201976-203083-203897",
+      "Name": "Derrick Jones Jr., Coby White, Patrick Beverley, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-1630245-1631207-202696",
+      "Name": "Alex Caruso, Javonte Green, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 59.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629750-1630245-201942-203083",
+      "Name": "Alex Caruso, Javonte Green, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-1630245-201609-203083",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, Goran Dragic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 56.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-201609-201942-202696-203897",
+      "Name": "Derrick Jones Jr., Goran Dragic, DeMar DeRozan, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1629632-1629750-1630245-203083",
+      "Name": "Alex Caruso, Coby White, Javonte Green, Ayo Dosunmu, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629750-1630172-1630245-201609-203083",
+      "Name": "Javonte Green, Patrick Williams, Ayo Dosunmu, Goran Dragic, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1631207-201942-203083-203897",
+      "Name": "Coby White, Dalen Terry, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 49.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1631207-201942-203083",
+      "Name": "Coby White, Patrick Williams, Dalen Terry, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 48.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630245-201942-201976-202696",
+      "Name": "Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Patrick Beverley, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 47.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630637-1631207-202696-203897",
+      "Name": "Patrick Williams, Carlik Jones, Dalen Terry, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 46.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630245-201976-203083-203897",
+      "Name": "Derrick Jones Jr., Ayo Dosunmu, Patrick Beverley, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-1630245-1631207-203083-203897",
+      "Name": "Patrick Williams, Ayo Dosunmu, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1630245-201942-203083",
+      "Name": "Derrick Jones Jr., Alex Caruso, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 42.0,
+      "GamesPlayed": 2,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630245-1630792-1631207-202696",
+      "Name": "Coby White, Ayo Dosunmu, Malcolm Hill, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 39.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1629632-1630245-1631207-203897",
+      "Name": "Derrick Jones Jr., Coby White, Ayo Dosunmu, Dalen Terry, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 38.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1630172-1630245-201942-203083",
+      "Name": "Derrick Jones Jr., Patrick Williams, Ayo Dosunmu, DeMar DeRozan, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 32.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630245-1630792-1631207-203083-203897",
+      "Name": "Ayo Dosunmu, Malcolm Hill, Dalen Terry, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 29.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630245-201942-203083-203897",
+      "Name": "Coby White, Ayo Dosunmu, DeMar DeRozan, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627936-1630172-1630245-1631207-202696",
+      "Name": "Alex Caruso, Patrick Williams, Ayo Dosunmu, Dalen Terry, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 19.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1629632-1630172-1631207-202696-203897",
+      "Name": "Coby White, Patrick Williams, Dalen Terry, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 18.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-201976-203083",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Patrick Beverley, Andre Drummond",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629750-201942-203897",
+      "Name": "Derrick Jones Jr., Alex Caruso, Javonte Green, DeMar DeRozan, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1627884-1627936-1629632-1629750-1630245",
+      "Name": "Derrick Jones Jr., Alex Caruso, Coby White, Javonte Green, Ayo Dosunmu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2022-23",
+      "EntityId": "1630172-201942-202696-203083-203897",
+      "Name": "Patrick Williams, DeMar DeRozan, Nikola Vucevic, Andre Drummond, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    }
+  ]
+}

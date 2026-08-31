@@ -1,0 +1,4769 @@
+{
+  "source": "https://api.pbpstats.com/get-totals/nba",
+  "parameters": {
+    "Season": "2020-21",
+    "SeasonType": "Regular Season",
+    "Type": "Lineup",
+    "TeamId": "1610612741"
+  },
+  "audit": {
+    "Season": "2020-21",
+    "RowsReturned": 500,
+    "RowsWithDefPoss": 500,
+    "RowsSkippedMissingMetrics": 25,
+    "LastRowDefPoss": 3,
+    "SecondsSortedDescending": true
+  },
+  "rows": [
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-1630172-202066-203897",
+      "Name": "Wendell Carter Jr., Coby White, Patrick Williams, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 8268.0,
+      "GamesPlayed": 14,
+      "DefPoss": 290,
+      "OpponentPoints": 337
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1629632-1630172-202066-202696",
+      "Name": "Daniel Theis, Coby White, Patrick Williams, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 7885.0,
+      "GamesPlayed": 10,
+      "DefPoss": 272,
+      "OpponentPoints": 316
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1630172-201152-202696-203107-203897",
+      "Name": "Patrick Williams, Thaddeus Young, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6954.0,
+      "GamesPlayed": 10,
+      "DefPoss": 229,
+      "OpponentPoints": 257
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628976-1629632-1630172-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 6213.0,
+      "GamesPlayed": 10,
+      "DefPoss": 219,
+      "OpponentPoints": 232
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1630172-201152-203107-203897",
+      "Name": "Lauri Markkanen, Patrick Williams, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 5221.0,
+      "GamesPlayed": 9,
+      "DefPoss": 178,
+      "OpponentPoints": 200
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-1630172-203490-203897",
+      "Name": "Wendell Carter Jr., Coby White, Patrick Williams, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 4052.0,
+      "GamesPlayed": 13,
+      "DefPoss": 145,
+      "OpponentPoints": 192
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1630172-201152-203897",
+      "Name": "Lauri Markkanen, Coby White, Patrick Williams, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3402.0,
+      "GamesPlayed": 12,
+      "DefPoss": 116,
+      "OpponentPoints": 139
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-201152-202066-202696",
+      "Name": "Coby White, Patrick Williams, Thaddeus Young, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3386.0,
+      "GamesPlayed": 11,
+      "DefPoss": 111,
+      "OpponentPoints": 114
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1629655-1630172-203897",
+      "Name": "Lauri Markkanen, Coby White, Daniel Gafford, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 3071.0,
+      "GamesPlayed": 8,
+      "DefPoss": 105,
+      "OpponentPoints": 144
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-201152-202066-203897",
+      "Name": "Coby White, Patrick Williams, Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2970.0,
+      "GamesPlayed": 16,
+      "DefPoss": 108,
+      "OpponentPoints": 147
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1629632-1630172-202696-203897",
+      "Name": "Daniel Theis, Coby White, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2907.0,
+      "GamesPlayed": 5,
+      "DefPoss": 98,
+      "OpponentPoints": 111
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1630172-201152-202066-203107-203897",
+      "Name": "Patrick Williams, Thaddeus Young, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2697.0,
+      "GamesPlayed": 10,
+      "DefPoss": 95,
+      "OpponentPoints": 105
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-201152-202066-203897",
+      "Name": "Lauri Markkanen, Coby White, Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 2136.0,
+      "GamesPlayed": 11,
+      "DefPoss": 78,
+      "OpponentPoints": 92
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1630172-201152-202066",
+      "Name": "Lauri Markkanen, Coby White, Patrick Williams, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1980.0,
+      "GamesPlayed": 7,
+      "DefPoss": 69,
+      "OpponentPoints": 61
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-201152-202066",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1856.0,
+      "GamesPlayed": 9,
+      "DefPoss": 66,
+      "OpponentPoints": 68
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-201152-202066-203897",
+      "Name": "Wendell Carter Jr., Coby White, Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1836.0,
+      "GamesPlayed": 8,
+      "DefPoss": 62,
+      "OpponentPoints": 73
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-201152-202696-203897",
+      "Name": "Coby White, Patrick Williams, Thaddeus Young, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1793.0,
+      "GamesPlayed": 10,
+      "DefPoss": 57,
+      "OpponentPoints": 74
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1629632-1630172-201152-202066",
+      "Name": "Daniel Theis, Coby White, Patrick Williams, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1668.0,
+      "GamesPlayed": 5,
+      "DefPoss": 57,
+      "OpponentPoints": 73
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-202066-203490-203897",
+      "Name": "Wendell Carter Jr., Coby White, Garrett Temple, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1581.0,
+      "GamesPlayed": 5,
+      "DefPoss": 55,
+      "OpponentPoints": 67
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-1629632-203490",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Coby White, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1493.0,
+      "GamesPlayed": 7,
+      "DefPoss": 51,
+      "OpponentPoints": 51
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-201152-202066-203107-203897",
+      "Name": "Lauri Markkanen, Thaddeus Young, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1481.0,
+      "GamesPlayed": 8,
+      "DefPoss": 46,
+      "OpponentPoints": 56
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-201152-202066-203107-203897",
+      "Name": "Denzel Valentine, Thaddeus Young, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1421.0,
+      "GamesPlayed": 9,
+      "DefPoss": 47,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1628972-1629632-203897",
+      "Name": "Lauri Markkanen, Daniel Theis, Troy Brown Jr., Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1381.0,
+      "GamesPlayed": 4,
+      "DefPoss": 48,
+      "OpponentPoints": 41
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1630172-201152-203107-203897",
+      "Name": "Denzel Valentine, Patrick Williams, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1320.0,
+      "GamesPlayed": 6,
+      "DefPoss": 48,
+      "OpponentPoints": 66
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628972-201152-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Troy Brown Jr., Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1315.0,
+      "GamesPlayed": 3,
+      "DefPoss": 37,
+      "OpponentPoints": 46
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-201152-202066-203490-203897",
+      "Name": "Coby White, Thaddeus Young, Garrett Temple, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1315.0,
+      "GamesPlayed": 7,
+      "DefPoss": 51,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-201152-202066-202696-203897",
+      "Name": "Coby White, Thaddeus Young, Garrett Temple, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1313.0,
+      "GamesPlayed": 5,
+      "DefPoss": 43,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628976-1629632-202066-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1281.0,
+      "GamesPlayed": 5,
+      "DefPoss": 51,
+      "OpponentPoints": 55
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1630172-202696-203107-203897",
+      "Name": "Daniel Theis, Patrick Williams, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1276.0,
+      "GamesPlayed": 6,
+      "DefPoss": 46,
+      "OpponentPoints": 61
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-1630172-203897",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1218.0,
+      "GamesPlayed": 5,
+      "DefPoss": 42,
+      "OpponentPoints": 53
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1629655-1630172-202066-203897",
+      "Name": "Coby White, Daniel Gafford, Patrick Williams, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1214.0,
+      "GamesPlayed": 3,
+      "DefPoss": 41,
+      "OpponentPoints": 54
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628976-1630172-203107-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Patrick Williams, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1164.0,
+      "GamesPlayed": 7,
+      "DefPoss": 37,
+      "OpponentPoints": 48
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1630172-201152-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Patrick Williams, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1156.0,
+      "GamesPlayed": 3,
+      "DefPoss": 38,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1630172-201152-203107",
+      "Name": "Denzel Valentine, Coby White, Patrick Williams, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1153.0,
+      "GamesPlayed": 6,
+      "DefPoss": 35,
+      "OpponentPoints": 41
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1629632-1630172-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Coby White, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1127.0,
+      "GamesPlayed": 6,
+      "DefPoss": 38,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1630172-201152-202696-203107",
+      "Name": "Lauri Markkanen, Patrick Williams, Thaddeus Young, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1119.0,
+      "GamesPlayed": 1,
+      "DefPoss": 40,
+      "OpponentPoints": 50
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-201152-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1094.0,
+      "GamesPlayed": 4,
+      "DefPoss": 34,
+      "OpponentPoints": 39
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1629632-203490-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Coby White, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1083.0,
+      "GamesPlayed": 9,
+      "DefPoss": 37,
+      "OpponentPoints": 44
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1630172-202696-203107-203897",
+      "Name": "Lauri Markkanen, Patrick Williams, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1021.0,
+      "GamesPlayed": 5,
+      "DefPoss": 35,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-201152-202066-203897",
+      "Name": "Denzel Valentine, Coby White, Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1014.0,
+      "GamesPlayed": 6,
+      "DefPoss": 37,
+      "OpponentPoints": 43
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-201152-202066-203107-203490",
+      "Name": "Denzel Valentine, Thaddeus Young, Garrett Temple, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 1008.0,
+      "GamesPlayed": 2,
+      "DefPoss": 35,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1630172-202066-202696",
+      "Name": "Lauri Markkanen, Coby White, Patrick Williams, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 965.0,
+      "GamesPlayed": 5,
+      "DefPoss": 28,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-202066-202696-203897",
+      "Name": "Coby White, Patrick Williams, Garrett Temple, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 951.0,
+      "GamesPlayed": 3,
+      "DefPoss": 32,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-201152-202066-202696",
+      "Name": "Lauri Markkanen, Coby White, Thaddeus Young, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 924.0,
+      "GamesPlayed": 5,
+      "DefPoss": 28,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1627853-1629653-1629750",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Devon Dotson, Javonte Green",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 920.0,
+      "GamesPlayed": 4,
+      "DefPoss": 32,
+      "OpponentPoints": 32
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "201152-202066-203107-203490-203897",
+      "Name": "Thaddeus Young, Garrett Temple, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 918.0,
+      "GamesPlayed": 5,
+      "DefPoss": 33,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629750-201152-202066-203107",
+      "Name": "Lauri Markkanen, Javonte Green, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 915.0,
+      "GamesPlayed": 4,
+      "DefPoss": 31,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1629632-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 906.0,
+      "GamesPlayed": 5,
+      "DefPoss": 30,
+      "OpponentPoints": 34
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1630172-203107-203490-203897",
+      "Name": "Wendell Carter Jr., Patrick Williams, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 861.0,
+      "GamesPlayed": 5,
+      "DefPoss": 31,
+      "OpponentPoints": 35
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1629632-1630172-203107",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Coby White, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 844.0,
+      "GamesPlayed": 7,
+      "DefPoss": 27,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1629655-201152-202066-203897",
+      "Name": "Coby White, Daniel Gafford, Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 834.0,
+      "GamesPlayed": 5,
+      "DefPoss": 32,
+      "OpponentPoints": 42
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-1628972-1629632",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Troy Brown Jr., Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 822.0,
+      "GamesPlayed": 2,
+      "DefPoss": 27,
+      "OpponentPoints": 28
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1630172-201152-203897",
+      "Name": "Denzel Valentine, Coby White, Patrick Williams, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 822.0,
+      "GamesPlayed": 5,
+      "DefPoss": 28,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-201152-202066-203490-203897",
+      "Name": "Denzel Valentine, Thaddeus Young, Garrett Temple, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 816.0,
+      "GamesPlayed": 3,
+      "DefPoss": 24,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628464-1629632-202066-202696",
+      "Name": "Denzel Valentine, Daniel Theis, Coby White, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 814.0,
+      "GamesPlayed": 6,
+      "DefPoss": 24,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-201152-202066-203107",
+      "Name": "Denzel Valentine, Coby White, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 814.0,
+      "GamesPlayed": 3,
+      "DefPoss": 29,
+      "OpponentPoints": 37
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-201152-203490-203897",
+      "Name": "Coby White, Patrick Williams, Thaddeus Young, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 785.0,
+      "GamesPlayed": 3,
+      "DefPoss": 29,
+      "OpponentPoints": 33
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628976-203107-203490-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 771.0,
+      "GamesPlayed": 3,
+      "DefPoss": 30,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1629632-202066-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Coby White, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 766.0,
+      "GamesPlayed": 5,
+      "DefPoss": 29,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-1630172-201152",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Patrick Williams, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 743.0,
+      "GamesPlayed": 4,
+      "DefPoss": 26,
+      "OpponentPoints": 31
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-1629632-201152-203897",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 719.0,
+      "GamesPlayed": 2,
+      "DefPoss": 24,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-201152-202066-203490",
+      "Name": "Lauri Markkanen, Coby White, Thaddeus Young, Garrett Temple, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 679.0,
+      "GamesPlayed": 4,
+      "DefPoss": 26,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1629632-1630172-202696-203107",
+      "Name": "Daniel Theis, Coby White, Patrick Williams, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 677.0,
+      "GamesPlayed": 5,
+      "DefPoss": 23,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-201152-202696-203107",
+      "Name": "Coby White, Patrick Williams, Thaddeus Young, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 666.0,
+      "GamesPlayed": 4,
+      "DefPoss": 22,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-201152-202066-203107-203897",
+      "Name": "Wendell Carter Jr., Thaddeus Young, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 643.0,
+      "GamesPlayed": 5,
+      "DefPoss": 21,
+      "OpponentPoints": 29
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1628972-1629632-202696-203897",
+      "Name": "Daniel Theis, Troy Brown Jr., Coby White, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 630.0,
+      "GamesPlayed": 2,
+      "DefPoss": 22,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629655-201152-202066-203897",
+      "Name": "Denzel Valentine, Daniel Gafford, Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 623.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1630172-201152-202329-203107",
+      "Name": "Denzel Valentine, Patrick Williams, Thaddeus Young, Al-Farouq Aminu, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 619.0,
+      "GamesPlayed": 1,
+      "DefPoss": 23,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1629655-201152-202066-203490",
+      "Name": "Ryan Arcidiacono, Daniel Gafford, Thaddeus Young, Garrett Temple, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 613.0,
+      "GamesPlayed": 1,
+      "DefPoss": 20,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-201152-203107-203897",
+      "Name": "Coby White, Patrick Williams, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 613.0,
+      "GamesPlayed": 4,
+      "DefPoss": 20,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1628464-1628972",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Daniel Theis, Troy Brown Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 610.0,
+      "GamesPlayed": 1,
+      "DefPoss": 18,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1630172-202066-203490-203897",
+      "Name": "Wendell Carter Jr., Patrick Williams, Garrett Temple, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 591.0,
+      "GamesPlayed": 5,
+      "DefPoss": 18,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629655-1630172-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Daniel Gafford, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 582.0,
+      "GamesPlayed": 4,
+      "DefPoss": 18,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1629632-202066-202696",
+      "Name": "Lauri Markkanen, Daniel Theis, Coby White, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 581.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1630172-202066-203897",
+      "Name": "Lauri Markkanen, Coby White, Patrick Williams, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 577.0,
+      "GamesPlayed": 3,
+      "DefPoss": 23,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1629632-202066-202696-203897",
+      "Name": "Daniel Theis, Coby White, Garrett Temple, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 577.0,
+      "GamesPlayed": 2,
+      "DefPoss": 21,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1629750-201152-203107",
+      "Name": "Lauri Markkanen, Coby White, Javonte Green, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 576.0,
+      "GamesPlayed": 1,
+      "DefPoss": 19,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-1629632-202696-203107",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Coby White, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 572.0,
+      "GamesPlayed": 2,
+      "DefPoss": 19,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628436-201152-202066-203107-203897",
+      "Name": "Luke Kornet, Thaddeus Young, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 572.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-201152-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 554.0,
+      "GamesPlayed": 3,
+      "DefPoss": 20,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1629750-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Javonte Green, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 553.0,
+      "GamesPlayed": 1,
+      "DefPoss": 16,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-202066-202696-203897",
+      "Name": "Lauri Markkanen, Coby White, Garrett Temple, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 550.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1630172-201152-202066-203897",
+      "Name": "Wendell Carter Jr., Patrick Williams, Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 549.0,
+      "GamesPlayed": 4,
+      "DefPoss": 17,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1629655-202066-203897",
+      "Name": "Lauri Markkanen, Coby White, Daniel Gafford, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 534.0,
+      "GamesPlayed": 4,
+      "DefPoss": 18,
+      "OpponentPoints": 26
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1630172-203490-203897",
+      "Name": "Lauri Markkanen, Coby White, Patrick Williams, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 531.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 30
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-201152-202066-202696-203107",
+      "Name": "Coby White, Thaddeus Young, Garrett Temple, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 531.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-201152-202066-203490-203897",
+      "Name": "Wendell Carter Jr., Thaddeus Young, Garrett Temple, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 527.0,
+      "GamesPlayed": 4,
+      "DefPoss": 21,
+      "OpponentPoints": 36
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-1630172-202066",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Patrick Williams, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 520.0,
+      "GamesPlayed": 3,
+      "DefPoss": 19,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-1629632-1630172",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Coby White, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 518.0,
+      "GamesPlayed": 6,
+      "DefPoss": 19,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-201152-203107-203490-203897",
+      "Name": "Lauri Markkanen, Thaddeus Young, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 513.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1630172-201152-202066-203107",
+      "Name": "Lauri Markkanen, Patrick Williams, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 512.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628436-1629632-202066-203107",
+      "Name": "Denzel Valentine, Luke Kornet, Coby White, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 505.0,
+      "GamesPlayed": 1,
+      "DefPoss": 18,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-1628972-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Troy Brown Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 495.0,
+      "GamesPlayed": 1,
+      "DefPoss": 16,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1630172-202696-203897",
+      "Name": "Lauri Markkanen, Coby White, Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 494.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 23
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628976-1629632-203107-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 493.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629632-1630172-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Coby White, Patrick Williams, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 486.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 25
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-203107-203490-203897",
+      "Name": "Wendell Carter Jr., Coby White, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 486.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-202066-203107-203490-203897",
+      "Name": "Wendell Carter Jr., Garrett Temple, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 484.0,
+      "GamesPlayed": 4,
+      "DefPoss": 18,
+      "OpponentPoints": 24
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628976-1629632-1630172-203897",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Coby White, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 481.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1630172-201152-203107-203490-203897",
+      "Name": "Patrick Williams, Thaddeus Young, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 474.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-201152-202066-203107-203897",
+      "Name": "Coby White, Thaddeus Young, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 465.0,
+      "GamesPlayed": 4,
+      "DefPoss": 18,
+      "OpponentPoints": 27
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1630172-201152-202696-203107",
+      "Name": "Denzel Valentine, Patrick Williams, Thaddeus Young, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 458.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629655-1630172-203107-203897",
+      "Name": "Lauri Markkanen, Daniel Gafford, Patrick Williams, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 457.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-1629632-1629750-202696",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Coby White, Javonte Green, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 455.0,
+      "GamesPlayed": 1,
+      "DefPoss": 16,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628972-201152-202696-203107-203897",
+      "Name": "Troy Brown Jr., Thaddeus Young, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 452.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1628464-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Daniel Theis, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 449.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628990-202066-203107-203490",
+      "Name": "Lauri Markkanen, Chandler Hutchison, Garrett Temple, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 447.0,
+      "GamesPlayed": 2,
+      "DefPoss": 16,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-202066-203107-203897",
+      "Name": "Lauri Markkanen, Daniel Theis, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 437.0,
+      "GamesPlayed": 3,
+      "DefPoss": 17,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1630172-203107-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Patrick Williams, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 436.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1630172-202066-203107-203897",
+      "Name": "Wendell Carter Jr., Patrick Williams, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 434.0,
+      "GamesPlayed": 5,
+      "DefPoss": 14,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-201152-203107-203490-203897",
+      "Name": "Coby White, Thaddeus Young, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 426.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 20
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-1630172-201152",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Patrick Williams, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 423.0,
+      "GamesPlayed": 4,
+      "DefPoss": 15,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-201152-202066-203490",
+      "Name": "Denzel Valentine, Coby White, Thaddeus Young, Garrett Temple, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 420.0,
+      "GamesPlayed": 3,
+      "DefPoss": 18,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-201152-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 419.0,
+      "GamesPlayed": 3,
+      "DefPoss": 15,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-201152-202066-202696-203107",
+      "Name": "Lauri Markkanen, Thaddeus Young, Garrett Temple, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 419.0,
+      "GamesPlayed": 4,
+      "DefPoss": 11,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-1629632-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 415.0,
+      "GamesPlayed": 2,
+      "DefPoss": 15,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1629655-201152-203490-203897",
+      "Name": "Coby White, Daniel Gafford, Thaddeus Young, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 415.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-201152-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 414.0,
+      "GamesPlayed": 1,
+      "DefPoss": 16,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-201152-202066-203107",
+      "Name": "Lauri Markkanen, Daniel Theis, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 414.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629655-202066-203107-203490-203897",
+      "Name": "Daniel Gafford, Garrett Temple, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 412.0,
+      "GamesPlayed": 2,
+      "DefPoss": 17,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628436-1629632-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 409.0,
+      "GamesPlayed": 1,
+      "DefPoss": 13,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-201152-202696-203107",
+      "Name": "Lauri Markkanen, Coby White, Thaddeus Young, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 405.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1628972-1629632-1630172-202696",
+      "Name": "Daniel Theis, Troy Brown Jr., Coby White, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 401.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-1630172-202696",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 392.0,
+      "GamesPlayed": 3,
+      "DefPoss": 16,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-201152-202066-203107",
+      "Name": "Coby White, Patrick Williams, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 389.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1630172-202066-203107",
+      "Name": "Lauri Markkanen, Daniel Theis, Patrick Williams, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 388.0,
+      "GamesPlayed": 4,
+      "DefPoss": 14,
+      "OpponentPoints": 22
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1630172-201152-202066-203897",
+      "Name": "Lauri Markkanen, Patrick Williams, Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 388.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-201152-203490-203897",
+      "Name": "Wendell Carter Jr., Coby White, Thaddeus Young, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 384.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1629655-1630172-202066-203107",
+      "Name": "Coby White, Daniel Gafford, Patrick Williams, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 381.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-202066-203490",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Garrett Temple, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 379.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1628436-1629653-1629690-1630172",
+      "Name": "Cristiano Felicio, Luke Kornet, Devon Dotson, Adam Mokoka, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 378.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1630172-201152-202066-203490-203897",
+      "Name": "Patrick Williams, Thaddeus Young, Garrett Temple, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 375.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1629632-203107-203897",
+      "Name": "Lauri Markkanen, Daniel Theis, Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 372.0,
+      "GamesPlayed": 1,
+      "DefPoss": 14,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1629632-1630172-202066",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Coby White, Patrick Williams, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 370.0,
+      "GamesPlayed": 5,
+      "DefPoss": 13,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-201152-202066",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 367.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628464-201152-203107",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Daniel Theis, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 367.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628464-1629632-1629750-202329",
+      "Name": "Denzel Valentine, Daniel Theis, Coby White, Javonte Green, Al-Farouq Aminu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 366.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-202066-203490-203897",
+      "Name": "Lauri Markkanen, Coby White, Garrett Temple, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 365.0,
+      "GamesPlayed": 4,
+      "DefPoss": 13,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-202696-203107-203897",
+      "Name": "Coby White, Patrick Williams, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 364.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-203107-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 360.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1628990-1629632-1630172-203897",
+      "Name": "Wendell Carter Jr., Chandler Hutchison, Coby White, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 360.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1630172-201152-202066",
+      "Name": "Denzel Valentine, Coby White, Patrick Williams, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 359.0,
+      "GamesPlayed": 3,
+      "DefPoss": 10,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1630172-201152-203107-203897",
+      "Name": "Wendell Carter Jr., Patrick Williams, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 359.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628436-201152-203107-203897",
+      "Name": "Denzel Valentine, Luke Kornet, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 358.0,
+      "GamesPlayed": 3,
+      "DefPoss": 14,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-201152-202066-203107-203490",
+      "Name": "Coby White, Thaddeus Young, Garrett Temple, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 355.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1629632-202696-203107",
+      "Name": "Lauri Markkanen, Daniel Theis, Coby White, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 350.0,
+      "GamesPlayed": 3,
+      "DefPoss": 13,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-202066-203107-203490-203897",
+      "Name": "Lauri Markkanen, Garrett Temple, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 349.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629653-1629750-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Devon Dotson, Javonte Green, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 348.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628972-1630172-201152-202696-203897",
+      "Name": "Troy Brown Jr., Patrick Williams, Thaddeus Young, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 347.0,
+      "GamesPlayed": 1,
+      "DefPoss": 12,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628972-1630172-201152-202696-203107",
+      "Name": "Troy Brown Jr., Patrick Williams, Thaddeus Young, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 343.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1629655-202066-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Daniel Gafford, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 342.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1630172-202066-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Patrick Williams, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 341.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629750-202696-203107-203897",
+      "Name": "Lauri Markkanen, Javonte Green, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 341.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-201152-203490-203897",
+      "Name": "Lauri Markkanen, Coby White, Thaddeus Young, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 338.0,
+      "GamesPlayed": 3,
+      "DefPoss": 12,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1628972-1630172-202696-203897",
+      "Name": "Daniel Theis, Troy Brown Jr., Patrick Williams, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 337.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-201152-202066-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 332.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-201152-203897",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 331.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628976-1629632-1630172-203490",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Patrick Williams, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 327.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1630172-202066-202696-203107-203897",
+      "Name": "Patrick Williams, Garrett Temple, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 319.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-1630172-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 314.0,
+      "GamesPlayed": 4,
+      "DefPoss": 12,
+      "OpponentPoints": 19
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628436-1629632-1630172-201152-203897",
+      "Name": "Luke Kornet, Coby White, Patrick Williams, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 314.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1629655-1630172-203490-203897",
+      "Name": "Coby White, Daniel Gafford, Patrick Williams, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 312.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-201152-203107-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 309.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628990-1629632-203107-203490",
+      "Name": "Lauri Markkanen, Chandler Hutchison, Coby White, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 308.0,
+      "GamesPlayed": 2,
+      "DefPoss": 13,
+      "OpponentPoints": 21
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628464-1629750-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Daniel Theis, Javonte Green, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 307.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628976-1630172-202066-203897",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Patrick Williams, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 306.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-201152-203107-203897",
+      "Name": "Denzel Valentine, Coby White, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 303.0,
+      "GamesPlayed": 3,
+      "DefPoss": 11,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-201152-203490",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 301.0,
+      "GamesPlayed": 2,
+      "DefPoss": 12,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628990-1629655-1629690",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Chandler Hutchison, Daniel Gafford, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 299.0,
+      "GamesPlayed": 1,
+      "DefPoss": 11,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628976-202066-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Wendell Carter Jr., Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 297.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629632-201152-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 295.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1630172-203107-203897",
+      "Name": "Lauri Markkanen, Daniel Theis, Patrick Williams, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 294.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628464-1628972-1629632-202696",
+      "Name": "Denzel Valentine, Daniel Theis, Troy Brown Jr., Coby White, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 292.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1629655-1630172-201152-202066",
+      "Name": "Coby White, Daniel Gafford, Patrick Williams, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 290.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-201152-202066",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 288.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-201152-202066-202696",
+      "Name": "Denzel Valentine, Coby White, Thaddeus Young, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 285.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 16
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628972-201152-202696",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Troy Brown Jr., Thaddeus Young, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 283.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628976-201152-202066-203897",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1629632-1630172-202696",
+      "Name": "Lauri Markkanen, Daniel Theis, Coby White, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 274.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1629750-1630172-202066",
+      "Name": "Lauri Markkanen, Coby White, Javonte Green, Patrick Williams, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 270.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 18
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1630172-201152-203490",
+      "Name": "Lauri Markkanen, Coby White, Patrick Williams, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 269.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-201152-202066-202329-203897",
+      "Name": "Coby White, Thaddeus Young, Garrett Temple, Al-Farouq Aminu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 268.0,
+      "GamesPlayed": 1,
+      "DefPoss": 10,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-202066-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 265.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-201152-202066-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 265.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628436-1630172-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629632-201152-203490",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Coby White, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 263.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-203490-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 262.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1630172-202696-203107",
+      "Name": "Lauri Markkanen, Coby White, Patrick Williams, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 261.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 17
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-201152-202066-203107",
+      "Name": "Lauri Markkanen, Coby White, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 260.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1630172-201152-203107-203897",
+      "Name": "Ryan Arcidiacono, Patrick Williams, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 259.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-1629632-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 257.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628436-1629632-1630172",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Coby White, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 254.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628464-1629632-1630172-201152",
+      "Name": "Denzel Valentine, Daniel Theis, Coby White, Patrick Williams, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 253.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-202066-202696",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 252.0,
+      "GamesPlayed": 2,
+      "DefPoss": 11,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-1629632-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 250.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629655-203107-203490-203897",
+      "Name": "Denzel Valentine, Daniel Gafford, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 249.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-202066-203897",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 248.0,
+      "GamesPlayed": 3,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1629750-202066-202696",
+      "Name": "Lauri Markkanen, Coby White, Javonte Green, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-202066-203107-203897",
+      "Name": "Wendell Carter Jr., Coby White, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 244.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1628972-1630172-202696-203107",
+      "Name": "Daniel Theis, Troy Brown Jr., Patrick Williams, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 239.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1629632-202066-203107",
+      "Name": "Cristiano Felicio, Denzel Valentine, Coby White, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 238.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1629632-1630172-203897",
+      "Name": "Cristiano Felicio, Denzel Valentine, Coby White, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628464-1630172-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Daniel Theis, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 237.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1628374-1629632-1630172-202066",
+      "Name": "Cristiano Felicio, Lauri Markkanen, Coby White, Patrick Williams, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 235.0,
+      "GamesPlayed": 2,
+      "DefPoss": 9,
+      "OpponentPoints": 15
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-1630172-203897",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 235.0,
+      "GamesPlayed": 2,
+      "DefPoss": 10,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627853-1629653-1629690-1629750",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Devon Dotson, Adam Mokoka, Javonte Green",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 233.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1629632-1630172-201152-202066",
+      "Name": "Ryan Arcidiacono, Coby White, Patrick Williams, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1629655-201152-202066-203107",
+      "Name": "Coby White, Daniel Gafford, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 232.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628464-1630172-202696-203107",
+      "Name": "Denzel Valentine, Daniel Theis, Patrick Williams, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 231.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1629632-201152-203107",
+      "Name": "Lauri Markkanen, Daniel Theis, Coby White, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 231.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628990-1629655-203490-203897",
+      "Name": "Lauri Markkanen, Chandler Hutchison, Daniel Gafford, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 231.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-202066-203490-203897",
+      "Name": "Cristiano Felicio, Denzel Valentine, Garrett Temple, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1630172-201152-203107-203897",
+      "Name": "Daniel Theis, Patrick Williams, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 230.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1629632-1630172-201152-203490",
+      "Name": "Ryan Arcidiacono, Coby White, Patrick Williams, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 224.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-201152-202696-203897",
+      "Name": "Lauri Markkanen, Coby White, Thaddeus Young, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 224.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628436-201152-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 223.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1629655-1630172-203107-203897",
+      "Name": "Coby White, Daniel Gafford, Patrick Williams, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 222.0,
+      "GamesPlayed": 3,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1629632-202066-202696",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Coby White, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 221.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 11
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-1630172-203107",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 218.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628976-1630172-203490-203897",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Patrick Williams, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 215.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1629632-202066-202696-203107",
+      "Name": "Daniel Theis, Coby White, Garrett Temple, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 213.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 13
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1628990-202066-203107",
+      "Name": "Cristiano Felicio, Denzel Valentine, Chandler Hutchison, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-201152-202066-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-1629632-202066-202696",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Coby White, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-202066-203107-203490",
+      "Name": "Lauri Markkanen, Coby White, Garrett Temple, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 209.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-202066-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628464-1629750-1630172",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Daniel Theis, Javonte Green, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 207.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1629655-1630172-201152-203490",
+      "Name": "Coby White, Daniel Gafford, Patrick Williams, Thaddeus Young, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 206.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 14
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628464-1628972-202696",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Daniel Theis, Troy Brown Jr., Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629655-1630172-201152-202066",
+      "Name": "Denzel Valentine, Daniel Gafford, Patrick Williams, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1630172-201152-202696-203897",
+      "Name": "Denzel Valentine, Patrick Williams, Thaddeus Young, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 1,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628976-1629632-203490-203897",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 205.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1630172-202066-202696-203897",
+      "Name": "Lauri Markkanen, Patrick Williams, Garrett Temple, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 204.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628464-1630172-203107",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Daniel Theis, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 203.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628976-1629632-1629690-1630172",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Coby White, Adam Mokoka, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 201.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1629632-1629655",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Coby White, Daniel Gafford",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1628972-202329-203897",
+      "Name": "Lauri Markkanen, Daniel Theis, Troy Brown Jr., Al-Farouq Aminu, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 199.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-1629632-201152",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Coby White, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629655-202066-203107-203897",
+      "Name": "Denzel Valentine, Daniel Gafford, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 198.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-201152-203107-203897",
+      "Name": "Lauri Markkanen, Coby White, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 197.0,
+      "GamesPlayed": 3,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-1630172-201152-203107",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Patrick Williams, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 196.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-202066-203107-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 194.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1629750-202329-203107",
+      "Name": "Lauri Markkanen, Daniel Theis, Javonte Green, Al-Farouq Aminu, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 194.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-202066-202329-203107",
+      "Name": "Lauri Markkanen, Daniel Theis, Garrett Temple, Al-Farouq Aminu, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 193.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-201152-203107-203897",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628976-1629632-202066",
+      "Name": "Denzel Valentine, Lauri Markkanen, Wendell Carter Jr., Coby White, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 192.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1629655-1630172-202066",
+      "Name": "Lauri Markkanen, Coby White, Daniel Gafford, Patrick Williams, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 191.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1630172-201152-203107",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Patrick Williams, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 190.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629632-1629655-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Coby White, Daniel Gafford, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 189.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1630172-201152-203897",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Patrick Williams, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1630172-201152-202066-203107",
+      "Name": "Daniel Theis, Patrick Williams, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1628990-1629632-203490-203897",
+      "Name": "Wendell Carter Jr., Chandler Hutchison, Coby White, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 188.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1629653-1629690-1629750-202329",
+      "Name": "Cristiano Felicio, Devon Dotson, Adam Mokoka, Javonte Green, Al-Farouq Aminu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1630172-202066-202696-203107",
+      "Name": "Daniel Theis, Patrick Williams, Garrett Temple, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-1630172-202066-203107",
+      "Name": "Wendell Carter Jr., Coby White, Patrick Williams, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 187.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-201152-202696-203107-203897",
+      "Name": "Coby White, Thaddeus Young, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 186.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629655-203107-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Gafford, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1628972-1629632-202066",
+      "Name": "Lauri Markkanen, Daniel Theis, Troy Brown Jr., Coby White, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628972-1629632-201152-202066-202329",
+      "Name": "Troy Brown Jr., Coby White, Thaddeus Young, Garrett Temple, Al-Farouq Aminu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1628990-1629632-1630172-203107",
+      "Name": "Wendell Carter Jr., Chandler Hutchison, Coby White, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 185.0,
+      "GamesPlayed": 1,
+      "DefPoss": 9,
+      "OpponentPoints": 10
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1627853-1629632-202066",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Coby White, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1628972-202696-203107",
+      "Name": "Lauri Markkanen, Daniel Theis, Troy Brown Jr., Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-1630172-201152-203897",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Patrick Williams, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 184.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628976-1630172-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 181.0,
+      "GamesPlayed": 2,
+      "DefPoss": 8,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628976-1629632-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Wendell Carter Jr., Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 180.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628464-202329-203107",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Daniel Theis, Al-Farouq Aminu, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 178.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1629632-1630172-201152",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Coby White, Patrick Williams, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1629632-1630172-203897",
+      "Name": "Lauri Markkanen, Daniel Theis, Coby White, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 175.0,
+      "GamesPlayed": 3,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1627853-1628990-203107",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Chandler Hutchison, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 174.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628990-1629655-203490-203897",
+      "Name": "Ryan Arcidiacono, Chandler Hutchison, Daniel Gafford, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-202696-203107-203897",
+      "Name": "Lauri Markkanen, Coby White, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 171.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629655-1629690-201152-203897",
+      "Name": "Denzel Valentine, Daniel Gafford, Adam Mokoka, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-1629632-1630172-202696",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Coby White, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 170.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628990-1629655-1629690-1630172",
+      "Name": "Ryan Arcidiacono, Chandler Hutchison, Daniel Gafford, Adam Mokoka, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 169.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-202066-203107-203490",
+      "Name": "Wendell Carter Jr., Coby White, Garrett Temple, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 168.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628436-1629632-202066-203897",
+      "Name": "Ryan Arcidiacono, Luke Kornet, Coby White, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 167.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-1629655-202066",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Daniel Gafford, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 165.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-201152-202696-203107",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Thaddeus Young, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 164.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628976-203107-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-1629690-201152",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Adam Mokoka, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 163.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-201152-203107",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 162.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1628972-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Troy Brown Jr., Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 161.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1628972-1629632-203107",
+      "Name": "Lauri Markkanen, Daniel Theis, Troy Brown Jr., Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628436-1630172-202066-203107-203897",
+      "Name": "Luke Kornet, Patrick Williams, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 160.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628436-1630172-202066-203107",
+      "Name": "Denzel Valentine, Luke Kornet, Patrick Williams, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 157.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629655-202066-203107-203897",
+      "Name": "Lauri Markkanen, Daniel Gafford, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-202329-202696-203107",
+      "Name": "Coby White, Patrick Williams, Al-Farouq Aminu, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 155.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-201152-202066-203107",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 154.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-1629632-202696",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Coby White, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 153.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-1629655-1630172",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Daniel Gafford, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 2,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628976-203107-203490",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 152.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-201152-202696-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Thaddeus Young, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 151.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629655-201152-202066-203490-203897",
+      "Name": "Daniel Gafford, Thaddeus Young, Garrett Temple, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 150.0,
+      "GamesPlayed": 4,
+      "DefPoss": 7,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628990-1629690-203490",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Chandler Hutchison, Adam Mokoka, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1630172-201152-202329-203107",
+      "Name": "Lauri Markkanen, Patrick Williams, Thaddeus Young, Al-Farouq Aminu, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 149.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1630172-201152-202066-202696-203107",
+      "Name": "Patrick Williams, Thaddeus Young, Garrett Temple, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 147.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1630172-201152-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Patrick Williams, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-203107-203490-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-201152-202066-203490-203897",
+      "Name": "Lauri Markkanen, Thaddeus Young, Garrett Temple, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 145.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628464-1629632-201152-202066",
+      "Name": "Denzel Valentine, Daniel Theis, Coby White, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 144.0,
+      "GamesPlayed": 2,
+      "DefPoss": 7,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628436-1629632-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 143.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-1630172-202696-203107",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Patrick Williams, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 142.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1629632-201152-202066",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Coby White, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629750-201152-203107-203897",
+      "Name": "Lauri Markkanen, Javonte Green, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-1630172-201152-203897",
+      "Name": "Wendell Carter Jr., Coby White, Patrick Williams, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 139.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 12
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628464-1628972-202696-203897",
+      "Name": "Denzel Valentine, Daniel Theis, Troy Brown Jr., Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 138.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628464-202066-202696-203107",
+      "Name": "Denzel Valentine, Daniel Theis, Garrett Temple, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1629632-1630172-203490",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Coby White, Patrick Williams, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629653-1629655-1629690-1630172",
+      "Name": "Denzel Valentine, Devon Dotson, Daniel Gafford, Adam Mokoka, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 7,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-201152-202066-203490",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Thaddeus Young, Garrett Temple, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1629655-1629690-1630172",
+      "Name": "Lauri Markkanen, Coby White, Daniel Gafford, Adam Mokoka, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 137.0,
+      "GamesPlayed": 1,
+      "DefPoss": 6,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1629632-203107-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Coby White, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628972-1630172-202696-203107-203897",
+      "Name": "Troy Brown Jr., Patrick Williams, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 136.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-201152-203897",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-1629632-1630172",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Coby White, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1629632-1630172-203107",
+      "Name": "Lauri Markkanen, Daniel Theis, Coby White, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 135.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-202066-203897",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628976-1629632-203107-203490",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Coby White, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628972-1629632-1630172-202696-203107",
+      "Name": "Troy Brown Jr., Coby White, Patrick Williams, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 134.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1629632-202066-203897",
+      "Name": "Lauri Markkanen, Daniel Theis, Coby White, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 133.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1628436-1629632",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Luke Kornet, Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628436-1629632-1630172-203107",
+      "Name": "Denzel Valentine, Luke Kornet, Coby White, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1630172-201152-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Patrick Williams, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 132.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-202329-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Al-Farouq Aminu, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628976-1629632-1629690-1630172",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Adam Mokoka, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 130.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1627853-1628374-202329",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Al-Farouq Aminu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629655-202066-203897",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Daniel Gafford, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1629655-1630172-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Daniel Gafford, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 129.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628990-1629655-202066-203107",
+      "Name": "Denzel Valentine, Chandler Hutchison, Daniel Gafford, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 128.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1629750-1630172-201152",
+      "Name": "Lauri Markkanen, Coby White, Javonte Green, Patrick Williams, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 127.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629655-1630172-202066-203107-203897",
+      "Name": "Daniel Gafford, Patrick Williams, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 126.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1630172-201152-202066-203107",
+      "Name": "Denzel Valentine, Patrick Williams, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628436-1629632-1630172-202066-203897",
+      "Name": "Luke Kornet, Coby White, Patrick Williams, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-201152-202329-203107",
+      "Name": "Coby White, Patrick Williams, Thaddeus Young, Al-Farouq Aminu, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 125.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1630172-202329-202696-203897",
+      "Name": "Coby White, Patrick Williams, Al-Farouq Aminu, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 123.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628976-1629632-1630172",
+      "Name": "Denzel Valentine, Lauri Markkanen, Wendell Carter Jr., Coby White, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629655-1630172-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Gafford, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-201152-202066-202696-203107",
+      "Name": "Denzel Valentine, Thaddeus Young, Garrett Temple, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-201152-203107-203897",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 122.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628464-1629632-1630172-202696",
+      "Name": "Denzel Valentine, Daniel Theis, Coby White, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1628990-1630172-203107-203897",
+      "Name": "Wendell Carter Jr., Chandler Hutchison, Patrick Williams, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 121.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-202066-202696-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Garrett Temple, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 120.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-201152-202329-203107",
+      "Name": "Denzel Valentine, Coby White, Thaddeus Young, Al-Farouq Aminu, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 119.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-202066-203107-203490",
+      "Name": "Denzel Valentine, Lauri Markkanen, Garrett Temple, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1629655-1630172-201152-203897",
+      "Name": "Coby White, Daniel Gafford, Patrick Williams, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 118.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629655-1630172-202066-203107-203490",
+      "Name": "Daniel Gafford, Patrick Williams, Garrett Temple, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 117.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-1629632-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628976-1630172-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Wendell Carter Jr., Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629655-201152-202066-203107-203897",
+      "Name": "Daniel Gafford, Thaddeus Young, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 116.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-1630172-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1630172-202696-203107-203897",
+      "Name": "Denzel Valentine, Patrick Williams, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1630172-203107-203897",
+      "Name": "Lauri Markkanen, Coby White, Patrick Williams, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 112.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1630172-201152-203107-203490",
+      "Name": "Denzel Valentine, Patrick Williams, Thaddeus Young, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1630172-203107-203490",
+      "Name": "Lauri Markkanen, Coby White, Patrick Williams, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 110.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1630172-201152-202696",
+      "Name": "Denzel Valentine, Lauri Markkanen, Patrick Williams, Thaddeus Young, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628436-1629632-202066-203897",
+      "Name": "Denzel Valentine, Luke Kornet, Coby White, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 107.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627853-1628972-1629653-1629750",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Troy Brown Jr., Devon Dotson, Javonte Green",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1630172-201152-202696",
+      "Name": "Lauri Markkanen, Coby White, Patrick Williams, Thaddeus Young, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 106.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1629632-202066-203490",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Coby White, Garrett Temple, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 105.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1629655-203107-203897",
+      "Name": "Lauri Markkanen, Coby White, Daniel Gafford, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 104.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628436-201152-202066-203107-203490",
+      "Name": "Luke Kornet, Thaddeus Young, Garrett Temple, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 102.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1628374-1628972-1629653-1629750",
+      "Name": "Cristiano Felicio, Lauri Markkanen, Troy Brown Jr., Devon Dotson, Javonte Green",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1630172-202329-202696-203107",
+      "Name": "Denzel Valentine, Patrick Williams, Al-Farouq Aminu, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628436-1629632-201152-202066-203897",
+      "Name": "Luke Kornet, Coby White, Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 3,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629655-1630172-201152-202066-203897",
+      "Name": "Daniel Gafford, Patrick Williams, Thaddeus Young, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 101.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628972-202696-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Troy Brown Jr., Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-1630172-203490",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Patrick Williams, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 100.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1627853-1629632-1629690",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Coby White, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "DefPoss": 5,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-1629632-202066",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Coby White, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-201152-202066-203490",
+      "Name": "Wendell Carter Jr., Coby White, Thaddeus Young, Garrett Temple, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 98.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628464-202696-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Daniel Theis, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628436-201152-202066-203107",
+      "Name": "Denzel Valentine, Luke Kornet, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-201152-202696-203107-203897",
+      "Name": "Denzel Valentine, Thaddeus Young, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 97.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-201152-202066-202329",
+      "Name": "Denzel Valentine, Coby White, Thaddeus Young, Garrett Temple, Al-Farouq Aminu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629655-1630172-203107-203897",
+      "Name": "Denzel Valentine, Daniel Gafford, Patrick Williams, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1629632-201152-203490-203897",
+      "Name": "Ryan Arcidiacono, Coby White, Thaddeus Young, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 95.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1627853-1629690-1629750",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Adam Mokoka, Javonte Green",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629655-1629690-1630172",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Daniel Gafford, Adam Mokoka, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1628464-1629632-202329",
+      "Name": "Denzel Valentine, Lauri Markkanen, Daniel Theis, Coby White, Al-Farouq Aminu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628976-1629632-1630172-203107",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 93.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1629632-201152-203107-203490",
+      "Name": "Ryan Arcidiacono, Coby White, Thaddeus Young, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 2,
+      "DefPoss": 5,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1629750-201152-202066",
+      "Name": "Lauri Markkanen, Coby White, Javonte Green, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629655-1630172-203490-203897",
+      "Name": "Lauri Markkanen, Daniel Gafford, Patrick Williams, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 91.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629632-1629655-203897",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Coby White, Daniel Gafford, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-1629655-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Daniel Gafford, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-201152-203107-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-201152-202066-203107-203897",
+      "Name": "Ryan Arcidiacono, Thaddeus Young, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628436-202066-203107-203897",
+      "Name": "Lauri Markkanen, Luke Kornet, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 90.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627853-1628436-1630172-203107",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Luke Kornet, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1629632-1629653-1629750-1630172",
+      "Name": "Cristiano Felicio, Coby White, Devon Dotson, Javonte Green, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 89.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1630172-201152-203490-203897",
+      "Name": "Denzel Valentine, Patrick Williams, Thaddeus Young, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-202066-202696-203107",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Garrett Temple, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 88.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1628972-1630172-203107-203897",
+      "Name": "Daniel Theis, Troy Brown Jr., Patrick Williams, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 87.0,
+      "GamesPlayed": 2,
+      "DefPoss": 4,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1629632-1630172-201152-203107",
+      "Name": "Daniel Theis, Coby White, Patrick Williams, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 86.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1629632-1630172",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Coby White, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629690-201152-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Adam Mokoka, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 85.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 8
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1628374-1629632-1629653-202066",
+      "Name": "Cristiano Felicio, Lauri Markkanen, Coby White, Devon Dotson, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1630172-202066-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Patrick Williams, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628990-1629655-1630172-203490",
+      "Name": "Ryan Arcidiacono, Chandler Hutchison, Daniel Gafford, Patrick Williams, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 84.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628972-1629632-1630172-201152-202696",
+      "Name": "Troy Brown Jr., Coby White, Patrick Williams, Thaddeus Young, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 83.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1628374-202329-203107",
+      "Name": "Cristiano Felicio, Denzel Valentine, Lauri Markkanen, Al-Farouq Aminu, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1629655-1630172-203107-203897",
+      "Name": "Ryan Arcidiacono, Daniel Gafford, Patrick Williams, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628436-1629632-202066-203107",
+      "Name": "Lauri Markkanen, Luke Kornet, Coby White, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 82.0,
+      "GamesPlayed": 1,
+      "DefPoss": 4,
+      "OpponentPoints": 9
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1629632-203490",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Coby White, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628464-1628972-202696",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Daniel Theis, Troy Brown Jr., Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 81.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1628976-1629632",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Wendell Carter Jr., Coby White",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628464-202329-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Daniel Theis, Al-Farouq Aminu, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629655-1630172-202066-203897",
+      "Name": "Lauri Markkanen, Daniel Gafford, Patrick Williams, Garrett Temple, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 80.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627853-1629750-1630172-203107",
+      "Name": "Cristiano Felicio, Ryan Arcidiacono, Javonte Green, Patrick Williams, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-1630172-203490-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Patrick Williams, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628976-1628990-1629632-1629690",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Chandler Hutchison, Coby White, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 79.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1627853-202066-203107",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 78.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-1629750-202696-203107",
+      "Name": "Lauri Markkanen, Coby White, Javonte Green, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 77.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1628972-203107-203897",
+      "Name": "Lauri Markkanen, Daniel Theis, Troy Brown Jr., Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1629632-1629750-1630172-202066",
+      "Name": "Daniel Theis, Coby White, Javonte Green, Patrick Williams, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 76.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1627853-1628436-1629690",
+      "Name": "Cristiano Felicio, Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 75.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628976-1629632-203490-203897",
+      "Name": "Ryan Arcidiacono, Wendell Carter Jr., Coby White, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-201152-202066-203107-203897",
+      "Name": "Daniel Theis, Thaddeus Young, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 74.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628436-1629632-1630172-203897",
+      "Name": "Denzel Valentine, Luke Kornet, Coby White, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1628972-1629632-1630172-201152",
+      "Name": "Daniel Theis, Troy Brown Jr., Coby White, Patrick Williams, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 72.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1630172-201152",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Patrick Williams, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628436-1629632-202066",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Coby White, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 71.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 6
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628464-1630172-202696",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Daniel Theis, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628976-1629632-1630172-203107-203490",
+      "Name": "Wendell Carter Jr., Coby White, Patrick Williams, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 70.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1629632-1630172-202066",
+      "Name": "Denzel Valentine, Lauri Markkanen, Coby White, Patrick Williams, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 69.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629632-1629655-1629690",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Coby White, Daniel Gafford, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1629632-203107-203490-203897",
+      "Name": "Lauri Markkanen, Coby White, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 68.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628990-201152-202066-203107",
+      "Name": "Denzel Valentine, Chandler Hutchison, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 2,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-201152-202696-203107",
+      "Name": "Denzel Valentine, Coby White, Thaddeus Young, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-1629632-1629750-202329",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Coby White, Javonte Green, Al-Farouq Aminu",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628436-1630172-201152-203107-203897",
+      "Name": "Luke Kornet, Patrick Williams, Thaddeus Young, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 67.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-202066-203107-203897",
+      "Name": "Denzel Valentine, Lauri Markkanen, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-203107-203490",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629655-201152-202066-203107-203490",
+      "Name": "Daniel Gafford, Thaddeus Young, Garrett Temple, Tomas Satoransky, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 66.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-1627756-1628374-1629632-203107",
+      "Name": "Cristiano Felicio, Denzel Valentine, Lauri Markkanen, Coby White, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629632-201152-203897",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Coby White, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 65.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1629653-1629750-1630172-201152",
+      "Name": "Ryan Arcidiacono, Devon Dotson, Javonte Green, Patrick Williams, Thaddeus Young",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 64.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628436-1630172-203897",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Luke Kornet, Patrick Williams, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-1629632-203897",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Coby White, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 63.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629750-201152-202696-203107-203897",
+      "Name": "Javonte Green, Thaddeus Young, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 62.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1628464-1630172-202066",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Daniel Theis, Patrick Williams, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1630172-202066-203490",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Patrick Williams, Garrett Temple, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1628972-1629632-1630172",
+      "Name": "Lauri Markkanen, Daniel Theis, Troy Brown Jr., Coby White, Patrick Williams",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "201152-202066-202696-203107-203897",
+      "Name": "Thaddeus Young, Garrett Temple, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 60.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 5
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1626245-202066-203107-203490-203897",
+      "Name": "Cristiano Felicio, Garrett Temple, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 58.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1630172-201152-202696",
+      "Name": "Denzel Valentine, Coby White, Patrick Williams, Thaddeus Young, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628972-1629632-202696-203897",
+      "Name": "Lauri Markkanen, Troy Brown Jr., Coby White, Nikola Vucevic, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628976-1629632-202066-203490",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Garrett Temple, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 55.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1629632-1629655-203107",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Coby White, Daniel Gafford, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-202066-202696-203107-203897",
+      "Name": "Lauri Markkanen, Garrett Temple, Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 54.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628374-1630172-202696",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Lauri Markkanen, Patrick Williams, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628990-1629655-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Chandler Hutchison, Daniel Gafford, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 53.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629632-1629655-203490",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Coby White, Daniel Gafford, Otto Porter Jr.",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1629655-201152-203897",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Daniel Gafford, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628436-202066-203107-203897",
+      "Name": "Denzel Valentine, Luke Kornet, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1629655-203490-203897",
+      "Name": "Denzel Valentine, Coby White, Daniel Gafford, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1630172-203107-203490-203897",
+      "Name": "Lauri Markkanen, Patrick Williams, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628990-201152-202066-203107-203897",
+      "Name": "Chandler Hutchison, Thaddeus Young, Garrett Temple, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 52.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 1
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628976-202066-203490-203897",
+      "Name": "Denzel Valentine, Wendell Carter Jr., Garrett Temple, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 51.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629655-1630172-201152-203897",
+      "Name": "Denzel Valentine, Daniel Gafford, Patrick Williams, Thaddeus Young, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 51.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1628972-202696-203107-203897",
+      "Name": "Daniel Theis, Troy Brown Jr., Nikola Vucevic, Tomas Satoransky, Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 50.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 7
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-201152-203107-203490-203897",
+      "Name": "Ryan Arcidiacono, Thaddeus Young, Tomas Satoransky, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 49.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628990-1629632-1629655-1629690",
+      "Name": "Ryan Arcidiacono, Chandler Hutchison, Coby White, Daniel Gafford, Adam Mokoka",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 45.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628464-1628972-1629632-202066-202696",
+      "Name": "Daniel Theis, Troy Brown Jr., Coby White, Garrett Temple, Nikola Vucevic",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 43.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 4
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-1630172-202066",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Patrick Williams, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1628374-1630172-203490-203897",
+      "Name": "Ryan Arcidiacono, Lauri Markkanen, Patrick Williams, Otto Porter Jr., Zach LaVine",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 40.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1627853-1628976-1628990-203107",
+      "Name": "Denzel Valentine, Ryan Arcidiacono, Wendell Carter Jr., Chandler Hutchison, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 36.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1629632-1630172-202696-203107",
+      "Name": "Denzel Valentine, Coby White, Patrick Williams, Nikola Vucevic, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 35.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627756-1628374-1630172-201152-203107",
+      "Name": "Denzel Valentine, Lauri Markkanen, Patrick Williams, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 31.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1629632-1629750-1630172-201152-202066",
+      "Name": "Coby White, Javonte Green, Patrick Williams, Thaddeus Young, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 31.0,
+      "GamesPlayed": 1,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628990-1630172-201152-202066-203107",
+      "Name": "Chandler Hutchison, Patrick Williams, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 28.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628976-1629632-1630172-202066",
+      "Name": "Lauri Markkanen, Wendell Carter Jr., Coby White, Patrick Williams, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 27.0,
+      "GamesPlayed": 1,
+      "DefPoss": 2,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628990-1629632-1630172-201152-203107",
+      "Name": "Chandler Hutchison, Coby White, Patrick Williams, Thaddeus Young, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 24.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 2
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1627853-1630172-201152-202066-203107",
+      "Name": "Ryan Arcidiacono, Patrick Williams, Thaddeus Young, Garrett Temple, Tomas Satoransky",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 13.0,
+      "GamesPlayed": 1,
+      "DefPoss": 1,
+      "OpponentPoints": 3
+    },
+    {
+      "Season": "2020-21",
+      "EntityId": "1628374-1628464-1629632-1630172-202066",
+      "Name": "Lauri Markkanen, Daniel Theis, Coby White, Patrick Williams, Garrett Temple",
+      "TeamAbbreviation": "CHI",
+      "SecondsPlayed": 12.0,
+      "GamesPlayed": 2,
+      "DefPoss": 3,
+      "OpponentPoints": 2
+    }
+  ]
+}

@@ -67,10 +67,56 @@ off-brand and flat. Grays are scaffolding: gridlines, muted labels, separators.
 | `GRIDLINE` | `#F0F0F0` | Chart gridlines |
 | `WHITE` | `#FFFFFF` | The `white` theme's canvas — not the post default |
 
+**⚠️ Black in a graphic is `#242424`.** Nothing the account publishes uses pure or near-pure black —
+not text, not marks, not rules. Stated by the user 2026-09-01 as a standing rule covering charts and
+graphics alike, so it applies to every new chart regardless of what the legacy `INK` and
+`BULLS_BLACK` tokens below say. Those two remain only because the legacy full-layout renderers were
+built on them; do not reach for them in new work.
+
+**⚠️ New charts take no theme.** The page canvas changes from post to post — it is whatever the user
+picks in Canva that day, and has ranged at least `#FAF8F5` to `#E9E5E1`. Chart assets are always
+exported transparent, and the only meaningful colours in them are Bulls red and `#242424`, so a
+canvas-dependent theme buys nothing and actively misleads: the `jersey` theme's `ink`, `muted` and
+`grid` tokens describe a background the post is not using. State the handful of colours a chart needs
+as named constants in the chart module instead. `three_point_leaders.py` is the reference for this.
+
+The theme machinery in `house.py` (`THEMES`, `get_theme`, `DEFAULT_THEME`) is therefore **retired in
+practice and slated for removal**; the user has confirmed they have never used an alternate theme.
+It still has 47 referencing modules, so removing it is its own task rather than something a post
+picks up in passing.
+
 **Post canvas is chosen in Canva and varies.** It has usually been a warm off-white near `#FAF8F5`
-(the `jersey` theme). Charts are exported transparent and sit on whatever background the page uses,
-so chart colors need to read against a light, low-saturation ground — that constraint is real; the
-exact hex is not. Don't fail a page for missing a specific canvas value.
+(the `jersey` theme), and has been as dark as `#E9E5E1`. Charts are exported transparent and sit on
+whatever background the page uses, so chart colors need to read against a light, low-saturation
+ground — that constraint is real; the exact hex is not. Don't fail a page for missing a specific
+canvas value.
+
+⚠️ **The quietest chart grey has to survive the whole canvas range, not the lightest end of it.**
+A gridline picked to look right against `#FAF8F5` can disappear entirely one page later. The
+three-point-leaders chart shipped `#E6E2DB` gridlines that were invisible on an `#E9E5E1` page —
+a contrast ratio of **1.03**, which is the same colour to a reader, and the failure looks like the
+lines were never drawn rather than like a colour that needs adjusting. Check the faintest element
+against the *darkest* canvas in use: `#D8D2CA` holds at 1.20 there while staying light at 1.42 on
+`#FAF8F5`. Ordering is what carries a grey hierarchy, so move the whole ladder together rather than
+darkening one rule.
+
+The same failure recurs one level up, in Canva type. The three-point-leaders page shipped its title
+and footer in `#A19B92` — contrast **2.20** on an `#E9E5E1` canvas, against 14.7 for the chart's own
+labels, so the headline was seven times weaker than the data it introduced. **Page text carrying
+source, coverage or qualification should clear roughly 4.5:1 on whatever canvas is in use**, because
+§7 requires those lines to survive reposts and screenshots and Instagram's compression eats faint
+small type first.
+
+Settled values for the `#E9E5E1` canvas: **subtitle `#5F5B57`** (5.37) and **footer `#7A736C`**
+(3.73), chosen by the user 2026-09-01. The footer sits under the 4.5:1 guide by deliberate choice —
+it is a legibility-for-quietness trade the user made with the numbers in front of them, not an
+oversight, so don't re-raise it per post. `#948D86` (2.61) and `#A19B92` (2.20) were both rejected as
+too faint.
+
+**Get a quieter tier from size and weight, not from a paler grey.** Lighter and legible are the same
+dial, so tone-only hierarchy has nowhere to go before it becomes unreadable — and tone is exactly the
+signal that breaks when the canvas moves. The chart's own reference lines separate by dash length and
+line weight for this reason, and the same applies to a subtitle against a footer.
 
 **Magnitude colormap** (`craft.MAGNITUDE_CMAP`): light neutral `#F2EAE8` → `#CE1141` → deep red
 `#7E0C2B`. Use when a bar or cell fill encodes magnitude.
@@ -78,10 +124,11 @@ exact hex is not. Don't fail a page for missing a specific canvas value.
 ⚠️ The table diverging colormap (`NET_CMAP`) runs red-to-green — colorblind-unsafe. Mitigated by
 always printing the sign (`force_sign`). Revisit if a table post ever leans on color alone.
 
-### Alternate themes (parked)
+### Alternate themes (retired)
 
-`house.THEMES` carries four alternates beyond `jersey`. **None are in active use** — the account runs
-on `#FAF8F5`. They're kept because the tokens may be reimplemented in Canva later to vary the look.
+`house.THEMES` carries four alternates beyond `jersey`. **None has ever been used**, confirmed by the
+user 2026-09-01, and the account does not run on a fixed canvas at all — see the rule above. The
+table is retained only as a record for the legacy renderers still importing it.
 A theme is a coordinated set, never just a background swap: changing the canvas changes ink, rules,
 gridlines, and accents together.
 

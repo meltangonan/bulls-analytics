@@ -50,6 +50,7 @@ deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
 | `current_roster_jam_cards.py` | NBA Jam-style player cards for the current roster. Six bars per card, each the player's league percentile in a per-75-possession production rate — so a card's shape describes how a player fills a box score, not how good he is. Ported from Owen Phillips' F5 small-multiple tutorial. |
 | `zone_deep_dive.py` | Volume *and* efficiency inside a single shot zone — one slide per zone, split into sub-regions reporting attempts, FG%, and the league's FG% from the same sub-region. Sample guardrails are built in rather than bolted on. |
 | `opponent_elite_performance.py` | Which opponents the most elite Bulls player-games came against. Reuses `top_game_performances.py`'s validated loaders, maps historical opponent abbreviations onto the current 29 franchises, and counts Game Score 30+ and 30-point performances as both totals and rates. |
+| `bulls_opponent_win_percentage.py` | Bulls regular-season win percentage against every current NBA opponent since 2000-01 — groups historical abbreviations into their current franchises, requires at least 40 meetings (the actual minimum is 49), ranks all 29 teams by Chicago wins divided by meetings, and renders one continuous chart master split into ranks 1–14 and 15–29 for a connected two-page swipe. East opponents are blue and West opponents red; each bar carries its percentage and record, with a logo, black leader line, and team label. |
 
 ## Season cache
 

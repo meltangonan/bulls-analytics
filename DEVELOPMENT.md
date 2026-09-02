@@ -207,6 +207,12 @@ These are the traps that produce silently wrong numbers rather than errors.
   returns zero rows for Summer League games without complaining. Use `get_game_shots`, which derives
   the league from the game-ID prefix (`00` NBA, `15` Summer League). Prefer the NBA's own `shot_zone`
   labels over re-deriving zones from distance or coordinates.
+- **⚠️ `get_team_shots` drops `ACTION_TYPE`.** The shared wrapper keeps coordinates, make/miss, and
+  zone labels. Dunk / layup / hook classification lives on `ACTION_TYPE`. Call `ShotChartDetail`
+  yourself — `team_id=CHI`, `player_id=0`, `context_measure_simple="FGA"` — rather than reconstructing
+  dunks from Restricted Area, which both misses labelled dunks just outside the restricted area and
+  counts every other rim finish. Promote the field into the shared fetch after a second regular-season
+  consumer; `scripts/prototypes/most_dunks_season.py` is the first.
 - **Keep both NBA zone columns, but do not confuse their jobs.** The current twelve-zone chart needs
   `shot_zone` for its physical families and coordinates for its custom angular cuts.
   `shot_zone_area` remains necessary for analyses that reproduce NBA's own detailed sectors through

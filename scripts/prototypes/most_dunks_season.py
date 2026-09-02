@@ -161,14 +161,23 @@ def fetch_season_shots(season: str) -> pd.DataFrame:
 
 def fetch_season_shots_retry(season: str) -> pd.DataFrame:
     """Retry the transient NBA.com timeouts, then give up."""
+    last_error: Exception | None = None
     for attempt in range(3):
         try:
             return fetch_season_shots(season)
         except Exception as error:  # noqa: BLE001 - retried, then re-raised
+            last_error = error
+            print(
+                f"  {season} attempt {attempt + 1}/3 failed: {type(error).__name__}",
+                flush=True,
+            )
             if attempt == 2:
-                raise RuntimeError(f"NBA.com failed for {season}") from error
+                raise RuntimeError(
+                    f"NBA.com failed for {season}. ShotChartDetail is often "
+                    "unreachable from datacenter IPs; retry on a residential network."
+                ) from error
             time.sleep(3)
-    raise RuntimeError(f"NBA.com failed for {season}")
+    raise RuntimeError(f"NBA.com failed for {season}") from last_error
 
 
 def load_or_fetch(refresh: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:

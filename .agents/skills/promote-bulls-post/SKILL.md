@@ -13,8 +13,10 @@ Read `AGENTS.md`, `POSTING_WORKFLOW.md` (Voice & Caption owns how the account so
 tagging), and `STRATEGY.md` before recommending distribution.
 
 **Inspect the actual artifacts**, not a summary: the approved final graphic, its analysis or
-prototype, and its Notion `chicagobullsdata posts` page. For Canva work that means every downloaded page in
-the visual folder's `final/`, with `assets/` holding the chart versions that produced it.
+prototype, and its Notion `chicagobullsdata posts` page. For Canva work that means the chart versions
+in `docs/visuals/<slug>/assets/` (highest version first; the publish-DPI export has a `-final`
+suffix). QA from a downloaded Canva page — check it, don't file it. Older posts may still have a
+retired `final/` folder; do not create new ones.
 
 ## Readiness
 

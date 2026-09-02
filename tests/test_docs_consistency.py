@@ -46,7 +46,7 @@ def _numbered_sections(path: Path) -> dict[str, str]:
     return out
 
 
-@pytest.mark.parametrize("doc", _docs(), ids=lambda p: p.name if p.parent.name == p.parent.name else str(p))
+@pytest.mark.parametrize("doc", _docs(), ids=lambda p: str(p.relative_to(ROOT)))
 def test_file_references_resolve(doc: Path):
     """A doc that points at a file which no longer exists answers nothing."""
     missing = []

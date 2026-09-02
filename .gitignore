@@ -31,8 +31,9 @@ cache/
 *.swo
 *~
 
-# direnv
+# direnv / secrets
 .envrc
+.env
 
 # OS
 .DS_Store

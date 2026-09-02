@@ -59,7 +59,7 @@ class Theme:
     carries the full token set, not just the canvas fill. ``jersey`` (warm
     off-white) is the default; ``white`` matches the loose module constants
     above. The palettes retain the earlier full-layout themes,
-    promoted to real render options (DESIGN.md §2/§10).
+    promoted to real render options (DESIGN.md §2).
     """
 
     name: str

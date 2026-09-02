@@ -60,7 +60,7 @@ from scripts.prototypes.rebounds_age_ladder import (
 
 MERGER_FIRST_SEASON_END_YEAR = 1977
 MERGER_SOURCE_DATA = _REPO / "docs/visuals/2026-08-27-rebounds-age-ladder/data"
-TEAM_YEAR_CACHE = _REPO / "cache/nba.com/rebounds-age-ladder/bulls-team-year-by-year.csv"
+TEAM_YEAR_CACHE = MERGER_SOURCE_DATA / "bulls-team-year-by-year.csv"
 TEAM_YEAR_SOURCE_URL = f"https://stats.nba.com/stats/teamyearbyyearstats?TeamID={BULLS_TEAM_ID}"
 
 # Fixed raw-RPG anchors keep the red/yellow/green cell meaningful across the

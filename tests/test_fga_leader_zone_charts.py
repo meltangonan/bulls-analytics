@@ -6,6 +6,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
+from tests.conftest import requires_helvetica
 from scripts.prototypes import fga_leader_zone_charts as charts
 
 
@@ -115,6 +116,7 @@ def test_saved_post_data_reconstructs_every_selection_and_chart_input():
         assert league.fga_share_pct.sum() == pytest.approx(100.0, abs=0.001)
 
 
+@requires_helvetica
 def test_large_four_line_pills_stay_separate_and_inside_the_asset():
     """Measure the actual rendered cards for all six saved season layouts."""
     from itertools import combinations

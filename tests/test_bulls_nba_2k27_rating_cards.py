@@ -5,6 +5,7 @@ import pytest
 from matplotlib.textpath import TextPath
 from PIL import Image
 
+from tests.conftest import requires_helvetica
 from scripts.prototypes import bulls_nba_2k27_rating_cards as cards_module
 from scripts.prototypes.bulls_nba_2k27_rating_cards import (
     change_color,
@@ -131,6 +132,7 @@ def test_rendered_bar_text_uses_only_helvetica_bold(tmp_path, monkeypatch):
     assert set(weights) == {"bold"}
 
 
+@requires_helvetica
 def test_category_label_gutter_clears_the_longest_label():
     label = TextPath(
         (0, 0),

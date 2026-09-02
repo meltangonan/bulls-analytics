@@ -32,10 +32,22 @@ class TestHouseGraphics:
         plt.close(fig)
 
     def test_house_fonts_use_helvetica_files(self):
-        assert "Helvetica" in display_font().get_file()
-        assert "Helvetica" in body_font("regular").get_file()
-        assert "Helvetica" in body_font("medium").get_file()
-        assert "Helvetica" in body_font("bold").get_file()
+        from bulls.graphics.house import _HELVETICA_TTC
+
+        fonts = (
+            display_font(),
+            body_font("regular"),
+            body_font("medium"),
+            body_font("bold"),
+        )
+        if _HELVETICA_TTC.exists():
+            for font in fonts:
+                assert "Helvetica" in font.get_file()
+            return
+        # Documented non-macOS path: family fallback, no extracted Helvetica file.
+        for font in fonts:
+            families = font.get_family()
+            assert any(name in families for name in ("Helvetica", "Arial", "DejaVu Sans"))
 
     def test_header_and_footer_include_required_house_elements(self):
         fig, ax = new_canvas()

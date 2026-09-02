@@ -30,9 +30,11 @@ Both render from `scripts/prototypes/assist_duos.py`; `--mode both` writes both 
 ## Data
 
 `scripts/prototypes/assist_duos_fetch.py` caches every assisted Bulls basket since 2000-01 from
-`PlayByPlayV3`, one CSV per season under `cache/assist-duos/`. ~2,100 games at roughly two minutes
-per season, strictly serial: **NBA.com throttles concurrent play-by-play hard** — a four-worker test
-made even single serial requests time out for minutes afterwards.
+`PlayByPlayV3`, one CSV per season under the post's tracked
+`docs/visuals/2026-08-08-assist-duos/data/seasons/` (not ignored `cache/`, which lost one full fetch
+to worktree cleanup). ~2,100 games at roughly two minutes per season, strictly serial: **NBA.com
+throttles concurrent play-by-play hard** — a four-worker test made even single serial requests time
+out for minutes afterwards.
 
 Play-by-play rather than the tracking passing dashboard because only it carries `shotValue`, and
 because it *is* the official record: tracking undercounts (2,312 vs 2,335 official in 2025-26).

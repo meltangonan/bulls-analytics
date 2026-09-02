@@ -32,8 +32,9 @@ The matching Notion page is `Mocked` until the user confirms the post is live.
 ## Analytical Record
 
 The Python analysis covers the 2026 California Classic, Salt Lake City, and Las Vegas circuits.
-Game-level files remain in ignored `cache/sl_sticky_stats_2026/` so the roughly 190 NBA.com calls do
-not need to be repeated.
+Game-level files ship with the post in
+`docs/visuals/2026-07-21-summer-league-sticky-stats/data/` (moved out of ignored `cache/` so a
+worktree cleanup cannot destroy them).
 
 - Qualification: minimum 50 Summer League minutes.
 - Qualified pool: 321 players.

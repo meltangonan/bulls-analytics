@@ -30,6 +30,7 @@ bulls-analytics/
 ├── .claude/skills/   # symlinks to the above, for Claude Code discovery
 ├── bulls/            # data fetchers, analysis, graphics
 ├── scripts/          # CLI entrypoints; prototypes/ holds one-off mock generators
+├── assets/           # local headshot overrides (Summer League report)
 ├── docs/             # permanent visuals and active handoffs
 ├── tests/            # pytest, NBA API mocked
 └── output/           # generated graphics (gitignored)
@@ -42,7 +43,10 @@ topic has exactly one owner — visual and voice decisions in `DESIGN.md`, produ
 `POSTING_WORKFLOW.md`, code in `DEVELOPMENT.md`, audience and distribution in `STRATEGY.md`.
 
 Reviewed visual work lives in `docs/visuals/YYYY-MM-DD-<slug>/`: `assets/` holds our own renders, one
-numbered version per state shown for review, and optional `final/` holds pages downloaded from Canva.
-Both are saved with `scripts/save_visual_version.py`. `output/` is disposable, gitignored scratch.
+numbered version per state shown for review, and `data/` holds the numbers behind them. Save with
+`scripts/save_visual_version.py`. `output/` is disposable, gitignored scratch. The composed Canva page
+is not archived here — Canva holds the editable design, Instagram holds the published post, and QA
+still works from a downloaded export that is checked, not filed. Older posts may still carry a
+retired `final/` folder; do not create new ones.
 Posts are tracked in the Notion `chicagobullsdata posts` database; all preserved graphics live under
 `docs/visuals/`.

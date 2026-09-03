@@ -17,6 +17,11 @@ pip install -r requirements.txt
 ./run_tests.sh  # verify setup
 ```
 
+NBA.com blocks datacenter/cloud IPs, so on Cursor Cloud or CI the live API needs a proxy: set the
+`NBA_STATS_PROXY` secret to a non-blocked (residential/mobile) proxy URL, then verify with
+`venv/bin/python scripts/check_nba_api.py`. On home internet no proxy is needed. See
+`DEVELOPMENT.md` → Network Access.
+
 ## Layout
 
 ```text

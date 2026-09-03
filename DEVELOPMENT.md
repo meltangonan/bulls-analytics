@@ -7,6 +7,33 @@ Code lives in `bulls/data` (NBA API wrappers), `bulls/analysis` (stat functions)
 `bulls/graphics` (`house.py` tokens/themes/fonts, `craft.py` shared helpers, and `court.py` standard
 court geometry). Read the modules for signatures — this file covers only what the code can't tell you.
 
+## Network Access
+
+NBA.com's Akamai edge blocks datacenter and cloud IPs, and the block is silent in two shapes:
+`stats.nba.com` completes the TLS handshake and then never answers (a read timeout, not an error),
+and `cdn.nba.com` returns 403. Nothing about request headers, IPv4 vs IPv6, or a longer timeout
+changes an IP-reputation block. On home internet the API works directly and no setup is needed.
+
+From a blocked network (Cursor Cloud, CI, most servers) every NBA request must egress through a proxy
+whose IP is not blocked. Set `NBA_STATS_PROXY` to the proxy URL (`http://user:pass@host:port`);
+`HTTPS_PROXY` is honoured as a fallback. `bulls/data/fetch.py` reads it once at import and routes both
+the nba_api endpoints and its own direct requests (headshots, the roster page) through it, so no call
+site changes. A residential or mobile proxy is the reliable choice — most datacenter proxies are
+blocked by the same Akamai rules, so a cheap datacenter proxy usually fails the same way the bare IP
+does.
+
+On Cursor Cloud, add `NBA_STATS_PROXY` as a Secret (to the right of the chat); secrets are injected
+as environment variables on new agents. Verify with:
+
+```bash
+venv/bin/python scripts/check_nba_api.py
+```
+
+It makes one live roster call and prints a one-line pass/fail (exit 0/1), so it doubles as a
+precondition gate before a fetch-heavy run. `tests/test_api_proxy.py` pins the routing — off by
+default, driven by the secret, and actually tunnelling to `stats.nba.com` when set — so the plumbing
+cannot silently regress.
+
 ## Post Worktrees
 
 Any post task that changes repo files starts in its own linked worktree; the user does not need to

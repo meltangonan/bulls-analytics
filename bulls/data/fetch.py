@@ -1,4 +1,5 @@
 """Fetch Bulls data from NBA API."""
+import os
 import time
 import json
 from pathlib import Path
@@ -6,6 +7,7 @@ import requests
 from typing import Optional, List, Dict
 import pandas as pd
 
+import nba_api.library.http as _nba_http
 from nba_api.stats.endpoints import (
     leaguegamefinder,
     boxscoretraditionalv3,
@@ -30,6 +32,69 @@ _NBA_HEADERS = {
     'Referer': 'https://www.nba.com/',
     'Accept': 'application/json',
 }
+
+
+def _resolve_proxy() -> str:
+    """Proxy URL for NBA.com traffic, taken from the environment.
+
+    NBA.com's Akamai edge blocks datacenter/cloud IPs outright, and the two
+    failure modes are silent: ``stats.nba.com`` completes the TLS handshake and
+    then never sends a byte (a read timeout, not an error), while
+    ``cdn.nba.com`` answers 403. Neither is fixable with headers, IPv4/IPv6, or
+    a longer timeout -- it is an IP-reputation block -- so from a blocked
+    network every NBA request must egress through a proxy whose IP is not
+    blocked. A residential or mobile proxy is the reliable choice; most
+    datacenter proxies are blocked by the same rules.
+
+    Set it once as the ``NBA_STATS_PROXY`` secret (``HTTPS_PROXY`` is honoured as
+    a fallback) and every fetcher in this module routes through it. Empty means
+    "connect directly", which is correct on an unblocked network such as a
+    laptop on home internet.
+    """
+    for name in ("NBA_STATS_PROXY", "HTTPS_PROXY", "https_proxy"):
+        value = os.environ.get(name)
+        if value and value.strip():
+            return value.strip()
+    return ""
+
+
+# Read once at import. Cloud Agents inject secrets as environment variables at
+# boot, so this is set before any fetch runs.
+NBA_PROXY = _resolve_proxy()
+
+# nba_api endpoints call ``send_api_request`` with ``proxy=None`` by default,
+# which falls back to this module global -- so setting it routes every endpoint
+# (ShotChartDetail, LeagueDash*, CommonTeamRoster, box scores) through the proxy
+# without touching each call site.
+_nba_http.PROXY = NBA_PROXY
+
+# The direct requests.get calls below (headshots, the roster page) are not
+# nba_api endpoints, so they take this explicit proxies mapping instead.
+_PROXIES = {"http": NBA_PROXY, "https": NBA_PROXY} if NBA_PROXY else None
+
+
+def verify_api_access(season: str = CURRENT_SEASON) -> Dict:
+    """Make one live NBA Stats call and report whether it succeeded.
+
+    Returns a result dict rather than raising, because "the API is unreachable"
+    is the answer the caller wants, not an exception. ``scripts/check_nba_api.py``
+    turns this into a one-line pass/fail so the proxy secret can be verified
+    without rendering a whole chart.
+    """
+    result: Dict = {"proxy_configured": bool(NBA_PROXY), "ok": False,
+                    "rows": 0, "detail": ""}
+    try:
+        roster = commonteamroster.CommonTeamRoster(
+            team_id=BULLS_TEAM_ID, season=season,
+            timeout=30, headers=_NBA_HEADERS,
+        ).get_data_frames()[0]
+        result["rows"] = int(len(roster))
+        result["ok"] = not roster.empty
+        result["detail"] = ("live NBA Stats reachable" if result["ok"]
+                            else "reached NBA but response was empty")
+    except Exception as exc:  # report the failure; do not crash the checker
+        result["detail"] = f"{type(exc).__name__}: {exc}"
+    return result
 
 
 def get_games(
@@ -846,7 +911,8 @@ def get_player_headshot(
 
     url = f"https://cdn.nba.com/headshots/nba/latest/1040x760/{player_id}.png"
     try:
-        resp = requests.get(url, timeout=10)
+        resp = requests.get(url, headers=_NBA_HEADERS, timeout=10,
+                            proxies=_PROXIES)
         resp.raise_for_status()
         file_path.write_bytes(resp.content)
         return file_path
@@ -897,6 +963,7 @@ def get_current_roster(team_id: int = BULLS_TEAM_ID) -> pd.DataFrame:
             "Accept": "text/html,application/xhtml+xml",
         },
         timeout=30,
+        proxies=_PROXIES,
     )
     response.raise_for_status()
     return parse_nba_roster(response.text)

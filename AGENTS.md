@@ -16,6 +16,7 @@ metrics, qualifications, sources, and the verified chart assets.
 | The shelf of post ideas and post log | the Notion `chicagobullsdata posts` database |
 | A create / promote / review stage | the matching skill in `.agents/skills/` |
 | Fetchers, analysis, graphics code, scripts, tests | `DEVELOPMENT.md` |
+| Live NBA API access from a blocked network (Cursor Cloud, CI) | `DEVELOPMENT.md` → Network Access |
 
 ## Defaults
 

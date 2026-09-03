@@ -44,6 +44,23 @@ user approves committing or pushing:
 5. Remove the worktree and delete its branch only once `scripts/check_worktrees.sh` reports nothing
    unsaved there. Preserve and report anything dirty, unmerged, or unclear.
 
+**`git worktree remove` refuses in two different ways, and only one of them means stop.** A refusal
+naming modified or untracked files is the real one: there is unsaved work, so investigate rather than
+force. `Directory not empty` *after* the command has already run is the cosmetic one — macOS leaves a
+`.DS_Store` in every folder Finder has opened, git deletes what it knows about and then cannot remove
+the near-empty directories around them. It leaves the worktree deregistered but still on disk, which
+looks alarming and is not. Clear the stragglers first and the refusal never happens:
+
+```bash
+find ../bulls-analytics-worktrees/<slug> -name .DS_Store -delete
+git worktree remove ../bulls-analytics-worktrees/<slug>
+```
+
+Keep the two apart deliberately. Treating every worktree-remove failure as noise is how the refusal
+that *does* mean "you are about to delete a day of renders" gets waved through. `check_worktrees.sh`
+enumerates directories on disk rather than `git worktree list`, so a half-removed worktree still
+shows up there — verify with it before finishing the delete by hand.
+
 **Ask what is unsaved, not what is merged.** A merged branch means the *code* landed. It says
 nothing about renders sitting in ignored `output/` or a `cache/` that took an hour to fetch, and
 both have been destroyed by cleanups that asked only the first question: a day of approved renders

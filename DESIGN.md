@@ -358,7 +358,26 @@ A player-specific **data-colour cover** may use the real qualified zone fills wh
 every pill, value, legend, and summary card. Unlike the decorative teasers, its colors remain an
 analytical claim: use the same player window, league baseline, palette, and low-volume floor as the
 corresponding detail chart. It previews the actual pattern while reserving its interpretation and
-supporting numbers for the data page.
+supporting numbers for the data page. **Its crop follows what it dropped.** A detail chart's floor
+is its legend; a bare chart's floor is the baseline of the court, and keeping the taller crop ships a
+transparent asset that is a quarter empty and has to be re-cropped by hand in Canva every time.
+
+A **season grid** (`zonegrid`) is the data-colour cover taken to a whole tenure: one bare coloured
+court per season, tiled on a single page, each rated against its own season's league. It is the only
+zone form that shows change, and it can only do so by giving something up — eleven courts carrying
+twelve pills each is 132 numbers, which is a table pretending to be a picture. With the pills gone
+the reader tracks one region down the page and watches its colour move. Each court keeps a season
+label and its attempt count in muted type; the count is what explains a grey court rather than
+leaving it looking broken.
+
+Its layout is solved, not chosen. Three columns is the only arrangement that survives a portrait
+page: four makes each court 250 px wide, at which point a corner three is three pixels across and the
+form stops reading as a court, while two runs to six rows and off the bottom. Scale then falls out of
+the tighter of the two constraints — with the season label and attempt count attached, four rows bind
+before three columns do. A short final row is centred rather than left-hung, because an orphan court
+under the left column reads as a missing season, which is a claim the chart is not making. Court
+lines drop to a proportional weight; markings sized for a full-page court drown a court a quarter its
+width.
 
 Zone-chart labels use sentence case rather than all caps: `11.6% of FGA`, `Below`, `Above`, and
 `Under 400 FGA`. Basketball acronyms remain uppercase (`FG`, `FGA`, `NBA`).

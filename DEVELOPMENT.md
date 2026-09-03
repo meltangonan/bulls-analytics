@@ -461,6 +461,52 @@ all league attempts, so the team opener and player slides are directly comparabl
 longer needs possession endpoints. The raw attempt count in the shooting line preserves absolute
 volume. `--league` is still rejected: the league cannot be its own efficiency baseline.
 
+`zonegrid` is `zones` repeated once per season on one page, and it is a post-script chart rather than
+a CLI one: it needs a subject frame and a league frame *per season*, and no combination of
+`--season`/`--player` flags supplies eleven of each. Post scripts call `render_zonegrid` directly with
+a `by_season` mapping, exactly as they already call `render_zones` with a hand-built context. **Every
+court is rated against its own season's league**, never a single borrowed baseline: league zone FG%
+is stable across eras but zone *share* is not, and grading 2003-04 against 2015-16's corner-three
+economy would report a change in the league as a change in the player.
+
+**Tenure charts.** A player's whole run at one club is now a four-post family — DeRozan, Rose,
+Butler, Hinrich — and the four only mean the same thing because they share four rules. Scope every
+pull to `team_id=BULLS_TEAM_ID`; a season split by a trade otherwise sweeps in the wrong uniform, and
+Hinrich's 2015-16 would gain 11 Atlanta games. **Reconcile the raw pull against an independent
+official total before filtering anything**, because a wrongly-scoped `ShotChartDetail` call returns an
+empty frame rather than an error — the reconciliation is the only thing that can tell a narrow pull
+from a broken one. Scale the pooled chart's colour floor to `20 × seasons`, so grey carries the same
+meaning at eleven seasons as at three. And name the seasons the player spent elsewhere rather than
+letting them read as gaps: Hinrich's tenure skips 2010-11 and 2011-12, and a subtitle spanning
+2003-04 to 2015-16 would otherwise claim thirteen seasons of coverage for eleven seasons of data.
+
+**Pooling the league across a tenure needs no attempt weighting.** Building the pooled baseline from
+each season's league weighted by the *player's* attempts that season is the more careful construction
+and was tested on Hinrich's eleven seasons: it moved no zone's league FG% by more than 0.21 points,
+against a chart whose narrowest colour band is ±2.5, so no zone changed colour. Plain concatenation
+is used because it is what a reader can reproduce from the saved files.
+
+**The league baseline stays in `cache/shot_charts`.** The three earlier tenure posts each copied every
+season's ~10 MB league pull into their own `data/` folder; at eleven seasons that is ~115 MB of a
+dataset the repo explicitly names as shared (`tests/test_data_locations.py`, AGENTS.md). What ships
+with a post is what only that post can produce — its subject's shots, the official totals it
+reconciles against, and the zone splits its slides print. The Hinrich post does that and leaves the
+league where it belongs; the earlier three keep their copies rather than being rewritten.
+
+**`LeagueDashPlayerStats` filtered by `team_id_nullable` labels the row with the player's
+end-of-season team.** The counting stats are correctly the filtered club's — Hinrich's 2015-16 row
+carries Chicago's 35 games and 118 attempts — but `TEAM_ABBREVIATION` on that row reads `ATL`. The
+trap runs the dangerous way: the label looks wrong on data that is right, so "fixing" it breaks a
+correct chart. Read the counting stats, never the abbreviation.
+
+**Historical seasons contain attempts with no location at all.** From 2008-09 on, `ShotChartDetail`
+occasionally returns a valid make/miss and shot value with no coordinates, distance, or zone — two of
+Hinrich's 7,593 Bulls attempts, and 20 to 156 per league season. Such a row belongs in scoring totals
+and cannot honestly contribute to a location chart, so the tenure posts drop rows missing *all* those
+fields and raise on a row missing only *some*, which would be a shape change in the feed rather than a
+known gap. `shot_maps.zone12_of_shots` still raises on an unrecognised zone label, and should: there
+is no region to guess for an unlocated row, but a renamed zone would be silently misplaced.
+
 The optional carousel summary below a zone chart reports total FGA, eFG%, and 3PT%. A post may put
 PPG immediately before those three cards when the season's scoring context is part of the page.
 That PPG must be `PTS / GP` from the official player or team totals endpoint: `ShotChartDetail`

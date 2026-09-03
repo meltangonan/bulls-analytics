@@ -1,0 +1,13 @@
+window,games,minutes,points,ppg,bulls_fga,shot_rows,fgm,efg_pct,three_pct,zones_rated,zones_grey,rated_fga_share_pct,mapped_zone_fga,excluded_backcourt_fga,unlocated_fga,source_zone_value_conflicts,league_zone_value_conflicts,league_unlocated_fga,min_zone_fga,scope
+2003-04,76,2709.3,915,12.0,823,823,318,47.4,39.0,12,0,99.9,822,1,0,1,70,0,20,Chicago attempts only
+2004-05,77,2797.5,1206,15.7,1122,1122,445,46.1,35.5,12,0,99.9,1121,1,0,3,113,0,20,Chicago attempts only
+2005-06,81,2954.7,1284,15.9,1078,1078,451,47.7,37.0,12,0,99.8,1076,2,0,3,111,0,20,Chicago attempts only
+2006-07,80,2839.0,1327,16.6,1061,1061,475,51.4,41.5,12,0,99.8,1059,2,0,0,95,0,20,Chicago attempts only
+2007-08,75,2379.5,862,11.5,797,797,330,46.7,35.0,11,1,98.6,796,1,0,0,127,0,20,Chicago attempts only
+2008-09,51,1338.5,503,9.9,419,418,183,52.0,41.1,10,2,93.8,417,1,1,1,143,24,20,Chicago attempts only
+2009-10,74,2481.5,805,10.9,753,752,308,47.9,37.3,11,1,97.7,750,2,1,0,10,23,20,Chicago attempts only
+2012-13,60,1764.4,459,7.7,422,422,159,46.1,39.0,9,3,92.9,421,1,0,0,12,30,20,Chicago attempts only
+2013-14,73,2116.4,666,9.1,619,619,243,46.1,35.1,11,1,96.8,618,1,0,0,11,46,20,Chicago attempts only
+2014-15,66,1610.0,377,5.7,381,381,142,44.9,34.5,11,1,96.1,380,1,0,1,10,20,20,Chicago attempts only
+2015-16,35,555.0,132,3.8,118,118,47,49.6,41.1,2,10,39.0,118,0,0,0,18,156,20,Chicago attempts only
+Bulls tenure,748,23545.7,8536,11.4,7593,7591,3101,47.8,37.6,11,1,97.1,7578,13,2,9,720,299,220,Chicago attempts only

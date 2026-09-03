@@ -701,8 +701,15 @@ def test_blank_zone_cover_has_no_data_layer_or_legend(tmp_path):
     assert "_zone12_block" not in blank
     assert "_zone12_legend" not in blank
     assert "_zone12_summary_cards" not in blank
-    helper = inspect.getsource(shot_chart._render_cover_zones)
-    assert 'court_ink = "#242424"' in helper
+    # The cover draws its court in the account's black rather than the theme
+    # ink. Asserted against the named constant, not the source text: the literal
+    # used to live inside _render_cover_zones and moved when the court drawing
+    # was shared with the season grid, which broke the test without changing a
+    # pixel of the cover.
+    assert shot_chart.ZONE12_COURT_INK == "#242424"
+    import inspect as _inspect
+    signature = _inspect.signature(shot_chart._draw_zone_court)
+    assert signature.parameters["court_ink"].default == shot_chart.ZONE12_COURT_INK
 
     out = tmp_path / "blank.png"
     shot_chart.render_blank_zones(out, final=False)
@@ -884,20 +891,28 @@ def test_overall_cards_put_supplied_ppg_immediately_before_fga():
 
 
 def test_the_filled_zone_court_has_a_closed_horizontal_top_edge():
+    """The cropped court is closed across the top, or the fills read as a bleed.
+
+    Driven through the real drawing function rather than an isolated helper. The
+    edge used to be its own one-line function, which made this test pass while
+    proving only that the helper worked -- not that anything called it.
+    """
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     import scripts.make_shot_chart as shot_chart
 
     fig, ax = plt.subplots()
-    theme = shot_chart.house.get_theme("jersey")
-    shot_chart._zone12_close_top(ax, lambda x, y: (x, y), theme)
-    line = ax.lines[-1]
+    fills = {zone: shot_chart.ZONE12_GREY for zone in shot_chart.sm.ZONE12_ORDER}
+    to_px = shot_chart._draw_zone_court(ax, 500.0, 500.0, 1.0, fills, 1.0)
+    left, right = to_px(-250, shot_chart.ZONE12_TOP), to_px(250, shot_chart.ZONE12_TOP)
+    closed = [line for line in ax.lines
+              if tuple(line.get_xdata()) == (left[0], right[0])
+              and tuple(line.get_ydata()) == (left[1], right[1])]
     plt.close(fig)
 
-    assert tuple(line.get_xdata()) == (-250, 250)
-    assert tuple(line.get_ydata()) == (shot_chart.ZONE12_TOP,) * 2
-    assert line.get_color() == theme.ink
+    assert len(closed) == 1
+    assert closed[0].get_color() == shot_chart.ZONE12_COURT_INK
 
 
 # --- Which side is which ---------------------------------------------------
@@ -953,3 +968,82 @@ def test_each_zone_fill_is_painted_on_the_side_its_own_shots_map_to():
             assert abs(drawn_offset) < 8.0, zone
         else:
             assert np.sign(drawn_offset) == -np.sign(source_x), zone
+
+
+def test_the_season_grid_paints_each_side_where_that_side_s_shots_map_to(tmp_path):
+    """The cover grid is a second renderer, so it needs its own mirror check.
+
+    A left/right flip has already reached Instagram once from this family, and it
+    is the one error a chart cannot show you: a mirrored court is still a valid
+    court, every total still reconciles, and every pill still sits inside a real
+    zone. Only the side changes. `render_zonegrid` draws through its own layout
+    rather than the season chart's, so passing the season chart's orientation
+    tests says nothing about it.
+
+    Built from synthetic shots whose two corners cannot be confused: NBA's LEFT
+    corner is all makes and its RIGHT corner all misses, so one fill must be
+    green and the other red. NBA Left belongs on the VIEWER'S RIGHT.
+    """
+    import matplotlib
+    matplotlib.use("Agg")
+    import numpy as np
+    from PIL import Image
+
+    import scripts.make_shot_chart as shot_chart
+    from bulls.graphics import house
+    from bulls.graphics.court import COURT_HALF_WIDTH, nba_to_basket_bottom_px
+
+    def corner_shots(left_made, right_made):
+        rows = []
+        for zone, loc_x, made in (("Left Corner 3", -235.0, left_made),
+                                  ("Right Corner 3", 235.0, right_made)):
+            for i in range(40):
+                rows.append({"loc_x": loc_x, "loc_y": 20.0, "shot_made": i < made,
+                             "shot_type": "3PT", "shot_zone": zone,
+                             "shot_zone_area": "Left Side(L)" if loc_x < 0
+                                               else "Right Side(R)"})
+        return pd.DataFrame(rows)
+
+    subject = corner_shots(left_made=40, right_made=0)   # left perfect, right winless
+    league = corner_shots(left_made=20, right_made=20)   # both exactly 50%
+    by_season = {s: {"subject": subject, "league": league}
+                 for s in ("2003-04", "2004-05")}
+
+    out = tmp_path / "grid.png"
+    shot_chart.render_zonegrid({"by_season": by_season, "min_fga": 10}, out,
+                               final=False)
+    img = Image.open(out).convert("RGB")
+    width, height = img.size
+    scale_px = width / house.CANVAS_WIDTH
+
+    # Replay the layout for the first court, exactly as the renderer lays it out.
+    s = shot_chart.ZONEGRID_SCALE
+    court_h = shot_chart.ZONEGRID_COURT_UNITS * s
+    court_w = 2 * COURT_HALF_WIDTH * s
+    label_block = (shot_chart.ZONEGRID_LABEL_GAP
+                   + shot_chart.ZONEGRID_LABEL_SIZE * 2.08
+                   + shot_chart.ZONEGRID_COUNT_GAP)
+    cell_h = court_h + label_block + shot_chart.ZONEGRID_ROW_GAP
+    pitch = court_w + shot_chart.ZONEGRID_COL_GAP
+    rows_used = -(-len(by_season) // shot_chart.ZONEGRID_COLS)
+    bottom = (shot_chart.ZONEGRID_TOP - (rows_used - 1) * cell_h - court_h
+              - label_block)
+    centre = house.CANVAS_WIDTH / 2 - (len(by_season) - 1) * pitch / 2
+    x0 = centre - COURT_HALF_WIDTH * s
+    baseline_y = shot_chart.ZONEGRID_TOP - court_h
+
+    def fill_at(loc_x):
+        px, py = nba_to_basket_bottom_px(x0, baseline_y, s, loc_x, -30.0)
+        col = int(px * scale_px)
+        row = int(height - (py - (bottom - 20)) * scale_px)
+        return col, "#%02X%02X%02X" % img.getpixel((col, row))
+
+    palette = shot_chart.ZONE12_PALETTES[shot_chart.ZONE12_DEFAULT_PALETTE]
+    left_col, left_fill = fill_at(-235.0)    # the zone NBA names Left
+    right_col, right_fill = fill_at(235.0)   # the zone NBA names Right
+
+    assert left_fill.upper() == palette[4].upper()   # 100% vs 50% -> best band
+    assert right_fill.upper() == palette[0].upper()  # 0% vs 50% -> worst band
+    # The claim this test exists for: NBA Left is drawn on the viewer's RIGHT.
+    assert left_col > centre * scale_px
+    assert right_col < centre * scale_px

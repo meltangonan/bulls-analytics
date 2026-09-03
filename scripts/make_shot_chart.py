@@ -77,6 +77,11 @@ REL_CMAP = LinearSegmentedColormap.from_list("rel", [
 
 DARK_BG, DARK_TEXT, DARK_DIM, DARK_LINE = "#14110F", "#F4EFE9", "#A79E95", "#6C645C"
 
+# The account's black (DESIGN.md section 2), not the theme ink. A filled court
+# carries its markings over twelve saturated fills, so the lines have to be the
+# one neutral that reads on all of them rather than a colour chosen per theme.
+ZONE12_COURT_INK = "#242424"
+
 
 def resolve_player(name: str) -> tuple[int, str]:
     from nba_api.stats.static import players
@@ -341,23 +346,24 @@ def render_hex(ctx, out: Path, final: bool):
     print("Source: NBA.com/stats")
 
 
-def _render_cover_zones(out: Path, final: bool, fills: dict[str, str],
-                        fill_alpha: float):
-    """Render a data-free twelve-zone cover treatment from supplied fills."""
-    theme = house.get_theme("jersey")
-    fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
-                              house.CANVAS_HEIGHT / house.DRAFT_DPI))
-    ax = fig.add_axes([0, 0, 1, 1])
-    ax.set_xlim(0, house.CANVAS_WIDTH); ax.set_ylim(0, house.CANVAS_HEIGHT)
-    ax.set_aspect("equal"); ax.set_xticks([]); ax.set_yticks([])
-    ax.patch.set_alpha(0.0)
-    for sp in ax.spines.values():
-        sp.set_visible(False)
+def _draw_zone_court(ax, center_x: float, center_y: float, s: float,
+                     fills: dict[str, str], fill_alpha: float,
+                     court_ink: str = ZONE12_COURT_INK, seam_alpha: float = 1.0,
+                     lw: float = 1.2):
+    """Paint one twelve-zone half court onto a supplied axes, and nothing else.
 
-    s = ZONE12_SCALE
-    court_ink = "#242424"
-    x0, y0 = draw_half_court(ax, house.CANVAS_WIDTH / 2, ZONE12_COURT_Y, s,
-                             court_ink, lw=1.2)
+    Everything the zone family draws below its type lives here: the court, the
+    twelve fills, the rim disc, the white seams and the two edges the crop needs.
+    It takes a position and a scale rather than owning the figure, which is what
+    lets one court fill a page and eleven of them tile a cover from identical
+    geometry. Returns the coordinate mapper so a caller can place its own marks.
+
+    ``lw`` scales every line together. The rim disc and the closing edges were
+    hand-set at 1.4 and 1.2 against a full-page court; expressed as ratios of
+    ``lw`` they hold their relationship when the court shrinks, instead of a
+    mini court drowning under lines sized for one four times its width.
+    """
+    x0, y0 = draw_half_court(ax, center_x, center_y, s, court_ink, lw=lw)
 
     def to_px(cx, cy):
         return nba_to_basket_bottom_px(x0, y0, s, cx, cy)
@@ -374,14 +380,35 @@ def _render_cover_zones(out: Path, final: bool, fills: dict[str, str],
     ax.add_patch(_Circle(
         to_px(0, 0), sm.RA_R * s,
         facecolor=to_rgba(fills["Restricted Area"], fill_alpha),
-        edgecolor=to_rgba(ZONE12_SEAM, 0.72), lw=1.4, zorder=2.5,
+        edgecolor=to_rgba(ZONE12_SEAM, seam_alpha), lw=lw * (1.4 / 1.2),
+        zorder=2.5,
     ))
-    _zone12_seams(ax, to_px, color=to_rgba(ZONE12_SEAM, 0.72))
+    _zone12_seams(ax, to_px, color=to_rgba(ZONE12_SEAM, seam_alpha),
+                  lw=ZONE12_SEAM_WIDTH * lw / 1.2)
     for side in (-250, 250):
         ax.plot([to_px(side, 0)[0]] * 2,
                 [to_px(side, 110)[1], to_px(side, ZONE12_TOP)[1]],
-                color=court_ink, lw=1.2, zorder=5)
-    _zone12_close_top(ax, to_px, theme, color=court_ink)
+                color=court_ink, lw=lw, zorder=5)
+    left, right = to_px(-250, ZONE12_TOP), to_px(250, ZONE12_TOP)
+    ax.plot([left[0], right[0]], [left[1], right[1]],
+            color=court_ink, lw=lw, zorder=5)
+    return to_px
+
+
+def _render_cover_zones(out: Path, final: bool, fills: dict[str, str],
+                        fill_alpha: float):
+    """Render a data-free twelve-zone cover treatment from supplied fills."""
+    fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
+                              house.CANVAS_HEIGHT / house.DRAFT_DPI))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, house.CANVAS_WIDTH); ax.set_ylim(0, house.CANVAS_HEIGHT)
+    ax.set_aspect("equal"); ax.set_xticks([]); ax.set_yticks([])
+    ax.patch.set_alpha(0.0)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+
+    _draw_zone_court(ax, house.CANVAS_WIDTH / 2, ZONE12_COURT_Y, ZONE12_SCALE,
+                     fills, fill_alpha, seam_alpha=0.72)
 
     out.parent.mkdir(parents=True, exist_ok=True)
     crop = Bbox.from_extents(0, ZONE12_CROP_BOTTOM / house.DRAFT_DPI,
@@ -1594,6 +1621,135 @@ def _zone12_fill(ax, gx_px, gy_px, mask, color, zorder):
                          zorder=zorder, antialiased=True)
 
 
+# --- zonegrid: one tenure, one page ----------------------------------------
+# Eleven courts on a 1080 x 1350 page. Three columns is the only arrangement
+# that works in portrait: four makes each court 250 px wide, at which point the
+# corner threes are three pixels across and the chart stops being readable as a
+# court; two runs to six rows and off the bottom.
+ZONEGRID_COLS = 3
+# Scale is solved, not chosen. Three courts plus two gaps have to fit 1080 px
+# across AND four rows plus their labels have to fit 1350 px down, and the court
+# is 1.29 times wider than deep, so the two constraints fight. The vertical one
+# binds: at 0.63 the bottom row's attempt count fell 2.7 units off the page when
+# the season-to-count gap was widened by seven. Scale is where that space is
+# taken back, because six-tenths of a percent off every court is invisible while
+# a tighter label gap is exactly what was being fixed. It leaves a 55 px side
+# margin, which is why the grid does not look width-constrained even though the
+# height is fully spent. `tests/test_hinrich_bulls_zone_charts.py` re-solves both
+# constraints, since an over-tall grid crops silently rather than failing.
+ZONEGRID_SCALE = 0.615
+ZONEGRID_COL_GAP = 24.0
+ZONEGRID_TOP = 1310.0            # top edge of the first row's court
+ZONEGRID_ROW_GAP = 32.0          # between one row's attempt count and the next court
+ZONEGRID_LABEL_GAP = 10.0        # between a court's baseline and its season label
+ZONEGRID_LABEL_SIZE = 13.0
+ZONEGRID_COUNT_SIZE = 9.0
+# The gap from the season to its attempt count is set against the LABEL's line
+# height, not the count's. At 150 dpi one point is 2.08 canvas units, so the
+# 13 pt season name stands about 27 units tall and a 16-unit gap put the count
+# inside that line's own body -- legible, but reading as one crowded block
+# rather than a heading with a figure under it.
+ZONEGRID_COUNT_GAP = 23.0
+# Court units the drawn court spans, baseline to the cropped top. draw_half_court
+# centres on a 280-unit court, so the drawn extent is not the centring extent and
+# using one for the other silently clips the top row.
+ZONEGRID_COURT_UNITS = ZONE12_TOP - sm.BASELINE_Y
+ZONEGRID_CENTRE_OFFSET = (280.0 - sm.BASELINE_Y) / 2.0
+
+
+def render_zonegrid(ctx, out: Path, final: bool):
+    """Every season of a tenure as one page of bare, comparable courts.
+
+    The season charts answer "how did he shoot in 2006-07". This answers a
+    question none of them can: what changed. Stripping the pills is what makes
+    that possible -- eleven courts carrying twelve figures each is 132 numbers,
+    which is a table pretending to be a picture. With only the fills left, the
+    reader tracks one region down the page and sees its colour move.
+
+    Each court is rated against its OWN season's league, so a zone going from
+    yellow to green means he improved relative to the players he was actually
+    playing against, not relative to a league average borrowed from another era.
+    """
+    by_season = ctx["by_season"]
+    palette = ctx.get("palette") or ZONE12_DEFAULT_PALETTE
+    min_fga = int(ctx.get("min_fga") or sm.MIN_ZONE12_FGA_PLAYER)
+    court_ink = ctx.get("court_ink") or "#242424"
+    theme = house.get_theme("jersey")
+
+    fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
+                              house.CANVAS_HEIGHT / house.DRAFT_DPI))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, house.CANVAS_WIDTH); ax.set_ylim(0, house.CANVAS_HEIGHT)
+    ax.set_aspect("equal"); ax.set_xticks([]); ax.set_yticks([])
+    ax.patch.set_alpha(0.0)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+
+    s = ZONEGRID_SCALE
+    court_h = ZONEGRID_COURT_UNITS * s
+    court_w = 2 * COURT_HALF_WIDTH * s
+    label_block = (ZONEGRID_LABEL_GAP + ZONEGRID_LABEL_SIZE * 2.08
+                   + ZONEGRID_COUNT_GAP)
+    cell_h = court_h + label_block + ZONEGRID_ROW_GAP
+    col_pitch = court_w + ZONEGRID_COL_GAP
+    seasons = list(by_season)
+    rows = -(-len(seasons) // ZONEGRID_COLS)
+
+    for i, season in enumerate(seasons):
+        row, col = divmod(i, ZONEGRID_COLS)
+        # A short final row centres rather than hanging left: an orphan court
+        # under the left column reads as a missing season, which is a claim.
+        in_row = min(ZONEGRID_COLS, len(seasons) - row * ZONEGRID_COLS)
+        span = (in_row - 1) * col_pitch
+        cx = house.CANVAS_WIDTH / 2 - span / 2 + col * col_pitch
+        baseline_y = ZONEGRID_TOP - row * cell_h - court_h
+        zones = sm.zone12_split(by_season[season]["subject"],
+                                by_season[season]["league"], min_fga=min_fga)
+        _draw_zone_court(ax, cx, baseline_y + ZONEGRID_CENTRE_OFFSET * s, s,
+                         _zone12_fills(zones, palette), 1.0,
+                         court_ink=court_ink, lw=0.7)
+        fga = len(by_season[season]["subject"])
+        ax.text(cx, baseline_y - ZONEGRID_LABEL_GAP - ZONEGRID_LABEL_SIZE * 2.08,
+                season, ha="center", va="baseline", fontsize=ZONEGRID_LABEL_SIZE,
+                color=theme.ink, fontproperties=helvetica("bold"))
+        ax.text(cx, baseline_y - ZONEGRID_LABEL_GAP - ZONEGRID_LABEL_SIZE * 2.08
+                - ZONEGRID_COUNT_GAP,
+                f"{fga:,} FGA", ha="center", va="baseline",
+                fontsize=ZONEGRID_COUNT_SIZE, color=theme.muted,
+                fontproperties=helvetica("bold"))
+
+    bottom = ZONEGRID_TOP - (rows - 1) * cell_h - court_h - label_block
+    out.parent.mkdir(parents=True, exist_ok=True)
+    crop = Bbox.from_extents(0, (bottom - 20) / house.DRAFT_DPI,
+                             house.CANVAS_WIDTH / house.DRAFT_DPI,
+                             (ZONEGRID_TOP + 18) / house.DRAFT_DPI)
+    fig.savefig(out, dpi=house.export_dpi(final), transparent=True,
+                bbox_inches=crop)
+    plt.close(fig)
+    print(f"Saved {out}")
+
+    scale_words = ("Red below, yellow average, green above" if palette == "rdylgn"
+                   else "Blue below, yellow average, orange/red above")
+    print("\nCANVA COPY")
+    print(f"Key: Colour = FG% vs the NBA in that zone, that season · {scale_words}")
+    print(f"Grey: fewer than {min_fga} attempts — too few to rate")
+
+
+def _zone12_fills(zones, palette: str) -> dict[str, str]:
+    """Zone -> fill colour, greying every zone too thin to make a claim.
+
+    The floor does not decide whether a zone is drawn, only whether it earns an
+    efficiency colour. A zone the sample cannot stand behind is still part of the
+    court and still gets painted -- in neutral grey, which says "no claim" rather
+    than the false "league average" a mid-band colour would say.
+    """
+    return {
+        z.zone: (_zone12_band_color(z.fg_rel / 100, palette)
+                 if z.rated else ZONE12_GREY)
+        for z in zones.itertuples()
+    }
+
+
 def render_zones(ctx, out: Path, final: bool):
     min_fga = int(ctx.get("min_fga") or sm.MIN_ZONE12_FGA_PLAYER)
     palette = ctx.get("palette") or ZONE12_DEFAULT_PALETTE
@@ -1621,51 +1777,11 @@ def render_zones(ctx, out: Path, final: bool):
     for sp in ax.spines.values():
         sp.set_visible(False)
 
-    s = ZONE12_SCALE
-    x0, y0 = draw_half_court(ax, house.CANVAS_WIDTH / 2, ZONE12_COURT_Y, s,
-                             court_ink, lw=1.2)
-
-    def to_px(cx, cy):
-        return nba_to_basket_bottom_px(x0, y0, s, cx, cy)
-
-    gx, gy, grid = _zone12_grid()
-    gx_px, gy_px = to_px(gx, gy)
-    fills = {}
-    for z in zones.itertuples():
-        # Colour is the claim, so only a rated zone earns it. A thin zone stays
-        # fully legible through its four-line pill but uses neutral grey ground.
-        fills[z.zone] = (_zone12_band_color(z.fg_rel / 100, palette)
-                         if z.rated else ZONE12_GREY)
-        _zone12_fill(ax, gx_px, gy_px, grid == z.zone, fills[z.zone], 2.0)
-    # The restricted area is drawn exactly rather than traced, because tracing
-    # runs a blurred mask through a contour and pulls a convex boundary in by a
-    # pixel or two -- invisible on a large zone, visible on an 8 ft disc. It goes
-    # UNDER the court, at the same depth as every other fill, so the rim and
-    # backboard draw over it exactly as they do everywhere else. An earlier pass
-    # put it on top to clear room for type inside the disc; it read as the basket
-    # having been cut out of the chart, which is a worse trade than moving the
-    # label.
-    from matplotlib.patches import Circle as _Circle
-
-    rim = zones[zones.zone == "Restricted Area"].iloc[0]
-    ax.add_patch(_Circle(to_px(0, 0), sm.RA_R * s,
-                         facecolor=fills["Restricted Area"],
-                         edgecolor=ZONE12_SEAM, lw=1.4, zorder=2.5))
-    # Seams over every fill: two neighbouring zones can land in the same band,
-    # and without a divider they read as one region.
-    _zone12_seams(ax, to_px)
-    # draw_half_court stops the sidelines at 11 ft, which is enough when the
-    # data layer is floating marks. A filled court needs its edge: without it
-    # the wing colours run to nothing and the image reads as a bleed rather than
-    # a court. The top stays open and the crop lands on it, so the only added
-    # lines are real sidelines. Close the cropped court across its top as well:
-    # without that edge the filled zones read as though they bleed out of the
-    # asset rather than belonging to one bounded court diagram.
-    for side in (-250, 250):
-        ax.plot([to_px(side, 0)[0]] * 2,
-                [to_px(side, 110)[1], to_px(side, ZONE12_TOP)[1]],
-                color=court_ink, lw=1.2, zorder=5)
-    _zone12_close_top(ax, to_px, theme, color=court_ink)
+    # Colour is the claim, so only a rated zone earns it. A thin zone stays
+    # fully legible through its four-line pill but uses neutral grey ground.
+    fills = _zone12_fills(zones, palette)
+    to_px = _draw_zone_court(ax, house.CANVAS_WIDTH / 2, ZONE12_COURT_Y,
+                             ZONE12_SCALE, fills, 1.0, court_ink=court_ink)
 
     if show_details:
         for z in zones.itertuples():
@@ -1683,7 +1799,8 @@ def render_zones(ctx, out: Path, final: bool):
                 ppg=ctx.get("summary_ppg"),
             )
     out.parent.mkdir(parents=True, exist_ok=True)
-    crop = Bbox.from_extents(0, ZONE12_CROP_BOTTOM / house.DRAFT_DPI,
+    bottom = ZONE12_CROP_BOTTOM if show_details else ZONE12_BARE_CROP_BOTTOM
+    crop = Bbox.from_extents(0, bottom / house.DRAFT_DPI,
                              house.CANVAS_WIDTH / house.DRAFT_DPI,
                              ZONE12_CROP_TOP / house.DRAFT_DPI)
     fig.savefig(out, dpi=house.export_dpi(final), transparent=True,
@@ -1732,6 +1849,12 @@ ZONE12_SCALE = 1.84
 ZONE12_COURT_Y = 771
 ZONE12_CROP_BOTTOM = 205
 ZONE12_CROP_TOP = 1180
+# A chart with its pills, legend and summary cards suppressed stops using the
+# space they occupied, and the crop has to follow or the asset ships with a
+# quarter of its height empty. The floor of a detail chart is its legend; the
+# floor of a bare one is the baseline of the court itself, plus a hairline so
+# the boundary is not the outermost pixel.
+ZONE12_BARE_CROP_BOTTOM = 450
 
 
 ZONE12_SEAM_WIDTH = 1.2          # the same weight as the court markings
@@ -1785,20 +1908,13 @@ def _zone12_seam_segments() -> list[tuple[tuple[float, float], tuple[float, floa
     return segments
 
 
-def _zone12_seams(ax, to_px, color=ZONE12_SEAM):
+def _zone12_seams(ax, to_px, color=ZONE12_SEAM, lw: float | None = None):
     """Draw the dividers, over the fills and under the court's black lines."""
     for (x1, y1), (x2, y2) in _zone12_seam_segments():
         p1, p2 = to_px(x1, y1), to_px(x2, y2)
         ax.plot([p1[0], p2[0]], [p1[1], p2[1]], color=color,
-                lw=ZONE12_SEAM_WIDTH, zorder=3, solid_capstyle="butt")
-
-
-def _zone12_close_top(ax, to_px, theme, color=None):
-    """Draw the missing horizontal edge across the cropped court."""
-    left = to_px(-250, ZONE12_TOP)
-    right = to_px(250, ZONE12_TOP)
-    ax.plot([left[0], right[0]], [left[1], right[1]],
-            color=color or theme.ink, lw=1.2, zorder=5)
+                lw=ZONE12_SEAM_WIDTH if lw is None else lw,
+                zorder=3, solid_capstyle="butt")
 
 
 # Rings-chart typography, unchanged: figure at 13, its gap to league average at
@@ -2188,8 +2304,10 @@ def _output_path(args, slug: str) -> Path:
 
     Dated because these are dailies: a chart rebuilt a week later is a different
     chart, and an undated filename silently overwrites the version already sitting
-    in a Canva page. The date comes from the filesystem clock rather than the
-    season string, since it stamps when the asset was cut, not what it covers.
+    in a Canva page. The date stamps when the asset was cut; the trailing season
+    states what it covers. Both are needed and neither substitutes for the other
+    -- one build can cut eleven seasons on the same day, and one season can be
+    rebuilt on eleven different days.
 
     ``--project`` puts renders in a folder named for the visual project, mirroring
     ``docs/visuals/<slug>/`` where reviewed versions are preserved. Scratch and
@@ -2205,6 +2323,12 @@ def _output_path(args, slug: str) -> Path:
     if args.chart == "ladder" and args.band != sm.LADDER_STEP_FT:
         parts.append(f"{args.band:g}ft")
     parts.append(slug)
+    # The season belongs in the name for the same reason the date does. Eleven
+    # seasons of one player rendered into one folder produced eleven files called
+    # `...-zones-kirk-hinrich.png`, each overwriting the last, and the only sign
+    # anything was wrong was a carousel with one slide in it.
+    if season := getattr(args, "season", ""):
+        parts.append(season)
     folder = ROOT / "output"
     if args.project:
         # Same dated folder shape as docs/visuals/, and the same reuse rule: an

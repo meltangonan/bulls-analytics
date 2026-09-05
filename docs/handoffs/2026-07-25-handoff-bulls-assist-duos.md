@@ -14,5 +14,5 @@ Both render from `scripts/prototypes/assist_duos.py`. Season extracts live in th
 tracked `docs/visuals/2026-08-08-assist-duos/data/seasons/` (not ignored `cache/`).
 
 Settled ranking, games-together denominator, and the play-by-play identity traps are in
-`scripts/prototypes/README.md` and `DEVELOPMENT.md` (Data Guardrails). Last known Notion state when
+`scripts/prototypes/README.md` and `docs/reference/play-by-play.md`. Last known Notion state when
 this closed: `Mocked` for the yearly post, `Parked` for the decade board.

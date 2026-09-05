@@ -33,7 +33,7 @@ player in every season, which is what catches a mis-scoped response. Team
 attribution is never read off `TEAM_ABBREVIATION`: a team-filtered `LeagueDash*`
 row carries the player's *last* team of the season, so filtering on it would
 silently delete traded players whose stint is already correctly scoped
-(DEVELOPMENT.md, Data Guardrails).
+(docs/reference/data-sources.md).
 
 The renderer produces a transparent chart asset; Canva owns the title, subtitle,
 source line, and page framing.
@@ -91,7 +91,7 @@ OUT = _REPO / "output" / "feed"
 POST_DATA = visual_dir(_REPO / "docs" / "visuals", PROJECT) / "data"
 RAW = POST_DATA / "raw"
 # NBA's CDN serves no portrait for Nate Robinson, only the grey silhouette
-# (DESIGN.md §5). This copy was hand-sourced for the 2026-08-20 height ladder;
+# (docs/design/tables-cards.md (Portraits)). This copy was hand-sourced for the 2026-08-20 height ladder;
 # portraits here win over the shared cache so the post carries the image it
 # actually renders.
 PORTRAITS = POST_DATA / "portraits"
@@ -124,13 +124,13 @@ HEADSHOT_X = 158
 # Portraits are drawn taller than the row pitch, so consecutive faces overlap
 # slightly. NBA portraits carry a transparent background, so the overlap reads as
 # a stack of players rather than as clipping -- and the size is the point: the
-# face is the highest-stopping-power object on the chart (DESIGN.md §5). Upper
+# face is the highest-stopping-power object on the chart (docs/design/tables-cards.md (Portraits)). Upper
 # rows take the higher z-order so no face is cut off by the one below it.
 HEADSHOT_HALF = 112
 # Top-anchored, not centred: the NBA CDN serves each player's *current* portrait,
 # so a chart spanning 1996 to 2026 arrives with Gibson and White in Hornets teal
 # and Portis in Heat white. Cropping to the head keeps the wrong jersey small
-# (DESIGN.md §5).
+# (docs/design/tables-cards.md (Portraits)).
 #
 # 0.64 is tuned against this layout, where the portrait's bottom edge lands on
 # the row rule and the cut is visible. The cut has to clear the jersey entirely:
@@ -160,7 +160,7 @@ SUPPORT_DROP = 46
 
 # This chart takes no theme. The page canvas changes from post to post, the asset
 # is always transparent, and the only meaningful colours are Bulls red and the
-# house near-black (DESIGN.md §2).
+# house near-black (DESIGN.md (Color and hierarchy)).
 #
 # #242424 is the account's black: nothing in a graphic is pure or near-pure black.
 INK = "#242424"

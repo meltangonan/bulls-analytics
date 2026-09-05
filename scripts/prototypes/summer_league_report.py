@@ -635,7 +635,7 @@ def _headshot_path(player: pd.Series):
     """Committed local crop if one exists, else the cached NBA CDN headshot.
 
     Local overrides live in assets/img/players/<personId>.png — used when the
-    CDN only has the gray rookie silhouette (DESIGN.md §5). Warns when falling
+    CDN only has the gray rookie silhouette (docs/design/tables-cards.md (Portraits)). Warns when falling
     back to a file that looks like the silhouette.
     """
     person_id = int(_number(player["personId"]))
@@ -843,11 +843,11 @@ def render_report(
 def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> Path:
     """Render the featured-player comparison as a tightly cropped PNG.
 
-    Uses Great Tables (environment-only dependency for now — see the anatomy
-    study) so the table engine owns row rhythm, baselines, and image sizing.
+    Uses Great Tables for this legacy page renderer so the table engine owns
+    row rhythm, baselines, and image sizing.
     The slide composites the PNG below the team snapshot.
     """
-    from great_tables import GT  # imported lazily; not in requirements.txt yet
+    from great_tables import GT  # Used only by this legacy table export.
 
     compact = len(players) >= MAX_CAROUSEL_PLAYERS
     headshot_height = 46 if compact else 52

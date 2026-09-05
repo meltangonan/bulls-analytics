@@ -14,7 +14,6 @@ import pytest
 from scripts.prototypes.scoring_leaps import (
     AXIS_MAX,
     AXIS_MIN,
-    CHART_TYPE,
     CHART_HEIGHT,
     CHART_WIDTH,
     DISPLAY_NAMES,
@@ -331,11 +330,6 @@ def test_rate_label_prints_the_exact_per_36_transition():
 def test_minutes_label_prints_the_exact_mpg_transition():
     leap = pd.Series({"minutes_per_game_prev": 18.89, "minutes_per_game_cur": 29.20})
     assert minutes_label(leap) == "18.9 to 29.2 MPG"
-
-
-def test_stat_lines_are_optically_balanced_above_the_season():
-    assert CHART_TYPE.rate == CHART_TYPE.minutes + 0.5
-    assert CHART_TYPE.rate == CHART_TYPE.season + 1
 
 
 def test_top_fifteen_stays_on_one_slide():

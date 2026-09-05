@@ -30,7 +30,6 @@ from pathlib import Path
 import sys
 
 import pandas as pd
-from nba_api.stats.endpoints import leaguedashplayerstats
 
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
@@ -65,26 +64,11 @@ LOCATION_COLUMNS = ["loc_x", "loc_y", "shot_distance", "shot_zone",
 
 
 def fetch_bulls_totals(season: str) -> pd.Series:
-    table = leaguedashplayerstats.LeagueDashPlayerStats(
-        season=season,
-        season_type_all_star="Regular Season",
-        team_id_nullable=BULLS_TEAM_ID,
-        per_mode_detailed="Totals",
-        timeout=60,
-        headers=fetch._NBA_HEADERS,
-    ).get_data_frames()[0]
-    missing = set(TOTAL_COLUMNS) - set(table.columns)
-    if missing:
-        raise ValueError(f"{season} totals missing: {', '.join(sorted(missing))}")
-    player = table[table.PLAYER_ID.astype(int).eq(PLAYER_ID)]
-    if len(player) != 1:
-        raise ValueError(
-            f"expected one {PLAYER_NAME} row for {season}, found {len(player)}")
-    # Read the counting stats, not TEAM_ABBREVIATION. Filtering by team_id gives
-    # that club's numbers but labels the row with the player's END-OF-SEASON
-    # team: Hinrich's 2015-16 row carries Chicago's 35 games and 118 attempts
-    # under an "ATL" label. Trusting the label would reject correct data.
-    return player.loc[:, TOTAL_COLUMNS].iloc[0]
+    """Fetch the independent Chicago totals used to reconcile this post's shots."""
+    return fetch.get_player_season_totals(
+        PLAYER_ID, season, team_id=BULLS_TEAM_ID,
+        columns=TOTAL_COLUMNS, player_name=PLAYER_NAME,
+    )
 
 
 def load_bulls_totals(season: str, data_dir: Path,

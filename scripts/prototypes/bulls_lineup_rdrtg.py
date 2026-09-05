@@ -28,8 +28,8 @@ import numpy as np
 import pandas as pd
 import requests
 from PIL import Image
-from matplotlib.patches import FancyBboxPatch
 
+from bulls.graphics.craft import draw_metric_badge
 from bulls.graphics.house import DEFAULT_THEME, DRAFT_DPI, HEADSHOT_CACHE, export_dpi, helvetica, square_headshot_label
 from scripts.prototypes import bulls_lineup_rortg as rortg
 
@@ -396,9 +396,10 @@ def render_chart(rows: pd.DataFrame, *, final: bool = False) -> Path:
             face_fraction = 0.80 if player_id == 213 else 0.72
             square_headshot_label(ax, headshot_path(player_id), x, y + 11, 49, zorder=3, face_fraction=face_fraction)
             ax.text(x, y - 56, row[f"{position}_LABEL"], ha="center", va="center", fontsize=7.4, color=theme.ink, fontproperties=helvetica("bold"), zorder=5)
-        ax.add_patch(FancyBboxPatch((x_metric - 57, y - 35), 114, 70, boxstyle="round,pad=0,rounding_size=13", facecolor="#B5123C", edgecolor="none", zorder=3))
-        ax.text(x_metric, y + 10, _rating_label(row["rDRTG"]), ha="center", va="center", fontsize=16, color="#FFFFFF", fontproperties=helvetica("bold"), zorder=4)
-        ax.text(x_metric, y - 16, f"{int(row['DefPoss']):,} POSS", ha="center", va="center", fontsize=8, color="#FFFFFF", fontproperties=helvetica("oblique"), zorder=4)
+        draw_metric_badge(
+            ax, x_metric, y, _rating_label(row["rDRTG"]),
+            f"{int(row['DefPoss']):,} POSS",
+        )
 
     OUT.mkdir(parents=True, exist_ok=True)
     path = OUT / f"{POST_DATE}-bulls-lineup-rdrtg-top-10.png"

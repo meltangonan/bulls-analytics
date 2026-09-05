@@ -1,66 +1,28 @@
 ---
 name: promote-bulls-post
-description: Prepare an approved @chicagobullsdata graphic for Instagram with a readiness check, optional natural posting copy, and a small post-specific distribution recommendation. Use when a Bulls analysis or graphic is approved and the user asks for a caption, posting package, publish preparation, or promotion advice. Do not use to build the graphic, review performance, or interact with Instagram.
+description: Prepare posting copy and a small distribution recommendation for an approved Bulls graphic.
 ---
 
 # Promote Bulls Post
 
-Prepare one approved post for a clean, accurate release without manufacturing a social-media persona.
+Read the relevant Notion post, approved graphic, and the voice/caption section of Notion editorial
+direction (linked in `STRATEGY.md`), unless already available in the task. Use the post's verified
+numbers and source/qualification summary; inspect analysis code only when a claim needs checking.
+Don't load development or chart-family guides for a wording-only change.
 
-## Context
+Confirm the graphic and copy agree on scope, comparison, threshold, source and conclusion. Verify
+new or time-sensitive claims. Use a downloaded Canva export when reviewing page readability;
+don't repeat unchanged visual QA or reopen approved design choices without an accuracy problem.
 
-Read `AGENTS.md`, `POSTING_WORKFLOW.md` (Voice & Caption owns how the account sounds; Hashtags owns
-tagging), and `STRATEGY.md` before recommending distribution.
+The user owns the caption. Preserve a supplied draft's structure and voice; otherwise offer one
+short line as raw material. Longer drafts or variants require a request. Include the ready-to-paste
+hashtag block specified in Notion and check it against the final content. Alt text and Story copy
+are optional when useful or requested.
 
-**Inspect the actual artifacts**, not a summary: the approved final graphic, its analysis or
-prototype, and its Notion `chicagobullsdata posts` page. For Canva work that means the chart versions
-in `docs/visuals/<slug>/assets/` (highest version first; the publish-DPI export has a `-final`
-suffix). QA from a downloaded Canva page — check it, don't file it. Older posts may still have a
-retired `final/` folder; do not create new ones.
+Give only a few distribution actions tied to this post. Offer a read-only narrative scan when it
+would materially help; don't run a social-feed survey as routine ceremony. Independently verify
+facts from social content before using them.
 
-## Readiness
-
-Confirm the graphic, the underlying analysis, and the posting copy agree on subject, timeframe,
-comparison, threshold, source, attribution, and conclusion. Verify any current statistic, roster
-fact, date, transaction, injury, or news claim.
-
-Flag factual conflicts, missing qualifications, unclear references, wrong handles, or stale template
-copy before polishing anything. Don't reopen approved visual decisions unless the check finds a real
-accuracy or comprehension problem.
-
-## Community Narrative Scan (offer, don't run)
-
-Offer a read-only scan of the conversation around the post's subject — the Instagram feed and
-Favorites of followed Bulls pages, plus the `@bullsdata` X timeline and targeted searches. If the
-user declines, skip it without argument.
-
-When accepted, report the 3–5 most relevant current narratives with sources and engagement signals,
-and say how each touches this post. Treat what you find as best-effort and session-specific, and
-verify any fact independently before it reaches copy or a graphic.
-
-## Copy
-
-The user owns the caption; `POSTING_WORKFLOW.md` (Voice & Caption) has the voice rules. Two things specific to this stage:
-
-- When they supply a draft, preserve its structure and voice and make the smallest useful edit. When
-  they ask for help, offer **one** short line as raw material. A fuller draft or multiple variants
-  only on explicit request.
-- **Always include a ready-to-paste hashtag block** built per `POSTING_WORKFLOW.md`, and verify it
-  against the final content for accidental carryover.
-
-Alt text and Story copy only when requested or clearly useful.
-
-## Distribution
-
-Offer at most 1–3 specific actions tied to this post's actual subject, each with a reason: a Story
-framing, a high-fit peer page where a relationship already exists, a current Bulls conversation the
-analysis genuinely adds to. Inspect live state only when a recommendation depends on it. If nothing
-is genuinely useful, say so — never produce a generic engagement checklist.
-
-**Draft and advise only.** Never post, comment, like, follow, message, or change settings without
-explicit per-action approval.
-
-## Close
-
-Save the approved caption on the Notion page (or note that the user supplied it). Never infer the
-post is live — the page moves to `Posted` only on the user's confirmation.
+Save approved copy on the existing Notion post (or note the user supplies it). `POSTING_WORKFLOW.md`
+owns the live-publication check. Draft and advise; social posting, messages, comments, reactions,
+follows and settings need explicit per-action approval. No Python tests for caption-only work.

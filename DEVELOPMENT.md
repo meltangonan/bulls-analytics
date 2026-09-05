@@ -1,666 +1,72 @@
-# Development Reference
+# Development
 
-Read before changing fetchers, analysis, graphics builders, scripts, or tests. `DESIGN.md` owns
-visual decisions; `POSTING_WORKFLOW.md` owns post production.
+Read the relevant section when changing code. This is an entry point, not a mandatory reading list.
 
-Code lives in `bulls/data` (NBA API wrappers), `bulls/analysis` (stat functions), and
-`bulls/graphics` (`house.py` tokens/themes/fonts, `craft.py` shared helpers, and `court.py` standard
-court geometry). Read the modules for signatures — this file covers only what the code can't tell you.
+## Environment and code
 
-## Post Worktrees
+Use `venv/bin/python` in the primary checkout. Linked worktrees reuse
+`/Users/meltangonan/projects/bulls-analytics/venv/bin/python`; set `PYTHONPATH` to the working tree
+when importing its code. `./run_tests.sh` handles this automatically.
 
-Any post task that changes repo files starts in its own linked worktree; the user does not need to
-request isolation. The primary checkout stays on `main` and is the integration copy — never switch
-it to a post branch. Use the visible sibling directory
-`../bulls-analytics-worktrees/<post-slug>` with the branch `post/<post-slug>`. The directory names
-the post, never the agent or the model: which tool is driving can change mid-build, and often does.
-Worktrees created under the older `<agent>-<slug>` naming keep their names until their post lands —
-renaming a live worktree costs more than the inconsistency.
+- `bulls/data`: fetching and source normalization.
+- `bulls/analysis`: calculations and qualifications.
+- `bulls/graphics`: reusable chart elements, font helpers and court geometry.
+- `scripts/prototypes`: post entry points; find the relevant one in `scripts/prototypes/README.md`.
 
-Before editing, fetch and fast-forward a clean primary `main`, run `scripts/check_worktrees.sh`, and
-stop rather than switching, cleaning, or discarding unexpected work. Create the post worktree from
-that current `main`. Copy the primary checkout's ignored `cache/` in when present: the small
-snapshot avoids duplicate NBA requests while keeping concurrent writes isolated. Do not copy
-`venv/`; run scripts with the primary checkout's `venv/bin/python`. `./run_tests.sh` finds that
-shared interpreter automatically while forcing imports to resolve from the current worktree.
+Reuse an existing family before starting a new renderer. Keep post-specific selection and copy near
+the entry point; shared fetching, table cells, boxes and portraits belong in the modules above.
+For substantial data pulls, prepare display-ready values before rendering so a spacing change
+can reuse the same verified inputs. Simple one-off analyses need no extra layer.
 
-⚠️ **The primary checkout owns the cache.** A cache built inside a worktree must be copied back
-before that worktree is removed, or it goes with the directory. Prefer running long fetches from the
-primary checkout, which writes only to ignored `cache/` and touches no tracked file.
+Cache successful requests and use saved data for visual iteration. Refresh when requested, when the
+brief requires current facts, or when source/schema changes warrant it. Avoid concurrent NBA
+play-by-play requests. Inspect endpoint parameters and response shapes before scaling a fetch.
+Unavailable data stays unavailable; reconcile against independent official totals where possible.
 
-Keep post-specific implementation, tests, outputs, and any required shared code or owner-doc changes
-in the worktree. Defer the shared `scripts/prototypes/README.md` index until integration. After the
-user approves committing or pushing:
-
-1. Make **one commit** in the post worktree holding the whole reviewed post — implementation,
-   tests, saved versions, final pages, and data. A post is one unit of work however many iterations
-   it took. Then update the primary `main` and rebase the post branch onto it, resolving real
-   shared-code conflicts there.
-2. Add the deferred index updates in the rebased worktree, validate, and amend them into the same
-   reviewed post commit when practical.
-3. Inspect the staged/final diff and commit file list; never use `git add -A` or `git commit -am`.
-4. Fast-forward the primary `main` to the post branch, push only with explicit approval, and prove
-   local/remote SHA parity.
-5. Remove the worktree and delete its branch only once `scripts/check_worktrees.sh` reports nothing
-   unsaved there. Preserve and report anything dirty, unmerged, or unclear.
-
-**`git worktree remove` refuses in two different ways, and only one of them means stop.** A refusal
-naming modified or untracked files is the real one: there is unsaved work, so investigate rather than
-force. `Directory not empty` *after* the command has already run is the cosmetic one — macOS leaves a
-`.DS_Store` in every folder Finder has opened, git deletes what it knows about and then cannot remove
-the near-empty directories around them. It leaves the worktree deregistered but still on disk, which
-looks alarming and is not. Clear the stragglers first and the refusal never happens:
+## Verification by change
 
 ```bash
-find ../bulls-analytics-worktrees/<slug> -name .DS_Store -delete
-git worktree remove ../bulls-analytics-worktrees/<slug>
+./run_tests.sh tests/test_scoring_leaps.py -q
+./run_tests.sh tests/test_court.py tests/test_zone_charts.py -q
+./run_tests.sh  # whole suite, when shared changes justify it
 ```
 
-Keep the two apart deliberately. Treating every worktree-remove failure as noise is how the refusal
-that *does* mean "you are about to delete a day of renders" gets waved through. `check_worktrees.sh`
-enumerates directories on disk rather than `git worktree list`, so a half-removed worktree still
-shows up there — verify with it before finishing the delete by hand.
+Explicit files/node IDs select only those checks. Options alone use `tests/` as the default.
 
-**Ask what is unsaved, not what is merged.** A merged branch means the *code* landed. It says
-nothing about renders sitting in ignored `output/` or a `cache/` that took an hour to fetch, and
-both have been destroyed by cleanups that asked only the first question: a day of approved renders
-from a worktree whose branch had already landed, and 2,132 rate-limited play-by-play requests behind
-an already-published post. `scripts/check_worktrees.sh` asks the second question, and the filing
-rules remove the exposure — single-owner data is written to the post's tracked `data/` from the
-start, and tracked files make a worktree dirty, which is already protected (`bulls/visuals.py`).
-
-**Abandoned posts leave a reason, not files.** When an idea is dropped mid-build, the valuable part
-is why: "the cohort fell below the minutes threshold once I applied it" is what stops the same dead
-end being reopened in three months. Write that on the Notion page and set its status back. Then
-delete the branch and remove the worktree — nothing lands in `docs/visuals/`. A dropped post that
-leaves a stale worktree and no written reason has cost you twice.
-
-Run `scripts/check_worktrees.sh` at task start. It reports what is actually unsaved in each
-worktree — modified tracked files, renders sitting in ignored `output/`, and cache size — rather
-than whether a branch is merged. Those are different questions, and answering the wrong one is how
-a day of approved renders was deleted from a worktree whose branch had already landed.
-
-## Conventions
-
-- Keep reusable fetching and analysis in `bulls/data` and `bulls/analysis`; reusable builders in
-  `bulls/graphics`; entry points in `scripts/`.
-- Start new formats as one script per idea batch in `scripts/prototypes/`. Promote to a reusable
-  module and CLI only after the format repeats. Extract a helper only after the same logic appears
-  in 2–3 prototypes.
-- **For a format that fetches substantial raw data, prepare display-ready content before drawing.**
-  Calculations, editorial selections, labels, images, and shot marks belong in a preparation step;
-  the renderer receives that prepared object instead of understanding NBA API columns. This keeps
-  analytical truth and visual composition independently testable. Keep the prepared shape
-  format-specific — don't invent a universal post schema, and let simple one-off prototypes stay
-  direct.
-- Never rebuild analytical logic in Canva, and never recompute a number that the chart already
-  proved. Canva is layout only.
-- **Data that can't be fetched is still that post's data: it lives in the post's tracked
-  `docs/visuals/<slug>/data/` as a dated snapshot CSV, never as a literal in a script, and never
-  behind a scraper.** Salary and contract data is the standing case: it isn't an
-  NBA.com statistic, and the sites that compile it (Basketball Reference, Spotrac) prohibit
-  automated access in their terms and return 403 to scripted requests. So the snapshot is captured
-  by hand, committed, and carries `#` comment lines naming each source URL, the capture date, the
-  exact call parameters, and every exclusion or correction. **Give each snapshot reconciliations the
-  tests can assert** — a total the source itself publishes, a structural invariant like roster size
-  or games per season — so a transcription slip or a bad source row fails a test instead of
-  shipping. `payroll_vs_wins.py` is the worked example: its guards caught Spotrac publishing a
-  2015-16 Bulls payroll inflated by three players who joined the team the following offseason.
-- Keep the matching Notion page current as the idea, status, and post log.
-- **`docs/visuals/YYYY-MM-DD-<slug>/` is the tracked home for visual work**, whether it becomes a
-  post or stays a reviewed chart. `assets/` holds our renders including the publish-DPI export;
-  `data/` holds the numbers behind them. `bulls/visuals.py` explains why the two are kept
-  differently; `scripts/save_visual_version.py` carries the promotion test and performs the save.
-  Saving is continuous; committing is not. Promoted files accumulate uncommitted in the
-  worktree and land as one commit when the post is finished — see Post Worktrees.
-  - **Save on the send; prune before the commit.** Every render shown to the user is saved at that
-    moment — the trigger is the act of showing, because whether a render was "only an adjustment" is
-    settled by what replaces it and cannot be judged when it is made. Before the post's single
-    commit, delete what turned out to be an adjustment — moved, resized, recoloured, re-cropped —
-    and keep every version carrying a different metric, cohort, threshold, chart type, sort or
-    claim, plus every version the user approved. When in doubt at prune time, keep: a spare version
-    costs 300 KB, a missing one loses the only copy.
-  - Versions are stamped `YYYY-MM-DD-vNN-<name>.png`, zero-padded so v10 sorts after v9, numbered
-    one past the highest present so a rebuild never renumbers history.
-  - **Save the approved version at the resolution that goes into Canva.** Draft renders are often
-    half-size previews; the export you actually upload is the file worth keeping, and it used to be
-    left in scratch where it died with the worktree. Expect the approved draft and its full-size
-    export as two adjacent near-identical versions. That is the point, not duplication.
-  - `--final` now means one thing only: on a prototype it renders at 300 DPI. The clashing
-    `save_visual_version.py --final` flag was removed with the `final/` folder on 2026-08-22.
-    Save chart renders with `--project <slug>` alone, whatever DPI they are.
-  - The folder's date is fixed when the post starts and never moves; a later save finds the folder
-    by slug whatever date it carries, so a post spanning three days stays in one place.
-- `output/` is gitignored scratch. Render there freely; promote what carries a decision.
-- Name renders `YYYY-MM-DD-{chart}-{mode}-{scope}.png` and pass `--project <slug>` so they land in
-  `output/YYYY-MM-DD-<slug>/`, mirroring `docs/visuals/YYYY-MM-DD-<slug>/`. Omit `--project` only for
-  disposable one-off exploration, which lands directly in `output/`.
-- Prefer small, test-backed changes. No automation, export pipelines, or heavy frameworks unless
-  requested.
-
-## Data Provenance
-
-Every data-bearing post gets a provenance section on its Notion page, written as the work lands
-rather than on request (`AGENTS.md` owns that rule; this section defines the content). A finding is
-reproducible only if the trail to it is written down, and the trail is the first thing forgotten.
-
-Six questions, and a section that cannot answer all six is incomplete:
-
-1. **Source and exact call.** Which endpoint, through which wrapper, with the real parameters pasted
-   in — not paraphrased. Parameter names here are frequently misleading: `season_type_all_star` is
-   the ordinary season-type filter (the suffix marks which *value list* it accepts, one that includes
-   `All Star`), and `context_measure_simple="FGA"` is what returns every attempt rather than makes
-   only. A reader who cannot see the literal call cannot tell what was scoped in or out.
-2. **The grain.** What one raw row represents, with a real sample. "One row per field-goal attempt"
-   is the fact everything else rests on.
-3. **Units and coordinate systems.** NBA shot coordinates are integer tenths of a foot with the hoop
-   at the origin. Draw the regulation court from the physical dimensions: backboard `y = -12.5`,
-   baseline `y = -52.5` (4 ft behind the board), and free-throw line `y = 137.5` (15 ft in front of
-   it). Integer shot coordinates can round across a half-unit boundary, so NBA.com's supplied basic
-   zone label adjudicates production rows at an edge; coordinates draw the ideal court and custom
-   angular subdivisions.
-4. **Derived versus measured fields.** State which columns the provider computed, and verify the
-   relationship rather than assuming it. `shot_distance` is exactly `floor(hypot(loc_x, loc_y)/10)`,
-   confirmed at 100% across 219,160 rows — which is what made "did they bin differently?" answerable.
-5. **What the source structurally cannot contain.** The most valuable line in the section and the
-   easiest to skip. `ShotChartDetail` is a field-goal log with no concept of a free throw, so any
-   points-per-shot figure built on it understates the rim, where shooting fouls concentrate. That is
-   a property of the dataset, not a setting — no parameter would add them.
-6. **One worked example.** A single real row traced from raw fields to its contribution to the
-   published number. This is the step that catches errors: a plausible-sounding claim about your own
-   pipeline survives a summary and dies against a trace.
-
-Record where the data itself lives, not only how it was obtained. A provenance section that names an
-endpoint but points at a folder that no longer exists answers nothing — see the tracked
-`docs/visuals/<slug>/data/` rule above.
-
-Also record what was cached and trimmed, since a cache written under an older column set is a
-silent-wrong-answer trap (see the guardrails below).
-
-## Data Guardrails
-
-These are the traps that produce silently wrong numbers rather than errors.
-
-- **⚠️ NBA.com's clutch split stops at 1996-97, and asking for anything earlier returns an EMPTY
-  frame rather than an error.** The split is derived from play-by-play, and the play-by-play archive
-  starts in 1996-97 — the same floor as shot-location data. Verified 2026-08-21 against
-  `LeagueDashPlayerClutch`: 1995-96 and 1990-91 each returned 0 rows with nothing raised, while
-  1996-97 returned 13. Nothing in the response says the window was empty because the era is
-  unavailable, so an unchecked "since 1976" or "full Jordan era" table would ship a 1996-onward
-  leaderboard under a headline claiming decades it does not contain. Assert the row count per season
-  rather than trusting the call to fail. The same trap should be assumed for any other endpoint
-  derived from play-by-play.
-- **⚠️ A team-filtered `LeagueDash*` row is the right stint stamped with the wrong team.**
-  `team_id_nullable` correctly returns only what the player did for that team, but
-  `TEAM_ABBREVIATION` in the response names his *last* team of the season. Ron Mercer's 2001-02
-  Bulls stint comes back stamped `IND`, because Chicago traded him in February. Filtering the
-  response down to `CHI` therefore looks like an obvious safety check and silently deletes 45 real
-  Bulls clutch stints from 2000-01 onward, every one belonging to a traded player. Verified
-  2026-08-21: Mercer's 19 Bulls clutch games plus 4 Indiana clutch games equal the 23 in his
-  unfiltered row, and Brad Miller's 23 plus 10 equal 33 the same way. The reconciliation, not the
-  abbreviation, is the check worth writing — a stint must be a subset of the player's unfiltered
-  season. A stint can legitimately equal the whole season when the player recorded no clutch
-  minutes after the trade, so "strictly smaller" is too strong a rule; Coby White, Kirk Hinrich and
-  Cameron Payne each appear absent from their new team's clutch response.
-  `scripts/prototypes/clutch_seasons_table.py` owns the worked version.
-- **⚠️ NBA.com does not publish where a foul happened, and no parameter adds it.** Verified
-  2026-08-07 against a full Bulls game: all 36 `PlayByPlayV3` foul rows return `xLegacy=0,
-  yLegacy=0`, while 180 of 181 shot rows in the same response carry real coordinates.
-  `ShotChartDetail` rejects `ContextMeasure=PFD` and `FTA` with HTTP 400 and 500s on `PF`; the
-  `cdn.nba.com` live feed answers 403 outside a browser session. **The tempting workaround is wrong
-  and looks right**: borrowing coordinates from the shot event beside each foul only reaches
-  and-ones, because NBA scoring charges no field-goal attempt when a player is fouled on a miss.
-  That covered 8 of 36 fouls in the test game, and the survivors are rim finishes by construction —
-  so the resulting "where they get fouled" map shows the sampling method, not the team. Use drive
-  tracking when the question is foul-drawing, and say the chart counts the situation rather than
-  locating it.
-- **`LeagueDashPtStats` drive fields cross-check each other, so use that.** `DRIVE_FTA` and
-  `DRIVE_PF_PCT` are published independently, and free throws per foul drawn must land just under
-  2.0, because a drive foul is nearly always a two-shot foul — measured at 1.971 (range 1.78–2.03)
-  across 125 qualified 2025-26 players. Assert the 1.5–2.5 band on every run; drift there means the
-  two fields stopped describing the same events and the rate axis is no longer trustworthy.
-
-- **`ShotChartDetail` filters by `league_id` server-side and defaults to the regular NBA**, so it
-  returns zero rows for Summer League games without complaining. Use `get_game_shots`, which derives
-  the league from the game-ID prefix (`00` NBA, `15` Summer League). Prefer the NBA's own `shot_zone`
-  labels over re-deriving zones from distance or coordinates.
-- **Keep both NBA zone columns, but do not confuse their jobs.** The current twelve-zone chart needs
-  `shot_zone` for its physical families and coordinates for its custom angular cuts.
-  `shot_zone_area` remains necessary for analyses that reproduce NBA's own detailed sectors through
-  `detailed_zones`; without it that helper returns the six basic zones unchanged. The shared shot
-  caches require both fields, so an older trimmed cache is automatically refetched.
-- **NBA's `SHOT_ZONE_AREA` sectors are angular from the hoop, but the number of sectors depends on
-  distance**: one inside 8 ft (all `Center(C)`), three from 8–16 ft (cuts at 60°/120°), five beyond
-  16 ft (cuts at 36°/72°/108°/144°). Pool the bands and the angle ranges overlap and look
-  self-contradictory. Consequences: `Left/Right Side Center` never appears inside 16 ft, so "Left
-  Mid-Range" is always a long two; `Left/Right Side` inside 16 ft covers a 60° wedge rather than only
-  the baseline its name suggests; above-the-break threes use just three sectors because the corners
-  take the outer two. Verified against 7,463 labelled 2025-26 shots — a classifier built to this
-  spec reproduces NBA's own labels on 99.8%, the rest being boundary rounding in NBA's integer
-  coordinates.
-- **The baseline/mid-range divider runs from the hoop through the corner break**, the point where
-  the arc meets the straight corner line, rather than at NBA's 36°. `shot_maps.CORNER_BREAK_DEG`
-  derives it (22.13°) instead of hard-coding it. Three lines then meet at one point — corner line,
-  arc, divider — so the boundary continues a mark already painted on the floor instead of sitting at
-  an angle nobody can name. It moves **44 of 7,417 Bulls shots (0.59%)** out of the baseline zones
-  into the mid-range ones, and changed **none** of `scoring_by_location.py`'s twelve zone leaders,
-  which was checked before the change landed.
-- **The two central mid-range cuts split what the baseline cuts leave into even thirds**
-  (`shot_maps.MID_SECTOR_CUTS`), not NBA's 72°/108°. Measured, not assumed: NBA's own angles gave the
-  centre sector 17.5% of the mid-range's area against 27.9% for each wing, because the paint pushes
-  the centre sector's inner edge out to the free-throw line — a ray is a poor proxy for area there.
-  Even thirds flattened both the area split (12.4% spread against 14.5%) and, more sharply, the split
-  of league three-point volume above the arc (31/33/36% against NBA's 35/26/39%). Rays through the
-  paint's own top corners were tried first and rejected — geometrically the more "principled" choice,
-  they overshoot badly and hand the centre 46.9% of above-the-break threes. The change moved 224 Bulls
-  shots (3.0%) and two of `scoring_by_location.py`'s zone leaders (Right Mid-Range, Top of Key 3);
-  both were checked and accepted as the archived post shipped under the old cuts, and a re-run under
-  the new ones would name different players there.
-  `shot_maps.ATB_CUTS` is `MID_SECTOR_CUTS[1:3]`, not a separate pair of numbers — the above-the-break
-  dividers are literally the same two rays continued past the arc, so they cannot drift apart from the
-  mid-range cuts they extend.
-- **The twelve-zone chart is source-faithful about physical regions and custom only about angles.**
-  `shot_maps.zone12_of_shots` trusts NBA.com's basic `shot_zone` for Restricted Area, In The Paint
-  (Non-RA), Mid-Range, both Corner 3s, Above the Break 3, and Backcourt. It then applies the chart's
-  continuous rays only inside Mid-Range and Above the Break 3. `shot_maps.zone_of` draws the same
-  regulation-sized physical shapes and custom rays and is only a coordinate fallback for synthetic
-  or non-NBA inputs. Backcourt is explicit and excluded from the twelve half-court zones; coverage
-  reports the omitted attempts. The contract is regression-tested by collapsing all twelve custom
-  zones back to their seven NBA basic families and requiring exact equality for each DeRozan Bulls
-  season.
-
-  **That reconciliation is blind to a left/right swap, so it is not the whole check.** Collapsing the
-  five mid-range sectors back to Mid-Range gives 741 either way; exchanging the two wings only moves
-  the pair of numbers printed in each half, and the pill anchors stay on their correct sides. NBA's
-  `shot_zone_area` is an independent angular labelling of the same rows and is the check that can see
-  it: no attempt NBA calls `Left Side(L)`/`Left Side Center(LC)` may land in a zone we name Right, or
-  the reverse. Measured across DeRozan's 4,193 Bulls attempts the crosstab is perfectly banded —
-  disagreement only ever between *neighbouring* sectors, which is expected because our rays sit at
-  different angles on purpose. Verified: swapping the baseline pair or the wing pair used to pass the
-  entire suite; `tests/test_zone_charts.py` and `tests/test_demar_derozan_bulls_zone_charts.py` now
-  fail on either.
-
-  This replaced the old coordinate-only physical classifier after a 2021-22 DeRozan audit. NBA.com
-  reported 293 restricted-area plus 359 paint attempts (652), while the old `y <= 142.5` cutoff
-  counted 671. The extra 19 are all NBA-labelled Mid-Range attempts at integer `loc_y = 139..142`;
-  the regulation line is `137.5`, so they are truly mid-range. Seven NBA-labelled paint attempts
-  across the three seasons sit at integer `loc_y = 138`, within one rounded coordinate unit of the
-  theoretical line; the source label correctly adjudicates that edge instead of moving the court
-  marking away from its regulation dimension.
-  Any other post should still group by NBA's own `shot_zone`.
-- **NBA's zone family and official shot value can disagree at the three-point boundary.** In the
-  DeRozan Bulls sample, five of 4,193 rows do: four official 2PT attempts are labelled `Above the
-  Break 3`, and one official 3PT attempt is labelled `Mid-Range`. All five were independently traced
-  to `PlayByPlayV3`, whose `shotValue` confirms the 2/3 ruling. The matching league pools contain 375
-  such rows out of 652,642. For a chart intended to reproduce NBA.com's **By Zone** table,
-  `shot_zone` remains the grouping authority; `shot_type` remains the authority for 3PA, 3PM, eFG%,
-  and points. `source_zone_value_conflicts` exposes the disagreement, and `zone12_split` calculates
-  points per shot from the official shot type rather than assuming every row inherited its displayed
-  zone's nominal value. Never derive scoring totals from zone membership.
-- **A basket-bottom court must mirror NBA's horizontal coordinate at rendering time.** NBA's Left
-  and Right names come from its basket-at-the-top source view; turning that court around puts NBA
-  Left on the viewer's right and NBA Right on the viewer's left. Do not swap labels or mutate the
-  data, because that breaks provenance. Use
-  `bulls.graphics.court.nba_to_basket_bottom_px` for the display transform. The 2021-22 DeMar
-  DeRozan audit is the regression example: NBA Left Corner 3 is 11/29 and must appear on the
-  viewer-right corner of our basket-bottom chart; NBA Right Corner 3 is 7/28 and must appear on the
-  viewer-left corner. Center zones do not move. `tests/test_court.py`, `tests/test_zone_charts.py`,
-  and `tests/test_demar_derozan_bulls_zone_charts.py` enforce the general rule and that real case.
-
-  Confirmed against the source, not inferred: NBA.com's own Shot Zones chart for a player draws the
-  basket at the **top** and prints its Left Corner 3 figure on the viewer's left. Our basket-bottom
-  court is that same court turned around — a 180 degree rotation, which reverses left and right.
-  A vertical flip would not; it would draw a court seen from under the floor. Independently, four
-  documented shots put NBA's positive `loc_x` on the side basketball language calls right: Ray Allen
-  2013 Finals G6 (+168), Kyrie Irving 2016 Finals G7 (+86), Derrick Rose 2015 ECR1 G3 (+84), and
-  Kawhi Leonard 2019 ECSF G7 (+149, a 15 ft baseline shot). Four different arenas, so a
-  camera-relative reading of those descriptions would not have agreed with itself.
-- **A renderer that positions marks by *angle* needs the mirror too, and it is easy to miss.**
-  `nba_to_basket_bottom_px` only covers code that maps a coordinate. The `cells` chart places its
-  wedges and its number anchors from sector angles instead, so it kept drawing NBA Left on the
-  viewer's left for a while after every coordinate-mapping chart had been corrected — the same
-  player's LEFT CORNER appeared on opposite sides of `--chart cells` and `--chart zones`. Mirroring
-  an angle maps it to `180 - theta` and reverses the interval, so wedge endpoints swap; the label
-  anchor, its rotation, and its two-line stacking all have to turn with it.
-  `tests/test_shot_chart_rendering.py` now checks every polar cell against the shared coordinate
-  mapping, which is the check that generalises: take a shot that genuinely falls in the cell, map it,
-  and require the wedge and its label to be on that same side.
-- **`shot_maps.polar_cells()` is the second deliberate exception, and it solves the 16 ft step
-  differently.** Rather than flattening the sector count, it keeps NBA's angular cuts — three
-  sectors inside, five outside — and moves the change from 16 ft to the three-point line, where the
-  floor already has a painted line for the step to sit on. Classification comes from `loc_x`/`loc_y`
-  and `shot_type`, so the drawn regions and the counted regions are the same object; a
-  `tile the court without overlap` test asserts every shot lands in exactly one cell. The 2PT/3PT
-  split follows `shot_type` rather than radius so the corner pocket stays with the threes.
-- **To qualify a per-bucket leader, gate on a *share* of the bucket, not a rank or a flat floor.**
-  When bucket volume varies wildly this is the difference between a defensible claim and a fluke.
-  In `scoring_by_location.py` the roster took 2,226 shots at the rim and 29 from right mid-range, so
-  "top 3 by attempts" meant 324 shots in one zone and 8 in another, while a flat 10-attempt floor
-  handed the rim to a 28-attempt reserve over the man who took 351 — it drops the volume requirement
-  entirely. A 15% share scales itself (334 at the rim, 9 on the right baseline) and cut the
-  low-sample zones from three to one. Bayesian shrinkage was also tried and was worse: with the
-  bucket mean as the prior, any small-sample overperformer still floats to the top.
-- **`detailed_zones` reclassifies `Above the Break 3` + `Back Court(BC)` as `Backcourt`.** A
-  half-court heave arrives labelled an above-the-break three, so a zone analysis that filters on the
-  raw `shot_zone` alone scores a 60-footer against Top of Key.
-- **Summer League's traditional box score can finalize hours before its shot-chart and advanced-box
-  feeds.** `summer_league_report.py` treats empty or all-zero derived feeds as unavailable rather
-  than printing false values. Expect a morning-after render when NBA.com lags.
-- **Shot-chart data includes everyone who took a Bulls shot that season, including traded players.**
-  Filter to a roster and show both views when the comparison needs to be fair.
-- **⚠️ Two roster sources, and they disagree. Use `get_current_roster()` for any "current roster"
-  post.** It reads the roster array embedded in NBA.com's public team page and reflects trades,
-  signings, and draft picks immediately. `get_roster()` wraps `commonteamroster`, which is
-  *season*-scoped and lags badly: checked 2026-07-25 it still returned Sexton, Simons, Yabusele,
-  and Richards while missing Claxton, Powell, and every 2026 rookie — 8 wrong out of 18. Never
-  infer current membership from a season stats endpoint's team field either; that answers "who
-  played here last season," which is a different question.
-- **NBA.com's team-filtered player endpoints can attach a traded player's *later* team abbreviation**
-  even while games, minutes, and ratings remain scoped to the team you requested. Treat the request's
-  `team_id_nullable` filter as the stint scope; never infer scope from the returned abbreviation.
-- **Play-by-play names the assister only inside the event description, with no player id.**
-  `PlayByPlayV3` is the sole source of player-to-player assist detail before 2013-14 and the only
-  source at any date carrying `shotValue`, but resolving `"(Butler 3 AST)"` to a person is a
-  minefield, and every failure is silent. Use `assist_duos_fetch.surname_key` / `_name_variants`
-  rather than re-deriving: fold diacritics (descriptions are ASCII `Vucevic`, the name column is
-  `Vučević`); strip generational suffixes (the column says `Butler III`, the description says
-  `Butler` — **417 of Jimmy Butler's 2016-17 assists vanished** on this alone); and generate
-  first-name prefixes of one, two, and three letters, because a shared surname is disambiguated by
-  whatever prefix is unique (`J. Sampson`, and `Ty.`/`Ti. Thomas` for Tyrus and Tim). Resolve within
-  the game first, then the season, and run resolution *after* the whole season is collected — a
-  player whose only appearance in a game is the assist itself produces no event row of his own.
-- **Reconcile extracted play-by-play against the official box score before reading any leaderboard.**
-  Summing `AST` over a season's team game log costs one request and turns every bug above from
-  something you must notice into a number that is not zero. All 26 Bulls seasons now sit at
-  48,316/48,316. Report a gap, never force it away.
-- **Use pbpstats as a secondary parser and analysis surface, not an independent provider.** It
-  derives its results from NBA feeds, so it is most valuable for checking our event attribution and
-  for questions where its added structure saves substantial work: passer-to-scorer assist networks,
-  players on court, possession boundaries, corrected event order, and shot-zone breakdowns. Keep
-  NBA.com's structured endpoint as the production source when it answers the question. The public
-  pbpstats API is best-effort—it returned intermittent 500/503 errors and timeouts during the
-  assist-duos audit—so cache any result a post depends on in that post's tracked `data/` folder.
-  API reference: `https://api.pbpstats.com/docs`; parser: `https://github.com/dblackrun/pbpstats`.
-- **Two-man lineup minutes (`leaguedashlineups`) return zero rows before 2007-08.** Shared minutes
-  are the better denominator than shared games, but they do not exist for the early 2000s, so a
-  since-2000 post must use games played together. Choose a metric against the oldest season on the
-  graphic, not the newest.
-- **The NBA CDN answers an unknown player with a grey silhouette, not a 404**, and it is 12,430
-  bytes — above any "file too small" threshold. Detect it by hashing (`assist_duos.is_silhouette`);
-  a size check silently passes it through and the chart renders a grey blob that reads as a design
-  choice. This also defeats `ensure_historical_headshot_fallbacks`, which treats any file over its
-  size floor as a usable cache and so skips the replacement it was written to fetch.
-- **The Advanced endpoint reports minutes per game even when `PerMode=Totals`.** For total player
-  minutes paired with advanced ratings, use `get_team_player_advanced_stats()`, which joins
-  Traditional totals to the Advanced ratings.
-- **DataBallR's percentiles are position-adjusted; ours are league-wide.** Don't treat a mismatch as
-  a bug. Tre Jones reads 67th percentile in assists there and 89th here off the same rate. Claxton is
-  the tell: DataBallR has him 95th in assists and 23rd in rebounds, which is only possible ranked
-  against other centers. Pick the population that fits the post — league-wide preserves positional
-  archetypes, position-adjusted normalizes them away — and say which one on the graphic.
-- **`LeagueDashPlayerShotLocations` (`distance_range="By Zone"`) returns per-player zone splits for
-  the whole league in one request** — far cheaper than re-deriving zones from `get_league_shots()`,
-  and its FGM/FGA reconcile exactly to each player's box score. Its columns arrive as a two-level
-  index that needs flattening. Note zone points exclude free throws, which have no location.
-- `get_league_shots()` hits all 30 teams — about 30 API calls, slow.
-- Set `min_shots` by timeframe: roughly 30 for a season, 10 for a recent-games view.
-- Treat NBA response caches, reconciled analysis caches, and extracted font caches as expensive
-  reusable inputs, not cleanup targets. Headshots cache in `cache/headshots/`.
-
-## Graphics Notes
-
-- **New work builds chart assets, not full pages.** Export transparent at a size comfortably larger
-  than the placed size; the Canva page supplies the `#FAF8F5` background and all typography. The
-  full-layout helpers in `house.py` (`draw_header`, `draw_jersey_stripe`, `draw_footer`, `save_post`)
-  are legacy — see `DESIGN.md`.
-- Chart text uses `house.helvetica()` / `house.helvetica("bold")`, which extracts the real Bold face
-  from the macOS system `Helvetica.ttc` into `cache/fonts/` — matplotlib silently renders regular if
-  you ask for bold by family name. The extraction stays in `cache/` so the licensed system font is
-  never committed; it falls back to an installed sans-serif off macOS.
-- Pull chart colors from the `Theme` tokens (`theme.ink`, `theme.accent`, `theme.grid`, …) rather
-  than the white-canvas module constants.
-- Prototypes should print a Canva copy block of the exact strings to paste, so the page's numbers and
-  the chart's numbers come from the same run.
-- Building from an F5 or similar tutorial: reproduce its styling and structure closely, swapping in
-  our palette and Helvetica (`DESIGN.md` §6).
-- `summer_league_report.py` calls `GT.as_raw_html()`, uses Helvetica in the browser, and renders through
-  `nokap.from_html`, and composites the cropped PNG into the Matplotlib canvas. **This browser-backed
-  step is part of the live report path**, not the rejected full-slide HTML renderer (`DESIGN.md`,
-  Settled). `gt_extras` stays limited to the separate Great Tables spike.
-- Court graphics use `analysis.detailed_zones()`.
-- `bulls/graphics/court.py` owns the shot-chart dimensions and continuous restricted-area D path.
-  Conventional charts call `draw_half_court()`; rings, cells, and ladders keep their specialized
-  renderers for clipping and contrast but import the same constants and geometry primitive. A new
-  shot-chart renderer may change court color, opacity, clipping, and line weight—not landmark
-  positions or shapes.
-
-## CLIs
-
-```bash
-venv/bin/python scripts/make_shot_chart.py --player "NAME" --chart hotspot|hex|rings|cells|zones|ladder [--final]
-venv/bin/python scripts/make_shot_chart.py --team --chart zones [--project <slug>]
-venv/bin/python scripts/make_shot_chart.py --team|--league --chart ladder --metric pps|fg-rel|pps-rel [--project <slug>]
-venv/bin/python scripts/make_shot_chart.py --team --chart ladder --blank [--project <slug>]
-venv/bin/python scripts/prototypes/current_roster_zone_charts.py    # the team plus every qualified player
-venv/bin/python scripts/save_visual_version.py --project <slug> <files...>   # preserve a reviewed version
-```
-
-## Chart Family Notes
-
-Why these charts are shaped the way they are. `DESIGN.md` owns how a chart looks; this covers the
-analytical choices behind the shot-chart family, which are easy to undo by accident.
-
-`rings`, `zones`, and `cells` answer the same question — how well he shoots by area, against the
-league — at four regions, twelve, and 18. Choose by sample. `rings` keeps every band large enough
-to carry volume as well as efficiency; `cells` locates a strength or a hole precisely but greys out
-what it cannot stand behind. On a ~950-attempt season about half the `cells` grid greys, which is
-informative when a player genuinely has no mid-range game and misleading when he simply missed time
-— read the printed per-cell table before publishing either.
-
-`zones` sits between them and is the only one of the three that fills the whole court, which is what
-makes it the colourful sibling of the hex chart rather than another sparse map. It uses NBA's twelve
-named regions via `shot_maps.zone_of`, colours each by FG% against the league across five bands, and
-prints the zone's share of all subject FGA under the shooting figure, followed by its signed gap to
-the NBA share in the same `vs LA` grammar. The two are meant to be read together because a player can
-be excellent in a zone he rarely visits. Shooting is the top line because the fill is shooting; the
-colour and the first figure have to be the same thing. The scale runs red → yellow → green by default
-(`--palette hex` for the blue scale the hex carousel used); `DESIGN.md` owns why.
-
-**Points per shot is deliberately not on it.** Inside one zone the point value is a constant, so PPS
-is FG% times that constant and "his PPS vs the league's" ranks identically to "his FG% vs the
-league's". PPS earned its place on the scoring-by-location post because that chart compared *across*
-zones, where a 35% three really does beat a 52% long two. Here it would be a third figure repeating
-the first. `tests/test_zone_charts.py` pins the identity so nobody re-adds it.
-
-`zones` accepts `--team` because shot share has one denominator at either scope: attempts in the zone
-divided by all attempts by that team or player. The NBA reference repeats the same calculation over
-all league attempts, so the team opener and player slides are directly comparable and the chart no
-longer needs possession endpoints. The raw attempt count in the shooting line preserves absolute
-volume. `--league` is still rejected: the league cannot be its own efficiency baseline.
-
-`zonegrid` is `zones` repeated once per season on one page, and it is a post-script chart rather than
-a CLI one: it needs a subject frame and a league frame *per season*, and no combination of
-`--season`/`--player` flags supplies eleven of each. Post scripts call `render_zonegrid` directly with
-a `by_season` mapping, exactly as they already call `render_zones` with a hand-built context. **Every
-court is rated against its own season's league**, never a single borrowed baseline: league zone FG%
-is stable across eras but zone *share* is not, and grading 2003-04 against 2015-16's corner-three
-economy would report a change in the league as a change in the player.
-
-**Tenure charts.** A player's whole run at one club is now a four-post family — DeRozan, Rose,
-Butler, Hinrich — and the four only mean the same thing because they share four rules. Scope every
-pull to `team_id=BULLS_TEAM_ID`; a season split by a trade otherwise sweeps in the wrong uniform, and
-Hinrich's 2015-16 would gain 11 Atlanta games. **Reconcile the raw pull against an independent
-official total before filtering anything**, because a wrongly-scoped `ShotChartDetail` call returns an
-empty frame rather than an error — the reconciliation is the only thing that can tell a narrow pull
-from a broken one. Scale the pooled chart's colour floor to `20 × seasons`, so grey carries the same
-meaning at eleven seasons as at three. And name the seasons the player spent elsewhere rather than
-letting them read as gaps: Hinrich's tenure skips 2010-11 and 2011-12, and a subtitle spanning
-2003-04 to 2015-16 would otherwise claim thirteen seasons of coverage for eleven seasons of data.
-
-**Pooling the league across a tenure needs no attempt weighting.** Building the pooled baseline from
-each season's league weighted by the *player's* attempts that season is the more careful construction
-and was tested on Hinrich's eleven seasons: it moved no zone's league FG% by more than 0.21 points,
-against a chart whose narrowest colour band is ±2.5, so no zone changed colour. Plain concatenation
-is used because it is what a reader can reproduce from the saved files.
-
-**The league baseline stays in `cache/shot_charts`.** The three earlier tenure posts each copied every
-season's ~10 MB league pull into their own `data/` folder; at eleven seasons that is ~115 MB of a
-dataset the repo explicitly names as shared (`tests/test_data_locations.py`, AGENTS.md). What ships
-with a post is what only that post can produce — its subject's shots, the official totals it
-reconciles against, and the zone splits its slides print. The Hinrich post does that and leaves the
-league where it belongs; the earlier three keep their copies rather than being rewritten.
-
-**`LeagueDashPlayerStats` filtered by `team_id_nullable` labels the row with the player's
-end-of-season team.** The counting stats are correctly the filtered club's — Hinrich's 2015-16 row
-carries Chicago's 35 games and 118 attempts — but `TEAM_ABBREVIATION` on that row reads `ATL`. The
-trap runs the dangerous way: the label looks wrong on data that is right, so "fixing" it breaks a
-correct chart. Read the counting stats, never the abbreviation.
-
-**Historical seasons contain attempts with no location at all.** From 2008-09 on, `ShotChartDetail`
-occasionally returns a valid make/miss and shot value with no coordinates, distance, or zone — two of
-Hinrich's 7,593 Bulls attempts, and 20 to 156 per league season. Such a row belongs in scoring totals
-and cannot honestly contribute to a location chart, so the tenure posts drop rows missing *all* those
-fields and raise on a row missing only *some*, which would be a shape change in the feed rather than a
-known gap. `shot_maps.zone12_of_shots` still raises on an unrecognised zone label, and should: there
-is no region to guess for an unlocated row, but a renamed zone would be silently misplaced.
-
-The optional carousel summary below a zone chart reports total FGA, eFG%, and 3PT%. A post may put
-PPG immediately before those three cards when the season's scoring context is part of the page.
-That PPG must be `PTS / GP` from the official player or team totals endpoint: `ShotChartDetail`
-contains field-goal attempts but not free throws, so it cannot reconstruct total points. eFG% is
-`(FGM + 0.5 × 3PM) / FGA`; 3PT% is `3PM / 3PA`. The summary cards are descriptive and carry no
-league comparison; the zone figures remain the chart's comparison layer. Mid-range share remains in
-the zone pills and editorial interpretation rather than becoming another headline card.
-
-**Every zone's pill prints makes over attempts** — `11/32 FG (34.4%)` — which changed what the
-colour floor has to protect. Early drafts hid the sample behind the floor entirely: a thin zone was
-greyed and only its attempt *rate* survived, because the reader had no way to judge the percentage
-for themselves. Once the raw count is on the page, the floor's only job is protecting the **colour**
-— a reader who can see "0 / 1" still learns what happened without the chart assigning that result
-an efficiency band. That is what let the floor come down from an evidence-grade bar to a
-display-grade one.
-
-**Both floors are solved, not chosen**, by asking a precision question at a strength each subject's
-sample can support.
-
-| Subject | Rule | Function | n | Why that rule |
-| --- | --- | --- | --- | --- |
-| Team chart | one standard error can't move it a band | `colour_floor(2.5)` | 400 | ~7,400 team shots can afford the strict reading |
-| Player chart | one **shot** can't move it farther than the full neutral span | `single_shot_floor(5.0)` | 20 | a rotation player's ~500 shots across twelve zones cannot reach a standard-error bar anywhere but the rim |
-
-`single_shot_floor` is `⌈100 / band_width⌉`: one make out of *n* moves a percentage by `100/n`
-points, and the neutral band spans 5 points from −2.5 to +2.5, so 20 caps one shot's movement at
-that full span. The ±5 outer cuts make each light band 2.5 points wide, so one shot can still cross
-one of those narrower bands at the floor. That is accepted because the count is printed inline and
-20 is explicitly a display-grade bar rather than an evidence-grade confidence threshold.
-`tests/test_zone_charts.py` pins the arithmetic so the number stays checkable rather than becoming
-folklore.
-
-**This floor was 45 for several rounds** — solved the same way as the team's, `colour_floor(7.5)` —
-before the counts-in-the-pill change made it clearly too strict: at 45, 71% of the carousel printed
-grey, including every mid-range zone for every player, on a chart meant to be colourful and legible
-at a glance rather than to carry an evidence-grade claim on its own. Three fixes were costed and
-rejected before landing on the single-shot rule:
-
-| Idea | Why it fails |
+| Change | Check |
 | --- | --- |
-| Flat floor of 25 | Margin of error ±19.6 points, far wider than the ±5 outer cut — the scale would be finer than its own noise |
-| Floor as a **share of the league's** volume in that zone | Anchored at the rim it gives the baseline zones a floor of 2 attempts (±65 points); anchored the other way the rim floor becomes 904. Precision depends on the raw count, not on how rare the zone is |
-| Floor as a **share of the player's own** attempts | Backwards: it sets the *loosest* bar for the player the chart knows *least* about (Miller's 5% floor is 13 shots; Buzelis's is 48), and it makes green mean a different margin of error on every slide in the carousel |
-| Floor solved per zone from the league's own FG% there | Correct, and worthless — the spread across all twelve zones is 4.7 attempts, because binomial variance is nearly flat over the 35–67% range basketball occupies |
+| Caption/Canva positioning | Changed copy and actual exported page; no Python suite |
+| One post's data or chart | Its test file and one rendered/exported result; reconcile changed data |
+| Docs/skills | Changed commands, links and instruction consistency; relevant doc/symlink tests |
+| Shared fetching/analysis/chart helpers | Module tests and affected families; whole suite once before integration if impact warrants |
 
-Merging the five mid-range zones into one band, and colouring the fill by volume instead of FG%,
-were also mocked and rejected on editorial grounds rather than statistical ones — twelve named zones
-and an efficiency-coded fill are the post. **Do not re-open any of these without new evidence; the
-arithmetic is above.**
+Keep tests for formulas, coverage, unavailable data, qualification boundaries, source reconciliation,
+publication-data preservation, and meaningful visual regressions. Avoid assertions that simply
+repeat styling constants or inspect exact source-code text. Use a real render to judge appearance.
+Do not rerun unchanged checks just because another message arrived. Report unrelated baseline
+failures separately; don't silently expand the task to fix them. `git diff --check` checks patch hygiene.
 
-**A zone gets one of three treatments**, by attempt count:
+## Conditional references
 
-| Attempts | Treatment | Pill |
-| --- | --- | --- |
-| ≥ floor | solid band colour | full four-line pill |
-| 1 to floor−1 | grey | full four-line pill, muted |
-| 0 | grey | `0 FGA` only |
+- Source selection, team stints, roster scope, clutch and advanced stats:
+  `docs/reference/data-sources.md`.
+- Shot coordinates, zone boundaries, chart-family metrics and thresholds:
+  `docs/reference/shot-analysis.md`; visual styling is routed by `DESIGN.md`.
+- Assist identity resolution, lineups and pbpstats: `docs/reference/play-by-play.md`.
+- Source trail and version/data filing: `docs/reference/provenance.md`.
+- Task isolation, integration and cleanup: `docs/reference/worktrees.md`.
 
-Grey means the zone has not earned an efficiency colour. A nonzero zone keeps the full descriptive
-pill, while a zero-attempt zone says `0 FGA`; the labels distinguish those two states without asking
-texture to carry the caveat. `zone-chart-summary-<season>.csv` reports the rated share per subject so
-a thin chart (Claxton: 92% of attempts on 2 of 12 rated zones, because he takes 92% of his shots at
-the rim) can be checked before publishing rather than discovered after.
-
-`ladder` is the distance-only form, concentric distance bands and no angle at all. It gets its
-fullest read from team-scale volume, but it can also show a player's shot-value profile:
-`--team` pulls every Bulls shot (traded players included — this is the team's offence, not a
-roster), `--league` charts all 30 teams. `--metric pps` is the "Midrange Is Dead" chart and the one
-that carries an argument, because points per shot is the only scale on which a two and a three
-compare; `fg-rel` and `pps-rel` measure each ring against the league at the same distance and answer
-"did they shoot it well" versus "did the shot pay". `--league` rejects the `-rel` metrics, which
-would be all zeros. The colour scale is **clamped, not fitted** — the rim ring is a large enough
-outlier to squash every other ring into one shade if it sets the range.
-
-The default rating floor is 40 attempts for a team or league ladder and 15 for a player ladder.
-Fifteen matches the fine shot-cell chart's floor: it reveals player midrange bands without assigning
-meaning to a result built from only a few makes or misses. Pass `--min-fga` only when the post has an
-explicitly justified alternative; the graphic prints the actual floor in its grey-band key.
-
-`--blank` produces the same 2-foot ladder and court geometry entirely in neutral grey, with no
-values, scale, or methodology copy. It is a data-free cover asset for a carousel whose later slides
-reveal the colored analytical charts; it should not be presented as a player's result.
-
-**The split at 24 ft is the method, not a detail.** Inside it a ring counts two-point attempts only;
-outside it, threes only. Binning purely by distance makes the 22-24 ft rings ~95% corner threes, so
-they read ~1.15 PPS, the curve rises smoothly into the arc, and the cliff the chart exists to show
-vanishes.
-
-**The corner pocket is carved out, and this is a deliberate divergence from the reference card.**
-A corner three sits ~22 ft from the hoop — inside the radius where the ladder counts twos — so a
-purely radial chart has to drop it. The card does exactly that: it loses 22% of all league threes
-and then paints the corner strip with the *above-the-break* value from 24-25 ft. That is backwards.
-Corner threes are the second most efficient shot in basketball, **1.15 PPS against 1.05 above the
-break**, so the card shows a great area as a merely good one. `shot_maps.corner_mask()` takes the
-region beyond the corner line and inside the split radius, `corner_split()` gives it its own value,
-and the two-point rings clip to the corner line so the two tile exactly. The carve-out is free of
-ambiguity: across 219,160 league attempts **zero** two-pointers fall beyond the corner line inside
-24 ft, because beyond that line a two does not exist. Coverage goes from 90.4% to **99.5%**; what
-remains excluded is heaves past 31 ft and ~190 above-the-break threes that register just under 24 ft.
-
-Ring values verified against a published league "Midrange Is Dead" card for 2025-26: of
-its 31 printed values, 15 reproduce exactly and 15 land within 0.01, with only the outermost 30-31 ft
-ring (smallest sample) off by 0.03. Pure-distance binning matches 16/31 but produces 0.70 / 1.10 /
-1.17 where the card prints 0.70 / 0.74 / 0.62 — that trio is the diagnostic if the method drifts.
-
-**Bands are 2 ft wide (`--band` overrides).** Two independent arguments landed on the same number.
-Statistically, 1 ft oversamples: across the league's own ladder **21 of 29 neighbouring 1 ft bands are
-statistically indistinguishable**, so most of that resolution renders noise as detail — pooling pairs
-turns the league mid-range from a jittery walk into a clean monotonic decline (0.91 → 0.87 → 0.84 →
-0.80 → 0.75 → 0.70, then the jump to 1.09 over the arc). Physically, a shooter and his defender
-occupy about two feet of floor, so a 14 ft and a 15 ft attempt are the same basketball situation
-measured twice; bands should be no finer than the resolution at which the phenomenon varies. It also
-takes a single team season from 12 grey bands to 2. 2 ft divides both `LADDER_MAX_FT` (30) and
-`LADDER_TWO_MAX_FT` (24), which it must — otherwise a band straddles the 2PT/3PT split.
-
-**The outer band has a hard edge at 30 ft; attempts past it are excluded and reported.** The
-reference card instead makes its outermost band a `30+` catch-all with no upper bound, which is why
-its top value reads 0.87 against our 0.90: it absorbs 962 heaves out to half court. A band with no
-outer edge is not a distance band, so we cap and disclose (0.4% of league attempts) rather than
-absorb. `ladder_edges()` snaps the last edge down so a wider band can never readmit them.
-
-**Colour scales are fixed, round and symmetric — never fitted.** Two separate requirements: a
-*clamped* range, so the rim's 1.51 cannot squash every other ring into one shade; and a *meaningful
-midpoint*, so the colour turn sits on a number a reader can name. For PPS that is 1.00 — a shot worth
-exactly one point — running 0.80 to 1.20 in steps of 0.05, which is what the reference does. Centring
-on the league mean (1.09) instead was a real bug: it pushed the turn up so 1.00 rendered orange and
-nothing went green until ~1.15, quietly flattering every ring between. Label placement is likewise
-measured, not eyeballed: glyph-ink centres are compared against band centres and the residual held at
-0 px (`LABEL_NUDGE_PX`).
-
-## Tests
+## Common commands
 
 ```bash
-./run_tests.sh
+venv/bin/python scripts/make_shot_chart.py --help
+venv/bin/python scripts/save_visual_version.py --project <slug> <chart.png>
+venv/bin/python scripts/save_visual_version.py --project <slug> --data <source.csv>
 ```
 
-All NBA API calls are mocked. `test_design_tokens.py` is the token drift alarm: it fails when hex
-values in `DESIGN.md` or `bulls/config.py` stop matching
-`bulls/graphics/house.py`. It parses the §2 table rows by token name, so keep that table's format
-intact when editing `DESIGN.md`.
+Read the selected renderer's arguments before using it. On supported renderers `--final` means
+publish DPI; the archive helper has no `--final` flag. Canva owns page typography, background and
+framing; chart labels use `house.helvetica()`. See `DESIGN.md` for the current palette and export contract.
+
+At season rollover, update `CURRENT_SEASON` and `LAST_SEASON` in `bulls/config.py`; fetchers otherwise
+continue serving the prior season. Dependency changes need an environment/import check.

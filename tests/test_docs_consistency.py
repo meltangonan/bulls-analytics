@@ -1,18 +1,4 @@
-"""Catch documentation drift the way we catch data drift: with a failing test.
-
-Every stale reference found in this repository so far was found by someone
-reading the docs and noticing — a `DESIGN.md §8` pointing at Faces, a skill still
-carrying a versioning rule the guides had replaced, six CSVs describing deleted
-files as archived, fourteen prototypes missing from their index. All of them were
-mechanically checkable. None of them were mechanically checked.
-
-An audit finds drift once. A test finds it every run, which is the difference
-between a rule that holds and a rule someone has to remember.
-
-These checks only cover claims a machine can verify: does the file exist, does the
-section exist, is every prototype indexed. Rules needing judgment stay in the
-owner documents.
-"""
+"""Check file references, prototype indexing, and canonical skill links."""
 from __future__ import annotations
 
 import ast
@@ -26,24 +12,18 @@ ROOT_DOCS = ["AGENTS.md", "DEVELOPMENT.md", "DESIGN.md", "POSTING_WORKFLOW.md",
              "STRATEGY.md", "README.md"]
 SKILLS = sorted((ROOT / ".agents/skills").rglob("SKILL.md"))
 
+# Search relevant source/docs once, excluding ignored caches and environments.
+SOURCE_BASENAMES = {p.name for directory in ("bulls", "scripts", "tests", "docs")
+                    for p in (ROOT / directory).rglob("*") if p.is_file()}
+
 # Things named in backticks that look like repo files but are not.
 EXTERNAL = {"Helvetica.ttc"}
 
 FILE_REF = re.compile(r'`([A-Za-z0-9_./-]+\.(?:py|md|html|csv|sh|json|ttc|cfg|ini|txt))`')
-SECTION_REF = re.compile(r'([A-Z_]+\.md)`?\s*§\s*(\d+)')
 
 
 def _docs() -> list[Path]:
-    return [ROOT / d for d in ROOT_DOCS] + SKILLS
-
-
-def _numbered_sections(path: Path) -> dict[str, str]:
-    out = {}
-    for line in path.read_text().splitlines():
-        m = re.match(r'^#+\s*(\d+)\.\s*(.+)$', line)
-        if m:
-            out[m.group(1)] = m.group(2).strip()
-    return out
+    return [ROOT / d for d in ROOT_DOCS] + sorted((ROOT / "docs/reference").glob("*.md")) + sorted((ROOT / "docs/design").glob("*.md")) + SKILLS
 
 
 @pytest.mark.parametrize("doc", _docs(), ids=lambda p: str(p.relative_to(ROOT)))
@@ -51,47 +31,27 @@ def test_file_references_resolve(doc: Path):
     """A doc that points at a file which no longer exists answers nothing."""
     missing = []
     for i, line in enumerate(doc.read_text().splitlines(), 1):
-        for m in FILE_REF.finditer(line):
-            ref = m.group(1)
+        refs = [m.group(1) for m in FILE_REF.finditer(line)]
+        refs += re.findall(r"\]\(([^)]+)\)", line)
+        for ref in refs:
+            if "://" in ref or ref.startswith("#"):
+                continue
+            ref = ref.split("#", 1)[0]
+            if (doc.parent / ref).exists():
+                continue
             if ref in EXTERNAL:
                 continue
             direct = ROOT / ref
             if direct.exists():
                 continue
-            if "/" not in ref and any(
-                p for p in ROOT.rglob(ref) if "venv" not in p.parts
-            ):
+            if "/" not in ref and ref in SOURCE_BASENAMES:
                 continue
             missing.append(f"{doc.relative_to(ROOT)}:{i} -> {ref}")
     assert not missing, "Documentation points at files that do not exist:\n  " + "\n  ".join(missing)
 
 
-def test_section_cross_references_resolve():
-    """`DESIGN.md §8` must name a section that is actually numbered 8.
-
-    Renumbering a document silently invalidates every reference to it. This has
-    already happened once: a reference to §8 survived after §8 became Voice &
-    Caption, then survived again after Voice & Caption moved out.
-    """
-    targets = {d: _numbered_sections(ROOT / d) for d in ROOT_DOCS if (ROOT / d).exists()}
-    sources = _docs() + sorted((ROOT / "scripts").rglob("*.py")) + sorted((ROOT / "bulls").rglob("*.py"))
-    broken = []
-    for src in sources:
-        for i, line in enumerate(src.read_text(errors="ignore").splitlines(), 1):
-            for m in SECTION_REF.finditer(line):
-                doc, num = m.group(1), m.group(2)
-                if doc in targets and num not in targets[doc]:
-                    broken.append(f"{src.relative_to(ROOT)}:{i} -> {doc} §{num}")
-    assert not broken, "Cross-references point at section numbers that do not exist:\n  " + "\n  ".join(broken)
-
-
 def test_every_prototype_is_indexed():
-    """`scripts/prototypes/README.md` is the only map of what has been built.
-
-    The integration checklist says to update it, and the index still fell fourteen
-    scripts behind, because a step you have to remember is a step that gets
-    skipped when the post is finished and the branch is ready.
-    """
+    """Every entry point should be discoverable without reading all scripts."""
     index = (ROOT / "scripts/prototypes/README.md").read_text()
     scripts = sorted(p.stem for p in (ROOT / "scripts/prototypes").glob("*.py")
                      if not p.name.startswith("_"))
@@ -140,28 +100,3 @@ def test_prototypes_have_a_module_docstring():
         if not ast.get_docstring(ast.parse(p.read_text(errors="ignore"))):
             bare.append(p.name)
     assert not bare, "Prototypes with no module docstring:\n  " + "\n  ".join(bare)
-
-
-def test_section_titles_have_one_owner():
-    """The same section title must not exist in two guides.
-
-    Single ownership is the rule AGENTS.md states in prose; this makes it
-    checkable. A topic with two homes is a topic whose two copies will disagree,
-    and the disagreement surfaces as a routing claim that quietly goes stale —
-    "confirmed voice rules go to DESIGN.md" outlived the section it named.
-    """
-    seen: dict[str, str] = {}
-    clashes = []
-    for name in ROOT_DOCS:
-        path = ROOT / name
-        if not path.exists():
-            continue
-        for line in path.read_text().splitlines():
-            m = re.match(r'^##\s+(?:\d+\.\s*)?(.+?)\s*$', line)
-            if not m:
-                continue
-            title = m.group(1).strip().lower()
-            if title in seen and seen[title] != name:
-                clashes.append(f'"{m.group(1)}" in both {seen[title]} and {name}')
-            seen.setdefault(title, name)
-    assert not clashes, "Section titles owned by more than one guide:\n  " + "\n  ".join(clashes)

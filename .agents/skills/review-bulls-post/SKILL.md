@@ -1,57 +1,25 @@
 ---
 name: review-bulls-post
-description: Review creative feedback, a published Bulls post, its actual caption, or Instagram Insights and carry the learning into future @chicagobullsdata work. Use when the user wants to debrief a mock or post, explain performance, incorporate feedback, identify hypotheses, or compound project knowledge. Do not use to create or promote the post.
+description: Review Bulls creative feedback or published results and update the relevant post or confirmed guidance.
 ---
 
 # Review Bulls Post
 
-Turn feedback and results into compact reusable project knowledge rather than a one-off conversation.
+Use the actual graphic, caption, relevant Notion post and available feedback/Insights. A review can
+proceed without Insights; don't invent missing metrics or infer remembered performance. Consult
+Notion editorial direction (linked in `STRATEGY.md`) only when its principles affect the review.
+Read analysis code when checking a data claim, not automatically for every piece of feedback.
 
-## Evidence
+Distinguish observed results, hypotheses about why they happened, and durable rules. Explicit user
+preferences are durable; explanations inferred from one post remain hypotheses until confirmed or
+supported repeatedly. Preserve contrary evidence and identify the missing evidence that would help.
 
-Read `AGENTS.md` and `STRATEGY.md`. Inspect the actual final graphic, the actual caption, the
-matching Notion `chicagobullsdata posts` page, the relevant analysis, and any Insights or qualitative feedback.
-For Canva work, use the chart versions in the post folder's `assets/`, highest version number first.
-The publish-DPI export has a `-final` suffix. QA from a downloaded Canva page — check it, don't file
-it. Older posts may still have a retired `final/` folder; do not create new ones.
+Update the existing Notion post with its feedback and results. Editorial direction/voice lessons go
+to Notion; reusable chart changes go to `DESIGN.md` or its family reference and the owning helper;
+data/execution changes go to the relevant `DEVELOPMENT.md` reference. Replace stale guidance instead
+of adding transcripts, separate decision logs or a rule for every incident.
 
-Earlier versions in `assets/` show how the post evolved, which is often what explains a piece of
-feedback.
-
-A review can proceed without Insights. Never rely on remembered performance or invent missing
-metrics. Compare against prior Notion post evidence when it's relevant.
-
-## Classify Each Lesson
-
-- **Observation** — seen in one post or session. Record as post-specific context.
-- **Working hypothesis** — a plausible pattern. Explain the evidence and the uncertainty, then bring
-  it to the user.
-- **Durable rule** — an explicitly stated user preference, a hypothesis the user confirms, or a
-  pattern with repeated evidence behind it.
-
-User preferences are durable immediately. Conclusions inferred from performance stay hypotheses until
-confirmed. If the user is unsure, give a recommendation and say what evidence would strengthen or
-weaken it — then leave it as a hypothesis rather than forcing a decision.
-
-## Update the System
-
-Make the smallest set of updates that keeps the project current:
-
-- Post-specific feedback and results go compactly on the Notion page.
-- Route each confirmed rule to its owner, per `AGENTS.md` (Read the Right Document): chart-layer
-  visual rules → `DESIGN.md`; production behaviour, caption voice, and hashtags →
-  `POSTING_WORKFLOW.md`; audience, metric, or distribution learning → `STRATEGY.md`; code, data
-  guardrails, and worktree mechanics → `DEVELOPMENT.md`.
-- A clear, distinct future idea → a new `Parked` Notion page.
-
-Note production mechanics (chart export, Canva assembly) only when they materially affected
-accuracy, comprehension, effort, or results — tooling alone is not a performance lesson.
-
-**Two failure modes to avoid:** don't create a transcript, a new knowledge file, or a decision log
-merely because the skill ran; and preserve important contrary evidence so the project doesn't overfit
-to a single post.
-
-## Close
-
-Say what was observed, which hypotheses still need evidence, which durable rules changed, which files
-you updated, and the clearest implication for the next post. Run `git diff --check`.
+Create a future idea only when the user selects it or asks to save it. Don't turn a review into
+unrequested production. State what was observed, what remains uncertain, and what guidance changed.
+Use `DEVELOPMENT.md` to select checks only if the review changed code; documentation changes need
+relevant reference checks and `git diff --check`, not historical render tests.

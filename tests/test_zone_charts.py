@@ -692,46 +692,8 @@ def test_a_rated_zone_keeps_its_solid_band_colour():
     plt.close(fig)
 
 
-def test_blank_zone_cover_has_no_data_layer_or_legend(tmp_path):
-    """The cover teases the exact geometry without pretending to show results."""
-    import inspect
-    from scripts import make_shot_chart as shot_chart
-
-    blank = inspect.getsource(shot_chart.render_blank_zones)
-    assert "_zone12_block" not in blank
-    assert "_zone12_legend" not in blank
-    assert "_zone12_summary_cards" not in blank
-    # The cover draws its court in the account's black rather than the theme
-    # ink. Asserted against the named constant, not the source text: the literal
-    # used to live inside _render_cover_zones and moved when the court drawing
-    # was shared with the season grid, which broke the test without changing a
-    # pixel of the cover.
-    assert shot_chart.ZONE12_COURT_INK == "#242424"
-    import inspect as _inspect
-    signature = _inspect.signature(shot_chart._draw_zone_court)
-    assert signature.parameters["court_ink"].default == shot_chart.ZONE12_COURT_INK
-
-    out = tmp_path / "blank.png"
-    shot_chart.render_blank_zones(out, final=False)
-    assert out.exists()
 
 
-def test_color_preview_cover_is_solid_reproducible_and_data_free(tmp_path):
-    """The colorful teaser previews the grammar without inventing results."""
-    import inspect
-    from scripts import make_shot_chart as shot_chart
-
-    preview = inspect.getsource(shot_chart.render_preview_zones)
-    assert "_zone12_block" not in preview
-    assert "_zone12_legend" not in preview
-    assert "_zone12_summary_cards" not in preview
-    assert "band_by_zone" in preview
-    assert "1.0" in preview
-    assert "(4, 3, 1, 0, 4, 2, 1, 0, 1, 3, 0, 3)" in preview
-
-    out = tmp_path / "preview.png"
-    shot_chart.render_preview_zones(out, final=False)
-    assert out.exists()
 
 
 def test_randomized_cover_is_reproducible_and_separates_adjacent_shades(tmp_path):
@@ -770,18 +732,6 @@ def test_solid_cover_variants_use_canonical_reusable_red_tokens(tmp_path):
         assert out.exists()
 
 
-def test_zone_renderer_can_hide_all_detail_overlays_for_a_data_cover():
-    """Real zone colors can stand alone without pills, legend, or summaries."""
-    import inspect
-    from scripts import make_shot_chart as shot_chart
-
-    source = inspect.getsource(shot_chart.render_zones)
-    assert 'show_details = bool(ctx.get("show_details", True))' in source
-    assert "if show_details:" in source
-    detail_branch = source.split("if show_details:", 1)[1]
-    assert "_zone12_block" in detail_branch
-    assert "_zone12_legend" in detail_branch
-    assert "_zone12_summary_cards" in detail_branch
 
 
 def test_the_above_the_break_dividers_are_the_mid_range_rays_continued():

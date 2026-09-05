@@ -463,7 +463,7 @@ def heat_fill(
     Red is the low end of the column's range and green the high end, so the
     scale reads as rank rather than as the house red/black semantics. Every
     cell prints its own number, which is what keeps a red-to-green ramp usable
-    for colourblind readers (DESIGN.md §2).
+    for colourblind readers (DESIGN.md (Color and hierarchy)).
     """
     span = maximum - minimum
     fraction = 1.0 if span <= 0 else (float(value) - minimum) / span
@@ -540,7 +540,7 @@ def verify_headshots(player_ids) -> list[int]:
     """Return ids whose cached headshot is the NBA CDN's generic silhouette.
 
     The silhouette is ~12 KB against 150-220 KB for a real portrait, so size
-    is the only reliable tell (DESIGN.md §5).
+    is the only reliable tell (docs/design/tables-cards.md (Portraits)).
     """
     missing = []
     for player_id in {int(pid) for pid in player_ids}:

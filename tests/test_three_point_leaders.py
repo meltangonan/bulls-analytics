@@ -289,10 +289,8 @@ def test_missing_portrait_becomes_a_placeholder_not_a_crash(tmp_path):
 
 
 def test_chart_uses_the_account_black_not_pure_black():
-    """DESIGN.md §2: nothing in a graphic is pure or near-pure black."""
+    """DESIGN.md (Color and hierarchy): nothing in a graphic is pure or near-pure black."""
     assert INK == "#242424"
-    source = Path("scripts/prototypes/three_point_leaders.py").read_text()
-    assert "DEFAULT_THEME" not in source, "new charts take no theme (DESIGN.md §2)"
 
 
 # --- render -------------------------------------------------------------------

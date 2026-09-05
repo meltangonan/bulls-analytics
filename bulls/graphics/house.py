@@ -1,12 +1,9 @@
-"""Executable house style for current @chicagobullsdata graphics.
+"""Shared chart utilities and compatibility helpers for older full-page posts.
 
-``DESIGN.md`` remains the human-readable source of truth. This module is the
-small Matplotlib implementation of the rules every current feed post shares:
-canvas, type, header, footer, color tokens, and draft/final export behavior.
-
-Post-specific charts, tables, annotations, and story decisions do not belong
-here. They stay with the format that needs them until a second real post proves
-that the visual grammar repeats.
+Current charts use Helvetica, export DPI, portraits, and table/card helpers.
+Canva owns page layout. Theme palettes, canvas, header, and footer functions
+remain for historical renderers; they are not the starting point for new posts.
+See DESIGN.md for the current chart contract.
 """
 
 from __future__ import annotations
@@ -42,6 +39,8 @@ OUTLINED_TITLE = True
 
 WHITE = "#FFFFFF"
 RED = "#CE1141"
+BLACK = "#242424"  # Current chart black.
+# Compatibility palette for historical renderers; new charts use BLACK/RED.
 BULLS_BLACK = "#141414"
 INK = "#1A1A1A"
 MUTED = "#777777"
@@ -59,7 +58,7 @@ class Theme:
     carries the full token set, not just the canvas fill. ``jersey`` (warm
     off-white) is the default; ``white`` matches the loose module constants
     above. The palettes retain the earlier full-layout themes,
-    promoted to real render options (DESIGN.md §2).
+    promoted to real render options (DESIGN.md (Color and hierarchy)).
     """
 
     name: str
@@ -569,7 +568,7 @@ def square_headshot_label(
 
     The landscape scatter family plots players as bare square faces; the red
     ring in ``craft.headshot_label`` means "this is the payoff" and would read
-    as an emphasis that a whole-roster layer does not intend (DESIGN.md §5).
+    as an emphasis that a whole-roster layer does not intend (docs/design/tables-cards.md (Portraits)).
 
     Returns the placed artist so the caller can set a per-player draw order.
     A missing or unreadable file becomes a neutral placeholder square, so a
@@ -836,3 +835,38 @@ def cut_out_flat_background(
     destination.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(destination)
     return destination
+
+
+def top_anchored_headshot_label(ax, image_path, x, y, half_size, *, crop_fraction=0.68, scale=1.0, zorder=5):
+    """Draw a transparent portrait cropped from the top of its source frame.
+
+    ``crop_fraction`` selects the source square; ``scale`` changes its drawn
+    size when a wider crop needs to retain the same face size. A missing image
+    keeps the standard placeholder footprint. Coordinates use the axes' units.
+    """
+    try:
+        image = plt.imread(image_path)
+    except (FileNotFoundError, OSError, ValueError):
+        return ax.add_patch(
+            FancyBboxPatch(
+                (x - half_size, y - half_size),
+                2 * half_size,
+                2 * half_size,
+                boxstyle="square,pad=0",
+                facecolor="#DDD8D1",
+                edgecolor="none",
+                zorder=zorder,
+            )
+        )
+
+    height, width = image.shape[:2]
+    side = max(1, round(min(height, width) * crop_fraction))
+    left = max(0, (width - side) // 2)
+    square = image[:side, left:left + side]
+    drawn = half_size * scale
+    return ax.imshow(
+        square,
+        extent=[x - drawn, x + drawn, y - drawn, y + drawn],
+        interpolation="bilinear",
+        zorder=zorder,
+    )

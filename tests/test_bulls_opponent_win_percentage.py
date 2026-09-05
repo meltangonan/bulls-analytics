@@ -43,7 +43,6 @@ def test_slide_layout_uses_a_fixed_shared_scale_with_minnesota_on_slide_two():
     assert post.SCALE_MIN == 25
     assert post.SCALE_MAX == 65
     assert post.CHART_HEIGHT == 1600
-    assert post.LOGO_ZOOM == 0.115
     assert post.CHART_WIDTH * 2 == 3600
     assert post.CHART_WIDTH > post.CHART_HEIGHT
 

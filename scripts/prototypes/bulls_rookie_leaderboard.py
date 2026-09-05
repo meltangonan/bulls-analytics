@@ -31,6 +31,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.patches import Rectangle
 
+from bulls.graphics.craft import draw_table_cell
 from bulls.graphics.house import (
     DEFAULT_THEME,
     draw_accent_card,
@@ -350,15 +351,15 @@ def render_page(
 
         for metric, (left, right, _) in columns.items():
             if pd.isna(row[metric]):
-                ax.text((left + right) / 2, y, "—", ha="center", va="center",
-                        fontsize=VALUE_FONT_SIZE, color=theme.faint,
-                        fontproperties=regular, zorder=4)
+                draw_table_cell(
+                    ax, "—", left, right, y, rh, color=theme.faint,
+                    fontsize=VALUE_FONT_SIZE, fontproperties=regular,
+                )
                 continue
+            fill = None
             color = theme.ink
             if metric in SHADED_METRICS:
                 fill = heat_fill(shaded_value(row, metric), *COLUMN_SCALES[metric])
-                ax.add_patch(Rectangle((left, y - rh / 2), right - left, rh,
-                                       facecolor=fill, edgecolor="none", zorder=2))
                 color = heat_text_color(fill)
             value = row[metric]
             if metric == "games":
@@ -369,8 +370,10 @@ def render_page(
                 label = f"{float(value):+.1f}"
             else:
                 label = f"{float(value):.1f}"
-            ax.text((left + right) / 2, y, label, ha="center", va="center",
-                    fontsize=VALUE_FONT_SIZE, color=color, fontproperties=regular, zorder=4)
+            draw_table_cell(
+                ax, label, left, right, y, rh, fill=fill, color=color,
+                fontsize=VALUE_FONT_SIZE, fontproperties=regular,
+            )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output_path, dpi=export_dpi(final), transparent=True,

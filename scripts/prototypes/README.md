@@ -1,123 +1,71 @@
-# Prototype Mock Generators
+# Post renderers
 
-One-off scripts behind visual projects tracked in Notion. Production prototypes render
-1080x1350 PNGs into `output/` from cached or fetched data; explicitly named spikes may write
-additional comparison artifacts there. These are
-deliberately prototype-grade — promote a builder into `bulls/graphics` plus a
-`scripts/` CLI only once its format repeats.
+Find a related entry point here; read its module docstring and arguments before running it.
+Notion owns post status and history. This index maps code, not publication state.
+The scripts include live post renderers, shared preparation scripts, and older experiments;
+check imports before retiring one. Reuse shared elements in `bulls/graphics` for new work.
 
-| Script | Catalog cards |
-| --- | --- |
-| `bulls_lineup_rortg.py` | Bulls' best five-man offensive lineups since 2000-01 — fetches Chicago regular-season lineup points and offensive possessions from pbpstats for 26 seasons, qualifies exact units at 500+ possessions, subtracts each season's NBA offensive rating, orders players by functional role from PG through C, and renders the approved transparent headshot lineup board for Canva. The post-specific source extracts, league baselines, completeness audit and final top ten ship with the visual. |
-| `bulls_lineup_rdrtg.py` | Bulls' best five-man defensive lineups since 2000-01 — the defensive counterpart to `bulls_lineup_rortg.py`. Fetches Chicago regular-season lineup opponent points and defensive possessions from pbpstats for 26 seasons, qualifies exact units at 500+ possessions, subtracts each season's NBA defensive rating, reuses the paired rORTG post's fetch helpers and PG-through-C display order, and renders the approved transparent headshot lineup board for Canva. The post-specific source extracts, league baselines, completeness audit and final top ten ship with the visual. |
-| `bulls_lineup_3pt.py` | Bulls' best three-point shooting five-man lineups since 2000-01 — fetches Chicago regular-season lineup FG3M/FG3A and offensive possessions from pbpstats for 26 seasons and renders the transparent headshot lineup board for Canva. **Two thresholds, not one: 100+ offensive possessions AND 50+ three-point attempts.** A possession minimum qualifies a per-possession rate, but three-point percentage is per-attempt and a 100-possession lineup can hold very few threes (the 2001-02 median was 15), so possessions alone put 4-for-6 samples on top of the board. Heaves were checked and left in: no qualifying lineup has more than two, and the top two rows do not move without them. pbpstats sends a zero count as null, so counts are coalesced while a missing identity, time or possession field still raises. The endpoint caps a season at 500 rows sorted by time played, and the fetch audit records the smallest retained lineup so truncation can never silently drop a qualifier. Players are ordered PG through C by functional role — editorial metadata, not a pbpstats field. Othella Harrington's portrait is derived in code from a Wikimedia photograph because the NBA CDN and ESPN both serve a silhouette for him; it is a post-career coaching photo. |
-| `bench_points_leaders.py` | Bulls' biggest bench-scoring seasons since 1996-97 — pulls Chicago-only bench, starter and unsplit player totals per season and **reconciles bench + starters exactly to the unsplit season row for every player in all 30 seasons**, which is the only thing that can tell a correctly-scoped response from a mis-scoped one. Qualifies at **70% of games played off the bench**, which keeps a starter who lost his job in February off a sixth-man board — without it Ben Gordon holds three of the top ten. **NBA.com's starter/bench split begins in 1996-97 and returns an EMPTY frame, not an error, before it** (verified against 1985-86, 1990-91 and 1995-96), so the window is asserted rather than trusted; it also rules out a "since Jordan left" framing, because 1996-97 and 1997-98 are dynasty seasons. No era adjustment: the leader is from 2004-05 and the distribution is not sorted by recency, checked rather than assumed. Renders a transparent horizontal bar leaderboard with the games/per-game line reversed out inside each bar, and fails if that line outgrows the shortest bar or the headline margin stops beating the rest of the board's spread. Add `--final` for the publish-DPI asset. |
-| `three_point_leaders.py` | Bulls' most accurate three-point shooter every season since 2010-11 — pulls Chicago-only player totals, all 30 team totals and the full league player pool per season, reconciles Bulls player 3PM/3PA exactly to the team row, qualifies at **150+ 3PA**, and renders a transparent vertical timeline where each season's leader is his own portrait. **The benchmark is the 90th percentile of NBA players with 150+ 3PA that season, not the league average**: a team's best shooter beats the league mean essentially by construction (it happened in all 16 seasons), while the top-10% line is missed in 6, so the crossings carry information. The league-wide call returns one row per player with full-season totals stamped with his *last* team, so it supplies the accuracy distribution only and can never be grouped by team. Labels flip to the side of the portrait away from the benchmark, which also encodes beat-versus-missed. Takes no theme: the canvas varies per post, so the palette is stated in-module. Nate Robinson's portrait ships with the post because the NBA CDN serves only a silhouette; Mike Dunleavy takes a wider crop drawn proportionally larger so his head matches every other face. |
-| `bulls_national_tv_history.py` | Bulls national TV games by season — reads the tracked 2010–11 through 2026–27 schedule-release snapshot, validates each total against its included network components, and renders transparent vertical or horizontal bar-chart assets for Canva. The published horizontal treatment orders seasons newest first, keeps historical bars black, and highlights 2026–27 in dark red; no network call is needed because the official Bulls/NBA source files and reconciled CSVs ship with the post. |
-| `bulls_nba_2k27_rating_cards.py` | Full Bulls NBA 2K27 launch roster — reads the tracked Aug. 28 snapshot manually audited from 2KRatings.com, validates each player's OVR change against NBA 2K26 when available, and renders one transparent six-bar asset per player for Canva. Every label and value uses Helvetica Bold, and all players share one fixed red-to-green rating scale; Canva owns names, portraits, archetypes, OVR, and year-over-year indicators. |
-| `f5_lineup_table.py` | Bulls Lineup Table — ten most-used 2-man combinations with minutes and off/def/net rating; writes the validated CSV, renders one transparent Canva chart asset, and prints the data-bound page copy (needs network; add `--final` only after draft approval) |
-| `summer_league_report.py` | Summer League Report v1 + v2 — run bare to auto-resolve the latest completed Bulls SL game, then re-run with `--carousel --player …` (current v2: team front page with the 35/65 comparison-and-shot-diet panel, shooting splits, and Great Tables player table + one player-focused shot-profile slide per selection) or 1–3 `--player`/`--lens` pairs for the legacy single image (needs network; refuses in-progress games) |
-| `summer_league_sticky_stats.py` | 2026 Summer League sticky shot-profile prototype — caches all 94 California, Salt Lake City, and Las Vegas game-level box scores and shot charts, qualifies the all-player pool at 50+ minutes, reconciles shot-detail attempts to official box FGA, then renders one transparent 3PT Attempt Rate-vs-Rim Rate Canva asset for Wilson, Swain, Sellers, and Atwell and prints the authoritative data-bound Canva copy (needs network only on the first run; add `--final` for 2160×2060) |
-| `current_roster_darko_landscape.py` | Current Bulls DARKO landscape — refreshes official NBA.com roster membership and full-precision ODPM/DDPM from DARKO on the same run, saves the 16-player validated working table with unavailable rookies left missing, and renders one chart-only Canva asset (needs network; add `--final` only after draft approval) |
-| `assisted_buckets.py` | Assisted vs. unassisted buckets — joins the live official Bulls roster to each player's complete 2025-26 NBA.com scoring totals across all teams, qualifies at 100+ FGM, reconciles inferred assisted/unassisted makes to official FGM, writes the full roster audit CSV, and renders one transparent 100% stacked-bar Canva asset with portrait headshots (needs network; add `--final` only after draft approval) |
-| `clutch_table.py` | Current Bulls in the clutch — joins the live official roster to complete 2025-26 NBA.com clutch totals across all teams, qualifies at 10+ clutch appearances, validates PTS, MIN, FGM–FGA, FG%, and WIN%, and renders one transparent Basketball University-inspired table asset; FG cell color compares the printed shooting line's FG% with the weighted league clutch average (needs network; add `--final` only after draft approval) |
-| `clutch_seasons_table.py` | The most clutch Bulls seasons since 2000 — ranks Bulls player-seasons from 2000-01 to 2025-26 by clutch points scored in a Bulls uniform, shades TS% against the league clutch average of each season's own league and WIN% around .500, marks PTS with the accent card, and reconciles every team-filtered stint against the player's unfiltered season (needs network on first run; snapshots then live in the post's `data/`) |
-| `assist_duos.py` + `assist_duos_fetch.py` | Bulls assist duos — which pairs created the most baskets for one another. `assist_duos_fetch.py` caches every assisted Bulls basket since 2000–01 from `PlayByPlayV3` into the post's **tracked** `docs/visuals/<slug>/data/seasons/` (not `cache/`, which is ignored and lost one full 50-minute fetch); strictly serial, since NBA.com throttles concurrent play-by-play hard. `--reconcile` checks each season against official box-score assists *and* every passer's attributed total against his own — currently 26/26 seasons and 476/476 player-seasons exact. `assist_duos.py --mode both` renders three visual projects: `assist-duos` (best connection of every season, newest first, one slide per decade, plus a 2025–26 top-eight slide), `assist-duos-by-decade` (top ten within each decade), and `assist-duos-all-time` (top 15 since 2000 on one board). Bar length is combined assists and the colour break is the split between directions; second column is games played together, since shared minutes do not exist before 2007–08 (needs network only when a season is missing) |
-| `height_ladder_fetch.py` + `height_ladder_threshold.py` + `height_ladder_prep.py` + `height_ladder_portraits.py` + `height_ladder_cards.py` | Bulls' highest PPG at each listed height — the best single Bulls season by a player at every listed height, 5-7 to 7-5, since the 1976-77 merger. `height_ladder_fetch.py` pulls 50 season rosters plus each distinct player's career and keeps only the Chicago rows, which credits a mid-season trade to the right team; `--rebuild` regenerates the tidy CSV from the saved raw responses without refetching. **Qualification is a graceful fallback**: 41+ GP and 20+ MPG, and a height emptied by that floor falls back to the best season any Bull that height ever played, set in oblique instead of carrying an asterisk. Four rungs fall back (5-7, 5-10, 5-11, 7-5) and the footnote's word "ever" is verified against the pre-merger rosters in `data/raw_rosters_pre1976.csv`. **Colour uses fixed anchors (8/18/28 PPG), never the ladder's own min-max** — a min-max scale anchored on Jordan's 37.1 describes Jordan and drags every honest starter toward red. Both carousel slides share one canvas at an uneven 11/9 split so slide 1 ends on Jordan. Portraits for the seven players the NBA CDN has no photo for are hand-sourced and ship in the post's `data/portraits/`. ⚠️ `height_ladder_fetch.py` stores PPG and MPG unrounded: rounding to two decimals there and to one at display rounds twice, which put three of twenty published MPG figures out by 0.1 |
-| `bulls_rookie_leaderboard.py` | Which Bulls rookies did the most — the 23 rookie seasons since 2000 with 1,000+ Bulls minutes, ranked by PRA/75 (points + rebounds + assists per 75 player possessions). Slide one is the top ten, slide two the remaining thirteen, so the cut is a real slice of a stated field. Rows stretch to fill one shared canvas, so the ranked slide gets taller rows than the reference slide — hierarchy, not inconsistency. **PRA/75 is production, not quality**: it weights a point, a rebound and an assist equally and ignores efficiency, turnovers and defence, which is why Bobby Portis ranks fifth at seven points below his season's league true shooting. The caption must say "did the most", never "best" — that is the claim the rejected composite made. TS% sits beside the ranking so the gap is visible. |
-| `bulls_rookie_metric_analysis.py` + `bulls_rookie_chronological_table.py` | Bulls rookie seasons since 2000 — NBA.com's explicit Rookie filter defines the Chicago-only population; 300+ Bulls minutes leaves 46 seasons across three newest-first slides (16/17/13) on one shared canvas. Columns are GP, MPG, PTS, REB, AST, STL, BLK, TOV%, TS%, and ON/OFF, equal width, with the original draft pick as a caption under each name. Portraits are clipped at their own separator, and a portrait whose background was not actually removed becomes the league silhouette. **Colour is calibrated from 1,147 NBA rookie seasons at 300+ minutes and uses a neutral band, not a midpoint** — the five counting columns are sequential above the rookie 75th percentile, while TOV%, TS% and ON/OFF diverge with the middle half left blank; TS% and TOV% are judged against their own season, so eras are not ranked. ON/OFF is the one hand-captured column (`databallr-bulls-on-off-snapshot.csv`, reconciled in `tests/test_databallr_snapshot.py`) because NBA.com serves no on/off before 2007-08; it is blanked below 750 minutes. NBA.com's own on-court net rating stays in the working CSV as `net_rating` but is not shown — it grades the rookie's teammates as much as the rookie. The earlier composite script remains exploratory. |
-| `current_roster_hex_charts.py` | Current-roster player hex batch — refreshes official NBA.com Bulls membership, joins each player to complete 2025-26 regular-season shots across all teams, qualifies at 250+ FGA, saves a complete roster audit plus each qualifier's raw shots and relative-FG% cell table, and renders one transparent chart asset per qualifier. |
-| `current_roster_zone_charts.py` | Current-roster twelve-zone batch — the Bulls team chart first, then the same 250+ FGA roster as the hex batch. Renders `make_shot_chart.py --chart zones` for each subject (colour floor 400 team / 20 player; below-floor zones are plain grey but retain full muted data pills), compares both FG% and share of FGA with the league average, writes each subject's raw shots plus the full zone-split and rated-share audit tables, and accepts `--final` for 300-DPI assets (needs network only when a shot cache is missing). |
-| `fga_leader_zone_charts.py` | Bulls FGA leaders of the 2020s — selects each season's Chicago leader by total regular-season FGA, reconciles every Bulls-only attempt to the official total, compares twelve custom zones with that season's NBA baseline, and renders transparent large-pill charts with overall FGA, eFG%, and 3PT% summary cards. `--extras-only` builds the reproducible 2022-23 DeMar DeRozan exception: both top-two Bulls had 1,300+ FGA and finished fewer than 100 attempts apart. |
-| `bulls_season_zone_charts.py` | One Bulls season through zone shot charts — selects the top nine Chicago regular-season shooters at the visible 250+ Bulls FGA qualifier, reconciles Chicago-only shot rows to official totals, compares each player with the same-season NBA zone baseline, and renders a 10-slide-ready set of transparent large-pill chart assets. |
-| `demar_derozan_bulls_zone_charts.py` | DeMar DeRozan's three Bulls regular seasons plus an attempt-weighted Chicago-tenure total — reconciles every season to official Bulls FGA, compares each twelve-zone result with the matching season's NBA baseline, uses the universal 20-FGA player-season colour floor and a three-season 60-FGA tenure floor, and renders verified chart assets plus data-free and data-colour cover treatments. |
-| `derrick_rose_bulls_zone_charts.py` | Derrick Rose's seven played Bulls regular seasons plus an attempt-weighted Chicago-tenure total — excludes the no-appearance 2012-13 season, reconciles every included season to official PTS, GP, FGA, and FGM, compares each twelve-zone result with the matching season's NBA baseline, renders official PTS / GP as a leading PPG summary card, uses the universal 20-FGA player-season colour floor and a seven-season 140-FGA tenure floor, and records unlocated historical league attempts rather than assigning them to invented zones. |
-| `hinrich_bulls_zone_charts.py` | Kirk Hinrich's eleven Bulls regular seasons plus a pooled Chicago-tenure total and a small-multiples cover — spans a tenure broken by two seasons elsewhere (2010-11, 2011-12) and a 2015-16 split by a February trade, so every pull is scoped to `team_id=BULLS_TEAM_ID` and reconciled to official PTS, GP, FGA, and FGM before anything is drawn. Uses the universal 20-FGA season colour floor and an eleven-season 220-FGA tenure floor, drops only attempts NBA.com logged with no location at all, and renders `render_zonegrid` — all eleven seasons as bare coloured courts on one page. Reads the league baseline from the shared `cache/shot_charts` rather than copying ~115 MB of it into the post. The pooled tenure chart also ships a pill-free `-cover` twin on the same window, baseline, palette and floor. |
-| `jimmy_butler_bulls_zone_charts.py` | Jimmy Butler's Bulls regular seasons with 300+ Chicago FGA plus an attempt-weighted six-season tenure total — retains his 79-FGA rookie season in the tenure pool, reconciles official PTS, GP, FGA, and FGM, compares each twelve-zone result with the matching season's NBA baseline, and renders a PPG/FGA/eFG%/3PT% summary row with a 20-FGA season colour floor and 120-FGA tenure floor. |
-| `top_game_performances.py` | Top Bulls game performances by decade — caches NBA.com player and team game logs for 2000–01 through 2025–26, reconciles every player-game to the Bulls team score, calculates Hollinger Game Score and single-game TS%, keeps the top ten player-games in each season-defined decade, and renders three transparent table assets for Canva; regular season is the default and `--playoffs` switches the same analysis to postseason games (needs network only when a season cache is missing) |
-| `game_score_by_height.py` | Best Bulls game at every listed height since 2000 — regular-season and playoff player-games share one eligibility pool. Reuses the audited Hollinger Game Score from `top_game_performances.py` and the player-height contract from the height ladder, then renders review formats for Canva. |
-| `season_opener_performances.py` | Best Bulls season-opener performances since 2000 — selects the first Bulls regular-season team game in each season before joining all player rows, ranks the combined pool by Hollinger Game Score, writes the tracked source and audit tables, and renders the approved top-ten Canva table with FT makes–attempts instead of TS% (needs network only when tracked raw season files are missing) |
-| `regular_season_gamebook.py` | Four independent regular-season postgame experiments — Game Deciders · Game Fingerprint · Shot Quality vs. Making · Who Drove What? (deterministic rehearsal using the Jul 10 Summer League game plus frozen 2025-26 benchmarks; no live API call) |
-| `rim_vs_three_pps_landscape.py` | Rim vs. Three points per shot — one `LeagueDashPlayerShotLocations` call plus Advanced possessions produce both axes on a shared points-per-attempt scale, qualifies the league at 1500+ possessions and 75+ attempts in each zone, highlights the current NBA.com roster (not the season's team field), and renders one transparent scatter plotting the roster as `house.square_headshot_label` faces at the roster-landscape size over a uniform grey league cloud (needs network; add `--final` only after draft approval) |
-| `scoring_by_location.py` | Scoring by location — one half court, twelve shot zones, and a face in each. Two slides off the same court: `--mode efficiency` crowns the best points per shot among Bulls with 15%+ of the team's attempts in that zone, `--mode volume` crowns whoever simply shoots it most (no gate — the count is the sample); bare runs write both. Zones are classified from `loc_x`/`loc_y` by the same `zone_of` that draws the outlines, deliberately diverging from NBA's own labels, and every run prints the live agreement rate (needs network on the first run; add `--final` for 300 DPI) |
-| `mock_post_demo.py` | A design-preview harness, not a post idea. Renders a full fake post (fictional roster, no network/cache needed) through the real house pipeline so design-system changes can be judged on an actual graphic; also writes a plain-title comparison variant (`-plain.png`, `outlined=False`) |
-| `season_shape_post.py` | The Shape of the Season — the account's debut post. Cumulative games over/under .500 for 2025-26 with fan-voice annotations, the Feb 5 trade-deadline line, and Caleb Wilson at the endpoint. Built on the legacy Python full-layout system (`DESIGN.md`), kept as its reference implementation rather than as a pattern for new posts. |
-| `impactful_bulls_bpm.py` | Most impactful Bull per season — Basketball Reference BPM 2.0 for every Bulls player since 2000-01; each season's winner is the qualified rotation-sized player with the highest BPM. Renders a two-slide carousel by default, one slide per decade behind `--split decades`. Table version of the analysis. |
-| `impactful_bulls_bpm_columns.py` | The same BPM analysis as a stacked column chart — one column per season, offense (OBPM) red and defense (DBPM) black, so the *shape* of a player's impact reads at a glance instead of being compared across two number columns. Second mockup, not a replacement. |
-| `scoring_age_ladder.py` | Highest-scoring Bulls season at every age since 2000. NBA.com's season-age field as listed, regular-season Chicago-only stints, qualified at half the Bulls' games that season. Transparent chart asset; Canva owns title and framing. |
-| `assist_age_ladder.py` | Assist counterpart to `scoring_age_ladder.py` — highest-assist Bulls season at every age since 2000, same approved table layout, ranked by assists per game. |
-| `stocks_age_ladder.py` | Defensive counterpart — highest steals-plus-blocks Bulls season at every age since 2000, qualified at half the Bulls' games. Prints the STL/BLK split and games played beside the composite. Shading is the season's ratio to the NBA median for rotation regulars (yellow = league average), not a rank within the chart. |
-| `rebounds_age_ladder.py` | Rebound counterpart to `stocks_age_ladder.py` — highest-rebounding Bulls season at every age since 2000. RPG is the heat cell; supporting columns are DREB, ORB, and GP. A second renderer splits the twenty-row ladder across two ten-row pages using the compact table geometry from the height Game Score post. |
-| `rebounds_age_ladder_merger.py` | Same rebound age ladder from the 1976-77 merger onward. NBA.com's LeagueDashPlayerStats endpoint begins in 1996-97, so this variant uses captured PlayerCareerStats rows from the height ladder joined to TeamYearByYearStats for the Bulls schedule and reconciliation totals. The primary asset keeps the Stocks table grammar; the alternate uses the Game Score height-post hybrid card geometry. |
-| `bulls_rookie_composite_table.py` | Top Bulls rookie seasons by an equal-weight six-category rank (PTS, REB, AST, STL+BLK, TS%, Win Shares) across rookies since 2000-01 with 1,000+ minutes; ties take average rank, lowest mean rank wins. **Exploratory** — the composite's "best rookie" claim was rejected in favour of `bulls_rookie_leaderboard.py`'s "did the most". |
-| `bulls_rookie_landscape_scatter.py` | Every Bulls rookie season since 2000 as production against quality — PRA/75 on x so 2001 and 2026 are comparable, BPM by default on y so the axis is not just playing time. Dot area is minutes, which puts qualification on the chart instead of behind a threshold: a rookie who barely played is a small dot, not an excluded row. |
-| `current_roster_scoring_landscape.py` | Current roster scoring landscape — NBA.com supplies roster membership and complete 2025-26 totals across all teams, and the same totals produce both axes (true-shooting attempts per 100 and relative TS%) and the 250-TSA qualification. |
-| `scoring_leaps.py` | Bulls' biggest year-over-year scoring leaps since 2000 — fetches Chicago-only NBA.com player and team totals, joins consecutive qualifying seasons, and ranks the top 15 by points-per-36 gain. Both seasons must include at least half of Bulls team games and 15+ MPG, while the ending season must reach 10+ PTS/36. The script reconciles player points to team points, keeps PPG audit-only, prints the minutes-confound comparison that justifies per 36, and renders the approved one-slide arrow chart for Canva (needs network only with `--refresh`; add `--final` for the publish-DPI asset). |
-| `bulls_on_court_landscape.py` | 2025-26 on-court performance landscape — Chicago-filtered player totals and advanced ratings, the qualifying analytical table, and a transparent Sticky Stats-style scatter asset. |
-| `current_roster_hot_spots.py` | Roster hot-spot shot charts as small multiples. Faithful port of Owen Phillips' F5 method: smooth shot-location density minus the league-average density, drawn as banded filled contours plus contour outlines. Red "shoots here more than a typical NBA player" layer only by default; `--cold` adds the blue layer. |
-| `current_roster_jam_cards.py` | NBA Jam-style player cards for the current roster. Six bars per card, each the player's league percentile in a per-75-possession production rate — so a card's shape describes how a player fills a box score, not how good he is. Ported from Owen Phillips' F5 small-multiple tutorial. |
-| `zone_deep_dive.py` | Volume *and* efficiency inside a single shot zone — one slide per zone, split into sub-regions reporting attempts, FG%, and the league's FG% from the same sub-region. Sample guardrails are built in rather than bolted on. |
-| `opponent_elite_performance.py` | Which opponents the most elite Bulls player-games came against. Reuses `top_game_performances.py`'s validated loaders, maps historical opponent abbreviations onto the current 29 franchises, and counts Game Score 30+ and 30-point performances as both totals and rates. |
-| `bulls_opponent_win_percentage.py` | Bulls regular-season win percentage against every current NBA opponent since 2000-01 — groups historical abbreviations into their current franchises, requires at least 40 meetings (the actual minimum is 49), ranks all 29 teams by Chicago wins divided by meetings, and renders one continuous chart master split into ranks 1–14 and 15–29 for a connected two-page swipe. East opponents are blue and West opponents red; each bar carries its percentage and record, with a logo, black leader line, and team label. |
+Run selected checks with `./run_tests.sh <test paths> -q`. Use the primary checkout's Python in
+linked worktrees. Rendering can fetch data unless the entry point explicitly supports saved inputs;
+inspect its arguments first. `--final` on supported renderers means publish DPI.
 
-## Season cache
-
-Scripts read CSVs from `cache/` (gitignored). Rebuild them with the project venv
-(~82 rate-limited API calls, a few minutes):
-
-```python
-import pandas as pd
-from bulls.data import fetch
-
-games = fetch.get_games(season="2025-26")
-games.to_csv("cache/games_2025-26.csv", index=False)
-
-frames = []
-for gid in games["GAME_ID"].unique():
-    b = fetch.get_box_score(gid)
-    if not b.empty:
-        b["game_id"] = gid
-        frames.append(b)
-pd.concat(frames, ignore_index=True).to_csv("cache/box_scores_2025-26.csv", index=False)
-
-fetch.get_roster().to_csv("cache/roster_2025-26.csv", index=False)
-```
-
-## Run
-
-```bash
-venv/bin/python scripts/prototypes/f5_lineup_table.py
-venv/bin/python scripts/prototypes/regular_season_gamebook.py
-venv/bin/python scripts/prototypes/payroll_vs_wins.py
-```
-
-### Payroll vs wins
-
-`payroll_vs_wins.py` fetches nothing. Salary is not an NBA.com statistic and the sites that compile
-it block scripted requests, so it reads the committed snapshot
-`docs/visuals/2026-08-08-payroll-vs-wins/data/2026-08-08-bulls-payroll-vs-wins.csv`. Refresh that file once per offseason by repeating the
-browser steps in its header comments, then re-run the suite: `tests/test_payroll_vs_wins.py`
-re-checks the snapshot against facts the sources publish independently, including a regression guard
-for a 2015-16 payroll figure Spotrac still publishes wrong.
-
-### Summer League Report quick start
-
-Run `summer_league_report.py` with no arguments to resolve the latest completed Bulls Summer League
-game and print the review table. After choosing the players with the user, render the carousel with
-NBA.com spellings from that table. Carousels support up to five featured players; the first-slide
-table automatically tightens its headshots, type, and row padding at five rows so it stays clear of
-the footer:
-
-```bash
-venv/bin/python scripts/prototypes/summer_league_report.py
-venv/bin/python scripts/prototypes/summer_league_report.py --carousel \
-  --player "<Name>" [--player "<Name>" ...]
-```
-
-Use `--final` only after draft approval. The script refuses in-progress games, treats lagging shot
-and advanced feeds as unavailable, and notes that point totals reflect the 2026 one-free-throw rule
-(the rendered FG% is unaffected by it).
-On game night, NBA.com's derived feeds may not populate until morning.
-
-After keeping a visual, save its PNG with `scripts/save_visual_version.py --project <slug>` and keep
-the matching Notion page current.
+| Entry point | Purpose/family | Focused checks (paths from repo root) |
+| --- | --- | --- |
+| `assist_age_ladder.py` | Assist counterpart to `scoring_age_ladder.py` | `tests/test_assist_age_ladder.py` |
+| `assist_duos.py` | Bulls assist duos | `tests/test_assist_duos.py` |
+| `assist_duos_fetch.py` | Bulls assist duos | `tests/test_assist_duos.py` |
+| `assisted_buckets.py` | Assisted vs. unassisted buckets | `tests/test_assisted_buckets.py` |
+| `bench_points_leaders.py` | Bulls' biggest bench-scoring seasons since 1996-97 | `tests/test_bench_points_leaders.py` |
+| `bulls_lineup_3pt.py` | Bulls' best three-point shooting five-man lineups since 2000-01 | Use the consuming family checks |
+| `bulls_lineup_rdrtg.py` | Bulls' best five-man defensive lineups since 2000-01 | `tests/test_bulls_lineup_rdrtg.py` |
+| `bulls_lineup_rortg.py` | Bulls' best five-man offensive lineups since 2000-01 | `tests/test_bulls_lineup_rortg.py` |
+| `bulls_national_tv_history.py` | Bulls national TV games by season | `tests/test_bulls_national_tv_history.py` |
+| `bulls_nba_2k27_rating_cards.py` | Full Bulls NBA 2K27 launch roster | `tests/test_bulls_nba_2k27_rating_cards.py` |
+| `bulls_on_court_landscape.py` | 2025-26 on-court performance landscape | Use the consuming family checks |
+| `bulls_opponent_win_percentage.py` | Bulls regular-season win percentage against every current NBA opponent since 2000-01 | `tests/test_bulls_opponent_win_percentage.py` |
+| `bulls_rookie_chronological_table.py` | Bulls rookie seasons since 2000 | `tests/test_databallr_snapshot.py`, `tests/test_bulls_rookie_chronological_table.py` |
+| `bulls_rookie_composite_table.py` | Top Bulls rookie seasons by an equal-weight six-category rank (PTS, REB, AST, STL+BLK, TS%, Win Shares) across r… | `tests/test_bulls_rookie_composite_table.py` |
+| `bulls_rookie_landscape_scatter.py` | Every Bulls rookie season since 2000 as production against quality | `tests/test_bulls_rookie_landscape_scatter.py` |
+| `bulls_rookie_leaderboard.py` | Which Bulls rookies did the most | `tests/test_bulls_rookie_leaderboard.py` |
+| `bulls_rookie_metric_analysis.py` | Bulls rookie seasons since 2000 | `tests/test_databallr_snapshot.py`, `tests/test_bulls_rookie_metric_analysis.py` |
+| `bulls_season_zone_charts.py` | One Bulls season through zone shot charts | `tests/test_2010_11_mvp_rose_zone_charts.py`, `tests/test_bulls_season_zone_charts.py` |
+| `clutch_seasons_table.py` | The most clutch Bulls seasons since 2000 | `tests/test_clutch_seasons_table.py` |
+| `clutch_table.py` | Current Bulls in the clutch | `tests/test_clutch_table.py`, `tests/test_scoring_age_ladder.py` |
+| `current_roster_darko_landscape.py` | Current Bulls DARKO landscape | `tests/test_current_roster_darko_landscape.py` |
+| `current_roster_hex_charts.py` | Current-roster player hex batch | `tests/test_current_roster_hex_charts.py` |
+| `current_roster_hot_spots.py` | Roster hot-spot shot charts as small multiples. Faithful port of Owen Phillips' F5 method: smooth shot-location … | `tests/test_current_roster_hot_spots.py` |
+| `current_roster_jam_cards.py` | NBA Jam-style player cards for the current roster. Six bars per card, each the player's league percentile in a p… | `tests/test_current_roster_jam_cards.py` |
+| `current_roster_scoring_landscape.py` | Current roster scoring landscape | `tests/test_current_roster_scoring_landscape.py` |
+| `current_roster_zone_charts.py` | Current-roster twelve-zone batch | Use the consuming family checks |
+| `demar_derozan_bulls_zone_charts.py` | DeMar DeRozan's three Bulls regular seasons plus an attempt-weighted Chicago-tenure total | `tests/test_demar_derozan_bulls_zone_charts.py` |
+| `derrick_rose_bulls_zone_charts.py` | Derrick Rose's seven played Bulls regular seasons plus an attempt-weighted Chicago-tenure total | `tests/test_derrick_rose_bulls_zone_charts.py`, `tests/test_player_season_totals.py` |
+| `f5_lineup_table.py` | Bulls Lineup Table | `tests/test_f5_lineup_table.py` |
+| `fga_leader_zone_charts.py` | Bulls FGA leaders of the 2020s | `tests/test_fga_leader_zone_charts.py` |
+| `game_score_by_height.py` | Best Bulls game at every listed height since 2000 | `tests/test_game_score_by_height.py` |
+| `height_ladder_cards.py` | Bulls' highest PPG at each listed height | Use the consuming family checks |
+| `height_ladder_fetch.py` | Bulls' highest PPG at each listed height | Use the consuming family checks |
+| `height_ladder_portraits.py` | Bulls' highest PPG at each listed height | Use the consuming family checks |
+| `height_ladder_prep.py` | Bulls' highest PPG at each listed height | Use the consuming family checks |
+| `height_ladder_threshold.py` | Bulls' highest PPG at each listed height | Use the consuming family checks |
+| `hinrich_bulls_zone_charts.py` | Kirk Hinrich's eleven Bulls regular seasons plus a pooled Chicago-tenure total and a small-multiples cover | `tests/test_hinrich_bulls_zone_charts.py`, `tests/test_player_season_totals.py` |
+| `impactful_bulls_bpm.py` | Most impactful Bull per season | `tests/test_impactful_bulls_bpm.py` |
+| `impactful_bulls_bpm_columns.py` | The same BPM analysis as a stacked column chart | Use the consuming family checks |
+| `jimmy_butler_bulls_zone_charts.py` | Jimmy Butler's Bulls regular seasons with 300+ Chicago FGA plus an attempt-weighted six-season tenure total | `tests/test_jimmy_butler_bulls_zone_charts.py`, `tests/test_player_season_totals.py` |
+| `mock_post_demo.py` | A design-preview harness, not a post idea. Renders a full fake post (fictional roster, no network/cache needed) … | Use the consuming family checks |
+| `opponent_elite_performance.py` | Which opponents the most elite Bulls player-games came against. Reuses `top_game_performances.py`'s validated lo… | `tests/test_opponent_elite_performance.py` |
+| `payroll_vs_wins.py` | Build the Bulls payroll-share vs win-percentage chart asset for Canva. | `tests/test_payroll_vs_wins.py` |
+| `rebounds_age_ladder.py` | Rebound counterpart to `stocks_age_ladder.py` | `tests/test_rebounds_age_ladder.py` |
+| `rebounds_age_ladder_merger.py` | Same rebound age ladder from the 1976-77 merger onward. NBA.com's LeagueDashPlayerStats endpoint begins in 1996-… | `tests/test_rebounds_age_ladder_merger.py` |
+| `regular_season_gamebook.py` | Four independent regular-season postgame experiments | `tests/test_regular_season_gamebook.py` |
+| `rim_vs_three_pps_landscape.py` | Rim vs. Three points per shot | `tests/test_rim_vs_three_pps_landscape.py` |
+| `scoring_age_ladder.py` | Highest-scoring Bulls season at every age since 2000. NBA.com's season-age field as listed, regular-season Chica… | `tests/test_stocks_age_ladder.py`, `tests/test_scoring_age_ladder.py`, `tests/test_assist_age_ladder.py` |
+| `scoring_by_location.py` | Scoring by location | `tests/test_scoring_by_location.py` |
+| `scoring_leaps.py` | Bulls' biggest year-over-year scoring leaps since 2000 | `tests/test_scoring_leaps.py` |
+| `season_opener_performances.py` | Best Bulls season-opener performances since 2000 | `tests/test_season_opener_performances.py` |
+| `season_shape_post.py` | The Shape of the Season | Use the consuming family checks |
+| `stocks_age_ladder.py` | Defensive counterpart | `tests/test_stocks_age_ladder.py` |
+| `summer_league_report.py` | Summer League Report v1 + v2 | `tests/test_summer_league_report.py` |
+| `summer_league_sticky_stats.py` | 2026 Summer League sticky shot-profile prototype | `tests/test_summer_league_sticky_stats.py` |
+| `three_point_leaders.py` | Bulls' most accurate three-point shooter every season since 2010-11 | `tests/test_three_point_leaders.py` |
+| `top_game_performances.py` | Top Bulls game performances by decade | `tests/test_bulls_rookie_leaderboard.py`, `tests/test_top_game_performances.py` |
+| `zone_deep_dive.py` | Volume *and* efficiency inside a single shot zone | Use the consuming family checks |

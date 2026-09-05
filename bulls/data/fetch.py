@@ -900,3 +900,35 @@ def get_current_roster(team_id: int = BULLS_TEAM_ID) -> pd.DataFrame:
     )
     response.raise_for_status()
     return parse_nba_roster(response.text)
+
+
+def get_player_season_totals(
+    player_id: int,
+    season: str,
+    *,
+    team_id: int,
+    columns: tuple[str, ...],
+    player_name: str,
+) -> pd.Series:
+    """Return one player's team-scoped regular-season totals, with schema checks.
+
+    A traded player's TEAM_ABBREVIATION may name his final team even though the
+    requested team_id correctly scopes the counts. Select by player ID, never
+    reject a valid stint by its display abbreviation. Callers own caching and
+    reconcile these independent box totals to their shot records.
+    """
+    table = leaguedashplayerstats.LeagueDashPlayerStats(
+        season=season,
+        season_type_all_star="Regular Season",
+        team_id_nullable=team_id,
+        per_mode_detailed="Totals",
+        timeout=60,
+        headers=_NBA_HEADERS,
+    ).get_data_frames()[0]
+    missing = set(columns) - set(table.columns)
+    if missing:
+        raise ValueError(f"{season} totals missing: {', '.join(sorted(missing))}")
+    player = table[table.PLAYER_ID.astype(int).eq(player_id)]
+    if len(player) != 1:
+        raise ValueError(f"expected one {player_name} row for {season}, found {len(player)}")
+    return player.loc[:, columns].iloc[0]

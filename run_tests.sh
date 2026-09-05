@@ -21,4 +21,4 @@ fi
 
 cd "$repo_dir"
 PYTHONPATH="$repo_dir${PYTHONPATH:+:$PYTHONPATH}" \
-    "$python_path" -m pytest tests/ -v "$@"
+    "$python_path" -m pytest "$@"

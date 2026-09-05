@@ -293,7 +293,7 @@ class TestRender:
         assert render_chart(build_leaders(table), "2026-09-03").is_file()
 
     def test_the_post_carries_the_portraits_it_renders(self):
-        """NBA's CDN serves only a silhouette for these two (DESIGN.md §5)."""
+        """NBA's CDN serves only a silhouette for these two (docs/design/tables-cards.md (Portraits))."""
         import scripts.prototypes.bench_points_leaders as module
 
         for player_id, who in ((101126, "Nate Robinson"), (2033, "Marcus Fizer")):
@@ -305,15 +305,23 @@ class TestRender:
             "Hand-sourced portraits must carry their provenance."
         )
 
-    def test_a_wide_portrait_is_not_clipped_to_a_square(self):
-        """Coby White's hair is wider than the square window would allow."""
+    def test_a_wide_portrait_is_not_clipped_to_a_square(self, tmp_path):
+        """Wide opaque content survives the crop with its aspect ratio intact."""
         import scripts.prototypes.bench_points_leaders as module
 
-        image = plt.imread(module.portrait_path(1629632))
-        band = image[: int(image.shape[0] * module.HEADSHOT_CROP_FRACTION)]
-        columns = np.where(band[..., 3].max(axis=0) > 0.04)[0]
-        content = int(columns.max() - columns.min())
-        square = int(image.shape[0] * module.HEADSHOT_CROP_FRACTION)
-        assert content > square, (
-            "This test only means something while his content overflows the square."
-        )
+        image = np.zeros((100, 180, 4), dtype=np.uint8)
+        image[:60, 10:170] = (255, 0, 0, 255)
+        source = tmp_path / "wide.png"
+        Image.fromarray(image).save(source)
+        fig, ax = plt.subplots()
+        try:
+            artist = module.portrait_label(ax, source, 200, 100, 30, crop=0.6)
+            shown = artist.get_array()
+            assert np.count_nonzero(shown[..., 3] > 0.04) == 60 * 160
+            left, right, bottom, top = artist.get_extent()
+            assert right - left > top - bottom
+            assert (right - left) / (top - bottom) == pytest.approx(
+                shown.shape[1] / shown.shape[0]
+            )
+        finally:
+            plt.close(fig)

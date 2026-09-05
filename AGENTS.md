@@ -1,118 +1,62 @@
 # Working Guide
 
-Bulls analysis and social-graphics production for `@chicagobullsdata`. **Posts are assembled in
-Canva**; Python owns the analysis and produces the verified chart assets that go into the page.
-Canva is a layout surface, never an analytical source — this repo stays the editor of record for
-metrics, qualifications, sources, and the verified chart assets.
+Python verifies the data and renders chart assets for `@chicagobullsdata`; Canva assembles the page.
+Notion owns editorial direction, ideas, briefs, post status, and publishing history.
 
-## Read the Right Document
+## Load only what the task needs
 
-| Working on… | Read… |
+Use guidance already in the conversation; don't reread it on every turn. Search the relevant
+section or function before opening a whole file. A caption edit doesn't need graphics code;
+a chart adjustment doesn't need the full post history.
+
+| Task | Starting point |
 | --- | --- |
-| Audience, editorial direction, metrics, distribution | `STRATEGY.md` |
-| Any visual, mock, or post iteration | `DESIGN.md`, then `POSTING_WORKFLOW.md` |
-| Analytical scope and fairness guardrails | `POSTING_WORKFLOW.md` |
-| Caption voice, hashtags, what a post says | `POSTING_WORKFLOW.md` |
-| The shelf of post ideas and post log | the Notion `chicagobullsdata posts` database |
-| A create / promote / review stage | the matching skill in `.agents/skills/` |
-| Fetchers, analysis, graphics code, scripts, tests | `DEVELOPMENT.md` |
+| Choose an idea, editorial direction, captions, performance | [Notion editorial direction](https://www.notion.so/3d2e1c13abe681e586b4c44762261fab) and the relevant post |
+| Build or adjust a chart | `DESIGN.md`, then only the matching family reference/helper |
+| Build, approve, or record a post | `POSTING_WORKFLOW.md` or the matching create/promote/review skill |
+| Change Python or run checks | `DEVELOPMENT.md`; endpoint references only for the data being used |
+| Find an existing renderer | `scripts/prototypes/README.md` |
+| Create, integrate, or remove a worktree | `docs/reference/worktrees.md` |
 
-## Defaults
+## Working defaults
 
-1. One post idea per task and working tree. Favor analysis quality over presentation polish, and
-   keep solutions simple — no speculative architecture, heavy export pipelines, or new frameworks
-   unless asked.
-2. Python builds the chart, Canva builds the page. Don't add titles, headers, or page furniture to a
-   chart asset; don't recompute anything in Canva. The Python full-layout system is legacy
-   (`DESIGN.md`) — maintain it, don't build new posts on it.
-3. Applicable thresholds, coverage windows, and sources stay visible on every data-bearing graphic.
-   The user usually adds them manually in Canva.
-4. **Promote every render you show the user; prune before the commit.** Renders go to `output/` —
-   scratch, gitignored, disposable. The moment a render goes to the user, promote it into
-   `docs/visuals/YYYY-MM-DD-<slug>/assets/`. The trigger is the act of showing, not a judgment about
-   whether the render mattered — **whether something was "only an adjustment" is settled by what
-   replaces it, so it cannot be known when the render is made.** A rule that asks for that judgment
-   up front fails silently, and did.
-   Classify in hindsight instead. Before the post's single commit, delete the promoted versions that
-   turned out to be adjustments — moved, resized, recolored, re-cropped. Keep every version that
-   carries a *decision* — a different metric, cohort, threshold, chart type, sort or claim — and
-   every version the user approved. Promote at publish DPI.
-   **When in doubt, keep** — a spare version costs 300 KB, a missing one loses the only copy.
-   **Saving is continuous; committing is not.** One post is one commit, made at the end once the
-   final graphic is settled, then pushed. Never commit a post's work in pieces — thirty iterations
-   are one piece of work, not thirty. Promoted files sit uncommitted in the worktree until then,
-   which is safe: `git worktree remove` refuses a dirty or untracked worktree, and
-   `scripts/check_worktrees.sh` reports what is unsaved before anything is removed.
-   The numbers behind the render go in `data/`. Save with `scripts/save_visual_version.py`
-   (`--data`). The repo does not archive the composed Canva page: Canva holds the editable design,
-   Instagram holds the published post, and the publish-DPI chart is already in `assets/`. QA still
-   works from a real export — download it, check it, don't file it.
-   **A graphic's data ships with the graphic.** Scope decides where a dataset lives: a dataset with
-   exactly one consuming post belongs in that post's `data/` from the start, whether or not it was
-   expensive to fetch, because that is what makes the numbers auditable later without refetching.
-   Only genuinely shared material stays in ignored `cache/` — portraits, the licensed font
-   extraction, the league shot baseline, season game logs.
-   `scripts/save_visual_version.py` and `bulls/visuals.py` own the full rules and the reasons;
-   `tests/test_data_locations.py` enforces the data half.
-5. After completing and verifying work, show the user the result and wait for explicit approval
-   before committing or pushing. Approval covers the work under review, not later work.
-6. Any post task that changes repo files automatically gets a temporary branch and linked worktree;
-   the user does not need to request it or report parallel work. Keep the primary checkout on `main`
-   at all times — never switch it to a post branch. Follow `DEVELOPMENT.md` for the fixed worktree
-   location, shared environment, integration, and safe cleanup. Preserve and report any dirty or
-   unmerged worktree; remove only work already represented on `main`.
+- Reuse settled chart formats and shared table, card, and portrait helpers. Keep calculations and
+  qualification in Python; never recompute them in Canva. Extract repeated operations after real
+  consumers exist, without inventing a universal post framework.
+- Verify source coverage, units, scope, and qualifications. Missing/unavailable data is not zero.
+  Preserve source snapshots and the trail from raw rows to the published figure.
+- Save each render before showing it with `scripts/save_visual_version.py --project <slug> <files>`.
+  Before committing, prune superseded cosmetic adjustments; retain decision-bearing versions and
+  approved publish-resolution assets. Post-specific data belongs in that post's tracked `data/`.
+- Run checks matched to the change using `DEVELOPMENT.md`. Repeat or broaden only after relevant
+  changes, failures, or unresolved concerns. Finish requested adjustments; stop proposing polish
+  once the brief is satisfied.
+- Use a worktree for a post, substantial shared-code changes, or concurrent work. Small maintenance
+  may use a clean primary `main` when no other task is editing it. Never switch primary `main` to a
+  task branch. One logical post or cleanup is one reviewed commit; commit/push need explicit approval.
+- Preserve dirty worktrees, unique scratch, and unmerged work. Remove only reviewed, integrated work;
+  consult `docs/reference/worktrees.md` at closeout.
+- Use bounded sub-agents when independent work can progress alongside useful local work: source
+  audits, separate code areas, or an independent review. Assign file ownership and ask for compact
+  findings with evidence. Routine edits stay local; don't delegate merely to add reviewers.
 
-## Notion
+## Notion and external actions
 
-The user's Notion `chicagobullsdata posts` database is the live idea catalog and post log — one page
-per post, `Status` moving `Not started → In progress → Mocked → Posted`, and a `Canva` URL property
-holding the design's edit link. Read it when picking up or scoping an idea, and check it before
-assuming a post's state. The page body carries the working detail — what the chart shows, thresholds,
-what was rejected and why, build notes — so record those there as work lands, and keep the Canva link
-in the property rather than as a bookmark block.
+The [posts database](https://www.notion.so/3a6e1c13abe6809ab16bfe33edb233cf) is the live catalog.
+Read the matching record when starting/resuming a post or checking its state, not on every adjustment.
+Keep working details and provenance there as decisions land; store the Canva edit link in `Canva`.
+`POSTING_WORKFLOW.md` defines the status transitions and publication check.
 
-**Every data-bearing post page also carries a data provenance section, written without being asked.**
-Findings age well; the trail back to them does not. Record where the numbers came from and how a raw
-record becomes the published figure — endpoint and exact call parameters, what one raw row is, units
-and coordinate systems, which fields are derived rather than measured, what the source structurally
-cannot contain, and one worked example tracing a single record end to end. `DEVELOPMENT.md` defines
-what the section must answer. The user should never have to ask for it, and should never have to
-re-derive it to answer "where did this come from?" months later. Notion owns the idea, working brief,
-status, and post history; the repository owns code, verified artifacts, and durable system rules.
+Instagram and X are read-only without explicit per-action approval for posting, commenting,
+liking, following, messaging, or settings. The in-app browser may already be signed into
+`@chicagobullsdata` and `@bullsdata`; verify live state rather than assuming it.
 
-## Instagram and X Access
+## Maintain one owner
 
-Read-only on both platforms: never post, comment, like, follow, or change settings without explicit
-per-action approval.
+Update the owner of a changed rule, replacing stale guidance instead of appending an incident log.
+Notion owns strategy, voice, ideas and post-specific lessons; the repo owns code, reproducibility,
+chart contracts and execution. Record explicit user preferences there; inferred lessons remain
+hypotheses until confirmed. Keep supporting references conditional, and preserve useful contrary evidence.
 
-The user is logged into `@chicagobullsdata` (Instagram) and `@bullsdata` (X) in the runtime's in-app
-browser, falling back to Chrome. X follows a curated set of basketball data/analytics accounts and is
-the better surface for narratives and beat-reporter news (K.C. Johnson, `@chicagobulls`). Useful
-Instagram references: the grid, the saved `Basketball` collection, Basketball University, Kirk
-Goldsberry, WNBA Viz Wiz, datakabas. Treat live state as best-effort and session-specific, and verify
-any fact independently before it reaches a caption or a graphic.
-
-## Documentation Ownership
-
-Update the document that owns a changed decision. Revise stale guidance instead of appending history.
-This is part of completing the work, not a separate request.
-
-**Design ownership is split.** Canva's Brand Kit owns post typography and page layout — that's
-upstream of this repo, so record changes in `DESIGN.md` rather than trying to reproduce them in
-Python. `DESIGN.md` owns the chart layer — how a chart looks — and a chart-layer change must land in
-`DESIGN.md` and `bulls/graphics/house.py` together. It does not own what a post *says*: caption
-voice and hashtags live in `POSTING_WORKFLOW.md`, and the analytical reasoning behind the shot-chart
-family lives in `DEVELOPMENT.md` under Chart Family Notes. `tests/test_design_tokens.py` catches color drift only.
-The legacy full-layout HTML design-system companion has been retired; `DESIGN.md` and
-`bulls/graphics/house.py` retain only the code and rules needed to maintain older renderers.
-
-Record an explicitly stated user preference as a durable rule immediately. Keep a conclusion inferred
-from results as a hypothesis until the user confirms it or repeated evidence supports it.
-
-`docs/handoffs/` holds temporary transfer notes marked `ACTIVE` or `CLOSED`. When work closes, move
-anything reusable into its owner document and compact the handoff to its outcome.
-
-## Cross-Tool Skills
-
-Canonical skills live in `.agents/skills/<name>/SKILL.md`. `.claude/skills/<name>/SKILL.md` is a
-relative symlink to it — never a copy. Update both paths when adding, renaming, or removing one.
+Canonical skills are `.agents/skills/<name>/SKILL.md`; `.claude/skills/<name>/SKILL.md` is a one-way
+relative symlink. Keep both discovery paths valid. Closed handoffs contain only outcomes and pointers.

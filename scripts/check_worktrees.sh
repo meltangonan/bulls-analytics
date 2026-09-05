@@ -1,82 +1,78 @@
 #!/usr/bin/env bash
-# Report what is unsaved in each post worktree. Read-only: this script never
-# removes, stashes, or modifies anything.
-#
-# "Is the branch merged?" and "is the work done?" are different questions. A
-# merged branch means the *code* landed; it says nothing about renders sitting in
-# ignored output/ or a cache/ that took fifty minutes to fetch. Both have been
-# destroyed by a cleanup that asked only the first question. This asks the second.
+# Read-only inventory. A clean or merged tree is not permission to delete it.
 set -euo pipefail
+python3 - "$(dirname "${BASH_SOURCE[0]}")" <<'PY'
+from pathlib import Path
+import subprocess
+import sys
 
-ROOT="$(git -C "$(dirname "${BASH_SOURCE[0]}")" rev-parse --show-toplevel)"
-WORKTREES="$(dirname "$ROOT")/$(basename "$ROOT")-worktrees"
 
-if [ ! -d "$WORKTREES" ]; then
-    echo "No worktree directory at $WORKTREES — nothing to check."
-    exit 0
-fi
+def git(path, *args):
+    return subprocess.run(
+        ["git", "-C", str(path), *args], capture_output=True, text=True, check=True
+    ).stdout.strip()
 
-printf '%-40s %6s %8s %6s %6s  %s\n' "WORKTREE" "EDITS" "RENDERS" "SAVED" "CACHE" "STATUS"
-printf '%s\n' "$(printf '%.0s-' {1..104})"
 
-removable=0
-unsaved_renders=()
-for w in "$WORKTREES"/*/; do
-    [ -d "$w" ] || continue
-    name="$(basename "$w")"
+common = Path(git(sys.argv[1], "rev-parse", "--path-format=absolute", "--git-common-dir"))
+primary = common.parent
+siblings = primary.parent / f"{primary.name}-worktrees"
+# -z preserves spaces, newlines, and other characters in registered paths.
+records = {}
+record = None
+for field in git(primary, "worktree", "list", "--porcelain", "-z").split("\0"):
+    if field.startswith("worktree "):
+        path = Path(field[9:])
+        record = records.setdefault(path, {})
+    elif field and record is not None:
+        key, _, value = field.partition(" ")
+        record[key] = value
+if siblings.is_dir():
+    for path in siblings.iterdir():
+        if path.is_dir():
+            records.setdefault(path, {"orphan": ""})
+records.pop(primary, None)
 
-    edits="$( { git -C "$w" status --porcelain 2>/dev/null || true; } | wc -l | tr -d ' ')"
-    # ⚠️ `set -euo pipefail` is on, so a `find` over a directory that does not
-    # exist fails the whole pipeline and kills the run. A worktree with no
-    # output/ or no docs/visuals/ is normal, not an error — count it as zero.
-    renders="$( { find "$w/output" -type f ! -name '.gitkeep' 2>/dev/null || true; } | wc -l | tr -d ' ')"
-    # Renders in output/ with nothing in assets/ means nothing was ever saved.
-    # Every render shown to the user should already be here (AGENTS.md default 4).
-    saved="$( { find "$w/docs/visuals" -path '*/assets/*' -type f 2>/dev/null || true; } | wc -l | tr -d ' ')"
-    cache="$(du -sh "$w/cache" 2>/dev/null | cut -f1 || echo '-')"
-    branch="$(git -C "$w" rev-parse --abbrev-ref HEAD 2>/dev/null || echo '?')"
 
-    if git -C "$ROOT" merge-base --is-ancestor "$branch" main 2>/dev/null; then
-        merged="merged"
-    else
-        merged="unmerged"
-    fi
+def file_count(path):
+    if not path.is_dir():
+        return 0
+    return sum(p.is_file() and p.name != ".gitkeep" for p in path.rglob("*"))
 
-    if [ "$edits" -gt 0 ] || [ "$renders" -gt 0 ]; then
-        status="LIVE — unsaved work, leave alone"
-    elif [ "$merged" = "unmerged" ]; then
-        status="LIVE — branch has commits main lacks"
-    else
-        status="safe to remove (branch $branch is merged, nothing unsaved)"
-        removable=$((removable + 1))
-    fi
 
-    if [ "$renders" -gt 0 ] && [ "$saved" -eq 0 ]; then
-        unsaved_renders+=("$name")
-    fi
-
-    printf '%-40s %6s %8s %6s %6s  %s\n' \
-        "$name" "$edits" "$renders" "$saved" "${cache:--}" "$status"
-done
-
-echo
-if [ ${#unsaved_renders[@]} -gt 0 ]; then
-    echo "⚠️  Renders in output/ but nothing in assets/: ${unsaved_renders[*]}"
-    echo "    output/ overwrites on every re-run, so an unsaved render is one run from gone."
-    echo "    Save with scripts/save_visual_version.py --project <slug>, then prune at commit."
-    echo
-fi
-if [ "$removable" -eq 0 ]; then
-    echo "Nothing is safe to remove. Every worktree holds unsaved work or unmerged commits."
-else
-    echo "$removable worktree(s) look removable."
-fi
-cat <<'NOTE'
-
-Before removing any worktree, regardless of what this says:
-  - save anything in output/ the user has seen (scripts/save_visual_version.py); prune the
-    adjustments before the post's commit, not before the render is safe
-  - copy cache/ back to the primary checkout if the fetch was expensive
-  - `git worktree remove <path>` first; it refuses when scratch is present, which is a
-    warning worth reading rather than a reason to reach for `rm -rf`
-NOTE
+print("WORKTREE\tEDITS\tOUTPUT FILES\tCACHE FILES\tSTATUS")
+for path, metadata in sorted(records.items()):
+    if not path.exists():
+        state = "PRUNABLE" if "prunable" in metadata else "MISSING"
+        print(f"{path}\t-\t-\t-\t{state} — registered path is absent; inspect metadata")
+        continue
+    output_count = file_count(path / "output")
+    cache_count = file_count(path / "cache")
+    if "orphan" in metadata:
+        print(f"{path}\t?\t{output_count}\t{cache_count}\tORPHAN — unregistered sibling directory; inspect contents")
+        continue
+    try:
+        edits = len(git(path, "status", "--porcelain").splitlines())
+        head = git(path, "rev-parse", "HEAD")
+        merged = subprocess.run(
+            ["git", "-C", str(primary), "merge-base", "--is-ancestor", head, "refs/heads/main"],
+            capture_output=True,
+        ).returncode == 0
+    except subprocess.CalledProcessError:
+        print(f"{path}\t?\t{output_count}\t{cache_count}\tUNKNOWN — Git inspection failed")
+        continue
+    label = "detached HEAD" if "detached" in metadata else metadata.get("branch", "unknown branch")
+    if edits or output_count or cache_count:
+        status = "LIVE — edits, output, or cached data require review"
+    elif not merged:
+        status = "LIVE — HEAD not confirmed contained in main"
+    else:
+        status = "REVIEW — clean tracked tree, HEAD contained in main"
+    if "locked" in metadata:
+        status += "; worktree is locked"
+    print(f"{path}\t{edits}\t{output_count}\t{cache_count}\t{status} ({label})")
+if not records:
+    print("No linked worktrees or orphan sibling directories found.")
+print("\nThis inventory does not establish that a worktree is safe to remove.")
+print("Review ignored files, preserve shown renders and post data, and compare cache contents before cleanup.")
+print("Historical assets are not evidence that the current post was saved. Use git worktree remove only after review.")
+PY

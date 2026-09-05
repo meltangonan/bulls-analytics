@@ -33,6 +33,7 @@ from nba_api.stats.endpoints import commonplayerinfo
 from PIL import Image
 
 from bulls.data import fetch
+from bulls.graphics.craft import draw_table_cell
 from bulls.graphics.house import (
     DEFAULT_THEME,
     HEAT_GREEN,
@@ -716,21 +717,17 @@ def render_page(
                     linewidth=0.9, zorder=3)
 
         for metric, (left, right, _) in columns.items():
+            fill = None
             text_color = theme.ink
             if pd.isna(row[metric]):
                 # Too small a sample to say anything. Say nothing.
-                ax.text((left + right) / 2, y, "—", ha="center", va="center",
-                        fontsize=VALUE_FONT_SIZE, color=theme.faint,
-                        fontproperties=body_font, zorder=4)
+                draw_table_cell(
+                    ax, "—", left, right, y, ROW_HEIGHT, color=theme.faint,
+                    fontsize=VALUE_FONT_SIZE, fontproperties=body_font,
+                )
                 continue
             if metric in SHADED_METRICS:
                 fill = heat_fill(shaded_value(row, metric), *scales[metric])
-                ax.add_patch(
-                    Rectangle(
-                        (left, y - ROW_HEIGHT / 2), right - left, ROW_HEIGHT,
-                        facecolor=fill, edgecolor="none", zorder=2,
-                    )
-                )
                 text_color = heat_text_color(fill)
 
             value = row[metric]
@@ -742,9 +739,10 @@ def render_page(
                 label = f"{float(value):+.1f}"
             else:
                 label = f"{float(value):.1f}"
-            ax.text((left + right) / 2, y, label, ha="center", va="center",
-                    fontsize=VALUE_FONT_SIZE, color=text_color,
-                    fontproperties=body_font, zorder=4)
+            draw_table_cell(
+                ax, label, left, right, y, ROW_HEIGHT, fill=fill, color=text_color,
+                fontsize=VALUE_FONT_SIZE, fontproperties=body_font,
+            )
 
         # Draw the player last so the overlapping portraits sit above the rules.
         _draw_player(ax, row, y)

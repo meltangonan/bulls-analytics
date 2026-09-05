@@ -1,164 +1,71 @@
-# Posting Workflow
+# Posting workflow
 
-How a Bulls analysis becomes an Instagram post. `STRATEGY.md` owns what's worth posting;
-`DESIGN.md` owns how it looks and sounds; this document owns the production and fairness checks.
+[Notion editorial direction](https://www.notion.so/3d2e1c13abe681e586b4c44762261fab) owns what the
+account says and who it serves. This file owns production, fairness and completion.
 
-## The Brief
+## Start or resume
 
-Before building, the brief needs a state for each area below — answered by the user, inferred from
-the Notion page or conversation, filled with a stated default, or explicitly deferred as
-not-yet-relevant. Then restate it and let the user correct it.
+Read the matching Notion post and use the settled conversation. Resolve only missing decisions:
+basketball question, scope, comparison, evidence/qualification, visual form, and deliverable.
+State reasonable defaults; ask only when the answer materially changes the result. Default to a
+1080×1350 feed page. Do not repeat the brief for an already-scoped adjustment.
 
-1. **Objective** — the basketball question and why a Bulls fan should care.
-2. **Analytical scope** — team or player, timeframe, metrics, filters, sample.
-3. **Comparison logic** — the baseline, peers, eras, or before/after framing that gives the number
-   meaning. A number without a comparison is not a post.
-4. **Evidence and qualifications** — sources, thresholds, uncertainty, and what the data can
-   actually support.
-5. **Visual communication** — chart form, information hierarchy, annotations, and what the Canva
-   page needs to say around the chart (title, subtitle, footnotes).
-6. **Deliverable** — feed or carousel, and what counts as an approved draft.
+Choose an existing chart family from `DESIGN.md` and `scripts/prototypes/README.md`. One selected
+idea gets one working post; loose brainstorming does not trigger fetching, artifacts, or Notion writes.
 
-Default to a 1080×1350 feed page when nothing else is implied.
+## Data and chart
 
-## Data & Fairness Guardrails
+Python owns calculations, selection, labels, and chart assets. Canva owns the page and its framing.
+Keep the coverage window, qualification and source visible on each data-bearing composed page.
+Use era, opportunity, pace or league context when the comparison needs it. Financial comparisons
+need same-season/cap-share context; composite metrics need honest component definitions.
 
-- **Name the coverage window.** Say “since 2000” or “shot-location era” when the source does not
-  cover full franchise history.
-- **Adjust when eras distort the comparison.** Use pace, league efficiency, role, or opportunity
-  context when raw totals would reward the environment more than the player.
-- **Normalize financial comparisons.** Prefer salary-cap share, payroll share, or same-season
-  context over nominal dollars across decades.
-- **Show the qualification rule.** Keep minimum games, minutes, possessions, attempts, or seasons
-  visible on the graphic.
-- **Expose important metric components.** A named composite can help, but readers should see its
-  inputs and not mistake editorial weighting for objective truth.
-- **Keep sources and dates attached.** Posts should remain auditable after the season changes and
-  the graphic recirculates.
+Verify every printed factual claim, including dates and roster membership. A source's structural
+limits constrain the headline. `docs/reference/provenance.md` defines the source trail that belongs
+on the Notion post; relevant endpoint traps are routed from `DEVELOPMENT.md`.
 
-## How a Post Gets Built
+Render into `output/`, then save each image before showing it. Keep data-bound Canva copy from the
+same calculation as the chart; never transcribe a value by eye. Reuse verified data during styling
+changes. Run only the checks appropriate to the change (`DEVELOPMENT.md`).
 
-**Python builds the chart; Canva builds the page.** Python owns verified calculations, display-ready
-content, and a transparent chart asset (see `DESIGN.md` §3 for the export contract). Canva owns the
-page canvas, all typography, and editorial copy.
+Complete requested visual changes. If further self-directed polish has no clear benefit, present
+the result instead of inventing another round. Spacing, cropping and label readability inside a
+chart remain Python's responsibility; page layout belongs in Canva.
 
-**Preserve the original during Canva iteration.** When making substantive edits to an existing
-design, work in a clearly labeled separate QA copy or on duplicated draft pages by default. Do not
-overwrite the user's original pages or design unless they explicitly ask to promote the approved
-draft into it. The user should not need to request this isolation on each revision.
+## Canva and approval
 
-The approved artifact is the **downloaded 1080×1350 page** — never the editable Canva design or the
-chart asset alone.
+For substantive edits to an existing Canva design, use a separate QA copy or duplicated draft pages
+unless the user authorizes edits to the original. Inspect the actual downloaded page at feed size:
 
-Prototypes print a Canva copy block with the exact strings to paste, so page numbers and chart
-numbers come from the same run. Never retype a value from a chart into Canva by eye.
+- correct dimensions (normally 1080×1350), readable labels and no cropping;
+- numbers, names, coverage, thresholds, source and handle agree with Python;
+- no stale template copy, placeholders, duplicate frames or draft notes;
+- printed components make sense together. Independently rounded components may not sum to a
+  printed total; preserve true values and choose a clear note or presentation when needed.
 
-The Python full-layout system (`house.draw_header` and friends) is legacy — maintain existing
-prototypes on it, don't start new posts there.
+The chart asset or editable design alone does not establish final-page approval. Keep the approved
+publish-resolution chart in the post's `assets/`. The downloaded Canva page is temporary QA;
+do not create a new `final/` archive. Older final-page archives remain historical records.
 
-**Know when the chart is done.** Three consecutive rounds that change only presentation — spacing,
-label placement, color, crop — mean the analysis is settled. Say so and ask whether to ship instead
-of opening a fourth. Polish is Canva's job: a chart asset carries no page furniture by contract
-(`DESIGN.md` §3), so presentation rounds in Python are usually redone by the layout surface anyway.
-Rounds that change what the chart *claims* are not polish and are not capped.
+Before the logical post commit, prune saved versions that became cosmetic adjustments. Keep every
+approved version and every change in metric, cohort, threshold, chart type, sorting or claim.
+When uncertain, keep the asset. Commit and push only with explicit user approval.
 
-## Before Calling a Draft Approved
+## Notion record
 
-- Every annotation, title, and subtitle is accurate, legible, and approved or redlined.
-- Event lines appear only where they explain a bend in the data, with verified dates.
-- Fan voice matches the settled amount for this post.
-- Posting copy is either saved on the Notion page or the user has chosen to write it.
+The live database currently supports `Not started`, `In progress`, `Parked`, `Mocked`, and `Posted`.
+Use `In progress` for an active build; `Parked` for a paused idea with a reason; `Mocked` after a
+verified approved design. On resuming a post, fetch its current state rather than treating this
+list as proof of that post's state. Keep the Canva edit URL in the `Canva` property.
 
-**Check what the numbers imply about each other, not only whether each is right.** When a graphic
-shows a composite beside its components — stocks with steals and blocks, rebounds with the
-offensive/defensive split, a total beside its parts — independently rounded cells will often fail to
-add up. On the stocks age ladder that was 6 of 20 rows including the headline (1.4 + 2.0 printed
-against 3.5), and every cell was individually correct. A value-by-value check against the Python
-output is blind to this, because the defect lives in the relationship between correct cells.
+Only mark `Posted` after the user confirms it is live. Record the exact publication URL and date,
+then re-fetch to verify the update. Preserve the brief, provenance, final selection and meaningful
+rejections in the same page. A dropped concept gets its reason there; don't delete unique work
+until its disposition is established.
 
-Rounding the parts to force the sum is usually the wrong repair: it prints a component that is
-checkable-wrong against every other source, which reads as bad data rather than as rounding. The
-options that keep every cell true are a one-line "components rounded independently" note, showing
-the components in different units (season totals beside a per-game composite, where no arithmetic is
-implied), or accepting it. Decide deliberately and record the decision on the Notion page.
+## Caption, distribution and review
 
-**Verify every fact printed on a graphic** — dates, picks, trades, injuries, records. Web-search
-anything past the model's knowledge cutoff. Never draw a guessed date.
-
-**Check the downloaded pages, not the Canva design:**
-
-- every page is exactly 1080×1350;
-- charts aren't cropped and labels stay readable at feed size;
-- thresholds, coverage, sources, attribution, names, dates, and handles match the latest Python
-  output;
-- no placeholder, duplicate frame, draft note, or previous-post copy survived.
-
-Canva-rendered text is judged from the downloaded page at feed size — DPI metadata does not improve
-it. Fix resolution problems by exporting a larger source asset.
-
-## After Approval
-
-1. Export the chart at publish DPI and save it with `scripts/save_visual_version.py --project
-   <slug>`; it lands in `assets/` with a `-final` suffix and goes into the post's single commit
-   along with everything else — not a commit of its own. The composed Canva page is **not** archived
-   here (retired 2026-08-22): Canva holds the editable design and Instagram the published post, so a
-   downloaded copy duplicated both. The QA export above is a temporary file — check it, don't file
-   it. Keep the Canva URL on the Notion page; that is the pointer to the composed page.
-2. Update the Notion page to `Mocked` and save the approved caption (or note the user supplies it).
-3. After the user confirms it is live, update the page to `Posted`. Never infer that a post is live.
-
-Card lifecycle: `Parked` → `Mocked` → `Posted`. `Generated` is legacy, pre-playbook terminology.
-
-## Voice & Caption
-
-The single owner of how the account sounds.
-
-**On-graphic copy** is minimal. The analytical thesis, player names, and context live in the caption.
-On-chart annotations may carry a light "fan in the stands" voice — first-person, wry, a notch above
-meme-page — but the chart stays clean.
-
-**The user writes the caption.** Offer at most one short line as raw material; never a multi-sentence
-draft unless asked. Both of the account's first two data-viz posts used the user's own one-liner plus
-hashtags (confirmed 2026-07-11).
-
-Captions sound like a knowledgeable person who watches the Bulls: simple, direct, grounded in the
-actual basketball observation. **A plain factual caption is a successful result.** Preserve material
-qualifiers without turning the caption into methodology notes.
-
-Never add a hook, joke, fan slang, rhetorical question, or engagement bait to make copy feel
-distinctive. Use humor only when it's natural to the post or comes from the user. Never perform a
-social-media persona.
-
-## Hashtags
-
-Always provide a ready-to-paste block (user rule, 2026-07-18), built from three parts:
-
-1. **Standing reach set, every post:** `#chicagobulls #bulls #nba #nbastats #dataviz #analytics`,
-   plus a seasonal tag only while the post's own subject is in that season (`#summerleague`). Never
-   carry a seasonal tag past the window it describes.
-2. **One tag per featured player worth tagging.** Draft with every player in the final graphic and
-   expect the user to cut the low-reach names — searched-for players earn the tag, deep-bench names
-   dilute it (confirmed 2026-07-24, after the scoring landscape shipped without Claxton, Okoro,
-   Miller, and Dillingham).
-3. **Deliberate reach tags the user designates**, allowed even when the player isn't in the post —
-   currently `#calebwilson`, the roster's most popular player.
-
-**Check the block against the actual final caption immediately before posting**, not against an
-earlier draft, and never reuse a prior block unchanged. This guards against accidental carryover:
-`#matas` rode into two Summer League reports despite Matas appearing in neither carousel. A
-deliberate reach tag is fine; anything else tagging an absent player is not.
-
-## "I need to post but have no idea"
-
-Offer 2–3 concrete candidates with one-line pitches, preferring in order:
-
-1. Parked Notion ideas with data ready today.
-2. Timely hooks: the latest game, roster news, dates, or anniversaries.
-3. A new brainstorm only when no existing Notion idea fits.
-
-Don't invent a new format when a Parked card already fits.
-
-## Season Rollover
-
-At the start of a new NBA season, update `CURRENT_SEASON` and `LAST_SEASON` in `bulls/config.py`.
-Fetchers otherwise keep serving the previous season's frozen data with no error.
+Use the matching promote/review skill and the relevant section of Notion editorial direction.
+Read current guidance when entering that stage; use context already loaded during ongoing edits.
+Save the user's approved caption on the post, or note that they supply it. Never infer performance
+or publication. Social actions remain subject to the per-action approval rule in `AGENTS.md`.

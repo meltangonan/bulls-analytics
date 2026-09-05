@@ -27,8 +27,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import requests
-from matplotlib.patches import FancyBboxPatch
 
+from bulls.graphics.craft import draw_metric_badge
 from bulls.graphics.house import (
     DEFAULT_THEME,
     DRAFT_DPI,
@@ -543,41 +543,9 @@ def render_chart(rows: pd.DataFrame, *, final: bool = False) -> Path:
                 zorder=5,
             )
 
-        positive = float(row["rORTG"]) >= 0
-        badge_fill = "#B5123C"
-        # The zone-chart summary cards use this Bulls-red rounded pill grammar.
-        ax.add_patch(
-            FancyBboxPatch(
-                (x_metric - 57, y - 35),
-                114,
-                70,
-                boxstyle="round,pad=0,rounding_size=13",
-                facecolor=badge_fill,
-                edgecolor="none",
-                zorder=3,
-            )
-        )
-        ax.text(
-            x_metric,
-            y + 10,
-            _rating_label(row["rORTG"]),
-            ha="center",
-            va="center",
-            fontsize=16,
-            color="#FFFFFF",
-            fontproperties=helvetica("bold"),
-            zorder=4,
-        )
-        ax.text(
-            x_metric,
-            y - 16,
+        draw_metric_badge(
+            ax, x_metric, y, _rating_label(row["rORTG"]),
             f"{int(row['OffPoss']):,} POSS",
-            ha="center",
-            va="center",
-            fontsize=8,
-            color="#FFFFFF",
-            fontproperties=helvetica("oblique"),
-            zorder=4,
         )
 
     OUT.mkdir(parents=True, exist_ok=True)

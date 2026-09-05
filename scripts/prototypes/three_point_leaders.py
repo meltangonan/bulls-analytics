@@ -57,7 +57,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
-from matplotlib.patches import FancyBboxPatch
 from nba_api.stats.endpoints import leaguedashplayerstats, leaguedashteamstats
 
 from bulls.config import API_DELAY, BULLS_TEAM_ID
@@ -160,11 +159,11 @@ LINE_DROP = 24          # the made-attempted line sits below it
 
 # Every vertical rule is a light grey: the gridlines quietest, the two reference
 # series a step darker so they still read as data. Grey is the right register for
-# all three -- they are scaffolding, not the subject (DESIGN.md §2).
+# all three -- they are scaffolding, not the subject (DESIGN.md (Color and hierarchy)).
 # This chart takes no theme. The page canvas changes from post to post, the asset
 # is always transparent, and the only meaningful colours are Bulls red and the
 # house near-black -- so the palette is stated here rather than resolved through
-# a canvas-dependent theme (DESIGN.md §2).
+# a canvas-dependent theme (DESIGN.md (Color and hierarchy)).
 #
 # #242424 is the account's black: nothing in a graphic is pure or near-pure black.
 INK = "#242424"
@@ -537,40 +536,10 @@ def portrait_path(player_id: int) -> Path:
 
 
 def top_anchored_headshot(ax, image_path, x, y, half_size, *, crop=HEADSHOT_CROP_FRACTION, zorder=5):
-    """Place a full-colour, top-anchored square crop of one player's portrait.
-
-    The NBA CDN serves a player's *current* portrait, so a chart spanning 2010 to
-    2026 arrives with several leaders in the uniform of a team they joined years
-    later. Anchoring the crop to the top of the frame shows more face and less
-    jersey, which keeps those off-brand colours from becoming blocks (DESIGN.md
-    §5). A missing file becomes a neutral placeholder rather than a crash.
-    """
-    try:
-        image = plt.imread(image_path)
-    except (FileNotFoundError, OSError, ValueError):
-        return ax.add_patch(
-            FancyBboxPatch(
-                (x - half_size, y - half_size),
-                2 * half_size,
-                2 * half_size,
-                boxstyle="square,pad=0",
-                facecolor="#DDD8D1",
-                edgecolor="none",
-                zorder=zorder,
-            )
-        )
-    height, width = image.shape[:2]
-    side = max(1, round(min(height, width) * crop))
-    left = max(0, (width - side) // 2)
-    square = image[:side, left:left + side]
-    # Source pixels per drawn pixel is held constant, so a portrait cropped wider
-    # is drawn correspondingly bigger and every head lands at the same scale.
-    drawn = half_size * crop / HEADSHOT_CROP_FRACTION
-    return ax.imshow(
-        square,
-        extent=[x - drawn, x + drawn, y - drawn, y + drawn],
-        interpolation="bilinear",
-        zorder=zorder,
+    """Keep face scale constant when an individual portrait needs a wider crop."""
+    return house.top_anchored_headshot_label(
+        ax, image_path, x, y, half_size, crop_fraction=crop,
+        scale=crop / HEADSHOT_CROP_FRACTION, zorder=zorder,
     )
 
 
@@ -616,7 +585,7 @@ def render_chart(
     benchmark_x = [_x(float(v), low, high) for v in leaders["benchmark_three_pct"]]
 
     # The benchmark is context, so it takes the muted dashed reference grammar
-    # from DESIGN.md §4 rather than a second bright colour.
+    # from docs/design/tables-cards.md rather than a second bright colour.
     ax.plot(
         benchmark_x, ys, color=BENCHMARK_GREY, linewidth=BENCHMARK_WIDTH,
         linestyle=(0, (5, 3)), zorder=2,

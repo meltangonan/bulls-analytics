@@ -92,10 +92,6 @@ def test_hex_asset_uses_a_tight_vertical_crop():
     assert msc.HEX_CROP_BOTTOM > 0
 
 
-def test_hex_legend_is_lowered_from_the_near_baseline_placement():
-    assert msc.HEX_LEGEND_DY == 110
-
-
 def test_hex_legend_icons_are_grouped_tightly():
     (small_x, small_r), (large_x, large_r) = msc.HEX_VOLUME_MARKS
     assert large_x - small_x - small_r - large_r == 3

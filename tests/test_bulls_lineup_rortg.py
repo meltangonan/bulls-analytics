@@ -139,6 +139,8 @@ def test_fetch_response_requires_minutes_order_and_safe_tail():
 
 def test_chart_export_has_expected_dimensions_and_transparency(tmp_path, monkeypatch):
     monkeypatch.setattr(bulls_lineup_rortg, "OUT", tmp_path)
+    monkeypatch.setattr(bulls_lineup_rortg, "ensure_historical_headshots", lambda ids: None)
+    monkeypatch.setattr(bulls_lineup_rortg, "ensure_headshots", lambda ids: None)
     lineups = _real_position_rows()
     rows = bulls_lineup_rortg.prepare_ranking(lineups, _league_for(lineups))
 

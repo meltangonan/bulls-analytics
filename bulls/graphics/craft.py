@@ -17,9 +17,9 @@ import matplotlib.text as mtext
 import numpy as np
 from matplotlib.colors import Colormap, LinearSegmentedColormap
 from matplotlib.image import AxesImage
-from matplotlib.patches import Rectangle
+from matplotlib.patches import FancyBboxPatch, Rectangle
 
-from bulls.graphics.house import FAINT, INK, MUTED, RED, RULE, body_font
+from bulls.graphics.house import BLACK, FAINT, INK, MUTED, RED, RULE, body_font, helvetica
 
 # Light neutral at vmin -> Bulls red -> deep Bulls red at vmax.
 MAGNITUDE_CMAP = LinearSegmentedColormap.from_list(
@@ -270,3 +270,53 @@ def headshot_label(
         zorder=3,
         interpolation="bilinear",
     )
+
+
+def draw_table_cell(
+    ax, label, left, right, y, row_height, *, fill=None, color=BLACK,
+    fontsize=10, fontproperties=None, fill_zorder=2, zorder=4,
+):
+    """Draw a centered table label with an optional edge-to-edge row fill.
+
+    The caller supplies formatted text and a calibrated fill; this helper never
+    calculates a metric, chooses a heat scale, or turns missing data into zero.
+    Bounds and row height are in axes units. Returns (fill patch or None, text).
+    """
+    patch = None
+    if fill is not None:
+        patch = ax.add_patch(Rectangle(
+            (left, y - row_height / 2), right - left, row_height,
+            facecolor=fill, edgecolor="none", zorder=fill_zorder,
+        ))
+    text = ax.text(
+        (left + right) / 2, y, label, ha="center", va="center",
+        fontsize=fontsize, color=color,
+        fontproperties=fontproperties if fontproperties is not None else helvetica(),
+        zorder=zorder,
+    )
+    return patch, text
+
+
+def draw_metric_badge(
+    ax, x, y, value, detail, *, width=114, height=70, fill="#B5123C",
+):
+    """Draw the lineup tables' two-line rounded ranking card.
+
+    ``value`` and ``detail`` are already-formatted strings. Preserve a visible
+    supporting sample below the bold figure. For a three-line card use its own
+    layout; squeezing a third line into this format clips the sample.
+    """
+    patch = ax.add_patch(FancyBboxPatch(
+        (x - width / 2, y - height / 2), width, height,
+        boxstyle="round,pad=0,rounding_size=13",
+        facecolor=fill, edgecolor="none", zorder=3,
+    ))
+    primary = ax.text(
+        x, y + 10, value, ha="center", va="center", fontsize=16,
+        color="#FFFFFF", fontproperties=helvetica("bold"), zorder=4,
+    )
+    secondary = ax.text(
+        x, y - 16, detail, ha="center", va="center", fontsize=8,
+        color="#FFFFFF", fontproperties=helvetica("oblique"), zorder=4,
+    )
+    return patch, primary, secondary

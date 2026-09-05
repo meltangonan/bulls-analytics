@@ -36,7 +36,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
-from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
+from matplotlib.patches import FancyArrowPatch
 from nba_api.stats.endpoints import leaguedashplayerstats, leaguedashteamstats
 
 from bulls.config import API_DELAY, BULLS_TEAM_ID
@@ -49,6 +49,7 @@ from bulls.graphics.house import (
     export_dpi,
     helvetica,
     rendered_width,
+    top_anchored_headshot_label as draw_top_anchored_headshot,
 )
 
 
@@ -488,43 +489,10 @@ def minutes_label(leap: pd.Series) -> str:
 
 
 def top_anchored_headshot_label(ax, image_path, x, y, half_size, *, zorder=5):
-    """Place a full-color, top-anchored square crop of one player's portrait.
-
-    Anchoring the crop to the top of the frame rather than its centre shows more
-    face and less jersey, which matters here because the NBA CDN serves a
-    player's *current* portrait: this chart spans 2004 to 2024, so several
-    players arrive in the uniform of a team they joined years later.
-
-    Portraits keep NBA's transparent background and are not placed on a tile, so
-    they sit directly on the Canva page.
-
-    A missing or unreadable file becomes a neutral placeholder square, so the
-    builder never breaks on one absent portrait.
-    """
-    try:
-        image = plt.imread(image_path)
-    except (FileNotFoundError, OSError, ValueError):
-        return ax.add_patch(
-            FancyBboxPatch(
-                (x - half_size, y - half_size),
-                2 * half_size,
-                2 * half_size,
-                boxstyle="square,pad=0",
-                facecolor="#DDD8D1",
-                edgecolor="none",
-                zorder=zorder,
-            )
-        )
-
-    height, width = image.shape[:2]
-    side = max(1, round(min(height, width) * HEADSHOT_CROP_FRACTION))
-    left = max(0, (width - side) // 2)
-    square = image[:side, left:left + side]
-    return ax.imshow(
-        square,
-        extent=[x - half_size, x + half_size, y - half_size, y + half_size],
-        interpolation="bilinear",
-        zorder=zorder,
+    """Use this post's approved crop with the shared portrait renderer."""
+    return draw_top_anchored_headshot(
+        ax, image_path, x, y, half_size,
+        crop_fraction=HEADSHOT_CROP_FRACTION, zorder=zorder,
     )
 
 
@@ -592,7 +560,7 @@ def render_chart(
 
         # A bare square crop, not the red-ringed circle: every row on a ranked
         # list is the same kind of thing, so a ring would read as an emphasis
-        # this layer does not intend (DESIGN.md §5).
+        # this layer does not intend (docs/design/tables-cards.md (Portraits)).
         top_anchored_headshot_label(
             ax,
             HEADSHOT_CACHE / f"{int(leap['player_id'])}.png",

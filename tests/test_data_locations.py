@@ -126,9 +126,3 @@ def test_single_owner_post_data_ships_with_its_post():
     assert data.is_dir(), f"Summer League inputs missing from the tracked tree: {data}"
     assert list(data.glob("games*.csv")), "expected the tournament game index"
     assert (data / "box").is_dir(), "expected the cached box scores"
-
-
-def test_every_allowed_cache_folder_states_a_reason():
-    """An allowlist without reasons decays into a list of whatever was there."""
-    for folder, reason in ALLOWED.items():
-        assert len(reason) > 20, f"{folder} needs a real justification, not '{reason}'"

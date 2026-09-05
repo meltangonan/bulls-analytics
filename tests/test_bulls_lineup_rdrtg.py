@@ -81,6 +81,7 @@ def test_prepare_rejects_duplicate_season_lineups():
 
 def test_chart_export_has_expected_dimensions_and_transparency(tmp_path, monkeypatch):
     monkeypatch.setattr(bulls_lineup_rdrtg, "OUT", tmp_path)
+    monkeypatch.setattr(bulls_lineup_rdrtg, "ensure_historical_headshots", lambda ids: None)
     rows = bulls_lineup_rdrtg.prepare_ranking(_lineup_rows(), _league_for(_lineup_rows()))
 
     output = bulls_lineup_rdrtg.render_chart(rows)

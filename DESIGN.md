@@ -42,8 +42,9 @@ Red and black establish the graphic's identity; the documented shot and table sc
 colors when they encode data. Direction must also be readable from labels or signed values.
 
 Canva's light, low-saturation canvas varies. Check quiet lines and labels against the actual page,
-including a darker warm background such as `#E9E5E1`. `#D8D2CA` is a proven quiet rule there;
-`#E6E2DB` disappears. Prefer size and weight to increasingly pale text. Aim near 4.5:1 for small
+including a darker warm background such as `#E9E5E1`. Use `#B8B0A8` for structural table separators
+on that background; reserve `#D8D2CA` for decorative or nonessential rules. `#E6E2DB` disappears.
+Prefer size and weight to increasingly pale text. Aim near 4.5:1 for small
 source/qualification text; the user's accepted `#E9E5E1` treatment uses subtitle `#5F5B57` and footer
 `#7A736C`, with the quieter footer an intentional exception.
 

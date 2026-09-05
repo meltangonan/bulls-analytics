@@ -581,8 +581,8 @@ def validate_working_table(
     }
 
 
-def top_games_by_decade(table: pd.DataFrame) -> pd.DataFrame:
-    """Return the top ten player-games in each decade with deterministic ties."""
+def top_games_by_decade(table: pd.DataFrame, *, top_n: int = TOP_N) -> pd.DataFrame:
+    """Return the requested top player-games in each decade with deterministic ties."""
     ranked = (
         table.sort_values(
             ["decade", "game_score", "points", "ts_pct", "game_date", "player", "player_id"],
@@ -590,7 +590,7 @@ def top_games_by_decade(table: pd.DataFrame) -> pd.DataFrame:
             kind="stable",
         )
         .groupby("decade", sort=False, group_keys=False)
-        .head(TOP_N)
+        .head(top_n)
         .copy()
     )
     ranked["rank"] = ranked.groupby("decade", sort=False).cumcount() + 1
@@ -749,26 +749,58 @@ def render_chart(
     decade: str,
     season_type: str = "Regular Season",
     show_free_throws: bool = False,
+    show_turnovers: bool = False,
+    top_n: int = TOP_N,
+    layout: TableLayout = DECADE_LAYOUT,
     final: bool = False,
 ) -> Path:
     """Render one transparent decade table in the settled ladder grammar."""
-    if len(rows) != TOP_N:
-        raise ValueError(f"Expected ten rows for {decade}; got {len(rows)}.")
+    if len(rows) != top_n:
+        raise ValueError(f"Expected {top_n} rows for {decade}; got {len(rows)}.")
     rows = rows.sort_values("rank", kind="stable").reset_index(drop=True)
-    layout = DECADE_LAYOUT
     chart_height = slide_height(len(rows), layout)
     header_y = chart_height - layout.header_from_top
     header_rule_y = chart_height - layout.header_rule_from_top
     first_row_y = chart_height - layout.first_row_from_top
     dpi = export_dpi(final)
-    fig = plt.figure(figsize=(CHART_WIDTH / dpi, chart_height / dpi), facecolor="none")
+    fig = plt.figure(figsize=(CHART_WIDTH / export_dpi(False), chart_height / export_dpi(False)), facecolor="none")
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, CHART_WIDTH)
     ax.set_ylim(0, chart_height)
     ax.axis("off")
     theme = DEFAULT_THEME
 
-    if show_free_throws:
+    # The 15-row season table uses the full width more efficiently: portraits
+    # reach the left edge, Game Score moves toward the identity block, the
+    # three shooting columns share one width, and TOV fits beside BLK.
+    if show_turnovers:
+        gmsc_left, gmsc_right = 510, 618
+        stat_bounds = (
+            (636, 696),   # PTS
+            (696, 790),   # FG
+            (790, 884),   # 3PT
+            (884, 978),   # FT
+            (978, 1059),  # REB
+            (1059, 1140), # AST
+            (1140, 1221), # STL
+            (1221, 1302), # BLK
+            (1302, 1383), # TOV
+            (1383, 1465), # +/-
+        )
+    else:
+        gmsc_left, gmsc_right = GMSC_LEFT, GMSC_RIGHT
+        stat_bounds = ()
+
+    if show_turnovers:
+        stat_labels = ("PTS", "FG", "3PT", "FT", "REB", "AST", "STL", "BLK", "TOV", "+/-")
+        headers = (
+            (layout.name_x, "PLAYER", "left", theme.ink),
+            ((gmsc_left + gmsc_right) / 2, "GMSC", "center", theme.accent),
+        ) + tuple(
+            ((left + right) / 2, label, "center", theme.ink)
+            for (left, right), label in zip(stat_bounds, stat_labels)
+        )
+    elif show_free_throws:
         headers = (
             (layout.name_x, "PLAYER", "left", theme.ink),
             ((GMSC_LEFT + GMSC_RIGHT) / 2, "GMSC", "center", theme.accent),
@@ -813,31 +845,40 @@ def render_chart(
             fontproperties=helvetica("bold"),
         )
 
+    table_right = stat_bounds[-1][1] if show_turnovers else PLUS_MINUS_RIGHT
+    separator_color = "#B8B0A8" if show_turnovers else theme.rule
     ax.plot(
-        [ROW_RULE_LEFT, PLUS_MINUS_RIGHT],
+        [0 if show_turnovers else ROW_RULE_LEFT, table_right],
         [header_rule_y, header_rule_y],
         color=theme.ink,
         linewidth=2.0,
         zorder=3,
     )
 
-    game_score_card(ax, len(rows), first_row_y, layout)
+    draw_accent_card(
+        ax, gmsc_left, gmsc_right, first_row_y, len(rows), layout.row_height
+    )
 
     for index, row in rows.iterrows():
         y = first_row_y - index * layout.row_height
         if index:
             divider_y = y + layout.row_height / 2
-            for rule_left, rule_right in row_rule_segments():
+            rule_segments = (
+                ((0, gmsc_left), (gmsc_right, table_right))
+                if show_turnovers
+                else row_rule_segments()
+            )
+            for rule_left, rule_right in rule_segments:
                 ax.plot(
                     [rule_left, rule_right],
                     [divider_y, divider_y],
-                    color=theme.rule,
+                    color=separator_color,
                     linewidth=1.0,
                     zorder=3,
                 )
 
         ax.text(
-            (GMSC_LEFT + GMSC_RIGHT) / 2,
+            (gmsc_left + gmsc_right) / 2,
             y,
             f"{float(row['game_score']):.1f}",
             ha="center",
@@ -866,7 +907,7 @@ def render_chart(
             fontproperties=helvetica("bold"),
             zorder=4,
         )
-        name_budget = GMSC_LEFT - layout.name_x - 16
+        name_budget = gmsc_left - layout.name_x - 16
         width = rendered_width(ax, name)
         if width > name_budget:
             name.set_fontsize(layout.name_font_size * name_budget / width)
@@ -910,7 +951,26 @@ def render_chart(
             fontproperties=helvetica("bold"),
             zorder=5,
         )
-        if show_free_throws:
+        if show_turnovers:
+            values = tuple(
+                (left, right, value)
+                for (left, right), value in zip(
+                    stat_bounds,
+                    (
+                        str(int(row["points"])),
+                        f"{int(row['fgm'])}–{int(row['fga'])}",
+                        f"{int(row['fg3m'])}–{int(row['fg3a'])}",
+                        f"{int(row['ftm'])}–{int(row['fta'])}",
+                        str(int(row["reb"])),
+                        str(int(row["ast"])),
+                        str(int(row["stl"])),
+                        str(int(row["blk"])),
+                        str(int(row["tov"])),
+                        _signed_box_score_value(row["plus_minus"]),
+                    ),
+                )
+            )
+        elif show_free_throws:
             values = (
                 (FT_TABLE_PTS_LEFT, FT_TABLE_PTS_RIGHT, str(int(row["points"]))),
                 (FT_TABLE_FG_LEFT, FT_TABLE_FG_RIGHT, f"{int(row['fgm'])}–{int(row['fga'])}"),

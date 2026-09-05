@@ -67,5 +67,6 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `summer_league_report.py` | Summer League Report v1 + v2 | `tests/test_summer_league_report.py` |
 | `summer_league_sticky_stats.py` | 2026 Summer League sticky shot-profile prototype | `tests/test_summer_league_sticky_stats.py` |
 | `three_point_leaders.py` | Bulls' most accurate three-point shooter every season since 2010-11 | `tests/test_three_point_leaders.py` |
+| `season_game_performances.py` | Top fifteen Bulls player-games in the 2025–26 regular season; reuses the Game Score table. | `tests/test_season_game_performances.py` |
 | `top_game_performances.py` | Top Bulls game performances by decade | `tests/test_bulls_rookie_leaderboard.py`, `tests/test_top_game_performances.py` |
 | `zone_deep_dive.py` | Volume *and* efficiency inside a single shot zone | Use the consuming family checks |

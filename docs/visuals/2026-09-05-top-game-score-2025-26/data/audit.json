@@ -1,0 +1,13 @@
+{
+  "season": "2025-26",
+  "season_type": "Regular Season",
+  "player_games": 865,
+  "team_games": 82,
+  "all_scores_reconciled": true,
+  "selected_games": 15,
+  "source_refreshed_on": "2026-09-05",
+  "prepared_at": "2026-09-05T12:21:26.395758-05:00",
+  "refreshed_this_run": false,
+  "player_source": "https://www.nba.com/stats/players/boxscores-traditional?Season=2025-26&SeasonType=Regular%20Season&TeamID=1610612741",
+  "team_source": "https://www.nba.com/stats/teams/boxscores?Season=2025-26&SeasonType=Regular%20Season&TeamID=1610612741"
+}

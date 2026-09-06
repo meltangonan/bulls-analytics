@@ -1,0 +1,11 @@
+{
+  "endpoint": "LeagueDashPlayerStats",
+  "parameters": {
+    "team_id_nullable": 1610612741,
+    "season": "2010-11",
+    "season_type_all_star": "Regular Season",
+    "per_mode_detailed": "Totals"
+  },
+  "fetched_at": "2026-09-06T15:10:13.100767+00:00",
+  "rows": 15
+}

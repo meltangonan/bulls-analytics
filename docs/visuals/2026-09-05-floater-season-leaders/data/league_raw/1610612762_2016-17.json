@@ -1,0 +1,12 @@
+{
+  "endpoint": "ShotChartDetail",
+  "parameters": {
+    "team_id": 1610612762,
+    "player_id": 0,
+    "season_nullable": "2016-17",
+    "season_type_all_star": "Regular Season",
+    "context_measure_simple": "FGA"
+  },
+  "fetched_at": "2026-09-06T15:13:33.232891+00:00",
+  "rows": 6515
+}

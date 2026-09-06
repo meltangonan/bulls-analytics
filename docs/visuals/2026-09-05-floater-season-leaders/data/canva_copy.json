@@ -1,0 +1,10 @@
+{
+  "title": "Bulls floater scoring leaders",
+  "subtitle": "Top 15 in floaters made in one season, since 2015–16",
+  "scope": "2015–16 to 2025–26 regular season · Chicago games only",
+  "definition": "NBA floating-shot labels, including driving and bank floaters. The driving labels begin in 2015–16.",
+  "relative_fg": "rFG% = floater FG% minus that season’s NBA floater FG%, in percentage points.",
+  "shot_share": "% OF FGA = floater attempts / all field-goal attempts in Bulls games.",
+  "source": "Source: NBA.com · Shot classifications",
+  "handle": "@chicagobullsdata"
+}

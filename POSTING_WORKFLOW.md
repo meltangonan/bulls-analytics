@@ -34,8 +34,15 @@ chart remain Python's responsibility; page layout belongs in Canva.
 
 ## Canva and approval
 
+Default handoff: verified graphic → user review and approval → user assembles in Canva.
+Create or edit a Canva page only when requested; selecting a post idea isn't graphic approval.
+For Canva assembly, use a copy of a recent design in `Posted` as the starting point for page
+typography, colors, spacing and framing. That reference does not determine the new chart type;
+keep the graphic matched to the selected brief.
+
 For substantive edits to an existing Canva design, use a separate QA copy or duplicated draft pages
-unless the user authorizes edits to the original. Inspect the actual downloaded page at feed size:
+unless the user authorizes edits to the original. When reviewing the composed page, inspect the
+actual downloaded page at feed size:
 
 - correct dimensions (normally 1080×1350), readable labels and no cropping;
 - numbers, names, coverage, thresholds, source and handle agree with Python;

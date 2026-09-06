@@ -11,6 +11,7 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 
 | Entry point | Purpose/family | Focused checks (paths from repo root) |
 | --- | --- | --- |
+| `layup_season_leaders.py` | Bulls single-season layup FGM ranking since 2000–01; `--prepare` snapshots/audits, `--render` saved data | `tests/test_layup_season_leaders.py` |
 | `assist_age_ladder.py` | Assist counterpart to `scoring_age_ladder.py` | `tests/test_assist_age_ladder.py` |
 | `assist_duos.py` | Bulls assist duos | `tests/test_assist_duos.py` |
 | `assist_duos_fetch.py` | Bulls assist duos | `tests/test_assist_duos.py` |

@@ -1,0 +1,14 @@
+{
+  "endpoint": "ShotChartDetail",
+  "parameters": {
+    "team_id": 1610612737,
+    "player_id": 0,
+    "season_nullable": "2012-13",
+    "season_type_all_star": "Regular Season",
+    "context_measure_simple": "FGA"
+  },
+  "fetched_at": null,
+  "metadata_recorded_at": "2026-09-06T14:49:13.775981+00:00",
+  "note": "Metadata reconstructed from saved snapshot filename and fetch code; original retrieval time was not recorded.",
+  "rows": 6644
+}

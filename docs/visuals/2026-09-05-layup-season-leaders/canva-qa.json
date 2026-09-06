@@ -1,0 +1,21 @@
+{
+  "reviewed_on": "2026-09-06",
+  "design_id": "DAHUbfjgsjY",
+  "canva_url": "https://www.canva.com/design/DAHUbfjgsjY/boFI8TtNlNTfBlmp_1sZTg/edit",
+  "export_dimensions": [
+    1080,
+    1350
+  ],
+  "export_sha256": "bf4cb4e5d751f66a6687303b5960bd9f80f666e37e307c42f9c64ae483d660c6",
+  "result": "pass",
+  "checks": [
+    "All 15 player-season rows and displayed values match top15_with_relative_fg.csv.",
+    "House black header and ruler, FGM pill, stripes, portrait crops, and column order match approved graphic.",
+    "No clipped names, numeric values, or hair; source, date scope, and handle visible."
+  ],
+  "caption_context": [
+    "Includes finger rolls and putback layups; excludes tips, dunks and floaters.",
+    "rFG% is the percentage-point difference from the same season NBA layup FG%."
+  ],
+  "export_retention": "Temporary QA only; Canva remains page owner."
+}

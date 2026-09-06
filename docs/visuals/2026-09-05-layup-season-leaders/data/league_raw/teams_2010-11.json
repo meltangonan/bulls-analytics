@@ -1,0 +1,10 @@
+{
+  "endpoint": "LeagueDashTeamStats",
+  "parameters": {
+    "season": "2010-11",
+    "season_type_all_star": "Regular Season",
+    "per_mode_detailed": "Totals"
+  },
+  "fetched_at": "2026-09-06T14:49:23.113929+00:00",
+  "rows": 30
+}

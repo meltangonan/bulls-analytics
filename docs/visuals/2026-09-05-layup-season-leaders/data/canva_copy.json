@@ -1,0 +1,10 @@
+{
+  "title": "Bulls layup scoring leaders",
+  "subtitle": "Top 15 in layups made in one season, since 2000–01",
+  "scope": "2000–01 to 2025–26 regular season · Chicago games only",
+  "definition": "Includes finger rolls and putback layups. Excludes tips, dunks and floaters.",
+  "relative_fg": "rFG% = layup FG% minus that season’s NBA layup FG%, in percentage points.",
+  "shot_share": "% OF FGA = layup attempts / all field-goal attempts in Bulls games.",
+  "source": "Source: NBA.com · Shot classifications",
+  "handle": "@chicagobullsdata"
+}

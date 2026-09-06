@@ -1,0 +1,3281 @@
+{
+  "method": "gzip, lossless byte-for-byte verification before original removal",
+  "files": [
+    {
+      "source": "raw/players_2000-01.csv",
+      "saved": "raw/players_2000-01.csv.gz",
+      "sha256_uncompressed": "e86d8e3181562806c02580d8823ee92b7e8b92fd22072ac34243bd8ed4456d55",
+      "bytes_uncompressed": 4388,
+      "bytes_compressed": 1979
+    },
+    {
+      "source": "raw/players_2001-02.csv",
+      "saved": "raw/players_2001-02.csv.gz",
+      "sha256_uncompressed": "6a1881bd71bc5a43092008503d0038b9d3e329f50a6d79a73147488fde79ed70",
+      "bytes_uncompressed": 4895,
+      "bytes_compressed": 2210
+    },
+    {
+      "source": "raw/players_2002-03.csv",
+      "saved": "raw/players_2002-03.csv.gz",
+      "sha256_uncompressed": "a656804e0c4610faf8679842a958d05ca962f6b0a0c0ca3b72ba3c3c3bf9bd1f",
+      "bytes_uncompressed": 4131,
+      "bytes_compressed": 1858
+    },
+    {
+      "source": "raw/players_2003-04.csv",
+      "saved": "raw/players_2003-04.csv.gz",
+      "sha256_uncompressed": "6532002a2fb5522ddf07aeaeaa2278ae8f6a9551cbdc432ff98b5194f71a1438",
+      "bytes_uncompressed": 5620,
+      "bytes_compressed": 2483
+    },
+    {
+      "source": "raw/players_2004-05.csv",
+      "saved": "raw/players_2004-05.csv.gz",
+      "sha256_uncompressed": "d24363ea9d88b4570e20271e67c240e527de9d557bfd434256d43f6a061ea67c",
+      "bytes_uncompressed": 4111,
+      "bytes_compressed": 1845
+    },
+    {
+      "source": "raw/players_2005-06.csv",
+      "saved": "raw/players_2005-06.csv.gz",
+      "sha256_uncompressed": "f32d7ad30668592777d144a87eb5179a6459c2bbc65d6272b5a45db513605568",
+      "bytes_uncompressed": 5010,
+      "bytes_compressed": 2179
+    },
+    {
+      "source": "raw/players_2006-07.csv",
+      "saved": "raw/players_2006-07.csv.gz",
+      "sha256_uncompressed": "03a480fd4a90e2e322bcacde996d3d01c938854cec59f97ee7fa47d84801ede6",
+      "bytes_uncompressed": 3893,
+      "bytes_compressed": 1758
+    },
+    {
+      "source": "raw/players_2007-08.csv",
+      "saved": "raw/players_2007-08.csv.gz",
+      "sha256_uncompressed": "3e7c4284ef10f49810a8d090214942809a89a0db3e6befab91b9dc70df990d26",
+      "bytes_uncompressed": 5119,
+      "bytes_compressed": 2238
+    },
+    {
+      "source": "raw/players_2008-09.csv",
+      "saved": "raw/players_2008-09.csv.gz",
+      "sha256_uncompressed": "1882bea45cedb8f74a06f42515ea883b68f28189a85b8078c848f878f9604239",
+      "bytes_uncompressed": 5103,
+      "bytes_compressed": 2247
+    },
+    {
+      "source": "raw/players_2009-10.csv",
+      "saved": "raw/players_2009-10.csv.gz",
+      "sha256_uncompressed": "60824510833b63c27b0edb8b004f8d35b1072449ca34c3b29ceb1f69e84365dd",
+      "bytes_uncompressed": 4823,
+      "bytes_compressed": 2153
+    },
+    {
+      "source": "raw/players_2010-11.csv",
+      "saved": "raw/players_2010-11.csv.gz",
+      "sha256_uncompressed": "2b067d04e0543291f3f2bcdd56d87ae9504105bf7527d06d0cc155f8c694e73a",
+      "bytes_uncompressed": 4143,
+      "bytes_compressed": 1804
+    },
+    {
+      "source": "raw/players_2011-12.csv",
+      "saved": "raw/players_2011-12.csv.gz",
+      "sha256_uncompressed": "8deb35f03f86551d6b85db59da8f8187adab86ef0839ac3c8e04597ae6f23814",
+      "bytes_uncompressed": 3925,
+      "bytes_compressed": 1748
+    },
+    {
+      "source": "raw/players_2012-13.csv",
+      "saved": "raw/players_2012-13.csv.gz",
+      "sha256_uncompressed": "b44293b7110dc155e897415a193ab3de619b1341e39d4b13fc5a9fcd3b9eb888",
+      "bytes_uncompressed": 4158,
+      "bytes_compressed": 1864
+    },
+    {
+      "source": "raw/players_2013-14.csv",
+      "saved": "raw/players_2013-14.csv.gz",
+      "sha256_uncompressed": "0bcd076a29f17fcaa4bcb75f7d8e86966473844f6d909d06c17ac04ee18b5f77",
+      "bytes_uncompressed": 5229,
+      "bytes_compressed": 2200
+    },
+    {
+      "source": "raw/players_2014-15.csv",
+      "saved": "raw/players_2014-15.csv.gz",
+      "sha256_uncompressed": "36a079b6ca3de3ed123c2ef2cfa4545d9a5736907710e13a67052aa22f5c7b74",
+      "bytes_uncompressed": 3974,
+      "bytes_compressed": 1780
+    },
+    {
+      "source": "raw/players_2015-16.csv",
+      "saved": "raw/players_2015-16.csv.gz",
+      "sha256_uncompressed": "fb827bb97fe7013d464d716342514dad120dbd94e3d210720c125e677391f9a1",
+      "bytes_uncompressed": 4448,
+      "bytes_compressed": 2028
+    },
+    {
+      "source": "raw/players_2016-17.csv",
+      "saved": "raw/players_2016-17.csv.gz",
+      "sha256_uncompressed": "7b03bcc4e2fc2c8fffb8ed57f7dbea1c3434b0eff1d35615be28b0b11be350cd",
+      "bytes_uncompressed": 4980,
+      "bytes_compressed": 2221
+    },
+    {
+      "source": "raw/players_2017-18.csv",
+      "saved": "raw/players_2017-18.csv.gz",
+      "sha256_uncompressed": "89336c9e7a5440a8d5e203ebbec9787d6e180e1bb8c995d1ba4fe55f344fe6ba",
+      "bytes_uncompressed": 5713,
+      "bytes_compressed": 2523
+    },
+    {
+      "source": "raw/players_2018-19.csv",
+      "saved": "raw/players_2018-19.csv.gz",
+      "sha256_uncompressed": "738edd0491e578987b65857b0ee23e35cdeaab88c2abcb626f94ec19ffec37d2",
+      "bytes_uncompressed": 6012,
+      "bytes_compressed": 2651
+    },
+    {
+      "source": "raw/players_2019-20.csv",
+      "saved": "raw/players_2019-20.csv.gz",
+      "sha256_uncompressed": "4b9d3a10f4b96439c293c92eacbf0e35577c10c02f1e46edbadb7c0baa0f738c",
+      "bytes_uncompressed": 4715,
+      "bytes_compressed": 2089
+    },
+    {
+      "source": "raw/players_2020-21.csv",
+      "saved": "raw/players_2020-21.csv.gz",
+      "sha256_uncompressed": "54f10413ec0fc35a0e7f074e3c9409e21c2278b065bc7c6c9cb26353e2999216",
+      "bytes_uncompressed": 5922,
+      "bytes_compressed": 2620
+    },
+    {
+      "source": "raw/players_2021-22.csv",
+      "saved": "raw/players_2021-22.csv.gz",
+      "sha256_uncompressed": "1a10303e3efd0854cdeab8063233b57ef9e1d8f50d3487b3ce8d90fe5a887d9c",
+      "bytes_uncompressed": 5851,
+      "bytes_compressed": 2561
+    },
+    {
+      "source": "raw/players_2022-23.csv",
+      "saved": "raw/players_2022-23.csv.gz",
+      "sha256_uncompressed": "cab1017879fe2841bf9ba4cdc1df612b7a166b832e8c66d0b0931d1584fa0ace",
+      "bytes_uncompressed": 4840,
+      "bytes_compressed": 2118
+    },
+    {
+      "source": "raw/players_2023-24.csv",
+      "saved": "raw/players_2023-24.csv.gz",
+      "sha256_uncompressed": "0c3e16e09f097e179842cc6d6e5cd9a4f0f078b8bf33a960cab304bbf3299cda",
+      "bytes_uncompressed": 4894,
+      "bytes_compressed": 2161
+    },
+    {
+      "source": "raw/players_2024-25.csv",
+      "saved": "raw/players_2024-25.csv.gz",
+      "sha256_uncompressed": "232f65b1564855dcc9bfeae8f20e6829586b6da78f3db53c5ce1eb56b26b6825",
+      "bytes_uncompressed": 5916,
+      "bytes_compressed": 2580
+    },
+    {
+      "source": "raw/players_2025-26.csv",
+      "saved": "raw/players_2025-26.csv.gz",
+      "sha256_uncompressed": "f0debe9c4fdc28665afda38c29db40941f3f3c8e4d58de5967e7a338fbaf1e78",
+      "bytes_uncompressed": 7670,
+      "bytes_compressed": 3364
+    },
+    {
+      "source": "raw/shots_2000-01.csv",
+      "saved": "raw/shots_2000-01.csv.gz",
+      "sha256_uncompressed": "663014b939234832b2142f731943be6cdb4f9858f1a8a1fcb923ce11e4f6c1f8",
+      "bytes_uncompressed": 1217694,
+      "bytes_compressed": 89173
+    },
+    {
+      "source": "raw/shots_2001-02.csv",
+      "saved": "raw/shots_2001-02.csv.gz",
+      "sha256_uncompressed": "c3ba21b0805c0963733e5812ba89add312330e4ce30e84c6b01c65b7136b088e",
+      "bytes_uncompressed": 1267683,
+      "bytes_compressed": 91043
+    },
+    {
+      "source": "raw/shots_2002-03.csv",
+      "saved": "raw/shots_2002-03.csv.gz",
+      "sha256_uncompressed": "d6c9a410d70f9f7c5c3c7812ea2638c04b4e1f4958fffc0a06b6cb17ca461aa1",
+      "bytes_uncompressed": 1279984,
+      "bytes_compressed": 93985
+    },
+    {
+      "source": "raw/shots_2003-04.csv",
+      "saved": "raw/shots_2003-04.csv.gz",
+      "sha256_uncompressed": "b8942e8bfcd4871701d4a95e39835c81128716b094e11780a01bd33f21ced355",
+      "bytes_uncompressed": 1287197,
+      "bytes_compressed": 96328
+    },
+    {
+      "source": "raw/shots_2004-05.csv",
+      "saved": "raw/shots_2004-05.csv.gz",
+      "sha256_uncompressed": "0fda85a1d6e5bbcef9cbaa759654eb11b7760f81c4fa32a855569e21d5477ab5",
+      "bytes_uncompressed": 1256862,
+      "bytes_compressed": 93849
+    },
+    {
+      "source": "raw/shots_2005-06.csv",
+      "saved": "raw/shots_2005-06.csv.gz",
+      "sha256_uncompressed": "7acfff22f54e37c42d1f7ef2d95890d6240cd82638ce0f8163303889be7c6dd7",
+      "bytes_uncompressed": 1284669,
+      "bytes_compressed": 96094
+    },
+    {
+      "source": "raw/shots_2006-07.csv",
+      "saved": "raw/shots_2006-07.csv.gz",
+      "sha256_uncompressed": "4c83712904df26ea348551801c8e36d44b579d16bd890a46d4b94f51df4e2ac1",
+      "bytes_uncompressed": 1264042,
+      "bytes_compressed": 94482
+    },
+    {
+      "source": "raw/shots_2007-08.csv",
+      "saved": "raw/shots_2007-08.csv.gz",
+      "sha256_uncompressed": "0e1a98200fafe438dc1be74a7ebf711acb30721205d8f0cfa85f37ec21ce0f67",
+      "bytes_uncompressed": 1307239,
+      "bytes_compressed": 98548
+    },
+    {
+      "source": "raw/shots_2008-09.csv",
+      "saved": "raw/shots_2008-09.csv.gz",
+      "sha256_uncompressed": "e49878a4d8f544d68ab668eb1aadb99aeb1edd4d848d62ae6655903939bf6ea6",
+      "bytes_uncompressed": 1349681,
+      "bytes_compressed": 99465
+    },
+    {
+      "source": "raw/shots_2009-10.csv",
+      "saved": "raw/shots_2009-10.csv.gz",
+      "sha256_uncompressed": "559f139b9a3961c4006480d1b7fe274d6a55e58ea142cd64e19b076b52c5b3fa",
+      "bytes_uncompressed": 1344836,
+      "bytes_compressed": 99253
+    },
+    {
+      "source": "raw/shots_2010-11.csv",
+      "saved": "raw/shots_2010-11.csv.gz",
+      "sha256_uncompressed": "ef9a621dca6c159f59a5dc9c9de7d9d7a2f8d73a564604c40f4f37c50890a497",
+      "bytes_uncompressed": 1266941,
+      "bytes_compressed": 99422
+    },
+    {
+      "source": "raw/shots_2011-12.csv",
+      "saved": "raw/shots_2011-12.csv.gz",
+      "sha256_uncompressed": "04db7a0c803e52cfbec24748c0484b5cc60fae0c77807568ad9aaacb9815d771",
+      "bytes_uncompressed": 1084554,
+      "bytes_compressed": 86004
+    },
+    {
+      "source": "raw/shots_2012-13.csv",
+      "saved": "raw/shots_2012-13.csv.gz",
+      "sha256_uncompressed": "e3df379537dd0258b0507544ec1c74f0b2d2d82fd05bf0b0f00ddbb58677a48e",
+      "bytes_uncompressed": 1297468,
+      "bytes_compressed": 102887
+    },
+    {
+      "source": "raw/shots_2013-14.csv",
+      "saved": "raw/shots_2013-14.csv.gz",
+      "sha256_uncompressed": "fe88ee12595ef2c144dc27d94d03358741de6205083a4c8b660963825ac6fd41",
+      "bytes_uncompressed": 1271096,
+      "bytes_compressed": 99894
+    },
+    {
+      "source": "raw/shots_2014-15.csv",
+      "saved": "raw/shots_2014-15.csv.gz",
+      "sha256_uncompressed": "40c6b1f722ae4f55fc7f78ea8db3b9b24bed131d8e1c6ff0262f51def159a21d",
+      "bytes_uncompressed": 1319688,
+      "bytes_compressed": 103734
+    },
+    {
+      "source": "raw/shots_2015-16.csv",
+      "saved": "raw/shots_2015-16.csv.gz",
+      "sha256_uncompressed": "16f75710382ec837bd56004b6070ae5997570197a6e54e6a4c45689ad03290a1",
+      "bytes_uncompressed": 1405530,
+      "bytes_compressed": 111344
+    },
+    {
+      "source": "raw/shots_2016-17.csv",
+      "saved": "raw/shots_2016-17.csv.gz",
+      "sha256_uncompressed": "88c49223ecf26d003d72795a822542acfbcd4db95ab33fbe6cf16d4434c582c9",
+      "bytes_uncompressed": 1453437,
+      "bytes_compressed": 113470
+    },
+    {
+      "source": "raw/shots_2017-18.csv",
+      "saved": "raw/shots_2017-18.csv.gz",
+      "sha256_uncompressed": "2e19eff2409c577206d9bd6c7b7d2f64da8177f5a5f58585f08e940dc83d35c0",
+      "bytes_uncompressed": 1448896,
+      "bytes_compressed": 114729
+    },
+    {
+      "source": "raw/shots_2018-19.csv",
+      "saved": "raw/shots_2018-19.csv.gz",
+      "sha256_uncompressed": "1fb04b8ef75ae1a9ac422a8dda9693d1a3136e68a29f11cfb240871fbe83bd61",
+      "bytes_uncompressed": 1448949,
+      "bytes_compressed": 113568
+    },
+    {
+      "source": "raw/shots_2019-20.csv",
+      "saved": "raw/shots_2019-20.csv.gz",
+      "sha256_uncompressed": "1bfbda121f14657bf0c89162aba09866f686d57487fbb7d01d4b4daf802ee56a",
+      "bytes_uncompressed": 1157629,
+      "bytes_compressed": 89334
+    },
+    {
+      "source": "raw/shots_2020-21.csv",
+      "saved": "raw/shots_2020-21.csv.gz",
+      "sha256_uncompressed": "b31a9995dde1a90ddcd7686cd24ed965b1110122778bab192eac7fec0b3a83c0",
+      "bytes_uncompressed": 1282174,
+      "bytes_compressed": 101351
+    },
+    {
+      "source": "raw/shots_2021-22.csv",
+      "saved": "raw/shots_2021-22.csv.gz",
+      "sha256_uncompressed": "bb8789d34d2a1605785a57a0174c3a4262198ad13d61405b23590ead7b007d31",
+      "bytes_uncompressed": 1422009,
+      "bytes_compressed": 113265
+    },
+    {
+      "source": "raw/shots_2022-23.csv",
+      "saved": "raw/shots_2022-23.csv.gz",
+      "sha256_uncompressed": "e4ebe4f69d3bf1310c27cf95b17bc4d2f6925d38840af6cf6a5c0f12eb779b19",
+      "bytes_uncompressed": 1425428,
+      "bytes_compressed": 112451
+    },
+    {
+      "source": "raw/shots_2023-24.csv",
+      "saved": "raw/shots_2023-24.csv.gz",
+      "sha256_uncompressed": "73823dc455051de27020e1b00e0c00a6cae373890c68fdb8ad645f86ed8ab364",
+      "bytes_uncompressed": 1474130,
+      "bytes_compressed": 116004
+    },
+    {
+      "source": "raw/shots_2024-25.csv",
+      "saved": "raw/shots_2024-25.csv.gz",
+      "sha256_uncompressed": "8078d6e9e2cb6aa20637bde55ac4d7d26ef9c4785c320274c8f2517186afa28b",
+      "bytes_uncompressed": 1524241,
+      "bytes_compressed": 119861
+    },
+    {
+      "source": "raw/shots_2025-26.csv",
+      "saved": "raw/shots_2025-26.csv.gz",
+      "sha256_uncompressed": "d7bb2a48d4a8175d5aaa1bb701071481f6fb5e20b886b1b440ed75ef8a5622b8",
+      "bytes_uncompressed": 1500608,
+      "bytes_compressed": 116301
+    },
+    {
+      "source": "raw/teams_2000-01.csv",
+      "saved": "raw/teams_2000-01.csv.gz",
+      "sha256_uncompressed": "07940a840d54a0f76c96c987cd90ba915ac3f1eb533f314cefb115fca84ece50",
+      "bytes_uncompressed": 594,
+      "bytes_compressed": 301
+    },
+    {
+      "source": "raw/teams_2001-02.csv",
+      "saved": "raw/teams_2001-02.csv.gz",
+      "sha256_uncompressed": "faeaeac1986e1a11c92c567a4f1c2cfd63d192d5d7f35e09a4ffaf3b4215d551",
+      "bytes_uncompressed": 595,
+      "bytes_compressed": 302
+    },
+    {
+      "source": "raw/teams_2002-03.csv",
+      "saved": "raw/teams_2002-03.csv.gz",
+      "sha256_uncompressed": "3adda85af5ccd4cae3864be6270b2fd4ef0759f3d7d0b101ecdd27a1e026dd4e",
+      "bytes_uncompressed": 598,
+      "bytes_compressed": 304
+    },
+    {
+      "source": "raw/teams_2003-04.csv",
+      "saved": "raw/teams_2003-04.csv.gz",
+      "sha256_uncompressed": "038a3d4112e23571d068e17b795f41be6d0adb0f4db7bdc6daed051a4ee648f4",
+      "bytes_uncompressed": 595,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2004-05.csv",
+      "saved": "raw/teams_2004-05.csv.gz",
+      "sha256_uncompressed": "5ea9fd642f3f466aa1786f09739de700ebc6f423582ab8df6b5650780feead7b",
+      "bytes_uncompressed": 593,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2005-06.csv",
+      "saved": "raw/teams_2005-06.csv.gz",
+      "sha256_uncompressed": "44d10a32159e7695a690ec6d92e7653b21c6c664447b4893ecfffdbf918d4341",
+      "bytes_uncompressed": 594,
+      "bytes_compressed": 298
+    },
+    {
+      "source": "raw/teams_2006-07.csv",
+      "saved": "raw/teams_2006-07.csv.gz",
+      "sha256_uncompressed": "30810a411b8d387aaef05d6db18c86a3d4c5a98e93a2b1d067c6ca2747d8cb4f",
+      "bytes_uncompressed": 597,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2007-08.csv",
+      "saved": "raw/teams_2007-08.csv.gz",
+      "sha256_uncompressed": "4fe71323a5c45640174ffb11d9902a24f1fc5f2d5ac8e56afd400cb9a40b15bf",
+      "bytes_uncompressed": 599,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2008-09.csv",
+      "saved": "raw/teams_2008-09.csv.gz",
+      "sha256_uncompressed": "aed3f6a7eb63ddb79a4e02125de16d6b0e3f4b353e766b1a5d2180b91b58648e",
+      "bytes_uncompressed": 595,
+      "bytes_compressed": 302
+    },
+    {
+      "source": "raw/teams_2009-10.csv",
+      "saved": "raw/teams_2009-10.csv.gz",
+      "sha256_uncompressed": "51d63b5f7ab8c6d39f16d98a25d1aa9f13a1f339c483a8571439a55ac253e590",
+      "bytes_uncompressed": 595,
+      "bytes_compressed": 302
+    },
+    {
+      "source": "raw/teams_2010-11.csv",
+      "saved": "raw/teams_2010-11.csv.gz",
+      "sha256_uncompressed": "be260cb5b33489f70c6b3b957fb6d218ab5f7efee53fd29829d2e650548d992d",
+      "bytes_uncompressed": 597,
+      "bytes_compressed": 301
+    },
+    {
+      "source": "raw/teams_2011-12.csv",
+      "saved": "raw/teams_2011-12.csv.gz",
+      "sha256_uncompressed": "9ea9a8d840e17e65911fc3d867a6cfd83d31f8046c1754884682a250f8d47c85",
+      "bytes_uncompressed": 596,
+      "bytes_compressed": 304
+    },
+    {
+      "source": "raw/teams_2012-13.csv",
+      "saved": "raw/teams_2012-13.csv.gz",
+      "sha256_uncompressed": "dffd9efd9b1b4af30b0e380cab1754e953e52d718285df68adda169cb880eb39",
+      "bytes_uncompressed": 597,
+      "bytes_compressed": 301
+    },
+    {
+      "source": "raw/teams_2013-14.csv",
+      "saved": "raw/teams_2013-14.csv.gz",
+      "sha256_uncompressed": "a1237278c8131917d9cee37311aa779e10efddbafc3ce2c934495c53110dab47",
+      "bytes_uncompressed": 597,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2014-15.csv",
+      "saved": "raw/teams_2014-15.csv.gz",
+      "sha256_uncompressed": "b3dc079dac0f4ea07b915192d7591aba8587313cb68635a70029c0bca60b70ac",
+      "bytes_uncompressed": 596,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2015-16.csv",
+      "saved": "raw/teams_2015-16.csv.gz",
+      "sha256_uncompressed": "3c5aac9e84eaeb627b2e3663453d32c46ae66316b3945e1c8ab8c83117e63989",
+      "bytes_uncompressed": 598,
+      "bytes_compressed": 301
+    },
+    {
+      "source": "raw/teams_2016-17.csv",
+      "saved": "raw/teams_2016-17.csv.gz",
+      "sha256_uncompressed": "029ab660f8783bb8d1c83b60fee7e0f4e8fcd26d587fbe9141f9cde6547b8a27",
+      "bytes_uncompressed": 593,
+      "bytes_compressed": 298
+    },
+    {
+      "source": "raw/teams_2017-18.csv",
+      "saved": "raw/teams_2017-18.csv.gz",
+      "sha256_uncompressed": "499d0a1e6959719ed137c8c07943779bba234e92eee69d366ee2f2bcd4758f96",
+      "bytes_uncompressed": 598,
+      "bytes_compressed": 305
+    },
+    {
+      "source": "raw/teams_2018-19.csv",
+      "saved": "raw/teams_2018-19.csv.gz",
+      "sha256_uncompressed": "ab94740ce8d2b5b0c064716ab27512d24cc4f801f5680e63549f1596a5e065a4",
+      "bytes_uncompressed": 598,
+      "bytes_compressed": 305
+    },
+    {
+      "source": "raw/teams_2019-20.csv",
+      "saved": "raw/teams_2019-20.csv.gz",
+      "sha256_uncompressed": "c56b499b61609290f9b9a28e3bbe5ef1f6267a1eebed475a8b5c6b946fa623da",
+      "bytes_uncompressed": 598,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2020-21.csv",
+      "saved": "raw/teams_2020-21.csv.gz",
+      "sha256_uncompressed": "632e5e40a683e11819eed91ab7617b0398eb8847fd5ecd359539119766e58eb6",
+      "bytes_uncompressed": 595,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2021-22.csv",
+      "saved": "raw/teams_2021-22.csv.gz",
+      "sha256_uncompressed": "b8c10a9068d96c9a11dd6bb00bf99a78f6989fdd699fd2ef2fcc1b7b2b9d89f9",
+      "bytes_uncompressed": 596,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2022-23.csv",
+      "saved": "raw/teams_2022-23.csv.gz",
+      "sha256_uncompressed": "e45697e370f121b79ba5a9b3aed0c3a46f0509ef1b086c03a5036ee999394ae7",
+      "bytes_uncompressed": 596,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2023-24.csv",
+      "saved": "raw/teams_2023-24.csv.gz",
+      "sha256_uncompressed": "011ca94ee98c4e01741f384cf863ba9cdeac3de925758336566f08ea13925992",
+      "bytes_uncompressed": 597,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2024-25.csv",
+      "saved": "raw/teams_2024-25.csv.gz",
+      "sha256_uncompressed": "e24c5c9702d9ae03b58c6fe014eec1db4e69e7034077c1f4438488c77854ccd6",
+      "bytes_uncompressed": 598,
+      "bytes_compressed": 303
+    },
+    {
+      "source": "raw/teams_2025-26.csv",
+      "saved": "raw/teams_2025-26.csv.gz",
+      "sha256_uncompressed": "3d7e100f8e79187b0a8d68628d9ec58bc65c5e6cefb2ca8c7669b4ebac1d456a",
+      "bytes_uncompressed": 599,
+      "bytes_compressed": 304
+    },
+    {
+      "source": "league_raw/1610612737_2006-07.csv",
+      "saved": "league_raw/1610612737_2006-07.csv.gz",
+      "sha256_uncompressed": "06630c72dc1bc48b2ab3433360a6113ceafd59a82418863bc0f29a9718fbfefa",
+      "bytes_uncompressed": 1221518,
+      "bytes_compressed": 89572
+    },
+    {
+      "source": "league_raw/1610612737_2008-09.csv",
+      "saved": "league_raw/1610612737_2008-09.csv.gz",
+      "sha256_uncompressed": "e3c50fad9cbd4a359d035bfc97e92c487c3041c3ad9bf79b9c44ef6b84ae64d9",
+      "bytes_uncompressed": 1277278,
+      "bytes_compressed": 97970
+    },
+    {
+      "source": "league_raw/1610612737_2009-10.csv",
+      "saved": "league_raw/1610612737_2009-10.csv.gz",
+      "sha256_uncompressed": "d23233382688d78d1dc4715118dc585fedd62f04bc257a2934f5ad128c8e02a9",
+      "bytes_uncompressed": 1349092,
+      "bytes_compressed": 102208
+    },
+    {
+      "source": "league_raw/1610612737_2010-11.csv",
+      "saved": "league_raw/1610612737_2010-11.csv.gz",
+      "sha256_uncompressed": "b84ffdfc581caf6b42b03377747bab09ba3dac295a0cad6f01eda945d7a53e74",
+      "bytes_uncompressed": 1277051,
+      "bytes_compressed": 101525
+    },
+    {
+      "source": "league_raw/1610612737_2012-13.csv",
+      "saved": "league_raw/1610612737_2012-13.csv.gz",
+      "sha256_uncompressed": "e341f238ce8e211aa9fc80a0da2f86da09295b7f01622e96612382e82edfce5b",
+      "bytes_uncompressed": 1285155,
+      "bytes_compressed": 102347
+    },
+    {
+      "source": "league_raw/1610612737_2013-14.csv",
+      "saved": "league_raw/1610612737_2013-14.csv.gz",
+      "sha256_uncompressed": "7092fc4256eb13e65ba698bb018d266a4ac9f85d21ded8b4da11cd0420ab6ed4",
+      "bytes_uncompressed": 1341807,
+      "bytes_compressed": 105057
+    },
+    {
+      "source": "league_raw/1610612737_2018-19.csv",
+      "saved": "league_raw/1610612737_2018-19.csv.gz",
+      "sha256_uncompressed": "7c06817b12654d4cbdad2da5f7479f536a81cdb402c843e68551fbae42248883",
+      "bytes_uncompressed": 1497581,
+      "bytes_compressed": 117710
+    },
+    {
+      "source": "league_raw/1610612737_2019-20.csv",
+      "saved": "league_raw/1610612737_2019-20.csv.gz",
+      "sha256_uncompressed": "6cc87941f74e87a1eac48a539e8e9f0b7cc6d5b4ac4166fb554d259e73418efc",
+      "bytes_uncompressed": 1216284,
+      "bytes_compressed": 96323
+    },
+    {
+      "source": "league_raw/1610612737_2020-21.csv",
+      "saved": "league_raw/1610612737_2020-21.csv.gz",
+      "sha256_uncompressed": "d0d9b9d6b2b2cf1295b9dcf9d7fb032f0d903eff1c6050d769d66d33a00e1916",
+      "bytes_uncompressed": 1259679,
+      "bytes_compressed": 100166
+    },
+    {
+      "source": "league_raw/1610612737_2022-23.csv",
+      "saved": "league_raw/1610612737_2022-23.csv.gz",
+      "sha256_uncompressed": "fbf2c56c7d7ea7b0d8309f0c1eaa4f2117ad76037d394a0082f885d4e0deacde",
+      "bytes_uncompressed": 1530365,
+      "bytes_compressed": 120235
+    },
+    {
+      "source": "league_raw/1610612737_2023-24.csv",
+      "saved": "league_raw/1610612737_2023-24.csv.gz",
+      "sha256_uncompressed": "b39f8ff93b742df73c9187bce2ffa1bc3d8f748d351ed9c22525cb190301cc42",
+      "bytes_uncompressed": 1538166,
+      "bytes_compressed": 120156
+    },
+    {
+      "source": "league_raw/1610612737_2024-25.csv",
+      "saved": "league_raw/1610612737_2024-25.csv.gz",
+      "sha256_uncompressed": "0244126d7dd7faac79f4e9ac88e9a63469ff6615747ff1d1d6e288776ca72609",
+      "bytes_uncompressed": 1532745,
+      "bytes_compressed": 119848
+    },
+    {
+      "source": "league_raw/1610612737_2025-26.csv",
+      "saved": "league_raw/1610612737_2025-26.csv.gz",
+      "sha256_uncompressed": "fc6aad858b14abfe760e432a1e41dc4b0c3aa8940daba5d3985a6133d0161d9d",
+      "bytes_uncompressed": 1543506,
+      "bytes_compressed": 120465
+    },
+    {
+      "source": "league_raw/1610612738_2006-07.csv",
+      "saved": "league_raw/1610612738_2006-07.csv.gz",
+      "sha256_uncompressed": "083c0ceb38e4ff85a9865efb0506658c3e98b8e709d5b6250a669a17d5ab17b7",
+      "bytes_uncompressed": 1245197,
+      "bytes_compressed": 93833
+    },
+    {
+      "source": "league_raw/1610612738_2008-09.csv",
+      "saved": "league_raw/1610612738_2008-09.csv.gz",
+      "sha256_uncompressed": "368c3482aeb74a4f2da5cf2e95dca4ff555d6c593edd7751800d9ad42c804dbb",
+      "bytes_uncompressed": 1217266,
+      "bytes_compressed": 93743
+    },
+    {
+      "source": "league_raw/1610612738_2009-10.csv",
+      "saved": "league_raw/1610612738_2009-10.csv.gz",
+      "sha256_uncompressed": "a1093bbc5a337ae6c3f51df5746c4c3ccea9c50cb239240882162f4a020b10b6",
+      "bytes_uncompressed": 1253686,
+      "bytes_compressed": 95659
+    },
+    {
+      "source": "league_raw/1610612738_2010-11.csv",
+      "saved": "league_raw/1610612738_2010-11.csv.gz",
+      "sha256_uncompressed": "a65ef52b6472c070795d3ec85bd7818eb4cb4a5136b5904d907dfd1f19ff8e90",
+      "bytes_uncompressed": 1198158,
+      "bytes_compressed": 95034
+    },
+    {
+      "source": "league_raw/1610612738_2012-13.csv",
+      "saved": "league_raw/1610612738_2012-13.csv.gz",
+      "sha256_uncompressed": "78a65397025a040f19bb1a05e3098671bb0f56c9eb887d5f0906bd9a274cf9e5",
+      "bytes_uncompressed": 1294442,
+      "bytes_compressed": 101533
+    },
+    {
+      "source": "league_raw/1610612738_2013-14.csv",
+      "saved": "league_raw/1610612738_2013-14.csv.gz",
+      "sha256_uncompressed": "0ea2ff0535813160c2f89c8164f286fa6ce120ff3c1b27400b7b77a337a19735",
+      "bytes_uncompressed": 1389512,
+      "bytes_compressed": 108431
+    },
+    {
+      "source": "league_raw/1610612738_2018-19.csv",
+      "saved": "league_raw/1610612738_2018-19.csv.gz",
+      "sha256_uncompressed": "d4e11d42cfbe3b9734b3764b8c0132af901188235129733156ab4e293ab1dd70",
+      "bytes_uncompressed": 1493066,
+      "bytes_compressed": 119298
+    },
+    {
+      "source": "league_raw/1610612738_2019-20.csv",
+      "saved": "league_raw/1610612738_2019-20.csv.gz",
+      "sha256_uncompressed": "e407f74789b32b5ce8b0a3505b1e4a56537b58b73b1bd91a03de41fdb4d317fb",
+      "bytes_uncompressed": 1303329,
+      "bytes_compressed": 103286
+    },
+    {
+      "source": "league_raw/1610612738_2020-21.csv",
+      "saved": "league_raw/1610612738_2020-21.csv.gz",
+      "sha256_uncompressed": "d707a597b513534ae00ee9015f87ab4cc99a2fafeaf5be7a1107f6088500eb09",
+      "bytes_uncompressed": 1296728,
+      "bytes_compressed": 103645
+    },
+    {
+      "source": "league_raw/1610612738_2022-23.csv",
+      "saved": "league_raw/1610612738_2022-23.csv.gz",
+      "sha256_uncompressed": "aeccc9cf4f033bdd425c52657f2a93c05ade55bfe1a12d26ff5eb837b8e05075",
+      "bytes_uncompressed": 1476135,
+      "bytes_compressed": 115512
+    },
+    {
+      "source": "league_raw/1610612738_2023-24.csv",
+      "saved": "league_raw/1610612738_2023-24.csv.gz",
+      "sha256_uncompressed": "f33b1e3d7000805ec839fe20f44b0f42f05764908359232871b37272179bc904",
+      "bytes_uncompressed": 1504774,
+      "bytes_compressed": 118838
+    },
+    {
+      "source": "league_raw/1610612738_2024-25.csv",
+      "saved": "league_raw/1610612738_2024-25.csv.gz",
+      "sha256_uncompressed": "18a5e71095e029c30b97337e7cf09695624716f21652e38b7621ec6fefc124e6",
+      "bytes_uncompressed": 1502798,
+      "bytes_compressed": 119358
+    },
+    {
+      "source": "league_raw/1610612738_2025-26.csv",
+      "saved": "league_raw/1610612738_2025-26.csv.gz",
+      "sha256_uncompressed": "8a4c2399bf4a71d0c6c6f67c6e6bc502d31056167332c20a1a7d8b79d4d32e93",
+      "bytes_uncompressed": 1509435,
+      "bytes_compressed": 119378
+    },
+    {
+      "source": "league_raw/1610612739_2006-07.csv",
+      "saved": "league_raw/1610612739_2006-07.csv.gz",
+      "sha256_uncompressed": "2730d5ab84a7d5b591a5e947a512709ebc0e2c1e0fe163512052d87a40b74c5b",
+      "bytes_uncompressed": 1317635,
+      "bytes_compressed": 97017
+    },
+    {
+      "source": "league_raw/1610612739_2008-09.csv",
+      "saved": "league_raw/1610612739_2008-09.csv.gz",
+      "sha256_uncompressed": "b562c4c15f84028c4bdb0cb5a0159d2f3983552aef387db61e18ca9c3a88bfd7",
+      "bytes_uncompressed": 1282702,
+      "bytes_compressed": 96332
+    },
+    {
+      "source": "league_raw/1610612739_2009-10.csv",
+      "saved": "league_raw/1610612739_2009-10.csv.gz",
+      "sha256_uncompressed": "198b7827b2460ab5aa13fb0b2b8c16e74a1501a3648f22db312d44d699cbb49c",
+      "bytes_uncompressed": 1311455,
+      "bytes_compressed": 96078
+    },
+    {
+      "source": "league_raw/1610612739_2010-11.csv",
+      "saved": "league_raw/1610612739_2010-11.csv.gz",
+      "sha256_uncompressed": "099bc56615f162fd593bd2e8cd915e6f4598aafdf318638558553349edf8e980",
+      "bytes_uncompressed": 1332740,
+      "bytes_compressed": 101869
+    },
+    {
+      "source": "league_raw/1610612739_2012-13.csv",
+      "saved": "league_raw/1610612739_2012-13.csv.gz",
+      "sha256_uncompressed": "8af394dcff6135ff08b501507f8b871a24dde2e79bbc42f5e083234175d032fe",
+      "bytes_uncompressed": 1386125,
+      "bytes_compressed": 106808
+    },
+    {
+      "source": "league_raw/1610612739_2013-14.csv",
+      "saved": "league_raw/1610612739_2013-14.csv.gz",
+      "sha256_uncompressed": "cb7072c64db39e09ba4083b3fae023bb8e01b62f2cb03eb31372b75c9e1fb96c",
+      "bytes_uncompressed": 1437480,
+      "bytes_compressed": 110138
+    },
+    {
+      "source": "league_raw/1610612739_2018-19.csv",
+      "saved": "league_raw/1610612739_2018-19.csv.gz",
+      "sha256_uncompressed": "b2df4b027f0be921c038e667f2624026068a3538751f4fb2cb15291730b967d3",
+      "bytes_uncompressed": 1480163,
+      "bytes_compressed": 113800
+    },
+    {
+      "source": "league_raw/1610612739_2019-20.csv",
+      "saved": "league_raw/1610612739_2019-20.csv.gz",
+      "sha256_uncompressed": "1fcaa35ef2e3b1babc5b66ddf771e016e1656cf9ef2e52f4c66c018e71900134",
+      "bytes_uncompressed": 1185980,
+      "bytes_compressed": 90970
+    },
+    {
+      "source": "league_raw/1610612739_2020-21.csv",
+      "saved": "league_raw/1610612739_2020-21.csv.gz",
+      "sha256_uncompressed": "17ac7308883f8251472327ffbfda78420d59f42ee006c88bd4f1179ea7534b9c",
+      "bytes_uncompressed": 1282549,
+      "bytes_compressed": 98126
+    },
+    {
+      "source": "league_raw/1610612739_2022-23.csv",
+      "saved": "league_raw/1610612739_2022-23.csv.gz",
+      "sha256_uncompressed": "c885fc981d1437598871964890e996b688970d93fd6a94ab365e1c693c3f497a",
+      "bytes_uncompressed": 1453683,
+      "bytes_compressed": 111849
+    },
+    {
+      "source": "league_raw/1610612739_2023-24.csv",
+      "saved": "league_raw/1610612739_2023-24.csv.gz",
+      "sha256_uncompressed": "3ac4793ec926067a6d6958f4467afff7a9add1bc9218e57360148e9a44695ce9",
+      "bytes_uncompressed": 1488991,
+      "bytes_compressed": 113817
+    },
+    {
+      "source": "league_raw/1610612739_2024-25.csv",
+      "saved": "league_raw/1610612739_2024-25.csv.gz",
+      "sha256_uncompressed": "951dfe71080aac78dc492d774dccc58afa9adf0bf14e3ddc663183c977f9b88a",
+      "bytes_uncompressed": 1555424,
+      "bytes_compressed": 119468
+    },
+    {
+      "source": "league_raw/1610612739_2025-26.csv",
+      "saved": "league_raw/1610612739_2025-26.csv.gz",
+      "sha256_uncompressed": "38ed406c7deabb794007058adcbce06d51c8d25a24710ed511c3af5a67d34451",
+      "bytes_uncompressed": 1544647,
+      "bytes_compressed": 118432
+    },
+    {
+      "source": "league_raw/1610612740_2006-07.csv",
+      "saved": "league_raw/1610612740_2006-07.csv.gz",
+      "sha256_uncompressed": "2fbe5afd289cc680d39543f2d1f4c8f6ab3e4aa8bfb567af579a8faf82c00d36",
+      "bytes_uncompressed": 1411796,
+      "bytes_compressed": 96101
+    },
+    {
+      "source": "league_raw/1610612740_2008-09.csv",
+      "saved": "league_raw/1610612740_2008-09.csv.gz",
+      "sha256_uncompressed": "fa60f567c2e2583ff3ab11f70671e2a874bff195aa692627b413d7f192b50207",
+      "bytes_uncompressed": 1294153,
+      "bytes_compressed": 93815
+    },
+    {
+      "source": "league_raw/1610612740_2009-10.csv",
+      "saved": "league_raw/1610612740_2009-10.csv.gz",
+      "sha256_uncompressed": "8ddb25433360551698feb3346e8590ced517e766497eb865873643a658213e8c",
+      "bytes_uncompressed": 1359845,
+      "bytes_compressed": 98117
+    },
+    {
+      "source": "league_raw/1610612740_2010-11.csv",
+      "saved": "league_raw/1610612740_2010-11.csv.gz",
+      "sha256_uncompressed": "e90f5a7baf52a11a31691802c72d39d009318d9ce69096933bcfb816b541b577",
+      "bytes_uncompressed": 1273614,
+      "bytes_compressed": 98851
+    },
+    {
+      "source": "league_raw/1610612740_2012-13.csv",
+      "saved": "league_raw/1610612740_2012-13.csv.gz",
+      "sha256_uncompressed": "9ed5d526f31bc45bda51cebea6a8a73cb02bd83db0f9dc16b16885e61ceb14d1",
+      "bytes_uncompressed": 1327133,
+      "bytes_compressed": 101344
+    },
+    {
+      "source": "league_raw/1610612740_2013-14.csv",
+      "saved": "league_raw/1610612740_2013-14.csv.gz",
+      "sha256_uncompressed": "905b2d2ac59102e749b9ff63950a2e3000873131cc7008c992661d44ff09b05c",
+      "bytes_uncompressed": 1365749,
+      "bytes_compressed": 103503
+    },
+    {
+      "source": "league_raw/1610612740_2018-19.csv",
+      "saved": "league_raw/1610612740_2018-19.csv.gz",
+      "sha256_uncompressed": "9f132e8db42c433c5af7010e6d463431d6d3ca8523eebaf1fa680a2b632368ad",
+      "bytes_uncompressed": 1560587,
+      "bytes_compressed": 119160
+    },
+    {
+      "source": "league_raw/1610612740_2019-20.csv",
+      "saved": "league_raw/1610612740_2019-20.csv.gz",
+      "sha256_uncompressed": "8dc1d0288b5adbd3a53362b2bac22827065efed1b10704c735d78e9bdc0ebbf9",
+      "bytes_uncompressed": 1367343,
+      "bytes_compressed": 103794
+    },
+    {
+      "source": "league_raw/1610612740_2020-21.csv",
+      "saved": "league_raw/1610612740_2020-21.csv.gz",
+      "sha256_uncompressed": "26450835b8cbd1bfd80dcc7f6948bf8d2503170e7250cc56cb6d8ea9490d5c30",
+      "bytes_uncompressed": 1335384,
+      "bytes_compressed": 101206
+    },
+    {
+      "source": "league_raw/1610612740_2022-23.csv",
+      "saved": "league_raw/1610612740_2022-23.csv.gz",
+      "sha256_uncompressed": "ab8bef7b88544b52da6904b4d278dee6e352a798012fcbd38f5d9ba3dcda0d77",
+      "bytes_uncompressed": 1509078,
+      "bytes_compressed": 114593
+    },
+    {
+      "source": "league_raw/1610612740_2023-24.csv",
+      "saved": "league_raw/1610612740_2023-24.csv.gz",
+      "sha256_uncompressed": "74f2c91113c0d702b4b4bc12a3683177947079bb4244772cec917e85cbe12797",
+      "bytes_uncompressed": 1506489,
+      "bytes_compressed": 114972
+    },
+    {
+      "source": "league_raw/1610612740_2024-25.csv",
+      "saved": "league_raw/1610612740_2024-25.csv.gz",
+      "sha256_uncompressed": "8a93ae58e2c51a46ff05a62c1c0a9381f3e702e080f169319407aeb96c76e1b4",
+      "bytes_uncompressed": 1555129,
+      "bytes_compressed": 118927
+    },
+    {
+      "source": "league_raw/1610612740_2025-26.csv",
+      "saved": "league_raw/1610612740_2025-26.csv.gz",
+      "sha256_uncompressed": "b00686c159b6b96f1b2f0e5ac26b142751fed2d35983382ffa61ff7a02774695",
+      "bytes_uncompressed": 1562393,
+      "bytes_compressed": 117291
+    },
+    {
+      "source": "league_raw/1610612741_2006-07.csv",
+      "saved": "league_raw/1610612741_2006-07.csv.gz",
+      "sha256_uncompressed": "d712ad8f40bc5d379cd90ec0a2a88a62b9a9bd8f6644a3be46d034b967180d0d",
+      "bytes_uncompressed": 1264042,
+      "bytes_compressed": 94484
+    },
+    {
+      "source": "league_raw/1610612741_2008-09.csv",
+      "saved": "league_raw/1610612741_2008-09.csv.gz",
+      "sha256_uncompressed": "e49878a4d8f544d68ab668eb1aadb99aeb1edd4d848d62ae6655903939bf6ea6",
+      "bytes_uncompressed": 1349681,
+      "bytes_compressed": 99465
+    },
+    {
+      "source": "league_raw/1610612741_2009-10.csv",
+      "saved": "league_raw/1610612741_2009-10.csv.gz",
+      "sha256_uncompressed": "559f139b9a3961c4006480d1b7fe274d6a55e58ea142cd64e19b076b52c5b3fa",
+      "bytes_uncompressed": 1344836,
+      "bytes_compressed": 99253
+    },
+    {
+      "source": "league_raw/1610612741_2010-11.csv",
+      "saved": "league_raw/1610612741_2010-11.csv.gz",
+      "sha256_uncompressed": "c94d4398179eebc9ef5f2bbc386ab454bcfec1e68ebf7e7c508116fe02c3ada5",
+      "bytes_uncompressed": 1266941,
+      "bytes_compressed": 99418
+    },
+    {
+      "source": "league_raw/1610612741_2012-13.csv",
+      "saved": "league_raw/1610612741_2012-13.csv.gz",
+      "sha256_uncompressed": "e3df379537dd0258b0507544ec1c74f0b2d2d82fd05bf0b0f00ddbb58677a48e",
+      "bytes_uncompressed": 1297468,
+      "bytes_compressed": 102887
+    },
+    {
+      "source": "league_raw/1610612741_2013-14.csv",
+      "saved": "league_raw/1610612741_2013-14.csv.gz",
+      "sha256_uncompressed": "fe88ee12595ef2c144dc27d94d03358741de6205083a4c8b660963825ac6fd41",
+      "bytes_uncompressed": 1271096,
+      "bytes_compressed": 99894
+    },
+    {
+      "source": "league_raw/1610612741_2018-19.csv",
+      "saved": "league_raw/1610612741_2018-19.csv.gz",
+      "sha256_uncompressed": "0cc7d2d77807aae599c7f1bb04519159fbef93c2d679a05678cd9848169e17ba",
+      "bytes_uncompressed": 1448949,
+      "bytes_compressed": 113574
+    },
+    {
+      "source": "league_raw/1610612741_2019-20.csv",
+      "saved": "league_raw/1610612741_2019-20.csv.gz",
+      "sha256_uncompressed": "1bfbda121f14657bf0c89162aba09866f686d57487fbb7d01d4b4daf802ee56a",
+      "bytes_uncompressed": 1157629,
+      "bytes_compressed": 89334
+    },
+    {
+      "source": "league_raw/1610612741_2020-21.csv",
+      "saved": "league_raw/1610612741_2020-21.csv.gz",
+      "sha256_uncompressed": "b31a9995dde1a90ddcd7686cd24ed965b1110122778bab192eac7fec0b3a83c0",
+      "bytes_uncompressed": 1282174,
+      "bytes_compressed": 101351
+    },
+    {
+      "source": "league_raw/1610612741_2022-23.csv",
+      "saved": "league_raw/1610612741_2022-23.csv.gz",
+      "sha256_uncompressed": "e4ebe4f69d3bf1310c27cf95b17bc4d2f6925d38840af6cf6a5c0f12eb779b19",
+      "bytes_uncompressed": 1425428,
+      "bytes_compressed": 112451
+    },
+    {
+      "source": "league_raw/1610612741_2023-24.csv",
+      "saved": "league_raw/1610612741_2023-24.csv.gz",
+      "sha256_uncompressed": "51e6081193d1bd5bf0ef8cf4052fe3879bf21daca279792b7fd8cd23c561fd98",
+      "bytes_uncompressed": 1474130,
+      "bytes_compressed": 116006
+    },
+    {
+      "source": "league_raw/1610612741_2024-25.csv",
+      "saved": "league_raw/1610612741_2024-25.csv.gz",
+      "sha256_uncompressed": "f0b86aa2f5b9db09e5e3ab0740127566cbcabc7fd036c500116dc942cd325d7b",
+      "bytes_uncompressed": 1524241,
+      "bytes_compressed": 119865
+    },
+    {
+      "source": "league_raw/1610612741_2025-26.csv",
+      "saved": "league_raw/1610612741_2025-26.csv.gz",
+      "sha256_uncompressed": "8f1cb0a1c3a177a708044444ee38442d1b775e504847d9dea8d0823531b3dbc4",
+      "bytes_uncompressed": 1500608,
+      "bytes_compressed": 116302
+    },
+    {
+      "source": "league_raw/1610612742_2006-07.csv",
+      "saved": "league_raw/1610612742_2006-07.csv.gz",
+      "sha256_uncompressed": "3d73e6afb68b09a12601752ddfca75dfe7dcf497df3752e57870704411f0e599",
+      "bytes_uncompressed": 1252770,
+      "bytes_compressed": 92986
+    },
+    {
+      "source": "league_raw/1610612742_2008-09.csv",
+      "saved": "league_raw/1610612742_2008-09.csv.gz",
+      "sha256_uncompressed": "d0920d35094cf08acc287945293328362f0bd140c41f460d1140b525d14496f0",
+      "bytes_uncompressed": 1322261,
+      "bytes_compressed": 99402
+    },
+    {
+      "source": "league_raw/1610612742_2009-10.csv",
+      "saved": "league_raw/1610612742_2009-10.csv.gz",
+      "sha256_uncompressed": "eb71f832c5b3ed3975165c913ef934102c1749149ea2cf799e613a5fd6b18774",
+      "bytes_uncompressed": 1360933,
+      "bytes_compressed": 101788
+    },
+    {
+      "source": "league_raw/1610612742_2010-11.csv",
+      "saved": "league_raw/1610612742_2010-11.csv.gz",
+      "sha256_uncompressed": "fe60e522974906898b8bde74898ff618b85ebc4e7e0742e24d5480bdb5db7a02",
+      "bytes_uncompressed": 1268837,
+      "bytes_compressed": 99913
+    },
+    {
+      "source": "league_raw/1610612742_2012-13.csv",
+      "saved": "league_raw/1610612742_2012-13.csv.gz",
+      "sha256_uncompressed": "b8aafeab8de17f4e5f234960f70efc177c7ba88ec08f3768f8ce055cde5b429d",
+      "bytes_uncompressed": 1358173,
+      "bytes_compressed": 108901
+    },
+    {
+      "source": "league_raw/1610612742_2013-14.csv",
+      "saved": "league_raw/1610612742_2013-14.csv.gz",
+      "sha256_uncompressed": "f20b15e31d60c03007aa4e900139fc3c1e04ba48fd12604b91492beb622699e8",
+      "bytes_uncompressed": 1399509,
+      "bytes_compressed": 109044
+    },
+    {
+      "source": "league_raw/1610612742_2018-19.csv",
+      "saved": "league_raw/1610612742_2018-19.csv.gz",
+      "sha256_uncompressed": "74e5f2efb90fdceb4a608fa02a68f3379504fcf0e0b26cac474cc48d92265d06",
+      "bytes_uncompressed": 1457138,
+      "bytes_compressed": 113432
+    },
+    {
+      "source": "league_raw/1610612742_2019-20.csv",
+      "saved": "league_raw/1610612742_2019-20.csv.gz",
+      "sha256_uncompressed": "bdad5584f541b81194a4aa28e753704e31673b84e1914d2e8d4909b5c4d90292",
+      "bytes_uncompressed": 1394797,
+      "bytes_compressed": 108561
+    },
+    {
+      "source": "league_raw/1610612742_2020-21.csv",
+      "saved": "league_raw/1610612742_2020-21.csv.gz",
+      "sha256_uncompressed": "dbd20803c9351bb20ff13273c27f982cfe63387d56c5560c8b77a9695950a781",
+      "bytes_uncompressed": 1295177,
+      "bytes_compressed": 101388
+    },
+    {
+      "source": "league_raw/1610612742_2022-23.csv",
+      "saved": "league_raw/1610612742_2022-23.csv.gz",
+      "sha256_uncompressed": "3072e36471555fb29316913d135f60d95ff1f150b87defee5d4a7e0ebe9b3e28",
+      "bytes_uncompressed": 1423672,
+      "bytes_compressed": 110494
+    },
+    {
+      "source": "league_raw/1610612742_2023-24.csv",
+      "saved": "league_raw/1610612742_2023-24.csv.gz",
+      "sha256_uncompressed": "a5ae51ca6633d06c2390842e19c3542628e584fde57738121c04536762aa4674",
+      "bytes_uncompressed": 1511673,
+      "bytes_compressed": 118086
+    },
+    {
+      "source": "league_raw/1610612742_2024-25.csv",
+      "saved": "league_raw/1610612742_2024-25.csv.gz",
+      "sha256_uncompressed": "cc22bd81307069c90de5e129d56ad4e425eb818bf1ef359d24fa8881b241368a",
+      "bytes_uncompressed": 1489359,
+      "bytes_compressed": 115682
+    },
+    {
+      "source": "league_raw/1610612742_2025-26.csv",
+      "saved": "league_raw/1610612742_2025-26.csv.gz",
+      "sha256_uncompressed": "64c26fee9d0f75bd93a053f568c3a5768f3ce4ca6c610c5c5bcea09279d7af97",
+      "bytes_uncompressed": 1519553,
+      "bytes_compressed": 118487
+    },
+    {
+      "source": "league_raw/1610612743_2006-07.csv",
+      "saved": "league_raw/1610612743_2006-07.csv.gz",
+      "sha256_uncompressed": "09f365bb22534c2947e72f166ebce10b9ee5b0ec45a35db9fd005ebad87b808c",
+      "bytes_uncompressed": 1309614,
+      "bytes_compressed": 94236
+    },
+    {
+      "source": "league_raw/1610612743_2008-09.csv",
+      "saved": "league_raw/1610612743_2008-09.csv.gz",
+      "sha256_uncompressed": "4393097445806cb41d361b6357271670aa77457812db2f5a0d720df405691693",
+      "bytes_uncompressed": 1260692,
+      "bytes_compressed": 91955
+    },
+    {
+      "source": "league_raw/1610612743_2009-10.csv",
+      "saved": "league_raw/1610612743_2009-10.csv.gz",
+      "sha256_uncompressed": "51c7d6f08aea85988ea30b5bb6e90a4577de71a5e07b2ee5b00422760cdf847e",
+      "bytes_uncompressed": 1292643,
+      "bytes_compressed": 95151
+    },
+    {
+      "source": "league_raw/1610612743_2010-11.csv",
+      "saved": "league_raw/1610612743_2010-11.csv.gz",
+      "sha256_uncompressed": "576266b5179762b7ec61823dbb6b45728c286dfc60c143260b570407e08aeca3",
+      "bytes_uncompressed": 1324117,
+      "bytes_compressed": 102210
+    },
+    {
+      "source": "league_raw/1610612743_2012-13.csv",
+      "saved": "league_raw/1610612743_2012-13.csv.gz",
+      "sha256_uncompressed": "db0c9b824b83054dbd8e272a9c3cba5f19a09482516456e6afda12b9f3dffa8e",
+      "bytes_uncompressed": 1415960,
+      "bytes_compressed": 108528
+    },
+    {
+      "source": "league_raw/1610612743_2013-14.csv",
+      "saved": "league_raw/1610612743_2013-14.csv.gz",
+      "sha256_uncompressed": "85010249e98d427dc59af69b72ed8fe95f5d8e7395d40091810afb3d522abf3e",
+      "bytes_uncompressed": 1385492,
+      "bytes_compressed": 108438
+    },
+    {
+      "source": "league_raw/1610612743_2018-19.csv",
+      "saved": "league_raw/1610612743_2018-19.csv.gz",
+      "sha256_uncompressed": "d45cdc5fcb3155054c444ac7d02c24ddeaf78633e9c426190e14992dcf214e74",
+      "bytes_uncompressed": 1486687,
+      "bytes_compressed": 116909
+    },
+    {
+      "source": "league_raw/1610612743_2019-20.csv",
+      "saved": "league_raw/1610612743_2019-20.csv.gz",
+      "sha256_uncompressed": "b5df69eebd0e57f686efd61d6e67ad23fb9e74fca1c0a900ce5f8187aa2deb5a",
+      "bytes_uncompressed": 1306533,
+      "bytes_compressed": 103508
+    },
+    {
+      "source": "league_raw/1610612743_2020-21.csv",
+      "saved": "league_raw/1610612743_2020-21.csv.gz",
+      "sha256_uncompressed": "5758a752cdf3d5e9bada8c41d5802ccf8e63a3fefdb8ecd6eee7cd8c140dca97",
+      "bytes_uncompressed": 1297882,
+      "bytes_compressed": 103463
+    },
+    {
+      "source": "league_raw/1610612743_2022-23.csv",
+      "saved": "league_raw/1610612743_2022-23.csv.gz",
+      "sha256_uncompressed": "230af72bb2a6bef738d501b3d7f6ceb49a0e288251f23dd89eed1c7a8cc46595",
+      "bytes_uncompressed": 1442986,
+      "bytes_compressed": 113931
+    },
+    {
+      "source": "league_raw/1610612743_2023-24.csv",
+      "saved": "league_raw/1610612743_2023-24.csv.gz",
+      "sha256_uncompressed": "ce70db79b5a959187fab643f245e4398ebb3a3f1c1ba528c00aa58baf78f2e0d",
+      "bytes_uncompressed": 1488320,
+      "bytes_compressed": 116611
+    },
+    {
+      "source": "league_raw/1610612743_2024-25.csv",
+      "saved": "league_raw/1610612743_2024-25.csv.gz",
+      "sha256_uncompressed": "1fa8c600cbdc58b58e4a4e0c05a0b02c318c161d90eab3f7d86650329886f78b",
+      "bytes_uncompressed": 1505904,
+      "bytes_compressed": 117905
+    },
+    {
+      "source": "league_raw/1610612743_2025-26.csv",
+      "saved": "league_raw/1610612743_2025-26.csv.gz",
+      "sha256_uncompressed": "eea7c0d84db8ef12ad1d5496f51f8a4b0de97f01c339748f2f45f145dd8b0561",
+      "bytes_uncompressed": 1465124,
+      "bytes_compressed": 115566
+    },
+    {
+      "source": "league_raw/1610612744_2006-07.csv",
+      "saved": "league_raw/1610612744_2006-07.csv.gz",
+      "sha256_uncompressed": "9fdb11a4fd4174f58e46cb952a50f36313941e04b52fea6a922f130986da31a1",
+      "bytes_uncompressed": 1422987,
+      "bytes_compressed": 101870
+    },
+    {
+      "source": "league_raw/1610612744_2008-09.csv",
+      "saved": "league_raw/1610612744_2008-09.csv.gz",
+      "sha256_uncompressed": "cea15d41b7dbb1527e581197d5ca0393700c8a699ec7d10e8baceb8a6c9a12c7",
+      "bytes_uncompressed": 1481944,
+      "bytes_compressed": 108778
+    },
+    {
+      "source": "league_raw/1610612744_2009-10.csv",
+      "saved": "league_raw/1610612744_2009-10.csv.gz",
+      "sha256_uncompressed": "de085324cb71736b5e78f49c4b95f09f47770a0f9bbb60dea57a96202908d0f4",
+      "bytes_uncompressed": 1447649,
+      "bytes_compressed": 107368
+    },
+    {
+      "source": "league_raw/1610612744_2010-11.csv",
+      "saved": "league_raw/1610612744_2010-11.csv.gz",
+      "sha256_uncompressed": "275ea4a060b6aa6d69ee2a1329daeef5b2c0f5201e12c8052b398ca753def509",
+      "bytes_uncompressed": 1430747,
+      "bytes_compressed": 109319
+    },
+    {
+      "source": "league_raw/1610612744_2012-13.csv",
+      "saved": "league_raw/1610612744_2012-13.csv.gz",
+      "sha256_uncompressed": "a161a2a73c050c82f2bb0cd8ef36a28774c994364855642a3c7187ea70ce8cee",
+      "bytes_uncompressed": 1396292,
+      "bytes_compressed": 107993
+    },
+    {
+      "source": "league_raw/1610612744_2013-14.csv",
+      "saved": "league_raw/1610612744_2013-14.csv.gz",
+      "sha256_uncompressed": "487407beceef966880b184a7548fadb1433f755c1186a84fb2bc21e6b6f46502",
+      "bytes_uncompressed": 1441034,
+      "bytes_compressed": 110394
+    },
+    {
+      "source": "league_raw/1610612744_2018-19.csv",
+      "saved": "league_raw/1610612744_2018-19.csv.gz",
+      "sha256_uncompressed": "6756067eb2f9619765879b705daba044ce2e708b604a5022c8e506f5a37f65d3",
+      "bytes_uncompressed": 1525617,
+      "bytes_compressed": 117683
+    },
+    {
+      "source": "league_raw/1610612744_2019-20.csv",
+      "saved": "league_raw/1610612744_2019-20.csv.gz",
+      "sha256_uncompressed": "d6a76e4fdb7ca1a0a1aeaab1bfaf7f22bfa1c9f6ab46735280a8efb9d0734ce7",
+      "bytes_uncompressed": 1199251,
+      "bytes_compressed": 92345
+    },
+    {
+      "source": "league_raw/1610612744_2020-21.csv",
+      "saved": "league_raw/1610612744_2020-21.csv.gz",
+      "sha256_uncompressed": "debca2d35109995b8a87925d02d8696ed900192be9fa4170879f1dc5b5a8c0f1",
+      "bytes_uncompressed": 1332037,
+      "bytes_compressed": 101562
+    },
+    {
+      "source": "league_raw/1610612744_2022-23.csv",
+      "saved": "league_raw/1610612744_2022-23.csv.gz",
+      "sha256_uncompressed": "10b5bcacb6c007ee165fb38fa25413f132ce70186fab737ffa81e4b8ddb26c60",
+      "bytes_uncompressed": 1553415,
+      "bytes_compressed": 118072
+    },
+    {
+      "source": "league_raw/1610612744_2023-24.csv",
+      "saved": "league_raw/1610612744_2023-24.csv.gz",
+      "sha256_uncompressed": "d20ee488449e44bebf36382ea328e46498a1de9f164941aca507ba44a07afefc",
+      "bytes_uncompressed": 1584837,
+      "bytes_compressed": 121440
+    },
+    {
+      "source": "league_raw/1610612744_2024-25.csv",
+      "saved": "league_raw/1610612744_2024-25.csv.gz",
+      "sha256_uncompressed": "82200a153f2bef611a3dda0f6f3f98eaf7c3e1ad2ddffa080fbf3e75a63ac10e",
+      "bytes_uncompressed": 1565958,
+      "bytes_compressed": 119125
+    },
+    {
+      "source": "league_raw/1610612744_2025-26.csv",
+      "saved": "league_raw/1610612744_2025-26.csv.gz",
+      "sha256_uncompressed": "8e9547c00e61175bab508e0827f1b0c968bc55d7f89310db2322ec04b2cdb5bc",
+      "bytes_uncompressed": 1531872,
+      "bytes_compressed": 117065
+    },
+    {
+      "source": "league_raw/1610612745_2006-07.csv",
+      "saved": "league_raw/1610612745_2006-07.csv.gz",
+      "sha256_uncompressed": "8a6bb49e6de6135ab153e29876cbd521e7d3e951b336698ca1f2c4481eb9dc53",
+      "bytes_uncompressed": 1264353,
+      "bytes_compressed": 92967
+    },
+    {
+      "source": "league_raw/1610612745_2008-09.csv",
+      "saved": "league_raw/1610612745_2008-09.csv.gz",
+      "sha256_uncompressed": "1e356e2c819e350bcf4c9a85d39a79d2499f861fe0fe3b8edb84ff9f28661bd6",
+      "bytes_uncompressed": 1308575,
+      "bytes_compressed": 96016
+    },
+    {
+      "source": "league_raw/1610612745_2009-10.csv",
+      "saved": "league_raw/1610612745_2009-10.csv.gz",
+      "sha256_uncompressed": "c0a0adce1e58820e880261cdfa5ff8f3f6aec57a5d3d071f2b17ec7974fcfb6d",
+      "bytes_uncompressed": 1393254,
+      "bytes_compressed": 100360
+    },
+    {
+      "source": "league_raw/1610612745_2010-11.csv",
+      "saved": "league_raw/1610612745_2010-11.csv.gz",
+      "sha256_uncompressed": "d9a167687cf4ccafd7811671680da925a242e4eebe6361f2deff014c684ff2ab",
+      "bytes_uncompressed": 1406555,
+      "bytes_compressed": 109755
+    },
+    {
+      "source": "league_raw/1610612745_2012-13.csv",
+      "saved": "league_raw/1610612745_2012-13.csv.gz",
+      "sha256_uncompressed": "3e84b119c1f8bb858c0f2cfb023e50d4a574b3130fefd0782f6c5f56b12dc48a",
+      "bytes_uncompressed": 1386979,
+      "bytes_compressed": 105453
+    },
+    {
+      "source": "league_raw/1610612745_2013-14.csv",
+      "saved": "league_raw/1610612745_2013-14.csv.gz",
+      "sha256_uncompressed": "6188e4416237376aad5732a32866eb7a1ee28299c3d8ed8884b2bc2dd6769a0a",
+      "bytes_uncompressed": 1358785,
+      "bytes_compressed": 103033
+    },
+    {
+      "source": "league_raw/1610612745_2018-19.csv",
+      "saved": "league_raw/1610612745_2018-19.csv.gz",
+      "sha256_uncompressed": "0c0720ae1c633a8ffcce7b3243aad039ea01eacd49b4b77ec01f52a50bf7f073",
+      "bytes_uncompressed": 1444800,
+      "bytes_compressed": 111719
+    },
+    {
+      "source": "league_raw/1610612745_2019-20.csv",
+      "saved": "league_raw/1610612745_2019-20.csv.gz",
+      "sha256_uncompressed": "25af8945b2f7c20d07502998ac3fdfdc3ff2fe490be22a65c9746f5eeae02377",
+      "bytes_uncompressed": 1326372,
+      "bytes_compressed": 101188
+    },
+    {
+      "source": "league_raw/1610612745_2020-21.csv",
+      "saved": "league_raw/1610612745_2020-21.csv.gz",
+      "sha256_uncompressed": "6527638c1bbe2489bb72aadaca88f16cc907212d818d0252dae96a556eb4feda",
+      "bytes_uncompressed": 1293097,
+      "bytes_compressed": 100709
+    },
+    {
+      "source": "league_raw/1610612745_2022-23.csv",
+      "saved": "league_raw/1610612745_2022-23.csv.gz",
+      "sha256_uncompressed": "d2715aa42d54723f93da0cf78726df3bb9519b61ae1330ad5b482d5712e0ca73",
+      "bytes_uncompressed": 1495840,
+      "bytes_compressed": 115705
+    },
+    {
+      "source": "league_raw/1610612745_2023-24.csv",
+      "saved": "league_raw/1610612745_2023-24.csv.gz",
+      "sha256_uncompressed": "2c47f168218e851062e29bc601b3d09ca867c538bd2b232c60d07da9b99b7a5d",
+      "bytes_uncompressed": 1526331,
+      "bytes_compressed": 119585
+    },
+    {
+      "source": "league_raw/1610612745_2024-25.csv",
+      "saved": "league_raw/1610612745_2024-25.csv.gz",
+      "sha256_uncompressed": "b289cc2d5ff88d0f835b05725e139a3f621ad6663536b5acc933cc4442b6041d",
+      "bytes_uncompressed": 1566640,
+      "bytes_compressed": 122957
+    },
+    {
+      "source": "league_raw/1610612745_2025-26.csv",
+      "saved": "league_raw/1610612745_2025-26.csv.gz",
+      "sha256_uncompressed": "dcc7f6b8acc06b17ba0a5c1b60d7caf38c46746ad5e0b14074045a02a2010614",
+      "bytes_uncompressed": 1500161,
+      "bytes_compressed": 117343
+    },
+    {
+      "source": "league_raw/1610612746_2006-07.csv",
+      "saved": "league_raw/1610612746_2006-07.csv.gz",
+      "sha256_uncompressed": "f2ed1a20145b30866979f97bc64127556330a578e8def901f36a478fdbd5ac3e",
+      "bytes_uncompressed": 1250444,
+      "bytes_compressed": 91468
+    },
+    {
+      "source": "league_raw/1610612746_2008-09.csv",
+      "saved": "league_raw/1610612746_2008-09.csv.gz",
+      "sha256_uncompressed": "3151d1301e4f9df0e788423487342e7c00cbf134cdceb9744ecd1d3145e9a301",
+      "bytes_uncompressed": 1372939,
+      "bytes_compressed": 98139
+    },
+    {
+      "source": "league_raw/1610612746_2009-10.csv",
+      "saved": "league_raw/1610612746_2009-10.csv.gz",
+      "sha256_uncompressed": "08300d84aaf1ef7a2ec095e937d8c7d949a2e7795ff5e33df4dea55fe89ce2d7",
+      "bytes_uncompressed": 1351986,
+      "bytes_compressed": 96259
+    },
+    {
+      "source": "league_raw/1610612746_2010-11.csv",
+      "saved": "league_raw/1610612746_2010-11.csv.gz",
+      "sha256_uncompressed": "cab9d169c9c8213c84c466ce518e07b9a0adc461ecab0fba208db338105f49ee",
+      "bytes_uncompressed": 1364678,
+      "bytes_compressed": 102754
+    },
+    {
+      "source": "league_raw/1610612746_2012-13.csv",
+      "saved": "league_raw/1610612746_2012-13.csv.gz",
+      "sha256_uncompressed": "5d74d52029eb757da2ce4e5e7d2187c55735caacc5ff76991a9c2ba415ee8713",
+      "bytes_uncompressed": 1366242,
+      "bytes_compressed": 103043
+    },
+    {
+      "source": "league_raw/1610612746_2013-14.csv",
+      "saved": "league_raw/1610612746_2013-14.csv.gz",
+      "sha256_uncompressed": "bfca54c62ce4e34dd7362bc7f130a58c52606d247f7677233599adb7785f9e23",
+      "bytes_uncompressed": 1403202,
+      "bytes_compressed": 106427
+    },
+    {
+      "source": "league_raw/1610612746_2018-19.csv",
+      "saved": "league_raw/1610612746_2018-19.csv.gz",
+      "sha256_uncompressed": "b1e716bfd48fdf35baa33a29de37e87bc8ca182b4aee3a61aea69994f701211c",
+      "bytes_uncompressed": 1438256,
+      "bytes_compressed": 114632
+    },
+    {
+      "source": "league_raw/1610612746_2019-20.csv",
+      "saved": "league_raw/1610612746_2019-20.csv.gz",
+      "sha256_uncompressed": "2bc3cfa9b47745eb4f95f7ddb25a997567b3ae7d21026ff08bb601a10d504995",
+      "bytes_uncompressed": 1278483,
+      "bytes_compressed": 102535
+    },
+    {
+      "source": "league_raw/1610612746_2020-21.csv",
+      "saved": "league_raw/1610612746_2020-21.csv.gz",
+      "sha256_uncompressed": "99a649e9b7e558ab233f648233f7b4832cdc673908ba83ad0f3089320bc84ea0",
+      "bytes_uncompressed": 1234676,
+      "bytes_compressed": 100191
+    },
+    {
+      "source": "league_raw/1610612746_2022-23.csv",
+      "saved": "league_raw/1610612746_2022-23.csv.gz",
+      "sha256_uncompressed": "f98c55f17a97ee2d644c0e43cb7715d3fe24ed5de074a55097d16cc5fb5c0bc0",
+      "bytes_uncompressed": 1405099,
+      "bytes_compressed": 113339
+    },
+    {
+      "source": "league_raw/1610612746_2023-24.csv",
+      "saved": "league_raw/1610612746_2023-24.csv.gz",
+      "sha256_uncompressed": "2d3ab92c089942d8977c88c224af64e5cbf9feefac6e02f4771b2ceeee10b4cd",
+      "bytes_uncompressed": 1414825,
+      "bytes_compressed": 114131
+    },
+    {
+      "source": "league_raw/1610612746_2024-25.csv",
+      "saved": "league_raw/1610612746_2024-25.csv.gz",
+      "sha256_uncompressed": "1aaf1152645351132554be88457991908b0446d13a3d2e2ac70436706c0528fb",
+      "bytes_uncompressed": 1420750,
+      "bytes_compressed": 113672
+    },
+    {
+      "source": "league_raw/1610612746_2025-26.csv",
+      "saved": "league_raw/1610612746_2025-26.csv.gz",
+      "sha256_uncompressed": "2367e41d1b7c832fe8ab0182541778b4b8d36c7444c971c09fe26870c1bec461",
+      "bytes_uncompressed": 1372489,
+      "bytes_compressed": 110349
+    },
+    {
+      "source": "league_raw/1610612747_2006-07.csv",
+      "saved": "league_raw/1610612747_2006-07.csv.gz",
+      "sha256_uncompressed": "fea3d27ad474c82231ee4091e4685bcdc6e9cf324cbd9fa025c11fbbd1fd2886",
+      "bytes_uncompressed": 1309409,
+      "bytes_compressed": 94056
+    },
+    {
+      "source": "league_raw/1610612747_2008-09.csv",
+      "saved": "league_raw/1610612747_2008-09.csv.gz",
+      "sha256_uncompressed": "ef0c5f9017c85d6880d74a6695a927a5d876b571b0c055f20663540d89e53096",
+      "bytes_uncompressed": 1410740,
+      "bytes_compressed": 102766
+    },
+    {
+      "source": "league_raw/1610612747_2009-10.csv",
+      "saved": "league_raw/1610612747_2009-10.csv.gz",
+      "sha256_uncompressed": "1f3242f00525033c1ad23cf2b0e4f9d0e0b215d5a7b37b469f809f73d14f6841",
+      "bytes_uncompressed": 1356287,
+      "bytes_compressed": 100366
+    },
+    {
+      "source": "league_raw/1610612747_2010-11.csv",
+      "saved": "league_raw/1610612747_2010-11.csv.gz",
+      "sha256_uncompressed": "23602ce3cb353058daccf8c6269300a0a5dd7c6b57b0efe87f296a3b7bf8426a",
+      "bytes_uncompressed": 1371962,
+      "bytes_compressed": 106362
+    },
+    {
+      "source": "league_raw/1610612747_2012-13.csv",
+      "saved": "league_raw/1610612747_2012-13.csv.gz",
+      "sha256_uncompressed": "f1378a61d7897316ff0784255e3275c32748bc576a8c1340c8a7c27809088037",
+      "bytes_uncompressed": 1356389,
+      "bytes_compressed": 104045
+    },
+    {
+      "source": "league_raw/1610612747_2013-14.csv",
+      "saved": "league_raw/1610612747_2013-14.csv.gz",
+      "sha256_uncompressed": "6d37c2ce66d59ad68a4158b02a13d1fe7d136d89672017fa10c902ef58e4f50e",
+      "bytes_uncompressed": 1429996,
+      "bytes_compressed": 110494
+    },
+    {
+      "source": "league_raw/1610612747_2018-19.csv",
+      "saved": "league_raw/1610612747_2018-19.csv.gz",
+      "sha256_uncompressed": "6e2e1b9791716e03f8a5a3273daca161135d6a774293de7122ead840682628df",
+      "bytes_uncompressed": 1527109,
+      "bytes_compressed": 117060
+    },
+    {
+      "source": "league_raw/1610612747_2019-20.csv",
+      "saved": "league_raw/1610612747_2019-20.csv.gz",
+      "sha256_uncompressed": "98781c760e18dba03b963fcdeec565d71aa83612eba73ca710e21a441d89451e",
+      "bytes_uncompressed": 1285157,
+      "bytes_compressed": 99380
+    },
+    {
+      "source": "league_raw/1610612747_2020-21.csv",
+      "saved": "league_raw/1610612747_2020-21.csv.gz",
+      "sha256_uncompressed": "c5bbc6148f28bba6d1cecba9dcb238da968462b1e6b47a749323ced3c8f57567",
+      "bytes_uncompressed": 1280899,
+      "bytes_compressed": 99412
+    },
+    {
+      "source": "league_raw/1610612747_2022-23.csv",
+      "saved": "league_raw/1610612747_2022-23.csv.gz",
+      "sha256_uncompressed": "39931d0033047f66256b9a75b1f0db0b1466b8a0be22fbb05de1491206a1ec2a",
+      "bytes_uncompressed": 1511796,
+      "bytes_compressed": 115778
+    },
+    {
+      "source": "league_raw/1610612747_2023-24.csv",
+      "saved": "league_raw/1610612747_2023-24.csv.gz",
+      "sha256_uncompressed": "880cb768516291d79dd36d47d062544d2ca6d46fcce7a1723978898c98a0a372",
+      "bytes_uncompressed": 1486636,
+      "bytes_compressed": 114664
+    },
+    {
+      "source": "league_raw/1610612747_2024-25.csv",
+      "saved": "league_raw/1610612747_2024-25.csv.gz",
+      "sha256_uncompressed": "0a8f6aed02e828a97f07fd82675f5cf12275560de4d688f3360ca9f804deb029",
+      "bytes_uncompressed": 1451174,
+      "bytes_compressed": 112751
+    },
+    {
+      "source": "league_raw/1610612747_2025-26.csv",
+      "saved": "league_raw/1610612747_2025-26.csv.gz",
+      "sha256_uncompressed": "712f61e80dd6101081c9fe68226be8a99ccabf4304d32024659a82468f491ee7",
+      "bytes_uncompressed": 1422716,
+      "bytes_compressed": 111052
+    },
+    {
+      "source": "league_raw/1610612748_2006-07.csv",
+      "saved": "league_raw/1610612748_2006-07.csv.gz",
+      "sha256_uncompressed": "d97832bb40b94495eeb81041c8a8cb1d8ddcc24d7fa2b367d86f98e5b6592879",
+      "bytes_uncompressed": 1187649,
+      "bytes_compressed": 90357
+    },
+    {
+      "source": "league_raw/1610612748_2008-09.csv",
+      "saved": "league_raw/1610612748_2008-09.csv.gz",
+      "sha256_uncompressed": "5218f87cd6d88bcf65277f6508e229345e4b6d0f034ef491906ec64f375ff3f2",
+      "bytes_uncompressed": 1303862,
+      "bytes_compressed": 98703
+    },
+    {
+      "source": "league_raw/1610612748_2009-10.csv",
+      "saved": "league_raw/1610612748_2009-10.csv.gz",
+      "sha256_uncompressed": "fe02122f1294b4b02a339534ce23bae64737de93cd587578e25cd760106854d2",
+      "bytes_uncompressed": 1241900,
+      "bytes_compressed": 95103
+    },
+    {
+      "source": "league_raw/1610612748_2010-11.csv",
+      "saved": "league_raw/1610612748_2010-11.csv.gz",
+      "sha256_uncompressed": "a697e79b6f68ed3dbd6d7428d72ce4655c347f8c9a9db19e3785af59807437d8",
+      "bytes_uncompressed": 1229791,
+      "bytes_compressed": 98730
+    },
+    {
+      "source": "league_raw/1610612748_2012-13.csv",
+      "saved": "league_raw/1610612748_2012-13.csv.gz",
+      "sha256_uncompressed": "e4d3ffe953d3a3047539f2ff3cdc584318af93fa246a72f32110aeac80961118",
+      "bytes_uncompressed": 1238822,
+      "bytes_compressed": 99104
+    },
+    {
+      "source": "league_raw/1610612748_2013-14.csv",
+      "saved": "league_raw/1610612748_2013-14.csv.gz",
+      "sha256_uncompressed": "de7a2d7028d6f636694c13f6b84d171c7c036ba8a0b37af90accdcd7ab1f07de",
+      "bytes_uncompressed": 1192792,
+      "bytes_compressed": 95388
+    },
+    {
+      "source": "league_raw/1610612748_2018-19.csv",
+      "saved": "league_raw/1610612748_2018-19.csv.gz",
+      "sha256_uncompressed": "844d5f66be205dabca6a229c6b2766957e8c0ceaba442027072e68690bc5e6ff",
+      "bytes_uncompressed": 1424700,
+      "bytes_compressed": 113280
+    },
+    {
+      "source": "league_raw/1610612748_2019-20.csv",
+      "saved": "league_raw/1610612748_2019-20.csv.gz",
+      "sha256_uncompressed": "f184b8a75522d6f184de858b5969bbf2fce658b0a4a44790ba475a335e006ed0",
+      "bytes_uncompressed": 1217914,
+      "bytes_compressed": 97825
+    },
+    {
+      "source": "league_raw/1610612748_2020-21.csv",
+      "saved": "league_raw/1610612748_2020-21.csv.gz",
+      "sha256_uncompressed": "b53ea1d92d589425681813a665bf33e809be1d75fac88d317c3f577681b44f12",
+      "bytes_uncompressed": 1189874,
+      "bytes_compressed": 96016
+    },
+    {
+      "source": "league_raw/1610612748_2022-23.csv",
+      "saved": "league_raw/1610612748_2022-23.csv.gz",
+      "sha256_uncompressed": "ee63966957e39e5f086ed562a1db67a1262daf9ea5887b19d415b8d055c5ca73",
+      "bytes_uncompressed": 1382108,
+      "bytes_compressed": 111968
+    },
+    {
+      "source": "league_raw/1610612748_2023-24.csv",
+      "saved": "league_raw/1610612748_2023-24.csv.gz",
+      "sha256_uncompressed": "b41b75d05f9c86160cc6418126390d8c9bf1a7278e0236d9ff2f838ada417fea",
+      "bytes_uncompressed": 1398250,
+      "bytes_compressed": 113401
+    },
+    {
+      "source": "league_raw/1610612748_2024-25.csv",
+      "saved": "league_raw/1610612748_2024-25.csv.gz",
+      "sha256_uncompressed": "e21b9158ce10d420d3ebc773a21818bbb7df9db393385f45f4770c7d6285acf9",
+      "bytes_uncompressed": 1424442,
+      "bytes_compressed": 114755
+    },
+    {
+      "source": "league_raw/1610612748_2025-26.csv",
+      "saved": "league_raw/1610612748_2025-26.csv.gz",
+      "sha256_uncompressed": "330c712e00d82ccd0d139031990bfcacfc22be3ed206da5b72550f142cbf2c3d",
+      "bytes_uncompressed": 1534227,
+      "bytes_compressed": 121730
+    },
+    {
+      "source": "league_raw/1610612749_2006-07.csv",
+      "saved": "league_raw/1610612749_2006-07.csv.gz",
+      "sha256_uncompressed": "2f26e3591cb2ac456e806ba431393a0863efb09e746345863fb78cc76ddf7c8e",
+      "bytes_uncompressed": 1300775,
+      "bytes_compressed": 93618
+    },
+    {
+      "source": "league_raw/1610612749_2008-09.csv",
+      "saved": "league_raw/1610612749_2008-09.csv.gz",
+      "sha256_uncompressed": "960f7e2abed547ccc714fbbd9f448efc67c4d5a080eb3ef640842f7bf6ba720a",
+      "bytes_uncompressed": 1362103,
+      "bytes_compressed": 98762
+    },
+    {
+      "source": "league_raw/1610612749_2009-10.csv",
+      "saved": "league_raw/1610612749_2009-10.csv.gz",
+      "sha256_uncompressed": "8e7d51c475833e1445a2f4a643a8aa02226bf240fd9af73a1dad61cf76e0debe",
+      "bytes_uncompressed": 1409168,
+      "bytes_compressed": 103010
+    },
+    {
+      "source": "league_raw/1610612749_2010-11.csv",
+      "saved": "league_raw/1610612749_2010-11.csv.gz",
+      "sha256_uncompressed": "e6588c9dee5c4f562d81209694997a96883d9cb17ed479a6bd179e8226e1a75e",
+      "bytes_uncompressed": 1321123,
+      "bytes_compressed": 102120
+    },
+    {
+      "source": "league_raw/1610612749_2012-13.csv",
+      "saved": "league_raw/1610612749_2012-13.csv.gz",
+      "sha256_uncompressed": "28112328d595f890deb78fa3f42fc869499a3ce77167bedaf02a3338117f9680",
+      "bytes_uncompressed": 1454386,
+      "bytes_compressed": 111601
+    },
+    {
+      "source": "league_raw/1610612749_2013-14.csv",
+      "saved": "league_raw/1610612749_2013-14.csv.gz",
+      "sha256_uncompressed": "1dafa025ac3ed6ad7ba89107bc1d75dc4d0421f08d7fd8b7d19e798cc7b3738d",
+      "bytes_uncompressed": 1367106,
+      "bytes_compressed": 105267
+    },
+    {
+      "source": "league_raw/1610612749_2018-19.csv",
+      "saved": "league_raw/1610612749_2018-19.csv.gz",
+      "sha256_uncompressed": "3789f2ed2a6e03bc5ea7387518b87055ee0ce196d4f6c8fcd715e4da2da18c2f",
+      "bytes_uncompressed": 1516412,
+      "bytes_compressed": 116955
+    },
+    {
+      "source": "league_raw/1610612749_2019-20.csv",
+      "saved": "league_raw/1610612749_2019-20.csv.gz",
+      "sha256_uncompressed": "1b52843bbd56e3c4dd64f02c2e0d63f2bc46ca6ca90317a5b29e2f102de9ed8e",
+      "bytes_uncompressed": 1351850,
+      "bytes_compressed": 105549
+    },
+    {
+      "source": "league_raw/1610612749_2020-21.csv",
+      "saved": "league_raw/1610612749_2020-21.csv.gz",
+      "sha256_uncompressed": "bcd0dc6c403fd0491b1cbbb6bb991aea0f63cb7817c5c37c0700598f9681afef",
+      "bytes_uncompressed": 1351914,
+      "bytes_compressed": 105523
+    },
+    {
+      "source": "league_raw/1610612749_2022-23.csv",
+      "saved": "league_raw/1610612749_2022-23.csv.gz",
+      "sha256_uncompressed": "248d44e2fb72ba6dd0b67cef0d7d1b4c27d5f4fc61f061a823bb7f6c8f0b6c27",
+      "bytes_uncompressed": 1515454,
+      "bytes_compressed": 119234
+    },
+    {
+      "source": "league_raw/1610612749_2023-24.csv",
+      "saved": "league_raw/1610612749_2023-24.csv.gz",
+      "sha256_uncompressed": "8a5b11480c724867160b9b0f463e68542b459afb1c6db2beac107c6b46aac342",
+      "bytes_uncompressed": 1494165,
+      "bytes_compressed": 116735
+    },
+    {
+      "source": "league_raw/1610612749_2024-25.csv",
+      "saved": "league_raw/1610612749_2024-25.csv.gz",
+      "sha256_uncompressed": "55ed3d061fef5ef8b6b2dadeaeb17a71d2d60a605eaa4532d39309094a819a5a",
+      "bytes_uncompressed": 1456250,
+      "bytes_compressed": 114644
+    },
+    {
+      "source": "league_raw/1610612749_2025-26.csv",
+      "saved": "league_raw/1610612749_2025-26.csv.gz",
+      "sha256_uncompressed": "e6f17c8abc35c286620d5b2cc2b3be543721cad71b9257e64712077b70e887a3",
+      "bytes_uncompressed": 1431342,
+      "bytes_compressed": 113502
+    },
+    {
+      "source": "league_raw/1610612750_2006-07.csv",
+      "saved": "league_raw/1610612750_2006-07.csv.gz",
+      "sha256_uncompressed": "4042a0fa8c205fc3a49f1d457590f33dcd40235671e0c8f0d0720b551ac7f4f8",
+      "bytes_uncompressed": 1296560,
+      "bytes_compressed": 92829
+    },
+    {
+      "source": "league_raw/1610612750_2008-09.csv",
+      "saved": "league_raw/1610612750_2008-09.csv.gz",
+      "sha256_uncompressed": "8973eb2343c601db735c9ed1049337052e0cb8651de13848ac8308bf178bb74c",
+      "bytes_uncompressed": 1363536,
+      "bytes_compressed": 97197
+    },
+    {
+      "source": "league_raw/1610612750_2009-10.csv",
+      "saved": "league_raw/1610612750_2009-10.csv.gz",
+      "sha256_uncompressed": "d06828d46186585a0c845947ce699314642f7c86ef8d7a7d00b05733b24ce8f3",
+      "bytes_uncompressed": 1399019,
+      "bytes_compressed": 101329
+    },
+    {
+      "source": "league_raw/1610612750_2010-11.csv",
+      "saved": "league_raw/1610612750_2010-11.csv.gz",
+      "sha256_uncompressed": "921b7f572efaca306aabe39e816727b70e7d54cb023e0a52fade66607ee11377",
+      "bytes_uncompressed": 1433372,
+      "bytes_compressed": 109974
+    },
+    {
+      "source": "league_raw/1610612750_2012-13.csv",
+      "saved": "league_raw/1610612750_2012-13.csv.gz",
+      "sha256_uncompressed": "074845ebf25b8d0905c239fef18e6bef9c69ec046d98e0c2d5e0bdfd5c09dc4e",
+      "bytes_uncompressed": 1368171,
+      "bytes_compressed": 102974
+    },
+    {
+      "source": "league_raw/1610612750_2013-14.csv",
+      "saved": "league_raw/1610612750_2013-14.csv.gz",
+      "sha256_uncompressed": "0a3bad8b17fe7565076e820f0f08bdc1c02b88f9906ca9b1fe81818be197a156",
+      "bytes_uncompressed": 1503882,
+      "bytes_compressed": 113132
+    },
+    {
+      "source": "league_raw/1610612750_2018-19.csv",
+      "saved": "league_raw/1610612750_2018-19.csv.gz",
+      "sha256_uncompressed": "bfc3dc34d8af42f5f0a3cb927301794737486e36fc35cc07cc32829856cdd66d",
+      "bytes_uncompressed": 1562786,
+      "bytes_compressed": 118664
+    },
+    {
+      "source": "league_raw/1610612750_2019-20.csv",
+      "saved": "league_raw/1610612750_2019-20.csv.gz",
+      "sha256_uncompressed": "443c1b9a445a2df5cbba47945dc4701ecf75361cbcce7d724d5fb65ca07f71cb",
+      "bytes_uncompressed": 1236114,
+      "bytes_compressed": 92603
+    },
+    {
+      "source": "league_raw/1610612750_2020-21.csv",
+      "saved": "league_raw/1610612750_2020-21.csv.gz",
+      "sha256_uncompressed": "678b1b1882bc2b42c6b62ee9ede4d9a7d9ca19feaf12593294f0db134c30f7ec",
+      "bytes_uncompressed": 1385266,
+      "bytes_compressed": 103006
+    },
+    {
+      "source": "league_raw/1610612750_2022-23.csv",
+      "saved": "league_raw/1610612750_2022-23.csv.gz",
+      "sha256_uncompressed": "15dbf7d6a444026a0e5a584966fdf6d1c3c2d9ad36a50886e94f4e8759d03704",
+      "bytes_uncompressed": 1520191,
+      "bytes_compressed": 114528
+    },
+    {
+      "source": "league_raw/1610612750_2023-24.csv",
+      "saved": "league_raw/1610612750_2023-24.csv.gz",
+      "sha256_uncompressed": "7ccd4156771e1d9891438ba6f377be7c7b18c1bd88800162564ca9f24a9403d2",
+      "bytes_uncompressed": 1482073,
+      "bytes_compressed": 112282
+    },
+    {
+      "source": "league_raw/1610612750_2024-25.csv",
+      "saved": "league_raw/1610612750_2024-25.csv.gz",
+      "sha256_uncompressed": "7bd935ee460e17f421645d8c053f862212d66c38e688a8fd5c41711e0ffde80a",
+      "bytes_uncompressed": 1528636,
+      "bytes_compressed": 115111
+    },
+    {
+      "source": "league_raw/1610612750_2025-26.csv",
+      "saved": "league_raw/1610612750_2025-26.csv.gz",
+      "sha256_uncompressed": "7f67fdc3b835b714237e4be47fa50949a8e2f2716ddfbd7395b6e8f12ad1afa5",
+      "bytes_uncompressed": 1539594,
+      "bytes_compressed": 116659
+    },
+    {
+      "source": "league_raw/1610612751_2006-07.csv",
+      "saved": "league_raw/1610612751_2006-07.csv.gz",
+      "sha256_uncompressed": "378988e8bb35eae632cfdb70b90bbaf7548a7996e5b640d0f5fa401434a5433f",
+      "bytes_uncompressed": 1239171,
+      "bytes_compressed": 89419
+    },
+    {
+      "source": "league_raw/1610612751_2008-09.csv",
+      "saved": "league_raw/1610612751_2008-09.csv.gz",
+      "sha256_uncompressed": "a3bf9c7034a32b1b33dd5bcef0e7d082ad402d16abff6f15d58478671fc30e3d",
+      "bytes_uncompressed": 1311291,
+      "bytes_compressed": 95833
+    },
+    {
+      "source": "league_raw/1610612751_2009-10.csv",
+      "saved": "league_raw/1610612751_2009-10.csv.gz",
+      "sha256_uncompressed": "6cb9baebc038d5346a70d79658b44dbba2312e0f73caaa3c542c0a9fd25f848b",
+      "bytes_uncompressed": 1285246,
+      "bytes_compressed": 94342
+    },
+    {
+      "source": "league_raw/1610612751_2010-11.csv",
+      "saved": "league_raw/1610612751_2010-11.csv.gz",
+      "sha256_uncompressed": "ca1e99511bc2b890cc6467a1ba920753459cc45f37d8b1ae6752d003565b8ca4",
+      "bytes_uncompressed": 1300134,
+      "bytes_compressed": 103196
+    },
+    {
+      "source": "league_raw/1610612751_2012-13.csv",
+      "saved": "league_raw/1610612751_2012-13.csv.gz",
+      "sha256_uncompressed": "414f754e04e037cb3bdb2c213247f5de3404d489b93802153c874faf403fbf8d",
+      "bytes_uncompressed": 1312527,
+      "bytes_compressed": 102856
+    },
+    {
+      "source": "league_raw/1610612751_2013-14.csv",
+      "saved": "league_raw/1610612751_2013-14.csv.gz",
+      "sha256_uncompressed": "09d724573866ee38884c3fc1ef390700f5ffc1662efb9fbe496e2d8e74df1dc2",
+      "bytes_uncompressed": 1285656,
+      "bytes_compressed": 101520
+    },
+    {
+      "source": "league_raw/1610612751_2018-19.csv",
+      "saved": "league_raw/1610612751_2018-19.csv.gz",
+      "sha256_uncompressed": "586e28940861cd2637dc8677f7297d30e8f59dff9e5661ca3d424847287e93d1",
+      "bytes_uncompressed": 1490739,
+      "bytes_compressed": 115808
+    },
+    {
+      "source": "league_raw/1610612751_2019-20.csv",
+      "saved": "league_raw/1610612751_2019-20.csv.gz",
+      "sha256_uncompressed": "f9c4de240f9523c7274d3d04c299a74895e96efdc31cef0c211573035da486db",
+      "bytes_uncompressed": 1314367,
+      "bytes_compressed": 102023
+    },
+    {
+      "source": "league_raw/1610612751_2020-21.csv",
+      "saved": "league_raw/1610612751_2020-21.csv.gz",
+      "sha256_uncompressed": "daca1fef3dac947b467965c7d882919c442e49eff8b284c68e6344e60ae5dbb5",
+      "bytes_uncompressed": 1260631,
+      "bytes_compressed": 99950
+    },
+    {
+      "source": "league_raw/1610612751_2022-23.csv",
+      "saved": "league_raw/1610612751_2022-23.csv.gz",
+      "sha256_uncompressed": "b3f33306bb23c34705f47b74c3ac0b9a08a272e5b0b5734aa7f3c30c914c3cd2",
+      "bytes_uncompressed": 1402127,
+      "bytes_compressed": 112170
+    },
+    {
+      "source": "league_raw/1610612751_2023-24.csv",
+      "saved": "league_raw/1610612751_2023-24.csv.gz",
+      "sha256_uncompressed": "e7b84bf7cc60b426efb5c546d34df9cbc4cea89ab8819df06e10bc75304212ff",
+      "bytes_uncompressed": 1485012,
+      "bytes_compressed": 116637
+    },
+    {
+      "source": "league_raw/1610612751_2024-25.csv",
+      "saved": "league_raw/1610612751_2024-25.csv.gz",
+      "sha256_uncompressed": "e79e65eb80fde76902e91b21d4c80d58686c01a35c9e8f8f7dc33c4e2476cdbe",
+      "bytes_uncompressed": 1433052,
+      "bytes_compressed": 112863
+    },
+    {
+      "source": "league_raw/1610612751_2025-26.csv",
+      "saved": "league_raw/1610612751_2025-26.csv.gz",
+      "sha256_uncompressed": "064281c03d6591bc8711e35d628d896a8b14d5a0341894ceb6bb350e3057c38b",
+      "bytes_uncompressed": 1401439,
+      "bytes_compressed": 110403
+    },
+    {
+      "source": "league_raw/1610612752_2006-07.csv",
+      "saved": "league_raw/1610612752_2006-07.csv.gz",
+      "sha256_uncompressed": "b39705d49de06e92db6885a21d1b9495e94b27f6704cd5dd73087467fb4df27f",
+      "bytes_uncompressed": 1239718,
+      "bytes_compressed": 87655
+    },
+    {
+      "source": "league_raw/1610612752_2008-09.csv",
+      "saved": "league_raw/1610612752_2008-09.csv.gz",
+      "sha256_uncompressed": "59987014042aa28edf8d2f4d6fe57fcb35d781d28db992fa6911a51b410a9a95",
+      "bytes_uncompressed": 1390641,
+      "bytes_compressed": 99365
+    },
+    {
+      "source": "league_raw/1610612752_2009-10.csv",
+      "saved": "league_raw/1610612752_2009-10.csv.gz",
+      "sha256_uncompressed": "2694fcbc7ba0106195cced4e892cb5fbb5b5b5f9e982c0c2e324dd6a30838a66",
+      "bytes_uncompressed": 1348161,
+      "bytes_compressed": 98396
+    },
+    {
+      "source": "league_raw/1610612752_2010-11.csv",
+      "saved": "league_raw/1610612752_2010-11.csv.gz",
+      "sha256_uncompressed": "fd92dd7a36eae291067b7433a039be9c30cfabc95b90b0c8403f10aa47b4eb0e",
+      "bytes_uncompressed": 1406868,
+      "bytes_compressed": 107150
+    },
+    {
+      "source": "league_raw/1610612752_2012-13.csv",
+      "saved": "league_raw/1610612752_2012-13.csv.gz",
+      "sha256_uncompressed": "78a38c158d4f5b6f9a3ead4a5b22a59670ad5075eb2efd795534ce8557c3ba60",
+      "bytes_uncompressed": 1313161,
+      "bytes_compressed": 102258
+    },
+    {
+      "source": "league_raw/1610612752_2013-14.csv",
+      "saved": "league_raw/1610612752_2013-14.csv.gz",
+      "sha256_uncompressed": "aeb6597b7c6b7e7d44a4dd7f1c9c306d4caa840fd9e21110931d0ae3514054d7",
+      "bytes_uncompressed": 1329364,
+      "bytes_compressed": 104024
+    },
+    {
+      "source": "league_raw/1610612752_2018-19.csv",
+      "saved": "league_raw/1610612752_2018-19.csv.gz",
+      "sha256_uncompressed": "5811fcaba1b8b10045751f09267bfa96e67712d672a4c654c35bdba4ababc3c6",
+      "bytes_uncompressed": 1466544,
+      "bytes_compressed": 114609
+    },
+    {
+      "source": "league_raw/1610612752_2019-20.csv",
+      "saved": "league_raw/1610612752_2019-20.csv.gz",
+      "sha256_uncompressed": "3fef30dc1e28542a6e3582a0c764ddd060a0f3005e27e44aeda6d06df54d210f",
+      "bytes_uncompressed": 1196646,
+      "bytes_compressed": 93148
+    },
+    {
+      "source": "league_raw/1610612752_2020-21.csv",
+      "saved": "league_raw/1610612752_2020-21.csv.gz",
+      "sha256_uncompressed": "8156d92c8b44870db5d9010dc63f60d942987557e5c55380c3f3b15398251c95",
+      "bytes_uncompressed": 1259701,
+      "bytes_compressed": 98416
+    },
+    {
+      "source": "league_raw/1610612752_2022-23.csv",
+      "saved": "league_raw/1610612752_2022-23.csv.gz",
+      "sha256_uncompressed": "d788a72b4cd27e6ec2ad3f0c5777a84ab7ba52eb286812c7b069cf3abd262555",
+      "bytes_uncompressed": 1499579,
+      "bytes_compressed": 114636
+    },
+    {
+      "source": "league_raw/1610612752_2023-24.csv",
+      "saved": "league_raw/1610612752_2023-24.csv.gz",
+      "sha256_uncompressed": "5aa52984662abe2e1f024c77671b7ded2e35841faf47c418b636c1227fafbe35",
+      "bytes_uncompressed": 1491346,
+      "bytes_compressed": 114586
+    },
+    {
+      "source": "league_raw/1610612752_2024-25.csv",
+      "saved": "league_raw/1610612752_2024-25.csv.gz",
+      "sha256_uncompressed": "a08a67b4212e6d9ea39e358dfcae0e45ad148e65f45a4504fa3b27eff2a44cac",
+      "bytes_uncompressed": 1498360,
+      "bytes_compressed": 116360
+    },
+    {
+      "source": "league_raw/1610612752_2025-26.csv",
+      "saved": "league_raw/1610612752_2025-26.csv.gz",
+      "sha256_uncompressed": "d5cd0b51dbfbd5bd07562f93d51028c1d3eb40c4d7bc04a742c3a01c18f7c197",
+      "bytes_uncompressed": 1500322,
+      "bytes_compressed": 117389
+    },
+    {
+      "source": "league_raw/1610612753_2006-07.csv",
+      "saved": "league_raw/1610612753_2006-07.csv.gz",
+      "sha256_uncompressed": "56c62ff20a5ae8c063a7ff21182d79774a45af9c0136547144af1cfedd92991c",
+      "bytes_uncompressed": 1164273,
+      "bytes_compressed": 86041
+    },
+    {
+      "source": "league_raw/1610612753_2008-09.csv",
+      "saved": "league_raw/1610612753_2008-09.csv.gz",
+      "sha256_uncompressed": "b30a336790ec3ea10bd297f1f48399193a3466907c61e278e63ac8cad507a677",
+      "bytes_uncompressed": 1239101,
+      "bytes_compressed": 93299
+    },
+    {
+      "source": "league_raw/1610612753_2009-10.csv",
+      "saved": "league_raw/1610612753_2009-10.csv.gz",
+      "sha256_uncompressed": "eb6bba6f7c866e48f5899317e13ba8a4c21655520a6ac7b31cc8c6fab5d4b5b9",
+      "bytes_uncompressed": 1236646,
+      "bytes_compressed": 92503
+    },
+    {
+      "source": "league_raw/1610612753_2010-11.csv",
+      "saved": "league_raw/1610612753_2010-11.csv.gz",
+      "sha256_uncompressed": "f4e4e8e51ba0e3f546a6f219bd569e548de2fdaec6cc7c6f09419ae220e482d2",
+      "bytes_uncompressed": 1285679,
+      "bytes_compressed": 101715
+    },
+    {
+      "source": "league_raw/1610612753_2012-13.csv",
+      "saved": "league_raw/1610612753_2012-13.csv.gz",
+      "sha256_uncompressed": "370d9184d115bea91fdeede1c24515b902f92567c10c9482926890771f1b7958",
+      "bytes_uncompressed": 1348089,
+      "bytes_compressed": 107445
+    },
+    {
+      "source": "league_raw/1610612753_2013-14.csv",
+      "saved": "league_raw/1610612753_2013-14.csv.gz",
+      "sha256_uncompressed": "da415f18ff93c53f79298c2885fbd53468386c8c2f88b01a9242b0449176eabb",
+      "bytes_uncompressed": 1366239,
+      "bytes_compressed": 107198
+    },
+    {
+      "source": "league_raw/1610612753_2018-19.csv",
+      "saved": "league_raw/1610612753_2018-19.csv.gz",
+      "sha256_uncompressed": "797390b4995907eed06c2bea8d9980dc63ad443a7c544a6ab0d6f27cd3cb9903",
+      "bytes_uncompressed": 1459125,
+      "bytes_compressed": 116090
+    },
+    {
+      "source": "league_raw/1610612753_2019-20.csv",
+      "saved": "league_raw/1610612753_2019-20.csv.gz",
+      "sha256_uncompressed": "629838bbf8aeefb51d2a723674a2acce8d8d9bed89b669e9ddb1ec74c4ecb1b4",
+      "bytes_uncompressed": 1298796,
+      "bytes_compressed": 103029
+    },
+    {
+      "source": "league_raw/1610612753_2020-21.csv",
+      "saved": "league_raw/1610612753_2020-21.csv.gz",
+      "sha256_uncompressed": "2105e87a5bc9c26a4fe8b3914cc3bcf109b81f1f9a40cb644c65a3ef7afe68ec",
+      "bytes_uncompressed": 1290932,
+      "bytes_compressed": 103198
+    },
+    {
+      "source": "league_raw/1610612753_2022-23.csv",
+      "saved": "league_raw/1610612753_2022-23.csv.gz",
+      "sha256_uncompressed": "ad90f72d0872c318e55fed9bdf5bad0e13b06304f8c69bbdd3a188020901c555",
+      "bytes_uncompressed": 1428254,
+      "bytes_compressed": 112593
+    },
+    {
+      "source": "league_raw/1610612753_2023-24.csv",
+      "saved": "league_raw/1610612753_2023-24.csv.gz",
+      "sha256_uncompressed": "6d64d771ba97fa7b5b82dedc379f09af7cacfd70264032fc7968949c2b8af8d1",
+      "bytes_uncompressed": 1406434,
+      "bytes_compressed": 111400
+    },
+    {
+      "source": "league_raw/1610612753_2024-25.csv",
+      "saved": "league_raw/1610612753_2024-25.csv.gz",
+      "sha256_uncompressed": "b0470f2fd69190c542d6fa8d725bed7d6f66ad264a2a74d3a80c8a57137d07b0",
+      "bytes_uncompressed": 1431104,
+      "bytes_compressed": 113156
+    },
+    {
+      "source": "league_raw/1610612753_2025-26.csv",
+      "saved": "league_raw/1610612753_2025-26.csv.gz",
+      "sha256_uncompressed": "11f131b7fb9234f2d390f6e9755039ac6512c5779f02d496df4e79f84dd8b845",
+      "bytes_uncompressed": 1471916,
+      "bytes_compressed": 115492
+    },
+    {
+      "source": "league_raw/1610612754_2006-07.csv",
+      "saved": "league_raw/1610612754_2006-07.csv.gz",
+      "sha256_uncompressed": "7f91e7768cd3029fdcc4797d0917ee96ab853ce834d7f2e85ea54b85281d82f0",
+      "bytes_uncompressed": 1270513,
+      "bytes_compressed": 97079
+    },
+    {
+      "source": "league_raw/1610612754_2008-09.csv",
+      "saved": "league_raw/1610612754_2008-09.csv.gz",
+      "sha256_uncompressed": "3503baa13a492ede36c2d31b8e524a946e04af6e4a1ef73a51e173f712ea5348",
+      "bytes_uncompressed": 1374658,
+      "bytes_compressed": 106333
+    },
+    {
+      "source": "league_raw/1610612754_2009-10.csv",
+      "saved": "league_raw/1610612754_2009-10.csv.gz",
+      "sha256_uncompressed": "fbc97dc18f45117853defc92d9389fd36d6cce1b13ef415ce38c938d262331a3",
+      "bytes_uncompressed": 1363172,
+      "bytes_compressed": 105247
+    },
+    {
+      "source": "league_raw/1610612754_2010-11.csv",
+      "saved": "league_raw/1610612754_2010-11.csv.gz",
+      "sha256_uncompressed": "53f05d7abb823797c642754c1e3ad4c3af84a798bc4b78b7d8661be70e7c0a78",
+      "bytes_uncompressed": 1366090,
+      "bytes_compressed": 107547
+    },
+    {
+      "source": "league_raw/1610612754_2012-13.csv",
+      "saved": "league_raw/1610612754_2012-13.csv.gz",
+      "sha256_uncompressed": "692d0c231d06e87a15c27cc25217706d76cfd25caabcc32593ce382811cb29a3",
+      "bytes_uncompressed": 1307775,
+      "bytes_compressed": 102187
+    },
+    {
+      "source": "league_raw/1610612754_2013-14.csv",
+      "saved": "league_raw/1610612754_2013-14.csv.gz",
+      "sha256_uncompressed": "f3f3a80d50c027d90f490145ce01d3cf852f7b9126768a76f26c366371694ede",
+      "bytes_uncompressed": 1315356,
+      "bytes_compressed": 103753
+    },
+    {
+      "source": "league_raw/1610612754_2018-19.csv",
+      "saved": "league_raw/1610612754_2018-19.csv.gz",
+      "sha256_uncompressed": "9748d8d6bc2e275a4124e731a343a1b5e0926825259a328eaee175ebc91b74b5",
+      "bytes_uncompressed": 1436029,
+      "bytes_compressed": 112765
+    },
+    {
+      "source": "league_raw/1610612754_2019-20.csv",
+      "saved": "league_raw/1610612754_2019-20.csv.gz",
+      "sha256_uncompressed": "70f461d4ced0c4d1825bd3f32d5bf502d9d261afa2887a90c7b5974fa20d664c",
+      "bytes_uncompressed": 1302612,
+      "bytes_compressed": 102960
+    },
+    {
+      "source": "league_raw/1610612754_2020-21.csv",
+      "saved": "league_raw/1610612754_2020-21.csv.gz",
+      "sha256_uncompressed": "45bafcd5084d1aef1f87a0b5faa7a5eb7f77fc9bb1a798b749c67221435b7f7d",
+      "bytes_uncompressed": 1339099,
+      "bytes_compressed": 104101
+    },
+    {
+      "source": "league_raw/1610612754_2022-23.csv",
+      "saved": "league_raw/1610612754_2022-23.csv.gz",
+      "sha256_uncompressed": "e371b08b0a6e02e2354cc6ac2c37dbe745561427d9ec4a1c6f3c346f298f897f",
+      "bytes_uncompressed": 1502074,
+      "bytes_compressed": 117340
+    },
+    {
+      "source": "league_raw/1610612754_2023-24.csv",
+      "saved": "league_raw/1610612754_2023-24.csv.gz",
+      "sha256_uncompressed": "419f4c8006d580de971e9a60764dc2c203633f0a118e2be5a5b3ed75cc096ddf",
+      "bytes_uncompressed": 1552648,
+      "bytes_compressed": 121314
+    },
+    {
+      "source": "league_raw/1610612754_2024-25.csv",
+      "saved": "league_raw/1610612754_2024-25.csv.gz",
+      "sha256_uncompressed": "d275be2dccf1ab6d8758df8cac485ada79a5c1a957e043c0aebc18d4f70320f9",
+      "bytes_uncompressed": 1497184,
+      "bytes_compressed": 118396
+    },
+    {
+      "source": "league_raw/1610612754_2025-26.csv",
+      "saved": "league_raw/1610612754_2025-26.csv.gz",
+      "sha256_uncompressed": "f51f2b5ed74177b70c7c06140a84548c7bfc6af5a5c37d58c250f43e0c89473f",
+      "bytes_uncompressed": 1484308,
+      "bytes_compressed": 118276
+    },
+    {
+      "source": "league_raw/1610612755_2006-07.csv",
+      "saved": "league_raw/1610612755_2006-07.csv.gz",
+      "sha256_uncompressed": "351b9e5a4b8cec0ba7309a29ea27ad2542f83b678eb948735c2c88001bf14b18",
+      "bytes_uncompressed": 1255722,
+      "bytes_compressed": 91242
+    },
+    {
+      "source": "league_raw/1610612755_2008-09.csv",
+      "saved": "league_raw/1610612755_2008-09.csv.gz",
+      "sha256_uncompressed": "3b7241a98b940cfb3bb1efa4a915e16b2ee9ba5241ab4fbee5745a89e752482a",
+      "bytes_uncompressed": 1332638,
+      "bytes_compressed": 93137
+    },
+    {
+      "source": "league_raw/1610612755_2009-10.csv",
+      "saved": "league_raw/1610612755_2009-10.csv.gz",
+      "sha256_uncompressed": "43ccb6adea262b8d818e554b5d9ed66c562c55f1d6dc0e2ff8261032a921a69c",
+      "bytes_uncompressed": 1330085,
+      "bytes_compressed": 97424
+    },
+    {
+      "source": "league_raw/1610612755_2010-11.csv",
+      "saved": "league_raw/1610612755_2010-11.csv.gz",
+      "sha256_uncompressed": "03b3095315521374b667658dc42b513a94f4541d8efd31958aaa268ddf0ce7b3",
+      "bytes_uncompressed": 1386370,
+      "bytes_compressed": 106725
+    },
+    {
+      "source": "league_raw/1610612755_2012-13.csv",
+      "saved": "league_raw/1610612755_2012-13.csv.gz",
+      "sha256_uncompressed": "fb38fd11692ad184085c7d337df2a791dad340360b787d7431d6ee995ca21d75",
+      "bytes_uncompressed": 1411171,
+      "bytes_compressed": 108043
+    },
+    {
+      "source": "league_raw/1610612755_2013-14.csv",
+      "saved": "league_raw/1610612755_2013-14.csv.gz",
+      "sha256_uncompressed": "a2fceeb816ab5bd3af11b7c107cb178e523e08cafad091f63631e37b45bd2688",
+      "bytes_uncompressed": 1488516,
+      "bytes_compressed": 110356
+    },
+    {
+      "source": "league_raw/1610612755_2018-19.csv",
+      "saved": "league_raw/1610612755_2018-19.csv.gz",
+      "sha256_uncompressed": "357acb34706a0464cf04d7f393686af01be7c3fff6a9569f9a7bf8a541ef29b6",
+      "bytes_uncompressed": 1474536,
+      "bytes_compressed": 115231
+    },
+    {
+      "source": "league_raw/1610612755_2019-20.csv",
+      "saved": "league_raw/1610612755_2019-20.csv.gz",
+      "sha256_uncompressed": "10e23bbeee22fd30d2f32b3545baea692b17b72df4678eac0e93daff6577cf33",
+      "bytes_uncompressed": 1313201,
+      "bytes_compressed": 102252
+    },
+    {
+      "source": "league_raw/1610612755_2020-21.csv",
+      "saved": "league_raw/1610612755_2020-21.csv.gz",
+      "sha256_uncompressed": "63bc09ef9ac9489724de31d043709931f72c7eb5541f622b896b4930a1f08075",
+      "bytes_uncompressed": 1281136,
+      "bytes_compressed": 100586
+    },
+    {
+      "source": "league_raw/1610612755_2022-23.csv",
+      "saved": "league_raw/1610612755_2022-23.csv.gz",
+      "sha256_uncompressed": "63fe95c0d5f2fbac0f53ae6f584cbeca8dc48b08894b41bd07b96f1ae5f233f7",
+      "bytes_uncompressed": 1419298,
+      "bytes_compressed": 109810
+    },
+    {
+      "source": "league_raw/1610612755_2023-24.csv",
+      "saved": "league_raw/1610612755_2023-24.csv.gz",
+      "sha256_uncompressed": "12af0c59e4da88b0400dedde7b40d8773232a28eab587d8db3c9e71c3d5cda24",
+      "bytes_uncompressed": 1518277,
+      "bytes_compressed": 117441
+    },
+    {
+      "source": "league_raw/1610612755_2024-25.csv",
+      "saved": "league_raw/1610612755_2024-25.csv.gz",
+      "sha256_uncompressed": "c267bb5920b3deb75fdb59e7abca84835bbe218d77f5d4f60ad8c32935a115ba",
+      "bytes_uncompressed": 1493695,
+      "bytes_compressed": 115559
+    },
+    {
+      "source": "league_raw/1610612755_2025-26.csv",
+      "saved": "league_raw/1610612755_2025-26.csv.gz",
+      "sha256_uncompressed": "459b9c091801f9dad80463c7236ab55a8f988ba0d97dc42035820a789a8387b6",
+      "bytes_uncompressed": 1537409,
+      "bytes_compressed": 118117
+    },
+    {
+      "source": "league_raw/1610612756_2006-07.csv",
+      "saved": "league_raw/1610612756_2006-07.csv.gz",
+      "sha256_uncompressed": "3ba58b2797bdd05aae1ff34dd4777828f4b010ffdfce28a98b83a244c467763b",
+      "bytes_uncompressed": 1305148,
+      "bytes_compressed": 96169
+    },
+    {
+      "source": "league_raw/1610612756_2008-09.csv",
+      "saved": "league_raw/1610612756_2008-09.csv.gz",
+      "sha256_uncompressed": "1aeaf9bddbd01501751b1df0d2481d2c78c54400824fc844097d802fb73dd70c",
+      "bytes_uncompressed": 1322913,
+      "bytes_compressed": 96438
+    },
+    {
+      "source": "league_raw/1610612756_2009-10.csv",
+      "saved": "league_raw/1610612756_2009-10.csv.gz",
+      "sha256_uncompressed": "763e927f53b8cfdc2787a90a535e8a986a795fdb3e8276466044debf658ef2ea",
+      "bytes_uncompressed": 1305756,
+      "bytes_compressed": 97515
+    },
+    {
+      "source": "league_raw/1610612756_2010-11.csv",
+      "saved": "league_raw/1610612756_2010-11.csv.gz",
+      "sha256_uncompressed": "b64ca7302d96793cef01f02a57cc18aaae5e5a6505d3a0e37a29891eaeaa77fe",
+      "bytes_uncompressed": 1315530,
+      "bytes_compressed": 104955
+    },
+    {
+      "source": "league_raw/1610612756_2012-13.csv",
+      "saved": "league_raw/1610612756_2012-13.csv.gz",
+      "sha256_uncompressed": "409f3aa55c51b7ef51fc2b319bf714743af649f54f036ad8d861312e8b0051e8",
+      "bytes_uncompressed": 1337457,
+      "bytes_compressed": 106505
+    },
+    {
+      "source": "league_raw/1610612756_2013-14.csv",
+      "saved": "league_raw/1610612756_2013-14.csv.gz",
+      "sha256_uncompressed": "977d2de5c8a34813502793ecb625eeb713a958e18dc5605f69c4189bdd065299",
+      "bytes_uncompressed": 1374427,
+      "bytes_compressed": 107542
+    },
+    {
+      "source": "league_raw/1610612756_2018-19.csv",
+      "saved": "league_raw/1610612756_2018-19.csv.gz",
+      "sha256_uncompressed": "636c123d21064b64bf231616f31f1686aa8d94068f66b7946cb6716ff61db161",
+      "bytes_uncompressed": 1430699,
+      "bytes_compressed": 113959
+    },
+    {
+      "source": "league_raw/1610612756_2019-20.csv",
+      "saved": "league_raw/1610612756_2019-20.csv.gz",
+      "sha256_uncompressed": "088e6d19924e90697d53e4a4005ca922e437ea930b5ada4dde950e6134d5512d",
+      "bytes_uncompressed": 1279323,
+      "bytes_compressed": 101743
+    },
+    {
+      "source": "league_raw/1610612756_2020-21.csv",
+      "saved": "league_raw/1610612756_2020-21.csv.gz",
+      "sha256_uncompressed": "d1349de15d9f6e31b7e67f30a08a360ad9cf48161472b7c3947f2a9815468eec",
+      "bytes_uncompressed": 1263123,
+      "bytes_compressed": 102428
+    },
+    {
+      "source": "league_raw/1610612756_2022-23.csv",
+      "saved": "league_raw/1610612756_2022-23.csv.gz",
+      "sha256_uncompressed": "12ab051e4ec00ad82167523c83bbc44e154061e7c5d794a1dfd5f6b1bb1d0cda",
+      "bytes_uncompressed": 1474917,
+      "bytes_compressed": 119006
+    },
+    {
+      "source": "league_raw/1610612756_2023-24.csv",
+      "saved": "league_raw/1610612756_2023-24.csv.gz",
+      "sha256_uncompressed": "56cc8f0c33c6067f27bbcf108a5f7d620a707431e9538b14c09d1b10e5a04964",
+      "bytes_uncompressed": 1408657,
+      "bytes_compressed": 113669
+    },
+    {
+      "source": "league_raw/1610612756_2024-25.csv",
+      "saved": "league_raw/1610612756_2024-25.csv.gz",
+      "sha256_uncompressed": "620a07448de59b4887f402367a1ce483e5472028795ffd2e5994d1bbe4f289a1",
+      "bytes_uncompressed": 1411794,
+      "bytes_compressed": 114765
+    },
+    {
+      "source": "league_raw/1610612756_2025-26.csv",
+      "saved": "league_raw/1610612756_2025-26.csv.gz",
+      "sha256_uncompressed": "498733ccddb9be46ee0b0bd5ded10748684ea2c059d4aad2f44dd4618427a75d",
+      "bytes_uncompressed": 1491298,
+      "bytes_compressed": 119899
+    },
+    {
+      "source": "league_raw/1610612757_2006-07.csv",
+      "saved": "league_raw/1610612757_2006-07.csv.gz",
+      "sha256_uncompressed": "ee925de3a3a4dcbe258f115a81dce02fd009dfab319178ed3df8bf039a5ee5a2",
+      "bytes_uncompressed": 1287105,
+      "bytes_compressed": 91390
+    },
+    {
+      "source": "league_raw/1610612757_2008-09.csv",
+      "saved": "league_raw/1610612757_2008-09.csv.gz",
+      "sha256_uncompressed": "6b92d99a91fd81bac7d6f382124e4b817443c8bbc97c059432908d5ee1c6ff21",
+      "bytes_uncompressed": 1321611,
+      "bytes_compressed": 94221
+    },
+    {
+      "source": "league_raw/1610612757_2009-10.csv",
+      "saved": "league_raw/1610612757_2009-10.csv.gz",
+      "sha256_uncompressed": "185110485e957903901586ebae20f78b69f9f46ab7359fa358e5cc48ec959379",
+      "bytes_uncompressed": 1311620,
+      "bytes_compressed": 94605
+    },
+    {
+      "source": "league_raw/1610612757_2010-11.csv",
+      "saved": "league_raw/1610612757_2010-11.csv.gz",
+      "sha256_uncompressed": "ba7c0424f21300fa7bd5013e8239cbfffec30f556a6a53d01fe3025b777d8659",
+      "bytes_uncompressed": 1392672,
+      "bytes_compressed": 104037
+    },
+    {
+      "source": "league_raw/1610612757_2012-13.csv",
+      "saved": "league_raw/1610612757_2012-13.csv.gz",
+      "sha256_uncompressed": "1759cfdde5d5d0dad1d5a5800c59df5be6d29a51d7ec9aa5e806d647802b7df9",
+      "bytes_uncompressed": 1420970,
+      "bytes_compressed": 107168
+    },
+    {
+      "source": "league_raw/1610612757_2013-14.csv",
+      "saved": "league_raw/1610612757_2013-14.csv.gz",
+      "sha256_uncompressed": "cc02541300baf11cbac85c7ffb51422df68775ad57f223ae8ef69ada761d674a",
+      "bytes_uncompressed": 1463546,
+      "bytes_compressed": 110717
+    },
+    {
+      "source": "league_raw/1610612757_2018-19.csv",
+      "saved": "league_raw/1610612757_2018-19.csv.gz",
+      "sha256_uncompressed": "b52c5da815848fb560062307f7c21c5c32910f03e3094c4d607ad0dc0e310561",
+      "bytes_uncompressed": 1552648,
+      "bytes_compressed": 118107
+    },
+    {
+      "source": "league_raw/1610612757_2019-20.csv",
+      "saved": "league_raw/1610612757_2019-20.csv.gz",
+      "sha256_uncompressed": "80752aa3848aed9d2d5cc991b557d13f96f86972c3d36fea0e0c689c1921f491",
+      "bytes_uncompressed": 1420574,
+      "bytes_compressed": 107605
+    },
+    {
+      "source": "league_raw/1610612757_2020-21.csv",
+      "saved": "league_raw/1610612757_2020-21.csv.gz",
+      "sha256_uncompressed": "939a437e14b5f4534f03a5da9e792789b17dce268be058126e6257b092d84e3e",
+      "bytes_uncompressed": 1384319,
+      "bytes_compressed": 105604
+    },
+    {
+      "source": "league_raw/1610612757_2022-23.csv",
+      "saved": "league_raw/1610612757_2022-23.csv.gz",
+      "sha256_uncompressed": "f39302e933c318ef0f2ecd88341c096ddc4cb27203c4a3de7c29d2cc13b13443",
+      "bytes_uncompressed": 1483379,
+      "bytes_compressed": 112295
+    },
+    {
+      "source": "league_raw/1610612757_2023-24.csv",
+      "saved": "league_raw/1610612757_2023-24.csv.gz",
+      "sha256_uncompressed": "db28369492977290609886a8408eaf05abf87b02ac002583f289ba8b1970e553",
+      "bytes_uncompressed": 1558802,
+      "bytes_compressed": 118262
+    },
+    {
+      "source": "league_raw/1610612757_2024-25.csv",
+      "saved": "league_raw/1610612757_2024-25.csv.gz",
+      "sha256_uncompressed": "82cc64fa42d5bf418ffd2f3811b72a6d9d4c27c0ea618123d6590342b2618368",
+      "bytes_uncompressed": 1571011,
+      "bytes_compressed": 118806
+    },
+    {
+      "source": "league_raw/1610612757_2025-26.csv",
+      "saved": "league_raw/1610612757_2025-26.csv.gz",
+      "sha256_uncompressed": "073477a738e86d36a18afb8236df92ef9a24c745bfb2c2335509ed4a72bd7281",
+      "bytes_uncompressed": 1562811,
+      "bytes_compressed": 117658
+    },
+    {
+      "source": "league_raw/1610612758_2006-07.csv",
+      "saved": "league_raw/1610612758_2006-07.csv.gz",
+      "sha256_uncompressed": "6caf849752d82593bb836c137e6efde2d390e09f7a6f80d2576a04ac03ca330e",
+      "bytes_uncompressed": 1280147,
+      "bytes_compressed": 92871
+    },
+    {
+      "source": "league_raw/1610612758_2008-09.csv",
+      "saved": "league_raw/1610612758_2008-09.csv.gz",
+      "sha256_uncompressed": "c4eedf79bcf8f1b9817bbc4a557cec7b9530ccea90d64f3c297425e4372096b2",
+      "bytes_uncompressed": 1349051,
+      "bytes_compressed": 98762
+    },
+    {
+      "source": "league_raw/1610612758_2009-10.csv",
+      "saved": "league_raw/1610612758_2009-10.csv.gz",
+      "sha256_uncompressed": "1337f7aa58fbe900f1bec38bd902c39a7045dec4747c5dbe8fb63e2ab81cbefc",
+      "bytes_uncompressed": 1394337,
+      "bytes_compressed": 101475
+    },
+    {
+      "source": "league_raw/1610612758_2010-11.csv",
+      "saved": "league_raw/1610612758_2010-11.csv.gz",
+      "sha256_uncompressed": "364daf35e85a36ca22e4f6e287d5d8ff1967b5791b1df9afc6554308fb7a457f",
+      "bytes_uncompressed": 1420190,
+      "bytes_compressed": 109302
+    },
+    {
+      "source": "league_raw/1610612758_2012-13.csv",
+      "saved": "league_raw/1610612758_2012-13.csv.gz",
+      "sha256_uncompressed": "3dfd1ff5a7ceae3c0cba522f8bf373f687a5539d4405fc9288760deed6117c4d",
+      "bytes_uncompressed": 1375159,
+      "bytes_compressed": 105787
+    },
+    {
+      "source": "league_raw/1610612758_2013-14.csv",
+      "saved": "league_raw/1610612758_2013-14.csv.gz",
+      "sha256_uncompressed": "d8c682c2ac6dff651bbedb1ea9e3b4d6012124400eb80d7772bc271b5005a2c4",
+      "bytes_uncompressed": 1343391,
+      "bytes_compressed": 104646
+    },
+    {
+      "source": "league_raw/1610612758_2018-19.csv",
+      "saved": "league_raw/1610612758_2018-19.csv.gz",
+      "sha256_uncompressed": "5516c07ca9d5828ecb1410932b71f859cc9054acf81720a87a483da79502b745",
+      "bytes_uncompressed": 1561507,
+      "bytes_compressed": 121041
+    },
+    {
+      "source": "league_raw/1610612758_2019-20.csv",
+      "saved": "league_raw/1610612758_2019-20.csv.gz",
+      "sha256_uncompressed": "42073396e2e5a3967cd1f626933cf388df06fc96a16837fcbf544473c4a17de7",
+      "bytes_uncompressed": 1297425,
+      "bytes_compressed": 101298
+    },
+    {
+      "source": "league_raw/1610612758_2020-21.csv",
+      "saved": "league_raw/1610612758_2020-21.csv.gz",
+      "sha256_uncompressed": "497aa9ef385bb6e7a9bcea75c1a6813abb4d613303d01ab824d4f5e11010742d",
+      "bytes_uncompressed": 1307269,
+      "bytes_compressed": 101834
+    },
+    {
+      "source": "league_raw/1610612758_2022-23.csv",
+      "saved": "league_raw/1610612758_2022-23.csv.gz",
+      "sha256_uncompressed": "8f36669b10d4a68d3df92a0f92e0f27872831c328e2ce13a6e9b425a1d4c808e",
+      "bytes_uncompressed": 1479832,
+      "bytes_compressed": 114647
+    },
+    {
+      "source": "league_raw/1610612758_2023-24.csv",
+      "saved": "league_raw/1610612758_2023-24.csv.gz",
+      "sha256_uncompressed": "f5be097b5451ab541c74df06e9f597c880f79f3631fe8a2004e64f53fd1cc9e4",
+      "bytes_uncompressed": 1528286,
+      "bytes_compressed": 119468
+    },
+    {
+      "source": "league_raw/1610612758_2024-25.csv",
+      "saved": "league_raw/1610612758_2024-25.csv.gz",
+      "sha256_uncompressed": "8a341388feb8c5d52113190e5160930915bc2ec0cfc07e39945443b211ba4521",
+      "bytes_uncompressed": 1509221,
+      "bytes_compressed": 119658
+    },
+    {
+      "source": "league_raw/1610612758_2025-26.csv",
+      "saved": "league_raw/1610612758_2025-26.csv.gz",
+      "sha256_uncompressed": "526665b658394cdfaa3ee752f8056dbbc3544c94498c5c0f440c9be1997c1a4b",
+      "bytes_uncompressed": 1503625,
+      "bytes_compressed": 118627
+    },
+    {
+      "source": "league_raw/1610612759_2006-07.csv",
+      "saved": "league_raw/1610612759_2006-07.csv.gz",
+      "sha256_uncompressed": "7bcf944e75104c3afbfeea9e087b9de3c41fbc9dab5c129735d24a3b8569aff2",
+      "bytes_uncompressed": 1232880,
+      "bytes_compressed": 92798
+    },
+    {
+      "source": "league_raw/1610612759_2008-09.csv",
+      "saved": "league_raw/1610612759_2008-09.csv.gz",
+      "sha256_uncompressed": "9512e9eb3dfb414c7648908f8b37cdf87caf3668fa8ca04ff73410d950845762",
+      "bytes_uncompressed": 1315567,
+      "bytes_compressed": 100216
+    },
+    {
+      "source": "league_raw/1610612759_2009-10.csv",
+      "saved": "league_raw/1610612759_2009-10.csv.gz",
+      "sha256_uncompressed": "253987e590f9b06a557b6af834a9ff421aef8d9d11f592d0e19f1a0c8574f7c7",
+      "bytes_uncompressed": 1348750,
+      "bytes_compressed": 101053
+    },
+    {
+      "source": "league_raw/1610612759_2010-11.csv",
+      "saved": "league_raw/1610612759_2010-11.csv.gz",
+      "sha256_uncompressed": "dd1d10b65a5c06669148e04041b3cce0a5be8581e6c3852a7c733b22bd66e568",
+      "bytes_uncompressed": 1344908,
+      "bytes_compressed": 103877
+    },
+    {
+      "source": "league_raw/1610612759_2012-13.csv",
+      "saved": "league_raw/1610612759_2012-13.csv.gz",
+      "sha256_uncompressed": "f8c7d99ea0f62291e608bd2aa4d2f55a0d73988bc454d679822b0da798260e10",
+      "bytes_uncompressed": 1354224,
+      "bytes_compressed": 104158
+    },
+    {
+      "source": "league_raw/1610612759_2013-14.csv",
+      "saved": "league_raw/1610612759_2013-14.csv.gz",
+      "sha256_uncompressed": "47eef6b271feb1246ba79e521e615b46fdd2e59759c6344657183ebccbcfb3be",
+      "bytes_uncompressed": 1391866,
+      "bytes_compressed": 107659
+    },
+    {
+      "source": "league_raw/1610612759_2018-19.csv",
+      "saved": "league_raw/1610612759_2018-19.csv.gz",
+      "sha256_uncompressed": "2a5dbb81b2355819b2f84d8f5fe0c2a1baa4a8dac001dad4e86c98d8a773906e",
+      "bytes_uncompressed": 1478617,
+      "bytes_compressed": 116858
+    },
+    {
+      "source": "league_raw/1610612759_2019-20.csv",
+      "saved": "league_raw/1610612759_2019-20.csv.gz",
+      "sha256_uncompressed": "cc7cc7f0104df6781d24877fd1b5c24c3854eb074fcce8670d97dcc4438e6cc0",
+      "bytes_uncompressed": 1297689,
+      "bytes_compressed": 101513
+    },
+    {
+      "source": "league_raw/1610612759_2020-21.csv",
+      "saved": "league_raw/1610612759_2020-21.csv.gz",
+      "sha256_uncompressed": "a886e4cff284bd3391ec63b1df3acd9c7444365930273f1bfba81ac0ae9edd7e",
+      "bytes_uncompressed": 1336293,
+      "bytes_compressed": 103993
+    },
+    {
+      "source": "league_raw/1610612759_2022-23.csv",
+      "saved": "league_raw/1610612759_2022-23.csv.gz",
+      "sha256_uncompressed": "038f94e7cafbc522462f96aa03bdab8653cc34d02f2c69cec11e39c95d49929e",
+      "bytes_uncompressed": 1570368,
+      "bytes_compressed": 120856
+    },
+    {
+      "source": "league_raw/1610612759_2023-24.csv",
+      "saved": "league_raw/1610612759_2023-24.csv.gz",
+      "sha256_uncompressed": "0d603145f26334fe50915eef48ebe2f4e2baf470c34bb9f4ce9d3062c59730f9",
+      "bytes_uncompressed": 1540063,
+      "bytes_compressed": 118832
+    },
+    {
+      "source": "league_raw/1610612759_2024-25.csv",
+      "saved": "league_raw/1610612759_2024-25.csv.gz",
+      "sha256_uncompressed": "19a72436aabeea8b3ade8c682062ffa999ae87b527e085a7e0e6c19a577b8b0c",
+      "bytes_uncompressed": 1527729,
+      "bytes_compressed": 117552
+    },
+    {
+      "source": "league_raw/1610612759_2025-26.csv",
+      "saved": "league_raw/1610612759_2025-26.csv.gz",
+      "sha256_uncompressed": "2c49ae6046a29979455b01b601ebb17eaaacc20b8a7be35d66295fddb71af744",
+      "bytes_uncompressed": 1525007,
+      "bytes_compressed": 116360
+    },
+    {
+      "source": "league_raw/1610612760_2006-07.csv",
+      "saved": "league_raw/1610612760_2006-07.csv.gz",
+      "sha256_uncompressed": "91f7cc79f2c9096789eb59cba361b65305f207114b03f032847f3b69cc504d5b",
+      "bytes_uncompressed": 1309012,
+      "bytes_compressed": 95113
+    },
+    {
+      "source": "league_raw/1610612760_2008-09.csv",
+      "saved": "league_raw/1610612760_2008-09.csv.gz",
+      "sha256_uncompressed": "22cd7710be3673d3ea28e40eaecf3f2bd012dc71785038a41904874a8bd4a9bf",
+      "bytes_uncompressed": 1387937,
+      "bytes_compressed": 98169
+    },
+    {
+      "source": "league_raw/1610612760_2009-10.csv",
+      "saved": "league_raw/1610612760_2009-10.csv.gz",
+      "sha256_uncompressed": "f938aeb126bf768c542c5fbc728175b888d43ad722316fef9bf5662eaeb1f019",
+      "bytes_uncompressed": 1337498,
+      "bytes_compressed": 94839
+    },
+    {
+      "source": "league_raw/1610612760_2010-11.csv",
+      "saved": "league_raw/1610612760_2010-11.csv.gz",
+      "sha256_uncompressed": "0502606aae752fecc5a1ce8534ad41f4f8acf227363b555bf729ce80520b7f0f",
+      "bytes_uncompressed": 1342013,
+      "bytes_compressed": 102076
+    },
+    {
+      "source": "league_raw/1610612760_2012-13.csv",
+      "saved": "league_raw/1610612760_2012-13.csv.gz",
+      "sha256_uncompressed": "e314fb6caeac769ce670f5d39318514e5d7376ca663ca15037e9f3d0b67991e3",
+      "bytes_uncompressed": 1365901,
+      "bytes_compressed": 102785
+    },
+    {
+      "source": "league_raw/1610612760_2013-14.csv",
+      "saved": "league_raw/1610612760_2013-14.csv.gz",
+      "sha256_uncompressed": "a458ebff86fc12e690fe3d02e8eb09c9dfa3aa3d914ac67fd8c723895706efa1",
+      "bytes_uncompressed": 1420565,
+      "bytes_compressed": 107760
+    },
+    {
+      "source": "league_raw/1610612760_2018-19.csv",
+      "saved": "league_raw/1610612760_2018-19.csv.gz",
+      "sha256_uncompressed": "df1e7eb1b1f31e2b2207c87043a10a360b19252d91dc92c43cbd1f6c4bd89eeb",
+      "bytes_uncompressed": 1608857,
+      "bytes_compressed": 120275
+    },
+    {
+      "source": "league_raw/1610612760_2019-20.csv",
+      "saved": "league_raw/1610612760_2019-20.csv.gz",
+      "sha256_uncompressed": "4d2ec4a14d7ec314583d307462d93f6fca745df209281ec625061a4489e64ff8",
+      "bytes_uncompressed": 1298401,
+      "bytes_compressed": 99063
+    },
+    {
+      "source": "league_raw/1610612760_2020-21.csv",
+      "saved": "league_raw/1610612760_2020-21.csv.gz",
+      "sha256_uncompressed": "72b783ec63755205c5b7dafdb8341c5c7e25ed731e894d1f54565d22a45d3e6e",
+      "bytes_uncompressed": 1333090,
+      "bytes_compressed": 101068
+    },
+    {
+      "source": "league_raw/1610612760_2022-23.csv",
+      "saved": "league_raw/1610612760_2022-23.csv.gz",
+      "sha256_uncompressed": "6be50dd2af3cf633445df340f5a43a476f829a4041e33beb6e3965990499bbef",
+      "bytes_uncompressed": 1614720,
+      "bytes_compressed": 121162
+    },
+    {
+      "source": "league_raw/1610612760_2023-24.csv",
+      "saved": "league_raw/1610612760_2023-24.csv.gz",
+      "sha256_uncompressed": "3c6469a712fcee7cabf8729df5348d0c3678784cda48f45f0c252b2ae5c61d37",
+      "bytes_uncompressed": 1557435,
+      "bytes_compressed": 118276
+    },
+    {
+      "source": "league_raw/1610612760_2024-25.csv",
+      "saved": "league_raw/1610612760_2024-25.csv.gz",
+      "sha256_uncompressed": "89d8673378d5a208ac4550743f75607cbcbf58765585b69d210732db873b4872",
+      "bytes_uncompressed": 1623905,
+      "bytes_compressed": 122805
+    },
+    {
+      "source": "league_raw/1610612760_2025-26.csv",
+      "saved": "league_raw/1610612760_2025-26.csv.gz",
+      "sha256_uncompressed": "857fad93f44e11e982bca2ff3a1b4ba75974669e678fa75cb6d198edce065b4b",
+      "bytes_uncompressed": 1553084,
+      "bytes_compressed": 118548
+    },
+    {
+      "source": "league_raw/1610612761_2006-07.csv",
+      "saved": "league_raw/1610612761_2006-07.csv.gz",
+      "sha256_uncompressed": "558f841217682c51590d7b75d77f8157b21c4fe3b7cf09af28675613b879ec73",
+      "bytes_uncompressed": 1270509,
+      "bytes_compressed": 94432
+    },
+    {
+      "source": "league_raw/1610612761_2008-09.csv",
+      "saved": "league_raw/1610612761_2008-09.csv.gz",
+      "sha256_uncompressed": "7435d23fc467790b4c20b3ef43373b0cb58c7f880fafa70fec4e970295619cab",
+      "bytes_uncompressed": 1302108,
+      "bytes_compressed": 99459
+    },
+    {
+      "source": "league_raw/1610612761_2009-10.csv",
+      "saved": "league_raw/1610612761_2009-10.csv.gz",
+      "sha256_uncompressed": "5e507ea894c9faf72ed8ef2a10f7f7bb82b68c75dca630648627bdc70a39461b",
+      "bytes_uncompressed": 1304520,
+      "bytes_compressed": 100649
+    },
+    {
+      "source": "league_raw/1610612761_2010-11.csv",
+      "saved": "league_raw/1610612761_2010-11.csv.gz",
+      "sha256_uncompressed": "53be0d8d5f8af5b79ed1fbf566c8f5e93ba7f7d962de704ecac74b9a3cf74799",
+      "bytes_uncompressed": 1335725,
+      "bytes_compressed": 104284
+    },
+    {
+      "source": "league_raw/1610612761_2012-13.csv",
+      "saved": "league_raw/1610612761_2012-13.csv.gz",
+      "sha256_uncompressed": "5324853eece3ebbf8ee3bba62ad301b13d00873504e57f68e464721e4501e2bb",
+      "bytes_uncompressed": 1361586,
+      "bytes_compressed": 107271
+    },
+    {
+      "source": "league_raw/1610612761_2013-14.csv",
+      "saved": "league_raw/1610612761_2013-14.csv.gz",
+      "sha256_uncompressed": "76886340cda0fb3e64fbcffef13ccbd4767de38955851ec1e02ab5f0b0505658",
+      "bytes_uncompressed": 1372974,
+      "bytes_compressed": 107459
+    },
+    {
+      "source": "league_raw/1610612761_2018-19.csv",
+      "saved": "league_raw/1610612761_2018-19.csv.gz",
+      "sha256_uncompressed": "73e71530339794d84113e17dea4dfeeea7fd26903a82664a59421b555f4795e6",
+      "bytes_uncompressed": 1469089,
+      "bytes_compressed": 116720
+    },
+    {
+      "source": "league_raw/1610612761_2019-20.csv",
+      "saved": "league_raw/1610612761_2019-20.csv.gz",
+      "sha256_uncompressed": "5d6e94ab5828548cba8f2757faa4ef3cc1a1d83cabab7aadf3d004a30b93bb34",
+      "bytes_uncompressed": 1284889,
+      "bytes_compressed": 100229
+    },
+    {
+      "source": "league_raw/1610612761_2020-21.csv",
+      "saved": "league_raw/1610612761_2020-21.csv.gz",
+      "sha256_uncompressed": "e0bde59082809b775468af4ef9d1bd9e93755bb42238152b4256ecf6ba073d20",
+      "bytes_uncompressed": 1293488,
+      "bytes_compressed": 101661
+    },
+    {
+      "source": "league_raw/1610612761_2022-23.csv",
+      "saved": "league_raw/1610612761_2022-23.csv.gz",
+      "sha256_uncompressed": "4f033c6644a88c3212cb97f16870c49ebe8ff5a1be3c3787789eaf960c5fff1f",
+      "bytes_uncompressed": 1533434,
+      "bytes_compressed": 119718
+    },
+    {
+      "source": "league_raw/1610612761_2023-24.csv",
+      "saved": "league_raw/1610612761_2023-24.csv.gz",
+      "sha256_uncompressed": "025338b9371f5155daba61abc0086d151d792554f972b290ba9a9b3dbba06ce4",
+      "bytes_uncompressed": 1510799,
+      "bytes_compressed": 117361
+    },
+    {
+      "source": "league_raw/1610612761_2024-25.csv",
+      "saved": "league_raw/1610612761_2024-25.csv.gz",
+      "sha256_uncompressed": "f081391ea472c1fb36d48695b8360f182b091900373de615858fff55720023d2",
+      "bytes_uncompressed": 1528539,
+      "bytes_compressed": 118987
+    },
+    {
+      "source": "league_raw/1610612761_2025-26.csv",
+      "saved": "league_raw/1610612761_2025-26.csv.gz",
+      "sha256_uncompressed": "bbc945cb9690656bbe80bab4daa6e12e97422bca77a5dd92b5117124f4f2e075",
+      "bytes_uncompressed": 1491944,
+      "bytes_compressed": 115808
+    },
+    {
+      "source": "league_raw/1610612762_2006-07.csv",
+      "saved": "league_raw/1610612762_2006-07.csv.gz",
+      "sha256_uncompressed": "334349ff77e747e73ff4d18f20e4d255d125e97517ea35ad6a490b02792231c5",
+      "bytes_uncompressed": 1216923,
+      "bytes_compressed": 89886
+    },
+    {
+      "source": "league_raw/1610612762_2008-09.csv",
+      "saved": "league_raw/1610612762_2008-09.csv.gz",
+      "sha256_uncompressed": "1fb6192e72a87842eae98a8cf37c5868d1b6f7ae3057c18c1d4d933d5da56181",
+      "bytes_uncompressed": 1248828,
+      "bytes_compressed": 93009
+    },
+    {
+      "source": "league_raw/1610612762_2009-10.csv",
+      "saved": "league_raw/1610612762_2009-10.csv.gz",
+      "sha256_uncompressed": "e330029884a4ec75633097702dfbd1f72fad3f7f017182a5e000cdeed524f702",
+      "bytes_uncompressed": 1245854,
+      "bytes_compressed": 92564
+    },
+    {
+      "source": "league_raw/1610612762_2010-11.csv",
+      "saved": "league_raw/1610612762_2010-11.csv.gz",
+      "sha256_uncompressed": "279672584a845c162780204237260ad6d6b6c5fbe535d8a172b81ded35eb7507",
+      "bytes_uncompressed": 1245800,
+      "bytes_compressed": 101042
+    },
+    {
+      "source": "league_raw/1610612762_2012-13.csv",
+      "saved": "league_raw/1610612762_2012-13.csv.gz",
+      "sha256_uncompressed": "b486318d5485f9eab33c199dd7125ff9148c5b5ebe123a76a9993283e468c101",
+      "bytes_uncompressed": 1272148,
+      "bytes_compressed": 102503
+    },
+    {
+      "source": "league_raw/1610612762_2013-14.csv",
+      "saved": "league_raw/1610612762_2013-14.csv.gz",
+      "sha256_uncompressed": "dda05ad972bcc40e9d18ce79c8151bf85b6e990a7d5b135620195d8b7efe1de0",
+      "bytes_uncompressed": 1310947,
+      "bytes_compressed": 104905
+    },
+    {
+      "source": "league_raw/1610612762_2018-19.csv",
+      "saved": "league_raw/1610612762_2018-19.csv.gz",
+      "sha256_uncompressed": "a1920238289879081e99a0f669f25482b91e74f06c7b78f5d665544681f9390a",
+      "bytes_uncompressed": 1383968,
+      "bytes_compressed": 111204
+    },
+    {
+      "source": "league_raw/1610612762_2019-20.csv",
+      "saved": "league_raw/1610612762_2019-20.csv.gz",
+      "sha256_uncompressed": "0eda93b8ae57b5c4501c533641ced51fc086cb459dc336d6235e60c7e67caf0a",
+      "bytes_uncompressed": 1213197,
+      "bytes_compressed": 97108
+    },
+    {
+      "source": "league_raw/1610612762_2020-21.csv",
+      "saved": "league_raw/1610612762_2020-21.csv.gz",
+      "sha256_uncompressed": "8a707d8682254f2715ec30626a09f4e5b74296d4ec1618a97c12aec16c4f2b23",
+      "bytes_uncompressed": 1255920,
+      "bytes_compressed": 100828
+    },
+    {
+      "source": "league_raw/1610612762_2022-23.csv",
+      "saved": "league_raw/1610612762_2022-23.csv.gz",
+      "sha256_uncompressed": "4e98337cf69fd4cbaf23c91aa6b973fb73062ba3eaa7f5158a182f79261662b9",
+      "bytes_uncompressed": 1470351,
+      "bytes_compressed": 117579
+    },
+    {
+      "source": "league_raw/1610612762_2023-24.csv",
+      "saved": "league_raw/1610612762_2023-24.csv.gz",
+      "sha256_uncompressed": "864b5db77ab55ca5dc13f794b39cc73d6bd8224ca527d7eaf70a34dc7433c009",
+      "bytes_uncompressed": 1470871,
+      "bytes_compressed": 117516
+    },
+    {
+      "source": "league_raw/1610612762_2024-25.csv",
+      "saved": "league_raw/1610612762_2024-25.csv.gz",
+      "sha256_uncompressed": "7c9413489f5905b4e846ecd38f017dacf21cfd642f2c92dfbe2e405b0f09b181",
+      "bytes_uncompressed": 1454611,
+      "bytes_compressed": 116693
+    },
+    {
+      "source": "league_raw/1610612762_2025-26.csv",
+      "saved": "league_raw/1610612762_2025-26.csv.gz",
+      "sha256_uncompressed": "54bd91097ee26ef19fd636f87d80f22446c9c5f9040e6139d4e9c1db7e86c766",
+      "bytes_uncompressed": 1491541,
+      "bytes_compressed": 119603
+    },
+    {
+      "source": "league_raw/1610612763_2006-07.csv",
+      "saved": "league_raw/1610612763_2006-07.csv.gz",
+      "sha256_uncompressed": "4092cef77b39311d60dd6d69fb7ad6a444e53bba173cf635c9b5162350ca2260",
+      "bytes_uncompressed": 1264194,
+      "bytes_compressed": 91266
+    },
+    {
+      "source": "league_raw/1610612763_2008-09.csv",
+      "saved": "league_raw/1610612763_2008-09.csv.gz",
+      "sha256_uncompressed": "c7f07fc1e287988413f684b289f6dffc3b4e3723aad68b6e9b27c00b443034e8",
+      "bytes_uncompressed": 1276476,
+      "bytes_compressed": 93061
+    },
+    {
+      "source": "league_raw/1610612763_2009-10.csv",
+      "saved": "league_raw/1610612763_2009-10.csv.gz",
+      "sha256_uncompressed": "98e02603f9ef6670eff362d71f50f2fd762aa2dc1688bb2fb3772dbb6dd10ad0",
+      "bytes_uncompressed": 1350636,
+      "bytes_compressed": 98919
+    },
+    {
+      "source": "league_raw/1610612763_2010-11.csv",
+      "saved": "league_raw/1610612763_2010-11.csv.gz",
+      "sha256_uncompressed": "17fbfdcd0e968eceb838c1477e784d3f144158af826c5dd4bed6dc5e4ee721c7",
+      "bytes_uncompressed": 1339881,
+      "bytes_compressed": 104816
+    },
+    {
+      "source": "league_raw/1610612763_2012-13.csv",
+      "saved": "league_raw/1610612763_2012-13.csv.gz",
+      "sha256_uncompressed": "0e2964c51942be1a03013b064dc6217664da940cb001b4fdd9231ea9f07a61ee",
+      "bytes_uncompressed": 1321556,
+      "bytes_compressed": 103129
+    },
+    {
+      "source": "league_raw/1610612763_2013-14.csv",
+      "saved": "league_raw/1610612763_2013-14.csv.gz",
+      "sha256_uncompressed": "d3b6261c7fb81a7513019913c4a9cdb68d884a3d8cfa4c9bd0c54108f2695baa",
+      "bytes_uncompressed": 1329897,
+      "bytes_compressed": 103820
+    },
+    {
+      "source": "league_raw/1610612763_2018-19.csv",
+      "saved": "league_raw/1610612763_2018-19.csv.gz",
+      "sha256_uncompressed": "06e9e236d641381f77834d9f0133b0cb5d80d435f69e48e5ba5f257580b012cb",
+      "bytes_uncompressed": 1415376,
+      "bytes_compressed": 110379
+    },
+    {
+      "source": "league_raw/1610612763_2019-20.csv",
+      "saved": "league_raw/1610612763_2019-20.csv.gz",
+      "sha256_uncompressed": "136c3d6debdab6676b7a49e15a54baebba95d844160765efe8b5c24b6dedc5c9",
+      "bytes_uncompressed": 1370424,
+      "bytes_compressed": 105750
+    },
+    {
+      "source": "league_raw/1610612763_2020-21.csv",
+      "saved": "league_raw/1610612763_2020-21.csv.gz",
+      "sha256_uncompressed": "de4c940ae5ebf61784382c259cbae0b360c377f2714deaca42e27e1fc43beef4",
+      "bytes_uncompressed": 1365388,
+      "bytes_compressed": 105317
+    },
+    {
+      "source": "league_raw/1610612763_2022-23.csv",
+      "saved": "league_raw/1610612763_2022-23.csv.gz",
+      "sha256_uncompressed": "f42a89f6cee451555d3b16cb5129399083a43e199a568c9f85ed93ff7e14be14",
+      "bytes_uncompressed": 1563462,
+      "bytes_compressed": 119791
+    },
+    {
+      "source": "league_raw/1610612763_2023-24.csv",
+      "saved": "league_raw/1610612763_2023-24.csv.gz",
+      "sha256_uncompressed": "b8ef36f85012d2ce3e42343314a7cc75e0c2896cf9aa57f7f540806019f2b0b1",
+      "bytes_uncompressed": 1500921,
+      "bytes_compressed": 115999
+    },
+    {
+      "source": "league_raw/1610612763_2024-25.csv",
+      "saved": "league_raw/1610612763_2024-25.csv.gz",
+      "sha256_uncompressed": "babdc4fb8109c3df94a91aef457d4b936f5910dadc7b04dbe82a20d1969b7c62",
+      "bytes_uncompressed": 1587449,
+      "bytes_compressed": 123067
+    },
+    {
+      "source": "league_raw/1610612763_2025-26.csv",
+      "saved": "league_raw/1610612763_2025-26.csv.gz",
+      "sha256_uncompressed": "8b63729f12592bf6c8f9d3eca13fd516bfb70645f166c8a57f1aaab60a13f4c7",
+      "bytes_uncompressed": 1547570,
+      "bytes_compressed": 119922
+    },
+    {
+      "source": "league_raw/1610612764_2006-07.csv",
+      "saved": "league_raw/1610612764_2006-07.csv.gz",
+      "sha256_uncompressed": "c034e8b854d6de851e0d1be70de524f93d16ef7ee531ae152c5f65facc6a82f7",
+      "bytes_uncompressed": 1350159,
+      "bytes_compressed": 99651
+    },
+    {
+      "source": "league_raw/1610612764_2008-09.csv",
+      "saved": "league_raw/1610612764_2008-09.csv.gz",
+      "sha256_uncompressed": "9a081fa32532cd757b9a6214d83a0dbc8131fa9c6460749c136075d00314d432",
+      "bytes_uncompressed": 1317819,
+      "bytes_compressed": 98828
+    },
+    {
+      "source": "league_raw/1610612764_2009-10.csv",
+      "saved": "league_raw/1610612764_2009-10.csv.gz",
+      "sha256_uncompressed": "7aadb7a101433b9cc32ae2234a28c81221de21ed0738175abe8c9a5183db3dd0",
+      "bytes_uncompressed": 1325372,
+      "bytes_compressed": 100567
+    },
+    {
+      "source": "league_raw/1610612764_2010-11.csv",
+      "saved": "league_raw/1610612764_2010-11.csv.gz",
+      "sha256_uncompressed": "7055acead39116e78a633322bce48f87c33246bebcb9e98fccae438ca6017919",
+      "bytes_uncompressed": 1365373,
+      "bytes_compressed": 106054
+    },
+    {
+      "source": "league_raw/1610612764_2012-13.csv",
+      "saved": "league_raw/1610612764_2012-13.csv.gz",
+      "sha256_uncompressed": "0cecc67da3fcc3250d53a8e62fd9adf2c0f3506e400477a80b4a6e467ca60ea8",
+      "bytes_uncompressed": 1364085,
+      "bytes_compressed": 105916
+    },
+    {
+      "source": "league_raw/1610612764_2013-14.csv",
+      "saved": "league_raw/1610612764_2013-14.csv.gz",
+      "sha256_uncompressed": "e04e48f6ee6e63d8c01b6b36fd3510cbcc80d3b8621735b3964425347274a9c6",
+      "bytes_uncompressed": 1410862,
+      "bytes_compressed": 108410
+    },
+    {
+      "source": "league_raw/1610612764_2018-19.csv",
+      "saved": "league_raw/1610612764_2018-19.csv.gz",
+      "sha256_uncompressed": "bd68bd887c97c8b8b2339da07fc869f50936982618e691bd65fde8f34feafc14",
+      "bytes_uncompressed": 1510746,
+      "bytes_compressed": 115850
+    },
+    {
+      "source": "league_raw/1610612764_2019-20.csv",
+      "saved": "league_raw/1610612764_2019-20.csv.gz",
+      "sha256_uncompressed": "428de2d77540d5c5680ccb4498fdb371c808e12aec2deea91f96ee641d856403",
+      "bytes_uncompressed": 1343731,
+      "bytes_compressed": 104451
+    },
+    {
+      "source": "league_raw/1610612764_2020-21.csv",
+      "saved": "league_raw/1610612764_2020-21.csv.gz",
+      "sha256_uncompressed": "9ff05e103f680e3b38b0ea54269bc79dbf48bc23b32c64b957aa58a42d6460a3",
+      "bytes_uncompressed": 1344720,
+      "bytes_compressed": 105617
+    },
+    {
+      "source": "league_raw/1610612764_2022-23.csv",
+      "saved": "league_raw/1610612764_2022-23.csv.gz",
+      "sha256_uncompressed": "99fc6b78281206156e5d5b8a1f279d51cdcf897f6c830ec8850fe8fedc9ae2ca",
+      "bytes_uncompressed": 1475538,
+      "bytes_compressed": 115043
+    },
+    {
+      "source": "league_raw/1610612764_2023-24.csv",
+      "saved": "league_raw/1610612764_2023-24.csv.gz",
+      "sha256_uncompressed": "2225fe81227ac9dfaf638adb060c605fbbf83cc67df8a0d5bd37f12fe5da439b",
+      "bytes_uncompressed": 1554002,
+      "bytes_compressed": 120956
+    },
+    {
+      "source": "league_raw/1610612764_2024-25.csv",
+      "saved": "league_raw/1610612764_2024-25.csv.gz",
+      "sha256_uncompressed": "a6379ba7f4f8169814fbcd23f028018b0dfd1eef66ef72fefc863b1d70f96384",
+      "bytes_uncompressed": 1535390,
+      "bytes_compressed": 120309
+    },
+    {
+      "source": "league_raw/1610612764_2025-26.csv",
+      "saved": "league_raw/1610612764_2025-26.csv.gz",
+      "sha256_uncompressed": "5938a382e74c15d798051378ae455ea3e098ace68628bb4af486b26517f5dd43",
+      "bytes_uncompressed": 1538889,
+      "bytes_compressed": 120485
+    },
+    {
+      "source": "league_raw/1610612765_2006-07.csv",
+      "saved": "league_raw/1610612765_2006-07.csv.gz",
+      "sha256_uncompressed": "1edf244bf01631a40a2237bef5d1decc56dee11adf9976355ffa715918b67957",
+      "bytes_uncompressed": 1258160,
+      "bytes_compressed": 91930
+    },
+    {
+      "source": "league_raw/1610612765_2008-09.csv",
+      "saved": "league_raw/1610612765_2008-09.csv.gz",
+      "sha256_uncompressed": "2e5cec8db95053f4a5ff9e9658539bc780ffd03c6801f7f05f8430594d2ecbe4",
+      "bytes_uncompressed": 1277459,
+      "bytes_compressed": 94795
+    },
+    {
+      "source": "league_raw/1610612765_2009-10.csv",
+      "saved": "league_raw/1610612765_2009-10.csv.gz",
+      "sha256_uncompressed": "7884af7c83a734ceab5abb9d66e4dbeb5ccc8bbc82626b6a4ca159baf2425a43",
+      "bytes_uncompressed": 1329400,
+      "bytes_compressed": 96891
+    },
+    {
+      "source": "league_raw/1610612765_2010-11.csv",
+      "saved": "league_raw/1610612765_2010-11.csv.gz",
+      "sha256_uncompressed": "93625ede7a4d2affbd58ee053c79d35d6d80b4b7b5f6cdc944af295572dc6aa2",
+      "bytes_uncompressed": 1340465,
+      "bytes_compressed": 102759
+    },
+    {
+      "source": "league_raw/1610612765_2012-13.csv",
+      "saved": "league_raw/1610612765_2012-13.csv.gz",
+      "sha256_uncompressed": "3fabfc29a172afaa215a0c4f133d1f81e9f271b7801ea657e8c798e8ecce8689",
+      "bytes_uncompressed": 1308955,
+      "bytes_compressed": 99609
+    },
+    {
+      "source": "league_raw/1610612765_2013-14.csv",
+      "saved": "league_raw/1610612765_2013-14.csv.gz",
+      "sha256_uncompressed": "d24868260f9bd2f11cee24620349ec79883f7bd825cac57bf40f241bdb6eee34",
+      "bytes_uncompressed": 1449114,
+      "bytes_compressed": 109596
+    },
+    {
+      "source": "league_raw/1610612765_2018-19.csv",
+      "saved": "league_raw/1610612765_2018-19.csv.gz",
+      "sha256_uncompressed": "73819cc4776fe6a908db2a2facad06f36f8d48f4d30653cf6f9bf0745ee07531",
+      "bytes_uncompressed": 1462962,
+      "bytes_compressed": 114138
+    },
+    {
+      "source": "league_raw/1610612765_2019-20.csv",
+      "saved": "league_raw/1610612765_2019-20.csv.gz",
+      "sha256_uncompressed": "fbd14b1007a272b2db943019c7bf7b7dadc80984bd2e45aed97137cd6a75c8d8",
+      "bytes_uncompressed": 1146768,
+      "bytes_compressed": 89308
+    },
+    {
+      "source": "league_raw/1610612765_2020-21.csv",
+      "saved": "league_raw/1610612765_2020-21.csv.gz",
+      "sha256_uncompressed": "32437c076f8b02b6951849c8499e66b15de17c5b9c642f833fdae2d448b4f249",
+      "bytes_uncompressed": 1245301,
+      "bytes_compressed": 98331
+    },
+    {
+      "source": "league_raw/1610612765_2022-23.csv",
+      "saved": "league_raw/1610612765_2022-23.csv.gz",
+      "sha256_uncompressed": "134d91a6d11bcf4e634c359dabc1dd656da5649557c938c9fc5424fa1a401cc5",
+      "bytes_uncompressed": 1450797,
+      "bytes_compressed": 114639
+    },
+    {
+      "source": "league_raw/1610612765_2023-24.csv",
+      "saved": "league_raw/1610612765_2023-24.csv.gz",
+      "sha256_uncompressed": "96333134e9e3703d7e84a6552bea98d01ffdd359a9faee39dbd13dce12df31c0",
+      "bytes_uncompressed": 1476245,
+      "bytes_compressed": 116240
+    },
+    {
+      "source": "league_raw/1610612765_2024-25.csv",
+      "saved": "league_raw/1610612765_2024-25.csv.gz",
+      "sha256_uncompressed": "f4e4faf5cb9d4b3867c45715aa9b5047d19456077ab8db45961b9232592c37ab",
+      "bytes_uncompressed": 1513484,
+      "bytes_compressed": 117556
+    },
+    {
+      "source": "league_raw/1610612765_2025-26.csv",
+      "saved": "league_raw/1610612765_2025-26.csv.gz",
+      "sha256_uncompressed": "7d55f2daf02492dcfbcd067ce2d3dc934046583d858abefb4182d62e13afbbfa",
+      "bytes_uncompressed": 1505108,
+      "bytes_compressed": 116582
+    },
+    {
+      "source": "league_raw/1610612766_2006-07.csv",
+      "saved": "league_raw/1610612766_2006-07.csv.gz",
+      "sha256_uncompressed": "debf7163d9b657398f490bf9b3f49f885eff897e5844c69a0cbb405cf846670b",
+      "bytes_uncompressed": 1304074,
+      "bytes_compressed": 93918
+    },
+    {
+      "source": "league_raw/1610612766_2008-09.csv",
+      "saved": "league_raw/1610612766_2008-09.csv.gz",
+      "sha256_uncompressed": "16a47c433154de5c7a8bbc540d73b483aaaebf69288f75eabb084dea236fba8c",
+      "bytes_uncompressed": 1240801,
+      "bytes_compressed": 89261
+    },
+    {
+      "source": "league_raw/1610612766_2009-10.csv",
+      "saved": "league_raw/1610612766_2009-10.csv.gz",
+      "sha256_uncompressed": "531662820f5f5c433798c5d9030b98afe3edb393868078fc964f559747cb76c0",
+      "bytes_uncompressed": 1281599,
+      "bytes_compressed": 89090
+    },
+    {
+      "source": "league_raw/1610612766_2010-11.csv",
+      "saved": "league_raw/1610612766_2010-11.csv.gz",
+      "sha256_uncompressed": "36be3062c4f0941a4f05c767fa7db7e9ce37819bcb6d748224fd0b723f6905ca",
+      "bytes_uncompressed": 1299577,
+      "bytes_compressed": 98998
+    },
+    {
+      "source": "league_raw/1610612766_2012-13.csv",
+      "saved": "league_raw/1610612766_2012-13.csv.gz",
+      "sha256_uncompressed": "6b200c28686eeef3f1ea922ee61585e67d62323176c917c85957901e53405bcc",
+      "bytes_uncompressed": 1328511,
+      "bytes_compressed": 101945
+    },
+    {
+      "source": "league_raw/1610612766_2013-14.csv",
+      "saved": "league_raw/1610612766_2013-14.csv.gz",
+      "sha256_uncompressed": "4f9dc5db75ec7b45b6d7b8fd7da319430273276a980e3b4022cce5708d1d8e8a",
+      "bytes_uncompressed": 1380350,
+      "bytes_compressed": 104949
+    },
+    {
+      "source": "league_raw/1610612766_2018-19.csv",
+      "saved": "league_raw/1610612766_2018-19.csv.gz",
+      "sha256_uncompressed": "28201f7bcddde2d699d363f94cf142db639001a2ad5cdde44ce63ea81c18e7ed",
+      "bytes_uncompressed": 1497715,
+      "bytes_compressed": 115989
+    },
+    {
+      "source": "league_raw/1610612766_2019-20.csv",
+      "saved": "league_raw/1610612766_2019-20.csv.gz",
+      "sha256_uncompressed": "6490c6f5d0a297f9651d7f680d84cd97d8fa447692dead5d03a6d83a74ca92e1",
+      "bytes_uncompressed": 1146362,
+      "bytes_compressed": 87900
+    },
+    {
+      "source": "league_raw/1610612766_2020-21.csv",
+      "saved": "league_raw/1610612766_2020-21.csv.gz",
+      "sha256_uncompressed": "87981bfc8482487c385b94c33e0c975eaf5756f49796e9a3f62ea74d4d18a6bd",
+      "bytes_uncompressed": 1293798,
+      "bytes_compressed": 99817
+    },
+    {
+      "source": "league_raw/1610612766_2022-23.csv",
+      "saved": "league_raw/1610612766_2022-23.csv.gz",
+      "sha256_uncompressed": "8eb30578ebcda408f3e835b6e95b2cbc3c1bfeef5ed500cc2f49c0f2466742ba",
+      "bytes_uncompressed": 1531579,
+      "bytes_compressed": 116571
+    },
+    {
+      "source": "league_raw/1610612766_2023-24.csv",
+      "saved": "league_raw/1610612766_2023-24.csv.gz",
+      "sha256_uncompressed": "b4035977287e7e98f5fcfa89dcd06c39703a9f00d9dabe664064d1bfc2eb29aa",
+      "bytes_uncompressed": 1471828,
+      "bytes_compressed": 113945
+    },
+    {
+      "source": "league_raw/1610612766_2024-25.csv",
+      "saved": "league_raw/1610612766_2024-25.csv.gz",
+      "sha256_uncompressed": "2ee4b88ff1b69ab3f653f84c3fa9914f3bd4d0b755ea8058ab9999e25bc14086",
+      "bytes_uncompressed": 1511289,
+      "bytes_compressed": 117806
+    },
+    {
+      "source": "league_raw/1610612766_2025-26.csv",
+      "saved": "league_raw/1610612766_2025-26.csv.gz",
+      "sha256_uncompressed": "b42016c3d095284181bb4429314d73bb92915142a126724c519977b6d93d03e9",
+      "bytes_uncompressed": 1504656,
+      "bytes_compressed": 116171
+    }
+  ]
+}

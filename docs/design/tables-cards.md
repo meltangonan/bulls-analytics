@@ -21,6 +21,11 @@ post-specific layout local until it has real repeat users.
 
 ## Table grammar
 
+Use house black (`#242424`) for column headers and the top header rule; keep body separators
+quieter. Set bold headers and player names large enough for feed-size reading. For player-season
+rankings, omit rank numerals, keep the identity-to-hero gap compact, and give comparable supporting
+columns equal widths. Large portraits may overlap with explicit draw order and unclipped hair.
+
 Dense stat tables use clean alternating rows, sorted by the story metric. Do not color every column
 by magnitude. `craft.MAGNITUDE_CMAP` (`#F2EAE8` → `#CE1141` → `#7E0C2B`) remains available for a mark
 whose magnitude genuinely is the point. Print signs where color expresses a difference; the existing
@@ -44,8 +49,8 @@ on the gap to that season's league baseline. Print raw values when familiar unit
 ## Cards and boxes
 
 A ranking table may use **one continuous red card** behind its defining column. It outsets past the
-column and overlaps the header boundary. Draw it above the header rule and break that rule at the
-card's outer bounds: either measure alone leaves a visible line through the rounded corners.
+column and reaches only a few placed pixels above the header boundary. Draw it above the header
+rule and break that rule at the card's outer bounds: either measure alone leaves a visible line through the rounded corners.
 Row rules may run behind the opaque card. The fill is flat red; its restrained deeper-red shadow
 provides depth. Use the helper's measured bounds to reserve a gap before neighboring columns, then
 allocate remaining widths within the canvas.
@@ -57,8 +62,9 @@ see [shot charts](shot-charts.md) for their four-line grammar.
 
 ## Portraits
 
-Keep portraits full color on a transparent background. The NBA CDN supplies a player's **current**
-portrait, so historical charts may show another team's jersey. A top-anchored crop limits that
+Use `top_anchored_headshot_label(..., preserve_width=True)` when wide hair needs a wider crop
+without shrinking the face. Keep portraits full color on a transparent background. The NBA CDN
+supplies a player's **current** portrait, so historical charts may show another team's jersey. A top-anchored crop limits that
 jersey without recoloring it. Equal-ranked players get equal unringed crops; a circular red ring
 means deliberate emphasis. Position portraits so geometry identifies the associated row or mark,
 and set draw order explicitly when faces overlap.

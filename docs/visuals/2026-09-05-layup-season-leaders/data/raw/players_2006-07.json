@@ -1,0 +1,11 @@
+{
+  "endpoint": "LeagueDashPlayerStats",
+  "parameters": {
+    "team_id_nullable": 1610612741,
+    "season": "2006-07",
+    "season_type_all_star": "Regular Season",
+    "per_mode_detailed": "Totals"
+  },
+  "fetched_at": "2026-09-05T22:48:21.136130+00:00",
+  "rows": 14
+}

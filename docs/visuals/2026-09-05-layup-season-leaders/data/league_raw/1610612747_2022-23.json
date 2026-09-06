@@ -1,0 +1,14 @@
+{
+  "endpoint": "ShotChartDetail",
+  "parameters": {
+    "team_id": 1610612747,
+    "player_id": 0,
+    "season_nullable": "2022-23",
+    "season_type_all_star": "Regular Season",
+    "context_measure_simple": "FGA"
+  },
+  "fetched_at": null,
+  "metadata_recorded_at": "2026-09-06T14:49:16.630761+00:00",
+  "note": "Metadata reconstructed from saved snapshot filename and fetch code; original retrieval time was not recorded.",
+  "rows": 7298
+}

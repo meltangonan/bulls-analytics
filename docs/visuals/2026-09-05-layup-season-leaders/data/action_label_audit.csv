@@ -1,0 +1,1045 @@
+SEASON,ACTION_TYPE,FGA,FGM,included
+2000-01,Alley Oop Dunk Shot,14,13,False
+2000-01,Alley Oop Layup shot,7,6,True
+2000-01,Driving Dunk Shot,43,41,False
+2000-01,Driving Finger Roll Shot,5,4,True
+2000-01,Driving Layup Shot,214,163,True
+2000-01,Dunk Shot,146,111,False
+2000-01,Finger Roll Shot,5,2,True
+2000-01,Hook Shot,127,81,False
+2000-01,Jump Shot,4348,1526,False
+2000-01,Layup Shot,1108,503,True
+2000-01,Reverse Dunk Shot,5,5,False
+2000-01,Reverse Layup Shot,46,33,True
+2000-01,Running Dunk Shot,10,10,False
+2000-01,Running Hook Shot,7,4,False
+2000-01,Running Jump Shot,111,67,False
+2000-01,Running Layup Shot,13,10,True
+2000-01,Slam Dunk Shot,66,66,False
+2000-01,Tip Shot,92,42,False
+2000-01,Turnaround Hook Shot,4,4,False
+2000-01,Turnaround Jump Shot,40,30,False
+2001-02,Alley Oop Dunk Shot,26,24,False
+2001-02,Alley Oop Layup shot,7,5,True
+2001-02,Driving Dunk Shot,23,22,False
+2001-02,Driving Finger Roll Shot,3,3,True
+2001-02,Driving Hook Shot,1,1,False
+2001-02,Driving Layup Shot,207,169,True
+2001-02,Dunk Shot,181,153,False
+2001-02,Fadeaway Jump Shot,34,25,False
+2001-02,Finger Roll Shot,3,3,True
+2001-02,Follow Up Dunk Shot,24,24,False
+2001-02,Hook Shot,73,35,False
+2001-02,Jump Hook Shot,8,5,False
+2001-02,Jump Shot,4302,1572,False
+2001-02,Layup Shot,1208,511,True
+2001-02,Reverse Dunk Shot,1,1,False
+2001-02,Reverse Layup Shot,49,36,True
+2001-02,Running Dunk Shot,9,9,False
+2001-02,Running Hook Shot,4,1,False
+2001-02,Running Jump Shot,82,52,False
+2001-02,Running Layup Shot,15,12,True
+2001-02,Slam Dunk Shot,60,60,False
+2001-02,Tip Shot,103,45,False
+2001-02,Turnaround Hook Shot,5,4,False
+2001-02,Turnaround Jump Shot,63,39,False
+2002-03,Alley Oop Dunk Shot,28,27,False
+2002-03,Alley Oop Layup shot,10,9,True
+2002-03,Driving Dunk Shot,29,29,False
+2002-03,Driving Finger Roll Shot,12,9,True
+2002-03,Driving Hook Shot,8,7,False
+2002-03,Driving Layup Shot,221,182,True
+2002-03,Dunk Shot,214,189,False
+2002-03,Fadeaway Jump Shot,37,20,False
+2002-03,Finger Roll Shot,10,8,True
+2002-03,Follow Up Dunk Shot,28,26,False
+2002-03,Hook Shot,160,90,False
+2002-03,Jump Hook Shot,40,21,False
+2002-03,Jump Shot,3991,1378,False
+2002-03,Layup Shot,1337,592,True
+2002-03,Reverse Dunk Shot,4,4,False
+2002-03,Reverse Layup Shot,40,29,True
+2002-03,Running Dunk Shot,7,7,False
+2002-03,Running Finger Roll Shot,3,2,True
+2002-03,Running Hook Shot,9,5,False
+2002-03,Running Jump Shot,180,125,False
+2002-03,Running Layup Shot,23,17,True
+2002-03,Running Tip Shot,2,2,False
+2002-03,Slam Dunk Shot,89,88,False
+2002-03,Tip Shot,142,76,False
+2002-03,Turnaround Hook Shot,5,3,False
+2002-03,Turnaround Jump Shot,85,46,False
+2003-04,Alley Oop Dunk Shot,18,16,False
+2003-04,Alley Oop Layup shot,15,15,True
+2003-04,Driving Dunk Shot,19,19,False
+2003-04,Driving Finger Roll Shot,17,10,True
+2003-04,Driving Hook Shot,2,1,False
+2003-04,Driving Layup Shot,183,147,True
+2003-04,Dunk Shot,168,151,False
+2003-04,Fadeaway Jump Shot,37,26,False
+2003-04,Finger Roll Shot,17,15,True
+2003-04,Follow Up Dunk Shot,21,21,False
+2003-04,Hook Bank Shot,1,1,False
+2003-04,Hook Shot,157,91,False
+2003-04,Jump Bank Shot,26,19,False
+2003-04,Jump Hook Shot,30,18,False
+2003-04,Jump Shot,4364,1476,False
+2003-04,Layup Shot,1196,448,True
+2003-04,Reverse Dunk Shot,3,3,False
+2003-04,Reverse Layup Shot,50,38,True
+2003-04,Running Dunk Shot,9,9,False
+2003-04,Running Hook Shot,10,8,False
+2003-04,Running Jump Shot,124,77,False
+2003-04,Running Layup Shot,21,17,True
+2003-04,Slam Dunk Shot,67,64,False
+2003-04,Tip Shot,117,58,False
+2003-04,Turnaround Hook Shot,10,8,False
+2003-04,Turnaround Jump Shot,71,42,False
+2004-05,Alley Oop Dunk Shot,46,46,False
+2004-05,Alley Oop Layup shot,14,11,True
+2004-05,Driving Dunk Shot,15,15,False
+2004-05,Driving Finger Roll Shot,16,16,True
+2004-05,Driving Hook Shot,3,2,False
+2004-05,Driving Layup Shot,205,177,True
+2004-05,Dunk Shot,151,132,False
+2004-05,Fadeaway Jump Shot,33,24,False
+2004-05,Finger Roll Shot,17,11,True
+2004-05,Follow Up Dunk Shot,28,26,False
+2004-05,Hook Bank Shot,1,1,False
+2004-05,Hook Shot,133,74,False
+2004-05,Jump Bank Shot,39,31,False
+2004-05,Jump Hook Shot,27,12,False
+2004-05,Jump Shot,4115,1419,False
+2004-05,Layup Shot,1210,491,True
+2004-05,Reverse Dunk Shot,3,3,False
+2004-05,Reverse Layup Shot,40,30,True
+2004-05,Running Dunk Shot,3,3,False
+2004-05,Running Finger Roll Shot,14,12,True
+2004-05,Running Hook Shot,25,15,False
+2004-05,Running Jump Shot,156,93,False
+2004-05,Running Layup Shot,39,34,True
+2004-05,Slam Dunk Shot,47,47,False
+2004-05,Tip Shot,139,75,False
+2004-05,Turnaround Hook Shot,3,1,False
+2004-05,Turnaround Jump Shot,70,48,False
+2005-06,Alley Oop Dunk Shot,11,11,False
+2005-06,Alley Oop Layup shot,7,7,True
+2005-06,Driving Dunk Shot,13,13,False
+2005-06,Driving Finger Roll Shot,10,9,True
+2005-06,Driving Hook Shot,8,6,False
+2005-06,Driving Layup Shot,295,251,True
+2005-06,Dunk Shot,96,86,False
+2005-06,Fadeaway Jump Shot,35,23,False
+2005-06,Finger Roll Shot,7,5,True
+2005-06,Follow Up Dunk Shot,16,15,False
+2005-06,Hook Shot,119,56,False
+2005-06,Jump Bank Shot,52,44,False
+2005-06,Jump Hook Shot,14,12,False
+2005-06,Jump Shot,4313,1624,False
+2005-06,Layup Shot,1224,489,True
+2005-06,Reverse Dunk Shot,1,1,False
+2005-06,Reverse Layup Shot,98,85,True
+2005-06,Running Dunk Shot,7,7,False
+2005-06,Running Finger Roll Shot,8,7,True
+2005-06,Running Hook Shot,17,13,False
+2005-06,Running Jump Shot,123,83,False
+2005-06,Running Layup Shot,43,36,True
+2005-06,Slam Dunk Shot,26,25,False
+2005-06,Tip Shot,132,55,False
+2005-06,Turnaround Finger Roll Shot,1,1,True
+2005-06,Turnaround Hook Shot,9,7,False
+2005-06,Turnaround Jump Shot,52,33,False
+2006-07,Alley Oop Dunk Shot,23,22,False
+2006-07,Alley Oop Layup shot,8,4,True
+2006-07,Driving Dunk Shot,21,21,False
+2006-07,Driving Finger Roll Shot,13,11,True
+2006-07,Driving Hook Shot,3,1,False
+2006-07,Driving Layup Shot,299,226,True
+2006-07,Dunk Shot,163,148,False
+2006-07,Fadeaway Jump Shot,72,47,False
+2006-07,Finger Roll Shot,6,4,True
+2006-07,Follow Up Dunk Shot,18,18,False
+2006-07,Hook Bank Shot,2,2,False
+2006-07,Hook Shot,104,46,False
+2006-07,Jump Bank Shot,42,31,False
+2006-07,Jump Hook Shot,20,6,False
+2006-07,Jump Shot,4188,1636,False
+2006-07,Layup Shot,1159,466,True
+2006-07,Reverse Dunk Shot,2,2,False
+2006-07,Reverse Layup Shot,100,83,True
+2006-07,Running Dunk Shot,10,10,False
+2006-07,Running Finger Roll Shot,5,5,True
+2006-07,Running Hook Shot,13,6,False
+2006-07,Running Jump Shot,124,84,False
+2006-07,Running Layup Shot,34,26,True
+2006-07,Slam Dunk Shot,39,38,False
+2006-07,Tip Shot,119,62,False
+2006-07,Turnaround Hook Shot,6,4,False
+2006-07,Turnaround Jump Shot,70,37,False
+2007-08,Alley Oop Dunk Shot,18,15,False
+2007-08,Alley Oop Layup shot,7,5,True
+2007-08,Driving Bank Hook Shot,1,1,False
+2007-08,Driving Bank shot,2,2,False
+2007-08,Driving Dunk Shot,29,27,False
+2007-08,Driving Finger Roll Layup Shot,14,12,True
+2007-08,Driving Hook Shot,3,1,False
+2007-08,Driving Jump shot,4,2,False
+2007-08,Driving Layup Shot,267,192,True
+2007-08,Driving Reverse Layup Shot,14,9,True
+2007-08,Driving Slam Dunk Shot,5,5,False
+2007-08,Dunk Shot,171,148,False
+2007-08,Fadeaway Bank shot,2,2,False
+2007-08,Fadeaway Jump Shot,86,51,False
+2007-08,Finger Roll Layup Shot,12,9,True
+2007-08,Floating Jump shot,39,31,False
+2007-08,Hook Bank Shot,2,1,False
+2007-08,Hook Shot,164,68,False
+2007-08,Jump Bank Hook Shot,1,1,False
+2007-08,Jump Bank Shot,38,22,False
+2007-08,Jump Hook Shot,25,18,False
+2007-08,Jump Shot,4040,1436,False
+2007-08,Layup Shot,1147,458,True
+2007-08,Pullup Jump shot,70,49,False
+2007-08,Putback Dunk Shot,19,16,False
+2007-08,Putback Layup Shot,25,21,True
+2007-08,Putback Slam Dunk Shot,6,6,False
+2007-08,Reverse Dunk Shot,1,1,False
+2007-08,Reverse Layup Shot,85,48,True
+2007-08,Reverse Slam Dunk Shot,1,1,False
+2007-08,Running Bank shot,10,8,False
+2007-08,Running Dunk Shot,13,13,False
+2007-08,Running Finger Roll Layup Shot,2,2,True
+2007-08,Running Hook Shot,25,12,False
+2007-08,Running Jump Shot,104,60,False
+2007-08,Running Layup Shot,63,41,True
+2007-08,Running Reverse Layup Shot,4,3,True
+2007-08,Running Slam Dunk Shot,2,2,False
+2007-08,Slam Dunk Shot,51,50,False
+2007-08,Step Back Jump shot,6,4,False
+2007-08,Tip Shot,145,52,False
+2007-08,Turnaround Bank Hook Shot,1,1,False
+2007-08,Turnaround Bank shot,4,3,False
+2007-08,Turnaround Fadeaway shot,19,14,False
+2007-08,Turnaround Hook Shot,15,13,False
+2007-08,Turnaround Jump Shot,99,51,False
+2008-09,Alley Oop Dunk Shot,36,31,False
+2008-09,Alley Oop Layup shot,12,9,True
+2008-09,Driving Dunk Shot,19,19,False
+2008-09,Driving Finger Roll Layup Shot,18,16,True
+2008-09,Driving Hook Shot,2,1,False
+2008-09,Driving Jump shot,7,3,False
+2008-09,Driving Layup Shot,414,307,True
+2008-09,Driving Reverse Layup Shot,18,15,True
+2008-09,Driving Slam Dunk Shot,11,10,False
+2008-09,Dunk Shot,172,152,False
+2008-09,Fadeaway Bank shot,5,4,False
+2008-09,Fadeaway Jump Shot,80,36,False
+2008-09,Finger Roll Layup Shot,17,13,True
+2008-09,Floating Jump shot,47,32,False
+2008-09,Hook Bank Shot,2,1,False
+2008-09,Hook Shot,65,26,False
+2008-09,Jump Bank Hook Shot,1,0,False
+2008-09,Jump Bank Shot,48,33,False
+2008-09,Jump Hook Shot,32,17,False
+2008-09,Jump Shot,3943,1445,False
+2008-09,Layup Shot,1168,472,True
+2008-09,Pullup Bank shot,5,4,False
+2008-09,Pullup Jump shot,110,80,False
+2008-09,Putback Dunk Shot,26,25,False
+2008-09,Putback Layup Shot,17,14,True
+2008-09,Putback Slam Dunk Shot,6,6,False
+2008-09,Reverse Dunk Shot,2,2,False
+2008-09,Reverse Layup Shot,78,58,True
+2008-09,Running Bank shot,25,23,False
+2008-09,Running Dunk Shot,13,12,False
+2008-09,Running Finger Roll Layup Shot,4,4,True
+2008-09,Running Hook Shot,9,8,False
+2008-09,Running Jump Shot,114,68,False
+2008-09,Running Layup Shot,67,42,True
+2008-09,Running Reverse Layup Shot,2,1,True
+2008-09,Running Slam Dunk Shot,3,3,False
+2008-09,Running Tip Shot,1,1,False
+2008-09,Slam Dunk Shot,41,40,False
+2008-09,Step Back Jump shot,11,7,False
+2008-09,Tip Shot,130,56,False
+2008-09,Turnaround Bank Hook Shot,2,2,False
+2008-09,Turnaround Bank shot,1,0,False
+2008-09,Turnaround Fadeaway shot,7,4,False
+2008-09,Turnaround Hook Shot,10,5,False
+2008-09,Turnaround Jump Shot,45,19,False
+2009-10,Alley Oop Dunk Shot,18,17,False
+2009-10,Alley Oop Layup shot,10,9,True
+2009-10,Driving Bank shot,3,3,False
+2009-10,Driving Dunk Shot,21,21,False
+2009-10,Driving Finger Roll Layup Shot,11,10,True
+2009-10,Driving Jump shot,12,9,False
+2009-10,Driving Layup Shot,441,309,True
+2009-10,Driving Reverse Layup Shot,31,26,True
+2009-10,Driving Slam Dunk Shot,15,15,False
+2009-10,Dunk Shot,176,149,False
+2009-10,Fadeaway Bank shot,5,5,False
+2009-10,Fadeaway Jump Shot,132,68,False
+2009-10,Finger Roll Layup Shot,6,4,True
+2009-10,Floating Jump shot,76,48,False
+2009-10,Hook Bank Shot,4,4,False
+2009-10,Hook Shot,92,36,False
+2009-10,Jump Bank Hook Shot,1,1,False
+2009-10,Jump Bank Shot,49,37,False
+2009-10,Jump Hook Shot,10,4,False
+2009-10,Jump Shot,3824,1340,False
+2009-10,Layup Shot,1089,457,True
+2009-10,Pullup Bank shot,2,2,False
+2009-10,Pullup Jump shot,115,90,False
+2009-10,Putback Dunk Shot,32,26,False
+2009-10,Putback Layup Shot,30,21,True
+2009-10,Putback Slam Dunk Shot,2,2,False
+2009-10,Reverse Dunk Shot,3,3,False
+2009-10,Reverse Layup Shot,66,39,True
+2009-10,Reverse Slam Dunk Shot,2,2,False
+2009-10,Running Bank shot,14,11,False
+2009-10,Running Dunk Shot,7,7,False
+2009-10,Running Finger Roll Layup Shot,5,4,True
+2009-10,Running Hook Shot,6,4,False
+2009-10,Running Jump Shot,103,56,False
+2009-10,Running Layup Shot,48,33,True
+2009-10,Running Reverse Layup Shot,5,3,True
+2009-10,Running Slam Dunk Shot,7,7,False
+2009-10,Running Tip Shot,1,1,False
+2009-10,Slam Dunk Shot,53,53,False
+2009-10,Step Back Jump shot,19,15,False
+2009-10,Tip Shot,188,82,False
+2009-10,Turnaround Bank Hook Shot,1,1,False
+2009-10,Turnaround Bank shot,4,3,False
+2009-10,Turnaround Fadeaway shot,15,5,False
+2009-10,Turnaround Hook Shot,10,4,False
+2009-10,Turnaround Jump Shot,61,35,False
+2010-11,Alley Oop Dunk Shot,8,7,False
+2010-11,Alley Oop Layup shot,3,1,True
+2010-11,Driving Bank shot,2,2,False
+2010-11,Driving Dunk Shot,21,15,False
+2010-11,Driving Finger Roll Layup Shot,17,15,True
+2010-11,Driving Hook Shot,3,1,False
+2010-11,Driving Jump shot,23,15,False
+2010-11,Driving Layup Shot,418,284,True
+2010-11,Driving Reverse Layup Shot,36,26,True
+2010-11,Driving Slam Dunk Shot,6,6,False
+2010-11,Dunk Shot,176,161,False
+2010-11,Fadeaway Bank shot,3,3,False
+2010-11,Fadeaway Jump Shot,105,50,False
+2010-11,Finger Roll Layup Shot,11,9,True
+2010-11,Floating Jump shot,89,44,False
+2010-11,Hook Bank Shot,3,3,False
+2010-11,Hook Shot,74,38,False
+2010-11,Jump Bank Hook Shot,1,1,False
+2010-11,Jump Bank Shot,31,21,False
+2010-11,Jump Hook Shot,16,12,False
+2010-11,Jump Shot,3717,1286,False
+2010-11,Layup Shot,983,501,True
+2010-11,Pullup Bank shot,3,2,False
+2010-11,Pullup Jump shot,105,68,False
+2010-11,Putback Dunk Shot,27,25,False
+2010-11,Putback Layup Shot,39,32,True
+2010-11,Putback Slam Dunk Shot,1,1,False
+2010-11,Reverse Dunk Shot,5,5,False
+2010-11,Reverse Layup Shot,100,70,True
+2010-11,Reverse Slam Dunk Shot,3,3,False
+2010-11,Running Bank shot,13,11,False
+2010-11,Running Dunk Shot,16,16,False
+2010-11,Running Finger Roll Layup Shot,6,5,True
+2010-11,Running Hook Shot,9,7,False
+2010-11,Running Jump Shot,101,47,False
+2010-11,Running Layup Shot,70,41,True
+2010-11,Running Reverse Layup Shot,7,2,True
+2010-11,Running Slam Dunk Shot,6,6,False
+2010-11,Slam Dunk Shot,71,69,False
+2010-11,Step Back Jump shot,18,11,False
+2010-11,Tip Shot,150,71,False
+2010-11,Turnaround Bank Hook Shot,1,1,False
+2010-11,Turnaround Bank shot,1,1,False
+2010-11,Turnaround Fadeaway shot,20,7,False
+2010-11,Turnaround Hook Shot,9,7,False
+2010-11,Turnaround Jump Shot,60,33,False
+2011-12,Alley Oop Dunk Shot,14,11,False
+2011-12,Alley Oop Layup shot,5,3,True
+2011-12,Driving Bank shot,3,3,False
+2011-12,Driving Dunk Shot,13,12,False
+2011-12,Driving Finger Roll Layup Shot,8,5,True
+2011-12,Driving Hook Shot,5,0,False
+2011-12,Driving Jump shot,19,11,False
+2011-12,Driving Layup Shot,280,180,True
+2011-12,Driving Reverse Layup Shot,15,10,True
+2011-12,Driving Slam Dunk Shot,6,6,False
+2011-12,Dunk Shot,111,97,False
+2011-12,Fadeaway Bank shot,1,1,False
+2011-12,Fadeaway Jump Shot,77,35,False
+2011-12,Finger Roll Layup Shot,19,16,True
+2011-12,Floating Jump shot,72,47,False
+2011-12,Hook Bank Shot,2,2,False
+2011-12,Hook Shot,84,42,False
+2011-12,Jump Bank Hook Shot,1,1,False
+2011-12,Jump Bank Shot,34,27,False
+2011-12,Jump Hook Shot,13,7,False
+2011-12,Jump Shot,3109,1079,False
+2011-12,Layup Shot,726,343,True
+2011-12,Pullup Bank shot,2,0,False
+2011-12,Pullup Jump shot,88,63,False
+2011-12,Putback Dunk Shot,9,8,False
+2011-12,Putback Layup Shot,90,62,True
+2011-12,Putback Slam Dunk Shot,3,3,False
+2011-12,Reverse Dunk Shot,4,3,False
+2011-12,Reverse Layup Shot,60,44,True
+2011-12,Running Bank shot,17,13,False
+2011-12,Running Dunk Shot,13,12,False
+2011-12,Running Finger Roll Layup Shot,4,1,True
+2011-12,Running Hook Shot,8,4,False
+2011-12,Running Jump Shot,102,47,False
+2011-12,Running Layup Shot,71,48,True
+2011-12,Running Reverse Layup Shot,5,5,True
+2011-12,Running Slam Dunk Shot,4,4,False
+2011-12,Running Tip Shot,2,1,False
+2011-12,Slam Dunk Shot,75,75,False
+2011-12,Step Back Jump shot,22,12,False
+2011-12,Tip Shot,170,80,False
+2011-12,Turnaround Bank shot,3,2,False
+2011-12,Turnaround Fadeaway shot,28,10,False
+2011-12,Turnaround Hook Shot,22,11,False
+2011-12,Turnaround Jump Shot,43,21,False
+2012-13,Alley Oop Dunk Shot,14,13,False
+2012-13,Alley Oop Layup shot,12,12,True
+2012-13,Driving Bank shot,3,3,False
+2012-13,Driving Dunk Shot,20,17,False
+2012-13,Driving Finger Roll Layup Shot,15,13,True
+2012-13,Driving Hook Shot,6,2,False
+2012-13,Driving Jump shot,46,20,False
+2012-13,Driving Layup Shot,392,238,True
+2012-13,Driving Reverse Layup Shot,20,15,True
+2012-13,Driving Slam Dunk Shot,9,9,False
+2012-13,Dunk Shot,90,74,False
+2012-13,Fadeaway Bank shot,5,3,False
+2012-13,Fadeaway Jump Shot,94,44,False
+2012-13,Finger Roll Layup Shot,27,23,True
+2012-13,Floating Jump shot,96,49,False
+2012-13,Hook Bank Shot,5,4,False
+2012-13,Hook Shot,91,29,False
+2012-13,Jump Bank Shot,52,39,False
+2012-13,Jump Hook Shot,10,6,False
+2012-13,Jump Shot,3633,1145,False
+2012-13,Layup Shot,822,412,True
+2012-13,Pullup Bank shot,2,2,False
+2012-13,Pullup Jump shot,196,118,False
+2012-13,Putback Dunk Shot,15,14,False
+2012-13,Putback Layup Shot,119,90,True
+2012-13,Putback Slam Dunk Shot,5,5,False
+2012-13,Reverse Layup Shot,74,51,True
+2012-13,Running Bank shot,23,15,False
+2012-13,Running Dunk Shot,18,18,False
+2012-13,Running Finger Roll Layup Shot,5,4,True
+2012-13,Running Hook Shot,14,10,False
+2012-13,Running Jump Shot,115,39,False
+2012-13,Running Layup Shot,164,102,True
+2012-13,Running Reverse Layup Shot,7,7,True
+2012-13,Running Slam Dunk Shot,20,20,False
+2012-13,Running Tip Shot,2,2,False
+2012-13,Slam Dunk Shot,71,70,False
+2012-13,Step Back Jump shot,19,12,False
+2012-13,Tip Shot,209,92,False
+2012-13,Turnaround Bank shot,2,1,False
+2012-13,Turnaround Fadeaway shot,56,33,False
+2012-13,Turnaround Hook Shot,20,8,False
+2012-13,Turnaround Jump Shot,80,43,False
+2013-14,Alley Oop Dunk Shot,10,10,False
+2013-14,Alley Oop Layup shot,10,7,True
+2013-14,Driving Bank shot,5,4,False
+2013-14,Driving Dunk Shot,6,5,False
+2013-14,Driving Finger Roll Layup Shot,14,11,True
+2013-14,Driving Hook Shot,9,4,False
+2013-14,Driving Jump shot,35,10,False
+2013-14,Driving Layup Shot,335,227,True
+2013-14,Driving Reverse Layup Shot,24,13,True
+2013-14,Driving Slam Dunk Shot,6,6,False
+2013-14,Dunk Shot,92,80,False
+2013-14,Fadeaway Bank shot,5,4,False
+2013-14,Fadeaway Jump Shot,64,38,False
+2013-14,Finger Roll Layup Shot,16,15,True
+2013-14,Floating Jump shot,73,38,False
+2013-14,Hook Bank Shot,1,1,False
+2013-14,Hook Shot,100,45,False
+2013-14,Jump Bank Shot,47,36,False
+2013-14,Jump Hook Shot,17,7,False
+2013-14,Jump Shot,3797,1271,False
+2013-14,Layup Shot,1018,477,True
+2013-14,Pullup Jump shot,85,57,False
+2013-14,Putback Dunk Shot,19,18,False
+2013-14,Putback Layup Shot,81,61,True
+2013-14,Putback Slam Dunk Shot,4,4,False
+2013-14,Reverse Layup Shot,74,50,True
+2013-14,Running Bank Hook Shot,4,3,False
+2013-14,Running Bank shot,18,11,False
+2013-14,Running Dunk Shot,10,10,False
+2013-14,Running Finger Roll Layup Shot,1,1,True
+2013-14,Running Hook Shot,14,8,False
+2013-14,Running Jump Shot,66,25,False
+2013-14,Running Layup Shot,93,49,True
+2013-14,Running Reverse Layup Shot,7,4,True
+2013-14,Running Slam Dunk Shot,4,4,False
+2013-14,Slam Dunk Shot,76,73,False
+2013-14,Step Back Jump shot,26,14,False
+2013-14,Tip Shot,182,84,False
+2013-14,Turnaround Bank Hook Shot,1,1,False
+2013-14,Turnaround Bank shot,6,4,False
+2013-14,Turnaround Fadeaway shot,39,14,False
+2013-14,Turnaround Hook Shot,13,7,False
+2013-14,Turnaround Jump Shot,70,32,False
+2014-15,Alley Oop Dunk Shot,25,21,False
+2014-15,Alley Oop Layup shot,25,19,True
+2014-15,Driving Bank Hook Shot,1,1,False
+2014-15,Driving Bank shot,5,5,False
+2014-15,Driving Dunk Shot,16,15,False
+2014-15,Driving Finger Roll Layup Shot,19,14,True
+2014-15,Driving Hook Shot,18,11,False
+2014-15,Driving Jump shot,43,20,False
+2014-15,Driving Layup Shot,357,244,True
+2014-15,Driving Reverse Layup Shot,42,22,True
+2014-15,Driving Slam Dunk Shot,6,5,False
+2014-15,Dunk Shot,114,102,False
+2014-15,Fadeaway Bank shot,3,2,False
+2014-15,Fadeaway Jump Shot,59,24,False
+2014-15,Finger Roll Layup Shot,23,14,True
+2014-15,Floating Jump shot,128,69,False
+2014-15,Hook Bank Shot,3,3,False
+2014-15,Hook Shot,114,46,False
+2014-15,Jump Bank Shot,48,34,False
+2014-15,Jump Hook Shot,15,10,False
+2014-15,Jump Shot,3647,1221,False
+2014-15,Layup Shot,903,415,True
+2014-15,Pullup Bank shot,1,1,False
+2014-15,Pullup Jump shot,124,78,False
+2014-15,Putback Dunk Shot,14,13,False
+2014-15,Putback Layup Shot,101,66,True
+2014-15,Putback Slam Dunk Shot,9,9,False
+2014-15,Reverse Dunk Shot,1,1,False
+2014-15,Reverse Layup Shot,62,46,True
+2014-15,Reverse Slam Dunk Shot,1,1,False
+2014-15,Running Bank Hook Shot,1,1,False
+2014-15,Running Bank shot,35,30,False
+2014-15,Running Dunk Shot,13,13,False
+2014-15,Running Finger Roll Layup Shot,3,2,True
+2014-15,Running Hook Shot,38,20,False
+2014-15,Running Jump Shot,108,50,False
+2014-15,Running Layup Shot,210,89,True
+2014-15,Running Reverse Layup Shot,26,19,True
+2014-15,Running Slam Dunk Shot,9,9,False
+2014-15,Running Tip Shot,3,1,False
+2014-15,Slam Dunk Shot,49,48,False
+2014-15,Step Back Jump shot,47,24,False
+2014-15,Tip Shot,191,88,False
+2014-15,Turnaround Bank Hook Shot,3,3,False
+2014-15,Turnaround Bank shot,6,4,False
+2014-15,Turnaround Fadeaway shot,32,20,False
+2014-15,Turnaround Hook Shot,22,11,False
+2014-15,Turnaround Jump Shot,74,37,False
+2015-16,Alley Oop Dunk Shot,40,37,False
+2015-16,Alley Oop Layup shot,30,21,True
+2015-16,Cutting Dunk Shot,50,46,False
+2015-16,Cutting Finger Roll Layup Shot,8,7,True
+2015-16,Cutting Layup Shot,126,97,True
+2015-16,Driving Bank Hook Shot,5,5,False
+2015-16,Driving Bank shot,34,25,False
+2015-16,Driving Dunk Shot,48,46,False
+2015-16,Driving Finger Roll Layup Shot,44,31,True
+2015-16,Driving Floating Bank Jump Shot,22,15,False
+2015-16,Driving Floating Jump Shot,112,65,False
+2015-16,Driving Hook Shot,45,26,False
+2015-16,Driving Jump shot,1,1,False
+2015-16,Driving Layup Shot,536,291,True
+2015-16,Driving Reverse Dunk Shot,2,1,False
+2015-16,Driving Reverse Layup Shot,67,37,True
+2015-16,Dunk Shot,89,79,False
+2015-16,Fadeaway Bank shot,8,6,False
+2015-16,Fadeaway Jump Shot,83,41,False
+2015-16,Finger Roll Layup Shot,7,4,True
+2015-16,Floating Jump shot,213,104,False
+2015-16,Hook Bank Shot,6,4,False
+2015-16,Hook Shot,102,40,False
+2015-16,Jump Bank Shot,89,53,False
+2015-16,Jump Shot,3574,1224,False
+2015-16,Layup Shot,604,234,True
+2015-16,Pullup Bank shot,26,13,False
+2015-16,Pullup Jump shot,257,129,False
+2015-16,Putback Dunk Shot,22,21,False
+2015-16,Putback Layup Shot,99,64,True
+2015-16,Reverse Layup Shot,57,37,True
+2015-16,Running Alley Oop Dunk Shot,1,1,False
+2015-16,Running Alley Oop Layup Shot,1,1,True
+2015-16,Running Dunk Shot,25,23,False
+2015-16,Running Finger Roll Layup Shot,12,9,True
+2015-16,Running Jump Shot,47,18,False
+2015-16,Running Layup Shot,90,55,True
+2015-16,Running Pull-Up Jump Shot,10,8,False
+2015-16,Running Reverse Layup Shot,9,2,True
+2015-16,Step Back Bank Jump Shot,7,5,False
+2015-16,Step Back Jump shot,96,40,False
+2015-16,Tip Dunk Shot,4,3,False
+2015-16,Tip Layup Shot,195,76,False
+2015-16,Turnaround Bank Hook Shot,4,3,False
+2015-16,Turnaround Bank shot,8,5,False
+2015-16,Turnaround Fadeaway shot,72,27,False
+2015-16,Turnaround Hook Shot,67,35,False
+2015-16,Turnaround Jump Shot,116,50,False
+2016-17,Alley Oop Dunk Shot,41,38,False
+2016-17,Alley Oop Layup shot,37,25,True
+2016-17,Cutting Dunk Shot,48,45,False
+2016-17,Cutting Finger Roll Layup Shot,9,7,True
+2016-17,Cutting Layup Shot,108,83,True
+2016-17,Driving Bank Hook Shot,3,2,False
+2016-17,Driving Bank shot,28,17,False
+2016-17,Driving Dunk Shot,36,32,False
+2016-17,Driving Finger Roll Layup Shot,55,46,True
+2016-17,Driving Floating Bank Jump Shot,35,25,False
+2016-17,Driving Floating Jump Shot,136,62,False
+2016-17,Driving Hook Shot,54,29,False
+2016-17,Driving Layup Shot,493,265,True
+2016-17,Driving Reverse Layup Shot,89,48,True
+2016-17,Dunk Shot,88,82,False
+2016-17,Fadeaway Bank shot,9,5,False
+2016-17,Fadeaway Jump Shot,164,64,False
+2016-17,Finger Roll Layup Shot,18,13,True
+2016-17,Floating Jump shot,161,76,False
+2016-17,Hook Bank Shot,5,4,False
+2016-17,Hook Shot,210,104,False
+2016-17,Jump Bank Shot,44,29,False
+2016-17,Jump Shot,3312,1076,False
+2016-17,Layup Shot,528,232,True
+2016-17,Pullup Bank shot,14,10,False
+2016-17,Pullup Jump shot,357,171,False
+2016-17,Putback Dunk Shot,20,15,False
+2016-17,Putback Layup Shot,129,95,True
+2016-17,Reverse Dunk Shot,2,1,False
+2016-17,Reverse Layup Shot,51,26,True
+2016-17,Running Alley Oop Dunk Shot,5,5,False
+2016-17,Running Dunk Shot,30,30,False
+2016-17,Running Finger Roll Layup Shot,6,6,True
+2016-17,Running Jump Shot,37,20,False
+2016-17,Running Layup Shot,87,60,True
+2016-17,Running Pull-Up Jump Shot,16,6,False
+2016-17,Running Reverse Layup Shot,13,11,True
+2016-17,Step Back Bank Jump Shot,1,1,False
+2016-17,Step Back Jump shot,121,58,False
+2016-17,Tip Layup Shot,207,91,False
+2016-17,Turnaround Bank Hook Shot,2,2,False
+2016-17,Turnaround Bank shot,15,8,False
+2016-17,Turnaround Fadeaway Bank Jump Shot,3,3,False
+2016-17,Turnaround Fadeaway shot,105,53,False
+2016-17,Turnaround Hook Shot,102,52,False
+2016-17,Turnaround Jump Shot,107,36,False
+2017-18,Alley Oop Dunk Shot,15,15,False
+2017-18,Alley Oop Layup shot,21,16,True
+2017-18,Cutting Dunk Shot,49,46,False
+2017-18,Cutting Finger Roll Layup Shot,4,4,True
+2017-18,Cutting Layup Shot,101,84,True
+2017-18,Driving Bank Hook Shot,4,2,False
+2017-18,Driving Dunk Shot,77,67,False
+2017-18,Driving Finger Roll Layup Shot,52,30,True
+2017-18,Driving Floating Bank Jump Shot,45,32,False
+2017-18,Driving Floating Jump Shot,193,77,False
+2017-18,Driving Hook Shot,73,36,False
+2017-18,Driving Layup Shot,602,276,True
+2017-18,Driving Reverse Layup Shot,58,32,True
+2017-18,Dunk Shot,80,70,False
+2017-18,Fadeaway Jump Shot,100,36,False
+2017-18,Finger Roll Layup Shot,23,15,True
+2017-18,Floating Jump shot,160,68,False
+2017-18,Hook Bank Shot,2,1,False
+2017-18,Hook Shot,182,88,False
+2017-18,Jump Bank Shot,38,24,False
+2017-18,Jump Shot,3389,1176,False
+2017-18,Layup Shot,550,243,True
+2017-18,Pullup Jump shot,539,220,False
+2017-18,Putback Dunk Shot,12,11,False
+2017-18,Putback Layup Shot,85,53,True
+2017-18,Reverse Dunk Shot,1,1,False
+2017-18,Reverse Layup Shot,36,29,True
+2017-18,Running Alley Oop Dunk Shot,1,1,False
+2017-18,Running Dunk Shot,45,44,False
+2017-18,Running Finger Roll Layup Shot,8,7,True
+2017-18,Running Jump Shot,34,12,False
+2017-18,Running Layup Shot,105,71,True
+2017-18,Running Pull-Up Jump Shot,17,9,False
+2017-18,Running Reverse Dunk Shot,1,1,False
+2017-18,Running Reverse Layup Shot,6,4,True
+2017-18,Step Back Bank Jump Shot,2,2,False
+2017-18,Step Back Jump shot,155,65,False
+2017-18,Tip Dunk Shot,6,5,False
+2017-18,Tip Layup Shot,173,78,False
+2017-18,Turnaround Bank Hook Shot,4,2,False
+2017-18,Turnaround Fadeaway Bank Jump Shot,11,9,False
+2017-18,Turnaround Fadeaway shot,50,20,False
+2017-18,Turnaround Hook Shot,101,54,False
+2017-18,Turnaround Jump Shot,75,34,False
+2018-19,Alley Oop Dunk Shot,32,30,False
+2018-19,Alley Oop Layup shot,17,13,True
+2018-19,Cutting Dunk Shot,76,71,False
+2018-19,Cutting Finger Roll Layup Shot,10,8,True
+2018-19,Cutting Layup Shot,123,90,True
+2018-19,Driving Bank Hook Shot,6,2,False
+2018-19,Driving Dunk Shot,96,84,False
+2018-19,Driving Finger Roll Layup Shot,90,57,True
+2018-19,Driving Floating Bank Jump Shot,65,41,False
+2018-19,Driving Floating Jump Shot,277,110,False
+2018-19,Driving Hook Shot,99,43,False
+2018-19,Driving Layup Shot,938,446,True
+2018-19,Driving Reverse Layup Shot,121,70,True
+2018-19,Dunk Shot,66,55,False
+2018-19,Fadeaway Jump Shot,130,43,False
+2018-19,Finger Roll Layup Shot,10,5,True
+2018-19,Floating Jump shot,160,76,False
+2018-19,Hook Bank Shot,4,3,False
+2018-19,Hook Shot,172,86,False
+2018-19,Jump Bank Shot,27,17,False
+2018-19,Jump Shot,2450,810,False
+2018-19,Layup Shot,372,160,True
+2018-19,Pullup Jump shot,720,314,False
+2018-19,Putback Dunk Shot,16,14,False
+2018-19,Putback Layup Shot,96,66,True
+2018-19,Reverse Dunk Shot,5,5,False
+2018-19,Reverse Layup Shot,48,26,True
+2018-19,Running Alley Oop Dunk Shot,2,2,False
+2018-19,Running Dunk Shot,60,60,False
+2018-19,Running Finger Roll Layup Shot,12,11,True
+2018-19,Running Jump Shot,28,10,False
+2018-19,Running Layup Shot,139,91,True
+2018-19,Running Pull-Up Jump Shot,19,9,False
+2018-19,Running Reverse Dunk Shot,1,1,False
+2018-19,Running Reverse Layup Shot,5,4,True
+2018-19,Step Back Bank Jump Shot,3,2,False
+2018-19,Step Back Jump shot,189,77,False
+2018-19,Tip Dunk Shot,21,18,False
+2018-19,Tip Layup Shot,146,65,False
+2018-19,Turnaround Bank Hook Shot,7,5,False
+2018-19,Turnaround Fadeaway Bank Jump Shot,19,13,False
+2018-19,Turnaround Fadeaway shot,69,29,False
+2018-19,Turnaround Hook Shot,167,86,False
+2018-19,Turnaround Jump Shot,92,38,False
+2019-20,Alley Oop Dunk Shot,58,45,False
+2019-20,Alley Oop Layup shot,17,11,True
+2019-20,Cutting Dunk Shot,106,101,False
+2019-20,Cutting Finger Roll Layup Shot,8,7,True
+2019-20,Cutting Layup Shot,112,83,True
+2019-20,Driving Bank Hook Shot,3,3,False
+2019-20,Driving Dunk Shot,73,60,False
+2019-20,Driving Finger Roll Layup Shot,75,47,True
+2019-20,Driving Floating Bank Jump Shot,47,26,False
+2019-20,Driving Floating Jump Shot,255,98,False
+2019-20,Driving Hook Shot,46,25,False
+2019-20,Driving Layup Shot,753,336,True
+2019-20,Driving Reverse Dunk Shot,1,1,False
+2019-20,Driving Reverse Layup Shot,55,27,True
+2019-20,Dunk Shot,63,52,False
+2019-20,Fadeaway Jump Shot,82,22,False
+2019-20,Finger Roll Layup Shot,10,9,True
+2019-20,Floating Jump shot,166,70,False
+2019-20,Hook Bank Shot,4,1,False
+2019-20,Hook Shot,70,34,False
+2019-20,Jump Bank Shot,20,11,False
+2019-20,Jump Shot,2133,715,False
+2019-20,Layup Shot,337,130,True
+2019-20,Pullup Jump shot,383,146,False
+2019-20,Putback Dunk Shot,20,20,False
+2019-20,Putback Layup Shot,116,73,True
+2019-20,Reverse Dunk Shot,1,1,False
+2019-20,Reverse Layup Shot,31,21,True
+2019-20,Running Alley Oop Dunk Shot,5,5,False
+2019-20,Running Dunk Shot,66,64,False
+2019-20,Running Finger Roll Layup Shot,21,17,True
+2019-20,Running Jump Shot,34,15,False
+2019-20,Running Layup Shot,144,95,True
+2019-20,Running Pull-Up Jump Shot,16,7,False
+2019-20,Running Reverse Dunk Shot,1,1,False
+2019-20,Running Reverse Layup Shot,6,5,True
+2019-20,Step Back Jump shot,195,79,False
+2019-20,Tip Dunk Shot,23,22,False
+2019-20,Tip Layup Shot,76,39,False
+2019-20,Turnaround Bank Hook Shot,1,1,False
+2019-20,Turnaround Fadeaway Bank Jump Shot,12,6,False
+2019-20,Turnaround Fadeaway shot,17,7,False
+2019-20,Turnaround Hook Shot,59,23,False
+2019-20,Turnaround Jump Shot,41,12,False
+2020-21,Alley Oop Dunk Shot,22,19,False
+2020-21,Alley Oop Layup shot,12,8,True
+2020-21,Cutting Dunk Shot,100,98,False
+2020-21,Cutting Finger Roll Layup Shot,19,14,True
+2020-21,Cutting Layup Shot,217,171,True
+2020-21,Driving Bank Hook Shot,2,1,False
+2020-21,Driving Dunk Shot,67,57,False
+2020-21,Driving Finger Roll Layup Shot,79,53,True
+2020-21,Driving Floating Bank Jump Shot,53,26,False
+2020-21,Driving Floating Jump Shot,238,104,False
+2020-21,Driving Hook Shot,70,34,False
+2020-21,Driving Layup Shot,732,336,True
+2020-21,Driving Reverse Dunk Shot,1,1,False
+2020-21,Driving Reverse Layup Shot,61,40,True
+2020-21,Dunk Shot,39,36,False
+2020-21,Fadeaway Jump Shot,92,41,False
+2020-21,Finger Roll Layup Shot,6,3,True
+2020-21,Floating Jump shot,160,75,False
+2020-21,Hook Bank Shot,1,0,False
+2020-21,Hook Shot,89,55,False
+2020-21,Jump Bank Shot,14,9,False
+2020-21,Jump Shot,2398,860,False
+2020-21,Layup Shot,243,123,True
+2020-21,Pullup Jump shot,607,266,False
+2020-21,Putback Dunk Shot,22,20,False
+2020-21,Putback Layup Shot,96,65,True
+2020-21,Reverse Dunk Shot,1,1,False
+2020-21,Reverse Layup Shot,54,37,True
+2020-21,Running Alley Oop Dunk Shot,5,5,False
+2020-21,Running Alley Oop Layup Shot,2,1,True
+2020-21,Running Dunk Shot,36,35,False
+2020-21,Running Finger Roll Layup Shot,15,11,True
+2020-21,Running Jump Shot,28,22,False
+2020-21,Running Layup Shot,125,91,True
+2020-21,Running Pull-Up Jump Shot,13,5,False
+2020-21,Running Reverse Layup Shot,8,7,True
+2020-21,Step Back Bank Jump Shot,1,0,False
+2020-21,Step Back Jump shot,233,98,False
+2020-21,Tip Dunk Shot,10,9,False
+2020-21,Tip Layup Shot,134,62,False
+2020-21,Turnaround Bank Hook Shot,5,5,False
+2020-21,Turnaround Fadeaway Bank Jump Shot,6,4,False
+2020-21,Turnaround Fadeaway shot,38,18,False
+2020-21,Turnaround Hook Shot,136,73,False
+2020-21,Turnaround Jump Shot,90,36,False
+2021-22,Alley Oop Dunk Shot,23,19,False
+2021-22,Alley Oop Layup shot,18,13,True
+2021-22,Cutting Dunk Shot,86,80,False
+2021-22,Cutting Finger Roll Layup Shot,22,17,True
+2021-22,Cutting Layup Shot,157,115,True
+2021-22,Driving Bank Hook Shot,5,2,False
+2021-22,Driving Dunk Shot,81,68,False
+2021-22,Driving Finger Roll Layup Shot,132,88,True
+2021-22,Driving Floating Bank Jump Shot,52,31,False
+2021-22,Driving Floating Jump Shot,221,89,False
+2021-22,Driving Hook Shot,48,25,False
+2021-22,Driving Layup Shot,677,324,True
+2021-22,Driving Reverse Dunk Shot,3,3,False
+2021-22,Driving Reverse Layup Shot,64,41,True
+2021-22,Dunk Shot,31,30,False
+2021-22,Fadeaway Jump Shot,207,88,False
+2021-22,Finger Roll Layup Shot,8,4,True
+2021-22,Floating Jump shot,128,64,False
+2021-22,Hook Bank Shot,3,1,False
+2021-22,Hook Shot,88,45,False
+2021-22,Jump Bank Shot,20,13,False
+2021-22,Jump Shot,2333,862,False
+2021-22,Layup Shot,205,121,True
+2021-22,Pullup Jump shot,1013,475,False
+2021-22,Putback Dunk Shot,18,16,False
+2021-22,Putback Layup Shot,108,71,True
+2021-22,Reverse Dunk Shot,2,1,False
+2021-22,Reverse Layup Shot,29,17,True
+2021-22,Running Alley Oop Dunk Shot,8,8,False
+2021-22,Running Dunk Shot,90,83,False
+2021-22,Running Finger Roll Layup Shot,41,26,True
+2021-22,Running Jump Shot,47,14,False
+2021-22,Running Layup Shot,158,108,True
+2021-22,Running Pull-Up Jump Shot,29,12,False
+2021-22,Running Reverse Layup Shot,9,6,True
+2021-22,Step Back Bank Jump Shot,4,3,False
+2021-22,Step Back Jump shot,315,125,False
+2021-22,Tip Dunk Shot,15,13,False
+2021-22,Tip Layup Shot,135,68,False
+2021-22,Turnaround Bank Hook Shot,3,2,False
+2021-22,Turnaround Fadeaway Bank Jump Shot,18,8,False
+2021-22,Turnaround Fadeaway shot,175,77,False
+2021-22,Turnaround Hook Shot,131,64,False
+2021-22,Turnaround Jump Shot,167,82,False
+2022-23,Alley Oop Dunk Shot,33,31,False
+2022-23,Alley Oop Layup shot,21,14,True
+2022-23,Cutting Dunk Shot,93,86,False
+2022-23,Cutting Finger Roll Layup Shot,13,11,True
+2022-23,Cutting Layup Shot,150,108,True
+2022-23,Driving Bank Hook Shot,6,1,False
+2022-23,Driving Dunk Shot,82,64,False
+2022-23,Driving Finger Roll Layup Shot,159,121,True
+2022-23,Driving Floating Bank Jump Shot,82,45,False
+2022-23,Driving Floating Jump Shot,167,62,False
+2022-23,Driving Hook Shot,39,23,False
+2022-23,Driving Layup Shot,747,389,True
+2022-23,Driving Reverse Layup Shot,86,63,True
+2022-23,Dunk Shot,42,27,False
+2022-23,Fadeaway Bank shot,16,9,False
+2022-23,Fadeaway Jump Shot,135,58,False
+2022-23,Finger Roll Layup Shot,17,11,True
+2022-23,Floating Jump shot,109,65,False
+2022-23,Hook Shot,63,40,False
+2022-23,Jump Bank Shot,14,3,False
+2022-23,Jump Shot,2143,802,False
+2022-23,Layup Shot,147,83,True
+2022-23,Pullup Jump shot,1119,476,False
+2022-23,Putback Dunk Shot,16,14,False
+2022-23,Putback Layup Shot,87,53,True
+2022-23,Reverse Dunk Shot,2,2,False
+2022-23,Reverse Layup Shot,30,20,True
+2022-23,Running Alley Oop Dunk Shot,9,9,False
+2022-23,Running Alley Oop Layup Shot,1,1,True
+2022-23,Running Dunk Shot,79,71,False
+2022-23,Running Finger Roll Layup Shot,44,34,True
+2022-23,Running Jump Shot,99,41,False
+2022-23,Running Layup Shot,254,158,True
+2022-23,Running Pull-Up Jump Shot,43,16,False
+2022-23,Running Reverse Dunk Shot,1,1,False
+2022-23,Running Reverse Layup Shot,26,19,True
+2022-23,Step Back Bank Jump Shot,2,1,False
+2022-23,Step Back Jump shot,273,104,False
+2022-23,Tip Dunk Shot,26,24,False
+2022-23,Tip Layup Shot,164,78,False
+2022-23,Turnaround Bank Hook Shot,3,3,False
+2022-23,Turnaround Bank shot,14,7,False
+2022-23,Turnaround Fadeaway Bank Jump Shot,8,4,False
+2022-23,Turnaround Fadeaway shot,127,55,False
+2022-23,Turnaround Hook Shot,161,96,False
+2022-23,Turnaround Jump Shot,164,85,False
+2023-24,Alley Oop Dunk Shot,11,10,False
+2023-24,Alley Oop Layup shot,5,5,True
+2023-24,Cutting Dunk Shot,57,50,False
+2023-24,Cutting Finger Roll Layup Shot,15,14,True
+2023-24,Cutting Layup Shot,105,75,True
+2023-24,Driving Bank Hook Shot,10,7,False
+2023-24,Driving Dunk Shot,68,51,False
+2023-24,Driving Finger Roll Layup Shot,290,213,True
+2023-24,Driving Floating Bank Jump Shot,101,57,False
+2023-24,Driving Floating Jump Shot,315,135,False
+2023-24,Driving Hook Shot,58,26,False
+2023-24,Driving Layup Shot,660,319,True
+2023-24,Driving Reverse Dunk Shot,2,1,False
+2023-24,Driving Reverse Layup Shot,84,51,True
+2023-24,Dunk Shot,37,28,False
+2023-24,Fadeaway Bank shot,14,7,False
+2023-24,Fadeaway Jump Shot,111,46,False
+2023-24,Finger Roll Layup Shot,17,11,True
+2023-24,Floating Jump shot,169,94,False
+2023-24,Hook Bank Shot,2,1,False
+2023-24,Hook Shot,77,38,False
+2023-24,Jump Bank Shot,10,2,False
+2023-24,Jump Shot,2286,822,False
+2023-24,Layup Shot,156,85,True
+2023-24,Pullup Jump shot,878,367,False
+2023-24,Putback Dunk Shot,16,14,False
+2023-24,Putback Layup Shot,125,75,True
+2023-24,Reverse Dunk Shot,4,4,False
+2023-24,Reverse Layup Shot,16,13,True
+2023-24,Running Alley Oop Dunk Shot,2,2,False
+2023-24,Running Alley Oop Layup Shot,2,1,True
+2023-24,Running Dunk Shot,71,61,False
+2023-24,Running Finger Roll Layup Shot,67,50,True
+2023-24,Running Jump Shot,137,57,False
+2023-24,Running Layup Shot,228,131,True
+2023-24,Running Pull-Up Jump Shot,76,33,False
+2023-24,Running Reverse Dunk Shot,1,1,False
+2023-24,Running Reverse Layup Shot,20,11,True
+2023-24,Step Back Bank Jump Shot,1,1,False
+2023-24,Step Back Jump shot,273,123,False
+2023-24,Tip Dunk Shot,20,14,False
+2023-24,Tip Layup Shot,222,102,False
+2023-24,Turnaround Bank Hook Shot,2,1,False
+2023-24,Turnaround Bank shot,13,10,False
+2023-24,Turnaround Fadeaway Bank Jump Shot,5,1,False
+2023-24,Turnaround Fadeaway shot,172,69,False
+2023-24,Turnaround Hook Shot,163,87,False
+2023-24,Turnaround Jump Shot,165,72,False
+2024-25,Alley Oop Dunk Shot,15,14,False
+2024-25,Alley Oop Layup shot,10,5,True
+2024-25,Cutting Dunk Shot,79,67,False
+2024-25,Cutting Finger Roll Layup Shot,31,25,True
+2024-25,Cutting Layup Shot,211,158,True
+2024-25,Driving Bank Hook Shot,6,3,False
+2024-25,Driving Dunk Shot,64,51,False
+2024-25,Driving Finger Roll Layup Shot,268,171,True
+2024-25,Driving Floating Bank Jump Shot,133,76,False
+2024-25,Driving Floating Jump Shot,346,138,False
+2024-25,Driving Hook Shot,62,29,False
+2024-25,Driving Layup Shot,778,375,True
+2024-25,Driving Reverse Dunk Shot,3,2,False
+2024-25,Driving Reverse Layup Shot,96,62,True
+2024-25,Dunk Shot,20,15,False
+2024-25,Fadeaway Bank shot,10,5,False
+2024-25,Fadeaway Jump Shot,98,38,False
+2024-25,Finger Roll Layup Shot,5,5,True
+2024-25,Floating Jump shot,169,106,False
+2024-25,Hook Bank Shot,2,2,False
+2024-25,Hook Shot,56,34,False
+2024-25,Jump Bank Shot,7,1,False
+2024-25,Jump Shot,2507,922,False
+2024-25,Layup Shot,75,48,True
+2024-25,Pullup Jump shot,551,190,False
+2024-25,Putback Dunk Shot,3,3,False
+2024-25,Putback Layup Shot,104,72,True
+2024-25,Reverse Dunk Shot,2,2,False
+2024-25,Reverse Layup Shot,22,11,True
+2024-25,Running Alley Oop Dunk Shot,12,11,False
+2024-25,Running Alley Oop Layup Shot,3,3,True
+2024-25,Running Dunk Shot,99,91,False
+2024-25,Running Finger Roll Layup Shot,76,57,True
+2024-25,Running Jump Shot,256,101,False
+2024-25,Running Layup Shot,316,190,True
+2024-25,Running Pull-Up Jump Shot,126,46,False
+2024-25,Running Reverse Dunk Shot,1,1,False
+2024-25,Running Reverse Layup Shot,34,24,True
+2024-25,Step Back Bank Jump Shot,1,0,False
+2024-25,Step Back Jump shot,381,148,False
+2024-25,Tip Dunk Shot,24,20,False
+2024-25,Tip Layup Shot,166,78,False
+2024-25,Turnaround Bank Hook Shot,12,7,False
+2024-25,Turnaround Bank shot,6,3,False
+2024-25,Turnaround Fadeaway Bank Jump Shot,8,4,False
+2024-25,Turnaround Fadeaway shot,106,39,False
+2024-25,Turnaround Hook Shot,129,66,False
+2024-25,Turnaround Jump Shot,56,24,False
+2025-26,Alley Oop Dunk Shot,24,22,False
+2025-26,Alley Oop Layup shot,18,10,True
+2025-26,Cutting Dunk Shot,86,78,False
+2025-26,Cutting Finger Roll Layup Shot,29,27,True
+2025-26,Cutting Layup Shot,231,151,True
+2025-26,Driving Bank Hook Shot,15,4,False
+2025-26,Driving Dunk Shot,45,37,False
+2025-26,Driving Finger Roll Layup Shot,303,211,True
+2025-26,Driving Floating Bank Jump Shot,140,81,False
+2025-26,Driving Floating Jump Shot,425,176,False
+2025-26,Driving Hook Shot,70,41,False
+2025-26,Driving Layup Shot,861,402,True
+2025-26,Driving Reverse Dunk Shot,1,1,False
+2025-26,Driving Reverse Layup Shot,104,57,True
+2025-26,Dunk Shot,20,17,False
+2025-26,Fadeaway Bank shot,4,1,False
+2025-26,Fadeaway Jump Shot,41,10,False
+2025-26,Finger Roll Layup Shot,6,4,True
+2025-26,Floating Jump shot,144,72,False
+2025-26,Hook Bank Shot,2,0,False
+2025-26,Hook Shot,35,18,False
+2025-26,Jump Bank Shot,8,4,False
+2025-26,Jump Shot,2554,939,False
+2025-26,Layup Shot,100,57,True
+2025-26,Pullup Jump shot,485,180,False
+2025-26,Putback Dunk Shot,11,10,False
+2025-26,Putback Layup Shot,107,76,True
+2025-26,Reverse Dunk Shot,2,2,False
+2025-26,Reverse Layup Shot,28,19,True
+2025-26,Running Alley Oop Dunk Shot,16,15,False
+2025-26,Running Alley Oop Layup Shot,7,4,True
+2025-26,Running Dunk Shot,86,76,False
+2025-26,Running Finger Roll Layup Shot,69,55,True
+2025-26,Running Jump Shot,245,88,False
+2025-26,Running Layup Shot,372,233,True
+2025-26,Running Pull-Up Jump Shot,96,37,False
+2025-26,Running Reverse Dunk Shot,1,1,False
+2025-26,Running Reverse Layup Shot,43,31,True
+2025-26,Step Back Bank Jump Shot,2,0,False
+2025-26,Step Back Jump shot,192,63,False
+2025-26,Tip Dunk Shot,13,6,False
+2025-26,Tip Layup Shot,138,59,False
+2025-26,Turnaround Bank Hook Shot,8,6,False
+2025-26,Turnaround Bank shot,9,5,False
+2025-26,Turnaround Fadeaway Bank Jump Shot,1,0,False
+2025-26,Turnaround Fadeaway shot,57,16,False
+2025-26,Turnaround Hook Shot,117,55,False
+2025-26,Turnaround Jump Shot,46,19,False

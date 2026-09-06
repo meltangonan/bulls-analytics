@@ -1,0 +1,11 @@
+{
+  "endpoint": "LeagueDashTeamStats",
+  "parameters": {
+    "team_id_nullable": 1610612741,
+    "season": "2023-24",
+    "season_type_all_star": "Regular Season",
+    "per_mode_detailed": "Totals"
+  },
+  "fetched_at": "2026-09-05T22:49:10.534195+00:00",
+  "rows": 1
+}

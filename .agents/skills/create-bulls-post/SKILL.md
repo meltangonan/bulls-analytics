@@ -1,6 +1,6 @@
 ---
 name: create-bulls-post
-description: Build or revise a selected Bulls post, from its brief to verified chart assets and Canva review.
+description: Build or revise a selected Bulls post's verified graphic for user review; assemble or review Canva pages when requested.
 ---
 
 # Create Bulls Post
@@ -22,12 +22,10 @@ Before showing each render, save it with `scripts/save_visual_version.py --proje
 Complete the user's requested adjustments; stop inventing polish when the brief is satisfied.
 Run only affected checks, repeating them when relevant code or data changes.
 
-For a chart-only adjustment, deliver and inspect the saved chart asset; a Canva round-trip is
-needed only when assembling or reviewing the composed page. A complete post draft includes the
-inspected downloaded Canva page, preserved publish-resolution chart, and updated Notion
-brief/provenance/Canva link. Use `Mocked` only after design approval;
-`Posted` requires live-publication confirmation. The downloaded page is QA scratch; the archive
-helper has no `--final` flag. Record source details using `docs/reference/provenance.md`.
+Deliver the inspected, saved graphic for user review and approval. Follow `POSTING_WORKFLOW.md`
+for the Canva handoff and recent-Posted page references; Canva work is a separate requested stage.
+Keep Notion's brief and provenance current. Use `Mocked` only after design approval;
+`Posted` requires live-publication confirmation. Record sources using `docs/reference/provenance.md`.
 
 Summarize the result, verification and meaningful limitations. Commit/push need explicit approval
 per `AGENTS.md`. Continue into promotion when requested; don't generate unsolicited posting copy.

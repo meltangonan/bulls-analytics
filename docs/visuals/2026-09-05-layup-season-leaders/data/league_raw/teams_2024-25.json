@@ -1,0 +1,10 @@
+{
+  "endpoint": "LeagueDashTeamStats",
+  "parameters": {
+    "season": "2024-25",
+    "season_type_all_star": "Regular Season",
+    "per_mode_detailed": "Totals"
+  },
+  "fetched_at": "2026-09-06T14:49:34.945893+00:00",
+  "rows": 30
+}

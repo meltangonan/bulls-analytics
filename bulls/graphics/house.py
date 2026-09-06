@@ -837,12 +837,13 @@ def cut_out_flat_background(
     return destination
 
 
-def top_anchored_headshot_label(ax, image_path, x, y, half_size, *, crop_fraction=0.68, scale=1.0, zorder=5):
+def top_anchored_headshot_label(ax, image_path, x, y, half_size, *, crop_fraction=0.68, scale=1.0, preserve_width=False, zorder=5):
     """Draw a transparent portrait cropped from the top of its source frame.
 
     ``crop_fraction`` selects the source square; ``scale`` changes its drawn
     size when a wider crop needs to retain the same face size. A missing image
     keeps the standard placeholder footprint. Coordinates use the axes' units.
+    ``preserve_width`` widens the crop around visible hair without changing face scale.
     """
     try:
         image = plt.imread(image_path)
@@ -862,11 +863,21 @@ def top_anchored_headshot_label(ax, image_path, x, y, half_size, *, crop_fractio
     height, width = image.shape[:2]
     side = max(1, round(min(height, width) * crop_fraction))
     left = max(0, (width - side) // 2)
-    square = image[:side, left:left + side]
+    window = side
+    if preserve_width and image.ndim == 3 and image.shape[2] == 4:
+        # Same width-preserving crop used by the bench-points portrait renderer:
+        # keep wide hair inside the crop without changing the face's scale.
+        columns = np.where(image[:side, :, 3].max(axis=0) > 0.04)[0]
+        if columns.size:
+            centre = (int(columns.min()) + int(columns.max())) / 2
+            window = min(width, max(side, int(columns.max() - columns.min()) + 24))
+            left = int(round(min(max(centre - window / 2, 0), width - window)))
+    square = image[:side, left:left + window]
     drawn = half_size * scale
+    half_width = drawn * window / side
     return ax.imshow(
         square,
-        extent=[x - drawn, x + drawn, y - drawn, y + drawn],
+        extent=[x - half_width, x + half_width, y - drawn, y + drawn],
         interpolation="bilinear",
         zorder=zorder,
     )

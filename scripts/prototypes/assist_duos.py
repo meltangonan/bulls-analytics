@@ -2,7 +2,7 @@
 
 Two slides off one analysis, in the settled ladder-table grammar:
 
-- ``--mode season`` — the top eight connections of the 2025-26 Bulls.
+- ``--mode season`` — the top ten connections of the 2025-26 Bulls.
 - ``--mode history`` — the top ten single-season Bulls connections since 2000-01, each
   labeled with its season.
 
@@ -51,8 +51,10 @@ from nba_api.stats.static import players as static_players
 
 from bulls.visuals import DATA, visual_dir
 from bulls.graphics.house import (
-    DEFAULT_THEME,
+    BLACK,
     HEADSHOT_CACHE,
+    RED,
+    draw_accent_card,
     ensure_headshots,
     export_dpi,
     helvetica,
@@ -73,13 +75,18 @@ from scripts.prototypes.top_game_performances import (
 )
 
 CURRENT_SEASON_END_YEAR = 2026
-SEASON_TOP_N = 8
+SEASON_TOP_N = 10
 HISTORY_TOP_N = 10
 ALL_TIME_TOP_N = 15
 
 # Two visual projects off one analysis, so the yearly post and the decade board keep
 # separate folders under output/ and docs/visuals/ rather than sharing a version history.
 YEARLY_PROJECT = "assist-duos"
+# The 2025-26 slide began as a current-team cut inside the yearly post and is now a post
+# of its own, so it takes its own folder like the decade and all-time boards. The season
+# *cache* stays under assist-duos: assist_duos_fetch owns that path and 26 seasons of
+# rate-limited requests should not be re-filed to follow an editorial split.
+SEASON_PROJECT = "assist-duos-last-season"
 DECADE_PROJECT = "assist-duos-by-decade"
 ALL_TIME_PROJECT = "assist-duos-all-time"
 OUTPUT_ROOT = _REPO / "output"
@@ -111,28 +118,67 @@ CHART_WIDTH = 1500
 ROW_RULE_LEFT = 24
 DUO_HEADER_X = 46      # inset so the label does not hug the canvas edge
 
-# Faces are anchored so their cropped bottom edge sits on the row's bottom rule and their
-# tops rise past the row into the one above, the way the other ladder tables stack. They
-# also overlap each other horizontally — the left player is drawn last, over the right —
-# by less than the portrait's empty margin, so neither face is covered.
+# Faces are anchored so their cropped bottom edge sits on the row's bottom rule, which
+# reads as the pair resting on it. At the earlier 116px row height the crop was taller
+# than the row and heads ran up into the row above, the way the denser ladder tables
+# stack; the 142px row contains the portrait instead, and with the separators now at a
+# visible weight that is the calmer of the two. They still overlap each other
+# horizontally — the left player is drawn last, over the right — by less than the
+# portrait's empty margin, so neither face is covered.
 FACE_A_X, FACE_B_X = 80, 182
-FACE_HALF = 62
 NAME_X = 262
 
 SEASON_LEFT, SEASON_RIGHT = 548, 664
-BAR_LEFT_WITH_SEASON, BAR_RIGHT = 700, 1150
+BAR_LEFT_WITH_SEASON = 700
 BAR_LEFT_NO_SEASON = 570
-AST_LEFT, AST_RIGHT = 1180, 1312
-GAMES_LEFT, GAMES_RIGHT = 1336, 1476
 
-BAR_VERTICAL_INSET = 15  # bar height is the row height less this, top and bottom
+
+@dataclass(frozen=True)
+class RightColumns:
+    """Where the bar stops and the value columns sit, for one slide's column set.
+
+    The rate column is carried only by a slide that has no SEASON column. Both
+    layouts spend the same band of canvas on their fourth column, so the bar keeps
+    almost exactly the same width either way (422px against 450px) instead of the
+    history boards being squeezed to make room for a column they do not print.
+    """
+
+    bar_right: float
+    ast_left: float
+    ast_right: float
+    games_left: float
+    games_right: float
+    rate_left: float | None = None
+    rate_right: float | None = None
+
+    @property
+    def outer_right(self) -> float:
+        """Right edge of the last printed column, where the row rules stop."""
+        return self.rate_right if self.rate_right is not None else self.games_right
+
+
+# Season-labelled boards: SEASON column, no rate column. Unchanged geometry.
+COLUMNS_WITH_SEASON = RightColumns(
+    bar_right=1150, ast_left=1180, ast_right=1312, games_left=1336, games_right=1476,
+)
+# The single-season slide: no SEASON column, so the freed band carries AST/G.
+COLUMNS_WITH_RATE = RightColumns(
+    bar_right=974, ast_left=1006, ast_right=1170, games_left=1202, games_right=1330,
+    rate_left=1354, rate_right=1476,
+)
+
 BAR_RADIUS = 10
 
 # Vertical sheen on each bar segment and on the total card, clipped to a rounded patch —
 # the same layering clutch_table.py uses for its points card. Top colour first.
+# Structural table separators. The jersey theme's rule colour (#E6E2DB) is named in
+# DESIGN.md as a value that disappears against a Canva background; #B8B0A8 is the
+# structural weight the approved layup and floater tables use.
+SEPARATOR = "#B8B0A8"
+DECORATIVE_RULE = "#D8D2CA"
+
 RED_BAR_GRADIENT = ("#E12C52", "#A80E35")
 DARK_BAR_GRADIENT = ("#333333", "#0C0C0C")
-TOTAL_CARD_GRADIENT = ("#D8244F", "#9E0C2E")
 SWATCH = 11              # colored square linking a name line to its bar segment
 MIN_INSIDE_LABEL_WIDTH = 40
 
@@ -155,6 +201,8 @@ class TableLayout:
     first_row_from_top: float
     bottom_pad: float
     row_height: float
+    face_half: float        # portrait crop half-size
+    bar_inset: float        # bar height is the row height less this, top and bottom
     headshot_rise: float
     header_font_size: float
     name_font_size: float
@@ -163,18 +211,47 @@ class TableLayout:
     direction_font_size: float
 
 
+# The season-labelled carousels. Their dimensions are documented in that post's brief and
+# its Canva frame is built around them, so they keep the denser row they were approved at.
 DUO_LAYOUT = TableLayout(
     header_from_top=56,
     header_rule_from_top=88,
     first_row_from_top=162,   # clears the header rule now that faces rise past the row
     bottom_pad=56,
     row_height=116,
+    face_half=62,
+    bar_inset=15,
     headshot_rise=4,
     header_font_size=15,
     name_font_size=17,
     value_font_size=17,
-    ast_font_size=18,
+    ast_font_size=17,
     direction_font_size=16,
+)
+
+# The single-season slide. Ten rows on one page rather than a carousel, so the row opens
+# up: taller rows put the export closer to the 4:5 page it sits on and give the type room
+# to grow for feed-size reading. At this height the portrait no longer overruns the row.
+SEASON_LAYOUT = TableLayout(
+    # The column headers sit clear of the TOTAL card. The card's top rises past the
+    # header rule by design, so the header band has to be measured from the card's top
+    # edge and not from the rule: at the shared 56/88/162 the headers cleared the rule
+    # but ran into the card, and TOTAL, sitting directly above it, touched it. The
+    # headers move up together and the table moves down, so they stay top-aligned with
+    # each other and the canvas grows 13px.
+    header_from_top=46,
+    header_rule_from_top=101,
+    first_row_from_top=175,
+    bottom_pad=56,
+    row_height=142,
+    face_half=68,
+    bar_inset=25,
+    headshot_rise=4,
+    header_font_size=16,
+    name_font_size=19,
+    value_font_size=19,
+    ast_font_size=21,
+    direction_font_size=17,
 )
 
 
@@ -446,46 +523,23 @@ def slide_height(row_count: int, layout: TableLayout = DUO_LAYOUT) -> float:
     )
 
 
-def ast_card_bounds(row_count: int, first_row_y: float, layout: TableLayout):
-    """The rounded card footprint behind the combined-assist column."""
-    top = first_row_y + layout.row_height / 2 + AST_CARD_OUTSET_Y + AST_CARD_OVERLAP_Y
-    bottom = (
-        first_row_y
-        - (row_count - 1) * layout.row_height
-        - layout.row_height / 2
-        - AST_CARD_OUTSET_Y
-    )
-    return AST_LEFT - AST_CARD_OUTSET_X, AST_RIGHT + AST_CARD_OUTSET_X, bottom, top
+def _draw_ast_card(ax, columns: RightColumns, row_count: int, first_row_y: float,
+                   layout: TableLayout):
+    """The red total column, drawn by the shared house helper. Returns its bounds.
 
+    This was a locally drawn card with a vertical red ramp. ``house.draw_accent_card``
+    now owns that component for every ranking table, and it settled on a **flat** accent
+    fill whose depth comes from an offset deeper-red shadow rather than a second colour
+    (DESIGN.md, "Cards and boxes"). Using the helper also means this table picks up any
+    later change to the card once, in one place.
 
-def _draw_ast_card(ax, row_count: int, first_row_y: float, layout: TableLayout) -> None:
-    """The red total column: a shadowed rounded card with a vertical colour ramp."""
-    left, right, bottom, top = ast_card_bounds(row_count, first_row_y, layout)
-    shape = dict(
-        boxstyle="round,pad=0,rounding_size=18", edgecolor="none", linewidth=0,
-    )
-    ax.add_patch(
-        FancyBboxPatch(
-            (left, bottom), right - left, top - bottom,
-            facecolor=DEFAULT_THEME.accent,
-            path_effects=[
-                PathEffects.withSimplePatchShadow(
-                    offset=(2.5, -3), shadow_rgbFace="#7A1230", alpha=0.32, rho=0.85
-                ),
-                PathEffects.Normal(),
-            ],
-            zorder=4,
-            **shape,
-        )
-    )
-    clip = FancyBboxPatch(
-        (left, bottom), right - left, top - bottom,
-        facecolor="none", zorder=4, **shape,
-    )
-    ax.add_patch(clip)
-    _vertical_gradient(
-        ax, left, right, (top + bottom) / 2, top - bottom,
-        TOTAL_CARD_GRADIENT, clip, 4.5,
+    ``overlap_y`` keeps this post's settled 13px rise past the header rule rather than
+    the helper's default 7, so the card sits where it was approved.
+    """
+    return draw_accent_card(
+        ax, columns.ast_left, columns.ast_right, first_row_y, row_count,
+        layout.row_height,
+        overlap_y=AST_CARD_OVERLAP_Y,
     )
 
 
@@ -541,7 +595,6 @@ def _draw_face(ax, player_id: int, name: str, x: float, y: float, half: float, z
         # monogram is only for a player with no cached image at all.
         return duo_face_label(ax, path, x, y, half, zorder=zorder)
 
-    theme = DEFAULT_THEME
     ax.add_patch(
         FancyBboxPatch(
             (x - half * 0.78, y - half * 0.78),
@@ -549,7 +602,7 @@ def _draw_face(ax, player_id: int, name: str, x: float, y: float, half: float, z
             half * 1.56,
             boxstyle="round,pad=0,rounding_size=14",
             facecolor="#E4DED6",
-            edgecolor=theme.rule,
+            edgecolor=DECORATIVE_RULE,
             linewidth=1.0,
             zorder=zorder,
         )
@@ -685,6 +738,7 @@ def render_table(
         )
 
     bar_left = BAR_LEFT_WITH_SEASON if show_season else BAR_LEFT_NO_SEASON
+    columns = COLUMNS_WITH_SEASON if show_season else COLUMNS_WITH_RATE
     chart_height = slide_height(max(canvas_rows or 0, len(rows)), layout)
     header_y = chart_height - layout.header_from_top
     header_rule_y = chart_height - layout.header_rule_from_top
@@ -696,18 +750,21 @@ def render_table(
     ax.set_xlim(0, CHART_WIDTH)
     ax.set_ylim(0, chart_height)
     ax.axis("off")
-    theme = DEFAULT_THEME
 
     headers = [
         # "DUO" sits over the portraits, not over the names, now that the faces are the
         # widest thing in the column.
-        (DUO_HEADER_X, "DUO", "left", theme.ink),
-        ((bar_left + BAR_RIGHT) / 2, "ASSISTS TO EACH OTHER", "center", theme.ink),
-        ((AST_LEFT + AST_RIGHT) / 2, "TOTAL", "center", theme.accent),
-        ((GAMES_LEFT + GAMES_RIGHT) / 2, "GAMES", "center", theme.ink),
+        (DUO_HEADER_X, "DUO", "left", BLACK),
+        ((bar_left + columns.bar_right) / 2, "ASSISTS TO EACH OTHER", "center", BLACK),
+        ((columns.ast_left + columns.ast_right) / 2, "TOTAL", "center", RED),
+        ((columns.games_left + columns.games_right) / 2, "GAMES", "center", BLACK),
     ]
+    if columns.rate_left is not None:
+        headers.append(
+            ((columns.rate_left + columns.rate_right) / 2, "AST/G", "center", BLACK)
+        )
     if show_season:
-        headers.insert(1, ((SEASON_LEFT + SEASON_RIGHT) / 2, "SEASON", "center", theme.ink))
+        headers.insert(1, ((SEASON_LEFT + SEASON_RIGHT) / 2, "SEASON", "center", BLACK))
     for x, label, alignment, color in headers:
         ax.text(
             x, header_y, label, ha=alignment, va="center",
@@ -715,17 +772,22 @@ def render_table(
             fontproperties=helvetica("bold"),
         )
 
-    ax.plot(
-        [ROW_RULE_LEFT, GAMES_RIGHT], [header_rule_y] * 2,
-        color=theme.ink, linewidth=2.0, zorder=3,
+    card_left, card_right, _, _ = _draw_ast_card(
+        ax, columns, len(rows), first_row_y, layout
     )
-
-    _draw_ast_card(ax, len(rows), first_row_y, layout)
+    for rule_left, rule_right in (
+        (ROW_RULE_LEFT, card_left - 10),
+        (card_right + 10, columns.outer_right),
+    ):
+        ax.plot(
+            [rule_left, rule_right], [header_rule_y] * 2,
+            color=BLACK, linewidth=2.0, zorder=3,
+        )
     ceiling = int(scale_max) if scale_max else int(rows.combined_ast.max())
     if ceiling < int(rows.combined_ast.max()):
         raise ValueError("scale_max is below a value on this slide; bars would overflow")
-    scale = (BAR_RIGHT - bar_left) / ceiling
-    bar_height = layout.row_height - 2 * BAR_VERTICAL_INSET
+    scale = (columns.bar_right - bar_left) / ceiling
+    bar_height = layout.row_height - 2 * layout.bar_inset
 
     # One name size for the whole slide. Shrinking only the rows that overflow left the
     # column looking ragged, with "Tomas Satoransky" visibly smaller than "Tre Jones"
@@ -749,18 +811,18 @@ def render_table(
         if index:
             divider_y = y + layout.row_height / 2
             for rule_left, rule_right in (
-                (ROW_RULE_LEFT, AST_LEFT - AST_CARD_OUTSET_X),
-                (AST_RIGHT + AST_CARD_OUTSET_X, GAMES_RIGHT),
+                (ROW_RULE_LEFT, card_left),
+                (card_right, columns.outer_right),
             ):
                 ax.plot(
                     [rule_left, rule_right], [divider_y] * 2,
-                    color=theme.rule, linewidth=1.0, zorder=3,
+                    color=SEPARATOR, linewidth=1.0, zorder=3,
                 )
 
         # Anchor the crop's bottom edge on the row's bottom rule; the head then rises
         # past the row top into the row above. Later rows draw over earlier ones, so a
         # lower player's head overlaps the neck of the one above, like stacked cards.
-        face_y = y - layout.row_height / 2 + FACE_HALF
+        face_y = y - layout.row_height / 2 + layout.face_half
         face_zorder = 4 + index * 0.01
         # Right player first so the left one overlaps him, reading as a pairing rather
         # than two unrelated portraits.
@@ -768,13 +830,14 @@ def render_table(
             (FACE_B_X, int(row.low_id), row.low_name),
             (FACE_A_X, int(row.high_id), row.high_name),
         ):
-            _draw_face(ax, player_id, name, face_x, face_y, FACE_HALF, face_zorder)
+            _draw_face(ax, player_id, name, face_x, face_y, layout.face_half,
+                       face_zorder)
 
         # A swatch ties each name line to its own bar segment, so "first name = red =
         # left segment" does not have to be inferred.
         for line_y, name, player_id, color in (
-            (y + 15, row.high_name, row.high_id, theme.accent),
-            (y - 15, row.low_name, row.low_id, theme.contrast),
+            (y + 15, row.high_name, row.high_id, RED),
+            (y - 15, row.low_name, row.low_id, BLACK),
         ):
             ax.add_patch(
                 Rectangle(
@@ -786,38 +849,50 @@ def render_table(
                 NAME_X + SWATCH + 10, line_y,
                 display_name(name, player_id, int(row.season_end_year)),
                 ha="left", va="center", fontsize=name_font_size,
-                color=theme.ink, fontproperties=helvetica("bold"), zorder=5,
+                color=BLACK, fontproperties=helvetica("bold"), zorder=5,
             )
 
         if show_season:
             ax.text(
                 (SEASON_LEFT + SEASON_RIGHT) / 2, y, display_season(row.season),
                 ha="center", va="center", fontsize=layout.value_font_size,
-                color=theme.ink, fontproperties=helvetica("bold"), zorder=5,
+                color=BLACK, fontproperties=helvetica("bold"), zorder=5,
             )
 
         split = bar_left + row.high_ast * scale
         bar_end = bar_left + row.combined_ast * scale
         _draw_split_bar(ax, bar_left, split, bar_end, y, bar_height)
         _direction_label(
-            ax, bar_left, split, y, row.high_ast, theme.accent, layout,
+            ax, bar_left, split, y, row.high_ast, RED, layout,
             align_outside_left=True,
         )
         _direction_label(
-            ax, split, bar_end, y, row.low_ast, theme.contrast, layout,
+            ax, split, bar_end, y, row.low_ast, BLACK, layout,
             align_outside_left=False,
         )
 
         ax.text(
-            (AST_LEFT + AST_RIGHT) / 2, y, f"{int(row.combined_ast)}",
+            (columns.ast_left + columns.ast_right) / 2, y, f"{int(row.combined_ast)}",
             ha="center", va="center", fontsize=layout.ast_font_size,
             color="#FFFFFF", fontproperties=helvetica("bold"), zorder=7,
         )
         ax.text(
-            (GAMES_LEFT + GAMES_RIGHT) / 2, y, f"{int(row.games_together)}",
+            (columns.games_left + columns.games_right) / 2, y,
+            f"{int(row.games_together)}",
             ha="center", va="center", fontsize=layout.value_font_size,
-            color=theme.ink, fontproperties=helvetica("bold"), zorder=5,
+            color=BLACK, fontproperties=helvetica("bold"), zorder=5,
         )
+        if columns.rate_left is not None:
+            # A pair can hold a row and share no games — a midseason trade where one
+            # arrived as the other left — and the rate is undefined there, not zero.
+            # An undefined cell is left empty rather than printing a placeholder.
+            rate = row.ast_per_game
+            ax.text(
+                (columns.rate_left + columns.rate_right) / 2, y,
+                "" if pd.isna(rate) else f"{rate:.1f}",
+                ha="center", va="center", fontsize=layout.value_font_size,
+                color=BLACK, fontproperties=helvetica("bold"), zorder=5,
+            )
 
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output, dpi=dpi, transparent=True)
@@ -845,13 +920,13 @@ def main() -> None:
             build_pairs(events, names),
             bulls_player_game_logs(CURRENT_SEASON_END_YEAR),
         ).head(SEASON_TOP_N)
-        out = project_dir(YEARLY_PROJECT)
+        out = project_dir(SEASON_PROJECT)
         pairs.to_csv(
-            data_dir(YEARLY_PROJECT) / "assist-duos-2025-26-season.csv", index=False
+            data_dir(SEASON_PROJECT) / "assist-duos-2025-26-season.csv", index=False
         )
         path = render_table(
             pairs, out / f"{args.date}-assist-duos-season.png",
-            show_season=False, final=args.final,
+            show_season=False, layout=SEASON_LAYOUT, final=args.final,
         )
         print(pairs[["high_name", "high_ast", "low_name", "low_ast",
                      "combined_ast", "combined_pts"]].to_string(index=False))

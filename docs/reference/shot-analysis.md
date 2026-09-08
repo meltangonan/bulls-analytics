@@ -5,6 +5,11 @@ truth lives in `bulls/analysis/shot_maps.py` and `bulls/graphics/court.py`.
 
 ## Source labels and geometry
 
+Shot *family* labels are a separate contract from geometry: the `action_type` vocabulary, its
+matching order, and how `leaguedashptstats` tracking measures do and do not relate to it live in
+[Shot data — endpoint reference](https://www.notion.so/3d4e1c13abe68173bf8beef7b30edd68). Read it
+before building a shot-family post; tracking categories overlap and never partition a season.
+
 NBA shot coordinates are integer tenths of a foot, hoop at the origin. Use shared court geometry:
 backboard y = −12.5, baseline y = −52.5, free-throw line y = 137.5. Integer coordinates may round
 across an edge; production rows use NBA's basic `shot_zone` to adjudicate physical families.

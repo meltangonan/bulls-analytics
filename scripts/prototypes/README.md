@@ -43,6 +43,7 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `current_roster_zone_charts.py` | Current-roster twelve-zone batch | Use the consuming family checks |
 | `demar_derozan_bulls_zone_charts.py` | DeMar DeRozan's three Bulls regular seasons plus an attempt-weighted Chicago-tenure total | `tests/test_demar_derozan_bulls_zone_charts.py` |
 | `derrick_rose_bulls_zone_charts.py` | Derrick Rose's seven played Bulls regular seasons plus an attempt-weighted Chicago-tenure total | `tests/test_derrick_rose_bulls_zone_charts.py`, `tests/test_player_season_totals.py` |
+| `dunks_since_2010.py` | Top-ten Bulls dunk seasons since 2010–11, split by type (total, driving, running, alley-oop, putback) | `tests/test_dunks_since_2010.py` |
 | `f5_lineup_table.py` | Bulls Lineup Table | `tests/test_f5_lineup_table.py` |
 | `fga_leader_zone_charts.py` | Bulls FGA leaders of the 2020s | `tests/test_fga_leader_zone_charts.py` |
 | `game_score_by_height.py` | Best Bulls game at every listed height since 2000 | `tests/test_game_score_by_height.py` |

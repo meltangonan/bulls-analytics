@@ -20,6 +20,7 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `assist_duos_fetch.py` | Bulls assist duos | `tests/test_assist_duos.py` |
 | `assisted_buckets.py` | Assisted vs. unassisted buckets | `tests/test_assisted_buckets.py` |
 | `bench_points_leaders.py` | Bulls' biggest bench-scoring seasons since 1996-97 | `tests/test_bench_points_leaders.py` |
+| `pull_up_points_data.py` | Bulls top-15 pull-up points seasons, 2013–14 onward; shared inputs for `pull_up_points_boxed.py`, `pull_up_points_bars.py`, and `pull_up_points_table.py` | `tests/test_pull_up_points_data.py` |
 | `bulls_lineup_3pt.py` | Bulls' best three-point shooting five-man lineups since 2000-01 | Use the consuming family checks |
 | `bulls_lineup_rdrtg.py` | Bulls' best five-man defensive lineups since 2000-01 | `tests/test_bulls_lineup_rdrtg.py` |
 | `bulls_lineup_rortg.py` | Bulls' best five-man offensive lineups since 2000-01 | `tests/test_bulls_lineup_rortg.py` |

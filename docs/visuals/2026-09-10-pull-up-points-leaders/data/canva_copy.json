@@ -1,0 +1,15 @@
+{
+  "title": "Bulls pull-up scoring leaders",
+  "subtitle": "Most pull-up points in a season · Top 15 since 2013–14",
+  "scope": "2013–14 to 2025–26 regular season · Chicago games only",
+  "source": "Source: NBA.com · Player tracking",
+  "handle": "@chicagobullsdata",
+  "definition": "Pull-up points exclude free throws. All supporting shooting stats refer to pull-ups.",
+  "relative": "rEFG = pull-up eFG% minus the same-season NBA pull-up eFG%, in percentage points.",
+  "per_game": "FGA/G and PTS/G use all official Bulls appearances that season.",
+  "leader": {
+    "player": "DeMar DeRozan",
+    "season": "2021-22",
+    "points": 923
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "season": "2024-25",
+  "saved_pull_up_shot_player_sum": {
+    "PULL_UP_FGM": 524,
+    "PULL_UP_FGA": 1411,
+    "PULL_UP_PTS": 1334
+  },
+  "saved_pull_up_shot_team_row": {
+    "PULL_UP_FGM": 562,
+    "PULL_UP_FGA": 1468,
+    "PULL_UP_PTS": 1414
+  },
+  "saved_player_minus_team": {
+    "PULL_UP_FGM": -38,
+    "PULL_UP_FGA": -57,
+    "PULL_UP_PTS": -80
+  },
+  "alternate_pullups_player_sum": {
+    "FGM": 562,
+    "FGA": 1468,
+    "FG3M": 290
+  },
+  "alternate_pullups_team_row": {
+    "FGM": 524,
+    "FGA": 1411,
+    "FG3M": 286
+  },
+  "alternate_player_minus_team": {
+    "FGM": 38,
+    "FGA": 57,
+    "FG3M": 4
+  },
+  "alternate_coby_white": {
+    "FGM": 144,
+    "FGA": 380,
+    "FG3M": 86
+  },
+  "canonical_coby_white": {
+    "FGM": 138,
+    "FGA": 362,
+    "PTS": 362
+  },
+  "interpretation": "LeagueDashPlayerPtShot Pullups player rows sum to the saved LeagueDashPtStats team row, while LeagueDashTeamPtShot returns the saved LeagueDashPtStats player sum; the endpoint surfaces therefore do not provide a single independent reconciliation, and classification/counting differs from the canonical PullUpShot player rows."
+}

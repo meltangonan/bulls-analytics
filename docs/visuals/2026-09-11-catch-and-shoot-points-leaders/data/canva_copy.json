@@ -1,0 +1,24 @@
+{
+  "title": "Bulls catch-and-shoot scoring leaders",
+  "three_point_title": "Bulls three-point catch-and-shoot scoring leaders",
+  "subtitle": "Top 15 Bulls seasons by catch-and-shoot points since 2013–14",
+  "scope": "2013–14 to 2025–26 regular season · Chicago games only",
+  "source": "Source: NBA.com · Player tracking",
+  "handle": "@chicagobullsdata",
+  "definition": "Catch-and-shoot points exclude free throws.",
+  "relative": "Efficiency comparisons use same-season catch-and-shoot league baselines: eFG% for all shots; 3P% for threes.",
+  "per_game": "PTS/G and FGA/G use official Chicago appearances.",
+  "volume": "PTS/G and FGA/G comparisons subtract same-season league catch-and-shoot points and attempts per official player appearance. No player qualification filter.",
+  "comparison_legend": "Parentheses: difference from same-season league average. Efficiency in percentage points; PTS/G and FGA/G per player appearance.",
+  "missing": "Unresolved league three-point attempts remain bounded, not zero-filled. Both bounds produce identical one-decimal comparisons for all selected rows.",
+  "leader": {
+    "player": "Nikola Vučević",
+    "season": "2022-23",
+    "points": 529
+  },
+  "three_point_leader": {
+    "player": "Coby White",
+    "season": "2023-24",
+    "points": 435
+  }
+}

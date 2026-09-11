@@ -66,7 +66,7 @@ def _season_label(value: object) -> str:
 
 
 def render(data_path: Path, output_path: Path, *, final: bool = False,
-           efficiency_label: str = "eFG%") -> Path:
+           efficiency_label: str = "eFG%", volume_comparisons: bool = False) -> Path:
     required = {
         "rank", "player_id", "player_name", "season", "gp", "fgm", "fga",
         "fg3m", "pts", "efg_pct", "league_efg_pct", "relative_efg_pp", "pts_per_game",
@@ -75,6 +75,8 @@ def render(data_path: Path, output_path: Path, *, final: bool = False,
     missing = required - set(frame.columns)
     if missing:
         raise ValueError(f"CSV is missing columns: {', '.join(sorted(missing))}")
+    if volume_comparisons and not {"relative_fga_per_game", "relative_pts_per_game"} <= set(frame.columns):
+        raise ValueError("Volume comparisons require relative FGA/G and PTS/G")
     frame = frame.sort_values("rank", kind="stable").reset_index(drop=True)
     if len(frame) != 15:
         raise ValueError(f"Expected exactly 15 rows, found {len(frame)}")
@@ -120,14 +122,24 @@ def render(data_path: Path, output_path: Path, *, final: bool = False,
                          color=SEASON_GREY, fontproperties=helvetica("oblique"), zorder=3)
         rel = float(row.relative_efg_pp)
         rel_color = GREY if -2 <= rel <= 2 else ("#218347" if rel > 2 else "#B53939")
-        ax.text(SUPPORT_X[0], y, f"{float(row.pts_per_game):.1f}", ha="center", va="center", fontsize=30,
+        ax.text(SUPPORT_X[0], y + (16 if volume_comparisons else 0), f"{float(row.pts_per_game):.1f}", ha="center", va="center", fontsize=30,
                 color=INK, fontproperties=helvetica("bold"), zorder=3)
         ax.text(SUPPORT_X[1], y + 16, f"{float(row.efg_pct):.1f}%", ha="center", va="center",
                 fontsize=30, color=INK, fontproperties=helvetica("bold"), zorder=3)
-        ax.text(SUPPORT_X[1], y - 30, f"({_signed(rel).replace(' pp', '')} vs. LA)", ha="center", va="center",
+        ax.text(SUPPORT_X[1], y - 30, f"({_signed(rel).replace(' pp', '')}{'' if volume_comparisons else ' vs. LA'})", ha="center", va="center",
                 fontsize=23, color=rel_color, fontproperties=helvetica("bold"), zorder=3)
-        ax.text(SUPPORT_X[2], y, f"{float(row.fga_per_game):.1f}", ha="center", va="center",
+        ax.text(SUPPORT_X[2], y + (16 if volume_comparisons else 0), f"{float(row.fga_per_game):.1f}", ha="center", va="center",
                 fontsize=30, color=INK, fontproperties=helvetica("bold"), zorder=3)
+
+        if volume_comparisons:
+            ax.text(SUPPORT_X[0], y - 30,
+                    f"({_signed(float(row.relative_pts_per_game)).replace(' pp', '')})",
+                    ha="center", va="center", fontsize=23, color=GREY,
+                    fontproperties=helvetica("bold"), zorder=3)
+            ax.text(SUPPORT_X[2], y - 30,
+                    f"({_signed(float(row.relative_fga_per_game)).replace(' pp', '')})",
+                    ha="center", va="center", fontsize=23, color=GREY,
+                    fontproperties=helvetica("bold"), zorder=3)
 
         width = float(row.pts) * scale
         ax.add_patch(FancyBboxPatch(
@@ -151,8 +163,10 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--final", action="store_true")
     parser.add_argument("--efficiency-label", default="eFG%")
+    parser.add_argument("--volume-comparisons", action="store_true")
     args = parser.parse_args()
-    path = render(args.data, args.output, final=args.final, efficiency_label=args.efficiency_label)
+    path = render(args.data, args.output, final=args.final, efficiency_label=args.efficiency_label,
+                  volume_comparisons=args.volume_comparisons)
     print(path)
 
 

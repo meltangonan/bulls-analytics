@@ -349,7 +349,7 @@ def render_hex(ctx, out: Path, final: bool):
 def _draw_zone_court(ax, center_x: float, center_y: float, s: float,
                      fills: dict[str, str], fill_alpha: float,
                      court_ink: str = ZONE12_COURT_INK, seam_alpha: float = 1.0,
-                     lw: float = 1.2):
+                     lw: float = 1.2, merge_mid: bool = False):
     """Paint one twelve-zone half court onto a supplied axes, and nothing else.
 
     Everything the zone family draws below its type lives here: the court, the
@@ -368,6 +368,15 @@ def _draw_zone_court(ax, center_x: float, center_y: float, s: float,
     def to_px(cx, cy):
         return nba_to_basket_bottom_px(x0, y0, s, cx, cy)
 
+    if merge_mid:
+        # The classified grid still names the five sectors, so the merged fill
+        # is applied to each of them and the seams between them are dropped.
+        # The band is one colour with no dividers, which is what makes it read
+        # as a single region rather than five that happen to match.
+        fills = dict(fills)
+        for zone in sm.MID_ZONES:
+            fills[zone] = fills["Mid-Range"]
+
     gx, gy, grid = _zone12_grid()
     gx_px, gy_px = to_px(gx, gy)
     for zone in sm.ZONE12_ORDER:
@@ -384,7 +393,8 @@ def _draw_zone_court(ax, center_x: float, center_y: float, s: float,
         zorder=2.5,
     ))
     _zone12_seams(ax, to_px, color=to_rgba(ZONE12_SEAM, seam_alpha),
-                  lw=ZONE12_SEAM_WIDTH * lw / 1.2)
+                  lw=ZONE12_SEAM_WIDTH * lw / 1.2,
+                  include_mid_cuts=not merge_mid)
     for side in (-250, 250):
         ax.plot([to_px(side, 0)[0]] * 2,
                 [to_px(side, 110)[1], to_px(side, ZONE12_TOP)[1]],
@@ -1548,6 +1558,7 @@ ZONE12_SHORT = {
     "Top of Key 3": "TOP OF KEY",
     "Right Wing 3": "RIGHT WING",
     "Right Corner 3": "RIGHT CORNER",
+    "Mid-Range": "MID-RANGE",
 }
 
 # Where each zone's block sits, in court coordinates with the hoop at the origin
@@ -1586,6 +1597,11 @@ ZONE12_ANCHORS = {
     "Left Wing 3":           (-169, 245),
     "Right Wing 3":          (169, 245),
     "Top of Key 3":          (0, 285),
+    # The merged mid-range is a horseshoe around the paint, and a horseshoe has
+    # no centre to sit in. This reuses the centre-mid position: above the paint,
+    # inside the arc, and the one part of the band wide enough for a pill that
+    # is not already crowded by a corner or wing card.
+    "Mid-Range":             (0, 196),
 }
 
 
@@ -1732,7 +1748,7 @@ def render_zonegrid(ctx, out: Path, final: bool):
                    else "Blue below, yellow average, orange/red above")
     print("\nCANVA COPY")
     print(f"Key: Colour = FG% vs the NBA in that zone, that season · {scale_words}")
-    print(f"Grey: fewer than {min_fga} attempts — too few to rate")
+    print(f"Grey: fewer than {min_fga} attempts, too few to rate")
 
 
 def _zone12_fills(zones, palette: str) -> dict[str, str]:
@@ -1759,7 +1775,9 @@ def render_zones(ctx, out: Path, final: bool):
     court_ink = ctx.get("court_ink") or house.get_theme("jersey").ink
     # The floor still applies. It no longer decides whether a zone is drawn at
     # all -- it decides whether the zone earns an efficiency colour.
-    zones = sm.zone12_split(ctx["player"], ctx["league"], min_fga=min_fga)
+    merge_mid = bool(ctx.get("merge_mid"))
+    zones = sm.zone12_split(ctx["player"], ctx["league"], min_fga=min_fga,
+                            merge_mid=merge_mid)
     excluded = int(zones.subject_excluded_fga.iloc[0])
     for z in zones.itertuples():
         rate = f"{z.fg * 100:5.1f}% FG ({z.fg_rel:+5.1f})" if z.fga else "     no attempts"
@@ -1781,7 +1799,8 @@ def render_zones(ctx, out: Path, final: bool):
     # fully legible through its four-line pill but uses neutral grey ground.
     fills = _zone12_fills(zones, palette)
     to_px = _draw_zone_court(ax, house.CANVAS_WIDTH / 2, ZONE12_COURT_Y,
-                             ZONE12_SCALE, fills, 1.0, court_ink=court_ink)
+                             ZONE12_SCALE, fills, 1.0, court_ink=court_ink,
+                             merge_mid=merge_mid)
 
     if show_details:
         for z in zones.itertuples():
@@ -1818,7 +1837,7 @@ def render_zones(ctx, out: Path, final: bool):
     print("\nCANVA COPY")
     print(f"Subtitle: {ctx['season']} Regular Season")
     print(f"Key: Colour = FG% vs the NBA in that zone · {scale_words}")
-    print("Reading it: vs LA = the percentage-point gap to league average — "
+    print("Reading it: vs LA = the percentage-point gap to league average. "
           "FG% on the first pair, share of FGA on the second")
     print("Grey FG gap: inside the chart's ±2.5-point average band")
     if show_summary:
@@ -1860,7 +1879,8 @@ ZONE12_BARE_CROP_BOTTOM = 450
 ZONE12_SEAM_WIDTH = 1.2          # the same weight as the court markings
 
 
-def _zone12_seam_segments() -> list[tuple[tuple[float, float], tuple[float, float]]]:
+def _zone12_seam_segments(include_mid_cuts: bool = True
+                          ) -> list[tuple[tuple[float, float], tuple[float, float]]]:
     """Every zone divider that the court's own black lines do not already draw.
 
     Solved from geometry rather than traced from the classified grid. Tracing
@@ -1880,7 +1900,7 @@ def _zone12_seam_segments() -> list[tuple[tuple[float, float], tuple[float, floa
     # Mid-range dividers: from where the ray leaves the paint out to the arc.
     # The baseline cuts end exactly on the corner break, because that is the
     # point the angle was derived from -- corner line, arc and divider meet.
-    for degrees in sm.MID_SECTOR_CUTS:
+    for degrees in (sm.MID_SECTOR_CUTS if include_mid_cuts else ()):
         theta = np.radians(degrees)
         cos, sin = np.cos(theta), np.sin(theta)
         leaves_paint = min(sm.PAINT_HALF / abs(cos) if abs(cos) > 1e-9 else np.inf,
@@ -1908,9 +1928,10 @@ def _zone12_seam_segments() -> list[tuple[tuple[float, float], tuple[float, floa
     return segments
 
 
-def _zone12_seams(ax, to_px, color=ZONE12_SEAM, lw: float | None = None):
+def _zone12_seams(ax, to_px, color=ZONE12_SEAM, lw: float | None = None,
+                  include_mid_cuts: bool = True):
     """Draw the dividers, over the fills and under the court's black lines."""
-    for (x1, y1), (x2, y2) in _zone12_seam_segments():
+    for (x1, y1), (x2, y2) in _zone12_seam_segments(include_mid_cuts):
         p1, p2 = to_px(x1, y1), to_px(x2, y2)
         ax.plot([p1[0], p2[0]], [p1[1], p2[1]], color=color,
                 lw=ZONE12_SEAM_WIDTH if lw is None else lw,
@@ -2375,6 +2396,9 @@ def main():
                          "rdylgn (red/yellow/green)")
     ap.add_argument("--show-thin-gray", action="store_true",
                     help="hex only: draw occupied 1-2 shot cells in gray")
+    ap.add_argument("--merge-mid", action="store_true",
+                    help="zones only: pool the five mid-range regions into one "
+                         "zone, for a subject who barely shoots there")
     ap.add_argument("--output", default="")
     args = ap.parse_args()
 
@@ -2434,6 +2458,9 @@ def main():
             ctx["min_fga"] = args.min_fga or sm.MIN_ZONE12_FGA_PLAYER
         ctx["palette"] = args.palette
         ctx["pill"] = args.pill
+        ctx["merge_mid"] = args.merge_mid
+    elif args.merge_mid:
+        raise SystemExit("--merge-mid is available only for --chart zones")
     if args.chart == "rings":
         if args.team:
             raise SystemExit("rings needs per-75 rates, which are player-scoped")

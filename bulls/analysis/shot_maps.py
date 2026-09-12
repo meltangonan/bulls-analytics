@@ -467,6 +467,22 @@ ZONE12_ORDER = (
 THREE_ZONES = frozenset({"Left Corner 3", "Left Wing 3", "Top of Key 3",
                          "Right Wing 3", "Right Corner 3"})
 
+# The five two-point regions outside the paint, and the eight-zone order that
+# replaces them with a single "Mid-Range". Merging is opt-in and exists for one
+# reason: a subject who barely shoots there. Five sectors each holding a handful
+# of attempts is five grey pills reporting 0/1 and 2/4, which spends most of the
+# court's type on figures too thin to mean anything. Pooled, the same shots make
+# one readable number. The five regions are exactly NBA's own Mid-Range family,
+# so merging removes our angular subdivision and invents nothing.
+MID_ZONES = ("Left Baseline", "Left Mid-Range", "Center Mid-Range",
+             "Right Mid-Range", "Right Baseline")
+
+ZONE8_ORDER = (
+    "Restricted Area", "In The Paint (Non-RA)", "Mid-Range",
+    "Left Corner 3", "Left Wing 3", "Top of Key 3",
+    "Right Wing 3", "Right Corner 3",
+)
+
 
 # --- What it takes to earn a colour ----------------------------------------
 # The floor is derived from the colour scale rather than chosen, because the
@@ -713,7 +729,8 @@ def zone12_of_shots(shots: pd.DataFrame) -> np.ndarray:
 
 
 def zone12_split(subject: pd.DataFrame, league: pd.DataFrame,
-                 min_fga: int = MIN_ZONE12_FGA) -> pd.DataFrame:
+                 min_fga: int = MIN_ZONE12_FGA,
+                 merge_mid: bool = False) -> pd.DataFrame:
     """Per-zone shot share and accuracy for all twelve zones vs the league.
 
     The same two questions ``zone_split`` asks of four rings, asked of twelve
@@ -725,6 +742,11 @@ def zone12_split(subject: pd.DataFrame, league: pd.DataFrame,
     The league reference uses the same calculation over all league attempts, so
     team and player charts share one directly comparable baseline without a
     possession estimate.
+
+    ``merge_mid`` pools the five mid-range regions into one row and returns
+    eight. Both sides are pooled from raw attempts, so the merged FG% is
+    attempt-weighted rather than an average of five rates, and the merged row
+    faces the same colour floor as any other zone -- pooling earns no exemption.
     """
     subject = subject.copy()
     league = league.copy()
@@ -748,8 +770,23 @@ def zone12_split(subject: pd.DataFrame, league: pd.DataFrame,
     subject_conflicts = int(source_zone_value_conflicts(subject).sum())
     league_conflicts = int(source_zone_value_conflicts(league).sum())
 
+    # After the exclusion counts above, which are defined against the twelve
+    # drawn regions and would miscount a shot relabelled "Mid-Range".
+    order = ZONE12_ORDER
+    if merge_mid:
+        order = ZONE8_ORDER
+        merged = {zone: "Mid-Range" for zone in MID_ZONES}
+        subject["zone12"] = subject.zone12.replace(merged)
+        league["zone12"] = league.zone12.replace(merged)
+        lg = league.groupby("zone12").agg(
+            size=("shot_made", "size"), sum=("shot_made", "sum"),
+            points=("_points", "sum"))
+        mine = subject.groupby("zone12").agg(
+            size=("shot_made", "size"), sum=("shot_made", "sum"),
+            points=("_points", "sum"))
+
     rows = []
-    for zone in ZONE12_ORDER:
+    for zone in order:
         fga = int(mine["size"].get(zone, 0))
         fgm = int(mine["sum"].get(zone, 0))
         lg_fga = int(lg["size"].get(zone, 0))

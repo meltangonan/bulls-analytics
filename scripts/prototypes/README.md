@@ -58,6 +58,8 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `impactful_bulls_bpm.py` | Most impactful Bull per season | `tests/test_impactful_bulls_bpm.py` |
 | `impactful_bulls_bpm_columns.py` | The same BPM analysis as a stacked column chart | Use the consuming family checks |
 | `jimmy_butler_bulls_zone_charts.py` | Jimmy Butler's Bulls regular seasons with 300+ Chicago FGA plus an attempt-weighted six-season tenure total | `tests/test_jimmy_butler_bulls_zone_charts.py`, `tests/test_player_season_totals.py` |
+| `matas_buzelis_shot_families.py` | Buzelis's shot families and self-created share across his two Bulls seasons, from NBA.com ACTION_TYPE labels | `tests/test_matas_buzelis_shot_families.py` |
+| `matas_buzelis_bulls_zone_charts.py` | Matas Buzelis's two Bulls regular seasons plus a pooled two-season tenure total | `tests/test_matas_buzelis_bulls_zone_charts.py` |
 | `mock_post_demo.py` | A design-preview harness, not a post idea. Renders a full fake post (fictional roster, no network/cache needed) … | Use the consuming family checks |
 | `opponent_elite_performance.py` | Which opponents the most elite Bulls player-games came against. Reuses `top_game_performances.py`'s validated lo… | `tests/test_opponent_elite_performance.py` |
 | `payroll_vs_wins.py` | Build the Bulls payroll-share vs win-percentage chart asset for Canva. | `tests/test_payroll_vs_wins.py` |

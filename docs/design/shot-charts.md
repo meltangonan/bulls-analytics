@@ -68,6 +68,14 @@ Under-floor zones are gray, with all descriptive figures retained in muted pills
 print only `0 FGA`; unavailable data must not become zero. The legend prints the actual qualification
 as `Under N FGA`. Use the post's floor rather than silently inheriting another post's number.
 
+`--merge-mid` pools the five mid-range regions into one zone, leaving eight. Use it only when the
+subject barely shoots there and the band would otherwise spend most of the court's type on figures
+too thin to read. The merged region is exactly NBA's own Mid-Range family, so merging removes our
+angular subdivision and invents no new boundary: drop the internal mid-range seams, paint the band
+one colour, and place the single pill above the paint inside the arc. Pool both the subject and the
+league from raw attempts so the merged FG% is attempt-weighted rather than an average of five rates.
+The merged zone faces the same floor as any other; pooling buys a readable figure, never a colour.
+
 Measure card height and line spacing in the renderer's coordinate system: point sizes and canvas
 units differ. Space the two figure/comparison pairs distinctly. An optional large pill uses 10-point
 primary figures, 7.5-point comparisons, expanded spacing, and measured padding. Keep the rim's type

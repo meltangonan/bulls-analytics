@@ -1,0 +1,964 @@
+season,GAME_ID,GAME_DATE,ACTION_TYPE,SHOT_TYPE,SHOT_ZONE_BASIC,SHOT_DISTANCE,SHOT_MADE_FLAG,family
+2025-26,0022500023,20251031,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500023,20251031,Running Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500023,20251031,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500023,20251031,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022500023,20251031,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500023,20251031,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500023,20251031,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500023,20251031,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0,Turnarounds/fades
+2025-26,0022500023,20251031,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500023,20251031,Driving Floating Bank Jump Shot,2PT Field Goal,Restricted Area,1,1,Floaters
+2025-26,0022500035,20251107,Running Reverse Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500035,20251107,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500035,20251107,Cutting Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500035,20251107,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500035,20251107,Jump Shot,3PT Field Goal,Right Corner 3,24,1,Standard jumpers
+2025-26,0022500035,20251107,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500035,20251107,Running Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500035,20251107,Pullup Jump shot,3PT Field Goal,Above the Break 3,30,0,Pull-ups
+2025-26,0022500035,20251107,Step Back Jump shot,3PT Field Goal,Left Corner 3,24,1,Step-backs
+2025-26,0022500035,20251107,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500035,20251107,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500035,20251107,Cutting Finger Roll Layup Shot,2PT Field Goal,In The Paint (Non-RA),6,1,Layups
+2025-26,0022500035,20251107,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500051,20251121,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500051,20251121,Running Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500051,20251121,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500051,20251121,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500051,20251121,Running Alley Oop Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022500051,20251121,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500051,20251121,Running Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022500051,20251121,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500071,20251128,Cutting Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500071,20251128,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500071,20251128,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500071,20251128,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500071,20251128,Step Back Jump shot,3PT Field Goal,Above the Break 3,26,0,Step-backs
+2025-26,0022500071,20251128,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500071,20251128,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500071,20251128,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500084,20251022,Cutting Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500084,20251022,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500084,20251022,Running Jump Shot,2PT Field Goal,Mid-Range,21,1,Running jumpers
+2025-26,0022500084,20251022,Driving Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022500084,20251022,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022500084,20251022,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500084,20251022,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500084,20251022,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500084,20251022,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022500084,20251022,Finger Roll Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500084,20251022,Turnaround Fadeaway shot,2PT Field Goal,Mid-Range,12,0,Turnarounds/fades
+2025-26,0022500084,20251022,Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500100,20251025,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500100,20251025,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0,Floaters
+2025-26,0022500100,20251025,Running Dunk Shot,2PT Field Goal,Restricted Area,2,0,Dunks
+2025-26,0022500100,20251025,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500100,20251025,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500115,20251027,Running Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500115,20251027,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500115,20251027,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022500115,20251027,Fadeaway Jump Shot,2PT Field Goal,Mid-Range,15,0,Turnarounds/fades
+2025-26,0022500115,20251027,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500115,20251027,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022500115,20251027,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500115,20251027,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500115,20251027,Running Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022500115,20251027,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500115,20251027,Driving Reverse Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500115,20251027,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500115,20251027,Driving Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500115,20251027,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500132,20251029,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500132,20251029,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500132,20251029,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500132,20251029,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500132,20251029,Driving Floating Jump Shot,2PT Field Goal,Restricted Area,2,0,Floaters
+2025-26,0022500132,20251029,Tip Layup Shot,2PT Field Goal,Restricted Area,0,0,Tip-ins
+2025-26,0022500132,20251029,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500132,20251029,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),10,0,Floaters
+2025-26,0022500132,20251029,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500132,20251029,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500132,20251029,Cutting Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500132,20251029,Jump Shot,3PT Field Goal,Left Corner 3,22,1,Standard jumpers
+2025-26,0022500132,20251029,Jump Shot,3PT Field Goal,Left Corner 3,22,1,Standard jumpers
+2025-26,0022500132,20251029,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500132,20251029,Driving Reverse Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500132,20251029,Turnaround Jump Shot,2PT Field Goal,Mid-Range,14,0,Turnarounds/fades
+2025-26,0022500132,20251029,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500132,20251029,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500153,20251102,Running Jump Shot,3PT Field Goal,Left Corner 3,23,0,Running jumpers
+2025-26,0022500153,20251102,Running Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500153,20251102,Running Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500153,20251102,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0,Floaters
+2025-26,0022500153,20251102,Running Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500153,20251102,Jump Shot,3PT Field Goal,Right Corner 3,22,1,Standard jumpers
+2025-26,0022500153,20251102,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500153,20251102,Pullup Jump shot,3PT Field Goal,Above the Break 3,26,0,Pull-ups
+2025-26,0022500153,20251102,Jump Shot,3PT Field Goal,Above the Break 3,27,1,Standard jumpers
+2025-26,0022500153,20251102,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500153,20251102,Tip Layup Shot,2PT Field Goal,Restricted Area,0,0,Tip-ins
+2025-26,0022500167,20251104,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500167,20251104,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500167,20251104,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,1,Floaters
+2025-26,0022500167,20251104,Running Jump Shot,3PT Field Goal,Above the Break 3,25,1,Running jumpers
+2025-26,0022500167,20251104,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500167,20251104,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500167,20251104,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500167,20251104,Running Jump Shot,3PT Field Goal,Left Corner 3,23,1,Running jumpers
+2025-26,0022500167,20251104,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500167,20251104,Running Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500167,20251104,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022500186,20251108,Running Reverse Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500186,20251108,Driving Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500186,20251108,Driving Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500186,20251108,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500186,20251108,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500186,20251108,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500202,20251110,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500202,20251110,Driving Floating Jump Shot,2PT Field Goal,Restricted Area,3,0,Floaters
+2025-26,0022500202,20251110,Running Jump Shot,3PT Field Goal,Left Corner 3,22,0,Running jumpers
+2025-26,0022500202,20251110,Pullup Jump shot,2PT Field Goal,Mid-Range,18,1,Pull-ups
+2025-26,0022500202,20251110,Driving Reverse Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500202,20251110,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500202,20251110,Running Jump Shot,3PT Field Goal,Above the Break 3,26,1,Running jumpers
+2025-26,0022500202,20251110,Running Jump Shot,3PT Field Goal,Above the Break 3,27,1,Running jumpers
+2025-26,0022500202,20251110,Driving Finger Roll Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022500214,20251112,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500214,20251112,Driving Floating Jump Shot,2PT Field Goal,Restricted Area,3,1,Floaters
+2025-26,0022500214,20251112,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500214,20251112,Putback Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500214,20251112,Running Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022500214,20251112,Driving Finger Roll Layup Shot,2PT Field Goal,In The Paint (Non-RA),5,1,Layups
+2025-26,0022500214,20251112,Pullup Jump shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022500214,20251112,Driving Floating Jump Shot,2PT Field Goal,Restricted Area,2,1,Floaters
+2025-26,0022500214,20251112,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500214,20251112,Jump Shot,3PT Field Goal,Above the Break 3,28,0,Standard jumpers
+2025-26,0022500214,20251112,Running Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500214,20251112,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500214,20251112,Pullup Jump shot,3PT Field Goal,Above the Break 3,26,1,Pull-ups
+2025-26,0022500214,20251112,Tip Layup Shot,2PT Field Goal,Restricted Area,0,0,Tip-ins
+2025-26,0022500240,20251116,Driving Floating Jump Shot,2PT Field Goal,Mid-Range,9,1,Floaters
+2025-26,0022500240,20251116,Driving Finger Roll Layup Shot,2PT Field Goal,In The Paint (Non-RA),7,1,Layups
+2025-26,0022500240,20251116,Jump Shot,3PT Field Goal,Right Corner 3,22,1,Standard jumpers
+2025-26,0022500240,20251116,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500240,20251116,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0,Floaters
+2025-26,0022500240,20251116,Tip Layup Shot,2PT Field Goal,Restricted Area,0,1,Tip-ins
+2025-26,0022500240,20251116,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500240,20251116,Jump Shot,3PT Field Goal,Left Corner 3,24,0,Standard jumpers
+2025-26,0022500240,20251116,Running Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022500240,20251116,Cutting Dunk Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Dunks
+2025-26,0022500240,20251116,Jump Shot,3PT Field Goal,Left Corner 3,24,1,Standard jumpers
+2025-26,0022500240,20251116,Cutting Dunk Shot,2PT Field Goal,Restricted Area,2,1,Dunks
+2025-26,0022500240,20251116,Driving Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500248,20251117,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),8,0,Layups
+2025-26,0022500248,20251117,Cutting Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500248,20251117,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500248,20251117,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500248,20251117,Running Pull-Up Jump Shot,3PT Field Goal,Above the Break 3,25,1,Pull-ups
+2025-26,0022500248,20251117,Tip Layup Shot,2PT Field Goal,Restricted Area,0,1,Tip-ins
+2025-26,0022500248,20251117,Driving Reverse Layup Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Layups
+2025-26,0022500248,20251117,Tip Layup Shot,2PT Field Goal,Restricted Area,0,0,Tip-ins
+2025-26,0022500248,20251117,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),8,0,Layups
+2025-26,0022500248,20251117,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500248,20251117,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500248,20251117,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500248,20251117,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500248,20251117,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),10,0,Floaters
+2025-26,0022500263,20251119,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500263,20251119,Cutting Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500263,20251119,Jump Shot,3PT Field Goal,Right Corner 3,22,1,Standard jumpers
+2025-26,0022500263,20251119,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500263,20251119,Cutting Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500263,20251119,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500271,20251122,Cutting Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Layups
+2025-26,0022500271,20251122,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,1,Floaters
+2025-26,0022500271,20251122,Running Reverse Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500271,20251122,Running Alley Oop Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500271,20251122,Cutting Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500271,20251122,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500271,20251122,Jump Shot,3PT Field Goal,Right Corner 3,22,0,Standard jumpers
+2025-26,0022500271,20251122,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500271,20251122,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500271,20251122,Jump Shot,3PT Field Goal,Right Corner 3,22,0,Standard jumpers
+2025-26,0022500271,20251122,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500289,20251124,Running Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500289,20251124,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500289,20251124,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500289,20251124,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500289,20251124,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500289,20251124,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500289,20251124,Jump Shot,3PT Field Goal,Left Corner 3,22,1,Standard jumpers
+2025-26,0022500289,20251124,Driving Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500295,20251129,Running Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Layups
+2025-26,0022500295,20251129,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500295,20251129,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500295,20251129,Running Jump Shot,3PT Field Goal,Above the Break 3,26,0,Running jumpers
+2025-26,0022500295,20251129,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500295,20251129,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500295,20251129,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500295,20251129,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500295,20251129,Running Jump Shot,3PT Field Goal,Above the Break 3,24,1,Running jumpers
+2025-26,0022500314,20251201,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500314,20251201,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500314,20251201,Driving Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500314,20251201,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Layups
+2025-26,0022500314,20251201,Fadeaway Jump Shot,2PT Field Goal,In The Paint (Non-RA),13,0,Turnarounds/fades
+2025-26,0022500314,20251201,Running Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500314,20251201,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500314,20251201,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500314,20251201,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500314,20251201,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500314,20251201,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500314,20251201,Step Back Jump shot,3PT Field Goal,Right Corner 3,22,0,Step-backs
+2025-26,0022500314,20251201,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,0,Floaters
+2025-26,0022500314,20251201,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500314,20251201,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500314,20251201,Driving Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500329,20251203,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500329,20251203,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500329,20251203,Cutting Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500329,20251203,Driving Floating Jump Shot,2PT Field Goal,Restricted Area,2,0,Floaters
+2025-26,0022500329,20251203,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,1,Floaters
+2025-26,0022500329,20251203,Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022500329,20251203,Running Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500329,20251203,Jump Shot,3PT Field Goal,Right Corner 3,24,0,Standard jumpers
+2025-26,0022500329,20251203,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500329,20251203,Running Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500329,20251203,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500329,20251203,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500329,20251203,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500329,20251203,Running Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022500345,20251205,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500345,20251205,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500345,20251205,Cutting Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500345,20251205,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500345,20251205,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500345,20251205,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500345,20251205,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500345,20251205,Driving Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500361,20251207,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500361,20251207,Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500361,20251207,Cutting Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500361,20251207,Driving Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500361,20251207,Running Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500361,20251207,Floating Jump shot,2PT Field Goal,In The Paint (Non-RA),6,0,Floaters
+2025-26,0022500361,20251207,Jump Shot,3PT Field Goal,Right Corner 3,24,0,Standard jumpers
+2025-26,0022500361,20251207,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022500361,20251207,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500361,20251207,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500361,20251207,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500361,20251207,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500367,20251217,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500367,20251217,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500367,20251217,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500367,20251217,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500367,20251217,Driving Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500367,20251217,Cutting Finger Roll Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500367,20251217,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500384,20251219,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500384,20251219,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,1,Floaters
+2025-26,0022500384,20251219,Running Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500384,20251219,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500384,20251219,Running Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500384,20251219,Jump Shot,3PT Field Goal,Above the Break 3,31,0,Standard jumpers
+2025-26,0022500384,20251219,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500384,20251219,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500384,20251219,Running Jump Shot,3PT Field Goal,Above the Break 3,25,0,Running jumpers
+2025-26,0022500384,20251219,Running Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500384,20251219,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500384,20251219,Cutting Dunk Shot,2PT Field Goal,Restricted Area,2,1,Dunks
+2025-26,0022500384,20251219,Driving Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500384,20251219,Turnaround Jump Shot,2PT Field Goal,Mid-Range,15,1,Turnarounds/fades
+2025-26,0022500384,20251219,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500396,20251221,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500396,20251221,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500396,20251221,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,1,Pull-ups
+2025-26,0022500396,20251221,Running Jump Shot,3PT Field Goal,Left Corner 3,23,1,Running jumpers
+2025-26,0022500396,20251221,Pullup Jump shot,3PT Field Goal,Above the Break 3,26,1,Pull-ups
+2025-26,0022500396,20251221,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500396,20251221,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500396,20251221,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500396,20251221,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500396,20251221,Jump Shot,3PT Field Goal,Right Corner 3,23,1,Standard jumpers
+2025-26,0022500396,20251221,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500411,20251223,Jump Shot,3PT Field Goal,Right Corner 3,23,1,Standard jumpers
+2025-26,0022500411,20251223,Driving Dunk Shot,2PT Field Goal,Restricted Area,1,0,Dunks
+2025-26,0022500411,20251223,Step Back Jump shot,3PT Field Goal,Above the Break 3,24,1,Step-backs
+2025-26,0022500411,20251223,Running Alley Oop Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500411,20251223,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500411,20251223,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500411,20251223,Cutting Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500411,20251223,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500427,20251226,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500427,20251226,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500427,20251226,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500427,20251226,Jump Shot,3PT Field Goal,Right Corner 3,24,0,Standard jumpers
+2025-26,0022500427,20251226,Pullup Jump shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022500427,20251226,Tip Dunk Shot,2PT Field Goal,Restricted Area,0,0,Dunks
+2025-26,0022500427,20251226,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500427,20251226,Jump Shot,3PT Field Goal,Left Corner 3,22,1,Standard jumpers
+2025-26,0022500427,20251226,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500427,20251226,Driving Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022500437,20251227,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500437,20251227,Running Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500437,20251227,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500437,20251227,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022500437,20251227,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500452,20251229,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,1,Pull-ups
+2025-26,0022500452,20251229,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022500452,20251229,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500452,20251229,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500452,20251229,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500452,20251229,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500452,20251229,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500452,20251229,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500452,20251229,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500452,20251229,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500452,20251229,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500452,20251229,Jump Shot,3PT Field Goal,Right Corner 3,22,0,Standard jumpers
+2025-26,0022500452,20251229,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500452,20251229,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500466,20251231,Running Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500466,20251231,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500466,20251231,Cutting Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500466,20251231,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500466,20251231,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,1,Floaters
+2025-26,0022500466,20251231,Pullup Jump shot,3PT Field Goal,Above the Break 3,26,0,Pull-ups
+2025-26,0022500466,20251231,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500466,20251231,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500466,20251231,Running Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500466,20251231,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500466,20251231,Driving Floating Jump Shot,2PT Field Goal,Restricted Area,3,0,Floaters
+2025-26,0022500466,20251231,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500466,20251231,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500466,20251231,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500466,20251231,Driving Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500466,20251231,Running Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500466,20251231,Step Back Jump shot,3PT Field Goal,Above the Break 3,25,0,Step-backs
+2025-26,0022500480,20260102,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500480,20260102,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500480,20260102,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022500480,20260102,Running Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500480,20260102,Running Jump Shot,3PT Field Goal,Above the Break 3,25,0,Running jumpers
+2025-26,0022500480,20260102,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500480,20260102,Pullup Jump shot,3PT Field Goal,Above the Break 3,26,1,Pull-ups
+2025-26,0022500480,20260102,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500480,20260102,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500480,20260102,Running Jump Shot,3PT Field Goal,Above the Break 3,25,0,Running jumpers
+2025-26,0022500480,20260102,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500480,20260102,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500480,20260102,Running Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500480,20260102,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500489,20260103,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500489,20260103,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500489,20260103,Tip Dunk Shot,2PT Field Goal,Restricted Area,1,0,Dunks
+2025-26,0022500489,20260103,Step Back Jump shot,3PT Field Goal,Above the Break 3,26,1,Step-backs
+2025-26,0022500489,20260103,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500489,20260103,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500489,20260103,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500489,20260103,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500489,20260103,Cutting Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500489,20260103,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500489,20260103,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500489,20260103,Cutting Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500489,20260103,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500489,20260103,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500489,20260103,Driving Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500489,20260103,Running Jump Shot,3PT Field Goal,Left Corner 3,22,0,Running jumpers
+2025-26,0022500503,20260105,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500503,20260105,Cutting Layup Shot,2PT Field Goal,In The Paint (Non-RA),5,1,Layups
+2025-26,0022500503,20260105,Running Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500503,20260105,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Layups
+2025-26,0022500503,20260105,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),5,1,Layups
+2025-26,0022500503,20260105,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500503,20260105,Running Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,1,0,Dunks
+2025-26,0022500503,20260105,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500503,20260105,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500503,20260105,Turnaround Hook Shot,2PT Field Goal,Restricted Area,3,1,Hooks
+2025-26,0022500503,20260105,Cutting Layup Shot,2PT Field Goal,In The Paint (Non-RA),6,1,Layups
+2025-26,0022500503,20260105,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500517,20260107,Running Alley Oop Dunk Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Dunks
+2025-26,0022500517,20260107,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500517,20260107,Driving Floating Jump Shot,2PT Field Goal,Restricted Area,3,1,Floaters
+2025-26,0022500517,20260107,Jump Shot,3PT Field Goal,Left Corner 3,25,0,Standard jumpers
+2025-26,0022500517,20260107,Turnaround Fadeaway shot,2PT Field Goal,In The Paint (Non-RA),8,0,Turnarounds/fades
+2025-26,0022500517,20260107,Driving Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500517,20260107,Step Back Jump shot,3PT Field Goal,Above the Break 3,25,1,Step-backs
+2025-26,0022500517,20260107,Alley Oop Dunk Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Dunks
+2025-26,0022500517,20260107,Running Jump Shot,3PT Field Goal,Right Corner 3,23,1,Running jumpers
+2025-26,0022500517,20260107,Jump Shot,3PT Field Goal,Above the Break 3,27,1,Standard jumpers
+2025-26,0022500517,20260107,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022500517,20260107,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022500517,20260107,Driving Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500517,20260107,Jump Shot,3PT Field Goal,Above the Break 3,27,1,Standard jumpers
+2025-26,0022500517,20260107,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500529,20260129,Step Back Jump shot,3PT Field Goal,Above the Break 3,27,0,Step-backs
+2025-26,0022500529,20260129,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500529,20260129,Driving Floating Jump Shot,2PT Field Goal,Restricted Area,3,0,Floaters
+2025-26,0022500529,20260129,Running Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500529,20260129,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Floaters
+2025-26,0022500529,20260129,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500529,20260129,Tip Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500529,20260129,Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022500529,20260129,Fadeaway Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0,Turnarounds/fades
+2025-26,0022500529,20260129,Driving Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500529,20260129,Step Back Jump shot,3PT Field Goal,Left Corner 3,24,0,Step-backs
+2025-26,0022500529,20260129,Jump Shot,3PT Field Goal,Above the Break 3,27,1,Standard jumpers
+2025-26,0022500529,20260129,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500529,20260129,Driving Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500529,20260129,Running Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022500546,20260110,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500546,20260110,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500546,20260110,Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500546,20260110,Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500546,20260110,Driving Reverse Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500546,20260110,Running Pull-Up Jump Shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022500546,20260110,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500546,20260110,Running Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500546,20260110,Turnaround Bank shot,2PT Field Goal,In The Paint (Non-RA),8,0,Turnarounds/fades
+2025-26,0022500546,20260110,Jump Shot,3PT Field Goal,Right Corner 3,22,0,Standard jumpers
+2025-26,0022500546,20260110,Jump Shot,3PT Field Goal,Right Corner 3,22,0,Standard jumpers
+2025-26,0022500546,20260110,Cutting Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500546,20260110,Running Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500546,20260110,Driving Floating Bank Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Floaters
+2025-26,0022500546,20260110,Step Back Jump shot,3PT Field Goal,Above the Break 3,26,0,Step-backs
+2025-26,0022500546,20260110,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500565,20260113,Pullup Jump shot,3PT Field Goal,Above the Break 3,27,0,Pull-ups
+2025-26,0022500565,20260113,Running Dunk Shot,2PT Field Goal,Restricted Area,2,1,Dunks
+2025-26,0022500565,20260113,Cutting Dunk Shot,2PT Field Goal,Restricted Area,2,1,Dunks
+2025-26,0022500565,20260113,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500565,20260113,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500565,20260113,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500565,20260113,Driving Floating Bank Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Floaters
+2025-26,0022500565,20260113,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500565,20260113,Reverse Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022500565,20260113,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500565,20260113,Driving Finger Roll Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Layups
+2025-26,0022500565,20260113,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,1,Pull-ups
+2025-26,0022500565,20260113,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500565,20260113,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500573,20260114,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500573,20260114,Running Jump Shot,3PT Field Goal,Above the Break 3,25,0,Running jumpers
+2025-26,0022500573,20260114,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500573,20260114,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500573,20260114,Driving Floating Bank Jump Shot,2PT Field Goal,Restricted Area,3,1,Floaters
+2025-26,0022500573,20260114,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500573,20260114,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500587,20260116,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500587,20260116,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500587,20260116,Running Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500587,20260116,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500587,20260116,Step Back Jump shot,3PT Field Goal,Above the Break 3,26,0,Step-backs
+2025-26,0022500587,20260116,Tip Layup Shot,2PT Field Goal,Restricted Area,0,0,Tip-ins
+2025-26,0022500587,20260116,Running Pull-Up Jump Shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022500587,20260116,Running Dunk Shot,2PT Field Goal,Restricted Area,1,0,Dunks
+2025-26,0022500587,20260116,Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500587,20260116,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500587,20260116,Running Jump Shot,3PT Field Goal,Left Corner 3,24,1,Running jumpers
+2025-26,0022500587,20260116,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500587,20260116,Running Jump Shot,3PT Field Goal,Left Corner 3,23,0,Running jumpers
+2025-26,0022500587,20260116,Driving Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Hooks
+2025-26,0022500587,20260116,Turnaround Bank shot,2PT Field Goal,In The Paint (Non-RA),11,0,Turnarounds/fades
+2025-26,0022500603,20260118,Turnaround Fadeaway shot,2PT Field Goal,Mid-Range,21,0,Turnarounds/fades
+2025-26,0022500603,20260118,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,0,Floaters
+2025-26,0022500603,20260118,Cutting Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500603,20260118,Cutting Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022500603,20260118,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500603,20260118,Jump Shot,3PT Field Goal,Left Corner 3,22,1,Standard jumpers
+2025-26,0022500603,20260118,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500603,20260118,Reverse Dunk Shot,2PT Field Goal,Restricted Area,2,1,Dunks
+2025-26,0022500603,20260118,Jump Shot,3PT Field Goal,Right Corner 3,23,1,Standard jumpers
+2025-26,0022500603,20260118,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500603,20260118,Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500603,20260118,Step Back Jump shot,3PT Field Goal,Right Corner 3,22,0,Step-backs
+2025-26,0022500603,20260118,Cutting Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500614,20260120,Driving Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500614,20260120,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022500614,20260120,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500614,20260120,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500614,20260120,Running Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500614,20260120,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500614,20260120,Running Jump Shot,3PT Field Goal,Above the Break 3,25,0,Running jumpers
+2025-26,0022500614,20260120,Running Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500614,20260120,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500614,20260120,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500614,20260120,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500614,20260120,Running Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500614,20260120,Driving Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500614,20260120,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500631,20260122,Running Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500631,20260122,Step Back Jump shot,2PT Field Goal,Mid-Range,15,0,Step-backs
+2025-26,0022500631,20260122,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500631,20260122,Running Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500631,20260122,Jump Shot,3PT Field Goal,Right Corner 3,22,1,Standard jumpers
+2025-26,0022500631,20260122,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500631,20260122,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500631,20260122,Driving Floating Bank Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0,Floaters
+2025-26,0022500647,20260124,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500647,20260124,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500647,20260124,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500647,20260124,Running Jump Shot,3PT Field Goal,Above the Break 3,26,1,Running jumpers
+2025-26,0022500647,20260124,Pullup Jump shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022500647,20260124,Driving Dunk Shot,2PT Field Goal,Restricted Area,1,0,Dunks
+2025-26,0022500647,20260124,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500647,20260124,Driving Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500647,20260124,Jump Shot,3PT Field Goal,Above the Break 3,27,1,Standard jumpers
+2025-26,0022500647,20260124,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500647,20260124,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500647,20260124,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500647,20260124,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500661,20260126,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500661,20260126,Running Pull-Up Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Pull-ups
+2025-26,0022500661,20260126,Running Pull-Up Jump Shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500661,20260126,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500661,20260126,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500661,20260126,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500661,20260126,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500661,20260126,Step Back Jump shot,3PT Field Goal,Right Corner 3,23,0,Step-backs
+2025-26,0022500672,20260128,Tip Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500672,20260128,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500672,20260128,Jump Shot,3PT Field Goal,Left Corner 3,24,1,Standard jumpers
+2025-26,0022500672,20260128,Jump Shot,3PT Field Goal,Above the Break 3,28,1,Standard jumpers
+2025-26,0022500672,20260128,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500672,20260128,Jump Shot,3PT Field Goal,Above the Break 3,27,1,Standard jumpers
+2025-26,0022500672,20260128,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),5,1,Layups
+2025-26,0022500672,20260128,Jump Shot,3PT Field Goal,Above the Break 3,30,0,Standard jumpers
+2025-26,0022500672,20260128,Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500672,20260128,Jump Shot,3PT Field Goal,Left Corner 3,24,0,Standard jumpers
+2025-26,0022500672,20260128,Jump Shot,3PT Field Goal,Right Corner 3,23,1,Standard jumpers
+2025-26,0022500692,20260131,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500692,20260131,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),6,1,Layups
+2025-26,0022500692,20260131,Driving Floating Jump Shot,2PT Field Goal,Restricted Area,2,0,Floaters
+2025-26,0022500692,20260131,Running Jump Shot,3PT Field Goal,Above the Break 3,24,1,Running jumpers
+2025-26,0022500692,20260131,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500692,20260131,Jump Shot,3PT Field Goal,Right Corner 3,24,1,Standard jumpers
+2025-26,0022500692,20260131,Jump Shot,3PT Field Goal,Left Corner 3,24,0,Standard jumpers
+2025-26,0022500692,20260131,Running Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500692,20260131,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500692,20260131,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0,Floaters
+2025-26,0022500692,20260131,Cutting Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500692,20260131,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500692,20260131,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),9,0,Floaters
+2025-26,0022500692,20260131,Running Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500692,20260131,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500705,20260201,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500705,20260201,Running Pull-Up Jump Shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022500705,20260201,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500705,20260201,Putback Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500705,20260201,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500705,20260201,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500705,20260201,Pullup Jump shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022500722,20260203,Running Layup Shot,2PT Field Goal,In The Paint (Non-RA),8,0,Layups
+2025-26,0022500722,20260203,Step Back Jump shot,3PT Field Goal,Above the Break 3,25,1,Step-backs
+2025-26,0022500722,20260203,Driving Dunk Shot,2PT Field Goal,Restricted Area,2,1,Dunks
+2025-26,0022500722,20260203,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500722,20260203,Jump Shot,3PT Field Goal,Right Corner 3,24,0,Standard jumpers
+2025-26,0022500722,20260203,Running Jump Shot,3PT Field Goal,Above the Break 3,23,1,Running jumpers
+2025-26,0022500722,20260203,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500722,20260203,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500722,20260203,Driving Finger Roll Layup Shot,2PT Field Goal,In The Paint (Non-RA),8,0,Layups
+2025-26,0022500722,20260203,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500722,20260203,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500722,20260203,Step Back Jump shot,3PT Field Goal,Above the Break 3,27,1,Step-backs
+2025-26,0022500722,20260203,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),8,0,Layups
+2025-26,0022500722,20260203,Running Jump Shot,3PT Field Goal,Above the Break 3,28,1,Running jumpers
+2025-26,0022500722,20260203,Driving Reverse Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500722,20260203,Cutting Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500736,20260205,Pullup Jump shot,3PT Field Goal,Above the Break 3,26,0,Pull-ups
+2025-26,0022500736,20260205,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500736,20260205,Driving Finger Roll Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Layups
+2025-26,0022500736,20260205,Jump Shot,3PT Field Goal,Above the Break 3,28,0,Standard jumpers
+2025-26,0022500736,20260205,Running Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500736,20260205,Running Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500736,20260205,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500736,20260205,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500736,20260205,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500736,20260205,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500736,20260205,Running Pull-Up Jump Shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022500752,20260207,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500752,20260207,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500752,20260207,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500752,20260207,Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500752,20260207,Running Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500752,20260207,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500752,20260207,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500752,20260207,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500752,20260207,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500752,20260207,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500752,20260207,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500752,20260207,Running Jump Shot,3PT Field Goal,Above the Break 3,25,1,Running jumpers
+2025-26,0022500752,20260207,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,1,Floaters
+2025-26,0022500762,20260209,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500762,20260209,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500762,20260209,Driving Floating Bank Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0,Floaters
+2025-26,0022500762,20260209,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500762,20260209,Running Layup Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Layups
+2025-26,0022500762,20260209,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500762,20260209,Cutting Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022500762,20260209,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500762,20260209,Pullup Jump shot,3PT Field Goal,Above the Break 3,26,0,Pull-ups
+2025-26,0022500762,20260209,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500762,20260209,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500762,20260209,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500762,20260209,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500762,20260209,Pullup Jump shot,3PT Field Goal,Right Corner 3,24,0,Pull-ups
+2025-26,0022500762,20260209,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500778,20260211,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Layups
+2025-26,0022500778,20260211,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500778,20260211,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500778,20260211,Driving Layup Shot,2PT Field Goal,Mid-Range,8,0,Layups
+2025-26,0022500778,20260211,Driving Layup Shot,2PT Field Goal,Mid-Range,9,0,Layups
+2025-26,0022500778,20260211,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),7,1,Layups
+2025-26,0022500778,20260211,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500778,20260211,Cutting Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500778,20260211,Pullup Jump shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022500778,20260211,Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500778,20260211,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500778,20260211,Pullup Jump shot,3PT Field Goal,Above the Break 3,27,0,Pull-ups
+2025-26,0022500778,20260211,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500797,20260219,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500797,20260219,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500797,20260219,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Floaters
+2025-26,0022500797,20260219,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500797,20260219,Tip Layup Shot,2PT Field Goal,Restricted Area,0,0,Tip-ins
+2025-26,0022500797,20260219,Running Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500797,20260219,Step Back Jump shot,3PT Field Goal,Above the Break 3,25,0,Step-backs
+2025-26,0022500797,20260219,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500797,20260219,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500797,20260219,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500814,20260221,Running Pull-Up Jump Shot,3PT Field Goal,Above the Break 3,24,1,Pull-ups
+2025-26,0022500814,20260221,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500814,20260221,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500814,20260221,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500814,20260221,Step Back Jump shot,3PT Field Goal,Above the Break 3,25,0,Step-backs
+2025-26,0022500814,20260221,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500814,20260221,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500814,20260221,Running Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500814,20260221,Step Back Jump shot,3PT Field Goal,Above the Break 3,24,1,Step-backs
+2025-26,0022500814,20260221,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500825,20260222,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500825,20260222,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500825,20260222,Driving Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022500825,20260222,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500825,20260222,Jump Shot,3PT Field Goal,Right Corner 3,22,1,Standard jumpers
+2025-26,0022500825,20260222,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500825,20260222,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500825,20260222,Step Back Jump shot,3PT Field Goal,Left Corner 3,23,1,Step-backs
+2025-26,0022500825,20260222,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500825,20260222,Running Jump Shot,3PT Field Goal,Above the Break 3,27,1,Running jumpers
+2025-26,0022500825,20260222,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500825,20260222,Jump Shot,3PT Field Goal,Left Corner 3,24,0,Standard jumpers
+2025-26,0022500836,20260224,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022500836,20260224,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500836,20260224,Turnaround Fadeaway shot,2PT Field Goal,In The Paint (Non-RA),10,0,Turnarounds/fades
+2025-26,0022500836,20260224,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500836,20260224,Step Back Jump shot,3PT Field Goal,Above the Break 3,25,1,Step-backs
+2025-26,0022500836,20260224,Step Back Jump shot,2PT Field Goal,Mid-Range,17,1,Step-backs
+2025-26,0022500836,20260224,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500836,20260224,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500836,20260224,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500836,20260224,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500836,20260224,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500836,20260224,Putback Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500836,20260224,Running Jump Shot,3PT Field Goal,Above the Break 3,26,1,Running jumpers
+2025-26,0022500836,20260224,Pullup Jump shot,3PT Field Goal,Above the Break 3,27,0,Pull-ups
+2025-26,0022500836,20260224,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500836,20260224,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500836,20260224,Jump Shot,3PT Field Goal,Above the Break 3,27,1,Standard jumpers
+2025-26,0022500836,20260224,Running Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500836,20260224,Running Jump Shot,3PT Field Goal,Above the Break 3,26,1,Running jumpers
+2025-26,0022500853,20260226,Cutting Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500853,20260226,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500853,20260226,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500853,20260226,Running Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500853,20260226,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,1,Floaters
+2025-26,0022500853,20260226,Step Back Jump shot,2PT Field Goal,Mid-Range,18,1,Step-backs
+2025-26,0022500853,20260226,Driving Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500853,20260226,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500853,20260226,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500853,20260226,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500853,20260226,Running Jump Shot,3PT Field Goal,Above the Break 3,24,0,Running jumpers
+2025-26,0022500853,20260226,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500853,20260226,Driving Floating Bank Jump Shot,2PT Field Goal,Restricted Area,1,0,Floaters
+2025-26,0022500853,20260226,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500853,20260226,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500853,20260226,Jump Shot,3PT Field Goal,Above the Break 3,27,1,Standard jumpers
+2025-26,0022500870,20260301,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500870,20260301,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500870,20260301,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500870,20260301,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500870,20260301,Step Back Jump shot,3PT Field Goal,Above the Break 3,25,0,Step-backs
+2025-26,0022500870,20260301,Cutting Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500870,20260301,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500870,20260301,Pullup Jump shot,2PT Field Goal,Mid-Range,20,0,Pull-ups
+2025-26,0022500870,20260301,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500870,20260301,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500870,20260301,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500870,20260301,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Floaters
+2025-26,0022500870,20260301,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500870,20260301,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,1,Pull-ups
+2025-26,0022500870,20260301,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500889,20260303,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500889,20260303,Running Dunk Shot,2PT Field Goal,Restricted Area,0,0,Dunks
+2025-26,0022500889,20260303,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500889,20260303,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500889,20260303,Pullup Jump shot,3PT Field Goal,Above the Break 3,28,0,Pull-ups
+2025-26,0022500889,20260303,Jump Shot,3PT Field Goal,Above the Break 3,28,0,Standard jumpers
+2025-26,0022500889,20260303,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500889,20260303,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022500889,20260303,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Hooks
+2025-26,0022500930,20260308,Step Back Jump shot,3PT Field Goal,Above the Break 3,26,0,Step-backs
+2025-26,0022500930,20260308,Running Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Running jumpers
+2025-26,0022500930,20260308,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500930,20260308,Running Finger Roll Layup Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Layups
+2025-26,0022500930,20260308,Cutting Dunk Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Dunks
+2025-26,0022500930,20260308,Layup Shot,2PT Field Goal,In The Paint (Non-RA),6,0,Layups
+2025-26,0022500930,20260308,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022500930,20260308,Jump Shot,3PT Field Goal,Right Corner 3,24,1,Standard jumpers
+2025-26,0022500930,20260308,Driving Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500930,20260308,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500930,20260308,Alley Oop Dunk Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Dunks
+2025-26,0022500930,20260308,Jump Shot,3PT Field Goal,Left Corner 3,24,1,Standard jumpers
+2025-26,0022500943,20260310,Driving Finger Roll Layup Shot,2PT Field Goal,In The Paint (Non-RA),8,1,Layups
+2025-26,0022500943,20260310,Cutting Finger Roll Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500943,20260310,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022500943,20260310,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),6,1,Layups
+2025-26,0022500943,20260310,Turnaround Fadeaway shot,2PT Field Goal,Mid-Range,9,0,Turnarounds/fades
+2025-26,0022500943,20260310,Driving Floating Bank Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,1,Floaters
+2025-26,0022500943,20260310,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500943,20260310,Running Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500943,20260310,Jump Shot,3PT Field Goal,Above the Break 3,27,1,Standard jumpers
+2025-26,0022500943,20260310,Step Back Jump shot,3PT Field Goal,Above the Break 3,26,0,Step-backs
+2025-26,0022500943,20260310,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500943,20260310,Cutting Dunk Shot,2PT Field Goal,Restricted Area,2,1,Dunks
+2025-26,0022500943,20260310,Cutting Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500943,20260310,Pullup Jump shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022500943,20260310,Driving Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500943,20260310,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022500943,20260310,Jump Shot,3PT Field Goal,Right Corner 3,24,0,Standard jumpers
+2025-26,0022500943,20260310,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500943,20260310,Step Back Jump shot,3PT Field Goal,Right Corner 3,23,0,Step-backs
+2025-26,0022500943,20260310,Running Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022500943,20260310,Running Jump Shot,3PT Field Goal,Above the Break 3,26,0,Running jumpers
+2025-26,0022500943,20260310,Jump Shot,3PT Field Goal,Above the Break 3,27,1,Standard jumpers
+2025-26,0022500943,20260310,Driving Finger Roll Layup Shot,2PT Field Goal,In The Paint (Non-RA),6,0,Layups
+2025-26,0022500943,20260310,Jump Shot,3PT Field Goal,Right Corner 3,24,1,Standard jumpers
+2025-26,0022500943,20260310,Driving Floating Bank Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,1,Floaters
+2025-26,0022500943,20260310,Step Back Jump shot,3PT Field Goal,Above the Break 3,28,1,Step-backs
+2025-26,0022500943,20260310,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500943,20260310,Jump Shot,3PT Field Goal,Left Corner 3,24,0,Standard jumpers
+2025-26,0022500960,20260312,Running Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500960,20260312,Driving Layup Shot,2PT Field Goal,Restricted Area,3,1,Layups
+2025-26,0022500960,20260312,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500960,20260312,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500960,20260312,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500960,20260312,Driving Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500960,20260312,Jump Shot,3PT Field Goal,Left Corner 3,22,1,Standard jumpers
+2025-26,0022500960,20260312,Running Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500960,20260312,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022500960,20260312,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500960,20260312,Driving Hook Shot,2PT Field Goal,In The Paint (Non-RA),12,0,Hooks
+2025-26,0022500960,20260312,Cutting Layup Shot,2PT Field Goal,In The Paint (Non-RA),6,0,Layups
+2025-26,0022500960,20260312,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500960,20260312,Pullup Jump shot,3PT Field Goal,Above the Break 3,29,1,Pull-ups
+2025-26,0022500960,20260312,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Layups
+2025-26,0022500960,20260312,Layup Shot,2PT Field Goal,In The Paint (Non-RA),6,0,Layups
+2025-26,0022500960,20260312,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500960,20260312,Jump Shot,3PT Field Goal,Above the Break 3,28,0,Standard jumpers
+2025-26,0022500960,20260312,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500968,20260313,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500968,20260313,Driving Layup Shot,2PT Field Goal,Restricted Area,3,0,Layups
+2025-26,0022500968,20260313,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),7,0,Layups
+2025-26,0022500968,20260313,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500968,20260313,Pullup Jump shot,3PT Field Goal,Above the Break 3,26,1,Pull-ups
+2025-26,0022500968,20260313,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022500968,20260313,Pullup Jump shot,2PT Field Goal,Mid-Range,14,1,Pull-ups
+2025-26,0022500968,20260313,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),9,0,Floaters
+2025-26,0022500968,20260313,Putback Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500968,20260313,Driving Floating Bank Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Floaters
+2025-26,0022500968,20260313,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500968,20260313,Running Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500968,20260313,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500968,20260313,Cutting Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500968,20260313,Pullup Jump shot,3PT Field Goal,Above the Break 3,26,0,Pull-ups
+2025-26,0022500968,20260313,Jump Shot,3PT Field Goal,Right Corner 3,24,0,Standard jumpers
+2025-26,0022500968,20260313,Pullup Jump shot,3PT Field Goal,Right Corner 3,23,1,Pull-ups
+2025-26,0022500968,20260313,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500987,20260316,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022500987,20260316,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500987,20260316,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500987,20260316,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022500987,20260316,Running Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500987,20260316,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022500987,20260316,Step Back Jump shot,2PT Field Goal,In The Paint (Non-RA),8,1,Step-backs
+2025-26,0022500987,20260316,Running Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022500987,20260316,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022500987,20260316,Driving Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022500987,20260316,Pullup Jump shot,3PT Field Goal,Above the Break 3,28,0,Pull-ups
+2025-26,0022500987,20260316,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022500987,20260316,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500987,20260316,Jump Shot,3PT Field Goal,Right Corner 3,23,1,Standard jumpers
+2025-26,0022500987,20260316,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022500987,20260316,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500987,20260316,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500987,20260316,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022500987,20260316,Step Back Jump shot,3PT Field Goal,Left Corner 3,22,1,Step-backs
+2025-26,0022500987,20260316,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022500987,20260316,Running Reverse Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022500987,20260316,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Floaters
+2025-26,0022501002,20260318,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022501002,20260318,Pullup Jump shot,2PT Field Goal,Mid-Range,17,0,Pull-ups
+2025-26,0022501002,20260318,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022501002,20260318,Running Jump Shot,3PT Field Goal,Above the Break 3,26,1,Running jumpers
+2025-26,0022501002,20260318,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022501002,20260318,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022501002,20260318,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501002,20260318,Step Back Jump shot,3PT Field Goal,Above the Break 3,25,0,Step-backs
+2025-26,0022501002,20260318,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,0,Dunks
+2025-26,0022501002,20260318,Running Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022501002,20260318,Jump Shot,3PT Field Goal,Right Corner 3,23,1,Standard jumpers
+2025-26,0022501002,20260318,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501002,20260318,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022501002,20260318,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501002,20260318,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022501011,20260319,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022501011,20260319,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022501011,20260319,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501011,20260319,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501011,20260319,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022501011,20260319,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501011,20260319,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,1,Pull-ups
+2025-26,0022501011,20260319,Step Back Jump shot,3PT Field Goal,Above the Break 3,25,0,Step-backs
+2025-26,0022501011,20260319,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022501011,20260319,Running Layup Shot,2PT Field Goal,In The Paint (Non-RA),6,0,Layups
+2025-26,0022501011,20260319,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022501011,20260319,Running Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022501011,20260319,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022501042,20260323,Jump Shot,3PT Field Goal,Right Corner 3,22,1,Standard jumpers
+2025-26,0022501042,20260323,Driving Floating Bank Jump Shot,2PT Field Goal,Restricted Area,3,0,Floaters
+2025-26,0022501042,20260323,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022501042,20260323,Running Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022501042,20260323,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022501042,20260323,Driving Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022501042,20260323,Step Back Jump shot,3PT Field Goal,Above the Break 3,24,0,Step-backs
+2025-26,0022501042,20260323,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022501042,20260323,Driving Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022501042,20260323,Jump Shot,3PT Field Goal,Above the Break 3,24,1,Standard jumpers
+2025-26,0022501042,20260323,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022501042,20260323,Jump Shot,3PT Field Goal,Above the Break 3,28,0,Standard jumpers
+2025-26,0022501042,20260323,Pullup Jump shot,3PT Field Goal,Above the Break 3,24,1,Pull-ups
+2025-26,0022501042,20260323,Running Pull-Up Jump Shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022501042,20260323,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022501042,20260323,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022501053,20260325,Driving Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Hooks
+2025-26,0022501053,20260325,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022501053,20260325,Step Back Jump shot,3PT Field Goal,Above the Break 3,25,0,Step-backs
+2025-26,0022501053,20260325,Running Pull-Up Jump Shot,3PT Field Goal,Above the Break 3,27,0,Pull-ups
+2025-26,0022501053,20260325,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022501053,20260325,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022501053,20260325,Jump Shot,3PT Field Goal,Above the Break 3,27,0,Standard jumpers
+2025-26,0022501053,20260325,Running Finger Roll Layup Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Layups
+2025-26,0022501053,20260325,Jump Shot,3PT Field Goal,Above the Break 3,27,1,Standard jumpers
+2025-26,0022501053,20260325,Pullup Jump shot,2PT Field Goal,Mid-Range,21,0,Pull-ups
+2025-26,0022501053,20260325,Pullup Jump shot,3PT Field Goal,Above the Break 3,28,0,Pull-ups
+2025-26,0022501053,20260325,Running Alley Oop Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022501053,20260325,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022501053,20260325,Running Pull-Up Jump Shot,3PT Field Goal,Above the Break 3,26,1,Pull-ups
+2025-26,0022501053,20260325,Pullup Jump shot,3PT Field Goal,Above the Break 3,29,0,Pull-ups
+2025-26,0022501070,20260327,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022501070,20260327,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022501070,20260327,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022501070,20260327,Cutting Dunk Shot,2PT Field Goal,Restricted Area,3,0,Dunks
+2025-26,0022501070,20260327,Driving Reverse Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022501070,20260327,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022501070,20260327,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022501070,20260327,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022501070,20260327,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501070,20260327,Jump Shot,3PT Field Goal,Right Corner 3,23,0,Standard jumpers
+2025-26,0022501070,20260327,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Turnarounds/fades
+2025-26,0022501070,20260327,Driving Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022501070,20260327,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022501079,20260328,Turnaround Hook Shot,2PT Field Goal,Restricted Area,3,1,Hooks
+2025-26,0022501079,20260328,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501079,20260328,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022501079,20260328,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022501079,20260328,Driving Floating Bank Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Floaters
+2025-26,0022501079,20260328,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022501079,20260328,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022501079,20260328,Cutting Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022501079,20260328,Running Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022501079,20260328,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022501079,20260328,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022501079,20260328,Step Back Jump shot,3PT Field Goal,Above the Break 3,26,1,Step-backs
+2025-26,0022501079,20260328,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022501079,20260328,Running Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022501079,20260328,Tip Layup Shot,2PT Field Goal,Restricted Area,0,1,Tip-ins
+2025-26,0022501079,20260328,Pullup Jump shot,3PT Field Goal,Above the Break 3,26,0,Pull-ups
+2025-26,0022501079,20260328,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,1,Turnarounds/fades
+2025-26,0022501079,20260328,Running Dunk Shot,2PT Field Goal,Restricted Area,2,1,Dunks
+2025-26,0022501079,20260328,Driving Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0,Layups
+2025-26,0022501079,20260328,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501079,20260328,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022501094,20260330,Driving Dunk Shot,2PT Field Goal,Restricted Area,1,1,Dunks
+2025-26,0022501094,20260330,Jump Shot,3PT Field Goal,Above the Break 3,24,0,Standard jumpers
+2025-26,0022501094,20260330,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022501094,20260330,Running Jump Shot,3PT Field Goal,Above the Break 3,25,0,Running jumpers
+2025-26,0022501094,20260330,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022501094,20260330,Running Pull-Up Jump Shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022501094,20260330,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0,Floaters
+2025-26,0022501094,20260330,Jump Shot,3PT Field Goal,Above the Break 3,26,1,Standard jumpers
+2025-26,0022501094,20260330,Driving Floating Bank Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,1,Floaters
+2025-26,0022501094,20260330,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022501094,20260330,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022501094,20260330,Running Pull-Up Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1,Pull-ups
+2025-26,0022501109,20260401,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022501109,20260401,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022501109,20260401,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022501109,20260401,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501109,20260401,Step Back Jump shot,3PT Field Goal,Above the Break 3,25,0,Step-backs
+2025-26,0022501109,20260401,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022501109,20260401,Jump Shot,3PT Field Goal,Right Corner 3,22,1,Standard jumpers
+2025-26,0022501109,20260401,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022501109,20260401,Driving Layup Shot,2PT Field Goal,Restricted Area,0,0,Layups
+2025-26,0022501109,20260401,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022501109,20260401,Jump Shot,3PT Field Goal,Left Corner 3,23,1,Standard jumpers
+2025-26,0022501123,20260403,Jump Shot,3PT Field Goal,Left Corner 3,23,0,Standard jumpers
+2025-26,0022501123,20260403,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501123,20260403,Jump Shot,3PT Field Goal,Above the Break 3,25,1,Standard jumpers
+2025-26,0022501123,20260403,Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022501123,20260403,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,0,1,Layups
+2025-26,0022501123,20260403,Cutting Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022501123,20260403,Running Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022501123,20260403,Pullup Jump shot,3PT Field Goal,Above the Break 3,26,0,Pull-ups
+2025-26,0022501123,20260403,Running Jump Shot,3PT Field Goal,Above the Break 3,25,0,Running jumpers
+2025-26,0022501177,20260410,Driving Floating Jump Shot,2PT Field Goal,Restricted Area,3,1,Floaters
+2025-26,0022501177,20260410,Running Layup Shot,2PT Field Goal,Restricted Area,1,0,Layups
+2025-26,0022501177,20260410,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022501177,20260410,Pullup Jump shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022501177,20260410,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022501177,20260410,Pullup Jump shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022501177,20260410,Pullup Jump shot,3PT Field Goal,Above the Break 3,24,0,Pull-ups
+2025-26,0022501177,20260410,Turnaround Jump Shot,2PT Field Goal,Mid-Range,12,1,Turnarounds/fades
+2025-26,0022501177,20260410,Driving Floating Bank Jump Shot,2PT Field Goal,Restricted Area,3,1,Floaters
+2025-26,0022501177,20260410,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022501177,20260410,Running Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks
+2025-26,0022501177,20260410,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022501177,20260410,Running Jump Shot,3PT Field Goal,Above the Break 3,25,0,Running jumpers
+2025-26,0022501177,20260410,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022501177,20260410,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501177,20260410,Cutting Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022501177,20260410,Jump Shot,3PT Field Goal,Above the Break 3,29,0,Standard jumpers
+2025-26,0022501209,20251212,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022501209,20251212,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0,Layups
+2025-26,0022501209,20251212,Pullup Jump shot,3PT Field Goal,Above the Break 3,25,0,Pull-ups
+2025-26,0022501209,20251212,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022501209,20251212,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022501209,20251212,Jump Shot,3PT Field Goal,Above the Break 3,26,0,Standard jumpers
+2025-26,0022501209,20251212,Turnaround Hook Shot,2PT Field Goal,Restricted Area,2,1,Hooks
+2025-26,0022501209,20251212,Driving Reverse Layup Shot,2PT Field Goal,Restricted Area,2,1,Layups
+2025-26,0022501223,20251214,Cutting Layup Shot,2PT Field Goal,Restricted Area,1,1,Layups
+2025-26,0022501223,20251214,Jump Shot,3PT Field Goal,Left Corner 3,22,1,Standard jumpers
+2025-26,0022501223,20251214,Jump Shot,3PT Field Goal,Left Corner 3,22,0,Standard jumpers
+2025-26,0022501223,20251214,Jump Shot,3PT Field Goal,Above the Break 3,25,0,Standard jumpers
+2025-26,0022501223,20251214,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1,Dunks

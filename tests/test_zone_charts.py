@@ -430,6 +430,11 @@ def test_every_pill_sits_inside_the_zone_it_reports():
 
     for zone, (x, y) in shot_chart.ZONE12_ANCHORS.items():
         landed = sm.zone_of(np.array([float(x)]), np.array([float(y)]))[0]
+        if zone == "Mid-Range":
+            # The opt-in merged zone is a horseshoe the classifier never names,
+            # so its pill has to land in one of the five sectors it pools.
+            assert landed in sm.MID_ZONES, f"the merged pill sits in {landed}"
+            continue
         assert landed == zone, f"the {zone} pill sits in {landed}"
 
 
@@ -487,8 +492,12 @@ def test_every_zone_has_an_anchor_and_a_short_label():
     """A zone with no anchor would silently vanish from the page."""
     import scripts.make_shot_chart as shot_chart
 
-    assert set(shot_chart.ZONE12_ANCHORS) == set(sm.ZONE12_ORDER)
-    assert set(shot_chart.ZONE12_SHORT) == set(sm.ZONE12_ORDER)
+    # The twelve drawn zones, plus the merged mid-range that --merge-mid draws
+    # in their place. Every zone either mode can render needs both.
+    expected = set(sm.ZONE12_ORDER) | {"Mid-Range"}
+    assert set(shot_chart.ZONE12_ANCHORS) == expected
+    assert set(shot_chart.ZONE12_SHORT) == expected
+    assert set(sm.ZONE8_ORDER) <= expected
 
 
 # --- Signs -----------------------------------------------------------------

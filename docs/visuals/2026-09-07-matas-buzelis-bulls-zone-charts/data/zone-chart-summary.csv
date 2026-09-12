@@ -1,0 +1,4 @@
+window,player_id,player,included_seasons,games,minutes,points,ppg,bulls_fga,shot_rows,fgm,fg_pct,efg_pct,three_pct,zones_rated,zones_grey,rated_fga_share_pct,mapped_zone_fga,excluded_backcourt_fga,source_zone_value_conflicts,league_zone_value_conflicts,min_zone_fga,scope
+2024-25,1641824,Matas Buzelis,2024-25,80,1511.3,688,8.6,555,555,252,45.4,54.1,36.1,7,5,96.9,555,0,0,12,20,Chicago attempts only
+2025-26,1641824,Matas Buzelis,2025-26,77,2248.2,1252,16.3,963,963,446,46.3,55.3,34.9,7,5,98.0,963,0,0,20,20,Chicago attempts only
+Bulls tenure,1641824,Matas Buzelis,"2024-25, 2025-26",157,3759.5,1940,12.4,1518,1518,698,46.0,54.8,35.3,7,5,97.6,1518,0,0,32,40,Chicago attempts only

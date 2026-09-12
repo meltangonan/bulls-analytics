@@ -1,0 +1,21 @@
+season,family,fga,fgm,share_pct,fg_pct,self_created,unlabelled_default,rated
+2024-25,Dunks,78,65,14.0541,83.3333,False,False,True
+2024-25,Floaters,34,11,6.1261,32.3529,False,False,True
+2024-25,Tip-ins,15,4,2.7027,26.6667,False,False,False
+2024-25,Layups,140,70,25.2252,50.0000,False,False,True
+2024-25,Hooks,3,0,0.5405,0.0000,False,False,False
+2024-25,Pull-ups,12,5,2.1622,41.6667,True,False,False
+2024-25,Step-backs,16,6,2.8829,37.5000,True,False,False
+2024-25,Turnarounds/fades,7,0,1.2613,0.0000,True,False,False
+2024-25,Running jumpers,17,6,3.0631,35.2941,False,False,False
+2024-25,Standard jumpers,233,85,41.9820,36.4807,False,True,True
+2025-26,Dunks,89,79,9.2420,88.7640,False,False,True
+2025-26,Floaters,48,22,4.9844,45.8333,False,False,True
+2025-26,Tip-ins,9,3,0.9346,33.3333,False,False,False
+2025-26,Layups,286,154,29.6989,53.8462,False,False,True
+2025-26,Hooks,7,3,0.7269,42.8571,False,False,False
+2025-26,Pull-ups,72,19,7.4766,26.3889,True,False,True
+2025-26,Step-backs,36,15,3.7383,41.6667,True,False,True
+2025-26,Turnarounds/fades,16,4,1.6615,25.0000,True,False,False
+2025-26,Running jumpers,34,18,3.5306,52.9412,False,False,True
+2025-26,Standard jumpers,366,129,38.0062,35.2459,False,True,True

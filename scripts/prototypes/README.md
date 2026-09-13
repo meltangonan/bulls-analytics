@@ -18,6 +18,8 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `assist_age_ladder.py` | Assist counterpart to `scoring_age_ladder.py` | `tests/test_assist_age_ladder.py` |
 | `assist_duos.py` | Bulls assist duos | `tests/test_assist_duos.py` |
 | `assist_duos_fetch.py` | Bulls assist duos | `tests/test_assist_duos.py` |
+| `scoring_duo_games_data.py` | Bulls top-15 combined-scoring duo games since 2000-01; duo selection, tie handling and overtime labels over `top_game_performances` source rows | `tests/test_scoring_duo_games.py` |
+| `scoring_duo_games_table.py` | Renders `scoring_duo_games_data.py` top15.csv as a split-bar duo table | `tests/test_scoring_duo_games.py` |
 | `assisted_buckets.py` | Assisted vs. unassisted buckets | `tests/test_assisted_buckets.py` |
 | `bench_points_leaders.py` | Bulls' biggest bench-scoring seasons since 1996-97 | `tests/test_bench_points_leaders.py` |
 | `catch_and_shoot_points_data.py` | Bulls top-15 catch-and-shoot points and three-point points seasons; renders with `pull_up_points_bars.py --volume-comparisons` | `tests/test_catch_and_shoot_points_data.py` |

@@ -8,7 +8,7 @@ account says and who it serves. This file owns production, fairness and completi
 Read the matching Notion post and use the settled conversation. Resolve only missing decisions:
 basketball question, scope, comparison, evidence/qualification, visual form, and deliverable.
 State reasonable defaults; ask only when the answer materially changes the result. Default to a
-1080×1350 feed page. Do not repeat the brief for an already-scoped adjustment.
+1080×1350 feed page; 1080×1440 (3:4) is also a supported Instagram feed size and the user has used it. Do not repeat the brief for an already-scoped adjustment.
 
 Choose an existing chart family from `DESIGN.md` and `scripts/prototypes/README.md`. One selected
 idea gets one working post; loose brainstorming does not trigger fetching, artifacts, or Notion writes.
@@ -44,7 +44,8 @@ For substantive edits to an existing Canva design, use a separate QA copy or dup
 unless the user authorizes edits to the original. When reviewing the composed page, inspect the
 actual downloaded page at feed size:
 
-- correct dimensions (normally 1080×1350), readable labels and no cropping;
+- correct dimensions (1080×1350 or 1080×1440, matching what the page was built for), readable
+  labels and no cropping;
 - numbers, names, coverage, thresholds, source and handle agree with Python;
 - no stale template copy, placeholders, duplicate frames or draft notes;
 - printed components make sense together. Independently rounded components may not sum to a

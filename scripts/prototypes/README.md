@@ -36,6 +36,7 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `bulls_rookie_metric_analysis.py` | Bulls rookie seasons since 2000 | `tests/test_databallr_snapshot.py`, `tests/test_bulls_rookie_metric_analysis.py` |
 | `bulls_season_zone_charts.py` | One Bulls season through zone shot charts | `tests/test_2010_11_mvp_rose_zone_charts.py`, `tests/test_bulls_season_zone_charts.py` |
 | `clutch_seasons_table.py` | The most clutch Bulls seasons since 2000 | `tests/test_clutch_seasons_table.py` |
+| `clutch_scoring_age_ladder.py` | Bulls clutch scoring leaders by age since 2000 | `tests/test_clutch_scoring_age_ladder.py` |
 | `clutch_table.py` | Current Bulls in the clutch | `tests/test_clutch_table.py`, `tests/test_scoring_age_ladder.py` |
 | `current_roster_darko_landscape.py` | Current Bulls DARKO landscape | `tests/test_current_roster_darko_landscape.py` |
 | `current_roster_hex_charts.py` | Current-roster player hex batch | `tests/test_current_roster_hex_charts.py` |

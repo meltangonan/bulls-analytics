@@ -667,6 +667,7 @@ def render_chart(
     games_left: float = GP_LEFT,
     games_right: float = GP_RIGHT,
     row_rule_left: float = ROW_RULE_LEFT,
+    row_rule_color: str | None = None,
     sort_by: list[str] | None = None,
     sort_ascending: bool | list[bool] = True,
     metric_fill_style: str = METRIC_FILL_SQUARE_CELLS,
@@ -824,7 +825,7 @@ def render_chart(
                 ax.plot(
                     [rule_left, rule_right],
                     [divider_y, divider_y],
-                    color=theme.rule,
+                    color=theme.rule if row_rule_color is None else row_rule_color,
                     linewidth=1.0,
                     # Matplotlib projects a solid line half a linewidth past each
                     # end by default, which painted a pale notch into the

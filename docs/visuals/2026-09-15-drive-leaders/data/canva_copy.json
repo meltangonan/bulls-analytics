@@ -1,0 +1,23 @@
+{
+  "title": "Bulls driving leaders",
+  "scope": "2013–14 to 2025–26 regular season · Chicago games only",
+  "source": "Source: NBA.com · Second Spectrum player tracking",
+  "handle": "@chicagobullsdata",
+  "slides": [
+    {
+      "title": "Most drives",
+      "subtitle": "Top 15 Bulls seasons by total drives; shot and pass rates show how drives ended"
+    },
+    {
+      "title": "Most points from drives",
+      "subtitle": "Top 15 Bulls seasons by drive points"
+    },
+    {
+      "title": "Most assists from drives",
+      "subtitle": "Top 15 Bulls seasons by drive assists; AST% is the percentage of drives that produced an assist"
+    }
+  ],
+  "definition": "A drive attacks the basket off the dribble in half-court offense.",
+  "points_note": "Drive points are NBA's reported points scored on drives. They do not consistently reconcile to 2×FGM + FTM, and drive 3PM is unavailable.",
+  "coverage_note": "NBA notes that player tracking is not available for every game."
+}

@@ -1,0 +1,29 @@
+{
+  "endpoint": "LeagueDashPtStats",
+  "measure": "Drives",
+  "player_source": "league-wide player response filtered to TEAM_ID 1610612741",
+  "season_type": "Regular Season",
+  "seasons": [
+    "2013-14",
+    "2014-15",
+    "2015-16",
+    "2016-17",
+    "2017-18",
+    "2018-19",
+    "2019-20",
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "retrieved_at": "2026-09-15T22:13:17.458606+00:00",
+  "row_grain": "one player-team-season aggregate",
+  "limitations": [
+    "No event rows, coordinates, drive direction, or shot linkage.",
+    "Drive 3PM is unavailable; DRIVE_PTS is retained as reported because historical component arithmetic does not always reconcile.",
+    "Tracking may be unavailable for some games.",
+    "Player sums can differ from team totals, especially around team stints; differences are retained in season_audit.csv."
+  ]
+}

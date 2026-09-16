@@ -1,0 +1,13 @@
+category,stat,total,rank,pool,partial_coverage
+Points,PTS,5280,26,439,False
+Field goals made,FGM,2181,22,439,False
+Field goal attempts,FGA,4408,24,439,False
+Free throws made,FTM,915,26,439,False
+Free throw attempts,FTA,1319,24,439,False
+Offensive rebounds,OREB,1336,6,401,True
+Defensive rebounds,DREB,2250,10,401,True
+Total rebounds,REB,3586,12,439,False
+Assists,AST,564,53,439,False
+Steals,STL,294,26,401,True
+Blocks,BLK,695,5,401,True
+Games played,GP,562,10,439,False

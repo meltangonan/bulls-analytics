@@ -1,0 +1,531 @@
+season,GAME_ID,GAME_DATE,ACTION_TYPE,SHOT_TYPE,SHOT_ZONE_BASIC,SHOT_DISTANCE,SHOT_MADE_FLAG
+2016-17,0021600015,20161027,Hook Shot,2PT Field Goal,Restricted Area,3,0
+2016-17,0021600015,20161027,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2016-17,0021600015,20161027,Driving Bank shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600015,20161027,Pullup Jump shot,2PT Field Goal,In The Paint (Non-RA),12,1
+2016-17,0021600015,20161027,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600015,20161027,Putback Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600015,20161027,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600015,20161027,Reverse Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600015,20161027,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600015,20161027,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2016-17,0021600015,20161027,Floating Jump shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2016-17,0021600015,20161027,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600015,20161027,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600030,20161029,Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,0
+2016-17,0021600030,20161029,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600030,20161029,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600030,20161029,Pullup Jump shot,2PT Field Goal,In The Paint (Non-RA),12,1
+2016-17,0021600030,20161029,Jump Shot,2PT Field Goal,Mid-Range,9,0
+2016-17,0021600030,20161029,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600030,20161029,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2016-17,0021600030,20161029,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600030,20161029,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600030,20161029,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2016-17,0021600030,20161029,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600043,20161031,Alley Oop Layup shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600043,20161031,Running Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600043,20161031,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2016-17,0021600043,20161031,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600043,20161031,Jump Shot,2PT Field Goal,Mid-Range,20,1
+2016-17,0021600043,20161031,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600043,20161031,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600043,20161031,Driving Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600043,20161031,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600061,20161102,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2016-17,0021600061,20161102,Tip Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600061,20161102,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600061,20161102,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600061,20161102,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600061,20161102,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600061,20161102,Step Back Jump shot,2PT Field Goal,In The Paint (Non-RA),8,1
+2016-17,0021600061,20161102,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600061,20161102,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600061,20161102,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600061,20161102,Tip Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600061,20161102,Tip Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600073,20161104,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2016-17,0021600073,20161104,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2016-17,0021600073,20161104,Driving Hook Shot,2PT Field Goal,Restricted Area,3,0
+2016-17,0021600073,20161104,Putback Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600073,20161104,Layup Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600073,20161104,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600073,20161104,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600083,20161105,Putback Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600083,20161105,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600083,20161105,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2016-17,0021600083,20161105,Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,0
+2016-17,0021600083,20161105,Pullup Jump shot,2PT Field Goal,Mid-Range,12,1
+2016-17,0021600083,20161105,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2016-17,0021600083,20161105,Putback Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600083,20161105,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600096,20161107,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2016-17,0021600096,20161107,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600096,20161107,Pullup Jump shot,2PT Field Goal,In The Paint (Non-RA),12,0
+2016-17,0021600096,20161107,Jump Shot,2PT Field Goal,In The Paint (Non-RA),9,1
+2016-17,0021600096,20161107,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600096,20161107,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2016-17,0021600096,20161107,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600096,20161107,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2016-17,0021600096,20161107,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600096,20161107,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600096,20161107,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600096,20161107,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600096,20161107,Tip Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600111,20161109,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),9,0
+2016-17,0021600111,20161109,Hook Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2016-17,0021600111,20161109,Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600111,20161109,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600111,20161109,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600111,20161109,Pullup Jump shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600111,20161109,Tip Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600111,20161109,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600111,20161109,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600111,20161109,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600111,20161109,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600111,20161109,Hook Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2016-17,0021600111,20161109,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600111,20161109,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600111,20161109,Floating Jump shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600118,20161110,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,0
+2016-17,0021600118,20161110,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2016-17,0021600118,20161110,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600118,20161110,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2016-17,0021600118,20161110,Turnaround Jump Shot,2PT Field Goal,Mid-Range,10,0
+2016-17,0021600118,20161110,Driving Hook Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600118,20161110,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2016-17,0021600133,20161112,Driving Layup Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600133,20161112,Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,0
+2016-17,0021600133,20161112,Putback Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600133,20161112,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600133,20161112,Putback Layup Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600133,20161112,Driving Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600133,20161112,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600133,20161112,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600133,20161112,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600133,20161112,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600156,20161115,Tip Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600156,20161115,Jump Shot,2PT Field Goal,Mid-Range,12,0
+2016-17,0021600156,20161115,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600156,20161115,Driving Finger Roll Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600156,20161115,Hook Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600156,20161115,Tip Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600156,20161115,Turnaround Jump Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600156,20161115,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600156,20161115,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600173,20161117,Reverse Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600173,20161117,Fadeaway Jump Shot,2PT Field Goal,Mid-Range,12,0
+2016-17,0021600173,20161117,Floating Jump shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2016-17,0021600173,20161117,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600173,20161117,Reverse Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600173,20161117,Hook Shot,2PT Field Goal,Restricted Area,3,0
+2016-17,0021600173,20161117,Tip Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600192,20161119,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600192,20161119,Running Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600192,20161119,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600192,20161119,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600192,20161119,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600192,20161119,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600192,20161119,Cutting Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600192,20161119,Jump Shot,2PT Field Goal,Mid-Range,12,0
+2016-17,0021600198,20161120,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2016-17,0021600198,20161120,Hook Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600198,20161120,Jump Shot,2PT Field Goal,In The Paint (Non-RA),15,0
+2016-17,0021600198,20161120,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600198,20161120,Hook Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600198,20161120,Running Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600198,20161120,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600198,20161120,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600198,20161120,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600198,20161120,Tip Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600198,20161120,Running Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600198,20161120,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2016-17,0021600210,20161122,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600210,20161122,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600210,20161122,Turnaround Jump Shot,2PT Field Goal,Mid-Range,11,1
+2016-17,0021600210,20161122,Putback Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600210,20161122,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600210,20161122,Putback Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600210,20161122,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600210,20161122,Running Jump Shot,2PT Field Goal,Mid-Range,11,0
+2016-17,0021600210,20161122,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2016-17,0021600210,20161122,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600210,20161122,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),9,0
+2016-17,0021600229,20161125,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2016-17,0021600229,20161125,Layup Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600229,20161125,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2016-17,0021600229,20161125,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600229,20161125,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600269,20161130,Turnaround Jump Shot,2PT Field Goal,Mid-Range,8,0
+2016-17,0021600269,20161130,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2016-17,0021600269,20161130,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600269,20161130,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600269,20161130,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600269,20161130,Putback Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600269,20161130,Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,0
+2016-17,0021600269,20161130,Jump Shot,2PT Field Goal,Mid-Range,12,0
+2016-17,0021600269,20161130,Jump Shot,2PT Field Goal,Mid-Range,13,0
+2016-17,0021600286,20161202,Driving Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600286,20161202,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600286,20161202,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2016-17,0021600286,20161202,Driving Reverse Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600286,20161202,Hook Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600286,20161202,Alley Oop Layup shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600286,20161202,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600286,20161202,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600286,20161202,Turnaround Hook Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600286,20161202,Driving Hook Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600286,20161202,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2016-17,0021600286,20161202,Tip Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600286,20161202,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600296,20161203,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600296,20161203,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600296,20161203,Driving Hook Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600296,20161203,Cutting Finger Roll Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600296,20161203,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600296,20161203,Turnaround Bank Hook Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600296,20161203,Turnaround Jump Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600296,20161203,Putback Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600308,20161205,Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,1
+2016-17,0021600308,20161205,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2016-17,0021600308,20161205,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2016-17,0021600308,20161205,Jump Shot,2PT Field Goal,Mid-Range,13,0
+2016-17,0021600308,20161205,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2016-17,0021600308,20161205,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600317,20161206,Reverse Layup Shot,2PT Field Goal,Restricted Area,3,0
+2016-17,0021600317,20161206,Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2016-17,0021600317,20161206,Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600317,20161206,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600317,20161206,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2016-17,0021600317,20161206,Reverse Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600317,20161206,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600317,20161206,Jump Shot,2PT Field Goal,Mid-Range,13,0
+2016-17,0021600317,20161206,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600317,20161206,Jump Shot,3PT Field Goal,Above the Break 3,26,0
+2016-17,0021600336,20161208,Floating Jump shot,2PT Field Goal,In The Paint (Non-RA),9,0
+2016-17,0021600336,20161208,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2016-17,0021600336,20161208,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2016-17,0021600336,20161208,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600336,20161208,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600336,20161208,Jump Shot,2PT Field Goal,Mid-Range,11,1
+2016-17,0021600336,20161208,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2016-17,0021600336,20161208,Jump Shot,2PT Field Goal,In The Paint (Non-RA),14,0
+2016-17,0021600336,20161208,Cutting Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600336,20161208,Jump Shot,2PT Field Goal,In The Paint (Non-RA),11,0
+2016-17,0021600336,20161208,Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600350,20161210,Turnaround Hook Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600350,20161210,Putback Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600350,20161210,Putback Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600350,20161210,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600350,20161210,Tip Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600350,20161210,Jump Shot,2PT Field Goal,Mid-Range,8,0
+2016-17,0021600350,20161210,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600350,20161210,Driving Floating Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2016-17,0021600350,20161210,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600350,20161210,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600350,20161210,Jump Shot,2PT Field Goal,Mid-Range,10,1
+2016-17,0021600370,20161213,Cutting Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600370,20161213,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2016-17,0021600370,20161213,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),10,0
+2016-17,0021600370,20161213,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600370,20161213,Tip Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600370,20161213,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600370,20161213,Jump Shot,2PT Field Goal,Mid-Range,12,0
+2016-17,0021600370,20161213,Pullup Jump shot,2PT Field Goal,Mid-Range,15,0
+2016-17,0021600370,20161213,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600370,20161213,Putback Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600370,20161213,Jump Shot,2PT Field Goal,In The Paint (Non-RA),13,0
+2016-17,0021600384,20161215,Reverse Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600384,20161215,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600384,20161215,Step Back Jump shot,2PT Field Goal,Mid-Range,10,0
+2016-17,0021600384,20161215,Running Reverse Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600384,20161215,Reverse Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600384,20161215,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600384,20161215,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600384,20161215,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600384,20161215,Jump Shot,2PT Field Goal,Mid-Range,11,1
+2016-17,0021600384,20161215,Reverse Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600384,20161215,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600393,20161216,Jump Shot,2PT Field Goal,Mid-Range,11,0
+2016-17,0021600393,20161216,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600393,20161216,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600393,20161216,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600393,20161216,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600393,20161216,Turnaround Hook Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600393,20161216,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600393,20161216,Tip Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600393,20161216,Putback Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600393,20161216,Driving Reverse Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600414,20161219,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2016-17,0021600414,20161219,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2016-17,0021600414,20161219,Jump Shot,2PT Field Goal,In The Paint (Non-RA),14,1
+2016-17,0021600414,20161219,Jump Shot,2PT Field Goal,In The Paint (Non-RA),13,1
+2016-17,0021600414,20161219,Turnaround Jump Shot,2PT Field Goal,Mid-Range,10,1
+2016-17,0021600414,20161219,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600414,20161219,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2016-17,0021600414,20161219,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2016-17,0021600432,20161221,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2016-17,0021600432,20161221,Jump Shot,2PT Field Goal,Mid-Range,11,1
+2016-17,0021600432,20161221,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600432,20161221,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600432,20161221,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600432,20161221,Driving Hook Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600432,20161221,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600432,20161221,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600432,20161221,Jump Shot,2PT Field Goal,In The Paint (Non-RA),10,1
+2016-17,0021600432,20161221,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600432,20161221,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600432,20161221,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2016-17,0021600442,20161223,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600442,20161223,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600442,20161223,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2016-17,0021600442,20161223,Alley Oop Layup shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600442,20161223,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600442,20161223,Jump Shot,2PT Field Goal,In The Paint (Non-RA),10,0
+2016-17,0021600442,20161223,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600442,20161223,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600442,20161223,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600442,20161223,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600458,20161225,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600458,20161225,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600458,20161225,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600458,20161225,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600458,20161225,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600458,20161225,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600458,20161225,Reverse Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600458,20161225,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600458,20161225,Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,1
+2016-17,0021600458,20161225,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600458,20161225,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2016-17,0021600458,20161225,Hook Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600458,20161225,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600465,20161226,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600465,20161226,Jump Shot,2PT Field Goal,Mid-Range,12,0
+2016-17,0021600465,20161226,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600465,20161226,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600465,20161226,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600465,20161226,Layup Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600465,20161226,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600465,20161226,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600465,20161226,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2016-17,0021600465,20161226,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2016-17,0021600465,20161226,Layup Shot,2PT Field Goal,Restricted Area,3,0
+2016-17,0021600465,20161226,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2016-17,0021600480,20161228,Jump Shot,2PT Field Goal,Mid-Range,11,0
+2016-17,0021600480,20161228,Tip Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600480,20161228,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600480,20161228,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),8,0
+2016-17,0021600480,20161228,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2016-17,0021600480,20161228,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600480,20161228,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600492,20161230,Pullup Jump shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600492,20161230,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600492,20161230,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600492,20161230,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600492,20161230,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600492,20161230,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2016-17,0021600492,20161230,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600492,20161230,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600492,20161230,Jump Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600492,20161230,Jump Shot,2PT Field Goal,Mid-Range,21,0
+2016-17,0021600492,20161230,Putback Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600492,20161230,Jump Shot,2PT Field Goal,Mid-Range,9,0
+2016-17,0021600503,20161231,Putback Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600503,20161231,Jump Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600503,20161231,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600503,20161231,Putback Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600503,20161231,Tip Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600503,20161231,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600503,20161231,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600503,20161231,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600503,20161231,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600503,20161231,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600503,20161231,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2016-17,0021600503,20161231,Jump Shot,2PT Field Goal,Mid-Range,14,1
+2016-17,0021600517,20170102,Jump Shot,2PT Field Goal,In The Paint (Non-RA),14,0
+2016-17,0021600517,20170102,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600517,20170102,Hook Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2016-17,0021600517,20170102,Putback Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600517,20170102,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2016-17,0021600517,20170102,Putback Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600517,20170102,Putback Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600517,20170102,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600532,20170104,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600532,20170104,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600532,20170104,Floating Jump shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600532,20170104,Turnaround Hook Shot,2PT Field Goal,Mid-Range,9,1
+2016-17,0021600532,20170104,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2016-17,0021600532,20170104,Turnaround Fadeaway shot,2PT Field Goal,Mid-Range,10,0
+2016-17,0021600532,20170104,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2016-17,0021600532,20170104,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600532,20170104,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600532,20170104,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2016-17,0021600554,20170107,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2016-17,0021600554,20170107,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600554,20170107,Driving Reverse Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600554,20170107,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2016-17,0021600554,20170107,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600554,20170107,Jump Shot,2PT Field Goal,In The Paint (Non-RA),10,0
+2016-17,0021600554,20170107,Putback Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600569,20170109,Hook Shot,2PT Field Goal,Mid-Range,9,1
+2016-17,0021600569,20170109,Jump Shot,2PT Field Goal,Mid-Range,10,0
+2016-17,0021600569,20170109,Jump Shot,2PT Field Goal,In The Paint (Non-RA),15,0
+2016-17,0021600569,20170109,Driving Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600569,20170109,Tip Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600569,20170109,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600569,20170109,Cutting Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600569,20170109,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600571,20170110,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600571,20170110,Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,0
+2016-17,0021600571,20170110,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600571,20170110,Jump Shot,3PT Field Goal,Left Corner 3,22,1
+2016-17,0021600571,20170110,Jump Shot,2PT Field Goal,Mid-Range,9,0
+2016-17,0021600571,20170110,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600571,20170110,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2016-17,0021600571,20170110,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2016-17,0021600571,20170110,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600571,20170110,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600571,20170110,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600587,20170112,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2016-17,0021600587,20170112,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600587,20170112,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600587,20170112,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600587,20170112,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600587,20170112,Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600587,20170112,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600587,20170112,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600602,20170114,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2016-17,0021600602,20170114,Jump Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600602,20170114,Jump Shot,3PT Field Goal,Left Corner 3,24,0
+2016-17,0021600602,20170114,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600602,20170114,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600602,20170114,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600602,20170114,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600602,20170114,Jump Shot,3PT Field Goal,Right Corner 3,23,0
+2016-17,0021600602,20170114,Pullup Jump shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600602,20170114,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2016-17,0021600602,20170114,Floating Jump shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600602,20170114,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2016-17,0021600602,20170114,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600602,20170114,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2016-17,0021600611,20170115,Jump Shot,2PT Field Goal,In The Paint (Non-RA),9,0
+2016-17,0021600611,20170115,Driving Reverse Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600611,20170115,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),10,0
+2016-17,0021600611,20170115,Floating Jump shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2016-17,0021600611,20170115,Step Back Jump shot,2PT Field Goal,Mid-Range,12,0
+2016-17,0021600611,20170115,Turnaround Bank shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600611,20170115,Jump Shot,3PT Field Goal,Right Corner 3,23,0
+2016-17,0021600611,20170115,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2016-17,0021600611,20170115,Pullup Jump shot,2PT Field Goal,In The Paint (Non-RA),10,1
+2016-17,0021600611,20170115,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600611,20170115,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600611,20170115,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600611,20170115,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600611,20170115,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600647,20170120,Jump Shot,3PT Field Goal,Right Corner 3,24,0
+2016-17,0021600647,20170120,Driving Reverse Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600647,20170120,Pullup Jump shot,2PT Field Goal,Mid-Range,14,0
+2016-17,0021600647,20170120,Tip Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600647,20170120,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600660,20170121,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600660,20170121,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600660,20170121,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2016-17,0021600660,20170121,Cutting Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600660,20170121,Jump Shot,2PT Field Goal,Mid-Range,20,1
+2016-17,0021600660,20170121,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2016-17,0021600660,20170121,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2016-17,0021600660,20170121,Turnaround Jump Shot,2PT Field Goal,Mid-Range,13,0
+2016-17,0021600660,20170121,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600677,20170124,Hook Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600677,20170124,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2016-17,0021600677,20170124,Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2016-17,0021600677,20170124,Jump Shot,3PT Field Goal,Left Corner 3,23,0
+2016-17,0021600677,20170124,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600677,20170124,Hook Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600683,20170125,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600683,20170125,Jump Shot,2PT Field Goal,Mid-Range,20,0
+2016-17,0021600683,20170125,Jump Bank Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600683,20170125,Putback Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600683,20170125,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2016-17,0021600683,20170125,Tip Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600683,20170125,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600683,20170125,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600683,20170125,Putback Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600683,20170125,Jump Shot,3PT Field Goal,Left Corner 3,23,0
+2016-17,0021600700,20170127,Step Back Jump shot,2PT Field Goal,Mid-Range,14,1
+2016-17,0021600700,20170127,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600700,20170127,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600700,20170127,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600700,20170127,Fadeaway Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2016-17,0021600700,20170127,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600740,20170201,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2016-17,0021600740,20170201,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600740,20170201,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600740,20170201,Jump Shot,3PT Field Goal,Left Corner 3,22,1
+2016-17,0021600740,20170201,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600749,20170203,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600749,20170203,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2016-17,0021600749,20170203,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600749,20170203,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600749,20170203,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2016-17,0021600749,20170203,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600749,20170203,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600749,20170203,Turnaround Hook Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600749,20170203,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600749,20170203,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600749,20170203,Jump Shot,3PT Field Goal,Left Corner 3,23,0
+2016-17,0021600749,20170203,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600749,20170203,Turnaround Jump Shot,2PT Field Goal,Mid-Range,12,0
+2016-17,0021600778,20170206,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600778,20170206,Layup Shot,2PT Field Goal,Restricted Area,3,0
+2016-17,0021600778,20170206,Hook Shot,2PT Field Goal,In The Paint (Non-RA),8,1
+2016-17,0021600778,20170206,Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600778,20170206,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600778,20170206,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600778,20170206,Jump Shot,3PT Field Goal,Left Corner 3,22,0
+2016-17,0021600778,20170206,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600778,20170206,Jump Shot,2PT Field Goal,Mid-Range,21,0
+2016-17,0021600778,20170206,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2016-17,0021600778,20170206,Layup Shot,2PT Field Goal,Restricted Area,3,1
+2016-17,0021600778,20170206,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600792,20170208,Jump Shot,2PT Field Goal,Mid-Range,11,0
+2016-17,0021600792,20170208,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600792,20170208,Turnaround Bank shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2016-17,0021600792,20170208,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600792,20170208,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600792,20170208,Tip Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600792,20170208,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600792,20170208,Putback Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600792,20170208,Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600792,20170208,Jump Shot,2PT Field Goal,Restricted Area,3,0
+2016-17,0021600807,20170210,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2016-17,0021600807,20170210,Cutting Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600807,20170210,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2016-17,0021600807,20170210,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600807,20170210,Reverse Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600807,20170210,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2016-17,0021600807,20170210,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600807,20170210,Jump Shot,2PT Field Goal,In The Paint (Non-RA),14,1
+2016-17,0021600807,20170210,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600807,20170210,Hook Shot,2PT Field Goal,Restricted Area,3,0
+2016-17,0021600816,20170212,Jump Shot,2PT Field Goal,Restricted Area,3,0
+2016-17,0021600816,20170212,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2016-17,0021600816,20170212,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600816,20170212,Putback Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600831,20170214,Jump Shot,2PT Field Goal,Mid-Range,14,1
+2016-17,0021600831,20170214,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600831,20170214,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600831,20170214,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2016-17,0021600831,20170214,Jump Shot,3PT Field Goal,Right Corner 3,22,0
+2016-17,0021600831,20170214,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600831,20170214,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600831,20170214,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2016-17,0021600831,20170214,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2016-17,0021600849,20170216,Floating Jump shot,2PT Field Goal,In The Paint (Non-RA),9,1
+2016-17,0021600849,20170216,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2016-17,0021600849,20170216,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600849,20170216,Turnaround Fadeaway shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2016-17,0021600849,20170216,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2016-17,0021600849,20170216,Cutting Layup Shot,2PT Field Goal,Restricted Area,2,0
+2016-17,0021600849,20170216,Hook Shot,2PT Field Goal,Restricted Area,1,1
+2016-17,0021600849,20170216,Dunk Shot,2PT Field Goal,Restricted Area,0,0

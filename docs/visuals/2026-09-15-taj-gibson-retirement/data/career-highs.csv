@@ -1,0 +1,9 @@
+category,value,times,game_date,opponent,in_playoffs,regular_season_value
+Points,32.0,1,2014-04-27,at WAS,True,26.0
+Rebounds,19.0,1,2013-02-02,at ATL,False,19.0
+Offensive rebounds,11.0,1,2010-02-17,at NYK,False,11.0
+Defensive rebounds,13.0,2,2013-02-02,at ATL,False,13.0
+Blocks,6.0,4,2016-01-05,vs MIL,False,6.0
+Assists,7.0,1,2016-02-24,vs WAS,False,7.0
+Steals,4.0,1,2016-03-21,vs SAC,False,4.0
+Plus-minus,35.0,2,2010-02-20,vs PHI,False,35.0

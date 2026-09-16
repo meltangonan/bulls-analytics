@@ -1,0 +1,13 @@
+window,zone,fga,fgm,fg,lg_fg,fg_rel,fga_share_pct,lg_fga_share_pct,subject_excluded_fga,league_excluded_fga,subject_source_conflict_fga,league_source_conflict_fga,pps,lg_pps,point_value,rated
+Bulls tenure,Restricted Area,2134,1319,0.6181,0.6072,1.0869,48.4120,32.3572,6,3478,0,87,1.2362,1.2144,2,True
+Bulls tenure,In The Paint (Non-RA),789,312,0.3954,0.3977,-0.2290,17.8993,14.5366,6,3478,0,87,0.7909,0.7955,2,True
+Bulls tenure,Left Baseline,431,165,0.3828,0.3977,-1.4856,9.7777,4.7321,6,3478,0,87,0.7657,0.7954,2,True
+Bulls tenure,Left Mid-Range,201,62,0.3085,0.3922,-8.3751,4.5599,6.2990,6,3478,0,87,0.6169,0.7844,2,True
+Bulls tenure,Center Mid-Range,227,92,0.4053,0.4031,0.2215,5.1497,5.5056,6,3478,0,87,0.8106,0.8061,2,True
+Bulls tenure,Right Mid-Range,245,94,0.3837,0.3928,-0.9087,5.5581,6.5497,6,3478,0,87,0.7673,0.7855,2,True
+Bulls tenure,Right Baseline,347,134,0.3862,0.3993,-1.3115,7.8721,4.3924,6,3478,0,87,0.7723,0.7986,2,True
+Bulls tenure,Left Corner 3,9,2,0.2222,0.3846,-16.2353,0.2042,3.4692,6,3478,0,87,0.6667,1.1537,3,False
+Bulls tenure,Left Wing 3,3,0,0.0000,0.3489,-34.8895,0.0681,6.5821,6,3478,0,87,0.0000,1.0467,3,False
+Bulls tenure,Top of Key 3,6,1,0.1667,0.3408,-17.4156,0.1361,5.7014,6,3478,0,87,0.5000,1.0225,3,False
+Bulls tenure,Right Wing 3,3,0,0.0000,0.3536,-35.3644,0.0681,6.4420,6,3478,0,87,0.0000,1.0609,3,False
+Bulls tenure,Right Corner 3,7,0,0.0000,0.3885,-38.8513,0.1588,3.2141,6,3478,0,87,0.0000,1.1652,3,False

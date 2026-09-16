@@ -1,0 +1,503 @@
+season,GAME_ID,GAME_DATE,ACTION_TYPE,SHOT_TYPE,SHOT_ZONE_BASIC,SHOT_DISTANCE,SHOT_MADE_FLAG
+2010-11,0021000011,20101027,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000011,20101027,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000011,20101027,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000011,20101027,Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000011,20101027,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000011,20101027,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2010-11,0021000011,20101027,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000011,20101027,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000011,20101027,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000011,20101027,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2010-11,0021000011,20101027,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000011,20101027,Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000035,20101030,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000035,20101030,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000035,20101030,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2010-11,0021000035,20101030,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2010-11,0021000035,20101030,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000035,20101030,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000035,20101030,Jump Bank Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000035,20101030,Slam Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000044,20101101,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000044,20101101,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000044,20101101,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2010-11,0021000044,20101101,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2010-11,0021000044,20101101,Jump Shot,2PT Field Goal,In The Paint (Non-RA),13,0
+2010-11,0021000044,20101101,Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,1
+2010-11,0021000044,20101101,Reverse Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000044,20101101,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000044,20101101,Slam Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000066,20101104,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2010-11,0021000066,20101104,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000066,20101104,Running Slam Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000066,20101104,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000066,20101104,Putback Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000066,20101104,Layup Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2010-11,0021000066,20101104,Reverse Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000066,20101104,Layup Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021000066,20101104,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000066,20101104,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000073,20101105,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000073,20101105,Jump Shot,2PT Field Goal,Mid-Range,21,1
+2010-11,0021000073,20101105,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2010-11,0021000073,20101105,Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,0
+2010-11,0021000073,20101105,Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000073,20101105,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000073,20101105,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2010-11,0021000073,20101105,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000073,20101105,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2010-11,0021000073,20101105,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2010-11,0021000073,20101105,Jump Shot,2PT Field Goal,Mid-Range,21,0
+2010-11,0021000073,20101105,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000073,20101105,Running Jump Shot,2PT Field Goal,In The Paint (Non-RA),9,1
+2010-11,0021000073,20101105,Jump Shot,2PT Field Goal,Mid-Range,20,0
+2010-11,0021000098,20101108,Jump Bank Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000098,20101108,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000098,20101108,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000098,20101108,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000098,20101108,Tip Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000098,20101108,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2010-11,0021000098,20101108,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2010-11,0021000098,20101108,Jump Shot,2PT Field Goal,Mid-Range,21,0
+2010-11,0021000098,20101108,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2010-11,0021000098,20101108,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000098,20101108,Jump Shot,2PT Field Goal,In The Paint (Non-RA),14,0
+2010-11,0021000098,20101108,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000119,20101111,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000119,20101111,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2010-11,0021000119,20101111,Jump Shot,2PT Field Goal,In The Paint (Non-RA),10,1
+2010-11,0021000119,20101111,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2010-11,0021000119,20101111,Reverse Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000119,20101111,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000119,20101111,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000119,20101111,Tip Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000119,20101111,Putback Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000119,20101111,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000134,20101113,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2010-11,0021000134,20101113,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2010-11,0021000134,20101113,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2010-11,0021000134,20101113,Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,1
+2010-11,0021000134,20101113,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2010-11,0021000134,20101113,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2010-11,0021000134,20101113,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2010-11,0021000134,20101113,Jump Shot,2PT Field Goal,Mid-Range,20,0
+2010-11,0021000156,20101116,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000156,20101116,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000156,20101116,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2010-11,0021000156,20101116,Jump Shot,2PT Field Goal,Mid-Range,11,0
+2010-11,0021000156,20101116,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2010-11,0021000156,20101116,Jump Shot,2PT Field Goal,Mid-Range,20,0
+2010-11,0021000156,20101116,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2010-11,0021000156,20101116,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000156,20101116,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2010-11,0021000166,20101117,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000166,20101117,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000166,20101117,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000166,20101117,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2010-11,0021000166,20101117,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000166,20101117,Turnaround Jump Shot,2PT Field Goal,Mid-Range,9,0
+2010-11,0021000166,20101117,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000179,20101119,Jump Bank Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2010-11,0021000179,20101119,Driving Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000179,20101119,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000179,20101119,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000179,20101119,Floating Jump shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2010-11,0021000179,20101119,Driving Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000179,20101119,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000179,20101119,Tip Shot,2PT Field Goal,Restricted Area,0,0
+2010-11,0021000179,20101119,Tip Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000179,20101119,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000179,20101119,Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,0
+2010-11,0021000179,20101119,Jump Shot,3PT Field Goal,Above the Break 3,25,1
+2010-11,0021000208,20101123,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000208,20101123,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2010-11,0021000208,20101123,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000208,20101123,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000208,20101123,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000208,20101123,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2010-11,0021000208,20101123,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000208,20101123,Jump Shot,3PT Field Goal,Right Corner 3,22,0
+2010-11,0021000208,20101123,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000208,20101123,Jump Shot,2PT Field Goal,Mid-Range,20,1
+2010-11,0021000208,20101123,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2010-11,0021000208,20101123,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000229,20101126,Jump Shot,2PT Field Goal,In The Paint (Non-RA),11,0
+2010-11,0021000229,20101126,Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,0
+2010-11,0021000229,20101126,Jump Shot,2PT Field Goal,Mid-Range,20,0
+2010-11,0021000241,20101127,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000241,20101127,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2010-11,0021000241,20101127,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2010-11,0021000241,20101127,Jump Shot,3PT Field Goal,Right Corner 3,23,0
+2010-11,0021000241,20101127,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000241,20101127,Dunk Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2010-11,0021000241,20101127,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2010-11,0021000241,20101127,Jump Shot,2PT Field Goal,Mid-Range,20,1
+2010-11,0021000241,20101127,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,1
+2010-11,0021000266,20101201,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000266,20101201,Jump Shot,2PT Field Goal,In The Paint (Non-RA),10,1
+2010-11,0021000266,20101201,Tip Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000266,20101201,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000266,20101201,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000266,20101201,Jump Shot,2PT Field Goal,Restricted Area,3,1
+2010-11,0021000266,20101201,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000266,20101201,Jump Shot,2PT Field Goal,Mid-Range,10,0
+2010-11,0021000280,20101203,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2010-11,0021000280,20101203,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000280,20101203,Jump Shot,2PT Field Goal,Mid-Range,13,0
+2010-11,0021000280,20101203,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000280,20101203,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000280,20101203,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000280,20101203,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2010-11,0021000280,20101203,Tip Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000290,20101204,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000290,20101204,Layup Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021000290,20101204,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000290,20101204,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2010-11,0021000290,20101204,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000290,20101204,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000305,20101206,Jump Shot,3PT Field Goal,Above the Break 3,35,0
+2010-11,0021000305,20101206,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000305,20101206,Layup Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021000305,20101206,Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000305,20101206,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000317,20101208,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2010-11,0021000317,20101208,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000317,20101208,Jump Shot,2PT Field Goal,Mid-Range,20,0
+2010-11,0021000317,20101208,Jump Shot,2PT Field Goal,Mid-Range,13,0
+2010-11,0021000333,20101210,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000333,20101210,Dunk Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000333,20101210,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000333,20101210,Jump Shot,2PT Field Goal,Mid-Range,21,0
+2010-11,0021000345,20101211,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000345,20101211,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000345,20101211,Jump Shot,2PT Field Goal,In The Paint (Non-RA),11,0
+2010-11,0021000345,20101211,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000345,20101211,Putback Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000345,20101211,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000345,20101211,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2010-11,0021000345,20101211,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2010-11,0021000345,20101211,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2010-11,0021000345,20101211,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000345,20101211,Tip Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000345,20101211,Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,0
+2010-11,0021000345,20101211,Putback Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000345,20101211,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000345,20101211,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2010-11,0021000345,20101211,Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000356,20101213,Slam Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000356,20101213,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000356,20101213,Running Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000356,20101213,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000356,20101213,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000370,20101215,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2010-11,0021000370,20101215,Driving Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000370,20101215,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000370,20101215,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000370,20101215,Jump Shot,3PT Field Goal,Above the Break 3,24,0
+2010-11,0021000370,20101215,Driving Dunk Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000370,20101215,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000370,20101215,Turnaround Hook Shot,2PT Field Goal,Mid-Range,8,0
+2010-11,0021000370,20101215,Slam Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000370,20101215,Driving Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000370,20101215,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000395,20101218,Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000433,20101225,Tip Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000433,20101225,Tip Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000440,20101226,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2010-11,0021000440,20101226,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2010-11,0021000440,20101226,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000440,20101226,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000440,20101226,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2010-11,0021000440,20101226,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000440,20101226,Jump Shot,2PT Field Goal,Mid-Range,9,0
+2010-11,0021000440,20101226,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2010-11,0021000458,20101228,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000458,20101228,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000458,20101228,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000458,20101228,Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,0
+2010-11,0021000458,20101228,Jump Shot,2PT Field Goal,In The Paint (Non-RA),13,0
+2010-11,0021000479,20101231,Dunk Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000479,20101231,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000479,20101231,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2010-11,0021000479,20101231,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000485,20110101,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000485,20110101,Jump Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021000485,20110101,Layup Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021000485,20110101,Layup Shot,2PT Field Goal,Restricted Area,3,1
+2010-11,0021000485,20110101,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000485,20110101,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2010-11,0021000507,20110104,Tip Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000507,20110104,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000507,20110104,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,1
+2010-11,0021000507,20110104,Jump Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021000507,20110104,Tip Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000507,20110104,Layup Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021000507,20110104,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000507,20110104,Putback Layup Shot,2PT Field Goal,Restricted Area,3,1
+2010-11,0021000507,20110104,Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000507,20110104,Jump Shot,2PT Field Goal,Mid-Range,20,1
+2010-11,0021000507,20110104,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2010-11,0021000513,20110105,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2010-11,0021000513,20110105,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000513,20110105,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000513,20110105,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000513,20110105,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000513,20110105,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000513,20110105,Jump Shot,3PT Field Goal,Backcourt,58,0
+2010-11,0021000526,20110107,Jump Shot,3PT Field Goal,Above the Break 3,25,0
+2010-11,0021000526,20110107,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000526,20110107,Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000526,20110107,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000526,20110107,Jump Shot,2PT Field Goal,In The Paint (Non-RA),9,0
+2010-11,0021000540,20110108,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000540,20110108,Jump Shot,2PT Field Goal,In The Paint (Non-RA),13,0
+2010-11,0021000540,20110108,Running Jump Shot,2PT Field Goal,Mid-Range,20,0
+2010-11,0021000540,20110108,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000553,20110110,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000553,20110110,Jump Shot,2PT Field Goal,Mid-Range,16,1
+2010-11,0021000553,20110110,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000553,20110110,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000553,20110110,Jump Shot,2PT Field Goal,In The Paint (Non-RA),9,1
+2010-11,0021000553,20110110,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000553,20110110,Hook Shot,2PT Field Goal,Restricted Area,3,1
+2010-11,0021000553,20110110,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000553,20110110,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000553,20110110,Tip Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000561,20110112,Jump Shot,2PT Field Goal,Mid-Range,20,0
+2010-11,0021000561,20110112,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2010-11,0021000561,20110112,Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,0
+2010-11,0021000561,20110112,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2010-11,0021000561,20110112,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000561,20110112,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000576,20110114,Putback Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000576,20110114,Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000576,20110114,Slam Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000576,20110114,Jump Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021000576,20110114,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000576,20110114,Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2010-11,0021000591,20110115,Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,0
+2010-11,0021000591,20110115,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000591,20110115,Jump Shot,2PT Field Goal,Mid-Range,21,1
+2010-11,0021000600,20110117,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000600,20110117,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2010-11,0021000600,20110117,Turnaround Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,1
+2010-11,0021000600,20110117,Turnaround Jump Shot,2PT Field Goal,Mid-Range,11,1
+2010-11,0021000600,20110117,Jump Shot,2PT Field Goal,Mid-Range,11,0
+2010-11,0021000600,20110117,Tip Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000600,20110117,Step Back Jump shot,2PT Field Goal,In The Paint (Non-RA),9,0
+2010-11,0021000600,20110117,Jump Shot,2PT Field Goal,Restricted Area,3,1
+2010-11,0021000600,20110117,Jump Shot,2PT Field Goal,Mid-Range,12,0
+2010-11,0021000600,20110117,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000600,20110117,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000612,20110118,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000612,20110118,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000612,20110118,Jump Shot,2PT Field Goal,Mid-Range,13,0
+2010-11,0021000612,20110118,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000612,20110118,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021000612,20110118,Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000612,20110118,Layup Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021000627,20110120,Jump Shot,2PT Field Goal,In The Paint (Non-RA),6,0
+2010-11,0021000627,20110120,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2010-11,0021000627,20110120,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000627,20110120,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000627,20110120,Jump Shot,2PT Field Goal,In The Paint (Non-RA),11,1
+2010-11,0021000627,20110120,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000627,20110120,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000645,20110122,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000645,20110122,Jump Shot,2PT Field Goal,In The Paint (Non-RA),14,0
+2010-11,0021000645,20110122,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2010-11,0021000645,20110122,Tip Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000645,20110122,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000645,20110122,Jump Shot,2PT Field Goal,Mid-Range,13,0
+2010-11,0021000658,20110124,Layup Shot,2PT Field Goal,Restricted Area,3,1
+2010-11,0021000658,20110124,Running Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000658,20110124,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000658,20110124,Turnaround Jump Shot,2PT Field Goal,Mid-Range,8,0
+2010-11,0021000658,20110124,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000687,20110128,Putback Dunk Shot,2PT Field Goal,Restricted Area,3,1
+2010-11,0021000687,20110128,Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000687,20110128,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000687,20110128,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000693,20110129,Jump Shot,2PT Field Goal,Mid-Range,19,1
+2010-11,0021000693,20110129,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000729,20110202,Slam Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000729,20110202,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000729,20110202,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000729,20110202,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000729,20110202,Jump Shot,2PT Field Goal,Mid-Range,20,0
+2010-11,0021000729,20110202,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000729,20110202,Jump Shot,2PT Field Goal,In The Paint (Non-RA),11,1
+2010-11,0021000729,20110202,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000753,20110205,Jump Hook Shot,2PT Field Goal,In The Paint (Non-RA),6,1
+2010-11,0021000753,20110205,Pullup Jump shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000753,20110205,Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000753,20110205,Driving Slam Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000763,20110207,Driving Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000763,20110207,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000763,20110207,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000780,20110209,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000780,20110209,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000780,20110209,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000780,20110209,Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000780,20110209,Jump Shot,3PT Field Goal,Backcourt,70,0
+2010-11,0021000780,20110209,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2010-11,0021000780,20110209,Jump Hook Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000800,20110212,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2010-11,0021000800,20110212,Turnaround Bank shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2010-11,0021000800,20110212,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000800,20110212,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000819,20110215,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000819,20110215,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000819,20110215,Jump Shot,2PT Field Goal,Mid-Range,11,0
+2010-11,0021000819,20110215,Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000819,20110215,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000819,20110215,Hook Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2010-11,0021000836,20110217,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000836,20110217,Jump Shot,2PT Field Goal,Mid-Range,9,0
+2010-11,0021000836,20110217,Putback Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000836,20110217,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000836,20110217,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000851,20110223,Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000851,20110223,Tip Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000851,20110223,Putback Dunk Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000851,20110223,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000851,20110223,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2010-11,0021000851,20110223,Dunk Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000851,20110223,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000851,20110223,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000859,20110224,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000859,20110224,Jump Shot,2PT Field Goal,Mid-Range,20,0
+2010-11,0021000859,20110224,Driving Layup Shot,2PT Field Goal,Restricted Area,0,0
+2010-11,0021000859,20110224,Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000859,20110224,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021000859,20110224,Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2010-11,0021000859,20110224,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021000859,20110224,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000877,20110226,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000877,20110226,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000877,20110226,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021000890,20110228,Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000890,20110228,Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000902,20110302,Running Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000902,20110302,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2010-11,0021000902,20110302,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000902,20110302,Jump Shot,2PT Field Goal,In The Paint (Non-RA),13,0
+2010-11,0021000902,20110302,Hook Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021000915,20110304,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000915,20110304,Jump Shot,2PT Field Goal,Mid-Range,18,1
+2010-11,0021000931,20110306,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2010-11,0021000931,20110306,Jump Shot,2PT Field Goal,In The Paint (Non-RA),13,1
+2010-11,0021000931,20110306,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021000943,20110307,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021000943,20110307,Layup Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021000943,20110307,Slam Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000953,20110309,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000953,20110309,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000953,20110309,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000953,20110309,Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000953,20110309,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021000953,20110309,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000953,20110309,Jump Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021000971,20110311,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021000971,20110311,Slam Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021000971,20110311,Jump Shot,2PT Field Goal,Mid-Range,13,0
+2010-11,0021000971,20110311,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021000971,20110311,Jump Shot,2PT Field Goal,Mid-Range,20,1
+2010-11,0021000971,20110311,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2010-11,0021000979,20110312,Turnaround Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2010-11,0021000979,20110312,Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021001001,20110315,Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001001,20110315,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021001001,20110315,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021001001,20110315,Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021001001,20110315,Reverse Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021001001,20110315,Jump Shot,2PT Field Goal,Mid-Range,12,0
+2010-11,0021001001,20110315,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021001001,20110315,Running Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001001,20110315,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021001001,20110315,Jump Shot,2PT Field Goal,In The Paint (Non-RA),13,1
+2010-11,0021001001,20110315,Dunk Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021001014,20110317,Jump Shot,2PT Field Goal,Mid-Range,17,1
+2010-11,0021001014,20110317,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021001014,20110317,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021001014,20110317,Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2010-11,0021001017,20110318,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021001017,20110318,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2010-11,0021001017,20110318,Jump Shot,2PT Field Goal,In The Paint (Non-RA),4,0
+2010-11,0021001017,20110318,Jump Shot,2PT Field Goal,In The Paint (Non-RA),9,0
+2010-11,0021001017,20110318,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001017,20110318,Putback Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001017,20110318,Layup Shot,2PT Field Goal,Restricted Area,0,0
+2010-11,0021001047,20110321,Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001047,20110321,Tip Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021001047,20110321,Jump Shot,2PT Field Goal,Mid-Range,18,0
+2010-11,0021001051,20110322,Driving Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001051,20110322,Putback Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001051,20110322,Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001051,20110322,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001051,20110322,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2010-11,0021001051,20110322,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021001074,20110325,Jump Shot,2PT Field Goal,In The Paint (Non-RA),9,1
+2010-11,0021001074,20110325,Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001074,20110325,Putback Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001084,20110326,Dunk Shot,2PT Field Goal,Restricted Area,0,0
+2010-11,0021001084,20110326,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001098,20110328,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021001098,20110328,Jump Shot,2PT Field Goal,Mid-Range,11,0
+2010-11,0021001098,20110328,Jump Shot,2PT Field Goal,Restricted Area,3,1
+2010-11,0021001098,20110328,Jump Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021001098,20110328,Tip Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001098,20110328,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021001113,20110330,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001113,20110330,Jump Shot,2PT Field Goal,In The Paint (Non-RA),13,1
+2010-11,0021001113,20110330,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2010-11,0021001113,20110330,Jump Shot,2PT Field Goal,In The Paint (Non-RA),11,0
+2010-11,0021001113,20110330,Reverse Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001113,20110330,Layup Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021001113,20110330,Slam Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001124,20110401,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001133,20110402,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2010-11,0021001133,20110402,Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,0
+2010-11,0021001133,20110402,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021001133,20110402,Jump Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021001133,20110402,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021001133,20110402,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2010-11,0021001133,20110402,Jump Shot,2PT Field Goal,Mid-Range,13,0
+2010-11,0021001133,20110402,Alley Oop Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001133,20110402,Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021001133,20110402,Tip Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001133,20110402,Jump Shot,2PT Field Goal,Mid-Range,15,1
+2010-11,0021001156,20110405,Jump Shot,2PT Field Goal,Mid-Range,14,1
+2010-11,0021001156,20110405,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001156,20110405,Jump Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021001156,20110405,Jump Shot,2PT Field Goal,Mid-Range,17,0
+2010-11,0021001156,20110405,Putback Dunk Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021001156,20110405,Jump Shot,2PT Field Goal,In The Paint (Non-RA),13,1
+2010-11,0021001156,20110405,Jump Shot,2PT Field Goal,In The Paint (Non-RA),5,0
+2010-11,0021001174,20110407,Hook Shot,2PT Field Goal,Restricted Area,3,1
+2010-11,0021001174,20110407,Jump Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021001174,20110407,Fadeaway Jump Shot,2PT Field Goal,In The Paint (Non-RA),12,1
+2010-11,0021001174,20110407,Jump Shot,2PT Field Goal,Restricted Area,3,0
+2010-11,0021001174,20110407,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001180,20110408,Jump Shot,2PT Field Goal,Mid-Range,14,0
+2010-11,0021001180,20110408,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021001180,20110408,Slam Dunk Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001180,20110408,Layup Shot,2PT Field Goal,Restricted Area,0,1
+2010-11,0021001180,20110408,Jump Shot,2PT Field Goal,Mid-Range,14,1
+2010-11,0021001180,20110408,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001180,20110408,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021001193,20110410,Jump Shot,2PT Field Goal,Mid-Range,19,0
+2010-11,0021001193,20110410,Driving Slam Dunk Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001193,20110410,Jump Shot,2PT Field Goal,Mid-Range,15,0
+2010-11,0021001193,20110410,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001193,20110410,Jump Shot,2PT Field Goal,In The Paint (Non-RA),8,0
+2010-11,0021001193,20110410,Pullup Jump shot,2PT Field Goal,Mid-Range,21,1
+2010-11,0021001213,20110412,Jump Shot,2PT Field Goal,In The Paint (Non-RA),7,0
+2010-11,0021001213,20110412,Slam Dunk Shot,2PT Field Goal,Restricted Area,1,0
+2010-11,0021001213,20110412,Layup Shot,2PT Field Goal,Restricted Area,1,1
+2010-11,0021001213,20110412,Layup Shot,2PT Field Goal,Restricted Area,2,0
+2010-11,0021001222,20110413,Layup Shot,2PT Field Goal,Restricted Area,2,1
+2010-11,0021001222,20110413,Hook Shot,2PT Field Goal,In The Paint (Non-RA),5,1
+2010-11,0021001222,20110413,Jump Shot,2PT Field Goal,Mid-Range,16,0
+2010-11,0021001222,20110413,Layup Shot,2PT Field Goal,Restricted Area,2,0

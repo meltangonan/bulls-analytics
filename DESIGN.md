@@ -17,7 +17,7 @@ Read only the reference for the chart being changed:
 
 - Export a **transparent** asset, large enough for its placed size. Use 300 DPI for publish assets;
   pixel dimensions, not DPI metadata alone, determine sharpness. Crop to the content and needed
-  breathing room; a chart asset does not need to fill a 4:5 page.
+  breathing room; a chart asset does not need to fill the page.
 - Charts carry axes, names, values, references, and data annotations. Canva carries titles,
   subtitles, editorial framing, sources, coverage, qualification, and authorship. A chart's own
   qualification legend stays with its marks when needed to interpret them.
@@ -58,7 +58,7 @@ cannot hide an outlier. A whole oblique row can signal a weaker qualification, e
 When the user supplies a visual reference, retain its structure and proportions while adapting the
 palette and chart typeface. Any larger departure should be deliberate.
 
-Judge the **downloaded Canva export at feed size**, usually 1080×1350. Check readable type, unclipped
+Judge the **downloaded Canva export at feed size** (1080×1440 or 1080×1350). Check readable type, unclipped
 marks, spacing, contrast, and visible source/coverage/qualification/authorship on each data-bearing
 page. Reuse an established chart family before inventing another layout. Update this guide or its
 specific reference together with the owning helper when a shared visual rule changes. Build,

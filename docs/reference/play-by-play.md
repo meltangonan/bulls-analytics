@@ -18,6 +18,15 @@ Two-man lineup minutes are unavailable before 2007-08 (`leaguedashlineups` retur
 since-2000 duo comparisons use games played together. Choose denominators against the oldest
 season in the coverage window.
 
+## Score columns
+
+`PlayByPlayV3` writes `"0"` into `scoreHome` and `scoreAway` on every non-scoring event rather than
+leaving them blank, so the raw columns alternate between the running score and zero. A team's score
+never decreases: take a running maximum of each column before computing a margin at any moment.
+A maximum deficit survives the raw columns by accident, because the false rows produce a zero margin;
+any score curve or per-moment margin does not. A final-score check missed it: the last row carried a
+real score in all 1,209 audited Bulls wins. Coverage begins in 1996-97, including playoffs and play-in.
+
 ## pbpstats and five-man units
 
 pbpstats parses NBA feeds; it is not an independent data provider. Use it for possession boundaries,

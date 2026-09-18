@@ -3,6 +3,19 @@
 Read the relevant heading when choosing or changing a fetch. These are observed endpoint contracts,
 not guarantees that providers never change; reconcile fresh results before publishing.
 
+## Choosing a source
+
+Prefer NBA.com. When no dashboard publishes the stat, NBA.com play-by-play can often still answer
+it: `and_one_leaders_data.py` counts and-1s from `PlayByPlayV3` because no endpoint reports them.
+Costing that out beats assuming it is impractical; one Bulls season is 82 requests, and every
+Chicago game since 1996-97 is about 2,400.
+
+Reach for another provider when it carries something NBA.com does not (Basketball Reference for
+BPM, hand-captured salary, pbpstats for parsed possessions), or for an audit. A provider's derived
+column is a parse of NBA events, not an independent measurement, so two of them agreeing is weaker
+evidence than it looks. Before publishing a number that rests on one, count a sample from the feed:
+the and-1 columns disagree with the logs they come from, differently in different eras.
+
 ## Coverage and team scope
 
 NBA clutch and starter/bench splits return empty frames before 1996-97 rather than reporting an

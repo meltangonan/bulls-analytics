@@ -1,0 +1,7 @@
+source,era,matched,exact,net,max_abs
+basketball-reference,1996-97..1999-00,54,52,-2,1
+basketball-reference,2000-01..2025-26,384,364,-6,1
+basketball-reference,all,438,416,-8,1
+pbpstats,1996-97..1999-00,54,41,19,5
+pbpstats,2000-01..2025-26,391,388,-2,2
+pbpstats,all,445,429,17,5

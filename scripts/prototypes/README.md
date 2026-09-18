@@ -16,6 +16,8 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `floater_season_leaders.py` | Bulls single-season floater FGM ranking since 2015–16, the first season carrying all three floating labels; same flags as `layup_season_leaders.py` | `tests/test_floater_season_leaders.py` |
 | `layup_season_leaders.py` | Bulls single-season layup FGM ranking since 2000–01; `--prepare` snapshots/audits, `--render` saved data | `tests/test_layup_season_leaders.py` |
 | `assist_age_ladder.py` | Assist counterpart to `scoring_age_ladder.py` | `tests/test_assist_age_ladder.py` |
+| `and_one_leaders_data.py` | Bulls and-1 season leaders since 1996-97; counts and-1s from NBA.com play-by-play. | `tests/test_and_one_leaders_data.py` |
+| `and_one_leaders_table.py` | Table-bar chart for the and-1 season leaders. | `tests/test_and_one_leaders_data.py` |
 | `assist_duos.py` | Bulls assist duos | `tests/test_assist_duos.py` |
 | `assist_duos_fetch.py` | Bulls assist duos | `tests/test_assist_duos.py` |
 | `scoring_duo_games_data.py` | Bulls top-15 combined-scoring duo games since 2000-01; duo selection, tie handling and overtime labels over `top_game_performances` source rows | `tests/test_scoring_duo_games.py` |

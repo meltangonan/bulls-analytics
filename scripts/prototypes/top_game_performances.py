@@ -114,6 +114,8 @@ class TableLayout:
     context_font_size: float
     value_font_size: float
     gmsc_font_size: float
+    name_rise: float = 12
+    context_drop: float = 17
 
 
 DECADE_LAYOUT = TableLayout(
@@ -536,6 +538,42 @@ def build_working_table(players: pd.DataFrame, teams: pd.DataFrame) -> pd.DataFr
     return joined
 
 
+REGULATION_TEAM_MINUTES = 240.0
+OVERTIME_TEAM_MINUTES = 25.0
+# Overtime steps sit 25 minutes apart, so snapping is unambiguous well before
+# half a step. The worst observed source drift is ~3 minutes, so 6 absorbs
+# rounding with headroom while still rejecting a total that sits between steps.
+MINUTES_TOLERANCE = 6.0
+# Deviation past this is still assigned a period count but is reported, so a
+# reader can see which games NBA.com under-reported.
+MINUTES_REPORT_THRESHOLD = 1.0
+
+
+def minute_reconciliation(table: pd.DataFrame) -> pd.DataFrame:
+    """Compare each game's logged team minutes against its period budget.
+
+    NBA.com's player game log carries no period count, but every box score
+    distributes a fixed team minute budget: 240 in regulation and 25 more per
+    overtime. Snapping to the nearest step recovers the period count; the
+    residual exposes games whose minutes do not add up.
+    """
+    totals = table.groupby("game_id")["minutes"].sum().rename("team_minutes")
+    periods = ((totals - REGULATION_TEAM_MINUTES) / OVERTIME_TEAM_MINUTES).round()
+    expected = REGULATION_TEAM_MINUTES + periods * OVERTIME_TEAM_MINUTES
+    frame = pd.concat([totals, periods.rename("overtime_periods").astype(int)], axis=1)
+    frame["expected_minutes"] = expected
+    frame["minutes_deviation"] = totals - expected
+    if (frame["overtime_periods"] < 0).any():
+        raise ValueError("A game logged fewer minutes than regulation allows.")
+    off = frame[frame["minutes_deviation"].abs() > MINUTES_TOLERANCE]
+    if not off.empty:
+        raise ValueError(
+            "Team minutes do not match a regulation/overtime budget: "
+            f"{off['team_minutes'].to_dict()}"
+        )
+    return frame
+
+
 def validate_working_table(
     table: pd.DataFrame,
     *,
@@ -742,6 +780,71 @@ def game_score_card(
     )
 
 
+def _turnover_values(row: pd.Series, show_free_throws: bool) -> tuple[str, ...]:
+    """Return one row's cells for the turnover table, optionally including FT."""
+    return (
+        (
+            str(int(row["points"])),
+            f"{int(row['fgm'])}–{int(row['fga'])}",
+            f"{int(row['fg3m'])}–{int(row['fg3a'])}",
+        )
+        + ((f"{int(row['ftm'])}–{int(row['fta'])}",) if show_free_throws else ())
+        + (
+            str(int(row["reb"])),
+            str(int(row["ast"])),
+            str(int(row["stl"])),
+            str(int(row["blk"])),
+            str(int(row["tov"])),
+            _signed_box_score_value(row["plus_minus"]),
+        )
+    )
+
+
+def identity_width(ax, rows: pd.DataFrame, layout: TableLayout) -> float:
+    """Measure the widest player name or game-context line, as the row loop draws them."""
+    def measure(text, size, weight=None):
+        artist = ax.text(0, 0, text, fontsize=size,
+                         fontproperties=helvetica(weight) if weight else helvetica())
+        width = rendered_width(ax, artist)
+        artist.remove()
+        return width
+
+    widest = 0.0
+    for _, row in rows.iterrows():
+        widest = max(widest, measure(_display_name(str(row["player"])), layout.name_font_size, "bold"))
+        date, matchup, result = _game_context_parts(row)
+        note = str(row.get("context_note", "") or "")
+        parts = [(date, None), (matchup, None)] + ([(note, None)] if note and note != "nan" else [])
+        context = sum(measure(text, layout.context_font_size, weight) + 9 for text, weight in parts)
+        widest = max(widest, context + measure(result, layout.context_font_size, "bold"))
+    return widest
+
+
+def equal_gap_bounds(ax, cells, *, left, right, header_size, value_size):
+    """Split [left, right] into columns as wide as their widest cell plus one shared gap.
+
+    ``cells[0]`` is the header row (bold); the rest are value rows. Each column gets half a
+    gap on both sides, so neighbouring columns always show the same white space.
+    """
+    widths = []
+    for column in zip(*cells):
+        column_widths = []
+        for index, text in enumerate(column):
+            artist = ax.text(0, 0, text, fontsize=header_size if index == 0 else value_size,
+                             fontproperties=helvetica("bold"))
+            column_widths.append(rendered_width(ax, artist))
+            artist.remove()
+        widths.append(max(column_widths))
+    gap = (right - left - sum(widths)) / len(widths)
+    if gap <= 0:
+        raise ValueError("Table columns do not fit in the available width.")
+    bounds, cursor = [], left
+    for width in widths:
+        bounds.append((cursor, cursor + width + gap))
+        cursor += width + gap
+    return tuple(bounds)
+
+
 def render_chart(
     rows: pd.DataFrame,
     date: str,
@@ -753,6 +856,7 @@ def render_chart(
     top_n: int = TOP_N,
     layout: TableLayout = DECADE_LAYOUT,
     final: bool = False,
+    emphasize_points: bool = False,
 ) -> Path:
     """Render one transparent decade table in the settled ladder grammar."""
     if len(rows) != top_n:
@@ -787,12 +891,29 @@ def render_chart(
             (1302, 1383), # TOV
             (1383, 1465), # +/-
         )
+        if not show_free_throws:
+            # Without FT, Game Score sits a fixed gap after the widest name or game line, and
+            # each stat column takes its widest header or value plus one shared visible gap,
+            # so neither long identities nor wide made-attempted cells crowd a neighbour.
+            gmsc_left = round(layout.name_x + identity_width(ax, rows, layout) + 22)
+            gmsc_right = gmsc_left + 108
+            stat_bounds = equal_gap_bounds(
+                ax,
+                [("PTS", "FG", "3PT", "REB", "AST", "STL", "BLK", "TOV", "+/-")]
+                + [_turnover_values(row, False) for _, row in rows.iterrows()],
+                left=gmsc_right + 18,
+                right=1465,
+                header_size=layout.header_font_size,
+                value_size=layout.value_font_size,
+            )
     else:
         gmsc_left, gmsc_right = GMSC_LEFT, GMSC_RIGHT
         stat_bounds = ()
 
     if show_turnovers:
         stat_labels = ("PTS", "FG", "3PT", "FT", "REB", "AST", "STL", "BLK", "TOV", "+/-")
+        if not show_free_throws:
+            stat_labels = tuple(label for label in stat_labels if label != "FT")
         headers = (
             (layout.name_x, "PLAYER", "left", theme.ink),
             ((gmsc_left + gmsc_right) / 2, "GMSC", "center", theme.accent),
@@ -898,7 +1019,7 @@ def render_chart(
         )
         name = ax.text(
             layout.name_x,
-            y + 12,
+            y + layout.name_rise,
             _display_name(str(row["player"])),
             ha="left",
             va="center",
@@ -913,7 +1034,7 @@ def render_chart(
             name.set_fontsize(layout.name_font_size * name_budget / width)
         context_date, context_matchup, context_result = _game_context_parts(row)
         context_font = helvetica()
-        context_y = y - 17
+        context_y = y - layout.context_drop
         date_artist = ax.text(
             layout.name_x,
             context_y,
@@ -938,10 +1059,25 @@ def render_chart(
             fontproperties=context_font,
             zorder=5,
         )
-        matchup_width = rendered_width(ax, matchup_artist)
+        result_x = matchup_x + rendered_width(ax, matchup_artist) + 9
+        # Mixed regular-season/playoff tables mark playoff rows, e.g. "(RD 1 GM1)".
+        context_note = str(row.get("context_note", "") or "")
+        if context_note and context_note != "nan":
+            note_artist = ax.text(
+                result_x,
+                context_y,
+                context_note,
+                ha="left",
+                va="center",
+                fontsize=layout.context_font_size,
+                color=theme.muted,
+                fontproperties=context_font,
+                zorder=5,
+            )
+            result_x += rendered_width(ax, note_artist) + 9
         result_color = "#3FAE63" if context_result == "W" else "#D64545"
         ax.text(
-            matchup_x + matchup_width + 9,
+            result_x,
             context_y,
             context_result,
             ha="left",
@@ -956,18 +1092,7 @@ def render_chart(
                 (left, right, value)
                 for (left, right), value in zip(
                     stat_bounds,
-                    (
-                        str(int(row["points"])),
-                        f"{int(row['fgm'])}–{int(row['fga'])}",
-                        f"{int(row['fg3m'])}–{int(row['fg3a'])}",
-                        f"{int(row['ftm'])}–{int(row['fta'])}",
-                        str(int(row["reb"])),
-                        str(int(row["ast"])),
-                        str(int(row["stl"])),
-                        str(int(row["blk"])),
-                        str(int(row["tov"])),
-                        _signed_box_score_value(row["plus_minus"]),
-                    ),
+                    _turnover_values(row, show_free_throws),
                 )
             )
         elif show_free_throws:
@@ -1002,7 +1127,7 @@ def render_chart(
                 (BLK_LEFT, BLK_RIGHT, str(int(row["blk"]))),
                 (PLUS_MINUS_LEFT, PLUS_MINUS_RIGHT, _signed_box_score_value(row["plus_minus"])),
             )
-        for left, right, value in values:
+        for column, (left, right, value) in enumerate(values):
             ax.text(
                 (left + right) / 2,
                 y,
@@ -1011,7 +1136,7 @@ def render_chart(
                 va="center",
                 fontsize=layout.value_font_size,
                 color=theme.ink,
-                fontproperties=helvetica(),
+                fontproperties=helvetica("bold") if emphasize_points and column == 0 else helvetica(),
                 zorder=4,
             )
 

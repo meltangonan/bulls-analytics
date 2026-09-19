@@ -25,9 +25,11 @@ import pandas as pd
 from scripts.prototypes.top_game_performances import (
     FIRST_SEASON_END_YEAR,
     LAST_SEASON_END_YEAR,
+    MINUTES_REPORT_THRESHOLD,
     build_working_table,
     display_season_label,
     fetch_bulls_history,
+    minute_reconciliation,
 )
 
 TOP_N = 15
@@ -40,42 +42,6 @@ DISPLAY_NAME_FIXES = {"Jimmy Butler III": "Jimmy Butler"}
 
 def display_name(full_name: str) -> str:
     return DISPLAY_NAME_FIXES.get(str(full_name), str(full_name))
-
-
-REGULATION_TEAM_MINUTES = 240.0
-OVERTIME_TEAM_MINUTES = 25.0
-# Overtime steps sit 25 minutes apart, so snapping is unambiguous well before
-# half a step. The worst observed source drift is ~3 minutes, so 6 absorbs
-# rounding with headroom while still rejecting a total that sits between steps.
-MINUTES_TOLERANCE = 6.0
-# Deviation past this is still assigned a period count but is reported, so a
-# reader can see which games NBA.com under-reported.
-MINUTES_REPORT_THRESHOLD = 1.0
-
-
-def minute_reconciliation(table: pd.DataFrame) -> pd.DataFrame:
-    """Compare each game's logged team minutes against its period budget.
-
-    NBA.com's player game log carries no period count, but every box score
-    distributes a fixed team minute budget: 240 in regulation and 25 more per
-    overtime. Snapping to the nearest step recovers the period count; the
-    residual exposes games whose minutes do not add up.
-    """
-    totals = table.groupby("game_id")["minutes"].sum().rename("team_minutes")
-    periods = ((totals - REGULATION_TEAM_MINUTES) / OVERTIME_TEAM_MINUTES).round()
-    expected = REGULATION_TEAM_MINUTES + periods * OVERTIME_TEAM_MINUTES
-    frame = pd.concat([totals, periods.rename("overtime_periods").astype(int)], axis=1)
-    frame["expected_minutes"] = expected
-    frame["minutes_deviation"] = totals - expected
-    if (frame["overtime_periods"] < 0).any():
-        raise ValueError("A game logged fewer minutes than regulation allows.")
-    off = frame[frame["minutes_deviation"].abs() > MINUTES_TOLERANCE]
-    if not off.empty:
-        raise ValueError(
-            "Team minutes do not match a regulation/overtime budget: "
-            f"{off['team_minutes'].to_dict()}"
-        )
-    return frame
 
 
 def overtime_periods(table: pd.DataFrame) -> pd.Series:

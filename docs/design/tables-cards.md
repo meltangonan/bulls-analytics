@@ -14,6 +14,7 @@ small helpers below; the post still chooses its columns, thresholds, dimensions,
 | Square portrait | `house.square_headshot_label` | [Lineup rORTG](../../scripts/prototypes/bulls_lineup_rortg.py) |
 | Top-anchored portrait | `house.top_anchored_headshot_label` | [Scoring leaps](../../scripts/prototypes/scoring_leaps.py), [three-point leaders](../../scripts/prototypes/three_point_leaders.py) |
 | One emphasized portrait | `craft.headshot_label` | Circular red-ringed crop; at most one payoff |
+| Player-game Game Score table | `top_game_performances.render_chart`; new tables pass `show_turnovers=True, show_free_throws=False, emphasize_points=True` | [Rookie games](../../scripts/prototypes/rookie_game_scores.py); [2025–26 top 15](../../scripts/prototypes/season_game_performances.py) keeps its earlier FT layout |
 
 Call signatures and geometry defaults live in the helpers. Choose the closest example and reuse its
 component, rather than importing a helper from another post or copying its drawing loop. Keep a
@@ -23,8 +24,25 @@ post-specific layout local until it has real repeat users.
 
 Use house black (`#242424`) for column headers and the top header rule; keep body separators
 quieter. Set bold headers and player names large enough for feed-size reading. For player-season
-rankings, omit rank numerals, keep the identity-to-hero gap compact, and give comparable supporting
-columns equal widths. Large portraits may overlap with explicit draw order and unclipped hair.
+rankings, omit rank numerals and keep the identity-to-hero gap compact. Size each supporting stat
+column to its widest header or value and give every column the **same visible gap**
+(`top_game_performances.equal_gap_bounds`); equal column widths crowd a narrow column such as PTS
+against a wide made-attempted one such as FG. Large portraits may overlap neighboring rows with
+explicit draw order and unclipped hair; prefer a larger overlapping face to a small contained one,
+then check that the longest name and context line (including a playoff note) still clear the hero column.
+
+In a player-game table, bold the PTS values: points is the supporting stat readers check first.
+Mark playoff rows in a mixed regular-season/playoff table with a muted `(RD 1 GM1)` note before the
+result, at the game line's own size. Place the hero column a fixed gap after the widest measured name
+or game line (`top_game_performances.identity_width`), not at a fixed x, and let the stat columns share
+what remains.
+
+Size row height from the Canva page, not the previous post: measure the table's placed height in a
+page export and grow rows until it fills the space between subtitle and footer. At the 1500-wide
+asset on a 1080×1440 page, fifteen rows fit at a 108-unit row height. Taller rows buy a larger player
+name and game line (21 and 12.5 there) with visible space between them, so descenders never touch the
+game line; keep headers, stat values and the hero number at their sizes, because width, not height,
+is the table's scarce dimension.
 
 Dense stat tables use clean alternating rows, sorted by the story metric. Do not color every column
 by magnitude. `craft.MAGNITUDE_CMAP` (`#F2EAE8` → `#CE1141` → `#7E0C2B`) remains available for a mark

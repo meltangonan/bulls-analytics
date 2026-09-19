@@ -1,0 +1,49 @@
+{
+  "seasons": "2000-01 through 2025-26",
+  "season_type": "Regular Season and Playoffs",
+  "bulls_player_games": {
+    "Playoffs": 967,
+    "Regular season": 21499
+  },
+  "team_games": {
+    "Regular season": 2089,
+    "Playoffs": 96
+  },
+  "playoff_seasons": [
+    2005,
+    2006,
+    2007,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2017,
+    2022
+  ],
+  "all_scores_reconciled": true,
+  "rookie_player_seasons": 76,
+  "rookie_player_games": {
+    "Playoffs": 119,
+    "Regular season": 3136
+  },
+  "first_season_disagreements": [
+    [
+      2006,
+      2450
+    ]
+  ],
+  "selected_games": 15,
+  "cutoff": [
+    24.700000000000006,
+    24.6
+  ],
+  "tiebreak": "Game Score, then points",
+  "prepared_at": "2026-09-18T18:52:10.478483-05:00",
+  "refreshed_this_run": false,
+  "rookie_source": "docs/visuals/2026-08-14-bulls-rookie-landscape/data/nba-bulls-rookies-since-2000.csv",
+  "player_source": "https://www.nba.com/stats/players/boxscores-traditional?Season=2025-26&SeasonType=Regular%20Season&TeamID=1610612741",
+  "team_source": "https://www.nba.com/stats/teams/boxscores?Season=2025-26&SeasonType=Regular%20Season&TeamID=1610612741"
+}

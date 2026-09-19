@@ -1,8 +1,13 @@
 # Provenance and saved artifacts
 
-Each data-bearing Notion post records a compact source trail as work lands:
+Each data-bearing Notion post records a compact source trail as work lands. Before a post moves to
+`Mocked`, check the trail against every point below for the final scope, and re-check it whenever
+the window, pool or season types change.
 
-1. Source URL/endpoint and exact call parameters, including scope and season type.
+1. Every endpoint used, named explicitly by its API URL (e.g.
+   `https://stats.nba.com/stats/playergamelogs`, reached through `nba_api` `PlayerGameLogs`); a web
+   page or client class alone does not identify it. Include the exact call parameters, scope,
+   season type and capture date.
 2. What one raw row represents, with a real example.
 3. Units and coordinate systems where relevant.
 4. Measured/provider fields versus our derived fields and their formulas.

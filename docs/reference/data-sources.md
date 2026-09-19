@@ -28,6 +28,14 @@ team abbreviation. Do not filter returned rows to `CHI` again. Ron Mercer's 2001
 row is stamped `IND`; Hinrich's 2015-16 Bulls totals are stamped `ATL`. Verify requested-team totals
 against independent totals. A stint may equal the full season if no relevant events followed a trade.
 
+NBA.com has three season types: `Regular Season`, `Playoffs` and `PlayIn`. A "regular season and
+playoffs" pool silently omits play-in games; fetch them or state the exclusion. Identify rookies with
+the explicit Rookie filter (`player_experience_nullable="Rookie"`), not `CommonAllPlayers.FROM_YEAR`:
+that field can be the draft year (Randy Holcomb: 2002, first game 2005-06) and counts 1976 ABA
+merger veterans as first-year players (Artis Gilmore). Game Score needs complete box scores, which
+NBA.com player logs have only from 1983-84; earlier games lack steals, blocks, turnovers or
+offensive rebounds.
+
 League-wide player totals can similarly be stamped with the last team; do not group them by team
 to reconstruct team totals. `three_point_leaders.py` uses that pool for the league distribution only
 and reconciles Chicago player 3PM/3PA to official team totals.

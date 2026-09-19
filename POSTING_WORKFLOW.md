@@ -63,8 +63,10 @@ When uncertain, keep the asset. Commit and push only with explicit user approval
 
 The live database currently supports `Not started`, `In progress`, `Parked`, `Mocked`, and `Posted`.
 Use `In progress` for an active build; `Parked` for a paused idea with a reason; `Mocked` after a
-verified approved design. On resuming a post, fetch its current state rather than treating this
-list as proof of that post's state. Keep the Canva edit URL in the `Canva` property.
+verified approved design and a Notion source trail that meets
+[provenance](docs/reference/provenance.md) for the final scope. On resuming a post, fetch its current
+state rather than treating this list as proof of that post's state. Keep the Canva edit URL in the
+`Canva` property.
 
 Only mark `Posted` after the user confirms it is live. Record the exact publication URL and date,
 then re-fetch to verify the update. Preserve the brief, provenance, final selection and meaningful

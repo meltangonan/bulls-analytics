@@ -1,0 +1,20 @@
+{
+  "endpoint": "LeagueDashPlayerStats",
+  "parameters": {
+    "season_type_all_star": "Regular Season",
+    "per_mode_detailed": "Totals",
+    "bulls_team_id": 1610612741
+  },
+  "window": "2000-01 through 2025-26",
+  "ranking": "blocks desc, blocks_per_game desc, older season",
+  "retrieved_at": "2026-09-19T23:12:04.838251+00:00",
+  "cutoff_blocks": 104,
+  "cutoff_ties_outside_table": [
+    {
+      "season": "2009-10",
+      "player_name": "Taj Gibson",
+      "blocks": 104,
+      "blocks_per_game": 1.2682926829268293
+    }
+  ]
+}

@@ -18,6 +18,9 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `assist_age_ladder.py` | Assist counterpart to `scoring_age_ladder.py` | `tests/test_assist_age_ladder.py` |
 | `and_one_leaders_data.py` | Bulls and-1 season leaders since 1996-97; counts and-1s from NBA.com play-by-play. | `tests/test_and_one_leaders_data.py` |
 | `and_one_leaders_table.py` | Table-bar chart for the and-1 season leaders. | `tests/test_and_one_leaders_data.py` |
+| `rim_protection_data.py` | Bulls rim defence since 2013-14 from NBA tracking: Chicago rows reconciled to the team every season, 2024-25 rebuilt from date halves because NBA.com's full-season aggregate is inflated about 17% league-wide, plus the per-100 landscape view and the top-15 table selection | `tests/test_rim_protection.py` |
+| `rim_protection_landscape.py` | Tipoff-style scatter of rim attempts defended against rim points saved, both per 100 possessions; qualified league seasons are grey, the Bulls seasons saving over a point per 100 are headshots on their point | `tests/test_rim_protection.py` |
+| `rim_protection_table.py` | Top-15 Bulls seasons by rim points saved as a table-bar hybrid; measures its own column widths for equal gaps and sizes rows to fill the Canva page (`--page 3:4` or `4:5`) | `tests/test_rim_protection.py` |
 | `assist_duos.py` | Bulls assist duos | `tests/test_assist_duos.py` |
 | `assist_duos_fetch.py` | Bulls assist duos | `tests/test_assist_duos.py` |
 | `scoring_duo_games_data.py` | Bulls top-15 combined-scoring duo games since 2000-01; duo selection, tie handling and overtime labels over `top_game_performances` source rows | `tests/test_scoring_duo_games.py` |

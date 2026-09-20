@@ -24,8 +24,10 @@ Run only affected checks, repeating them when relevant code or data changes.
 
 Deliver the inspected, saved graphic for user review and approval. Follow `POSTING_WORKFLOW.md`
 for the Canva handoff and recent-Posted page references; Canva work is a separate requested stage.
-Keep Notion's brief and provenance current. Use `Mocked` only after design approval;
-`Posted` requires live-publication confirmation. Record sources using `docs/reference/provenance.md`.
+Before handing off a completed draft, update and verify the Notion record using
+`POSTING_WORKFLOW.md`'s Notion record section and every applicable point in
+`docs/reference/provenance.md`. Do this without being asked. Use `Mocked` only after design approval
+and complete provenance; follow the same record section for publication closeout.
 
 Summarize the result, verification and meaningful limitations. Commit/push need explicit approval
 per `AGENTS.md`. Continue into promotion when requested; don't generate unsolicited posting copy.

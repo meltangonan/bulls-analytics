@@ -13,6 +13,9 @@ when importing its code. `./run_tests.sh` handles this automatically.
 - `bulls/graphics`: reusable chart elements, font helpers and court geometry.
 - `scripts/prototypes`: post entry points; find the relevant one in `scripts/prototypes/README.md`.
 
+Scope code searches to `bulls/`, `scripts/` and `tests/`; search a selected post's
+`docs/visuals/<slug>/` for its evidence. Broad repo searches also scan archived data and copy.
+
 Reuse an existing family before starting a new renderer. Keep post-specific selection and copy near
 the entry point; shared fetching, table cells, boxes and portraits belong in the modules above.
 For substantial data pulls, prepare display-ready values before rendering so a spacing change

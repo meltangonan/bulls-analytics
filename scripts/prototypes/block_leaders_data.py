@@ -159,7 +159,7 @@ def build(*, refresh: bool = False) -> pd.DataFrame:
         },
         "window": f"{FIRST_SEASON} through {LAST_SEASON}",
         "ranking": "blocks desc, blocks_per_game desc, older season",
-        "retrieved_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "cutoff_blocks": int(cutoff["blocks"]),
         "cutoff_ties_outside_table": tied_out[
             ["season", "player_name", "blocks", "blocks_per_game"]

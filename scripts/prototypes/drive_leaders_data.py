@@ -171,7 +171,17 @@ def main(refresh: bool = False) -> None:
         "player_source": "league-wide player response filtered to TEAM_ID 1610612741",
         "season_type": "Regular Season",
         "seasons": SEASONS,
-        "retrieved_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source_snapshots": [
+            {
+                "path": f"raw/{kind}_{season}.json",
+                "retrieved_at": json.loads(
+                    (DATA / "raw" / f"{kind}_{season}.json").read_text()
+                ).get("retrieved_at"),
+            }
+            for season in SEASONS
+            for kind in ("players", "teams")
+        ],
         "row_grain": "one player-team-season aggregate",
         "limitations": [
             "No event rows, coordinates, drive direction, or shot linkage.",

@@ -291,7 +291,7 @@ def main(refresh: bool = False) -> None:
         "selection_table": f"Top {TABLE_ROWS} Chicago seasons by total rim points saved, {TABLE_MIN_MINUTES}+ Chicago minutes",
         "selection_per_100": f"Qualified Chicago seasons saving more than {FEATURE_SAVED_PER_100} rim point per 100 possessions; rim points saved = 2 x (rim FGA x league rim FG% minus rim FGM allowed)",
         "possessions_source": "LeagueDashPlayerStats Advanced POSS (league-wide and TeamID-filtered)",
-        "retrieved_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "limitations": [
             "2024-25 full-season aggregates are inflated about 17% league-wide against NBA.com's own game-level data; 2024-25 is rebuilt from two date-bounded halves.",
             "Defended attempts relative to league restricted-area FGA drift from about 0.87 (2013-19) to 1.05 (2023-24) and 0.91 (2024-26), so raw per-game volume is not strictly comparable across eras. FG% is compared to each season's own league average.",

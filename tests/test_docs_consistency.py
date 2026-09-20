@@ -26,28 +26,55 @@ def _docs() -> list[Path]:
     return [ROOT / d for d in ROOT_DOCS] + sorted((ROOT / "docs/reference").glob("*.md")) + sorted((ROOT / "docs/design").glob("*.md")) + SKILLS
 
 
+def _reference_resolves(doc: Path, ref: str, *, clickable: bool) -> bool:
+    if "://" in ref or ref.startswith("#"):
+        return True
+    ref = ref.split("#", 1)[0]
+    if (doc.parent / ref).exists():
+        return True
+    # A clickable relative link must work from the containing document. Informal
+    # backtick references may use a repository path or a known bare filename.
+    if clickable:
+        return False
+    return (ref in EXTERNAL or (ROOT / ref).exists()
+            or ("/" not in ref and ref in SOURCE_BASENAMES))
+
+
 @pytest.mark.parametrize("doc", _docs(), ids=lambda p: str(p.relative_to(ROOT)))
 def test_file_references_resolve(doc: Path):
     """A doc that points at a file which no longer exists answers nothing."""
     missing = []
     for i, line in enumerate(doc.read_text().splitlines(), 1):
-        refs = [m.group(1) for m in FILE_REF.finditer(line)]
-        refs += re.findall(r"\]\(([^)]+)\)", line)
-        for ref in refs:
-            if "://" in ref or ref.startswith("#"):
-                continue
-            ref = ref.split("#", 1)[0]
-            if (doc.parent / ref).exists():
-                continue
-            if ref in EXTERNAL:
-                continue
-            direct = ROOT / ref
-            if direct.exists():
-                continue
-            if "/" not in ref and ref in SOURCE_BASENAMES:
-                continue
-            missing.append(f"{doc.relative_to(ROOT)}:{i} -> {ref}")
+        refs = [(m.group(1), False) for m in FILE_REF.finditer(line)]
+        refs += [(ref, True) for ref in re.findall(r"\]\(([^)]+)\)", line)]
+        for ref, clickable in refs:
+            if not _reference_resolves(doc, ref, clickable=clickable):
+                missing.append(f"{doc.relative_to(ROOT)}:{i} -> {ref}")
     assert not missing, "Documentation points at files that do not exist:\n  " + "\n  ".join(missing)
+
+
+@pytest.mark.parametrize("ref,clickable,expected", [
+    ("../README.md#usage", True, True),
+    ("README.md", True, False),
+    ("chart.py", True, False),
+    ("scripts/chart.py", True, False),
+    ("README.md", False, True),
+    ("chart.py", False, True),
+    ("scripts/chart.py", False, True),
+    ("missing.py", False, False),
+    ("#usage", True, True),
+    ("https://example.com/README.md", True, True),
+])
+def test_reference_resolution(tmp_path, monkeypatch, ref, clickable, expected):
+    """A filename elsewhere must not hide a broken link in a nested document."""
+    (tmp_path / "docs").mkdir()
+    (tmp_path / "scripts").mkdir()
+    (tmp_path / "README.md").touch()
+    (tmp_path / "scripts/chart.py").touch()
+    monkeypatch.setitem(_reference_resolves.__globals__, "ROOT", tmp_path)
+    monkeypatch.setitem(_reference_resolves.__globals__, "SOURCE_BASENAMES", {"chart.py"})
+    assert _reference_resolves(tmp_path / "docs/guide.md", ref,
+                               clickable=clickable) is expected
 
 
 def test_every_prototype_is_indexed():

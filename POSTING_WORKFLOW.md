@@ -61,6 +61,20 @@ When uncertain, keep the asset. Commit and push only with explicit user approval
 
 ## Notion record
 
+Update the existing page as decisions land, without waiting for a separate documentation request.
+Use these headings in order for a built post; ideas need only the sections supported so far:
+
+- **Brief and final scope** — the question, coverage, comparison, qualification and final selection.
+- **Results and decisions** — published findings, meaningful rejected approaches and why.
+- **Data provenance** — the complete source trail in `docs/reference/provenance.md`, including
+  the worked example, reconciliation, limitations and saved-file/renderer paths.
+- **Publication** — Canva edit link in the `Canva` property; body holds the confirmed publication
+  URL/date and approved caption, or notes that the user supplies it.
+
+Use real headings, code blocks for calls/formulas, and tables where they clarify results. Preserve
+useful existing detail when reorganizing; replace stale statements without reducing the page to a
+status summary. Add feedback/results when available; don't create empty placeholder sections.
+
 The live database currently supports `Not started`, `In progress`, `Parked`, `Mocked`, and `Posted`.
 Use `In progress` for an active build; `Parked` for a paused idea with a reason; `Mocked` after a
 verified approved design and a Notion source trail that meets
@@ -68,10 +82,11 @@ verified approved design and a Notion source trail that meets
 state rather than treating this list as proof of that post's state. Keep the Canva edit URL in the
 `Canva` property.
 
-Only mark `Posted` after the user confirms it is live. Record the exact publication URL and date,
-then re-fetch to verify the update. Preserve the brief, provenance, final selection and meaningful
-rejections in the same page. A dropped concept gets its reason there; don't delete unique work
-until its disposition is established.
+Only mark `Posted` after the user confirms it is live. At publication closeout, check the whole
+record against the final published scope and the provenance checklist, filling verified gaps.
+Re-fetch after substantive updates to verify the body, formatting, links and properties, not just
+the status. State any unresolved documentation gaps. A dropped concept gets its reason on the
+same page; don't delete unique work until its disposition is established.
 
 ## Caption, distribution and review
 

@@ -1,8 +1,9 @@
 # Provenance and saved artifacts
 
-Each data-bearing Notion post records a compact source trail as work lands. Before a post moves to
-`Mocked`, check the trail against every point below for the final scope, and re-check it whenever
-the window, pool or season types change.
+Each data-bearing Notion post records a source trail complete enough to explain and audit the
+published figures without reconstructing the conversation. Keep the explanation concise, but
+answer every applicable point below on the page; code/file links support rather than replace it.
+Check it before `Mocked`, at publication closeout, and whenever the scope changes.
 
 1. Every endpoint used, named explicitly by its API URL (e.g.
    `https://stats.nba.com/stats/playergamelogs`, reached through `nba_api` `PlayerGameLogs`); a web
@@ -12,7 +13,9 @@ the window, pool or season types change.
 3. Units and coordinate systems where relevant.
 4. Measured/provider fields versus our derived fields and their formulas.
 5. What the source cannot contain, plus exclusions, unavailable results and coverage gaps.
-6. One worked raw row traced into the published figure, and paths to the saved inputs/output.
+6. One worked example using actual saved values: raw row(s), filters, grouping/calculation, and
+   the resulting published value. For aggregates, show how the rows contribute to the total or
+   denominator. Include paths to the saved inputs, audit/output and producing script.
 
 Record reconciliations and cache/schema changes that affect the result. For example,
 `ShotChartDetail` contains field-goal attempts, not free throws; total PPG must use official

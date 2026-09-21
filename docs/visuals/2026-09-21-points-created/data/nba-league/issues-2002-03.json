@@ -1,0 +1,35 @@
+[
+  {
+    "game_id": "0020200235",
+    "action_number": 386,
+    "team_id": 1610612749,
+    "description": "Ollie  Layup (8 PTS) (Kukoc 5 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 389,
+    "expected": 4,
+    "observed": 5
+  },
+  {
+    "game_id": "0020200235",
+    "action_number": 389,
+    "team_id": 1610612749,
+    "description": "Gadzuric 11' Jump Shot (10 PTS) (Kukoc 6 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 389,
+    "expected": 5,
+    "observed": 6
+  },
+  {
+    "game_id": "0020200235",
+    "action_number": 476,
+    "team_id": 1610612749,
+    "description": "Gadzuric 7' Hook Shot (6 PTS) (Kukoc 4 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 389,
+    "expected": 6,
+    "observed": 4
+  }
+]

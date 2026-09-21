@@ -1,0 +1,35 @@
+[
+  {
+    "game_id": "0020600929",
+    "action_number": 284,
+    "team_id": 1610612750,
+    "description": "Garnett 16' Jump Shot (25 PTS) (Hudson 3 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1607,
+    "expected": 2,
+    "observed": 3
+  },
+  {
+    "game_id": "0020600929",
+    "action_number": 432,
+    "team_id": 1610612750,
+    "description": "Smith 16' Jump Shot (7 PTS) (Hudson 4 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1607,
+    "expected": 3,
+    "observed": 4
+  },
+  {
+    "game_id": "0020600929",
+    "action_number": 483,
+    "team_id": 1610612750,
+    "description": "Garnett Dunk (21 PTS) (Hudson 2 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1607,
+    "expected": 4,
+    "observed": 2
+  }
+]

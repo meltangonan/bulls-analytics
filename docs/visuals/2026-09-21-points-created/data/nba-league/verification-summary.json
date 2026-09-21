@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-09-21T18:59:10.682984+00:00",
+  "status": "complete",
+  "selected_rows": 15,
+  "method": "Exact competition ranks from NBA scoring and NBA play-by-play with conservative official box-score bounds for unexamined assists.",
+  "unresolved_comparisons": 0,
+  "rank_changes": [],
+  "proof_sha256": {
+    "rank-proof-2010-11.csv": "60d35d1755cf8b168fe068d8bd5de1cb2b50e6e2bdba57495e99208d64da35d0",
+    "rank-proof-1996-97.csv": "59e86f39799b427d04bda5c88b718c2f3f38217dde38d6ae2accca4d4504e9e1",
+    "rank-proof-2021-22.csv": "b86b0a8aa164ca65db76176bdfc7e31e77597fd8166f1c9170564947e8815bd0",
+    "rank-proof-1997-98.csv": "531cda68b2be0ff49460d003c2a540e0bd6337010225dcbfb8dec1fe06a40429",
+    "rank-proof-2023-24.csv": "3715d8e8582297bd5f24ae4dc7e6cc7c48247084c12a27cab7befe332592518c",
+    "rank-proof-2016-17.csv": "bd0e7b89479649a5d595392e457a3ba326b2f9065513d51aef6450fdff7ac448",
+    "rank-proof-2022-23.csv": "107fd99acb2f1758b9bd9e334c4f2f7167727a7a480c9b6d9f7456f8493faed5",
+    "rank-proof-2002-03.csv": "6a142bd4ecc2507a4adf4f1905e15cb9ed68f58bc92995c8ada9bf11a130da9a",
+    "rank-proof-2009-10.csv": "108989e00a64b8b25ad04621924b2cefb251bc3cbf983ebf1b9309d69c70e4fd",
+    "rank-proof-2008-09.csv": "1cf5e786d2e7f259c21566e03d0a6312d591246e0cc2fee53864344e7014ee04",
+    "rank-proof-2005-06.csv": "fde1b62ed48f84aaa45fa884060ef47fbea4c4ede6831e114bce763564f07438",
+    "rank-proof-2006-07.csv": "df7e3e6218c3a6a07f96f307050947d7792ae942027757167e8079f6aa893734"
+  }
+}

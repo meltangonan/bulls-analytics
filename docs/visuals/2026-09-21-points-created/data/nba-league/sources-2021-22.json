@@ -1,0 +1,1392 @@
+{
+  "generated_at": "2026-09-21T18:55:37.170569+00:00",
+  "season": "2021-22",
+  "games": [
+    {
+      "game_id": "0022100001",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100001.json.gz",
+      "retrieved_at": "2026-09-21T18:47:11.200962+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100004",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100004.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100022",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100022.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100029",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100029.json.gz",
+      "retrieved_at": "2026-09-21T18:47:35.884949+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100030",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100030.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100032",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100032.json.gz",
+      "retrieved_at": "2026-09-21T18:47:12.337798+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100035",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100035.json.gz",
+      "retrieved_at": "2026-09-21T18:47:27.909222+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100042",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100042.json.gz",
+      "retrieved_at": "2026-09-21T18:48:03.580829+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100044",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100044.json.gz",
+      "retrieved_at": "2026-09-21T18:48:04.272030+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100046",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100046.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100053",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100053.json.gz",
+      "retrieved_at": "2026-09-21T18:47:13.024200+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100060",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100060.json.gz",
+      "retrieved_at": "2026-09-21T18:48:11.390537+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100067",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100067.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100069",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100069.json.gz",
+      "retrieved_at": "2026-09-21T18:47:28.548154+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100083",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100083.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100085",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100085.json.gz",
+      "retrieved_at": "2026-09-21T18:47:36.437070+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100091",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100091.json.gz",
+      "retrieved_at": "2026-09-21T18:48:15.474624+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100092",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100092.json.gz",
+      "retrieved_at": "2026-09-21T18:47:37.000320+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100098",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100098.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100103",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100103.json.gz",
+      "retrieved_at": "2026-09-21T18:48:05.074019+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100111",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100111.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100113",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100113.json.gz",
+      "retrieved_at": "2026-09-21T18:47:46.019059+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100116",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100116.json.gz",
+      "retrieved_at": "2026-09-21T18:47:13.968099+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100124",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100124.json.gz",
+      "retrieved_at": "2026-09-21T18:47:59.326512+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100132",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100132.json.gz",
+      "retrieved_at": "2026-09-21T18:47:29.180034+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100135",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100135.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100148",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100148.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100154",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100154.json.gz",
+      "retrieved_at": "2026-09-21T18:47:47.022462+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100159",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100159.json.gz",
+      "retrieved_at": "2026-09-21T18:47:47.727811+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100161",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100161.json.gz",
+      "retrieved_at": "2026-09-21T18:48:07.979065+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100163",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100163.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100179",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100179.json.gz",
+      "retrieved_at": "2026-09-21T18:47:37.680200+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100181",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100181.json.gz",
+      "retrieved_at": "2026-09-21T18:47:02.629432+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100183",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100183.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100193",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100193.json.gz",
+      "retrieved_at": "2026-09-21T18:48:16.199604+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100196",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100196.json.gz",
+      "retrieved_at": "2026-09-21T18:47:29.939832+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100198",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100198.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100209",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100209.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100213",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100213.json.gz",
+      "retrieved_at": "2026-09-21T18:47:20.735734+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100223",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100223.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100234",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100234.json.gz",
+      "retrieved_at": "2026-09-21T18:48:11.941173+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100236",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100236.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100242",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100242.json.gz",
+      "retrieved_at": "2026-09-21T18:47:48.269811+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100250",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100250.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100253",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100253.json.gz",
+      "retrieved_at": "2026-09-21T18:46:56.497313+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100257",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100257.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100258",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100258.json.gz",
+      "retrieved_at": "2026-09-21T18:48:06.190624+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100260",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100260.json.gz",
+      "retrieved_at": "2026-09-21T18:47:49.191480+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100270",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100270.json.gz",
+      "retrieved_at": "2026-09-21T18:47:49.853497+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100271",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100271.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100277",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100277.json.gz",
+      "retrieved_at": "2026-09-21T18:47:50.954662+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100281",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100281.json.gz",
+      "retrieved_at": "2026-09-21T18:47:30.496103+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100283",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100283.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100288",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100288.json.gz",
+      "retrieved_at": "2026-09-21T18:48:12.573422+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100294",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100294.json.gz",
+      "retrieved_at": "2026-09-21T18:47:21.285190+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100296",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100296.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100297",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100297.json.gz",
+      "retrieved_at": "2026-09-21T18:47:31.122984+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100307",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100307.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100310",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100310.json.gz",
+      "retrieved_at": "2026-09-21T18:47:03.315673+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100324",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100324.json.gz",
+      "retrieved_at": "2026-09-21T18:47:03.967146+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100325",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100325.json.gz",
+      "retrieved_at": "2026-09-21T18:47:21.864726+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100328",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100328.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100332",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100332.json.gz",
+      "retrieved_at": "2026-09-21T18:47:31.671389+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100343",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100343.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100357",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100357.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100360",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100360.json.gz",
+      "retrieved_at": "2026-09-21T18:47:22.631473+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100363",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100363.json.gz",
+      "retrieved_at": "2026-09-21T18:47:00.449949+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100367",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100367.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100384",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100384.json.gz",
+      "retrieved_at": "2026-09-21T18:47:51.535334+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100394",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100394.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100398",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100398.json.gz",
+      "retrieved_at": "2026-09-21T18:47:52.293772+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100415",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100415.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100430",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100430.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100437",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100437.json.gz",
+      "retrieved_at": "2026-09-21T18:47:53.051665+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100448",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100448.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100459",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100459.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100461",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100461.json.gz",
+      "retrieved_at": "2026-09-21T18:47:53.747265+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100463",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100463.json.gz",
+      "retrieved_at": "2026-09-21T18:47:32.247209+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100472",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100472.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100487",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100487.json.gz",
+      "retrieved_at": "2026-09-21T18:47:32.822392+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100491",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100491.json.gz",
+      "retrieved_at": "2026-09-21T18:47:59.925260+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100499",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100499.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100502",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100502.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100507",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100507.json.gz",
+      "retrieved_at": "2026-09-21T18:47:14.924261+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100508",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100508.json.gz",
+      "retrieved_at": "2026-09-21T18:48:16.833775+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100519",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100519.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100525",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100525.json.gz",
+      "retrieved_at": "2026-09-21T18:48:00.550190+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100530",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100530.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100539",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100539.json.gz",
+      "retrieved_at": "2026-09-21T18:48:01.594715+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100541",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100541.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100542",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100542.json.gz",
+      "retrieved_at": "2026-09-21T18:47:33.422150+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100555",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100555.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100556",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100556.json.gz",
+      "retrieved_at": "2026-09-21T18:48:13.149531+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100558",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100558.json.gz",
+      "retrieved_at": "2026-09-21T18:47:15.684376+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100567",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100567.json.gz",
+      "retrieved_at": "2026-09-21T18:47:38.204420+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100570",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100570.json.gz",
+      "retrieved_at": "2026-09-21T18:47:39.057084+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100583",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100583.json.gz",
+      "retrieved_at": "2026-09-21T18:47:08.948061+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100585",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100585.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100602",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100602.json.gz",
+      "retrieved_at": "2026-09-21T18:46:57.690361+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100603",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100603.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100607",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100607.json.gz",
+      "retrieved_at": "2026-09-21T18:48:08.686614+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100623",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100623.json.gz",
+      "retrieved_at": "2026-09-21T18:47:54.349427+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100625",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100625.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100627",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100627.json.gz",
+      "retrieved_at": "2026-09-21T18:47:55.129218+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100637",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100637.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100644",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100644.json.gz",
+      "retrieved_at": "2026-09-21T18:47:16.302219+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100646",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100646.json.gz",
+      "retrieved_at": "2026-09-21T18:47:04.544337+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100647",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100647.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100657",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100657.json.gz",
+      "retrieved_at": "2026-09-21T18:46:59.050779+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100658",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100658.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100660",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100660.json.gz",
+      "retrieved_at": "2026-09-21T18:48:17.446356+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100673",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100673.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100674",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100674.json.gz",
+      "retrieved_at": "2026-09-21T18:48:13.817967+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100676",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100676.json.gz",
+      "retrieved_at": "2026-09-21T18:47:23.421129+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100690",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100690.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100691",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100691.json.gz",
+      "retrieved_at": "2026-09-21T18:47:01.506286+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100701",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100701.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100704",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100704.json.gz",
+      "retrieved_at": "2026-09-21T18:47:39.871542+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100706",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100706.json.gz",
+      "retrieved_at": "2026-09-21T18:47:34.089800+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100710",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100710.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100718",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100718.json.gz",
+      "retrieved_at": "2026-09-21T18:47:55.746430+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100723",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100723.json.gz",
+      "retrieved_at": "2026-09-21T18:47:34.689139+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100728",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100728.json.gz",
+      "retrieved_at": "2026-09-21T18:47:56.375087+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100730",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100730.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100732",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100732.json.gz",
+      "retrieved_at": "2026-09-21T18:47:16.873715+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100742",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100742.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100753",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100753.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100768",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100768.json.gz",
+      "retrieved_at": "2026-09-21T18:47:57.074670+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100769",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100769.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100772",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100772.json.gz",
+      "retrieved_at": "2026-09-21T18:48:02.250589+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100780",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100780.json.gz",
+      "retrieved_at": "2026-09-21T18:47:40.595359+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100789",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100789.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100791",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100791.json.gz",
+      "retrieved_at": "2026-09-21T18:47:17.419932+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100792",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100792.json.gz",
+      "retrieved_at": "2026-09-21T18:47:57.770468+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100800",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100800.json.gz",
+      "retrieved_at": "2026-09-21T18:48:18.338200+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100802",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100802.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100812",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100812.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100822",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100822.json.gz",
+      "retrieved_at": "2026-09-21T18:48:09.341206+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100826",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100826.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100836",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100836.json.gz",
+      "retrieved_at": "2026-09-21T18:48:10.219756+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100838",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100838.json.gz",
+      "retrieved_at": "2026-09-21T18:47:41.447759+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100841",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100841.json.gz",
+      "retrieved_at": "2026-09-21T18:47:18.109510+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100843",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100843.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100848",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100848.json.gz",
+      "retrieved_at": "2026-09-21T18:47:42.138103+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100852",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100852.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100861",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100861.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100878",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100878.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100885",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100885.json.gz",
+      "retrieved_at": "2026-09-21T18:47:24.067133+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100887",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100887.json.gz",
+      "retrieved_at": "2026-09-21T18:48:07.369342+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100891",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100891.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100899",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100899.json.gz",
+      "retrieved_at": "2026-09-21T18:47:24.707076+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100901",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100901.json.gz",
+      "retrieved_at": "2026-09-21T18:47:42.992036+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100909",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100909.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100912",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100912.json.gz",
+      "retrieved_at": "2026-09-21T18:47:09.802138+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100922",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100922.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100947",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100947.json.gz",
+      "retrieved_at": "2026-09-21T18:46:55.725160+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100949",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100949.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100955",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100955.json.gz",
+      "retrieved_at": "2026-09-21T18:47:06.324121+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100969",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100969.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100979",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100979.json.gz",
+      "retrieved_at": "2026-09-21T18:48:14.754399+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100982",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100982.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022100989",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100989.json.gz",
+      "retrieved_at": "2026-09-21T18:47:43.634325+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101006",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101006.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101022",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101022.json.gz",
+      "retrieved_at": "2026-09-21T18:47:58.390431+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101024",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101024.json.gz",
+      "retrieved_at": "2026-09-21T18:47:44.208798+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101026",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101026.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101034",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101034.json.gz",
+      "retrieved_at": "2026-09-21T18:47:05.135636+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101040",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101040.json.gz",
+      "retrieved_at": "2026-09-21T18:47:45.111184+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101041",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101041.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101046",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101046.json.gz",
+      "retrieved_at": "2026-09-21T18:46:59.640206+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101056",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101056.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101072",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101072.json.gz",
+      "retrieved_at": "2026-09-21T18:47:06.967975+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101076",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101076.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101082",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101082.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101098",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101098.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101107",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101107.json.gz",
+      "retrieved_at": "2026-09-21T18:47:35.261862+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101110",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101110.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101126",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101126.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101131",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101131.json.gz",
+      "retrieved_at": "2026-09-21T18:47:18.728770+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101132",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101132.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101136",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101136.json.gz",
+      "retrieved_at": "2026-09-21T18:46:58.373674+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101140",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101140.json.gz",
+      "retrieved_at": "2026-09-21T18:47:19.352578+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101149",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101149.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101161",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101161.json.gz",
+      "retrieved_at": "2026-09-21T18:47:05.776343+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101164",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101164.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101167",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101167.json.gz",
+      "retrieved_at": "2026-09-21T18:47:08.180800+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101170",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101170.json.gz",
+      "retrieved_at": "2026-09-21T18:48:02.939798+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101178",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101178.json.gz",
+      "retrieved_at": "2026-09-21T18:47:25.300639+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101181",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101181.json.gz",
+      "retrieved_at": "2026-09-21T18:47:25.976103+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101183",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101183.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101190",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101190.json.gz",
+      "retrieved_at": "2026-09-21T18:47:26.524981+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101193",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101193.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101197",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101197.json.gz",
+      "retrieved_at": "2026-09-21T18:47:19.935249+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101203",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101203.json.gz",
+      "retrieved_at": "2026-09-21T18:48:10.773901+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101208",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101208.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101214",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101214.json.gz",
+      "retrieved_at": "2026-09-21T18:47:27.302230+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101219",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101219.json.gz",
+      "retrieved_at": "2026-09-21T18:47:10.528301+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0022101224",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101224.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    }
+  ]
+}

@@ -1,0 +1,2267 @@
+{
+  "generated_at": "2026-09-21T18:55:23.203687+00:00",
+  "season": "2008-09",
+  "games": [
+    {
+      "game_id": "0020800002",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800002.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800005",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800005.json.gz",
+      "retrieved_at": "2026-09-21T18:42:17.737783+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800006",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800006.json.gz",
+      "retrieved_at": "2026-09-21T18:43:21.031238+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800008",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800008.json.gz",
+      "retrieved_at": "2026-09-21T18:43:09.843283+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800019",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800019.json.gz",
+      "retrieved_at": "2026-09-21T18:41:34.311793+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800022",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800022.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800026",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800026.json.gz",
+      "retrieved_at": "2026-09-21T18:42:02.179707+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800027",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800027.json.gz",
+      "retrieved_at": "2026-09-21T18:42:49.748316+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800030",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800030.json.gz",
+      "retrieved_at": "2026-09-21T18:42:50.290440+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800034",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800034.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800043",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800043.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800048",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800048.json.gz",
+      "retrieved_at": "2026-09-21T18:42:02.924346+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800049",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800049.json.gz",
+      "retrieved_at": "2026-09-21T18:43:10.416654+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800055",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800055.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800059",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800059.json.gz",
+      "retrieved_at": "2026-09-21T18:42:18.745929+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800069",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800069.json.gz",
+      "retrieved_at": "2026-09-21T18:42:50.823345+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800071",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800071.json.gz",
+      "retrieved_at": "2026-09-21T18:43:10.977088+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800073",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800073.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800076",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800076.json.gz",
+      "retrieved_at": "2026-09-21T18:43:21.580937+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800082",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800082.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800090",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800090.json.gz",
+      "retrieved_at": "2026-09-21T18:42:28.071442+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800098",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800098.json.gz",
+      "retrieved_at": "2026-09-21T18:42:28.815653+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800100",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800100.json.gz",
+      "retrieved_at": "2026-09-21T18:42:19.571837+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800101",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800101.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800106",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800106.json.gz",
+      "retrieved_at": "2026-09-21T18:41:35.019427+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800107",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800107.json.gz",
+      "retrieved_at": "2026-09-21T18:42:29.601268+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800109",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800109.json.gz",
+      "retrieved_at": "2026-09-21T18:43:11.583011+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800117",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800117.json.gz",
+      "retrieved_at": "2026-09-21T18:43:22.125094+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800118",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800118.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800123",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800123.json.gz",
+      "retrieved_at": "2026-09-21T18:41:35.590784+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800125",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800125.json.gz",
+      "retrieved_at": "2026-09-21T18:41:42.414938+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800133",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800133.json.gz",
+      "retrieved_at": "2026-09-21T18:41:36.112841+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800134",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800134.json.gz",
+      "retrieved_at": "2026-09-21T18:41:43.072864+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800137",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800137.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800142",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800142.json.gz",
+      "retrieved_at": "2026-09-21T18:43:39.334451+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800143",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800143.json.gz",
+      "retrieved_at": "2026-09-21T18:43:33.038843+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800153",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800153.json.gz",
+      "retrieved_at": "2026-09-21T18:43:12.201772+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800154",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800154.json.gz",
+      "retrieved_at": "2026-09-21T18:43:22.727841+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800156",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800156.json.gz",
+      "retrieved_at": "2026-09-21T18:43:33.586416+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800158",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800158.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800163",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800163.json.gz",
+      "retrieved_at": "2026-09-21T18:42:03.520475+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800166",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800166.json.gz",
+      "retrieved_at": "2026-09-21T18:43:23.373101+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800168",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800168.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800169",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800169.json.gz",
+      "retrieved_at": "2026-09-21T18:42:51.436316+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800172",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800172.json.gz",
+      "retrieved_at": "2026-09-21T18:41:17.591896+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800173",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800173.json.gz",
+      "retrieved_at": "2026-09-21T18:43:24.077712+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800182",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800182.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800183",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800183.json.gz",
+      "retrieved_at": "2026-09-21T18:42:37.509877+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800188",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800188.json.gz",
+      "retrieved_at": "2026-09-21T18:41:43.733714+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800194",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800194.json.gz",
+      "retrieved_at": "2026-09-21T18:42:20.282409+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800196",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800196.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800198",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800198.json.gz",
+      "retrieved_at": "2026-09-21T18:41:52.982437+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800202",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800202.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800213",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800213.json.gz",
+      "retrieved_at": "2026-09-21T18:43:12.811995+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800214",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800214.json.gz",
+      "retrieved_at": "2026-09-21T18:42:20.997662+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800218",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800218.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800222",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800222.json.gz",
+      "retrieved_at": "2026-09-21T18:42:22.062752+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800224",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800224.json.gz",
+      "retrieved_at": "2026-09-21T18:43:34.214989+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800226",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800226.json.gz",
+      "retrieved_at": "2026-09-21T18:41:23.149705+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800235",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800235.json.gz",
+      "retrieved_at": "2026-09-21T18:43:39.949787+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800236",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800236.json.gz",
+      "retrieved_at": "2026-09-21T18:41:36.697165+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800241",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800241.json.gz",
+      "retrieved_at": "2026-09-21T18:43:40.512852+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800248",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800248.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800249",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800249.json.gz",
+      "retrieved_at": "2026-09-21T18:42:30.239734+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800250",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800250.json.gz",
+      "retrieved_at": "2026-09-21T18:41:53.537083+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800252",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800252.json.gz",
+      "retrieved_at": "2026-09-21T18:41:44.441221+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800253",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800253.json.gz",
+      "retrieved_at": "2026-09-21T18:42:04.087009+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800258",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800258.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800261",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800261.json.gz",
+      "retrieved_at": "2026-09-21T18:41:45.220934+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800264",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800264.json.gz",
+      "retrieved_at": "2026-09-21T18:42:04.694750+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800269",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800269.json.gz",
+      "retrieved_at": "2026-09-21T18:41:23.735885+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800270",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800270.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800275",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800275.json.gz",
+      "retrieved_at": "2026-09-21T18:43:41.384940+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800281",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800281.json.gz",
+      "retrieved_at": "2026-09-21T18:43:13.733850+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800285",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800285.json.gz",
+      "retrieved_at": "2026-09-21T18:42:52.091808+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800289",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800289.json.gz",
+      "retrieved_at": "2026-09-21T18:41:10.116121+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800292",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800292.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800296",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800296.json.gz",
+      "retrieved_at": "2026-09-21T18:43:42.203299+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800299",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800299.json.gz",
+      "retrieved_at": "2026-09-21T18:43:14.304441+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800301",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800301.json.gz",
+      "retrieved_at": "2026-09-21T18:42:52.728521+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800308",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800308.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800315",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800315.json.gz",
+      "retrieved_at": "2026-09-21T18:41:54.067496+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800318",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800318.json.gz",
+      "retrieved_at": "2026-09-21T18:41:54.647458+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800320",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800320.json.gz",
+      "retrieved_at": "2026-09-21T18:43:24.693313+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800324",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800324.json.gz",
+      "retrieved_at": "2026-09-21T18:42:22.962919+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800326",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800326.json.gz",
+      "retrieved_at": "2026-09-21T18:42:23.643635+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800331",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800331.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800339",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800339.json.gz",
+      "retrieved_at": "2026-09-21T18:41:27.527323+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800340",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800340.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800341",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800341.json.gz",
+      "retrieved_at": "2026-09-21T18:43:42.957145+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800343",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800343.json.gz",
+      "retrieved_at": "2026-09-21T18:42:24.211103+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800354",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800354.json.gz",
+      "retrieved_at": "2026-09-21T18:42:53.485748+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800356",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800356.json.gz",
+      "retrieved_at": "2026-09-21T18:42:38.085659+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800360",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800360.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800363",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800363.json.gz",
+      "retrieved_at": "2026-09-21T18:43:25.408119+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800371",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800371.json.gz",
+      "retrieved_at": "2026-09-21T18:41:37.373469+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800373",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800373.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800380",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800380.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800381",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800381.json.gz",
+      "retrieved_at": "2026-09-21T18:41:08.909562+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800384",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800384.json.gz",
+      "retrieved_at": "2026-09-21T18:42:54.165949+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800389",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800389.json.gz",
+      "retrieved_at": "2026-09-21T18:42:54.728941+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800391",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800391.json.gz",
+      "retrieved_at": "2026-09-21T18:41:19.540337+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800393",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800393.json.gz",
+      "retrieved_at": "2026-09-21T18:41:45.958624+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800395",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800395.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800398",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800398.json.gz",
+      "retrieved_at": "2026-09-21T18:42:55.292654+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800407",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800407.json.gz",
+      "retrieved_at": "2026-09-21T18:42:30.915698+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800410",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800410.json.gz",
+      "retrieved_at": "2026-09-21T18:42:55.900175+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800413",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800413.json.gz",
+      "retrieved_at": "2026-09-21T18:41:28.181791+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800415",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800415.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800423",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800423.json.gz",
+      "retrieved_at": "2026-09-21T18:42:05.301095+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800426",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800426.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800432",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800432.json.gz",
+      "retrieved_at": "2026-09-21T18:41:13.968208+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800435",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800435.json.gz",
+      "retrieved_at": "2026-09-21T18:42:38.719442+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800436",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800436.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800437",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800437.json.gz",
+      "retrieved_at": "2026-09-21T18:42:56.514705+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800444",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800444.json.gz",
+      "retrieved_at": "2026-09-21T18:43:34.816359+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800450",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800450.json.gz",
+      "retrieved_at": "2026-09-21T18:43:35.547928+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800452",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800452.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800456",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800456.json.gz",
+      "retrieved_at": "2026-09-21T18:42:05.985129+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800458",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800458.json.gz",
+      "retrieved_at": "2026-09-21T18:42:57.047529+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800467",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800467.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800470",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800470.json.gz",
+      "retrieved_at": "2026-09-21T18:43:14.913765+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800472",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800472.json.gz",
+      "retrieved_at": "2026-09-21T18:41:28.877543+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800475",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800475.json.gz",
+      "retrieved_at": "2026-09-21T18:41:46.545666+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800476",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800476.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800477",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800477.json.gz",
+      "retrieved_at": "2026-09-21T18:41:37.881564+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800482",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800482.json.gz",
+      "retrieved_at": "2026-09-21T18:43:15.491331+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800483",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800483.json.gz",
+      "retrieved_at": "2026-09-21T18:41:12.140706+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800491",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800491.json.gz",
+      "retrieved_at": "2026-09-21T18:43:26.032678+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800492",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800492.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800493",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800493.json.gz",
+      "retrieved_at": "2026-09-21T18:42:24.784995+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800494",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800494.json.gz",
+      "retrieved_at": "2026-09-21T18:43:26.731506+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800502",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800502.json.gz",
+      "retrieved_at": "2026-09-21T18:41:47.244703+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800504",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800504.json.gz",
+      "retrieved_at": "2026-09-21T18:42:25.355435+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800506",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800506.json.gz",
+      "retrieved_at": "2026-09-21T18:41:47.885494+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800508",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800508.json.gz",
+      "retrieved_at": "2026-09-21T18:42:57.925901+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800511",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800511.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800518",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800518.json.gz",
+      "retrieved_at": "2026-09-21T18:42:06.553276+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800519",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800519.json.gz",
+      "retrieved_at": "2026-09-21T18:41:55.221728+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800521",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800521.json.gz",
+      "retrieved_at": "2026-09-21T18:43:27.307942+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800526",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800526.json.gz",
+      "retrieved_at": "2026-09-21T18:43:16.085383+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800529",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800529.json.gz",
+      "retrieved_at": "2026-09-21T18:41:14.543387+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800531",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800531.json.gz",
+      "retrieved_at": "2026-09-21T18:41:55.887859+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800534",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800534.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800535",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800535.json.gz",
+      "retrieved_at": "2026-09-21T18:41:48.487432+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800536",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800536.json.gz",
+      "retrieved_at": "2026-09-21T18:43:43.946014+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800540",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800540.json.gz",
+      "retrieved_at": "2026-09-21T18:42:25.862462+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800542",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800542.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800546",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800546.json.gz",
+      "retrieved_at": "2026-09-21T18:42:26.388301+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800547",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800547.json.gz",
+      "retrieved_at": "2026-09-21T18:41:29.477772+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800554",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800554.json.gz",
+      "retrieved_at": "2026-09-21T18:42:58.511936+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800557",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800557.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800559",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800559.json.gz",
+      "retrieved_at": "2026-09-21T18:42:39.334511+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800563",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800563.json.gz",
+      "retrieved_at": "2026-09-21T18:43:44.836545+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800567",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800567.json.gz",
+      "retrieved_at": "2026-09-21T18:42:07.319118+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800568",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800568.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800569",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800569.json.gz",
+      "retrieved_at": "2026-09-21T18:41:30.253690+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800577",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800577.json.gz",
+      "retrieved_at": "2026-09-21T18:41:56.510446+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800578",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800578.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800579",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800579.json.gz",
+      "retrieved_at": "2026-09-21T18:42:59.085753+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800581",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800581.json.gz",
+      "retrieved_at": "2026-09-21T18:41:49.025583+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800590",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800590.json.gz",
+      "retrieved_at": "2026-09-21T18:41:30.937480+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800593",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800593.json.gz",
+      "retrieved_at": "2026-09-21T18:41:38.569388+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800594",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800594.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800601",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800601.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800602",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800602.json.gz",
+      "retrieved_at": "2026-09-21T18:43:16.716402+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800604",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800604.json.gz",
+      "retrieved_at": "2026-09-21T18:42:39.895240+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800605",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800605.json.gz",
+      "retrieved_at": "2026-09-21T18:42:07.903786+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800613",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800613.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800615",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800615.json.gz",
+      "retrieved_at": "2026-09-21T18:42:59.725485+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800619",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800619.json.gz",
+      "retrieved_at": "2026-09-21T18:42:31.443882+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800636",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800636.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800637",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800637.json.gz",
+      "retrieved_at": "2026-09-21T18:43:27.900079+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800642",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800642.json.gz",
+      "retrieved_at": "2026-09-21T18:41:57.139459+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800646",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800646.json.gz",
+      "retrieved_at": "2026-09-21T18:41:49.552780+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800651",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800651.json.gz",
+      "retrieved_at": "2026-09-21T18:42:08.581527+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800652",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800652.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800666",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800666.json.gz",
+      "retrieved_at": "2026-09-21T18:42:40.634083+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800668",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800668.json.gz",
+      "retrieved_at": "2026-09-21T18:42:41.379707+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800670",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800670.json.gz",
+      "retrieved_at": "2026-09-21T18:41:39.126650+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800675",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800675.json.gz",
+      "retrieved_at": "2026-09-21T18:43:17.464034+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800677",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800677.json.gz",
+      "retrieved_at": "2026-09-21T18:43:00.402133+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800678",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800678.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800681",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800681.json.gz",
+      "retrieved_at": "2026-09-21T18:42:09.391100+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800683",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800683.json.gz",
+      "retrieved_at": "2026-09-21T18:41:57.707722+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800688",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800688.json.gz",
+      "retrieved_at": "2026-09-21T18:41:39.765419+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800691",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800691.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800693",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800693.json.gz",
+      "retrieved_at": "2026-09-21T18:41:18.234800+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800700",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800700.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800702",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800702.json.gz",
+      "retrieved_at": "2026-09-21T18:43:00.945935+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800712",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800712.json.gz",
+      "retrieved_at": "2026-09-21T18:42:42.059252+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800716",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800716.json.gz",
+      "retrieved_at": "2026-09-21T18:41:15.156011+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800717",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800717.json.gz",
+      "retrieved_at": "2026-09-21T18:41:18.953363+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800718",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800718.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800727",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800727.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800731",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800731.json.gz",
+      "retrieved_at": "2026-09-21T18:41:12.693424+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800732",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800732.json.gz",
+      "retrieved_at": "2026-09-21T18:42:10.192231+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800734",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800734.json.gz",
+      "retrieved_at": "2026-09-21T18:43:01.613176+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800745",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800745.json.gz",
+      "retrieved_at": "2026-09-21T18:41:31.614584+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800747",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800747.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800750",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800750.json.gz",
+      "retrieved_at": "2026-09-21T18:41:32.443380+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800752",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800752.json.gz",
+      "retrieved_at": "2026-09-21T18:42:26.961359+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800760",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800760.json.gz",
+      "retrieved_at": "2026-09-21T18:43:02.182251+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800761",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800761.json.gz",
+      "retrieved_at": "2026-09-21T18:41:58.376183+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800766",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800766.json.gz",
+      "retrieved_at": "2026-09-21T18:43:36.247847+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800769",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800769.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800773",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800773.json.gz",
+      "retrieved_at": "2026-09-21T18:42:42.616306+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800775",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800775.json.gz",
+      "retrieved_at": "2026-09-21T18:43:45.743998+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800776",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800776.json.gz",
+      "retrieved_at": "2026-09-21T18:42:11.388015+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800780",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800780.json.gz",
+      "retrieved_at": "2026-09-21T18:42:27.507420+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800785",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800785.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800786",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800786.json.gz",
+      "retrieved_at": "2026-09-21T18:41:10.988425+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800788",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800788.json.gz",
+      "retrieved_at": "2026-09-21T18:41:40.302965+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800801",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800801.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800803",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800803.json.gz",
+      "retrieved_at": "2026-09-21T18:42:12.477847+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800804",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800804.json.gz",
+      "retrieved_at": "2026-09-21T18:41:13.306332+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800815",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800815.json.gz",
+      "retrieved_at": "2026-09-21T18:41:24.419971+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800816",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800816.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800827",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800827.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800829",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800829.json.gz",
+      "retrieved_at": "2026-09-21T18:42:32.006957+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800836",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800836.json.gz",
+      "retrieved_at": "2026-09-21T18:41:09.525771+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800838",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800838.json.gz",
+      "retrieved_at": "2026-09-21T18:41:58.930432+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800845",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800845.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800849",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800849.json.gz",
+      "retrieved_at": "2026-09-21T18:42:43.605271+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800851",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800851.json.gz",
+      "retrieved_at": "2026-09-21T18:41:20.122298+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800852",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800852.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800858",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800858.json.gz",
+      "retrieved_at": "2026-09-21T18:43:18.005729+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800859",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800859.json.gz",
+      "retrieved_at": "2026-09-21T18:42:44.271730+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800865",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800865.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800867",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800867.json.gz",
+      "retrieved_at": "2026-09-21T18:41:25.085233+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800871",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800871.json.gz",
+      "retrieved_at": "2026-09-21T18:43:28.507682+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800875",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800875.json.gz",
+      "retrieved_at": "2026-09-21T18:42:44.848915+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800879",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800879.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800886",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800886.json.gz",
+      "retrieved_at": "2026-09-21T18:41:25.721131+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800887",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800887.json.gz",
+      "retrieved_at": "2026-09-21T18:43:18.563721+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800890",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800890.json.gz",
+      "retrieved_at": "2026-09-21T18:43:36.781658+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800895",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800895.json.gz",
+      "retrieved_at": "2026-09-21T18:43:29.243341+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800897",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800897.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800900",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800900.json.gz",
+      "retrieved_at": "2026-09-21T18:41:26.297429+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800907",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800907.json.gz",
+      "retrieved_at": "2026-09-21T18:41:16.897414+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800910",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800910.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800911",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800911.json.gz",
+      "retrieved_at": "2026-09-21T18:43:37.366166+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800916",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800916.json.gz",
+      "retrieved_at": "2026-09-21T18:42:45.776958+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800917",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800917.json.gz",
+      "retrieved_at": "2026-09-21T18:42:32.564569+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800918",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800918.json.gz",
+      "retrieved_at": "2026-09-21T18:41:59.578246+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800920",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800920.json.gz",
+      "retrieved_at": "2026-09-21T18:42:33.080809+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800922",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800922.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800929",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800929.json.gz",
+      "retrieved_at": "2026-09-21T18:42:33.686339+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800930",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800930.json.gz",
+      "retrieved_at": "2026-09-21T18:42:13.144181+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800932",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800932.json.gz",
+      "retrieved_at": "2026-09-21T18:43:19.289149+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800939",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800939.json.gz",
+      "retrieved_at": "2026-09-21T18:41:50.110514+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800942",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800942.json.gz",
+      "retrieved_at": "2026-09-21T18:43:02.768554+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800945",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800945.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800947",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800947.json.gz",
+      "retrieved_at": "2026-09-21T18:43:37.996041+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800956",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800956.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800957",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800957.json.gz",
+      "retrieved_at": "2026-09-21T18:41:50.689987+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800963",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800963.json.gz",
+      "retrieved_at": "2026-09-21T18:42:46.795601+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800965",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800965.json.gz",
+      "retrieved_at": "2026-09-21T18:41:51.288123+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800968",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800968.json.gz",
+      "retrieved_at": "2026-09-21T18:43:03.344813+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800969",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800969.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800973",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800973.json.gz",
+      "retrieved_at": "2026-09-21T18:43:04.006824+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800981",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800981.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800983",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800983.json.gz",
+      "retrieved_at": "2026-09-21T18:42:47.358002+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800988",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800988.json.gz",
+      "retrieved_at": "2026-09-21T18:43:04.722479+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800989",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800989.json.gz",
+      "retrieved_at": "2026-09-21T18:41:33.076583+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800995",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800995.json.gz",
+      "retrieved_at": "2026-09-21T18:43:29.914280+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020800996",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020800996.json.gz",
+      "retrieved_at": "2026-09-21T18:43:05.295563+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801000",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801000.json.gz",
+      "retrieved_at": "2026-09-21T18:42:00.158325+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801003",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801003.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801009",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801009.json.gz",
+      "retrieved_at": "2026-09-21T18:42:34.234480+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801013",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801013.json.gz",
+      "retrieved_at": "2026-09-21T18:42:13.953767+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801016",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801016.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801018",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801018.json.gz",
+      "retrieved_at": "2026-09-21T18:41:41.206550+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801025",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801025.json.gz",
+      "retrieved_at": "2026-09-21T18:43:05.941185+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801031",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801031.json.gz",
+      "retrieved_at": "2026-09-21T18:42:14.619617+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801032",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801032.json.gz",
+      "retrieved_at": "2026-09-21T18:43:30.617667+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801037",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801037.json.gz",
+      "retrieved_at": "2026-09-21T18:42:34.820560+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801038",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801038.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801047",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801047.json.gz",
+      "retrieved_at": "2026-09-21T18:43:06.565270+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801049",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801049.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801053",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801053.json.gz",
+      "retrieved_at": "2026-09-21T18:43:07.272533+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801055",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801055.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801064",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801064.json.gz",
+      "retrieved_at": "2026-09-21T18:43:07.873163+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801066",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801066.json.gz",
+      "retrieved_at": "2026-09-21T18:43:31.168956+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801068",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801068.json.gz",
+      "retrieved_at": "2026-09-21T18:43:38.620128+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801071",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801071.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801074",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801074.json.gz",
+      "retrieved_at": "2026-09-21T18:43:08.458953+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801078",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801078.json.gz",
+      "retrieved_at": "2026-09-21T18:41:26.930661+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801080",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801080.json.gz",
+      "retrieved_at": "2026-09-21T18:42:35.509762+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801083",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801083.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801088",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801088.json.gz",
+      "retrieved_at": "2026-09-21T18:43:31.772817+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801094",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801094.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801096",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801096.json.gz",
+      "retrieved_at": "2026-09-21T18:42:15.267210+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801106",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801106.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801107",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801107.json.gz",
+      "retrieved_at": "2026-09-21T18:41:20.885864+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801110",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801110.json.gz",
+      "retrieved_at": "2026-09-21T18:43:19.867118+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801114",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801114.json.gz",
+      "retrieved_at": "2026-09-21T18:41:15.761275+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801115",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801115.json.gz",
+      "retrieved_at": "2026-09-21T18:41:21.566190+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801122",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801122.json.gz",
+      "retrieved_at": "2026-09-21T18:41:51.934951+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801125",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801125.json.gz",
+      "retrieved_at": "2026-09-21T18:42:36.107631+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801136",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801136.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801137",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801137.json.gz",
+      "retrieved_at": "2026-09-21T18:42:00.855365+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801141",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801141.json.gz",
+      "retrieved_at": "2026-09-21T18:42:47.967151+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801143",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801143.json.gz",
+      "retrieved_at": "2026-09-21T18:41:11.591081+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801147",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801147.json.gz",
+      "retrieved_at": "2026-09-21T18:43:20.456689+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801150",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801150.json.gz",
+      "retrieved_at": "2026-09-21T18:41:16.355934+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801153",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801153.json.gz",
+      "retrieved_at": "2026-09-21T18:41:33.667042+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801158",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801158.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801165",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801165.json.gz",
+      "retrieved_at": "2026-09-21T18:41:41.882976+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801170",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801170.json.gz",
+      "retrieved_at": "2026-09-21T18:42:48.556261+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801173",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801173.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801175",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801175.json.gz",
+      "retrieved_at": "2026-09-21T18:43:09.127764+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801179",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801179.json.gz",
+      "retrieved_at": "2026-09-21T18:42:16.048150+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801180",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801180.json.gz",
+      "retrieved_at": "2026-09-21T18:42:36.800308+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801190",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801190.json.gz",
+      "retrieved_at": "2026-09-21T18:42:49.158693+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801192",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801192.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801199",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801199.json.gz",
+      "retrieved_at": "2026-09-21T18:42:16.801809+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801204",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801204.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801205",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801205.json.gz",
+      "retrieved_at": "2026-09-21T18:41:52.454794+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801209",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801209.json.gz",
+      "retrieved_at": "2026-09-21T18:43:32.490065+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801215",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801215.json.gz",
+      "retrieved_at": "2026-09-21T18:41:22.439393+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801218",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801218.json.gz",
+      "retrieved_at": null,
+      "status": "reconciled",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020801219",
+      "path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2008-09_0020801219.json.gz",
+      "retrieved_at": "2026-09-21T18:42:01.589138+00:00",
+      "status": "reconciled",
+      "excluded_teams": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "game_id": "0020800969",
+    "action_number": 25,
+    "team_id": 1610612755,
+    "description": "Green 19' Jump Shot (2 PTS) (Miller 2 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1889,
+    "expected": 1,
+    "observed": 2
+  },
+  {
+    "game_id": "0020800969",
+    "action_number": 35,
+    "team_id": 1610612755,
+    "description": "Iguodala Driving Layup (4 PTS) (Miller 1 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1889,
+    "expected": 2,
+    "observed": 1
+  },
+  {
+    "game_id": "0020801215",
+    "action_number": 4,
+    "team_id": 1610612738,
+    "description": "Pierce 26' 3PT Jump Shot (5 PTS) (Perkins 2 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 2570,
+    "expected": 1,
+    "observed": 2
+  },
+  {
+    "game_id": "0020801215",
+    "action_number": 25,
+    "team_id": 1610612738,
+    "description": "T. Allen Dunk (2 PTS) (Perkins 1 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 2570,
+    "expected": 2,
+    "observed": 1
+  }
+]

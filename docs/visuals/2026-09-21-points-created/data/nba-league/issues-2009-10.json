@@ -1,0 +1,35 @@
+[
+  {
+    "game_id": "0020901103",
+    "action_number": 42,
+    "team_id": 1610612760,
+    "description": "Durant 27' 3PT Jump Shot (7 PTS) (Westbrook 3 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 201566,
+    "expected": 2,
+    "observed": 3
+  },
+  {
+    "game_id": "0020901103",
+    "action_number": 53,
+    "team_id": 1610612760,
+    "description": "Krstic  Dunk (4 PTS) (Westbrook 4 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 201566,
+    "expected": 3,
+    "observed": 4
+  },
+  {
+    "game_id": "0020901103",
+    "action_number": 61,
+    "team_id": 1610612760,
+    "description": "Sefolosha  Layup (2 PTS) (Westbrook 2 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 201566,
+    "expected": 4,
+    "observed": 2
+  }
+]

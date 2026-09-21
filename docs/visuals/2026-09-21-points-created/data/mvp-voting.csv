@@ -1,0 +1,16 @@
+PLAYER_ID,PLAYER_NAME,season,mvp_rank,mvp_points,mvp_annotation,source_url,status,mvp_label,mvp_tied
+893,Michael Jordan,1996-97,2,957,2nd in MVP voting,https://www.basketball-reference.com/awards/awards_1997.html,received_votes,2nd in MVP voting,false
+937,Scottie Pippen,1996-97,11,6,11th in MVP voting,https://www.basketball-reference.com/awards/awards_1997.html,received_votes,11th in MVP voting,false
+893,Michael Jordan,1997-98,1,1084,MVP,https://www.basketball-reference.com/awards/awards_1998.html,received_votes,MVP,false
+147,Jalen Rose,2002-03,,0,,https://www.basketball-reference.com/awards/awards_2003.html,no_votes_in_complete_table,,false
+2550,Kirk Hinrich,2005-06,,0,,https://www.basketball-reference.com/awards/awards_2006.html,no_votes_in_complete_table,,false
+2550,Kirk Hinrich,2006-07,,0,,https://www.basketball-reference.com/awards/awards_2007.html,no_votes_in_complete_table,,false
+201565,Derrick Rose,2008-09,,0,,https://www.basketball-reference.com/awards/awards_2009.html,no_votes_in_complete_table,,false
+201565,Derrick Rose,2009-10,,0,,https://www.basketball-reference.com/awards/awards_2010.html,no_votes_in_complete_table,,false
+201565,Derrick Rose,2010-11,1,1182,MVP,https://www.basketball-reference.com/awards/awards_2011.html,received_votes,MVP,false
+202710,Jimmy Butler,2016-17,,0,,https://www.basketball-reference.com/awards/awards_2017.html,no_votes_in_complete_table,,false
+201942,DeMar DeRozan,2021-22,10,1,T-10th in MVP voting,https://www.basketball-reference.com/awards/awards_2022.html,received_votes,T-10th in MVP voting,true
+201942,DeMar DeRozan,2022-23,,0,,https://www.basketball-reference.com/awards/awards_2023.html,no_votes_in_complete_table,,false
+203897,Zach LaVine,2022-23,,0,,https://www.basketball-reference.com/awards/awards_2023.html,no_votes_in_complete_table,,false
+201942,DeMar DeRozan,2023-24,,0,,https://www.basketball-reference.com/awards/awards_2024.html,no_votes_in_complete_table,,false
+1629632,Coby White,2023-24,,0,,https://www.basketball-reference.com/awards/awards_2024.html,no_votes_in_complete_table,,false

@@ -1,0 +1,27 @@
+{
+  "endpoint": "https://stats.nba.com/stats/playergamelogs",
+  "parameters": {
+    "DateFrom": "",
+    "DateTo": "",
+    "GameSegment": "",
+    "LastNGames": "",
+    "LeagueID": "00",
+    "Location": "",
+    "MeasureType": null,
+    "Month": "",
+    "OpponentTeamID": null,
+    "Outcome": "",
+    "PORound": "",
+    "PerMode": "",
+    "Period": "",
+    "PlayerID": "",
+    "Season": "2021-22",
+    "SeasonSegment": "",
+    "SeasonType": "Regular Season",
+    "ShotClockRange": "",
+    "TeamID": "",
+    "VsConference": "",
+    "VsDivision": ""
+  },
+  "retrieved_at": "2026-09-21T18:46:52.990430+00:00"
+}

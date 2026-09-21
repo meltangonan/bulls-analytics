@@ -10,6 +10,11 @@ it: `and_one_leaders_data.py` counts and-1s from `PlayByPlayV3` because no endpo
 Costing that out beats assuming it is impractical; one Bulls season is 82 requests, and every
 Chicago game since 1996-97 is about 2,400.
 
+Use consistent NBA inputs for a post's statistical totals and league comparisons, even when
+reconstructing them takes more effort. Do not mix another provider's derived totals into the
+comparison merely to save fetching time. Basketball Reference remains suitable for MVP voting;
+document other exceptions and their reason explicitly.
+
 Reach for another provider when it carries something NBA.com does not (Basketball Reference for
 BPM, hand-captured salary, pbpstats for parsed possessions), or for an audit. A provider's derived
 column is a parse of NBA events, not an independent measurement, so two of them agreeing is weaker

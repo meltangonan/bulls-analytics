@@ -1,0 +1,88 @@
+[
+  {
+    "game_id": "0020500524",
+    "action_number": 158,
+    "team_id": 1610612741,
+    "description": "Songaila 21' Jump Shot (6 PTS) (Hinrich 3 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 2550,
+    "expected": 2,
+    "observed": 3
+  },
+  {
+    "game_id": "0020500524",
+    "action_number": 280,
+    "team_id": 1610612741,
+    "description": "Sweetney 19' Jump Shot (8 PTS) (Hinrich 4 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 2550,
+    "expected": 3,
+    "observed": 4
+  },
+  {
+    "game_id": "0020500524",
+    "action_number": 494,
+    "team_id": 1610612741,
+    "description": "Nocioni  Layup (11 PTS) (Hinrich 5 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 2550,
+    "expected": 4,
+    "observed": 5
+  },
+  {
+    "game_id": "0020500524",
+    "action_number": 530,
+    "team_id": 1610612741,
+    "description": "Nocioni 25' 3PT Jump Shot (4 PTS) (Hinrich 2 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 2550,
+    "expected": 5,
+    "observed": 2
+  },
+  {
+    "game_id": "0020500639",
+    "action_number": 395,
+    "team_id": 1610612746,
+    "description": "McCarty 20' Jump Shot (4 PTS) (N'Dong 1 AST)",
+    "severity": "error",
+    "kind": "unresolved_assister",
+    "assister_raw": "N'DONG",
+    "assist_ordinal": 1,
+    "candidates": []
+  },
+  {
+    "game_id": "0020500639",
+    "team_id": 1610612746,
+    "player_id": 101238,
+    "severity": "error",
+    "kind": "assist_count_mismatch",
+    "official_ast": 1,
+    "pbp_ast": 0,
+    "difference": -1
+  },
+  {
+    "game_id": "0020500853",
+    "action_number": 140,
+    "team_id": 1610612746,
+    "description": "Cassell 13' Jump Shot (6 PTS) (N'Dong 1 AST)",
+    "severity": "error",
+    "kind": "unresolved_assister",
+    "assister_raw": "N'DONG",
+    "assist_ordinal": 1,
+    "candidates": []
+  },
+  {
+    "game_id": "0020500853",
+    "team_id": 1610612746,
+    "player_id": 101238,
+    "severity": "error",
+    "kind": "assist_count_mismatch",
+    "official_ast": 1,
+    "pbp_ast": 0,
+    "difference": -1
+  }
+]

@@ -18,6 +18,10 @@ Read only the reference for the chart being changed:
 - Export a **transparent** asset, large enough for its placed size. Use 300 DPI for publish assets;
   pixel dimensions, not DPI metadata alone, determine sharpness. Crop to the content and needed
   breathing room; a chart asset does not need to fill the page.
+- For a full-width chart on a 1080×1440 Canva page, start around **1030 px placed width**
+  (roughly 25 px side margins), usually aligned with the footer. This is a flexible default, not
+  a minimum. Fit height to the actual subtitle-to-footer space; adjust row height or padding
+  before crowding columns, and preserve proportions when placing the asset.
 - Charts carry axes, names, values, references, and data annotations. Canva carries titles,
   subtitles, editorial framing, sources, coverage, qualification, and authorship. A chart's own
   qualification legend stays with its marks when needed to interpret them.

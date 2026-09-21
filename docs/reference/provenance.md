@@ -5,6 +5,13 @@ published figures without reconstructing the conversation. Keep the explanation 
 answer every applicable point below on the page; code/file links support rather than replace it.
 Check it before `Mocked`, at publication closeout, and whenever the scope changes.
 
+Lead the Notion provenance section with a short plain-language map of the displayed stats:
+**stat → source/endpoint → supplied as a summary or calculated by us → calculation**.
+Say whether inputs are season totals, game logs or individual events, and explain each provider's
+role (including sources used only for checks). Name rate/share denominators. A compact table is
+usually enough; put exact parameters, raw-field names and audit/file details below it. The reader
+should understand where each number came from without reading code; retain the supporting trail.
+
 1. Every endpoint used, named explicitly by its API URL (e.g.
    `https://stats.nba.com/stats/playergamelogs`, reached through `nba_api` `PlayerGameLogs`); a web
    page or client class alone does not identify it. Include the exact call parameters, scope,

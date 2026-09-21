@@ -23,6 +23,8 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `rim_protection_table.py` | Top-15 Bulls seasons by rim points saved as a table-bar hybrid; measures its own column widths for equal gaps and sizes rows to fill the Canva page (`--page 3:4` or `4:5`) | `tests/test_rim_protection.py` |
 | `block_leaders_data.py` / `block_leaders_table.py` | Prepares and renders the top Bulls single-season block totals since 2000-01. Blocks are the bar; NBA rank and BLK/G are support columns. The 104-block cutoff tie is resolved by BLK/G | `tests/test_block_leaders.py` |
 | `points_created_table.py` | Top 15 Bulls points-created seasons since 1996-97; scored/assisted split bar, total card, NBA rank, team share, per-game rate and MVP voting. `points_created_nba_ranks.py` certifies ranks with NBA data; `points_created_nba_parse.py` attributes and reconciles baskets | `tests/test_points_created_nba_*.py`, saved rank proofs and renderer geometry checks |
+| `contested_jumpers_data.py` | Bulls contested-jumper season leaders since 2013-14: 10+ ft shots by closest-defender distance, Chicago rows reconciled to the team dashboard, NBA rank from the league pool | `tests/test_contested_jumpers_data.py` |
+| `contested_jumpers_table.py` | Table-bar chart for the contested-jumper leaders; the and-1 layout with three support columns | `tests/test_contested_jumpers_data.py` |
 | `assist_duos.py` | Bulls assist duos | `tests/test_assist_duos.py` |
 | `assist_duos_fetch.py` | Bulls assist duos | `tests/test_assist_duos.py` |
 | `scoring_duo_games_data.py` | Bulls top-15 combined-scoring duo games since 2000-01; duo selection, tie handling and overtime labels over `top_game_performances` source rows | `tests/test_scoring_duo_games.py` |

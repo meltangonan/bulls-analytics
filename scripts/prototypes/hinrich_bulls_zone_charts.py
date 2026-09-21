@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
-"""Build Kirk Hinrich's eleven Bulls season zone charts, tenure chart, and cover.
+"""Build Kirk Hinrich's Bulls season zone charts, tenure chart, and cover.
 
     venv/bin/python scripts/prototypes/hinrich_bulls_zone_charts.py --final
 
 The fourth in the tenure family, after Rose, DeRozan and Butler, and deliberately
 identical to them in method so the four can sit side by side: same twelve zones,
 same reconciliation, same grey floor rule, same audit files. What is new is the
-cover -- ``shot_chart.render_zonegrid`` puts all eleven seasons on one page as
+cover -- ``shot_chart.render_zonegrid`` puts every charted season on one page as
 bare coloured courts, which is a question no single-season slide can ask.
+
+**Eleven seasons are pulled; ten are drawn.** ``CHART_MIN_SEASON_FGA`` keeps a
+season off the slides and off the cover grid unless he took 300 Chicago shots in
+it. All eleven still reconcile, still pool into the tenure chart and still land
+in the audit files -- the floor governs what is shown, not what is counted.
 
 Two things about Hinrich's tenure that the earlier three did not have to handle:
 
@@ -49,7 +54,19 @@ SEASONS = (
     "2012-13", "2013-14", "2014-15", "2015-16",
 )
 AWAY_SEASONS = ("2010-11", "2011-12")
+# A season earns its own shot chart at 300 Chicago attempts. Below that the
+# chart is mostly grey -- a picture of a sample, not of a shooter -- and it sits
+# beside full seasons as though the two were comparable. The line falls in a
+# real gap in his career rather than between neighbours: 2015-16's Chicago half
+# is 118 attempts and the next thinnest season is 381, so nothing is cut close.
+# Every season still feeds the pooled tenure chart and every audit file; the
+# floor decides which seasons are DRAWN, not which are counted.
+CHART_MIN_SEASON_FGA = 300
+GRID_ROW_PLAN = (3, 3, 3, 1)
 SEASON_MIN_ZONE_FGA = sm.MIN_ZONE12_FGA_PLAYER
+# Twenty attempts per pooled season. The pool is all eleven Chicago seasons,
+# including the thin 2015-16 half that gets no chart of its own, so the
+# denominator stays at eleven.
 TENURE_MIN_ZONE_FGA = SEASON_MIN_ZONE_FGA * len(SEASONS)
 PROJECT = "hinrich-bulls-zone-charts"
 START_DATE = "2026-09-03"
@@ -194,8 +211,8 @@ def assert_source_family_reconciliation(season: str,
 
 def summary_row(label: str, totals: pd.Series, shots: pd.DataFrame,
                 zones: pd.DataFrame, min_zone_fga: int,
-                unlocated_fga: int, league_unlocated_fga: int
-                ) -> dict[str, object]:
+                unlocated_fga: int, league_unlocated_fga: int,
+                charted: bool = True) -> dict[str, object]:
     overall = shot_chart._zone12_overall_metrics(shots)
     rated = zones[zones.rated]
     return {
@@ -223,6 +240,7 @@ def summary_row(label: str, totals: pd.Series, shots: pd.DataFrame,
         ),
         "league_unlocated_fga": league_unlocated_fga,
         "min_zone_fga": min_zone_fga,
+        "charted": charted,
         "scope": "Chicago attempts only",
     }
 
@@ -298,7 +316,18 @@ def render_cover(by_season: dict[str, dict[str, pd.DataFrame]],
                  output_dir: Path, final: bool) -> Path:
     out = output_dir / f"{date.today().isoformat()}-zonegrid-kirk-hinrich-tenure.png"
     shot_chart.render_zonegrid(
-        {"by_season": by_season, "min_fga": SEASON_MIN_ZONE_FGA},
+        {
+            "by_season": by_season,
+            "min_fga": SEASON_MIN_ZONE_FGA,
+            # Three to a row, with the tenth hanging left under the stack. Three
+            # wide is what buys the size: the courts come out 335 px against the
+            # 248 a four-wide row allows, because four of them squeeze the page
+            # width while three leave room to grow into. The odd court is left
+            # aligned rather than centred so the columns stay true and it reads
+            # as the next season in sequence.
+            "row_plan": GRID_ROW_PLAN,
+            "align": "left",
+        },
         out,
         final,
     )
@@ -324,16 +353,21 @@ def build(args: argparse.Namespace) -> list[Path]:
         audit = zones.copy()
         audit.insert(0, "window", season)
         splits.append(audit)
+        charted = int(totals.FGA) >= CHART_MIN_SEASON_FGA
         summaries.append(summary_row(
             season, totals, shots, zones, SEASON_MIN_ZONE_FGA,
-            unlocated, league_unlocated,
+            unlocated, league_unlocated, charted,
         ))
-        outputs.append(render(
-            season, shots, league, SEASON_MIN_ZONE_FGA,
-            args.output_dir, args.final,
-            float(totals.PTS) / int(totals.GP),
-        ))
-        by_season[season] = {"subject": shots, "league": league}
+        if charted:
+            outputs.append(render(
+                season, shots, league, SEASON_MIN_ZONE_FGA,
+                args.output_dir, args.final,
+                float(totals.PTS) / int(totals.GP),
+            ))
+            by_season[season] = {"subject": shots, "league": league}
+        else:
+            print(f"{season}: {int(totals.FGA)} Chicago FGA, under "
+                  f"{CHART_MIN_SEASON_FGA} -- no chart, pooled into the tenure")
         all_shots.append(shots.assign(source_season=season))
         all_league.append(league.assign(source_season=season))
         all_totals.append(totals)
@@ -377,13 +411,18 @@ def build(args: argparse.Namespace) -> list[Path]:
     print("\nKIRK HINRICH BULLS ZONE SUMMARY")
     print(summary.to_string(index=False))
     print("\nCANVA COPY")
+    charted = [row["window"] for row in summaries[:-1] if row["charted"]]
     print("Title: Kirk Hinrich as a Bull, season by season")
     print(f"Coverage: Eleven Chicago regular seasons · "
           f"{' and '.join(AWAY_SEASONS)} omitted (not a Bull)")
+    print(f"Charted seasons: {len(charted)} of {len(SEASONS)} · "
+          f"{CHART_MIN_SEASON_FGA}+ Chicago FGA "
+          f"({', '.join(s for s in SEASONS if s not in charted)} omitted)")
     print("Season qualifier: Grey zones are under 20 FGA")
     print(f"Tenure qualifier: Grey zones are under {TENURE_MIN_ZONE_FGA} FGA "
           f"(20 × {len(SEASONS)} seasons)")
-    print("2015-16 note: Chicago half only — 11 later Atlanta games excluded")
+    print("2015-16 note: Chicago half only (118 FGA) — too thin for its own "
+          "chart, still inside the pooled tenure")
     print("Source: NBA.com/stats · Chicago attempts only")
     return outputs
 

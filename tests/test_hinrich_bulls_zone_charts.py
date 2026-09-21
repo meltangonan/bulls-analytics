@@ -131,53 +131,155 @@ def test_the_2015_16_slide_holds_only_his_chicago_half():
 # --- the cover -------------------------------------------------------------
 def _grid_geometry(count: int):
     """Where render_zonegrid would place `count` courts, without drawing them."""
-    s = shot_chart.ZONEGRID_SCALE
+    plan = list(charts.GRID_ROW_PLAN) if count == sum(charts.GRID_ROW_PLAN) \
+        else shot_chart.zonegrid_row_plan(count)
+    s = shot_chart.zonegrid_scale(plan)
     court_h = shot_chart.ZONEGRID_COURT_UNITS * s
     court_w = 2 * shot_chart.COURT_HALF_WIDTH * s
     label_block = (shot_chart.ZONEGRID_LABEL_GAP
-                   + shot_chart.ZONEGRID_LABEL_SIZE * 2.08
-                   + shot_chart.ZONEGRID_COUNT_GAP)
+                   + shot_chart.ZONEGRID_LABEL_SIZE * 2.08)
     cell_h = court_h + label_block + shot_chart.ZONEGRID_ROW_GAP
     pitch = court_w + shot_chart.ZONEGRID_COL_GAP
-    rows = -(-count // shot_chart.ZONEGRID_COLS)
+    rows = len(plan)
     return court_w, court_h, cell_h, pitch, label_block, rows
 
 
-def test_the_cover_grid_fits_the_page_at_eleven_seasons():
-    """Eleven courts have to fit 1080 x 1350 with their labels attached.
+def test_the_cover_grid_fits_the_page_at_ten_seasons():
+    """The 3-3-3-1 has to fit 1080 x 1350 with every label attached.
 
-    Solved arithmetically rather than by eye, because the failure is silent: an
-    over-tall grid does not error, it crops the bottom row's attempt count off
-    the asset, and the asset still looks finished.
+    Solved arithmetically rather than by eye, because both failures are silent:
+    an over-wide grid runs its outer courts off the canvas and an over-tall one
+    crops the bottom row's label away, and either asset still looks finished.
+
+    The WIDEST row is what has to fit across, not the number of rows.
     """
     from bulls.graphics import house
 
-    court_w, court_h, cell_h, pitch, label_block, rows = _grid_geometry(11)
+    plan = list(charts.GRID_ROW_PLAN)
+    court_w, court_h, cell_h, pitch, label_block, rows = _grid_geometry(10)
+    assert plan == [3, 3, 3, 1] and sum(plan) == 10
     assert rows == 4
-    widest = 3 * court_w + 2 * shot_chart.ZONEGRID_COL_GAP
-    assert widest < house.CANVAS_WIDTH
+    widest = max(plan)
+    span = widest * court_w + (widest - 1) * shot_chart.ZONEGRID_COL_GAP
+    assert span < house.CANVAS_WIDTH
     # The crop, not the content, is what has to fit: the renderer pads 20 units
-    # below the last attempt count and 18 above the first court, and matplotlib
-    # silently clamps a crop that runs off the canvas rather than raising.
+    # below the last label and 18 above the first court, and matplotlib silently
+    # clamps a crop that runs off the canvas rather than raising.
     bottom = (shot_chart.ZONEGRID_TOP - (rows - 1) * cell_h - court_h
               - label_block)
-    assert bottom - 20 > 0, "bottom row's attempt count would be cropped away"
+    assert bottom - 20 > 0, "bottom row's season label would be cropped away"
     assert shot_chart.ZONEGRID_TOP + 18 < house.CANVAS_HEIGHT
 
 
-def test_a_short_last_row_is_centred_not_left_hung():
-    """Two courts under three read as a missing season unless they are centred."""
+def test_the_scale_solver_takes_the_binding_constraint():
+    """Whichever of width and height runs out first is the one that sets scale.
+
+    The arrangement decides which that is, and getting it backwards is silent --
+    the grid just comes out smaller than it needed to be, or runs off the page.
+    Each case here is one the post actually tried, kept so a future re-arrangement
+    is a change to the plan rather than a re-solve by hand.
+    """
     from bulls.graphics import house
 
-    court_w, _, _, pitch, _, _ = _grid_geometry(11)
-    # Row 3 of Hinrich's grid holds 2003-04..2015-16's final pair.
-    in_row = 2
-    span = (in_row - 1) * pitch
-    centres = [house.CANVAS_WIDTH / 2 - span / 2 + col * pitch
-               for col in range(in_row)]
-    assert sum(centres) / in_row == pytest.approx(house.CANVAS_WIDTH / 2)
-    assert min(centres) - court_w / 2 > 0
-    assert max(centres) + court_w / 2 < house.CANVAS_WIDTH
+    def limits(plan):
+        widest, rows = max(plan), len(plan)
+        by_w = ((house.CANVAS_WIDTH - 2 * shot_chart.ZONEGRID_MARGIN
+                 - (widest - 1) * shot_chart.ZONEGRID_COL_GAP)
+                / (widest * 2 * shot_chart.COURT_HALF_WIDTH))
+        by_h = ((shot_chart.ZONEGRID_TOP - shot_chart.ZONEGRID_BOTTOM_MIN
+                 - rows * shot_chart.ZONEGRID_LABEL_BLOCK
+                 - (rows - 1) * shot_chart.ZONEGRID_ROW_GAP)
+                / (rows * shot_chart.ZONEGRID_COURT_UNITS))
+        return by_w, by_h
+
+    for plan, binds in (([3, 3, 3, 1], "width"),
+                        ([4, 3, 3], "width"),
+                        ([2] * 5, "height")):
+        by_w, by_h = limits(plan)
+        chosen = shot_chart.zonegrid_scale(plan)
+        assert chosen == pytest.approx(min(by_w, by_h))
+        assert ("width" if by_w < by_h else "height") == binds
+
+    # Three wide is what buys the size: 335 px courts against 248 at four wide.
+    wide = 2 * shot_chart.COURT_HALF_WIDTH * shot_chart.zonegrid_scale([3, 3, 3, 1])
+    narrow = 2 * shot_chart.COURT_HALF_WIDTH * shot_chart.zonegrid_scale([4, 3, 3])
+    assert wide > narrow * 1.3
+
+
+def test_rows_are_levelled_so_no_row_is_left_an_orphan():
+    """4-3-3, never 4-4-2. The remainder is spread, not dumped on the last row.
+
+    Checked across counts rather than only Hinrich's ten, because the rule lives
+    in the renderer and the next tenure will bring a different number.
+    """
+    plan = shot_chart.zonegrid_row_plan
+    assert plan(10) == [4, 3, 3]
+    assert plan(11) == [4, 4, 3]
+    assert plan(9) == [3, 3, 3]
+    assert plan(2) == [2]
+    for count in range(1, 40):
+        rows = plan(count)
+        assert sum(rows) == count, "every court must be placed exactly once"
+        assert max(rows) <= shot_chart.ZONEGRID_COLS
+        assert max(rows) - min(rows) <= 1, "rows differ by more than one court"
+        assert len(rows) == -(-count // shot_chart.ZONEGRID_COLS), (
+            "levelling must not cost an extra row"
+        )
+
+
+def test_only_three_hundred_attempt_seasons_are_charted():
+    """The floor governs what is drawn, not what is counted.
+
+    Pinned as a gap rather than a list: the value of 300 is only defensible
+    because nothing sits near it, so a future season that lands at 290 or 310
+    should make someone re-argue the number instead of quietly falling on a side
+    of it.
+    """
+    summary = pd.read_csv(DATA / "zone-chart-summary.csv").set_index("window")
+    seasons = summary.loc[list(charts.SEASONS)]
+    charted = seasons[seasons.charted]
+    assert len(charted) == 10
+    assert "2015-16" not in charted.index
+    assert charted.bulls_fga.min() >= charts.CHART_MIN_SEASON_FGA
+    below = seasons[~seasons.charted].bulls_fga.max()
+    assert below < charts.CHART_MIN_SEASON_FGA
+    assert charted.bulls_fga.min() - below > 200, "the 300 line is no longer a gap"
+    # Dropped from the slides, still inside the pooled tenure chart.
+    assert int(summary.loc["Bulls tenure", "bulls_fga"]) == int(
+        seasons.bulls_fga.sum()
+    )
+
+
+def test_the_lone_tenth_court_hangs_under_the_left_column():
+    """2014-15 sits under 2012-13, not under the middle of the row above.
+
+    Left alignment is the whole reason the odd court works here: it keeps the
+    three columns true, so the last season reads as the next one in sequence.
+    Centred, it would sit between two columns and read as a caption for the row
+    above it rather than as a chart of its own.
+    """
+    from bulls.graphics import house
+
+    plan = list(charts.GRID_ROW_PLAN)
+    court_w, _, _, pitch, _, _ = _grid_geometry(10)
+    widest_span = (max(plan) - 1) * pitch
+    left_edge = house.CANVAS_WIDTH / 2 - widest_span / 2
+
+    def centres(in_row, align):
+        span = (in_row - 1) * pitch if align == "center" else widest_span
+        return [house.CANVAS_WIDTH / 2 - span / 2 + col * pitch
+                for col in range(in_row)]
+
+    full = centres(3, "left")
+    lone = centres(1, "left")
+    assert lone[0] == pytest.approx(full[0]), "the tenth court must share a column"
+    assert lone[0] == pytest.approx(left_edge)
+    # The full rows are unaffected by the alignment choice -- they are the widest.
+    assert centres(3, "center") == pytest.approx(full)
+    # And centring the lone court would have moved it a full column to the right.
+    assert centres(1, "center")[0] > lone[0] + pitch * 0.9
+    assert min(full) - court_w / 2 > 0
+    assert max(full) + court_w / 2 < house.CANVAS_WIDTH
 
 
 def test_the_cover_greys_the_same_zones_the_season_slides_grey():

@@ -976,12 +976,11 @@ def test_the_season_grid_paints_each_side_where_that_side_s_shots_map_to(tmp_pat
     scale_px = width / house.CANVAS_WIDTH
 
     # Replay the layout for the first court, exactly as the renderer lays it out.
-    s = shot_chart.ZONEGRID_SCALE
+    s = shot_chart.zonegrid_scale(shot_chart.zonegrid_row_plan(len(by_season)))
     court_h = shot_chart.ZONEGRID_COURT_UNITS * s
     court_w = 2 * COURT_HALF_WIDTH * s
     label_block = (shot_chart.ZONEGRID_LABEL_GAP
-                   + shot_chart.ZONEGRID_LABEL_SIZE * 2.08
-                   + shot_chart.ZONEGRID_COUNT_GAP)
+                   + shot_chart.ZONEGRID_LABEL_SIZE * 2.08)
     cell_h = court_h + label_block + shot_chart.ZONEGRID_ROW_GAP
     pitch = court_w + shot_chart.ZONEGRID_COL_GAP
     rows_used = -(-len(by_season) // shot_chart.ZONEGRID_COLS)

@@ -1638,34 +1638,21 @@ def _zone12_fill(ax, gx_px, gy_px, mask, color, zorder):
 
 
 # --- zonegrid: one tenure, one page ----------------------------------------
-# Eleven courts on a 1080 x 1350 page. Three columns is the only arrangement
-# that works in portrait: four makes each court 250 px wide, at which point the
-# corner threes are three pixels across and the chart stops being readable as a
-# court; two runs to six rows and off the bottom.
-ZONEGRID_COLS = 3
-# Scale is solved, not chosen. Three courts plus two gaps have to fit 1080 px
-# across AND four rows plus their labels have to fit 1350 px down, and the court
-# is 1.29 times wider than deep, so the two constraints fight. The vertical one
-# binds: at 0.63 the bottom row's attempt count fell 2.7 units off the page when
-# the season-to-count gap was widened by seven. Scale is where that space is
-# taken back, because six-tenths of a percent off every court is invisible while
-# a tighter label gap is exactly what was being fixed. It leaves a 55 px side
-# margin, which is why the grid does not look width-constrained even though the
-# height is fully spent. `tests/test_hinrich_bulls_zone_charts.py` re-solves both
-# constraints, since an over-tall grid crops silently rather than failing.
-ZONEGRID_SCALE = 0.615
-ZONEGRID_COL_GAP = 24.0
+# Ten courts, two to a row. Two columns is a HEIGHT-bound layout, which is the
+# opposite of what the column count suggests: the court is 1.29 times wider than
+# deep, so five of them stacked is the tall arrangement, and five rows plus their
+# labels have to fit 1350 px down long before two courts trouble 1080 px across.
+ZONEGRID_COLS = 4                # widest row the default plan will build
+ZONEGRID_MARGIN = 24.0           # page edge to the outermost court
+ZONEGRID_BOTTOM_MIN = 40.0       # lowest the last row's label may sit
+ZONEGRID_COL_GAP = 14.0
 ZONEGRID_TOP = 1310.0            # top edge of the first row's court
-ZONEGRID_ROW_GAP = 32.0          # between one row's attempt count and the next court
+ZONEGRID_ROW_GAP = 20.0          # between one row's season label and the next court
 ZONEGRID_LABEL_GAP = 10.0        # between a court's baseline and its season label
 ZONEGRID_LABEL_SIZE = 13.0
-ZONEGRID_COUNT_SIZE = 9.0
-# The gap from the season to its attempt count is set against the LABEL's line
-# height, not the count's. At 150 dpi one point is 2.08 canvas units, so the
-# 13 pt season name stands about 27 units tall and a 16-unit gap put the count
-# inside that line's own body -- legible, but reading as one crowded block
-# rather than a heading with a figure under it.
-ZONEGRID_COUNT_GAP = 23.0
+# At 150 dpi one point is 2.08 canvas units, so a 13 pt season name stands about
+# 27 units tall under its court.
+ZONEGRID_LABEL_BLOCK = ZONEGRID_LABEL_GAP + ZONEGRID_LABEL_SIZE * 2.08
 # Court units the drawn court spans, baseline to the cropped top. draw_half_court
 # centres on a 280-unit court, so the drawn extent is not the centring extent and
 # using one for the other silently clips the top row.
@@ -1673,14 +1660,66 @@ ZONEGRID_COURT_UNITS = ZONE12_TOP - sm.BASELINE_Y
 ZONEGRID_CENTRE_OFFSET = (280.0 - sm.BASELINE_Y) / 2.0
 
 
+def zonegrid_scale(plan: list[int]) -> float:
+    """The largest courts a given arrangement can carry on one page.
+
+    Scale is derived, not chosen, because which constraint binds CHANGES with the
+    arrangement and getting it backwards is silent. A court is 1.29 times wider
+    than deep, so a wide arrangement runs out of page width while a tall one runs
+    out of height, and the same hand-solved constant cannot serve both:
+
+        4-3-3      width binds    courts 248 px, a band 727 units tall
+        3-3-3-1    width binds    courts 335 px, filling 1246 units
+        five 2s    height binds   courts 259 px in a 533-wide column
+
+    Both limits are computed and the smaller wins, so re-arranging the grid is a
+    change to the plan alone. `tests/test_hinrich_bulls_zone_charts.py` checks
+    that the loser is genuinely slack, which is what catches a solver that has
+    quietly stopped binding on anything.
+    """
+    widest, rows = max(plan), len(plan)
+    by_width = ((house.CANVAS_WIDTH - 2 * ZONEGRID_MARGIN
+                 - (widest - 1) * ZONEGRID_COL_GAP)
+                / (widest * 2 * COURT_HALF_WIDTH))
+    by_height = ((ZONEGRID_TOP - ZONEGRID_BOTTOM_MIN - rows * ZONEGRID_LABEL_BLOCK
+                  - (rows - 1) * ZONEGRID_ROW_GAP)
+                 / (rows * ZONEGRID_COURT_UNITS))
+    return min(by_width, by_height)
+
+
+def zonegrid_row_plan(count: int, cols: int = ZONEGRID_COLS) -> list[int]:
+    """Split `count` courts into the fewest rows of at most `cols`, then level.
+
+    Filling left to right and letting the remainder fall where it may gives 10
+    courts a 4-4-2, and that bottom pair reads as a row that lost two seasons
+    rather than as the shape of the grid. Levelling gives 4-3-3: the same three
+    rows, the same court size, no orphans.
+
+    The levelling is chronologically lucky for Hinrich and would be for any
+    split tenure: his ten charted seasons break 4-3-3 as 2003-07, 2007-10, and
+    2012-15, which puts his entire second Chicago stint on the bottom row on its
+    own. That is a reading the arrangement supports rather than one it imposes,
+    which is the only kind a layout is allowed to offer.
+    """
+    rows = -(-count // cols)
+    if rows == 0:
+        return []
+    base, extra = divmod(count, rows)
+    return [base + (1 if r < extra else 0) for r in range(rows)]
+
+
 def render_zonegrid(ctx, out: Path, final: bool):
     """Every season of a tenure as one page of bare, comparable courts.
 
     The season charts answer "how did he shoot in 2006-07". This answers a
-    question none of them can: what changed. Stripping the pills is what makes
-    that possible -- eleven courts carrying twelve figures each is 132 numbers,
-    which is a table pretending to be a picture. With only the fills left, the
-    reader tracks one region down the page and sees its colour move.
+    question none of them can: what changed. Stripping the overlays is what
+    makes that possible -- ten courts carrying twelve figures each is 120
+    numbers, which is a table pretending to be a picture. The attempt count went
+    with the pills for the same reason: it is a per-court figure, the grid is
+    for reading colour across courts, and the seasons on it are already filtered
+    to a comparable volume, so the count had nothing left to qualify. With only
+    the fills left, the reader tracks one region down the page and sees its
+    colour move.
 
     Each court is rated against its OWN season's league, so a zone going from
     yellow to green means he improved relative to the players he was actually
@@ -1701,38 +1740,43 @@ def render_zonegrid(ctx, out: Path, final: bool):
     for sp in ax.spines.values():
         sp.set_visible(False)
 
-    s = ZONEGRID_SCALE
+    seasons = list(by_season)
+    plan = list(ctx.get("row_plan") or zonegrid_row_plan(len(seasons)))
+    if sum(plan) != len(seasons):
+        raise ValueError(f"row_plan {plan} places {sum(plan)} courts, "
+                         f"but {len(seasons)} seasons were given")
+    align = str(ctx.get("align") or "center")
+    rows = len(plan)
+    s = zonegrid_scale(plan)
     court_h = ZONEGRID_COURT_UNITS * s
     court_w = 2 * COURT_HALF_WIDTH * s
-    label_block = (ZONEGRID_LABEL_GAP + ZONEGRID_LABEL_SIZE * 2.08
-                   + ZONEGRID_COUNT_GAP)
+    label_block = ZONEGRID_LABEL_BLOCK
     cell_h = court_h + label_block + ZONEGRID_ROW_GAP
     col_pitch = court_w + ZONEGRID_COL_GAP
-    seasons = list(by_season)
-    rows = -(-len(seasons) // ZONEGRID_COLS)
+    widest_span = (max(plan) - 1) * col_pitch
 
-    for i, season in enumerate(seasons):
-        row, col = divmod(i, ZONEGRID_COLS)
-        # A short final row centres rather than hanging left: an orphan court
-        # under the left column reads as a missing season, which is a claim.
-        in_row = min(ZONEGRID_COLS, len(seasons) - row * ZONEGRID_COLS)
-        span = (in_row - 1) * col_pitch
-        cx = house.CANVAS_WIDTH / 2 - span / 2 + col * col_pitch
+    i = 0
+    for row, in_row in enumerate(plan):
+        # A row narrower than the widest either centres under it or hangs from
+        # its left edge. Centring reads as a deliberate tapering block; left
+        # alignment keeps the columns lined up, so a lone court reads as the next
+        # one in sequence rather than as a caption under the row above.
+        span = ((in_row - 1) * col_pitch if align == "center" else widest_span)
         baseline_y = ZONEGRID_TOP - row * cell_h - court_h
-        zones = sm.zone12_split(by_season[season]["subject"],
-                                by_season[season]["league"], min_fga=min_fga)
-        _draw_zone_court(ax, cx, baseline_y + ZONEGRID_CENTRE_OFFSET * s, s,
-                         _zone12_fills(zones, palette), 1.0,
-                         court_ink=court_ink, lw=0.7)
-        fga = len(by_season[season]["subject"])
-        ax.text(cx, baseline_y - ZONEGRID_LABEL_GAP - ZONEGRID_LABEL_SIZE * 2.08,
-                season, ha="center", va="baseline", fontsize=ZONEGRID_LABEL_SIZE,
-                color=theme.ink, fontproperties=helvetica("bold"))
-        ax.text(cx, baseline_y - ZONEGRID_LABEL_GAP - ZONEGRID_LABEL_SIZE * 2.08
-                - ZONEGRID_COUNT_GAP,
-                f"{fga:,} FGA", ha="center", va="baseline",
-                fontsize=ZONEGRID_COUNT_SIZE, color=theme.muted,
-                fontproperties=helvetica("bold"))
+        for col in range(in_row):
+            season = seasons[i]
+            i += 1
+            cx = house.CANVAS_WIDTH / 2 - span / 2 + col * col_pitch
+            zones = sm.zone12_split(by_season[season]["subject"],
+                                    by_season[season]["league"], min_fga=min_fga)
+            _draw_zone_court(ax, cx, baseline_y + ZONEGRID_CENTRE_OFFSET * s, s,
+                             _zone12_fills(zones, palette), 1.0,
+                             court_ink=court_ink, lw=0.7)
+            ax.text(cx,
+                    baseline_y - ZONEGRID_LABEL_GAP - ZONEGRID_LABEL_SIZE * 2.08,
+                    season, ha="center", va="baseline",
+                    fontsize=ZONEGRID_LABEL_SIZE, color=theme.ink,
+                    fontproperties=helvetica("bold"))
 
     bottom = ZONEGRID_TOP - (rows - 1) * cell_h - court_h - label_block
     out.parent.mkdir(parents=True, exist_ok=True)

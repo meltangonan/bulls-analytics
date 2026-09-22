@@ -57,6 +57,7 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `current_roster_darko_landscape.py` | Current Bulls DARKO landscape | `tests/test_current_roster_darko_landscape.py` |
 | `current_roster_hex_charts.py` | Current-roster player hex batch | `tests/test_current_roster_hex_charts.py` |
 | `current_roster_hot_spots.py` | Roster shot-location density vs league, as small multiples; frequency, not accuracy; `--cold` adds below-average locations | `tests/test_current_roster_hot_spots.py` |
+| `bulls_scoring_lines.py` / `scoring_line_identity_mockups.py` | Individual scoring-line renderer plus the final current-roster batch: complete prior-season player logs, 20-game floor, trailing 10-game trend, headshots and the qualified roster repeated as gray context | `tests/test_bulls_scoring_lines.py` |
 | `current_roster_jam_cards.py` | NBA Jam-style roster cards; six league-percentile bars using per-75-possession production | `tests/test_current_roster_jam_cards.py` |
 | `current_roster_scoring_landscape.py` | Current roster scoring landscape | `tests/test_current_roster_scoring_landscape.py` |
 | `current_roster_zone_charts.py` | Current-roster twelve-zone batch | Shared renderer: `tests/test_zone_charts.py`; no dedicated batch tests |

@@ -1,0 +1,10 @@
+window,games,minutes,points,ppg,bulls_fga,shot_rows,fgm,efg_pct,three_pct,zones_rated,zones_grey,rated_fga_share_pct,mapped_zone_fga,excluded_backcourt_fga,unlocated_fga,source_zone_value_conflicts,league_zone_value_conflicts,league_unlocated_fga,min_zone_fga,charted,scope
+2017-18,24,656.3,401,16.7,355,355,136,44.2,34.1,7,5,88.2,355,0,0,1,108,0,20,True,Chicago attempts only
+2018-19,63,2170.9,1492,23.7,1135,1135,530,52.0,37.4,10,2,96.9,1133,2,0,0,144,0,20,True,Chicago attempts only
+2019-20,60,2085.4,1530,25.5,1199,1199,539,52.6,38.0,11,1,98.4,1197,2,0,1,103,0,20,True,Chicago attempts only
+2020-21,58,2033.6,1591,27.4,1123,1123,569,59.6,41.9,11,1,99.6,1122,1,0,0,95,0,20,True,Chicago attempts only
+2021-22,67,2328.1,1635,24.4,1186,1186,565,55.4,38.9,12,0,100.0,1186,0,0,0,210,0,20,True,Chicago attempts only
+2022-23,77,2767.9,1913,24.8,1388,1388,673,55.8,37.5,12,0,100.0,1388,0,0,0,144,0,20,True,Chicago attempts only
+2023-24,25,871.9,487,19.5,376,376,170,53.1,34.9,6,6,80.6,376,0,0,0,21,0,20,True,Chicago attempts only
+2024-25,42,1432.0,1007,24.0,710,710,363,60.7,44.6,11,1,97.7,710,0,0,0,12,0,20,True,Chicago attempts only
+Bulls tenure,416,14346.1,10056,24.2,7472,7472,3545,55.0,39.0,11,1,98.3,7467,5,0,2,837,0,160,True,Chicago attempts only

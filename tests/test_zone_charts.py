@@ -288,9 +288,9 @@ def test_the_large_pill_keeps_four_lines_and_enlarges_only_the_figures():
     assert pills == 1
     assert len(texts) == 4
     assert texts[0] == "60/100 FG (60.0%)"
-    assert texts[1].endswith("vs LA")
+    assert texts[1].endswith("vs NBA")
     assert texts[2] == "100.0% of FGA"
-    assert texts[3].endswith("vs LA")
+    assert texts[3].endswith("vs NBA")
     assert shot_chart.ZONE12_LARGE_FIGURE_SIZE > shot_chart.ZONE12_FIGURE_SIZE
     assert shot_chart.ZONE12_LARGE_DELTA_SIZE == shot_chart.ZONE12_DELTA_SIZE + 1
 
@@ -386,11 +386,11 @@ def test_a_rated_zone_prints_shooting_first_then_shot_share():
     assert pills == 1
     assert len(texts) == 4
     # The shooting figure names itself. "66.7%" alone was ambiguous next to a
-    # neighbouring "+5% vs LA" -- both are percentages of different things.
+    # neighbouring "+5% vs NBA" -- both are percentages of different things.
     assert "FG (" in texts[0], f"shooting must come first, got {texts}"
     assert texts[0].startswith("40/60"), "makes and attempts lead the line"
     assert texts[2] == "100.0% of FGA", f"shot share must come second, got {texts}"
-    assert texts[3] == "0.0 vs LA", f"shot share must use the comparison grammar, got {texts}"
+    assert texts[3] == "0.0 vs NBA", f"shot share must use the comparison grammar, got {texts}"
     assert colours[3] == shot_chart.ZONE12_NEUTRAL_GAP
 
 
@@ -402,9 +402,9 @@ def test_shooting_and_share_use_the_same_coloured_comparison_grammar():
                             _shots([(0, 240, 1)] * 30 + [(0, 240, 0)] * 70
                                    + [(0, 0, 1)] * 100))
     _, texts, colours, _ = _rendered("Top of Key 3", table)
-    assert sum("vs LA" in text for text in texts) == 2
+    assert sum("vs NBA" in text for text in texts) == 2
     assert texts[2] == "100.0% of FGA"
-    assert texts[3] == "+50.0 vs LA"
+    assert texts[3] == "+50.0 vs NBA"
     assert colours[1] == shot_chart.ZONE12_UP_ON_LIGHT
     assert colours[3] == shot_chart.ZONE12_UP_ON_LIGHT
 
@@ -798,7 +798,7 @@ def test_overall_cards_replace_low_sample_three_pct_with_attempt_count():
     ) == "35.0% 3PT"
 
 
-def test_overall_cards_default_to_three_red_gradient_pills_without_league_deltas():
+def test_overall_cards_default_to_three_flat_bulls_red_pills_without_league_deltas():
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -822,7 +822,55 @@ def test_overall_cards_default_to_three_red_gradient_pills_without_league_deltas
     assert labels == ["4 FGA", "62.5% eFG", "2 3PA"]
     assert not any("LA" in label for label in labels)
     assert colors == ["#FFFFFF"] * 3
+    # Flat Bulls red, not the classic maroon gradient (which is an image).
+    assert len(ax.images) == 0
+    faces = {tuple(round(c, 3) for c in p.get_facecolor()) for p in ax.patches}
+    from matplotlib.colors import to_rgba
+    assert faces == {tuple(round(c, 3) for c in to_rgba("#CE1141"))}
+
+
+def test_classic_style_keeps_the_published_gradient_cards_and_vs_la():
+    """Posts through Hinrich were published in "classic"; it must still exist."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import scripts.make_shot_chart as shot_chart
+
+    shots = pd.DataFrame({
+        "shot_type": ["2PT Field Goal", "3PT Field Goal"], "shot_made": [1, 0],
+    })
+    fig, ax = plt.subplots()
+    ax.set_xlim(0, 1080)
+    ax.set_ylim(0, 1350)
+    shot_chart._zone12_summary_cards(
+        ax, shots, shots, shot_chart.house.get_theme("jersey"), style="classic"
+    )
     assert len(ax.images) == 3
+    plt.close(fig)
+    assert shot_chart.ZONE12_STYLES["classic"]["reference"] == "LA"
+
+
+def test_supplied_gp_leads_the_cards_and_five_fit_the_court():
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import scripts.make_shot_chart as shot_chart
+
+    shots = pd.DataFrame({
+        "shot_type": ["2PT Field Goal", "3PT Field Goal"], "shot_made": [1, 0],
+    })
+    fig, ax = plt.subplots()
+    ax.set_xlim(0, 1080)
+    ax.set_ylim(0, 1350)
+    shot_chart._zone12_summary_cards(
+        ax, shots, shots, shot_chart.house.get_theme("jersey"), ppg=16.7, gp=24
+    )
+    labels = [text.get_text() for text in ax.texts]
+    xs = [p.get_x() for p in ax.patches]
+    right = max(p.get_x() + p.get_width() for p in ax.patches)
+    plt.close(fig)
+    assert labels[:2] == ["24 GP", "16.7 PPG"]
+    assert min(xs) >= 80 - 0.5 and right <= 1000 + 0.5
 
 
 def test_overall_cards_put_supplied_ppg_immediately_before_fga():
@@ -846,7 +894,6 @@ def test_overall_cards_put_supplied_ppg_immediately_before_fga():
     plt.close(fig)
 
     assert labels == ["25.0 PPG", "4 FGA", "62.5% eFG", "2 3PA"]
-    assert len(ax.images) == 4
 
 
 def test_the_filled_zone_court_has_a_closed_horizontal_top_edge():

@@ -76,6 +76,7 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `impactful_bulls_bpm.py` | Most impactful Bull per season | `tests/test_impactful_bulls_bpm.py` |
 | `impactful_bulls_bpm_columns.py` | The same BPM analysis as a stacked column chart | Shared analysis: `tests/test_impactful_bulls_bpm.py`; no dedicated renderer tests |
 | `jimmy_butler_bulls_zone_charts.py` | Jimmy Butler's Bulls regular seasons with 300+ Chicago FGA plus an attempt-weighted six-season tenure total | `tests/test_jimmy_butler_bulls_zone_charts.py`, `tests/test_player_season_totals.py` |
+| `lavine_bulls_zone_charts.py` | Zach LaVine's eight Bulls regular seasons plus a pooled Chicago-tenure total, bare tenure cover and small-multiples grid | `tests/test_lavine_bulls_zone_charts.py` |
 | `matas_buzelis_shot_families.py` | Buzelis's shot families and self-created share across his two Bulls seasons, from NBA.com ACTION_TYPE labels | `tests/test_matas_buzelis_shot_families.py` |
 | `matas_buzelis_bulls_zone_charts.py` | Matas Buzelis's two Bulls regular seasons plus a pooled two-season tenure total | `tests/test_matas_buzelis_bulls_zone_charts.py` |
 | `mock_post_demo.py` | Design preview with a fictional roster; no network or cache needed | No dedicated tests |

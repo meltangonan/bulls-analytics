@@ -42,8 +42,11 @@ interpretation. `--palette hex` is a comparison option, not the default.
 
 Signed figures repeat direction so the red/green palette remains interpretable without distinguishing
 those hues. Preserve lightness differences between its ends. Compute ink contrast from fill luminance
-where text actually sits on a fill. The standard pill's cream background lets text colors keep a
-consistent meaning across regions.
+where text actually sits on a fill. Figures sit on an opaque zone tag rather than on the fill, so
+text colors keep one meaning across regions and a tag centred on a narrow corner strip still reads as
+belonging to it. The house tag (`tagged` style, the default since 2026-09-22) is the page colour
+`#FAF8F5` with near-square corners (3-unit radius) and a 1.1-weight `#242424` rule. Text set straight
+on the fills with a white outline was tried and rejected: it reads as stickers and loses attribution.
 
 Separate neighboring fills with cream geometry-derived seams only where the floor has no black
 marking: mid-range rays, above-the-arc rays, and corner break. Never trace seam lines from the
@@ -55,18 +58,18 @@ roughly 33.5–34 feet.
 Zone blocks omit zone names; position supplies the attribution. Use four lines in one column:
 
 1. Makes/attempts and FG%, such as `11/32 FG (34.4%)`.
-2. Signed shooting gap ending in `vs LA`.
+2. Signed shooting gap ending in `vs NBA`.
 3. Share of all subject FGA.
-4. Signed gap to league shot share, also ending in `vs LA`.
+4. Signed gap to league shot share, also ending in `vs NBA`. (`vs LA` read as Los Angeles.)
 
 Shooting leads because the fill encodes shooting. Both primary figure lines share a size. Shooting
 gaps within ±2.5 points stay neutral, matching the fill; shot-share gaps use the signed directional
 grammar. Use a true minus and decide the sign after rounding so zero carries no false direction.
 Sentence case applies to labels (`11.6% of FGA`, `Below`, `Above`, `Under 400 FGA`); retain acronyms.
 
-Under-floor zones are gray, with all descriptive figures retained in muted pills. Zero attempts
+Under-floor zones are gray, with all descriptive figures retained in muted, faded tags. Zero attempts
 print only `0 FGA`; unavailable data must not become zero. The legend prints the actual qualification
-as `Under N FGA`. Use the post's floor rather than silently inheriting another post's number.
+as `Under N FGA`, under a `FG% vs. NBA avg` heading in `#242424`. Use the post's floor rather than silently inheriting another post's number.
 
 `--merge-mid` pools the five mid-range regions into one zone, leaving eight. Use it only when the
 subject barely shoots there and the band would otherwise spend most of the court's type on figures
@@ -83,9 +86,18 @@ scale equal to the other zones, even if its card slightly crosses the eight-foot
 mid-range placement may need compact cards; do not shrink only the most important figure to fit.
 
 Optional verified summary cards below the legend contain total FGA, eFG%, and 3PT%, without league
-comparisons. PPG may lead when needed and must come from official box-score points and games—the
-shot log contains no free throws. Below 20 total 3PA, print the attempt count instead of 3PT%.
-These one-line cards use a `#B5123C` → `#7E0C2B` vertical gradient and white type.
+comparisons. PPG may precede them and must come from official box-score points and games, because the
+shot log contains no free throws. GP may lead (`summary_gp`, official games for the scoped team) so a
+short or injury-shortened sample reads as short; print plain `N GP`, never `N of 82`, since a trade or
+shortened season makes any denominator a claim about missed games. Below 20 total 3PA, print the
+attempt count instead of 3PT%. The cards are rounded (14-unit radius) flat Bulls red `#CE1141` with
+white type, sitting 40 units closer to the legend than the classic layout. Four cards keep their
+210-unit width; five shrink to 172 so the row spans the court's own 920 units.
+
+The earlier `classic` style (cream `#F5EFE2` bubbles, `vs LA`, red legend heading, `#B5123C` →
+`#7E0C2B` gradient cards) is how every zone post through Hinrich was published. Pass
+`"style": "classic"` only to reproduce one of those exactly; `ZONE12_STYLES` in
+`scripts/make_shot_chart.py` owns both.
 
 ## Covers and season grids
 
@@ -97,7 +109,7 @@ Distinguish decorative previews from data-bearing colors:
 | Illustrative color teaser | Seeded shuffle of the five-band palette; no adjacent identical shades or analytical claims |
 | Reusable single-red court | Opaque `#CE1141` or `#E67C96`; player-neutral name and content |
 | Actual data-color cover | Same subject window, league baseline, palette, and floor as the detail chart; suppress pills and legend |
-| Season grid | One actual data-color court per season, compared with that season's league; label season and attempt count |
+| Season grid | One actual data-color court per season, compared with that season's league; label the season only (per-season counts belong on the season slides) |
 
 Bare courts crop to the court baseline, rather than retaining the detail chart's empty legend space.
 For a tenure grid on a portrait page, use three columns, fit scale to available rows and labels,

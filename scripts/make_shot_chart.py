@@ -1816,6 +1816,8 @@ def render_zones(ctx, out: Path, final: bool):
     pill = str(ctx.get("pill") or "full")
     show_summary = bool(ctx.get("summary_metrics"))
     show_details = bool(ctx.get("show_details", True))
+    style = str(ctx.get("style") or ZONE12_DEFAULT_STYLE)
+    look = ZONE12_STYLES[style]
     court_ink = ctx.get("court_ink") or house.get_theme("jersey").ink
     # The floor still applies. It no longer decides whether a zone is drawn at
     # all -- it decides whether the zone earns an efficiency colour.
@@ -1848,10 +1850,11 @@ def render_zones(ctx, out: Path, final: bool):
 
     if show_details:
         for z in zones.itertuples():
-            _zone12_block(ax, to_px, z, fills[z.zone], theme, pill)
+            _zone12_block(ax, to_px, z, fills[z.zone], theme, pill, style)
         _zone12_legend(
             ax, theme, palette, min_fga,
             show_thin=bool(ctx.get("show_thin_legend", True)),
+            style=style,
         )
         if show_summary:
             _zone12_summary_cards(
@@ -1860,9 +1863,12 @@ def render_zones(ctx, out: Path, final: bool):
                 ctx["league"],
                 theme,
                 ppg=ctx.get("summary_ppg"),
+                gp=ctx.get("summary_gp"),
+                style=style,
             )
     out.parent.mkdir(parents=True, exist_ok=True)
-    bottom = ZONE12_CROP_BOTTOM if show_details else ZONE12_BARE_CROP_BOTTOM
+    bottom = (ZONE12_CROP_BOTTOM + look["summary_lift"] if show_details
+              else ZONE12_BARE_CROP_BOTTOM)
     crop = Bbox.from_extents(0, bottom / house.DRAFT_DPI,
                              house.CANVAS_WIDTH / house.DRAFT_DPI,
                              ZONE12_CROP_TOP / house.DRAFT_DPI)
@@ -1881,12 +1887,14 @@ def render_zones(ctx, out: Path, final: bool):
     print("\nCANVA COPY")
     print(f"Subtitle: {ctx['season']} Regular Season")
     print(f"Key: Colour = FG% vs the NBA in that zone · {scale_words}")
-    print("Reading it: vs LA = the percentage-point gap to league average. "
+    print(f"Reading it: vs {look['reference']} = the percentage-point gap to league average. "
           "FG% on the first pair, share of FGA on the second")
     print("Grey FG gap: inside the chart's ±2.5-point average band")
     if show_summary:
         overall = _zone12_overall_metrics(ctx["player"])
         summary_parts = []
+        if ctx.get("summary_gp") is not None:
+            summary_parts.append(f"{int(ctx['summary_gp'])} GP")
         if ctx.get("summary_ppg") is not None:
             summary_parts.append(f"{float(ctx['summary_ppg']):.1f} PPG")
         summary_parts.extend((
@@ -2008,6 +2016,25 @@ ZONE12_PILL_ROUND = 10.0
 # comparison, and the pill still says at a glance that this one is not evidence
 # the way its neighbours are.
 ZONE12_THIN_PILL_ALPHA = 0.72
+# Two looks for the same chart. "tagged" is the house style from LaVine
+# (2026-09-22) on: printed-label zone tags on the page colour with a hairline
+# rule, "vs NBA" instead of the ambiguous "vs LA", a black legend heading, flat
+# Bulls-red summary pills, and the summary lifted toward the legend. "classic"
+# is how every post through Hinrich was published; pass "style": "classic" to
+# reproduce one of those exactly. Presentation only -- never a figure or colour.
+ZONE12_STYLES = {
+    "classic": {
+        "pill_face": CREAM, "pill_edge": "none", "pill_lw": 0.0,
+        "pill_round": ZONE12_PILL_ROUND, "reference": "LA",
+        "legend_title": None, "card_fill": None, "summary_lift": 0,
+    },
+    "tagged": {
+        "pill_face": "#FAF8F5", "pill_edge": house.BLACK, "pill_lw": 1.1,
+        "pill_round": 3.0, "reference": "NBA",
+        "legend_title": house.BLACK, "card_fill": house.RED, "summary_lift": 40,
+    },
+}
+ZONE12_DEFAULT_STYLE = "tagged"
 ZONE12_THIN_INK = "#6B6660"
 
 # A shooting gap only earns a colour when it clears the fill scale's own +/-2.5
@@ -2018,7 +2045,7 @@ ZONE12_FG_NEUTRAL_POINTS = 2.5
 
 
 def _zone12_rows(
-    z, compact: bool = False
+    z, compact: bool = False, reference: str = "NBA"
 ) -> tuple[tuple[str, str, bool, float], ...]:
     """The two (figure, reference, reference_is_directional, value) pairs.
 
@@ -2038,7 +2065,7 @@ def _zone12_rows(
     the shot-diet comparison.
     """
     shooting = (f"{z.fgm}/{z.fga} FG ({z.fg * 100:.1f}%)",
-                f"{_signed(z.fg_rel, 1)} vs LA",
+                f"{_signed(z.fg_rel, 1)} vs {reference}",
                 abs(z.fg_rel) >= ZONE12_FG_NEUTRAL_POINTS, z.fg_rel)
     if compact:
         return (shooting,)
@@ -2046,7 +2073,7 @@ def _zone12_rows(
     return (
         shooting,
         (f"{z.fga_share_pct:.1f}% of FGA",
-         f"{_signed(share_rel, 1)} vs LA",
+         f"{_signed(share_rel, 1)} vs {reference}",
          round(share_rel, 1) != 0.0, share_rel),
     )
 
@@ -2085,7 +2112,8 @@ def _zone12_delta_ink(value, meaningful: bool = True) -> str:
     return ZONE12_UP_ON_LIGHT if value >= 0 else ZONE12_DOWN_ON_LIGHT
 
 
-def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full"):
+def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full",
+                  style: str = ZONE12_DEFAULT_STYLE):
     """One cream pill of figures, floating over the zone it describes.
 
     A pill rather than type straight on the fill, for two reasons that both came
@@ -2105,12 +2133,13 @@ def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full"):
     if not z.fga:
         # Zero attempts shares the grey ground but has its own explicit pill,
         # so it cannot be confused with a measured, below-floor zone.
-        _zone12_empty_pill(ax, px, py, theme)
+        _zone12_empty_pill(ax, px, py, theme, style)
         return
 
     compact = pill == "counts"
     large = pill == "large"
-    rows = _zone12_rows(z, compact)
+    look = ZONE12_STYLES[style]
+    rows = _zone12_rows(z, compact, look["reference"])
     ink = ZONE12_PILL_INK if z.rated else ZONE12_THIN_INK
     alpha = 1.0 if z.rated else ZONE12_THIN_PILL_ALPHA
 
@@ -2131,8 +2160,9 @@ def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full"):
 
     ax.add_patch(FancyBboxPatch(
         (px - half_w, py - half_h), 2 * half_w, 2 * half_h,
-        boxstyle=f"round,pad=0,rounding_size={ZONE12_PILL_ROUND}",
-        facecolor=CREAM, edgecolor="none", alpha=alpha, zorder=10))
+        boxstyle=f"round,pad=0,rounding_size={look['pill_round']}",
+        facecolor=look["pill_face"], edgecolor=look["pill_edge"],
+        linewidth=look["pill_lw"], alpha=alpha, zorder=10))
 
     # One column, not the rings chart's two. Side by side, a pill runs about
     # 330 px wide: the three above-the-arc zones alone would need 990 px of an
@@ -2154,8 +2184,9 @@ def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full"):
         top -= block
 
 
-def _zone12_empty_pill(ax, px, py, theme):
+def _zone12_empty_pill(ax, px, py, theme, style: str = ZONE12_DEFAULT_STYLE):
     """One muted line for a zone with no attempts at all."""
+    look = ZONE12_STYLES[style]
     label = ax.text(px, py, "0 FGA", ha="center", va="center",
                     fontsize=ZONE12_FIGURE_SIZE, zorder=11,
                     color=ZONE12_THIN_INK, alpha=ZONE12_THIN_PILL_ALPHA,
@@ -2164,9 +2195,9 @@ def _zone12_empty_pill(ax, px, py, theme):
     half_h = 7 + ZONE12_PILL_PAD_Y
     ax.add_patch(FancyBboxPatch(
         (px - half_w, py - half_h), 2 * half_w, 2 * half_h,
-        boxstyle=f"round,pad=0,rounding_size={ZONE12_PILL_ROUND}",
-        facecolor=CREAM, edgecolor="none", alpha=ZONE12_THIN_PILL_ALPHA,
-        zorder=10))
+        boxstyle=f"round,pad=0,rounding_size={look['pill_round']}",
+        facecolor=look["pill_face"], edgecolor=look["pill_edge"],
+        linewidth=look["pill_lw"], alpha=ZONE12_THIN_PILL_ALPHA, zorder=10))
 
 
 ZONE12_TAIL_GAP = 6.0            # between the shot-share figure and its reference
@@ -2219,7 +2250,7 @@ def _zone12_thin_key(min_fga: int) -> str:
 
 
 def _zone12_legend(ax, theme, palette: str, min_fga: int,
-                   show_thin: bool = True):
+                   show_thin: bool = True, style: str = ZONE12_DEFAULT_STYLE):
     """One row: the colour scale, then the grey that sits outside it.
 
     Grey is a sixth state of the same encoding rather than a separate idea, so
@@ -2262,7 +2293,9 @@ def _zone12_legend(ax, theme, palette: str, min_fga: int,
     ax.text(x + below_w, y, "Below", ha="right", va="center", **label)
     x += below_w + pad
     ax.text(x + scale_w / 2, y + 40, "FG% vs. NBA avg", ha="center", va="center",
-            fontsize=10, color=theme.accent, fontproperties=helvetica("bold"))
+            fontsize=10,
+            color=ZONE12_STYLES[style]["legend_title"] or theme.accent,
+            fontproperties=helvetica("bold"))
     for i, color in enumerate(colors):
         ax.add_patch(Rectangle((x + i * (swatch + gap), y - 11), swatch, 22,
                                facecolor=color, edgecolor="none", zorder=9))
@@ -2307,7 +2340,8 @@ def _zone12_three_label(subject: dict[str, float | int]) -> str:
     return f"{float(subject['three_pct']):.1f}% 3PT"
 
 
-def _zone12_summary_cards(ax, player, _league, theme, ppg=None):
+def _zone12_summary_cards(ax, player, _league, theme, ppg=None, gp=None,
+                          style: str = ZONE12_DEFAULT_STYLE):
     """Three or four one-line overall cards in a Bulls-red gradient.
 
     PPG is optional because shot-attempt tables do not contain free throws. A
@@ -2322,30 +2356,39 @@ def _zone12_summary_cards(ax, player, _league, theme, ppg=None):
     ]
     if ppg is not None:
         cards.insert(0, f"{float(ppg):.1f} PPG")
-    gap = 22
-    total_w = len(cards) * ZONE12_SUMMARY_CARD_W + (len(cards) - 1) * gap
+    # Games played says how much of a season the chart is. A 24-game season and
+    # an 82-game one otherwise look alike. Plain GP, never "of 82": a traded or
+    # shortened season makes any denominator a claim about missed games.
+    if gp is not None:
+        cards.insert(0, f"{int(gp)} GP")
+    # Five cards at the four-card width run to 1,138 px on a 1,080 canvas, so
+    # five shrink to the court's own 920 px span, as the four roughly already do.
+    gap = 22 if len(cards) <= 4 else 15
+    card_w = ZONE12_SUMMARY_CARD_W if len(cards) <= 4 else 172
+    fill = ZONE12_STYLES[style]["card_fill"]
+    y = ZONE12_SUMMARY_Y + ZONE12_STYLES[style]["summary_lift"]
+    total_w = len(cards) * card_w + (len(cards) - 1) * gap
     left = house.CANVAS_WIDTH / 2 - total_w / 2
     gradient_top = np.array(to_rgb("#B5123C"))
     gradient_bottom = np.array(to_rgb("#7E0C2B"))
     ramp = np.linspace(gradient_bottom, gradient_top, 256).reshape(256, 1, 3)
     for index, headline in enumerate(cards):
-        x = left + index * (ZONE12_SUMMARY_CARD_W + gap)
+        x = left + index * (card_w + gap)
         clip = FancyBboxPatch(
-            (x, ZONE12_SUMMARY_Y - ZONE12_SUMMARY_CARD_H / 2),
-            ZONE12_SUMMARY_CARD_W, ZONE12_SUMMARY_CARD_H,
+            (x, y - ZONE12_SUMMARY_CARD_H / 2), card_w, ZONE12_SUMMARY_CARD_H,
             boxstyle="round,pad=0,rounding_size=14",
-            facecolor="none", edgecolor="none", zorder=10)
+            facecolor=fill or "none", edgecolor="none", zorder=10)
         ax.add_patch(clip)
-        image = ax.imshow(
-            ramp,
-            extent=(x, x + ZONE12_SUMMARY_CARD_W,
-                    ZONE12_SUMMARY_Y - ZONE12_SUMMARY_CARD_H / 2,
-                    ZONE12_SUMMARY_Y + ZONE12_SUMMARY_CARD_H / 2),
-            origin="lower", aspect="auto", interpolation="bicubic", zorder=10,
-        )
-        image.set_clip_path(clip)
-        center = x + ZONE12_SUMMARY_CARD_W / 2
-        ax.text(center, ZONE12_SUMMARY_Y, headline,
+        if fill is None:
+            image = ax.imshow(
+                ramp,
+                extent=(x, x + card_w, y - ZONE12_SUMMARY_CARD_H / 2,
+                        y + ZONE12_SUMMARY_CARD_H / 2),
+                origin="lower", aspect="auto", interpolation="bicubic",
+                zorder=10,
+            )
+            image.set_clip_path(clip)
+        ax.text(x + card_w / 2, y, headline,
                 ha="center", va="center", fontsize=14, color="#FFFFFF",
                 fontproperties=helvetica("bold"), zorder=11)
 

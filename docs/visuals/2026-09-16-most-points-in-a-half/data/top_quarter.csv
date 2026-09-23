@@ -1,0 +1,14 @@
+rank,tied,player_id,player_name,season,season_type,game_date,matchup,opponent,home,result,split,split_label,pts,fgm,fga,fg3m,fg3a,ftm,fta,min,game_pts,game_id
+1,False,203897,Zach LaVine,2019-20,Regular Season,2019-11-23,CHI @ CHA,CHA,False,W,q4,4Q,27.0,10.0,14.0,7.0,9.0,0.0,0.0,10.783333333333333,49,0021900226
+2,True,147,Jalen Rose,2002-03,Regular Season,2002-12-21,CHI vs. IND,IND,True,W,q4,4Q,25.0,6.0,8.0,3.0,3.0,10.0,10.0,12.0,28,0020200385
+2,True,203897,Zach LaVine,2020-21,Regular Season,2021-04-09,CHI @ ATL,ATL,False,L,q2,2Q,25.0,8.0,12.0,5.0,6.0,4.0,4.0,12.0,50,0022000791
+4,True,197,Scott Burrell,1997-98,Regular Season,1998-02-02,CHI @ DEN,DEN,False,W,q4,4Q,24.0,8.0,11.0,5.0,6.0,3.0,3.0,12.0,24,0029700657
+4,True,2037,Jamal Crawford,2003-04,Regular Season,2004-04-11,CHI @ TOR,TOR,False,W,q4,4Q,24.0,8.0,13.0,3.0,4.0,5.0,6.0,12.0,50,0020301156
+4,True,203897,Zach LaVine,2020-21,Regular Season,2021-02-05,CHI @ ORL,ORL,False,L,q4,4Q,24.0,8.0,14.0,1.0,4.0,7.0,7.0,11.066666666666666,26,0022000344
+7,True,1629632,Coby White,2019-20,Regular Season,2019-11-12,CHI vs. NYK,NYK,True,W,q4,4Q,23.0,8.0,9.0,7.0,8.0,0.0,0.0,10.483333333333333,27,0021900149
+7,True,101126,Nate Robinson,2012-13,Playoffs,2013-04-27,CHI vs. BKN,BKN,True,W,q4,4Q,23.0,9.0,11.0,2.0,2.0,3.0,3.0,11.601666666666667,34,0041200134
+7,True,2037,Jamal Crawford,2003-04,Regular Season,2003-12-06,CHI vs. NOH,NOH,True,L,q4,4Q,23.0,10.0,12.0,1.0,2.0,2.0,2.0,12.0,28,0020300274
+10,True,203897,Zach LaVine,2024-25,Regular Season,2024-12-26,CHI @ ATL,ATL,False,L,q3,3Q,22.0,7.0,9.0,6.0,6.0,2.0,2.0,12.0,37,0022400413
+10,True,2732,Ben Gordon,2004-05,Regular Season,2005-03-30,CHI @ CHA,CHA,False,W,q4,4Q,22.0,8.0,12.0,3.0,4.0,3.0,4.0,12.0,35,0020401054
+10,True,893,Michael Jordan,1996-97,Regular Season,1997-02-04,CHI @ POR,POR,False,W,q4,4Q,22.0,8.0,13.0,1.0,2.0,5.0,5.0,12.0,36,0029600667
+10,True,1626171,Bobby Portis Jr.,2018-19,Regular Season,2019-02-02,CHI @ CHA,CHA,False,L,q2,2Q,22.0,9.0,13.0,4.0,6.0,0.0,0.0,12.0,33,0021800776

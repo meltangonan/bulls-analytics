@@ -38,6 +38,8 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `pull_up_points_data.py` | Bulls top-15 pull-up points seasons, 2013–14 onward; shared inputs for `pull_up_points_boxed.py`, `pull_up_points_bars.py`, and `pull_up_points_table.py` | `tests/test_pull_up_points_data.py` |
 | `drive_leaders_data.py` | Bulls top-15 drive volume, drive-points, and drive-assist seasons since 2013–14; retains point-accounting and player/team audits | `tests/test_drive_leaders.py` |
 | `drive_leaders_table.py` | Three matching table assets for the drive leaders carousel (`--mode drives/points/assists`) | `tests/test_drive_leaders.py` |
+| `points_in_a_period_data.py` | Bulls most points in one quarter or half since 1996-97 from `PlayerGameLogs` period/segment splits; proves quarters and halves sum to the game before ranking; top 10 plus ties at 10th | `tests/test_points_in_a_period.py` |
+| `points_in_a_period_bars.py` | Ranked table-bar hybrid for those boards (`--board quarter/half`), T-n ties, asterisk for playoff and play-in games, post-local portraits | `tests/test_points_in_a_period.py` |
 | `bulls_lineup_3pt.py` | Bulls' best three-point shooting five-man lineups since 2000-01 | No dedicated tests |
 | `bulls_lineup_rdrtg.py` | Bulls' best five-man defensive lineups since 2000-01 | `tests/test_bulls_lineup_rdrtg.py` |
 | `bulls_lineup_rortg.py` | Bulls' best five-man offensive lineups since 2000-01 | `tests/test_bulls_lineup_rortg.py` |

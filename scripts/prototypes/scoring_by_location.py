@@ -26,7 +26,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from matplotlib.patches import Arc, Circle, FancyBboxPatch, Wedge
+from matplotlib.patches import Arc, Circle, FancyBboxPatch, Rectangle, Wedge
 from scipy.ndimage import gaussian_filter
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -38,7 +38,9 @@ from bulls.analysis import shot_maps as sm
 from bulls.analysis.stats import detailed_zones
 from bulls.config import CURRENT_SEASON
 from bulls.graphics import house
-from bulls.graphics.court import BACKBOARD_Y, BASELINE_Y
+from bulls.graphics.court import (
+    BACKBOARD_Y, BASELINE_Y, CHART_COURT_INK, chart_court_segments,
+)
 from bulls.graphics.house import helvetica
 
 CACHE = REPO_ROOT / "cache" / "scoring_by_location"
@@ -164,7 +166,7 @@ VIEW_Y = (-356, 142)
 COURT_FILL = "#F6DCE1"
 PAINT_FILL = "#EFC6D0"
 RIM_FILL = "#E5A9B8"
-COURT_LINE = "#1A1A1A"
+COURT_LINE = CHART_COURT_INK
 ZONE_LINE = "#1A1A1A"
 
 # Centre-to-centre between a chip's two figures, in court units.
@@ -386,8 +388,11 @@ def draw_court(ax):
     ax.add_patch(FancyBboxPatch(
         (-PAINT_HALF, flip(FT_Y)), 2 * PAINT_HALF, FT_Y - BASELINE_Y,
         boxstyle="square,pad=0", facecolor="none", edgecolor=COURT_LINE, lw=1.9, zorder=4))
+    for start, end in chart_court_segments():
+        ax.plot([start[0], end[0]], [flip(start[1]), flip(end[1])], **line)
     ax.add_patch(Circle((0, 0), 7.5, facecolor="none", edgecolor=COURT_LINE, lw=1.9, zorder=5))
     ax.plot([-30, 30], [flip(BACKBOARD_Y)] * 2, **line)             # backboard
+    ax.plot([0, 0], [flip(BACKBOARD_Y), flip(-7.5)], **line)        # rim connector
     _arc(ax, 0, 0, 2 * RA_R, 0, 180, color=COURT_LINE, lw=1.9, zorder=5)
     for side in (-RA_R, RA_R):                                      # close the D
         ax.plot([side, side], [0, flip(BACKBOARD_Y)], **line)

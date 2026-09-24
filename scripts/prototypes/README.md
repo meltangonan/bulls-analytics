@@ -64,6 +64,9 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `current_roster_scoring_landscape.py` | Current roster scoring landscape | `tests/test_current_roster_scoring_landscape.py` |
 | `current_roster_zone_charts.py` | Current-roster twelve-zone batch | Shared renderer: `tests/test_zone_charts.py`; no dedicated batch tests |
 | `demar_derozan_bulls_zone_charts.py` | DeMar DeRozan's three Bulls regular seasons plus an attempt-weighted Chicago-tenure total | `tests/test_demar_derozan_bulls_zone_charts.py` |
+| `distance_band_fgm.py` | Bulls player-season FGM leaders by two-foot distance band since 1997-98, with PPS tiebreak and a final 30 ft-to-half-court group; saved shot rows reconcile to official team totals | Post audit tables in `docs/visuals/2026-09-23-distance-band-fgm/data/` |
+| `distance_band_fgm_court_assets.py` | Sixteen court-only assets for Canva, cropped to the court edges; `--final` exports 2700 × 2538 at 300 DPI, and the final band ends at the half-court line | `tests/test_court.py`, inspected saved renders |
+| `distance_band_fgm_chart.py` | Three earlier 1080 × 1350 review slides with portraits and labels | Inspected saved v16 renders |
 | `derrick_rose_bulls_zone_charts.py` | Derrick Rose's seven played Bulls regular seasons plus an attempt-weighted Chicago-tenure total | `tests/test_derrick_rose_bulls_zone_charts.py`, `tests/test_player_season_totals.py` |
 | `dunks_since_2010.py` | Top-ten Bulls dunk seasons since 2010–11, split by type (total, driving, running, alley-oop, putback) | `tests/test_dunks_since_2010.py` |
 | `f5_lineup_table.py` | Bulls Lineup Table | `tests/test_f5_lineup_table.py` |

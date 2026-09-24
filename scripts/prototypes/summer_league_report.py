@@ -45,7 +45,7 @@ from nba_api.stats.endpoints import (
 from bulls.config import BULLS_TEAM_ID, NBA_TEAMS
 from bulls.data.fetch import _NBA_HEADERS, get_game_shots, get_player_headshot
 from bulls.graphics.craft import headshot_label
-from bulls.graphics.court import draw_half_court, nba_to_basket_bottom_px
+from bulls.graphics.court import draw_chart_court, nba_to_basket_bottom_px
 from bulls.graphics.house import (
     CANVAS_HEIGHT as H,
     CANVAS_WIDTH as W,
@@ -69,7 +69,6 @@ PALE_RED = "#F7E8ED"
 PANEL_RED = "#FAF1F4"  # lighter wash for large court panels
 CHIP_GRAY = "#F1ECE8"  # warm neutral for cards outside a tinted panel
 CHIP_BLUSH = "#F3E1E7"  # stronger tonal-red card surface inside pale panels
-COURT_LINE = "#C9A8B5"  # warm court lines on the pale panels
 OUTPUT_DIR = _REPO / "output"
 LENSES = ("shot_diet", "role", "impact")
 SUMMER_LEAGUE_LEAGUE_ID = "15"
@@ -685,7 +684,6 @@ def _draw_shot_map(
     right: float,
     y_center: float,
     s: float = 0.42,
-    line_color: str = "#CFCFCF",
     miss_as_x: bool = False,
     draw_legend: bool = True,
 ):
@@ -699,7 +697,7 @@ def _draw_shot_map(
     """
     if not attempts:
         return
-    t, x0, y0, top_y = _draw_half_court(ax, right, y_center, s, line_color)
+    t, x0, y0, top_y = _draw_half_court(ax, right, y_center, s)
 
     dot_r = max(5.0, 5 * s / 0.42 * 0.7)
     legend_size = 8 if s <= 0.6 else 12
@@ -725,11 +723,11 @@ def _draw_shot_map(
     ax.text(miss_x + 10 + legend_size / 2, legend_y, "MISS", ha="left", va="center", fontsize=legend_size, color=MUTED, fontproperties=body_font("medium"))
 
 
-def _draw_half_court(ax, right: float, y_center: float, s: float, line_color: str):
+def _draw_half_court(ax, right: float, y_center: float, s: float):
     """Draw court geometry; return the basket-bottom NBA data transform."""
     top_y = 280
     center_x = right - 250 * s
-    x0, y0 = draw_half_court(ax, center_x, y_center, s, line_color)
+    x0, y0 = draw_chart_court(ax, center_x, y_center, s)
 
     def data_t(cx, cy):
         return nba_to_basket_bottom_px(x0, y0, s, cx, cy)
@@ -1077,7 +1075,7 @@ def render_team_slide(
     # Right: compact zone labels preserve the court geography while replacing
     # dozens of overlapping shot dots with makes/attempts, FG%, and diet share.
     ax.text(444, section_y, "BULLS SHOT DIET", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
-    t, _, _, _ = _draw_half_court(ax, right=996, y_center=866, s=0.94, line_color=COURT_LINE)
+    t, _, _, _ = _draw_half_court(ax, right=996, y_center=866, s=0.94)
     zone_positions = {
         "restricted": t(0, 4),
         "paint": t(0, 94),
@@ -1167,7 +1165,6 @@ def render_player_slide(
         right=660,
         y_center=655,
         s=1.2,
-        line_color=COURT_LINE,
         miss_as_x=True,
     )
     ax.text(60, 390, "SHOT DISTRIBUTION", ha="left", va="top", fontsize=10, color=RED, fontproperties=body_font("bold"))

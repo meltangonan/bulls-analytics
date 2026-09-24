@@ -54,11 +54,11 @@ from bulls.graphics.court import (
     COURT_HALF_WIDTH,
     FT_LINE_Y,
     FT_RADIUS,
-    HASH_FROM_BASELINE_FT,
     HOOP_RADIUS,
-    LANE_MARKS_FT,
     PAINT_HALF_WIDTH,
-    draw_half_court,
+    CHART_COURT_INK,
+    chart_court_segments,
+    draw_chart_court,
     nba_to_basket_bottom_px,
     restricted_area_patch,
 )
@@ -68,7 +68,6 @@ from bulls.visuals import visual_dir
 # --- Palettes ---------------------------------------------------------------
 HOT_BANDS = ["#F6CDD7", "#E67C96", "#CE1141", "#7E0C2B"]
 HOT_LINE = "#5E0820"
-COURT_WARM = "#C9A8B5"
 
 HEX_COLORS = ("#2166AC", "#92C5DE", "#F1CC5B", "#E8763C", "#A80F2A")
 HEX_CUTS = (-0.075, -0.025, 0.025, 0.075)
@@ -80,7 +79,7 @@ DARK_BG, DARK_TEXT, DARK_DIM, DARK_LINE = "#14110F", "#F4EFE9", "#A79E95", "#6C6
 # The account's black (DESIGN.md section 2), not the theme ink. A filled court
 # carries its markings over twelve saturated fills, so the lines have to be the
 # one neutral that reads on all of them rather than a colour chosen per theme.
-ZONE12_COURT_INK = "#242424"
+ZONE12_COURT_INK = CHART_COURT_INK
 
 
 def resolve_player(name: str) -> tuple[int, str]:
@@ -106,7 +105,7 @@ def render_hotspot(ctx, out: Path, final: bool):
     theme = house.get_theme("jersey")
     fig, ax = house.new_canvas(theme)
     s = 1.72
-    x0, y0 = draw_half_court(ax, house.CANVAS_WIDTH / 2, 700, s, COURT_WARM)
+    x0, y0 = draw_chart_court(ax, house.CANVAS_WIDTH / 2, 700, s)
 
     player = sm.within_range(ctx["player"])
     league = sm.within_range(ctx["league"])
@@ -266,8 +265,7 @@ def render_hex(ctx, out: Path, final: bool):
         sp.set_visible(False)
 
     s = 1.84
-    x0, y0 = draw_half_court(ax, house.CANVAS_WIDTH / 2, 830, s, theme.ink,
-                             lw=1.2)
+    x0, y0 = draw_chart_court(ax, house.CANVAS_WIDTH / 2, 830, s, lw=1.2)
 
     p, table = prepare_hex_table(ctx)
     sparse_attempts = int(table.loc[
@@ -348,7 +346,7 @@ def render_hex(ctx, out: Path, final: bool):
 
 def _draw_zone_court(ax, center_x: float, center_y: float, s: float,
                      fills: dict[str, str], fill_alpha: float,
-                     court_ink: str = ZONE12_COURT_INK, seam_alpha: float = 1.0,
+                     seam_alpha: float = 1.0,
                      lw: float = 1.2, merge_mid: bool = False):
     """Paint one twelve-zone half court onto a supplied axes, and nothing else.
 
@@ -363,7 +361,7 @@ def _draw_zone_court(ax, center_x: float, center_y: float, s: float,
     ``lw`` they hold their relationship when the court shrinks, instead of a
     mini court drowning under lines sized for one four times its width.
     """
-    x0, y0 = draw_half_court(ax, center_x, center_y, s, court_ink, lw=lw)
+    x0, y0 = draw_chart_court(ax, center_x, center_y, s, lw=lw)
 
     def to_px(cx, cy):
         return nba_to_basket_bottom_px(x0, y0, s, cx, cy)
@@ -398,10 +396,10 @@ def _draw_zone_court(ax, center_x: float, center_y: float, s: float,
     for side in (-250, 250):
         ax.plot([to_px(side, 0)[0]] * 2,
                 [to_px(side, 110)[1], to_px(side, ZONE12_TOP)[1]],
-                color=court_ink, lw=lw, zorder=5)
+                color=CHART_COURT_INK, lw=lw, zorder=5)
     left, right = to_px(-250, ZONE12_TOP), to_px(250, ZONE12_TOP)
     ax.plot([left[0], right[0]], [left[1], right[1]],
-            color=court_ink, lw=lw, zorder=5)
+            color=CHART_COURT_INK, lw=lw, zorder=5)
     return to_px
 
 
@@ -598,7 +596,7 @@ ZONE_BINS = [
     (5.0, 1e9, "#245A3B", "+5% or better", "BETTER"),
 ]
 
-COURT_INK = "#141414"        # court markings, per the reference card
+COURT_INK = CHART_COURT_INK
 CREAM = "#F5EFE2"            # headline figures and the zone pill
 # Bright enough to carry their meaning while sitting on a coloured band: a
 # delta and its band are often the same hue, so the tint has to do the work.
@@ -709,17 +707,14 @@ def _ring_court(ax, hx, hy, s, clip):
     base = hy + sm.BASELINE_Y * s
 
     ax.plot([hx - 250 * s, hx + 250 * s], [base, base], **line)
+    for side in (-250, 250):
+        ax.plot([hx + side * s] * 2, [base, hy + 110 * s], **line)
     ax.add_patch(Rectangle((hx - PAINT_HALF_WIDTH * s, base),
                            2 * PAINT_HALF_WIDTH * s, 190 * s, facecolor="none",
                            edgecolor=COURT_INK, lw=2.0, zorder=6))
-    for ft in LANE_MARKS_FT:
-        y = base + ft * 10 * s
-        for side, direction in ((-PAINT_HALF_WIDTH, -1), (PAINT_HALF_WIDTH, 1)):
-            ax.plot([hx + side * s, hx + (side + direction * 8) * s], [y, y], **line)
-    hash_y = base + HASH_FROM_BASELINE_FT * 10 * s
-    for side, direction in ((-250, 1), (250, -1)):
-        ax.plot([hx + side * s, hx + (side + direction * 18) * s],
-                [hash_y, hash_y], **line)
+    for start, end in chart_court_segments():
+        ax.plot([hx + start[0] * s, hx + end[0] * s],
+                [hy + start[1] * s, hy + end[1] * s], **line)
     ax.add_patch(_Circle((hx, hy), HOOP_RADIUS * s, facecolor="none", edgecolor=COURT_INK,
                          lw=2.0, zorder=7))
     board_y = hy + BACKBOARD_Y * s
@@ -739,8 +734,9 @@ def _ring_court(ax, hx, hy, s, clip):
     corner_top = (ARC ** 2 - CORNER_X ** 2) ** 0.5
     for side in (-CORNER_X, CORNER_X):
         ax.plot([hx + side * s] * 2, [base, hy + corner_top * s], **line)
-    a = ax.add_patch(_Arc((hx, hy), 2 * ARC * s, 2 * ARC * s, theta1=22.1,
-                          theta2=157.9, color=COURT_INK, lw=2.0, zorder=6))
+    theta = float(np.degrees(np.arctan2(corner_top, CORNER_X)))
+    a = ax.add_patch(_Arc((hx, hy), 2 * ARC * s, 2 * ARC * s, theta1=theta,
+                          theta2=180 - theta, color=COURT_INK, lw=2.0, zorder=6))
     a.set_clip_path(clip)
 
 
@@ -1347,16 +1343,10 @@ def _ladder_label(ax, hx, hy, s, ring, col, metric, norm):
             fontproperties=helvetica("bold"))
 
 
-# Court ink. Softer and thinner than the zone charts use: here the markings sit
-# on top of 30 saturated bands, so a hard white line fights the data for
-# attention instead of quietly locating it.
-LADDER_COURT_INK = "#FBF7F1"
-# Dropped a notch from 0.68 so the rim label stays legible. The innermost
-# value in the number column sits inside the hoop, and with the label
-# outlines removed an opaque rim circle drew straight through white digits.
-LADDER_COURT_ALPHA, LADDER_COURT_LW = 0.52, 1.3
+LADDER_COURT_INK = CHART_COURT_INK
+LADDER_COURT_ALPHA, LADDER_COURT_LW = 1.0, 1.3
 def _ladder_court(ax, hx, hy, s, clip):
-    """Court markings, drawn light because every ring sits under them."""
+    """Shared black court markings over the distance bands."""
     from matplotlib.patches import Arc as _Arc, Circle as _Circle
     ink = LADDER_COURT_INK
     line = dict(color=ink, lw=LADDER_COURT_LW, zorder=6, alpha=LADDER_COURT_ALPHA)
@@ -1364,22 +1354,16 @@ def _ladder_court(ax, hx, hy, s, clip):
     base = hy + sm.BASELINE_Y * s
 
     ax.plot([hx - 250 * s, hx + 250 * s], [base, base], **line)
+    for side in (-250, 250):
+        ax.plot([hx + side * s] * 2, [base, hy + 110 * s], **line)
     ax.add_patch(Rectangle((hx - PAINT_HALF_WIDTH * s, base),
                            2 * PAINT_HALF_WIDTH * s, 190 * s, facecolor="none",
                            edgecolor=ink, lw=LADDER_COURT_LW,
                            alpha=LADDER_COURT_ALPHA, zorder=6))
 
-    # Lane marks: short ticks stepping out from each paint edge.
-    for ft in LANE_MARKS_FT:
-        y = base + ft * 10 * s
-        for side, direction in ((-PAINT_HALF_WIDTH, -1), (PAINT_HALF_WIDTH, 1)):
-            ax.plot([hx + side * s, hx + (side + direction * 8) * s], [y, y], **line)
-
-    # Sideline hash marks, which the reference keeps and which quietly tell the
-    # reader how far out the widest rings actually reach.
-    y = base + HASH_FROM_BASELINE_FT * 10 * s
-    for side, direction in ((-250, 1), (250, -1)):
-        ax.plot([hx + side * s, hx + (side + direction * 18) * s], [y, y], **line)
+    for start, end in chart_court_segments():
+        ax.plot([hx + start[0] * s, hx + end[0] * s],
+                [hy + start[1] * s, hy + end[1] * s], **line)
 
     # Restricted area: 4 ft from the centre of the rim, the arc a defender
     # cannot draw a charge inside. It belongs on this chart more than most --
@@ -1387,21 +1371,15 @@ def _ladder_court(ax, hx, hy, s, clip):
     restricted_area_patch(ax, hx, hy, s, ink, LADDER_COURT_LW, 6,
                           LADDER_COURT_ALPHA)
 
-    # Backboard with depth: a thick plate over a soft drop shadow, then the rim
-    # and its connector drawn on top.
+    # Backboard, rim, and connector use the same ink as the rest of the court.
     bb_y = hy + BACKBOARD_Y * s
-    for dy, lw, alpha, color in ((-2.4, 5.0, 0.30, "#150F0A"),
-                                 (0.0, 4.2, 0.95, ink)):
-        ax.plot([hx - BACKBOARD_HALF_WIDTH * s, hx + BACKBOARD_HALF_WIDTH * s],
-                [bb_y + dy] * 2, color=color, lw=lw,
-                alpha=alpha, solid_capstyle="butt", zorder=7)
+    ax.plot([hx - BACKBOARD_HALF_WIDTH * s, hx + BACKBOARD_HALF_WIDTH * s],
+            [bb_y] * 2, color=ink, lw=4.2,
+            solid_capstyle="butt", zorder=7)
     ax.plot([hx, hx], [bb_y, hy - HOOP_RADIUS * s], color=ink, lw=1.6, alpha=0.9,
             zorder=7)
-    # The rim goes lightest of all. It is the one marking that shares its exact
-    # position with a number -- the innermost ring's value sits inside the hoop
-    # -- so it has to locate the basket without competing with the digits.
     ax.add_patch(_Circle((hx, hy), HOOP_RADIUS * s, facecolor="none", edgecolor=ink,
-                         lw=1.5, alpha=0.42, zorder=4))
+                         lw=1.5, zorder=4))
 
     ft_y = hy + FT_LINE_Y * s
     for t1, t2, dash in ((0, 180, "solid"), (180, 360, (0, (5, 4)))):
@@ -1411,8 +1389,9 @@ def _ladder_court(ax, hx, hy, s, clip):
     corner_top = (ARC ** 2 - CORNER_X ** 2) ** 0.5
     for side in (-CORNER_X, CORNER_X):
         ax.plot([hx + side * s] * 2, [base, hy + corner_top * s], **line)
-    a = ax.add_patch(_Arc((hx, hy), 2 * ARC * s, 2 * ARC * s, theta1=22.1,
-                          theta2=157.9, **arcs))
+    theta = float(np.degrees(np.arctan2(corner_top, CORNER_X)))
+    a = ax.add_patch(_Arc((hx, hy), 2 * ARC * s, 2 * ARC * s, theta1=theta,
+                          theta2=180 - theta, **arcs))
     a.set_clip_path(clip)
 
 
@@ -1728,7 +1707,6 @@ def render_zonegrid(ctx, out: Path, final: bool):
     by_season = ctx["by_season"]
     palette = ctx.get("palette") or ZONE12_DEFAULT_PALETTE
     min_fga = int(ctx.get("min_fga") or sm.MIN_ZONE12_FGA_PLAYER)
-    court_ink = ctx.get("court_ink") or "#242424"
     theme = house.get_theme("jersey")
 
     fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
@@ -1771,7 +1749,7 @@ def render_zonegrid(ctx, out: Path, final: bool):
                                     by_season[season]["league"], min_fga=min_fga)
             _draw_zone_court(ax, cx, baseline_y + ZONEGRID_CENTRE_OFFSET * s, s,
                              _zone12_fills(zones, palette), 1.0,
-                             court_ink=court_ink, lw=0.7)
+                             lw=0.7)
             ax.text(cx,
                     baseline_y - ZONEGRID_LABEL_GAP - ZONEGRID_LABEL_SIZE * 2.08,
                     season, ha="center", va="baseline",
@@ -1818,7 +1796,6 @@ def render_zones(ctx, out: Path, final: bool):
     show_details = bool(ctx.get("show_details", True))
     style = str(ctx.get("style") or ZONE12_DEFAULT_STYLE)
     look = ZONE12_STYLES[style]
-    court_ink = ctx.get("court_ink") or house.get_theme("jersey").ink
     # The floor still applies. It no longer decides whether a zone is drawn at
     # all -- it decides whether the zone earns an efficiency colour.
     merge_mid = bool(ctx.get("merge_mid"))
@@ -1845,7 +1822,7 @@ def render_zones(ctx, out: Path, final: bool):
     # fully legible through its four-line pill but uses neutral grey ground.
     fills = _zone12_fills(zones, palette)
     to_px = _draw_zone_court(ax, house.CANVAS_WIDTH / 2, ZONE12_COURT_Y,
-                             ZONE12_SCALE, fills, 1.0, court_ink=court_ink,
+                             ZONE12_SCALE, fills, 1.0,
                              merge_mid=merge_mid)
 
     if show_details:

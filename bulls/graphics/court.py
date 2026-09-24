@@ -10,13 +10,16 @@ from __future__ import annotations
 
 import numpy as np
 from matplotlib.path import Path
-from matplotlib.patches import Arc, Circle, FancyBboxPatch, PathPatch
+from matplotlib.patches import Arc, Circle, FancyBboxPatch, PathPatch, Rectangle
 
 
 # Court constants, tenths of a foot.
 ARC = 237.5              # three-point radius
 CORNER_X = 220.0         # where the arc meets the corner lines
 BASELINE_Y = -52.5
+# Hoop center is 5 ft 3 in from the baseline; midcourt is 47 ft from it.
+HALFCOURT_Y = 417.5
+CENTER_CIRCLE_RADII = (60.0, 20.0)
 PAINT_HALF_WIDTH = 80.0
 FT_LINE_Y = 137.5
 COURT_HALF_WIDTH = 250.0
@@ -29,8 +32,67 @@ BACKBOARD_Y = -12.5
 BACKBOARD_HALF_WIDTH = 30.0
 RESTRICTED_RADIUS = 40.0
 FT_RADIUS = 60.0
-LANE_MARKS_FT = (7.0, 8.0, 11.0, 14.0)
+# Positions measured from the baseline in the NBA court diagram. The 7–8 ft
+# interval is a solid neutral-zone block, not a pair of thin lane-space ticks.
+LANE_MARKS_FT = (4.0, 11.0, 14.0, 17.0)
+# Selected visual convention for Bulls court charts. The official marking set
+# above remains available to callers that need a regulation diagram.
+CHART_LANE_MARKS_FT = (7.0, 8.0, 11.0, 14.0)
+CHART_COURT_INK = "#000000"
+LANE_MARK_LENGTH = 5.0  # six inches, in shot-chart tenths of a foot
+NEUTRAL_ZONE_START_FT = 7.0
+NEUTRAL_ZONE_LENGTH = 10.0  # one foot along the lane
+NEUTRAL_ZONE_DEPTH = 20.0 / 3.0  # eight inches outside the lane
 HASH_FROM_BASELINE_FT = 28.0
+SIDELINE_HASH_LENGTH = 30.0  # three feet
+BASELINE_HASH_X = 110.0  # three feet outside the eight-foot lane edge
+FREE_THROW_CIRCLE_HASH_X = 50.0  # three feet inside the lane edge
+SIX_INCH_HASH_LENGTH = 5.0
+
+
+def auxiliary_court_segments(lane_marks_ft: tuple[float, ...] = LANE_MARKS_FT):
+    """NBA lane, sideline, and nearby hash marks in raw court coordinates.
+
+    Line thickness remains a drawing choice; endpoints follow Rule No. 1 and
+    its court diagram. Return segments so specialized charts can use their own
+    colors and scaling without inventing different court geometry.
+    """
+    segments = []
+    for ft in lane_marks_ft:
+        y = BASELINE_Y + ft * 10
+        for side, direction in ((-PAINT_HALF_WIDTH, -1), (PAINT_HALF_WIDTH, 1)):
+            segments.append(((side, y), (side + direction * LANE_MARK_LENGTH, y)))
+
+    y = BASELINE_Y + HASH_FROM_BASELINE_FT * 10
+    for side, direction in ((-COURT_HALF_WIDTH, 1), (COURT_HALF_WIDTH, -1)):
+        segments.append(((side, y), (side + direction * SIDELINE_HASH_LENGTH, y)))
+
+    # Baseline hashes are outside the lane. The 13-ft free-throw-circle hashes
+    # are inside it, three feet in from each lane line.
+    for side in (-1, 1):
+        x = side * BASELINE_HASH_X
+        segments.append(((x, BASELINE_Y),
+                         (x, BASELINE_Y + SIX_INCH_HASH_LENGTH)))
+        y = BASELINE_Y + 130.0
+        x = side * FREE_THROW_CIRCLE_HASH_X
+        segments.append(((x, y),
+                         (x + side * SIX_INCH_HASH_LENGTH, y)))
+    return segments
+
+
+def chart_court_segments():
+    """Lane and hash segments selected for all Bulls chart renderers."""
+    return auxiliary_court_segments(CHART_LANE_MARKS_FT)
+
+
+def neutral_zone_rectangles():
+    """The two one-foot neutral-zone blocks, in raw court coordinates."""
+    y = BASELINE_Y + NEUTRAL_ZONE_START_FT * 10
+    return (
+        (-PAINT_HALF_WIDTH - NEUTRAL_ZONE_DEPTH, y,
+         NEUTRAL_ZONE_DEPTH, NEUTRAL_ZONE_LENGTH),
+        (PAINT_HALF_WIDTH, y, NEUTRAL_ZONE_DEPTH, NEUTRAL_ZONE_LENGTH),
+    )
 
 # Warm court line for pale panels; the Summer League report's original value.
 COURT_LINE = "#C9A8B5"
@@ -81,10 +143,15 @@ def nba_to_basket_bottom_px(x0: float, y0: float, s: float, loc_x, loc_y):
 
 
 def draw_half_court(ax, center_x: float, center_y: float, s: float,
-                    color: str = COURT_LINE, lw: float = 1.1, zorder: int = 5):
+                    color: str = COURT_LINE, lw: float = 1.1, zorder: int = 5,
+                    show_neutral_zone_blocks: bool = True,
+                    lane_marks_ft: tuple[float, ...] = LANE_MARKS_FT):
     """Draw a half court centred at (center_x, center_y), hoop toward the bottom.
 
     ``s`` scales the 500-unit court width to pixels (s=1.0 -> 500 px wide).
+    ``show_neutral_zone_blocks=False`` and ``lane_marks_ft`` can reproduce a
+    simplified lane treatment for a post illustration; defaults keep the full
+    NBA markings.
     Returns the ``(x0, y0)`` origin so callers can map shot coordinates into the
     same pixel space::
 
@@ -112,19 +179,14 @@ def draw_half_court(ax, center_x: float, center_y: float, s: float,
         boxstyle="square,pad=0", facecolor="none", edgecolor=color,
         lw=lw, zorder=zorder))
 
-    # The same lane-space and sideline markings used by the shot-value ladder.
-    # They are court geography, not chart decoration, so conventional shot maps
-    # should not lose them just because their data layer is made of hexagons.
-    for ft in LANE_MARKS_FT:
-        mark_y = BASELINE_Y + ft * 10
-        for side, direction in ((-PAINT_HALF_WIDTH, -1), (PAINT_HALF_WIDTH, 1)):
-            ax.plot([t(side, mark_y)[0], t(side + direction * 8, mark_y)[0]],
-                    [t(0, mark_y)[1]] * 2, **line)
-
-    hash_y = BASELINE_Y + HASH_FROM_BASELINE_FT * 10
-    for side, direction in ((-COURT_HALF_WIDTH, 1), (COURT_HALF_WIDTH, -1)):
-        ax.plot([t(side, hash_y)[0], t(side + direction * 18, hash_y)[0]],
-                [t(0, hash_y)[1]] * 2, **line)
+    for start, end in auxiliary_court_segments(lane_marks_ft):
+        a, b = t(*start), t(*end)
+        ax.plot([a[0], b[0]], [a[1], b[1]], **line)
+    if show_neutral_zone_blocks:
+        for x, y, width, height in neutral_zone_rectangles():
+            px, py = t(x, y)
+            ax.add_patch(Rectangle((px, py), width * s, height * s,
+                                   facecolor=color, edgecolor="none", zorder=zorder))
 
     hoop_x, hoop_y = t(0, 0)
     ax.add_patch(Circle((hoop_x, hoop_y), HOOP_RADIUS * s, facecolor="none",
@@ -157,3 +219,24 @@ def draw_half_court(ax, center_x: float, center_y: float, s: float,
     ax.add_patch(Arc((hoop_x, hoop_y), 2 * ARC * s, 2 * ARC * s, theta1=theta,
                      theta2=180 - theta, color=color, lw=lw, zorder=zorder))
     return x0, y0
+
+
+def draw_chart_court(ax, center_x: float, center_y: float, s: float,
+                     lw: float = 1.1, zorder: int = 5):
+    """Draw the shared black court and selected lane pattern for Bulls charts."""
+    return draw_half_court(ax, center_x, center_y, s,
+                           color=CHART_COURT_INK, lw=lw, zorder=zorder,
+                           show_neutral_zone_blocks=False,
+                           lane_marks_ft=CHART_LANE_MARKS_FT)
+
+
+def draw_halfcourt_boundary(ax, hoop_x: float, hoop_y: float, s: float,
+                            lw: float = 1.1, zorder: int = 5):
+    """Draw the division line and basket-facing halves of both center circles."""
+    y = hoop_y + HALFCOURT_Y * s
+    ax.plot((hoop_x - COURT_HALF_WIDTH * s, hoop_x + COURT_HALF_WIDTH * s),
+            (y, y), color=CHART_COURT_INK, lw=lw, zorder=zorder)
+    for radius in CENTER_CIRCLE_RADII:
+        ax.add_patch(Arc((hoop_x, y), 2 * radius * s, 2 * radius * s,
+                         theta1=180, theta2=360, color=CHART_COURT_INK,
+                         lw=lw, zorder=zorder + 1))

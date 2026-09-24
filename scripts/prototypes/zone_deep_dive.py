@@ -36,7 +36,7 @@ if str(ROOT) not in sys.path:
 
 from bulls import data
 from bulls.graphics import house
-from bulls.graphics.court import BASELINE_Y, draw_half_court, nba_to_basket_bottom_px
+from bulls.graphics.court import BASELINE_Y, draw_chart_court, nba_to_basket_bottom_px
 from bulls.graphics.house import helvetica
 
 CACHE = ROOT / "cache" / "hot_spots"
@@ -114,7 +114,7 @@ def render(rows, zone_title, zone_rule, player_name, subtitle, out, final):
     theme = house.get_theme("jersey")
     fig, ax = house.new_canvas(theme)
     s = 1.62
-    x0, y0 = draw_half_court(ax, house.CANVAS_WIDTH / 2, 700, s, "#B4AEA6")
+    x0, y0 = draw_chart_court(ax, house.CANVAS_WIDTH / 2, 700, s)
 
     def t(cx, cy):
         return nba_to_basket_bottom_px(x0, y0, s, cx, cy)

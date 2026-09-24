@@ -5,23 +5,40 @@ from __future__ import annotations
 import matplotlib.pyplot as plt
 import numpy as np
 import pytest
-from matplotlib.patches import Circle
+from matplotlib.patches import Arc, Circle, Rectangle
 
 from bulls.graphics.court import (
     ARC,
     BACKBOARD_HALF_WIDTH,
     BACKBOARD_Y,
     BASELINE_Y,
+    CHART_COURT_INK,
+    CHART_LANE_MARKS_FT,
+    CENTER_CIRCLE_RADII,
     COURT_HALF_WIDTH,
     CORNER_X,
     HASH_FROM_BASELINE_FT,
+    HALFCOURT_Y,
     FT_LINE_Y,
     HOOP_RADIUS,
     LANE_MARKS_FT,
+    LANE_MARK_LENGTH,
+    NEUTRAL_ZONE_DEPTH,
+    NEUTRAL_ZONE_LENGTH,
+    NEUTRAL_ZONE_START_FT,
+    BASELINE_HASH_X,
+    FREE_THROW_CIRCLE_HASH_X,
+    SIX_INCH_HASH_LENGTH,
     PAINT_HALF_WIDTH,
     RESTRICTED_RADIUS,
+    SIDELINE_HASH_LENGTH,
+    auxiliary_court_segments,
+    chart_court_segments,
+    draw_chart_court,
+    draw_halfcourt_boundary,
     draw_half_court,
     nba_to_basket_bottom_px,
+    neutral_zone_rectangles,
     restricted_area_patch,
 )
 from bulls.analysis import shot_maps as sm
@@ -64,6 +81,19 @@ def test_court_markers_and_zone_geometry_share_the_same_physical_constants():
 
 
 def test_standard_court_includes_ladder_lane_and_sideline_marks():
+    # NBA Rule No. 1 and its court diagram: the sideline mark is 3 ft long,
+    # lane ticks are 6 in long, and the lane spaces include 4 and 17 ft marks.
+    assert LANE_MARKS_FT == (4.0, 11.0, 14.0, 17.0)
+    assert LANE_MARK_LENGTH == 5.0
+    assert NEUTRAL_ZONE_START_FT == 7.0
+    assert NEUTRAL_ZONE_LENGTH == 10.0
+    assert NEUTRAL_ZONE_DEPTH == pytest.approx(20.0 / 3.0)
+    assert HASH_FROM_BASELINE_FT == 28.0
+    assert SIDELINE_HASH_LENGTH == 30.0
+    assert BASELINE_HASH_X == 110.0
+    assert FREE_THROW_CIRCLE_HASH_X == 50.0
+    assert SIX_INCH_HASH_LENGTH == 5.0
+
     fig, ax = plt.subplots()
     x0, y0 = draw_half_court(ax, center_x=0, center_y=0, s=1.0)
 
@@ -71,16 +101,59 @@ def test_standard_court_includes_ladder_lane_and_sideline_marks():
         return x0 + x + COURT_HALF_WIDTH, y0 + y - BASELINE_Y
 
     segments = {_segment(line) for line in ax.lines}
-    for ft in LANE_MARKS_FT:
-        y = BASELINE_Y + ft * 10
-        for side, direction in ((-PAINT_HALF_WIDTH, -1), (PAINT_HALF_WIDTH, 1)):
-            assert ((t(side, y)[0], t(side + direction * 8, y)[0]),
-                    (t(0, y)[1], t(0, y)[1])) in segments
+    for start, end in auxiliary_court_segments():
+        a, b = t(*start), t(*end)
+        assert ((a[0], b[0]), (a[1], b[1])) in segments
+    blocks = [patch for patch in ax.patches if isinstance(patch, Rectangle)]
+    for x, y, width, height in neutral_zone_rectangles():
+        px, py = t(x, y)
+        assert any(block.get_xy() == pytest.approx((px, py))
+                   and block.get_width() == pytest.approx(width)
+                   and block.get_height() == pytest.approx(height)
+                   for block in blocks)
+    plt.close(fig)
 
-    y = BASELINE_Y + HASH_FROM_BASELINE_FT * 10
-    for side, direction in ((-COURT_HALF_WIDTH, 1), (COURT_HALF_WIDTH, -1)):
-        assert ((t(side, y)[0], t(side + direction * 18, y)[0]),
-                (t(0, y)[1], t(0, y)[1])) in segments
+
+def test_simplified_court_can_omit_neutral_zone_blocks_only():
+    fig, ax = plt.subplots()
+    x0, y0 = draw_half_court(ax, center_x=0, center_y=0, s=1.0,
+                            show_neutral_zone_blocks=False,
+                            lane_marks_ft=(7.0, 8.0, 11.0, 14.0))
+    assert not any(isinstance(patch, Rectangle) for patch in ax.patches)
+    segments = {_segment(line) for line in ax.lines}
+    for ft in (7.0, 8.0, 11.0, 14.0):
+        y = y0 + ft * 10
+        left = x0 + COURT_HALF_WIDTH - PAINT_HALF_WIDTH
+        assert ((left, left - LANE_MARK_LENGTH), (y, y)) in segments
+    plt.close(fig)
+
+
+def test_chart_court_uses_black_and_the_selected_marks():
+    fig, ax = plt.subplots()
+    x0, y0 = draw_chart_court(ax, center_x=0, center_y=0, s=1.0)
+    assert CHART_COURT_INK == "#000000"
+    assert CHART_LANE_MARKS_FT == (7.0, 8.0, 11.0, 14.0)
+    assert not any(isinstance(patch, Rectangle) for patch in ax.patches)
+    assert all(line.get_color() == CHART_COURT_INK for line in ax.lines)
+    segments = {_segment(line) for line in ax.lines}
+    for start, end in chart_court_segments():
+        a = (x0 + start[0] + COURT_HALF_WIDTH, y0 + start[1] - BASELINE_Y)
+        b = (x0 + end[0] + COURT_HALF_WIDTH, y0 + end[1] - BASELINE_Y)
+        assert ((a[0], b[0]), (a[1], b[1])) in segments
+    plt.close(fig)
+
+
+def test_halfcourt_boundary_uses_official_center_circle_radii():
+    fig, ax = plt.subplots()
+    draw_halfcourt_boundary(ax, hoop_x=300, hoop_y=100, s=2)
+    assert HALFCOURT_Y == pytest.approx(417.5)
+    assert CENTER_CIRCLE_RADII == (60.0, 20.0)
+    line = ax.lines[0]
+    assert _segment(line) == ((-200.0, 800.0), (935.0, 935.0))
+    assert line.get_color() == CHART_COURT_INK
+    arcs = [patch for patch in ax.patches if isinstance(patch, Arc)]
+    assert {(arc.width, arc.height) for arc in arcs} == {(240.0, 240.0), (80.0, 80.0)}
+    assert all(arc.center == (300, 935) for arc in arcs)
     plt.close(fig)
 
 

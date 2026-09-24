@@ -8,11 +8,21 @@ references and the post's Notion provenance. Shared court geometry lives in
 
 ## Court geometry and labels
 
-All shot courts share the complete landmark set: six-foot backboard 1.25 feet behind the center of
-an 18-inch rim, connector ending at the rim's rear edge, restricted-area D, lane-space ticks, sideline
-hashes, free-throw circle, and full three-point line. Physical dimensions follow NBA regulation:
+All newly rendered Bulls shot courts use black markings and the same visible landmark positions:
+six-foot backboard 1.25 feet behind the center of an 18-inch rim, connector ending at the rim's rear
+edge, restricted-area D, lane-space ticks, sideline hashes, free-throw circle, and full three-point line.
+Physical dimensions follow NBA regulation:
 four-foot restricted radius, 16-foot lane, free-throw line 15 feet from the backboard, 23-foot-nine-inch
-arc, and 22-foot corner lines. Change contrast for the data layer, not physical geometry.
+arc, and 22-foot corner lines. The [NBA Rule No. 1 court diagram](https://official.nba.com/rule-no-1-court-dimensions-equipment/)
+also sets the six-inch lane-space ticks and nearby hashes, the one-foot neutral-zone blocks,
+and the three-foot sideline hashes. The selected chart treatment uses two ticks at 7 and 8 feet
+from the baseline, singles at 11 and 14 feet, and no filled neutral-zone blocks. It is a visual
+choice, not the complete regulation marking set. `draw_chart_court` and `chart_court_segments`
+in the shared helper own the black ink and selected marks across standard, ring, ladder, and
+scoring-by-location renderers. The helper also retains the complete official markings for a
+regulation diagram. Different chart crops show different amounts of the court; only a crop reaching
+the actual half-court line shows the center-circle semicircles. Older exported images do not change
+until re-rendered. Change contrast for the data layer, not physical geometry.
 
 **NBA Left appears on the viewer's right in our basket-at-bottom view.** Keep NBA's source label,
 counts, and league comparison intact; mirror x exactly once through `nba_to_basket_bottom_px`.
@@ -138,4 +148,4 @@ headshots, headline totals, and qualification copy belong in Canva, not inside t
 
 Concentric bands use thin tinted sub-annuli to distinguish adjoining bands; ladder charts add a
 soft stepped shadow outside each ring. Do not flatten an established many-band chart into one
-indistinct mass. Court markings over saturated bands use thinner lines and approximately 0.68 alpha.
+indistinct mass. Court markings over saturated bands use thin, opaque black lines.

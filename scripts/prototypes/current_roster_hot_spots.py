@@ -57,7 +57,7 @@ from bulls.analysis.shot_maps import (
 from bulls.config import CURRENT_SEASON
 from bulls.data.fetch import _NBA_HEADERS
 from bulls.graphics import house
-from bulls.graphics.court import draw_half_court, nba_to_basket_bottom_px
+from bulls.graphics.court import draw_chart_court, nba_to_basket_bottom_px
 from bulls.graphics.house import helvetica
 
 CACHE = ROOT / "cache" / "hot_spots"
@@ -91,7 +91,6 @@ DEFAULT_ROWS = [2, 3, 3, 2]
 
 # Warm, faint court lines (from the Summer League report) so the geometry
 # anchors the heat without competing with it.
-COURT_LINE = "#C9A8B5"
 
 # F5 layers: filled contour bands + outline color, hot (Bulls red) and cold
 # (gray). Low band is faint; the ramp climbs through Bulls red to a deep red.
@@ -248,7 +247,7 @@ def square_headshot_label(ax, image_path, cx: float, cy: float, half: float):
 
 def draw_player(ax, pm: PlayerMap, center_x: float, court_y: float, s: float,
                 theme, show_cold: bool):
-    x0, y0 = draw_half_court(ax, center_x, court_y, s, COURT_LINE)
+    x0, y0 = draw_chart_court(ax, center_x, court_y, s)
     if show_cold:
         _draw_field(ax, x0, y0, s, np.clip(-pm.diff, 0, None), COLD_BANDS, COLD_LINE, COLD_ALPHA)
     _draw_field(ax, x0, y0, s, np.clip(pm.diff, 0, None), HOT_BANDS, HOT_LINE, HOT_ALPHA)

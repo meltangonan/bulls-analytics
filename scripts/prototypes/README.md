@@ -11,6 +11,7 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 
 | Entry point | Purpose/family | Focused checks (paths from repo root) |
 | --- | --- | --- |
+| `deep_threes_career_fetch_playoffs.py` / `deep_threes_career_data.py` / `deep_threes_career_table.py` | Bulls career made 27–39-foot threes since 1996–97, regular season plus playoffs; saved shot rows reconcile to official totals, same-range NBA percentage is season/phase weighted by player attempts; transparent top-15 bar table sized for a 1030 px Canva placement | `tests/test_deep_threes_career.py`, saved render |
 | `shot_family_leaders.py` | Any shot family's single-season FGM ranking from one registry (`--family dunks/hooks/layups/floaters`); derives the rankable window from the label audit, `--from-season` narrows it | `tests/test_shot_family_leaders.py` |
 | `shot_diet_distribution.py` | Bulls shot-family shares vs the league average, one dumbbell row per family; `--prepare` snapshots 30 teams and reconciles, `--audit-venue` tests arena scorer bias, `--corroborate` checks the claims against tracking, `--render` draws the family dumbbell and `--render-table` the 48-label vocabulary, both from saved tables | `tests/test_shot_diet_distribution.py` |
 | `floater_season_leaders.py` | Bulls single-season floater FGM ranking since 2015–16, the first season carrying all three floating labels; same flags as `layup_season_leaders.py` | `tests/test_floater_season_leaders.py` |

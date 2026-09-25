@@ -1,0 +1,104 @@
+season,season_type,endpoint,file,source_file_modified_utc
+1996-97,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/1996-97.csv.gz,2026-09-25T14:45:22.834271+00:00
+1996-97,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/1996-97.csv.gz,2026-09-25T14:45:22.825467+00:00
+1997-98,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/1997-98.csv.gz,2026-09-25T14:45:22.835343+00:00
+1997-98,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/1997-98.csv.gz,2026-09-25T14:45:22.825597+00:00
+1998-99,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/1998-99.csv.gz,2026-09-25T14:45:22.836306+00:00
+1998-99,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/1998-99.csv.gz,2026-09-25T14:45:22.825715+00:00
+1999-00,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/1999-00.csv.gz,2026-09-25T14:45:22.837302+00:00
+1999-00,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/1999-00.csv.gz,2026-09-25T14:45:22.825852+00:00
+2000-01,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2000-01.csv.gz,2026-09-25T14:45:22.838042+00:00
+2000-01,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2000-01.csv.gz,2026-09-25T14:45:22.825984+00:00
+2001-02,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2001-02.csv.gz,2026-09-25T14:45:22.838850+00:00
+2001-02,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2001-02.csv.gz,2026-09-25T14:45:22.826112+00:00
+2002-03,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2002-03.csv.gz,2026-09-25T14:45:22.839793+00:00
+2002-03,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2002-03.csv.gz,2026-09-25T14:45:22.826237+00:00
+2003-04,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2003-04.csv.gz,2026-09-25T14:45:22.840565+00:00
+2003-04,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2003-04.csv.gz,2026-09-25T14:45:22.826522+00:00
+2004-05,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2004-05.csv.gz,2026-09-25T14:45:22.841573+00:00
+2004-05,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2004-05.csv.gz,2026-09-25T14:45:22.826781+00:00
+2005-06,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2005-06.csv.gz,2026-09-25T14:45:22.841745+00:00
+2005-06,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2005-06.csv.gz,2026-09-25T14:45:22.827909+00:00
+2006-07,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2006-07.csv.gz,2026-09-25T14:45:22.842238+00:00
+2006-07,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2006-07.csv.gz,2026-09-25T14:45:22.828029+00:00
+2007-08,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2007-08.csv.gz,2026-09-25T14:45:22.843709+00:00
+2007-08,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2007-08.csv.gz,2026-09-25T14:45:22.828143+00:00
+2008-09,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2008-09.csv.gz,2026-09-25T14:45:22.843882+00:00
+2008-09,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2008-09.csv.gz,2026-09-25T14:45:22.828267+00:00
+2009-10,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2009-10.csv.gz,2026-09-25T14:45:22.844129+00:00
+2009-10,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2009-10.csv.gz,2026-09-25T14:45:22.828586+00:00
+2010-11,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2010-11.csv.gz,2026-09-25T14:45:22.844278+00:00
+2010-11,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2010-11.csv.gz,2026-09-25T14:45:22.828851+00:00
+2011-12,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2011-12.csv.gz,2026-09-25T14:45:22.844589+00:00
+2011-12,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2011-12.csv.gz,2026-09-25T14:45:22.829128+00:00
+2012-13,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2012-13.csv.gz,2026-09-25T14:45:22.844916+00:00
+2012-13,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2012-13.csv.gz,2026-09-25T14:45:22.829396+00:00
+2013-14,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2013-14.csv.gz,2026-09-25T14:45:22.845562+00:00
+2013-14,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2013-14.csv.gz,2026-09-25T14:45:22.829675+00:00
+2014-15,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2014-15.csv.gz,2026-09-25T14:45:22.846386+00:00
+2014-15,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2014-15.csv.gz,2026-09-25T14:45:22.829948+00:00
+2015-16,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2015-16.csv.gz,2026-09-25T14:45:22.846823+00:00
+2015-16,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2015-16.csv.gz,2026-09-25T14:45:22.830229+00:00
+2016-17,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2016-17.csv.gz,2026-09-25T14:45:22.847485+00:00
+2016-17,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2016-17.csv.gz,2026-09-25T14:45:22.830483+00:00
+2017-18,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2017-18.csv.gz,2026-09-25T14:45:22.847783+00:00
+2017-18,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2017-18.csv.gz,2026-09-25T14:45:22.830750+00:00
+2018-19,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2018-19.csv.gz,2026-09-25T14:45:22.848087+00:00
+2018-19,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2018-19.csv.gz,2026-09-25T14:45:22.831157+00:00
+2019-20,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2019-20.csv.gz,2026-09-25T14:45:22.849576+00:00
+2019-20,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2019-20.csv.gz,2026-09-25T14:45:22.831477+00:00
+2020-21,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2020-21.csv.gz,2026-09-25T14:45:22.849827+00:00
+2020-21,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2020-21.csv.gz,2026-09-25T14:45:22.831756+00:00
+2021-22,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2021-22.csv.gz,2026-09-25T14:45:22.850157+00:00
+2021-22,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2021-22.csv.gz,2026-09-25T14:45:22.832023+00:00
+2022-23,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2022-23.csv.gz,2026-09-25T14:45:22.850818+00:00
+2022-23,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2022-23.csv.gz,2026-09-25T14:45:22.832302+00:00
+2023-24,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2023-24.csv.gz,2026-09-25T14:45:22.851092+00:00
+2023-24,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2023-24.csv.gz,2026-09-25T14:45:22.832575+00:00
+2024-25,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2024-25.csv.gz,2026-09-25T14:45:22.851398+00:00
+2024-25,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2024-25.csv.gz,2026-09-25T14:45:22.832846+00:00
+2025-26,Regular Season,https://stats.nba.com/stats/shotchartdetail,raw/bulls-shots/2025-26.csv.gz,2026-09-25T14:45:22.852126+00:00
+2025-26,Regular Season,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-player-totals/2025-26.csv.gz,2026-09-25T14:45:22.833110+00:00
+1996-97,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/1996-97.csv.gz,2026-09-25T15:01:50.402323+00:00
+1996-97,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/1996-97.csv.gz,2026-09-25T15:01:50.577462+00:00
+1996-97,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/1996-97.csv.gz,2026-09-25T15:06:32.549140+00:00
+1997-98,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/1997-98.csv.gz,2026-09-25T15:01:53.284607+00:00
+1997-98,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/1997-98.csv.gz,2026-09-25T15:01:54.178251+00:00
+1997-98,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/1997-98.csv.gz,2026-09-25T15:06:34.326552+00:00
+2004-05,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2004-05.csv.gz,2026-09-25T15:01:56.903440+00:00
+2004-05,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2004-05.csv.gz,2026-09-25T15:01:57.661461+00:00
+2004-05,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2004-05.csv.gz,2026-09-25T15:06:35.710584+00:00
+2005-06,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2005-06.csv.gz,2026-09-25T15:02:00.371737+00:00
+2005-06,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2005-06.csv.gz,2026-09-25T15:02:01.553193+00:00
+2005-06,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2005-06.csv.gz,2026-09-25T15:06:36.234171+00:00
+2006-07,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2006-07.csv.gz,2026-09-25T15:02:04.751473+00:00
+2006-07,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2006-07.csv.gz,2026-09-25T15:02:05.594668+00:00
+2006-07,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2006-07.csv.gz,2026-09-25T15:06:36.708539+00:00
+2008-09,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2008-09.csv.gz,2026-09-25T15:02:12.570455+00:00
+2008-09,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2008-09.csv.gz,2026-09-25T15:02:13.430195+00:00
+2008-09,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2008-09.csv.gz,2026-09-25T15:06:38.158433+00:00
+2009-10,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2009-10.csv.gz,2026-09-25T15:02:16.235133+00:00
+2009-10,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2009-10.csv.gz,2026-09-25T15:02:17.274646+00:00
+2009-10,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2009-10.csv.gz,2026-09-25T15:06:38.671893+00:00
+2010-11,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2010-11.csv.gz,2026-09-25T15:02:19.768035+00:00
+2010-11,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2010-11.csv.gz,2026-09-25T15:02:20.651488+00:00
+2010-11,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2010-11.csv.gz,2026-09-25T15:06:39.139091+00:00
+2011-12,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2011-12.csv.gz,2026-09-25T15:02:23.220603+00:00
+2011-12,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2011-12.csv.gz,2026-09-25T15:02:24.489483+00:00
+2011-12,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2011-12.csv.gz,2026-09-25T15:06:40.402308+00:00
+2012-13,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2012-13.csv.gz,2026-09-25T15:02:27.190440+00:00
+2012-13,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2012-13.csv.gz,2026-09-25T15:02:28.418126+00:00
+2012-13,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2012-13.csv.gz,2026-09-25T15:06:41.184002+00:00
+2013-14,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2013-14.csv.gz,2026-09-25T15:02:31.801896+00:00
+2013-14,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2013-14.csv.gz,2026-09-25T15:02:35.308161+00:00
+2013-14,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2013-14.csv.gz,2026-09-25T15:06:42.428299+00:00
+2014-15,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2014-15.csv.gz,2026-09-25T15:02:37.998249+00:00
+2014-15,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2014-15.csv.gz,2026-09-25T15:02:39.851224+00:00
+2014-15,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2014-15.csv.gz,2026-09-25T15:06:42.905000+00:00
+2016-17,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2016-17.csv.gz,2026-09-25T15:02:42.666830+00:00
+2016-17,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2016-17.csv.gz,2026-09-25T15:02:45.381460+00:00
+2016-17,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2016-17.csv.gz,2026-09-25T15:06:44.391564+00:00
+2021-22,Playoffs,https://stats.nba.com/stats/shotchartdetail,raw/league-playoff-shots/2021-22.csv.gz,2026-09-25T15:02:46.145173+00:00
+2021-22,Playoffs,https://stats.nba.com/stats/leaguedashplayerstats,raw/bulls-playoff-totals/2021-22.csv.gz,2026-09-25T15:02:47.020485+00:00
+2021-22,Playoffs,https://stats.nba.com/stats/leaguedashteamstats,raw/league-playoff-team-totals/2021-22.csv.gz,2026-09-25T15:06:44.874172+00:00
+1996-97 to 2025-26,Playoffs coverage,https://stats.nba.com/stats/leaguegamefinder,raw/bulls-playoff-games.csv.gz,2026-09-25T15:14:17.189166+00:00

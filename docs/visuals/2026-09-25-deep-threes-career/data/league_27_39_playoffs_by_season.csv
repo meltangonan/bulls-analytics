@@ -1,0 +1,15 @@
+season,official_3pa,official_3pm,league_3pa,league_3pm,source_path,official_source_path,source_file_modified_utc
+1996-97,2770,962,54,10,raw/league-playoff-shots/1996-97.csv.gz,raw/league-playoff-team-totals/1996-97.csv.gz,2026-09-25T15:01:50.402323+00:00
+1997-98,1983,683,68,11,raw/league-playoff-shots/1997-98.csv.gz,raw/league-playoff-team-totals/1997-98.csv.gz,2026-09-25T15:01:53.284607+00:00
+2004-05,2891,1031,106,21,raw/league-playoff-shots/2004-05.csv.gz,raw/league-playoff-team-totals/2004-05.csv.gz,2026-09-25T15:01:56.903440+00:00
+2005-06,3068,1071,162,42,raw/league-playoff-shots/2005-06.csv.gz,raw/league-playoff-team-totals/2005-06.csv.gz,2026-09-25T15:02:00.371737+00:00
+2006-07,2893,1012,102,24,raw/league-playoff-shots/2006-07.csv.gz,raw/league-playoff-team-totals/2006-07.csv.gz,2026-09-25T15:02:04.751473+00:00
+2008-09,3276,1168,212,57,raw/league-playoff-shots/2008-09.csv.gz,raw/league-playoff-team-totals/2008-09.csv.gz,2026-09-25T15:02:12.570455+00:00
+2009-10,3118,1089,144,43,raw/league-playoff-shots/2009-10.csv.gz,raw/league-playoff-team-totals/2009-10.csv.gz,2026-09-25T15:02:16.235133+00:00
+2010-11,2902,989,128,28,raw/league-playoff-shots/2010-11.csv.gz,raw/league-playoff-team-totals/2010-11.csv.gz,2026-09-25T15:02:19.768035+00:00
+2011-12,2983,994,154,29,raw/league-playoff-shots/2011-12.csv.gz,raw/league-playoff-team-totals/2011-12.csv.gz,2026-09-25T15:02:23.220603+00:00
+2012-13,3502,1205,235,78,raw/league-playoff-shots/2012-13.csv.gz,raw/league-playoff-team-totals/2012-13.csv.gz,2026-09-25T15:02:27.190440+00:00
+2013-14,3978,1426,271,84,raw/league-playoff-shots/2013-14.csv.gz,raw/league-playoff-team-totals/2013-14.csv.gz,2026-09-25T15:02:31.801896+00:00
+2014-15,4139,1424,369,117,raw/league-playoff-shots/2014-15.csv.gz,raw/league-playoff-team-totals/2014-15.csv.gz,2026-09-25T15:02:37.998249+00:00
+2016-17,4597,1660,408,145,raw/league-playoff-shots/2016-17.csv.gz,raw/league-playoff-team-totals/2016-17.csv.gz,2026-09-25T15:02:42.666830+00:00
+2021-22,6017,2135,1071,353,raw/league-playoff-shots/2021-22.csv.gz,raw/league-playoff-team-totals/2021-22.csv.gz,2026-09-25T15:02:46.145173+00:00

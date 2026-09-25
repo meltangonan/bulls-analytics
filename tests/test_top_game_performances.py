@@ -142,3 +142,24 @@ def test_top_games_keeps_only_ten_rows_and_breaks_ties_deterministically():
         "Player 01",
     ]
     assert result.loc[result["decade"].eq("2000s"), "rank"].tolist() == list(range(1, 11))
+
+
+@pytest.mark.parametrize("stored_id", ["0028300012", "28300012"])
+def test_cached_seasons_keep_live_game_id_format(tmp_path, monkeypatch, stored_id):
+    """A cached side must join a live side, whose IDs are 10-character strings."""
+    from scripts.prototypes import top_game_performances as module
+
+    monkeypatch.setattr(module, "RAW_CACHE", tmp_path)
+    pd.DataFrame(
+        [{"game_id": stored_id, "game_date": "1983-10-29", "team_points": 104}]
+    ).to_csv(tmp_path / "CHI-team-regular-season-1984.csv", index=False)
+    pd.DataFrame(
+        [{"game_id": stored_id, "player_id": 1, "fg3m": 0, "fg3a": 0}]
+    ).to_csv(tmp_path / "CHI-players-regular-season-1984.csv", index=False)
+
+    teams = module.fetch_bulls_team_games(1984)
+    players = module.fetch_bulls_season(1984)
+
+    assert teams["game_id"].tolist() == ["0028300012"]
+    assert players["game_id"].tolist() == ["0028300012"]
+    assert players.merge(teams, on="game_id").shape[0] == 1

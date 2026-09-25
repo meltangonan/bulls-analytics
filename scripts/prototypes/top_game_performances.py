@@ -274,6 +274,17 @@ def _opponent(matchup: str) -> str:
     return text
 
 
+def _read_cached_games(path: Path) -> pd.DataFrame:
+    """Read a cached season with NBA.com's 10-character game IDs intact.
+
+    Live responses carry zero-padded ID strings; letting pandas parse the cache
+    as integers drops the zeros, so a cached side never joins a live one.
+    """
+    frame = pd.read_csv(path, dtype={"game_id": str})
+    frame["game_id"] = frame["game_id"].str.zfill(10)
+    return frame
+
+
 def fetch_bulls_team_games(
     end_year: int,
     *,
@@ -283,7 +294,7 @@ def fetch_bulls_team_games(
     """Load Bulls game scores used to reconcile player totals per game."""
     cache_path = RAW_CACHE / f"CHI-team-{season_type_slug(season_type)}-{end_year}.csv"
     if cache_path.exists() and not refresh:
-        return pd.read_csv(cache_path)
+        return _read_cached_games(cache_path)
 
     season = season_label(end_year)
     frame = _request_frame(
@@ -328,7 +339,7 @@ def fetch_bulls_season(
     """Load and calculate one Chicago player-game table for a season type."""
     cache_path = RAW_CACHE / f"CHI-players-{season_type_slug(season_type)}-{end_year}.csv"
     if cache_path.exists() and not refresh:
-        cached = pd.read_csv(cache_path)
+        cached = _read_cached_games(cache_path)
         if {"fg3m", "fg3a"}.issubset(cached.columns):
             return cached
 

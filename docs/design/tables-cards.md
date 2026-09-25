@@ -14,7 +14,7 @@ small helpers below; the post still chooses its columns, thresholds, dimensions,
 | Square portrait | `house.square_headshot_label` | [Lineup rORTG](../../scripts/prototypes/bulls_lineup_rortg.py) |
 | Top-anchored portrait | `house.top_anchored_headshot_label` | [Scoring leaps](../../scripts/prototypes/scoring_leaps.py), [three-point leaders](../../scripts/prototypes/three_point_leaders.py) |
 | One emphasized portrait | `craft.headshot_label` | Circular red-ringed crop; at most one payoff |
-| Player-game Game Score table | `top_game_performances.render_chart`; new tables pass `show_turnovers=True, show_free_throws=False, emphasize_points=True` | [Rookie games](../../scripts/prototypes/rookie_game_scores.py); [2025–26 top 15](../../scripts/prototypes/season_game_performances.py) keeps its earlier FT layout |
+| Player-game Game Score table | `top_game_performances.render_chart`; new tables pass `show_turnovers=True, show_free_throws=False, emphasize_points=True`; add `shooting_after_assists=True` for PTS, REB, AST before FG and 3PT | [Rookie games](../../scripts/prototypes/rookie_game_scores.py); [sophomore games](../../scripts/prototypes/sophomore_game_scores.py) (shooting after assists); [2025–26 top 15](../../scripts/prototypes/season_game_performances.py) keeps its earlier FT layout |
 
 Call signatures and geometry defaults live in the helpers. Choose the closest example and reuse its
 component, rather than importing a helper from another post or copying its drawing loop. Keep a

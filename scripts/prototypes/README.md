@@ -101,6 +101,7 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `summer_league_sticky_stats.py` | 2026 Summer League sticky shot-profile prototype | `tests/test_summer_league_sticky_stats.py` |
 | `three_point_leaders.py` | Bulls' most accurate three-point shooter every season since 2010-11 | `tests/test_three_point_leaders.py` |
 | `rookie_game_scores.py` | Top fifteen Bulls rookie games since 2000–01 by Game Score, regular season plus that season's playoffs (repeats eligible, points tiebreak); NBA.com Rookie filter defines rookies, CommonAllPlayers audits it; renders the Game Score table without FT and a boxed card version from `game_score_by_height.py` | `tests/test_rookie_game_scores.py` |
+| `sophomore_game_scores.py` | Top fifteen Bulls sophomore games since 2000–01 by Game Score, same window, pools, tiebreak and formats as `rookie_game_scores.py`; NBA.com's Sophomore experience filter defines second seasons, CommonAllPlayers audits it (three players who missed a season disagree); table orders PTS, REB, AST before FG and 3PT | `tests/test_sophomore_game_scores.py` |
 | `season_game_performances.py` | Top fifteen Bulls player-games in the 2025–26 regular season; reuses the Game Score table. | `tests/test_season_game_performances.py` |
 | `top_game_performances.py` | Top Bulls game performances by decade | `tests/test_bulls_rookie_leaderboard.py`, `tests/test_top_game_performances.py` |
 | `zone_deep_dive.py` | Volume *and* efficiency inside a single shot zone | No dedicated tests |

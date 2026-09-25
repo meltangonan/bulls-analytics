@@ -780,9 +780,20 @@ def game_score_card(
     )
 
 
-def _turnover_values(row: pd.Series, show_free_throws: bool) -> tuple[str, ...]:
+# PTS, REB, AST lead, then the made-attempted shooting cells: the counting-stat reading order.
+SHOOTING_AFTER_ASSISTS = (0, 3, 4, 1, 2, 5, 6, 7, 8)
+
+
+def _shooting_order(cells: tuple, shooting_after_assists: bool) -> tuple:
+    """Reorder the nine no-FT turnover cells when shooting follows assists."""
+    return tuple(cells[i] for i in SHOOTING_AFTER_ASSISTS) if shooting_after_assists else cells
+
+
+def _turnover_values(
+    row: pd.Series, show_free_throws: bool, shooting_after_assists: bool = False
+) -> tuple[str, ...]:
     """Return one row's cells for the turnover table, optionally including FT."""
-    return (
+    cells = (
         (
             str(int(row["points"])),
             f"{int(row['fgm'])}–{int(row['fga'])}",
@@ -798,6 +809,7 @@ def _turnover_values(row: pd.Series, show_free_throws: bool) -> tuple[str, ...]:
             _signed_box_score_value(row["plus_minus"]),
         )
     )
+    return _shooting_order(cells, shooting_after_assists)
 
 
 def identity_width(ax, rows: pd.DataFrame, layout: TableLayout) -> float:
@@ -857,8 +869,11 @@ def render_chart(
     layout: TableLayout = DECADE_LAYOUT,
     final: bool = False,
     emphasize_points: bool = False,
+    shooting_after_assists: bool = False,
 ) -> Path:
     """Render one transparent decade table in the settled ladder grammar."""
+    if shooting_after_assists and (not show_turnovers or show_free_throws):
+        raise ValueError("Shooting after assists needs the turnover layout without FT.")
     if len(rows) != top_n:
         raise ValueError(f"Expected {top_n} rows for {decade}; got {len(rows)}.")
     rows = rows.sort_values("rank", kind="stable").reset_index(drop=True)
@@ -899,8 +914,9 @@ def render_chart(
             gmsc_right = gmsc_left + 108
             stat_bounds = equal_gap_bounds(
                 ax,
-                [("PTS", "FG", "3PT", "REB", "AST", "STL", "BLK", "TOV", "+/-")]
-                + [_turnover_values(row, False) for _, row in rows.iterrows()],
+                [_shooting_order(("PTS", "FG", "3PT", "REB", "AST", "STL", "BLK", "TOV", "+/-"),
+                                 shooting_after_assists)]
+                + [_turnover_values(row, False, shooting_after_assists) for _, row in rows.iterrows()],
                 left=gmsc_right + 18,
                 right=1465,
                 header_size=layout.header_font_size,
@@ -913,7 +929,8 @@ def render_chart(
     if show_turnovers:
         stat_labels = ("PTS", "FG", "3PT", "FT", "REB", "AST", "STL", "BLK", "TOV", "+/-")
         if not show_free_throws:
-            stat_labels = tuple(label for label in stat_labels if label != "FT")
+            stat_labels = _shooting_order(
+                tuple(label for label in stat_labels if label != "FT"), shooting_after_assists)
         headers = (
             (layout.name_x, "PLAYER", "left", theme.ink),
             ((gmsc_left + gmsc_right) / 2, "GMSC", "center", theme.accent),
@@ -1092,7 +1109,7 @@ def render_chart(
                 (left, right, value)
                 for (left, right), value in zip(
                     stat_bounds,
-                    _turnover_values(row, show_free_throws),
+                    _turnover_values(row, show_free_throws, shooting_after_assists),
                 )
             )
         elif show_free_throws:

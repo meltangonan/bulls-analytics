@@ -3,17 +3,17 @@
 Selected first post: the top 15 Bulls regular-season player-seasons from 1996-97
 through 2025-26, with repeat players allowed. **All 15 ranks are verified using
 NBA-only statistical inputs.** The totals, rates and ranks are unchanged. Current
-v07 uses the verified dataset and is pixel-identical to the reviewed v06 layout.
-Earlier mixed-source exploratory tables remain saved as research history.
+v08 (approved September 25) keeps the verified v07 data and enlarges the headshots to
+match the recent top-15 tables. Earlier mixed-source exploratory tables remain saved as
+research history.
 
-[Notion post](https://www.notion.so/3e2e1c13abe681059cdfd8bbca295c65): In progress.
+[Notion post](https://www.notion.so/3e2e1c13abe681059cdfd8bbca295c65): Mocked.
 [Canva design](https://www.canva.com/design/DAHV2VGcKSk/Ox26trwE_gnQL_QutD-smg/edit):
-page 2 passed composed-page QA on September 21 using a downloaded 1080×1440 PNG.
-All 15 rows and figures match the verified table; no clipping or overlap.
-The taller chart has 25.34 px side margins and 45.81 px above the source footer.
-Review export: `output/points-created/canva-qa-page2-full.png` (temporary, untracked).
-The cover remains unfinished. Promotion draft is recorded in Notion, not approved
-or published. Publication is not confirmed.
+the cover is finished and page 2 holds the v08 publish asset. Page 2 passed composed-page
+QA on September 25 from a downloaded 1080×1440 PNG: all 15 rows and figures match the
+verified table, with no clipping or overlap. Review export:
+`output/points-created/canva-qa-page2-v08.png` (temporary, untracked). The promotion
+draft is recorded in Notion, not approved or published. Publication is not confirmed.
 
 ## Definition and displayed statistics
 
@@ -125,24 +125,25 @@ card displays total PTS created. NBA ranks in the top 10 use conditional green
 hyphens and bold italic type, and parenthesized MVP annotations are bold Bulls red.
 There are no ordinal rank labels beside the player names.
 
-Current v07 uses a 3500 × 4014 transparent draft and a 7000 × 8026 publish asset,
-with 254-unit rows. Both exports are pixel-identical to v06. The actual reviewed
-Canva placement is x=25.34/y=185.20, width 1029.32 and height 1180.58, ending at
-y=1365.78 with 45.81 pixels above the source footer. The downloaded 1080×1440
-composed table page passed QA. The initial v01 and final v07 assets are retained;
-superseded cosmetic versions and scratch exports were preserved locally under
-`output/points-created-closeout-2026-09-21/` in the primary checkout.
+Headshots follow the sophomore and season-opener tables: each portrait is about 1.2×
+the row height (half-size 155 in a 254-unit row, 0.74 top crop, raised 19 units), so
+heads rise slightly past the row above. The width-preserving crop keeps wide hair such
+as Coby White's intact; names start at x=345 and bars at x=1065 (span 1075) to clear it.
+Historical NBA CDN portraits may show later jerseys.
 
-Code and data work is complete. The user will finish the cover and caption in
-Canva and expects to publish later in the week; no scheduled or completed
-publication is claimed.
+Current v08 uses a 3500 × 4014 transparent draft and a 7000 × 8026 publish asset,
+with 254-unit rows. The Canva frame is x=25.34/y=186.29, width 1029.32 and height
+1180.58, ending at y=1366.88 with 42.51 pixels above the source footer; the image
+fills the frame without cropping. Assets retained: initial v01, previously approved
+v07 and current approved v08. Earlier superseded cosmetic versions and scratch exports
+were preserved locally under `output/points-created-closeout-2026-09-21/` in the
+primary checkout.
 
 Five selected seasons received MVP votes: Rose 2010-11 (MVP), Jordan 1996-97
 (2nd), Jordan 1997-98 (MVP), Pippen 1996-97 (11th), and DeRozan 2021-22
 (tied 10th). `data/mvp-voting.csv`, `data/mvp-voting-sources.json`, and
 `data/raw/mvp-awards-<endyear>.html` preserve the positive and no-votes findings.
-These are voting finishes, not first-place vote counts. Historical NBA CDN
-portraits may show later jerseys.
+These are voting finishes, not first-place vote counts.
 
 ## Superseded exploratory evidence
 

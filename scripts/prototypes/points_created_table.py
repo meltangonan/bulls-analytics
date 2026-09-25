@@ -18,7 +18,7 @@ from bulls.graphics import house
 
 PROJECT = ROOT / 'docs/visuals/2026-09-21-points-created'
 WIDTH, ROW, PAD = 3500, 254, 190
-NAME_X, BAR_LEFT, BAR_SPAN = 300, 1020, 1120
+NAME_X, BAR_LEFT, BAR_SPAN = 345, 1065, 1075
 TOTAL_LEFT, TOTAL_RIGHT = 2225, 2475
 SUPPORT = (2680, 3010, 3340)
 INK, RED = house.BLACK, house.RED
@@ -75,7 +75,8 @@ def render(output:Path, final=False):
         portrait=PRIMARY_HEADSHOTS/f'{int(r.PLAYER_ID)}.png'
         if not portrait.exists():
             house.ensure_headshots([int(r.PLAYER_ID)]);portrait=house.HEADSHOT_CACHE/f'{int(r.PLAYER_ID)}.png'
-        house.top_anchored_headshot_label(ax,portrait,140,y+4,118,crop_fraction=.64,preserve_width=True,zorder=2)
+        # Match the recent top-15 tables: the portrait is ~1.2x row height and rises past the row.
+        house.top_anchored_headshot_label(ax,portrait,160,y+19,155,crop_fraction=.74,preserve_width=True,zorder=2)
         name=text(NAME_X,y+24,r.PLAYER_NAME,36,align='left')
         if NAME_X+house.rendered_width(ax,name)>BAR_LEFT-35:raise ValueError(f'Name too wide: {r.PLAYER_NAME}')
         season=str(r.season)

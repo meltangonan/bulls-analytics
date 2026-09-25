@@ -64,16 +64,27 @@ When uncertain, keep the asset. Commit and push only with explicit user approval
 Update the existing page as decisions land, without waiting for a separate documentation request.
 Use these headings in order for a built post; ideas need only the sections supported so far:
 
-- **Brief and final scope** — the question, coverage, comparison, qualification and final selection.
-- **Results and decisions** — published findings, meaningful rejected approaches and why.
-- **Data provenance** — the complete source trail in `docs/reference/provenance.md`, including
-  the worked example, reconciliation, limitations and saved-file/renderer paths.
-- **Publication** — Canva edit link in the `Canva` property; body holds the confirmed publication
-  URL/date and approved caption, or notes that the user supplies it.
+- **Brief and final scope** — the question, cohort or occasion, coverage window, ranking and
+  tiebreak, qualification and displayed columns. When the source limits coverage, say why the
+  window starts or ends where it does.
+- **Results and decisions** — a table of the displayed rows (or key values); findings with their
+  supporting numbers (cutoff, first one out, ties, counts); visual decisions and why (color scale,
+  dropped columns, substitute portraits); rejected approaches with the numbers that ruled them out.
+- **Data provenance** — the complete source trail in `docs/reference/provenance.md`, as
+  subsections: stat map, endpoints and calls, grain, units, measured versus derived, checks and
+  reconciliation (list what the build asserts), limitations, worked example, saved files and code
+  (approved asset, script, tests, commit).
+- **Publication** — Canva edit link in the `Canva` property; body maps the Canva pages, says what
+  is approved and what remains, flags timing risks (such as a new game that would change the
+  result), then holds the confirmed publication URL/date and approved caption, or notes that the
+  user supplies it.
 
-Use real headings, code blocks for calls/formulas, and tables where they clarify results. Preserve
+Take every number on the page from the saved data files at the time of writing, not from memory
+of the conversation, and recount after any scope change. Write short plain sentences. Use real
+headings, code blocks for calls/formulas, and tables where they clarify results. Preserve
 useful existing detail when reorganizing; replace stale statements without reducing the page to a
 status summary. Add feedback/results when available; don't create empty placeholder sections.
+The [season-opener page](https://www.notion.so/3bbe1c13abe6815e8f07f011b843d20e) is a model record.
 
 The live database currently supports `Not started`, `In progress`, `Parked`, `Mocked`, and `Posted`.
 Use `In progress` for an active build; `Parked` for a paused idea with a reason; `Mocked` after a

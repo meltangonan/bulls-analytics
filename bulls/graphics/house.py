@@ -634,6 +634,24 @@ def _heat_mix(base: str, target: str, strength: float) -> tuple[float, float, fl
     return tuple(base_rgb * (1 - amount) + target_rgb * amount)
 
 
+# Fixed to the interpretation printed on the existing Game Score explainer:
+# 10+ average, 20+ very good, 30+ star-level, 40+ dominant, 50+ historic.
+# These are semantic bands, never recalculated from the ladder's min/max.
+GAME_SCORE_BANDS = (
+    (50.0, "#2F8F4E"),
+    (40.0, "#70AD5A"),
+    (30.0, "#F2D46B"),
+    (20.0, "#E98B52"),
+    (float("-inf"), "#D64545"),
+)
+
+
+def game_score_fill(value: float) -> str:
+    """Return the settled interpretation colour for a Game Score."""
+    score = float(value)
+    return next(color for minimum, color in GAME_SCORE_BANDS if score >= minimum)
+
+
 def heat_fill(
     value: float,
     red_at: float,

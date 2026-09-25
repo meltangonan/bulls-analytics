@@ -20,6 +20,7 @@ _REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_REPO))
 
 from bulls.graphics import house
+from bulls.graphics.house import GAME_SCORE_BANDS, game_score_fill  # noqa: F401 (re-exported)
 from scripts.prototypes import height_ladder_cards as height_cards
 from scripts.prototypes.top_game_performances import game_score
 
@@ -52,24 +53,6 @@ TOP = 104
 BOTTOM = 42
 RED = house.DEFAULT_THEME.accent
 THEME = house.DEFAULT_THEME
-
-# Fixed to the interpretation printed on the existing Game Score explainer:
-# 10+ average, 20+ very good, 30+ star-level, 40+ dominant, 50+ historic.
-# These are semantic bands, never recalculated from the ladder's min/max.
-GAME_SCORE_BANDS = (
-    (50.0, "#2F8F4E"),
-    (40.0, "#70AD5A"),
-    (30.0, "#F2D46B"),
-    (20.0, "#E98B52"),
-    (float("-inf"), "#D64545"),
-)
-
-
-def game_score_fill(value: float) -> str:
-    """Return the settled interpretation colour for a Game Score."""
-    score = float(value)
-    return next(color for minimum, color in GAME_SCORE_BANDS if score >= minimum)
-
 
 def height_inches(value: str) -> int:
     feet, inches = str(value).split("-")

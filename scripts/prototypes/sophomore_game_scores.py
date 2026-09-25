@@ -32,7 +32,7 @@ from bulls.data.fetch import _NBA_HEADERS
 from bulls.graphics import house
 from scripts.prototypes import height_ladder_cards as cards
 from scripts.prototypes import top_game_performances as games
-from scripts.prototypes.game_score_by_height import game_score_fill
+from bulls.graphics.house import game_score_fill
 
 DATA = ROOT / 'docs/visuals/2026-09-20-sophomore-game-scores/data'
 SOPHOMORE_FILTER = DATA / 'nba-bulls-sophomores-since-2000.csv'

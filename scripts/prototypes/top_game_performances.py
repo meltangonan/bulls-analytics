@@ -33,6 +33,7 @@ import numpy as np
 import pandas as pd
 import requests
 from PIL import Image
+from matplotlib.colors import to_rgb
 from matplotlib.patches import FancyBboxPatch, Rectangle
 from nba_api.stats.endpoints import leaguegamefinder, playergamelogs
 
@@ -45,6 +46,7 @@ from bulls.graphics.house import (
     HEADSHOT_CACHE,
     ensure_headshots,
     export_dpi,
+    heat_text_color,
     helvetica,
     rendered_width,
 )
@@ -306,8 +308,9 @@ def fetch_bulls_team_games(
             "PLUS_MINUS": "team_plus_minus",
         }
     )
-    for column in ("team_points", "team_plus_minus"):
-        result[column] = pd.to_numeric(result[column], errors="raise").astype(int)
+    result["team_points"] = pd.to_numeric(result["team_points"], errors="raise").astype(int)
+    # NBA.com leaves plus/minus blank before 1996-97; keep the blank rather than inventing zero.
+    result["team_plus_minus"] = pd.to_numeric(result["team_plus_minus"], errors="raise").astype("Int64")
     result["game_id"] = result["game_id"].astype(str)
     result["season_end_year"] = end_year
     result["team_source_url"] = team_source_url(end_year, season_type)
@@ -415,11 +418,12 @@ def fetch_bulls_history(
     *,
     season_type: str = "Regular Season",
     refresh: bool = False,
+    first_end_year: int = FIRST_SEASON_END_YEAR,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Load every Bulls season of the requested type since 2000–01."""
+    """Load every Bulls season of the requested type since 2000–01 (or ``first_end_year``)."""
     player_frames: list[pd.DataFrame] = []
     team_frames: list[pd.DataFrame] = []
-    for end_year in range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1):
+    for end_year in range(first_end_year, LAST_SEASON_END_YEAR + 1):
         print(f"Loading {display_season_label(end_year)}")
         player_frames.append(fetch_bulls_season(end_year, season_type=season_type, refresh=refresh))
         team_frames.append(fetch_bulls_team_games(end_year, season_type=season_type, refresh=refresh))
@@ -431,6 +435,10 @@ def fetch_bulls_history(
 
 def decade_for_end_year(end_year: int) -> str:
     """Map an NBA ending year to the decade label used by the carousel."""
+    if 1981 <= end_year <= 1990:
+        return "1980s"
+    if 1991 <= end_year <= 2000:
+        return "1990s"
     if 2001 <= end_year <= 2010:
         return "2000s"
     if 2011 <= end_year <= 2020:
@@ -689,6 +697,8 @@ def _display_name(name: str) -> str:
 
 def _signed_box_score_value(value: float | int) -> str:
     """Show positive plus/minus values with an explicit leading plus sign."""
+    if pd.isna(value):
+        return ""
     integer = int(value)
     return f"{integer:+d}" if integer > 0 else str(integer)
 
@@ -870,10 +880,23 @@ def render_chart(
     final: bool = False,
     emphasize_points: bool = False,
     shooting_after_assists: bool = False,
+    score_fill: Callable[[float], str] | None = None,
+    show_plus_minus: bool = True,
+    portraits: dict[int, Path] | None = None,
 ) -> Path:
-    """Render one transparent decade table in the settled ladder grammar."""
+    """Render one transparent decade table in the settled ladder grammar.
+
+    ``score_fill`` swaps the continuous red card for per-row Game Score cells
+    coloured by that function (for example ``house.game_score_fill``).
+    ``portraits`` maps a player id to a post-local portrait that replaces the
+    shared NBA CDN headshot (for players the CDN serves a silhouette for).
+    """
     if shooting_after_assists and (not show_turnovers or show_free_throws):
         raise ValueError("Shooting after assists needs the turnover layout without FT.")
+    if not show_plus_minus and (not show_turnovers or show_free_throws):
+        raise ValueError("Dropping +/- needs the turnover layout without FT.")
+    # +/- is the last cell in every turnover ordering.
+    trim = (lambda cells: cells) if show_plus_minus else (lambda cells: cells[:-1])
     if len(rows) != top_n:
         raise ValueError(f"Expected {top_n} rows for {decade}; got {len(rows)}.")
     rows = rows.sort_values("rank", kind="stable").reset_index(drop=True)
@@ -914,9 +937,10 @@ def render_chart(
             gmsc_right = gmsc_left + 108
             stat_bounds = equal_gap_bounds(
                 ax,
-                [_shooting_order(("PTS", "FG", "3PT", "REB", "AST", "STL", "BLK", "TOV", "+/-"),
-                                 shooting_after_assists)]
-                + [_turnover_values(row, False, shooting_after_assists) for _, row in rows.iterrows()],
+                [trim(_shooting_order(("PTS", "FG", "3PT", "REB", "AST", "STL", "BLK", "TOV", "+/-"),
+                                      shooting_after_assists))]
+                + [trim(_turnover_values(row, False, shooting_after_assists))
+                   for _, row in rows.iterrows()],
                 left=gmsc_right + 18,
                 right=1465,
                 header_size=layout.header_font_size,
@@ -929,11 +953,12 @@ def render_chart(
     if show_turnovers:
         stat_labels = ("PTS", "FG", "3PT", "FT", "REB", "AST", "STL", "BLK", "TOV", "+/-")
         if not show_free_throws:
-            stat_labels = _shooting_order(
-                tuple(label for label in stat_labels if label != "FT"), shooting_after_assists)
+            stat_labels = trim(_shooting_order(
+                tuple(label for label in stat_labels if label != "FT"), shooting_after_assists))
         headers = (
             (layout.name_x, "PLAYER", "left", theme.ink),
-            ((gmsc_left + gmsc_right) / 2, "GMSC", "center", theme.accent),
+            ((gmsc_left + gmsc_right) / 2, "GMSC", "center",
+             theme.ink if score_fill else theme.accent),
         ) + tuple(
             ((left + right) / 2, label, "center", theme.ink)
             for (left, right), label in zip(stat_bounds, stat_labels)
@@ -993,16 +1018,30 @@ def render_chart(
         zorder=3,
     )
 
-    draw_accent_card(
-        ax, gmsc_left, gmsc_right, first_row_y, len(rows), layout.row_height
-    )
+    if score_fill is None:
+        draw_accent_card(
+            ax, gmsc_left, gmsc_right, first_row_y, len(rows), layout.row_height
+        )
 
     for index, row in rows.iterrows():
         y = first_row_y - index * layout.row_height
+        if score_fill is not None:
+            ax.add_patch(
+                Rectangle(
+                    (gmsc_left, y - layout.row_height / 2),
+                    gmsc_right - gmsc_left,
+                    layout.row_height,
+                    facecolor=score_fill(float(row["game_score"])),
+                    edgecolor="none",
+                    zorder=2,
+                )
+            )
         if index:
             divider_y = y + layout.row_height / 2
             rule_segments = (
-                ((0, gmsc_left), (gmsc_right, table_right))
+                ((0, table_right),)
+                if score_fill is not None
+                else ((0, gmsc_left), (gmsc_right, table_right))
                 if show_turnovers
                 else row_rule_segments()
             )
@@ -1022,13 +1061,19 @@ def render_chart(
             ha="center",
             va="center",
             fontsize=layout.gmsc_font_size,
-            color="#FFFFFF",
+            color=(
+                heat_text_color(to_rgb(score_fill(float(row["game_score"]))))
+                if score_fill is not None
+                else "#FFFFFF"
+            ),
             fontproperties=helvetica("bold"),
             zorder=6,
         )
         face_headshot_label(
             ax,
-            HEADSHOT_CACHE / f"{int(row['player_id'])}.png",
+            (portraits or {}).get(
+                int(row["player_id"]), HEADSHOT_CACHE / f"{int(row['player_id'])}.png"
+            ),
             layout.headshot_x,
             y + layout.headshot_rise,
             layout.headshot_half_size,
@@ -1109,7 +1154,7 @@ def render_chart(
                 (left, right, value)
                 for (left, right), value in zip(
                     stat_bounds,
-                    _turnover_values(row, show_free_throws, shooting_after_assists),
+                    trim(_turnover_values(row, show_free_throws, shooting_after_assists)),
                 )
             )
         elif show_free_throws:

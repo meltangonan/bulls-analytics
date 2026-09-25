@@ -65,13 +65,13 @@ def test_rank_season_openers_uses_settled_tie_breaks():
             for index in range(9)
     )
     rows = pd.DataFrame(row_data)
-    result = rank_season_openers(rows)
+    result = rank_season_openers(rows, top_n=10)
     assert result.iloc[0]["player"] == "First"
     assert result["rank"].tolist() == list(range(1, 11))
 
 
-def test_rank_season_openers_requires_the_full_top_ten():
-    with pytest.raises(ValueError, match="Expected 10"):
+def test_rank_season_openers_requires_the_full_top_fifteen():
+    with pytest.raises(ValueError, match="Expected 15"):
         rank_season_openers(
             pd.DataFrame(
                 [

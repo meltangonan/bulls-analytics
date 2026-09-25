@@ -69,8 +69,10 @@ def test_decade_mapping_uses_nba_season_end_years():
     assert decade_for_end_year(2001) == "2000s"
     assert decade_for_end_year(2011) == "2010s"
     assert decade_for_end_year(2021) == "2020s"
+    assert decade_for_end_year(1984) == "1980s"
+    assert decade_for_end_year(2000) == "1990s"
     with pytest.raises(ValueError):
-        decade_for_end_year(2000)
+        decade_for_end_year(1980)
 
 
 def test_source_urls_can_switch_to_playoffs_without_reusing_regular_season_urls():

@@ -281,7 +281,9 @@ def _read_cached_games(path: Path) -> pd.DataFrame:
     as integers drops the zeros, so a cached side never joins a live one.
     """
     frame = pd.read_csv(path, dtype={"game_id": str})
-    frame["game_id"] = frame["game_id"].str.zfill(10)
+    # Older caches hold NBA.com's raw uppercase columns; callers refetch those.
+    if "game_id" in frame.columns:
+        frame["game_id"] = frame["game_id"].str.zfill(10)
     return frame
 
 

@@ -110,7 +110,7 @@ def render(data_path: Path, output_path: Path, *, final: bool = False) -> Path:
             crop_fraction=.64, preserve_width=True, zorder=2,
         )
         name = ax.text(NAME_X, y, row.player_name, ha="left", va="center",
-                       fontsize=35, color=INK, fontproperties=bold, zorder=3)
+                       fontsize=37, color=INK, fontproperties=bold, zorder=3)
         if NAME_X + house.rendered_width(ax, name) > BAR_LEFT - 27:
             raise ValueError(f"Name overruns the makes bar: {row.player_name}")
 
@@ -123,20 +123,20 @@ def render(data_path: Path, output_path: Path, *, final: bool = False) -> Path:
         inside = row.deep_3pm >= 40
         ax.text(BAR_LEFT + width + (-20 if inside else 20), y,
                 f"{int(row.deep_3pm)}", ha="right" if inside else "left",
-                va="center", fontsize=31, color="white" if inside else INK,
+                va="center", fontsize=33, color="white" if inside else INK,
                 fontproperties=bold, zorder=3)
 
         ax.text(SUPPORT_X[0], y, f"{int(row.deep_3pa)}", ha="center", va="center",
-                fontsize=30, color=INK, fontproperties=bold, zorder=3)
+                fontsize=32, color=INK, fontproperties=bold, zorder=3)
         ax.text(SUPPORT_X[1], y, f"{row.attempts_per_game:.2f}", ha="center", va="center",
-                fontsize=30, color=INK, fontproperties=bold, zorder=3)
+                fontsize=32, color=INK, fontproperties=bold, zorder=3)
         ax.text(SUPPORT_X[2], y + 24, f"{row.three_pct:.1f}%",
-                ha="center", va="center", fontsize=30, color=INK,
+                ha="center", va="center", fontsize=32, color=INK,
                 fontproperties=bold, zorder=3)
         relative = float(row.relative_pp)
         relative_color = GREY if -2 <= relative <= 2 else (GREEN if relative > 2 else DARK_RED)
         ax.text(SUPPORT_X[2], y - 33, f"({_signed(relative)} vs. NBA)",
-                ha="center", va="center", fontsize=23, color=relative_color,
+                ha="center", va="center", fontsize=25, color=relative_color,
                 fontproperties=bold, zorder=3)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)

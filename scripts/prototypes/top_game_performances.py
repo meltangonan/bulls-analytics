@@ -35,7 +35,7 @@ import requests
 from PIL import Image
 from matplotlib.colors import to_rgb
 from matplotlib.patches import FancyBboxPatch, Rectangle
-from nba_api.stats.endpoints import leaguegamefinder, playergamelogs
+from nba_api.stats.endpoints import leaguegamefinder, playercareerstats, playergamelogs
 
 from bulls.config import BULLS_TEAM_ID
 from bulls.data.fetch import _NBA_HEADERS
@@ -444,6 +444,45 @@ def fetch_bulls_history(
         pd.concat(player_frames, ignore_index=True),
         pd.concat(team_frames, ignore_index=True),
     )
+
+
+def _career_request(player_id: int):
+    """One career request; NBA.com's occasional error body surfaces as a retryable ValueError."""
+    try:
+        return playercareerstats.PlayerCareerStats(
+            player_id=player_id, per_mode36="Totals", headers=_NBA_HEADERS, timeout=60
+        )
+    except KeyError as exc:
+        raise ValueError(f"NBA.com returned an error body ({exc}).") from exc
+
+
+def fetch_career_seasons(
+    player_ids: list[int], path: Path, refresh: bool = False
+) -> pd.DataFrame:
+    """Load each player's regular-season team history into ``path``, fetching only missing players."""
+    cached = pd.read_csv(path) if path.exists() and not refresh else pd.DataFrame()
+    wanted = set(int(p) for p in player_ids)
+    if len(cached):
+        cached = cached[cached["PLAYER_ID"].astype(int).isin(wanted)]
+    have = set(cached["PLAYER_ID"].astype(int)) if len(cached) else set()
+    frames = [cached] if len(cached) else []
+    missing = sorted(wanted - have)
+    for index, player_id in enumerate(missing, 1):
+        print(f"Career history {index}/{len(missing)}: {player_id}")
+        frame = _request_frame(
+            lambda: _career_request(player_id),
+            f"PlayerCareerStats {player_id}",
+        )
+        if frame.empty:
+            raise ValueError(f"NBA.com returned no career rows for player {player_id}.")
+        frame["captured_at"] = datetime.now(SNAPSHOT_TZ).isoformat(timespec="seconds")
+        frames.append(frame)
+        # Save as we go so an interrupted run resumes instead of refetching.
+        path.parent.mkdir(parents=True, exist_ok=True)
+        pd.concat(frames, ignore_index=True).to_csv(path, index=False)
+    result = pd.concat(frames, ignore_index=True)
+    result.to_csv(path, index=False)
+    return result
 
 
 def decade_for_end_year(end_year: int) -> str:

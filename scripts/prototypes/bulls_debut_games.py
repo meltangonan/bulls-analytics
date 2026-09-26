@@ -17,7 +17,7 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
-from nba_api.stats.endpoints import commonallplayers, playercareerstats
+from nba_api.stats.endpoints import commonallplayers
 
 _REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_REPO))
@@ -66,43 +66,6 @@ def fetch_first_seasons(refresh: bool = False) -> pd.DataFrame:
     FIRST_SEASONS_PATH.parent.mkdir(parents=True, exist_ok=True)
     frame.to_csv(FIRST_SEASONS_PATH, index=False)
     return frame
-
-
-def _career_request(player_id: int):
-    """One career request; NBA.com's occasional error body surfaces as a retryable ValueError."""
-    try:
-        return playercareerstats.PlayerCareerStats(
-            player_id=player_id, per_mode36="Totals", headers=_NBA_HEADERS, timeout=60
-        )
-    except KeyError as exc:
-        raise ValueError(f"NBA.com returned an error body ({exc}).") from exc
-
-
-def fetch_career_seasons(player_ids: list[int], refresh: bool = False) -> pd.DataFrame:
-    """Load each player's regular-season team history, fetching only missing players."""
-    cached = pd.read_csv(CAREER_PATH) if CAREER_PATH.exists() and not refresh else pd.DataFrame()
-    wanted = set(int(p) for p in player_ids)
-    if len(cached):
-        cached = cached[cached["PLAYER_ID"].astype(int).isin(wanted)]
-    have = set(cached["PLAYER_ID"].astype(int)) if len(cached) else set()
-    frames = [cached] if len(cached) else []
-    missing = sorted(wanted - have)
-    for index, player_id in enumerate(missing, 1):
-        print(f"Career history {index}/{len(missing)}: {player_id}")
-        frame = base._request_frame(
-            lambda: _career_request(player_id),
-            f"PlayerCareerStats {player_id}",
-        )
-        if frame.empty:
-            raise ValueError(f"NBA.com returned no career rows for player {player_id}.")
-        frame["captured_at"] = datetime.now(base.SNAPSHOT_TZ).isoformat(timespec="seconds")
-        frames.append(frame)
-        # Save as we go so an interrupted run resumes instead of refetching.
-        CAREER_PATH.parent.mkdir(parents=True, exist_ok=True)
-        pd.concat(frames, ignore_index=True).to_csv(CAREER_PATH, index=False)
-    result = pd.concat(frames, ignore_index=True)
-    result.to_csv(CAREER_PATH, index=False)
-    return result
 
 
 def first_bulls_games(working: pd.DataFrame) -> pd.DataFrame:
@@ -271,7 +234,7 @@ def main() -> None:
     working = base.build_working_table(players, teams)
     first = attach_first_nba_season(first_bulls_games(working), fetch_first_seasons(args.refresh))
     early = first.loc[needs_career_check(first), "player_id"].tolist()
-    audit = classify_debuts(first, fetch_career_seasons(early, refresh=args.refresh))
+    audit = classify_debuts(first, base.fetch_career_seasons(early, CAREER_PATH, refresh=args.refresh))
     debuts = audit[audit["is_debut"]].copy()
     # Box scores with blanks can't be scored; validate() proves none could reach the list.
     ranked = rank_debuts(debuts.dropna(subset=GAME_SCORE_INPUTS))

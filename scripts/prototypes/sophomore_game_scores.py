@@ -1,11 +1,12 @@
-"""Top fifteen Bulls sophomore games since 2000–01 by Game Score, regular season and playoffs.
+"""Top fifteen Bulls sophomore games since 1983–84 by Game Score, regular season and playoffs.
 
-The sibling of the 2026-09-18 rookie post, with the same window, pools, tiebreak and formats.
-The Bulls game logs come from ``top_game_performances``' cached NBA.com sources. NBA.com's
-Sophomore filter on the same endpoint the rookie post used defines who was in their second
-season; the CommonAllPlayers first season is an independent audit. A sophomore's playoff games
-that season share the pool, and repeat players are eligible. Renders the settled Game Score
-table and the boxed card grammar of the 2026-08-25 Game Score by height post.
+The sibling of the 2026-09-18 rookie post, with its pools, tiebreak and table, over the longest
+window NBA.com's box scores support. A sophomore season is a player's second NBA regular season
+with an appearance, read from NBA.com career histories. That is the rule behind NBA.com's own
+Sophomore filter, which exists from 1996–97 and must agree with it for every season it covers;
+CommonAllPlayers' first season is a second audit. A sophomore's playoff games that season share
+the pool, and repeat players are eligible. Plus/minus is untracked before 1996–97, so the table
+drops it, as the 1983–84 season-opener table does.
 """
 from pathlib import Path
 from dataclasses import replace
@@ -22,48 +23,65 @@ import numpy as np
 import pandas as pd
 from nba_api.stats.endpoints import commonallplayers, leaguedashplayerstats
 
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
-
 from bulls.config import BULLS_TEAM_ID
 from bulls.data.fetch import _NBA_HEADERS
-from bulls.graphics import house
-from scripts.prototypes import height_ladder_cards as cards
+from bulls.graphics.house import cut_out_flat_background
 from scripts.prototypes import top_game_performances as games
-from bulls.graphics.house import game_score_fill
 
 DATA = ROOT / 'docs/visuals/2026-09-20-sophomore-game-scores/data'
-SOPHOMORE_FILTER = DATA / 'nba-bulls-sophomores-since-2000.csv'
+SOPHOMORE_FILTER = DATA / 'nba-sophomore-filter-since-1996-97.csv'
 FIRST_SEASONS = DATA / 'nba-common-all-players-first-seasons.csv'
-SEASONS = range(2001, 2027)
-LABEL = 'Sophomores since 2000–01'
+CAREERS = DATA / 'career-seasons.csv'
+SEASONS = range(1984, 2027)
+FILTER_SEASONS = range(1997, 2027)  # LeagueDashPlayerStats has no season data before 1996–97
+LABEL = 'Sophomores since 1983–84'
 TOP_N = 15
 # Taller rows than the 2025–26 table: the Canva page has room below the table at its width.
+# Name, game line and cells run one point larger than the rookie table (user request, 2026-09-26).
 TABLE_LAYOUT = replace(games.DECADE_LAYOUT, row_height=108, headshot_x=60, name_x=128,
                        headshot_half_size=66, headshot_rise=8, first_row_from_top=145,
-                       bottom_pad=42, name_font_size=21, context_font_size=12.5,
-                       name_rise=16, context_drop=22)
-PLAYOFF_SEASONS = {2005, 2006, 2007, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2022}
-# NBA.com counts seasons a player appeared in; CommonAllPlayers' FROM_YEAR is the first season
-# on a roster. They differ for exactly three Bulls sophomores, each of whom missed a full season:
-# Chris Richard (played 2007-08, out 2008-09), E.J. Liddell (drafted 2022, first played 2023-24)
-# and Mouhamadou Gueye (played 2023-24, out 2024-25). Second season played is the definition this
-# post wants, so NBA.com decides and the audit records the gap.
-KNOWN_FIRST_SEASON_DISAGREEMENTS = {(2010, 201181), (2025, 1630604), (2026, 1631338)}
+                       bottom_pad=42, name_font_size=22, context_font_size=13.5,
+                       value_font_size=17, gmsc_font_size=17, name_rise=16, context_drop=22)
+# The NBA CDN serves a silhouette for Quintin Dailey. The user supplied a cropped portrait on flat
+# white (2026-09-26); data/portraits_source keeps it unchanged.
+PORTRAIT_SOURCES = {76497: 'Quintin Dailey.png'}
+PLAYOFF_SEASONS = set(range(1985, 1999)) | {2005, 2006, 2007, 2009, 2010, 2011, 2012, 2013,
+                                            2014, 2015, 2017, 2022}
+# NBA.com's career endpoint returns an error body for these Bulls players (retried 2026-09-26).
+# Their regular seasons played (end years) come from PlayerGameLogs(player_id_nullable=...) for
+# each season in their CommonAllPlayers span, checked the same day.
+CAREER_GAP_SEASONS = {
+    1099: (1997,),        # Matt Steigenga: CHI 1996-97 only
+    2000: (2000,),        # Dedric Willoughby: CHI 1999-00 only
+    2839: (2005, 2006),   # James Thomas: ATL/POR 2004-05, CHI/PHI 2005-06 (a Bulls sophomore)
+    200603: (1993, 1994), # Corey Williams: CHI 1992-93 (rookie), MIN 1993-94
+}
+# NBA.com credits these Bulls points to a nameless 0-minute row in both PlayerGameLogs and
+# BoxScoreTraditionalV2. Team totals minus the named players leave only shooting for it, so its
+# Game Score is at most 6.6, 4.3 and 1.3, far below any top-fifteen cutoff.
+UNATTRIBUTED_POINTS = {'0028300217': 11, '0028300521': 7, '0028400293': 3}
+# NBA.com leaves Game Score inputs blank for these regular-season rows: every Bulls player on
+# 1983-11-23 (no rebound split or turnovers) and one player in each other game. Each value is the
+# highest Game Score the row could have, crediting every rebound as offensive, no turnovers or
+# fouls, and team totals minus the named players for anything else blank.
+INCOMPLETE_BOX_SCORES = {'0028300147': 20.1, '0028400171': 3.4, '0028400234': 1.0,
+                         '0028400278': 3.4, '0028400305': 4.7, '0028600427': 0.0}
+# NBA.com's Sophomore filter labels Chris Anstey's 1999-00 Bulls season his sophomore year, but
+# his career history shows DAL 1997-98 and 1998-99 first, so it was his third season played.
+KNOWN_FILTER_DISAGREEMENTS = {(2000, 1512)}
+# CommonAllPlayers' FROM_YEAR is the first season on a roster, so FROM_YEAR + 2 misses anyone who
+# sat out a full season before their second one: Anthony Jones (WAS/SAS 1986-87, out 1987-88),
+# Chris Richard (MIN 2007-08, out 2008-09), E.J. Liddell (drafted 2022, first played 2023-24)
+# and Mouhamadou Gueye (TOR 2023-24, out 2024-25). Second season played decides.
+KNOWN_FIRST_SEASON_DISAGREEMENTS = {(1989, 77173), (2010, 201181), (2025, 1630604), (2026, 1631338)}
 
 
-def fetch_sophomore_seasons(refresh=False):
-    """Load NBA.com's Sophomore experience filter for each Bulls season, fetching once when absent.
-
-    Same endpoint and shape as the rookie post's Rookie filter, so NBA.com owns both definitions.
-    Only the player-season identity and games played are kept; every stat comes from the game logs.
-    """
+def fetch_sophomore_filter(refresh=False):
+    """Load NBA.com's Sophomore experience filter for each Bulls season it covers."""
     if SOPHOMORE_FILTER.exists() and not refresh:
         return pd.read_csv(SOPHOMORE_FILTER)
     rows = []
-    for end_year in SEASONS:
+    for end_year in FILTER_SEASONS:
         label = f'{end_year - 1}-{str(end_year)[2:]}'
         frame = leaguedashplayerstats.LeagueDashPlayerStats(
             team_id_nullable=BULLS_TEAM_ID, season=label, season_type_all_star='Regular Season',
@@ -87,6 +105,26 @@ def fetch_first_seasons(refresh=False):
     return frame[['PERSON_ID', 'DISPLAY_FIRST_LAST', 'FROM_YEAR', 'TO_YEAR']]
 
 
+def post_portraits():
+    """Cut the supplied portraits out of their white surround, framed like NBA headshots."""
+    return {player_id: cut_out_flat_background(DATA / 'portraits_source' / name,
+                                                DATA / 'portraits' / f'{player_id}.png')
+            for player_id, name in PORTRAIT_SOURCES.items()}
+
+
+def second_seasons_played(careers):
+    """Map each player to the end year of their second NBA regular season with a game played.
+
+    Career histories list a traded player once per team plus a TOT row, so seasons are counted
+    once each. A player with a single season has no sophomore year.
+    """
+    played = careers.loc[careers.LEAGUE_ID.astype(int).eq(0) & careers.GP.gt(0)]
+    seasons = played.groupby('PLAYER_ID').SEASON_ID.apply(lambda s: sorted(set(s)))
+    second = {int(player): int(ids[1][:4]) + 1 for player, ids in seasons.items() if len(ids) > 1}
+    second.update({player: years[1] for player, years in CAREER_GAP_SEASONS.items() if len(years) > 1})
+    return second
+
+
 def playoff_context(game_id):
     """NBA.com playoff ids encode the round at digit 8 and the game at digit 10."""
     game_id = str(game_id).zfill(10)
@@ -105,48 +143,80 @@ def validated_pool(players, teams, pool, seasons):
         raise ValueError(f'{pool} player and team game coverage differs.')
     reconciliation = table.groupby(['season_end_year', 'game_id'], as_index=False).agg(
         player_points=('points', 'sum'), team_points=('team_points', 'first'))
-    if not reconciliation.player_points.eq(reconciliation.team_points).all():
+    reconciliation['unattributed_points'] = reconciliation.game_id.map(UNATTRIBUTED_POINTS).fillna(0).astype(int)
+    if not (reconciliation.player_points + reconciliation.unattributed_points).eq(
+            reconciliation.team_points).all():
         raise ValueError(f'{pool} player points do not reconcile to team scores.')
-    if not np.isfinite(table[['game_score', 'ts_pct']]).all().all():
-        raise ValueError('Nonfinite derived metric.')
+    blank = ~np.isfinite(table.game_score)
+    if set(table.loc[blank, 'game_id']) != (set(INCOMPLETE_BOX_SCORES) if pool == 'Regular season' else set()):
+        raise ValueError(f'{pool} has undocumented blank Game Score inputs.')
     table['pool'] = reconciliation['pool'] = pool
     table['context_note'] = table.game_id.map(playoff_context) if pool == 'Playoffs' else ''
     return table, reconciliation
 
 
-def prepare(players, teams, playoff_players, playoff_teams, sophomore_filter, first_seasons):
+def prepare(players, teams, playoff_players, playoff_teams, sophomore_filter, first_seasons,
+            careers):
     table, reconciliation = validated_pool(players, teams, 'Regular season', SEASONS)
     playoffs, playoff_reconciliation = validated_pool(
         playoff_players, playoff_teams, 'Playoffs', PLAYOFF_SEASONS)
 
     played = set(zip(table.season_end_year, table.player_id))
-    pairs = set(zip(sophomore_filter.season.astype(int), sophomore_filter.player_id.astype(int)))
-    if not pairs <= played:
-        raise ValueError('The Sophomore filter names a player-season with no Bulls game rows.')
+    bulls_ids = {p for _, p in played}
+    if bulls_ids - set(CAREER_GAP_SEASONS) != bulls_ids & set(careers.PLAYER_ID.astype(int)):
+        raise ValueError('A Bulls player is missing a career history.')
+    spans = first_seasons.set_index('PERSON_ID')
+    for player, years in CAREER_GAP_SEASONS.items():
+        if (int(spans.FROM_YEAR[player]) + 1, int(spans.TO_YEAR[player]) + 1) != (years[0], years[-1]):
+            raise ValueError(f'Hand-checked seasons for {player} disagree with CommonAllPlayers.')
+    second = second_seasons_played(careers)
+    pairs = {(y, p) for y, p in played if second.get(p) == y}
+
+    # NBA.com's own label must match the rule wherever NBA.com has one.
+    nba_pairs = set(zip(sophomore_filter.season.astype(int), sophomore_filter.player_id.astype(int)))
+    in_filter_years = {(y, p) for y, p in pairs if y in FILTER_SEASONS}
+    if nba_pairs ^ in_filter_years != KNOWN_FILTER_DISAGREEMENTS:
+        raise ValueError(f'Second season played disagrees with NBA.com: '
+                         f'{sorted(nba_pairs ^ in_filter_years)}.')
+
     first = first_seasons.set_index('PERSON_ID').FROM_YEAR
-    if not {p for _, p in played} <= set(first.index):
+    if not bulls_ids <= set(first.index):
         raise ValueError('A Bulls player is missing from CommonAllPlayers.')
-    # CommonAllPlayers FROM_YEAR is the first season on an NBA roster, so a sophomore season
-    # ends two years later. It disagrees with NBA.com whenever a player sat out that first year.
     by_first_season = {(y, p) for y, p in played if int(first[p]) == y - 2}
     if pairs ^ by_first_season != KNOWN_FIRST_SEASON_DISAGREEMENTS:
-        raise ValueError(f'Sophomore sources disagree: {sorted(pairs ^ by_first_season)}.')
+        raise ValueError(f'First-season audit disagrees: {sorted(pairs ^ by_first_season)}.')
 
+    names = table.drop_duplicates('player_id').set_index('player_id').player
     season_games = table.groupby(['season_end_year', 'player_id']).size()
-    audit = sophomore_filter[['season', 'season_label', 'player_id', 'player_name', 'games']].copy()
-    audit['bulls_game_rows'] = [season_games[(s, p)] for s, p in zip(audit.season, audit.player_id)]
+    filter_games = sophomore_filter.set_index(['season', 'player_id']).games
+    audit = pd.DataFrame(sorted(pairs | by_first_season | nba_pairs), columns=['season', 'player_id'])
+    audit['player_name'] = audit.player_id.map(names)
+    audit['bulls_game_rows'] = [season_games.get((s, p), 0) for s, p in zip(audit.season, audit.player_id)]
+    audit['second_season_played'] = [(s, p) in pairs for s, p in zip(audit.season, audit.player_id)]
+    audit['nba_sophomore_filter'] = [
+        ((s, p) in nba_pairs) if s in FILTER_SEASONS else pd.NA
+        for s, p in zip(audit.season, audit.player_id)]
+    audit['nba_filter_games'] = [filter_games.get((s, p), pd.NA) for s, p in zip(audit.season, audit.player_id)]
     audit['common_all_players_from_year'] = audit.player_id.map(first)
     audit['first_season_agrees'] = [
-        (s, p) in by_first_season for s, p in zip(audit.season, audit.player_id)]
-    if not audit.games.eq(audit.bulls_game_rows).all():
+        ((s, p) in by_first_season) == ((s, p) in pairs) for s, p in zip(audit.season, audit.player_id)]
+    checked = audit.nba_filter_games.notna()
+    if not audit.loc[checked, 'nba_filter_games'].astype(int).eq(audit.loc[checked, 'bulls_game_rows']).all():
         raise ValueError('Sophomore filter games do not match Bulls game-log rows.')
 
     # Sophomore status is a regular-season fact; that season's playoff games inherit it.
     pool = pd.concat([table, playoffs], ignore_index=True)
-    pool['overtime_periods'] = pool.game_id.map(games.minute_reconciliation(pool).overtime_periods)
-    sophomores = pool.loc[[pair in pairs for pair in zip(pool.season_end_year, pool.player_id)]].copy()
+    # The documented incomplete games also under-log minutes, so their period count stays unknown.
+    documented = set(INCOMPLETE_BOX_SCORES) | set(UNATTRIBUTED_POINTS)
+    periods = games.minute_reconciliation(pool.loc[~pool.game_id.isin(documented)]).overtime_periods
+    pool['overtime_periods'] = pool.game_id.map(periods).astype('Int64')
+    is_sophomore = np.array([pair in pairs for pair in zip(pool.season_end_year, pool.player_id)])
+    sophomores = pool.loc[is_sophomore & np.isfinite(pool.game_score)].copy()
     reconciliation = pd.concat([reconciliation, playoff_reconciliation], ignore_index=True)
-    return pool, reconciliation, audit, sophomores, select_top(sophomores)
+    ranked = select_top(sophomores)
+    if ranked.overtime_periods.isna().any() or max(INCOMPLETE_BOX_SCORES.values()) >= ranked.game_score.min():
+        raise ValueError('An incomplete box score could reach the top fifteen.')
+    return pool, reconciliation, audit, sophomores, ranked
 
 
 def select_top(sophomores, top_n=TOP_N):
@@ -171,92 +241,20 @@ def load_sources(refresh=False):
     players, teams = load('Regular Season')
     playoff_players, playoff_teams = load('Playoffs')
     DATA.mkdir(parents=True, exist_ok=True)
+    careers = games.fetch_career_seasons(
+        sorted(set(players.player_id.astype(int)) - set(CAREER_GAP_SEASONS)), CAREERS, refresh)
     return (players, teams, playoff_players, playoff_teams,
-            fetch_sophomore_seasons(refresh), fetch_first_seasons(refresh))
-
-
-def render_boxed(ranked, final=True):
-    """Draw the ranked games as bordered cards, reusing the Game Score by height grammar."""
-    rows = len(ranked)
-    fig_h = cards.figure_height(rows)
-    fig, ax = plt.subplots(figsize=(cards.FIG_W, fig_h))
-    fig.patch.set_alpha(0)
-    fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
-    ax.set_axis_off()
-    ax.patch.set_alpha(0)
-    ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.autoscale(False)
-    theme = house.DEFAULT_THEME
-    row_h = cards.ROW_H_IN / fig_h
-    top = 1 - cards.PAD_TOP_IN / fig_h
-    stripe_y = cards.STRIPE * cards.FIG_W / fig_h
-    rank_right, portrait_x, name_x, score_left = 0.112, 0.168, 0.245, 0.895
-    for i, (_, row) in enumerate(ranked.iterrows()):
-        y = top - (i + 0.5) * row_h
-        box_h = row_h * 0.86
-        bottom = y - box_h / 2
-        cards.striped_box(ax, cards.X_ROW_L, bottom, cards.X_ROW_R - cards.X_ROW_L, box_h,
-                          cards.BULLS_RED, cards._mix('#FFFFFF', cards.BULLS_RED, 0.11), fig_h, zorder=2)
-        ax.add_patch(Rectangle((cards.X_ROW_L + cards.STRIPE, bottom + stripe_y),
-                               rank_right - cards.X_ROW_L - cards.STRIPE, box_h - 2 * stripe_y,
-                               facecolor=cards.BULLS_RED, edgecolor='none', zorder=3))
-        ax.text((cards.X_ROW_L + cards.STRIPE + rank_right) / 2, y, str(int(row['rank'])),
-                fontproperties=house.helvetica('bold'), fontsize=26, color='white',
-                ha='center', va='center', zorder=4)
-        cards.place_portrait(ax, games.HEADSHOT_CACHE / f"{int(row.player_id)}.png", portrait_x,
-                             bottom + cards.PORTRAIT_LIFT_IN / fig_h, row_h * cards.PORTRAIT_SCALE,
-                             fig_h, 10 + i)
-        ax.text(name_x, y + row_h * 0.12, games._display_name(row.player),
-                fontproperties=house.helvetica('bold'), fontsize=19, color=theme.ink,
-                ha='left', va='center', zorder=5)
-        date = pd.Timestamp(row.game_date).strftime('%b %-d, %Y')
-        site = 'vs' if 'vs.' in row.matchup else 'at'
-        context_y = y - row_h * 0.18
-        cursor = name_x
-        note = str(row.get('context_note', '') or '')
-        for text, size, weight, color in ((date, 12, None, theme.muted),
-                                          (f'{site} {row.opponent}', 12, None, theme.muted),
-                                          (note if note != 'nan' else '', 10.5, None, theme.muted),
-                                          (row.result, 12, 'bold', '#3FAE63' if row.result == 'W' else '#D64545')):
-            if not text:
-                continue
-            artist = ax.text(cursor, context_y, text, fontproperties=house.helvetica(weight) if weight else house.helvetica(),
-                             fontsize=size, color=color, ha='left', va='center', zorder=5)
-            cursor += house.rendered_width(ax, artist) + 0.006
-        stat_specs = (('PTS', int(row.points), 0.040), ('REB', int(row.reb), 0.045),
-                      ('AST', int(row.ast), 0.040), ('FG', f'{int(row.fgm)}-{int(row.fga)}', 0.065),
-                      ('STL', int(row.stl), 0.040), ('BLK', int(row.blk), 0.040),
-                      ('+/-', f'{int(row.plus_minus):+d}', 0.045))
-        stat_cursor = 0.528
-        for label, value, width in stat_specs:
-            x = stat_cursor + width / 2
-            stat_cursor += width + 0.0037
-            ax.text(x, y + row_h * 0.105, str(value), ha='center', va='center', color=theme.ink,
-                    fontsize=19, fontproperties=house.helvetica('bold'), zorder=5)
-            ax.text(x, y - row_h * 0.105, label, ha='center', va='center', color=theme.muted,
-                    fontsize=10, fontproperties=house.helvetica('bold'), zorder=5)
-        fill = game_score_fill(row.game_score)
-        cards.striped_box(ax, score_left, bottom, cards.X_ROW_R - score_left, box_h, fill, fill, fig_h, zorder=5)
-        ax.text((score_left + cards.X_ROW_R) / 2, y, f'{row.game_score:.1f}',
-                fontproperties=house.helvetica('bold'), fontsize=21.5, color='white',
-                ha='center', va='center', zorder=7,
-                path_effects=[cards.path_effects.withStroke(linewidth=3.5, foreground=house.BULLS_BLACK)])
-    games.OUT.mkdir(exist_ok=True)
-    path = games.OUT / f"sophomore-game-scores-boxed-{'final' if final else 'draft'}.png"
-    fig.savefig(path, dpi=400 if final else 200, transparent=True)
-    plt.close(fig)
-    return path
+            fetch_sophomore_filter(refresh), fetch_first_seasons(refresh), careers)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--refresh', action='store_true')
     args = parser.parse_args()
-    players, teams, playoff_players, playoff_teams, sophomore_filter, first_seasons = load_sources(
-        args.refresh)
+    players, teams, playoff_players, playoff_teams, sophomore_filter, first_seasons, careers = (
+        load_sources(args.refresh))
     table, reconciliation, audit, sophomores, ranked = prepare(
-        players, teams, playoff_players, playoff_teams, sophomore_filter, first_seasons)
+        players, teams, playoff_players, playoff_teams, sophomore_filter, first_seasons, careers)
     bulls_ids = set(table.player_id)
     sophomore_filter.to_csv(SOPHOMORE_FILTER, index=False)
     first_seasons.loc[first_seasons.PERSON_ID.isin(bulls_ids)].to_csv(FIRST_SEASONS, index=False)
@@ -266,33 +264,35 @@ def main():
     print(ranked[['rank', 'player', 'pool', 'game_date', 'opponent', 'result', 'game_score',
                   'points', 'reb', 'ast']].to_string(index=False), flush=True)
     snapshot = datetime.now(ZoneInfo('America/Chicago'))
-    report = {'seasons': '2000-01 through 2025-26', 'season_type': 'Regular Season and Playoffs',
+    report = {'seasons': '1983-84 through 2025-26', 'season_type': 'Regular Season and Playoffs',
               'bulls_player_games': table.groupby('pool').size().to_dict(),
               'team_games': {'Regular season': len(teams), 'Playoffs': len(playoff_teams)},
               'playoff_seasons': sorted(PLAYOFF_SEASONS),
-              'all_scores_reconciled': True, 'sophomore_player_seasons': len(audit),
+              'all_scores_reconciled': True,
+              'sophomore_player_seasons': int(audit.second_season_played.sum()),
               'sophomore_player_games': sophomores.groupby('pool').size().to_dict(),
+              'sophomore_rule': 'second NBA regular season with a game played (PlayerCareerStats)',
+              'nba_filter_agrees': f'every season {FILTER_SEASONS.start - 1}-{str(FILTER_SEASONS.start)[2:]} on',
               'first_season_disagreements': sorted(map(list, KNOWN_FIRST_SEASON_DISAGREEMENTS)),
               'selected_games': TOP_N,
-              'cutoff': [float(sophomores.game_score.nlargest(TOP_N).min()),
-                         float(sophomores.game_score.nlargest(TOP_N + 1).min())],
-              'tiebreak': 'Game Score, then points', 'prepared_at': snapshot.isoformat(),
-              'refreshed_this_run': args.refresh,
-              'sophomore_source': 'NBA.com LeagueDashPlayerStats, PlayerExperience=Sophomore',
+              'cutoff': [float(sophomores.game_score.round(1).nlargest(TOP_N).min()),
+                         float(sophomores.game_score.round(1).nlargest(TOP_N + 1).min())],
+              'tiebreak': 'Game Score, then points', 'plus_minus': 'dropped; untracked before 1996-97',
+              'prepared_at': snapshot.isoformat(), 'refreshed_this_run': args.refresh,
               'player_source': games.player_source_url(2026), 'team_source': games.team_source_url(2026)}
     (DATA / 'audit.json').write_text(json.dumps(report, indent=2) + '\n')
     (DATA / 'canva-copy.txt').write_text(
-        'BEST BULLS SOPHOMORE GAMES\nTop 15 second-season performances since 2000–01\n'
-        'Ranked by Hollinger Game Score\n'
-        'Regular season and playoffs • Overtime included • Repeat players eligible • Ties broken by points\n'
-        'Game Score measures box-score production. FG and 3PT show makes–attempts; TOV is turnovers.\n'
-        'Source: NBA.com • Calculations: @chicagobullsdata\n')
+        "Bulls' best sophomore performances\n"
+        'Top 15 in Hollinger Game Score by a sophomore, since 1983-84\n'
+        'Data via NBA.com | 1983-84 to 2025-26 regular season and playoffs\n'
+        'Sophomore: second NBA season with a game played • Overtime included • Ties broken by points\n')
     games.ensure_headshots(ranked.player_id.tolist())
     games.ensure_historical_headshot_fallbacks(ranked.player_id.tolist())
     print(games.render_chart(ranked, snapshot.date().isoformat(), decade=LABEL,
                              show_free_throws=False, show_turnovers=True, top_n=TOP_N,
                              layout=TABLE_LAYOUT, final=True, emphasize_points=True,
-                             shooting_after_assists=True))
+                             shooting_after_assists=True, show_plus_minus=False,
+                             portraits=post_portraits()))
 
 
 if __name__ == '__main__':

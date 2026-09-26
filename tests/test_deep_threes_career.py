@@ -46,11 +46,14 @@ def test_saved_leaderboard_reconciles_and_uses_attempt_weighted_league_rate():
     assert top.iloc[0].player_name == "Zach LaVine"
     assert (top.iloc[0].deep_3pm, top.iloc[0].deep_3pa, top.iloc[0].gp) == (234, 622, 420)
     assert top.deep_3pa.ge(top.deep_3pm).all()
+    assert top.all_3pa.ge(top.deep_3pa).all()
     assert top.league_three_pct.notna().all()
     for row in top.itertuples():
         played = seasons.loc[seasons.PLAYER_ID.eq(row.player_id)]
         assert played.deep_3pa.sum() == row.deep_3pa
         assert played.deep_3pm.sum() == row.deep_3pm
+        assert played.all_3pa.sum() == row.all_3pa
+        assert abs(100 * row.deep_3pa / row.all_3pa - row.deep_attempt_share_pct) < 1e-9
         expected_rate = 100 * played.expected_makes.sum() / row.deep_3pa
         assert abs(expected_rate - row.league_three_pct) < 1e-9
     lavine_playoffs = seasons.loc[

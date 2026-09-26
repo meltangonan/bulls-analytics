@@ -36,7 +36,7 @@ NAME_X = 320
 BAR_LEFT = 970
 BAR_RIGHT = 1840
 BAR_HEIGHT = 105
-SUPPORT_X = (2010, 2265, 2645)
+SUPPORT_X = (1960, 2290, 2645)
 INK = house.BLACK
 RED = house.RED
 GREY = "#5F5B57"
@@ -62,7 +62,7 @@ def _signed(value: float) -> str:
 def render(data_path: Path, output_path: Path, *, final: bool = False) -> Path:
     frame = pd.read_csv(data_path)
     required = {"rank", "player_id", "player_name", "deep_3pm", "deep_3pa",
-                "attempts_per_game", "three_pct", "league_three_pct", "relative_pp"}
+                "deep_attempt_share_pct", "three_pct", "league_three_pct", "relative_pp"}
     missing = required - set(frame)
     if missing:
         raise ValueError(f"Missing data columns: {sorted(missing)}")
@@ -87,9 +87,13 @@ def render(data_path: Path, output_path: Path, *, final: bool = False) -> Path:
         (NAME_X, "PLAYER", "left"),
         (BAR_LEFT, "MAKES", "left"),
         (SUPPORT_X[0], "ATT", "center"),
-        (SUPPORT_X[1], "ATT/G", "center"),
+        (SUPPORT_X[1], "SHARE OF\n3PA", "center"),
         (SUPPORT_X[2], "3P%", "center"),
     ):
+        if "\n" in label:
+            upper, label = label.split("\n", 1)
+            ax.text(x, header_y + 50, upper, ha=align, va="center", fontsize=30,
+                    color=INK, fontproperties=bold, zorder=3)
         ax.text(x, header_y, label, ha=align, va="center", fontsize=30,
                 color=INK, fontproperties=bold, zorder=3)
     ax.plot([0, WIDTH], [height - TOP_PADDING + 19] * 2,
@@ -128,7 +132,7 @@ def render(data_path: Path, output_path: Path, *, final: bool = False) -> Path:
 
         ax.text(SUPPORT_X[0], y, f"{int(row.deep_3pa)}", ha="center", va="center",
                 fontsize=32, color=INK, fontproperties=bold, zorder=3)
-        ax.text(SUPPORT_X[1], y, f"{row.attempts_per_game:.2f}", ha="center", va="center",
+        ax.text(SUPPORT_X[1], y, f"{row.deep_attempt_share_pct:.1f}%", ha="center", va="center",
                 fontsize=32, color=INK, fontproperties=bold, zorder=3)
         ax.text(SUPPORT_X[2], y + 24, f"{row.three_pct:.1f}%",
                 ha="center", va="center", fontsize=32, color=INK,

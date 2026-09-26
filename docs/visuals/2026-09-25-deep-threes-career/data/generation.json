@@ -1,5 +1,6 @@
 {
-  "generated_at_utc": "2026-09-25T15:48:55.557159+00:00",
+  "generated_at_utc": "2026-09-26T15:51:15.969422+00:00",
   "definition": "NBA regular-season and playoff Bulls 3PT shots, 27-39 whole feet, LOC_Y < 417.5",
+  "deep_attempt_share": "qualifying Bulls 3PA / all official Bulls FG3A across regular season and playoffs",
   "player_league_comparison": "same-range league FG% by season and phase, weighted by each player's attempts"
 }

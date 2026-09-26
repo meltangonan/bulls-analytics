@@ -176,7 +176,9 @@ def prepare(data_dir: Path, league_cache: Path | None = None) -> pd.DataFrame:
             deep_3pa=("SHOT_MADE_FLAG", "size"), deep_3pm=("SHOT_MADE_FLAG", "sum")
         )
         names = shots[["PLAYER_ID", "PLAYER_NAME"]].drop_duplicates("PLAYER_ID", keep="last")
-        player_year = official[["PLAYER_ID", "GP"]].merge(
+        player_year = official[["PLAYER_ID", "GP", "FG3A"]].rename(
+            columns={"FG3A": "all_3pa"}
+        ).merge(
             names, on="PLAYER_ID", how="left", validate="one_to_one"
         ).merge(counts, on="PLAYER_ID", how="left", validate="one_to_one")
         player_year[["deep_3pa", "deep_3pm"]] = player_year[["deep_3pa", "deep_3pm"]].fillna(0).astype(int)
@@ -207,7 +209,8 @@ def prepare(data_dir: Path, league_cache: Path | None = None) -> pd.DataFrame:
 
     player_seasons = pd.concat(player_seasons, ignore_index=True)
     career = player_seasons.groupby("PLAYER_ID", as_index=False).agg(
-        gp=("GP", "sum"), deep_3pa=("deep_3pa", "sum"),
+        gp=("GP", "sum"), all_3pa=("all_3pa", "sum"),
+        deep_3pa=("deep_3pa", "sum"),
         deep_3pm=("deep_3pm", "sum"), expected_makes=("expected_makes", "sum")
     )
     latest_names = player_seasons.drop_duplicates("PLAYER_ID", keep="last")[["PLAYER_ID", "PLAYER_NAME"]]
@@ -223,7 +226,9 @@ def prepare(data_dir: Path, league_cache: Path | None = None) -> pd.DataFrame:
     ]
     if top.expected_makes.isna().any() or selected_years.league_rate.isna().any():
         raise ValueError("A selected player's season is missing its league baseline")
-    top["attempts_per_game"] = top.deep_3pa / top.gp
+    if top.all_3pa.le(0).any():
+        raise ValueError("A selected player has no official Bulls 3PA denominator")
+    top["deep_attempt_share_pct"] = top.deep_3pa / top.all_3pa * 100
     top["three_pct"] = top.deep_3pm / top.deep_3pa * 100
     top["league_three_pct"] = top.expected_makes / top.deep_3pa * 100
     top["relative_pp"] = top.three_pct - top.league_three_pct
@@ -246,6 +251,7 @@ def prepare(data_dir: Path, league_cache: Path | None = None) -> pd.DataFrame:
     (data_dir / "generation.json").write_text(json.dumps({
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "definition": "NBA regular-season and playoff Bulls 3PT shots, 27-39 whole feet, LOC_Y < 417.5",
+        "deep_attempt_share": "qualifying Bulls 3PA / all official Bulls FG3A across regular season and playoffs",
         "player_league_comparison": "same-range league FG% by season and phase, weighted by each player's attempts",
     }, indent=2) + "\n")
     return top
@@ -257,7 +263,8 @@ def main() -> None:
     parser.add_argument("--league-cache", type=Path)
     args = parser.parse_args()
     top = prepare(args.data_dir, args.league_cache)
-    print(top[["rank", "player_name", "deep_3pm", "deep_3pa", "attempts_per_game",
+    print(top[["rank", "player_name", "deep_3pm", "deep_3pa", "all_3pa",
+               "deep_attempt_share_pct",
                "three_pct", "league_three_pct", "relative_pp"]].round(2).to_string(index=False))
 
 

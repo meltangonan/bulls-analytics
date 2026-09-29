@@ -1,0 +1,20 @@
+{
+  "endpoint": "LeagueDashPlayerStats",
+  "measures": {
+    "Misc": "PTS_2ND_CHANCE (Bulls and league)",
+    "Base": "PTS (Bulls), share denominator"
+  },
+  "parameters": {
+    "season_type_all_star": "Regular Season",
+    "per_mode_detailed": "Totals",
+    "bulls_team_id": 1610612741
+  },
+  "window": "1996-97 through 2025-26; 1995-96 and earlier return no rows",
+  "ranking": "points desc, points_per_game desc, older season",
+  "share_of_points": "PTS_2ND_CHANCE / Base PTS",
+  "share_max_abs_diff_vs_published": null,
+  "nba_rank": "Bulls total against every player's full-season league total",
+  "generated_at": "2026-09-29T22:53:53.916898+00:00",
+  "cutoff_points": 203,
+  "cutoff_ties_outside_table": []
+}

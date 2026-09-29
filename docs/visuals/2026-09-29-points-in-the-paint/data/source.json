@@ -1,0 +1,28 @@
+{
+  "endpoint": "LeagueDashPlayerStats",
+  "measures": {
+    "Misc": "PTS_PAINT (Bulls and league)",
+    "Base": "PTS (Bulls), share denominator",
+    "Scoring": "PCT_PTS_PAINT (Bulls), share check"
+  },
+  "parameters": {
+    "season_type_all_star": "Regular Season",
+    "per_mode_detailed": "Totals",
+    "bulls_team_id": 1610612741
+  },
+  "window": "1996-97 through 2025-26; 1995-96 and earlier return no rows",
+  "ranking": "points desc, points_per_game desc, older season",
+  "share_of_points": "PTS_PAINT / Base PTS",
+  "share_max_abs_diff_vs_published": 0.0004848035581912491,
+  "nba_rank": "Bulls total against every player's full-season league total",
+  "generated_at": "2026-09-29T22:53:18.686557+00:00",
+  "cutoff_points": 702,
+  "cutoff_ties_outside_table": [
+    {
+      "season": "2012-13",
+      "player_name": "Carlos Boozer",
+      "points": 702,
+      "points_per_game": 8.886075949367088
+    }
+  ]
+}

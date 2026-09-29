@@ -1,0 +1,18 @@
+{
+  "endpoint": "LeagueDashPlayerStats",
+  "measures": {
+    "Misc": "PTS_FB (Bulls and league)",
+    "Scoring": "PCT_PTS_FB, FG_PCT (Bulls)"
+  },
+  "parameters": {
+    "season_type_all_star": "Regular Season",
+    "per_mode_detailed": "Totals",
+    "bulls_team_id": 1610612741
+  },
+  "window": "1996-97 through 2025-26; 1995-96 and earlier return no rows",
+  "ranking": "fast_break_points desc, fast_break_points_per_game desc, older season",
+  "nba_rank": "Bulls total against every player's full-season league total",
+  "generated_at": "2026-09-29T22:17:37.709715+00:00",
+  "cutoff_fast_break_points": 220,
+  "cutoff_ties_outside_table": []
+}

@@ -35,7 +35,7 @@ import requests
 from PIL import Image
 from matplotlib.colors import to_rgb
 from matplotlib.patches import FancyBboxPatch, Rectangle
-from nba_api.stats.endpoints import leaguegamefinder, playercareerstats, playergamelogs
+from nba_api.stats.endpoints import leaguegamefinder, playercareerstats, playergamelogs, teamgamelog
 
 from bulls.config import BULLS_TEAM_ID
 from bulls.data.fetch import _NBA_HEADERS
@@ -118,6 +118,7 @@ class TableLayout:
     gmsc_font_size: float
     name_rise: float = 12
     context_drop: float = 17
+    rank_x: float | None = None  # centre of an optional rank column left of the headshot
 
 
 DECADE_LAYOUT = TableLayout(
@@ -309,6 +310,20 @@ def fetch_bulls_team_games(
         ),
         f"team games for {season}",
     )
+    if frame.empty:
+        # LeagueGameFinder has no Bulls rows before 1983-84; the team game log still has scores.
+        frame = _request_frame(
+            lambda: teamgamelog.TeamGameLog(
+                team_id=BULLS_TEAM_ID,
+                season=season,
+                season_type_all_star=season_type,
+                headers=_NBA_HEADERS,
+                timeout=60,
+            ),
+            f"team game log for {season}",
+        ).rename(columns={"Game_ID": "GAME_ID"})
+        frame["GAME_DATE"] = pd.to_datetime(frame["GAME_DATE"], format="%b %d, %Y").dt.strftime("%Y-%m-%d")
+        frame["PLUS_MINUS"] = pd.NA
     _require_columns(frame, {"GAME_ID", "GAME_DATE", "MATCHUP", "WL", "PTS", "PLUS_MINUS"}, "team games")
     result = frame[["GAME_ID", "GAME_DATE", "MATCHUP", "WL", "PTS", "PLUS_MINUS"]].copy()
     result = result.rename(
@@ -485,8 +500,19 @@ def fetch_career_seasons(
     return result
 
 
+def first_bulls_games(working: pd.DataFrame) -> pd.DataFrame:
+    """Each player's earliest logged Bulls regular-season game with minutes played."""
+    played = working[working["minutes"] > 0].copy()
+    played["game_date_parsed"] = pd.to_datetime(played["game_date"], errors="raise")
+    first = played.sort_values(["game_date_parsed", "game_id"], kind="stable")
+    first = first.groupby("player_id", sort=False).head(1)
+    return first.drop(columns="game_date_parsed").reset_index(drop=True)
+
+
 def decade_for_end_year(end_year: int) -> str:
     """Map an NBA ending year to the decade label used by the carousel."""
+    if 1971 <= end_year <= 1980:
+        return "1970s"
     if 1981 <= end_year <= 1990:
         return "1980s"
     if 1991 <= end_year <= 2000:
@@ -851,23 +877,33 @@ def _shooting_order(cells: tuple, shooting_after_assists: bool) -> tuple:
     return tuple(cells[i] for i in SHOOTING_AFTER_ASSISTS) if shooting_after_assists else cells
 
 
+def _count_cell(value, missing: str = "") -> str:
+    """A blank source cell shows ``missing`` on the page; missing is never zero."""
+    return missing if pd.isna(value) else str(int(value))
+
+
+def _made_attempted_cell(made, attempted, dash: str, missing: str = "") -> str:
+    return missing if pd.isna(attempted) else f"{int(made)}{dash}{int(attempted)}"
+
+
 def _turnover_values(
-    row: pd.Series, show_free_throws: bool, shooting_after_assists: bool = False
+    row: pd.Series, show_free_throws: bool, shooting_after_assists: bool = False, dash: str = "–",
+    missing: str = "",
 ) -> tuple[str, ...]:
     """Return one row's cells for the turnover table, optionally including FT."""
     cells = (
         (
             str(int(row["points"])),
-            f"{int(row['fgm'])}–{int(row['fga'])}",
-            f"{int(row['fg3m'])}–{int(row['fg3a'])}",
+            _made_attempted_cell(row["fgm"], row["fga"], dash, missing),
+            _made_attempted_cell(row["fg3m"], row["fg3a"], dash, missing),
         )
-        + ((f"{int(row['ftm'])}–{int(row['fta'])}",) if show_free_throws else ())
+        + ((_made_attempted_cell(row["ftm"], row["fta"], dash, missing),) if show_free_throws else ())
         + (
-            str(int(row["reb"])),
-            str(int(row["ast"])),
-            str(int(row["stl"])),
-            str(int(row["blk"])),
-            str(int(row["tov"])),
+            _count_cell(row["reb"], missing),
+            _count_cell(row["ast"], missing),
+            _count_cell(row["stl"], missing),
+            _count_cell(row["blk"], missing),
+            _count_cell(row["tov"], missing),
             _signed_box_score_value(row["plus_minus"]),
         )
     )
@@ -935,8 +971,18 @@ def render_chart(
     score_fill: Callable[[float], str] | None = None,
     show_plus_minus: bool = True,
     portraits: dict[int, Path] | None = None,
+    hero_points: bool = False,
+    made_attempted_dash: str = "–",
+    missing_cell: str = "",
+    striped_rows: bool = False,
+    output_name: str | None = None,
 ) -> Path:
     """Render one transparent decade table in the settled ladder grammar.
+
+    ``hero_points`` puts points in the red card column in place of Game Score and drops
+    the separate PTS column. ``striped_rows`` shades every other row, starting with the first,
+    as in the quarter/half and block-leader tables. ``layout.rank_x`` adds a "#" column showing ``rank_label``
+    (for tie labels such as "T3") or ``rank``; rows are always ordered by ``rank``.
 
     ``score_fill`` swaps the continuous red card for per-row Game Score cells
     coloured by that function (for example ``house.game_score_fill``).
@@ -947,8 +993,15 @@ def render_chart(
         raise ValueError("Shooting after assists needs the turnover layout without FT.")
     if not show_plus_minus and (not show_turnovers or show_free_throws):
         raise ValueError("Dropping +/- needs the turnover layout without FT.")
+    if hero_points and (not show_turnovers or show_free_throws):
+        raise ValueError("Points as the hero column needs the turnover layout without FT.")
     # +/- is the last cell in every turnover ordering.
     trim = (lambda cells: cells) if show_plus_minus else (lambda cells: cells[:-1])
+    # With points in the card, the PTS cell (first of the turnover cells) leaves the stat columns.
+    trim_cells = trim
+    trim = (lambda cells: trim_cells(cells)[1:]) if hero_points else trim_cells
+    if hero_points and shooting_after_assists and SHOOTING_AFTER_ASSISTS[0] != 0:
+        raise ValueError("Points must stay the first turnover cell for the hero column.")
     if len(rows) != top_n:
         raise ValueError(f"Expected {top_n} rows for {decade}; got {len(rows)}.")
     rows = rows.sort_values("rank", kind="stable").reset_index(drop=True)
@@ -991,7 +1044,8 @@ def render_chart(
                 ax,
                 [trim(_shooting_order(("PTS", "FG", "3PT", "REB", "AST", "STL", "BLK", "TOV", "+/-"),
                                       shooting_after_assists))]
-                + [trim(_turnover_values(row, False, shooting_after_assists))
+                + [trim(_turnover_values(row, False, shooting_after_assists, made_attempted_dash,
+                                        missing_cell))
                    for _, row in rows.iterrows()],
                 left=gmsc_right + 18,
                 right=1465,
@@ -1009,7 +1063,7 @@ def render_chart(
                 tuple(label for label in stat_labels if label != "FT"), shooting_after_assists))
         headers = (
             (layout.name_x, "PLAYER", "left", theme.ink),
-            ((gmsc_left + gmsc_right) / 2, "GMSC", "center",
+            ((gmsc_left + gmsc_right) / 2, "PTS" if hero_points else "GMSC", "center",
              theme.ink if score_fill else theme.accent),
         ) + tuple(
             ((left + right) / 2, label, "center", theme.ink)
@@ -1048,6 +1102,8 @@ def render_chart(
             ((BLK_LEFT + BLK_RIGHT) / 2, "BLK", "center", theme.ink),
             ((PLUS_MINUS_LEFT + PLUS_MINUS_RIGHT) / 2, "+/-", "center", theme.ink),
         )
+    if layout.rank_x is not None:
+        headers = ((layout.rank_x, "#", "center", theme.ink),) + headers
     for x, label, alignment, color in headers:
         ax.text(
             x,
@@ -1069,6 +1125,13 @@ def render_chart(
         linewidth=2.0,
         zorder=3,
     )
+
+    if striped_rows:
+        for index in range(0, len(rows), 2):
+            y = first_row_y - index * layout.row_height
+            ax.axhspan(y - layout.row_height / 2, y + layout.row_height / 2,
+                       xmin=0, xmax=table_right / CHART_WIDTH,
+                       color=separator_color, alpha=0.12, linewidth=0, zorder=0)
 
     if score_fill is None:
         draw_accent_card(
@@ -1109,7 +1172,7 @@ def render_chart(
         ax.text(
             (gmsc_left + gmsc_right) / 2,
             y,
-            f"{float(row['game_score']):.1f}",
+            str(int(row["points"])) if hero_points else f"{float(row['game_score']):.1f}",
             ha="center",
             va="center",
             fontsize=layout.gmsc_font_size,
@@ -1121,6 +1184,10 @@ def render_chart(
             fontproperties=helvetica("bold"),
             zorder=6,
         )
+        if layout.rank_x is not None:
+            ax.text(layout.rank_x, y, str(row.get("rank_label", row["rank"])), ha="center", va="center",
+                    fontsize=layout.header_font_size * 1.3, color=theme.ink,
+                    fontproperties=helvetica("bold"), zorder=4)
         face_headshot_label(
             ax,
             (portraits or {}).get(
@@ -1206,7 +1273,8 @@ def render_chart(
                 (left, right, value)
                 for (left, right), value in zip(
                     stat_bounds,
-                    trim(_turnover_values(row, show_free_throws, shooting_after_assists)),
+                    trim(_turnover_values(row, show_free_throws, shooting_after_assists,
+                                          made_attempted_dash, missing_cell)),
                 )
             )
         elif show_free_throws:
@@ -1250,13 +1318,15 @@ def render_chart(
                 va="center",
                 fontsize=layout.value_font_size,
                 color=theme.ink,
-                fontproperties=helvetica("bold") if emphasize_points and column == 0 else helvetica(),
+                fontproperties=(helvetica("bold") if emphasize_points and column == 0 and not hero_points
+                                else helvetica()),
                 zorder=4,
             )
 
     OUT.mkdir(parents=True, exist_ok=True)
     suffix = "final" if final else "draft"
     path = OUT / (
+        f"{output_name}-{suffix}.png" if output_name else
         f"{date}-bulls-top-game-performances-{season_type_slug(season_type)}-"
         f"{decade}-{suffix}.png"
     )

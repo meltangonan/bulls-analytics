@@ -2,9 +2,9 @@ import pandas as pd
 import pytest
 
 from bulls.config import BULLS_TEAM_ID
+from scripts.prototypes.top_game_performances import first_bulls_games
 from scripts.prototypes.bulls_debut_games import (
     classify_debuts,
-    first_bulls_games,
     needs_career_check,
     rank_debuts,
     season_end_year,

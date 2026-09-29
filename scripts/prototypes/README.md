@@ -42,6 +42,7 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `points_in_a_period_data.py` | Bulls most points in one quarter or half since 1996-97 from `PlayerGameLogs` period/segment splits; proves quarters and halves sum to the game before ranking; top 10 plus ties at 10th | `tests/test_points_in_a_period.py` |
 | `points_in_a_period_bars.py` | Ranked table-bar hybrid for those boards (`--board quarter/half`), T-n ties, asterisk for playoff and play-in games, post-local portraits | `tests/test_points_in_a_period.py` |
 | `bulls_debut_games.py` | Top fifteen first games as a Bull since 1983-84 by Game Score; first logged Bulls game, with career team history checking pre-1983-84 entrants for an earlier Bulls stint; red card, no +/- | `tests/test_bulls_debut_games.py` |
+| `bulls_rookie_debuts.py` | Top fifteen Bulls rookies by points in their NBA debut (first NBA game with the Bulls, drafted or not) since the 1976-77 merger; ABA veterans excluded, career team history checks high-scoring listed veterans; `render_chart(hero_points=True, striped_rows=True)` with a T-n `#` column, Basketball-Reference fills only for blank pre-1983-84 cells | `tests/test_bulls_rookie_debuts.py` |
 | `bulls_lineup_3pt.py` | Bulls' best three-point shooting five-man lineups since 2000-01 | No dedicated tests |
 | `bulls_lineup_rdrtg.py` | Bulls' best five-man defensive lineups since 2000-01 | `tests/test_bulls_lineup_rdrtg.py` |
 | `bulls_lineup_rortg.py` | Bulls' best five-man offensive lineups since 2000-01 | `tests/test_bulls_lineup_rortg.py` |

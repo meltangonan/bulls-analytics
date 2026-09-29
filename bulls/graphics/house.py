@@ -830,7 +830,8 @@ def cut_out_flat_background(
                 background[ny, nx] = True
                 queue.append((ny, nx))
 
-    pixels[:, :, 3] = np.where(background, 0, 255)
+    # Keep any transparency the source already has (a pre-lifted cut-out stays cut out).
+    pixels[:, :, 3] = np.where(background, 0, pixels[:, :, 3])
     cut_out = Image.fromarray(pixels)
     # Feather the boundary so the edge does not read as cut with scissors.
     alpha = cut_out.getchannel("A").filter(ImageFilter.GaussianBlur(0.8))

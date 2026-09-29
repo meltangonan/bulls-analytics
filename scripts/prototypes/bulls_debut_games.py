@@ -68,15 +68,6 @@ def fetch_first_seasons(refresh: bool = False) -> pd.DataFrame:
     return frame
 
 
-def first_bulls_games(working: pd.DataFrame) -> pd.DataFrame:
-    """Each player's earliest logged Bulls regular-season game with minutes played."""
-    played = working[working["minutes"] > 0].copy()
-    played["game_date_parsed"] = pd.to_datetime(played["game_date"], errors="raise")
-    first = played.sort_values(["game_date_parsed", "game_id"], kind="stable")
-    first = first.groupby("player_id", sort=False).head(1)
-    return first.drop(columns="game_date_parsed").reset_index(drop=True)
-
-
 def attach_first_nba_season(first: pd.DataFrame, first_seasons: pd.DataFrame) -> pd.DataFrame:
     """Add each player's first NBA season (ending year) from CommonAllPlayers."""
     seasons = first_seasons[["PERSON_ID", "FROM_YEAR"]].rename(columns={"PERSON_ID": "player_id"})
@@ -232,7 +223,7 @@ def main() -> None:
     players, teams = base.fetch_bulls_history(season_type="Regular Season",
                                               first_end_year=FIRST_END_YEAR)
     working = base.build_working_table(players, teams)
-    first = attach_first_nba_season(first_bulls_games(working), fetch_first_seasons(args.refresh))
+    first = attach_first_nba_season(base.first_bulls_games(working), fetch_first_seasons(args.refresh))
     early = first.loc[needs_career_check(first), "player_id"].tolist()
     audit = classify_debuts(first, base.fetch_career_seasons(early, CAREER_PATH, refresh=args.refresh))
     debuts = audit[audit["is_debut"]].copy()

@@ -15,7 +15,6 @@ from __future__ import annotations
 import argparse
 import shutil
 import sys
-from dataclasses import replace
 from datetime import datetime
 from pathlib import Path
 
@@ -31,11 +30,7 @@ from scripts.prototypes import top_game_performances as base
 PROJECT = "season-opener-performances"
 FIRST_END_YEAR = 1984
 TOP_N = 15
-# The rookie and sophomore tables' fifteen-row fit for a 1080x1440 page.
-TABLE_LAYOUT = replace(base.DECADE_LAYOUT, row_height=108, headshot_x=60, name_x=128,
-                       headshot_half_size=66, headshot_rise=8, first_row_from_top=145,
-                       bottom_pad=42, name_font_size=21, context_font_size=12.5,
-                       name_rise=16, context_drop=22)
+TABLE_LAYOUT = base.FIFTEEN_ROW_LAYOUT
 DATA_DIR = base._REPO / "docs" / "visuals" / "2026-09-25-season-opener-performances" / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
 # Hand-sourced cut-out for a player the NBA CDN serves a silhouette for, copied from the
@@ -174,7 +169,8 @@ def canva_copy(report: dict[str, object]) -> str:
             (
                 "NOTE: Game Score measures box-score productivity. "
                 "Overtime games are included and not adjusted. "
-                "FG and 3PT show makes–attempts; TOV is turnovers."
+                "FG shows makes-attempts; TS% is true shooting, "
+                "PTS / (2 x (FGA + 0.44 x FTA)); TOV is turnovers."
             ),
             (
                 f"AUDIT: {report['player_game_count']} player-games across "
@@ -220,6 +216,10 @@ def main() -> None:
         # NBA.com has no plus/minus before 1996-97, so the column would be blank for early rows.
         show_plus_minus=False,
         portraits=PORTRAITS,
+        made_attempted_dash="-",
+        # Most of these openers have few or no three-point attempts; TS% also reflects the
+        # free throws the table no longer shows.
+        true_shooting=True,
     )
     print(f"Chart: {chart}")
     print(f"Data: {DATA_DIR}")

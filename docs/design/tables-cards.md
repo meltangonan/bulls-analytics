@@ -40,10 +40,13 @@ what remains.
 
 Size row height from the Canva page, not the previous post: measure the table's placed height in a
 page export and grow rows until it fills the space between subtitle and footer. At the 1500-wide
-asset on a 1080×1440 page, fifteen rows fit at a 108-unit row height. Taller rows buy a larger player
-name and game line (21 and 12.5 there) with visible space between them, so descenders never touch the
-game line; keep headers, stat values and the hero number at their sizes, because width, not height,
-is the table's scarce dimension.
+asset on a 1080×1440 page, fifteen rows fit at a 108-unit row height. Start a fifteen-row
+player-game table from `top_game_performances.FIFTEEN_ROW_LAYOUT`, the house sizes: player name 21,
+game line 14, stat values and the Game Score number 19, headers 15. Keep visible space between name
+and game line so descenders never touch it. Width, not height, is the table's scarce dimension, so
+check that the widest row still clears every column before going larger. Made-attempted cells use a
+hyphen (`made_attempted_dash="-"`). When most rows have few three-point attempts, `true_shooting=True`
+shows TS% in the 3PT column's place; define TS% in the page note.
 
 Dense stat tables use clean alternating rows, sorted by the story metric. Do not color every column
 by magnitude. `craft.MAGNITUDE_CMAP` (`#F2EAE8` → `#CE1141` → `#7E0C2B`) remains available for a mark

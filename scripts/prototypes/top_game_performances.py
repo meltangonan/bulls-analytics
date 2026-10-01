@@ -13,7 +13,7 @@ import argparse
 import hashlib
 import sys
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime
 from io import BytesIO
 from pathlib import Path
@@ -136,6 +136,15 @@ DECADE_LAYOUT = TableLayout(
     context_font_size=11.5,
     value_font_size=16,
     gmsc_font_size=16,
+)
+
+# House standard for a fifteen-row player-game table on a 1080x1440 Canva page: the game line
+# at 14, and stat values and the Game Score number at 19 (settled on the 2026-09-25 season-opener
+# post). New fifteen-row tables start here; override a field only for a real layout difference.
+FIFTEEN_ROW_LAYOUT = replace(
+    DECADE_LAYOUT, row_height=108, headshot_x=60, name_x=128, headshot_half_size=66,
+    headshot_rise=8, first_row_from_top=145, bottom_pad=42, name_font_size=21,
+    context_font_size=14, value_font_size=19, gmsc_font_size=19, name_rise=16, context_drop=22,
 )
 
 RAW_CACHE = _REPO / "cache" / "nba.com" / "top-game-performances"
@@ -338,7 +347,11 @@ def fetch_bulls_team_games(
     )
     result["team_points"] = pd.to_numeric(result["team_points"], errors="raise").astype(int)
     # NBA.com leaves plus/minus blank before 1996-97; keep the blank rather than inventing zero.
-    result["team_plus_minus"] = pd.to_numeric(result["team_plus_minus"], errors="raise").astype("Int64")
+    # It also returns a fractional value for a few games (2017-18: 14.4, 0.2); truncate as the
+    # cached seasons always have. The field is audit-only and never displayed.
+    result["team_plus_minus"] = np.trunc(
+        pd.to_numeric(result["team_plus_minus"], errors="raise")
+    ).astype("Int64")
     result["game_id"] = result["game_id"].astype(str)
     result["season_end_year"] = end_year
     result["team_source_url"] = team_source_url(end_year, season_type)
@@ -888,14 +901,19 @@ def _made_attempted_cell(made, attempted, dash: str, missing: str = "") -> str:
 
 def _turnover_values(
     row: pd.Series, show_free_throws: bool, shooting_after_assists: bool = False, dash: str = "–",
-    missing: str = "",
+    missing: str = "", true_shooting: bool = False,
 ) -> tuple[str, ...]:
-    """Return one row's cells for the turnover table, optionally including FT."""
+    """Return one row's cells for the turnover table, optionally including FT.
+
+    ``true_shooting`` puts single-game TS% (one decimal, the header carries the unit) in the
+    3PT cell.
+    """
     cells = (
         (
             str(int(row["points"])),
             _made_attempted_cell(row["fgm"], row["fga"], dash, missing),
-            _made_attempted_cell(row["fg3m"], row["fg3a"], dash, missing),
+            f"{float(row['ts_pct']):.1f}" if true_shooting
+            else _made_attempted_cell(row["fg3m"], row["fg3a"], dash, missing),
         )
         + ((_made_attempted_cell(row["ftm"], row["fta"], dash, missing),) if show_free_throws else ())
         + (
@@ -976,6 +994,7 @@ def render_chart(
     missing_cell: str = "",
     striped_rows: bool = False,
     output_name: str | None = None,
+    true_shooting: bool = False,
 ) -> Path:
     """Render one transparent decade table in the settled ladder grammar.
 
@@ -986,11 +1005,15 @@ def render_chart(
 
     ``score_fill`` swaps the continuous red card for per-row Game Score cells
     coloured by that function (for example ``house.game_score_fill``).
+    ``true_shooting`` shows single-game TS% in the 3PT column's place.
     ``portraits`` maps a player id to a post-local portrait that replaces the
     shared NBA CDN headshot (for players the CDN serves a silhouette for).
     """
     if shooting_after_assists and (not show_turnovers or show_free_throws):
         raise ValueError("Shooting after assists needs the turnover layout without FT.")
+    if true_shooting and (not show_turnovers or show_free_throws):
+        raise ValueError("TS% in place of 3PT needs the turnover layout without FT.")
+    third_label = "TS%" if true_shooting else "3PT"
     if not show_plus_minus and (not show_turnovers or show_free_throws):
         raise ValueError("Dropping +/- needs the turnover layout without FT.")
     if hero_points and (not show_turnovers or show_free_throws):
@@ -1042,10 +1065,10 @@ def render_chart(
             gmsc_right = gmsc_left + 108
             stat_bounds = equal_gap_bounds(
                 ax,
-                [trim(_shooting_order(("PTS", "FG", "3PT", "REB", "AST", "STL", "BLK", "TOV", "+/-"),
+                [trim(_shooting_order(("PTS", "FG", third_label, "REB", "AST", "STL", "BLK", "TOV", "+/-"),
                                       shooting_after_assists))]
                 + [trim(_turnover_values(row, False, shooting_after_assists, made_attempted_dash,
-                                        missing_cell))
+                                        missing_cell, true_shooting))
                    for _, row in rows.iterrows()],
                 left=gmsc_right + 18,
                 right=1465,
@@ -1057,7 +1080,7 @@ def render_chart(
         stat_bounds = ()
 
     if show_turnovers:
-        stat_labels = ("PTS", "FG", "3PT", "FT", "REB", "AST", "STL", "BLK", "TOV", "+/-")
+        stat_labels = ("PTS", "FG", third_label, "FT", "REB", "AST", "STL", "BLK", "TOV", "+/-")
         if not show_free_throws:
             stat_labels = trim(_shooting_order(
                 tuple(label for label in stat_labels if label != "FT"), shooting_after_assists))
@@ -1274,7 +1297,7 @@ def render_chart(
                 for (left, right), value in zip(
                     stat_bounds,
                     trim(_turnover_values(row, show_free_throws, shooting_after_assists,
-                                          made_attempted_dash, missing_cell)),
+                                          made_attempted_dash, missing_cell, true_shooting)),
                 )
             )
         elif show_free_throws:

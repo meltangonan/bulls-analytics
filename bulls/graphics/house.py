@@ -206,9 +206,9 @@ _FONT_CACHE_DIR = REPO_ROOT / "cache" / "fonts"
 
 
 def _helvetica_fallback(weight: str) -> fm.FontProperties:
-    """Installed-sans fallback that still honours slant (non-macOS)."""
+    """Prefer the Helvetica-compatible Nimbus Sans on non-macOS systems."""
     return fm.FontProperties(
-        family=["Helvetica", "Arial", "DejaVu Sans"],
+        family=["Helvetica", "Nimbus Sans", "Arial", "DejaVu Sans"],
         weight="bold" if weight.startswith("bold") else "normal",
         style="italic" if weight.endswith("oblique") else "normal",
     )

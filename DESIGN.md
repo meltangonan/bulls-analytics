@@ -29,7 +29,9 @@ Read only the reference for the chart being changed:
   cards may carry those numbers inside the asset; never copy a number by eye.
 - Use `house.helvetica()` with `regular`, `bold`, `oblique`, or `bold_oblique`. It loads the actual
   face; requesting bold or italic by family name can silently return regular on macOS. The helper
-  caches extracted licensed fonts locally and falls back to installed sans-serif elsewhere.
+  caches extracted licensed fonts locally. Elsewhere it prefers installed Nimbus Sans,
+  then Arial or DejaVu Sans. Cloud uses Nimbus Sans from the `fonts-urw-base35` package;
+  the Mac continues to use its system Helvetica. The fonts are visually close, not identical.
 - Helvetica lacks arrow glyphs. Write “to” or draw a real arrow. Use a true minus (−) for negative
   comparisons and remove the sign when the displayed number rounds to zero.
 

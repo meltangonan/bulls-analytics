@@ -31,7 +31,11 @@ a chart adjustment doesn't need the full post history.
 - Run checks matched to the change using `DEVELOPMENT.md`. Repeat or broaden only after relevant
   changes, failures, or unresolved concerns. Finish requested adjustments; stop proposing polish
   once the brief is satisfied.
-- Use a worktree for a post, substantial shared-code changes, or concurrent work. Small maintenance
+- Before starting or resuming repo work, check the branch and local changes, then fetch GitHub.
+  Start new branches from latest `origin/main`; resume existing work on its task branch. Preserve
+  unfinished work and use the sync/integration checks in `docs/reference/worktrees.md`.
+- Use a worktree for a post, substantial shared-code changes, or concurrent work. Cloud tasks
+  already provide isolation; reuse their checkout unless the user requests another worktree. Small maintenance
   may use a clean primary `main` when no other task is editing it. Never switch primary `main` to a
   task branch. One logical post or cleanup is one reviewed commit; commit/push need explicit approval.
 - Preserve dirty worktrees, unique scratch, and unmerged work. Remove only reviewed, integrated work;

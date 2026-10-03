@@ -1,0 +1,94 @@
+{
+  "season": "2002-03",
+  "games": [
+    {
+      "game_id": "0020200720",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2002-03_0020200720.json.gz",
+      "sha256": "de417fbd0078503b9a6dfe541fa7a129850eb50619e036be721cccb716e332ce",
+      "retrieved_at": null,
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2002-03_0020200720.json.gz",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020200562",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2002-03_0020200562.json.gz",
+      "sha256": "878dc51ad2f7d9a6f9e512fd06e5ac793d38fbd5ff3401b5d5e5489f8e496bb5",
+      "retrieved_at": "2026-10-02T23:53:04.444095+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020200294",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2002-03_0020200294.json.gz",
+      "sha256": "3d8b01324ef515b35c49154a2583a123d85ee1571c4caba8c6f815cd689a4f9f",
+      "retrieved_at": "2026-09-21T18:33:38.447363+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2002-03_0020200294.json.gz",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020200757",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2002-03_0020200757.json.gz",
+      "sha256": "9cd94028262efe2d5992b172a26ee21215bad565c42930dac765ac389f8946d4",
+      "retrieved_at": "2026-10-02T23:53:05.011346+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020200836",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2002-03_0020200836.json.gz",
+      "sha256": "96c36f3d7fc2f9f280f7458382d50242f40264c8b111d969e4a28e1c2456a66a",
+      "retrieved_at": "2026-10-02T23:53:05.612554+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020200770",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2002-03_0020200770.json.gz",
+      "sha256": "5264e91f0c6a612a5ec42ceaa2e666a5a64627f5d3ac5ba60b078aefd75d5b47",
+      "retrieved_at": "2026-09-21T18:33:46.115965+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2002-03_0020200770.json.gz",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020200056",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2002-03_0020200056.json.gz",
+      "sha256": "6d3e6362f03a26d320dc0a9d8ee96fd9b03aa08303c920b134cdd13468236a73",
+      "retrieved_at": "2026-10-02T23:53:06.158272+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020200037",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2002-03_0020200037.json.gz",
+      "sha256": "ec31319ec627105190c371dffac3be4d62974c4a6f77a8ce1b9eec4cf063aac8",
+      "retrieved_at": "2026-10-02T23:53:06.704258+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020200372",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2002-03_0020200372.json.gz",
+      "sha256": "63636e0901d52448486a499ca0738cb4d80c1361fea2e65d56e7db52d1f26ae6",
+      "retrieved_at": "2026-10-02T23:53:07.340480+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020200868",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2002-03_0020200868.json.gz",
+      "sha256": "c61f79761a8ef10396e42791778b8565d75d850b6e420179213c680dcead0504",
+      "retrieved_at": "2026-09-21T18:34:29.948040+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2002-03_0020200868.json.gz",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0020200265",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2002-03_0020200265.json.gz",
+      "sha256": "19de071e034a2bce22723e7cda391ac4d2eaa8715f64e99e7e42ede2ace7336f",
+      "retrieved_at": "2026-10-02T23:53:08.062530+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    }
+  ],
+  "generated_at": "2026-10-02T23:53:09.495343+00:00"
+}

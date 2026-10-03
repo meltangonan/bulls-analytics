@@ -1,0 +1,682 @@
+{
+  "generated_at": "2026-10-02T22:38:23.007178+00:00",
+  "status": "complete",
+  "population_player_games": 24660,
+  "population_games": 2385,
+  "candidate_games_resolved": 35,
+  "display_rows": 16,
+  "cutoff_created": 61,
+  "maximum_excluded_bound": 60,
+  "error_count": 0,
+  "box_sources": [
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-1997.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-1997.csv",
+      "sha256": "9273a6ba3ed9929b860d806a2c6a1eeca68f9a722234d19743e2e82cb6dd3f46",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-1997.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-1997.csv",
+      "sha256": "d181bd6d16cbc1f01eb163b30e793c9b27cd50390cfa06e7251f32a2a543b92b",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-1998.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-1998.csv",
+      "sha256": "e8f744b5795089b30a975b7d64ce4a68af0821df230eea50ca03cc0beebd8aca",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-1998.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-1998.csv",
+      "sha256": "f1a3b3cfe7664a130c6366b27817fe08318d5225040f5e713683f9427e1787be",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-1999.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-1999.csv",
+      "sha256": "264eddedcca8ac361db31f5531c8a310e2e238014572dcc24aa8bdf6faffe1f7",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-1999.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-1999.csv",
+      "sha256": "94210e591f4e4e2822422ffeb7b919a0884222315e31928335c42a4d17c4b3f0",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2000.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2000.csv",
+      "sha256": "0067040869d0bfb5b6e92c12c94d409d89d1c2bf64c3725886dff8eba93447c8",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2000.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2000.csv",
+      "sha256": "7b8250e55fe0a7163988d1a6251e19214c53d7929e1dc13cd12640a3916434c4",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2001.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2001.csv",
+      "sha256": "4566ddfecc16106bdb6be1071d108742adc907e255d86114212ab47a24f18b50",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2001.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2001.csv",
+      "sha256": "9433df6f3a5f203fa235ccda4e8e84aa4512dcc709f68d189ef283ee0d852f45",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2002.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2002.csv",
+      "sha256": "3bb46fdb6b4e59758d03c87dd1178a895dae620cf89982863ad64ba697482d21",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2002.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2002.csv",
+      "sha256": "f87147f56a2a8bdaa779cbf6ca4eb7d3339db6053a2bcd140f5b502127c21dd2",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2003.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2003.csv",
+      "sha256": "239d82ed2c88953ef7f7b32e7956744b889c10164e8ca687c7fd6a13c23d929f",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2003.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2003.csv",
+      "sha256": "4c22b68ffed0e027254b65198eecec47990689ff9e9b246e71c51d5f08422082",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2004.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2004.csv",
+      "sha256": "bf08861e362aa14b3f8a7f84a7d63b1ffaed68b04f9a86552423c1ae2b1c1e60",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2004.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2004.csv",
+      "sha256": "69c265f5ea2541d05204cf405bdc60d45dea11a9659ee3a8884e922e4ce22c3e",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2005.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2005.csv",
+      "sha256": "8eeb9791ce6f28ae790be7c071307da8be1e71d123528a45cad942b026cd79e5",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2005.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2005.csv",
+      "sha256": "c65b56cc05c05b7aab20ba9f1fb75394f955b4e3673d78b27a00250d8269ad88",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2006.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2006.csv",
+      "sha256": "353484aeb853b7816ce5f3f6660020ecece7142cfe3d0d5ac7182f73c21d9b23",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2006.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2006.csv",
+      "sha256": "f590752c19b439c79084a61d74409cc508528a3c70b4f67a117fbf7241cec06c",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2007.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2007.csv",
+      "sha256": "7869f1eab59f7fc98e22c9eec96f925fd0a63ad31b7620970516252c5361f8ed",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2007.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2007.csv",
+      "sha256": "3870ceba75b2d91c52dfdb5d6ab32af6f3fc139a6e2186df07c3a24e149db1ca",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2008.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2008.csv",
+      "sha256": "38809f27620c7ed511c64f01bcaa329af8b06c7cf94e8e42cbb45bbdc95d6e4e",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2008.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2008.csv",
+      "sha256": "28b74df52544a47df11e691f948df2e5b398b3824eee725cdcf44f04161eefc1",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2009.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2009.csv",
+      "sha256": "187db895897c58bd0f3c19ee53a70fec33f2e8077a8cd6b874f11c277c76f1c5",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2009.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2009.csv",
+      "sha256": "a8577c94e3beaef5dfc88a7c5aa42795799fdb1e1929aa3930cf824e87bb11c0",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2010.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2010.csv",
+      "sha256": "b9732c094fd58ef6ef1c88baf1d9e72c036bc3de4c527d964173aa87dc37c9ff",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2010.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2010.csv",
+      "sha256": "6a7a7cba802b35941d002b1be67bfb0f80056c37c9c2fb534500ae65a0beb040",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2011.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2011.csv",
+      "sha256": "a14fe3e377f21aab0fa28168912490c852f02370fd404d397518e89d3fecd878",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2011.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2011.csv",
+      "sha256": "62d7d47470bb445a887bfdc5d4e34c16a564ef1086159cfd5db6c385a3fcae90",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2012.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2012.csv",
+      "sha256": "af424035a61016989e4c655ecc38dc40c7c493903b271b863a078de07003df9d",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2012.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2012.csv",
+      "sha256": "ad3bc6d9ec6113ad2f571260470ab6b7058f44ccc73a534fcfe7494201597d5f",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2013.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2013.csv",
+      "sha256": "5d2b14b5245ece171d877cf0e952c1eb11342393f13fe35b8499886b5585197b",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2013.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2013.csv",
+      "sha256": "f332a503bef93a8cbcdae8a78bebf044785324db3027b6ea6da2ce6a5a6a0aee",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2014.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2014.csv",
+      "sha256": "34b863c56ff39b3619cacf84f2be69378893685d509b7216cb3e313761f98785",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2014.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2014.csv",
+      "sha256": "fffe9372b2c32d8b8b8ef9431b16a3c7c533bf3c10b79bce2bfa24ca27b6ecc6",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2015.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2015.csv",
+      "sha256": "b97d485e13c16daa17128d43004a1bf67e22da71586f60b889fe9864d06f0148",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2015.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2015.csv",
+      "sha256": "a8287bb9fb33bac858413fbfe738236a04779a9fe5bd7df4080821c8e61dd79f",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2016.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2016.csv",
+      "sha256": "e773c83390db77629306c9d0682583b5b9fdd8cd12c7eb2f1cc70f66d9d3b176",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2016.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2016.csv",
+      "sha256": "4772b4722c3d146105dc298e3f0776f74d0d321cd17ae825e9a561709ae2add4",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2017.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2017.csv",
+      "sha256": "92cbf3dd67b3973754691ed728096e252a0a4c7f71c6988aaa93672724446b0b",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2017.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2017.csv",
+      "sha256": "5f794172c0aaec00a6f4c95415601c2dec2f8e2667d97e7a5dd4e897f11240d9",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2018.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2018.csv",
+      "sha256": "94028a9ed0e96db6c7e660e895b07d168968b0ad75c0cf74e821760b3fa091e9",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2018.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2018.csv",
+      "sha256": "f7d13be0cfd66395948a6385f1fed5d71d830134fe809f838b663bd04ae38679",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2019.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2019.csv",
+      "sha256": "c2f7cf21ca78e9681a3893d5659d83cfc3438e1f43999316b60a57098bf8baae",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2019.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2019.csv",
+      "sha256": "3e64733c17e946ae1a91f5541fb47f80ba64c39ab2d121969a8b1e1cf9a0af39",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2020.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2020.csv",
+      "sha256": "d222ce8360fb4e79003f9d438be5fb79c8fd706d7b1ed74d97921cbd55505fd6",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2020.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2020.csv",
+      "sha256": "c90a197183cc3fd017a21440e31043c330c1048964b1b5806743dd35cf0229bc",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2021.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2021.csv",
+      "sha256": "47474140a97cdd90ba1804d9ccc7f0b7311712cb49104e6c873ad874de2bb075",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2021.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2021.csv",
+      "sha256": "00e3b5af5f05492687e9c8fe14f9fe5d978b31187250ae93ad1fb57654a58a29",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2022.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2022.csv",
+      "sha256": "03f134b25dd38e14c1d729c4a30f456e8310c31b5f2e58faf3796b39c3c1704a",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2022.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2022.csv",
+      "sha256": "b5b6f8a9c5618d40a9251b30086bc1c69b14b3eaa27783a06e84e4da6ebb82dc",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2023.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2023.csv",
+      "sha256": "3269c1a7b59a692b3accd69413d6b383faf2d20671312e1ee299581112bafef8",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2023.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2023.csv",
+      "sha256": "08dd208eb7328e799f362af8116d828b9a84fae81bc4c2ab676bca88d2685111",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2024.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2024.csv",
+      "sha256": "fa2cb647dcf6ed7c25b0b9febb3a507b1a43a6066915a3a3a5a331ca9a74ce42",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2024.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2024.csv",
+      "sha256": "d63e5d12e723ea749f5998de019340efef203414471d8da559ec8a6fb98c0270",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2025.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2025.csv",
+      "sha256": "d74ded9a84b0d5436c0594de92a789ff5d7a63854566c2f706903a513b5cd48c",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2025.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2025.csv",
+      "sha256": "241336159e8762613bc4547ddaa847d9530d155382b76df53780005fb39ab362",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-players-regular-season-2026.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-players-regular-season-2026.csv",
+      "sha256": "d7f9bcf53b2715c3c06a6e8cdd7335a68cfca6981281fb642671a48e58da9061",
+      "original_capture_date": null
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/CHI-team-regular-season-2026.csv",
+      "source_path": "docs/visuals/2026-09-25-season-opener-performances/data/raw/CHI-team-regular-season-2026.csv",
+      "sha256": "477783681c5872cd395189c3fa718437f3dff4349d21d5355ecc2d343a4cb261",
+      "original_capture_date": null
+    }
+  ],
+  "basket_sources": [
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2018-19.csv",
+      "sha256": "e28b872fd4842f7efff0b31d0ad19b77b458f0fcd1691969765bdef5b4f017f3",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0021800928",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2018-19-0021800928.csv",
+      "archived_game_sha256": "85505f183950770a656f47e36add22e44ed9e24a1492ca592ee10795da7719ea"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2023-24_0022300300.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2023-24_0022300300.json.gz",
+      "sha256": "370c7f3182acdfacb7b63eab29e8a8c96c6952826303d31d121fc04f0aa0bd83",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2015-16.csv",
+      "sha256": "d15f408f7ed421472dd0becf5287abcc7568b54d2eb37ffce13f1d5915efac2a",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0021500587",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2015-16-0021500587.csv",
+      "archived_game_sha256": "04e3e00bf76342117be8d9b2d47092a14bfb4c1bb6ff3b843166c6f70cedcaa5"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2016-17_0021600517.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600517.json.gz",
+      "sha256": "50a6d07fa02e268b3587ec6e1c82da8f193644bb4397e87bbd95cf63dd624e74",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2021-22_0022101149.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022101149.json.gz",
+      "sha256": "9bfa5e2a50696774b79a45f6154fb6e03c60df474b87c7a8fb748b9f4afd1028",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2016-17_0021601077.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021601077.json.gz",
+      "sha256": "83248e584ee5a9b79936dbdf77eeac538e56a4266b94a8069bdf3d8bdc3ab8d8",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2010-11_0021001084.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2010-11_0021001084.json.gz",
+      "sha256": "d04c1f1ebc1ba3b5c69fe786b2feb9a52cf9dc78446b83f114f86174dfa83ccc",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2019-20.csv",
+      "sha256": "176016caad2c1443b5cc9ae5b603e1781a008e1a1663b437f6c75d200867e47a",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0021900682",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2019-20-0021900682.csv",
+      "archived_game_sha256": "7fd602ebf37fce8ec2ebddb71027a5bab75b18ba6919b40b2cba0aed82d43b2a"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2020-21.csv",
+      "sha256": "07eca722c2db7af902a73d6bb1006a0876834aa38497f69eb80adfd9030b57d8",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0022000142",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2020-21-0022000142.csv",
+      "archived_game_sha256": "72f2b37b303bc15f8d0b605b31ee7d10a9dab0988b4acd6d95f3da3f8a80af1d"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2021-22_0022100802.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100802.json.gz",
+      "sha256": "1f73001091e34a2399b99e340a9fdb7eb264a84f5337f61d62fbe2d77c8869c0",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2025-26.csv",
+      "sha256": "281ef0cf239d9ba8d2b8e4e1271b9c303d9c268faa6d86bbe970081a481ca3aa",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0022500960",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2025-26-0022500960.csv",
+      "archived_game_sha256": "67be4980c3342b6368408cfb6afc87d3f6190ba1546605fed291ab18386dcab1"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2025-26.csv",
+      "sha256": "281ef0cf239d9ba8d2b8e4e1271b9c303d9c268faa6d86bbe970081a481ca3aa",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0022500943",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2025-26-0022500943.csv",
+      "archived_game_sha256": "5e734378f79acdf439ce82b53eb7a8f116b97533ed09728395b3e65747a09fb6"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2024-25.csv",
+      "sha256": "edbe1d1ca4fc0104a613f49db751c56d00e8a3f9cf86487c87908d7e33e38dc5",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0022401028",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2024-25-0022401028.csv",
+      "archived_game_sha256": "e2aff44467f0c319edb03977b999a81f4dba4753328e9cedd1abc5676f8332d1"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2002-03_0020200720.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2002-03_0020200720.json.gz",
+      "sha256": "de417fbd0078503b9a6dfe541fa7a129850eb50619e036be721cccb716e332ce",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2011-12.csv",
+      "sha256": "a3aa403ae86122c1efc16ef904df7dfcaa9216b149ba6cb0ece715d342c089fb",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0021100049",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2011-12-0021100049.csv",
+      "archived_game_sha256": "9f7b477c7a2d2b77695d8cbba415d667fe2817fba6b4bcc789f38d2430afa84d"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2020-21.csv",
+      "sha256": "07eca722c2db7af902a73d6bb1006a0876834aa38497f69eb80adfd9030b57d8",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0022000791",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2020-21-0022000791.csv",
+      "archived_game_sha256": "25adae8772a82d059c0cf704b5b2c33fa748773e14f27b5b7a2c6385af90ede0"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2021-22_0022100502.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100502.json.gz",
+      "sha256": "dfc4a0c48cfd34e31d87fccd9e40cc6aaf086e5c67771a76a0743ba17a8dc4b0",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2025-26.csv",
+      "sha256": "281ef0cf239d9ba8d2b8e4e1271b9c303d9c268faa6d86bbe970081a481ca3aa",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0022500240",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2025-26-0022500240.csv",
+      "archived_game_sha256": "7b2a30713da5f11f7786c1fe61397fca41c80ed5bb4c3d6f09409c70f070071e"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2001-02.csv",
+      "sha256": "4282768fcedd2289c63799668345282dfd1c61a6cc50a84ae390d090d44fa24a",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0020100904",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2001-02-0020100904.csv",
+      "archived_game_sha256": "1bee8091fc2f0e0dcabf77dd3525c837e3a90fbb0e2626ff6e2b36116685c742"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2010-11_0021000836.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2010-11_0021000836.json.gz",
+      "sha256": "d1b0bb1b7ecfb1ebb5d104892ac6ae8daf929993c585081d009f63d0c2616ae4",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2022-23_0022200007.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2022-23_0022200007.json.gz",
+      "sha256": "3a02fcd4ecd5d64ee1302c743fa2cde78f10cee37315dc405368c2bfab23ab0a",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2025-26.csv",
+      "sha256": "281ef0cf239d9ba8d2b8e4e1271b9c303d9c268faa6d86bbe970081a481ca3aa",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0022500167",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2025-26-0022500167.csv",
+      "archived_game_sha256": "75837044121445ef2160cb20fcd332047c81bd5a8799c6af5755d5f858601bca"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2006-07_0020600889.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2006-07_0020600889.json.gz",
+      "sha256": "44e10133c827f3f0fcba3e00883b49b5e8faaed5460a0d6a499991117c37bf26",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2011-12.csv",
+      "sha256": "a3aa403ae86122c1efc16ef904df7dfcaa9216b149ba6cb0ece715d342c089fb",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0021100349",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2011-12-0021100349.csv",
+      "archived_game_sha256": "9165e1e290c5cd52b1e6cbe53218be0d3a7324676a133725544936f8ba27a0dd"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/1996-97_0029600565.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/1996-97_0029600565.json.gz",
+      "sha256": "3cff6f3d0bc8dd9c6f7049bbadb8641ca19608b50b3707f09b16b07dd39785ef",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2011-12.csv",
+      "sha256": "a3aa403ae86122c1efc16ef904df7dfcaa9216b149ba6cb0ece715d342c089fb",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0021100327",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2011-12-0021100327.csv",
+      "archived_game_sha256": "d134001aca257004ad919b56f6d93da34478ae58741bbd37475ca48a1369b5b7"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2010-11_0021000729.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2010-11_0021000729.json.gz",
+      "sha256": "ac36112d839fe085943c0a8fdf5d5874882bcb9e31d1249471dd90326c8ee97e",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2023-24_0022300633.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2023-24_0022300633.json.gz",
+      "sha256": "9161173275f2c2bc1b1c6409b2a55931e36e96d97b4af03304f947e3f48e7120",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2022-23_0022201050.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2022-23_0022201050.json.gz",
+      "sha256": "058abb0b44953bf1b92537fcbf7d7a678b461e02660c22fe97489ba0e8c399c6",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2022-23_0022200124.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2022-23_0022200124.json.gz",
+      "sha256": "b618aab370e72e9076c1f9bb4584e09b6929cf9654ebb0865fa935d7bb024278",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2022-23_0022200532.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2022-23_0022200532.json.gz",
+      "sha256": "52a51611a04dda78f0d26e2f258a7bdc6d94ddfa60a04928c29a958442d6c671",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-10-02-points-created-games/data/raw/2021-22_0022100861.json.gz",
+      "source_path": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2021-22_0022100861.json.gz",
+      "sha256": "56b87c9e9a9da750be00d24d49c79097995a737ee43b37239414d2aaad2c0247",
+      "retrieved_at": null,
+      "type": "NBA PlayByPlayV3 raw actions"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2018-19.csv",
+      "sha256": "e28b872fd4842f7efff0b31d0ad19b77b458f0fcd1691969765bdef5b4f017f3",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0021801069",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2018-19-0021801069.csv",
+      "archived_game_sha256": "113ae417a17fc396a0a205fb7c6824df1db7bdfa94ebd355faf0e9a64c3f1fc5"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2024-25.csv",
+      "sha256": "edbe1d1ca4fc0104a613f49db751c56d00e8a3f9cf86487c87908d7e33e38dc5",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0022401160",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2024-25-0022401160.csv",
+      "archived_game_sha256": "d387b94a1c7b9cc0bd1ff31d82edaaa321ee8e67fa452625e295927306c28862"
+    },
+    {
+      "path": "docs/visuals/2026-08-08-assist-duos/data/seasons/assisted-baskets-2025-26.csv",
+      "sha256": "281ef0cf239d9ba8d2b8e4e1271b9c303d9c268faa6d86bbe970081a481ca3aa",
+      "type": "Saved normalized NBA PlayByPlayV3 assisted baskets",
+      "original_capture_date": null,
+      "game_id": "0022501011",
+      "overtime_source": "Official player-game MIN sum: 240 + 25 per overtime",
+      "archived_game_path": "docs/visuals/2026-10-02-points-created-games/data/raw/assisted-baskets-2025-26-0022501011.csv",
+      "archived_game_sha256": "038b79002596e15362fa017f628911e3f30766bd0ca2d3e6adc68a7a53d6e312"
+    }
+  ],
+  "output_sha256": {
+    "top15.csv": "99458925010342582c1b45d289eab328edc47a56d12bd4d51406247e824f6278",
+    "selection-proof.csv.gz": "2d8a19d75eae645d0f23d3ef501fe27eaf0c1f27ce6ce5a9fab6fd85aa2332c7",
+    "coverage.csv": "1788920d7303f09fca759db7e4df0453f6cd75117ca40e2a1250f301fa712514",
+    "candidate-assisted-baskets.csv.gz": "dd8688e6b5cdf989b779ba877367fcb90a20a97a0763c4ecd0425b26db04f51a"
+  },
+  "pre_rank_top15_sha256": "06bd181c9622f9d0ebcae11d89d9b1499f47cfbce5542ba0290c550e55f8e98c",
+  "nba_season_rank_enrichment": {
+    "verification_summary": "nba-game-ranks/verification-summary.json",
+    "note": "Bulls selection and original metric values preserved; NBA ranks added from exact complete season-game proofs."
+  }
+}

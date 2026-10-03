@@ -1,0 +1,78 @@
+{
+  "season": "2010-11",
+  "games": [
+    {
+      "game_id": "0021001084",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2010-11_0021001084.json.gz",
+      "sha256": "d04c1f1ebc1ba3b5c69fe786b2feb9a52cf9dc78446b83f114f86174dfa83ccc",
+      "retrieved_at": null,
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2010-11_0021001084.json.gz",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021000975",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2010-11_0021000975.json.gz",
+      "sha256": "8742f59c27e8be319629fa7c1358c93f85d977603c8d074a5ab2618ae9b91e5c",
+      "retrieved_at": "2026-10-02T23:53:10.516438+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021001053",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2010-11_0021001053.json.gz",
+      "sha256": "9c1aac89b822f2fd8863cf872f79342cb854111f305c1a55e1b16ef3eba97562",
+      "retrieved_at": "2026-09-21T18:24:23.016293+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2010-11_0021001053.json.gz",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021001093",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2010-11_0021001093.json.gz",
+      "sha256": "b19cac4df13ad4cb91b065ad4e3ca8fa5adf7abcfa5a281ca0e86925584c913c",
+      "retrieved_at": "2026-10-02T23:53:11.134910+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021000675",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2010-11_0021000675.json.gz",
+      "sha256": "63111b9320e4bd848ca692775e9ab782409618b7c6cff9e5bf7f60b1c754539b",
+      "retrieved_at": "2026-10-02T23:53:11.756664+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021001151",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2010-11_0021001151.json.gz",
+      "sha256": "641a57792e8635be31cd68de194b93b99194441cb180a1cf50fe22fd58f8c071",
+      "retrieved_at": "2026-10-02T23:53:12.433429+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021000925",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2010-11_0021000925.json.gz",
+      "sha256": "d56b4bb0e3b49a65327ebc5195d621cdbcad1e0ab5343f1a0244da2e40b6b18a",
+      "retrieved_at": "2026-10-02T23:53:12.981222+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021000688",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2010-11_0021000688.json.gz",
+      "sha256": "bcd9ce51a10607f97a6802f4c39b042a898a21e107de40c75dc8f95854e01c7f",
+      "retrieved_at": "2026-09-21T18:24:49.488108+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2010-11_0021000688.json.gz",
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021000547",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2010-11_0021000547.json.gz",
+      "sha256": "154c72fa40d5ec19ab56a66f4b03a238ebabd0d446e827bea98892cfa0b16b00",
+      "retrieved_at": "2026-09-21T18:24:29.767110+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2010-11_0021000547.json.gz",
+      "excluded_teams": []
+    }
+  ],
+  "generated_at": "2026-10-02T23:53:14.624308+00:00"
+}

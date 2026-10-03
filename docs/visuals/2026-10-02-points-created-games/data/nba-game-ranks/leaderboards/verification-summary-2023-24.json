@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-03T01:43:33.979302+00:00",
+  "status": "complete",
+  "method": "Independent replay from original full-league NBA box logs and raw PBP; no reuse of derived points-created totals.",
+  "leaderboard_limit": 10,
+  "display_rows": 10,
+  "cutoff_created": 76,
+  "population_player_games": 26401,
+  "population_games": 1230,
+  "pbp_games_replayed": 76,
+  "maximum_unresolved_bound": 69,
+  "source_errors": 0,
+  "source_warnings": 0,
+  "targets_rechecked": [
+    {
+      "season": "2023-24",
+      "GAME_ID": "0022300300",
+      "PLAYER_ID": 201942,
+      "created": 70,
+      "nba_season_rank": 22,
+      "nba_season_rank_label": "T-22nd",
+      "nba_season_tie_count": 7,
+      "nba_season_rank_status": "complete",
+      "population_player_games": 26401,
+      "population_games": 1230,
+      "unresolved_comparisons": 0
+    }
+  ],
+  "published_ranks_changed": false,
+  "proof_sha256": {
+    "population-proof-2023-24.csv.gz": "fdbf468642d6e01aca6d0d90a9b754407d97f26bcc737cea6a69dce6e8d81eb8",
+    "target-recheck-proof-2023-24.csv.gz": "ff101f6ded72ecaaa33a02d9b61fa7bfaf4b87158fc44fbf18dbb6f674fa4cf9",
+    "assisted-baskets-2023-24.csv.gz": "f0eedc37a1226d17eab11382875f3a85e74f6da2f3f6afef533f5155a879b50b",
+    "top10-with-ties-2023-24.csv": "fee0ead9c7e4b2f72e43d1675d7f2978591972a265678618bf1a930c3e86fa9c"
+  }
+}

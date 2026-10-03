@@ -1,0 +1,1319 @@
+{
+  "season": "2016-17",
+  "games": [
+    {
+      "game_id": "0021600517",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600517.json.gz",
+      "sha256": "50a6d07fa02e268b3587ec6e1c82da8f193644bb4397e87bbd95cf63dd624e74",
+      "retrieved_at": null,
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600517.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601077",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601077.json.gz",
+      "sha256": "83248e584ee5a9b79936dbdf77eeac538e56a4266b94a8069bdf3d8bdc3ab8d8",
+      "retrieved_at": null,
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021601077.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601200",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601200.json.gz",
+      "sha256": "63fb8faa79e8278a42e43da3e67d7e17f3f5c1eb2cc6fb7bed48d79275cad550",
+      "retrieved_at": "2026-10-02T23:55:16.211266+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600094",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600094.json.gz",
+      "sha256": "7cf594b45a6268be408a637144408064365e163c26f1731d4193e22f8d90d3b9",
+      "retrieved_at": "2026-10-02T23:55:16.827518+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601150",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601150.json.gz",
+      "sha256": "cf38ff732e0989940bb397aecd325c68e30cb8f7edca8af4f54e01eae0876c4d",
+      "retrieved_at": "2026-09-21T18:44:29.824316+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021601150.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600355",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600355.json.gz",
+      "sha256": "685623ed6e3aa81244e5993144f197f25a5fb53f4ff52a26dac625b9a214eb41",
+      "retrieved_at": "2026-10-02T23:55:17.402629+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601091",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601091.json.gz",
+      "sha256": "081bb27484200b70010d76a01a823669bbdfaf94ac89aa4f84b481d9ab794548",
+      "retrieved_at": "2026-10-02T23:55:17.862845+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601024",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601024.json.gz",
+      "sha256": "930def707a90088d6c5f5abb0fe91b62f7f9d0da63a89b091b78e9b11efad184",
+      "retrieved_at": "2026-10-02T23:55:19.026317+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601048",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601048.json.gz",
+      "sha256": "6dfd481da05ed7e8d1ba9d89e852e4442aa11108c3ab57eced4a7002de0bdfd5",
+      "retrieved_at": "2026-10-02T23:55:19.447762+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601197",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601197.json.gz",
+      "sha256": "26d061459167ea4cb0e578849e334e7ae16fef4a664b1923f08bed92d86f31a6",
+      "retrieved_at": "2026-09-21T18:44:44.259278+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021601197.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600349",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600349.json.gz",
+      "sha256": "da47ca571450342b81284e0873533d5bda743a4fbfe3c99f7b04e239367cebf8",
+      "retrieved_at": "2026-09-21T18:45:05.142825+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600349.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600845",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600845.json.gz",
+      "sha256": "f066b521ad89083fab23dde379e55d051445a050409a5b231ee4e260ab626761",
+      "retrieved_at": "2026-10-02T23:55:20.451566+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600989",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600989.json.gz",
+      "sha256": "7b636c693d12d09aa88ec9c80ff24ff2d8b74ff24890560bf48c89f481500a34",
+      "retrieved_at": "2026-09-21T18:45:47.790931+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600989.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600522",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600522.json.gz",
+      "sha256": "58b6947d848844f31c33a44fda4957c6272d3f0bff669d199b3041a526fcbfb5",
+      "retrieved_at": "2026-10-02T23:55:21.200907+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600942",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600942.json.gz",
+      "sha256": "d33077133da052fc719ede5c792cb7c591eeecc7f7dab47c4b2a4459c614c696",
+      "retrieved_at": "2026-10-02T23:55:21.548649+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601167",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601167.json.gz",
+      "sha256": "860ca10ea68c0ada3987da6811b100ccd8bdc2504041d060096c0960c27d1f4f",
+      "retrieved_at": "2026-10-02T23:55:21.906839+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600841",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600841.json.gz",
+      "sha256": "e6e5adc209c740af4ad91ff4ccab0981b284a48f5f4f2c93f097ec6942049fa0",
+      "retrieved_at": "2026-10-02T23:55:22.323111+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600913",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600913.json.gz",
+      "sha256": "126a721da772536d1f6cd894d7bb07c845a01598dae0fa59bc70ee5c0286dea6",
+      "retrieved_at": "2026-09-21T18:44:35.320108+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600913.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600750",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600750.json.gz",
+      "sha256": "fa05c3a6195611be88639c2d86a0356682d083a991e0d3d636b2d7624667df09",
+      "retrieved_at": "2026-10-02T23:55:22.958950+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600215",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600215.json.gz",
+      "sha256": "dda589e04926c193a3767ceb4d75ae2d333aca0bc5bd1b8cd96b5f13726b3ca8",
+      "retrieved_at": "2026-09-21T18:46:11.093657+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600215.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600429",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600429.json.gz",
+      "sha256": "06ece50c7cd282805e845fde22cc85ef4b18b23349d3af3f141ccede348adc0f",
+      "retrieved_at": "2026-09-21T18:44:28.280718+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600429.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600574",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600574.json.gz",
+      "sha256": "f747d36cdf4aaf55e8a90cee3ae936c22e01cbbffa6acb2a5b370451b38cae2c",
+      "retrieved_at": "2026-09-21T18:45:09.342891+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600574.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600219",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600219.json.gz",
+      "sha256": "ccbe6904a1bd75870aa522cdb263efa5ef2e6de21897ebe4e51e0d650fc2ef0a",
+      "retrieved_at": "2026-09-21T18:45:16.720219+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600219.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600058",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600058.json.gz",
+      "sha256": "e3d6575eddcb46661cbd46048bcc7ae010c33363e9e9943fdc340fb12de94ab1",
+      "retrieved_at": "2026-10-02T23:55:23.912868+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601171",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601171.json.gz",
+      "sha256": "99239aeb5026b94575558cf6690ca15bbe4aab7b9a193af32e0d42ee60127d3b",
+      "retrieved_at": "2026-10-02T23:55:24.287543+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600749",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600749.json.gz",
+      "sha256": "98405a128b0c43414572bbbc9a2d5adc8e1d9bffdc8f627e0fb88e86673121e8",
+      "retrieved_at": null,
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600749.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600195",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600195.json.gz",
+      "sha256": "aa6da7c0a75b8b2a7797e30f75dc8b32d8804c72b9000d1c8fba7c9a1668df3e",
+      "retrieved_at": "2026-09-21T18:45:16.153939+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600195.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600153",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600153.json.gz",
+      "sha256": "50a689ab1f3c82b0dbb5d54a6d0fdf81b542c47c39e90a5fd11283d97d7f6b19",
+      "retrieved_at": "2026-09-21T18:45:34.081306+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600153.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600582",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600582.json.gz",
+      "sha256": "24aa41306722d3bbb66741aa1038f75291bdc35f523e5d8aaf9b11edd1c82937",
+      "retrieved_at": "2026-10-02T23:55:25.105356+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600563",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600563.json.gz",
+      "sha256": "a9816fdcdc50a06b840441ba8cfe7aaa7f12cb37949942cac98ab67f8ea9e1a6",
+      "retrieved_at": "2026-09-21T18:46:33.214317+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600563.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600352",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600352.json.gz",
+      "sha256": "a0e6112c15fc75a1f71035c05dd0948cd981c2ff862928b6565caa1f27bc1f0e",
+      "retrieved_at": "2026-10-02T23:55:25.726791+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600364",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600364.json.gz",
+      "sha256": "7708bbd07fce18ba6bf0737e36c7b229942fd35ddba16eb225d55d09ad2e9073",
+      "retrieved_at": "2026-10-02T23:55:26.375650+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600040",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600040.json.gz",
+      "sha256": "820de97f1366d627f419586f9a3bfc44ab714493290f2c1be56bee907b2b2a70",
+      "retrieved_at": "2026-10-02T23:55:26.994064+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600435",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600435.json.gz",
+      "sha256": "7d8e461610362014989ce70511894255a75294e8c14d07b9585e3df64cb57734",
+      "retrieved_at": "2026-10-02T23:55:28.168811+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600270",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600270.json.gz",
+      "sha256": "8ea49cd50b04eb29dcffc8b926f4c4f6c75a11efb4d77f663309a3a7f46fed0b",
+      "retrieved_at": "2026-10-02T23:55:28.725183+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 205,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        },
+        {
+          "action_number": 474,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600488",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600488.json.gz",
+      "sha256": "5a841e0c58a22dd2b07f3afecf26077584ed00615247e9859d68f74e58a36f45",
+      "retrieved_at": "2026-09-21T18:44:51.936475+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600488.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600395",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600395.json.gz",
+      "sha256": "731aea3e0af29bc4194b3ece1a587d9aab64c9fda99d0db9ce5b85cbf0201975",
+      "retrieved_at": "2026-10-02T23:55:29.345798+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600251",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600251.json.gz",
+      "sha256": "c41fc2c1a6cbdf23687ce2aeaeb12600c026c372285d636809a0f36801b32d94",
+      "retrieved_at": "2026-10-02T23:55:29.984581+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600995",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600995.json.gz",
+      "sha256": "2b5b26370fcf08abc247b1f2809664f5b45773ade6d8a0274f39a51aadca67e9",
+      "retrieved_at": "2026-10-02T23:55:30.350805+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600467",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600467.json.gz",
+      "sha256": "c4b196d7b49db26badc7bed8bb2b8da610a1ffba985d7f6f2bd20ffad631ade6",
+      "retrieved_at": "2026-10-02T23:55:30.998480+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600256",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600256.json.gz",
+      "sha256": "db048b143782025ffcef16ad5d3d1ea55e651051331e70ef8ba3a6583312c018",
+      "retrieved_at": "2026-10-02T23:55:31.552843+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600403",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600403.json.gz",
+      "sha256": "c21238ad69a3a6801dd20728de1f84331254f5a795d27f06385023f3062c5240",
+      "retrieved_at": "2026-10-02T23:55:32.193546+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600638",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600638.json.gz",
+      "sha256": "272921dcb9a4be303ae9c8f73f596a621ad7a5f45b811d8a43103f6dd3ac3348",
+      "retrieved_at": "2026-10-02T23:55:32.835326+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 49,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        },
+        {
+          "action_number": 57,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        },
+        {
+          "action_number": 137,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        },
+        {
+          "action_number": 245,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600448",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600448.json.gz",
+      "sha256": "6591bad0d9ef9dddad06becba53e9165fdc8a20ce26590734399624e50853382",
+      "retrieved_at": "2026-10-02T23:55:33.404433+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600474",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600474.json.gz",
+      "sha256": "7274abded1e4f36ab10d66b861a2e6501269c46abafecf508421038e60ce354b",
+      "retrieved_at": "2026-10-02T23:55:33.913668+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600281",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600281.json.gz",
+      "sha256": "b681e0e9429c3a018cc7016f650916ba261ffc6cb74a64e43ca16230544c284d",
+      "retrieved_at": "2026-10-02T23:55:35.155460+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601110",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601110.json.gz",
+      "sha256": "187b0de8dd397327d74c82899c3fa3137fbefc6d7c3fc893186004e91afae99a",
+      "retrieved_at": "2026-10-02T23:55:35.535478+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600714",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600714.json.gz",
+      "sha256": "728abccfa9174df13e1fa037e23327f2df4ee306e041f32f151c29074e682901",
+      "retrieved_at": "2026-10-02T23:55:37.139451+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 352,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600636",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600636.json.gz",
+      "sha256": "20205d46ce873970651aa4f0588888913521c6d0bf93830f8188930030cb197a",
+      "retrieved_at": "2026-09-21T18:46:52.008218+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600636.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600068",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600068.json.gz",
+      "sha256": "600c77ecd4bdffdbbcf21f1aa22a0878036beb838c3bd7cd9188ede0f009325e",
+      "retrieved_at": "2026-09-21T18:46:08.531668+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600068.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600369",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600369.json.gz",
+      "sha256": "ca12dc9a87321fe69459a1ebc2f852a8aeade00490b64748a68bbffbe95851c4",
+      "retrieved_at": "2026-09-21T18:44:45.795441+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600369.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600080",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600080.json.gz",
+      "sha256": "8b009fa64855208f69780fc09c620b38bc25a922ec04f2da76b32694642b4972",
+      "retrieved_at": "2026-10-02T23:55:38.454184+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600924",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600924.json.gz",
+      "sha256": "4ba9c39eecc0370d104bbb58101d2c1e0d1bcaa8d6e01a038470e4cd786e51b9",
+      "retrieved_at": "2026-10-02T23:55:39.190392+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601182",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601182.json.gz",
+      "sha256": "9fbcf5f819d7d019210ed1d1cf40af5091a4de1235e9308a3d76ae86be6535d5",
+      "retrieved_at": "2026-10-02T23:55:39.595409+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600983",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600983.json.gz",
+      "sha256": "5a55ec61d00e95f0daa594eea7a10487ab74abaf7faf09b9415d4796e17a8395",
+      "retrieved_at": "2026-10-02T23:55:40.700332+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 168,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        },
+        {
+          "action_number": 174,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        },
+        {
+          "action_number": 389,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600813",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600813.json.gz",
+      "sha256": "0d15ac60feeb9e9f45ed22df25412a4c0e0428833f04362a509b30be873cfbf0",
+      "retrieved_at": "2026-10-02T23:55:41.221862+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601152",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601152.json.gz",
+      "sha256": "3570d9e5838e874112e43c65f36933ec25c67c76308f24b2b71775a4bc02696f",
+      "retrieved_at": "2026-10-02T23:55:41.985796+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 275,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600171",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600171.json.gz",
+      "sha256": "21035e3889206c06530503959578a2c7af479b1782d5a5d7fc8b411a46428616",
+      "retrieved_at": "2026-10-02T23:55:42.518698+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600723",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600723.json.gz",
+      "sha256": "fcd6eb29c9ffa9c72655333e94dd76728c8cd424f39c06b3d8149b38bb9f1ee1",
+      "retrieved_at": "2026-10-02T23:55:43.019329+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600743",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600743.json.gz",
+      "sha256": "90dd43842ea16e4f15e8eafba7d0da5070650c0d8816ba5c788492e87d3fe892",
+      "retrieved_at": "2026-10-02T23:55:43.564215+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600623",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600623.json.gz",
+      "sha256": "bab11cccca072787cb63ad60a9076cb4f86270a7fca53472e3afaa789c45c33c",
+      "retrieved_at": "2026-10-02T23:55:44.135699+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600721",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600721.json.gz",
+      "sha256": "cbbecf6ca3a0ac1286d9f52e0e376c8d13baa40914e5b054f0a7799e86af6012",
+      "retrieved_at": "2026-10-02T23:55:44.723983+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601119",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601119.json.gz",
+      "sha256": "b4af5ff89628d8027e44eeb990b58a4f3b1f29614ad7e8d219f1dad093cdb709",
+      "retrieved_at": "2026-10-02T23:55:45.104182+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601051",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601051.json.gz",
+      "sha256": "0bdf1291b617da3f3528ef8ac4dd5efc89f75646b68b51ed2c777e7514e75ea5",
+      "retrieved_at": null,
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021601051.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601083",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601083.json.gz",
+      "sha256": "4c4f19af3602045c2ff3a3001d2528ff2d12fc72e6e62d34db87a09be5137ac3",
+      "retrieved_at": "2026-10-02T23:55:45.545856+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601142",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601142.json.gz",
+      "sha256": "cdcb690ce44ca1f23357871b7ba900d247c93445ad09ac9f06f4b3fcea8bbec5",
+      "retrieved_at": "2026-10-02T23:55:45.934334+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600732",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600732.json.gz",
+      "sha256": "807ae07620509cee69125f59ba5c26408bb5c604464e348059a71dfae8cf5643",
+      "retrieved_at": "2026-10-02T23:55:46.471583+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600306",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600306.json.gz",
+      "sha256": "3015f46e6b9307043383a699cb70d20ad7651d6bca5d11f6ef20df6e32d34796",
+      "retrieved_at": "2026-10-02T23:55:47.040889+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 310,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600386",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600386.json.gz",
+      "sha256": "ef4a53eb6c61c257312c6dfd571567c456cc21f3d9085c0252dadda9a03a7d7b",
+      "retrieved_at": "2026-10-02T23:55:47.735637+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600812",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600812.json.gz",
+      "sha256": "40f6bcd6eea93187a9056e5c3dcc0e183818ebd1bd0c593bc349a9ffd5867771",
+      "retrieved_at": "2026-10-02T23:55:48.310246+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 623,
+          "rule": "Remove comma before generational suffix",
+          "original_description": "Price 25' 3PT Jump Shot (3 PTS) (Jones, Jr. 1 AST)",
+          "normalized_description": "Price 25' 3PT Jump Shot (3 PTS) (Jones Jr. 1 AST)"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600134",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600134.json.gz",
+      "sha256": "7c0e71af87d231f858e0eb61d4221ca71053832e62ca5fadf050ec454348e421",
+      "retrieved_at": "2026-10-02T23:55:48.901330+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600695",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600695.json.gz",
+      "sha256": "4f99ea1f537a2574d81e192a0bf75f2d23e8cf48bcc9de11a88fb6907a22d580",
+      "retrieved_at": "2026-09-21T18:46:20.105478+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600695.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600742",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600742.json.gz",
+      "sha256": "16bf8dabbda460761ee3ee4770b9221f676a1c54603a0566983d69f0daa10fbe",
+      "retrieved_at": "2026-10-02T23:55:49.546238+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 71,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        },
+        {
+          "action_number": 355,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600832",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600832.json.gz",
+      "sha256": "19b6604899881b45870b270d31031d2a65eb6afc7f12eb5971e4f0f9b1d51c2c",
+      "retrieved_at": "2026-09-21T18:46:05.066075+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600832.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600780",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600780.json.gz",
+      "sha256": "b26bf6f6da1eee05232a49cb078fa01efb484b1589addeb82cb494cd11cfbf61",
+      "retrieved_at": "2026-10-02T23:55:50.316303+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601224",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601224.json.gz",
+      "sha256": "8fe14628fcb59f2467f963eaf3173aab4bd006f72b2781f85cb5d295e5ccc7cf",
+      "retrieved_at": "2026-10-02T23:55:50.809982+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601021",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601021.json.gz",
+      "sha256": "dfbaeaf0acd58b1ec47231f3a2641c86a898c58956062ce2d5fd9e191cfc3e0f",
+      "retrieved_at": null,
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021601021.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601041",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601041.json.gz",
+      "sha256": "9ca0c3b25e6b11520466ae14cec31eab4ad2b4acf1695733a129dd9d415d8a7e",
+      "retrieved_at": "2026-10-02T23:55:51.265930+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601073",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601073.json.gz",
+      "sha256": "048fc3e61f6c3f5298c063a735dbcdb57336b735cd4585e0bc932f9adeac9add",
+      "retrieved_at": "2026-09-21T18:44:54.599482+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021601073.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601137",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601137.json.gz",
+      "sha256": "63660aab8b4210536c5d729c347eac4a9c505973f0bf4c262685961144b4d201",
+      "retrieved_at": "2026-10-02T23:55:51.752803+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600769",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600769.json.gz",
+      "sha256": "7dbfde99cfb985b003df17e7dc45d6112c8034d4e9b5a27f244a2bb2092a7f99",
+      "retrieved_at": "2026-09-21T18:46:36.693942+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600769.json.gz",
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 266,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        },
+        {
+          "action_number": 586,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600811",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600811.json.gz",
+      "sha256": "e36f090860b0ce813107cd1fdbe1b94938a054e81cc12fa4c2c5d2a359b479b9",
+      "retrieved_at": "2026-09-21T18:46:37.299409+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600811.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600853",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600853.json.gz",
+      "sha256": "22ec89830fff1164f7dca8b5e2332b019e11cc8bab586009cb5eaacd49ccb5bc",
+      "retrieved_at": "2026-09-21T18:46:22.562571+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600853.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600561",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600561.json.gz",
+      "sha256": "764fef82456aa9c7a20ee620e42e3254e08e61c9e13204cf058d1092b770c37c",
+      "retrieved_at": "2026-10-02T23:55:52.606988+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600731",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600731.json.gz",
+      "sha256": "75542de44abb342021fa04101c5ca79c9f58ecdc0282f7e34a6ca99d34e00163",
+      "retrieved_at": "2026-09-21T18:44:43.541213+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600731.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600741",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600741.json.gz",
+      "sha256": "8471dbf2eb2e2cd23105e6a3310a1fb7f50a2a39fb6d17d2ce6f69e05ac434df",
+      "retrieved_at": "2026-10-02T23:55:53.236573+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600671",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600671.json.gz",
+      "sha256": "cef5de436ff6fb7a143b460bae316698174200dde7f70f677ee9d246a9f6f3e2",
+      "retrieved_at": "2026-10-02T23:55:53.754343+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600681",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600681.json.gz",
+      "sha256": "b5692fceac7c845d3bbb3c255a1a8c0aad7e2174d5fe7dd4ab52d0c4ced65485",
+      "retrieved_at": "2026-10-02T23:55:54.418870+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600314",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600314.json.gz",
+      "sha256": "9acf431faed36c294e68346f07d9ce79c660d7f9eb35d41419a5c9d2112c1012",
+      "retrieved_at": "2026-09-21T18:46:13.019739+00:00",
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600314.json.gz",
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600245",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600245.json.gz",
+      "sha256": "7aaaf64bfd8e07b4065df26e5358b141ea8951f36e2d4ae7a7fe67c85af7c02e",
+      "retrieved_at": "2026-10-02T23:55:56.696793+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600178",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600178.json.gz",
+      "sha256": "8a2d94b030d9de827140a8d13bef4252ce300b5a85a35911d7499afa01daf4ad",
+      "retrieved_at": "2026-10-02T23:55:57.415787+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600114",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600114.json.gz",
+      "sha256": "f18f7b292cee8d5b1274f61353060f2421a4efdd73ec3e651c9db3fa619ca8ab",
+      "retrieved_at": "2026-10-02T23:55:57.950493+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600010",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600010.json.gz",
+      "sha256": "da8c1a2413bc5dc2facabf95962c429be451fda7ef3fa025ac0cb61dfcb541c1",
+      "retrieved_at": "2026-10-02T23:55:58.635450+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600893",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600893.json.gz",
+      "sha256": "237015a3b4db9872cd8d70b27584e15b7b6d5042958febcec05793c6b3c1c43c",
+      "retrieved_at": "2026-10-02T23:55:18.506857+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 66,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 40,
+          "evidence_description": "MISS Kanter 5' Jump Shot"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601000",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601000.json.gz",
+      "sha256": "52780f849417637ebda191696a3c9fa525358f360d7a050ab5e70a25f6d986fa",
+      "retrieved_at": "2026-10-02T23:55:19.998786+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 145,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 99,
+          "evidence_description": "MISS Kanter  Dunk"
+        },
+        {
+          "action_number": 410,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 99,
+          "evidence_description": "MISS Kanter  Dunk"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600459",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600459.json.gz",
+      "sha256": "da7d33873e6800ebd47948d2416013c02bbdc64d457b174dac474c9f839ac7b0",
+      "retrieved_at": "2026-10-02T23:55:27.511431+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 99,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 71,
+          "evidence_description": "Kanter S.FOUL (P1.T3) (N.Buchert)"
+        },
+        {
+          "action_number": 133,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 71,
+          "evidence_description": "Kanter S.FOUL (P1.T3) (N.Buchert)"
+        },
+        {
+          "action_number": 238,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 71,
+          "evidence_description": "Kanter S.FOUL (P1.T3) (N.Buchert)"
+        },
+        {
+          "action_number": 401,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 71,
+          "evidence_description": "Kanter S.FOUL (P1.T3) (N.Buchert)"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600415",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600415.json.gz",
+      "sha256": "c68e0d99f71a5f1aca7872fd26e86c76507277043cc62652124030bbe29fafca",
+      "retrieved_at": "2026-10-02T23:55:34.466540+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 443,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 100,
+          "evidence_description": "Kanter REBOUND (Off:1 Def:0)"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600880",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600880.json.gz",
+      "sha256": "c29fb090139110565cffc4eec8b278d2c20fec77b4b877e2423e8c0e45531b6b",
+      "retrieved_at": "2026-10-02T23:55:35.910868+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 151,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 71,
+          "evidence_description": "Kanter REBOUND (Off:1 Def:0)"
+        },
+        {
+          "action_number": 474,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 71,
+          "evidence_description": "Kanter REBOUND (Off:1 Def:0)"
+        },
+        {
+          "action_number": 502,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 71,
+          "evidence_description": "Kanter REBOUND (Off:1 Def:0)"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600211",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600211.json.gz",
+      "sha256": "60280bcf6a05bc7d9bfeb2dbe0be5d071a64a7efdfb73ed747f2830393ea78be",
+      "retrieved_at": "2026-10-02T23:55:36.454863+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 140,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 40,
+          "evidence_description": "MISS Kanter 18' Jump Shot"
+        },
+        {
+          "action_number": 319,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 40,
+          "evidence_description": "MISS Kanter 18' Jump Shot"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021601015",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021601015.json.gz",
+      "sha256": "aac4d605b241569cb62b6330edcd92d88d27e800656756a6ba7a1a5bd9c0d51f",
+      "retrieved_at": "2026-10-02T23:55:41.630083+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 449,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 86,
+          "evidence_description": "Kanter 1' Reverse Layup (2 PTS) (Gibson 1 AST)"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600973",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600973.json.gz",
+      "sha256": "c93c12cb21fba958ca18fdcc97c2f16eb32cb1fcec010d0ab48cc97d9b9e7eae",
+      "retrieved_at": "2026-10-02T23:55:40.249215+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 337,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 53,
+          "evidence_description": "Kanter BLOCK (1 BLK)"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600544",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600544.json.gz",
+      "sha256": "cc325e38cf92d1bf9dbdb1ddfd29908700c759c115b0c11c2b25347ac35f7f7f",
+      "retrieved_at": "2026-10-02T23:55:37.956264+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 372,
+          "raw_assister": "McClellan",
+          "normalized_assister": "Sheldon Mac",
+          "player_id": 1627815,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 157,
+          "evidence_description": "SUB: Beal FOR McClellan"
+        },
+        {
+          "action_number": 375,
+          "raw_assister": "McClellan",
+          "normalized_assister": "Sheldon Mac",
+          "player_id": 1627815,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 157,
+          "evidence_description": "SUB: Beal FOR McClellan"
+        },
+        {
+          "action_number": 386,
+          "raw_assister": "McClellan",
+          "normalized_assister": "Sheldon Mac",
+          "player_id": 1627815,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 157,
+          "evidence_description": "SUB: Beal FOR McClellan"
+        },
+        {
+          "action_number": 143,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600571",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600571.json.gz",
+      "sha256": "d93328abb38c62642b39599bd09eab50c771cede8e5d036495060a9a05161ca2",
+      "retrieved_at": null,
+      "reused_source": "docs/visuals/2026-09-21-points-created/data/nba-league/raw/2016-17_0021600571.json.gz",
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 426,
+          "raw_assister": "McClellan",
+          "normalized_assister": "Sheldon Mac",
+          "player_id": 1627815,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 93,
+          "evidence_description": "McClellan S.FOUL (P1.T3) (M.Ayotte)"
+        },
+        {
+          "action_number": 55,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        },
+        {
+          "action_number": 320,
+          "raw_assister": "Mark Morris",
+          "normalized_assister": "Mark. Morris",
+          "player_id": 202693,
+          "rule": "unique literal first-name prefix within same-team official roster"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600540",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600540.json.gz",
+      "sha256": "01249920c0b2129396b351fce4aaf1ff7a5b832f916195ffd4e4d3674ed53af5",
+      "retrieved_at": "2026-10-02T23:55:55.529457+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 113,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 90,
+          "evidence_description": "Kanter REBOUND (Off:0 Def:1)"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600433",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600433.json.gz",
+      "sha256": "8ad98cf57cfaa103f02d30c86dd746540bea5fe18869d6f653bc5f66027d4b5a",
+      "retrieved_at": "2026-10-02T23:55:54.969957+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 146,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 73,
+          "evidence_description": "Kanter S.FOUL (P1.T4) (D.Collins)"
+        }
+      ],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021600307",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2016-17_0021600307.json.gz",
+      "sha256": "bf092df31b6a4291cdf11513ba6c293d3c98cb68be774d951ba2afabb07e23a3",
+      "retrieved_at": "2026-10-02T23:55:56.055871+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [
+        {
+          "action_number": 167,
+          "raw_assister": "Kanter",
+          "normalized_assister": "Enes Freedom",
+          "player_id": 202683,
+          "rule": "Historical name tied to NBA person-ID by own raw actions",
+          "evidence_action_number": 75,
+          "evidence_description": "Kanter Free Throw 1 of 2 (1 PTS)"
+        }
+      ],
+      "excluded_teams": []
+    }
+  ],
+  "generated_at": "2026-10-02T23:57:33.679092+00:00"
+}

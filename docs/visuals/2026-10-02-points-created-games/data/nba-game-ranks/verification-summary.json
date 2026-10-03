@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-10-03T00:02:59.677593+00:00",
+  "status": "complete",
+  "selected_rows": 16,
+  "scope": "All NBA regular-season player-games in each target season, including overtime and other games by the same player.",
+  "metric": "PTS plus actual points scored on assisted field goals (2 or 3).",
+  "rank": "Competition rank: 1 + count of player-games strictly above target; T prefix when >1 player-game equals target.",
+  "unresolved_comparisons": 0,
+  "proof_sha256": {
+    "rank-proof-2025-26.csv.gz": "ad03d70c1a47cbb4da39f4d226c075628f6da3ed7e868b75ccc96bbaee6ce4a3",
+    "population-proof-2023-24.csv.gz": "47fa2614f0f4fb0b6dc61bba686e3fc7b215bd417cef8cc75c3c725cb48b9f24",
+    "population-proof-2011-12.csv.gz": "dd82642590a89e452ff6ea2c20dbfadd53ff87b3e6fddc75e26238681620d8d1",
+    "population-proof-2025-26.csv.gz": "6a49660f7a3795e1c6b62cbed5ff2c06f7455c7b2bf3a463b54260477190a7cc",
+    "population-proof-2016-17.csv.gz": "4d252946a9cc17df0f3b440f8b366dd605845cd166fb4bec1a4b47f42a42aa5a",
+    "rank-proof-2023-24.csv.gz": "6ede7d2e7bdc878a76b87bdd24466cbd2f5e7b03df77de9c160daa073dda30e5",
+    "population-proof-2001-02.csv.gz": "e5cfbda84e88656a684c57a0aa7dd8a668a8038cfd7737dc211ae68dd4e1a191",
+    "rank-proof-2010-11.csv.gz": "596947d78397018fa6bd028503b532c7f65d07aceec9aec2a768a99027c36d14",
+    "rank-proof-2001-02.csv.gz": "dad63cad36d0e485aa6cdecc57e66c585f2318968de8a0138a495425af3073da",
+    "rank-proof-2015-16.csv.gz": "bb3d4af5d4cec76ca0b4a871a1aae0a2220f7fa390f62789c1b3e1c9ded70ef6",
+    "population-proof-2015-16.csv.gz": "df6d5168b033154e02dfdbe7525d042169719bcf9616bb946908a02730ca8bd3",
+    "population-proof-2019-20.csv.gz": "beade74ca999a39bdf5e651d4915db93de9d82c66cc433980e75a7ad2c75b33a",
+    "rank-proof-2020-21.csv.gz": "4e71cdcf7cfc15d92d33292eef3a0b32395399902d4bc9a1b75ff7704cc20de4",
+    "population-proof-2021-22.csv.gz": "4579aa3f51f16e16f4736d0eead7c8915064c8d98c4be35be36b98cd935d8b1d",
+    "population-proof-2002-03.csv.gz": "40e8e63ffdf6f780a32524aed84fb20ecc380db549c6b135e2e041df4258b0ef",
+    "rank-proof-2016-17.csv.gz": "11c63da76f633502bb60379f7ec4b7a511744f625da0a934f1d86a5b56dab49b",
+    "rank-proof-2019-20.csv.gz": "129ca3eb8820e0269cf108c86aed86791185bd7d2ee513f0de4b93feefbdba3c",
+    "rank-proof-2002-03.csv.gz": "5b3d2cca9ed1b63b7c07bcdf4d9ad89114985d696fdb6a196dc8a9a7b5ffa833",
+    "rank-proof-2011-12.csv.gz": "d0b90c9efb0c494ee1d2156410709e3223304e50aabe48d809176abd4d39ba26",
+    "rank-proof-2021-22.csv.gz": "01285272d56b2c4a4a3454bb564169b377beeb73c1cceb2717dd9c3829d077ca",
+    "rank-proof-2018-19.csv.gz": "bb28486985092f38b55967fa17693fd396df42b759191151689408c493a9109f",
+    "population-proof-2010-11.csv.gz": "8ec30c7530296da2992bb7b3cb2f8840de600a2b2020dc5bc40a3643655a59ff",
+    "population-proof-2020-21.csv.gz": "c701af7eac4065d6a17f87e700182763239c240aa1b13a593d07676d82d6fa25",
+    "population-proof-2018-19.csv.gz": "7c5d6e959bc2f3cfeac0852772b6ff8801559b933b12d0656c26aecd38affdb8"
+  },
+  "top15_sha256": "99458925010342582c1b45d289eab328edc47a56d12bd4d51406247e824f6278",
+  "populations": [
+    {
+      "season": "2023-24",
+      "player_games": 26401,
+      "games": 1230,
+      "resolved_player_games": 1420,
+      "inspected_games": 68,
+      "proof_comparisons": 26401
+    },
+    {
+      "season": "2018-19",
+      "player_games": 26101,
+      "games": 1230,
+      "resolved_player_games": 889,
+      "inspected_games": 44,
+      "proof_comparisons": 26101
+    },
+    {
+      "season": "2015-16",
+      "player_games": 26078,
+      "games": 1230,
+      "resolved_player_games": 670,
+      "inspected_games": 32,
+      "proof_comparisons": 26078
+    },
+    {
+      "season": "2010-11",
+      "player_games": 25153,
+      "games": 1230,
+      "resolved_player_games": 168,
+      "inspected_games": 9,
+      "proof_comparisons": 25153
+    },
+    {
+      "season": "2002-03",
+      "player_games": 23941,
+      "games": 1189,
+      "resolved_player_games": 210,
+      "inspected_games": 11,
+      "proof_comparisons": 23941
+    },
+    {
+      "season": "2011-12",
+      "player_games": 20758,
+      "games": 990,
+      "resolved_player_games": 320,
+      "inspected_games": 16,
+      "proof_comparisons": 20758
+    },
+    {
+      "season": "2016-17",
+      "player_games": 26139,
+      "games": 1230,
+      "resolved_player_games": 2207,
+      "inspected_games": 106,
+      "proof_comparisons": 52278
+    },
+    {
+      "season": "2021-22",
+      "player_games": 26039,
+      "games": 1230,
+      "resolved_player_games": 3563,
+      "inspected_games": 174,
+      "proof_comparisons": 78117
+    },
+    {
+      "season": "2001-02",
+      "player_games": 23908,
+      "games": 1189,
+      "resolved_player_games": 311,
+      "inspected_games": 16,
+      "proof_comparisons": 23908
+    },
+    {
+      "season": "2025-26",
+      "player_games": 26651,
+      "games": 1230,
+      "resolved_player_games": 3098,
+      "inspected_games": 149,
+      "proof_comparisons": 53302
+    },
+    {
+      "season": "2019-20",
+      "player_games": 22393,
+      "games": 1059,
+      "resolved_player_games": 2361,
+      "inspected_games": 114,
+      "proof_comparisons": 22393
+    },
+    {
+      "season": "2020-21",
+      "player_games": 23054,
+      "games": 1080,
+      "resolved_player_games": 2921,
+      "inspected_games": 144,
+      "proof_comparisons": 23054
+    }
+  ],
+  "population_player_games": 296616,
+  "population_games": 14117,
+  "proof_comparisons": 401484,
+  "inspected_games": 883,
+  "old_post_pbp_reused": 127,
+  "pbp_new_for_this_post": 756,
+  "source_errors": 0,
+  "source_warnings": 15,
+  "recorded_name_normalizations": 66,
+  "excluded_source_team_games": [],
+  "endpoints": {
+    "league_summary": "https://stats.nba.com/stats/leaguedashplayerstats",
+    "game_logs": "https://stats.nba.com/stats/playergamelogs",
+    "play_by_play": "https://stats.nba.com/stats/playbyplayv3"
+  }
+}

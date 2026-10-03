@@ -1,0 +1,402 @@
+{
+  "season": "2018-19",
+  "games": [
+    {
+      "game_id": "0021800928",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800928.json.gz",
+      "sha256": "855cc017fe47cdc08600a9ec5c699f8b2a07dece7d7552109980eb5e17d09962",
+      "retrieved_at": "2026-10-02T23:57:35.622287+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800625",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800625.json.gz",
+      "sha256": "8d3be172a2277b08b302dea056feaaee71daa8c9d5d7f7f26bf06a58f3036135",
+      "retrieved_at": "2026-10-02T23:57:36.096546+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800439",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800439.json.gz",
+      "sha256": "049dd5a47879293e8606b7a439f262dba65b550404c39d333122426bed0ea3d5",
+      "retrieved_at": "2026-10-02T23:57:36.574060+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800300",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800300.json.gz",
+      "sha256": "60e07bdd72846781f8c28083fb825449acff71541e8ac784f5eb86f2ac781712",
+      "retrieved_at": "2026-10-02T23:57:37.029375+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800279",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800279.json.gz",
+      "sha256": "d91502366047eaee3e48b1d36129a9bf09bdfca6834b91d44597a8749fe2be9b",
+      "retrieved_at": "2026-10-02T23:57:37.408103+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800976",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800976.json.gz",
+      "sha256": "5799f56247480154f4237e45957dc58a7344f887585e6bb34b1cb8e4451359bf",
+      "retrieved_at": "2026-10-02T23:57:37.841865+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800846",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800846.json.gz",
+      "sha256": "8a0f5f6e973621ed835952be175ce820b138af979bcb281f6a40e05e3913944f",
+      "retrieved_at": "2026-10-02T23:57:38.384034+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021801063",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021801063.json.gz",
+      "sha256": "388ddc8827872e93c9105ada6856510f8edfcbad2230f235288d2080a94f956f",
+      "retrieved_at": "2026-10-02T23:57:38.837336+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800658",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800658.json.gz",
+      "sha256": "6a6777c530de3fb2c87ab96072f1af73a412a0f6f2efd6f4ae85f5048801d4d8",
+      "retrieved_at": "2026-10-02T23:57:39.245594+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800593",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800593.json.gz",
+      "sha256": "5a801126011a5adf51c2ac76e78e53705cd953aca5b83185f516d76c6142026c",
+      "retrieved_at": "2026-10-02T23:57:39.699817+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021801043",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021801043.json.gz",
+      "sha256": "7c26540258163a8bea50ce6c691abb4c6673853dfc1a36a7f212e3332e110932",
+      "retrieved_at": "2026-10-02T23:57:40.186966+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021801161",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021801161.json.gz",
+      "sha256": "7bdc582ee9d6670e2d55c078d221162eb342131e7504fb5bdf1efeceea4b3d8a",
+      "retrieved_at": "2026-10-02T23:57:40.562246+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021801177",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021801177.json.gz",
+      "sha256": "60d15b2233584aed94b003a3d75c86257f35bada5fb2dcee8195f3805bcc9c8d",
+      "retrieved_at": "2026-10-02T23:57:41.026955+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800048",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800048.json.gz",
+      "sha256": "9c4cfd34c43c76827751b49c3b0d14e5f3daf4ede0acfa94b57ecdc52a0fe04d",
+      "retrieved_at": "2026-10-02T23:57:41.713466+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800710",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800710.json.gz",
+      "sha256": "e9ffe689e9bda5d3fa461800d189354aa6534d86f83b4ec636727c2d823479ec",
+      "retrieved_at": "2026-10-02T23:57:42.114209+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800114",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800114.json.gz",
+      "sha256": "72d0add66645bafb6a775d758601d675ad70dd89bd7d3042745c8d83f84bc945",
+      "retrieved_at": "2026-10-02T23:57:42.543047+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800225",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800225.json.gz",
+      "sha256": "d414722fbee475a0087b1a7bc773dc000500152187c1a64703952dadfbbe5d95",
+      "retrieved_at": "2026-10-02T23:57:43.045742+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800866",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800866.json.gz",
+      "sha256": "7b0816612fba51bab8895f1c222bd92781c295af920f4f375265e184c7eb584e",
+      "retrieved_at": "2026-10-02T23:57:43.447672+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021801036",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021801036.json.gz",
+      "sha256": "dbaee7da406cd70b57af5efd79dfca6cff97cd3559a37f7cdaef9c413a9b9526",
+      "retrieved_at": "2026-10-02T23:57:43.834368+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021801107",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021801107.json.gz",
+      "sha256": "eeb74f124bf6fcaab1f2b0b70e3a2f2505c0e83270c32b275240f67eba339bc1",
+      "retrieved_at": "2026-10-02T23:57:44.445182+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800216",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800216.json.gz",
+      "sha256": "f22fd2aa7d0eefb77554bfbf670e3667261f34d07ff8a98ca7dcefe6ba40762c",
+      "retrieved_at": "2026-10-02T23:57:44.851766+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800212",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800212.json.gz",
+      "sha256": "c72601c7509c6dd9a4b4cbfae54322d9039a9ff44d238c7e20566c0653c236aa",
+      "retrieved_at": "2026-10-02T23:57:45.262773+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800409",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800409.json.gz",
+      "sha256": "40c4b56a1f3e39e8be27216ab56630f3927039f2f330ffd8b2561a0640791ddb",
+      "retrieved_at": "2026-10-02T23:57:45.671897+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800467",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800467.json.gz",
+      "sha256": "9fa2b87d2936f04d1d77a365790f4c1b857bcc50e5c1c54c3f19a7a5b7da8087",
+      "retrieved_at": "2026-10-02T23:57:46.126765+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021801030",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021801030.json.gz",
+      "sha256": "02c184df69ea27ffbf3c721e7daccf3502b391f140f0a1ab960f40ac837e9b36",
+      "retrieved_at": "2026-10-02T23:57:46.528917+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800641",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800641.json.gz",
+      "sha256": "b00cbc8208667d4d5dfb5413bcc95f3ebd68c44138bd1ca1991f3e7f47530aa7",
+      "retrieved_at": "2026-10-02T23:57:46.956608+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800671",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800671.json.gz",
+      "sha256": "40ea5f9f92e3a213add534dcd04aa2342c755c3d480de10f2c3896f4d9f2434f",
+      "retrieved_at": "2026-10-02T23:57:47.368151+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800848",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800848.json.gz",
+      "sha256": "18c9b16aa66ad429af6e2b34025445f650c40d524eafc03246c0880690390bdb",
+      "retrieved_at": "2026-10-02T23:57:47.811214+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800243",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800243.json.gz",
+      "sha256": "08c0b319f923aaf87871a6f770989d9c3ef155d3585c1ffb72755f837b3684e3",
+      "retrieved_at": "2026-10-02T23:57:48.267185+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800039",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800039.json.gz",
+      "sha256": "58900f0099a4c047130da33b2fad9c51b3bc843741a6db04cd65c902423c5325",
+      "retrieved_at": "2026-10-02T23:57:48.766057+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800258",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800258.json.gz",
+      "sha256": "de9eb9c04f7b8c7588adeabfee20d8d0f9749276af24bc8d4c2b0560c7aef8b1",
+      "retrieved_at": "2026-10-02T23:57:49.192720+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800480",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800480.json.gz",
+      "sha256": "b2f8734d3d33a3bc10cdf6380e19ef2bcbfecf7c521b45433055bf546d04d99a",
+      "retrieved_at": "2026-10-02T23:57:49.646198+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800505",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800505.json.gz",
+      "sha256": "75f515dd40785722ae68b88ea51d9a66eef3aacf4d1d7434e9d4600aa00c7c69",
+      "retrieved_at": "2026-10-02T23:57:50.046142+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800842",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800842.json.gz",
+      "sha256": "f60d2529b29d9c59f2c486fa789a7b1a4e463be666fa914f1e31137f865bd0a4",
+      "retrieved_at": "2026-10-02T23:57:50.439923+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800533",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800533.json.gz",
+      "sha256": "73fb15783cd0334ce213432edd9fe40af35b2853ba96a234935dd7ebe944401c",
+      "retrieved_at": "2026-10-02T23:57:50.843388+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021801113",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021801113.json.gz",
+      "sha256": "5e06360041e2666be37582d77844e332134d1e135a460376d77bacde4b23d53a",
+      "retrieved_at": "2026-10-02T23:57:51.273604+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021801105",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021801105.json.gz",
+      "sha256": "19f832cb8e9784288e1ea64dc2a6415ced74cc85cd5874b7fd2ed37873c182af",
+      "retrieved_at": "2026-10-02T23:57:51.658527+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021801058",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021801058.json.gz",
+      "sha256": "49b990a664112bfc69665ee64badae1d2edb264ca764fdd2774dd607b456bbcc",
+      "retrieved_at": "2026-10-02T23:57:52.089104+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021801197",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021801197.json.gz",
+      "sha256": "62227268af264c8ec104de369c3d9cf8c4f84838a5f5c10794d02dc56b4a9ff6",
+      "retrieved_at": "2026-10-02T23:57:52.465162+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800892",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800892.json.gz",
+      "sha256": "f7f22a6eb67fde0a3a1bfc002f57632e01a014859454e43515746c3ebae541c1",
+      "retrieved_at": "2026-10-02T23:57:52.839680+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800483",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800483.json.gz",
+      "sha256": "9108041d8247e486e801d0b58c11798d685d0e0d314fde1c1feb762c7fe6a3cd",
+      "retrieved_at": "2026-10-02T23:57:53.283565+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800763",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800763.json.gz",
+      "sha256": "dfdc6eef5354cc9998540a414003ce69e7909b1552cd0cc97d666e2e0029ca1e",
+      "retrieved_at": "2026-10-02T23:57:53.652962+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800316",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800316.json.gz",
+      "sha256": "73d8e0bd76501461d44ea806d99a16266bd075f5d09a9e74f4ccb149aa715555",
+      "retrieved_at": "2026-10-02T23:57:54.170836+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021800349",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2018-19_0021800349.json.gz",
+      "sha256": "d3b1d2d59ad99d0d7bf7c2f93a69010d9b94434c0904139cd9ec34374012b89f",
+      "retrieved_at": "2026-10-02T23:57:54.593064+00:00",
+      "reused_source": null,
+      "assister_prefix_normalizations": [],
+      "excluded_teams": []
+    }
+  ],
+  "generated_at": "2026-10-02T23:57:56.206647+00:00"
+}

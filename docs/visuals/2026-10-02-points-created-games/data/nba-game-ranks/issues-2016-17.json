@@ -1,0 +1,24 @@
+[
+  {
+    "game_id": "0021600369",
+    "action_number": 115,
+    "team_id": 1610612753,
+    "description": "Fournier 3' Layup (11 PTS) (Rudez 2 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 204014,
+    "expected": 1,
+    "observed": 2
+  },
+  {
+    "game_id": "0021600369",
+    "action_number": 135,
+    "team_id": 1610612753,
+    "description": "Fournier 3' Running Layup (9 PTS) (Rudez 1 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 204014,
+    "expected": 2,
+    "observed": 1
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "game_id": "0022000735",
+    "action_number": 715,
+    "team_id": 1610612737,
+    "description": "Capela 3' Alley Oop Layup (28 PTS) (Young 10 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1629027,
+    "expected": 9,
+    "observed": 10
+  },
+  {
+    "game_id": "0022000735",
+    "action_number": 725,
+    "team_id": 1610612737,
+    "description": "Bogdanovic 3' Cutting Layup Shot (28 PTS) (Young 11 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1629027,
+    "expected": 10,
+    "observed": 11
+  },
+  {
+    "game_id": "0022000735",
+    "action_number": 775,
+    "team_id": 1610612737,
+    "description": "Gallinari 24' 3PT Jump Shot (16 PTS) (Young 12 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1629027,
+    "expected": 11,
+    "observed": 12
+  },
+  {
+    "game_id": "0022000735",
+    "action_number": 807,
+    "team_id": 1610612737,
+    "description": "Capela 1' Dunk (26 PTS) (Young 9 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1629027,
+    "expected": 12,
+    "observed": 9
+  }
+]

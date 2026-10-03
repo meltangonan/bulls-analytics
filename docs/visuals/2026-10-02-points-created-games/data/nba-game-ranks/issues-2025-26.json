@@ -1,0 +1,57 @@
+[
+  {
+    "game_id": "0022500371",
+    "action_number": 135,
+    "team_id": 1610612737,
+    "description": "Gueye 2' Alley Oop Dunk (4 PTS) (Young 4 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1629027,
+    "expected": 3,
+    "observed": 4
+  },
+  {
+    "game_id": "0022500371",
+    "action_number": 138,
+    "team_id": 1610612737,
+    "description": "Krejci 26' 3PT Jump Shot (3 PTS) (Young 5 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1629027,
+    "expected": 4,
+    "observed": 5
+  },
+  {
+    "game_id": "0022500371",
+    "action_number": 140,
+    "team_id": 1610612737,
+    "description": "Alexander-Walker 3' Fadeaway Jumper (5 PTS) (Young 3 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1629027,
+    "expected": 5,
+    "observed": 3
+  },
+  {
+    "game_id": "0022500493",
+    "action_number": 215,
+    "team_id": 1610612746,
+    "description": "Collins 3PT Jump Shot (20 PTS) (Dunn 3 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1627739,
+    "expected": 2,
+    "observed": 3
+  },
+  {
+    "game_id": "0022500493",
+    "action_number": 246,
+    "team_id": 1610612746,
+    "description": "Jones Jr. 3PT Jump Shot (11 PTS) (Dunn 2 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1627739,
+    "expected": 3,
+    "observed": 2
+  }
+]

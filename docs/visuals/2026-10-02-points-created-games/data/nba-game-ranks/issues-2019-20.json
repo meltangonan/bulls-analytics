@@ -1,0 +1,24 @@
+[
+  {
+    "game_id": "0021900213",
+    "action_number": 263,
+    "team_id": 1610612757,
+    "description": "Labissiere 16' Jump Shot (12 PTS) (McCollum 4 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 203468,
+    "expected": 3,
+    "observed": 4
+  },
+  {
+    "game_id": "0021900213",
+    "action_number": 306,
+    "team_id": 1610612757,
+    "description": "Labissiere 14' Jump Shot (10 PTS) (McCollum 3 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 203468,
+    "expected": 4,
+    "observed": 3
+  }
+]

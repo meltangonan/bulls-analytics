@@ -76,6 +76,10 @@ rule and break that rule at the card's outer bounds: either measure alone leaves
 Row rules may run behind the opaque card. The fill is flat red; its restrained deeper-red shadow
 provides depth. Use the helper's measured bounds to reserve a gap before neighboring columns, then
 allocate remaining widths within the canvas.
+For a coordinate canvas wider than the standard 1500-unit game table, pass
+`scale=canvas_width / 1500` to `draw_accent_card` so the corner radius, outsets
+and shadow retain the standard placed proportions. Existing 1500-unit callers
+keep the default scale of one.
 
 A two-line metric badge is for a ranked list's main number and its short qualifier. Reuse
 `draw_metric_badge`; it does not choose the metric or convert units. Keep different text structures

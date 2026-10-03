@@ -713,6 +713,7 @@ def accent_card_bounds(
     row_height: float,
     outset_y: float = ACCENT_CARD_OUTSET_Y,
     overlap_y: float = ACCENT_CARD_OVERLAP_Y,
+    scale: float = 1.0,
 ) -> tuple[float, float, float, float]:
     """Footprint of the hero card: one block spanning every row, slightly out.
 
@@ -722,10 +723,10 @@ def accent_card_bounds(
     one more cell in it.
     """
     return (
-        left - ACCENT_CARD_OUTSET_X,
-        right + ACCENT_CARD_OUTSET_X,
-        first_row_y - (row_count - 1) * row_height - row_height / 2 - outset_y,
-        first_row_y + row_height / 2 + outset_y + overlap_y,
+        left - ACCENT_CARD_OUTSET_X * scale,
+        right + ACCENT_CARD_OUTSET_X * scale,
+        first_row_y - (row_count - 1) * row_height - row_height / 2 - outset_y * scale,
+        first_row_y + row_height / 2 + (outset_y + overlap_y) * scale,
     )
 
 
@@ -740,16 +741,20 @@ def draw_accent_card(
     zorder: float = 4,
     outset_y: float = ACCENT_CARD_OUTSET_Y,
     overlap_y: float = ACCENT_CARD_OVERLAP_Y,
+    scale: float = 1.0,
 ) -> tuple[float, float, float, float]:
     """Draw the rounded, shadowed accent card and return its bounds.
 
     The fill is flat accent. What reads as a gradient is the drop shadow, offset
     down-right and darkened toward a deeper red, which lifts the card off the
     page without a second colour.
+
+    ``scale`` preserves the standard 1500-unit table's corner and shadow
+    proportions when a renderer uses a larger coordinate canvas.
     """
     resolved = get_theme(theme)
     bounds = accent_card_bounds(
-        left, right, first_row_y, row_count, row_height, outset_y, overlap_y
+        left, right, first_row_y, row_count, row_height, outset_y, overlap_y, scale
     )
     card_left, card_right, bottom, top = bounds
     ax.add_patch(
@@ -757,13 +762,13 @@ def draw_accent_card(
             (card_left, bottom),
             card_right - card_left,
             top - bottom,
-            boxstyle=f"round,pad=0,rounding_size={ACCENT_CARD_ROUNDING}",
+            boxstyle=f"round,pad=0,rounding_size={ACCENT_CARD_ROUNDING * scale}",
             facecolor=resolved.accent,
             edgecolor="none",
             linewidth=0,
             path_effects=[
                 pe.withSimplePatchShadow(
-                    offset=(2, -2),
+                    offset=(2 * scale, -2 * scale),
                     shadow_rgbFace=ACCENT_CARD_SHADOW,
                     alpha=0.22,
                     rho=0.8,

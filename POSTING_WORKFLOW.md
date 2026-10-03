@@ -36,9 +36,11 @@ chart remain Python's responsibility; page layout belongs in Canva.
 
 Default handoff: verified graphic → user review and approval → user assembles in Canva.
 Create or edit a Canva page only when requested; selecting a post idea isn't graphic approval.
-For Canva assembly, use a copy of a recent design in `Posted` as the starting point for page
-typography, colors, spacing and framing. That reference does not determine the new chart type;
-keep the graphic matched to the selected brief.
+For the standard two-page cover-and-chart assembly, duplicate the dedicated
+[Bulls Data master](https://www.canva.com/d/0QRav5yW1RK2_y2), then replace its placeholders.
+[Master reference](docs/reference/canva-master.md) records the design ID, page geometry and handoff.
+Use a recent design in `Posted` when a different established page format is needed. The page
+reference does not determine the new chart type; keep the graphic matched to the selected brief.
 
 For substantive edits to an existing Canva design, use a separate QA copy or duplicated draft pages
 unless the user authorizes edits to the original. When reviewing the composed page, inspect the

@@ -1,0 +1,24 @@
+[
+  {
+    "game_id": "0022100853",
+    "action_number": 255,
+    "team_id": 1610612742,
+    "description": "Brunson 3PT Jump Shot (15 PTS) (Doncic 6 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1629029,
+    "expected": 5,
+    "observed": 6
+  },
+  {
+    "game_id": "0022100853",
+    "action_number": 281,
+    "team_id": 1610612742,
+    "description": "Bullock 12' Pullup Jump Shot (11 PTS) (Doncic 5 AST)",
+    "severity": "warning",
+    "kind": "assist_ordinal_gap",
+    "player_id": 1629029,
+    "expected": 6,
+    "observed": 5
+  }
+]

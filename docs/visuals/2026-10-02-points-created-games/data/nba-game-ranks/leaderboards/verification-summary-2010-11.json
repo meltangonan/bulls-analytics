@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-03T01:43:24.940031+00:00",
+  "status": "complete",
+  "method": "Independent replay from original full-league NBA box logs and raw PBP; no reuse of derived points-created totals.",
+  "leaderboard_limit": 3,
+  "display_rows": 5,
+  "cutoff_created": 66,
+  "population_player_games": 25153,
+  "population_games": 1230,
+  "pbp_games_replayed": 26,
+  "maximum_unresolved_bound": 62,
+  "source_errors": 0,
+  "source_warnings": 0,
+  "targets_rechecked": [
+    {
+      "season": "2010-11",
+      "GAME_ID": "0021001084",
+      "PLAYER_ID": 201565,
+      "created": 66,
+      "nba_season_rank": 3,
+      "nba_season_rank_label": "T-3rd",
+      "nba_season_tie_count": 3,
+      "nba_season_rank_status": "complete",
+      "population_player_games": 25153,
+      "population_games": 1230,
+      "unresolved_comparisons": 0
+    }
+  ],
+  "published_ranks_changed": false,
+  "proof_sha256": {
+    "target-recheck-proof-2010-11.csv.gz": "bbcf98bd7f5529ca34e242539ff6225479b2fe8e7b9bad0bf4c0b9edfb8aa695",
+    "assisted-baskets-2010-11.csv.gz": "7102cf53f35a08cfaba08ce02cfc6b1681b8754d8a0cc436f833cb205843d63f",
+    "top3-with-ties-2010-11.csv": "518ac5ac088f14800e7a67ba59b959c4211dff178ea9e7e71ef6a6123e200d4d",
+    "population-proof-2010-11.csv.gz": "429e718413a14f92ac97b8cf98ef8a6ae2208345caef79aefe456052bdf9070f"
+  }
+}

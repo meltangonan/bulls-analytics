@@ -1,0 +1,76 @@
+{
+  "design_id": "DAHW5wCi63M",
+  "title": "2026-10-02 Most Points Created in a Bulls Game",
+  "edit_url": "https://www.canva.com/d/nUU7AOZj0RYRT2J",
+  "template_design_id": "DAHV2VGcKSk",
+  "template_post_url": "https://www.notion.so/3e2e1c13abe681059cdfd8bbca295c65",
+  "saved_date": "2026-10-03",
+  "page_dimensions": [
+    1080,
+    1440
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "question": "Which Chicago Bull created the most points in a game?",
+      "coverage": "*Since 1996-97",
+      "cover_photo": "User-added DeMar DeRozan photograph; preview reviewed",
+      "brand_elements": "Original jersey trim, gradient overlays and handle preserved",
+      "cover_asset_id": "MAHW6j7Kep8",
+      "cover_pixels": [
+        1469,
+        1836
+      ]
+    },
+    {
+      "page": 2,
+      "title": "Bulls\u2019 top points-created games",
+      "subtitle": "Top 15 in points created in a single game, since 1996-97",
+      "footer": "Data via NBA.com | 1996-97 to 2025-26 regular seasons | Includes cutoff ties (16 games)",
+      "chart_asset_id": "MAHW6XOpq08",
+      "chart_source": "assets/2026-10-02-v08-table-300dpi.png",
+      "chart_pixels": [
+        7000,
+        8098
+      ],
+      "chart_dpi": 300,
+      "position": {
+        "left": 25,
+        "top": 183.26923604521346,
+        "width": 1030,
+        "height": 1191.5628571428572
+      },
+      "chart_element_id": "PBb6HtqJqgVB6vWK-LBSkM5R9zXnWf1Dd"
+    }
+  ],
+  "qa": {
+    "tool_preview_pixels": [
+      450,
+      600
+    ],
+    "status": "User signed off final QA and development; only Instagram publication remains.",
+    "full_size_page_export": "Not inspected through connected tools; user accepted available-preview QA and closed review.",
+    "asset_metadata_verified": {
+      "width": 7000,
+      "height": 8098,
+      "asset_id": "MAHW6XOpq08",
+      "source_dpi": 300,
+      "verified_date": "2026-10-03"
+    },
+    "review_date_local": "2026-10-02",
+    "review_timezone": "America/Chicago",
+    "user_signoff_date_local": "2026-10-02"
+  },
+  "publication": "Not published",
+  "added_column": {
+    "label": "Season rank",
+    "scope": "Every NBA regular-season player-game in the same season",
+    "decision": "Selected, exactly verified and saved",
+    "method_required": "Exact competition rank using official scoring and assisted field-goal values; verify ties",
+    "unresolved_comparisons": 0,
+    "population_player_games": 296616,
+    "population_games": 14117
+  },
+  "promotion": "Caption raw material, hashtag block and two distribution recommendations saved in Notion; user owns caption; no social publication.",
+  "development": "Complete; commit and push to main explicitly authorized by user."
+}

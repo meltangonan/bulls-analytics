@@ -1,0 +1,10 @@
+{
+  "endpoint": "https://stats.nba.com/stats/playergamelogs",
+  "parameters": {
+    "Season": "2001-02",
+    "SeasonType": "Regular Season"
+  },
+  "retrieved_at": null,
+  "archived_at": "2026-10-02T23:55:37.745464+00:00",
+  "note": "Fetched during current exact-rank feasibility probe; original timestamp not recorded."
+}

@@ -1,0 +1,134 @@
+{
+  "season": "2011-12",
+  "games": [
+    {
+      "game_id": "0021100049",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100049.json.gz",
+      "sha256": "7cba50fef491b7d2a9a8c19a23115c13e45641bb7ee69fc7347b7eba62747d14",
+      "retrieved_at": "2026-10-02T23:53:16.379001+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100167",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100167.json.gz",
+      "sha256": "64494c4ea79a49f0f5059d90fddc57da4dc4f5eef45c81bebaaa87185352df7d",
+      "retrieved_at": "2026-10-02T23:53:16.985896+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100429",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100429.json.gz",
+      "sha256": "fe0d5f4ca8f8f5d943dbe24de5319327f625f55b488821e6d3512d4781c831b9",
+      "retrieved_at": "2026-10-02T23:53:17.600489+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100591",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100591.json.gz",
+      "sha256": "1eb6b8aaa196a2ed3af22b7c1d695e9a14292880e071a1fc30f4fb7a6d001b29",
+      "retrieved_at": "2026-10-02T23:53:18.274594+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100350",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100350.json.gz",
+      "sha256": "45d13ff9eec961d91f4123404054e9589dc5c6aa706586acfd7d1c71c3ba2940",
+      "retrieved_at": "2026-10-02T23:53:18.820434+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100086",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100086.json.gz",
+      "sha256": "442376278d6e47322103df57c837295615765797cefe14e5f7727bb02a896d1d",
+      "retrieved_at": "2026-10-02T23:53:19.383644+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100959",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100959.json.gz",
+      "sha256": "36d576183790b61839307ea19833d6e6c3465650953721ff759045e64bedf75c",
+      "retrieved_at": "2026-10-02T23:53:19.921208+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100633",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100633.json.gz",
+      "sha256": "05d4ec68bbc35e8277a18052c592891ad6bf1a2e4881b3bcfb235c4768c26a8a",
+      "retrieved_at": "2026-10-02T23:53:20.467545+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100691",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100691.json.gz",
+      "sha256": "9be8ac4b44d16268f3dee0a1197854da070babc00aa05e285bc56aa91fae6c10",
+      "retrieved_at": "2026-10-02T23:53:20.982189+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100460",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100460.json.gz",
+      "sha256": "f74befdcd7fde9f103594087806685b1673278e7a83280f763dccfa3abdccd9f",
+      "retrieved_at": "2026-10-02T23:53:21.678684+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100546",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100546.json.gz",
+      "sha256": "e975d727600f1489934435b793e6a5db0dbd3b65770d71ec7a6df4bdb82441da",
+      "retrieved_at": "2026-10-02T23:53:22.369005+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100915",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100915.json.gz",
+      "sha256": "ff01a4964b37f095263a49cc51088411b7f07c475d381ba1b4fc33d00c96ad22",
+      "retrieved_at": "2026-10-02T23:53:22.866815+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100706",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100706.json.gz",
+      "sha256": "e3e6415a67a63430d18b4109940d9105262026ae5caba0c921b1b645d4fb9794",
+      "retrieved_at": "2026-10-02T23:53:23.398155+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100307",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100307.json.gz",
+      "sha256": "63012f5504a6e053a57ece2f7590e7ee42edb2f66bffdb97935b73b80b3101e0",
+      "retrieved_at": "2026-10-02T23:53:24.013392+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100409",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100409.json.gz",
+      "sha256": "40bb027abe86d33ca6b915aaee81d3371682b707c521a0dc5a60ce0ff33c6588",
+      "retrieved_at": "2026-10-02T23:53:24.622010+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    },
+    {
+      "game_id": "0021100257",
+      "path": "docs/visuals/2026-10-02-points-created-games/data/nba-game-ranks/raw/2011-12_0021100257.json.gz",
+      "sha256": "010818d438549028537e42c96ba069c8f9d8f0a37213a9697f5a95eed56e9260",
+      "retrieved_at": "2026-10-02T23:53:25.323382+00:00",
+      "reused_source": null,
+      "excluded_teams": []
+    }
+  ],
+  "generated_at": "2026-10-02T23:53:26.496048+00:00"
+}

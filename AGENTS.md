@@ -40,9 +40,10 @@ a chart adjustment doesn't need the full post history.
   task branch. One logical post or cleanup is one reviewed commit; commit/push need explicit approval.
 - Preserve dirty worktrees, unique scratch, and unmerged work. Remove only reviewed, integrated work;
   consult `docs/reference/worktrees.md` at closeout.
-- Use bounded sub-agents when independent work can progress alongside useful local work: source
-  audits, separate code areas, or an independent review. Assign file ownership and ask for compact
-  findings with evidence. Routine edits stay local; don't delegate merely to add reviewers.
+- Standing permission: start bounded sub-agents without being asked when independent work can
+  progress alongside useful local work: source audits, separate code areas, or an independent
+  review. Assign file ownership and ask for compact findings with evidence. Routine edits stay
+  local; don't delegate merely to add reviewers.
 
 ## Notion and external actions
 

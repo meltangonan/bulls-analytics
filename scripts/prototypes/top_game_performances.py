@@ -58,7 +58,7 @@ TOP_N = 10
 NBA_REQUEST_ATTEMPTS = 3
 LIVE_REQUEST_DELAY_SECONDS = 0.8
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
-SEASON_TYPE_SLUGS = {"Regular Season": "regular-season", "Playoffs": "playoffs"}
+SEASON_TYPE_SLUGS = {"Regular Season": "regular-season", "Playoffs": "playoffs", "Pre Season": "preseason"}
 MIN_USABLE_HEADSHOT_BYTES = 5_000
 HISTORICAL_HEADSHOT_URLS = {
     1500: "https://basket-retro.com/wp-content/uploads/2016/05/ron.jpg",  # Ron Mercer
@@ -995,6 +995,7 @@ def render_chart(
     striped_rows: bool = False,
     output_name: str | None = None,
     true_shooting: bool = False,
+    show_minutes: bool = False,
 ) -> Path:
     """Render one transparent decade table in the settled ladder grammar.
 
@@ -1006,6 +1007,7 @@ def render_chart(
     ``score_fill`` swaps the continuous red card for per-row Game Score cells
     coloured by that function (for example ``house.game_score_fill``).
     ``true_shooting`` shows single-game TS% in the 3PT column's place.
+    ``show_minutes`` adds a final MIN column (whole minutes played).
     ``portraits`` maps a player id to a post-local portrait that replaces the
     shared NBA CDN headshot (for players the CDN serves a silhouette for).
     """
@@ -1023,6 +1025,13 @@ def render_chart(
     # With points in the card, the PTS cell (first of the turnover cells) leaves the stat columns.
     trim_cells = trim
     trim = (lambda cells: trim_cells(cells)[1:]) if hero_points else trim_cells
+    if show_minutes and (not show_turnovers or show_free_throws):
+        raise ValueError("A minutes column needs the turnover layout without FT.")
+    minute_header = ("MIN",) if show_minutes else ()
+
+    def minute_cell(row: pd.Series) -> tuple[str, ...]:
+        return (str(int(round(float(row["minutes"])))),) if show_minutes else ()
+
     if hero_points and shooting_after_assists and SHOOTING_AFTER_ASSISTS[0] != 0:
         raise ValueError("Points must stay the first turnover cell for the hero column.")
     if len(rows) != top_n:
@@ -1066,9 +1075,9 @@ def render_chart(
             stat_bounds = equal_gap_bounds(
                 ax,
                 [trim(_shooting_order(("PTS", "FG", third_label, "REB", "AST", "STL", "BLK", "TOV", "+/-"),
-                                      shooting_after_assists))]
+                                      shooting_after_assists)) + minute_header]
                 + [trim(_turnover_values(row, False, shooting_after_assists, made_attempted_dash,
-                                        missing_cell, true_shooting))
+                                        missing_cell, true_shooting)) + minute_cell(row)
                    for _, row in rows.iterrows()],
                 left=gmsc_right + 18,
                 right=1465,
@@ -1083,7 +1092,7 @@ def render_chart(
         stat_labels = ("PTS", "FG", third_label, "FT", "REB", "AST", "STL", "BLK", "TOV", "+/-")
         if not show_free_throws:
             stat_labels = trim(_shooting_order(
-                tuple(label for label in stat_labels if label != "FT"), shooting_after_assists))
+                tuple(label for label in stat_labels if label != "FT"), shooting_after_assists)) + minute_header
         headers = (
             (layout.name_x, "PLAYER", "left", theme.ink),
             ((gmsc_left + gmsc_right) / 2, "PTS" if hero_points else "GMSC", "center",
@@ -1297,7 +1306,8 @@ def render_chart(
                 for (left, right), value in zip(
                     stat_bounds,
                     trim(_turnover_values(row, show_free_throws, shooting_after_assists,
-                                          made_attempted_dash, missing_cell, true_shooting)),
+                                          made_attempted_dash, missing_cell, true_shooting))
+                    + minute_cell(row),
                 )
             )
         elif show_free_throws:

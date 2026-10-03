@@ -16,8 +16,8 @@ don't repeat unchanged visual QA or reopen approved design choices without an ac
 
 The user owns the caption. Preserve a supplied draft's structure and voice; otherwise offer one
 short line as raw material. Longer drafts or variants require a request. Include the ready-to-paste
-hashtag block specified in Notion and check it against the final content. Alt text and Story copy
-are optional when useful or requested.
+hashtag block, the search wording and per-page alt text specified in Notion, and check them
+against the final content. Story copy is optional when useful or requested.
 
 Give only a few distribution actions tied to this post. Offer a read-only narrative scan when it
 would materially help; don't run a social-feed survey as routine ceremony. Independently verify

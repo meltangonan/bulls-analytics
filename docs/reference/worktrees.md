@@ -14,7 +14,7 @@ fast-forward a clean primary `main` to `origin/main`. Preserve unexpected work; 
 or reset it. If access fails, report that freshness is unverified. Create from the updated main:
 
 ```bash
-git -C /Users/meltangonan/projects/bulls-analytics worktree add -b codex/<slug> \
+git -C /Users/meltangonan/projects/bulls-analytics worktree add -b <slug> \
   /Users/meltangonan/projects/bulls-analytics-worktrees/<slug> main
 ```
 

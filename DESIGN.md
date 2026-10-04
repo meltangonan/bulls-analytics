@@ -64,6 +64,12 @@ cannot hide an outlier. A whole oblique row can signal a weaker qualification, e
 When the user supplies a visual reference, retain its structure and proportions while adapting the
 palette and chart typeface. Any larger departure should be deliberate.
 
+While a new format is still taking shape, a quick mockup of the composed page can settle the design
+before renderer code is written. Use whatever is fastest; a self-contained HTML page often helps,
+since it can show whole pages or a carousel with real data at phone width. Keep the numbers coming
+from Python, then port the settled design to Python chart assets and Canva. Mockups decide the design;
+they are not production assets.
+
 Judge the **downloaded Canva export at feed size** (1080×1440 or 1080×1350). Check readable type, unclipped
 marks, spacing, contrast, and visible source/coverage/qualification/authorship on each data-bearing
 page. Reuse an established chart family before inventing another layout. Update this guide or its

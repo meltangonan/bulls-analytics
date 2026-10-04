@@ -1,16 +1,19 @@
 # Bulls Data Canva master
 
-Reusable two-page master, created and saved at the user's request on October 3, 2026.
+Reusable two-page master, created on October 3, 2026 and published by the user as a Canva
+Brand Template.
 
-- Edit link: https://www.canva.com/d/0QRav5yW1RK2_y2
-- Design ID: `DAHW6R8JldQ`
+- Brand Template: https://www.canva.com/brand/brand-templates/EAHW6UQqJFQ
+- Brand Template ID: `EAHW6UQqJFQ`
 - Title: `MASTER — Bulls Data — Cover + Chart — 1080×1440`
 - Source: approved points-created game post, `DAHW5wCi63M`, preserving its current page styling.
 - Both pages: 1080×1440.
 
-Duplicate this master for each standard cover-and-chart post. Edit the new copy and keep the
-master as the reusable starting point. This is an ordinary Canva master design, not a published
-Brand Template; it does not currently use autofill datasets.
+Create each standard cover-and-chart post as a new design from this Brand Template (Canva MCP
+`create-design-from-brand-template`, or the template's "Use template" link), then edit the new
+design. The template has no autofill fields (dataset checked October 4, 2026), so replace the
+placeholders by editing. A single-page post can create from page 2 only. The original master
+design ID, `DAHW6R8JldQ`, no longer resolves; use the Brand Template ID.
 
 Page 1 preserves the jersey trim, background/gradient overlays, title typography, smaller red
 italic qualifier and handle. Replace “Your cover question goes here” and “*Coverage or qualifier”

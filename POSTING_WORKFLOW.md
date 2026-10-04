@@ -36,9 +36,10 @@ chart remain Python's responsibility; page layout belongs in Canva.
 
 Default handoff: verified graphic → user review and approval → user assembles in Canva.
 Create or edit a Canva page only when requested; selecting a post idea isn't graphic approval.
-For the standard two-page cover-and-chart assembly, duplicate the dedicated
-[Bulls Data master](https://www.canva.com/d/0QRav5yW1RK2_y2), then replace its placeholders.
-[Master reference](docs/reference/canva-master.md) records the design ID, page geometry and handoff.
+For the standard two-page cover-and-chart assembly, create a design from the
+[Bulls Data master](https://www.canva.com/brand/brand-templates/EAHW6UQqJFQ) Brand Template, then
+replace its placeholders. [Master reference](docs/reference/canva-master.md) records the template
+ID, page geometry and handoff.
 Use a recent design in `Posted` when a different established page format is needed. The page
 reference does not determine the new chart type; keep the graphic matched to the selected brief.
 

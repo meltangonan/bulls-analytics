@@ -47,7 +47,6 @@ from bulls.visuals import DATA, visual_dir
 SEASON = "2025-26"
 BULLS = 1610612741
 PROJECT = "shot-diet-distribution"
-CACHE = ROOT / "cache" / "shot_family_diet" / "v2"
 OUT = ROOT / "output" / PROJECT
 
 NBA_TEAM_IDS = [1610612737, 1610612738, 1610612751, 1610612766, 1610612752,
@@ -94,6 +93,11 @@ def post_data() -> Path:
     return visual_dir(ROOT / "docs" / "visuals", PROJECT) / DATA
 
 
+def raw_dir() -> Path:
+    """Source snapshots the published shares rest on; tracked with the post."""
+    return post_data() / "raw"
+
+
 def classify(action: str) -> str:
     action = action.lower()
     for name, pattern in FAMILY_RULES:
@@ -105,7 +109,8 @@ def classify(action: str) -> str:
 # ---------------------------------------------------------------- preparation
 
 def fetch_team(team_id: int) -> pd.DataFrame:
-    path = CACHE / f"{team_id}_{SEASON}.csv.gz"
+    raw = raw_dir()
+    path = raw / f"{team_id}_{SEASON}.csv.gz"
     if not path.exists():
         params = dict(team_id=team_id, player_id=0, season_nullable=SEASON,
                       season_type_all_star="Regular Season", context_measure_simple="FGA")
@@ -123,9 +128,9 @@ def fetch_team(team_id: int) -> pd.DataFrame:
         missing = [column for column in KEEP if column not in frame.columns]
         if missing:
             raise ValueError(f"ShotChartDetail is missing {missing}")
-        CACHE.mkdir(parents=True, exist_ok=True)
+        raw.mkdir(parents=True, exist_ok=True)
         frame[KEEP].to_csv(path, index=False)
-        (CACHE / f"{team_id}_{SEASON}.meta.json").write_text(json.dumps(dict(
+        (raw / f"{team_id}_{SEASON}.meta.json").write_text(json.dumps(dict(
             endpoint="ShotChartDetail", parameters=params, rows=len(frame),
             fetched_at=datetime.now(timezone.utc).isoformat()), indent=2))
         time.sleep(0.65)
@@ -142,7 +147,7 @@ def load_shots() -> pd.DataFrame:
 
 
 def official_totals() -> pd.DataFrame:
-    path = CACHE.parent / f"official_totals_{SEASON}.csv"
+    path = raw_dir() / f"official_totals_{SEASON}.csv"
     if not path.exists():
         frame = leaguedashteamstats.LeagueDashTeamStats(
             season=SEASON, season_type_all_star="Regular Season",

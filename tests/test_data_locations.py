@@ -41,6 +41,8 @@ ALLOWED = {
     "hot_spots": "per-player zone splits shared by three posts, cheap to refetch",
     "scoring_by_location": "derived zone classification shared with the hot-spot family",
     "nba.com": "season game logs shared by the game-score and scoring-ladder posts",
+    "misc_leaders_audit": "independent re-fetch audit shared by the four 2026-09-29 Misc "
+                          "leaderboard posts; its outputs and the published inputs are tracked",
 }
 
 # Modules that legitimately reference the cache root itself rather than a subfolder.

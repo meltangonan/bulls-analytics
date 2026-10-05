@@ -1,0 +1,12 @@
+{
+  "endpoint": "ShotChartDetail",
+  "parameters": {
+    "team_id": 1610612758,
+    "player_id": 0,
+    "season_nullable": "2025-26",
+    "season_type_all_star": "Regular Season",
+    "context_measure_simple": "FGA"
+  },
+  "rows": 7299,
+  "fetched_at": "2026-09-06T17:03:03.364165+00:00"
+}

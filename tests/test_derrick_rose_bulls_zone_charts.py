@@ -105,3 +105,13 @@ def test_saved_zone_tables_are_complete_and_cover_each_mapped_attempt():
         assert int(group.fga.sum() + group.subject_excluded_fga.iloc[0]) == int(
             summary.loc[window, "shot_rows"]
         )
+
+
+def test_only_300_fga_seasons_are_charted_but_all_are_pooled():
+    summary = pd.read_csv(DATA / "zone-chart-summary.csv")
+    seasons = summary[summary.window.ne("Bulls tenure")]
+    assert seasons.charted.tolist() == (
+        seasons.bulls_fga >= charts.CHART_MIN_SEASON_FGA
+    ).tolist()
+    assert seasons[~seasons.charted].window.tolist() == ["2013-14"]
+    assert sum(charts.GRID_ROW_PLAN) == int(seasons.charted.sum())

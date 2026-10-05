@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Build Derrick Rose's seven Bulls season zone charts and pooled tenure chart."""
+"""Build Derrick Rose's Bulls season zone charts, pooled tenure chart, and grid.
+
+Rebuilt 2026-10-05 to the LaVine format: GP leads the summary pills, a season
+is drawn only at 300+ Chicago FGA (2013-14's 164 still feeds the tenure pool),
+and a small-multiples grid of the drawn seasons closes the carousel.
+"""
 from __future__ import annotations
 
 import argparse
@@ -27,6 +32,10 @@ SEASONS = (
     "2013-14", "2014-15", "2015-16",
 )
 OMITTED_NO_FGA_SEASON = "2012-13"
+# A season earns its own chart at 300 Chicago attempts, as on Hinrich and
+# LaVine. Every season still feeds the pooled tenure chart and the audit files.
+CHART_MIN_SEASON_FGA = 300
+GRID_ROW_PLAN = (2, 2, 2)
 SEASON_MIN_ZONE_FGA = sm.MIN_ZONE12_FGA_PLAYER
 TENURE_MIN_ZONE_FGA = SEASON_MIN_ZONE_FGA * len(SEASONS)
 PROJECT = "derrick-rose-bulls-zone-charts"
@@ -147,7 +156,8 @@ def assert_source_family_reconciliation(season: str,
 
 def summary_row(label: str, totals: pd.Series, shots: pd.DataFrame,
                 zones: pd.DataFrame, min_zone_fga: int,
-                league_unlocated_fga: int) -> dict[str, object]:
+                league_unlocated_fga: int,
+                charted: bool = True) -> dict[str, object]:
     overall = shot_chart._zone12_overall_metrics(shots)
     rated = zones[zones.rated]
     return {
@@ -174,6 +184,7 @@ def summary_row(label: str, totals: pd.Series, shots: pd.DataFrame,
         ),
         "league_unlocated_fga": league_unlocated_fga,
         "min_zone_fga": min_zone_fga,
+        "charted": charted,
         "scope": "Chicago attempts only",
     }
 
@@ -189,7 +200,7 @@ def pooled_totals(rows: list[pd.Series]) -> pd.Series:
 
 def render(label: str, shots: pd.DataFrame, league: pd.DataFrame,
            min_zone_fga: int, output_dir: Path, final: bool,
-           ppg: float) -> Path:
+           ppg: float, gp: int) -> Path:
     suffix = label.lower().replace("–", "-").replace(" ", "-")
     out = output_dir / f"{date.today().isoformat()}-zone-derrick-rose-{suffix}.png"
     shot_chart.render_zones(
@@ -202,6 +213,23 @@ def render(label: str, shots: pd.DataFrame, league: pd.DataFrame,
             "pill": "large",
             "summary_metrics": True,
             "summary_ppg": ppg,
+            "summary_gp": gp,
+        },
+        out,
+        final,
+    )
+    return out
+
+
+def render_grid(by_season: dict[str, dict[str, pd.DataFrame]],
+                output_dir: Path, final: bool) -> Path:
+    out = output_dir / f"{date.today().isoformat()}-zonegrid-derrick-rose-tenure.png"
+    shot_chart.render_zonegrid(
+        {
+            "by_season": by_season,
+            "min_fga": SEASON_MIN_ZONE_FGA,
+            "row_plan": GRID_ROW_PLAN,
+            "align": "left",
         },
         out,
         final,
@@ -214,6 +242,7 @@ def build(args: argparse.Namespace) -> list[Path]:
     args.data_dir.mkdir(parents=True, exist_ok=True)
     outputs, summaries, splits = [], [], []
     all_shots, all_league, all_totals = [], [], []
+    by_season: dict[str, dict[str, pd.DataFrame]] = {}
 
     for season in SEASONS:
         print(f"\n{'=' * 72}\n{season}")
@@ -226,15 +255,21 @@ def build(args: argparse.Namespace) -> list[Path]:
         audit = zones.copy()
         audit.insert(0, "window", season)
         splits.append(audit)
+        charted = int(totals.FGA) >= CHART_MIN_SEASON_FGA
         summaries.append(summary_row(
             season, totals, shots, zones, SEASON_MIN_ZONE_FGA,
-            league_unlocated,
+            league_unlocated, charted,
         ))
-        outputs.append(render(
-            season, shots, league, SEASON_MIN_ZONE_FGA,
-            args.output_dir, args.final,
-            float(totals.PTS) / int(totals.GP),
-        ))
+        if charted:
+            outputs.append(render(
+                season, shots, league, SEASON_MIN_ZONE_FGA,
+                args.output_dir, args.final,
+                float(totals.PTS) / int(totals.GP), int(totals.GP),
+            ))
+            by_season[season] = {"subject": shots, "league": league}
+        else:
+            print(f"{season}: {int(totals.FGA)} Chicago FGA, under "
+                  f"{CHART_MIN_SEASON_FGA} -- no chart, pooled into the tenure")
         all_shots.append(shots.assign(source_season=season))
         all_league.append(league.assign(source_season=season))
         all_totals.append(totals)
@@ -256,8 +291,9 @@ def build(args: argparse.Namespace) -> list[Path]:
     outputs.append(render(
         "Bulls tenure", tenure_shots, tenure_league, TENURE_MIN_ZONE_FGA,
         args.output_dir, args.final,
-        float(totals.PTS) / int(totals.GP),
+        float(totals.PTS) / int(totals.GP), int(totals.GP),
     ))
+    outputs.append(render_grid(by_season, args.output_dir, args.final))
 
     summary = pd.DataFrame(summaries)
     summary.to_csv(args.data_dir / "zone-chart-summary.csv", index=False)
@@ -268,7 +304,11 @@ def build(args: argparse.Namespace) -> list[Path]:
     print(summary.to_string(index=False))
     print("\nCANVA COPY")
     print("Title: Derrick Rose as a Bull, season by season")
-    print("Coverage: Seven played regular seasons · 2012-13 omitted (did not play)")
+    charted = [row["window"] for row in summaries[:-1] if row["charted"]]
+    print(f"Coverage: {len(SEASONS)} played Chicago regular seasons · "
+          f"{OMITTED_NO_FGA_SEASON} omitted (did not play)")
+    print(f"Charted seasons: {len(charted)} of {len(SEASONS)} · "
+          f"{CHART_MIN_SEASON_FGA}+ Chicago FGA")
     print("Season qualifier: Grey zones are under 20 FGA")
     print("Tenure qualifier: Grey zones are under 140 FGA (20 × 7 seasons)")
     print("Source: NBA.com/stats · Chicago attempts only")

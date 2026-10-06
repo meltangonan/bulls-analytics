@@ -26,7 +26,6 @@ from bulls.config import BULLS_TEAM_ID
 from bulls.data.fetch import _NBA_HEADERS
 from bulls.graphics.house import cut_out_flat_background
 from scripts.prototypes import top_game_performances as base
-from scripts.prototypes.season_opener_performances import TABLE_LAYOUT
 
 
 PROJECT = "bulls-debut-games"
@@ -239,11 +238,12 @@ def main() -> None:
     chart = base.render_chart(
         ranked, snapshot.date().isoformat(), decade="bulls-debuts",
         season_type="Regular Season", show_free_throws=False, show_turnovers=True,
-        top_n=TOP_N, layout=TABLE_LAYOUT, final=args.final, emphasize_points=True,
+        top_n=TOP_N, layout=base.FIFTEEN_ROW_LAYOUT, final=args.final, emphasize_points=True,
         shooting_after_assists=True,
         # NBA.com has no plus/minus before 1996-97 (Earl Cureton's 1986 debut).
         show_plus_minus=False,
         portraits=post_portraits(),
+        made_attempted_dash="-",
     )
     print(f"Chart: {chart}")
     print(canva_copy(report))

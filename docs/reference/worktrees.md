@@ -18,6 +18,11 @@ git -C /Users/meltangonan/projects/bulls-analytics worktree add -b <slug> \
   /Users/meltangonan/projects/bulls-analytics-worktrees/<slug> main
 ```
 
+Creating the worktree does not move the session into it. Switch the session's folder to the new
+worktree right away so the app's file pane, diff view, and branch label follow the post. Use the
+app's folder switch (the user approves it). A shell `cd` or Claude Code's `EnterWorktree` moves
+only the agent, not the app's panes.
+
 Use the primary checkout's Python environment. Do not copy all of `cache/` automatically; copy
 only the selected chart's required shared inputs when needed. Keep worktree writes isolated and
 post-specific source data in that post's tracked `data/` directory.

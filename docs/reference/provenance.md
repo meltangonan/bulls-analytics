@@ -5,7 +5,15 @@ published figures without reconstructing the conversation. Keep the explanation 
 answer every applicable point below on the page; code/file links support rather than replace it.
 Check it before `Mocked`, at publication closeout, and whenever the scope changes.
 
-Lead the Notion provenance section with a short plain-language map of the displayed stats:
+Open the section with a Mermaid data-flow diagram (a Notion code block with language `mermaid`)
+that follows the data from start to end format: each source and endpoint call, the script that
+fetches it, saved snapshots and shared caches, filters, joins and calculations, audits or checks,
+and the chart or page that uses the result. Label nodes with real endpoint, script and file names,
+and quote labels that contain punctuation. A recurring format adds its run steps; a single post shows
+only the data's path. The diagram orients the reader; the stat map and the points below still carry
+the detail.
+
+Follow it with a short plain-language map of the displayed stats:
 **stat → source/endpoint → supplied as a summary or calculated by us → calculation**.
 Say whether inputs are season totals, game logs or individual events, and explain each provider's
 role (including sources used only for checks). Name rate/share denominators. A compact table is

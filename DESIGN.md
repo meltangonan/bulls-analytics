@@ -67,8 +67,18 @@ palette and chart typeface. Any larger departure should be deliberate.
 While a new format is still taking shape, a quick mockup of the composed page can settle the design
 before renderer code is written. Use whatever is fastest; a self-contained HTML page often helps,
 since it can show whole pages or a carousel with real data at phone width. Keep the numbers coming
-from Python, then port the settled design to Python chart assets and Canva. Mockups decide the design;
-they are not production assets.
+from Python. The usual next step ports the settled design to Python chart assets and Canva. HTML pages
+exported as 1080×1440 PNGs are also an option for final assets: the postgame recap uses them (see its
+package README), and other formats may follow. This path is still being evaluated, so choose it per
+format with the user rather than by default.
+
+HTML pages get the house serif from licensed desktop fonts on the user's Mac: Georgia Pro Condensed
+Bold and Bold Italic, installed in `~/Library/Fonts` (bought 2026-10-07). Reference them by local name
+only, `local('GeorgiaProCondensed-Bold')` and `local('GeorgiaProCondensed-BoldItalic')`, with Source
+Serif 4 from Google Fonts as the fallback, and have the export report which face rendered. Never
+commit, upload or embed the font files (base64 in a published artifact counts). Phone previews and
+cloud runs therefore show the fallback, so export final PNGs on the Mac. Georgia Pro Condensed is also
+in Canva's library; Canva posts still use the Brand Kit's Clarendon Narrow unless the user changes it.
 
 Judge the **downloaded Canva export at feed size** (1080×1440 or 1080×1350). Check readable type, unclipped
 marks, spacing, contrast, and visible source/coverage/qualification/authorship on each data-bearing

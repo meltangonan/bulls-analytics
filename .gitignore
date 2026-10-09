@@ -23,6 +23,8 @@ output/*
 # slow or rate-limited to rebuild does NOT belong here — it goes to the post's tracked
 # docs/visuals/<slug>/data/ folder. See bulls/visuals.py.
 cache/
+# Postgame recap: NBA.com headshots, downloaded again for each game that needs them.
+postgame-recaps/portraits/
 
 # IDE
 .vscode/

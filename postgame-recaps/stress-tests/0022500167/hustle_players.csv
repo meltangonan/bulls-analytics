@@ -1,0 +1,19 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,points,contestedShots,contestedShots2pt,contestedShots3pt,deflections,chargesDrawn,screenAssists,screenAssistPoints,looseBallsRecoveredOffensive,looseBallsRecoveredDefensive,looseBallsRecoveredTotal,offensiveBoxOuts,defensiveBoxOuts,boxOutPlayerTeamRebounds,boxOutPlayerRebounds,boxOuts
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1631133,Jabari,Walker,J. Walker,jabari-walker,F,,33,18:42,2,1,1,0,0,1,0,0,0,0,0,1,0,1,1,1
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1626162,Kelly,Oubre Jr.,K. Oubre Jr.,kelly-oubre-jr,F,,9,32:37,18,6,4,2,2,0,0,0,0,0,0,0,0,0,0,0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,203954,Joel,Embiid,J. Embiid,joel-embiid,C,,21,25:33,20,7,6,1,2,0,6,15,0,0,0,0,0,0,0,0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1642845,VJ,Edgecombe,V. Edgecombe,vj-edgecombe,G,,77,37:43,12,4,3,1,1,0,0,0,0,3,3,0,0,0,0,0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1630178,Tyrese,Maxey,T. Maxey,tyrese-maxey,G,,0,39:16,39,6,4,2,2,0,0,0,1,1,2,0,0,0,0,0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1629656,Quentin,Grimes,Q. Grimes,quentin-grimes,,,5,29:34,10,3,3,0,3,0,0,0,1,0,1,0,0,0,0,0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1630570,Trendon,Watford,T. Watford,trendon-watford,,,12,18:59,8,5,3,2,0,0,1,2,0,0,0,0,0,0,0,0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1641737,Adem,Bona,A. Bona,adem-bona,,,30,22:27,2,10,3,7,1,0,2,4,0,1,1,0,0,0,0,0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1630171,Isaac,Okoro,I. Okoro,isaac-okoro,F,,35,32:57,16,2,2,0,3,1,1,2,0,1,1,0,0,0,0,0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1641824,Matas,Buzelis,M. Buzelis,matas-buzelis,F,,14,30:25,10,12,8,4,1,0,0,0,0,0,0,0,0,0,0,0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,202696,Nikola,Vučević,N. Vučević,nikola-vučević,C,,9,31:04,19,15,10,5,6,0,3,6,0,0,0,1,1,2,2,2
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1630200,Tre,Jones,T. Jones,tre-jones,G,,30,26:50,8,4,4,0,5,0,0,0,0,0,0,0,0,0,0,0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1630581,Josh,Giddey,J. Giddey,josh-giddey,G,,3,37:24,29,6,3,3,3,1,0,0,1,0,1,0,0,0,0,0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1628989,Kevin,Huerter,K. Huerter,kevin-huerter,,,13,24:60,12,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,,,44,20:35,3,2,2,0,3,0,0,0,0,1,1,0,0,0,0,0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1630188,Jalen,Smith,J. Smith,jalen-smith,,,25,16:56,14,4,4,0,0,0,1,2,0,0,0,2,1,3,2,3
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1631207,Dalen,Terry,D. Terry,dalen-terry,,,7,13:44,2,6,4,2,0,0,0,0,0,0,0,0,0,0,0,0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1641763,Julian,Phillips,J. Phillips,julian-phillips,,,15,5:05,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0

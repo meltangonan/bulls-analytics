@@ -1,0 +1,23 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,points,contestedShots,contestedShots2pt,contestedShots3pt,deflections,chargesDrawn,screenAssists,screenAssistPoints,looseBallsRecoveredOffensive,looseBallsRecoveredDefensive,looseBallsRecoveredTotal,offensiveBoxOuts,defensiveBoxOuts,boxOutPlayerTeamRebounds,boxOutPlayerRebounds,boxOuts
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1629661,Cameron,Johnson,C. Johnson,cameron-johnson,F,,23,15:20,10,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,203932,Aaron,Gordon,A. Gordon,aaron-gordon,F,,32,15:20,18,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,203999,Nikola,Jokić,N. Jokić,nikola-jokić,C,,15,16:20,6,2,0,2,2,0,1,0,1,0,1,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1631128,Christian,Braun,C. Braun,christian-braun,G,,0,14:17,5,3,3,0,2,0,0,0,0,1,1,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1627750,Jamal,Murray,J. Murray,jamal-murray,G,,27,15:49,4,4,3,1,1,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1631124,Julian,Strawther,J. Strawther,julian-strawther,,,1,18:13,15,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,201942,DeMar,DeRozan,D. DeRozan,demar-derozan,,,10,11:27,7,2,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1626145,Tyus,Jones,T. Jones,tyus-jones,,,5,14:30,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1628963,Marvin,Bagley III,M. Bagley III,marvin-bagley-iii,,,3,15:00,10,3,2,1,2,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1643813,Alpha,Diallo,A. Diallo,alpha-diallo,,,11,20:56,8,3,2,1,0,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1642350,Trevon,Brazile,T. Brazile,trevon-brazile,,,7,17:05,4,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1643624,Bryce,Hopkins,B. Hopkins,bryce-hopkins,,,13,10:30,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1630192,Zeke,Nnaji,Z. Nnaji,zeke-nnaji,,,22,9:05,6,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1642846,Ace,Bailey,A. Bailey,ace-bailey,F,,19,27:01,10,3,1,2,1,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1628991,Jaren,Jackson Jr.,J. Jackson Jr.,jaren-jackson-jr,F,,20,15:41,7,5,2,3,1,0,1,0,0,0,0,0,0,0,0,0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1629637,Jaxson,Hayes,J. Hayes,jaxson-hayes,C,,11,13:48,7,5,1,4,0,0,2,0,0,0,0,0,0,0,0,0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1643408,Darryn,Peterson,D. Peterson,darryn-peterson,G,,22,29:37,23,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1629006,Josh,Okogie,J. Okogie,josh-okogie,,,21,24:52,8,2,1,1,0,0,0,0,0,0,0,0,0,0,0,1
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1628964,Mo,Bamba,M. Bamba,mo-bamba,,,44,19:56,8,5,3,2,1,0,0,0,0,0,0,0,0,0,0,2
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1629004,Svi,Mykhailiuk,S. Mykhailiuk,svi-mykhailiuk,,,10,22:08,9,3,3,0,2,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1642268,Isaiah,Collier,I. Collier,isaiah-collier,,,8,16:49,6,3,1,2,0,0,0,0,0,0,0,0,0,0,0,0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1630182,Josh,Green,J. Green,josh-green,,,5,10:36,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0

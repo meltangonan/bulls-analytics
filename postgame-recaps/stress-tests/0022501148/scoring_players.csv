@@ -1,0 +1,25 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1630171,Isaac,Okoro,I. Okoro,isaac-okoro,F,,,16:18,0.571,0.429,0.545,0.0,0.273,0.364,0.182,0.182,0.545,0.667,0.333,1.0,0.0,0.75,0.25
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1631159,Leonard,Miller,L. Miller,leonard-miller,F,,,25:05,0.455,0.545,0.615,0.0,0.231,0.538,0.154,0.154,0.615,0.75,0.25,1.0,0.0,0.8,0.2
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1627824,Guerschon,Yabusele,G. Yabusele,guerschon-yabusele,C,,,26:52,0.444,0.556,0.444,0.0,0.333,0.0,0.222,0.0,0.444,1.0,0.0,1.0,0.0,1.0,0.0
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1629012,Collin,Sexton,C. Sexton,collin-sexton,G,,,30:18,0.5,0.5,0.533,0.133,0.2,0.267,0.267,0.0,0.4,0.5,0.5,1.0,0.0,0.6,0.4
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1630200,Tre,Jones,T. Jones,tre-jones,G,,,26:41,0.8,0.2,0.8,0.0,0.0,0.4,0.2,0.4,0.8,0.75,0.25,0.0,0.0,0.75,0.25
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,,,,31:54,0.25,0.75,0.2,0.1,0.6,0.0,0.2,0.1,0.1,1.0,0.0,1.0,0.0,1.0,0.0
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1642265,Rob,Dillingham,R. Dillingham,rob-dillingham,,,,27:08,0.467,0.533,0.308,0.077,0.577,0.115,0.115,0.231,0.231,0.5,0.5,0.6,0.4,0.556,0.444
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1642950,Lachlan,Olbrich,L. Olbrich,lachlan-olbrich,,,,21:08,0.833,0.167,0.857,0.0,0.0,0.0,0.143,0.0,0.857,0.667,0.333,0.0,0.0,0.667,0.333
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1642530,Yuki,Kawamura,Y. Kawamura,yuki-kawamura,,,,16:26,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1630644,Mac,McClung,M. McClung,mac-mcclung,,,,18:10,0.4,0.6,0.4,0.0,0.6,1.0,0.0,0.4,0.4,1.0,0.0,1.0,0.0,1.0,0.0
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1628380,Zach,Collins,Z. Collins,zach-collins,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501148,1610612741,Chicago,Bulls,CHI,bulls,1629014,Anfernee,Simons,A. Simons,anfernee-simons,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1641778,Leaky,Black,L. Black,leaky-black,F,,,23:57,0.25,0.75,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1630264,Anthony,Gill,A. Gill,anthony-gill,F,,,15:32,0.5,0.5,0.25,0.0,0.75,0.25,0.0,0.0,0.25,1.0,0.0,1.0,0.0,1.0,0.0
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1642882,Julian,Reese,J. Reese,julian-reese,C,,,36:06,1.0,0.0,0.941,0.0,0.0,0.118,0.059,0.176,0.941,0.75,0.25,0.0,0.0,0.75,0.25
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1641731,Bilal,Coulibaly,B. Coulibaly,bilal-coulibaly,G,,,23:47,0.7,0.3,0.526,0.211,0.316,0.0,0.158,0.0,0.316,0.2,0.8,1.0,0.0,0.429,0.571
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1642267,Bub,Carrington,B. Carrington,bub-carrington,G,,,31:39,0.333,0.667,0.429,0.143,0.429,0.0,0.143,0.143,0.286,0.0,1.0,0.5,0.5,0.2,0.8
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1630536,Sharife,Cooper,S. Cooper,sharife-cooper,,,,27:08,0.5,0.5,0.471,0.118,0.353,0.471,0.176,0.0,0.353,0.25,0.75,0.5,0.5,0.333,0.667
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1630551,Justin,Champagnie,J. Champagnie,justin-champagnie,,,,29:13,0.444,0.556,0.4,0.0,0.6,0.0,0.0,0.0,0.4,1.0,0.0,1.0,0.0,1.0,0.0
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1642860,Will,Riley,W. Riley,will-riley,,,,30:44,0.615,0.385,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1642364,Jamir,Watkins,J. Watkins,jamir-watkins,,,,21:54,0.3,0.7,0.462,0.0,0.231,0.154,0.308,0.0,0.462,0.667,0.333,1.0,0.0,0.75,0.25
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1630702,Jaden,Hardy,J. Hardy,jaden-hardy,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1642848,Tre,Johnson,T. Johnson,tre-johnson,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501148,1610612764,Washington,Wizards,WAS,wizards,1641774,Tristan,Vukcevic,T. Vukcevic,tristan-vukcevic,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

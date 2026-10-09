@@ -1,0 +1,29 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1641709,Ausar,Thompson,A. Thompson,ausar-thompson,F,,,33:02,1.0,0.0,0.909,0.364,0.0,0.0,0.091,0.182,0.545,0.6,0.4,0.0,0.0,0.6,0.4
+0022500084,1610612765,Detroit,Pistons,DET,pistons,202699,Tobias,Harris,T. Harris,tobias-harris,F,,,34:24,0.75,0.25,0.6,0.0,0.3,0.0,0.1,0.0,0.6,0.333,0.667,1.0,0.0,0.5,0.5
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1631105,Jalen,Duren,J. Duren,jalen-duren,C,,,19:45,1.0,0.0,0.933,0.0,0.0,0.133,0.067,0.267,0.933,0.714,0.286,0.0,0.0,0.714,0.286
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1629130,Duncan,Robinson,D. Robinson,duncan-robinson,G,,,32:22,0.286,0.714,1.0,0.0,0.0,1.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1630595,Cade,Cunningham,C. Cunningham,cade-cunningham,G,,,34:16,0.75,0.25,0.609,0.0,0.13,0.174,0.261,0.348,0.609,0.429,0.571,0.0,1.0,0.375,0.625
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1630191,Isaiah,Stewart,I. Stewart,isaiah-stewart,,,,24:54,0.857,0.143,0.6,0.0,0.3,0.0,0.1,0.0,0.6,1.0,0.0,1.0,0.0,1.0,0.0
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1627747,Caris,LeVert,C. LeVert,caris-levert,,,,21:27,0.571,0.429,0.5,0.0,0.375,0.0,0.125,0.25,0.5,1.0,0.0,1.0,0.0,1.0,0.0
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1641842,Ronald,Holland II,R. Holland II,ronald-holland-ii,,,,26:58,0.6,0.4,0.526,0.0,0.158,0.579,0.316,0.211,0.526,0.4,0.6,1.0,0.0,0.5,0.5
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1630194,Paul,Reed,P. Reed,paul-reed,,,,3:21,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1629750,Javonte,Green,J. Green,javonte-green,,,,9:31,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1642450,Daniss,Jenkins,D. Jenkins,daniss-jenkins,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1641732,Colby,Jones,C. Jones,colby-jones,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1641752,Bobi,Klintman,B. Klintman,bobi-klintman,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1642404,Chaz,Lanier,C. Lanier,chaz-lanier,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500084,1610612765,Detroit,Pistons,DET,pistons,1642449,Tolu,Smith,T. Smith,tolu-smith,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1630171,Isaac,Okoro,I. Okoro,isaac-okoro,F,,,22:31,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1641824,Matas,Buzelis,M. Buzelis,matas-buzelis,F,,,33:46,0.75,0.25,0.667,0.095,0.0,0.0,0.333,0.0,0.571,0.714,0.286,0.0,0.0,0.714,0.286
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,202696,Nikola,Vučević,N. Vučević,nikola-vučević,C,,,32:35,0.667,0.333,0.5,0.071,0.429,0.071,0.071,0.143,0.429,1.0,0.0,1.0,0.0,1.0,0.0
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1630200,Tre,Jones,T. Jones,tre-jones,G,,,31:38,0.875,0.125,0.667,0.0,0.25,0.0,0.083,0.167,0.667,0.25,0.75,1.0,0.0,0.4,0.6
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1630581,Josh,Giddey,J. Giddey,josh-giddey,G,,,28:48,0.833,0.167,0.421,0.105,0.158,0.158,0.421,0.105,0.316,0.25,0.75,1.0,0.0,0.4,0.6
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1628989,Kevin,Huerter,K. Huerter,kevin-huerter,,,,27:14,0.455,0.545,0.267,0.0,0.4,0.0,0.333,0.0,0.267,0.5,0.5,1.0,0.0,0.75,0.25
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1630245,Ayo,Dosunmu,A. Dosunmu,ayo-dosunmu,,,,26:30,0.643,0.357,0.571,0.0,0.429,0.143,0.0,0.357,0.571,0.75,0.25,1.0,0.0,0.833,0.167
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,,,,17:00,0.0,1.0,0.0,0.0,0.75,0.0,0.25,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1630188,Jalen,Smith,J. Smith,jalen-smith,,,,13:38,0.286,0.714,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1631207,Dalen,Terry,D. Terry,dalen-terry,,,,6:20,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1628975,Jevon,Carter,J. Carter,jevon-carter,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1642855,Noa,Essengue,N. Essengue,noa-essengue,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500084,1610612741,Chicago,Bulls,CHI,bulls,1641763,Julian,Phillips,J. Phillips,julian-phillips,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

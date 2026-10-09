@@ -1,0 +1,25 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,1630171,Isaac,Okoro,I. Okoro,isaac-okoro,F,,,19:57,0.333,0.667,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,1641824,Matas,Buzelis,M. Buzelis,matas-buzelis,F,,,29:05,0.643,0.357,0.462,0.0,0.462,0.231,0.077,0.0,0.462,0.333,0.667,1.0,0.0,0.6,0.4
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,202696,Nikola,Vučević,N. Vučević,nikola-vučević,C,,,29:00,0.385,0.615,0.25,0.0,0.75,0.0,0.0,0.0,0.25,1.0,0.0,1.0,0.0,1.0,0.0
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,1628989,Kevin,Huerter,K. Huerter,kevin-huerter,G,,,24:00,0.25,0.75,0.3,0.1,0.6,0.0,0.1,0.0,0.2,0.667,0.333,1.0,0.0,0.857,0.143
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,1630581,Josh,Giddey,J. Giddey,josh-giddey,G,,,30:19,0.833,0.167,0.762,0.095,0.0,0.19,0.238,0.0,0.667,0.125,0.875,0.0,0.0,0.125,0.875
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,,,,16:58,0.429,0.571,0.286,0.286,0.429,0.286,0.286,0.286,0.0,1.0,0.0,1.0,0.0,1.0,0.0
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,1631207,Dalen,Terry,D. Terry,dalen-terry,,,,18:04,0.25,0.75,0.4,0.0,0.6,0.4,0.0,0.0,0.4,0.0,1.0,1.0,0.0,0.5,0.5
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,1630245,Ayo,Dosunmu,A. Dosunmu,ayo-dosunmu,,,,25:50,0.778,0.222,0.667,0.0,0.143,0.286,0.19,0.19,0.667,0.429,0.571,1.0,0.0,0.5,0.5
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,1630188,Jalen,Smith,J. Smith,jalen-smith,,,,17:57,0.455,0.545,0.375,0.125,0.563,0.375,0.063,0.188,0.25,1.0,0.0,1.0,0.0,1.0,0.0
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,1628975,Jevon,Carter,J. Carter,jevon-carter,,,,18:08,0.231,0.769,0.0,0.0,1.0,0.0,0.0,0.4,0.0,0.0,0.0,0.6,0.4,0.6,0.4
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,1641763,Julian,Phillips,J. Phillips,julian-phillips,,,,10:42,0.5,0.5,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0022500248,1610612741,Chicago,Bulls,CHI,bulls,1642855,Noa,Essengue,N. Essengue,noa-essengue,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,1631212,Peyton,Watson,P. Watson,peyton-watson,F,,,34:02,0.75,0.25,0.4,0.0,0.6,0.0,0.0,0.0,0.4,1.0,0.0,1.0,0.0,1.0,0.0
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,203932,Aaron,Gordon,A. Gordon,aaron-gordon,F,,,32:25,0.722,0.278,0.75,0.0,0.125,0.0,0.125,0.0,0.75,0.444,0.556,0.0,1.0,0.4,0.6
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,203999,Nikola,Jokić,N. Jokić,nikola-jokić,C,,,38:38,0.741,0.259,0.667,0.111,0.083,0.056,0.25,0.056,0.556,0.333,0.667,1.0,0.0,0.385,0.615
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,1629661,Cameron,Johnson,C. Johnson,cameron-johnson,G,,,36:55,0.417,0.583,0.105,0.105,0.789,0.263,0.105,0.0,0.0,0.0,1.0,1.0,0.0,0.833,0.167
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,1627750,Jamal,Murray,J. Murray,jamal-murray,G,,,38:16,0.5,0.5,0.412,0.235,0.441,0.147,0.147,0.0,0.176,0.286,0.714,0.2,0.8,0.25,0.75
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,203501,Tim,Hardaway Jr.,T. Hardaway Jr.,tim-hardaway-jr,,,,16:12,0.625,0.375,1.0,0.5,0.0,0.5,0.0,1.0,0.5,0.5,0.5,0.0,0.0,0.5,0.5
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,1628971,Bruce,Brown,B. Brown,bruce-brown,,,,22:32,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,1642461,Spencer,Jones,S. Jones,spencer-jones,,,,6:01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,202685,Jonas,Valanciunas,J. Valanciunas,jonas-valanciunas,,,,4:33,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,1629618,Jalen,Pickett,J. Pickett,jalen-pickett,,,,10:27,0.667,0.333,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,1630192,Zeke,Nnaji,Z. Nnaji,zeke-nnaji,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500248,1610612743,Denver,Nuggets,DEN,nuggets,1641816,Hunter,Tyson,H. Tyson,hunter-tyson,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

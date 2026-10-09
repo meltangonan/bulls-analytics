@@ -1,0 +1,555 @@
+gameId,actionNumber,clock,period,teamId,teamTricode,personId,playerName,playerNameI,xLegacy,yLegacy,shotDistance,shotResult,isFieldGoal,scoreHome,scoreAway,pointsTotal,location,description,actionType,subType,videoAvailable,shotValue,actionId
+0012600030,2,PT12M00.00S,1,0,,0,,,0,0,0,,0,0,0,0,,Start of 1st Period (8:12 PM EST),period,start,1,0,1
+0012600030,4,PT12M00.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Jump Ball Smith vs. Ighodaro: Tip to Giddey,Jump Ball,,1,0,2
+0012600030,7,PT11M43.00S,1,1610612741,CHI,1626181,Powell,N. Powell,-153,224,27,Made,1,3,0,3,h,Powell 27' 3PT Jump Shot (3 PTS) (Giddey 1 AST),Made Shot,Jump Shot,1,3,3
+0012600030,8,PT11M23.00S,1,1610612756,PHX,1630224,Green,J. Green,39,242,25,Made,1,3,3,6,v,Green 25' 3PT Pullup Jump Shot (3 PTS) (Brooks 1 AST),Made Shot,Pullup Jump shot,1,3,4
+0012600030,9,PT11M07.00S,1,1610612741,CHI,1643410,Wilson,C. Wilson,-111,232,26,Missed,1,,,0,h,MISS Wilson 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,5
+0012600030,10,PT11M07.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,6
+0012600030,11,PT10M58.00S,1,1610612741,CHI,1641824,Buzelis,M. Buzelis,7,7,1,Made,1,5,3,8,h,Buzelis 1' Driving Layup (2 PTS),Made Shot,Driving Layup Shot,1,2,7
+0012600030,12,PT10M45.00S,1,1610612756,PHX,1626164,Booker,D. Booker,-107,240,26,Missed,1,,,0,v,MISS Booker 26' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,8
+0012600030,13,PT10M45.00S,1,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,9
+0012600030,14,PT10M33.00S,1,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,Ighodaro Out of Bounds - Bad Pass Turnover Turnover (P1.T1),Turnover,Out of Bounds - Bad Pass Turnover,1,0,10
+0012600030,42,PT10M30.00S,1,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,,,0,v,Booker P.FOUL (P1.T1) (A.Moyer-Gleich),Foul,Personal,1,0,11
+0012600030,15,PT10M21.00S,1,1610612741,CHI,1630188,Smith,J. Smith,-124,247,28,Made,1,8,3,11,h,Smith 28' 3PT Jump Shot (3 PTS) (Giddey 2 AST),Made Shot,Jump Shot,1,3,12
+0012600030,17,PT10M05.00S,1,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,,,0,v,Booker Lost Ball Turnover (P1.T2),Turnover,Lost Ball,1,0,13
+0012600030,17,PT10M05.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith STEAL (1 STL),,,1,0,14
+0012600030,20,PT10M03.00S,1,1610612741,CHI,1641824,Buzelis,M. Buzelis,17,13,2,Missed,1,,,0,h,MISS Buzelis 2' Running Layup,Missed Shot,Running Layup Shot,1,2,15
+0012600030,21,PT10M03.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith REBOUND (Off:2 Def:0),Rebound,Unknown,1,0,16
+0012600030,22,PT10M02.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,Made,1,10,3,13,h,Smith Putback Dunk (5 PTS),Made Shot,Putback Dunk Shot,1,2,17
+0012600030,23,PT09M40.00S,1,1610612756,PHX,1628415,Brooks,D. Brooks,16,63,7,Made,1,10,5,15,v,Brooks 7' Turnaround Jump Shot (2 PTS),Made Shot,Turnaround Jump Shot,1,2,18
+0012600030,25,PT09M34.00S,1,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks P.FOUL (P1.T2) (S.Foster),Foul,Personal,1,0,19
+0012600030,27,PT09M25.00S,1,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks S.FOUL (P2.T3) (J.Schroeder),Foul,Shooting,1,0,20
+0012600030,29,PT09M25.00S,1,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,11,5,16,h,Powell Free Throw 1 of 3 (4 PTS),Free Throw,Free Throw 1 of 3,1,0,21
+0012600030,30,PT09M25.00S,1,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,12,5,17,h,Powell Free Throw 2 of 3 (5 PTS),Free Throw,Free Throw 2 of 3,1,0,22
+0012600030,31,PT09M25.00S,1,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,13,5,18,h,Powell Free Throw 3 of 3 (6 PTS),Free Throw,Free Throw 3 of 3,1,0,23
+0012600030,32,PT09M17.00S,1,1610612756,PHX,1626164,Booker,D. Booker,-152,138,21,Made,1,13,7,20,v,Booker 21' Jump Shot (2 PTS) (Brooks 2 AST),Made Shot,Jump Shot,1,2,24
+0012600030,34,PT09M02.00S,1,1610612741,CHI,1641824,Buzelis,M. Buzelis,17,16,2,Made,1,15,7,22,h,Buzelis 2' Driving Layup (4 PTS) (Giddey 3 AST),Made Shot,Driving Layup Shot,1,2,25
+0012600030,35,PT08M51.00S,1,1610612756,PHX,1626164,Booker,D. Booker,-85,182,20,Missed,1,,,0,v,MISS Booker 20' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,26
+0012600030,36,PT08M51.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith REBOUND (Off:2 Def:1),Rebound,Unknown,1,0,27
+0012600030,38,PT08M33.00S,1,1610612741,CHI,1641824,Buzelis,M. Buzelis,4,26,3,Made,1,17,7,24,h,Buzelis 3' Layup (6 PTS),Made Shot,Layup Shot,1,2,28
+0012600030,40,PT08M24.00S,1,1610612756,PHX,1628415,Brooks,D. Brooks,231,-21,0,Made,1,17,10,27,v,Brooks 3PT Jump Shot (5 PTS) (Bridges 1 AST),Made Shot,Jump Shot,1,3,29
+0012600030,44,PT08M10.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith Bad Pass Turnover (P1.T1),Turnover,Bad Pass,1,0,30
+0012600030,44,PT08M10.00S,1,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green STEAL (1 STL),,,1,0,31
+0012600030,48,PT08M03.00S,1,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Timeout: Regular (Reg.1 Short 0),Timeout,Regular,0,0,32
+0012600030,49,PT08M03.00S,1,0,,0,,,0,0,0,,0,17,10,27,,Instant Replay1st Period (8:19 PM EST),Instant Replay,Coach Challenge Overturn Ruling,0,0,33
+0012600030,50,PT07M58.00S,1,1610612756,PHX,1628970,Bridges,M. Bridges,10,5,1,Made,1,17,12,29,v,Bridges 1' Driving Reverse Layup (3 PTS),Made Shot,Driving Reverse Layup Shot,1,2,34
+0012600030,52,PT07M58.00S,1,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,Wilson S.FOUL (P1.T1) (S.Foster),Foul,Shooting,1,0,35
+0012600030,54,PT07M58.00S,1,1610612756,PHX,1628970,Bridges,M. Bridges,0,0,0,,0,17,13,30,v,Bridges Free Throw 1 of 1 (3 PTS),Free Throw,Free Throw 1 of 1,1,0,36
+0012600030,55,PT07M45.00S,1,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,Ighodaro S.FOUL (P1.T4) (S.Foster),Foul,Shooting,1,0,37
+0012600030,57,PT07M45.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,MISS Smith Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,38
+0012600030,58,PT07M45.00S,1,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Rebound,Rebound,Normal Rebound,0,0,39
+0012600030,59,PT07M45.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,18,13,31,h,Smith Free Throw 2 of 2 (6 PTS),Free Throw,Free Throw 2 of 2,1,0,40
+0012600030,60,PT07M24.00S,1,1610612756,PHX,1630224,Green,J. Green,-77,37,9,Made,1,18,15,33,v,Green 9' Fadeaway Jumper (5 PTS),Made Shot,Fadeaway Jump Shot,1,2,41
+0012600030,61,PT07M12.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith OFF.Foul (P1) (S.Foster),Foul,Offensive,1,0,42
+0012600030,63,PT07M12.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith Offensive Foul Turnover (P2.T2),Turnover,Offensive Foul Turnover,1,0,43
+0012600030,64,PT06M57.00S,1,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,-3,0,Made,1,18,17,35,v,Ighodaro Alley Oop Dunk (2 PTS) (Green 1 AST),Made Shot,Alley Oop Dunk Shot,1,2,44
+0012600030,67,PT06M48.00S,1,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,Ighodaro S.FOUL (P2.PN) (J.Schroeder),Foul,Shooting,1,0,45
+0012600030,69,PT06M48.00S,1,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,19,17,36,h,Buzelis Free Throw 1 of 2 (7 PTS),Free Throw,Free Throw 1 of 2,1,0,46
+0012600030,73,PT06M48.00S,1,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,,,0,h,SUB: Awaka FOR Powell,Substitution,,0,0,47
+0012600030,74,PT06M48.00S,1,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,SUB: Hield FOR Smith,Substitution,,0,0,48
+0012600030,70,PT06M48.00S,1,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,20,17,37,h,Buzelis Free Throw 2 of 2 (8 PTS),Free Throw,Free Throw 2 of 2,1,0,49
+0012600030,76,PT06M33.00S,1,1610612756,PHX,1626164,Booker,D. Booker,-21,13,2,Missed,1,,,0,v,MISS Booker 2' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,50
+0012600030,77,PT06M33.00S,1,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,,,0,h,Giddey REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,51
+0012600030,78,PT06M25.00S,1,1610612741,CHI,1641824,Buzelis,M. Buzelis,-110,236,26,Missed,1,,,0,h,MISS Buzelis 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,52
+0012600030,79,PT06M25.00S,1,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,53
+0012600030,82,PT06M25.00S,1,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,SUB: Maluach FOR Ighodaro,Substitution,,0,0,54
+0012600030,83,PT06M10.00S,1,1610612756,PHX,1628415,Brooks,D. Brooks,-120,240,27,Missed,1,,,0,v,MISS Brooks 27' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,55
+0012600030,84,PT06M10.00S,1,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,Buzelis REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,56
+0012600030,85,PT06M01.00S,1,1610612741,CHI,1643410,Wilson,C. Wilson,99,185,21,Made,1,22,17,39,h,Wilson 21' Pullup Jump Shot (2 PTS),Made Shot,Pullup Jump shot,1,2,57
+0012600030,86,PT05M52.00S,1,1610612756,PHX,1628415,Brooks,D. Brooks,202,162,26,Made,1,22,20,42,v,Brooks 26' 3PT Jump Shot (8 PTS) (Maluach 1 AST),Made Shot,Jump Shot,1,3,58
+0012600030,88,PT05M30.00S,1,1610612741,CHI,1627741,Hield,B. Hield,20,18,3,Missed,1,,,0,h,MISS Hield 3' Driving Layup,Missed Shot,Driving Layup Shot,1,2,59
+0012600030,89,PT05M30.00S,1,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,60
+0012600030,90,PT05M23.00S,1,1610612741,CHI,1627741,Hield,B. Hield,-232,19,0,Missed,1,,,0,h,MISS Hield 3PT Jump Shot,Missed Shot,Jump Shot,1,3,61
+0012600030,91,PT05M23.00S,1,1610612756,PHX,1628970,Bridges,M. Bridges,0,0,0,,0,,,0,v,Bridges REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,62
+0012600030,132,PT05M12.00S,1,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,,,0,h,Giddey S.FOUL (P1.T2) (S.Foster),Foul,Shooting,1,0,63
+0012600030,208,PT05M12.00S,1,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Timeout: Regular (Full 1 Short 0),Timeout,Regular,0,0,64
+0012600030,98,PT05M12.00S,1,1610612756,PHX,1628970,Bridges,M. Bridges,0,0,0,,0,,,0,v,SUB: Goodwin FOR Bridges,Substitution,,0,0,65
+0012600030,102,PT05M12.00S,1,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,SUB: Swain FOR Buzelis,Substitution,,0,0,66
+0012600030,103,PT05M12.00S,1,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,,,0,h,SUB: Okoro FOR Giddey,Substitution,,0,0,67
+0012600030,135,PT05M12.00S,1,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,MISS Green Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,68
+0012600030,137,PT05M12.00S,1,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Normal Rebound,1,0,69
+0012600030,136,PT05M12.00S,1,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,22,21,43,v,Green Free Throw 2 of 2 (6 PTS),Free Throw,Free Throw 2 of 2,1,0,70
+0012600030,104,PT04M52.00S,1,1610612741,CHI,1643410,Wilson,C. Wilson,166,48,17,Missed,1,,,0,h,MISS Wilson 17' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,71
+0012600030,105,PT04M52.00S,1,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka REBOUND (Off:2 Def:0),Rebound,Unknown,1,0,72
+0012600030,108,PT04M48.00S,1,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,SUB: Miller FOR Wilson,Substitution,,0,0,73
+0012600030,110,PT04M48.00S,1,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,SUB: Gillespie FOR Green,Substitution,,0,0,74
+0012600030,106,PT04M47.00S,1,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Turnover: Shot Clock (T#3),Turnover,Shot Clock Turnover,1,0,75
+0012600030,111,PT04M32.00S,1,1610612756,PHX,1626164,Booker,D. Booker,161,198,26,Missed,1,,,0,v,MISS Booker 26' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,76
+0012600030,112,PT04M32.00S,1,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,77
+0012600030,113,PT04M20.00S,1,1610612756,PHX,1628415,Brooks,D. Brooks,-184,179,26,Made,1,22,24,46,v,Brooks 26' 3PT Jump Shot (11 PTS) (Goodwin 1 AST),Made Shot,Jump Shot,1,3,78
+0012600030,115,PT04M10.00S,1,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka Bad Pass Turnover (P1.T4),Turnover,Bad Pass,1,0,79
+0012600030,115,PT04M10.00S,1,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin STEAL (1 STL),,,1,0,80
+0012600030,117,PT04M07.00S,1,1610612756,PHX,1630692,Goodwin,J. Goodwin,147,204,25,Missed,1,,,0,v,MISS Goodwin 25' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,81
+0012600030,118,PT04M07.00S,1,1610612741,CHI,1630171,Okoro,I. Okoro,0,0,0,,0,,,0,h,Okoro REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,82
+0012600030,119,PT03M59.00S,1,1610612741,CHI,1643517,Swain,D. Swain,15,15,2,Made,1,24,24,48,h,Swain 2' Running Dunk (2 PTS),Made Shot,Running Dunk Shot,1,2,83
+0012600030,121,PT03M46.00S,1,1610612741,CHI,1630171,Okoro,I. Okoro,0,0,0,,0,,,0,h,Okoro P.FOUL (P1.T3) (A.Moyer-Gleich),Foul,Personal,1,0,84
+0012600030,125,PT03M46.00S,1,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,,,0,v,SUB: Dunn FOR Booker,Substitution,,0,0,85
+0012600030,126,PT03M46.00S,1,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,SUB: Kennard FOR Brooks,Substitution,,0,0,86
+0012600030,127,PT03M45.00S,1,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka P.FOUL (P1.T4) (A.Moyer-Gleich),Foul,Personal,1,0,87
+0012600030,129,PT03M30.00S,1,1610612756,PHX,1630692,Goodwin,J. Goodwin,-17,6,2,Made,1,24,26,50,v,Goodwin 2' Driving Layup (2 PTS) (Kennard 1 AST),Made Shot,Driving Layup Shot,1,2,88
+0012600030,131,PT03M25.00S,1,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,Swain Out of Bounds Lost Ball Turnover (P1.T5),Turnover,Out of Bounds Lost Ball Turnover,1,0,89
+0012600030,138,PT03M16.00S,1,1610612756,PHX,1628379,Kennard,L. Kennard,-69,262,27,Missed,1,,,0,v,MISS Kennard 27' 3PT Step Back Jump Shot,Missed Shot,Step Back Jump shot,1,3,90
+0012600030,139,PT03M16.00S,1,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka REBOUND (Off:2 Def:1),Rebound,Unknown,1,0,91
+0012600030,140,PT03M06.00S,1,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Turnover: 8 Second Violation (T#6),Turnover,8 Second Violation,1,0,92
+0012600030,141,PT02M58.00S,1,1610612756,PHX,1631221,Gillespie,C. Gillespie,-110,266,29,Made,1,24,29,53,v,Gillespie 29' 3PT Pullup Jump Shot (3 PTS),Made Shot,Pullup Jump shot,1,3,93
+0012600030,142,PT02M58.00S,1,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka P.FOUL (P2.PN) (A.Moyer-Gleich),Foul,Personal,1,0,94
+0012600030,146,PT02M58.00S,1,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,,,0,h,SUB: Powell FOR Hield,Substitution,,0,0,95
+0012600030,144,PT02M58.00S,1,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,24,30,54,v,Maluach Free Throw 1 of 2 (1 PTS),Free Throw,Free Throw 1 of 2,1,0,96
+0012600030,147,PT02M47.00S,1,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka OFF.Foul (P3) (J.Schroeder),Foul,Offensive,1,0,97
+0012600030,149,PT02M47.00S,1,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka Offensive Foul Turnover (P2.T7),Turnover,Offensive Foul Turnover,1,0,98
+0012600030,150,PT02M30.00S,1,1610612756,PHX,1630692,Goodwin,J. Goodwin,-160,198,25,Made,1,24,33,57,v,Goodwin 25' 3PT Jump Shot (5 PTS) (Gillespie 1 AST),Made Shot,Jump Shot,1,3,99
+0012600030,152,PT02M07.00S,1,1610612741,CHI,1626181,Powell,N. Powell,-78,242,25,Missed,1,,,0,h,MISS Powell 25' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,100
+0012600030,153,PT02M07.00S,1,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka REBOUND (Off:3 Def:1),Rebound,Unknown,1,0,101
+0012600030,154,PT02M00.00S,1,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,,,0,h,Powell Lost Ball Turnover (P1.T8),Turnover,Lost Ball,1,0,102
+0012600030,154,PT02M00.00S,1,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin STEAL (2 STL),,,1,0,103
+0012600030,156,PT01M53.00S,1,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin Lost Ball Turnover (P1.T3),Turnover,Lost Ball,1,0,104
+0012600030,156,PT01M53.00S,1,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,,,0,h,Powell STEAL (1 STL),,,1,0,105
+0012600030,158,PT01M49.00S,1,1610612741,CHI,1643591,Awaka,T. Awaka,16,3,2,Missed,1,,,0,h,MISS Awaka 2' Running Layup,Missed Shot,Running Layup Shot,1,2,106
+0012600030,158,PT01M49.00S,1,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn BLOCK (1 BLK),,,1,2,107
+0012600030,160,PT01M49.00S,1,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,108
+0012600030,164,PT01M49.00S,1,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,SUB: Smith FOR Awaka,Substitution,,0,0,109
+0012600030,165,PT01M49.00S,1,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,SUB: Giddey FOR Swain,Substitution,,0,0,110
+0012600030,166,PT01M37.00S,1,1610612756,PHX,1631221,Gillespie,C. Gillespie,-151,213,26,Made,1,24,36,60,v,Gillespie 26' 3PT Pullup Jump Shot (6 PTS),Made Shot,Pullup Jump shot,1,3,111
+0012600030,167,PT01M25.00S,1,1610612741,CHI,1630188,Smith,J. Smith,81,245,26,Missed,1,,,0,h,MISS Smith 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,112
+0012600030,168,PT01M25.00S,1,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,113
+0012600030,169,PT01M09.00S,1,1610612756,PHX,1642863,Maluach,K. Maluach,-10,11,1,Made,1,24,38,62,v,Maluach 1' Layup (3 PTS) (Goodwin 2 AST),Made Shot,Layup Shot,1,2,114
+0012600030,171,PT00M58.00S,1,1610612741,CHI,1630188,Smith,J. Smith,-91,230,25,Made,1,27,38,65,h,Smith 25' 3PT Jump Shot (9 PTS) (Okoro 1 AST),Made Shot,Jump Shot,1,3,115
+0012600030,173,PT00M32.30S,1,1610612756,PHX,1631221,Gillespie,C. Gillespie,-147,-16,15,Made,1,27,40,67,v,Gillespie 15' Turnaround Fadeaway (8 PTS),Made Shot,Turnaround Fadeaway shot,1,2,116
+0012600030,174,PT00M17.30S,1,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn S.FOUL (P1.PN) (S.Foster),Foul,Shooting,1,0,117
+0012600030,176,PT00M17.30S,1,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,28,40,68,h,Giddey Free Throw 1 of 2 (1 PTS),Free Throw,Free Throw 1 of 2,1,0,118
+0012600030,177,PT00M17.30S,1,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,29,40,69,h,Giddey Free Throw 2 of 2 (2 PTS),Free Throw,Free Throw 2 of 2,1,0,119
+0012600030,178,PT00M01.30S,1,1610612756,PHX,1631221,Gillespie,C. Gillespie,-60,165,18,Missed,1,,,0,v,MISS Gillespie 18' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,120
+0012600030,179,PT00M01.30S,1,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,,,0,h,Giddey REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,121
+0012600030,180,PT00M00.00S,1,0,,0,,,0,0,0,,0,29,40,69,,End of 1st Period (8:42 PM EST),period,end,1,0,122
+0012600030,189,PT12M00.00S,2,0,,0,,,0,0,0,,0,29,40,69,,Start of 2nd Period (8:45 PM EST),period,start,1,0,123
+0012600030,191,PT11M46.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,10,12,2,Missed,1,,,0,v,MISS Ighodaro 2' Alley Oop Dunk,Missed Shot,Alley Oop Dunk Shot,1,2,124
+0012600030,192,PT11M46.00S,2,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,,,0,h,Giddey REBOUND (Off:0 Def:3),Rebound,Unknown,1,0,125
+0012600030,193,PT11M37.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,Ighodaro S.FOUL (P3.T1) (A.Moyer-Gleich),Foul,Shooting,1,0,126
+0012600030,195,PT11M37.00S,2,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,30,40,70,h,Powell Free Throw 1 of 3 (7 PTS),Free Throw,Free Throw 1 of 3,1,0,127
+0012600030,196,PT11M37.00S,2,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,31,40,71,h,Powell Free Throw 2 of 3 (8 PTS),Free Throw,Free Throw 2 of 3,1,0,128
+0012600030,197,PT11M37.00S,2,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,,,0,h,MISS Powell Free Throw 3 of 3,Free Throw,Free Throw 3 of 3,1,0,129
+0012600030,198,PT11M37.00S,2,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin REBOUND (Off:1 Def:2),Rebound,Unknown,1,0,130
+0012600030,199,PT11M27.00S,2,1610612756,PHX,1631221,Gillespie,C. Gillespie,-163,194,25,Missed,1,,,0,v,MISS Gillespie 25' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,131
+0012600030,200,PT11M27.00S,2,1610612756,PHX,1628379,Kennard,L. Kennard,0,0,0,,0,,,0,v,Kennard REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,132
+0012600030,201,PT11M16.00S,2,1610612756,PHX,1628379,Kennard,L. Kennard,16,13,2,Made,1,31,42,73,v,Kennard 2' Cutting Layup Shot (2 PTS) (Ighodaro 1 AST),Made Shot,Cutting Layup Shot,1,2,133
+0012600030,203,PT11M05.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,Wilson Offensive Charge Foul (P2) (S.Foster),Foul,Offensive Charge,1,0,134
+0012600030,205,PT11M05.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,Wilson Offensive Foul Turnover (P1.T9),Turnover,Offensive Foul Turnover,1,0,135
+0012600030,206,PT11M01.00S,2,1610612756,PHX,1631221,Gillespie,C. Gillespie,0,0,0,,0,,,0,v,Gillespie Out of Bounds - Bad Pass Turnover Turnover (P1.T4),Turnover,Out of Bounds - Bad Pass Turnover,1,0,136
+0012600030,207,PT11M01.00S,2,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Timeout: Regular (Reg.2 Short 0),Timeout,Regular,0,0,137
+0012600030,210,PT11M01.00S,2,1610612756,PHX,1628970,Bridges,M. Bridges,0,0,0,,0,,,0,v,SUB: Fleming FOR Bridges,Substitution,,0,0,138
+0012600030,211,PT10M48.00S,2,1610612756,PHX,1628379,Kennard,L. Kennard,0,0,0,,0,,,0,v,Kennard P.FOUL (P1.T2) (J.Schroeder),Foul,Personal,1,0,139
+0012600030,213,PT10M44.00S,2,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,,,0,h,Giddey Bad Pass Turnover (P1.T10),Turnover,Bad Pass,1,0,140
+0012600030,213,PT10M44.00S,2,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin STEAL (3 STL),,,1,0,141
+0012600030,215,PT10M34.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,-26,9,3,Missed,1,,,0,v,MISS Ighodaro 3' Driving Layup,Missed Shot,Driving Layup Shot,1,2,142
+0012600030,216,PT10M34.00S,2,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith REBOUND (Off:2 Def:2),Rebound,Unknown,1,0,143
+0012600030,217,PT10M30.00S,2,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,,0,,,0,v,Fleming S.FOUL (P1.T3) (S.Foster),Foul,Shooting,1,0,144
+0012600030,219,PT10M30.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,32,42,74,h,Wilson Free Throw 1 of 2 (3 PTS),Free Throw,Free Throw 1 of 2,1,0,145
+0012600030,220,PT10M30.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,33,42,75,h,Wilson Free Throw 2 of 2 (4 PTS),Free Throw,Free Throw 2 of 2,1,0,146
+0012600030,221,PT10M16.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,-6,6,1,Made,1,33,44,77,v,Ighodaro 1' Alley Oop Dunk (4 PTS) (Kennard 2 AST),Made Shot,Alley Oop Dunk Shot,1,2,147
+0012600030,223,PT10M06.00S,2,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,,,0,h,Powell Lost Ball Turnover (P2.T11),Turnover,Lost Ball,1,0,148
+0012600030,223,PT10M06.00S,2,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin STEAL (4 STL),,,1,0,149
+0012600030,225,PT10M00.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,-12,1,1,Made,1,33,46,79,v,Ighodaro 1' Running Layup (6 PTS) (Kennard 3 AST),Made Shot,Running Layup Shot,1,2,150
+0012600030,227,PT10M00.00S,2,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Timeout: Regular (Full 2 Short 0),Timeout,Regular,0,0,151
+0012600030,229,PT10M00.00S,2,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,,,0,h,SUB: Hield FOR Powell,Substitution,,0,0,152
+0012600030,230,PT09M43.00S,2,1610612741,CHI,1641824,Buzelis,M. Buzelis,-203,155,26,Missed,1,,,0,h,MISS Buzelis 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,153
+0012600030,231,PT09M43.00S,2,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Rebound,Rebound,Unknown,0,0,154
+0012600030,232,PT09M36.00S,2,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,,,0,h,Hield Bad Pass Turnover (P1.T12),Turnover,Bad Pass,1,0,155
+0012600030,232,PT09M36.00S,2,1610612756,PHX,1628379,Kennard,L. Kennard,0,0,0,,0,,,0,v,Kennard STEAL (1 STL),,,1,0,156
+0012600030,234,PT09M30.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,-4,11,1,Made,1,33,48,81,v,Ighodaro 1' Running Dunk (8 PTS) (Kennard 4 AST),Made Shot,Running Dunk Shot,1,2,157
+0012600030,236,PT09M20.00S,2,1610612756,PHX,1631221,Gillespie,C. Gillespie,0,0,0,,0,,,0,v,Gillespie P.FOUL (P1.T4) (A.Moyer-Gleich),Foul,Personal,1,0,158
+0012600030,238,PT09M20.00S,2,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Turnover: 5 Second Violation (T#13),Turnover,5 Second Violation,1,0,159
+0012600030,240,PT09M20.00S,2,1610612756,PHX,1631221,Gillespie,C. Gillespie,0,0,0,,0,,,0,v,SUB: Green FOR Gillespie,Substitution,,0,0,160
+0012600030,241,PT09M07.00S,2,1610612756,PHX,1630224,Green,J. Green,-15,14,2,Missed,1,,,0,v,MISS Green 2' Driving Layup,Missed Shot,Driving Layup Shot,1,2,161
+0012600030,242,PT09M07.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,Ighodaro REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,162
+0012600030,243,PT09M07.00S,2,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,,,0,h,Hield S.FOUL (P1.T1) (A.Moyer-Gleich),Foul,Shooting,1,0,163
+0012600030,245,PT09M07.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,MISS Ighodaro Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,164
+0012600030,246,PT09M07.00S,2,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Normal Rebound,0,0,165
+0012600030,247,PT09M07.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,MISS Ighodaro Free Throw 2 of 2,Free Throw,Free Throw 2 of 2,1,0,166
+0012600030,248,PT09M07.00S,2,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,167
+0012600030,249,PT09M01.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,Ighodaro Bad Pass Turnover (P2.T5),Turnover,Bad Pass,1,0,168
+0012600030,249,PT09M01.00S,2,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,,,0,h,Hield STEAL (1 STL),,,1,0,169
+0012600030,251,PT08M57.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,-2,-2,0,Made,1,35,48,83,h,Wilson Running Dunk (6 PTS) (Hield 1 AST),Made Shot,Running Dunk Shot,1,2,170
+0012600030,253,PT08M44.00S,2,1610612756,PHX,1630224,Green,J. Green,-26,259,26,Missed,1,,,0,v,MISS Green 26' 3PT Step Back Jump Shot,Missed Shot,Step Back Jump shot,1,3,171
+0012600030,254,PT08M44.00S,2,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Rebound,Rebound,Unknown,0,0,172
+0012600030,256,PT08M41.00S,2,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,,,0,h,SUB: Swain FOR Giddey,Substitution,,0,0,173
+0012600030,257,PT08M29.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,190,202,28,Missed,1,,,0,h,MISS Wilson 28' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,174
+0012600030,258,PT08M29.00S,2,1610612756,PHX,1628379,Kennard,L. Kennard,0,0,0,,0,,,0,v,Kennard REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,175
+0012600030,259,PT08M18.00S,2,1610612756,PHX,1628379,Kennard,L. Kennard,-11,-6,1,Made,1,35,50,85,v,Kennard 1' Driving Layup (4 PTS),Made Shot,Driving Layup Shot,1,2,176
+0012600030,260,PT08M02.00S,2,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,Swain Bad Pass Turnover (P2.T14),Turnover,Bad Pass,1,0,177
+0012600030,260,PT08M02.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,Ighodaro STEAL (1 STL),,,1,0,178
+0012600030,262,PT07M56.00S,2,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green Offensive Charge Foul (P1) (A.Moyer-Gleich),Foul,Offensive Charge,1,0,179
+0012600030,264,PT07M56.00S,2,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green Offensive Foul Turnover (P1.T6),Turnover,Offensive Foul Turnover,1,0,180
+0012600030,266,PT07M56.00S,2,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,SUB: Okoro FOR Buzelis,Substitution,,0,0,181
+0012600030,268,PT07M56.00S,2,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,SUB: Awaka FOR Smith,Substitution,,0,0,182
+0012600030,269,PT07M43.00S,2,1610612741,CHI,1627741,Hield,B. Hield,3,-2,0,Made,1,37,50,87,h,Hield Driving Layup (3 PTS),Made Shot,Driving Layup Shot,1,2,183
+0012600030,270,PT07M43.00S,2,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,,0,,,0,v,Fleming S.FOUL (P2.PN) (A.Moyer-Gleich),Foul,Shooting,1,0,184
+0012600030,272,PT07M43.00S,2,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,38,50,88,h,Hield Free Throw 1 of 1 (3 PTS),Free Throw,Free Throw 1 of 1,1,0,185
+0012600030,273,PT07M32.00S,2,1610612756,PHX,1642853,Fleming,R. Fleming,-240,-28,24,Missed,1,,,0,v,MISS Fleming 24' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,186
+0012600030,274,PT07M32.00S,2,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka REBOUND (Off:3 Def:2),Rebound,Unknown,1,0,187
+0012600030,276,PT07M23.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,-11,-4,1,Made,1,40,50,90,h,Wilson 1' Driving Reverse Layup (9 PTS) (Swain 1 AST),Made Shot,Driving Reverse Layup Shot,1,2,188
+0012600030,278,PT07M23.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,Ighodaro S.FOUL (P4.PN) (A.Moyer-Gleich),Foul,Shooting,1,0,189
+0012600030,283,PT07M23.00S,2,1610612756,PHX,1628379,Kennard,L. Kennard,0,0,0,,0,,,0,v,SUB: Booker FOR Kennard,Substitution,,0,0,190
+0012600030,284,PT07M23.00S,2,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,SUB: Brooks FOR Goodwin,Substitution,,0,0,191
+0012600030,280,PT07M23.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,41,50,91,h,Wilson Free Throw 1 of 1 (9 PTS),Free Throw,Free Throw 1 of 1,1,0,192
+0012600030,285,PT07M12.00S,2,1610612756,PHX,1626164,Booker,D. Booker,103,147,18,Made,1,41,52,93,v,Booker 18' Pullup Jump Shot (4 PTS) (Ighodaro 2 AST),Made Shot,Pullup Jump shot,1,2,193
+0012600030,287,PT06M54.00S,2,1610612741,CHI,1627741,Hield,B. Hield,234,95,25,Missed,1,,,0,h,MISS Hield 25' 3PT Step Back Jump Shot,Missed Shot,Step Back Jump shot,1,3,194
+0012600030,287,PT06M54.00S,2,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green BLOCK (1 BLK),,,1,3,195
+0012600030,289,PT06M54.00S,2,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,196
+0012600030,290,PT06M32.00S,2,1610612756,PHX,1630224,Green,J. Green,-176,188,26,Missed,1,,,0,v,MISS Green 26' 3PT Step Back Jump Shot,Missed Shot,Step Back Jump shot,1,3,197
+0012600030,291,PT06M32.00S,2,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,198
+0012600030,292,PT06M30.00S,2,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,Swain L.B.FOUL (P1.T2) (A.Moyer-Gleich),Foul,Loose Ball,1,0,199
+0012600030,294,PT06M22.00S,2,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka S.FOUL (P4.T3) (S.Foster),Foul,Shooting,1,0,200
+0012600030,296,PT06M22.00S,2,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,41,53,94,v,Green Free Throw 1 of 2 (7 PTS),Free Throw,Free Throw 1 of 2,1,0,201
+0012600030,299,PT06M22.00S,2,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,SUB: Miller FOR Awaka,Substitution,,0,0,202
+0012600030,297,PT06M22.00S,2,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,41,54,95,v,Green Free Throw 2 of 2 (8 PTS),Free Throw,Free Throw 2 of 2,1,0,203
+0012600030,300,PT06M06.00S,2,1610612741,CHI,1630171,Okoro,I. Okoro,12,-2,1,Made,1,43,54,97,h,Okoro 1' Driving Layup (2 PTS) (Wilson 1 AST),Made Shot,Driving Layup Shot,1,2,204
+0012600030,301,PT05M59.00S,2,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,Swain S.FOUL (P2.T4) (A.Moyer-Gleich),Foul,Shooting,1,0,205
+0012600030,307,PT05M59.00S,2,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,SUB: Maluach FOR Ighodaro,Substitution,,0,0,206
+0012600030,304,PT05M59.00S,2,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,43,55,98,v,Booker Free Throw 1 of 2 (5 PTS),Free Throw,Free Throw 1 of 2,1,0,207
+0012600030,305,PT05M59.00S,2,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,43,56,99,v,Booker Free Throw 2 of 2 (6 PTS),Free Throw,Free Throw 2 of 2,1,0,208
+0012600030,308,PT05M43.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,-102,229,25,Missed,1,,,0,h,MISS Wilson 25' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,209
+0012600030,309,PT05M43.00S,2,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,210
+0012600030,310,PT05M33.00S,2,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks Bad Pass Turnover (P1.T7),Turnover,Bad Pass,1,0,211
+0012600030,310,PT05M33.00S,2,1610612741,CHI,1631159,Miller,L. Miller,0,0,0,,0,,,0,h,Miller STEAL (1 STL),,,1,0,212
+0012600030,312,PT05M29.00S,2,1610612741,CHI,1643517,Swain,D. Swain,10,-4,1,Made,1,45,56,101,h,Swain 1' Running Dunk (4 PTS) (Miller 1 AST),Made Shot,Running Dunk Shot,1,2,213
+0012600030,314,PT05M06.00S,2,1610612756,PHX,1630224,Green,J. Green,10,16,2,Missed,1,,,0,v,MISS Green 2' Driving Layup,Missed Shot,Driving Layup Shot,1,2,214
+0012600030,315,PT05M06.00S,2,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,,0,,,0,v,Fleming REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,215
+0012600030,316,PT05M01.00S,2,1610612756,PHX,1642853,Fleming,R. Fleming,7,1,1,Made,1,45,58,103,v,Fleming 1' Putback Layup (2 PTS),Made Shot,Putback Layup Shot,1,2,216
+0012600030,317,PT04M53.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,122,95,15,Missed,1,,,0,h,MISS Wilson 15' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,217
+0012600030,318,PT04M53.00S,2,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Rebound,Rebound,Unknown,0,0,218
+0012600030,319,PT04M53.00S,2,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,,,0,v,Booker L.B.FOUL (P2.PN) (J.Schroeder),Foul,Loose Ball,1,0,219
+0012600030,321,PT04M53.00S,2,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,46,58,104,h,Hield Free Throw 1 of 2 (4 PTS),Free Throw,Free Throw 1 of 2,1,0,220
+0012600030,322,PT04M53.00S,2,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,47,58,105,h,Hield Free Throw 2 of 2 (5 PTS),Free Throw,Free Throw 2 of 2,1,0,221
+0012600030,323,PT04M36.00S,2,1610612756,PHX,1626164,Booker,D. Booker,-36,270,27,Missed,1,,,0,v,MISS Booker 27' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,222
+0012600030,324,PT04M36.00S,2,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,223
+0012600030,325,PT04M34.00S,2,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,Swain L.B.FOUL (P3.PN) (A.Moyer-Gleich),Foul,Loose Ball,1,0,224
+0012600030,327,PT04M34.00S,2,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,47,59,106,v,Maluach Free Throw 1 of 2 (4 PTS),Free Throw,Free Throw 1 of 2,1,0,225
+0012600030,330,PT04M34.00S,2,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,SUB: Giddey FOR Swain,Substitution,,0,0,226
+0012600030,328,PT04M34.00S,2,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,MISS Maluach Free Throw 2 of 2,Free Throw,Free Throw 2 of 2,1,0,227
+0012600030,331,PT04M34.00S,2,1610612741,CHI,1631159,Miller,L. Miller,0,0,0,,0,,,0,h,Miller REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,228
+0012600030,332,PT04M24.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,36,66,8,Missed,1,,,0,h,MISS Wilson 8' Driving Floating Jump Shot,Missed Shot,Driving Floating Jump Shot,1,2,229
+0012600030,333,PT04M24.00S,2,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,Maluach REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,230
+0012600030,334,PT04M17.00S,2,1610612756,PHX,1630224,Green,J. Green,82,241,25,Missed,1,,,0,v,MISS Green 25' 3PT Running Jump Shot,Missed Shot,Running Jump Shot,1,3,231
+0012600030,335,PT04M17.00S,2,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Rebound,Rebound,Unknown,0,0,232
+0012600030,336,PT04M15.00S,2,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,Maluach L.B.FOUL (P1.PN) (S.Foster),Foul,Loose Ball,1,0,233
+0012600030,338,PT04M15.00S,2,1610612741,CHI,1631159,Miller,L. Miller,0,0,0,,0,48,59,107,h,Miller Free Throw 1 of 2 (1 PTS),Free Throw,Free Throw 1 of 2,1,0,234
+0012600030,342,PT04M15.00S,2,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,SUB: Buzelis FOR Wilson,Substitution,,0,0,235
+0012600030,343,PT04M15.00S,2,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,,,0,h,SUB: Powell FOR Hield,Substitution,,0,0,236
+0012600030,339,PT04M15.00S,2,1610612741,CHI,1631159,Miller,L. Miller,0,0,0,,0,49,59,108,h,Miller Free Throw 2 of 2 (2 PTS),Free Throw,Free Throw 2 of 2,1,0,237
+0012600030,344,PT04M03.00S,2,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,,,0,v,Booker Offensive Charge Foul (P3) (S.Foster),Foul,Offensive Charge,1,0,238
+0012600030,346,PT04M03.00S,2,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,,,0,v,Booker Offensive Foul Turnover (P2.T8),Turnover,Offensive Foul Turnover,1,0,239
+0012600030,348,PT04M03.00S,2,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,,0,,,0,v,SUB: Dunn FOR Fleming,Substitution,,0,0,240
+0012600030,349,PT03M44.00S,2,1610612741,CHI,1631159,Miller,L. Miller,3,0,0,Made,1,51,59,110,h,Miller Reverse Layup (4 PTS) (Powell 1 AST),Made Shot,Reverse Layup Shot,1,2,241
+0012600030,351,PT03M25.00S,2,1610612756,PHX,1628415,Brooks,D. Brooks,130,231,27,Missed,1,,,0,v,MISS Brooks 27' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,242
+0012600030,352,PT03M25.00S,2,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Rebound,Rebound,Unknown,0,0,243
+0012600030,366,PT03M09.00S,2,1610612741,CHI,1631159,Miller,L. Miller,-231,-24,0,Missed,1,,,0,h,MISS Miller 3PT Jump Shot,Missed Shot,Jump Shot,1,3,244
+0012600030,367,PT03M09.00S,2,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,245
+0012600030,368,PT02M52.00S,2,1610612756,PHX,1630224,Green,J. Green,8,16,2,Missed,1,,,0,v,MISS Green 2' Driving Layup,Missed Shot,Driving Layup Shot,1,2,246
+0012600030,368,PT02M52.00S,2,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,,,0,h,Giddey BLOCK (1 BLK),,,1,2,247
+0012600030,370,PT02M52.00S,2,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,248
+0012600030,373,PT02M52.00S,2,1610612741,CHI,1630171,Okoro,I. Okoro,0,0,0,,0,,,0,h,SUB: Smith FOR Okoro,Substitution,,0,0,249
+0012600030,374,PT02M51.00S,2,1610612756,PHX,1626164,Booker,D. Booker,-169,192,26,Missed,1,,,0,v,MISS Booker 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,250
+0012600030,375,PT02M51.00S,2,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,Buzelis REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,251
+0012600030,376,PT02M43.00S,2,1610612741,CHI,1630188,Smith,J. Smith,211,170,27,Missed,1,,,0,h,MISS Smith 27' 3PT Running Jump Shot,Missed Shot,Running Jump Shot,1,3,252
+0012600030,377,PT02M43.00S,2,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,253
+0012600030,378,PT02M29.00S,2,1610612756,PHX,1630224,Green,J. Green,-12,8,1,Made,1,51,61,112,v,Green 1' Driving Layup (10 PTS),Made Shot,Driving Layup Shot,1,2,254
+0012600030,379,PT02M12.00S,2,1610612741,CHI,1641824,Buzelis,M. Buzelis,-100,84,13,Missed,1,,,0,h,MISS Buzelis 13' Jump Shot,Missed Shot,Jump Shot,1,2,255
+0012600030,380,PT02M12.00S,2,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,Maluach REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,256
+0012600030,381,PT02M08.00S,2,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,Maluach Bad Pass Turnover (P1.T9),Turnover,Bad Pass,1,0,257
+0012600030,381,PT02M08.00S,2,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith STEAL (2 STL),,,1,0,258
+0012600030,383,PT02M05.00S,2,1610612741,CHI,1641824,Buzelis,M. Buzelis,11,2,1,Made,1,53,61,114,h,Buzelis 1' Layup (10 PTS) (Smith 1 AST),Made Shot,Layup Shot,1,2,259
+0012600030,385,PT01M49.00S,2,1610612756,PHX,1626164,Booker,D. Booker,-19,11,2,Missed,1,,,0,v,MISS Booker 2' Driving Layup,Missed Shot,Driving Layup Shot,1,2,260
+0012600030,385,PT01M49.00S,2,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,Buzelis BLOCK (1 BLK),,,1,2,261
+0012600030,386,PT01M49.00S,2,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith REBOUND (Off:2 Def:3),Rebound,Unknown,1,0,262
+0012600030,387,PT01M44.00S,2,1610612741,CHI,1630581,Giddey,J. Giddey,173,199,26,Missed,1,,,0,h,MISS Giddey 26' 3PT Running Jump Shot,Missed Shot,Running Jump Shot,1,3,263
+0012600030,388,PT01M44.00S,2,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,Maluach REBOUND (Off:0 Def:3),Rebound,Unknown,1,0,264
+0012600030,390,PT01M36.00S,2,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks Offensive Charge Foul (P3) (S.Foster),Foul,Offensive Charge,1,0,265
+0012600030,392,PT01M36.00S,2,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks Offensive Foul Turnover (P2.T10),Turnover,Offensive Foul Turnover,1,0,266
+0012600030,394,PT01M36.00S,2,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,SUB: Gillespie FOR Green,Substitution,,0,0,267
+0012600030,395,PT01M22.00S,2,1610612741,CHI,1631159,Miller,L. Miller,-163,198,26,Made,1,56,61,117,h,Miller 26' 3PT Jump Shot (7 PTS) (Giddey 4 AST),Made Shot,Jump Shot,1,3,268
+0012600030,397,PT01M13.00S,2,1610612741,CHI,1626181,Powell,N. Powell,0,0,0,,0,,,0,h,Powell P.FOUL (P1.PN) (J.Schroeder),Foul,Personal,1,0,269
+0012600030,399,PT01M13.00S,2,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,,,0,v,MISS Booker Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,270
+0012600030,400,PT01M13.00S,2,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Normal Rebound,1,0,271
+0012600030,401,PT01M13.00S,2,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,56,62,118,v,Booker Free Throw 2 of 2 (7 PTS),Free Throw,Free Throw 2 of 2,0,0,272
+0012600030,402,PT01M04.00S,2,1610612741,CHI,1626181,Powell,N. Powell,184,175,25,Made,1,59,62,121,h,Powell 25' 3PT Jump Shot (11 PTS) (Giddey 5 AST),Made Shot,Jump Shot,1,3,273
+0012600030,404,PT00M55.10S,2,1610612756,PHX,1631221,Gillespie,C. Gillespie,102,226,25,Missed,1,,,0,v,MISS Gillespie 25' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,274
+0012600030,405,PT00M55.10S,2,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,Buzelis REBOUND (Off:0 Def:3),Rebound,Unknown,1,0,275
+0012600030,406,PT00M45.10S,2,1610612741,CHI,1641824,Buzelis,M. Buzelis,-104,234,26,Missed,1,,,0,h,MISS Buzelis 26' 3PT Running Pull-Up Jump Shot,Missed Shot,Running Pull-Up Jump Shot,1,3,276
+0012600030,407,PT00M45.10S,2,1610612756,PHX,1631221,Gillespie,C. Gillespie,0,0,0,,0,,,0,v,Gillespie REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,277
+0012600030,408,PT00M41.80S,2,1610612756,PHX,1628415,Brooks,D. Brooks,4,10,1,Made,1,59,64,123,v,Brooks 1' Running Dunk (13 PTS) (Gillespie 2 AST),Made Shot,Running Dunk Shot,1,2,278
+0012600030,410,PT00M31.80S,2,1610612741,CHI,1626181,Powell,N. Powell,-94,235,25,Made,1,62,64,126,h,Powell 25' 3PT Jump Shot (14 PTS) (Buzelis 1 AST),Made Shot,Jump Shot,1,3,279
+0012600030,412,PT00M13.90S,2,1610612756,PHX,1626164,Booker,D. Booker,226,-3,0,Missed,1,,,0,v,MISS Booker 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,280
+0012600030,413,PT00M13.90S,2,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,281
+0012600030,414,PT00M01.90S,2,1610612756,PHX,1626164,Booker,D. Booker,-135,221,26,Missed,1,,,0,v,MISS Booker 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,282
+0012600030,415,PT00M01.90S,2,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,283
+0012600030,416,PT00M00.00S,2,1610612756,PHX,1642346,Dunn,R. Dunn,77,18,8,Missed,1,,,0,v,MISS Dunn 8' Jump Shot,Missed Shot,Jump Shot,1,2,284
+0012600030,417,PT00M00.00S,2,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,285
+0012600030,418,PT00M00.00S,2,0,,0,,,0,0,0,,0,62,64,126,,End of 2nd Period (9:18 PM EST),period,end,1,0,286
+0012600030,429,PT12M00.00S,3,0,,0,,,0,0,0,,0,71,79,150,,Start of 3rd Period (10:10 PM EST),period,start,1,0,287
+0012600030,430,PT11M50.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,13,47,5,Made,1,62,66,128,v,Brooks 5' Turnaround Jump Shot (22 PTS) (Booker 1 AST),Made Shot,Turnaround Jump Shot,1,2,288
+0012600030,432,PT11M39.00S,3,1610612741,CHI,1643410,Wilson,C. Wilson,27,86,9,Missed,1,,,0,h,MISS Wilson 9' Jump Shot,Missed Shot,Jump Shot,1,2,289
+0012600030,433,PT11M39.00S,3,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green REBOUND (Off:1 Def:3),Rebound,Unknown,1,0,290
+0012600030,434,PT11M24.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,8,-2,1,Made,1,62,68,130,v,Brooks 1' Driving Dunk (22 PTS) (Green 2 AST),Made Shot,Driving Dunk Shot,1,2,291
+0012600030,436,PT11M01.00S,3,1610612741,CHI,1630581,Giddey,J. Giddey,16,11,2,Missed,1,,,0,h,MISS Giddey 2' Cutting Layup Shot,Missed Shot,Cutting Layup Shot,1,2,292
+0012600030,437,PT11M01.00S,3,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green REBOUND (Off:1 Def:3),Rebound,Unknown,1,0,293
+0012600030,438,PT10M53.00S,3,1610612756,PHX,1630224,Green,J. Green,11,114,11,Made,1,62,70,132,v,Green 11' Turnaround Jump Shot (12 PTS),Made Shot,Turnaround Jump Shot,1,2,294
+0012600030,439,PT10M29.00S,3,1610612741,CHI,1641824,Buzelis,M. Buzelis,-146,211,26,Missed,1,,,0,h,MISS Buzelis 26' 3PT Step Back Jump Shot,Missed Shot,Step Back Jump shot,1,3,295
+0012600030,440,PT10M29.00S,3,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith REBOUND (Off:5 Def:3),Rebound,Unknown,1,0,296
+0012600030,441,PT10M24.00S,3,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith Lost Ball Turnover (P3.T16),Turnover,Lost Ball,1,0,297
+0012600030,441,PT10M24.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks STEAL (1 STL),,,1,0,298
+0012600030,443,PT10M21.00S,3,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,,,0,h,Giddey S.FOUL (P2.PN) (A.Moyer-Gleich),Foul,Shooting,1,0,299
+0012600030,445,PT10M21.00S,3,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Timeout: Regular (Full 3 Short 0),Timeout,Regular,0,0,300
+0012600030,446,PT10M21.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,62,71,133,v,Brooks Free Throw 1 of 2 (18 PTS),Free Throw,Free Throw 1 of 2,1,0,301
+0012600030,447,PT10M21.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,62,72,134,v,Brooks Free Throw 2 of 2 (19 PTS),Free Throw,Free Throw 2 of 2,1,0,302
+0012600030,448,PT10M06.00S,3,1610612741,CHI,1630581,Giddey,J. Giddey,-121,229,26,Made,1,65,72,137,h,Giddey 26' 3PT Pullup Jump Shot (5 PTS),Made Shot,Pullup Jump shot,1,3,303
+0012600030,449,PT09M57.00S,3,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green Bad Pass Turnover (P3.T13),Turnover,Bad Pass,1,0,304
+0012600030,449,PT09M57.00S,3,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,Buzelis STEAL (2 STL),,,1,0,305
+0012600030,451,PT09M51.00S,3,1610612741,CHI,1641824,Buzelis,M. Buzelis,-233,-10,0,Missed,1,,,0,h,MISS Buzelis 3PT Running Pull-Up Jump Shot,Missed Shot,Running Pull-Up Jump Shot,1,3,306
+0012600030,452,PT09M51.00S,3,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith REBOUND (Off:5 Def:3),Rebound,Unknown,1,0,307
+0012600030,453,PT09M48.00S,3,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,Missed,1,,,0,h,MISS Smith Tip Layup Shot,Missed Shot,Tip Layup Shot,1,2,308
+0012600030,454,PT09M48.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks REBOUND (Off:0 Def:4),Rebound,Unknown,1,0,309
+0012600030,455,PT09M41.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks Bad Pass Turnover (P3.T13),Turnover,Bad Pass,1,0,310
+0012600030,455,PT09M41.00S,3,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,Wilson STEAL (1 STL),,,1,0,311
+0012600030,457,PT09M26.00S,3,1610612741,CHI,1641824,Buzelis,M. Buzelis,-6,37,4,Made,1,67,72,139,h,Buzelis 4' Driving Hook Shot (14 PTS) (Okoro 2 AST),Made Shot,Driving Hook Shot,1,2,312
+0012600030,459,PT09M04.00S,3,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,Wilson S.FOUL (P5.PN) (S.Foster),Foul,Shooting,1,0,313
+0012600030,461,PT09M04.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,67,73,140,v,Brooks Free Throw 1 of 2 (20 PTS),Free Throw,Free Throw 1 of 2,1,0,314
+0012600030,462,PT09M04.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,MISS Brooks Free Throw 2 of 2,Free Throw,Free Throw 2 of 2,1,0,315
+0012600030,463,PT09M04.00S,3,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,Wilson REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,316
+0012600030,464,PT08M52.00S,3,1610612741,CHI,1641824,Buzelis,M. Buzelis,-1,11,1,Made,1,69,73,142,h,Buzelis 1' Driving Dunk (14 PTS) (Giddey 6 AST),Made Shot,Driving Dunk Shot,1,2,317
+0012600030,466,PT08M52.00S,3,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Timeout: Regular (Reg.3 Short 0),Timeout,Regular,0,0,318
+0012600030,468,PT08M52.00S,3,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,,0,,,0,v,SUB: Dunn FOR Fleming,Substitution,,0,0,319
+0012600030,469,PT08M42.00S,3,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,Wilson P.FOUL (P5.PN) (S.Foster),Foul,Personal,1,0,320
+0012600030,471,PT08M35.00S,3,1610612756,PHX,1626164,Booker,D. Booker,177,186,26,Missed,1,,,0,v,MISS Booker 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,321
+0012600030,472,PT08M35.00S,3,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn REBOUND (Off:2 Def:1),Rebound,Unknown,1,0,322
+0012600030,473,PT08M24.00S,3,1610612756,PHX,1626164,Booker,D. Booker,10,56,6,Made,1,69,75,144,v,Booker 6' Pullup Jump Shot (11 PTS),Made Shot,Pullup Jump shot,1,2,323
+0012600030,474,PT08M01.00S,3,1610612741,CHI,1630581,Giddey,J. Giddey,-3,18,2,Missed,1,,,0,h,MISS Giddey 2' Driving Layup,Missed Shot,Driving Layup Shot,1,2,324
+0012600030,475,PT08M01.00S,3,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,Smith REBOUND (Off:5 Def:3),Rebound,Unknown,1,0,325
+0012600030,476,PT07M56.00S,3,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,Made,1,71,75,146,h,Smith Putback Layup (11 PTS),Made Shot,Putback Layup Shot,1,2,326
+0012600030,477,PT07M51.00S,3,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,Wilson P.FOUL (P5.PN) (S.Foster),Foul,Personal,1,0,327
+0012600030,480,PT07M51.00S,3,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,SUB: Essengue FOR Wilson,Substitution,,0,0,328
+0012600030,481,PT07M44.00S,3,1610612741,CHI,1630171,Okoro,I. Okoro,0,0,0,,0,,,0,h,Okoro S.FOUL (P2.PN) (S.Foster),Foul,Shooting,1,0,329
+0012600030,484,PT07M44.00S,3,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Violation: Delay of game Violation,Violation,Delay Of Game,0,0,330
+0012600030,483,PT07M44.00S,3,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,71,76,147,v,Booker Free Throw 1 of 2 (10 PTS),Free Throw,Free Throw 1 of 2,1,0,331
+0012600030,485,PT07M44.00S,3,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,71,77,148,v,Booker Free Throw 2 of 2 (11 PTS),Free Throw,Free Throw 2 of 2,1,0,332
+0012600030,486,PT07M30.00S,3,1610612741,CHI,1641824,Buzelis,M. Buzelis,-241,3,24,Missed,1,,,0,h,MISS Buzelis 24' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,333
+0012600030,487,PT07M30.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks REBOUND (Off:0 Def:4),Rebound,Unknown,1,0,334
+0012600030,488,PT07M17.00S,3,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green Bad Pass Turnover (P3.T13),Turnover,Bad Pass,1,0,335
+0012600030,488,PT07M17.00S,3,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,Buzelis STEAL (2 STL),,,1,0,336
+0012600030,490,PT07M16.00S,3,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green P.FOUL (P2.T1) (A.Moyer-Gleich),Foul,Personal,1,0,337
+0012600030,492,PT07M06.00S,3,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,,,0,h,Giddey Bad Pass Turnover (P2.T16),Turnover,Bad Pass,1,0,338
+0012600030,492,PT07M06.00S,3,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green STEAL (2 STL),,,1,0,339
+0012600030,494,PT07M00.00S,3,1610612741,CHI,1642855,Essengue,N. Essengue,0,0,0,,0,,,0,h,Essengue P.FOUL (P1.PN) (S.Foster),Foul,Personal,1,0,340
+0012600030,496,PT07M00.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,71,78,149,v,Brooks Free Throw 1 of 2 (21 PTS),Free Throw,Free Throw 1 of 2,1,0,341
+0012600030,497,PT07M00.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,71,79,150,v,Brooks Free Throw 2 of 2 (22 PTS),Free Throw,Free Throw 2 of 2,1,0,342
+0012600030,498,PT06M42.00S,3,1610612741,CHI,1630188,Smith,J. Smith,-6,5,1,Made,1,73,79,152,h,Smith 1' Dunk (13 PTS) (Giddey 7 AST),Made Shot,Dunk Shot,1,2,343
+0012600030,500,PT06M32.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks Offensive Charge Foul (P5) (A.Moyer-Gleich),Foul,Offensive Charge,1,0,344
+0012600030,502,PT06M32.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks Offensive Foul Turnover (P5.T19),Turnover,Offensive Foul Turnover,1,0,345
+0012600030,503,PT06M16.00S,3,1610612741,CHI,1630581,Giddey,J. Giddey,57,55,8,Missed,1,,,0,h,MISS Giddey 8' Driving Floating Jump Shot,Missed Shot,Driving Floating Jump Shot,1,2,346
+0012600030,504,PT06M16.00S,3,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,Ighodaro REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,347
+0012600030,505,PT06M04.00S,3,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green Offensive Charge Foul (P3) (J.Schroeder),Foul,Offensive Charge,1,0,348
+0012600030,507,PT06M04.00S,3,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,Green Offensive Foul Turnover (P4.T19),Turnover,Offensive Foul Turnover,1,0,349
+0012600030,510,PT06M04.00S,3,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,SUB: Awaka FOR Buzelis,Substitution,,0,0,350
+0012600030,511,PT06M04.00S,3,1610612741,CHI,1630188,Smith,J. Smith,0,0,0,,0,,,0,h,SUB: Williams FOR Smith,Substitution,,0,0,351
+0012600030,514,PT06M04.00S,3,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,SUB: Goodwin FOR Dunn,Substitution,,0,0,352
+0012600030,515,PT06M04.00S,3,1610612756,PHX,1642345,Ighodaro,O. Ighodaro,0,0,0,,0,,,0,v,SUB: Maluach FOR Ighodaro,Substitution,,0,0,353
+0012600030,516,PT05M50.00S,3,1610612741,CHI,1630171,Okoro,I. Okoro,-158,209,26,Missed,1,,,0,h,MISS Okoro 26' 3PT Step Back Jump Shot,Missed Shot,Step Back Jump shot,1,3,354
+0012600030,517,PT05M50.00S,3,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka REBOUND (Off:5 Def:3),Rebound,Unknown,1,0,355
+0012600030,518,PT05M43.00S,3,1610612741,CHI,1630581,Giddey,J. Giddey,219,141,26,Missed,1,,,0,h,MISS Giddey 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,356
+0012600030,519,PT05M43.00S,3,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka REBOUND (Off:5 Def:3),Rebound,Unknown,1,0,357
+0012600030,520,PT05M39.00S,3,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,Made,1,75,79,154,h,Awaka Tip Layup Shot (5 PTS),Made Shot,Tip Layup Shot,1,2,358
+0012600030,521,PT05M27.00S,3,1610612756,PHX,1626164,Booker,D. Booker,-37,266,27,Missed,1,,,0,v,MISS Booker 27' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,359
+0012600030,522,PT05M27.00S,3,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka REBOUND (Off:5 Def:3),Rebound,Unknown,1,0,360
+0012600030,523,PT05M18.00S,3,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin S.FOUL (P2.T4) (J.Schroeder),Foul,Shooting,1,0,361
+0012600030,525,PT05M18.00S,3,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,76,79,155,h,Giddey Free Throw 1 of 2 (6 PTS),Free Throw,Free Throw 1 of 2,1,0,362
+0012600030,528,PT05M18.00S,3,1610612741,CHI,1630171,Okoro,I. Okoro,0,0,0,,0,,,0,h,SUB: Hield FOR Okoro,Substitution,,0,0,363
+0012600030,526,PT05M18.00S,3,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,77,79,156,h,Giddey Free Throw 2 of 2 (7 PTS),Free Throw,Free Throw 2 of 2,1,0,364
+0012600030,529,PT05M10.00S,3,1610612741,CHI,1642855,Essengue,N. Essengue,0,0,0,,0,,,0,h,Essengue P.FOUL (P3.PN) (A.Moyer-Gleich),Foul,Personal,1,0,365
+0012600030,531,PT05M10.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,77,80,157,v,Brooks Free Throw 1 of 2 (23 PTS),Free Throw,Free Throw 1 of 2,1,0,366
+0012600030,534,PT05M10.00S,3,1610612741,CHI,1630581,Giddey,J. Giddey,0,0,0,,0,,,0,h,SUB: Swain FOR Giddey,Substitution,,0,0,367
+0012600030,532,PT05M10.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,77,81,158,v,Brooks Free Throw 2 of 2 (24 PTS),Free Throw,Free Throw 2 of 2,1,0,368
+0012600030,535,PT04M57.00S,3,1610612741,CHI,1643517,Swain,D. Swain,100,110,15,Made,1,79,81,160,h,Swain 15' Jump Shot (6 PTS),Made Shot,Jump Shot,1,2,369
+0012600030,546,PT04M57.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks OFF.Foul (P5) (A.Moyer-Gleich),Foul,Offensive,1,0,370
+0012600030,548,PT04M57.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,Brooks Offensive Foul Turnover (P5.T19),Turnover,Offensive Foul Turnover,0,0,371
+0012600030,540,PT04M55.00S,3,1610612756,PHX,1628415,Brooks,D. Brooks,0,0,0,,0,,,0,v,SUB: Gillespie FOR Brooks,Substitution,,0,0,372
+0012600030,541,PT04M55.00S,3,1610612756,PHX,1630224,Green,J. Green,0,0,0,,0,,,0,v,SUB: Kennard FOR Green,Substitution,,0,0,373
+0012600030,542,PT04M55.00S,3,1610612756,PHX,1626164,Booker,D. Booker,0,0,0,,0,,,0,v,SUB: Fleming FOR Booker,Substitution,,0,0,374
+0012600030,543,PT04M40.00S,3,1610612756,PHX,1631221,Gillespie,C. Gillespie,0,0,0,,0,,,0,v,Gillespie P.FOUL (P2.T4) (J.Schroeder),Foul,Personal,1,0,375
+0012600030,549,PT04M34.00S,3,1610612741,CHI,1642855,Essengue,N. Essengue,-237,-10,24,Missed,1,,,0,h,MISS Essengue 24' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,376
+0012600030,550,PT04M34.00S,3,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,Swain REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,377
+0012600030,551,PT04M27.00S,3,1610612741,CHI,1642855,Essengue,N. Essengue,10,16,2,Missed,1,,,0,h,MISS Essengue 2' Cutting Dunk Shot,Missed Shot,Cutting Dunk Shot,1,2,378
+0012600030,552,PT04M27.00S,3,1610612756,PHX,1631221,Gillespie,C. Gillespie,0,0,0,,0,,,0,v,Gillespie REBOUND (Off:1 Def:2),Rebound,Unknown,1,0,379
+0012600030,553,PT04M16.00S,3,1610612756,PHX,1630692,Goodwin,J. Goodwin,-105,-1,11,Missed,1,,,0,v,MISS Goodwin 11' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,380
+0012600030,554,PT04M16.00S,3,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,Maluach REBOUND (Off:1 Def:4),Rebound,Unknown,1,0,381
+0012600030,555,PT04M08.00S,3,1610612756,PHX,1628379,Kennard,L. Kennard,11,3,1,Made,1,79,83,162,v,Kennard 1' Driving Layup (8 PTS) (Maluach 3 AST),Made Shot,Driving Layup Shot,1,2,382
+0012600030,557,PT03M56.00S,3,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,Swain Lost Ball Turnover (P3.T18),Turnover,Lost Ball,1,0,383
+0012600030,557,PT03M56.00S,3,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin STEAL (6 STL),,,1,0,384
+0012600030,559,PT03M42.00S,3,1610612756,PHX,1628379,Kennard,L. Kennard,30,122,13,Missed,1,,,0,v,MISS Kennard 13' Fadeaway Jumper,Missed Shot,Fadeaway Jump Shot,1,2,385
+0012600030,560,PT03M42.00S,3,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,,,0,h,Hield REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,386
+0012600030,561,PT03M32.00S,3,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin S.FOUL (P2.T4) (S.Foster),Foul,Shooting,1,0,387
+0012600030,563,PT03M32.00S,3,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,MISS Awaka Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,388
+0012600030,564,PT03M32.00S,3,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Rebound,Rebound,Normal Rebound,0,0,389
+0012600030,565,PT03M32.00S,3,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,80,83,163,h,Awaka Free Throw 2 of 2 (3 PTS),Free Throw,Free Throw 2 of 2,1,0,390
+0012600030,566,PT03M21.00S,3,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,,,0,h,Hield P.FOUL (P3.PN) (S.Foster),Foul,Personal,1,0,391
+0012600030,568,PT03M21.00S,3,1610612756,PHX,1628379,Kennard,L. Kennard,0,0,0,,0,80,84,164,v,Kennard Free Throw 1 of 2 (7 PTS),Free Throw,Free Throw 1 of 2,1,0,392
+0012600030,569,PT03M21.00S,3,1610612756,PHX,1628379,Kennard,L. Kennard,0,0,0,,0,80,85,165,v,Kennard Free Throw 2 of 2 (8 PTS),Free Throw,Free Throw 2 of 2,1,0,393
+0012600030,570,PT02M57.00S,3,1610612741,CHI,1630172,Williams,P. Williams,-31,248,25,Made,1,83,85,168,h,Williams 25' 3PT Jump Shot (6 PTS) (Hield 3 AST),Made Shot,Jump Shot,1,3,394
+0012600030,572,PT02M43.00S,3,1610612756,PHX,1631221,Gillespie,C. Gillespie,-107,222,25,Made,1,83,88,171,v,Gillespie 25' 3PT Pullup Jump Shot (12 PTS) (Maluach 3 AST),Made Shot,Pullup Jump shot,1,3,395
+0012600030,574,PT02M29.00S,3,1610612741,CHI,1643591,Awaka,T. Awaka,0,6,1,Made,1,85,88,173,h,Awaka 1' Cutting Dunk Shot (5 PTS) (Essengue 1 AST),Made Shot,Cutting Dunk Shot,1,2,396
+0012600030,576,PT02M14.00S,3,1610612756,PHX,1631221,Gillespie,C. Gillespie,168,247,30,Missed,1,,,0,v,MISS Gillespie 30' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,397
+0012600030,577,PT02M14.00S,3,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,,,0,h,Hield REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,398
+0012600030,578,PT02M03.00S,3,1610612741,CHI,1642855,Essengue,N. Essengue,-145,239,28,Missed,1,,,0,h,MISS Essengue 28' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,399
+0012600030,579,PT02M03.00S,3,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,Maluach REBOUND (Off:1 Def:4),Rebound,Unknown,1,0,400
+0012600030,580,PT01M52.00S,3,1610612756,PHX,1642853,Fleming,R. Fleming,237,-21,24,Missed,1,,,0,v,MISS Fleming 24' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,401
+0012600030,581,PT01M52.00S,3,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,402
+0012600030,582,PT01M51.00S,3,1610612741,CHI,1642855,Essengue,N. Essengue,0,0,0,,0,,,0,h,Essengue L.B.FOUL (P3.PN) (J.Schroeder),Foul,Loose Ball,1,0,403
+0012600030,585,PT01M51.00S,3,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Timeout: Regular (Reg.4 Short 0),Timeout,Regular,0,0,404
+0012600030,600,PT01M51.00S,3,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,SUB: Miller FOR Awaka,Substitution,,0,0,405
+0012600030,586,PT01M51.00S,3,0,,0,,,0,0,0,,0,91,90,181,,Instant Replay3rd Period (10:10 PM EST),Instant Replay,Coach Challenge Overturn Ruling,0,0,406
+0012600030,584,PT01M51.00S,3,1610612756,PHX,1631221,Gillespie,C. Gillespie,0,0,0,,0,85,89,174,v,Gillespie Free Throw 1 of 2 (12 PTS),Free Throw,Free Throw 1 of 2,1,0,407
+0012600030,587,PT01M51.00S,3,1610612756,PHX,1631221,Gillespie,C. Gillespie,0,0,0,,0,,,0,v,MISS Gillespie Free Throw 2 of 2,Free Throw,Free Throw 2 of 2,1,0,408
+0012600030,588,PT01M51.00S,3,1610612756,PHX,1631221,Gillespie,C. Gillespie,0,0,0,,0,,,0,v,Gillespie REBOUND (Off:1 Def:2),Rebound,Unknown,1,0,409
+0012600030,589,PT01M44.00S,3,1610612756,PHX,1631221,Gillespie,C. Gillespie,0,0,0,,0,,,0,v,Gillespie Bad Pass Turnover (P2.T19),Turnover,Bad Pass,1,0,410
+0012600030,589,PT01M44.00S,3,1610612741,CHI,1631159,Miller,L. Miller,0,0,0,,0,,,0,h,Miller STEAL (2 STL),,,1,0,411
+0012600030,592,PT01M32.00S,3,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,,,0,h,Hield Bad Pass Turnover (P2.T18),Turnover,Bad Pass,1,0,412
+0012600030,592,PT01M32.00S,3,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin STEAL (6 STL),,,1,0,413
+0012600030,594,PT01M24.00S,3,1610612741,CHI,1627741,Hield,B. Hield,0,0,0,,0,,,0,h,Hield S.FOUL (P3.PN) (A.Moyer-Gleich),Foul,Shooting,1,0,414
+0012600030,596,PT01M24.00S,3,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,,0,,,0,v,MISS Fleming Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,415
+0012600030,597,PT01M24.00S,3,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Normal Rebound,0,0,416
+0012600030,598,PT01M24.00S,3,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,,0,85,90,175,v,Fleming Free Throw 2 of 2 (3 PTS),Free Throw,Free Throw 2 of 2,1,0,417
+0012600030,601,PT01M08.00S,3,1610612741,CHI,1627741,Hield,B. Hield,-169,201,26,Made,1,88,90,178,h,Hield 26' 3PT Pullup Jump Shot (8 PTS) (Miller 2 AST),Made Shot,Pullup Jump shot,1,3,418
+0012600030,603,PT00M38.80S,3,1610612756,PHX,1642863,Maluach,K. Maluach,-1,66,7,Missed,1,,,0,v,MISS Maluach 7' Jump Shot,Missed Shot,Jump Shot,1,2,419
+0012600030,604,PT00M38.80S,3,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,,0,,,0,v,Fleming REBOUND (Off:2 Def:0),Rebound,Unknown,1,0,420
+0012600030,605,PT00M38.80S,3,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,Missed,1,,,0,v,MISS Fleming Tip Layup Shot,Missed Shot,Tip Layup Shot,1,2,421
+0012600030,606,PT00M38.80S,3,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Rebound,Rebound,Unknown,0,0,422
+0012600030,608,PT00M30.00S,3,1610612741,CHI,1630172,Williams,P. Williams,237,-27,24,Made,1,91,90,181,h,Williams 24' 3PT Jump Shot (6 PTS) (Hield 3 AST),Made Shot,Jump Shot,1,3,423
+0012600030,610,PT00M26.40S,3,1610612756,PHX,1630692,Goodwin,J. Goodwin,0,0,0,,0,,,0,v,Goodwin Bad Pass Turnover (P2.T19),Turnover,Bad Pass,1,0,424
+0012600030,612,PT00M26.40S,3,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,SUB: Dunn FOR Maluach,Substitution,,0,0,425
+0012600030,613,PT00M26.40S,3,1610612756,PHX,1628379,Kennard,L. Kennard,0,0,0,,0,,,0,v,Kennard Violation:Kicked Ball (S.Foster),Violation,Kicked Ball,0,0,426
+0012600030,614,PT00M26.40S,3,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Timeout: Regular (Full 4 Short 0),Timeout,Regular,0,0,427
+0012600030,615,PT00M02.50S,3,1610612741,CHI,1627741,Hield,B. Hield,-104,61,12,Missed,1,,,0,h,MISS Hield 12' Jump Shot,Missed Shot,Jump Shot,1,2,428
+0012600030,616,PT00M02.50S,3,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn REBOUND (Off:2 Def:2),Rebound,Unknown,1,0,429
+0012600030,624,PT00M01.30S,3,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn Bad Pass Turnover (P1.T19),Turnover,Bad Pass,1,0,430
+0012600030,624,PT00M01.30S,3,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,Swain STEAL (1 STL),,,1,0,431
+0012600030,619,PT00M00.30S,3,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn S.FOUL (P2.PN) (S.Foster),Foul,Shooting,1,0,432
+0012600030,621,PT00M00.30S,3,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,92,90,182,h,Swain Free Throw 1 of 2 (7 PTS),Free Throw,Free Throw 1 of 2,1,0,433
+0012600030,622,PT00M00.30S,3,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,93,90,183,h,Swain Free Throw 2 of 2 (8 PTS),Free Throw,Free Throw 2 of 2,1,0,434
+0012600030,623,PT00M00.00S,3,0,,0,,,0,0,0,,0,93,90,183,,End of 3rd Period (10:11 PM EST),period,end,1,0,435
+0012600030,638,PT12M00.00S,4,0,,0,,,0,0,0,,0,93,90,183,,Start of 4th Period (10:14 PM EST),period,start,1,0,436
+0012600030,639,PT11M41.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,4,-5,1,Made,1,95,90,185,h,Awaka 1' Driving Layup (7 PTS) (Swain 2 AST),Made Shot,Driving Layup Shot,1,2,437
+0012600030,641,PT11M25.00S,4,1610612756,PHX,1642863,Maluach,K. Maluach,11,20,2,Made,1,95,92,187,v,Maluach 2' Layup (6 PTS) (Dunn 1 AST),Made Shot,Layup Shot,1,2,438
+0012600030,643,PT11M09.00S,4,1610612741,CHI,1643410,Wilson,C. Wilson,-150,6,15,Made,1,97,92,189,h,Wilson 15' Turnaround Jump Shot (11 PTS) (Swain 3 AST),Made Shot,Turnaround Jump Shot,1,2,439
+0012600030,645,PT10M52.00S,4,1610612756,PHX,1631123,Bouyea,J. Bouyea,12,-9,2,Made,1,97,94,191,v,Bouyea 2' Driving Finger Roll Layup (2 PTS) (Maluach 4 AST),Made Shot,Driving Finger Roll Layup Shot,1,2,440
+0012600030,646,PT10M40.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,-5,106,11,Missed,1,,,0,h,MISS Awaka 11' Floating Jump Shot,Missed Shot,Floating Jump shot,1,2,441
+0012600030,647,PT10M40.00S,4,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,,0,,,0,v,Fleming REBOUND (Off:2 Def:1),Rebound,Unknown,1,0,442
+0012600030,648,PT10M21.00S,4,1610612756,PHX,1630311,Spencer,P. Spencer,-31,9,3,Missed,1,,,0,v,MISS Spencer 3' Driving Layup,Missed Shot,Driving Layup Shot,1,2,443
+0012600030,648,PT10M21.00S,4,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,Buzelis BLOCK (2 BLK),,,1,2,444
+0012600030,650,PT10M21.00S,4,1610612741,CHI,1630172,Williams,P. Williams,0,0,0,,0,,,0,h,Williams REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,445
+0012600030,652,PT10M08.00S,4,1610612741,CHI,1630172,Williams,P. Williams,79,14,8,Missed,1,,,0,h,MISS Williams 8' Driving Layup,Missed Shot,Driving Layup Shot,1,2,446
+0012600030,654,PT10M08.00S,4,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,Maluach REBOUND (Off:1 Def:5),Rebound,Unknown,1,0,447
+0012600030,655,PT09M57.00S,4,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,Maluach Bad Pass Turnover (P2.T20),Turnover,Bad Pass,1,0,448
+0012600030,655,PT09M57.00S,4,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,Swain STEAL (2 STL),,,1,0,449
+0012600030,657,PT09M55.00S,4,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,,0,,,0,v,Fleming S.FOUL (P3.T1) (J.Schroeder),Foul,Shooting,1,0,450
+0012600030,659,PT09M55.00S,4,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,98,94,192,h,Swain Free Throw 1 of 2 (9 PTS),Free Throw,Free Throw 1 of 2,1,0,451
+0012600030,660,PT09M55.00S,4,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,99,94,193,h,Swain Free Throw 2 of 2 (10 PTS),Free Throw,Free Throw 2 of 2,1,0,452
+0012600030,661,PT09M43.00S,4,1610612756,PHX,1631123,Bouyea,J. Bouyea,-11,-7,1,Made,1,99,96,195,v,Bouyea 1' Driving Layup (4 PTS),Made Shot,Driving Layup Shot,1,2,453
+0012600030,662,PT09M28.00S,4,1610612741,CHI,1641824,Buzelis,M. Buzelis,-120,-13,12,Missed,1,,,0,h,MISS Buzelis 12' Fadeaway Jumper,Missed Shot,Fadeaway Jump Shot,1,2,454
+0012600030,663,PT09M28.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka REBOUND (Off:6 Def:3),Rebound,Unknown,1,0,455
+0012600030,664,PT09M22.00S,4,1610612741,CHI,1643410,Wilson,C. Wilson,243,-11,24,Missed,1,,,0,h,MISS Wilson 24' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,456
+0012600030,665,PT09M22.00S,4,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,457
+0012600030,666,PT09M22.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka L.B.FOUL (P5.T1) (S.Foster),Foul,Loose Ball,1,0,458
+0012600030,674,PT09M08.00S,4,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn Lost Ball Turnover (P2.T21),Turnover,Lost Ball,1,0,459
+0012600030,674,PT09M08.00S,4,1610612741,CHI,1630172,Williams,P. Williams,0,0,0,,0,,,0,h,Williams STEAL (1 STL),,,1,0,460
+0012600030,670,PT09M08.00S,4,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Timeout: Regular (Full 5 Short 0),Timeout,Regular,0,0,461
+0012600030,671,PT09M08.00S,4,0,,0,,,0,0,0,,0,99,96,195,,Instant Replay4th Period (10:18 PM EST),Instant Replay,Coach Challenge Overturn Ruling,0,0,462
+0012600030,672,PT08M54.00S,4,1610612741,CHI,1643410,Wilson,C. Wilson,-11,11,2,Made,1,101,96,197,h,Wilson 2' Driving Layup (13 PTS) (Swain 4 AST),Made Shot,Driving Layup Shot,1,2,463
+0012600030,676,PT08M30.00S,4,1610612756,PHX,1630311,Spencer,P. Spencer,158,202,26,Missed,1,,,0,v,MISS Spencer 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,464
+0012600030,677,PT08M30.00S,4,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,Swain REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,465
+0012600030,678,PT08M19.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,-8,156,16,Made,1,103,96,199,h,Awaka 16' Turnaround Hook Shot (9 PTS) (Swain 5 AST),Made Shot,Turnaround Hook Shot,1,2,466
+0012600030,680,PT07M58.00S,4,1610612756,PHX,1631123,Bouyea,J. Bouyea,236,-18,24,Made,1,103,99,202,v,Bouyea 24' 3PT Jump Shot (7 PTS) (Spencer 1 AST),Made Shot,Jump Shot,1,3,467
+0012600030,683,PT07M43.00S,4,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,Buzelis Lost Ball Turnover (P1.T19),Turnover,Lost Ball,1,0,468
+0012600030,683,PT07M43.00S,4,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn STEAL (1 STL),,,1,0,469
+0012600030,685,PT07M42.00S,4,1610612756,PHX,1642346,Dunn,R. Dunn,7,-8,1,Made,1,103,101,204,v,Dunn 1' Layup (2 PTS),Made Shot,Layup Shot,1,2,470
+0012600030,686,PT07M42.00S,4,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,Buzelis Violation:Defensive Goaltending (A.Moyer-Gleich),Violation,Defensive Goaltending,0,0,471
+0012600030,687,PT07M29.00S,4,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,Wilson Traveling Turnover (P2.T20),Turnover,Traveling,1,0,472
+0012600030,690,PT07M29.00S,4,1610612741,CHI,1641824,Buzelis,M. Buzelis,0,0,0,,0,,,0,h,SUB: Peterson FOR Buzelis,Substitution,,0,0,473
+0012600030,691,PT07M29.00S,4,1610612741,CHI,1643517,Swain,D. Swain,0,0,0,,0,,,0,h,SUB: Boston FOR Swain,Substitution,,0,0,474
+0012600030,693,PT07M29.00S,4,1610612756,PHX,1642853,Fleming,R. Fleming,0,0,0,,0,,,0,v,SUB: Highsmith FOR Fleming,Substitution,,0,0,475
+0012600030,694,PT07M10.00S,4,1610612756,PHX,1629312,Highsmith,H. Highsmith,0,0,0,,0,,,0,v,Highsmith Out of Bounds - Bad Pass Turnover Turnover (P1.T22),Turnover,Out of Bounds - Bad Pass Turnover,1,0,476
+0012600030,695,PT06M57.00S,4,1610612741,CHI,1641809,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson Offensive Charge Foul (P1) (A.Moyer-Gleich),Foul,Offensive Charge,1,0,477
+0012600030,697,PT06M57.00S,4,1610612741,CHI,1641809,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson Offensive Foul Turnover (P1.T21),Turnover,Offensive Foul Turnover,1,0,478
+0012600030,699,PT06M57.00S,4,1610612741,CHI,1630172,Williams,P. Williams,0,0,0,,0,,,0,h,SUB: Essengue FOR Williams,Substitution,,0,0,479
+0012600030,700,PT06M41.00S,4,1610612756,PHX,1642346,Dunn,R. Dunn,240,13,24,Missed,1,,,0,v,MISS Dunn 24' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,480
+0012600030,701,PT06M41.00S,4,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,481
+0012600030,702,PT06M41.00S,4,1610612741,CHI,1630527,Boston,B. Boston,0,0,0,,0,,,0,h,Boston L.B.FOUL (P1.T2) (A.Moyer-Gleich),Foul,Loose Ball,1,0,482
+0012600030,704,PT06M30.00S,4,1610612756,PHX,1631123,Bouyea,J. Bouyea,0,0,0,,0,,,0,v,Bouyea Out of Bounds - Bad Pass Turnover Turnover (P1.T23),Turnover,Out of Bounds - Bad Pass Turnover,1,0,483
+0012600030,706,PT06M07.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,-11,247,25,Made,1,106,101,207,h,Awaka 25' 3PT Jump Shot (12 PTS) (Peterson 1 AST),Made Shot,Jump Shot,1,3,484
+0012600030,708,PT05M55.00S,4,1610612741,CHI,1641809,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson S.FOUL (P2.T3) (J.Schroeder),Foul,Shooting,1,0,485
+0012600030,710,PT05M55.00S,4,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,106,102,208,v,Maluach Free Throw 1 of 2 (7 PTS),Free Throw,Free Throw 1 of 2,1,0,486
+0012600030,711,PT05M55.00S,4,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,106,103,209,v,Maluach Free Throw 2 of 2 (8 PTS),Free Throw,Free Throw 2 of 2,1,0,487
+0012600030,712,PT05M34.00S,4,1610612741,CHI,1643410,Wilson,C. Wilson,-30,122,13,Missed,1,,,0,h,MISS Wilson 13' Fadeaway Jumper,Missed Shot,Fadeaway Jump Shot,1,2,488
+0012600030,713,PT05M34.00S,4,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,Maluach REBOUND (Off:1 Def:6),Rebound,Unknown,1,0,489
+0012600030,714,PT05M25.00S,4,1610612756,PHX,1630311,Spencer,P. Spencer,47,258,26,Made,1,106,106,212,v,Spencer 26' 3PT Running Jump Shot (3 PTS) (Bouyea 1 AST),Made Shot,Running Jump Shot,1,3,490
+0012600030,716,PT05M18.00S,4,1610612741,CHI,1642855,Essengue,N. Essengue,0,0,0,,0,,,0,h,Essengue Lost Ball Turnover (P1.T22),Turnover,Lost Ball,1,0,491
+0012600030,716,PT05M18.00S,4,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn STEAL (2 STL),,,1,0,492
+0012600030,718,PT04M55.00S,4,1610612756,PHX,1631123,Bouyea,J. Bouyea,47,290,29,Missed,1,,,0,v,MISS Bouyea 29' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,493
+0012600030,719,PT04M55.00S,4,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,Wilson REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,494
+0012600030,720,PT04M45.00S,4,1610612741,CHI,1641809,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson Bad Pass Turnover (P2.T23),Turnover,Bad Pass,1,0,495
+0012600030,720,PT04M45.00S,4,1610612756,PHX,1631123,Bouyea,J. Bouyea,0,0,0,,0,,,0,v,Bouyea STEAL (1 STL),,,1,0,496
+0012600030,722,PT04M42.00S,4,1610612756,PHX,1631123,Bouyea,J. Bouyea,10,-1,1,Made,1,106,108,214,v,Bouyea 1' Running Dunk (9 PTS),Made Shot,Running Dunk Shot,1,2,497
+0012600030,723,PT04M42.00S,4,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Timeout: Regular (Full 6 Short 0),Timeout,Regular,0,0,498
+0012600030,725,PT04M42.00S,4,1610612756,PHX,1642863,Maluach,K. Maluach,0,0,0,,0,,,0,v,SUB: Peat FOR Maluach,Substitution,,0,0,499
+0012600030,731,PT04M42.00S,4,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,SUB: Swain FOR Wilson,Substitution,,0,0,500
+0012600030,726,PT04M26.00S,4,1610612741,CHI,1641809,Peterson,D. Peterson,-143,222,26,Made,1,109,108,217,h,Peterson 26' 3PT Jump Shot (3 PTS) (Essengue 2 AST),Made Shot,Jump Shot,1,3,501
+0012600030,728,PT04M11.00S,4,1610612756,PHX,1643520,Peat,K. Peat,0,0,0,,0,,,0,v,Peat OFF.Foul (P1) (A.Moyer-Gleich),Foul,Offensive,1,0,502
+0012600030,732,PT04M11.00S,4,1610612756,PHX,1643520,Peat,K. Peat,0,0,0,,0,,,0,v,Peat Offensive Foul Turnover (P1.T24),Turnover,Offensive Foul Turnover,1,0,503
+0012600030,733,PT03M51.00S,4,1610612756,PHX,1643520,Peat,K. Peat,0,0,0,,0,,,0,v,Peat S.FOUL (P2.T2) (S.Foster),Foul,Shooting,1,0,504
+0012600030,735,PT03M51.00S,4,1610612741,CHI,1642855,Essengue,N. Essengue,0,0,0,,0,110,108,218,h,Essengue Free Throw 1 of 2 (1 PTS),Free Throw,Free Throw 1 of 2,0,0,505
+0012600030,736,PT03M51.00S,4,1610612741,CHI,1642855,Essengue,N. Essengue,0,0,0,,0,111,108,219,h,Essengue Free Throw 2 of 2 (2 PTS),Free Throw,Free Throw 2 of 2,1,0,506
+0012600030,737,PT03M39.00S,4,1610612756,PHX,1643520,Peat,K. Peat,0,18,2,Missed,1,,,0,v,MISS Peat 2' Driving Layup,Missed Shot,Driving Layup Shot,1,2,507
+0012600030,737,PT03M39.00S,4,1610612741,CHI,1641809,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson BLOCK (1 BLK),,,1,2,508
+0012600030,739,PT03M39.00S,4,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Rebound,Rebound,Unknown,0,0,509
+0012600030,741,PT03M23.00S,4,1610612756,PHX,1631123,Bouyea,J. Bouyea,0,0,0,,0,,,0,v,Bouyea Bad Pass Turnover (P2.T25),Turnover,Bad Pass,1,0,510
+0012600030,741,PT03M23.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka STEAL (1 STL),,,1,0,511
+0012600030,743,PT03M18.00S,4,1610612741,CHI,1642855,Essengue,N. Essengue,-4,5,1,Missed,1,,,0,h,MISS Essengue 1' Running Layup,Missed Shot,Running Layup Shot,1,2,512
+0012600030,744,PT03M18.00S,4,1610612756,PHX,1629312,Highsmith,H. Highsmith,0,0,0,,0,,,0,v,Highsmith REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,513
+0012600030,745,PT03M10.00S,4,1610612756,PHX,1630311,Spencer,P. Spencer,149,221,27,Missed,1,,,0,v,MISS Spencer 27' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,514
+0012600030,746,PT03M10.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka REBOUND (Off:6 Def:4),Rebound,Unknown,1,0,515
+0012600030,747,PT02M58.00S,4,1610612741,CHI,1630527,Boston,B. Boston,13,14,2,Made,1,113,108,221,h,Boston 2' Driving Reverse Layup (2 PTS),Made Shot,Driving Reverse Layup Shot,1,2,516
+0012600030,750,PT02M42.00S,4,1610612741,CHI,1630527,Boston,B. Boston,0,0,0,,0,,,0,h,SUB: Wilson FOR Boston,Substitution,,0,0,517
+0012600030,751,PT02M35.00S,4,1610612756,PHX,1631123,Bouyea,J. Bouyea,0,0,0,,0,,,0,v,Bouyea Offensive Charge Foul (P1) (A.Moyer-Gleich),Foul,Offensive Charge,1,0,518
+0012600030,753,PT02M35.00S,4,1610612756,PHX,1631123,Bouyea,J. Bouyea,0,0,0,,0,,,0,v,Bouyea Offensive Foul Turnover (P3.T26),Turnover,Offensive Foul Turnover,1,0,519
+0012600030,754,PT02M25.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,13,10,2,Made,1,115,108,223,h,Awaka 2' Driving Layup (14 PTS) (Wilson 2 AST),Made Shot,Driving Layup Shot,1,2,520
+0012600030,756,PT02M25.00S,4,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn S.FOUL (P3.T3) (A.Moyer-Gleich),Foul,Shooting,1,0,521
+0012600030,758,PT02M25.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,MISS Awaka Free Throw 1 of 1,Free Throw,Free Throw 1 of 1,0,0,522
+0012600030,759,PT02M25.00S,4,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn REBOUND (Off:2 Def:3),Rebound,Unknown,0,0,523
+0012600030,760,PT02M10.00S,4,1610612756,PHX,1629312,Highsmith,H. Highsmith,-11,16,2,Missed,1,,,0,v,MISS Highsmith 2' Driving Layup,Missed Shot,Driving Layup Shot,1,2,524
+0012600030,760,PT02M10.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka BLOCK (1 BLK),,,1,2,525
+0012600030,762,PT02M10.00S,4,1610612741,CHI,1643410,Wilson,C. Wilson,0,0,0,,0,,,0,h,Wilson REBOUND (Off:0 Def:3),Rebound,Unknown,1,0,526
+0012600030,763,PT02M06.00S,4,1610612741,CHI,1643410,Wilson,C. Wilson,-5,12,1,Made,1,117,108,225,h,Wilson 1' Running Finger Roll Layup (15 PTS),Made Shot,Running Finger Roll Layup Shot,1,2,527
+0012600030,764,PT02M06.00S,4,1610612756,PHX,1643520,Peat,K. Peat,0,0,0,,0,,,0,v,Peat Violation:Defensive Goaltending (S.Foster),Violation,Defensive Goaltending,0,0,528
+0012600030,765,PT02M06.00S,4,0,,1610612756,,,0,0,0,,0,,,0,v,Suns Timeout: Regular (Reg.5 Short 0),Timeout,Regular,0,0,529
+0012600030,766,PT01M48.00S,4,1610612756,PHX,1629312,Highsmith,H. Highsmith,-226,-25,0,Missed,1,,,0,v,MISS Highsmith 3PT Jump Shot,Missed Shot,Jump Shot,1,3,530
+0012600030,767,PT01M48.00S,4,1610612756,PHX,1643520,Peat,K. Peat,0,0,0,,0,,,0,v,Peat REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,531
+0012600030,768,PT01M43.00S,4,1610612756,PHX,1643520,Peat,K. Peat,11,96,10,Missed,1,,,0,v,MISS Peat 10' Jump Shot,Missed Shot,Jump Shot,1,2,532
+0012600030,769,PT01M43.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka REBOUND (Off:6 Def:5),Rebound,Unknown,1,0,533
+0012600030,770,PT01M25.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka OFF.Foul (P6) (A.Moyer-Gleich),Foul,Offensive,1,0,534
+0012600030,772,PT01M25.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,Awaka Offensive Foul Turnover (P3.T24),Turnover,Offensive Foul Turnover,1,0,535
+0012600030,774,PT01M25.00S,4,1610612741,CHI,1643591,Awaka,T. Awaka,0,0,0,,0,,,0,h,SUB: Miller FOR Awaka,Substitution,,0,0,536
+0012600030,775,PT01M19.00S,4,1610612756,PHX,1631123,Bouyea,J. Bouyea,8,3,1,Missed,1,,,0,v,MISS Bouyea 1' Driving Layup,Missed Shot,Driving Layup Shot,1,2,537
+0012600030,776,PT01M19.00S,4,1610612756,PHX,1643520,Peat,K. Peat,0,0,0,,0,,,0,v,Peat REBOUND (Off:2 Def:0),Rebound,Unknown,1,0,538
+0012600030,777,PT01M19.00S,4,1610612756,PHX,1643520,Peat,K. Peat,0,0,0,Made,1,117,110,227,v,Peat Putback Layup (2 PTS),Made Shot,Putback Layup Shot,1,2,539
+0012600030,778,PT01M09.00S,4,1610612741,CHI,1631159,Miller,L. Miller,-8,11,1,Made,1,119,110,229,h,Miller 1' Driving Layup (9 PTS) (Peterson 2 AST),Made Shot,Driving Layup Shot,1,2,540
+0012600030,780,PT00M59.60S,4,1610612741,CHI,1642855,Essengue,N. Essengue,0,0,0,,0,,,0,h,Essengue S.FOUL (P4.T4) (A.Moyer-Gleich),Foul,Shooting,1,0,541
+0012600030,782,PT00M59.60S,4,1610612756,PHX,1630311,Spencer,P. Spencer,0,0,0,,0,119,111,230,v,Spencer Free Throw 1 of 2 (4 PTS),Free Throw,Free Throw 1 of 2,1,0,542
+0012600030,783,PT00M59.60S,4,1610612756,PHX,1630311,Spencer,P. Spencer,0,0,0,,0,119,112,231,v,Spencer Free Throw 2 of 2 (5 PTS),Free Throw,Free Throw 2 of 2,1,0,543
+0012600030,784,PT00M56.30S,4,1610612756,PHX,1642346,Dunn,R. Dunn,0,0,0,,0,,,0,v,Dunn P.FOUL (P4.T4) (S.Foster),Foul,Personal,1,0,544
+0012600030,786,PT00M36.00S,4,1610612741,CHI,1631159,Miller,L. Miller,-12,42,4,Missed,1,,,0,h,MISS Miller 4' Driving Hook Shot,Missed Shot,Driving Hook Shot,1,2,545
+0012600030,787,PT00M36.00S,4,1610612756,PHX,1643520,Peat,K. Peat,0,0,0,,0,,,0,v,Peat REBOUND (Off:2 Def:1),Rebound,Unknown,1,0,546
+0012600030,789,PT00M24.50S,4,1610612756,PHX,1642346,Dunn,R. Dunn,7,4,1,Made,1,119,114,233,v,Dunn 1' Driving Layup (4 PTS) (Bouyea 2 AST),Made Shot,Driving Layup Shot,1,2,547
+0012600030,791,PT00M13.40S,4,1610612741,CHI,1631159,Miller,L. Miller,3,1,0,Made,1,121,114,235,h,Miller Alley Oop Dunk (11 PTS) (Swain 6 AST),Made Shot,Alley Oop Dunk Shot,1,2,548
+0012600030,793,PT00M04.30S,4,1610612756,PHX,1630311,Spencer,P. Spencer,211,144,26,Made,1,121,117,238,v,Spencer 26' 3PT Jump Shot (8 PTS) (Dunn 2 AST),Made Shot,Jump Shot,1,3,549
+0012600030,795,PT00M03.20S,4,0,,1610612741,,,0,0,0,,0,,,0,h,BULLS Timeout: Regular (Full 7 Short 0),Timeout,Regular,0,0,550
+0012600030,796,PT00M00.70S,4,1610612741,CHI,1631159,Miller,L. Miller,-11,8,1,Made,1,123,117,240,h,Miller 1' Layup (14 PTS) (Peterson 3 AST),Made Shot,Layup Shot,1,2,551
+0012600030,798,PT00M00.70S,4,1610612756,PHX,1630311,Spencer,P. Spencer,0,0,0,,0,,,0,v,Spencer S.FOUL (P1.PN) (J.Schroeder),Foul,Shooting,1,0,552
+0012600030,800,PT00M00.70S,4,1610612741,CHI,1631159,Miller,L. Miller,0,0,0,,0,124,117,241,h,Miller Free Throw 1 of 1 (14 PTS),Free Throw,Free Throw 1 of 1,1,0,553
+0012600030,801,PT00M00.00S,4,0,,0,,,0,0,0,,0,124,117,241,,End of 4th Period (10:46 PM EST),period,end,1,0,554

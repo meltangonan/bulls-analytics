@@ -1,0 +1,342 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Postgame recap mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,900;1,8..60,900&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:RecapSerif;font-weight:900;font-style:normal;src:local('GeorgiaProCondensed-Bold'),local('Georgia Pro Condensed Bold')}
+@font-face{font-family:RecapSerif;font-weight:900;font-style:italic;src:local('GeorgiaProCondensed-BoldItalic'),local('Georgia Pro Condensed Bold Italic')}
+body{margin:0;background:#2b2b2b;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#eee}
+header{padding:18px 24px 6px}
+h1{font-size:18px;font-weight:500;margin:0 0 4px}
+p.n{font-size:13px;color:#bbb;margin:0 0 12px}
+nav button{font:inherit;font-size:13px;margin:0 6px 8px 0;padding:6px 10px;border-radius:6px;border:1px solid #666;background:#3a3a3a;color:#eee;cursor:pointer}
+nav button.on{background:#CE1141;border-color:#CE1141}
+#g{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(360px,100%),1fr));gap:18px;padding:8px 16px 40px}
+@media (max-width:600px){header{padding:14px 16px 4px}}
+.cap{font-size:13px;color:#ccc;padding:6px 2px 0}
+svg{display:block;width:100%;height:auto;font-variant-numeric:tabular-nums}
+</style></head><body>
+<header><h1>Postgame recap mockup</h1>
+<p class="n">Every number comes from recap_data.py. Pages are drawn at 1080x1440 in the Canva page style and shown near phone width.</p>
+<nav id="nav"></nav></header>
+<div id="g"></div>
+<script>
+const A=__ASSETS__;
+// House page: Canva Brand Template page 2 (warm canvas, jersey trim, serif title, red italic subtitle, source footer).
+const BG='#E9E5E1',K='#242424',R='#CE1141',MU=K,FT='#7A736C',RU='#B8B0A8',LR='#D8D2CA',BAND='#E2DED9',GR='#7D7873';
+const SANS='"Helvetica Neue", Helvetica, Arial, sans-serif',SERIF="RecapSerif, 'Source Serif 4', Georgia, serif";
+const L=25,RX=1055,W=RX-L;
+const cv=document.createElement('canvas').getContext('2d');
+const tw=(s,size,w=400,fam=SANS,it=false)=>{cv.font=`${it?'italic ':''}${w} ${size}px ${fam}`;return cv.measureText(String(s)).width;};
+const fit=(s,max,width,w=700,fam=SANS,it=false)=>Math.min(max,max*width/tw(s,max,w,fam,it));
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+// Serif text is drawn squeezed: translate to the anchor point, then scale x to NAR.
+const t=(x,y,s,txt,o={})=>`<text${o.halo?` stroke="${BG}" stroke-width="7" stroke-linejoin="round" paint-order="stroke"`:''} x="${x}" y="${y}" font-size="${s}" fill="${o.f||K}" font-weight="${o.w||400}" text-anchor="${o.a||'start'}"${o.ff?` font-family="${o.ff.replace(/"/g,"'")}"`:''}${o.it?' font-style="italic"':''}${o.ls?` letter-spacing="${o.ls}"`:''}>${esc(txt)}</text>`;
+const ln=(x1,y1,x2,y2,c=RU,w=2,d='')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${c}" stroke-width="${w}"${d?` stroke-dasharray="${d}"`:''}/>`;
+const rect=(x,y,w,h,f,r=0,extra='')=>`<rect x="${x}" y="${y}" width="${Math.max(0,w)}" height="${Math.max(0,h)}" rx="${r}" fill="${f}" ${extra}/>`;
+const sgn=v=>(v>0?'+':v<0?'-':'')+Math.abs(v);
+const sgn1=v=>(v>0?'+':v<0?'-':'')+Math.abs(v).toFixed(1);
+const ord=n=>{const s=['th','st','nd','rd'],v=n%100;return n+(s[(v-20)%10]||s[v]||s[0]);};
+let clipN=0;
+// Portrait clipped to its row so the house face crop sits on the row's bottom edge.
+const head=(id,x,y,s,box)=>{if(!A.heads[id])return '';if(!box)return `<image href="${A.heads[id]}" x="${x}" y="${y}" width="${s}" height="${s}"/>`;
+const c='c'+(++clipN);return `<clipPath id="${c}"><rect x="${box[0]}" y="${box[1]}" width="${box[2]}" height="${box[3]}"/></clipPath><image href="${A.heads[id]}" x="${x}" y="${y}" width="${s}" height="${s}" clip-path="url(#${c})"/>`;};
+// Word wrap measured with the page font.
+const wrapText=(txt,size,width,w=400)=>{const out=[];let line='';txt.split(' ').forEach(wd=>{const nx=line?line+' '+wd:wd;if(tw(nx,size,w)>width&&line){out.push(line);line=wd;}else line=nx;});if(line)out.push(line);return out;};
+// Diverging scale on points above average: green helped, red hurt, full strength at 6 points.
+const scale=v=>{const k=Math.min(1,Math.abs(v)/6),c=v>=0?[63,174,99]:[214,69,69],b=[246,243,239];return `rgb(${c.map((x,i)=>Math.round(b[i]+(x-b[i])*(0.12+0.6*k))).join(',')})`;};
+const tri=(x,y,up,c)=>up?`<path d="M${x-8},${y+5} L${x+8},${y+5} L${x},${y-8} Z" fill="${c}"/>`:`<path d="M${x-8},${y-5} L${x+8},${y-5} L${x},${y+8} Z" fill="${c}"/>`;
+const label=(x,y,s,o={})=>t(x,y,o.size||24,s,{w:700,f:o.f||K,a:o.a});
+// Section titles: larger than labels and body text, so each section reads as its own block.
+const sec=(x,y,s,o={})=>{const sz=28,px=12,w=tw(s,sz,700)+2*px,bx=o.a==='end'?x-w:o.a==='middle'?x-w/2:x,top=y-sz*0.78-9,bot=o.onRule?y+16:y+10;
+return `<rect x="${bx}" y="${top}" width="${w}" height="${bot-top}" fill="none" stroke="${K}" stroke-width="2.5"/>`+label(bx+px,y,s,{size:sz,f:o.f});};
+// A portrait standing in front of a plain gray circle: the circle is a background, the headshot is not cropped.
+const headOnCircle=(id,cx,cy,r,sz=r*2)=>`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${LR}"/>`+(A.heads[id]?`<image href="${A.heads[id]}" x="${cx-sz/2}" y="${cy+r*0.92-sz}" width="${sz}" height="${sz}"/>`:'');
+const logo=(tri,x,y,sz)=>A.logos[tri]?`<image href="${A.logos[tri]}" x="${x}" y="${y}" width="${sz}" height="${sz}"/>`:'';
+// Section header for a Bulls-vs-opponent block: logo and name at each end, the section title centred.
+const teamHead=(y,title,onRule)=>logo(D.chi.tri,L,y-40,48)+label(L+56,y,D.chi.team,{f:R,size:26})+sec(540,y,title,{a:'middle',onRule})+label(RX-56,y,D.opp.team,{a:'end',size:26})+logo(D.opp.tri,RX-48,y-40,48);
+const legend=(y,items)=>{let x=RX,o='';[...items].reverse().forEach(([lab,fill,col])=>{const w=tw(lab,18,700)+lab.length*0.5;o+=t(x,y,18,lab,{a:'end',f:col||K,w:700})+rect(x-w-26,y-15,17,17,fill,3,`stroke="${RU}" stroke-width="1"`);x-=w+56;});return o;};
+
+let D;
+const season=()=>`${D.season_label} ${D.kind==='Preseason'?'preseason':'regular season'}`;
+const gameTag=()=>`${D.chi.tri} ${D.home?'vs. ':'@'}${D.opp.tri}, ${D.date_short}`;
+const trim=()=>rect(0,0,1080,4,'#C12744')+rect(0,4,1080,4,'#EFEEF1')+rect(0,8,1080,5,'#151F1B');
+// Footer as on the Canva page: "Data via NBA.com as of <capture time> | game | qualification", later parts bold,
+// handle at right. The capture time says which moment the numbers show: NBA.com revises official stats after games.
+const footer=(foot,fill=FT,hand=K)=>{let parts=[D.as_of?`Data via NBA.com as of ${D.as_of}`:'Data via NBA.com',gameTag(),...foot],hw=tw('chicago_bulls[data]',16,700)+24,over='';
+if(foot.length&&tw(parts.join(' | '),16,700)>W-hw){over=foot.join(' | ');parts=parts.slice(0,2);}
+const fs=Math.min(16,16*(W-hw)/tw(parts.join(' | '),16,700));
+return `<text x="${L}" y="1424" font-size="${fs.toFixed(1)}" fill="${fill}">${parts.map((p,i)=>`<tspan font-weight="${i?700:400}">${esc((i?' | ':'')+p)}</tspan>`).join('')}</text>`
++`<text x="${RX}" y="1424" font-size="16" font-weight="700" text-anchor="end"><tspan fill="${R}">chicago_bulls</tspan><tspan fill="${hand}">[data]</tspan></text>`
++(over?t(L,1400,fit(over,16,W,700),over,{f:fill,w:700}):'');};
+// A titled page: serif title, then the content shifted up 36px into the space a subtitle used to take.
+function page(title,inner,foot=[],note=''){
+let s=rect(0,0,1080,1440,BG)+trim();
+if(title)s+=t(L,104,fit(title,86,W,900,SERIF),title,{w:900,ff:SERIF})+`<g transform="translate(0,-36)">${inner}</g>`;else s+=inner;
+if(note)s+=t(L,1390,fit(note,16,W,400),note,{f:FT});
+return s+footer(foot);}
+const svg=(inner,cap)=>`<div><svg viewBox="0 0 1080 1440" font-family='${SANS}'>${inner}</svg><div class="cap">${cap}</div></div>`;
+
+// Monotone cubic through the points: smooth, no overshoot, and it still passes through every real value.
+function mono(P){const n=P.length;if(n<2)return '';const dx=[],m=[],tg=[];
+for(let i=0;i<n-1;i++){dx[i]=P[i+1][0]-P[i][0];m[i]=(P[i+1][1]-P[i][1])/dx[i];}
+tg[0]=m[0];tg[n-1]=m[n-2];for(let i=1;i<n-1;i++)tg[i]=m[i-1]*m[i]<=0?0:3*(dx[i-1]+dx[i])/((2*dx[i]+dx[i-1])/m[i-1]+(dx[i]+2*dx[i-1])/m[i]);
+const f=v=>v.toFixed(1);let d=`M${f(P[0][0])},${f(P[0][1])}`;
+for(let i=0;i<n-1;i++){const h=dx[i]/3;d+=` C${f(P[i][0]+h)},${f(P[i][1]+tg[i]*h)} ${f(P[i+1][0]-h)},${f(P[i+1][1]-tg[i+1]*h)} ${f(P[i+1][0])},${f(P[i+1][1])}`;}return d;}
+// Ramer-Douglas-Peucker: drop points within eps pixels of the line between their neighbours, keeping
+// the biggest peaks and troughs and any point marked keep (the labeled moments). The shape stays true; the jitter goes.
+function simplify(P,eps,keep){if(P.length<3)return P;const out=new Set([0,P.length-1,...keep]);
+const rec=(a,b)=>{let mx=-1,mi=-1;const [x1,y1]=P[a],[x2,y2]=P[b],len=Math.hypot(x2-x1,y2-y1)||1;
+for(let i=a+1;i<b;i++){const d=Math.abs((y2-y1)*P[i][0]-(x2-x1)*P[i][1]+x2*y1-y2*x1)/len;if(d>mx){mx=d;mi=i;}}
+if(mx>eps){out.add(mi);rec(a,mi);rec(mi,b);}};
+const ks=[...out].sort((a,b)=>a-b);for(let i=0;i<ks.length-1;i++)rec(ks[i],ks[i+1]);return [...out].sort((a,b)=>a-b).map(i=>P[i]);}
+// Red above the zero line, gray below, from one path clipped twice.
+function splitArea(d,first,last,zy,id){const area=`${d} L${last},${zy} L${first},${zy} Z`;
+return `<defs><clipPath id="${id}u"><rect x="0" y="0" width="1080" height="${zy}"/></clipPath><clipPath id="${id}d"><rect x="0" y="${zy}" width="1080" height="1440"/></clipPath></defs>`
++`<path d="${area}" fill="${R}" opacity="0.16" clip-path="url(#${id}u)"/><path d="${area}" fill="${GR}" opacity="0.22" clip-path="url(#${id}d)"/>`
++`<path d="${d}" fill="none" stroke="${R}" stroke-width="4" stroke-linejoin="round" clip-path="url(#${id}u)"/><path d="${d}" fill="none" stroke="${K}" stroke-width="4" stroke-linejoin="round" clip-path="url(#${id}d)"/>`;}
+
+const pbpWarn=(y)=>D.pbp_ok===false?rect(L,y-34,W,48,'#F6D6DC',6)+t(540,y,22,'Play-by-play was out of order when pulled: not reliable yet',{a:'middle',w:700,f:R}):'';
+function cover(){const F=D.flow,Q=D.quarters;let s='';
+// Scoreboard
+const ot=F.periods>4?(F.periods==5?'OT':`${F.periods-4}OT`):'';
+s+=logo(D.chi.tri,220,30,100)+t(270,172,36,D.chi.team,{a:'middle',w:700})+t(270,338,180,D.chi.score,{a:'middle',w:900,ff:SERIF,f:R});
+s+=logo(D.opp.tri,760,30,100)+t(810,172,36,D.opp.team,{a:'middle',w:700})+t(810,338,180,D.opp.score,{a:'middle',w:900,ff:SERIF});
+s+=t(540,ot?250:268,28,'Final',{a:'middle',w:700})+(ot?t(540,288,26,`(${ot})`,{a:'middle',w:700}):'');
+// Line score
+const n=Q.labels.length+1,c0=430,cw=(RX-c0)/n,cx=i=>c0+cw*i+cw/2,ly0=420;
+[...Q.labels,'FINAL'].forEach((q,i)=>s+=label(cx(i),ly0-16,q,{a:'middle'}));s+=ln(L,ly0,RX,ly0,K,3);
+[[D.chi.team,Q.chi,D.chi.score,R,D.chi.tri],[D.opp.team,Q.opp,D.opp.score,K,D.opp.tri]].forEach(([nm,v,tot,c,tri],j)=>{const y=ly0+j*62;if(j==0)s+=rect(L,y,W,62,BAND);
+s+=logo(tri,L+8,y+7,48)+t(L+66,y+42,30,nm,{w:700,f:c});v.forEach((x,i)=>s+=t(cx(i),y+43,32,x,{a:'middle'}));s+=t(cx(n-1),y+43,34,tot,{a:'middle',w:700,f:c});});
+s+=ln(L,ly0+124,RX,ly0+124,RU,1.5);
+// Scoring margin
+const NB=D.notables||[],X0=82,X1=RX,top=640,bot=NB.length?948:1040,maxUp=Math.max(10,Math.ceil(F.chi_lead/10)*10),maxDn=Math.max(10,Math.ceil(F.opp_lead/10)*10);
+const sx=m=>X0+m/F.total*(X1-X0),sy=v=>top+(maxUp-v)/(maxUp+maxDn)*(bot-top),z=sy(0);
+s+=sec(L,604,'Scoring margin')+legend(604,[[`${D.chi.team} ahead`,R,R],[`${D.opp.team} ahead`,GR]]);
+const step=(maxUp+maxDn)>40?20:10;for(let v=-maxDn;v<=maxUp;v+=step){s+=ln(X0,sy(v),X1,sy(v),v==0?K:LR,v==0?2:1.2,v==0?'':'5 8');s+=t(X0-12,sy(v)+7,20,v>0?'+'+v:v,{a:'end'});}
+for(let p=1;p<F.periods;p++){const m=12*Math.min(p,4)+5*Math.max(p-4,0);s+=ln(sx(m),top,sx(m),bot,RU,1.2);}
+for(let p=1;p<=F.periods;p++){const a=12*Math.min(p-1,4)+5*Math.max(p-5,0),b=a+(p<=4?12:5);s+=t(sx((a+b)/2),bot+34,19,Q.labels[p-1].replace(/(\d)(ST|ND|RD|TH)$/,(m,d,x)=>d+x.toLowerCase()),{a:'middle',w:700});}
+// Scores logged at the same clock time are spread 2 seconds apart, so no event is dropped and every labeled moment is a real point on the line.
+const pts=[[0,0]];F.series.forEach(([a,b])=>{const prev=pts[pts.length-1][0];pts.push([Math.max(a,prev+0.033),b]);});
+const at=nt=>pts.findIndex(p=>Math.abs(p[0]-nt.t)<0.2&&p[1]==nt.m);
+const keep=F.notes.map(at).filter(i=>i>0);
+s+=splitArea(mono(simplify(pts.map(([a,b])=>[sx(a),sy(b)]),1.6*(bot-top)/(maxUp+maxDn),keep)),sx(0),sx(pts[pts.length-1][0]),z,'cm');
+F.notes.forEach(nt=>{const i=at(nt),x=sx(i>0?pts[i][0]:nt.t),y=sy(nt.m),right=x<X1-240;s+=`<circle cx="${x}" cy="${y}" r="7" fill="${nt.m>0?R:K}" stroke="${BG}" stroke-width="2.5"/>`;
+if(nt.kind==='decider'){
+// The label goes above or below the chart, whichever box the margin line does not pass through (bug 7, Oct 7);
+// a halo in the page colour keeps it legible if the line comes close.
+const txt=(nt.m>0?'':D.opp.tri+': ')+nt.label,lw=Math.max(tw(txt,22,700),tw(nt.sub,19)),lx0=right?x+10:x-10-lw,
+P=pts.map(([a,b])=>[sx(a),sy(b)]),clear=ly=>!P.some(([px,py])=>px>lx0-8&&px<lx0+lw+8&&py>ly-26&&py<ly+34),
+tops=nt.m>0?[sy(maxUp)+30,sy(-maxDn)-46]:[sy(-maxDn)-46,sy(maxUp)+30],ly=tops.find(clear)??tops[0];
+s+=ln(x,y+(ly<y?-10:10),x,ly+(ly<y?14:-30),K,1.5)+t(right?x+10:x-10,ly,22,txt,{a:right?'start':'end',w:700,halo:1})+t(right?x+10:x-10,ly+25,19,nt.sub,{a:right?'start':'end',halo:1});}
+// Above a high and below a low, unless that would cross the chart's edge: then beside the dot.
+else{const edge=nt.kind==='high'?y-40<top:y+40>bot,ly=edge?y+8:nt.kind==='high'?y-16:y+34,dx=edge?18:14;s+=t(right?x+dx:x-dx,ly,22,nt.label,{a:right?'start':'end',w:700});}});
+s+=pbpWarn(top+40);
+// Game flow strip
+const run=F.run_chi==F.run_opp?[`${F.run_chi}-0`,'Both teams']:F.run_chi>F.run_opp?[`${F.run_chi}-0`,D.chi.tri]:[`${F.run_opp}-0`,D.opp.tri];
+const tiles=[['Biggest lead',null],['Lead changes',[F.lead_changes,'']],['Tied',[F.ties,F.ties==1?'time':'times']],['Longest run',run]],w4=W/4,ty=NB.length?1022:1120;
+s+=ln(L,ty,RX,ty,K,3);tiles.forEach(([h,v],i)=>{const x=L+i*w4,c=x+w4/2;if(i)s+=ln(x,ty+22,x,ty+176,RU,1.5);s+=label(c,ty+46,h,{a:'middle',size:21});
+if(!v)s+=t(c-56,ty+124,58,F.chi_lead,{a:'middle',w:700,f:R})+t(c-56,ty+160,18,D.chi.tri,{a:'middle',w:700})+t(c+56,ty+124,58,F.opp_lead,{a:'middle',w:700})+t(c+56,ty+160,18,D.opp.tri,{a:'middle',w:700});
+else s+=t(c,ty+124,58,v[0],{a:'middle',w:700})+(v[1]?t(c,ty+160,fit(v[1],18,w4-16),v[1],{a:'middle',w:700}):'');});
+s+=ln(L,ty+190,RX,ty+190,RU,1.5);
+// Notables: up to three exact callouts from recap_data.notables; the part before the colon is bold.
+// Notables: up to three exact callouts from recap_data.notables; the part before the colon is bold.
+if(NB.length){s+=sec(L,ty+236,'Notables');NB.forEach((n,i)=>{const y=ty+282+i*34,[a,...b]=n.split(': ');s+=rect(L,y-15,12,12,R,2);
+const w=tw(a+':',24,700),rest=b.join(': ');s+=t(L+24,y,24,a+':',{w:700})+t(L+24+w+8,y,fit(rest,24,RX-L-24-w-8),rest);});}
+return page(null,s);}
+
+function teamStats(){let s='';
+// Game leaders, with portraits; the stat sits right beside the name
+const gy=262;s+=teamHead(gy-16,'Game leaders',1);s+=ln(L,gy,RX,gy,K,3);
+const rh=84,hs=82,nw=230;D.leaders.forEach(([lab,l,r],i)=>{const y=gy+i*rh,box=[L,y,W,rh];if(i%2==0)s+=rect(L,y,W,rh,BAND);
+l[2].forEach((id,k)=>s+=head(id,L+4+k*58,y+rh-hs,hs,box));const nx=L+4+hs+(l[2].length-1)*58+12,lw=Math.min(nw,tw(l[0],28,700));
+s+=t(nx,y+54,fit(l[0],28,nw,700),l[0],{w:700})+t(nx+lw+14,y+55,38,l[1],{w:700,f:R});
+s+=t(540,y+52,22,lab,{a:'middle',w:700});
+r[2].forEach((id,k)=>s+=head(id,RX-4-hs-k*58,y+rh-hs,hs,box));const ex=RX-4-hs-(r[2].length-1)*58-12,rw=Math.min(nw,tw(r[0],28,700));
+s+=t(ex,y+54,fit(r[0],28,nw,700),r[0],{w:700,a:'end'})+t(ex-rw-14,y+55,38,r[1],{w:700,a:'end'});});
+s+=ln(L,gy+3*rh,RX,gy+3*rh,RU,1.5);
+// Head to head: Bulls numbers always in Bulls red; the better side is bold
+const H2=D.h2h.filter(r=>!['Steals','Blocks'].includes(r[0])),y0=620,stp=Math.min(50,(1120-y0)/H2.length);
+s+=teamHead(578,'Head-to-head');
+H2.forEach(([lab,l,r,va,vb,hi],i)=>{const y=y0+i*stp,better=va==vb?0:((va>vb)==!!hi?1:-1);
+s+=t(L,y,24,l,{w:better==1?700:400,f:R})+t(RX,y,24,r,{a:'end',w:better==-1?700:400})+t(540,y,21,lab,{a:'middle',w:700});
+const sh=(va+vb)?va/(va+vb):0.5,mid=L+W*sh;s+=rect(L,y+10,mid-L-3,13,R,3)+rect(mid+3,y+10,RX-mid-3,13,GR,3);});
+// Bulls game awards: up to four in one row, each the award, the headshot on a gray circle, the name and
+// the stat that earned it. Space separates them; no rules or boxes.
+const aw=D.awards.slice(0,4),ay=1158;if(aw.length){s+=sec(L,ay,`${D.chi.team} game awards`,{onRule:1});s+=ln(L,ay+16,RX,ay+16,K,3);
+const cw=W/4,x0=L+(W-cw*aw.length)/2,rr=74,cy=ay+142;
+aw.forEach(([nm,id,name,line],i)=>{const cx=x0+cw*i+cw/2;
+s+=t(cx,ay+52,fit(nm,20,cw-12),nm,{a:'middle',f:R,w:700})+headOnCircle(id,cx,cy,rr,132);
+s+=t(cx,cy+rr+30,fit(name,24,cw-12,700),name,{a:'middle',w:700})+t(cx,cy+rr+54,fit(line,18,cw-12,400),line,{a:'middle'});});}
+return page('Team stats',s);}
+
+function boxScore(){const B=D.box,P=[...B.starters,...B.bench];
+const HD=['MIN','PTS','REB','AST','FG','3PT','FT','TS%','STL','BLK','TO','+/-'];
+const ts=(p,fa,ft)=>(fa+ft)?(p/(2*(fa+0.44*ft))*100).toFixed(1):'-';
+const pct=(m,a)=>a?(100*m/a).toFixed(1)+'%':'-';
+const cells=r=>[r[2],r[3],r[4],r[5],`${r[6]}-${r[7]}`,`${r[8]}-${r[9]}`,`${r[10]}-${r[11]}`,ts(r[3],r[7],r[11]),r[12],r[13],r[14],sgn(r[15])].map(String);
+const sum=(rows,i)=>rows.reduce((a,r)=>a+r[i],0);
+const tot=rows=>[sum(rows,2),sum(rows,3),sum(rows,4),sum(rows,5),`${sum(rows,6)}-${sum(rows,7)}`,`${sum(rows,8)}-${sum(rows,9)}`,`${sum(rows,10)}-${sum(rows,11)}`,ts(sum(rows,3),sum(rows,7),sum(rows,11)),sum(rows,12),sum(rows,13),sum(rows,14),''].map(String);
+const TS=tot(B.starters),TB=tot(B.bench),TT=tot(P);if(B.minutes){TS[0]=String(B.minutes[0]);TB[0]=String(B.minutes[1]);TT[0]=String(B.minutes[2]);}
+const TP=['','','','',pct(sum(P,6),sum(P,7)),pct(sum(P,8),sum(P,9)),pct(sum(P,10),sum(P,11)),'','','','',''];
+const rowH=Math.min(82,(1380-244-50*2-80-16)/P.length),HS=Math.min(84,rowH+8),hs=21,NX=L+HS+12,G=16;
+// Name plus a gray jersey number, measured at 1px and scaled.
+// Names stack: first name small on top, last name large below with the gray jersey number. Widths at 1px.
+const split=n=>{const i=n.indexOf(' ');return i<0?['',n]:[n.slice(0,i),n.slice(i+1)];};
+const nameW=Math.max(...P.map(r=>{const [f,l]=split(r[1]);return Math.max(tw(f,0.6,400),tw(l,1,700)+(r[16]?0.3+tw(`#${r[16]}`,0.8,400):0));}),tw('Starters',1,700));
+// Every column is as wide as its header or widest player value, and every gap is the same G.
+// Totals use the player size and may borrow all but 8px of the gap; a column widens only by what is left over.
+// Numbers and names shrink together until the longest name clears the first column.
+let vs,colW,L0,NF;for(vs of [32,31,30,29,28,27,26,25,24,23,22]){colW=HD.map((h,j)=>{const w=Math.max(tw(h,hs,700),...P.map(r=>tw(cells(r)[j],vs,400)));
+return Math.max(w,...[TS,TB,TT].map(row=>tw(row[j],vs,700)-(G-8)));});
+L0=RX-8-colW.reduce((a,b)=>a+b,0)-G*(HD.length-1);NF=Math.min(36,rowH*0.46,(L0-NX-14)/nameW);if(NF>=vs+4)break;}
+let cur=L0;const cc=colW.map(w=>{const c=cur+w/2;cur+=w+G;return c;});
+let s='';HD.forEach((h,j)=>s+=t(cc[j],226,hs,h,{a:'middle',w:700}));s+=ln(L,242,RX,242,K,3);
+let y=244,bg='',fg='',k=0;
+const prow=r=>{if(k++%2==0)bg+=rect(L,y,W,rowH,BAND);const c=y+rowH/2;fg+=head(r[0],L+2,y+rowH-HS,HS,[L,y-8,W,rowH+8]);
+const [fn,lnm]=split(r[1]);fg+=t(NX,c-NF*0.22,NF*0.6,fn)+t(NX,c+NF*0.74,NF,lnm,{w:700});if(r[16])fg+=t(NX+tw(lnm,NF,700)+NF*0.3,c+NF*0.74,NF*0.8,`#${r[16]}`,{f:FT});
+cells(r).forEach((v,j)=>fg+=t(cc[j],c+vs*0.36,vs,v,{a:'middle'}));y+=rowH;};
+const trow=(lab,vals,strong)=>{fg+=ln(L,y,RX,y,strong?K:RU,strong?3:1.5);const c=y+28+vs*0.36,f=strong?K:R;
+fg+=t(NX,c,NF,lab,{w:700,f});vals.forEach((v,j)=>fg+=t(cc[j],c,vs,v,{a:'middle',w:700,f}));
+if(strong)TP.forEach((v,j)=>{if(v)fg+=t(cc[j],c+28,19,v,{a:'middle',it:true});});y+=strong?80:50;};
+B.starters.forEach(prow);trow('Starters',TS,false);k=0;y+=8;B.bench.forEach(prow);trow('Bench',TB,false);y+=8;trow('Team',TT,true);
+return page(`${D.chi.team} box score`,s+bg+fg,B.dnp.length?[`Did not play: ${B.dnp.join(', ')}`]:[]);}
+
+function shotChart(){const S=D.shooting;let s='';const zs=A.zsize[D.game_id],zw=W,zh=zw*zs[1]/zs[0];
+s+=`<image href="${A.zones[D.game_id]}" x="${L}" y="186" width="${zw}" height="${zh}"/>`;
+if(D.shot_types.length){const y4=Math.min(186+zh+62,1196),ST=D.shot_types,rows=ST.length;s+=sec(L,y4,'Shot types',{onRule:1});s+=ln(L,y4+16,RX,y4+16,K,3);
+const rh=Math.min(40,(1388-(y4+30))/rows),ux0=L+250,ux1=RX-170,maxA=Math.max(...ST.map(r=>r[2])),u=Math.min(16,(ux1-ux0)/maxA),sq=u-3;
+ST.forEach(([lab,m,a],i)=>{const y=y4+30+i*rh,c=y+rh/2;s+=t(L,c+7,20,lab,{w:700});
+for(let k=0;k<a;k++)s+=rect(ux0+k*u,c-sq/2,sq,sq,k<m?R:LR);
+s+=t(RX-80,c+8,22,`${m}-${a}`,{a:'end',w:700})+t(RX,c+8,20,`${Math.round(m/a*100)}%`,{a:'end',f:FT,w:700});});}
+return page(`${D.chi.team} shot chart`,s);}
+
+function seasonPage(){const S=D.season,G=S.games,n=G.length,slots=S.slots,O=S.over,E=S.east,now=O[n-1],pre=D.kind==='Preseason';let s='';
+s+=label(L,212,'Record',{size:28})+t(L,330,124,`${S.wins}-${S.losses}`,{w:900,ff:SERIF,f:R});
+if(E){const pl=(E[1]?'T-':'')+ord(E[0]),EP=S.east_prev;s+=label(RX,212,`In the ${S.conf||'East'}`,{a:'end',size:28})+t(RX,330,124,pl,{w:900,ff:SERIF,a:'end'});
+// Places moved tonight, as on the season leaders page: up is better (a smaller place number).
+if(EP&&EP[0]!=E[0]){const up=EP[0]>E[0],c2=up?R:K,n=String(Math.abs(EP[0]-E[0])),px=RX-tw(pl,124,900,SERIF)-24-tw(n,26,700);s+=tri(px-14,284,up,c2)+t(px,292,26,n,{w:700,f:c2});}}
+const wide=slots<=20,x0=82,x1=RX,sw=(x1-x0)/slots,gx=i=>x0+i*sw+sw/2;
+// Place a label near (ax, ay): try spots around it, nearest first, and take the first that touches no
+// obstacle (bars, lines, edges). A thin leader joins it to the point when it had to move away.
+const place=(ax,ay,txt,size,obst,bounds)=>{const w=tw(txt,size,700),h=size*0.9,pad=6,hit=b=>b.x<bounds[0]||b.x+b.w>bounds[2]||b.y<bounds[1]||b.y+b.h>bounds[3]||obst.some(o=>b.x<o.x+o.w+pad&&b.x+b.w+pad>o.x&&b.y<o.y+o.h+pad&&b.y+b.h+pad>o.y);
+const c=[];for(let r=0;r<=260;r+=12)for(const [dx,dy] of [[1,0],[-1,0],[0,-1],[0,1],[1,-1],[-1,-1],[1,1],[-1,1]]){const x=dx>0?ax+12+r*Math.abs(dx):dx<0?ax-12-w-r*Math.abs(dx):ax-w/2,y=dy<0?ay-14-h-r:dy>0?ay+14+r:ay-h/2;c.push({x,y,w,h,d:Math.hypot(x+w/2-ax,y+h/2-ay)});}
+c.sort((a,b)=>a.d-b.d);const b=c.find(q=>!hit(q))||c[0];const near=Math.max(b.x,Math.min(ax,b.x+b.w)),nearY=Math.max(b.y,Math.min(ay,b.y+b.h));
+return (Math.hypot(near-ax,nearY-ay)>22?ln(ax,ay,near,nearY,K,1.2):'')+t(b.x,b.y+h*0.85,size,txt,{w:700,halo:1});};
+// Game margins
+const lim=Math.max(wide?20:30,Math.ceil(Math.max(...G.map(g=>Math.abs(g[3])))/10)*10),zy=652,sc=(wide?175:200)/lim;
+s+=sec(L,410,'Game margins')+legend(410,[['Win',R,R],['Loss',GR]]);
+for(let v=-lim;v<=lim;v+=lim/2){s+=ln(x0-6,zy-v*sc,x1,zy-v*sc,v==0?K:LR,v==0?2:1.2);s+=t(x0-14,zy-v*sc+7,19,v>0?'+'+v:v,{a:'end'});}
+G.forEach((g,i)=>{const h=Math.abs(g[3])*sc,bw=wide?sw*0.56:sw-3,bx=x0+i*sw+(sw-bw)/2,last=i==n-1;s+=rect(bx,g[3]>0?zy-h:zy,bw,h,g[3]>0?R:GR,wide?3:1,last?`stroke="${K}" stroke-width="${wide?3:2}"`:'');
+if(wide)s+=t(gx(i),g[3]>0?zy-h-10:zy+h+26,21,sgn(g[3]),{a:'middle',w:700});});
+// Tonight's bar: label placed beside its tip, clear of every bar and the zero line.
+if(!wide){const lg=G[n-1],tip=lg[3]>0?zy-lg[3]*sc:zy+lg[3]*-sc;
+const bars=G.map((g,i)=>({x:x0+i*sw+1.5,y:g[3]>0?zy-Math.abs(g[3])*sc:zy,w:sw-3,h:Math.abs(g[3])*sc})).concat([{x:x0,y:zy-1,w:x1-x0,h:2}]);
+s+=place(gx(n-1),tip,`Tonight: ${sgn(lg[3])} ${lg[2]?'vs.':'at'} ${lg[1]}`,21,bars,[x0,zy-lim*sc,RX,zy+lim*sc]);}
+// Games over .500 after each game, from .500 before the first game
+const ol=wide?Math.max(2,...O.map(Math.abs)):Math.max(5,Math.ceil(Math.max(...O.map(Math.abs))/5)*5),oz=1150,osc=(wide?165:182)/ol,oy=v=>oz-v*osc;
+s+=sec(L,926,'Games over .500');
+for(let v=-ol;v<=ol;v+=ol){s+=ln(x0-6,oy(v),x1,oy(v),v==-ol?K:v==0?RU:LR,v==-ol?2:v==0?1.5:1.2);s+=t(x0-14,oy(v)+7,19,v==0?'.500':(v>0?'+'+v:v),{a:'end'});}
+let d=`M${x0},${oy(0)}`;O.forEach((v,i)=>d+=` L${gx(i)},${oy(v)}`);
+s+=splitArea(d,x0,gx(n-1),oz,'ov');
+s+=`<circle cx="${gx(n-1)}" cy="${oy(now)}" r="8" fill="${now>0?R:K}" stroke="${BG}" stroke-width="2.5"/>`;
+const endLab=now?sgn(now):'.500';
+// The line's points and the .500 line are the obstacles for the end label.
+const linePts=[[x0,oy(0)],...O.map((v,i)=>[gx(i),oy(v)])],obst=[{x:x0,y:oz-1,w:x1-x0,h:2}];
+for(let i=1;i<linePts.length;i++){const [a1,b1]=linePts[i-1],[a2,b2]=linePts[i];obst.push({x:Math.min(a1,a2),y:Math.min(b1,b2)-2,w:Math.abs(a2-a1)+1,h:Math.abs(b2-b1)+4});}
+s+=wide?t(gx(n-1)+14,oy(now)+8,22,endLab,{w:700}):place(gx(n-1),oy(now),endLab,22,obst,[x0,oz-ol*osc,RX,oz+ol*osc]);
+const ay=oz+ol*osc;
+// Preseason and other short seasons name every game on the axis, played or still to come.
+if(wide){G.forEach((g,i)=>s+=t(gx(i),ay+38,19,(g[2]?'':'@')+g[1],{a:'middle',w:i==n-1?700:400}));(S.upcoming||[]).slice(0,slots-n).forEach(([o,h],j)=>s+=t(gx(n+j),ay+38,19,(h?'':'@')+o,{a:'middle',f:FT}));}
+else S.months.forEach(([i,m])=>s+=ln(x0+i*sw,ay,x0+i*sw,ay+12,K,2)+t(x0+i*sw+4,ay+36,19,m,{w:700}));
+return page(`${D.chi.team} ${pre?'preseason':'season'} so far`,s);}
+
+// Game breakdown: the four factors as rates and as points above an average team, per team, then the margin bars and how to read them.
+function breakdownRawPage(color=false){const BD=D.breakdown,FF=D.four_factors,TV=BD.teams,f1=v=>(v>0?'+':v<0?'-':'')+Math.abs(v).toFixed(1);let s=sec(L,250,'Four factors',{onRule:1});
+const cxs=[[300,600],[600,752],[752,904],[904,RX]].map(([a,b])=>(a+b)/2),hy=252,ry=266,bh=136,pc=v=>v.toFixed(1)+'%';
+FF.rows.forEach((r,i)=>{if(i){s+=label(cxs[i],hy,r[0],{a:'middle',size:22});return;}const sub='(2PT | 3PT)',w1=tw('EFG%',22,700),w2=tw(sub,18,700),x=cxs[0]-(w1+8+w2)/2;s+=label(x,hy,'EFG%',{size:22})+t(x+w1+8,hy,18,sub,{w:700});});
+s+=ln(L,ry,RX,ry,K,3);
+// Centre a main value with a small (a | b) beside it
+const pair=(cx,y,main,sub,size,o)=>{const w1=tw(main,size,o.w||400),w2=sub?tw(sub,size*0.6,400)+20:0,x0=cx-(w1+w2)/2;return t(x0,y,size,main,o)+(sub?t(x0+w1+20,y,size*0.6,sub,{f:o.f}):'');};
+const colW=[300,152,152,151];
+[[D.chi.team,1,R,0,D.chi.tri],[D.opp.team,2,K,1,D.opp.tri]].forEach(([nm,vi,c0,j,tri])=>{const y=ry+j*bh,v=TV[tri],c=color?K:c0;if(j==0&&!color)s+=rect(L,y,W,bh,BAND);
+if(color)[v.shoot,v.tov,v.reb,v.ft].forEach((pt,i)=>s+=rect(cxs[i]-colW[i]/2+5,y+5,colW[i]-10,bh-10,scale(pt),8));
+s+=logo(tri,L+8,y+12,48)+t(L+66,y+46,30,nm,{w:700,f:c0})+t(L+66,y+98,18,'Points above average',{w:700});
+FF.rows.forEach((r,i)=>{const val=r[vi],o=r[vi==1?2:1],better=val!=o&&(val>o)==r[3],sp=i==0?FF.efg_split[j]:null;
+const main=pc(val),sub=sp?`(${sp[0]==null?'-':sp[0].toFixed(1)+'%'} | ${sp[1]==null?'-':sp[1].toFixed(1)+'%'})`:'';
+if(better&&!color){const w1=tw(main,32,700),w2=sub?tw(sub,19.2,400)+20:0;s+=rect(cxs[i]-(w1+w2)/2-10,y+11,w1+20,48,'none',8,`stroke="${c}" stroke-width="3"`);}
+s+=pair(cxs[i],y+46,main,sub,32,{w:better&&!color?700:400,f:c});
+const pts=[v.shoot,v.tov,v.reb,v.ft][i];s+=pair(cxs[i],y+98,f1(pts),i==0?`(${f1(v.shoot2)} | ${f1(v.shoot3)})`:'',28,{w:700,f:c});});});
+s+=ln(L,ry+2*bh,RX,ry+2*bh,RU,1.5);
+if(color){const ky=ry+2*bh+34;s+=t(L,ky,18,'Shading: points above average.',{w:700});[[-6,'-6'],[-3,'-3'],[0,'0'],[3,'+3'],[6,'+6']].forEach(([v,l],i)=>{const x=L+300+i*74;s+=rect(x,ky-20,64,26,scale(v),5)+t(x+32,ky-1,16,l,{a:'middle',w:700});});}
+// Where the margin came from: Bulls minus opponent in each factor, then other and the extra possession
+const rows=BD.rows.filter(r=>r[0]!=='Other'||Math.abs(r[1])>=0.05),my=ry+2*bh+(color?110:80);s+=sec(L,my,`Where the ${sgn(BD.margin)} came from`,{onRule:1});
+const mx=Math.max(...rows.map(r=>Math.abs(r[1])),Math.abs(BD.margin),1),ax0=620,asc=Math.min(44,290/mx),ay0=my+16,rh=58;
+const bar=(y,v,col)=>{const w=Math.abs(v)*asc;return rect(v>0?ax0:ax0-w,y+14,w,32,col,3);};
+s+=ln(L,ay0,RX,ay0,K,3);
+rows.forEach(([lab,v],i)=>{const y=ay0+i*rh;if(i%2==0)s+=rect(L,y,W,rh,BAND);s+=t(L+12,y+39,26,lab)+bar(y,v,v>0?R:GR)+t(RX-12,y+39,26,sgn1(v),{a:'end',w:700,f:v>0?R:K});});
+s+=pbpWarn(ay0+40);const by=ay0+rows.length*rh;s+=ln(ax0,ay0,ax0,by+rh,K,2)+ln(L,by,RX,by,K,2)+t(L+12,by+38,28,'Final margin',{w:700})+bar(by,BD.margin,BD.margin>0?R:K)+t(RX-12,by+38,28,sgn(BD.margin),{a:'end',w:700,f:BD.margin>0?R:K});
+// How to read it: three short paragraphs with tonight's own numbers, all from recap_data.
+const E=BD.example,SH=BD.shots,cs=SH[D.chi.tri],os=SH[D.opp.tri],V3=E.make3,f3=v=>v.toFixed(3),[pc_,po_]=BD.possessions;
+const other=rows.find(r=>r[0]==='Other'),extra=rows.find(r=>r[0].includes('possession'));
+const paras=[`Every possession starts worth ${f3(E.v)} points, the 2025-26 NBA average. Each play changes that value: a made 2 adds ${f3(E.make2)}, a made 3 adds ${f3(V3)}, a miss leaves ${E.miss_value.toFixed(3)} (offenses rebound ${E.oreb_pct}% of misses), and a turnover loses the full ${f3(E.v)}.`,
+`Points above average compares each team with an average team on the same number of possessions. ${D.chi.team} shooting: ${cs.m2} × ${f3(E.make2)} + ${cs.m3} × ${f3(V3)} - ${cs.miss} × ${f3(-E.miss)} ≈ ${f1(cs.raw)}, against ${f1(cs.expected)} for an average team on ${pc_} possessions, so ${f1(cs.vs)}.`,
+`Each bar is the ${D.chi.team} minus the ${D.opp.team}: shooting ${f1(cs.vs)} - (${f1(os.vs)}) = ${f1(cs.vs-os.vs)}.`+(other?' Other covers possessions cut off when a quarter ended.':'')+(extra?` The ${D.chi.team} had ${pc_} possessions to ${po_}, and each possession is worth ${f3(E.v)}.`:'')+` The bars add up to the final margin, ${sgn(BD.margin)}.`];
+let ey=by+rh+70;s+=sec(L,ey,'How to read it');ey+=44;
+paras.forEach(pp=>{wrapText(pp,21,W).forEach(line=>{s+=t(L,ey,21,line);ey+=29;});ey+=10;});
+return page(`${D.chi.team} game breakdown`,s);}
+
+function leadersPage(){const SL=D.season_leaders;if(!SL)return null;let s='';const bh=238,y0=164,tx=L+196;
+SL.stats.forEach(([lab,rows],k)=>{const y=y0+k*bh,nm=lab.charAt(0)+lab.slice(1).toLowerCase();if(k)s+=ln(L,y,RX,y,RU,1.5);
+// Fill three places; a tie that would not fit becomes one shared place.
+const groups=[];rows.forEach(r=>{const g=groups.find(g=>g[0][3]==r[3]);g?g.push(r):groups.push([r]);});
+const cells=[];for(const g of groups){const left=3-cells.length;if(left<=0)break;if(g.length<=left)g.forEach(r=>cells.push([r]));else{cells.push(g);break;}}
+const lead=cells[0],r0=lead[0],m=Math.min(lead.length,2),val=r0[2].toFixed(1),cy=y+122;
+// The leader: headshot in front of a gray circle, the stat, the name, the value large in red.
+s+=`<circle cx="${L+82}" cy="${cy}" r="76" fill="${LR}"/>`;const hz=m==1?140:116;for(let q=m-1;q>=0;q--)if(A.heads[lead[q][0]])s+=`<image href="${A.heads[lead[q][0]]}" x="${L+82+(q-(m-1)/2)*48-hz/2}" y="${cy+70-hz}" width="${hz}" height="${hz}"/>`;
+s+=t(tx,y+66,22,nm,{w:700,f:R})+t(tx+tw(nm,22,700)+8,y+66,22,'per game',{f:FT});
+const who=lead.length>2?`${lead.length} tied`:lead.map(q=>q[1]).join(', ');s+=t(tx,y+118,fit(who,40,RX-230-tx,700),who,{w:700});
+if(lead.length==1&&r0[5]!=null&&r0[5]!=r0[3]){const up=r0[5]>r0[3],c2=up?R:K,px=tx+Math.min(tw(who,40,700),RX-230-tx)+24;s+=tri(px,y+104,up,c2)+t(px+12,y+111,20,Math.abs(r0[5]-r0[3]),{f:c2,w:700});}
+s+=t(RX,y+130,96,val,{w:900,ff:SERIF,a:'end',f:R});
+// Second and third on one line: place, name, value.
+let x=tx;cells.slice(1).forEach(c=>{const p=c[0][3],tied=c.length>1||cells.filter(q=>q[0][3]==p).length>1,rk=(tied?'T-':'')+p,nmz=c.length>2?`${c.length} tied`:c.map(q=>q[1]).join(', '),v=c[0][2].toFixed(1);
+s+=t(x,y+170,24,rk,{w:900,ff:SERIF,f:FT});x+=tw(rk,24,900,SERIF)+10;s+=t(x,y+170,24,nmz);x+=tw(nmz,24)+10;s+=t(x,y+170,24,v,{w:700});x+=tw(v,24,700)+40;});});
+const pre=D.kind==='Preseason';
+return page(`${D.chi.team} ${pre?'preseason':'season'} leaders`,s,[`Qualified: played ${SL.qualify} of ${SL.games} games (half)`]);}
+
+// "Swipe" cue at the top right: the text, then three red chevrons that brighten toward the next slide.
+const swipeCue=()=>{const y=74,cy=y-9,x=RX-46;
+return t(x-14,y,26,'Swipe for the full breakdown',{a:'end'})+[0.3,0.6,1].map((o,i)=>`<path d="M${x+i*16},${cy-11} L${x+i*16+11},${cy} L${x+i*16},${cy+11}" fill="none" stroke="${R}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="${o}"/>`).join('');};
+
+// Optional carousel cover on the page background: the game's own scoring-margin line as art, the score in the
+// serif (Bulls line red), "@" or "vs." between the teams, the date (and any overtime) in red italic.
+function recapCover(){const F=D.flow;let s=rect(0,0,1080,1440,BG)+trim();
+const maxUp=Math.max(10,F.chi_lead),maxDn=Math.max(10,F.opp_lead),top=240,bot=780,sx=m=>m/F.total*1080,sy=v=>top+(maxUp-v)/(maxUp+maxDn)*(bot-top),z=sy(0);
+const pts=[[0,0]];F.series.forEach(([a,b])=>{const prev=pts[pts.length-1][0];pts.push([Math.max(a,prev+0.033),b]);});
+const d=mono(simplify(pts.map(([a,b])=>[sx(a),sy(b)]),1.6*(bot-top)/(maxUp+maxDn),[]));
+s+=`<defs><clipPath id="clu"><rect x="0" y="0" width="1080" height="${z}"/></clipPath><clipPath id="cld"><rect x="0" y="${z}" width="1080" height="1440"/></clipPath>`
++`<linearGradient id="clf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${BG}" stop-opacity="0"/><stop offset="1" stop-color="${BG}" stop-opacity="1"/></linearGradient></defs>`;
+s+=ln(0,z,1080,z,RU,2);
+s+=`<path d="${d} L1080,${z} L0,${z} Z" fill="${R}" opacity="0.16" clip-path="url(#clu)"/><path d="${d} L1080,${z} L0,${z} Z" fill="${GR}" opacity="0.22" clip-path="url(#cld)"/>`;
+s+=`<path d="${d}" fill="none" stroke="${R}" stroke-width="6" stroke-linejoin="round" clip-path="url(#clu)"/><path d="${d}" fill="none" stroke="${GR}" stroke-width="6" stroke-linejoin="round" clip-path="url(#cld)"/>`;
+s+=rect(0,740,1080,200,'url(#clf)');
+const l1=`${D.chi.team} ${D.chi.score}`,l2=`${D.opp.team} ${D.opp.score}`,fs=Math.min(160,...[[l1,D.chi.record],[l2,D.opp.record]].map(([l,r])=>(W-12)/((tw(l,160,900,SERIF)+tw(r?`(${r})`:'',48,700))/160+0.9+74/160))),y1=960;
+const rec=(r,x,y)=>r?t(x,y,fs*0.3,`(${r})`,{w:700}):'';
+s+=t(L,y1,fs,l1,{w:900,ff:SERIF,f:R})+logo(D.chi.tri,L+tw(l1,fs,900,SERIF)+26,y1-fs*0.8,fs*0.9)+rec(D.chi.record,L+tw(l1,fs,900,SERIF)+fs*0.9+48,y1-fs*0.25);
+s+=t(L+4,y1+fs*0.74,fs*0.42,D.home?'vs.':'@',{w:900,ff:SERIF,it:true});
+s+=t(L,y1+fs*1.68,fs,l2,{w:900,ff:SERIF})+logo(D.opp.tri,L+tw(l2,fs,900,SERIF)+26,y1+fs*1.68-fs*0.8,fs*0.9)+rec(D.opp.record,L+tw(l2,fs,900,SERIF)+fs*0.9+48,y1+fs*1.68-fs*0.25);
+const ot=F.periods>4?` (${F.periods==5?'OT':`${F.periods-4}OT`})`:'';
+s+=t(L,y1+fs*1.68+104,50,D.date_short+ot,{w:900,ff:SERIF,it:true,f:R});
+s+=t(L,74,26,`${D.chi.city} ${D.chi.team} ${D.kind==='Preseason'?'preseason':'game'} recap #${D.season.games.length}`,{w:700})+swipeCue();
+s+=`<text x="${RX}" y="1424" font-size="16" font-weight="700" text-anchor="end"><tspan fill="${R}">chicago_bulls</tspan><tspan fill="${K}">[data]</tspan></text>`;
+return s;}
+
+function render(i){D=A.games[i];clipN=0;document.querySelectorAll('nav button').forEach((b,j)=>b.className=j==i?'on':'');
+const pages=[[recapCover,'Cover (optional)'],[cover,'Final score'],[teamStats,'Team stats'],[shotChart,'Shot chart'],[()=>breakdownRawPage(false),'Game breakdown'],[boxScore,'Box score'],[seasonPage,'Season so far'],[leadersPage,'Season leaders']];
+let k=0;const html=pages.map(([f,c])=>[f(),c]).filter(p=>p[0]).map(([s,c])=>svg(s,`${++k} · ${c}`)).join('');
+document.getElementById('g').innerHTML=html+(D.missing.length?`<div class="cap" style="grid-column:1/-1">Skipped or empty feeds: ${D.missing.join('; ')}</div>`:'');window.scrollTo(0,0);}
+document.getElementById('nav').innerHTML=A.games.map((g,i)=>`<button onclick="render(${i})">${g.result} ${g.chi.score}-${g.opp.score} ${g.home?'vs':'at'} ${g.opp.tri} · ${g.date_short}${g.kind==='Preseason'?' (pre)':''}</button>`).join('');
+// Measure only after the serif has loaded, so titles fit their width.
+Promise.all([document.fonts.load(`900 40px ${SERIF}`),document.fonts.load(`italic 900 40px ${SERIF}`)]).catch(()=>{}).then(()=>render(0));
+</script></body></html>

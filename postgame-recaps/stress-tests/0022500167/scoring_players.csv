@@ -1,0 +1,27 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1631133,Jabari,Walker,J. Walker,jabari-walker,F,,,18:42,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1626162,Kelly,Oubre Jr.,K. Oubre Jr.,kelly-oubre-jr,F,,,32:37,0.636,0.364,0.556,0.111,0.333,0.389,0.111,0.5,0.444,0.4,0.6,1.0,0.0,0.571,0.429
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,203954,Joel,Embiid,J. Embiid,joel-embiid,C,,,25:33,0.714,0.286,0.6,0.3,0.15,0.0,0.25,0.05,0.3,0.333,0.667,1.0,0.0,0.429,0.571
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1642845,VJ,Edgecombe,V. Edgecombe,vj-edgecombe,G,,,37:43,0.75,0.25,0.333,0.0,0.5,0.25,0.167,0.0,0.333,0.0,1.0,1.0,0.0,0.5,0.5
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1630178,Tyrese,Maxey,T. Maxey,tyrese-maxey,G,,,39:16,0.615,0.385,0.41,0.103,0.462,0.0,0.128,0.0,0.308,0.5,0.5,0.5,0.5,0.5,0.5
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1629656,Quentin,Grimes,Q. Grimes,quentin-grimes,,,,29:34,0.545,0.455,0.8,0.0,0.0,0.6,0.2,0.2,0.8,0.75,0.25,0.0,0.0,0.75,0.25
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1630570,Trendon,Watford,T. Watford,trendon-watford,,,,18:59,1.0,0.0,0.5,0.0,0.0,0.0,0.5,0.0,0.5,1.0,0.0,0.0,0.0,1.0,0.0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1641737,Adem,Bona,A. Bona,adem-bona,,,,22:27,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1642272,Jared,McCain,J. McCain,jared-mccain,,,,15:09,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1641780,Johni,Broome,J. Broome,johni-broome,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,203083,Andre,Drummond,A. Drummond,andre-drummond,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,1642348,Justin,Edwards,J. Edwards,justin-edwards,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,201569,Eric,Gordon,E. Gordon,eric-gordon,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500167,1610612755,Philadelphia,76ers,PHI,sixers,200768,Kyle,Lowry,K. Lowry,kyle-lowry,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1630171,Isaac,Okoro,I. Okoro,isaac-okoro,F,,,32:57,0.25,0.75,0.25,0.0,0.563,0.0,0.188,0.313,0.25,0.0,1.0,1.0,0.0,0.6,0.4
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1641824,Matas,Buzelis,M. Buzelis,matas-buzelis,F,,,30:25,0.636,0.364,0.4,0.0,0.6,0.6,0.0,0.0,0.4,0.5,0.5,1.0,0.0,0.75,0.25
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,202696,Nikola,Vučević,N. Vučević,nikola-vučević,C,,,31:04,0.643,0.357,0.737,0.0,0.158,0.0,0.105,0.105,0.737,0.714,0.286,1.0,0.0,0.75,0.25
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1630200,Tre,Jones,T. Jones,tre-jones,G,,,26:50,1.0,0.0,1.0,0.0,0.0,0.5,0.0,0.5,1.0,0.5,0.5,0.0,0.0,0.5,0.5
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1630581,Josh,Giddey,J. Giddey,josh-giddey,G,,,37:24,0.789,0.211,0.552,0.0,0.207,0.31,0.241,0.207,0.552,0.25,0.75,0.5,0.5,0.3,0.7
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1628989,Kevin,Huerter,K. Huerter,kevin-huerter,,,,24:60,0.538,0.462,0.5,0.0,0.5,0.417,0.0,0.167,0.5,0.667,0.333,1.0,0.0,0.8,0.2
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,,,,20:35,0.6,0.4,0.667,0.0,0.0,0.667,0.333,0.667,0.667,0.0,1.0,0.0,0.0,0.0,1.0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1630188,Jalen,Smith,J. Smith,jalen-smith,,,,16:56,0.125,0.875,0.143,0.0,0.643,0.214,0.214,0.0,0.143,1.0,0.0,1.0,0.0,1.0,0.0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1631207,Dalen,Terry,D. Terry,dalen-terry,,,,13:44,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1641763,Julian,Phillips,J. Phillips,julian-phillips,,,,5:05,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1628975,Jevon,Carter,J. Carter,jevon-carter,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500167,1610612741,Chicago,Bulls,CHI,bulls,1630245,Ayo,Dosunmu,A. Dosunmu,ayo-dosunmu,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

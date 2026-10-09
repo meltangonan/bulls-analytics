@@ -1,0 +1,27 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1631159,Leonard,Miller,L. Miller,leonard-miller,F,,,37:41,0.813,0.188,0.824,0.0,0.176,0.235,0.0,0.235,0.824,0.571,0.429,1.0,0.0,0.625,0.375
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1630188,Jalen,Smith,J. Smith,jalen-smith,F,,,33:53,0.231,0.769,0.167,0.0,0.5,0.0,0.333,0.0,0.167,1.0,0.0,1.0,0.0,1.0,0.0
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1627824,Guerschon,Yabusele,G. Yabusele,guerschon-yabusele,C,,,23:13,0.667,0.333,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1641824,Matas,Buzelis,M. Buzelis,matas-buzelis,G,,,45:12,0.464,0.536,0.537,0.0,0.366,0.146,0.098,0.122,0.537,0.727,0.273,1.0,0.0,0.813,0.188
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1630581,Josh,Giddey,J. Giddey,josh-giddey,G,,,43:12,0.438,0.563,0.286,0.0,0.571,0.0,0.143,0.0,0.286,0.0,1.0,0.75,0.25,0.429,0.571
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1630200,Tre,Jones,T. Jones,tre-jones,,,,33:29,0.667,0.333,0.727,0.273,0.273,0.227,0.0,0.182,0.455,0.5,0.5,1.0,0.0,0.6,0.4
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1630208,Nick,Richards,N. Richards,nick-richards,,,,28:07,1.0,0.0,0.8,0.0,0.0,0.0,0.2,0.2,0.8,0.75,0.25,0.0,0.0,0.75,0.25
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1642265,Rob,Dillingham,R. Dillingham,rob-dillingham,,,,20:13,0.727,0.273,0.4,0.0,0.6,0.0,0.0,0.0,0.4,0.0,1.0,1.0,0.0,0.5,0.5
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1642530,Yuki,Kawamura,Y. Kawamura,yuki-kawamura,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1630171,Isaac,Okoro,I. Okoro,isaac-okoro,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1629012,Collin,Sexton,C. Sexton,collin-sexton,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500943,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,1630611,Gui,Santos,G. Santos,gui-santos,F,,,36:40,0.526,0.474,0.471,0.0,0.529,0.0,0.0,0.294,0.471,0.75,0.25,1.0,0.0,0.857,0.143
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,203110,Draymond,Green,D. Green,draymond-green,F,,,29:29,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,201143,Al,Horford,A. Horford,al-horford,C,,,34:04,0.444,0.556,0.308,0.0,0.692,0.0,0.0,0.0,0.308,1.0,0.0,1.0,0.0,1.0,0.0
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,1642954,Will,Richard,W. Richard,will-richard,G,,,31:44,0.444,0.556,0.5,0.0,0.375,0.0,0.125,0.0,0.5,1.0,0.0,1.0,0.0,1.0,0.0
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,1641764,Brandin,Podziemski,B. Podziemski,brandin-podziemski,G,,,26:55,0.5,0.5,0.444,0.222,0.333,0.222,0.222,0.222,0.222,1.0,0.0,0.0,1.0,0.667,0.333
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,1643018,LJ,Cryer,L. Cryer,lj-cryer,,,,20:38,0.286,0.714,0.118,0.0,0.529,0.118,0.353,0.118,0.118,1.0,0.0,0.667,0.333,0.75,0.25
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,1631466,Nate,Williams,N. Williams,nate-williams,,,,10:58,0.667,0.333,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,1630311,Pat,Spencer,P. Spencer,pat-spencer,,,,30:10,0.5,0.5,0.471,0.0,0.529,0.235,0.0,0.118,0.471,0.25,0.75,0.667,0.333,0.429,0.571
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,204001,Kristaps,Porziņģis,K. Porziņģis,kristaps-porziņģis,,,,20:13,0.538,0.462,0.353,0.118,0.353,0.0,0.294,0.0,0.235,0.333,0.667,0.5,0.5,0.4,0.6
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,1627780,Gary,Payton II,G. Payton II,gary-payton-ii,,,,21:50,0.857,0.143,0.833,0.0,0.0,0.333,0.167,0.5,0.833,0.4,0.6,0.0,0.0,0.4,0.6
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,1642502,Malevy,Leons,M. Leons,malevy-leons,,,,2:18,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,1629001,De'Anthony,Melton,D. Melton,deanthony-melton,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,1630541,Moses,Moody,M. Moody,moses-moody,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500943,1610612744,Golden State,Warriors,GSW,warriors,1642366,Quinten,Post,Q. Post,quinten-post,,DNP - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

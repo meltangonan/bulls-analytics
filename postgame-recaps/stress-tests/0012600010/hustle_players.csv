@@ -1,0 +1,28 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,points,contestedShots,contestedShots2pt,contestedShots3pt,deflections,chargesDrawn,screenAssists,screenAssistPoints,looseBallsRecoveredOffensive,looseBallsRecoveredDefensive,looseBallsRecoveredTotal,offensiveBoxOuts,defensiveBoxOuts,boxOutPlayerTeamRebounds,boxOutPlayerRebounds,boxOuts
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1642876,Adou,Thiero,A. Thiero,adou-thiero,F,,1,16:57,7,2,0,2,2,0,0,0,1,0,1,0,0,0,0,0
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1631222,Jake,LaRavia,J. LaRavia,jake-laravia,F,,12,22:18,9,3,3,0,5,0,0,0,1,0,1,0,0,0,0,2
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1630572,Sandro,Mamukelashvili,S. Mamukelashvili,sandro-mamukelashvili,C,,54,18:08,15,4,3,1,0,0,0,0,0,0,0,0,0,0,0,0
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1642355,Bronny,James,B. James,bronny-james,G,,9,20:58,4,1,0,1,2,0,0,0,0,0,0,0,0,0,0,0
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1629656,Quentin,Grimes,Q. Grimes,quentin-grimes,G,,5,23:05,12,7,2,5,3,0,0,0,0,0,0,0,0,0,0,0
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1643418,Cameron,Carr,C. Carr,cameron-carr,,,43,12:10,5,1,0,1,3,0,0,0,0,0,0,0,0,0,0,1
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1630702,Jaden,Hardy,J. Hardy,jaden-hardy,,,7,18:46,13,1,1,0,2,0,1,0,0,0,0,0,0,0,0,0
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1626172,Kevon,Looney,K. Looney,kevon-looney,,,55,13:02,0,6,3,3,0,0,3,0,0,0,0,0,0,0,0,0
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1643024,Chris,Mañon,C. Mañon,chris-mañon,,,30,22:18,7,2,2,0,4,0,0,0,0,0,0,0,0,0,0,1
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1629020,Jarred,Vanderbilt,J. Vanderbilt,jarred-vanderbilt,,,2,15:30,2,1,1,0,1,1,0,0,1,0,1,0,0,0,0,2
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1643758,AK,Okereke,A. Okereke,ak-okereke,,,31,13:16,4,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1631306,Cole,Swider,C. Swider,cole-swider,,,13,12:00,9,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+0012600010,1610612747,Los Angeles,Lakers,LAL,lakers,1643759,William,Kyle,W. Kyle,william-kyle,,,,9:40,0,1,0,1,2,0,1,0,0,0,0,0,0,0,0,0
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1630611,Gui,Santos,G. Santos,gui-santos,F,,15,21:20,7,4,1,3,3,0,0,0,1,0,1,0,0,0,0,1
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1642865,Yaxel,Lendeborg,Y. Lendeborg,yaxel-lendeborg,F,,1,21:27,17,3,2,1,0,0,0,0,0,0,0,0,0,0,0,0
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,203110,Draymond,Green,D. Green,draymond-green,C,,23,14:52,3,6,4,2,1,0,2,0,0,0,0,0,0,0,0,1
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1641764,Brandin,Podziemski,B. Podziemski,brandin-podziemski,G,,2,19:27,16,2,2,0,6,1,0,0,0,1,1,0,0,0,0,0
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,201939,Stephen,Curry,S. Curry,stephen-curry,G,,30,14:19,16,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1627780,Gary,Payton II,G. Payton II,gary-payton-ii,,,0,15:56,4,0,0,0,2,0,0,0,1,0,1,0,0,0,0,0
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1629646,Charles,Bassey,C. Bassey,charles-bassey,,,28,14:15,4,8,4,4,2,0,1,0,0,0,0,0,0,0,0,0
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1629001,De'Anthony,Melton,D. Melton,deanthony-melton,,,8,17:42,9,1,0,1,2,0,0,0,0,0,0,0,0,0,0,0
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1627777,Georges,Niang,G. Niang,georges-niang,,,32,18:32,7,2,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1630314,Brandon,Williams,B. Williams,brandon-williams,,,12,18:07,10,2,0,2,3,0,0,0,0,1,1,0,0,0,0,0
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1642954,Will,Richard,W. Richard,will-richard,,,3,15:12,5,3,3,0,3,0,0,0,0,0,0,0,0,0,0,0
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1643633,Graham,Ike,G. Ike,graham-ike,,,45,12:20,6,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1642502,Malevy,Leons,M. Leons,malevy-leons,,,33,10:20,5,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+0012600010,1610612744,Golden State,Warriors,GSW,warriors,1642893,Alex,Toohey,A. Toohey,alex-toohey,,,22,3:06,3,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0

@@ -1,0 +1,522 @@
+gameId,actionNumber,clock,period,teamId,teamTricode,personId,playerName,playerNameI,xLegacy,yLegacy,shotDistance,shotResult,isFieldGoal,scoreHome,scoreAway,pointsTotal,location,description,actionType,subType,videoAvailable,shotValue,actionId
+0012600027,2,PT12M00.00S,1,0,,0,,,0,0,0,,0,86,96,182,,Start of 1st Period (11:34 PM EST),period,start,1,0,1
+0012600027,4,PT12M00.00S,1,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,,0,,,0,h,Jump Ball Hayes vs. Jokic: Tip to Gordon,Jump Ball,,1,0,2
+0012600027,7,PT11M43.00S,1,1610612743,DEN,1627750,Murray,J. Murray,-199,199,28,Missed,1,,,0,v,MISS Murray 28' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,3
+0012600027,8,PT11M43.00S,1,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Unknown,0,0,4
+0012600027,9,PT11M20.00S,1,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,40,122,13,Missed,1,,,0,h,MISS Jackson Jr. 13' Driving Floating Jump Shot,Missed Shot,Driving Floating Jump Shot,1,2,5
+0012600027,10,PT11M20.00S,1,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,,0,,,0,h,Hayes REBOUND (Off:1 Def:3),Rebound,Unknown,1,0,6
+0012600027,11,PT11M18.00S,1,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,Made,1,77,91,168,h,Hayes Tip Layup Shot (7 PTS),Made Shot,Tip Layup Shot,1,2,7
+0012600027,12,PT11M10.00S,1,1610612743,DEN,1631128,Braun,C. Braun,0,0,0,,0,,,0,v,Braun OFF.Foul (P1) (M.Dagher),Foul,Offensive,1,0,8
+0012600027,30,PT11M10.00S,1,1610612743,DEN,1631128,Braun,C. Braun,0,0,0,,0,,,0,v,Braun Offensive Foul Turnover (P1.T14),Turnover,Offensive Foul Turnover,1,0,9
+0012600027,15,PT11M04.00S,1,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,,,0,v,Gordon P.FOUL (P1.T1) (G.Petraitis),Foul,Personal,1,0,10
+0012600027,17,PT10M59.00S,1,1610612762,UTA,1643408,Peterson,D. Peterson,31,-2,3,Made,1,79,91,170,h,Peterson 3' Alley Oop Dunk (21 PTS) (George 4 AST),Made Shot,Alley Oop Dunk Shot,1,2,11
+0012600027,19,PT10M45.00S,1,1610612743,DEN,1631128,Braun,C. Braun,-204,171,27,Missed,1,,,0,v,MISS Braun 27' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,12
+0012600027,20,PT10M45.00S,1,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,13
+0012600027,21,PT10M22.00S,1,1610612762,UTA,1629637,Hayes,J. Hayes,-22,256,26,Missed,1,,,0,h,MISS Hayes 26' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,14
+0012600027,22,PT10M22.00S,1,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,,,0,v,Gordon REBOUND (Off:0 Def:4),Rebound,Unknown,1,0,15
+0012600027,23,PT10M03.00S,1,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic Backcourt Turnover (P2.T14),Turnover,Backcourt Turnover,1,0,16
+0012600027,24,PT09M57.00S,1,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic Violation:Kicked Ball (G.Petraitis),Violation,Kicked Ball,0,0,17
+0012600027,25,PT09M50.00S,1,1610612762,UTA,1629637,Hayes,J. Hayes,84,66,11,Missed,1,,,0,h,MISS Hayes 11' Driving Layup,Missed Shot,Driving Layup Shot,1,2,18
+0012600027,26,PT09M50.00S,1,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,,,0,v,Gordon REBOUND (Off:0 Def:4),Rebound,Unknown,1,0,19
+0012600027,27,PT09M42.00S,1,1610612743,DEN,203932,Gordon,A. Gordon,-194,175,26,Made,1,79,94,173,v,Gordon 26' 3PT Running Pull-Up Jump Shot (18 PTS),Made Shot,Running Pull-Up Jump Shot,1,3,20
+0012600027,28,PT09M15.00S,1,1610612762,UTA,1641718,George,K. George,237,-26,24,Made,1,82,94,176,h,George 24' 3PT Fadeaway Jumper (3 PTS),Made Shot,Fadeaway Jump Shot,1,3,21
+0012600027,31,PT09M04.00S,1,1610612762,UTA,1641718,George,K. George,0,0,0,,0,,,0,h,George P.FOUL (P4.T3) (S.Twardoski),Foul,Personal,1,0,22
+0012600027,33,PT09M01.00S,1,1610612743,DEN,203999,Jokić,N. Jokić,53,35,6,Missed,1,,,0,v,MISS Jokic 6' Cutting Layup Shot,Missed Shot,Cutting Layup Shot,1,2,23
+0012600027,33,PT09M01.00S,1,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,,0,,,0,h,Hayes BLOCK (1 BLK),,,1,2,24
+0012600027,35,PT09M01.00S,1,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Unknown,1,0,25
+0012600027,36,PT08M58.00S,1,1610612743,DEN,1627750,Murray,J. Murray,-28,36,5,Missed,1,,,0,v,MISS Murray 5' Driving Layup,Missed Shot,Driving Layup Shot,1,2,26
+0012600027,37,PT08M58.00S,1,1610612743,DEN,1627750,Murray,J. Murray,0,0,0,,0,,,0,v,Murray REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,27
+0012600027,38,PT08M54.00S,1,1610612743,DEN,1627750,Murray,J. Murray,0,0,0,Missed,1,,,0,v,MISS Murray Tip Layup Shot,Missed Shot,Tip Layup Shot,1,2,28
+0012600027,39,PT08M54.00S,1,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,,,0,h,Jackson Jr. REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,29
+0012600027,40,PT08M43.00S,1,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,64,6,Made,1,84,94,178,h,Jackson Jr. 6' Turnaround Hook Shot (7 PTS) (George 4 AST),Made Shot,Turnaround Hook Shot,1,2,30
+0012600027,42,PT08M30.00S,1,1610612743,DEN,1631128,Braun,C. Braun,-6,36,4,Missed,1,,,0,v,MISS Braun 4' Cutting Layup Shot,Missed Shot,Cutting Layup Shot,1,2,31
+0012600027,42,PT08M30.00S,1,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,,,0,h,Jackson Jr. BLOCK (1 BLK),,,1,2,32
+0012600027,44,PT08M30.00S,1,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Unknown,1,0,33
+0012600027,45,PT08M20.00S,1,1610612762,UTA,1642846,Bailey,A. Bailey,-241,-6,24,Missed,1,,,0,h,MISS Bailey 24' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,34
+0012600027,46,PT08M20.00S,1,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic REBOUND (Off:0 Def:4),Rebound,Unknown,1,0,35
+0012600027,47,PT08M09.00S,1,1610612743,DEN,203932,Gordon,A. Gordon,-6,27,3,Made,1,84,96,180,v,Gordon 3' Driving Dunk (18 PTS) (Murray 3 AST),Made Shot,Driving Dunk Shot,1,2,36
+0012600027,49,PT07M47.00S,1,1610612762,UTA,1643408,Peterson,D. Peterson,-123,98,16,Missed,1,,,0,h,MISS Peterson 16' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,37
+0012600027,50,PT07M47.00S,1,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic REBOUND (Off:0 Def:4),Rebound,Unknown,1,0,38
+0012600027,52,PT07M37.00S,1,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,,,0,h,Jackson Jr. P.FOUL (P3.T3) (S.Twardoski),Foul,Personal,1,0,39
+0012600027,55,PT07M36.00S,1,1610612743,DEN,1631128,Braun,C. Braun,36,244,25,Missed,1,,,0,v,MISS Braun 25' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,40
+0012600027,56,PT07M36.00S,1,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,,0,,,0,h,Hayes REBOUND (Off:1 Def:3),Rebound,Unknown,1,0,41
+0012600027,57,PT07M23.00S,1,1610612762,UTA,1629637,Hayes,J. Hayes,22,12,3,Made,1,86,96,182,h,Hayes 3' Alley Oop Dunk (7 PTS) (George 4 AST),Made Shot,Alley Oop Dunk Shot,1,2,42
+0012600027,59,PT07M10.00S,1,1610612762,UTA,1641718,George,K. George,0,0,0,,0,,,0,h,George P.FOUL (P4.T3) (S.Twardoski),Foul,Personal,1,0,43
+0012600027,61,PT07M01.00S,1,1610612743,DEN,1631128,Braun,C. Braun,224,8,0,Missed,1,,,0,v,MISS Braun 3PT Jump Shot,Missed Shot,Jump Shot,1,3,44
+0012600027,62,PT07M01.00S,1,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey REBOUND (Off:3 Def:4),Rebound,Unknown,1,0,45
+0012600027,156,PT06M46.00S,1,1610612762,UTA,1642846,Bailey,A. Bailey,29,32,4,Missed,1,,,0,h,MISS Bailey 4' Driving Layup,Missed Shot,Driving Layup Shot,1,2,46
+0012600027,156,PT06M46.00S,1,1610612743,DEN,1627750,Murray,J. Murray,0,0,0,,0,,,0,v,Murray BLOCK (1 BLK),,,1,2,47
+0012600027,158,PT06M46.00S,1,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,,,0,v,Gordon REBOUND (Off:0 Def:5),Rebound,Unknown,1,0,48
+0012600027,65,PT06M43.00S,1,1610612743,DEN,1629661,Johnson,C. Johnson,-217,130,25,Missed,1,,,0,v,MISS Johnson 25' 3PT Running Jump Shot,Missed Shot,Running Jump Shot,1,3,49
+0012600027,66,PT06M43.00S,1,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson REBOUND (Off:0 Def:3),Rebound,Unknown,1,0,50
+0012600027,67,PT06M31.00S,1,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic P.FOUL (P4.T2) (G.Petraitis),Foul,Personal,1,0,51
+0012600027,69,PT06M31.00S,1,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Timeout: Regular (Full 4 Short 0),Timeout,Regular,0,0,52
+0012600027,72,PT06M31.00S,1,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,,,0,h,SUB: Okogie FOR Jackson Jr.,Substitution,,0,0,53
+0012600027,75,PT06M19.00S,1,1610612762,UTA,1643408,Peterson,D. Peterson,84,62,10,Made,1,88,96,184,h,Peterson 10' Pullup Jump Shot (23 PTS),Made Shot,Pullup Jump shot,1,2,54
+0012600027,76,PT05M58.00S,1,1610612743,DEN,203999,Jokić,N. Jokić,61,52,8,Made,1,88,98,186,v,Jokic 8' Driving Hook Shot (6 PTS) (Johnson 1 AST),Made Shot,Driving Hook Shot,1,2,55
+0012600027,78,PT05M41.00S,1,1610612762,UTA,1629006,Okogie,J. Okogie,-50,19,5,Missed,1,,,0,h,MISS Okogie 5' Driving Layup,Missed Shot,Driving Layup Shot,1,2,56
+0012600027,78,PT05M41.00S,1,1610612743,DEN,1631128,Braun,C. Braun,0,0,0,,0,,,0,v,Braun BLOCK (1 BLK),,,1,2,57
+0012600027,80,PT05M41.00S,1,1610612743,DEN,1631128,Braun,C. Braun,0,0,0,,0,,,0,v,Braun REBOUND (Off:1 Def:3),Rebound,Unknown,1,0,58
+0012600027,81,PT05M36.00S,1,1610612743,DEN,1629661,Johnson,C. Johnson,-7,21,2,Made,1,88,100,188,v,Johnson 2' Running Dunk (10 PTS) (Jokic 5 AST),Made Shot,Running Dunk Shot,1,2,59
+0012600027,83,PT05M14.00S,1,1610612762,UTA,1641718,George,K. George,39,248,25,Made,1,91,100,191,h,George 25' 3PT Pullup Jump Shot (6 PTS) (Peterson 3 AST),Made Shot,Pullup Jump shot,1,3,60
+0012600027,84,PT05M02.00S,1,1610612762,UTA,1641718,George,K. George,0,0,0,,0,,,0,h,George P.FOUL (P5.PN) (S.Twardoski),Foul,Personal,1,0,61
+0012600027,88,PT05M02.00S,1,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,,0,,,0,h,SUB: Bamba FOR Hayes,Substitution,,0,0,62
+0012600027,89,PT05M02.00S,1,1610612762,UTA,1641718,George,K. George,0,0,0,,0,,,0,h,SUB: Mykhailiuk FOR George,Substitution,,0,0,63
+0012600027,92,PT05M02.00S,1,1610612743,DEN,1629661,Johnson,C. Johnson,0,0,0,,0,,,0,v,SUB: Strawther FOR Johnson,Substitution,,0,0,64
+0012600027,93,PT05M02.00S,1,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,,,0,v,SUB: DeRozan FOR Gordon,Substitution,,0,0,65
+0012600027,94,PT04M53.00S,1,1610612743,DEN,203999,Jokić,N. Jokić,58,28,6,Made,1,91,102,193,v,Jokic 6' Driving Floating Bank Jump Shot (6 PTS),Made Shot,Driving Floating Bank Jump Shot,1,2,66
+0012600027,96,PT04M28.00S,1,1610612762,UTA,1628964,Bamba,M. Bamba,-26,10,3,Made,1,93,102,195,h,Bamba 3' Layup (8 PTS) (Okogie 3 AST),Made Shot,Layup Shot,1,2,67
+0012600027,98,PT04M07.00S,1,1610612743,DEN,1627750,Murray,J. Murray,85,116,14,Made,1,93,104,197,v,Murray 14' Step Back Jump Shot (4 PTS),Made Shot,Step Back Jump shot,1,2,68
+0012600027,99,PT03M52.00S,1,1610612762,UTA,1643408,Peterson,D. Peterson,79,17,8,Missed,1,,,0,h,MISS Peterson 8' Floating Jump Shot,Missed Shot,Floating Jump shot,1,2,69
+0012600027,100,PT03M52.00S,1,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Unknown,1,0,70
+0012600027,102,PT03M49.00S,1,1610612743,DEN,1627750,Murray,J. Murray,0,0,0,,0,,,0,v,SUB: T. Jones FOR Murray,Substitution,,0,0,71
+0012600027,103,PT03M31.00S,1,1610612743,DEN,203999,Jokić,N. Jokić,1,65,7,Missed,1,,,0,v,MISS Jokic 7' Turnaround Hook Shot,Missed Shot,Turnaround Hook Shot,1,2,72
+0012600027,104,PT03M31.00S,1,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba REBOUND (Off:4 Def:6),Rebound,Unknown,1,0,73
+0012600027,105,PT03M20.00S,1,1610612762,UTA,1628964,Bamba,M. Bamba,-14,24,3,Made,1,95,104,199,h,Bamba 3' Alley Oop Layup (8 PTS) (Peterson 3 AST),Made Shot,Alley Oop Layup shot,1,2,74
+0012600027,107,PT03M18.00S,1,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Timeout: Regular (Reg.5 Short 0),Timeout,Regular,0,0,75
+0012600027,109,PT03M18.00S,1,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,SUB: Collier FOR Peterson,Substitution,,0,0,76
+0012600027,112,PT03M18.00S,1,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,SUB: Bagley III FOR Jokic,Substitution,,0,0,77
+0012600027,113,PT03M18.00S,1,1610612743,DEN,1631128,Braun,C. Braun,0,0,0,,0,,,0,v,SUB: Diallo FOR Braun,Substitution,,0,0,78
+0012600027,114,PT02M59.00S,1,1610612743,DEN,201942,DeRozan,D. DeRozan,-100,121,16,Missed,1,,,0,v,MISS DeRozan 16' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,79
+0012600027,115,PT02M59.00S,1,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba REBOUND (Off:4 Def:6),Rebound,Unknown,1,0,80
+0012600027,116,PT02M42.00S,1,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,101,235,26,Missed,1,,,0,h,MISS Mykhailiuk 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,81
+0012600027,117,PT02M42.00S,1,1610612743,DEN,1626145,Jones,T. Jones,0,0,0,,0,,,0,v,T. Jones REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,82
+0012600027,118,PT02M32.00S,1,1610612743,DEN,201942,DeRozan,D. DeRozan,-200,147,25,Made,1,95,107,202,v,DeRozan 25' 3PT Jump Shot (7 PTS) (T. Jones 6 AST),Made Shot,Jump Shot,1,3,83
+0012600027,120,PT02M16.00S,1,1610612762,UTA,1642846,Bailey,A. Bailey,240,92,26,Made,1,98,107,205,h,Bailey 26' 3PT Jump Shot (10 PTS) (Collier 3 AST),Made Shot,Jump Shot,1,3,84
+0012600027,122,PT01M57.00S,1,1610612743,DEN,1631124,Strawther,J. Strawther,223,79,24,Made,1,98,110,208,v,Strawther 24' 3PT Jump Shot (15 PTS) (T. Jones 6 AST),Made Shot,Jump Shot,1,3,85
+0012600027,124,PT01M36.00S,1,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,237,-26,24,Missed,1,,,0,h,MISS Mykhailiuk 24' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,86
+0012600027,125,PT01M36.00S,1,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,Diallo REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,87
+0012600027,126,PT01M34.00S,1,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,Diallo Lost Ball Turnover (P3.T15),Turnover,Lost Ball,1,0,88
+0012600027,126,PT01M34.00S,1,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey STEAL (1 STL),,,1,0,89
+0012600027,128,PT01M33.00S,1,1610612762,UTA,1642846,Bailey,A. Bailey,16,9,2,Made,1,100,110,210,h,Bailey 2' Dunk (10 PTS),Made Shot,Dunk Shot,1,2,90
+0012600027,130,PT01M21.00S,1,1610612743,DEN,1643813,Diallo,A. Diallo,238,68,25,Made,1,100,113,213,v,Diallo 25' 3PT Jump Shot (8 PTS) (Strawther 3 AST),Made Shot,Jump Shot,1,3,91
+0012600027,132,PT01M05.00S,1,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,96,238,26,Made,1,103,113,216,h,Mykhailiuk 26' 3PT Jump Shot (9 PTS) (Okogie 3 AST),Made Shot,Jump Shot,1,3,92
+0012600027,134,PT01M03.00S,1,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Timeout: Regular (Reg.5 Short 0),Timeout,Regular,0,0,93
+0012600027,137,PT01M03.00S,1,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,SUB: Jackson Jr. FOR Bailey,Substitution,,0,0,94
+0012600027,138,PT00M54.00S,1,1610612743,DEN,201942,DeRozan,D. DeRozan,237,68,25,Missed,1,,,0,v,MISS DeRozan 25' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,95
+0012600027,139,PT00M54.00S,1,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,Strawther REBOUND (Off:2 Def:2),Rebound,Unknown,1,0,96
+0012600027,143,PT00M45.50S,1,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Normal Rebound,0,0,97
+0012600027,140,PT00M45.50S,1,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,,,0,h,Jackson Jr. P.FOUL (P4.PN) (M.Dagher),Foul,Personal,1,0,98
+0012600027,142,PT00M45.50S,1,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,MISS Diallo Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,99
+0012600027,202,PT00M45.50S,1,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Normal Rebound,1,0,100
+0012600027,144,PT00M45.50S,1,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,MISS Diallo Free Throw 2 of 2,Free Throw,Free Throw 2 of 2,1,0,101
+0012600027,145,PT00M45.50S,1,1610612762,UTA,1629006,Okogie,J. Okogie,0,0,0,,0,,,0,h,Okogie REBOUND (Off:1 Def:2),Rebound,Unknown,1,0,102
+0012600027,146,PT00M29.30S,1,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,-151,203,25,Made,1,106,113,219,h,Mykhailiuk 25' 3PT Step Back Jump Shot (9 PTS),Made Shot,Step Back Jump shot,1,3,103
+0012600027,148,PT00M11.30S,1,1610612762,UTA,1629006,Okogie,J. Okogie,0,0,0,,0,,,0,h,Okogie S.FOUL (P4.PN) (S.Twardoski),Foul,Shooting,1,0,104
+0012600027,150,PT00M11.30S,1,1610612743,DEN,201942,DeRozan,D. DeRozan,0,0,0,,0,106,114,220,v,DeRozan Free Throw 1 of 2 (6 PTS),Free Throw,Free Throw 1 of 2,1,0,105
+0012600027,151,PT00M11.30S,1,1610612743,DEN,201942,DeRozan,D. DeRozan,0,0,0,,0,106,115,221,v,DeRozan Free Throw 2 of 2 (7 PTS),Free Throw,Free Throw 2 of 2,1,0,106
+0012600027,153,PT00M02.00S,1,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,210,-5,21,Missed,1,,,0,h,MISS Mykhailiuk 21' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,107
+0012600027,154,PT00M02.00S,1,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Unknown,1,0,108
+0012600027,155,PT00M00.00S,1,0,,0,,,0,0,0,,0,106,117,223,,End of 1st Period (11:34 PM EST),period,end,1,0,109
+0012600027,159,PT12M00.00S,2,0,,0,,,0,0,0,,0,0,0,0,,Start of 2nd Period (9:40 PM EST),period,start,1,0,110
+0012600027,160,PT11M54.00S,2,1610612762,UTA,1629006,Okogie,J. Okogie,5,87,9,Missed,1,,,0,h,MISS Okogie 9' Driving Floating Jump Shot,Missed Shot,Driving Floating Jump Shot,1,2,111
+0012600027,161,PT11M54.00S,2,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,,,0,v,Bagley III REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,112
+0012600027,162,PT11M27.00S,2,1610612743,DEN,201942,DeRozan,D. DeRozan,100,180,21,Missed,1,,,0,v,MISS DeRozan 21' Jump Shot,Missed Shot,Jump Shot,1,2,113
+0012600027,163,PT11M27.00S,2,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,0,0,0,,0,,,0,h,Mykhailiuk REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,114
+0012600027,164,PT11M14.00S,2,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,Strawther P.FOUL (P1.T1) (G.Petraitis),Foul,Personal,1,0,115
+0012600027,167,PT11M14.00S,2,1610612762,UTA,1629006,Okogie,J. Okogie,0,0,0,,0,,,0,h,SUB: Peterson FOR Okogie,Substitution,,0,0,116
+0012600027,168,PT11M08.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,143,203,25,Missed,1,,,0,h,MISS Peterson 25' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,117
+0012600027,169,PT11M08.00S,2,1610612743,DEN,1626145,Jones,T. Jones,0,0,0,,0,,,0,v,T. Jones REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,118
+0012600027,170,PT10M59.00S,2,1610612743,DEN,1643813,Diallo,A. Diallo,226,32,0,Made,1,0,3,3,v,Diallo 3PT Jump Shot (3 PTS) (Strawther 1 AST),Made Shot,Jump Shot,1,3,119
+0012600027,172,PT10M56.00S,2,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Timeout: Regular (Full 1 Short 0),Timeout,Regular,0,0,120
+0012600027,173,PT10M44.00S,2,1610612762,UTA,1642268,Collier,I. Collier,49,101,11,Missed,1,,,0,h,MISS Collier 11' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,121
+0012600027,174,PT10M44.00S,2,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,122
+0012600027,175,PT10M41.00S,2,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,Missed,1,,,0,h,MISS Bamba Tip Layup Shot,Missed Shot,Tip Layup Shot,1,2,123
+0012600027,176,PT10M41.00S,2,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba REBOUND (Off:2 Def:0),Rebound,Unknown,1,0,124
+0012600027,177,PT10M39.00S,2,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,Made,1,2,3,5,h,Bamba Tip Layup Shot (2 PTS),Made Shot,Tip Layup Shot,1,2,125
+0012600027,178,PT10M18.00S,2,1610612743,DEN,1628963,Bagley III,M. Bagley III,-63,95,11,Made,1,2,5,7,v,Bagley III 11' Floating Jump Shot (2 PTS) (T. Jones 1 AST),Made Shot,Floating Jump shot,1,2,126
+0012600027,180,PT09M59.00S,2,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba Bad Pass Turnover (P1.T1),Turnover,Bad Pass,1,0,127
+0012600027,180,PT09M59.00S,2,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,Strawther STEAL (1 STL),,,1,0,128
+0012600027,184,PT09M42.00S,2,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,,,0,h,Jackson Jr. S.FOUL (P1.T1) (S.Twardoski),Foul,Shooting,1,0,129
+0012600027,186,PT09M42.00S,2,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,2,6,8,v,Strawther Free Throw 1 of 2 (1 PTS),Free Throw,Free Throw 1 of 2,1,0,130
+0012600027,187,PT09M42.00S,2,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,2,7,9,v,Strawther Free Throw 2 of 2 (2 PTS),Free Throw,Free Throw 2 of 2,1,0,131
+0012600027,189,PT09M34.00S,2,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,Diallo AWAY.FROM.PLAY.FOUL (P1.T3) (S.Twardoski),Foul,Away From Play,0,0,132
+0012600027,191,PT09M34.00S,2,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,,,0,h,MISS Jackson Jr. Free Throw 1 of 1,Free Throw,Free Throw 1 of 1,1,0,133
+0012600027,192,PT09M34.00S,2,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Unknown,0,0,134
+0012600027,193,PT09M34.00S,2,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,Strawther S.FOUL (P2.T3) (M.Dagher),Foul,Shooting,1,0,135
+0012600027,195,PT09M34.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,3,7,10,h,Peterson Free Throw 1 of 2 (1 PTS),Free Throw,Free Throw 1 of 2,1,0,136
+0012600027,198,PT09M34.00S,2,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,SUB: Hayes FOR Bamba,Substitution,,0,0,137
+0012600027,196,PT09M34.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,4,7,11,h,Peterson Free Throw 2 of 2 (2 PTS),Free Throw,Free Throw 2 of 2,1,0,138
+0012600027,199,PT09M26.00S,2,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,,,0,v,Bagley III OFF.Foul (P1) (G.Petraitis),Foul,Offensive,1,0,139
+0012600027,201,PT09M26.00S,2,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,,,0,v,Bagley III Offensive Foul Turnover (P1.T1),Turnover,Offensive Foul Turnover,1,0,140
+0012600027,203,PT09M16.00S,2,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,-242,-5,24,Made,1,7,7,14,h,Jackson Jr. 24' 3PT Jump Shot (3 PTS) (Peterson 1 AST),Made Shot,Jump Shot,1,3,141
+0012600027,205,PT09M02.00S,2,1610612743,DEN,201942,DeRozan,D. DeRozan,-74,151,17,Made,1,7,9,16,v,DeRozan 17' Pullup Jump Shot (2 PTS),Made Shot,Pullup Jump shot,1,2,142
+0012600027,206,PT08M50.00S,2,1610612762,UTA,1629637,Hayes,J. Hayes,45,62,8,Missed,1,,,0,h,MISS Hayes 8' Cutting Layup Shot,Missed Shot,Cutting Layup Shot,1,2,143
+0012600027,206,PT08M50.00S,2,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,,,0,v,Bagley III BLOCK (1 BLK),,,1,2,144
+0012600027,208,PT08M50.00S,2,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Unknown,1,0,145
+0012600027,209,PT08M44.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,132,130,19,Made,1,9,9,18,h,Peterson 19' Pullup Jump Shot (4 PTS),Made Shot,Pullup Jump shot,1,2,146
+0012600027,210,PT08M25.00S,2,1610612743,DEN,1631124,Strawther,J. Strawther,102,240,26,Missed,1,,,0,v,MISS Strawther 26' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,147
+0012600027,211,PT08M25.00S,2,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Unknown,0,0,148
+0012600027,213,PT08M22.00S,2,1610612762,UTA,1642268,Collier,I. Collier,0,0,0,,0,,,0,h,SUB: George FOR Collier,Substitution,,0,0,149
+0012600027,216,PT08M22.00S,2,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,SUB: Johnson FOR Strawther,Substitution,,0,0,150
+0012600027,217,PT08M22.00S,2,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,SUB: Gordon FOR Diallo,Substitution,,0,0,151
+0012600027,218,PT08M11.00S,2,1610612762,UTA,1641718,George,K. George,0,0,0,,0,,,0,h,George Bad Pass Turnover (P1.T2),Turnover,Bad Pass,1,0,152
+0012600027,218,PT08M11.00S,2,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,,,0,v,Bagley III STEAL (1 STL),,,1,0,153
+0012600027,220,PT08M06.00S,2,1610612743,DEN,1628963,Bagley III,M. Bagley III,-31,14,3,Made,1,9,11,20,v,Bagley III 3' Running Layup (4 PTS) (T. Jones 2 AST),Made Shot,Running Layup Shot,1,2,154
+0012600027,222,PT07M46.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,-196,179,27,Missed,1,,,0,h,MISS Peterson 27' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,155
+0012600027,223,PT07M46.00S,2,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,,,0,v,Bagley III REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,156
+0012600027,224,PT07M38.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson S.FOUL (P1.T2) (M.Dagher),Foul,Shooting,1,0,157
+0012600027,226,PT07M38.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,9,12,21,v,Gordon Free Throw 1 of 2 (1 PTS),Free Throw,Free Throw 1 of 2,1,0,158
+0012600027,230,PT07M38.00S,2,1610612743,DEN,1626145,Jones,T. Jones,0,0,0,,0,,,0,v,SUB: Jokic FOR T. Jones,Substitution,,0,0,159
+0012600027,231,PT07M38.00S,2,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,,,0,v,SUB: Murray FOR Bagley III,Substitution,,0,0,160
+0012600027,227,PT07M38.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,9,13,22,v,Gordon Free Throw 2 of 2 (2 PTS),Free Throw,Free Throw 2 of 2,1,0,161
+0012600027,232,PT07M16.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,207,160,26,Missed,1,,,0,h,MISS Peterson 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,162
+0012600027,233,PT07M16.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,163
+0012600027,234,PT07M08.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,-117,225,25,Made,1,9,16,25,v,Gordon 25' 3PT Running Pull-Up Jump Shot (5 PTS) (Jokic 1 AST),Made Shot,Running Pull-Up Jump Shot,1,3,164
+0012600027,236,PT06M55.00S,2,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,-239,46,24,Missed,1,,,0,h,MISS Mykhailiuk 24' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,165
+0012600027,237,PT06M55.00S,2,1610612743,DEN,1629661,Johnson,C. Johnson,0,0,0,,0,,,0,v,Johnson REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,166
+0012600027,238,PT06M42.00S,2,1610612743,DEN,1629661,Johnson,C. Johnson,-42,37,6,Missed,1,,,0,v,MISS Johnson 6' Driving Layup,Missed Shot,Driving Layup Shot,1,2,167
+0012600027,238,PT06M42.00S,2,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,0,0,0,,0,,,0,h,Mykhailiuk BLOCK (1 BLK),,,1,2,168
+0012600027,240,PT06M42.00S,2,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,,0,,,0,h,Hayes REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,169
+0012600027,241,PT06M31.00S,2,1610612762,UTA,1641718,George,K. George,-83,101,13,Missed,1,,,0,h,MISS George 13' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,170
+0012600027,242,PT06M31.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,,,0,v,Gordon REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,171
+0012600027,243,PT06M18.00S,2,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,,0,,,0,h,Hayes P.FOUL (P1.T3) (S.Twardoski),Foul,Personal,1,0,172
+0012600027,246,PT06M18.00S,2,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,0,0,0,,0,,,0,h,SUB: Bailey FOR Mykhailiuk,Substitution,,0,0,173
+0012600027,247,PT06M17.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic OFF.Foul (P1) (G.Petraitis),Foul,Offensive,1,0,174
+0012600027,249,PT06M17.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic Offensive Foul Turnover (P1.T2),Turnover,Offensive Foul Turnover,1,0,175
+0012600027,250,PT06M17.00S,2,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Timeout: Regular (Reg.1 Short 0),Timeout,Regular,0,0,176
+0012600027,251,PT06M17.00S,2,0,,0,,,0,0,0,,0,9,16,25,,Instant Replay2nd Period (9:50 PM EST),Instant Replay,Coach Challenge Ruling Stands,0,0,177
+0012600027,252,PT06M00.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,-31,13,3,Made,1,11,16,27,h,Peterson 3' Driving Layup (6 PTS) (Bailey 1 AST),Made Shot,Driving Layup Shot,1,2,178
+0012600027,254,PT06M00.00S,2,1610612743,DEN,1627750,Murray,J. Murray,0,0,0,,0,,,0,v,Murray S.FOUL (P1.T4) (M.Dagher),Foul,Shooting,1,0,179
+0012600027,256,PT06M00.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,MISS Peterson Free Throw 1 of 1,Free Throw,Free Throw 1 of 1,1,0,180
+0012600027,257,PT06M00.00S,2,1610612743,DEN,201942,DeRozan,D. DeRozan,0,0,0,,0,,,0,v,DeRozan REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,181
+0012600027,258,PT05M50.00S,2,1610612743,DEN,1629661,Johnson,C. Johnson,-197,174,26,Made,1,11,19,30,v,Johnson 26' 3PT Jump Shot (3 PTS) (DeRozan 1 AST),Made Shot,Jump Shot,1,3,182
+0012600027,260,PT05M35.00S,2,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,,,0,h,Jackson Jr. OFF.Foul (P2) (G.Petraitis),Foul,Offensive,1,0,183
+0012600027,262,PT05M35.00S,2,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,,,0,h,Jackson Jr. Offensive Foul Turnover (P1.T3),Turnover,Offensive Foul Turnover,1,0,184
+0012600027,264,PT05M35.00S,2,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,,,0,h,SUB: Okogie FOR Jackson Jr.,Substitution,,0,0,185
+0012600027,266,PT05M35.00S,2,1610612743,DEN,201942,DeRozan,D. DeRozan,0,0,0,,0,,,0,v,SUB: Braun FOR DeRozan,Substitution,,0,0,186
+0012600027,267,PT05M13.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,-242,22,24,Missed,1,,,0,v,MISS Gordon 24' 3PT Step Back Jump Shot,Missed Shot,Step Back Jump shot,1,3,187
+0012600027,268,PT05M13.00S,2,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,,0,,,0,h,Hayes REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,188
+0012600027,269,PT05M01.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,-99,45,11,Made,1,13,19,32,h,Peterson 11' Pullup Jump Shot (8 PTS),Made Shot,Pullup Jump shot,1,2,189
+0012600027,270,PT05M01.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic S.FOUL (P2.PN) (G.Petraitis),Foul,Shooting,1,0,190
+0012600027,272,PT05M01.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,MISS Peterson Free Throw 1 of 1,Free Throw,Free Throw 1 of 1,1,0,191
+0012600027,273,PT05M01.00S,2,1610612743,DEN,1631128,Braun,C. Braun,0,0,0,,0,,,0,v,Braun REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,192
+0012600027,274,PT04M49.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson P.FOUL (P2.T4) (M.Dagher),Foul,Personal,1,0,193
+0012600027,276,PT04M41.00S,2,1610612762,UTA,1641718,George,K. George,0,0,0,,0,,,0,h,George S.FOUL (P1.PN) (G.Petraitis),Foul,Shooting,1,0,194
+0012600027,278,PT04M41.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,13,20,33,v,Gordon Free Throw 1 of 2 (6 PTS),Free Throw,Free Throw 1 of 2,1,0,195
+0012600027,279,PT04M41.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,,,0,v,MISS Gordon Free Throw 2 of 2,Free Throw,Free Throw 2 of 2,1,0,196
+0012600027,280,PT04M41.00S,2,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,197
+0012600027,282,PT04M27.00S,2,1610612762,UTA,1641718,George,K. George,0,0,0,,0,,,0,h,George Bad Pass Turnover (P2.T4),Turnover,Bad Pass,1,0,198
+0012600027,282,PT04M27.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic STEAL (1 STL),,,1,0,199
+0012600027,284,PT04M24.00S,2,1610612743,DEN,1629661,Johnson,C. Johnson,11,18,2,Made,1,13,22,35,v,Johnson 2' Running Layup (5 PTS) (Murray 1 AST),Made Shot,Running Layup Shot,1,2,200
+0012600027,286,PT04M10.00S,2,1610612762,UTA,1629637,Hayes,J. Hayes,24,6,2,Made,1,15,22,37,h,Hayes 2' Alley Oop Layup (2 PTS) (George 1 AST),Made Shot,Alley Oop Layup shot,1,2,201
+0012600027,288,PT03M53.00S,2,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson P.FOUL (P3.PN) (M.Dagher),Foul,Personal,1,0,202
+0012600027,290,PT03M53.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,MISS Jokic Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,203
+0012600027,291,PT03M53.00S,2,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Normal Rebound,0,0,204
+0012600027,292,PT03M53.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,15,23,38,v,Jokic Free Throw 2 of 2 (1 PTS),Free Throw,Free Throw 2 of 2,1,0,205
+0012600027,293,PT03M42.00S,2,1610612762,UTA,1641718,George,K. George,-33,17,4,Missed,1,,,0,h,MISS George 4' Driving Layup,Missed Shot,Driving Layup Shot,1,2,206
+0012600027,294,PT03M42.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,207
+0012600027,295,PT03M37.00S,2,1610612743,DEN,1629661,Johnson,C. Johnson,20,31,4,Missed,1,,,0,v,MISS Johnson 4' Running Layup,Missed Shot,Running Layup Shot,1,2,208
+0012600027,296,PT03M37.00S,2,1610612762,UTA,1629006,Okogie,J. Okogie,0,0,0,,0,,,0,h,Okogie REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,209
+0012600027,297,PT03M32.00S,2,1610612762,UTA,1629637,Hayes,J. Hayes,33,14,4,Missed,1,,,0,h,MISS Hayes 4' Running Alley Oop Dunk Shot,Missed Shot,Running Alley Oop Dunk Shot,1,2,210
+0012600027,298,PT03M32.00S,2,1610612743,DEN,1627750,Murray,J. Murray,0,0,0,,0,,,0,v,Murray REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,211
+0012600027,299,PT03M26.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,30,33,4,Missed,1,,,0,v,MISS Gordon 4' Running Layup,Missed Shot,Running Layup Shot,1,2,212
+0012600027,300,PT03M26.00S,2,1610612743,DEN,1631128,Braun,C. Braun,0,0,0,,0,,,0,v,Braun REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,213
+0012600027,301,PT03M23.00S,2,1610612743,DEN,1631128,Braun,C. Braun,0,0,0,Made,1,15,25,40,v,Braun Putback Layup (2 PTS),Made Shot,Putback Layup Shot,1,2,214
+0012600027,302,PT03M11.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic P.FOUL (P3.PN) (G.Petraitis),Foul,Personal,1,0,215
+0012600027,305,PT03M11.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,Jokic T.FOUL (P3.PN) (G.Petraitis),Foul,Technical,1,0,216
+0012600027,306,PT03M11.00S,2,1610612762,UTA,1641718,George,K. George,0,0,0,,0,,,0,h,MISS George Free Throw Technical,Free Throw,Free Throw Technical,1,0,217
+0012600027,307,PT03M11.00S,2,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Normal Rebound,0,0,218
+0012600027,304,PT03M11.00S,2,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,,0,,,0,h,MISS Hayes Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,219
+0012600027,308,PT03M11.00S,2,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Normal Rebound,1,0,220
+0012600027,309,PT03M11.00S,2,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,,0,16,25,41,h,Hayes Free Throw 2 of 2 (3 PTS),Free Throw,Free Throw 2 of 2,1,0,221
+0012600027,310,PT02M57.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,-21,-1,2,Made,1,16,27,43,v,Gordon 2' Dunk (8 PTS) (Jokic 2 AST),Made Shot,Dunk Shot,1,2,222
+0012600027,312,PT02M44.00S,2,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey Out of Bounds Lost Ball Turnover (P1.T5),Turnover,Out of Bounds Lost Ball Turnover,1,0,223
+0012600027,314,PT02M44.00S,2,1610612762,UTA,1629637,Hayes,J. Hayes,0,0,0,,0,,,0,h,SUB: Jackson Jr. FOR Hayes,Substitution,,0,0,224
+0012600027,315,PT02M33.00S,2,1610612762,UTA,1641718,George,K. George,0,0,0,,0,,,0,h,George P.FOUL (P2.PN) (G.Petraitis),Foul,Personal,1,0,225
+0012600027,317,PT02M33.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,,,0,v,MISS Jokic Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,226
+0012600027,318,PT02M33.00S,2,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Normal Rebound,1,0,227
+0012600027,321,PT02M33.00S,2,1610612762,UTA,1641718,George,K. George,0,0,0,,0,,,0,h,SUB: Collier FOR George,Substitution,,0,0,228
+0012600027,319,PT02M33.00S,2,1610612743,DEN,203999,Jokić,N. Jokić,0,0,0,,0,16,28,44,v,Jokic Free Throw 2 of 2 (2 PTS),Free Throw,Free Throw 2 of 2,1,0,229
+0012600027,322,PT02M16.00S,2,1610612762,UTA,1629006,Okogie,J. Okogie,242,-21,24,Made,1,19,28,47,h,Okogie 24' 3PT Jump Shot (3 PTS) (Collier 1 AST),Made Shot,Jump Shot,1,3,230
+0012600027,324,PT02M02.00S,2,1610612743,DEN,1629661,Johnson,C. Johnson,232,72,24,Made,1,19,31,50,v,Johnson 24' 3PT Jump Shot (8 PTS) (Jokic 3 AST),Made Shot,Jump Shot,1,3,231
+0012600027,326,PT01M48.00S,2,1610612762,UTA,1629006,Okogie,J. Okogie,232,0,0,Missed,1,,,0,h,MISS Okogie 3PT Jump Shot,Missed Shot,Jump Shot,1,3,232
+0012600027,327,PT01M48.00S,2,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,233
+0012600027,328,PT01M35.00S,2,1610612762,UTA,1642268,Collier,I. Collier,167,57,18,Missed,1,,,0,h,MISS Collier 18' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,234
+0012600027,329,PT01M35.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,,,0,v,Gordon REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,235
+0012600027,330,PT01M25.00S,2,1610612762,UTA,1629006,Okogie,J. Okogie,0,0,0,,0,,,0,h,Okogie P.FOUL (P1.PN) (S.Twardoski),Foul,Personal,1,0,236
+0012600027,332,PT01M25.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,19,32,51,v,Gordon Free Throw 1 of 2 (9 PTS),Free Throw,Free Throw 1 of 2,1,0,237
+0012600027,333,PT01M25.00S,2,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,19,33,52,v,Gordon Free Throw 2 of 2 (10 PTS),Free Throw,Free Throw 2 of 2,1,0,238
+0012600027,334,PT01M12.00S,2,1610612762,UTA,1629006,Okogie,J. Okogie,-232,55,24,Made,1,22,33,55,h,Okogie 24' 3PT Jump Shot (6 PTS) (Bailey 2 AST),Made Shot,Jump Shot,1,3,239
+0012600027,336,PT00M56.40S,2,1610612743,DEN,203932,Gordon,A. Gordon,-4,117,12,Made,1,22,35,57,v,Gordon 12' Cutting Layup Shot (13 PTS) (Jokic 4 AST),Made Shot,Cutting Layup Shot,1,2,240
+0012600027,338,PT00M56.40S,2,1610612762,UTA,1629006,Okogie,J. Okogie,0,0,0,,0,,,0,h,Okogie S.FOUL (P2.PN) (M.Dagher),Foul,Shooting,1,0,241
+0012600027,340,PT00M56.40S,2,1610612743,DEN,203932,Gordon,A. Gordon,0,0,0,,0,22,36,58,v,Gordon Free Throw 1 of 1 (13 PTS),Free Throw,Free Throw 1 of 1,1,0,242
+0012600027,341,PT00M47.70S,2,1610612743,DEN,1629661,Johnson,C. Johnson,0,0,0,,0,,,0,v,Johnson P.FOUL (P1.PN) (M.Dagher),Foul,Personal,1,0,243
+0012600027,343,PT00M47.70S,2,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,23,36,59,h,Jackson Jr. Free Throw 1 of 2 (4 PTS),Free Throw,Free Throw 1 of 2,1,0,244
+0012600027,344,PT00M47.70S,2,1610612762,UTA,1628991,Jackson Jr.,J. Jackson Jr.,0,0,0,,0,24,36,60,h,Jackson Jr. Free Throw 2 of 2 (5 PTS),Free Throw,Free Throw 2 of 2,1,0,245
+0012600027,345,PT00M35.30S,2,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson S.FOUL (P4.PN) (S.Twardoski),Foul,Shooting,1,0,246
+0012600027,347,PT00M35.30S,2,1610612743,DEN,1627750,Murray,J. Murray,0,0,0,,0,24,37,61,v,Murray Free Throw 1 of 2 (1 PTS),Free Throw,Free Throw 1 of 2,1,0,247
+0012600027,348,PT00M35.30S,2,1610612743,DEN,1627750,Murray,J. Murray,0,0,0,,0,24,38,62,v,Murray Free Throw 2 of 2 (2 PTS),Free Throw,Free Throw 2 of 2,1,0,248
+0012600027,349,PT00M32.70S,2,1610612762,UTA,1642268,Collier,I. Collier,52,39,7,Made,1,26,38,64,h,Collier 7' Driving Layup (2 PTS),Made Shot,Driving Layup Shot,1,2,249
+0012600027,350,PT00M32.70S,2,1610612743,DEN,1629661,Johnson,C. Johnson,0,0,0,,0,,,0,v,Johnson S.FOUL (P2.PN) (S.Twardoski),Foul,Shooting,1,0,250
+0012600027,352,PT00M32.70S,2,1610612762,UTA,1642268,Collier,I. Collier,0,0,0,,0,,,0,h,MISS Collier Free Throw 1 of 1,Free Throw,Free Throw 1 of 1,1,0,251
+0012600027,353,PT00M32.70S,2,1610612743,DEN,1631128,Braun,C. Braun,0,0,0,,0,,,0,v,Braun REBOUND (Off:1 Def:2),Rebound,Unknown,1,0,252
+0012600027,354,PT00M09.60S,2,1610612743,DEN,1631128,Braun,C. Braun,174,188,26,Made,1,26,41,67,v,Braun 26' 3PT Jump Shot (5 PTS) (Murray 2 AST),Made Shot,Jump Shot,1,3,253
+0012600027,356,PT00M00.10S,2,1610612762,UTA,1642268,Collier,I. Collier,-111,-2,11,Made,1,28,41,69,h,Collier 11' Fadeaway Jumper (4 PTS),Made Shot,Fadeaway Jump Shot,1,2,254
+0012600027,358,PT00M00.00S,2,0,,0,,,0,0,0,,0,28,41,69,,Instant Replay2nd Period (9:56 PM EST),Instant Replay,Support Ruling,0,0,255
+0012600027,357,PT00M00.00S,2,0,,0,,,0,0,0,,0,28,41,69,,End of 2nd Period (9:56 PM EST),period,end,1,0,256
+0012600027,373,PT12M00.00S,3,0,,0,,,0,0,0,,0,28,41,69,,Start of 3rd Period (11:03 PM EST),period,start,1,0,257
+0012600027,374,PT11M49.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,35,22,4,Missed,1,,,0,h,MISS Bailey 4' Cutting Dunk Shot,Missed Shot,Cutting Dunk Shot,1,2,258
+0012600027,375,PT11M49.00S,3,1610612762,UTA,1629006,Okogie,J. Okogie,0,0,0,,0,,,0,h,Okogie REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,259
+0012600027,376,PT11M44.00S,3,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,Diallo P.FOUL (P2.T1) (G.Petraitis),Foul,Personal,1,0,260
+0012600027,399,PT11M35.00S,3,1610612762,UTA,1643408,Peterson,D. Peterson,-83,128,15,Missed,1,,,0,h,MISS Peterson 15' Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,2,261
+0012600027,400,PT11M35.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,Strawther REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,262
+0012600027,414,PT11M27.00S,3,1610612743,DEN,1626145,Jones,T. Jones,-229,30,0,Missed,1,,,0,v,MISS T. Jones 3PT Running Jump Shot,Missed Shot,Running Jump Shot,1,3,263
+0012600027,415,PT11M27.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,Strawther REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,264
+0012600027,421,PT11M24.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,-10,72,7,Made,1,28,43,71,v,Strawther 7' Driving Floating Jump Shot (4 PTS),Made Shot,Driving Floating Jump Shot,1,2,265
+0012600027,434,PT10M54.00S,3,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Turnover: Shot Clock (T#6),Turnover,Shot Clock Turnover,1,0,266
+0012600027,435,PT10M41.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,-21,108,11,Missed,1,,,0,v,MISS Strawther 11' Driving Finger Roll Layup,Missed Shot,Driving Finger Roll Layup Shot,1,2,267
+0012600027,436,PT10M41.00S,3,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,,,0,v,Bagley III REBOUND (Off:1 Def:2),Rebound,Unknown,1,0,268
+0012600027,440,PT10M40.00S,3,1610612743,DEN,1628963,Bagley III,M. Bagley III,-29,16,3,Made,1,28,45,73,v,Bagley III 3' Tip Layup Shot (6 PTS),Made Shot,Tip Layup Shot,1,2,269
+0012600027,380,PT10M23.00S,3,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba P.FOUL (P1.T1) (G.Petraitis),Foul,Personal,1,0,270
+0012600027,441,PT10M23.00S,3,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba Offensive Foul Turnover (P2.T7),Turnover,Offensive Foul Turnover,0,0,271
+0012600027,383,PT10M10.00S,3,1610612762,UTA,1629006,Okogie,J. Okogie,0,0,0,,0,,,0,h,Okogie S.FOUL (P3.T2) (G.Petraitis),Foul,Shooting,1,0,272
+0012600027,385,PT10M10.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,28,46,74,v,Strawther Free Throw 1 of 2 (5 PTS),Free Throw,Free Throw 1 of 2,1,0,273
+0012600027,386,PT10M10.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,28,47,75,v,Strawther Free Throw 2 of 2 (6 PTS),Free Throw,Free Throw 2 of 2,1,0,274
+0012600027,387,PT10M05.00S,3,1610612762,UTA,1642268,Collier,I. Collier,45,85,10,Made,1,30,47,77,h,Collier 10' Driving Layup (6 PTS),Made Shot,Driving Layup Shot,1,2,275
+0012600027,469,PT09M55.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,-114,214,24,Made,1,30,50,80,v,Strawther 24' 3PT Jump Shot (9 PTS) (T. Jones 3 AST),Made Shot,Jump Shot,1,3,276
+0012600027,504,PT09M47.00S,3,0,,0,,,0,0,0,,0,30,50,80,,Instant Replay3rd Period (11:05 PM EST),Instant Replay,Replay Center,0,0,277
+0012600027,388,PT09M39.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,226,5,0,Missed,1,,,0,h,MISS Bailey 3PT Jump Shot,Missed Shot,Jump Shot,1,3,278
+0012600027,389,PT09M39.00S,3,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba REBOUND (Off:3 Def:0),Rebound,Unknown,1,0,279
+0012600027,390,PT09M34.00S,3,1610612762,UTA,1643408,Peterson,D. Peterson,-215,129,25,Missed,1,,,0,h,MISS Peterson 25' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,280
+0012600027,391,PT09M34.00S,3,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,,,0,v,Bagley III REBOUND (Off:1 Def:3),Rebound,Unknown,1,0,281
+0012600027,392,PT09M32.00S,3,1610612743,DEN,1626145,Jones,T. Jones,0,0,0,,0,,,0,v,T. Jones Bad Pass Turnover (P1.T3),Turnover,Bad Pass,1,0,282
+0012600027,393,PT09M28.00S,3,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson Bad Pass Turnover (P1.T8),Turnover,Bad Pass,1,0,283
+0012600027,393,PT09M28.00S,3,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,Diallo STEAL (1 STL),,,1,0,284
+0012600027,395,PT09M28.00S,3,1610612743,DEN,1643813,Diallo,A. Diallo,19,3,2,Made,1,30,52,82,v,Diallo 2' Dunk (5 PTS),Made Shot,Dunk Shot,1,2,285
+0012600027,396,PT09M07.00S,3,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson OFF.Foul (P5) (S.Twardoski),Foul,Offensive,1,0,286
+0012600027,398,PT09M07.00S,3,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson Offensive Foul Turnover (P2.T9),Turnover,Offensive Foul Turnover,1,0,287
+0012600027,401,PT08M55.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,64,74,10,Missed,1,,,0,v,MISS Strawther 10' Driving Layup,Missed Shot,Driving Layup Shot,1,2,288
+0012600027,401,PT08M55.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey BLOCK (1 BLK),,,1,2,289
+0012600027,402,PT08M55.00S,3,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Unknown,1,0,290
+0012600027,404,PT08M47.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,Strawther Backcourt Turnover (P1.T4),Turnover,Backcourt Turnover,1,0,291
+0012600027,405,PT08M47.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,,"Double Technical - Strawther, Collier (G.Petraitis)",Foul,Double Technical,1,0,292
+0012600027,409,PT08M38.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,-85,245,26,Missed,1,,,0,h,MISS Bailey 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,293
+0012600027,410,PT08M38.00S,3,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,,,0,v,Bagley III REBOUND (Off:1 Def:4),Rebound,Unknown,1,0,294
+0012600027,412,PT08M22.00S,3,1610612743,DEN,1626145,Jones,T. Jones,-95,196,22,Made,1,30,56,86,v,T. Jones 22' Pullup Jump Shot (2 PTS) (Strawther 2 AST),Made Shot,Pullup Jump shot,1,2,295
+0012600027,416,PT08M09.00S,3,1610612743,DEN,1626145,Jones,T. Jones,0,0,0,,0,,,0,v,T. Jones P.FOUL (P1.T2) (S.Twardoski),Foul,Personal,1,0,296
+0012600027,418,PT08M01.00S,3,1610612762,UTA,1642268,Collier,I. Collier,0,0,0,,0,,,0,h,Collier OFF.Foul (P1) (S.Twardoski),Foul,Offensive,1,0,297
+0012600027,420,PT08M01.00S,3,1610612762,UTA,1642268,Collier,I. Collier,0,0,0,,0,,,0,h,Collier Offensive Foul Turnover (P1.T10),Turnover,Offensive Foul Turnover,1,0,298
+0012600027,423,PT07M54.00S,3,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,Diallo OFF.Foul (P3) (G.Petraitis),Foul,Offensive,1,0,299
+0012600027,425,PT07M54.00S,3,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,Diallo Offensive Foul Turnover (P2.T7),Turnover,Offensive Foul Turnover,1,0,300
+0012600027,426,PT07M40.00S,3,1610612762,UTA,1643408,Peterson,D. Peterson,-89,129,16,Made,1,34,56,90,h,Peterson 16' Pullup Jump Shot (10 PTS),Made Shot,Pullup Jump shot,1,2,301
+0012600027,427,PT07M24.00S,3,1610612743,DEN,1628963,Bagley III,M. Bagley III,-21,29,4,Missed,1,,,0,v,MISS Bagley III 4' Cutting Layup Shot,Missed Shot,Cutting Layup Shot,1,2,302
+0012600027,428,PT07M24.00S,3,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba REBOUND (Off:4 Def:2),Rebound,Unknown,1,0,303
+0012600027,429,PT07M15.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,235,-15,24,Made,1,37,56,93,h,Bailey 24' 3PT Jump Shot (3 PTS) (Okogie 1 AST),Made Shot,Jump Shot,1,3,304
+0012600027,431,PT06M59.00S,3,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba S.FOUL (P2.T3) (S.Twardoski),Foul,Shooting,1,0,305
+0012600027,433,PT06M59.00S,3,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Timeout: Regular (Full 2 Short 0),Timeout,Regular,0,0,306
+0012600027,438,PT06M59.00S,3,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,SUB: Mykhailiuk FOR Peterson,Substitution,,0,0,307
+0012600027,439,PT06M59.00S,3,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,37,57,94,v,Bagley III Free Throw 1 of 2 (7 PTS),Free Throw,Free Throw 1 of 2,1,0,308
+0012600027,442,PT06M59.00S,3,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,37,58,95,v,Bagley III Free Throw 2 of 2 (8 PTS),Free Throw,Free Throw 2 of 2,1,0,309
+0012600027,443,PT06M44.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey Bad Pass Turnover (P2.T11),Turnover,Bad Pass,1,0,310
+0012600027,443,PT06M44.00S,3,1610612743,DEN,1626145,Jones,T. Jones,0,0,0,,0,,,0,v,T. Jones STEAL (1 STL),,,1,0,311
+0012600027,445,PT06M33.00S,3,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,125,13,Made,1,37,61,98,v,Bagley III 13' Floating Jump Shot (10 PTS) (T. Jones 4 AST),Made Shot,Floating Jump shot,1,2,312
+0012600027,447,PT06M15.00S,3,1610612762,UTA,1642268,Collier,I. Collier,0,0,0,,0,,,0,h,Collier Bad Pass Turnover (P2.T13),Turnover,Bad Pass,1,0,313
+0012600027,447,PT06M15.00S,3,1610612743,DEN,1626145,Jones,T. Jones,0,0,0,,0,,,0,v,T. Jones STEAL (2 STL),,,1,0,314
+0012600027,449,PT06M11.00S,3,1610612762,UTA,1642268,Collier,I. Collier,0,0,0,,0,,,0,h,Collier S.FOUL (P2.T4) (M.Dagher),Foul,Shooting,1,0,315
+0012600027,451,PT06M11.00S,3,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,MISS Diallo Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,316
+0012600027,452,PT06M11.00S,3,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Normal Rebound,0,0,317
+0012600027,455,PT06M11.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,SUB: Green FOR Bailey,Substitution,,0,0,318
+0012600027,457,PT06M11.00S,3,1610612743,DEN,1642350,Brazile,T. Brazile,0,0,0,,0,,,0,v,SUB: Whitmore FOR Brazile,Substitution,,0,0,319
+0012600027,453,PT06M11.00S,3,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,MISS Diallo Free Throw 2 of 2,Free Throw,Free Throw 2 of 2,1,0,320
+0012600027,458,PT06M11.00S,3,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba REBOUND (Off:4 Def:4),Rebound,Unknown,1,0,321
+0012600027,459,PT05M56.00S,3,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,38,50,6,Missed,1,,,0,h,MISS Mykhailiuk 6' Driving Finger Roll Layup,Missed Shot,Driving Finger Roll Layup Shot,1,2,322
+0012600027,460,PT05M56.00S,3,1610612743,DEN,1641715,Whitmore,C. Whitmore,0,0,0,,0,,,0,v,Whitmore REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,323
+0012600027,461,PT05M41.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,Strawther Lost Ball Turnover (P2.T8),Turnover,Lost Ball,1,0,324
+0012600027,462,PT05M41.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,Strawther L.B.FOUL (P3.T3) (G.Petraitis),Foul,Loose Ball,1,0,325
+0012600027,465,PT05M41.00S,3,1610612743,DEN,1626145,Jones,T. Jones,0,0,0,,0,,,0,v,SUB: Nembhard FOR T. Jones,Substitution,,0,0,326
+0012600027,467,PT05M31.00S,3,1610612762,UTA,1628964,Bamba,M. Bamba,13,4,1,Made,1,39,63,102,h,Bamba 1' Layup (4 PTS) (Collier 2 AST),Made Shot,Layup Shot,1,2,327
+0012600027,471,PT05M11.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,-237,-20,24,Made,1,39,66,105,v,Strawther 24' 3PT Jump Shot (12 PTS) (Nembhard 2 AST),Made Shot,Jump Shot,1,3,328
+0012600027,473,PT04M53.00S,3,1610612762,UTA,1642268,Collier,I. Collier,-65,250,26,Missed,1,,,0,h,MISS Collier 26' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,329
+0012600027,474,PT04M53.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,Strawther REBOUND (Off:1 Def:2),Rebound,Unknown,1,0,330
+0012600027,475,PT04M40.00S,3,1610612762,UTA,1642268,Collier,I. Collier,0,0,0,,0,,,0,h,Collier P.FOUL (P3.PN) (S.Twardoski),Foul,Personal,1,0,331
+0012600027,478,PT04M40.00S,3,1610612762,UTA,1642268,Collier,I. Collier,0,0,0,,0,,,0,h,SUB: Peterson FOR Collier,Substitution,,0,0,332
+0012600027,481,PT04M40.00S,3,1610612743,DEN,1628963,Bagley III,M. Bagley III,0,0,0,,0,,,0,v,SUB: Hopkins FOR Bagley III,Substitution,,0,0,333
+0012600027,482,PT04M40.00S,3,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,SUB: Nnaji FOR Diallo,Substitution,,0,0,334
+0012600027,483,PT04M30.00S,3,1610612743,DEN,1641715,Whitmore,C. Whitmore,39,24,5,Made,1,39,68,107,v,Whitmore 5' Driving Layup (2 PTS),Made Shot,Driving Layup Shot,1,2,335
+0012600027,484,PT04M13.00S,3,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,-176,188,26,Missed,1,,,0,h,MISS Mykhailiuk 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,336
+0012600027,485,PT04M13.00S,3,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,,,0,v,Nnaji REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,337
+0012600027,488,PT03M57.00S,3,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,SUB: Bailey FOR Bamba,Substitution,,0,0,338
+0012600027,489,PT03M51.00S,3,1610612743,DEN,1641715,Whitmore,C. Whitmore,-178,178,25,Missed,1,,,0,v,MISS Whitmore 25' 3PT Step Back Jump Shot,Missed Shot,Step Back Jump shot,1,3,339
+0012600027,490,PT03M51.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey REBOUND (Off:1 Def:2),Rebound,Unknown,1,0,340
+0012600027,491,PT03M36.00S,3,1610612762,UTA,1643408,Peterson,D. Peterson,-69,142,16,Made,1,42,68,110,h,Peterson 16' Pullup Jump Shot (12 PTS) (Green 1 AST),Made Shot,Pullup Jump shot,1,2,341
+0012600027,492,PT03M24.00S,3,1610612743,DEN,1642948,Nembhard,R. Nembhard,0,0,0,,0,,,0,v,Nembhard Lost Ball Turnover (P1.T9),Turnover,Lost Ball,1,0,342
+0012600027,492,PT03M24.00S,3,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,0,0,0,,0,,,0,h,Mykhailiuk STEAL (2 STL),,,1,0,343
+0012600027,494,PT03M20.00S,3,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,26,-2,3,Missed,1,,,0,h,MISS Mykhailiuk 3' Running Layup,Missed Shot,Running Layup Shot,1,2,344
+0012600027,495,PT03M20.00S,3,1610612743,DEN,1643624,Hopkins,B. Hopkins,0,0,0,,0,,,0,v,Hopkins REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,345
+0012600027,496,PT03M12.00S,3,1610612743,DEN,1630192,Nnaji,Z. Nnaji,56,22,6,Made,1,42,70,112,v,Nnaji 6' Driving Floating Bank Jump Shot (4 PTS) (Hopkins 1 AST),Made Shot,Driving Floating Bank Jump Shot,1,2,346
+0012600027,498,PT02M53.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,-69,209,22,Made,1,44,70,114,h,Bailey 22' Pullup Jump Shot (5 PTS),Made Shot,Pullup Jump shot,1,2,347
+0012600027,499,PT02M27.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey S.FOUL (P1.PN) (G.Petraitis),Foul,Shooting,1,0,348
+0012600027,501,PT02M27.00S,3,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Timeout: Regular (Reg.2 Short 0),Timeout,Regular,0,0,349
+0012600027,506,PT02M27.00S,3,1610612743,DEN,1631124,Strawther,J. Strawther,0,0,0,,0,,,0,v,SUB: Brazile FOR Strawther,Substitution,,0,0,350
+0012600027,502,PT02M27.00S,3,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,44,71,115,v,Nnaji Free Throw 1 of 2 (5 PTS),Free Throw,Free Throw 1 of 2,1,0,351
+0012600027,507,PT02M27.00S,3,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,44,72,116,v,Nnaji Free Throw 2 of 2 (6 PTS),Free Throw,Free Throw 2 of 2,1,0,352
+0012600027,508,PT02M16.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,-133,226,26,Missed,1,,,0,h,MISS Bailey 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,353
+0012600027,509,PT02M16.00S,3,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,,,0,v,Nnaji REBOUND (Off:0 Def:3),Rebound,Unknown,1,0,354
+0012600027,510,PT02M00.00S,3,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey S.FOUL (P2.PN) (S.Twardoski),Foul,Shooting,1,0,355
+0012600027,512,PT02M00.00S,3,1610612743,DEN,1641715,Whitmore,C. Whitmore,0,0,0,,0,44,73,117,v,Whitmore Free Throw 1 of 2 (3 PTS),Free Throw,Free Throw 1 of 2,1,0,356
+0012600027,513,PT02M00.00S,3,1610612743,DEN,1641715,Whitmore,C. Whitmore,0,0,0,,0,44,74,118,v,Whitmore Free Throw 2 of 2 (4 PTS),Free Throw,Free Throw 2 of 2,1,0,357
+0012600027,514,PT01M47.00S,3,1610612762,UTA,1643408,Peterson,D. Peterson,229,-10,0,Missed,1,,,0,h,MISS Peterson 3PT Jump Shot,Missed Shot,Jump Shot,1,3,358
+0012600027,515,PT01M47.00S,3,1610612762,UTA,1630182,Green,J. Green,0,0,0,,0,,,0,h,Green REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,359
+0012600027,516,PT01M36.00S,3,1610612762,UTA,1643408,Peterson,D. Peterson,114,166,20,Made,1,48,74,122,h,Peterson 20' Pullup Jump Shot (14 PTS),Made Shot,Pullup Jump shot,1,2,360
+0012600027,517,PT01M20.00S,3,1610612743,DEN,1642350,Brazile,T. Brazile,0,0,0,,0,,,0,v,Brazile OFF.Foul (P1) (S.Twardoski),Foul,Offensive,1,0,361
+0012600027,519,PT01M20.00S,3,1610612743,DEN,1642350,Brazile,T. Brazile,0,0,0,,0,,,0,v,Brazile Offensive Foul Turnover (P1.T11),Turnover,Offensive Foul Turnover,1,0,362
+0012600027,520,PT01M08.00S,3,1610612762,UTA,1630182,Green,J. Green,234,40,24,Missed,1,,,0,h,MISS Green 24' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,363
+0012600027,521,PT01M08.00S,3,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,,,0,v,Nnaji REBOUND (Off:0 Def:4),Rebound,Unknown,1,0,364
+0012600027,522,PT01M04.00S,3,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,,,0,v,Nnaji Lost Ball Turnover (P2.T12),Turnover,Lost Ball,1,0,365
+0012600027,522,PT01M04.00S,3,1610612762,UTA,1629006,Okogie,J. Okogie,0,0,0,,0,,,0,h,Okogie STEAL (1 STL),,,1,0,366
+0012600027,524,PT01M04.00S,3,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,,,0,v,Nnaji P.FOUL (P1.T4) (S.Twardoski),Foul,Personal,1,0,367
+0012600027,526,PT00M59.00S,3,1610612762,UTA,1643408,Peterson,D. Peterson,33,143,15,Made,1,50,74,124,h,Peterson 15' Pullup Jump Shot (16 PTS),Made Shot,Pullup Jump shot,1,2,368
+0012600027,527,PT00M35.30S,3,1610612743,DEN,1642948,Nembhard,R. Nembhard,112,56,13,Missed,1,,,0,v,MISS Nembhard 13' Driving Floating Bank Jump Shot,Missed Shot,Driving Floating Bank Jump Shot,1,2,369
+0012600027,528,PT00M35.30S,3,1610612762,UTA,1643408,Peterson,D. Peterson,0,0,0,,0,,,0,h,Peterson REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,370
+0012600027,529,PT00M20.10S,3,1610612762,UTA,1643408,Peterson,D. Peterson,231,3,0,Made,1,53,74,127,h,Peterson 3PT Jump Shot (19 PTS) (Green 2 AST),Made Shot,Jump Shot,1,3,371
+0012600027,534,PT00M14.60S,3,1610612743,DEN,1641715,Whitmore,C. Whitmore,-17,34,4,Made,1,53,76,129,v,Whitmore 4' Driving Finger Roll Layup (6 PTS),Made Shot,Driving Finger Roll Layup Shot,1,2,372
+0012600027,531,PT00M14.60S,3,1610612762,UTA,1630182,Green,J. Green,0,0,0,,0,,,0,h,Green S.FOUL (P2.PN) (S.Twardoski),Foul,Shooting,1,0,373
+0012600027,533,PT00M14.60S,3,1610612743,DEN,1641715,Whitmore,C. Whitmore,0,0,0,,0,,,0,v,MISS Whitmore Free Throw 1 of 1,Free Throw,Free Throw 1 of 1,1,0,374
+0012600027,668,PT00M14.60S,3,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Unknown,1,0,375
+0012600027,676,PT00M13.80S,3,1610612762,UTA,1630182,Green,J. Green,0,0,0,,0,,,0,h,Green L.B.FOUL (P3.PN) (M.Dagher),Foul,Loose Ball,1,0,376
+0012600027,678,PT00M13.80S,3,1610612743,DEN,1642350,Brazile,T. Brazile,0,0,0,,0,,,0,v,MISS Brazile Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,0,0,377
+0012600027,684,PT00M13.80S,3,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Normal Rebound,1,0,378
+0012600027,679,PT00M13.80S,3,1610612743,DEN,1642350,Brazile,T. Brazile,0,0,0,,0,,,0,v,MISS Brazile Free Throw 2 of 2,Free Throw,Free Throw 2 of 2,0,0,379
+0012600027,685,PT00M13.80S,3,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey REBOUND (Off:1 Def:3),Rebound,Unknown,1,0,380
+0012600027,538,PT00M03.20S,3,1610612762,UTA,1629006,Okogie,J. Okogie,21,15,3,Made,1,55,76,131,h,Okogie 3' Driving Layup (8 PTS) (Bailey 3 AST),Made Shot,Driving Layup Shot,1,2,381
+0012600027,539,PT00M03.20S,3,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,,,0,v,Nnaji S.FOUL (P2.PN) (S.Twardoski),Foul,Shooting,1,0,382
+0012600027,541,PT00M03.20S,3,1610612762,UTA,1629006,Okogie,J. Okogie,0,0,0,,0,,,0,h,MISS Okogie Free Throw 1 of 1,Free Throw,Free Throw 1 of 1,1,0,383
+0012600027,542,PT00M03.20S,3,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey REBOUND (Off:2 Def:3),Rebound,Unknown,1,0,384
+0012600027,543,PT00M01.50S,3,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,Missed,1,,,0,h,MISS Bailey Putback Dunk,Missed Shot,Putback Dunk Shot,1,2,385
+0012600027,543,PT00M01.50S,3,1610612743,DEN,1642350,Brazile,T. Brazile,0,0,0,,0,,,0,v,Brazile BLOCK (1 BLK),,,1,2,386
+0012600027,544,PT00M01.50S,3,1610612762,UTA,1642846,Bailey,A. Bailey,0,0,0,,0,,,0,h,Bailey REBOUND (Off:3 Def:3),Rebound,Unknown,1,0,387
+0012600027,721,PT00M00.70S,3,1610612762,UTA,1642846,Bailey,A. Bailey,6,9,1,Missed,1,,,0,h,MISS Bailey 1' Putback Layup,Missed Shot,Putback Layup Shot,1,2,388
+0012600027,722,PT00M00.70S,3,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Unknown,1,0,389
+0012600027,546,PT00M00.00S,3,0,,0,,,0,0,0,,0,55,76,131,,End of 3rd Period (11:15 PM EST),period,end,1,0,390
+0012600027,555,PT12M00.00S,4,0,,0,,,0,0,0,,0,30,52,82,,Start of 4th Period (11:05 PM EST),period,start,1,0,391
+0012600027,556,PT11M43.00S,4,1610612743,DEN,1630192,Nnaji,Z. Nnaji,-35,166,17,Made,1,30,54,84,v,Nnaji 17' Jump Shot (2 PTS) (Nembhard 1 AST),Made Shot,Jump Shot,1,2,392
+0012600027,558,PT11M30.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,-182,164,24,Missed,1,,,0,h,MISS Mykhailiuk 24' 3PT Pullup Jump Shot,Missed Shot,Pullup Jump shot,1,3,393
+0012600027,559,PT11M30.00S,4,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,Diallo REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,394
+0012600027,560,PT11M24.00S,4,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,Diallo Bad Pass Turnover (P1.T6),Turnover,Bad Pass,1,0,395
+0012600027,560,PT11M24.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,0,0,0,,0,,,0,h,Mykhailiuk STEAL (1 STL),,,1,0,396
+0012600027,562,PT11M14.00S,4,1610612762,UTA,1642396,Hinson,B. Hinson,149,211,26,Missed,1,,,0,h,MISS Hinson 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,397
+0012600027,563,PT11M14.00S,4,1610612743,DEN,1642350,Brazile,T. Brazile,0,0,0,,0,,,0,v,Brazile REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,398
+0012600027,564,PT11M01.00S,4,1610612743,DEN,1643624,Hopkins,B. Hopkins,0,0,0,,0,,,0,v,Hopkins Lost Ball Turnover (P1.T6),Turnover,Lost Ball,1,0,399
+0012600027,564,PT11M01.00S,4,1610612762,UTA,1630182,Green,J. Green,0,0,0,,0,,,0,h,Green STEAL (1 STL),,,1,0,400
+0012600027,566,PT10M43.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,52,69,9,Missed,1,,,0,h,MISS Mykhailiuk 9' Driving Floating Jump Shot,Missed Shot,Driving Floating Jump Shot,1,2,401
+0012600027,566,PT10M43.00S,4,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,,,0,v,Nnaji BLOCK (1 BLK),,,1,2,402
+0012600027,567,PT10M43.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,0,0,0,,0,,,0,h,Mykhailiuk REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,403
+0012600027,569,PT10M37.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,42,85,9,Missed,1,,,0,h,MISS Mykhailiuk 9' Fadeaway Jumper,Missed Shot,Fadeaway Jump Shot,1,2,404
+0012600027,570,PT10M37.00S,4,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba REBOUND (Off:4 Def:1),Rebound,Unknown,1,0,405
+0012600027,571,PT10M33.00S,4,1610612762,UTA,1628964,Bamba,M. Bamba,15,77,8,Missed,1,,,0,h,MISS Bamba 8' Turnaround Hook Shot,Missed Shot,Turnaround Hook Shot,1,2,406
+0012600027,572,PT10M33.00S,4,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,,,0,v,Nnaji REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,407
+0012600027,573,PT10M25.00S,4,1610612743,DEN,1630192,Nnaji,Z. Nnaji,-4,256,26,Missed,1,,,0,v,MISS Nnaji 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,408
+0012600027,574,PT10M25.00S,4,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba REBOUND (Off:4 Def:1),Rebound,Unknown,1,0,409
+0012600027,575,PT10M12.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,34,26,4,Made,1,32,56,88,h,Mykhailiuk 4' Driving Reverse Layup (2 PTS),Made Shot,Driving Reverse Layup Shot,1,2,410
+0012600027,576,PT10M02.00S,4,1610612762,UTA,1630182,Green,J. Green,0,0,0,,0,,,0,h,Green S.FOUL (P1.T1) (M.Dagher),Foul,Shooting,1,0,411
+0012600027,578,PT10M02.00S,4,1610612743,DEN,1643624,Hopkins,B. Hopkins,0,0,0,,0,37,59,96,v,Hopkins Free Throw 1 of 2 (1 PTS),Free Throw,Free Throw 1 of 2,1,0,412
+0012600027,579,PT10M02.00S,4,1610612743,DEN,1643624,Hopkins,B. Hopkins,0,0,0,,0,,,0,v,MISS Hopkins Free Throw 2 of 2,Free Throw,Free Throw 2 of 2,1,0,413
+0012600027,580,PT10M02.00S,4,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,Bamba REBOUND (Off:4 Def:3),Rebound,Unknown,1,0,414
+0012600027,581,PT09M52.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,0,0,0,,0,,,0,h,Mykhailiuk Out of Bounds Lost Ball Turnover (P1.T12),Turnover,Out of Bounds Lost Ball Turnover,1,0,415
+0012600027,582,PT09M40.00S,4,1610612743,DEN,1642948,Nembhard,R. Nembhard,22,82,8,Made,1,37,63,100,v,Nembhard 8' Driving Floating Jump Shot (2 PTS),Made Shot,Driving Floating Jump Shot,1,2,416
+0012600027,583,PT09M27.00S,4,1610612762,UTA,1630182,Green,J. Green,-138,214,25,Missed,1,,,0,h,MISS Green 25' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,417
+0012600027,584,PT09M27.00S,4,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Unknown,0,0,418
+0012600027,585,PT09M24.00S,4,1610612743,DEN,1643624,Hopkins,B. Hopkins,0,0,0,,0,,,0,v,Hopkins L.B.FOUL (P1.T1) (M.Dagher),Foul,Loose Ball,1,0,419
+0012600027,587,PT09M12.00S,4,1610612762,UTA,1642926,Bates,T. Bates,0,0,0,,0,,,0,h,Bates Bad Pass Turnover (P1.T14),Turnover,Bad Pass,1,0,420
+0012600027,587,PT09M12.00S,4,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,Diallo STEAL (2 STL),,,1,0,421
+0012600027,589,PT08M59.00S,4,1610612762,UTA,1642926,Bates,T. Bates,0,0,0,,0,,,0,h,Bates P.FOUL (P1.T2) (S.Twardoski),Foul,Personal,1,0,422
+0012600027,591,PT08M50.00S,4,1610612743,DEN,1630192,Nnaji,Z. Nnaji,-242,-6,24,Missed,1,,,0,v,MISS Nnaji 24' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,423
+0012600027,592,PT08M50.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,0,0,0,,0,,,0,h,Mykhailiuk REBOUND (Off:1 Def:2),Rebound,Unknown,1,0,424
+0012600027,593,PT08M31.00S,4,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,Diallo S.FOUL (P4.T2) (S.Twardoski),Foul,Shooting,1,0,425
+0012600027,595,PT08M31.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,0,0,0,,0,,,0,h,MISS Mykhailiuk Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,426
+0012600027,596,PT08M31.00S,4,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Normal Rebound,1,0,427
+0012600027,599,PT08M31.00S,4,1610612743,DEN,1642350,Brazile,T. Brazile,0,0,0,,0,,,0,v,SUB: Whitmore FOR Brazile,Substitution,,0,0,428
+0012600027,597,PT08M31.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,0,0,0,,0,40,68,108,h,Mykhailiuk Free Throw 2 of 2 (3 PTS),Free Throw,Free Throw 2 of 2,1,0,429
+0012600027,600,PT08M12.00S,4,1610612743,DEN,1642948,Nembhard,R. Nembhard,66,89,11,Missed,1,,,0,v,MISS Nembhard 11' Fadeaway Jumper,Missed Shot,Fadeaway Jump Shot,1,2,430
+0012600027,601,PT08M12.00S,4,1610612762,UTA,1630182,Green,J. Green,0,0,0,,0,,,0,h,Green REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,431
+0012600027,602,PT07M59.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,92,237,25,Missed,1,,,0,h,MISS Mykhailiuk 25' 3PT Step Back Jump Shot,Missed Shot,Step Back Jump shot,1,3,432
+0012600027,603,PT07M59.00S,4,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Unknown,1,0,433
+0012600027,605,PT07M57.00S,4,1610612743,DEN,1642948,Nembhard,R. Nembhard,0,0,0,,0,,,0,v,SUB: Walker IV FOR Nembhard,Substitution,,0,0,434
+0012600027,606,PT07M39.00S,4,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,,,0,v,Nnaji Lost Ball Turnover (P1.T10),Turnover,Lost Ball,1,0,435
+0012600027,606,PT07M39.00S,4,1610612762,UTA,1630182,Green,J. Green,0,0,0,,0,,,0,h,Green STEAL (2 STL),,,1,0,436
+0012600027,608,PT07M35.00S,4,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Timeout: Regular (Full 3 Short 0),Timeout,Regular,0,0,437
+0012600027,613,PT07M35.00S,4,1610612762,UTA,1628964,Bamba,M. Bamba,0,0,0,,0,,,0,h,SUB: Ingram FOR Bamba,Substitution,,0,0,438
+0012600027,614,PT07M35.00S,4,1610612762,UTA,1629004,Mykhailiuk,S. Mykhailiuk,0,0,0,,0,,,0,h,SUB: Alexander FOR Mykhailiuk,Substitution,,0,0,439
+0012600027,615,PT07M35.00S,4,1610612762,UTA,1630182,Green,J. Green,0,0,0,,0,,,0,h,SUB: Aidoo FOR Green,Substitution,,0,0,440
+0012600027,616,PT07M35.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,8,19,2,Made,1,46,74,120,h,Aidoo 2' Floating Jump Shot (2 PTS) (Hinson 1 AST),Made Shot,Floating Jump shot,1,2,441
+0012600027,618,PT07M35.00S,4,1610612743,DEN,1630192,Nnaji,Z. Nnaji,0,0,0,,0,,,0,v,SUB: Holmes II FOR Nnaji,Substitution,,0,0,442
+0012600027,619,PT07M12.00S,4,1610612743,DEN,1641715,Whitmore,C. Whitmore,127,221,25,Missed,1,,,0,v,MISS Whitmore 25' 3PT Step Back Jump Shot,Missed Shot,Step Back Jump shot,1,3,443
+0012600027,620,PT07M12.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,,,0,h,Aidoo REBOUND (Off:0 Def:1),Rebound,Unknown,1,0,444
+0012600027,621,PT07M04.00S,4,1610612743,DEN,1643624,Hopkins,B. Hopkins,0,0,0,,0,,,0,v,Hopkins P.FOUL (P2.T4) (M.Dagher),Foul,Personal,1,0,445
+0012600027,623,PT07M03.00S,4,1610612743,DEN,1641715,Whitmore,C. Whitmore,0,0,0,,0,,,0,v,Whitmore P.FOUL (P1.T4) (G.Petraitis),Foul,Personal,1,0,446
+0012600027,625,PT06M51.00S,4,1610612743,DEN,1643624,Hopkins,B. Hopkins,0,0,0,,0,,,0,v,Hopkins P.FOUL (P3.PN) (S.Twardoski),Foul,Personal,1,0,447
+0012600027,627,PT06M51.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,,,0,h,MISS Aidoo Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,448
+0012600027,628,PT06M51.00S,4,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Normal Rebound,0,0,449
+0012600027,629,PT06M51.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,56,76,132,h,Aidoo Free Throw 2 of 2 (3 PTS),Free Throw,Free Throw 2 of 2,1,0,450
+0012600027,630,PT06M40.00S,4,1610612743,DEN,1641747,Holmes II,D. Holmes II,-2,57,6,Missed,1,,,0,v,MISS Holmes II 6' Hook Shot,Missed Shot,Hook Shot,1,2,451
+0012600027,630,PT06M40.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,,,0,h,Aidoo BLOCK (1 BLK),,,1,2,452
+0012600027,632,PT06M40.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,,,0,h,Aidoo REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,453
+0012600027,633,PT06M29.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,-215,139,26,Made,1,59,76,135,h,Ingram 26' 3PT Jump Shot (3 PTS) (Alexander 1 AST),Made Shot,Jump Shot,1,3,454
+0012600027,635,PT06M10.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,0,0,0,,0,,,0,h,Ingram P.FOUL (P1.T4) (S.Twardoski),Foul,Personal,1,0,455
+0012600027,638,PT06M10.00S,4,1610612743,DEN,1643624,Hopkins,B. Hopkins,0,0,0,,0,,,0,v,SUB: Nembhard FOR Hopkins,Substitution,,0,0,456
+0012600027,639,PT06M10.00S,4,1610612762,UTA,1641725,Alexander,T. Alexander,0,0,0,,0,,,0,h,Alexander P.FOUL (P1.T4) (M.Dagher),Foul,Personal,1,0,457
+0012600027,641,PT06M08.00S,4,1610612743,DEN,1629022,Walker IV,L. Walker IV,97,240,26,Missed,1,,,0,v,MISS Walker IV 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,458
+0012600027,642,PT06M08.00S,4,1610612743,DEN,1641747,Holmes II,D. Holmes II,0,0,0,,0,,,0,v,Holmes II REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,459
+0012600027,643,PT06M00.00S,4,1610612743,DEN,1641715,Whitmore,C. Whitmore,42,21,5,Made,1,59,78,137,v,Whitmore 5' Driving Layup (8 PTS) (Nembhard 3 AST),Made Shot,Driving Layup Shot,1,2,460
+0012600027,645,PT05M51.00S,4,1610612762,UTA,1642396,Hinson,B. Hinson,-233,-2,0,Missed,1,,,0,h,MISS Hinson 3PT Jump Shot,Missed Shot,Jump Shot,1,3,461
+0012600027,646,PT05M51.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,0,0,0,,0,,,0,h,Ingram REBOUND (Off:1 Def:0),Rebound,Unknown,1,0,462
+0012600027,647,PT05M45.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,23,119,12,Made,1,61,78,139,h,Ingram 12' Pullup Jump Shot (5 PTS),Made Shot,Pullup Jump shot,1,2,463
+0012600027,648,PT05M20.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,,,0,h,Aidoo S.FOUL (P1.PN) (G.Petraitis),Foul,Shooting,1,0,464
+0012600027,650,PT05M20.00S,4,1610612743,DEN,1629022,Walker IV,L. Walker IV,0,0,0,,0,61,79,140,v,Walker IV Free Throw 1 of 2 (1 PTS),Free Throw,Free Throw 1 of 2,1,0,465
+0012600027,653,PT05M20.00S,4,1610612743,DEN,1643813,Diallo,A. Diallo,0,0,0,,0,,,0,v,SUB: Brazile FOR Diallo,Substitution,,0,0,466
+0012600027,651,PT05M20.00S,4,1610612743,DEN,1629022,Walker IV,L. Walker IV,0,0,0,,0,,,0,v,MISS Walker IV Free Throw 2 of 2,Free Throw,Free Throw 2 of 2,1,0,467
+0012600027,654,PT05M20.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,0,0,0,,0,,,0,h,Ingram REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,468
+0012600027,655,PT05M05.00S,4,1610612762,UTA,1641725,Alexander,T. Alexander,-185,180,26,Missed,1,,,0,h,MISS Alexander 26' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,469
+0012600027,656,PT05M05.00S,4,1610612743,DEN,1641747,Holmes II,D. Holmes II,0,0,0,,0,,,0,v,Holmes II REBOUND (Off:1 Def:1),Rebound,Unknown,1,0,470
+0012600027,657,PT04M57.00S,4,1610612743,DEN,1642350,Brazile,T. Brazile,32,6,3,Made,1,61,81,142,v,Brazile 3' Running Alley Oop Dunk Shot (2 PTS) (Nembhard 4 AST),Made Shot,Running Alley Oop Dunk Shot,1,2,471
+0012600027,659,PT04M43.00S,4,1610612762,UTA,1641725,Alexander,T. Alexander,89,35,10,Made,1,63,81,144,h,Alexander 10' Pullup Jump Shot (2 PTS),Made Shot,Pullup Jump shot,1,2,472
+0012600027,660,PT04M27.00S,4,1610612743,DEN,1641747,Holmes II,D. Holmes II,-115,226,25,Missed,1,,,0,v,MISS Holmes II 25' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,473
+0012600027,661,PT04M27.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,,,0,h,Aidoo REBOUND (Off:0 Def:3),Rebound,Unknown,1,0,474
+0012600027,662,PT04M16.00S,4,1610612743,DEN,1629022,Walker IV,L. Walker IV,0,0,0,,0,,,0,v,Walker IV P.FOUL (P1.PN) (M.Dagher),Foul,Personal,1,0,475
+0012600027,664,PT04M16.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,,,0,h,MISS Aidoo Free Throw 1 of 2,Free Throw,Free Throw 1 of 2,1,0,476
+0012600027,665,PT04M16.00S,4,0,,1610612762,,,0,0,0,,0,,,0,h,JAZZ Rebound,Rebound,Normal Rebound,1,0,477
+0012600027,667,PT04M16.00S,4,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Timeout: Regular (Reg.3 Short 0),Timeout,Regular,0,0,478
+0012600027,666,PT04M16.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,64,81,145,h,Aidoo Free Throw 2 of 2 (4 PTS),Free Throw,Free Throw 2 of 2,1,0,479
+0012600027,670,PT04M03.00S,4,1610612743,DEN,1641715,Whitmore,C. Whitmore,10,45,5,Made,1,64,83,147,v,Whitmore 5' Cutting Dunk Shot (10 PTS) (Holmes II 1 AST),Made Shot,Cutting Dunk Shot,1,2,480
+0012600027,672,PT03M46.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,-26,18,3,Made,1,66,83,149,h,Aidoo 3' Dunk (6 PTS) (Ingram 1 AST),Made Shot,Dunk Shot,1,2,481
+0012600027,674,PT03M31.00S,4,1610612743,DEN,1642948,Nembhard,R. Nembhard,-61,143,16,Missed,1,,,0,v,MISS Nembhard 16' Driving Floating Jump Shot,Missed Shot,Driving Floating Jump Shot,1,2,482
+0012600027,675,PT03M31.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,0,0,0,,0,,,0,h,Ingram REBOUND (Off:1 Def:2),Rebound,Unknown,1,0,483
+0012600027,680,PT03M18.00S,4,1610612743,DEN,1641715,Whitmore,C. Whitmore,0,0,0,,0,,,0,v,Whitmore S.FOUL (P2.PN) (S.Twardoski),Foul,Shooting,1,0,484
+0012600027,682,PT03M18.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,0,0,0,,0,67,83,150,h,Ingram Free Throw 1 of 2 (6 PTS),Free Throw,Free Throw 1 of 2,1,0,485
+0012600027,683,PT03M18.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,0,0,0,,0,68,83,151,h,Ingram Free Throw 2 of 2 (7 PTS),Free Throw,Free Throw 2 of 2,1,0,486
+0012600027,686,PT03M04.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,0,0,0,,0,,,0,h,Ingram P.FOUL (P2.PN) (G.Petraitis),Foul,Personal,1,0,487
+0012600027,688,PT03M04.00S,4,1610612743,DEN,1641715,Whitmore,C. Whitmore,0,0,0,,0,68,84,152,v,Whitmore Free Throw 1 of 2 (11 PTS),Free Throw,Free Throw 1 of 2,1,0,488
+0012600027,689,PT03M04.00S,4,1610612743,DEN,1641715,Whitmore,C. Whitmore,0,0,0,,0,68,85,153,v,Whitmore Free Throw 2 of 2 (12 PTS),Free Throw,Free Throw 2 of 2,1,0,489
+0012600027,690,PT02M52.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,-24,79,8,Made,1,70,85,155,h,Ingram 8' Turnaround Jump Shot (9 PTS),Made Shot,Turnaround Jump Shot,1,2,490
+0012600027,691,PT02M31.00S,4,1610612743,DEN,1642350,Brazile,T. Brazile,-29,7,3,Made,1,70,87,157,v,Brazile 3' Layup (4 PTS) (Nembhard 5 AST),Made Shot,Layup Shot,1,2,491
+0012600027,693,PT02M18.00S,4,1610612762,UTA,1642926,Bates,T. Bates,227,34,0,Missed,1,,,0,h,MISS Bates 3PT Jump Shot,Missed Shot,Jump Shot,1,3,492
+0012600027,694,PT02M18.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,0,0,0,,0,,,0,h,Ingram REBOUND (Off:2 Def:2),Rebound,Unknown,1,0,493
+0012600027,695,PT02M13.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,-23,12,3,Missed,1,,,0,h,MISS Ingram 3' Driving Reverse Layup,Missed Shot,Driving Reverse Layup Shot,1,2,494
+0012600027,696,PT02M13.00S,4,1610612762,UTA,1631127,Ingram,H. Ingram,0,0,0,,0,,,0,h,Ingram REBOUND (Off:3 Def:2),Rebound,Unknown,1,0,495
+0012600027,697,PT02M08.00S,4,1610612762,UTA,1642396,Hinson,B. Hinson,91,232,25,Missed,1,,,0,h,MISS Hinson 25' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,496
+0012600027,698,PT02M08.00S,4,0,,1610612743,,,0,0,0,,0,,,0,v,Nuggets Rebound,Rebound,Unknown,0,0,497
+0012600027,699,PT01M48.00S,4,1610612743,DEN,1641715,Whitmore,C. Whitmore,-42,275,28,Missed,1,,,0,v,MISS Whitmore 28' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,498
+0012600027,700,PT01M48.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,,,0,h,Aidoo REBOUND (Off:0 Def:4),Rebound,Unknown,1,0,499
+0012600027,732,PT01M39.00S,4,1610612762,UTA,1642396,Hinson,B. Hinson,0,0,0,,0,,,0,h,Hinson Lost Ball Turnover (P1.T15),Turnover,Lost Ball,0,0,500
+0012600027,732,PT01M39.00S,4,1610612743,DEN,1642948,Nembhard,R. Nembhard,0,0,0,,0,,,0,v,Nembhard STEAL (1 STL),,,0,0,501
+0012600027,704,PT01M34.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,,,0,h,Aidoo S.FOUL (P2.PN) (M.Dagher),Foul,Shooting,1,0,502
+0012600027,706,PT01M34.00S,4,1610612743,DEN,1641715,Whitmore,C. Whitmore,0,0,0,,0,70,88,158,v,Whitmore Free Throw 1 of 2 (13 PTS),Free Throw,Free Throw 1 of 2,1,0,503
+0012600027,707,PT01M34.00S,4,1610612743,DEN,1641715,Whitmore,C. Whitmore,0,0,0,,0,70,89,159,v,Whitmore Free Throw 2 of 2 (14 PTS),Free Throw,Free Throw 2 of 2,1,0,504
+0012600027,708,PT01M27.00S,4,1610612762,UTA,1641725,Alexander,T. Alexander,237,62,24,Made,1,73,89,162,h,Alexander 24' 3PT Jump Shot (5 PTS) (Ingram 2 AST),Made Shot,Jump Shot,1,3,505
+0012600027,710,PT01M14.00S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,,,0,h,Aidoo S.FOUL (P3.PN) (S.Twardoski),Foul,Shooting,1,0,506
+0012600027,712,PT01M14.00S,4,1610612743,DEN,1641747,Holmes II,D. Holmes II,0,0,0,,0,73,90,163,v,Holmes II Free Throw 1 of 2 (1 PTS),Free Throw,Free Throw 1 of 2,1,0,507
+0012600027,713,PT01M14.00S,4,1610612743,DEN,1641747,Holmes II,D. Holmes II,0,0,0,,0,73,91,164,v,Holmes II Free Throw 2 of 2 (2 PTS),Free Throw,Free Throw 2 of 2,1,0,508
+0012600027,714,PT01M04.00S,4,1610612743,DEN,1642350,Brazile,T. Brazile,0,0,0,,0,,,0,v,Brazile S.FOUL (P2.PN) (G.Petraitis),Foul,Shooting,1,0,509
+0012600027,716,PT01M04.00S,4,1610612762,UTA,1641725,Alexander,T. Alexander,0,0,0,,0,74,91,165,h,Alexander Free Throw 1 of 2 (6 PTS),Free Throw,Free Throw 1 of 2,1,0,510
+0012600027,717,PT01M04.00S,4,1610612762,UTA,1641725,Alexander,T. Alexander,0,0,0,,0,75,91,166,h,Alexander Free Throw 2 of 2 (7 PTS),Free Throw,Free Throw 2 of 2,1,0,511
+0012600027,718,PT00M42.20S,4,1610612743,DEN,1642948,Nembhard,R. Nembhard,-168,184,25,Missed,1,,,0,v,MISS Nembhard 25' 3PT Jump Shot,Missed Shot,Jump Shot,1,3,512
+0012600027,719,PT00M42.20S,4,1610612743,DEN,1641747,Holmes II,D. Holmes II,0,0,0,,0,,,0,v,Holmes II REBOUND (Off:2 Def:1),Rebound,Unknown,1,0,513
+0012600027,720,PT00M38.50S,4,1610612743,DEN,1641747,Holmes II,D. Holmes II,0,0,0,Made,1,106,117,223,v,Holmes II Tip Dunk Shot (4 PTS),Made Shot,Tip Dunk Shot,1,2,514
+0012600027,724,PT00M18.80S,4,1610612762,UTA,1631127,Ingram,H. Ingram,27,6,3,Missed,1,,,0,h,MISS Ingram 3' Driving Layup,Missed Shot,Driving Layup Shot,1,2,515
+0012600027,724,PT00M18.80S,4,1610612743,DEN,1641747,Holmes II,D. Holmes II,0,0,0,,0,,,0,v,Holmes II BLOCK (2 BLK),,,1,2,516
+0012600027,725,PT00M18.80S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,0,0,0,,0,,,0,h,Aidoo REBOUND (Off:1 Def:4),Rebound,Unknown,1,0,517
+0012600027,726,PT00M14.90S,4,1610612762,UTA,1643265,Aidoo,J. Aidoo,17,9,2,Missed,1,,,0,h,MISS Aidoo 2' Putback Layup,Missed Shot,Putback Layup Shot,1,2,518
+0012600027,726,PT00M14.90S,4,1610612743,DEN,1641747,Holmes II,D. Holmes II,0,0,0,,0,,,0,v,Holmes II BLOCK (2 BLK),,,1,2,519
+0012600027,727,PT00M14.90S,4,1610612743,DEN,1642350,Brazile,T. Brazile,0,0,0,,0,,,0,v,Brazile REBOUND (Off:0 Def:2),Rebound,Unknown,1,0,520
+0012600027,729,PT00M00.00S,4,0,,0,,,0,0,0,,0,106,117,223,,End of 4th Period (11:34 PM EST),period,end,1,0,521

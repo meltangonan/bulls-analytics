@@ -1,0 +1,3 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,minutes,fieldGoalsMade,fieldGoalsAttempted,fieldGoalsPercentage,threePointersMade,threePointersAttempted,threePointersPercentage,freeThrowsMade,freeThrowsAttempted,freeThrowsPercentage,reboundsOffensive,reboundsDefensive,reboundsTotal,assists,steals,blocks,turnovers,foulsPersonal,points,plusMinusPoints
+0012600030,1610612741,Chicago,Bulls,CHI,bulls,240:00,42,83,0.506,12,33,0.364,28,32,0.875,12,23,35,30,13,5,21,30,124,7.0
+0012600030,1610612756,Phoenix,Suns,PHX,suns,240:00,40,84,0.476,11,36,0.306,26,34,0.765,12,26,38,25,14,2,26,32,117,-7.0

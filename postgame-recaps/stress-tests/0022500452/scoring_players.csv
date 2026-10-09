@@ -1,0 +1,28 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630183,Jaden,McDaniels,J. McDaniels,jaden-mcdaniels,F,,,22:47,0.889,0.111,0.571,0.0,0.429,0.286,0.0,0.0,0.571,0.5,0.5,1.0,0.0,0.667,0.333
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,203944,Julius,Randle,J. Randle,julius-randle,F,,,28:01,0.818,0.182,0.706,0.235,0.0,0.0,0.294,0.0,0.471,0.5,0.5,0.0,0.0,0.5,0.5
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,203497,Rudy,Gobert,R. Gobert,rudy-gobert,C,,,29:37,1.0,0.0,0.889,0.0,0.0,0.444,0.111,0.222,0.889,1.0,0.0,0.0,0.0,1.0,0.0
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630162,Anthony,Edwards,A. Edwards,anthony-edwards,G,,,32:15,0.615,0.385,0.609,0.348,0.261,0.0,0.13,0.087,0.261,0.429,0.571,0.0,1.0,0.333,0.667
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1628978,Donte,DiVincenzo,D. DiVincenzo,donte-divincenzo,G,,,26:32,0.1,0.9,0.0,0.0,1.0,0.25,0.0,0.5,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1641740,Jaylen,Clark,J. Clark,jaylen-clark,,,,18:50,1.0,0.0,0.727,0.0,0.0,0.182,0.273,0.364,0.727,0.5,0.5,0.0,0.0,0.5,0.5
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1629675,Naz,Reid,N. Reid,naz-reid,,,,26:52,0.444,0.556,0.303,0.0,0.545,0.152,0.152,0.061,0.303,0.4,0.6,1.0,0.0,0.727,0.273
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,201144,Mike,Conley,M. Conley,mike-conley,,,,17:45,0.333,0.667,1.0,0.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630538,Bones,Hyland,B. Hyland,bones-hyland,,,,14:22,0.5,0.5,0.667,0.0,0.25,0.167,0.083,0.333,0.667,0.5,0.5,1.0,0.0,0.6,0.4
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630548,Johnny,Juzang,J. Juzang,johnny-juzang,,,,5:45,0.25,0.75,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642265,Rob,Dillingham,R. Dillingham,rob-dillingham,,,,5:45,0.667,0.333,0.4,0.0,0.6,0.0,0.0,0.0,0.4,0.0,1.0,1.0,0.0,0.5,0.5
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642866,Joan,Beringer,J. Beringer,joan-beringer,,,,5:45,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1631159,Leonard,Miller,L. Miller,leonard-miller,,,,5:45,1.0,0.0,0.667,0.0,0.0,0.667,0.333,0.667,0.667,1.0,0.0,0.0,0.0,1.0,0.0
+0022500452,1610612750,Minnesota,Timberwolves,MIN,timberwolves,204060,Joe,Ingles,J. Ingles,joe-ingles,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1630171,Isaac,Okoro,I. Okoro,isaac-okoro,F,,,20:02,0.25,0.75,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1641824,Matas,Buzelis,M. Buzelis,matas-buzelis,F,,,23:58,0.429,0.571,0.308,0.0,0.692,0.0,0.0,0.0,0.308,0.0,1.0,0.667,0.333,0.4,0.6
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,202696,Nikola,Vučević,N. Vučević,nikola-vučević,C,,,30:02,0.706,0.294,0.609,0.0,0.391,0.0,0.0,0.13,0.609,0.857,0.143,1.0,0.0,0.9,0.1
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1629632,Coby,White,C. White,coby-white,G,,,6:35,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1630581,Josh,Giddey,J. Giddey,josh-giddey,G,,,17:52,0.6,0.4,0.364,0.0,0.273,0.0,0.364,0.182,0.364,0.0,1.0,1.0,0.0,0.333,0.667
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1630188,Jalen,Smith,J. Smith,jalen-smith,,,,25:31,0.333,0.667,0.167,0.0,0.75,0.25,0.083,0.0,0.167,1.0,0.0,1.0,0.0,1.0,0.0
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1630245,Ayo,Dosunmu,A. Dosunmu,ayo-dosunmu,,,,31:37,0.667,0.333,0.8,0.0,0.0,0.2,0.2,0.2,0.8,0.25,0.75,0.0,0.0,0.25,0.75
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,,,,19:38,0.625,0.375,0.571,0.0,0.429,0.429,0.0,0.0,0.571,0.0,1.0,1.0,0.0,0.333,0.667
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1628989,Kevin,Huerter,K. Huerter,kevin-huerter,,,,21:59,0.5,0.5,0.25,0.0,0.75,0.0,0.0,0.0,0.25,1.0,0.0,1.0,0.0,1.0,0.0
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1630200,Tre,Jones,T. Jones,tre-jones,,,,21:07,1.0,0.0,0.909,0.0,0.0,0.364,0.091,0.0,0.909,0.6,0.4,0.0,0.0,0.6,0.4
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1631207,Dalen,Terry,D. Terry,dalen-terry,,,,10:56,0.333,0.667,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1641763,Julian,Phillips,J. Phillips,julian-phillips,,,,5:45,0.5,0.5,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0022500452,1610612741,Chicago,Bulls,CHI,bulls,1628975,Jevon,Carter,J. Carter,jevon-carter,,,,4:58,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

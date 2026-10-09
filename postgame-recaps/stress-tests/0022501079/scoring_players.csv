@@ -1,0 +1,25 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1630171,Isaac,Okoro,I. Okoro,isaac-okoro,F,,,29:42,0.571,0.429,0.857,0.0,0.0,0.286,0.143,0.286,0.857,0.667,0.333,0.0,0.0,0.667,0.333
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1641824,Matas,Buzelis,M. Buzelis,matas-buzelis,F,,,38:32,0.524,0.476,0.483,0.0,0.31,0.379,0.207,0.069,0.483,0.571,0.429,1.0,0.0,0.7,0.3
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1631159,Leonard,Miller,L. Miller,leonard-miller,C,,,16:20,0.5,0.5,0.4,0.0,0.0,0.4,0.6,0.4,0.4,1.0,0.0,0.0,0.0,1.0,0.0
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1630200,Tre,Jones,T. Jones,tre-jones,G,,,29:20,0.733,0.267,0.737,0.0,0.158,0.0,0.105,0.105,0.737,0.571,0.429,1.0,0.0,0.625,0.375
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1630581,Josh,Giddey,J. Giddey,josh-giddey,G,,,34:52,0.727,0.273,0.556,0.111,0.167,0.0,0.278,0.0,0.444,0.4,0.6,0.0,1.0,0.333,0.667
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1629012,Collin,Sexton,C. Sexton,collin-sexton,,,,30:22,0.571,0.429,0.231,0.0,0.346,0.077,0.423,0.115,0.231,0.333,0.667,0.667,0.333,0.5,0.5
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,,,,22:58,0.4,0.6,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.5,0.5,0.0,0.0,0.5,0.5
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1642265,Rob,Dillingham,R. Dillingham,rob-dillingham,,,,15:27,0.4,0.6,0.25,0.0,0.75,0.0,0.0,0.0,0.25,1.0,0.0,1.0,0.0,1.0,0.0
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1642950,Lachlan,Olbrich,L. Olbrich,lachlan-olbrich,,,,22:27,1.0,0.0,0.5,0.0,0.0,0.0,0.5,0.25,0.5,1.0,0.0,0.0,0.0,1.0,0.0
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1630208,Nick,Richards,N. Richards,nick-richards,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1629014,Anfernee,Simons,A. Simons,anfernee-simons,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501079,1610612741,Chicago,Bulls,CHI,bulls,1627824,Guerschon,Yabusele,G. Yabusele,guerschon-yabusele,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1641712,Rayan,Rupert,R. Rupert,rayan-rupert,F,,,30:26,0.7,0.3,0.571,0.0,0.429,0.214,0.0,0.357,0.571,0.75,0.25,0.5,0.5,0.667,0.333
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1641713,GG,Jackson,G. Jackson,gg-jackson,F,,,21:14,0.714,0.286,0.6,0.2,0.0,0.0,0.4,0.2,0.4,0.333,0.667,0.0,0.0,0.333,0.667
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1641765,Olivier-Maxence,Prosper,O. Prosper,olivier-maxence-prosper,C,,,15:28,0.625,0.375,0.667,0.0,0.25,0.417,0.083,0.667,0.667,0.75,0.25,1.0,0.0,0.8,0.2
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1642907,Cedric,Coward,C. Coward,cedric-coward,G,,,24:13,0.684,0.316,0.667,0.083,0.25,0.083,0.083,0.208,0.583,0.375,0.625,1.0,0.0,0.5,0.5
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1642914,Javon,Small,J. Small,javon-small,G,,,15:28,0.4,0.6,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.5,0.5,0.5
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1642383,Walter,Clayton Jr.,W. Clayton Jr.,walter-clayton-jr,,,,29:53,0.333,0.667,0.571,0.286,0.429,0.0,0.0,0.0,0.286,0.0,1.0,1.0,0.0,0.333,0.667
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1642942,Jahmai,Mashack,J. Mashack,jahmai-mashack,,,,29:53,0.917,0.083,0.941,0.0,0.0,0.235,0.059,0.118,0.941,0.75,0.25,0.0,0.0,0.75,0.25
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1631174,Tyler,Burton,T. Burton,tyler-burton,,,,26:34,0.533,0.467,0.444,0.0,0.5,0.167,0.056,0.278,0.444,0.5,0.5,1.0,0.0,0.714,0.286
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1630610,DeJon,Jarreau,D. Jarreau,dejon-jarreau,,,,19:17,1.0,0.0,0.714,0.0,0.0,0.0,0.286,0.0,0.714,0.6,0.4,0.0,0.0,0.6,0.4
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1642380,Adama,Bal,A. Bal,adama-bal,,,,27:34,0.375,0.625,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1642285,Cam,Spencer,C. Spencer,cam-spencer,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501079,1610612763,Memphis,Grizzlies,MEM,grizzlies,1642377,Jaylen,Wells,J. Wells,jaylen-wells,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

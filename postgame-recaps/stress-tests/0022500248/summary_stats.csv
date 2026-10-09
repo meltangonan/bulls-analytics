@@ -1,0 +1,3 @@
+gameId,teamId,teamCity,teamName,teamTricode,points,reboundsTotal,assists,steals,blocks,turnovers,fieldGoalsPercentage,threePointersPercentage,freeThrowsPercentage,pointsInThePaint,pointsSecondChance,pointsFastBreak,biggestLead,leadChanges,timesTied,biggestScoringRun,turnoversTeam,turnoversTotal,reboundsTeam,pointsFromTurnovers,benchPoints
+0022500248,1610612743,Denver,Nuggets,DEN,127.0,53.0,21.0,6.0,5.0,8.0,0.474,0.389,0.84,48.0,18.0,14.0,8.0,15.0,8.0,13.0,0.0,8.0,4.0,6.0,9.0
+0022500248,1610612741,Chicago,Bulls,CHI,130.0,53.0,31.0,5.0,4.0,9.0,0.471,0.358,0.789,50.0,20.0,23.0,18.0,15.0,8.0,13.0,0.0,9.0,4.0,15.0,66.0

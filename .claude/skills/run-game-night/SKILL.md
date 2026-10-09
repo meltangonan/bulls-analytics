@@ -1,0 +1,1 @@
+../../../.agents/skills/run-game-night/SKILL.md

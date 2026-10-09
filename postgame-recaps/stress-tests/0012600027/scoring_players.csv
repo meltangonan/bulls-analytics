@@ -1,0 +1,42 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1629661,Cameron,Johnson,C. Johnson,cameron-johnson,F,,,15:20,0.571,0.429,0.4,0.0,0.6,0.4,0.0,0.2,0.4,1.0,0.0,1.0,0.0,1.0,0.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,203932,Aaron,Gordon,A. Gordon,aaron-gordon,F,,,15:20,0.571,0.429,0.333,0.0,0.333,0.333,0.333,0.0,0.333,1.0,0.0,0.5,0.5,0.8,0.2
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,203999,Nikola,Jokić,N. Jokić,nikola-jokić,C,,,16:20,1.0,0.0,0.667,0.0,0.0,0.0,0.333,0.167,0.667,0.5,0.5,0.0,0.0,0.5,0.5
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1631128,Christian,Braun,C. Braun,christian-braun,G,,,14:17,0.333,0.667,0.4,0.0,0.6,0.0,0.0,0.0,0.4,0.0,1.0,1.0,0.0,0.5,0.5
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1627750,Jamal,Murray,J. Murray,jamal-murray,G,,,15:49,0.75,0.25,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1631124,Julian,Strawther,J. Strawther,julian-strawther,,,,18:13,0.429,0.571,0.133,0.0,0.6,0.0,0.267,0.267,0.133,0.0,1.0,1.0,0.0,0.75,0.25
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,201942,DeMar,DeRozan,D. DeRozan,demar-derozan,,,,11:27,0.6,0.4,0.286,0.286,0.429,0.0,0.286,0.0,0.0,0.0,1.0,1.0,0.0,0.5,0.5
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1626145,Tyus,Jones,T. Jones,tyus-jones,,,,14:30,0.5,0.5,1.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1628963,Marvin,Bagley III,M. Bagley III,marvin-bagley-iii,,,,15:00,1.0,0.0,0.8,0.0,0.0,0.2,0.2,0.6,0.8,0.75,0.25,0.0,0.0,0.75,0.25
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1643813,Alpha,Diallo,A. Diallo,alpha-diallo,,,,20:56,0.333,0.667,0.25,0.0,0.75,0.0,0.0,0.25,0.25,0.0,1.0,1.0,0.0,0.667,0.333
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1642350,Trevon,Brazile,T. Brazile,trevon-brazile,,,,17:05,1.0,0.0,1.0,0.0,0.0,0.5,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1641715,Cam,Whitmore,C. Whitmore,cam-whitmore,,,,14:42,0.571,0.429,0.571,0.0,0.0,0.143,0.429,0.143,0.571,0.5,0.5,0.0,0.0,0.5,0.5
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1642948,Ryan,Nembhard,R. Nembhard,ryan-nembhard,,,,15:54,0.8,0.2,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1643624,Bryce,Hopkins,B. Hopkins,bryce-hopkins,,,,10:30,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1630192,Zeke,Nnaji,Z. Nnaji,zeke-nnaji,,,,9:05,0.5,0.5,0.667,0.333,0.0,0.0,0.333,0.0,0.333,1.0,0.0,0.0,0.0,1.0,0.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1629022,Lonnie,Walker IV,L. Walker IV,lonnie-walker-iv,,,,7:57,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1641747,DaRon,Holmes II,D. Holmes II,daron-holmes-ii,,,,7:35,0.667,0.333,0.5,0.0,0.0,0.0,0.5,0.0,0.5,0.0,1.0,0.0,0.0,0.0,1.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1641863,Dane,Goodwin,D. Goodwin,dane-goodwin,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1641746,Coleman,Hawkins,C. Hawkins,coleman-hawkins,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1642461,Spencer,Jones,S. Jones,spencer-jones,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612743,Denver,Nuggets,DEN,nuggets,1641801,Emanuel,Miller,E. Miller,emanuel-miller,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1642846,Ace,Bailey,A. Bailey,ace-bailey,F,,,27:01,0.5,0.5,0.4,0.2,0.6,0.0,0.0,0.2,0.2,0.0,1.0,1.0,0.0,0.5,0.5
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1628991,Jaren,Jackson Jr.,J. Jackson Jr.,jaren-jackson-jr,F,,,15:41,0.667,0.333,0.286,0.0,0.429,0.0,0.286,0.429,0.286,1.0,0.0,1.0,0.0,1.0,0.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1629637,Jaxson,Hayes,J. Hayes,jaxson-hayes,C,,,13:48,0.857,0.143,0.857,0.0,0.0,0.0,0.143,0.0,0.857,0.667,0.333,0.0,0.0,0.667,0.333
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1643408,Darryn,Peterson,D. Peterson,darryn-peterson,G,,,29:37,0.667,0.333,0.783,0.609,0.13,0.0,0.087,0.348,0.174,0.333,0.667,1.0,0.0,0.4,0.6
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1641718,Keyonte,George,K. George,keyonte-george,G,,,12:47,0.5,0.5,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.5,0.5,0.5
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1629006,Josh,Okogie,J. Okogie,josh-okogie,,,,24:52,0.5,0.5,0.25,0.0,0.75,0.0,0.0,0.0,0.25,1.0,0.0,1.0,0.0,1.0,0.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1628964,Mo,Bamba,M. Bamba,mo-bamba,,,,19:56,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.25,1.0,0.75,0.25,0.0,0.0,0.75,0.25
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1629004,Svi,Mykhailiuk,S. Mykhailiuk,svi-mykhailiuk,,,,22:08,0.429,0.571,0.222,0.0,0.667,0.0,0.111,0.0,0.222,0.0,1.0,0.5,0.5,0.333,0.667
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1642268,Isaiah,Collier,I. Collier,isaiah-collier,,,,16:49,0.833,0.167,1.0,0.333,0.0,0.0,0.0,0.0,0.667,0.0,1.0,0.0,0.0,0.0,1.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1630182,Josh,Green,J. Green,josh-green,,,,10:36,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1642926,Tamar,Bates,T. Bates,tamar-bates,,,,12:00,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1642396,Blake,Hinson,B. Hinson,blake-hinson,,,,12:00,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1631127,Harrison,Ingram,H. Ingram,harrison-ingram,,,,7:35,0.8,0.2,0.444,0.0,0.333,0.0,0.222,0.0,0.444,0.0,1.0,1.0,0.0,0.333,0.667
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1641725,Trey,Alexander,T. Alexander,trey-alexander,,,,7:35,0.333,0.667,0.286,0.286,0.429,0.0,0.286,0.0,0.0,0.0,1.0,1.0,0.0,0.5,0.5
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1643265,Jonas,Aidoo,J. Aidoo,jonas-aidoo,,,,7:35,1.0,0.0,0.667,0.0,0.0,0.0,0.333,0.333,0.667,1.0,0.0,0.0,0.0,1.0,0.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1642271,Kyle,Filipowski,K. Filipowski,kyle-filipowski,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1641917,Taylor,Funk,T. Funk,taylor-funk,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1628374,Lauri,Markkanen,L. Markkanen,lauri-markkanen,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,203994,Jusuf,Nurkić,J. Nurkić,jusuf-nurkić,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600027,1610612762,Utah,Jazz,UTA,jazz,1641729,Brice,Sensabaugh,B. Sensabaugh,brice-sensabaugh,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

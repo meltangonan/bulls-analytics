@@ -1,0 +1,25 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,F,,,35:35,0.4,0.6,0.462,0.0,0.462,0.0,0.077,0.0,0.462,0.333,0.667,1.0,0.0,0.6,0.4
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1631159,Leonard,Miller,L. Miller,leonard-miller,F,,,34:37,0.667,0.333,0.824,0.118,0.176,0.235,0.0,0.118,0.706,0.714,0.286,1.0,0.0,0.75,0.25
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1642950,Lachlan,Olbrich,L. Olbrich,lachlan-olbrich,C,,,30:36,1.0,0.0,0.8,0.0,0.0,0.0,0.2,0.4,0.8,0.5,0.5,0.0,0.0,0.5,0.5
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1629012,Collin,Sexton,C. Sexton,collin-sexton,G,,,28:24,0.938,0.063,0.737,0.0,0.158,0.105,0.105,0.263,0.737,0.429,0.571,1.0,0.0,0.5,0.5
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1630200,Tre,Jones,T. Jones,tre-jones,G,,,19:22,0.727,0.273,1.0,0.333,0.0,0.0,0.0,0.0,0.667,0.333,0.667,0.0,0.0,0.333,0.667
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1631338,Mouhamadou,Gueye,M. Gueye,mouhamadou-gueye,,,,28:42,0.625,0.375,0.727,0.0,0.0,0.636,0.273,0.0,0.727,0.75,0.25,0.0,0.0,0.75,0.25
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1642265,Rob,Dillingham,R. Dillingham,rob-dillingham,,,,29:56,0.722,0.278,0.8,0.08,0.12,0.16,0.08,0.16,0.72,0.2,0.8,1.0,0.0,0.273,0.727
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1630644,Mac,McClung,M. McClung,mac-mcclung,,,,18:01,0.429,0.571,0.308,0.0,0.462,0.0,0.231,0.0,0.308,1.0,0.0,1.0,0.0,1.0,0.0
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1642530,Yuki,Kawamura,Y. Kawamura,yuki-kawamura,,,,14:48,0.25,0.75,0.286,0.0,0.643,0.143,0.071,0.286,0.286,0.5,0.5,1.0,0.0,0.8,0.2
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1628380,Zach,Collins,Z. Collins,zach-collins,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1630208,Nick,Richards,N. Richards,nick-richards,,DNP - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,1629014,Anfernee,Simons,A. Simons,anfernee-simons,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,1642843,Cooper,Flagg,C. Flagg,cooper-flagg,F,,,9:59,0.875,0.125,0.8,0.0,0.0,0.2,0.2,0.2,0.8,0.25,0.75,0.0,0.0,0.25,0.75
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,203114,Khris,Middleton,K. Middleton,khris-middleton,F,,,5:42,0.0,1.0,0.0,0.0,0.75,0.375,0.25,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,203939,Dwight,Powell,D. Powell,dwight-powell,C,,,24:23,0.5,0.5,0.571,0.0,0.429,0.0,0.0,0.0,0.571,1.0,0.0,1.0,0.0,1.0,0.0
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,1631108,Max,Christie,M. Christie,max-christie,G,,,12:32,0.429,0.571,0.5,0.0,0.5,0.417,0.0,0.167,0.5,1.0,0.0,1.0,0.0,1.0,0.0
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,1642948,Ryan,Nembhard,R. Nembhard,ryan-nembhard,G,,,38:17,0.818,0.182,0.667,0.267,0.2,0.133,0.133,0.133,0.4,0.4,0.6,0.0,1.0,0.333,0.667
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,1630619,Moussa,Cisse,M. Cisse,moussa-cisse,,,,40:49,1.0,0.0,0.706,0.0,0.0,0.0,0.294,0.0,0.706,0.333,0.667,0.0,0.0,0.333,0.667
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,202691,Klay,Thompson,K. Thompson,klay-thompson,,,,10:05,0.1,0.9,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,1642358,AJ,Johnson,A. Johnson,aj-johnson,,,,25:09,0.75,0.25,0.6,0.0,0.0,0.1,0.4,0.0,0.6,0.167,0.833,0.0,0.0,0.167,0.833
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,1642967,John,Poulakidas,J. Poulakidas,john-poulakidas,,,,36:03,0.111,0.889,0.071,0.0,0.857,0.214,0.071,0.107,0.071,1.0,0.0,1.0,0.0,1.0,0.0
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,1641890,Tyler,Smith,T. Smith,tyler-smith,,,,37:01,0.25,0.75,0.3,0.0,0.6,0.2,0.1,0.1,0.3,0.667,0.333,1.0,0.0,0.857,0.143
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,1628963,Marvin,Bagley III,M. Bagley III,marvin-bagley-iii,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,1630230,Naji,Marshall,N. Marshall,naji-marshall,,DND - Injury/Illness,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

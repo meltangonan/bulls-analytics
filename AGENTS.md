@@ -16,6 +16,7 @@ a chart adjustment doesn't need the full post history.
 | Build, approve, or record a post | `POSTING_WORKFLOW.md` or the matching create/promote/review skill |
 | Change Python or run checks | `DEVELOPMENT.md`; endpoint references only for the data being used |
 | Find an existing renderer | `scripts/prototypes/README.md` |
+| Run or change the postgame recap series | `postgame-recaps/README.md`, the `run-game-night` skill, Notion's "Game recaps" page |
 | Create, integrate, or remove a worktree | `docs/reference/worktrees.md` |
 
 ## Working defaults

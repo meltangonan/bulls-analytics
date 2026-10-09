@@ -1,0 +1,3 @@
+gameId,teamId,teamCity,teamName,teamTricode,points,reboundsTotal,assists,steals,blocks,turnovers,fieldGoalsPercentage,threePointersPercentage,freeThrowsPercentage,pointsInThePaint,pointsSecondChance,pointsFastBreak,biggestLead,leadChanges,timesTied,biggestScoringRun,turnoversTeam,turnoversTotal,reboundsTeam,pointsFromTurnovers,benchPoints
+0022500452,1610612741,Chicago,Bulls,CHI,101.0,42.0,25.0,3.0,7.0,16.0,0.409,0.342,0.857,50.0,17.0,12.0,9.0,6.0,4.0,6.0,1.0,17.0,12.0,7.0,50.0
+0022500452,1610612750,Minnesota,Timberwolves,MIN,136.0,46.0,32.0,9.0,9.0,3.0,0.537,0.405,0.76,60.0,10.0,20.0,41.0,6.0,4.0,12.0,2.0,5.0,7.0,24.0,68.0

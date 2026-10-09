@@ -1,0 +1,3 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0022501193,1610612742,Dallas,Mavericks,DAL,mavericks,240:00,0.51,0.49,0.403,0.027,0.443,0.161,0.154,0.074,0.376,0.467,0.533,0.955,0.045,0.673,0.327
+0022501193,1610612741,Chicago,Bulls,CHI,bulls,240:00,0.642,0.358,0.656,0.047,0.234,0.148,0.109,0.148,0.609,0.476,0.524,1.0,0.0,0.577,0.423

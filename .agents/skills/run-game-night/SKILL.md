@@ -14,7 +14,8 @@ reasons: `postgame-recaps/README.md`, "Game night".
 
 1. **Recheck the previous game.** If a `postgame-recaps/seasons/*/*/as-posted/` folder exists for an earlier
    game, run `postgame-recaps/pipeline/recheck.py` on the most recent one. Exit 1 lists numbers NBA.com
-   corrected since posting: report them; do not rebuild or change the post.
+   corrected since posting: report them; do not rebuild or change the post. A traceback (a network error)
+   is not a correction: say the recheck could not run, and continue.
    ```
    PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/recheck.py <game_id>
    ```
@@ -27,7 +28,24 @@ reasons: `postgame-recaps/README.md`, "Game night".
    ```
    PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/game_night.py --today
    ```
-   A "stopped" or "gave up" line means no slides: report it in one sentence, keep all data, and stop.
+   The script exits in three ways:
+   - A `FINAL SEEN` or `STILL WAITING` line followed by `restart: ...` (exit 76) is a notice, not a failure.
+     Post the notice in one chat line and send it as a PushNotification (every notice: the user wants to
+     hear from the run, and the post should be out within 30 minutes of the buzzer), then start the printed
+     restart command in the background at once (it carries the game ID and the time Final was first seen;
+     every feed is on disk, so nothing is lost). Pushes read like "Bulls game final, 110-102; waiting for
+     NBA.com to publish (12 to 35 min so far)" and "Bulls recap still waiting, 21 min after Final: NBA.com has
+     not published: four factors, misc". Notices come at Final, then 20, 30, 45, 60, 90 and 120 minutes
+     after it (from 10 minutes when a check is failing).
+     When a check is failing, quote the reason line (it names the feed and the row). A feed NBA.com never
+     corrects (DEN at UTA, Oct 6) looks the same as a wrong check, so say which it looks like and that the
+     user can reply "stop". If the user says stop, end the background task with TaskStop and report what
+     it was waiting on; do not restart it.
+   - A "stopped" or "gave up" line means no slides: report it in one sentence, keep all data, and stop.
+   - A "done:" line: continue with step 3.
+   If the user asks how the run is going, read the last 15 lines of the background task's output and answer
+   in one line: the phase, minutes since Final, and either "waiting for NBA.com to publish X (normal)" or
+   "a check is failing: <reason>".
 3. **Check every slide** (`output/postgame-recap/<id>/slides/`, Read each PNG):
    - the export's `serif:` line names Georgia Pro Condensed Bold (otherwise say so, and continue);
    - the `delivery:` lines say the slides hold image data only and Photos stored them unchanged; report

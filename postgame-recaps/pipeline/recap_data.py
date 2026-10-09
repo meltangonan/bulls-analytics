@@ -344,7 +344,10 @@ def east_place(league_games: pd.DataFrame, dates: list) -> list:
     applied. Teams yet to play are left out until they have a game.
     """
     conf = EAST if TRI in EAST else set(league_games.TEAM_ABBREVIATION) - EAST
-    east = league_games[league_games.TEAM_ABBREVIATION.isin(conf)]
+    # A game still in progress is in the log with no result (Game 1's log held GSW at POR at half-time); it must
+    # count for no one, not as a loss. The featured team's own rows stay (its game tonight is final).
+    settled = league_games.WL.isin(["W", "L"]) | (league_games.TEAM_ABBREVIATION == TRI)
+    east = league_games[league_games.TEAM_ABBREVIATION.isin(conf) & settled]
     out = []
     for date in dates:
         played = east[east.GAME_DATE <= date]

@@ -110,3 +110,52 @@ def test_slides_keep_image_data_only(tmp_path):
     path.write_bytes(png[:33] + chunk + png[33:])
     assert clean_png(path) == ["tEXt"]
     assert path.read_bytes() == png and clean_png(path) == []
+
+
+def test_east_place_ignores_games_still_in_progress():
+    # LeagueGameLog carries a live game with no result (Game 1's as-posted log held GSW at POR at half-time).
+    # A blank result must count for no one: here NYK is really 1-0, so the Bulls (1-1) sit second.
+    rd.TRI = "CHI"
+    rows = [("CHI", "2026-10-05", "W"), ("CHI", "2026-10-07", "L"), ("NYK", "2026-10-05", "W"), ("NYK", "2026-10-07", None)]
+    lg = pd.DataFrame(rows, columns=["TEAM_ABBREVIATION", "GAME_DATE", "WL"])
+    assert rd.east_place(lg, ["2026-10-07"]) == [[2, False]]
+
+
+def test_baseline_rebound_rate_is_joined_on_game_and_team():
+    import accounting as acc
+    # The four-factors and advanced tables do not share a row order; joined, the possession-weighted OREB% is
+    # 0.3023 (the row-wise product gave 0.3027). Points per possession is unchanged.
+    assert round(acc.P, 4) == 0.3023 and round(acc.V, 4) == 1.1476
+
+
+def test_notice_marks_fire_once_across_restarts():
+    from game_night import due
+    final_at = 1000.0
+    assert due(0, final_at, final_at + 1, "publishing") == 0  # the process that saw Final
+    restarted = final_at + 90  # the restart begins after the mark it reported
+    assert due(restarted, final_at, final_at + 19 * 60, "publishing") is None  # 19 min in: nothing yet
+    assert due(restarted, final_at, final_at + 20 * 60, "publishing") == 20  # the post should be out by 30
+    assert due(restarted, final_at, final_at + 12 * 60, "check") == 10  # sooner when a check is failing
+    assert due(final_at + 21 * 60, final_at, final_at + 31 * 60, "check") == 30
+    assert due(final_at + 31 * 60, final_at, final_at + 44 * 60, "publishing") is None
+
+
+def test_as_posted_is_written_once(tmp_path):
+    from game_night import SNAPSHOT, snapshot
+    data, out = tmp_path / "game", tmp_path / "out"
+    data.mkdir(), out.mkdir()
+    for name in SNAPSHOT:
+        (data / name).write_text("first")
+    (out / "recap.json").write_text("{}")
+    assert snapshot(data, out).startswith("as-posted/ written")
+    assert (data / "as-posted" / "pbp.csv").read_text() == "first" and (data / "as-posted" / "recap.json").exists()
+    (data / "pbp.csv").write_text("corrected")  # a rebuild after an NBA.com correction
+    assert snapshot(data, out).startswith("as-posted/ kept")
+    assert (data / "as-posted" / "pbp.csv").read_text() == "first"
+
+
+def test_today_prefers_last_night_before_six():
+    from datetime import date, datetime
+    from game_night import game_day
+    assert game_day(datetime(2027, 1, 8, 0, 40)) == [date(2027, 1, 7), date(2027, 1, 8)]
+    assert game_day(datetime(2027, 1, 7, 18, 0)) == [date(2027, 1, 7)]

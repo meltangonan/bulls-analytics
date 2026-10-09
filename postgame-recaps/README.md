@@ -25,12 +25,16 @@ PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/game_night.py --today
 ```
 
 `--today` finds tonight's Bulls game in NBA.com's schedule (or pass a game ID) and exits quietly on days
-without one. It checks every 90 seconds until the game is Final, the box score is filled and the
-play-by-play ends on the final score; then it pulls every feed and computes every number, and while either
-step exits NOT_READY (75) it logs the reason, waits 90 seconds and pulls again. Any other failure stops the
-run. Then, one build at a time (a lock), it draws the shot chart (linking the shared cache when run from a
+without one (before 6 am, last night's game). It checks every 90 seconds until the game is Final, the box
+score is filled and the play-by-play ends on the final score, holding the Mac awake (`caffeinate`) meanwhile;
+then it pulls every feed and computes every number, and while either step exits NOT_READY (75) it logs the
+reason, waits 90 seconds (5 minutes from an hour after Final, so a long wait does not hammer stats.nba.com)
+and pulls again. Any other failure three times in a row stops the run; once or twice, it pulls again, because
+a half-published feed can crash a step. Then, one build at a time (a lock), it draws the shot chart (linking the shared cache when run from a
 worktree, removing only the link), builds the pages, exports the PNGs, copies them to iCloud Drive › Bulls
-recaps, writes `caption.txt`, keeps an `as-posted/` copy of the feeds, and delivers (`pipeline/deliver.py`):
+recaps, writes `caption.txt`, keeps an `as-posted/` copy of the feeds, play-by-play, `sources.json` and `recap.json`
+(written once per game, so a rebuild cannot move the baseline `recheck.py` compares against), and delivers
+(`pipeline/deliver.py`):
 - every slide keeps image data only, so Instagram has nothing to read as AI-made (the user's rule: its AI
   label must never appear); anything else is removed and logged;
 - the slides go into the Photos album "Bulls recaps", which iCloud Photos syncs to the phone, where
@@ -39,8 +43,21 @@ recaps, writes `caption.txt`, keeps an `as-posted/` copy of the feeds, and deliv
   with the slides was tried and dropped on 2026-10-08: a text to oneself never alerts on the iPhone, and the
   attachments would pile up in Messages.
 A failed delivery is logged and never fails the run: the slides are already in iCloud Drive. It gives up
-five hours after tip-off. `--check` only reports whether the game is final. `FOCUS_TEAM_ID` dry-runs another
+five hours after tip-off (three hours after Final once a notice has restarted it). `--check` only reports
+whether the game is final. `FOCUS_TEAM_ID` dry-runs another
 team's game (saved under `stress-tests/`); `RECAP_ALBUM` sends a test run's slides to another album.
+
+Notices, so a long wait is heard about instead of sat through in silence (added 2026-10-09): at fixed minutes
+after Final (`MARKS`: at Final, then 20, 30, 45, 60, 90 and 120 minutes while NBA.com has not published every
+slide feed, because the post should be out within 30 minutes of the buzzer; from 10 minutes when every feed is
+in but a check keeps failing) the script prints what it is waiting on,
+the step's own reason line and a restart command carrying the game ID and the time Final was first seen, then
+exits STILL_WAITING (76). The `run-game-night` skill posts the notice, pushes it to the phone (every notice;
+the user wants to hear from the run), and restarts the command; every feed is already on disk, so a restart costs seconds and the timing line and
+deadline carry on. Each mark is raised once, because a restarted process begins after the mark it reported
+(no state file). The two kinds of wait are different problems: "not published yet: four factors" is NBA.com
+being slow and needs patience; "every slide feed is published but a check is failing" means a scrambled feed
+(DEN at UTA, 2026-10-06, never corrected) or our own check, and the user decides whether to keep waiting.
 
 The steps it runs, for debugging (from the primary checkout, where `cache/` is the shared cache):
 
@@ -74,7 +91,10 @@ RangeType=0, which makes NBA.com ignore the range, so overtime is kept: checked 
 with `nba_api`'s defaults: stats.nba.com caches each exact request, and on 2026-10-07 the website's request
 had four factors, advanced and misc filled two to five minutes sooner.
 
-`recap_data.py` computes every number into `output/postgame-recap/<id>/recap.json`; the template only draws.
+`recap_data.py` computes every number into `output/postgame-recap/<id>/recap.json`; the template only draws,
+plus the arithmetic on rows it prints: TS% and the box-score subtotals and team row (which sums the players'
+turnovers; the head-to-head turnover count is NBA.com's total with team turnovers, so slides 3 and 6 can
+differ by design).
 Scores come only from made-shot and free-throw rows: a period-start row can carry a later score, which once hid
 five minutes of baskets (first live run, below). Game margins come from the two teams' points in LeagueGameLog;
 LeagueGameFinder is no longer pulled, because after an overnight stat correction (2026-10-08) it showed the
@@ -86,8 +106,8 @@ and an offensive rebound added, an assist moved), which changed eleven numbers o
 12 to 14, Suns blocks 2 to 3, Caleb Wilson's line, two shot types, two breakdown bars). `pipeline/recheck.py <game_id>`
 compares the feeds saved for the post (the game folder's `as-posted/` when present) with NBA.com now and lists each
 changed number in plain words (box score with minutes, line score, four factors, misc points, game-flow counts,
-and the featured team's shots by zone and shot type); it reads only. `game_night.py` copies those feeds into
-`as-posted/` after each export, so a later re-pull cannot move the baseline. The as-posted Game 1 feeds and
+and the featured team's shots by zone and shot type); it reads only. `game_night.py` copies those feeds, the play-by-play, `sources.json` and
+`recap.json` into `as-posted/` after the first export only, so neither a re-pull nor a rebuild can move the baseline. The as-posted Game 1 feeds and
 recap.json are kept in `seasons/2026-27/0012600030/as-posted/`; the game folder itself holds the corrected pull.
 The next-morning QA of four dry runs (2026-10-09) found only fast break points revised, in two of them; fast break
 points also changed for Game 1, so they are the stat to expect to move. Readers are told: every slide footer
@@ -171,7 +191,7 @@ guarded whom, player tracking, how they scored (`pipeline/backpocket_pages.js`; 
 
 Every possession starts worth V, the 2025-26 league points per possession (1.148). Each shot, rebound,
 turnover and free-throw trip moves that value and books the change to one factor; a missed shot drops it
-to P×V, where P is the official offensive-rebound rate (0.303). Factors are centred on the league average
+to P×V, where P is the official offensive-rebound rate (0.302). Factors are centred on the league average
 and taken Bulls minus opponent; an extra-possession term covers unequal possession counts. Because every
 point and possession passes through one booked event, the factors sum to the final margin exactly.
 `pipeline/validate_accounting_season.py` checks this on all 82 Bulls games of 2025-26 (both overtime games
@@ -181,13 +201,13 @@ lane violation that cancelled a trip's last free throw. A production run must re
 The total is exact; the split between factors depends on V and P.
 
 Worked example, Bulls at Denver (2025-11-17), traced play by play. Constants from 2025-26 NBA.com totals:
-V = 284,395 PTS / 247,827 POSS = 1.1476; P = 0.3027 (official OREB%, team rebounds included), so a miss
+V = 284,395 PTS / 247,827 POSS = 1.1476; P = 0.3023 (official OREB%, team rebounds included, weighted by possessions), so a miss
 leaves P x V = 0.347. Each made 2 books 2 - 1.148 = +0.852 to shooting; each made 3 +1.852; each miss
-0.347 - 1.148 = -0.800. Bulls shooting raw: 29 x 0.852 + 19 x 1.852 - 54 x 0.800 = +16.71; the league's
-raw shooting per possession is (2 x FGM + 3PM - FGA x V + misses x P x V) / POSS = +0.1128, so 103
-possessions expect +11.62 and the Bulls are +5.09. Denver: +12.40 raw, +11.50 expected on 102, +0.90.
+0.347 - 1.148 = -0.801. Bulls shooting raw: 29 x 0.852 + 19 x 1.852 - 54 x 0.801 = +16.68; the league's
+raw shooting per possession is (2 x FGM + 3PM - FGA x V + misses x P x V) / POSS = +0.1125, so 103
+possessions expect +11.59 and the Bulls are +5.09. Denver: +12.38 raw, +11.48 expected on 102, +0.90.
 Shooting bar = 5.09 - 0.90 = +4.2. Turnovers book minus the possession's value (9 x 1.148), rebounds
-+0.80 for an offensive board and -0.347 when the opponent rebounds a miss, free-throw trips minus the
++0.801 for an offensive board and -0.347 when the opponent rebounds a miss, free-throw trips minus the
 possession value at the trip's start plus 1 per make. `other` holds technical/flagrant/clear-path free
 throws and possessions cut off by the end of a period. Play-by-play counts team rebounds, so the Bulls show
 16 offensive rebounds where the box score shows 13.
@@ -236,8 +256,8 @@ so the line shows why Game Score picked the player.
 ## Baseline for current-season games
 
 `recap_data.BASELINE_SEASON` sets one completed regular season for points per possession, the
-offensive-rebound rate, the scatter reference line and the zones league FG%. Proposed policy: use the previous completed regular season for the whole season and say so on
-the page. It exists from the first preseason game, and it keeps all 82 posts on one scale. League ORtg moved
+offensive-rebound rate, the scatter reference line and the zones league FG%. Policy, in force since the first preseason game: the previous completed regular season for the whole season,
+said on the page. It exists from the first preseason game, and it keeps all 82 posts on one scale. League ORtg moved
 only between 113.7 and 114.8 over 2022-23 to 2025-26; moving the baseline across that range, or the
 rebound rate by two points, changed the Denver breakdown bars by at most 0.1 point, because both teams
 are measured against the same baseline and the error cancels in the Bulls-minus-opponent edge.
@@ -253,8 +273,10 @@ label) and pins Game 1's NBA.com-verified numbers and caption.
   LeagueGameFinder's team games were dropped on 2026-10-08; older folders still hold them); for regular-season games also `player_games.csv`, the Bulls' player game
   logs and `league_games.csv`, every team's games, both from `LeagueGameLog` (preseason too), and
   `schedule.csv` from `ScheduleLeagueV2`, added 2026-10-06),
-  fetched 2026-10-03 by `pipeline/pull_game.py`; `missing.txt` lists empty feeds.
-  Games: 0022500248 (DEN), 0022500167 (PHI), 0022500705 (MIA), 0022500240 (UTA), 0012500059 (preseason DEN).
+  fetched by `pipeline/pull_game.py` (the first five games on 2026-10-03, the rest on 2026-10-07 and 08);
+  `missing.txt` lists empty feeds. 14 folders: the games named under Stress test and Second stress test, the
+  two 2026-27 dry runs (0012600010 LAL at GSW, 0012600027 DEN at UTA, kept for its scrambled play-by-play)
+  and the preseason DEN game (0012500059).
 - `logos/`: both teams' primary logos (SVG) from NBA.com's CDN (`cdn.nba.com/logos/nba/<team id>/primary/L/logo.svg`),
   fetched by `pull_logos`; there is no separate dark-background version, so the cover uses the same file.
 - `baselines/league-2025-26/`: league team-game logs, official four factors and advanced (possessions, ratings).

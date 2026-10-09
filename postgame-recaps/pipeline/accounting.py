@@ -10,12 +10,13 @@ import pandas as pd
 
 LEAGUE = Path(__file__).resolve().parents[1] / "baselines" / "league-2025-26"
 lg = pd.read_csv(LEAGUE / "league_teamgames_2025-26.csv.gz", dtype={"GAME_ID": str})
-adv = pd.read_csv(LEAGUE / "league_advanced_2025-26.csv.gz")
+adv = pd.read_csv(LEAGUE / "league_advanced_2025-26.csv.gz", dtype={"GAME_ID": str})
 V = lg.PTS.sum() / adv.POSS.sum()
-opp = lg[["GAME_ID", "TEAM_ID", "DREB"]].rename(columns={"TEAM_ID": "O", "DREB": "ODREB"})
-m = lg.merge(opp, on="GAME_ID"); m = m[m.TEAM_ID != m.O]
-ff = pd.read_csv(LEAGUE / "league_four_factors_2025-26.csv.gz")
-P = (ff.OREB_PCT * adv.POSS).sum() / adv.POSS.sum()   # official OREB%, team rebounds included
+ff = pd.read_csv(LEAGUE / "league_four_factors_2025-26.csv.gz", dtype={"GAME_ID": str})
+# Official OREB% (team rebounds included), weighted by possessions. The two tables are joined on game and team:
+# they do not come back in the same row order (found 2026-10-09; the row-wise product gave 0.3027, not 0.3023).
+_joined = ff.merge(adv[["GAME_ID", "TEAM_ID", "POSS"]], on=["GAME_ID", "TEAM_ID"])
+P = (_joined.OREB_PCT * _joined.POSS).sum() / _joined.POSS.sum()
 
 def account(pbp, TEAMS, split=None):
     """split, if given, collects each team's shooting value by shot value: split[team][2 or 3]."""
@@ -89,7 +90,6 @@ base["ft"] = -sum(base.values())
 lg_3a = lg.FG3A.sum()
 base_shot = {3: (3 * lg_3 - lg_3a * V + (lg_3a - lg_3) * P * V) / L,
              2: (2 * (lg_fgm - lg_3) - (lg_fga - lg_3a) * V + ((lg_fga - lg_3a) - (lg_fgm - lg_3)) * P * V) / L}
-out = {}
 def centred(cats, N):
     out = {}
     for t in cats:

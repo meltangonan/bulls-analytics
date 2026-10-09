@@ -10,8 +10,8 @@ postgame-recaps/
   baselines/league-2025-26/ league averages the game breakdown is measured against
   seasons/<season>/<id>/    each Bulls game's NBA.com feeds, sources.json, and as-posted/ (what the slides used)
   stress-tests/<id>/        saved test games: 2025-26 Bulls games and dry runs featuring other teams
-  logos/, portraits/        NBA.com images (portraits are downloaded again when missing, never committed)
-  assets/                   decision-bearing slide versions from the format's design (Oct 3 to 7, 2026)
+  logos/, portraits/        NBA.com images (portraits are downloaded again when missing or 12 hours old, never committed)
+  assets/                   decision-bearing slide versions from the format's design (Oct 3 to 9, 2026; v14 is the Oct 9 template)
 output/postgame-recap/<id>/ recap.json, zones.png, slides/, caption.txt (scratch, not committed)
 ```
 
@@ -116,7 +116,7 @@ capture was not on game day), and the caption carries "Stats via NBA.com as of g
 official stats after a game."
 
 Before posting, check by eye: the score, line score and slide 2's tiles against the NBA.com game page; a margin
-line with no long straight stretch; the box-score lines of the top three Bulls scorers.
+line with no long flat stretch (minutes with no score logged); the box-score lines of the top three Bulls scorers.
 
 ## Pages in the mockup
 
@@ -126,29 +126,32 @@ CHI @DEN, Nov 17, 2025" footer with the handle. The serif (titles, scores, big
 numbers) is Georgia Pro Condensed Bold and Bold Italic (licensed desktop fonts, installed in ~/Library/Fonts
 on 2026-10-07) when present on the Mac that exports; otherwise Source Serif 4 Black. All other text is Geist SemiBold
 and Regular, from `~/Library/Fonts` or else Google Fonts. `export_slides.py` prints which faces it used. Font files never enter the repo (it is
-public), and the phone preview cannot load them, so it shows Source Serif 4. Section titles are 30 px. Labels are sentence case; column headers keep
+public), and the phone preview cannot load them, so it shows Source Serif 4. Section titles are light text on a solid black block. The account mark
+(`assets/brand/chicagobullsdata-mark.svg`) sits top right of every page but the cover. Labels are sentence case; column headers keep
 capitals. Optional cover first, on the same
-background: the game's margin line as art, the score in the serif (Bulls line red), "@" or "vs.", the date.
+background with graph paper (36 px grid): the game's margin line as art, the score in the serif (Bulls line red), "@" or "vs.", the date, and across the top the series label in a black block and the swipe call to action as a red block with an arrow.
 
-1. Final score: big scoreboard, line score, smoothed scoring-margin line, then biggest lead, lead
+1. Final score: big scoreboard (Final, any overtime, then W in green or L in red), line score, step-line scoring margin (every score, unsmoothed), then biggest lead, lead
    changes, tied, longest run, and up to three notables.
 2. Team stats: game leaders for both teams with headshots, head to head, up to four Bulls game awards.
-3. Shot chart (real Python render): mid-range pooled, 8-attempt color floor, pills show
+3. Shot chart (real Python render): mid-range pooled and painted as one shape, 5-attempt color floor, pills show
    makes/attempts and share of FGA, summary pills; shot-type strip below.
-4. Game breakdown: four factors table and points above average, the margin bars, "How to read it" (below).
+4. Game breakdown: four factors table and points above average, the margin bars (each factor keeps one color chip on its column and its bar), "How to read it" (below).
 5. Box score: starters and bench by points, subtotals and team total; MIN PTS REB AST FG 3PT FT TS% STL
    BLK TO +/-; one fixed gap between every column.
 6. Season so far: record and tonight's place in the conference, then game margins (empty slots for games
    to play) and games over .500 after each game, on one game axis.
-7. Season leaders: top three Bulls per game in points, rebounds, assists, steals and blocks, with places
-   moved tonight (from game 5; preseason game 3).
+7. Season leaders: one grid of every qualified Bulls player's per-game points, rebounds, assists, steals and
+   blocks (and games played), sorted by points; each stat's leader, every tied player included, in a solid red
+   cell, the rest shaded by how close they are to the leader (from game 5; preseason from game 1, since
+   2026-10-09, when the top-three cards were replaced so ties are never cut).
 
 Preseason is its own season: its own record, .500 line, slots (from the schedule) and leaders; the
 regular season starts at 0-0. Game breakdown (option B, chosen 2026-10-07; the bars-only page with awards was retired): the four factors per team as
 rates (eFG% with 2PT | 3PT, TOV%, OREB%, FT rate; the better rate boxed) and as "points above average"
 (points, not per possession, against an average team on that team's possessions) (shooting split 2PT | 3PT, using the league's own 2PT and 3PT baselines),
 no total, then the Bulls-minus-opponent bars (other only when nonzero, extra possession) to the margin,
-then "How to read it": three short paragraphs with tonight's own worked shooting math (per-play values at
+then "How to read it": why these four factors (every way a possession ends), then three short paragraphs with tonight's own worked shooting math (per-play values at
 three decimals, so the equation is marked ≈).
 Team stats then drops its four factors section and ends with up to four Bulls game awards as cards
 (award, headshot, name, the stat that earned it). Technical, flagrant and clear-path free throws now
@@ -173,11 +176,14 @@ guarded whom, player tracking, how they scored (`pipeline/backpocket_pages.js`; 
   Preseason ranks preseason games only.
 - Scores logged at the same clock time are spread two seconds apart on the margin line, so every labeled
   moment is a real point on it.
-- The margin line is simplified (Ramer-Douglas-Peucker, 1.6-point tolerance) then drawn as a monotone
-  curve: it passes through every kept point, keeps the labeled high, low and deciding basket, and drops
-  back-and-forth inside 1.6 points. The cover's counts (lead changes, tied) come from the full data.
-- Zones always pool mid-range: the test games had 1 to 6 mid-range attempts, under the 8-attempt color
-  floor even pooled, so five separate regions would all be gray.
+- The margin line is drawn exactly, unsmoothed (2026-10-09; it was simplified and drawn as a monotone curve
+  before): a step line that holds the margin flat until the next score and then jumps, through every scoring
+  event. `STEP` in the template switches it to straight segments between scores.
+- Zones always pool mid-range: a game's five mid-range sectors hold 0 to 4 attempts each, so split they
+  would all be gray; pooled, the 13 saved Bulls games had 1 to 10. The color floor is 5 attempts (was 8 until
+  2026-10-09): at 8, 3.2 of 8 zones per game were gray and mid-range in 11 of 13 games; at 5, 1.2 zones and 5
+  of 13. One shot moves a 5-attempt zone's FG% by 20 points, so the color describes tonight, not a skill;
+  the pill prints makes and attempts. A split mid-range belongs on a season-to-date chart, not a game.
 - Notables (final-score page): up to three exact, positive callouts in one column, most notable first: tonight's team
   stat ranked top three among every NBA team game this season (once 150 exist), a Bulls season high
   (after 10 games; biggest win, fewest points allowed included), then player season highs over a floor
@@ -185,8 +191,8 @@ guarded whom, player tracking, how they scored (`pipeline/backpocket_pages.js`; 
   "tied". Regular season only; `player_games.csv` keeps Bulls players' games on every team for this.
 - Season leaders qualify at half of the Bulls' games so far, shown in the footer. The NBA's 70% rule
   was tried first and left out Giddey (34 of 50) and White (28 of 50) at the midseason test game.
-- Season leader ties share a place
-  at the one decimal printed, and a tie that would overflow three cards becomes one shared card.
+- Season leader values are rounded to the one decimal printed, so players tied on the page share the red cell.
+  The saved games qualify 9 to 16 players; the grid fits 16 at full row height.
 
 ## Game breakdown method (`pipeline/accounting.py`)
 
@@ -239,15 +245,16 @@ at POR (long name), a -35 loss vs MIN with 13 Bulls used, and a 1-point loss at 
 All twelve reconcile and match NBA's flow counts. An in-browser check of every text element on all 95 pages
 (off the 25 px margins, or overlapping another text) finds none. Fixes it forced: chart labels at the edge go
 beside their dot, season-chart labels are placed by trying spots around their bar or point, nearest first, and taking the first that touches no bar, line or edge (a short leader joins any label that had to move), season leaders wait until game 5
-(game 3 in preseason), the cover lines leave room for the record, and notables rank players by size and give
+(game 3 in preseason, game 2 since 2026-10-09), the cover lines leave room for the record, and notables rank players by size and give
 each player one line.
 
-Awards (2026-10-07): Top Performer (highest Game Score, not printed; a triple-double is named in its line)
+Awards (2026-10-07; shown as hashtags since 2026-10-09, the mapping is drafted on the Notion "Game recaps"
+page): Top Performer (#mvp; highest Game Score, not printed; a triple-double is named in its line)
 is always first. The rest are leader-only, at most two per player, and ranked by how far the winner cleared
 the floor (value / floor): Triple-double (by anyone else), Hot Hand (70%+ FG on 10+ shots), Sharpshooter
 (6+ threes), Pickpocket (4+ steals), Block Party (4+), Glass Cleaner (15+ rebounds), Board Crasher (5+
-offensive), Facilitator (12+ assists), Spark Plug (bench Game Score 10+, not the Top Performer), Workhorse
-(40+ minutes), Closer (5+ clutch points), Slam Dunk (4+ dunks), Soft Touch (3+ floaters),
+offensive), Facilitator (10+ assists, lowered from 12 by the user on 2026-10-09), Spark Plug (bench Game Score 10+, not the Top Performer), Workhorse
+(40+ minutes), Closer (5+ clutch points), Slam Dunk (5+ dunks, raised from 4 on 2026-10-09), Soft Touch (3+ floaters),
 Floors tightened 2026-10-07 so each box-score award fires in about 5-20% of 2025-26 Bulls games (Hot Hand had
 fired in 82%, Facilitator 63%). Team stats shows the first four. The hustle awards (Charge Taker, Loose Ball,
 Screen Setter) were removed on 2026-10-08: hustle stats publish late and speed matters more. The Top Performer
@@ -287,6 +294,9 @@ label) and pins Game 1's NBA.com-verified numbers and caption.
 ## Known gaps before production
 
 - Jersey numbers: the box score feed leaves `jerseyNum` blank, so numbers come from `CommonTeamRoster`.
+  The 2026-27 camp roster lists four shared numbers (8, 9, 11, 15). `recap_data.JERSEY_FIX` holds numbers the
+  user confirmed (Buddy Hield 7) and wins over the roster; when two players who both played share a number,
+  every unconfirmed holder prints none (Game 1: Miller and Boston at 11).
   Pulled the night of a game it is current; the 2025-26 test games were pulled later, so players traded
   since (Vučević, Huerter, Dosunmu, Carter, Terry, Phillips, White) show no number rather than a guess.
   NBA's live box score feed (which carries jersey numbers) returned HTTP 403.

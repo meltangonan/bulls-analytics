@@ -221,10 +221,14 @@ def pull_game(game_id: str) -> list:
     pull_player_games(season, season_type, out, missing)
     pull_schedule(season, out, missing)
     pull_league_games(season, season_type, out, missing)
-    # Headshots for every Bulls player and for the opponent's players who played (game leaders).
+    # Headshots for every Bulls player and for the opponent's players who played (game leaders), downloaded
+    # again once they are 12 hours old: NBA.com swaps in new season photos under the same URL (two were stale
+    # on 2026-10-09), and the age limit keeps the 90-second readiness retries from downloading them each time.
     played = players[(players.teamId == BULLS) | players.minutes.fillna("").astype(str).str.contains(":")]
     for pid in played.personId:
-        if get_player_headshot(int(pid), cache_dir=str(PORTRAITS)) is None:
+        path = PORTRAITS / f"{int(pid)}.png"
+        old = path.exists() and time.time() - path.stat().st_mtime > 12 * 3600
+        if get_player_headshot(int(pid), cache_dir=str(PORTRAITS), refresh=old) is None:
             missing.append(f"portrait {pid}")
     (out / "missing.txt").write_text("\n".join(missing) + ("\n" if missing else ""))
     (out / "sources.json").write_text(json.dumps({

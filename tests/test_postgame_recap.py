@@ -159,3 +159,37 @@ def test_today_prefers_last_night_before_six():
     from postgame_recap import game_day
     assert game_day(datetime(2027, 1, 8, 0, 40)) == [date(2027, 1, 7), date(2027, 1, 8)]
     assert game_day(datetime(2027, 1, 7, 18, 0)) == [date(2027, 1, 7)]
+
+
+def test_headshot_refresh_downloads_again_and_keeps_the_old_file_on_failure(tmp_path, monkeypatch):
+    """NBA.com swaps in new season photos under the same URL, so the recap re-downloads old ones."""
+    import requests
+    from bulls.data import fetch
+
+    class Reply:
+        def __init__(self, body):
+            self.content = body
+
+        def raise_for_status(self):
+            if self.content is None:
+                raise requests.HTTPError("down")
+
+    path = tmp_path / "7.png"
+    path.write_bytes(b"last season")
+    monkeypatch.setattr(fetch.requests, "get", lambda url, timeout: Reply(b"this season"))
+    assert fetch.get_player_headshot(7, cache_dir=str(tmp_path)).read_bytes() == b"last season"
+    assert fetch.get_player_headshot(7, cache_dir=str(tmp_path), refresh=True).read_bytes() == b"this season"
+    monkeypatch.setattr(fetch.requests, "get", lambda url, timeout: Reply(None))
+    assert fetch.get_player_headshot(7, cache_dir=str(tmp_path), refresh=True).read_bytes() == b"this season"
+
+
+def test_game_one_jerseys_and_leaders_grid():
+    d = rd.build("0012600030")
+    nums = {r[1]: r[-1] for r in d["box"]["starters"] + d["box"]["bench"]}
+    # NBA.com's roster lists Hield as 8 (Wilson's number) and Robinson as 7; the user confirmed Hield wears 7.
+    assert (nums["Buddy Hield"], nums["Caleb Wilson"]) == ("7", "8")
+    sl = d["season_leaders"]  # preseason leaders show from game 1
+    assert (sl["games"], sl["qualify"], len(sl["rows"])) == (1, 1, 14)
+    assert sl["rows"][0][1:3] == ["Caleb Wilson", 15.0]
+    steals = [r[1] for r in sl["rows"] if r[2 + sl["columns"].index("STL")] == 2.0]
+    assert len(steals) == 4  # a four-way tie for the lead, every one shown

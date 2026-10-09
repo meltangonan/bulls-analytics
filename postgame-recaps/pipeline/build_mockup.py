@@ -16,7 +16,9 @@ from PIL import Image
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from paths import LOGOS, OUTPUT, PORTRAITS  # noqa: E402
+from paths import LOGOS, OUTPUT, PORTRAITS, REPO  # noqa: E402
+
+BRAND = REPO / "assets" / "brand" / "chicagobullsdata-mark.svg"  # the account's mark, top right of each page
 
 
 def portrait(path: Path) -> str:
@@ -44,8 +46,7 @@ def player_ids(game: dict) -> set[int]:
     ids |= {award[1] for award in game["awards"]}
     for _, chi, opp in game["leaders"]:
         ids |= set(chi[2]) | set(opp[2])
-    for _, rows in (game["season_leaders"] or {}).get("stats", []):
-        ids |= {row[0] for row in rows}
+    ids |= {row[0] for row in (game["season_leaders"] or {}).get("rows", [])}
     for _, _, rows in game["matchups"] or []:
         ids |= {row[5] for row in rows if row[5]}
     return ids
@@ -69,7 +70,8 @@ def main(game_ids: list[str]) -> None:
             path = LOGOS / f"{tri}.svg"
             if path.exists():
                 logos[tri] = "data:image/svg+xml;base64," + base64.b64encode(path.read_bytes()).decode()
-    assets = {"games": games, "zones": zones, "zsize": sizes, "heads": heads, "logos": logos}
+    brand = "data:image/svg+xml;base64," + base64.b64encode(BRAND.read_bytes()).decode()
+    assets = {"games": games, "zones": zones, "zsize": sizes, "heads": heads, "logos": logos, "brand": brand}
     out = OUTPUT / "mockup.html"
     out.write_text((HERE / "recap_template.html").read_text().replace("__ASSETS__", json.dumps(assets, ensure_ascii=False)))
     print(f"wrote {out} ({out.stat().st_size // 1024} KB), {len(games)} games, {len(heads)} portraits")

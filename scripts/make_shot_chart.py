@@ -366,22 +366,16 @@ def _draw_zone_court(ax, center_x: float, center_y: float, s: float,
     def to_px(cx, cy):
         return nba_to_basket_bottom_px(x0, y0, s, cx, cy)
 
-    if merge_mid:
-        # The classified grid still names the five sectors, so the merged fill
-        # is applied to each of them and the seams between them are dropped.
-        # The band is one colour with no dividers, which is what makes it read
-        # as a single region rather than five that happen to match.
-        fills = dict(fills)
-        for zone in sm.MID_ZONES:
-            fills[zone] = fills["Mid-Range"]
-
     gx, gy, grid = _zone12_grid()
     gx_px, gy_px = to_px(gx, gy)
-    for zone in sm.ZONE12_ORDER:
-        _zone12_fill(
-            ax, gx_px, gy_px, grid == zone,
-            to_rgba(fills[zone], fill_alpha), 2.0,
-        )
+    # Merged, the five mid-range sectors are traced as one shape. Traced one by
+    # one, each softened edge stops just short of its neighbour's and the page
+    # shows through as a hairline seam between two fills of the same colour.
+    shapes = ([("Mid-Range", np.isin(grid, sm.MID_ZONES))] if merge_mid else [])
+    shapes += [(zone, grid == zone) for zone in sm.ZONE12_ORDER
+               if not (merge_mid and zone in sm.MID_ZONES)]
+    for zone, mask in shapes:
+        _zone12_fill(ax, gx_px, gy_px, mask, to_rgba(fills[zone], fill_alpha), 2.0)
 
     from matplotlib.patches import Circle as _Circle
     ax.add_patch(_Circle(

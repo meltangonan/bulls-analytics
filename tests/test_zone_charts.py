@@ -1052,3 +1052,21 @@ def test_the_season_grid_paints_each_side_where_that_side_s_shots_map_to(tmp_pat
     # The claim this test exists for: NBA Left is drawn on the viewer's RIGHT.
     assert left_col > centre * scale_px
     assert right_col < centre * scale_px
+
+
+def test_merged_mid_range_is_painted_as_one_shape(monkeypatch):
+    """Five sectors traced one by one leave hairline seams of page between them."""
+    import matplotlib.pyplot as plt
+    import scripts.make_shot_chart as shot_chart
+
+    masks = []
+    monkeypatch.setattr(shot_chart, "_zone12_fill", lambda ax, gx, gy, mask, color, z: masks.append(mask))
+    fills = {zone: "#888888" for zone in sm.ZONE12_ORDER} | {"Mid-Range": "#888888"}
+    fig, ax = plt.subplots()
+    shot_chart._draw_zone_court(ax, 500, 500, 1.0, fills, 1.0, merge_mid=True)
+    plt.close(fig)
+
+    _, _, grid = shot_chart._zone12_grid()
+    mid = np.isin(grid, sm.MID_ZONES)
+    assert sum((m & mid).any() for m in masks) == 1
+    assert any((m == mid).all() for m in masks)

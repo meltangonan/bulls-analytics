@@ -826,6 +826,7 @@ def get_lineup_stats(
 def get_player_headshot(
     player_id: int,
     cache_dir: str = "cache/headshots",
+    refresh: bool = False,
 ) -> Optional[Path]:
     """
     Download and cache a player headshot from the NBA CDN.
@@ -833,6 +834,9 @@ def get_player_headshot(
     Args:
         player_id: NBA player ID
         cache_dir: Local directory to cache headshot PNGs
+        refresh: Download again even when cached, because NBA.com replaces
+            headshots each season under the same URL; a failed download keeps
+            the cached file.
 
     Returns:
         Path to cached headshot PNG, or None if download fails.
@@ -841,7 +845,7 @@ def get_player_headshot(
     cache_path.mkdir(parents=True, exist_ok=True)
 
     file_path = cache_path / f"{player_id}.png"
-    if file_path.exists():
+    if file_path.exists() and not refresh:
         return file_path
 
     url = f"https://cdn.nba.com/headshots/nba/latest/1040x760/{player_id}.png"
@@ -851,7 +855,7 @@ def get_player_headshot(
         file_path.write_bytes(resp.content)
         return file_path
     except requests.RequestException:
-        return None
+        return file_path if file_path.exists() else None
 
 
 def team_roster_url(team_id: int = BULLS_TEAM_ID) -> str:

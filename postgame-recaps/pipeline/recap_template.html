@@ -26,7 +26,7 @@ svg{display:block;width:100%;height:auto;font-variant-numeric:tabular-nums}
 <script>
 const A=__ASSETS__;
 // House page: Canva Brand Template page 2 (warm canvas, jersey trim, serif title, red italic subtitle, source footer).
-const BG='#E9E5E1',K='#242424',R='#CE1141',MU=K,FT='#7A736C',RU='#B8B0A8',LR='#D8D2CA',BAND='#E2DED9',GR='#7D7873';
+const BG='#E9E5E1',K='#242424',R='#CE1141',MU=K,FT='#7A736C',RU='#B8B0A8',LR='#D8D2CA',BAND='#E2DED9',GR='#7D7873',WIN='#2E8540';
 const SANS='RecapSans, Geist, Arial, sans-serif',SERIF="RecapSerif, 'Source Serif 4', Georgia, serif";
 const L=25,RX=1055,W=RX-L;
 // Measure with an offscreen SVG text node, not a canvas: a canvas ignores the svg's tabular-nums, and Geist's
@@ -54,15 +54,20 @@ const wrapText=(txt,size,width,w=400)=>{const out=[];let line='';txt.split(' ').
 const scale=v=>{const k=Math.min(1,Math.abs(v)/6),c=v>=0?[63,174,99]:[214,69,69],b=[246,243,239];return `rgb(${c.map((x,i)=>Math.round(b[i]+(x-b[i])*(0.12+0.6*k))).join(',')})`;};
 const tri=(x,y,up,c)=>up?`<path d="M${x-8},${y+5} L${x+8},${y+5} L${x},${y-8} Z" fill="${c}"/>`:`<path d="M${x-8},${y-5} L${x+8},${y-5} L${x},${y+8} Z" fill="${c}"/>`;
 const label=(x,y,s,o={})=>t(x,y,o.size||24,s,{w:600,f:o.f||K,a:o.a});
-// Section titles: larger than labels and body text, so each section reads as its own block.
+// Section titles: larger than labels and body text, light type on a solid block, so each section reads as its own block.
 const sec=(x,y,s,o={})=>{const sz=28,px=12,w=tw(s,sz,600)+2*px,bx=o.a==='end'?x-w:o.a==='middle'?x-w/2:x,top=y-sz*0.78-9,bot=o.onRule?y+16:y+10;
-return `<rect x="${bx}" y="${top}" width="${w}" height="${bot-top}" fill="none" stroke="${K}" stroke-width="2.5"/>`+label(bx+px,y,s,{size:sz,f:o.f});};
+return rect(bx,top,w,bot-top,K)+label(bx+px,y,s,{size:sz,f:BG});};
+// One colour per factor (shooting, turnovers, rebounding, free throws): the same chip marks a factor's rate and its bar.
+const FC=['#8DB04A','#F2C94C','#7F98F0','#E5A8F0'];
+const chip=(x,y,w,fill)=>rect(x,y-24,w,32,fill);
+// The account's mark, top right.
+const mark=(y=34,sz=72)=>A.brand?`<image href="${A.brand}" x="${RX-sz}" y="${y}" width="${sz}" height="${sz}"/>`:'';
 // A portrait standing in front of a plain gray circle: the circle is a background, the headshot is not cropped.
 const headOnCircle=(id,cx,cy,r,sz=r*2)=>`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${LR}"/>`+(A.heads[id]?`<image href="${A.heads[id]}" x="${cx-sz/2}" y="${cy+r*0.92-sz}" width="${sz}" height="${sz}"/>`:'');
 const logo=(tri,x,y,sz)=>A.logos[tri]?`<image href="${A.logos[tri]}" x="${x}" y="${y}" width="${sz}" height="${sz}"/>`:'';
 // Section header for a Bulls-vs-opponent block: logo and name at each end, the section title centred.
 const teamHead=(y,title,onRule)=>logo(D.chi.tri,L,y-40,48)+label(L+56,y,D.chi.team,{f:R,size:26})+sec(540,y,title,{a:'middle',onRule})+label(RX-56,y,D.opp.team,{a:'end',size:26})+logo(D.opp.tri,RX-48,y-40,48);
-const legend=(y,items)=>{let x=RX,o='';[...items].reverse().forEach(([lab,fill,col])=>{const w=tw(lab,18,600)+lab.length*0.5;o+=t(x,y,18,lab,{a:'end',f:col||K,w:600})+rect(x-w-26,y-15,17,17,fill,3,`stroke="${RU}" stroke-width="1"`);x-=w+56;});return o;};
+const legend=(y,items)=>{let x=RX,o='';[...items].reverse().forEach(([lab,fill,col])=>{const w=tw(lab,18,600)+lab.length*0.5;o+=t(x,y,18,lab,{a:'end',f:col||K,w:600})+rect(x-w-26,y-15,17,17,fill,0,`stroke="${RU}" stroke-width="1"`);x-=w+56;});return o;};
 
 let D;
 const season=()=>`${D.season_label} ${D.kind==='Preseason'?'preseason':'regular season'}`;
@@ -79,37 +84,30 @@ return `<text x="${L}" y="1424" font-size="${fs.toFixed(1)}" fill="${fill}">${pa
 // A titled page: serif title, then the content shifted up 36px into the space a subtitle used to take.
 function page(title,inner,foot=[],note=''){
 let s=rect(0,0,1080,1440,BG)+trim();
-if(title)s+=t(L,104,fit(title,86,W,900,SERIF),title,{w:900,ff:SERIF})+`<g transform="translate(0,-36)">${inner}</g>`;else s+=inner;
+if(title)s+=t(L,104,fit(title,86,W-96,900,SERIF),title,{w:900,ff:SERIF})+mark()+`<g transform="translate(0,-36)">${inner}</g>`;else s+=inner;
 if(note)s+=t(L,1390,fit(note,16,W,400),note,{f:FT});
 return s+footer(foot);}
 const svg=(inner,cap)=>`<div><svg viewBox="0 0 1080 1440" font-family='${SANS}'>${inner}</svg><div class="cap">${cap}</div></div>`;
 
-// Monotone cubic through the points: smooth, no overshoot, and it still passes through every real value.
-function mono(P){const n=P.length;if(n<2)return '';const dx=[],m=[],tg=[];
-for(let i=0;i<n-1;i++){dx[i]=P[i+1][0]-P[i][0];m[i]=(P[i+1][1]-P[i][1])/dx[i];}
-tg[0]=m[0];tg[n-1]=m[n-2];for(let i=1;i<n-1;i++)tg[i]=m[i-1]*m[i]<=0?0:3*(dx[i-1]+dx[i])/((2*dx[i]+dx[i-1])/m[i-1]+(dx[i]+2*dx[i-1])/m[i]);
-const f=v=>v.toFixed(1);let d=`M${f(P[0][0])},${f(P[0][1])}`;
-for(let i=0;i<n-1;i++){const h=dx[i]/3;d+=` C${f(P[i][0]+h)},${f(P[i][1]+tg[i]*h)} ${f(P[i+1][0]-h)},${f(P[i+1][1]-tg[i+1]*h)} ${f(P[i+1][0])},${f(P[i+1][1])}`;}return d;}
-// Ramer-Douglas-Peucker: drop points within eps pixels of the line between their neighbours, keeping
-// the biggest peaks and troughs and any point marked keep (the labeled moments). The shape stays true; the jitter goes.
-function simplify(P,eps,keep){if(P.length<3)return P;const out=new Set([0,P.length-1,...keep]);
-const rec=(a,b)=>{let mx=-1,mi=-1;const [x1,y1]=P[a],[x2,y2]=P[b],len=Math.hypot(x2-x1,y2-y1)||1;
-for(let i=a+1;i<b;i++){const d=Math.abs((y2-y1)*P[i][0]-(x2-x1)*P[i][1]+x2*y1-y2*x1)/len;if(d>mx){mx=d;mi=i;}}
-if(mx>eps){out.add(mi);rec(a,mi);rec(mi,b);}};
-const ks=[...out].sort((a,b)=>a-b);for(let i=0;i<ks.length-1;i++)rec(ks[i],ks[i+1]);return [...out].sort((a,b)=>a-b).map(i=>P[i]);}
+// The margin line through every scoring event, unsmoothed: STEP holds the margin flat until the next score and
+// then jumps (how a score really moves); otherwise straight segments join the scores.
+const STEP=true;
+const marginPath=P=>{const f=v=>v.toFixed(1);return `M${f(P[0][0])},${f(P[0][1])}`+P.slice(1).map(([x,y])=>STEP?` H${f(x)} V${f(y)}`:` L${f(x)},${f(y)}`).join('');};
 // Red above the zero line, gray below, from one path clipped twice.
 function splitArea(d,first,last,zy,id){const area=`${d} L${last},${zy} L${first},${zy} Z`;
 return `<defs><clipPath id="${id}u"><rect x="0" y="0" width="1080" height="${zy}"/></clipPath><clipPath id="${id}d"><rect x="0" y="${zy}" width="1080" height="1440"/></clipPath></defs>`
 +`<path d="${area}" fill="${R}" opacity="0.16" clip-path="url(#${id}u)"/><path d="${area}" fill="${GR}" opacity="0.22" clip-path="url(#${id}d)"/>`
 +`<path d="${d}" fill="none" stroke="${R}" stroke-width="4" stroke-linejoin="round" clip-path="url(#${id}u)"/><path d="${d}" fill="none" stroke="${K}" stroke-width="4" stroke-linejoin="round" clip-path="url(#${id}d)"/>`;}
 
-const pbpWarn=(y)=>D.pbp_ok===false?rect(L,y-34,W,48,'#F6D6DC',6)+t(540,y,22,'Play-by-play was out of order when pulled: not reliable yet',{a:'middle',w:600,f:R}):'';
+const pbpWarn=(y)=>D.pbp_ok===false?rect(L,y-34,W,48,'#F6D6DC')+t(540,y,22,'Play-by-play was out of order when pulled: not reliable yet',{a:'middle',w:600,f:R}):'';
 function cover(){const F=D.flow,Q=D.quarters;let s='';
 // Scoreboard
 const ot=F.periods>4?(F.periods==5?'OT':`${F.periods-4}OT`):'';
 s+=logo(D.chi.tri,220,30,100)+t(270,172,36,D.chi.team,{a:'middle',w:600})+t(270,338,180,D.chi.score,{a:'middle',w:900,ff:SERIF,f:R});
 s+=logo(D.opp.tri,760,30,100)+t(810,172,36,D.opp.team,{a:'middle',w:600})+t(810,338,180,D.opp.score,{a:'middle',w:900,ff:SERIF});
-s+=t(540,ot?250:268,28,'Final',{a:'middle',w:600})+(ot?t(540,288,26,`(${ot})`,{a:'middle',w:600}):'');
+// Final, any overtime, then the result: W in green, L in red.
+const fy=ot?222:244;s+=t(540,fy,28,'Final',{a:'middle',w:600})+(ot?t(540,fy+36,26,`(${ot})`,{a:'middle',w:600}):'');
+s+=t(540,fy+(ot?96:62),48,D.result,{a:'middle',w:600,f:D.result==='W'?WIN:R})+mark(30);
 // Line score
 const n=Q.labels.length+1,c0=430,cw=(RX-c0)/n,cx=i=>c0+cw*i+cw/2,ly0=420;
 [...Q.labels,'FINAL'].forEach((q,i)=>s+=label(cx(i),ly0-16,q,{a:'middle'}));s+=ln(L,ly0,RX,ly0,K,3);
@@ -126,8 +124,7 @@ for(let p=1;p<=F.periods;p++){const a=12*Math.min(p-1,4)+5*Math.max(p-5,0),b=a+(
 // Scores logged at the same clock time are spread 2 seconds apart, so no event is dropped and every labeled moment is a real point on the line.
 const pts=[[0,0]];F.series.forEach(([a,b])=>{const prev=pts[pts.length-1][0];pts.push([Math.max(a,prev+0.033),b]);});
 const at=nt=>pts.findIndex(p=>Math.abs(p[0]-nt.t)<0.2&&p[1]==nt.m);
-const keep=F.notes.map(at).filter(i=>i>0);
-s+=splitArea(mono(simplify(pts.map(([a,b])=>[sx(a),sy(b)]),1.6*(bot-top)/(maxUp+maxDn),keep)),sx(0),sx(pts[pts.length-1][0]),z,'cm');
+s+=splitArea(marginPath(pts.map(([a,b])=>[sx(a),sy(b)])),sx(0),sx(pts[pts.length-1][0]),z,'cm');
 F.notes.forEach(nt=>{const i=at(nt),x=sx(i>0?pts[i][0]:nt.t),y=sy(nt.m),right=x<X1-240;s+=`<circle cx="${x}" cy="${y}" r="7" fill="${nt.m>0?R:K}" stroke="${BG}" stroke-width="2.5"/>`;
 if(nt.kind==='decider'){
 // The label goes above or below the chart, whichever box the margin line does not pass through (bug 7, Oct 7);
@@ -148,7 +145,7 @@ else s+=t(c,ty+124,58,v[0],{a:'middle',w:600})+(v[1]?t(c,ty+160,fit(v[1],18,w4-1
 s+=ln(L,ty+190,RX,ty+190,RU,1.5);
 // Notables: up to three exact callouts from recap_data.notables; the part before the colon is bold.
 // Notables: up to three exact callouts from recap_data.notables; the part before the colon is bold.
-if(NB.length){s+=sec(L,ty+236,'Notables');NB.forEach((n,i)=>{const y=ty+282+i*34,[a,...b]=n.split(': ');s+=rect(L,y-15,12,12,R,2);
+if(NB.length){s+=sec(L,ty+236,'Notables');NB.forEach((n,i)=>{const y=ty+282+i*34,[a,...b]=n.split(': ');s+=rect(L,y-15,12,12,R);
 const w=tw(a+':',24,600),rest=b.join(': ');s+=t(L+24,y,24,a+':',{w:600})+t(L+24+w+8,y,fit(rest,24,RX-L-24-w-8),rest);});}
 return page(null,s);}
 
@@ -167,7 +164,7 @@ const H2=D.h2h.filter(r=>!['Steals','Blocks'].includes(r[0])),y0=620,stp=Math.mi
 s+=teamHead(578,'Head-to-head');
 H2.forEach(([lab,l,r,va,vb,hi],i)=>{const y=y0+i*stp,better=va==vb?0:((va>vb)==!!hi?1:-1);
 s+=t(L,y,24,l,{w:better==1?600:400,f:R})+t(RX,y,24,r,{a:'end',w:better==-1?600:400})+t(540,y,21,lab,{a:'middle',w:600});
-const sh=(va+vb)?va/(va+vb):0.5,mid=L+W*sh;s+=rect(L,y+10,mid-L-3,13,R,3)+rect(mid+3,y+10,RX-mid-3,13,GR,3);});
+const sh=(va+vb)?va/(va+vb):0.5,mid=L+W*sh;s+=rect(L,y+10,mid-L-3,13,R)+rect(mid+3,y+10,RX-mid-3,13,GR);});
 // Bulls game awards: up to four in one row, each the award, the headshot on a gray circle, the name and
 // the stat that earned it. Space separates them; no rules or boxes.
 const aw=D.awards.slice(0,4),ay=1158;if(aw.length){s+=sec(L,ay,`${D.chi.team} game awards`,{onRule:1});s+=ln(L,ay+16,RX,ay+16,K,3);
@@ -219,8 +216,8 @@ s+=t(RX-80,c+8,22,`${m}-${a}`,{a:'end',w:600})+t(RX,c+8,20,`${Math.round(m/a*100
 return page(`${D.chi.team} shot chart`,s);}
 
 function seasonPage(){const S=D.season,G=S.games,n=G.length,slots=S.slots,O=S.over,E=S.east,now=O[n-1],pre=D.kind==='Preseason';let s='';
-s+=label(L,212,'Record',{size:28})+t(L,330,124,`${S.wins}-${S.losses}`,{w:900,ff:SERIF,f:R});
-if(E){const pl=(E[1]?'T-':'')+ord(E[0]),EP=S.east_prev;s+=label(RX,212,`In the ${S.conf||'East'}`,{a:'end',size:28})+t(RX,330,124,pl,{w:900,ff:SERIF,a:'end'});
+s+=sec(L,212,'Record')+t(L,330,124,`${S.wins}-${S.losses}`,{w:900,ff:SERIF,f:R});
+if(E){const pl=(E[1]?'T-':'')+ord(E[0]),EP=S.east_prev;s+=sec(RX,212,`In the ${S.conf||'East'}`,{a:'end'})+t(RX,330,124,pl,{w:900,ff:SERIF,a:'end'});
 // Places moved tonight, as on the season leaders page: up is better (a smaller place number).
 if(EP&&EP[0]!=E[0]){const up=EP[0]>E[0],c2=up?R:K,n=String(Math.abs(EP[0]-E[0])),px=RX-tw(pl,124,900,SERIF)-24-tw(n,26,600);s+=tri(px-14,284,up,c2)+t(px,292,26,n,{w:600,f:c2});}}
 const wide=slots<=20,x0=82,x1=RX,sw=(x1-x0)/slots,gx=i=>x0+i*sw+sw/2;
@@ -234,7 +231,7 @@ return (Math.hypot(near-ax,nearY-ay)>22?ln(ax,ay,near,nearY,K,1.2):'')+t(b.x,b.y
 const lim=Math.max(wide?20:30,Math.ceil(Math.max(...G.map(g=>Math.abs(g[3])))/10)*10),zy=652,sc=(wide?175:200)/lim;
 s+=sec(L,410,'Game margins')+legend(410,[['Win',R,R],['Loss',GR]]);
 for(let v=-lim;v<=lim;v+=lim/2){s+=ln(x0-6,zy-v*sc,x1,zy-v*sc,v==0?K:LR,v==0?2:1.2);s+=t(x0-14,zy-v*sc+7,19,v>0?'+'+v:v,{a:'end'});}
-G.forEach((g,i)=>{const h=Math.abs(g[3])*sc,bw=wide?sw*0.56:sw-3,bx=x0+i*sw+(sw-bw)/2,last=i==n-1;s+=rect(bx,g[3]>0?zy-h:zy,bw,h,g[3]>0?R:GR,wide?3:1,last?`stroke="${K}" stroke-width="${wide?3:2}"`:'');
+G.forEach((g,i)=>{const h=Math.abs(g[3])*sc,bw=wide?sw*0.56:sw-3,bx=x0+i*sw+(sw-bw)/2,last=i==n-1;s+=rect(bx,g[3]>0?zy-h:zy,bw,h,g[3]>0?R:GR,0,last?`stroke="${K}" stroke-width="${wide?3:2}"`:'');
 if(wide)s+=t(gx(i),g[3]>0?zy-h-10:zy+h+26,21,sgn(g[3]),{a:'middle',w:600});});
 // Tonight's bar: label placed beside its tip, clear of every bar and the zero line.
 if(!wide){const lg=G[n-1],tip=lg[3]>0?zy-lg[3]*sc:zy+lg[3]*-sc;
@@ -261,7 +258,7 @@ return page(`${D.chi.team} ${pre?'preseason':'season'} so far`,s);}
 // Game breakdown: the four factors as rates and as points above an average team, per team, then the margin bars and how to read them.
 function breakdownRawPage(color=false){const BD=D.breakdown,FF=D.four_factors,TV=BD.teams,f1=v=>(v>0?'+':v<0?'-':'')+Math.abs(v).toFixed(1);let s=sec(L,250,'Four factors',{onRule:1});
 const cxs=[[300,600],[600,752],[752,904],[904,RX]].map(([a,b])=>(a+b)/2),hy=252,ry=266,bh=136,pc=v=>v.toFixed(1)+'%';
-FF.rows.forEach((r,i)=>{if(i){s+=label(cxs[i],hy,r[0],{a:'middle',size:22});return;}const sub='(2PT | 3PT)',w1=tw('EFG%',22,600),w2=tw(sub,18,600),x=cxs[0]-(w1+8+w2)/2;s+=label(x,hy,'EFG%',{size:22})+t(x+w1+8,hy,18,sub,{w:600});});
+FF.rows.forEach((r,i)=>{if(i){const w=tw(r[0],22,600)+20;s+=chip(cxs[i]-w/2,hy,w,FC[i])+label(cxs[i],hy,r[0],{a:'middle',size:22});return;}const sub='(2PT | 3PT)',w1=tw('EFG%',22,600),w2=tw(sub,18,600),x=cxs[0]-(w1+8+w2)/2;s+=chip(x-10,hy,w1+8+w2+20,FC[0])+label(x,hy,'EFG%',{size:22})+t(x+w1+8,hy,18,sub,{w:600});});
 s+=ln(L,ry,RX,ry,K,3);
 // Centre a main value with a small (a | b) beside it
 const pair=(cx,y,main,sub,size,o)=>{const w1=tw(main,size,o.w||400),w2=sub?tw(sub,size*0.6,400)+20:0,x0=cx-(w1+w2)/2;return t(x0,y,size,main,o)+(sub?t(x0+w1+20,y,size*0.6,sub,{f:o.f}):'');};
@@ -271,7 +268,7 @@ if(color)[v.shoot,v.tov,v.reb,v.ft].forEach((pt,i)=>s+=rect(cxs[i]-colW[i]/2+5,y
 s+=logo(tri,L+8,y+12,48)+t(L+66,y+46,30,nm,{w:600,f:c0})+t(L+66,y+98,18,'Points above average',{w:600});
 FF.rows.forEach((r,i)=>{const val=r[vi],o=r[vi==1?2:1],better=val!=o&&(val>o)==r[3],sp=i==0?FF.efg_split[j]:null;
 const main=pc(val),sub=sp?`(${sp[0]==null?'-':sp[0].toFixed(1)+'%'} | ${sp[1]==null?'-':sp[1].toFixed(1)+'%'})`:'';
-if(better&&!color){const w1=tw(main,32,600),w2=sub?tw(sub,19.2,400)+20:0;s+=rect(cxs[i]-(w1+w2)/2-10,y+11,w1+20,48,'none',8,`stroke="${c}" stroke-width="3"`);}
+if(better&&!color){const w1=tw(main,32,600),w2=sub?tw(sub,19.2,400)+20:0;s+=rect(cxs[i]-(w1+w2)/2-10,y+11,w1+20,48,'none',0,`stroke="${c}" stroke-width="3"`);}
 s+=pair(cxs[i],y+46,main,sub,32,{w:better&&!color?600:400,f:c});
 const pts=[v.shoot,v.tov,v.reb,v.ft][i];s+=pair(cxs[i],y+98,f1(pts),i==0?`(${f1(v.shoot2)} | ${f1(v.shoot3)})`:'',28,{w:600,f:c});});});
 s+=ln(L,ry+2*bh,RX,ry+2*bh,RU,1.5);
@@ -279,48 +276,55 @@ if(color){const ky=ry+2*bh+34;s+=t(L,ky,18,'Shading: points above average.',{w:6
 // Where the margin came from: Bulls minus opponent in each factor, then other and the extra possession
 const rows=BD.rows.filter(r=>r[0]!=='Other'||Math.abs(r[1])>=0.05),my=ry+2*bh+(color?110:80);s+=sec(L,my,`Where the ${sgn(BD.margin)} came from`,{onRule:1});
 const mx=Math.max(...rows.map(r=>Math.abs(r[1])),Math.abs(BD.margin),1),ax0=620,asc=Math.min(44,290/mx),ay0=my+16,rh=58;
-const bar=(y,v,col)=>{const w=Math.abs(v)*asc;return rect(v>0?ax0:ax0-w,y+14,w,32,col,3);};
+const bar=(y,v,col)=>{const w=Math.abs(v)*asc;return rect(v>0?ax0:ax0-w,y+14,w,32,col);};
 s+=ln(L,ay0,RX,ay0,K,3);
-rows.forEach(([lab,v],i)=>{const y=ay0+i*rh;if(i%2==0)s+=rect(L,y,W,rh,BAND);s+=t(L+12,y+39,26,lab)+bar(y,v,v>0?R:GR)+t(RX-12,y+39,26,sgn1(v),{a:'end',w:600,f:v>0?R:K});});
+const fci={Shooting:0,Turnovers:1,Rebounding:2,'Free throws':3};
+rows.forEach(([lab,v],i)=>{const y=ay0+i*rh;if(i%2==0)s+=rect(L,y,W,rh,BAND);if(lab in fci)s+=chip(L+4,y+39,tw(lab,26)+16,FC[fci[lab]]);s+=t(L+12,y+39,26,lab)+bar(y,v,v>0?R:GR)+t(RX-12,y+39,26,sgn1(v),{a:'end',w:600,f:v>0?R:K});});
 s+=pbpWarn(ay0+40);const by=ay0+rows.length*rh;s+=ln(ax0,ay0,ax0,by+rh,K,2)+ln(L,by,RX,by,K,2)+t(L+12,by+38,28,'Final margin',{w:600})+bar(by,BD.margin,BD.margin>0?R:K)+t(RX-12,by+38,28,sgn(BD.margin),{a:'end',w:600,f:BD.margin>0?R:K});
 // How to read it: three short paragraphs with tonight's own numbers, all from recap_data.
 const E=BD.example,SH=BD.shots,cs=SH[D.chi.tri],os=SH[D.opp.tri],V3=E.make3,f3=v=>v.toFixed(3),[pc_,po_]=BD.possessions;
 const other=rows.find(r=>r[0]==='Other'),extra=rows.find(r=>r[0].includes('possession'));
+// Print the table's and the bar's own one-decimal values: cs.vs is kept at two decimals, and rounding it again
+// could print 2.3 beside the table's 2.2 (Game 1, true value 2.2499). Separately rounded values may not subtract
+// exactly, so the equation then says ≈.
+const f2=v=>(v>0?'+':v<0?'-':'')+Math.abs(v).toFixed(2),ca=TV[D.chi.tri].shoot,oa=TV[D.opp.tri].shoot,sb=rows.find(r=>r[0]==='Shooting')[1],eq=Math.abs(ca-oa-sb)<0.05?'=':'≈';
 const paras=[`Every possession starts worth ${f3(E.v)} points, the 2025-26 NBA average. Each play changes that value: a made 2 adds ${f3(E.make2)}, a made 3 adds ${f3(V3)}, a miss leaves ${E.miss_value.toFixed(3)} (offenses rebound ${E.oreb_pct}% of misses), and a turnover loses the full ${f3(E.v)}.`,
-`Points above average compares each team with an average team on the same number of possessions. ${D.chi.team} shooting: ${cs.m2} × ${f3(E.make2)} + ${cs.m3} × ${f3(V3)} - ${cs.miss} × ${f3(-E.miss)} ≈ ${f1(cs.raw)}, against ${f1(cs.expected)} for an average team on ${pc_} possessions, so ${f1(cs.vs)}.`,
-`Each bar is the ${D.chi.team} minus the ${D.opp.team}: shooting ${f1(cs.vs)} - (${f1(os.vs)}) = ${f1(cs.vs-os.vs)}.`+(other?' Other covers possessions cut off when a quarter ended.':'')+(extra?` The ${D.chi.team} had ${pc_} possessions to ${po_}, and each possession is worth ${f3(E.v)}.`:'')+` The bars add up to the final margin, ${sgn(BD.margin)}.`];
-let ey=by+rh+70;s+=sec(L,ey,'How to read it');ey+=44;
-paras.forEach(pp=>{wrapText(pp,21,W).forEach(line=>{s+=t(L,ey,21,line);ey+=29;});ey+=10;});
+`Points above average compares each team with an average team on the same number of possessions. ${D.chi.team} shooting: ${cs.m2} × ${f3(E.make2)} + ${cs.m3} × ${f3(V3)} - ${cs.miss} × ${f3(-E.miss)} ≈ ${f2(cs.raw)}, against ${f2(cs.expected)} for an average team on ${pc_} possessions, so ${f1(ca)}.`,
+`Each bar is the ${D.chi.team} minus the ${D.opp.team}: shooting ${f1(ca)} - (${f1(oa)}) ${eq} ${f1(sb)}.`+(other?' Other covers possessions cut off when a quarter ended.':'')+(extra?` The ${D.chi.team} had ${pc_} possessions to ${po_}, and each possession is worth ${f3(E.v)}.`:'')+` The bars add up to the final margin, ${sgn(BD.margin)}.`];
+let ey=by+rh+58;s+=sec(L,ey,'How to read it');ey+=44;
+// Opens with why these four: they are every way a possession can end. The question is set in SemiBold.
+const why='Why four factors?';paras.unshift(`${why} Every possession ends in a shot, a turnover or free throws, and a missed shot goes to whichever team rebounds it. The four factors measure each of those outcomes.`);
+// 21px unless the last line would reach the footer (a game with both Other and an extra possession runs longest): then a pixel smaller at a time.
+let fs=21,lines;for(;fs>18;fs--){lines=paras.map(pp=>wrapText(pp,fs,W-8));if(ey+(lines.flat().length-1)*fs*1.38+(lines.length-1)*fs*0.48<=1386)break;}lines=paras.map(pp=>wrapText(pp,fs,W-8));
+lines.forEach(ls=>{ls.forEach(line=>{s+=line.startsWith(why)?t(L,ey,fs,why,{w:600})+t(L+tw(why,fs,600)+fs*0.29,ey,fs,line.slice(why.length+1)):t(L,ey,fs,line);ey+=fs*1.38;});ey+=fs*0.48;});
 return page(`${D.chi.team} game breakdown`,s);}
 
-function leadersPage(){const SL=D.season_leaders;if(!SL)return null;let s='';const bh=238,y0=164,tx=L+196;
-SL.stats.forEach(([lab,rows],k)=>{const y=y0+k*bh,nm=lab.charAt(0)+lab.slice(1).toLowerCase();if(k)s+=ln(L,y,RX,y,RU,1.5);
-// Fill three places; a tie that would not fit becomes one shared place.
-const groups=[];rows.forEach(r=>{const g=groups.find(g=>g[0][3]==r[3]);g?g.push(r):groups.push([r]);});
-const cells=[];for(const g of groups){const left=3-cells.length;if(left<=0)break;if(g.length<=left)g.forEach(r=>cells.push([r]));else{cells.push(g);break;}}
-const lead=cells[0],r0=lead[0],m=Math.min(lead.length,2),val=r0[2].toFixed(1),cy=y+122;
-// The leader: headshot in front of a gray circle, the stat, the name, the value large in red.
-s+=`<circle cx="${L+82}" cy="${cy}" r="76" fill="${LR}"/>`;const hz=m==1?140:116;for(let q=m-1;q>=0;q--)if(A.heads[lead[q][0]])s+=`<image href="${A.heads[lead[q][0]]}" x="${L+82+(q-(m-1)/2)*48-hz/2}" y="${cy+70-hz}" width="${hz}" height="${hz}"/>`;
-s+=t(tx,y+66,22,nm,{w:600,f:R})+t(tx+tw(nm,22,600)+8,y+66,22,'per game',{f:FT});
-const who=lead.length>2?`${lead.length} tied`:lead.map(q=>q[1]).join(', ');s+=t(tx,y+118,fit(who,40,RX-230-tx,600),who,{w:600});
-if(lead.length==1&&r0[5]!=null&&r0[5]!=r0[3]){const up=r0[5]>r0[3],c2=up?R:K,px=tx+Math.min(tw(who,40,600),RX-230-tx)+24;s+=tri(px,y+104,up,c2)+t(px+12,y+111,20,Math.abs(r0[5]-r0[3]),{f:c2,w:600});}
-s+=t(RX,y+130,96,val,{w:900,ff:SERIF,a:'end',f:R});
-// Second and third on one line: place, name, value.
-let x=tx;cells.slice(1).forEach(c=>{const p=c[0][3],tied=c.length>1||cells.filter(q=>q[0][3]==p).length>1,rk=(tied?'T-':'')+p,nmz=c.length>2?`${c.length} tied`:c.map(q=>q[1]).join(', '),v=c[0][2].toFixed(1);
-s+=t(x,y+170,24,rk,{w:900,ff:SERIF,f:FT});x+=tw(rk,24,900,SERIF)+10;s+=t(x,y+170,24,nmz);x+=tw(nmz,24)+10;s+=t(x,y+170,24,v,{w:600});x+=tw(v,24,600)+40;});});
-const pre=D.kind==='Preseason';
-return page(`${D.chi.team} ${pre?'preseason':'season'} leaders`,s,[`Qualified: played ${SL.qualify} of ${SL.games} games (half)`]);}
+// Season leaders as one grid: every qualified player's per-game line, sorted by points. Each stat's leader (every
+// player tied for it) sits in a solid red cell; the other cells shade lighter the further behind the leader they are.
+function leadersPage(){const SL=D.season_leaders;if(!SL||!SL.rows.length)return null;
+const P=SL.rows,n=P.length,C=SL.columns,mx=C.map((c,j)=>Math.max(...P.map(r=>r[2+j])));
+const rowH=Math.min(76,(1352-244)/n),HS=Math.min(84,rowH+8),NX=L+HS+12,GX=490,c0=545,cw=(RX-c0)/C.length,cx=j=>c0+cw*j+cw/2,NF=Math.min(32,rowH*0.44);
+const split=nm=>{const i=nm.indexOf(' ');return i<0?['',nm]:[nm.slice(0,i),nm.slice(i+1)];};
+let s=sec(L,224,'Per game')+t(GX,226,21,'GP',{a:'middle',w:600,f:FT});C.forEach((c,j)=>s+=t(cx(j),226,21,c,{a:'middle',w:600}));s+=ln(L,242,RX,242,K,3);
+let bg='',fg='';P.forEach((r,i)=>{const y=244+i*rowH,c=y+rowH/2,[fn,lnm]=split(r[1]);if(i%2==0)bg+=rect(L,y,W,rowH,BAND);
+fg+=head(r[0],L+2,y+rowH-HS,HS,[L,y-8,W,rowH+8])+t(NX,c-NF*0.22,NF*0.6,fn)+t(NX,c+NF*0.74,fit(lnm,NF,GX-40-NX,600),lnm,{w:600})+t(GX,c+8,22,r[7],{a:'middle',f:FT});
+C.forEach((col,j)=>{const v=r[2+j],lead=v>0&&v===mx[j],k=mx[j]?v/mx[j]:0;
+fg+=rect(cx(j)-cw/2+3,y+4,cw-6,rowH-8,lead?R:`rgba(206,17,65,${(0.04+0.3*k).toFixed(3)})`)+t(cx(j),c+10,28,v.toFixed(1),{a:'middle',w:lead?600:400,f:lead?BG:v?K:FT});});});
+const pre=D.kind==='Preseason',g=SL.games;
+return page(`${D.chi.team} ${pre?'preseason':'season'} leaders`,bg+s+fg,[`Qualified: played ${SL.qualify} of ${g} ${g==1?'game':'games'} (half)`]);}
 
-// "Swipe" cue at the top right: the text, then three red chevrons that brighten toward the next slide.
-const swipeCue=()=>{const y=74,cy=y-9,x=RX-46;
-return t(x-14,y,26,'Swipe for the full breakdown',{a:'end'})+[0.3,0.6,1].map((o,i)=>`<path d="M${x+i*16},${cy-11} L${x+i*16+11},${cy} L${x+i*16},${cy+11}" fill="none" stroke="${R}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="${o}"/>`).join('');};
+// "Swipe" call to action at the top right: a red block like the section titles, the text, then one arrow.
+const swipeCue=y=>{const sz=28,px=14,txt='Swipe for the full breakdown',tw1=tw(txt,sz,600),aw=30,w=px+tw1+14+aw+px,bx=RX-w,top=y-sz*0.78-9,bot=y+10,cy=(top+bot)/2,ax=bx+px+tw1+14;
+return rect(bx,top,w,bot-top,R)+label(bx+px,y,txt,{size:sz,f:BG})+`<path d="M${ax},${cy} L${ax+aw},${cy} M${ax+aw-12},${cy-11} L${ax+aw},${cy} L${ax+aw-12},${cy+11}" fill="none" stroke="${BG}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>`;};
 
 // Optional carousel cover on the page background: the game's own scoring-margin line as art, the score in the
 // serif (Bulls line red), "@" or "vs." between the teams, the date (and any overtime) in red italic.
-function recapCover(){const F=D.flow;let s=rect(0,0,1080,1440,BG)+trim();
+// Graph paper behind the cover: a 36 px grid with a heavier line every 180 px, the account's data look.
+const GRAPH=`<defs><pattern id="gp" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36,0 L0,0 L0,36" fill="none" stroke="#DCD6CE" stroke-width="1"/></pattern><pattern id="gP" width="180" height="180" patternUnits="userSpaceOnUse"><path d="M180,0 L0,0 L0,180" fill="none" stroke="#D2CBC2" stroke-width="2"/></pattern></defs><rect width="1080" height="1440" fill="url(#gp)"/><rect width="1080" height="1440" fill="url(#gP)"/>`;
+function recapCover(){const F=D.flow;let s=rect(0,0,1080,1440,BG)+GRAPH+trim();
 const maxUp=Math.max(10,F.chi_lead),maxDn=Math.max(10,F.opp_lead),top=240,bot=780,sx=m=>m/F.total*1080,sy=v=>top+(maxUp-v)/(maxUp+maxDn)*(bot-top),z=sy(0);
 const pts=[[0,0]];F.series.forEach(([a,b])=>{const prev=pts[pts.length-1][0];pts.push([Math.max(a,prev+0.033),b]);});
-const d=mono(simplify(pts.map(([a,b])=>[sx(a),sy(b)]),1.6*(bot-top)/(maxUp+maxDn),[]));
+const d=marginPath(pts.map(([a,b])=>[sx(a),sy(b)]));
 s+=`<defs><clipPath id="clu"><rect x="0" y="0" width="1080" height="${z}"/></clipPath><clipPath id="cld"><rect x="0" y="${z}" width="1080" height="1440"/></clipPath>`
 +`<linearGradient id="clf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${BG}" stop-opacity="0"/><stop offset="1" stop-color="${BG}" stop-opacity="1"/></linearGradient></defs>`;
 s+=ln(0,z,1080,z,RU,2);
@@ -334,7 +338,7 @@ s+=t(L+4,y1+fs*0.74,fs*0.42,D.home?'vs.':'@',{w:900,ff:SERIF,it:true});
 s+=t(L,y1+fs*1.68,fs,l2,{w:900,ff:SERIF})+logo(D.opp.tri,L+tw(l2,fs,900,SERIF)+26,y1+fs*1.68-fs*0.8,fs*0.9)+rec(D.opp.record,L+tw(l2,fs,900,SERIF)+fs*0.9+48,y1+fs*1.68-fs*0.25);
 const ot=F.periods>4?` (${F.periods==5?'OT':`${F.periods-4}OT`})`:'';
 s+=t(L,y1+fs*1.68+104,50,D.date_short+ot,{w:900,ff:SERIF,it:true,f:R});
-s+=t(L,74,26,`${D.chi.city} ${D.chi.team} ${D.kind==='Preseason'?'preseason':'game'} recap #${D.season.games.length}`,{w:600})+swipeCue();
+s+=sec(L,78,`${D.chi.city} ${D.chi.team} ${D.kind==='Preseason'?'preseason':'game'} recap #${D.season.games.length}`)+swipeCue(78);
 s+=`<text x="${RX}" y="1424" font-size="16" font-weight="600" text-anchor="end"><tspan fill="${R}">chicago_bulls</tspan><tspan fill="${K}">[data]</tspan></text>`;
 return s;}
 

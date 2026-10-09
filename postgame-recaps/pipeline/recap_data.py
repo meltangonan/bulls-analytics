@@ -284,6 +284,11 @@ def head_to_head(teams: pd.DataFrame, misc: pd.DataFrame, stats: pd.DataFrame, o
 # --- box score -----------------------------------------------------------------------------------
 
 
+# Numbers the user confirmed where NBA.com's roster is wrong (2026-10-09: it listed Buddy Hield as #8, Caleb
+# Wilson's number; Hield wears 7).
+JERSEY_FIX = {1627741: "7"}
+
+
 def box(players: pd.DataFrame, roster: pd.DataFrame, team_minutes: str | None = None) -> dict:
     """Bulls rows. Jersey numbers come from the roster pulled with the game (the box score's jerseyNum is
     blank, current games included; rechecked 2026-10-07); no number rather than a guess."""
@@ -297,6 +302,12 @@ def box(players: pd.DataFrame, roster: pd.DataFrame, team_minutes: str | None = 
         return t[:-2] if t.endswith(".0") else t
     num = {int(k): jersey(v) for k, v in zip(roster.PLAYER_ID, roster.NUM)} if not roster.empty else {}
     num.update({int(r.personId): jersey(r.jerseyNum) for r in p.itertuples() if jersey(r.jerseyNum)})
+    num.update(JERSEY_FIX)
+    # Two players in one game cannot share a number (camp rosters list pairs who never play together, such as
+    # Peterson and Claxton at 9). When two who played tonight share one, a confirmed number keeps it and every
+    # unconfirmed holder prints none (Game 1: Miller and Boston at 11).
+    seen = pd.Series({k: v for k, v in num.items() if k in set(p.personId[p["min"] > 0]) and v})
+    num.update({k: "" for k in seen[seen.duplicated(keep=False)].index if k not in JERSEY_FIX})
     played = p[p["min"] > 0]
     dnp = p[p["min"] == 0]
 
@@ -440,7 +451,7 @@ def breakdown(pbp: pd.DataFrame, teams: pd.DataFrame, opp_tri: str) -> dict:
 
 
 def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home: bool) -> list:
-    """Top Performer first, then every other award the night earned, biggest feat first.
+    """#mvp (the top performer) first, then every other award the night earned, biggest feat first.
 
     Each award has a floor; only the leader can win it, and a player wins at most two. The rest are
     ranked by how far the winner cleared the floor (value / floor), so a 6-steal night outranks 12 rebounds.
@@ -474,23 +485,24 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
                  "blocks": ("BLK", 3, 2), "threePointersMade": ("3PM", 4, 3)}
         extra = sorted(((p.loc[tp, c] / unit, c) for c, (_, unit, floor) in scale.items() if p.loc[tp, c] >= floor), reverse=True)[:2]
         line = ", ".join([f"{p.points[tp]} PTS on {fg(tp)}"] + [f"{int(p.loc[tp, c])} {scale[c][0]}" for _, c in extra])
-    out = [["Top performer", int(tp), p.loc[tp, "name"], line]]
+    out = [["#mvp", int(tp), p.loc[tp, "name"], line]]
 
     # A triple-double by anyone but the Top Performer gets its own card (value 3 against a floor of 1).
     td = cats.drop(tp)
-    add("Triple-double", td.where(td >= 3), 1, lambda i: f"{p.points[i]} PTS, {p.reboundsTotal[i]} REB, {p.assists[i]} AST")
-    # Floors set 2026-10-07 so each award fires in roughly one game in ten to five (2025-26 Bulls games).
+    add("#tripledouble", td.where(td >= 3), 1, lambda i: f"{p.points[i]} PTS, {p.reboundsTotal[i]} REB, {p.assists[i]} AST")
+    # Floors set 2026-10-07 so each award fires in roughly one game in ten to five (2025-26 Bulls games);
+    # the user moved assists to 10 (fires in 40% of those games, 20% at 12) and dunks to 5 on 2026-10-09.
     shooters = p[p.fieldGoalsAttempted >= 10]
-    add("Hot hand", (shooters.fieldGoalsMade / shooters.fieldGoalsAttempted), 0.70,
+    add("#heater", (shooters.fieldGoalsMade / shooters.fieldGoalsAttempted), 0.70,
         lambda i: f"{fg(i)} ({100 * p.fieldGoalsMade[i] / p.fieldGoalsAttempted[i]:.0f}%)")
-    add("Sharpshooter", p.threePointersMade - p.threePointersAttempted / 1000, 6, lambda i: f"{p.threePointersMade[i]}-{p.threePointersAttempted[i]} from three")
-    add("Pickpocket", p.steals, 4, lambda i: f"{p.steals[i]} steals")
-    add("Block party", p.blocks, 4, lambda i: f"{p.blocks[i]} blocks")
-    add("Glass cleaner", p.reboundsTotal, 15, lambda i: f"{p.reboundsTotal[i]} rebounds")
-    add("Board crasher", p.reboundsOffensive, 5, lambda i: f"{p.reboundsOffensive[i]} offensive rebounds")
-    add("Facilitator", p.assists, 12, lambda i: f"{p.assists[i]} assists")
-    add("Spark plug", p.gmsc[~p.starter].drop(tp, errors="ignore"), 10, lambda i: f"{p.points[i]} PTS on {fg(i)} off the bench")
-    add("Workhorse", p["min"], 40, lambda i: f"{int(round(p['min'][i]))} minutes")
+    add("#sniper", p.threePointersMade - p.threePointersAttempted / 1000, 6, lambda i: f"{p.threePointersMade[i]}-{p.threePointersAttempted[i]} from three")
+    add("#cookiemonster", p.steals, 4, lambda i: f"{p.steals[i]} steals")
+    add("#blockparty", p.blocks, 4, lambda i: f"{p.blocks[i]} blocks")
+    add("#windex", p.reboundsTotal, 15, lambda i: f"{p.reboundsTotal[i]} rebounds")
+    add("#boardman", p.reboundsOffensive, 5, lambda i: f"{p.reboundsOffensive[i]} offensive rebounds")
+    add("#dimer", p.assists, 10, lambda i: f"{p.assists[i]} assists")
+    add("#benchmob", p.gmsc[~p.starter].drop(tp, errors="ignore"), 10, lambda i: f"{p.points[i]} PTS on {fg(i)} off the bench")
+    add("#lungs", p["min"], 40, lambda i: f"{int(round(p['min'][i]))} minutes")
 
     ev = scoring_events(pbp, chi_home)
     ev["before"] = ev.margin.shift().fillna(0)
@@ -498,14 +510,14 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
     late = ev[(ev.period >= 4) & ev.clock.map(clock_left).le(300) & ev.before.abs().le(5) & ev.chi_pts.gt(0)]
     clutch = late.groupby("personId").chi_pts.sum()
     clutch = clutch[clutch.index.isin(p.index)]
-    add("Closer", clutch, 5, lambda i: f"{int(clutch[i])} clutch PTS (last 5 min, within 5)")
+    add("#icecold", clutch, 5, lambda i: f"{int(clutch[i])} clutch PTS (last 5 min, within 5)")
 
     if not raw.empty:
         raw = raw.assign(fam=classify_series(raw.ACTION_TYPE), made=raw.SHOT_MADE_FLAG == 1)
         dunks = raw[(raw.fam == "Dunks") & raw.made].groupby("PLAYER_ID").size()
-        add("Slam dunk", dunks, 4, lambda i: f"{dunks[i]} dunks")
+        add("#dunkeverything", dunks, 5, lambda i: f"{dunks[i]} dunks")
         fl = raw[raw.fam == "Floaters"].groupby("PLAYER_ID").agg(m=("made", "sum"), a=("made", "size"))
-        add("Soft touch", fl.m, 3, lambda i: f"{fl.m[i]}-{fl.a[i]} on floaters")
+        add("#floateralert", fl.m, 3, lambda i: f"{fl.m[i]}-{fl.a[i]} on floaters")
 
     # Leader only; rank by how far past the floor; at most two awards per player.
     wins = {int(tp): 1}
@@ -625,43 +637,31 @@ SEASON_STATS = (("Points", "PTS"), ("Rebounds", "REB"), ("Assists", "AST"), ("St
 
 
 def season_leaders(player_games: pd.DataFrame, game_id: str) -> dict | None:
-    """Top three Bulls per game in each stat through tonight, with each player's place before tonight.
+    """Every qualified Bulls player's per-game averages through tonight, for the leaders grid.
 
     Qualifying: a player needs half of the Bulls' games so far. (The NBA's 70% rule left out Giddey,
-    34 of 50 games, and White, 28 of 50, at the midseason test game.)
-    Ties share a place (shown as T2) and are compared at the one decimal printed.
+    34 of 50 games, and White, 28 of 50, at the midseason test game.) Values are rounded to the one
+    decimal printed, so tied leaders tie on the page too.
     """
     if player_games.empty:
         return None
     player_games = player_games[player_games.TEAM_ID == BULLS]
-    # Until game 5 (game 3 of the short preseason), per-game averages are just a few box scores; the page waits.
+    # Regular season: from game 5, before which per-game averages are just a few box scores. Preseason: from
+    # game 1 (user, 2026-10-09: the slide can be left out of a post when one game says too little).
     tonight = player_games.loc[player_games.GAME_ID.astype(str).str.zfill(10) == game_id, "GAME_DATE"].max()
-    if player_games[player_games.GAME_DATE <= tonight].GAME_ID.nunique() < (5 if game_id[:3] == "002" else 3):
+    if game_id[:3] == "002" and player_games[player_games.GAME_DATE <= tonight].GAME_ID.nunique() < 5:
         return None  # the logs also hold their games for other teams
     g = player_games.assign(gid=player_games.GAME_ID.astype(str).str.zfill(10))
-    date = g.loc[g.gid == game_id, "GAME_DATE"].iloc[0]
-
-    def table(through):
-        b = g[g.GAME_DATE <= through]
-        need = math.ceil(0.5 * b.gid.nunique())
-        x = b.groupby(["PLAYER_ID", "PLAYER_NAME"])[[c for _, c in SEASON_STATS]].mean()
-        x["gp"] = b.groupby(["PLAYER_ID", "PLAYER_NAME"]).size()
-        return x[x.gp >= need].reset_index(), need
-
-    now, need = table(date)
-    earlier = g.loc[g.GAME_DATE < date, "GAME_DATE"].max()
-    before = table(earlier)[0] if isinstance(earlier, str) else None
-    out = []
-    for label, col in SEASON_STATS:
-        v = now[col].round(1)
-        rank = v.rank(method="min", ascending=False).astype(int)
-        prev = before[col].round(1).rank(method="min", ascending=False).astype(int).set_axis(before.PLAYER_ID) if before is not None else None
-        top = now.assign(v=v, place=rank).sort_values(["place", "PLAYER_NAME"])
-        top = top[top.place <= 3]
-        rows = [[int(r.PLAYER_ID), r.PLAYER_NAME.split(" ", 1)[-1], float(r.v), int(r.place), int((rank == r.place).sum()),
-                 int(prev[r.PLAYER_ID]) if prev is not None and r.PLAYER_ID in prev.index else None] for r in top.itertuples()]
-        out.append([label, rows])
-    return {"stats": out, "qualify": need, "games": int(g[g.GAME_DATE <= date].gid.nunique())}
+    b = g[g.GAME_DATE <= g.loc[g.gid == game_id, "GAME_DATE"].iloc[0]]
+    games = int(b.gid.nunique())
+    need = math.ceil(0.5 * games)
+    cols = [c for _, c in SEASON_STATS]
+    x = b.groupby(["PLAYER_ID", "PLAYER_NAME"])[cols].mean().round(1)
+    x["gp"] = b.groupby(["PLAYER_ID", "PLAYER_NAME"]).size()
+    x = x[x.gp >= need].reset_index()
+    x = x.assign(last=x.PLAYER_NAME.str.split(" ", n=1).str[-1]).sort_values(["PTS", "last"], ascending=[False, True])
+    rows = [[int(r.PLAYER_ID), r.PLAYER_NAME, *[float(getattr(r, c)) for c in cols], int(r.gp)] for r in x.itertuples()]
+    return {"columns": cols, "rows": rows, "qualify": need, "games": games}
 
 
 # --- notables -------------------------------------------------------------------------------------

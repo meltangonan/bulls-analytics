@@ -43,7 +43,7 @@ def block(ax, to_px, z, fill, theme, pill="full", style=msc.ZONE12_DEFAULT_STYLE
 msc._zone12_block = block
 g = pd.read_csv(GAME / "shots_chi.csv"); lg = shot_data.league_shots("2025-26")
 ctx = {"player": g, "league": lg, "name": "Chicago Bulls", "subtitle": "", "season": "2025-26",
-       "min_fga": 8, "palette": None, "pill": "full", "merge_mid": True, "summary_metrics": True}
+       "min_fga": 5, "palette": None, "pill": "full", "merge_mid": True, "summary_metrics": True}
 OUT.parent.mkdir(parents=True, exist_ok=True)
 msc.render_zones(ctx, OUT, final=False)
 print("wrote")

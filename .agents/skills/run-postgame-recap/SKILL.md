@@ -52,7 +52,7 @@ reasons: `postgame-recaps/README.md`, "Running a recap".
      anything else;
    - the score, line score and slide 2's four tiles match `output/postgame-recap/<id>/recap.json`,
      which the script has checked against NBA.com;
-   - no long straight stretch in the margin line, no red play-by-play warning;
+   - no long flat stretch in the step margin line (minutes with no score logged), no red play-by-play warning;
    - no text overlaps or runs off a page; headshots and logos present;
    - awards and leaders hold no surprise; if a pick looks wrong, check its Game Score in that recap.json.
 4. **Deliver.** Send a PushNotification ("Bulls recap ready: <score>. <n> slides in Photos, Bulls recaps"),

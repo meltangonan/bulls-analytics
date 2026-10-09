@@ -35,7 +35,7 @@ PERIOD_NAMES = ["1ST", "2ND", "3RD", "4TH"]
 
 
 class NotReady(Exception):
-    """NBA.com has not finished publishing or correcting this game; game_night.py waits and pulls again."""
+    """NBA.com has not finished publishing or correcting this game; postgame_recap.py waits and pulls again."""
 
 
 NOT_READY = 75  # exit code for NotReady, so the caller can tell "wait" from "broken"

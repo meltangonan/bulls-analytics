@@ -1,16 +1,16 @@
 ---
-name: run-game-night
-description: Build, check and deliver tonight's Bulls postgame recap carousel ("run game night"); waits for NBA.com, never posts.
+name: run-postgame-recap
+description: Build, check and deliver tonight's Bulls postgame recap carousel ("run postgame recap"); waits for NBA.com, never posts.
 ---
 
-# Run Game Night
+# Run Postgame Recap
 
 The user starts this with a message, from the desktop app or from the phone through Remote Control, in a
 session opened on the `bulls-analytics` folder. Run every command from the repo root. The run ends when
 checked slides are in the Photos album and iCloud Drive, and the user has a notification (your push is the
 only alert) and the caption. Never post, schedule or draft on Instagram or X; never commit or push: the game's new folder in
 `postgame-recaps/seasons/` stays uncommitted until the user approves a batch commit. Method and failure
-reasons: `postgame-recaps/README.md`, "Game night".
+reasons: `postgame-recaps/README.md`, "Running a recap".
 
 1. **Recheck the previous game.** If a `postgame-recaps/seasons/*/*/as-posted/` folder exists for an earlier
    game, run `postgame-recaps/pipeline/recheck.py` on the most recent one. Exit 1 lists numbers NBA.com
@@ -26,7 +26,7 @@ reasons: `postgame-recaps/README.md`, "Game night".
    feeds and adds the slides to the Photos album (it sends no text message). "no Bulls game today" ends the
    run.
    ```
-   PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/game_night.py --today
+   PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/postgame_recap.py --today
    ```
    The script exits in three ways:
    - A `FINAL SEEN` or `STILL WAITING` line followed by `restart: ...` (exit 76) is a notice, not a failure.

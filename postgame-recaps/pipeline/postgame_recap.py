@@ -1,8 +1,8 @@
-"""Game night: wait until NBA.com has published and settled every feed for a finished game, then build the recap.
+"""Postgame recap: wait until NBA.com has published and settled every feed for a finished game, then build the recap.
 
-    PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/game_night.py --today
-    PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/game_night.py 0012600037
-    PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/game_night.py 0012600037 1760059860   (a restart)
+    PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/postgame_recap.py --today
+    PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/postgame_recap.py 0012600037
+    PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/postgame_recap.py 0012600037 1760059860   (a restart)
 
 Run from the repo root (a worktree uses the primary checkout's venv). --today finds tonight's Bulls game in
 NBA.com's schedule (before 6 am, last night's) and exits quietly when there is none; a game ID runs that game.
@@ -17,7 +17,7 @@ first showed Final, printed by a notice (below); a restart passes it so the timi
    Final) and pulls again. Any other failure three times in a row stops the run; once or twice, it pulls again
    (a half-published feed can crash a step).
 3. Notices: at fixed minutes after Final (MARKS) it prints what it is waiting on and a restart command, then
-   exits STILL_WAITING (76). The run-game-night skill posts the notice, pushes it to the phone when it matters,
+   exits STILL_WAITING (76). The run-postgame-recap skill posts the notice, pushes it to the phone when it matters,
    and restarts the command; nothing is lost, because every feed is on disk. Each mark is raised once: a
    restarted process begins after the mark it reported. It gives up three hours after Final.
 4. It draws the shot chart (linking the shared cache, then removing only the link), builds the pages, exports
@@ -147,7 +147,7 @@ def due(started: float, final_at: float, now: float, stage: str) -> int | None:
 def notice(text: str, game_id: str, final_at: float) -> None:
     """Print what the run is waiting on and the command that resumes it, then exit STILL_WAITING."""
     log(text)
-    log(f"restart: PYTHONPATH=. {PY} postgame-recaps/pipeline/game_night.py {game_id} {int(final_at)}")
+    log(f"restart: PYTHONPATH=. {PY} postgame-recaps/pipeline/postgame_recap.py {game_id} {int(final_at)}")
     sys.exit(STILL_WAITING)
 
 

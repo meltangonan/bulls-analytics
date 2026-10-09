@@ -15,13 +15,13 @@ postgame-recaps/
 output/postgame-recap/<id>/ recap.json, zones.png, slides/, caption.txt (scratch, not committed)
 ```
 
-## Game night
+## Running a recap
 
-One command, from the repo root (a worktree uses the primary checkout's venv); the `run-game-night` skill
+One command, from the repo root (a worktree uses the primary checkout's venv); the `run-postgame-recap` skill
 wraps it with Claude's slide check and the Notion log:
 
 ```bash
-PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/game_night.py --today
+PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/postgame_recap.py --today
 ```
 
 `--today` finds tonight's Bulls game in NBA.com's schedule (or pass a game ID) and exits quietly on days
@@ -39,7 +39,7 @@ recaps, writes `caption.txt`, keeps an `as-posted/` copy of the feeds, play-by-p
   label must never appear); anything else is removed and logged;
 - the slides go into the Photos album "Bulls recaps", which iCloud Photos syncs to the phone, where
   Instagram picks images; the stored originals are exported back and compared byte for byte;
-- Claude's push notification is the alert (the `run-game-night` skill). An iMessage to the user's own number
+- Claude's push notification is the alert (the `run-postgame-recap` skill). An iMessage to the user's own number
   with the slides was tried and dropped on 2026-10-08: a text to oneself never alerts on the iPhone, and the
   attachments would pile up in Messages.
 A failed delivery is logged and never fails the run: the slides are already in iCloud Drive. It gives up
@@ -52,7 +52,7 @@ after Final (`MARKS`: at Final, then 20, 30, 45, 60, 90 and 120 minutes while NB
 slide feed, because the post should be out within 30 minutes of the buzzer; from 10 minutes when every feed is
 in but a check keeps failing) the script prints what it is waiting on,
 the step's own reason line and a restart command carrying the game ID and the time Final was first seen, then
-exits STILL_WAITING (76). The `run-game-night` skill posts the notice, pushes it to the phone (every notice;
+exits STILL_WAITING (76). The `run-postgame-recap` skill posts the notice, pushes it to the phone (every notice;
 the user wants to hear from the run), and restarts the command; every feed is already on disk, so a restart costs seconds and the timing line and
 deadline carry on. Each mark is raised once, because a restarted process begins after the mark it reported
 (no state file). The two kinds of wait are different problems: "not published yet: four factors" is NBA.com
@@ -106,7 +106,7 @@ and an offensive rebound added, an assist moved), which changed eleven numbers o
 12 to 14, Suns blocks 2 to 3, Caleb Wilson's line, two shot types, two breakdown bars). `pipeline/recheck.py <game_id>`
 compares the feeds saved for the post (the game folder's `as-posted/` when present) with NBA.com now and lists each
 changed number in plain words (box score with minutes, line score, four factors, misc points, game-flow counts,
-and the featured team's shots by zone and shot type); it reads only. `game_night.py` copies those feeds, the play-by-play, `sources.json` and
+and the featured team's shots by zone and shot type); it reads only. `postgame_recap.py` copies those feeds, the play-by-play, `sources.json` and
 `recap.json` into `as-posted/` after the first export only, so neither a re-pull nor a rebuild can move the baseline. The as-posted Game 1 feeds and
 recap.json are kept in `seasons/2026-27/0012600030/as-posted/`; the game folder itself holds the corrected pull.
 The next-morning QA of four dry runs (2026-10-09) found only fast break points revised, in two of them; fast break
@@ -311,7 +311,7 @@ label) and pins Game 1's NBA.com-verified numbers and caption.
   and are read as text so "3.0" and lost "00" cannot appear. Minutes totals add exact minutes and round once.
   A "Did not play" list too long for the footer moves to its own line above it.
 - First live run (2026-10-07, PHX at CHI, 0012600030; full write-up on the Notion "Game recaps" page).
-  Final about 21:51 CT, every feed ready to `game_night.py` 22:08, slides 22:10. Open: (1) stats.nba.com
+  Final about 21:51 CT, every feed ready to `postgame_recap.py` 22:08, slides 22:10. Open: (1) stats.nba.com
   caches by exact URL, and `nba_api`'s request (EndRange=0, no LeagueID) lagged the website's
   (LeagueID=00, EndRange=28800) by two to five minutes on four factors, advanced, misc and scoring;
   (2) readiness checks four factors and shots but not scoring, advanced or misc, so the first build pulled

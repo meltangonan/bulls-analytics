@@ -47,7 +47,7 @@ def season_of(game_id: str) -> str:
     return f"{start}-{str(start + 1)[-2:]}"
 
 
-# Feeds the published slides draw on. While any is missing the pull exits NOT_READY and game_night.py pulls
+# Feeds the published slides draw on. While any is missing the pull exits NOT_READY and postgame_recap.py pulls
 # again; the rest (advanced, scoring, matchups, tracking, opponent shots) feed back-pocket pages only.
 REQUIRED = {"summary_game.csv": "summary", "summary_info.csv": "summary", "summary_arena.csv": "summary (arena)",
             "summary_linescore.csv": "line score", "summary_stats.csv": "summary (game flow counts)",
@@ -234,7 +234,7 @@ def pull_game(game_id: str) -> list:
         "files": dict(sorted(CAPTURED.items()))}, indent=1) + "\n")
     if missing:
         print("missing or empty:", "; ".join(missing))
-    # The required feeds still missing, by plain name, for game_night.py's log.
+    # The required feeds still missing, by plain name, for postgame_recap.py's log.
     return sorted({REQUIRED[m.split(":")[0]] for m in missing if m.split(":")[0] in REQUIRED})
 
 

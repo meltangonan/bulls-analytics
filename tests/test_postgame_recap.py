@@ -15,7 +15,7 @@ PIPELINE = Path(__file__).resolve().parents[1] / "postgame-recaps/pipeline"
 sys.path.insert(0, str(PIPELINE))
 import recap_data as rd  # noqa: E402
 from deliver import clean_png  # noqa: E402
-from game_night import caption  # noqa: E402
+from postgame_recap import caption  # noqa: E402
 from paths import game_dir  # noqa: E402
 
 
@@ -129,7 +129,7 @@ def test_baseline_rebound_rate_is_joined_on_game_and_team():
 
 
 def test_notice_marks_fire_once_across_restarts():
-    from game_night import due
+    from postgame_recap import due
     final_at = 1000.0
     assert due(0, final_at, final_at + 1, "publishing") == 0  # the process that saw Final
     restarted = final_at + 90  # the restart begins after the mark it reported
@@ -141,7 +141,7 @@ def test_notice_marks_fire_once_across_restarts():
 
 
 def test_as_posted_is_written_once(tmp_path):
-    from game_night import SNAPSHOT, snapshot
+    from postgame_recap import SNAPSHOT, snapshot
     data, out = tmp_path / "game", tmp_path / "out"
     data.mkdir(), out.mkdir()
     for name in SNAPSHOT:
@@ -156,6 +156,6 @@ def test_as_posted_is_written_once(tmp_path):
 
 def test_today_prefers_last_night_before_six():
     from datetime import date, datetime
-    from game_night import game_day
+    from postgame_recap import game_day
     assert game_day(datetime(2027, 1, 8, 0, 40)) == [date(2027, 1, 7), date(2027, 1, 8)]
     assert game_day(datetime(2027, 1, 7, 18, 0)) == [date(2027, 1, 7)]

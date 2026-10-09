@@ -124,7 +124,8 @@ Drawn in the Canva Brand Template's page style (`EAHW6UQqJFQ`, page 2): warm `#E
 black trim, heavy serif title, no subtitle, black text, 25 px side margins, and a "Data via NBA.com |
 CHI @DEN, Nov 17, 2025" footer with the handle. The serif (titles, scores, big
 numbers) is Georgia Pro Condensed Bold and Bold Italic (licensed desktop fonts, installed in ~/Library/Fonts
-on 2026-10-07) when present on the Mac that exports; otherwise Source Serif 4 Black. `export_slides.py` prints which one it used. Font files never enter the repo (it is
+on 2026-10-07) when present on the Mac that exports; otherwise Source Serif 4 Black. All other text is Geist SemiBold
+and Regular, from `~/Library/Fonts` or else Google Fonts. `export_slides.py` prints which faces it used. Font files never enter the repo (it is
 public), and the phone preview cannot load them, so it shows Source Serif 4. Section titles are 30 px. Labels are sentence case; column headers keep
 capitals. Optional cover first, on the same
 background: the game's margin line as art, the score in the serif (Bulls line red), "@" or "vs.", the date.

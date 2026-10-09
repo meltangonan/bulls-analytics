@@ -24,6 +24,7 @@ from bulls.graphics.house import (
     display_font,
     draw_footer,
     draw_header,
+    geist,
     helvetica,
     new_canvas,
     save_post,

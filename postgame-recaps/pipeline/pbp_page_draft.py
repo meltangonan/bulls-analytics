@@ -70,7 +70,7 @@ def page(game_id: str) -> str:
          t(25, 104, 86, "Bulls assist network", w=900, ff="RecapSerif, 'Source Serif 4', Georgia, serif")]
     # Section title in the page's boxed style.
     s.append(f'<rect x="25" y="150" width="{len("Who set up whom") * 15.5 + 24:.0f}" height="41" fill="none" stroke="{K}" stroke-width="2.5"/>'
-             + t(37, 181, 28, "Who set up whom", w=700))
+             + t(37, 181, 28, "Who set up whom", w=600))
     s.append(t(1055, 181, 20, f"Arrow from passer to scorer · {int(pairs.n.sum())} assists", f=FT, a="end"))
     # Edges first, so the portraits sit on top. Each curve bends toward the centre; width grows with assists.
     for r in pairs.sort_values("n").itertuples():
@@ -87,7 +87,7 @@ def page(game_id: str) -> str:
                  f'<polygon points="{tip}" fill="{R}" fill-opacity="{op:.2f}"/>')
         if r.n >= 2:
             lx, ly = 0.25 * x1 + 0.5 * qx + 0.25 * ex, 0.25 * y1 + 0.5 * qy + 0.25 * ey
-            s.append(f'<circle cx="{lx:.1f}" cy="{ly:.1f}" r="15" fill="{BG}" stroke="{R}" stroke-width="2"/>' + t(lx, ly + 7, 19, r.n, f=R, w=700, a="middle"))
+            s.append(f'<circle cx="{lx:.1f}" cy="{ly:.1f}" r="15" fill="{BG}" stroke="{R}" stroke-width="2"/>' + t(lx, ly + 7, 19, r.n, f=R, w=600, a="middle"))
     for pid, (x, y) in pos.items():
         s.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{nr}" fill="{LR}"/>')
         if pid in heads:
@@ -96,11 +96,11 @@ def page(game_id: str) -> str:
         lx, ly = x + out[0] / L * (nr + 18), y + out[1] / L * (nr + 18)
         anchor = "middle" if abs(out[0]) < 60 else ("start" if out[0] > 0 else "end")
         ly += 30 if out[1] > 40 else (-26 if out[1] < -40 else 8)
-        s.append(t(lx, ly, 21, name[pid], w=700, a=anchor)
+        s.append(t(lx, ly, 21, name[pid], w=600, a=anchor)
                  + t(lx, ly + 22, 17, f"{int(given.get(pid, 0))} ast · {int(got.get(pid, 0))} assisted", f=FT, a=anchor))
     # Top connections: the three duos with the most assists, ties broken by points.
     s.append(f'<rect x="25" y="1052" width="{len("Top connections") * 15.5 + 24:.0f}" height="41" fill="none" stroke="{K}" stroke-width="2.5"/>'
-             + t(37, 1083, 28, "Top connections", w=700) + f'<line x1="25" y1="1093" x2="1055" y2="1093" stroke="{K}" stroke-width="2.5"/>')
+             + t(37, 1083, 28, "Top connections", w=600) + f'<line x1="25" y1="1093" x2="1055" y2="1093" stroke="{K}" stroke-width="2.5"/>')
     top = pairs.sort_values(["n", "pts"], ascending=False).head(3)
     for k, r in enumerate(top.itertuples()):
         x0 = 25 + k * 352
@@ -110,13 +110,15 @@ def page(game_id: str) -> str:
             if pid in heads:
                 s.append(f'<image href="{heads[pid]}" x="{hx - 39}" y="{1170 + 37 - 78}" width="78" height="78"/>')
         s.append(f'<path d="M{x0 + 88},1170 L{x0 + 100},1170" stroke="{R}" stroke-width="4"/><polygon points="{x0 + 106},1170 {x0 + 96},1163 {x0 + 96},1177" fill="{R}"/>')
-        s.append(t(x0 + 96, 1244, 22, f"{name[r.passer]} to {name[r.scorer]}", w=700, a="middle")
+        s.append(t(x0 + 96, 1244, 22, f"{name[r.passer]} to {name[r.scorer]}", w=600, a="middle")
                  + t(x0 + 96, 1272, 19, f"{r.n} assists, {r.pts} points", f=FT, a="middle"))
     s.append(t(25, 1424, 16, "Data via NBA.com play-by-play | Draft page, not in the recap yet", f=FT)
-             + f'<text x="1055" y="1424" font-size="16" font-weight="700" text-anchor="end"><tspan fill="{R}">chicago_bulls</tspan><tspan fill="{K}">[data]</tspan></text>')
+             + f'<text x="1055" y="1424" font-size="16" font-weight="600" text-anchor="end"><tspan fill="{R}">chicago_bulls</tspan><tspan fill="{K}">[data]</tspan></text>')
     return ("<!doctype html><html><head><meta charset='utf-8'><style>"
+            "@font-face{font-family:RecapSans;font-weight:400;src:local('Geist-Regular')}"
+            "@font-face{font-family:RecapSans;font-weight:600;src:local('Geist-SemiBold')}"
             "@font-face{font-family:RecapSerif;font-weight:900;src:local('GeorgiaProCondensed-Bold'),local('Georgia Pro Condensed Bold')}"
-            "body{margin:0}svg{display:block;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-variant-numeric:tabular-nums}</style></head><body>"
+            "body{margin:0}svg{display:block;font-family:RecapSans,Geist,Arial,sans-serif;font-variant-numeric:tabular-nums}</style></head><body>"
             f'<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1440" viewBox="0 0 1080 1440">{"".join(s)}</svg></body></html>')
 
 

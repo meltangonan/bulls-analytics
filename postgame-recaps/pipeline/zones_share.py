@@ -13,7 +13,7 @@ from matplotlib.patches import FancyBboxPatch
 sys.path.insert(0, "scripts")
 import make_shot_chart as msc
 from bulls.data import shots as shot_data
-from bulls.graphics.house import helvetica
+from bulls.graphics.house import geist
 
 GAME, OUT = Path(sys.argv[1]), Path(sys.argv[2])
 FIG, SHARE, GAP = float(sys.argv[3]), float(sys.argv[4]), float(sys.argv[5])
@@ -37,7 +37,7 @@ def block(ax, to_px, z, fill, theme, pill="full", style=msc.ZONE12_DEFAULT_STYLE
     top = py + span / 2
     for i, (s, size) in enumerate(lines):
         ax.text(px, top, s, fontsize=size, zorder=11, color=ink if i == 0 else "#5F5B57",
-                alpha=alpha, ha="center", va="center", fontproperties=helvetica("bold"))
+                alpha=alpha, ha="center", va="center", fontproperties=geist("semibold"))
         top -= GAP
 
 msc._zone12_block = block

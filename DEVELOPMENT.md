@@ -69,7 +69,7 @@ venv/bin/python scripts/save_visual_version.py --project <slug> --data <source.c
 
 Read the selected renderer's arguments before using it. On supported renderers `--final` means
 publish DPI; the archive helper has no `--final` flag. Canva owns page typography, background and
-framing; chart labels use `house.helvetica()`. See `DESIGN.md` for the current palette and export contract.
+framing; new chart labels use `house.geist()` (existing renderers keep `house.helvetica()`). See `DESIGN.md` for the current palette and export contract.
 
 At season rollover, update `CURRENT_SEASON` and `LAST_SEASON` in `bulls/config.py`; fetchers otherwise
 continue serving the prior season. Dependency changes need an environment/import check.

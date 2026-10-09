@@ -27,13 +27,20 @@ Read only the reference for the chart being changed:
   qualification legend stays with its marks when needed to interpret them.
 - Generate data-bound Canva copy from the same calculation as the chart. Optional verified summary
   cards may carry those numbers inside the asset; never copy a number by eye.
-- Use `house.helvetica()` with `regular`, `bold`, `oblique`, or `bold_oblique`. It loads the actual
-  face; requesting bold or italic by family name can silently return regular on macOS. The helper
-  caches extracted licensed fonts locally. Elsewhere it prefers installed Nimbus Sans,
-  then Arial or DejaVu Sans. Cloud uses Nimbus Sans from the `fonts-urw-base35` package;
-  the Mac continues to use its system Helvetica. The fonts are visually close, not identical.
-- Helvetica lacks arrow glyphs. Write “to” or draw a real arrow. Use a true minus (−) for negative
-  comparisons and remove the sign when the displayed number rounds to zero.
+- The house sans is **Geist** (adopted 2026-10-09), in two weights: **SemiBold** for labels, values,
+  and short callouts; **Regular** for subtitles, notes, sources, and footers. Supporting text recedes
+  through `#5F5B57`, not a lighter weight. Do not set SemiBold beside Bold as two levels; emphasize
+  with red or size. Titles, scores, and big numbers stay in Georgia Pro Condensed.
+- In new charts use `house.geist()` with `regular` or `semibold`. It loads the face file from
+  `~/Library/Fonts`, because requesting a weight by family name can silently return regular.
+  Elsewhere it falls back to Nimbus Sans, Arial, or DejaVu Sans, which are wider than Geist, so
+  export final assets on the Mac. HTML pages reference `local('Geist-SemiBold')` and
+  `local('Geist-Regular')`, with Geist from Google Fonts as the fallback. Canva has both weights in
+  the Brand Kit.
+- Existing renderers keep `house.helvetica()` so published charts re-render unchanged; do not
+  migrate them. Their layouts and tests assume Helvetica's glyph widths.
+- Use a true minus (−) for negative comparisons and remove the sign when the displayed number rounds
+  to zero. Check that any arrow or special glyph exists in the chosen face before using it.
 
 ## Color and hierarchy
 

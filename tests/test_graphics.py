@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import matplotlib.pyplot as plt
+import pytest
 from PIL import Image
 
 from bulls.graphics import (
@@ -48,6 +49,18 @@ class TestHouseGraphics:
         for font in fonts:
             families = font.get_family()
             assert any(name in families for name in ("Helvetica", "Arial", "DejaVu Sans"))
+
+    def test_geist_loads_the_requested_face(self):
+        from bulls.graphics.house import _GEIST_DIR, geist
+
+        for weight, face in (("regular", "Geist-Regular"), ("semibold", "Geist-SemiBold")):
+            font = geist(weight)
+            if (_GEIST_DIR / f"{face}.otf").exists():
+                assert font.get_file().endswith(f"{face}.otf")
+            else:
+                assert "Geist" in font.get_family()
+        with pytest.raises(ValueError):
+            geist("bold")
 
     def test_header_and_footer_include_required_house_elements(self):
         fig, ax = new_canvas()

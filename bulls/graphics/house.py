@@ -1,6 +1,6 @@
 """Shared chart utilities and compatibility helpers for older full-page posts.
 
-Current charts use Helvetica, export DPI, portraits, and table/card helpers.
+New charts use Geist (older ones Helvetica), export DPI, portraits, and table/card helpers.
 Canva owns page layout. Theme palettes, canvas, header, and footer functions
 remain for historical renderers; they are not the starting point for new posts.
 See DESIGN.md for the current chart contract.
@@ -243,6 +243,29 @@ def helvetica(weight: str = "regular") -> fm.FontProperties:
         except Exception:
             return _helvetica_fallback(weight)
     return fm.FontProperties(fname=str(extracted))
+
+
+_GEIST_DIR = Path.home() / "Library" / "Fonts"
+_GEIST_FILES = {"regular": "Geist-Regular.otf", "semibold": "Geist-SemiBold.otf"}
+
+
+def geist(weight: str = "regular") -> fm.FontProperties:
+    """Return the house sans for new chart assets: Geist Regular or SemiBold.
+
+    SemiBold carries labels and values; Regular carries quieter supporting
+    text. Load the face by filename, because asking matplotlib for a weight by
+    family name can silently return Regular. Geist is installed in the user's
+    ``~/Library/Fonts`` on the Mac; elsewhere, fall back to an installed sans.
+    """
+    if weight not in _GEIST_FILES:
+        raise ValueError("Unsupported Geist weight; choose regular or semibold.")
+    path = _GEIST_DIR / _GEIST_FILES[weight]
+    if path.exists():
+        return fm.FontProperties(fname=str(path))
+    return fm.FontProperties(
+        family=["Geist", "Nimbus Sans", "Arial", "DejaVu Sans"],
+        weight="semibold" if weight == "semibold" else "normal",
+    )
 
 
 def rendered_width(ax, text_artist) -> float:

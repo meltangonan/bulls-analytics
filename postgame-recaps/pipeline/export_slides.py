@@ -41,6 +41,9 @@ def main(game_ids: list[str], icloud: bool = False) -> None:
         # Serif 4 from Google Fonts. Font files never enter the repo.
         georgia = page.evaluate("[...document.fonts].some(f => f.family === 'RecapSerif' && f.status === 'loaded')")
         print("serif:", "Georgia Pro Condensed Bold" if georgia else "Source Serif 4 (Georgia Pro Condensed is not installed)")
+        # The sans is Geist Regular and SemiBold, installed on this Mac, else the same faces from Google Fonts.
+        geist = page.evaluate("[...document.fonts].filter(f => f.family === 'RecapSans' && f.status === 'loaded').length")
+        print("sans:", "Geist from this Mac" if geist == 2 else "Geist from Google Fonts (not installed on this Mac)")
         for game_id in game_ids:
             if game_id not in ids:
                 raise SystemExit(f"{game_id} is not in the mockup; rebuild it with build_mockup.py")

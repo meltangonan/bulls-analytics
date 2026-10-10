@@ -1,0 +1,123 @@
+{
+ "game_id": "0012600037",
+ "season": "2026-27",
+ "season_type": "Pre Season",
+ "requests": "https://stats.nba.com/stats/<endpoint> through nba_api; box score V3 calls first with the NBA.com website's parameters (LeagueID=00, EndRange=28800, RangeType=0), then nba_api's defaults",
+ "files": {
+  "advanced_players.csv": {
+   "source": "boxscoreadvancedv3, players",
+   "rows": 41,
+   "captured_utc": "2026-10-10T02:58:47Z"
+  },
+  "ff_team.csv": {
+   "source": "boxscorefourfactorsv3, teams",
+   "rows": 2,
+   "captured_utc": "2026-10-10T02:58:45Z"
+  },
+  "league_games.csv": {
+   "source": "leaguegamelog T, this season type",
+   "rows": 50,
+   "captured_utc": "2026-10-10T02:59:04Z"
+  },
+  "matchups.csv": {
+   "source": "boxscorematchupsv3",
+   "rows": 0,
+   "captured_utc": "2026-10-10T02:58:50Z"
+  },
+  "misc_teams.csv": {
+   "source": "boxscoremiscv3, teams",
+   "rows": 2,
+   "captured_utc": "2026-10-10T02:58:49Z"
+  },
+  "pbp.csv": {
+   "source": "playbyplayv3",
+   "rows": 536,
+   "captured_utc": "2026-10-10T02:58:46Z"
+  },
+  "player_games.csv": {
+   "source": "leaguegamelog P, this season type",
+   "rows": 28,
+   "captured_utc": "2026-10-10T02:59:00Z"
+  },
+  "players.csv": {
+   "source": "boxscoretraditionalv3, players",
+   "rows": 41,
+   "captured_utc": "2026-10-10T02:58:44Z"
+  },
+  "roster.csv": {
+   "source": "commonteamroster, Bulls",
+   "rows": 21,
+   "captured_utc": "2026-10-10T02:58:59Z"
+  },
+  "schedule.csv": {
+   "source": "scheduleleaguev2, Bulls games",
+   "rows": 85,
+   "captured_utc": "2026-10-10T02:59:03Z"
+  },
+  "scoring_players.csv": {
+   "source": "boxscorescoringv3, players",
+   "rows": 41,
+   "captured_utc": "2026-10-10T02:58:54Z"
+  },
+  "scoring_teams.csv": {
+   "source": "boxscorescoringv3, teams",
+   "rows": 2,
+   "captured_utc": "2026-10-10T02:58:55Z"
+  },
+  "shots_raw_chi.csv": {
+   "source": "shotchartdetail, featured team, every field-goal attempt",
+   "rows": 80,
+   "captured_utc": "2026-10-10T02:58:56Z"
+  },
+  "shots_raw_opp.csv": {
+   "source": "shotchartdetail, opponent, every field-goal attempt",
+   "rows": 76,
+   "captured_utc": "2026-10-10T02:58:57Z"
+  },
+  "summary_arena.csv": {
+   "source": "boxscoresummaryv3, table 2",
+   "rows": 1,
+   "captured_utc": "2026-10-10T02:58:40Z"
+  },
+  "summary_availability.csv": {
+   "source": "boxscoresummaryv3, table 8",
+   "rows": 1,
+   "captured_utc": "2026-10-10T02:58:43Z"
+  },
+  "summary_game.csv": {
+   "source": "boxscoresummaryv3, table 0",
+   "rows": 1,
+   "captured_utc": "2026-10-10T02:58:38Z"
+  },
+  "summary_info.csv": {
+   "source": "boxscoresummaryv3, table 1",
+   "rows": 1,
+   "captured_utc": "2026-10-10T02:58:39Z"
+  },
+  "summary_linescore.csv": {
+   "source": "boxscoresummaryv3, table 4",
+   "rows": 2,
+   "captured_utc": "2026-10-10T02:58:41Z"
+  },
+  "summary_stats.csv": {
+   "source": "boxscoresummaryv3, table 7",
+   "rows": 2,
+   "captured_utc": "2026-10-10T02:58:42Z"
+  },
+  "teams.csv": {
+   "source": "boxscoretraditionalv3, team totals",
+   "rows": 2,
+   "captured_utc": "2026-10-10T02:58:44Z"
+  },
+  "track_players.csv": {
+   "source": "boxscoreplayertrackv3, players",
+   "rows": 0,
+   "captured_utc": "2026-10-10T02:58:51Z"
+  },
+  "track_teams.csv": {
+   "source": "boxscoreplayertrackv3, teams",
+   "rows": 0,
+   "captured_utc": "2026-10-10T02:58:52Z"
+  }
+ }
+}

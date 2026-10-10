@@ -293,7 +293,7 @@ const paras=[`Every possession starts worth ${f3(E.v)} points, the 2025-26 NBA a
 `Each bar is the ${D.chi.team} minus the ${D.opp.team}: shooting ${f1(ca)} - (${f1(oa)}) ${eq} ${f1(sb)}.`+(other?' Other covers possessions cut off when a quarter ended.':'')+(extra?` The ${D.chi.team} had ${pc_} possessions to ${po_}, and each possession is worth ${f3(E.v)}.`:'')+` The bars add up to the final margin, ${sgn(BD.margin)}.`];
 let ey=by+rh+58;s+=sec(L,ey,'How to read it');ey+=44;
 // Opens with why these four: they are every way a possession can end. The question is set in SemiBold.
-const why='Why four factors?';paras.unshift(`${why} Every possession ends in a shot, a turnover or free throws, and a missed shot goes to whichever team rebounds it. The four factors measure each of those outcomes.`);
+const why='Why four factors?';paras.unshift(`${why} A possession ends in one of four ways: a shot, a turnover, free throws, or a rebound. The idea is that if you win more of those four categories than your opponent, you'll usually win the game.`);
 // 21px unless the last line would reach the footer (a game with both Other and an extra possession runs longest): then a pixel smaller at a time.
 let fs=21,lines;for(;fs>18;fs--){lines=paras.map(pp=>wrapText(pp,fs,W-8));if(ey+(lines.flat().length-1)*fs*1.38+(lines.length-1)*fs*0.48<=1386)break;}lines=paras.map(pp=>wrapText(pp,fs,W-8));
 lines.forEach(ls=>{ls.forEach(line=>{s+=line.startsWith(why)?t(L,ey,fs,why,{w:600})+t(L+tw(why,fs,600)+fs*0.29,ey,fs,line.slice(why.length+1)):t(L,ey,fs,line);ey+=fs*1.38;});ey+=fs*0.48;});

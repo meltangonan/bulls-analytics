@@ -248,7 +248,7 @@ const endLab=now?sgn(now):'.500';
 // The line's points and the .500 line are the obstacles for the end label.
 const linePts=[[x0,oy(0)],...O.map((v,i)=>[gx(i),oy(v)])],obst=[{x:x0,y:oz-1,w:x1-x0,h:2}];
 for(let i=1;i<linePts.length;i++){const [a1,b1]=linePts[i-1],[a2,b2]=linePts[i];obst.push({x:Math.min(a1,a2),y:Math.min(b1,b2)-2,w:Math.abs(a2-a1)+1,h:Math.abs(b2-b1)+4});}
-s+=wide?t(gx(n-1)+14,oy(now)+8,22,endLab,{w:600}):place(gx(n-1),oy(now),endLab,22,obst,[x0,oz-ol*osc,RX,oz+ol*osc]);
+s+=wide?t(gx(n-1)+14,oy(now)+8,22,endLab,{w:600,halo:1}):place(gx(n-1),oy(now),endLab,22,obst,[x0,oz-ol*osc,RX,oz+ol*osc]);
 const ay=oz+ol*osc;
 // Preseason and other short seasons name every game on the axis, played or still to come.
 if(wide){G.forEach((g,i)=>s+=t(gx(i),ay+38,19,(g[2]?'':'@')+g[1],{a:'middle',w:i==n-1?600:400}));(S.upcoming||[]).slice(0,slots-n).forEach(([o,h],j)=>s+=t(gx(n+j),ay+38,19,(h?'':'@')+o,{a:'middle',f:FT}));}

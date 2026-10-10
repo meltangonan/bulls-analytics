@@ -184,6 +184,22 @@ def feeds_agree(players: pd.DataFrame, teams: pd.DataFrame, ff: pd.DataFrame) ->
     return out
 
 
+def compare_flow(ours: dict, nba: dict, margin: int) -> tuple[str, str]:
+    """Our game-flow counts against NBA.com's: "match" or what differs, plus a note on any NBA value skipped.
+
+    A winner led by at least its final margin, so NBA.com's biggest lead below that margin is impossible
+    and is left out of the comparison (HOU won 135-117 at DAL on 2026-10-09 and NBA.com still listed both
+    teams' biggest lead as 0 nine hours later). Ours must pass the same test to be kept; every other count
+    must still match exactly.
+    """
+    note = ""
+    for side, lead in (("chi_lead", margin), ("opp_lead", -margin)):
+        if lead > 0 and nba[side] < lead <= ours[side]:
+            note = f"NBA.com's biggest lead of {nba[side]} is below the {lead}-point final margin, so ours was kept"
+            nba = {**nba, side: ours[side]}
+    return ("match" if ours == nba else f"differs: ours {ours}, NBA {nba}"), note
+
+
 def flow(pbp: pd.DataFrame, chi_home: bool, opp_tri: str) -> dict:
     ev = scoring_events(pbp, chi_home)
     periods = int(pbp.period.max())
@@ -461,7 +477,6 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
         return []
     p["name"] = p.firstName + " " + p.familyName
     p["gmsc"] = game_score(p)  # Game Score picks the top performers; it is not printed
-    p["min"] = p.minutes.map(minutes)
     p["starter"] = p.position.notna() & (p.position.astype(str).str.strip() != "")
     p = p.set_index("personId", drop=False)
     fg = lambda i: f"{p.fieldGoalsMade[i]}-{p.fieldGoalsAttempted[i]} FG"
@@ -491,9 +506,10 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
     td = cats.drop(tp)
     add("#tripledouble", td.where(td >= 3), 1, lambda i: f"{p.points[i]} PTS, {p.reboundsTotal[i]} REB, {p.assists[i]} AST")
     # Floors set 2026-10-07 so each award fires in roughly one game in ten to five (2025-26 Bulls games);
-    # the user moved assists to 10 (fires in 40% of those games, 20% at 12) and dunks to 5 on 2026-10-09.
+    # the user moved assists to 10 (fires in 40% of those games, 20% at 12) and dunks to 5 on 2026-10-09, set the
+    # bench award at Game Score 15, and dropped the minutes and floater awards (the Notion "Game recaps" table).
     shooters = p[p.fieldGoalsAttempted >= 10]
-    add("#heater", (shooters.fieldGoalsMade / shooters.fieldGoalsAttempted), 0.70,
+    add("#hothand", (shooters.fieldGoalsMade / shooters.fieldGoalsAttempted), 0.70,
         lambda i: f"{fg(i)} ({100 * p.fieldGoalsMade[i] / p.fieldGoalsAttempted[i]:.0f}%)")
     add("#sniper", p.threePointersMade - p.threePointersAttempted / 1000, 6, lambda i: f"{p.threePointersMade[i]}-{p.threePointersAttempted[i]} from three")
     add("#cookiemonster", p.steals, 4, lambda i: f"{p.steals[i]} steals")
@@ -501,8 +517,7 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
     add("#windex", p.reboundsTotal, 15, lambda i: f"{p.reboundsTotal[i]} rebounds")
     add("#boardman", p.reboundsOffensive, 5, lambda i: f"{p.reboundsOffensive[i]} offensive rebounds")
     add("#dimer", p.assists, 10, lambda i: f"{p.assists[i]} assists")
-    add("#benchmob", p.gmsc[~p.starter].drop(tp, errors="ignore"), 10, lambda i: f"{p.points[i]} PTS on {fg(i)} off the bench")
-    add("#lungs", p["min"], 40, lambda i: f"{int(round(p['min'][i]))} minutes")
+    add("#sparkplug", p.gmsc[~p.starter].drop(tp, errors="ignore"), 15, lambda i: f"{p.points[i]} PTS on {fg(i)} off the bench")
 
     ev = scoring_events(pbp, chi_home)
     ev["before"] = ev.margin.shift().fillna(0)
@@ -510,14 +525,12 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
     late = ev[(ev.period >= 4) & ev.clock.map(clock_left).le(300) & ev.before.abs().le(5) & ev.chi_pts.gt(0)]
     clutch = late.groupby("personId").chi_pts.sum()
     clutch = clutch[clutch.index.isin(p.index)]
-    add("#icecold", clutch, 5, lambda i: f"{int(clutch[i])} clutch PTS (last 5 min, within 5)")
+    add("#closer", clutch, 5, lambda i: f"{int(clutch[i])} clutch PTS (last 5 min, within 5)")
 
     if not raw.empty:
         raw = raw.assign(fam=classify_series(raw.ACTION_TYPE), made=raw.SHOT_MADE_FLAG == 1)
         dunks = raw[(raw.fam == "Dunks") & raw.made].groupby("PLAYER_ID").size()
         add("#dunkeverything", dunks, 5, lambda i: f"{dunks[i]} dunks")
-        fl = raw[raw.fam == "Floaters"].groupby("PLAYER_ID").agg(m=("made", "sum"), a=("made", "size"))
-        add("#floateralert", fl.m, 3, lambda i: f"{fl.m[i]}-{fl.a[i]} on floaters")
 
     # Leader only; rank by how far past the floor; at most two awards per player.
     wins = {int(tp): 1}
@@ -863,7 +876,9 @@ def build(game_id: str) -> dict:
                "chi_lead": int(s.loc[TRI, "biggestLead"]), "opp_lead": int(s.loc[opp_tri, "biggestLead"]),
                "run_chi": int(s.loc[TRI, "biggestScoringRun"]), "run_opp": int(s.loc[opp_tri, "biggestScoringRun"])}
         ours = {k: data["flow"][k] for k in nba}
-        data["flow"]["nba_check"] = "match" if ours == nba else f"differs: ours {ours}, NBA {nba}"
+        data["flow"]["nba_check"], note = compare_flow(ours, nba, data["chi"]["score"] - data["opp"]["score"])
+        if note:
+            data["flow"]["nba_note"] = note
     if data["flow"].get("nba_check") != "match":
         raise NotReady(f"game flow does not match NBA.com's own counts ({data['flow'].get('nba_check', 'no NBA counts published')})")
     return data

@@ -85,7 +85,10 @@ What makes a build "not ready" (`pull_game.py` and `recap_data.py`, exit 75):
   Bulls player who played);
 - the box-score tables disagree with each other (`feeds_agree`): player rows must add up to the team totals, and
   NBA.com's eFG% and FT rate must match the box score's makes and attempts (all 15 saved games agree);
-- lead changes, ties, biggest leads or longest runs differ from NBA.com's own Summary V3 counts.
+- lead changes, ties, biggest leads or longest runs differ from NBA.com's own Summary V3 counts. One exception
+  (`compare_flow`, 2026-10-09): a winner led by at least its final margin, so an NBA.com biggest lead below it is
+  impossible and is skipped, provided ours passes that test (HOU 135-117 at DAL, Oct 9: NBA.com listed both teams'
+  biggest lead as 0 nine hours after Final). The recap.json `flow.nba_note` records it.
 Box-score feeds are requested first exactly as NBA.com's game page requests them (LeagueID=00, EndRange=28800,
 RangeType=0, which makes NBA.com ignore the range, so overtime is kept: checked on an OT and a 2OT game), then
 with `nba_api`'s defaults: stats.nba.com caches each exact request, and on 2026-10-07 the website's request
@@ -253,8 +256,9 @@ page): Top Performer (#mvp; highest Game Score, not printed; a triple-double is 
 is always first. The rest are leader-only, at most two per player, and ranked by how far the winner cleared
 the floor (value / floor): Triple-double (by anyone else), Hot Hand (70%+ FG on 10+ shots), Sharpshooter
 (6+ threes), Pickpocket (4+ steals), Block Party (4+), Glass Cleaner (15+ rebounds), Board Crasher (5+
-offensive), Facilitator (10+ assists, lowered from 12 by the user on 2026-10-09), Spark Plug (bench Game Score 10+, not the Top Performer), Workhorse
-(40+ minutes), Closer (5+ clutch points), Slam Dunk (5+ dunks, raised from 4 on 2026-10-09), Soft Touch (3+ floaters),
+offensive), Facilitator (10+ assists, lowered from 12 by the user on 2026-10-09), Spark Plug (bench Game Score 15+, raised from 10 on 2026-10-09; not the Top Performer),
+Closer (5+ clutch points), Slam Dunk (5+ dunks, raised from 4 on 2026-10-09). Workhorse (40+ minutes) and Soft Touch
+(3+ floaters) were dropped on 2026-10-09; the hashtag for each award is in the Notion "Game recaps" table.
 Floors tightened 2026-10-07 so each box-score award fires in about 5-20% of 2025-26 Bulls games (Hot Hand had
 fired in 82%, Facilitator 63%). Team stats shows the first four. The hustle awards (Charge Taker, Loose Ball,
 Screen Setter) were removed on 2026-10-08: hustle stats publish late and speed matters more. The Top Performer
@@ -282,9 +286,10 @@ label) and pins Game 1's NBA.com-verified numbers and caption.
   logs and `league_games.csv`, every team's games, both from `LeagueGameLog` (preseason too), and
   `schedule.csv` from `ScheduleLeagueV2`, added 2026-10-06),
   fetched by `pipeline/pull_game.py` (the first five games on 2026-10-03, the rest on 2026-10-07 and 08);
-  `missing.txt` lists empty feeds. 14 folders: the games named under Stress test and Second stress test, the
-  two 2026-27 dry runs (0012600010 LAL at GSW, 0012600027 DEN at UTA, kept for its scrambled play-by-play)
-  and the preseason DEN game (0012500059).
+  `missing.txt` lists empty feeds. 16 folders: the games named under Stress test and Second stress test, the
+  2026-27 dry runs (0012600010 LAL at GSW; 0012600027 DEN at UTA, kept for its scrambled play-by-play;
+  0012600012 HOU at DAL, whose impossible NBA.com biggest leads made `compare_flow`; 0012600036 SAC at LAL, a
+  clean loss) and the preseason DEN game (0012500059).
 - `logos/`: both teams' primary logos (SVG) from NBA.com's CDN (`cdn.nba.com/logos/nba/<team id>/primary/L/logo.svg`),
   fetched by `pull_logos`; there is no separate dark-background version, so the cover uses the same file.
 - `baselines/league-2025-26/`: league team-game logs, official four factors and advanced (possessions, ratings).

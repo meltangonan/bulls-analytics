@@ -1,0 +1,41 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1629631,De'Andre,Hunter,D. Hunter,deandre-hunter,F,,,18:08,0.5,0.5,0.667,0.0,0.0,1.0,0.333,1.0,0.667,1.0,0.0,0.0,0.0,1.0,0.0
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1630173,Precious,Achiuwa,P. Achiuwa,precious-achiuwa,F,,,24:26,1.0,0.0,1.0,0.0,0.0,0.222,0.0,0.111,1.0,0.556,0.444,0.0,0.0,0.556,0.444
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1642875,Maxime,Raynaud,M. Raynaud,maxime-raynaud,C,,,23:58,0.875,0.125,0.769,0.0,0.0,0.0,0.231,0.154,0.769,0.6,0.4,0.0,0.0,0.6,0.4
+0012600036,1610612758,Sacramento,Kings,SAC,kings,203897,Zach,LaVine,Z. LaVine,zach-lavine,G,,,22:58,0.75,0.25,0.545,0.182,0.0,0.182,0.455,0.182,0.364,0.667,0.333,0.0,0.0,0.667,0.333
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1643411,Darius,Acuff Jr.,D. Acuff Jr.,darius-acuff-jr,G,,,23:23,0.533,0.467,0.333,0.0,0.5,0.167,0.167,0.0,0.333,0.5,0.5,0.0,1.0,0.25,0.75
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1643567,Emanuel,Sharp,E. Sharp,emanuel-sharp,,,,21:06,0.0,1.0,0.0,0.0,0.818,0.545,0.182,0.909,0.0,0.0,0.0,0.667,0.333,0.667,0.333
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1642928,Dylan,Cardwell,D. Cardwell,dylan-cardwell,,,,11:30,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1642284,Alex,Karaban,A. Karaban,alex-karaban,,,,20:26,0.333,0.667,0.0,0.0,0.857,0.0,0.143,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1642367,Jonathan,Mogbo,J. Mogbo,jonathan-mogbo,,,,21:32,0.857,0.143,0.833,0.0,0.0,0.167,0.167,0.333,0.833,0.8,0.2,0.0,0.0,0.8,0.2
+0012600036,1610612758,Sacramento,Kings,SAC,kings,203901,Elfrid,Payton,E. Payton,elfrid-payton,,,,10:18,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1641778,Leaky,Black,L. Black,leaky-black,,,,10:45,1.0,0.0,1.0,0.0,0.0,0.5,0.0,0.5,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1642363,Nique,Clifford,N. Clifford,nique-clifford,,,,12:02,0.857,0.143,1.0,0.0,0.0,0.5,0.0,0.5,1.0,0.5,0.5,0.0,0.0,0.5,0.5
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1641745,Adam,Flagler,A. Flagler,adam-flagler,,,,8:18,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1631342,Daeqwon,Plowden,D. Plowden,daeqwon-plowden,,,,11:11,0.4,0.6,0.4,0.0,0.6,0.2,0.0,0.333,0.4,1.0,0.0,1.0,0.0,1.0,0.0
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1628370,Malik,Monk,M. Monk,malik-monk,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1631099,Keegan,Murray,K. Murray,keegan-murray,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1641803,Tristen,Newton,T. Newton,tristen-newton,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1627734,Domantas,Sabonis,D. Sabonis,domantas-sabonis,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612758,Sacramento,Kings,SAC,kings,1627732,Ben,Simmons,B. Simmons,ben-simmons,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1642876,Adou,Thiero,A. Thiero,adou-thiero,F,,,21:12,0.857,0.143,1.0,0.0,0.0,0.333,0.0,0.667,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1629656,Quentin,Grimes,Q. Grimes,quentin-grimes,F,,,28:32,0.5,0.5,0.333,0.0,0.5,0.583,0.167,0.417,0.333,1.0,0.0,1.0,0.0,1.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1626172,Kevon,Looney,K. Looney,kevon-looney,C,,,17:03,1.0,0.0,0.5,0.0,0.0,0.0,0.5,0.0,0.5,1.0,0.0,0.0,0.0,1.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1630559,Austin,Reaves,A. Reaves,austin-reaves,G,,,24:49,0.571,0.429,0.5,0.0,0.0,0.0,0.5,0.25,0.5,0.5,0.5,0.0,0.0,0.5,0.5
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1629029,Luka,Dončić,L. Dončić,luka-dončić,G,,,25:03,0.625,0.375,0.348,0.087,0.261,0.0,0.391,0.261,0.261,0.5,0.5,0.5,0.5,0.5,0.5
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1631222,Jake,LaRavia,J. LaRavia,jake-laravia,,,,24:01,0.333,0.667,0.353,0.0,0.529,0.118,0.118,0.118,0.353,1.0,0.0,1.0,0.0,1.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1630572,Sandro,Mamukelashvili,S. Mamukelashvili,sandro-mamukelashvili,,,,21:01,0.4,0.6,0.421,0.0,0.474,0.158,0.105,0.158,0.421,0.75,0.25,1.0,0.0,0.857,0.143
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1629680,Matisse,Thybulle,M. Thybulle,matisse-thybulle,,,,20:30,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1642355,Bronny,James,B. James,bronny-james,,,,22:05,0.333,0.667,0.5,0.0,0.0,0.5,0.5,0.5,0.5,0.0,1.0,0.0,0.0,0.0,1.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1643024,Chris,Mañon,C. Mañon,chris-mañon,,,,5:52,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1629020,Jarred,Vanderbilt,J. Vanderbilt,jarred-vanderbilt,,,,8:42,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.5,1.0,0.0,1.0,0.0,0.0,0.0,1.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1630702,Jaden,Hardy,J. Hardy,jaden-hardy,,,,9:09,0.667,0.333,0.333,0.0,0.0,0.0,0.667,0.0,0.333,0.0,1.0,0.0,0.0,0.0,1.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1643758,AK,Okereke,A. Okereke,ak-okereke,,,,4:60,1.0,0.0,0.667,0.0,0.0,1.0,0.333,0.0,0.667,1.0,0.0,0.0,0.0,1.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1643759,William,Kyle,W. Kyle,william-kyle,,,,3:17,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1631306,Cole,Swider,C. Swider,cole-swider,,,,3:44,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1643418,Cameron,Carr,C. Carr,cameron-carr,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1641751,Arthur,Kaluma,A. Kaluma,arthur-kaluma,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1631117,Walker,Kessler,W. Kessler,walker-kessler,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1642261,Dalton,Knecht,D. Knecht,dalton-knecht,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1629012,Collin,Sexton,C. Sexton,collin-sexton,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600036,1610612747,Los Angeles,Lakers,LAL,lakers,1630533,Ziaire,Williams,Z. Williams,ziaire-williams,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

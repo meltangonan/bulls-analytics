@@ -193,3 +193,17 @@ def test_game_one_jerseys_and_leaders_grid():
     assert sl["rows"][0][1:3] == ["Caleb Wilson", 15.0]
     steals = [r[1] for r in sl["rows"] if r[2 + sl["columns"].index("STL")] == 2.0]
     assert len(steals) == 4  # a four-way tie for the lead, every one shown
+
+
+def test_an_impossible_nba_biggest_lead_is_skipped_but_nothing_else_is():
+    # HOU won 135-117 at DAL (2026-10-09, never trailed); NBA.com listed both biggest leads as 0.
+    ours = {"lead_changes": 0, "ties": 0, "chi_lead": 28, "opp_lead": 0, "run_chi": 10, "run_opp": 9}
+    nba = {**ours, "chi_lead": 0}
+    check, note = rd.compare_flow(ours, nba, 18)
+    assert check == "match" and "below the 18-point final margin" in note
+    # A possible NBA value that differs still holds the build, and so does any other count.
+    assert rd.compare_flow(ours, {**ours, "chi_lead": 25}, 18)[0].startswith("differs")
+    assert rd.compare_flow(ours, {**nba, "run_opp": 8}, 18)[0].startswith("differs")
+    # Ours must pass the same test: a lead below the margin on both sides is not waved through.
+    assert rd.compare_flow({**ours, "chi_lead": 12}, nba, 18)[0].startswith("differs")
+    assert rd.compare_flow(ours, ours, 18) == ("match", "")

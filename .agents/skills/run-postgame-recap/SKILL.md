@@ -28,6 +28,17 @@ reasons: `postgame-recaps/README.md`, "Running a recap".
    ```
    PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/postgame_recap.py --today
    ```
+   **Watch it.** Right after starting each build (the first one and every restart), start a Monitor on that
+   build's output file with the maximum timeout; if it expires while the build runs, re-arm it with `--resume`
+   added, which skips the lines already reported:
+   ```
+   python3 postgame-recaps/pipeline/watch_build.py <the build's output file>
+   ```
+   It prints a line when the period changes, at Final, when the list of unpublished feeds changes, when a
+   check fails, at each build step and at done, plus a heartbeat every 5 minutes after Final without one.
+   Post each line to chat as a one-line update in plain words (the user wants frequent updates); no
+   PushNotification for these, only for the notices below. It exits when its build exits or restarts; if one
+   is still running when the build has exited, stop it with TaskStop.
    The script exits in three ways:
    - A `FINAL SEEN` or `STILL WAITING` line followed by `restart: ...` (exit 76) is a notice, not a failure.
      Post the notice in one chat line and send it as a PushNotification (every notice: the user wants to
@@ -43,7 +54,7 @@ reasons: `postgame-recaps/README.md`, "Running a recap".
      it was waiting on; do not restart it.
    - A "stopped" or "gave up" line means no slides: report it in one sentence, keep all data, and stop.
    - A "done:" line: continue with step 3.
-   If the user asks how the run is going, read the last 15 lines of the background task's output and answer
+   If the user asks how the run is going between updates, read the last 15 lines of the background task's output and answer
    in one line: the phase, minutes since Final, and either "waiting for NBA.com to publish X (normal)" or
    "a check is failing: <reason>".
 3. **Check every slide** (`output/postgame-recap/<id>/slides/`, Read each PNG):

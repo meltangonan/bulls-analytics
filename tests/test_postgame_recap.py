@@ -17,6 +17,7 @@ import recap_data as rd  # noqa: E402
 from deliver import clean_png  # noqa: E402
 from postgame_recap import caption  # noqa: E402
 from paths import game_dir  # noqa: E402
+from watch_build import Watcher  # noqa: E402
 
 
 def pbp(game_id):
@@ -207,3 +208,31 @@ def test_an_impossible_nba_biggest_lead_is_skipped_but_nothing_else_is():
     # Ours must pass the same test: a lead below the margin on both sides is not waved through.
     assert rd.compare_flow({**ours, "chi_lead": 12}, nba, 18)[0].startswith("differs")
     assert rd.compare_flow(ours, ours, 18) == ("match", "")
+
+
+def test_watcher_prints_changes_and_a_heartbeat_not_every_poll():
+    # Lines from the Oct 9 build log; the clock is pinned so "min after Final" reads from the log's stamps.
+    from datetime import datetime
+    now = datetime(2026, 10, 9, 22, 30).timestamp()
+    log = ["21:52:32 game 0012600037; restarted, Final first seen 21:43",
+           "21:52:32 final: 104-100 (away-home)",
+           "missing or empty: ff_team.csv: not published (no rows)",
+           "not published yet: Bulls shots, four factors, misc (head-to-head)",
+           "21:53:11 not ready, pulling again in 90 s",
+           "missing or empty: ff_team.csv: not published (no rows)",
+           "not published yet: Bulls shots, four factors, misc (head-to-head)",
+           "21:55:09 not ready, pulling again in 90 s",
+           "not published yet: four factors, misc (head-to-head)",
+           "21:57:06 not ready, pulling again in 90 s",
+           "CANVA COPY",
+           "21:59:09 done: CHI 100, MEM 104; 8 slides; game flow vs NBA.com: match"]
+    w = Watcher()
+    out = [u for line in log for u in w.feed(line + "\n", now)]
+    assert out == ["game 0012600037; restarted, Final first seen 21:43",
+                   "final: 104-100 (away-home)",
+                   "10 min after Final; waiting on: not published yet: Bulls shots, four factors, misc (head-to-head)",
+                   "14 min after Final; waiting on: not published yet: four factors, misc (head-to-head)",
+                   "done: CHI 100, MEM 104; 8 slides; game flow vs NBA.com: match"]
+    assert not w.ended and w.tick(now + 60) == []
+    assert w.tick(now + 300) == ["52 min after Final; still waiting on: not published yet: four factors, misc (head-to-head)"]
+    assert w.feed("21:59:09 restart: python postgame_recap.py 0012600037 1791600198\n", now) == [] and w.ended

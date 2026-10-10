@@ -24,6 +24,10 @@ wraps it with Claude's slide check and the Notion log:
 PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/postgame_recap.py --today
 ```
 
+Beside it, the skill runs `pipeline/watch_build.py <build output file>` under Claude's Monitor tool: it turns
+the log into one line per change (period, Final, the feeds still unpublished, a failing check, each build step)
+plus a heartbeat every 5 minutes after Final, so Claude can update the user without reading every poll.
+
 `--today` finds tonight's Bulls game in NBA.com's schedule (or pass a game ID) and exits quietly on days
 without one (before 6 am, last night's game). It checks every 90 seconds until the game is Final, the box
 score is filled and the play-by-play ends on the final score, holding the Mac awake (`caffeinate`) meanwhile;

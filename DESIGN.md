@@ -1,8 +1,10 @@
 # Chart design
 
 Python produces verified chart assets; Canva assembles the post. **Notion owns editorial direction
-and the live post brief.** Canva's Brand Kit and the user's current design own page typography,
-background, and composition. This file owns the reusable chart contract, alongside
+and the live post brief**, and its [Design system](https://www.notion.so/3f5e1c13abe681e1a3f4f5eee72b6fbb)
+page owns the account's visual point of view and the reasons behind it. Canva's Brand Kit and the
+user's current design own page typography, background, and composition. This file owns the reusable
+chart contract and the exact specs of the house character, alongside
 [`house.py`](bulls/graphics/house.py) and [`craft.py`](bulls/graphics/craft.py).
 
 Read only the reference for the chart being changed:
@@ -41,6 +43,36 @@ Read only the reference for the chart being changed:
   migrate them. Their layouts and tests assume Helvetica's glyph widths.
 - Use a true minus (−) for negative comparisons and remove the sign when the displayed number rounds
   to zero. Check that any arrow or special glyph exists in the chosen face before using it.
+
+## House character
+
+The account's own style, decided by the user while building the postgame recap (2026-10-09). The
+Design system page holds the reasons; this section holds the specs. New charts and HTML pages follow
+it. Existing renderers keep their published shapes until the user redesigns them (the shot chart's
+rounded summary pills, for example). Choose from these rules and the user's taste, not from what
+other accounts do; when a reference shapes a new format, name what was taken and what was changed.
+
+- **Square corners.** Bars, chips, legend swatches, highlight boxes, banners and buttons have no
+  corner radius. Circles stay for data points and portrait backgrounds.
+- **Exact lines.** Draw a data line through every real value and never smooth it: no splines, no
+  dropped points. A quantity that changes only at events, such as a score, is a step line that holds
+  flat until the next event; a value measured between events uses straight segments.
+- **Labeled blocks.** A section title is SemiBold type in the canvas color `#E9E5E1` on a solid
+  `#242424` block with 12 px side padding. A page's one call to action is the same block in Bulls red
+  `#CE1141` with an arrow. Do not outline labels.
+- **Background.** A cover may carry graph paper on the canvas: a 36 px grid in `#DCD6CE` at 1 px, with
+  every fifth line (180 px) in `#D2CBC2` at 2 px. Stat pages stay plain. No noise, grain or photographic
+  textures.
+- **Color with a job.** Red and black are the identity; any other color encodes something. A win is
+  `#2E8540` and a loss red. A category keeps one color wherever it appears on a page, as the recap's
+  four factor chips do (shooting `#8DB04A`, turnovers `#F2C94C`, rebounding `#7F98F0`, free throws
+  `#E5A8F0`, all with black text).
+- **Whole sets.** Show every qualifying row when it fits. Never cut inside a tie: show tied rows with
+  `T-n` ranks, or rescope the list.
+- **The account mark.** [`assets/brand/chicagobullsdata-mark.svg`](assets/brand/chicagobullsdata-mark.svg)
+  (transparent) sits small at the top right of each HTML page, clear of the title. Never use the
+  official Bulls mark as the account's identity.
+- **No em dashes** on graphics or in captions; restructure the sentence instead.
 
 ## Color and hierarchy
 

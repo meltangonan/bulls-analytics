@@ -12,6 +12,7 @@ a chart adjustment doesn't need the full post history.
 | Task | Starting point |
 | --- | --- |
 | Choose an idea, editorial direction, captions, performance | [Notion editorial direction](https://www.notion.so/3d2e1c13abe681e586b4c44762261fab) and the relevant post |
+| Choose a new format's look | [Notion design system](https://www.notion.so/3f5e1c13abe681e1a3f4f5eee72b6fbb), then `DESIGN.md` |
 | Build or adjust a chart | `DESIGN.md`, then only the matching family reference/helper |
 | Build, approve, or record a post | `POSTING_WORKFLOW.md` or the matching create/promote/review skill |
 | Change Python or run checks | `DEVELOPMENT.md`; endpoint references only for the data being used |
@@ -24,8 +25,10 @@ a chart adjustment doesn't need the full post history.
 - Reuse settled chart formats and shared table, card, and portrait helpers. Keep calculations and
   qualification in Python; never recompute them in Canva. Extract repeated operations after real
   consumers exist, without inventing a universal post framework.
-- Verify source coverage, units, scope, and qualifications. Missing/unavailable data is not zero.
-  Preserve source snapshots and the trail from raw rows to the published figure.
+- Credibility comes first: one wrong published number costs the account's credibility, so an
+  unverified figure waits or is left out, whatever the deadline or design. Verify source coverage,
+  units, scope, and qualifications. Missing/unavailable data is not zero. Preserve source snapshots
+  and the trail from raw rows to the published figure.
 - Save each render before showing it with `scripts/save_visual_version.py --project <slug> <files>`.
   Before committing, prune superseded cosmetic adjustments; retain decision-bearing versions and
   approved publish-resolution assets. Post-specific data belongs in that post's tracked `data/`.

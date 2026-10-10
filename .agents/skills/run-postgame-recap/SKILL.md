@@ -36,9 +36,10 @@ reasons: `postgame-recaps/README.md`, "Running a recap".
    ```
    It prints a line when the period changes, at Final, when the list of unpublished feeds changes, when a
    check fails, at each build step and at done, plus a heartbeat every 5 minutes after Final without one.
-   Post each line to chat as a one-line update in plain words (the user wants frequent updates); no
-   PushNotification for these, only for the notices below. It exits when its build exits or restarts; if one
-   is still running when the build has exited, stop it with TaskStop.
+   Post each line to chat as a one-line update in plain words, and send each one as a PushNotification
+   too (the user's choice, Oct 9: a buzz every 5 minutes is wanted while the series is new). It exits
+   when its build exits or restarts; if one is still running when the build has exited, stop it with
+   TaskStop.
    The script exits in three ways:
    - A `FINAL SEEN` or `STILL WAITING` line followed by `restart: ...` (exit 76) is a notice, not a failure.
      Post the notice in one chat line and send it as a PushNotification (every notice: the user wants to

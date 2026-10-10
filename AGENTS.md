@@ -12,7 +12,7 @@ a chart adjustment doesn't need the full post history.
 | Task | Starting point |
 | --- | --- |
 | Choose an idea, editorial direction, captions, performance | [Notion editorial direction](https://www.notion.so/3d2e1c13abe681e586b4c44762261fab) and the relevant post |
-| Choose a new format's look | [Notion design system](https://www.notion.so/3f5e1c13abe681e1a3f4f5eee72b6fbb), then `DESIGN.md` |
+| Choose a new format's look | [Notion Principles](https://www.notion.so/3f5e1c13abe681e1a3f4f5eee72b6fbb), then `DESIGN.md` |
 | Build or adjust a chart | `DESIGN.md`, then only the matching family reference/helper |
 | Build, approve, or record a post | `POSTING_WORKFLOW.md` or the matching create/promote/review skill |
 | Change Python or run checks | `DEVELOPMENT.md`; endpoint references only for the data being used |

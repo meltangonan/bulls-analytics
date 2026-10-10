@@ -62,8 +62,9 @@ const FC=['#8DB04A','#F2C94C','#7F98F0','#E5A8F0'];
 const chip=(x,y,w,fill)=>rect(x,y-24,w,32,fill);
 // The account's mark, top right.
 const mark=(y=34,sz=72)=>A.brand?`<image href="${A.brand}" x="${RX-sz}" y="${y}" width="${sz}" height="${sz}"/>`:'';
-// A portrait standing in front of a plain gray circle: the circle is a background, the headshot is not cropped.
-const headOnCircle=(id,cx,cy,r,sz=r*2)=>`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${LR}"/>`+(A.heads[id]?`<image href="${A.heads[id]}" x="${cx-sz/2}" y="${cy+r*0.92-sz}" width="${sz}" height="${sz}"/>`:'');
+// A portrait in a square black frame with no fill: the whole headshot sits inside, on the frame's bottom edge,
+// and the frame is drawn last so the jersey cannot break it.
+const headInFrame=(id,cx,cy,h,sz)=>(A.heads[id]?`<image href="${A.heads[id]}" x="${cx-sz/2}" y="${cy+h-sz}" width="${sz}" height="${sz}"/>`:'')+rect(cx-h,cy-h,2*h,2*h,'none',0,`stroke="${K}" stroke-width="3"`);
 const logo=(tri,x,y,sz)=>A.logos[tri]?`<image href="${A.logos[tri]}" x="${x}" y="${y}" width="${sz}" height="${sz}"/>`:'';
 // Section header for a Bulls-vs-opponent block: logo and name at each end, the section title centred.
 const teamHead=(y,title,onRule)=>logo(D.chi.tri,L,y-40,48)+label(L+56,y,D.chi.team,{f:R,size:26})+sec(540,y,title,{a:'middle',onRule})+label(RX-56,y,D.opp.team,{a:'end',size:26})+logo(D.opp.tri,RX-48,y-40,48);
@@ -165,12 +166,12 @@ s+=teamHead(578,'Head-to-head');
 H2.forEach(([lab,l,r,va,vb,hi],i)=>{const y=y0+i*stp,better=va==vb?0:((va>vb)==!!hi?1:-1);
 s+=t(L,y,24,l,{w:better==1?600:400,f:R})+t(RX,y,24,r,{a:'end',w:better==-1?600:400})+t(540,y,21,lab,{a:'middle',w:600});
 const sh=(va+vb)?va/(va+vb):0.5,mid=L+W*sh;s+=rect(L,y+10,mid-L-3,13,R)+rect(mid+3,y+10,RX-mid-3,13,GR);});
-// Bulls game awards: up to four in one row, each the award, the headshot on a gray circle, the name and
-// the stat that earned it. Space separates them; no rules or boxes.
+// Bulls game awards: up to four in one row, each the award, the framed headshot, the name and the stat that
+// earned it.
 const aw=D.awards.slice(0,4),ay=1158;if(aw.length){s+=sec(L,ay,`${D.chi.team} game awards`,{onRule:1});s+=ln(L,ay+16,RX,ay+16,K,3);
 const cw=W/4,x0=L+(W-cw*aw.length)/2,rr=74,cy=ay+142;
 aw.forEach(([nm,id,name,line],i)=>{const cx=x0+cw*i+cw/2;
-s+=t(cx,ay+52,fit(nm,20,cw-12),nm,{a:'middle',f:R,w:600})+headOnCircle(id,cx,cy,rr,132);
+s+=t(cx,ay+52,fit(nm,20,cw-12),nm,{a:'middle',f:R,w:600})+headInFrame(id,cx,cy,78,140);
 s+=t(cx,cy+rr+30,fit(name,24,cw-12,600),name,{a:'middle',w:600})+t(cx,cy+rr+54,fit(line,18,cw-12,400),line,{a:'middle'});});}
 return page('Team stats',s);}
 

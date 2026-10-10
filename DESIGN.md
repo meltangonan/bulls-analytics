@@ -1,8 +1,8 @@
 # Chart design
 
 Python produces verified chart assets; Canva assembles the post. **Notion owns editorial direction
-and the live post brief**, and its [Design system](https://www.notion.so/3f5e1c13abe681e1a3f4f5eee72b6fbb)
-page owns the account's visual point of view and the reasons behind it. Canva's Brand Kit and the
+and the live post brief**, and its [Principles](https://www.notion.so/3f5e1c13abe681e1a3f4f5eee72b6fbb)
+page owns the account's priorities, visual point of view and the reasons behind them. Canva's Brand Kit and the
 user's current design own page typography, background, and composition. This file owns the reusable
 chart contract and the exact specs of the house character, alongside
 [`house.py`](bulls/graphics/house.py) and [`craft.py`](bulls/graphics/craft.py).
@@ -47,13 +47,14 @@ Read only the reference for the chart being changed:
 ## House character
 
 The account's own style, decided by the user while building the postgame recap (2026-10-09). The
-Design system page holds the reasons; this section holds the specs. New charts and HTML pages follow
+Principles page holds the reasons; this section holds the specs. New charts and HTML pages follow
 it. Existing renderers keep their published shapes until the user redesigns them (the shot chart's
 rounded summary pills, for example). Choose from these rules and the user's taste, not from what
 other accounts do; when a reference shapes a new format, name what was taken and what was changed.
 
 - **Square corners.** Bars, chips, legend swatches, highlight boxes, banners and buttons have no
-  corner radius. Circles stay for data points and portrait backgrounds.
+  corner radius. Circles stay for data points only. A portrait that needs a background sits in a
+  square `#242424` frame, 3 px, with no fill, the whole headshot inside and resting on the bottom edge.
 - **Exact lines.** Draw a data line through every real value and never smooth it: no splines, no
   dropped points. A quantity that changes only at events, such as a score, is a step line that holds
   flat until the next event; a value measured between events uses straight segments.

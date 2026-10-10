@@ -252,7 +252,7 @@ beside their dot, season-chart labels are placed by trying spots around their ba
 each player one line.
 
 Awards (2026-10-07; shown as hashtags since 2026-10-09, the mapping is drafted on the Notion "Game recaps"
-page): Top Performer (#mvp; highest Game Score, not printed; a triple-double is named in its line)
+page): Top Performer (#mvp; highest Game Score, not printed; a triple-double shows as its three stats, unlabeled)
 is always first. The rest are leader-only, at most two per player, and ranked by how far the winner cleared
 the floor (value / floor): Triple-double (by anyone else), Hot Hand (70%+ FG on 10+ shots), Sharpshooter
 (6+ threes), Pickpocket (4+ steals), Block Party (4+), Glass Cleaner (15+ rebounds), Board Crasher (5+

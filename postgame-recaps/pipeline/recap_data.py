@@ -492,7 +492,7 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
     cats = p[list(tens)].ge(10).sum(axis=1)
     hit =[f"{int(p.loc[tp, c])} {label}" for c, label in tens.items() if p.loc[tp, c] >= 10]
     if len(hit) >= 3:
-        line = f"{'Quadruple' if len(hit) >= 4 else 'Triple'}-double: " + ", ".join(hit)
+        line = ", ".join(hit)  # the stats show the triple-double; no label, so the line stays short (user, Oct 9)
     else:
         # Points and shooting, then up to two other stats that stand out, so the line shows why Game Score
         # picked this player (Oct 7: Miller's "14 PTS, 1 REB, 2 AST" hid his shooting and steals).
@@ -525,7 +525,7 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
     late = ev[(ev.period >= 4) & ev.clock.map(clock_left).le(300) & ev.before.abs().le(5) & ev.chi_pts.gt(0)]
     clutch = late.groupby("personId").chi_pts.sum()
     clutch = clutch[clutch.index.isin(p.index)]
-    add("#closer", clutch, 5, lambda i: f"{int(clutch[i])} clutch PTS (last 5 min, within 5)")
+    add("#closer", clutch, 5, lambda i: f"{int(clutch[i])} clutch PTS")
 
     if not raw.empty:
         raw = raw.assign(fam=classify_series(raw.ACTION_TYPE), made=raw.SHOT_MADE_FLAG == 1)

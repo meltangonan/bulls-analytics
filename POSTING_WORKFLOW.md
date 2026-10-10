@@ -42,6 +42,8 @@ replace its placeholders. [Master reference](docs/reference/canva-master.md) rec
 ID, page geometry and handoff.
 Use a recent design in `Posted` when a different established page format is needed. The page
 reference does not determine the new chart type; keep the graphic matched to the selected brief.
+Title the Canva design `YYYY-MM-DD <Post title>` with the date the post was started (the post
+folder's date), not the planned posting date.
 
 For substantive edits to an existing Canva design, use a separate QA copy or duplicated draft pages
 unless the user authorizes edits to the original. When reviewing the composed page, inspect the

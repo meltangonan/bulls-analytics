@@ -6,7 +6,9 @@ Read the relevant section when changing code. This is an entry point, not a mand
 
 Use `venv/bin/python` in the primary checkout. Linked worktrees reuse
 `/Users/meltangonan/projects/bulls-analytics/venv/bin/python`; set `PYTHONPATH` to the working tree
-when importing its code. `./run_tests.sh` handles this automatically.
+when importing its code. `./run_tests.sh` handles this automatically. HTML renderers and mockups use
+Playwright's Chromium: run `venv/bin/python -m playwright install chromium` once per machine (cloud
+sessions ship a preinstalled browser).
 
 - `bulls/data`: fetching and source normalization.
 - `bulls/analysis`: calculations and qualifications.

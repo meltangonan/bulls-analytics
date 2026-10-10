@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}
+body{width:1080px;height:1440px;background:#E9E5E1;font-family:Helvetica,Arial,sans-serif;color:#242424;
+  position:relative;overflow:hidden;font-variant-numeric:tabular-nums}
+.trim{position:absolute;left:0;right:0;top:0;height:13px;background:linear-gradient(#CE1141 0 4px,#fff 4px 8px,#242424 8px 13px)}
+h1{position:absolute;left:25px;top:48px;font-family:Georgia,serif;font-weight:700;font-size:62px;letter-spacing:-1.5px}
+.sub{position:absolute;left:25px;top:118px;font-family:Georgia,serif;font-weight:700;font-style:italic;font-size:30px;color:#CE1141;letter-spacing:-.5px}
+.foot{position:absolute;left:25px;right:25px;top:1409px;font-size:14.7px;color:#7A736C;display:flex;justify-content:space-between}
+.foot b{font-weight:700}.handle{font-weight:700;font-size:16px;color:#CE1141}.handle i{font-style:normal;color:#242424}
+
+.sec{position:absolute;left:25px;right:25px}
+.sec h2{display:flex;align-items:center;gap:16px;font-family:Georgia,serif;font-size:32px;padding-bottom:10px;border-bottom:2px solid #7A736C;margin-bottom:16px}
+.sec h2 b{background:#CE1141;color:#fff;font-family:Helvetica,Arial,sans-serif;font-size:24px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:4px}
+.sec p{font-size:22px;line-height:1.42;margin:0 0 12px 56px;max-width:900px}
+.sec p.f{font-weight:700}.sec p .red{color:#CE1141}
+.ex{margin:6px 0 0 56px;background:#F6F3F0;border-radius:10px;padding:18px 22px;font-size:21px;line-height:1.5;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.note{position:absolute;left:25px;right:25px;top:1180px;font-size:17px;font-style:italic;font-weight:700;color:#242424}
+</style></head><body>
+<div class="trim"></div>
+<h1>How we estimated the miles</h1>
+<p class="sub">Measured since 2013-14, estimated from minutes before that</p>
+<div class="sec" style="top:210px"><h2><b>1</b>What is measured</h2>
+<p>Since 2013-14, cameras in every NBA arena track how far each player moves during games. Those miles are real
+measurements: Zach LaVine's 1,093 miles as a Bull are counted, not estimated.</p></div>
+<div class="sec" style="top:440px"><h2><b>2</b>How we estimated earlier seasons</h2>
+<p>Before tracking, we only know minutes. Miles follow minutes closely, so for each Bulls season before 2013-14:</p>
+<p class="f"><span class="red">Estimated miles</span> = minutes played &times; miles per minute</p>
+<p>Players with enough tracked Bulls minutes (Hinrich, Noah, Rose) use their own measured pace. Everyone else uses
+the Bulls average from 2013-14 to 2016-17: 0.070 miles per minute, about 3.4 miles per 48-minute game.</p>
+<div class="ex"><b>Example: Michael Jordan</b><br>43,364 Bulls minutes, regular season and playoffs<br>
+43,364 &times; 0.0703 = 3,048 miles &divide; 26.2 = <b>116 marathons</b></div></div>
+<div class="sec" style="top:935px"><h2><b>3</b>How sure we are</h2>
+<p>Minutes predict miles well: using a player's own pace, a tracked season lands within about 2% of the measured
+miles. The ranges show a slower and a faster pace, and they can't capture how the speed of play changed between eras.</p></div>
+<p class="note">*Estimates rank the order well, since minutes are exact; treat individual totals as approximate.</p>
+<div class="foot"><span>Data via NBA.com player tracking and box scores</span><span class="handle">chicago_bulls<i>[data]</i></span></div>
+</body></html>

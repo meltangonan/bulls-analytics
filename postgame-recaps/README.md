@@ -11,7 +11,7 @@ postgame-recaps/
   seasons/<season>/<id>/    each Bulls game's NBA.com feeds, sources.json, and as-posted/ (what the slides used)
   stress-tests/<id>/        saved test games: 2025-26 Bulls games and dry runs featuring other teams
   logos/, portraits/        NBA.com images (portraits are downloaded again when missing or 12 hours old, never committed)
-  assets/                   decision-bearing slide versions from the format's design (Oct 3 to 9, 2026; v14 is the Oct 9 template)
+  assets/                   decision-bearing slide versions from the format's design (Oct 3 to 10, 2026; v14 is the Oct 9 template; v19 is the Oct 10 template, with v15 and v17 its rejected options)
 output/postgame-recap/<id>/ recap.json, zones.png, slides/, caption.txt (scratch, not committed)
 ```
 
@@ -137,12 +137,18 @@ public), and the phone preview cannot load them, so it shows Source Serif 4. Sec
 (`assets/brand/chicagobullsdata-mark.svg`) sits top right of every page but the cover. Labels are sentence case; column headers keep
 capitals. Optional cover first, on the same
 background with graph paper (36 px grid): the game's margin line as art, the score in the serif (Bulls line red), "@" or "vs.", the date, and across the top the series label in a black block and the swipe call to action as a red block with an arrow.
+Under the series label, a contents box lists every page that follows with its carousel number ("[03] Team stats"),
+on a solid offset shadow; every page's footer ends with the same number. Numbers are counted from the pages actually
+drawn, so a skipped page (season leaders before game 5) drops out and the rest renumber. The opponent's side of
+every comparison (head-to-head bars, the margin chart and the cover's margin art) takes a tint of the team's color,
+red, green, black and silver teams staying gray (`DESIGN.md`, "The opponent in a tint").
 
 1. Final score: big scoreboard (Final, any overtime, then W in green or L in red), line score, step-line scoring margin (every score, unsmoothed), then biggest lead, lead
-   changes, tied, longest run, and up to three notables.
-2. Team stats: game leaders for both teams with headshots, head to head, up to four Bulls game awards.
-3. Shot chart (real Python render): mid-range pooled and painted as one shape, 5-attempt color floor, pills show
-   makes/attempts and share of FGA, summary pills; shot-type strip below.
+   changes, tied, longest run (four band tiles, each label in a black block), and up to three notables.
+2. Team stats: game leaders for both teams with headshots, 13 head-to-head rows (offensive rebounds after
+   rebounds, steals and blocks after assists), up to four Bulls game awards.
+3. Shot chart (real Python render): mid-range pooled and painted as one shape, 5-attempt color floor, square pills show
+   makes/attempts and share of FGA, square summary cards; shot-type strip below.
 4. Game breakdown: four factors table and points above average, the margin bars (each factor keeps one color chip on its column and its bar), "How to read it" (below).
 5. Box score: starters and bench by points, subtotals and team total; MIN PTS REB AST FG 3PT FT TS% STL
    BLK TO +/-; one fixed gap between every column.
@@ -152,6 +158,14 @@ background with graph paper (36 px grid): the game's margin line as art, the sco
    blocks (and games played), sorted by points; each stat's leader, every tied player included, in a solid red
    cell, the rest shaded by how close they are to the leader (from game 5; preseason from game 1, since
    2026-10-09, when the top-three cards were replaced so ties are never cut).
+
+Team ranks (designed 2026-10-10, regular season only, not yet in the live carousel): "Where the Bulls rank", twelve
+NBA.com team stats with league ranks in three groups (overall; style; the four factors with their color chips), each
+a strip of all 30 teams by value with the Bulls as a red square. Only a mockup exists: `build_mockup.py <game_id> --ranks-mock
+postgame-recaps/team-ranks-mock/ranks.json` draws it from the 2025-26 NBA.com snapshot in that folder (its
+`pull_team_ranks.py` rebuilds ranks.json; ranks are NBA.com's own, 1 being the best or the most,
+except 3-point attempt share, which NBA.com does not list: the script ranks 3PA/FGA, ties sharing the best rank). The live page still needs season-to-date team stats pulled with each
+game and a start rule (around game 5 to 10).
 
 Preseason is its own season: its own record, .500 line, slots (from the schedule) and leaders; the
 regular season starts at 0-0. Game breakdown (option B, chosen 2026-10-07; the bars-only page with awards was retired): the four factors per team as

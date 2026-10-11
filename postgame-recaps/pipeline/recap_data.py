@@ -280,14 +280,13 @@ def head_to_head(teams: pd.DataFrame, misc: pd.DataFrame, stats: pd.DataFrame, o
     rows = [shoot("Field goals", "fieldGoalsMade", "fieldGoalsAttempted"),
             shoot("3-pointers", "threePointersMade", "threePointersAttempted"),
             shoot("Free throws", "freeThrowsMade", "freeThrowsAttempted")]
-    for label, col in (("Rebounds", "reboundsTotal"), ("Assists", "assists")):
+    for label, col in (("Rebounds", "reboundsTotal"), ("Offensive rebounds", "reboundsOffensive"),
+                       ("Assists", "assists"), ("Steals", "steals"), ("Blocks", "blocks")):
         rows.append([label, str(getattr(c, col)), str(getattr(o, col)), getattr(c, col), getattr(o, col), 1])
     if not stats.empty:
         s = {r.teamTricode: r for r in stats.itertuples()}
         rows.append(["Turnovers", str(int(s[TRI].turnoversTotal)), str(int(s[opp_tri].turnoversTotal)),
                      int(s[TRI].turnoversTotal), int(s[opp_tri].turnoversTotal), 0])
-    for label, col in (("Steals", "steals"), ("Blocks", "blocks")):
-        rows.append([label, str(getattr(c, col)), str(getattr(o, col)), getattr(c, col), getattr(o, col), 1])
     if not misc.empty:
         m = {r.teamTricode: r for r in misc.itertuples()}
         for label, col in (("Points in the paint", "pointsPaint"), ("Fast break points", "pointsFastBreak"),

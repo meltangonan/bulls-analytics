@@ -52,7 +52,7 @@ def player_ids(game: dict) -> set[int]:
     return ids
 
 
-def main(game_ids: list[str]) -> None:
+def main(game_ids: list[str], ranks: Path | None = None) -> None:
     games, zones, sizes, ids = [], {}, {}, set()
     for game_id in game_ids:
         game = json.loads((OUTPUT / game_id / "recap.json").read_text())
@@ -72,10 +72,14 @@ def main(game_ids: list[str]) -> None:
                 logos[tri] = "data:image/svg+xml;base64," + base64.b64encode(path.read_bytes()).decode()
     brand = "data:image/svg+xml;base64," + base64.b64encode(BRAND.read_bytes()).decode()
     assets = {"games": games, "zones": zones, "zsize": sizes, "heads": heads, "logos": logos, "brand": brand}
+    if ranks:  # team ranks mockup pages, for design review only; a live recap never passes it
+        assets["ranks"] = json.loads(ranks.read_text())
     out = OUTPUT / "mockup.html"
     out.write_text((HERE / "recap_template.html").read_text().replace("__ASSETS__", json.dumps(assets, ensure_ascii=False)))
     print(f"wrote {out} ({out.stat().st_size // 1024} KB), {len(games)} games, {len(heads)} portraits")
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    args = sys.argv[1:]
+    ranks = Path(args.pop(args.index("--ranks-mock") + 1)) if "--ranks-mock" in args else None
+    main([a for a in args if a != "--ranks-mock"], ranks)

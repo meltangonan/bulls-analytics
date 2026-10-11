@@ -48,8 +48,9 @@ Read only the reference for the chart being changed:
 
 The account's own style, decided by the user while building the postgame recap (2026-10-09). The
 Principles page holds the reasons; this section holds the specs. New charts and HTML pages follow
-it. Existing renderers keep their published shapes until the user redesigns them (the shot chart's
-rounded summary pills, for example). Choose from these rules and the user's taste, not from what
+it. Existing renderers keep their published shapes until the user redesigns them; the shot chart's
+pills and summary cards went square on 2026-10-10 (only its `classic` style, which reproduces the
+posts through Hinrich, stays rounded). Choose from these rules and the user's taste, not from what
 other accounts do; when a reference shapes a new format, name what was taken and what was changed.
 
 - **Square corners.** Bars, chips, legend swatches, highlight boxes, banners and buttons have no
@@ -61,6 +62,9 @@ other accounts do; when a reference shapes a new format, name what was taken and
 - **Labeled blocks.** A section title is SemiBold type in the canvas color `#E9E5E1` on a solid
   `#242424` block with 12 px side padding. A page's one call to action is the same block in Bulls red
   `#CE1141` with an arrow. Do not outline labels.
+- **Offset shadow.** A cover's contents box (the recap's page list) sits on a solid `#242424`
+  shadow offset 6 px right and down, with no blur, under a 3 px black frame on the canvas color.
+  Use it for that one navigational box per cover, not on stat pages.
 - **Background.** A cover may carry graph paper on the canvas: a 36 px grid in `#DCD6CE` at 1 px, with
   every fifth line (180 px) in `#D2CBC2` at 2 px. Stat pages stay plain. No noise, grain or photographic
   textures.
@@ -68,6 +72,15 @@ other accounts do; when a reference shapes a new format, name what was taken and
   `#2E8540` and a loss red. A category keeps one color wherever it appears on a page, as the recap's
   four factor chips do (shooting `#8DB04A`, turnovers `#F2C94C`, rebounding `#7F98F0`, free throws
   `#E5A8F0`, all with black text).
+- **The opponent in a tint.** In a Bulls-versus-opponent comparison (bars, margin areas and lines),
+  the opponent takes one team color mixed 45% into the canvas, so Bulls red stays the loudest mark;
+  numbers stay black. Use the team color furthest from Bulls red, even when the logo leans on
+  another (the Suns are purple, not their logo's orange). Red teams, greens (green means a win) and
+  black or silver teams stay gray `#7D7873`. The table lives in the recap template (`TEAMC`).
+- **Readable small text.** Text under 24 px keeps at least 4.5:1 contrast on the canvas and on band
+  rows: black, or the secondary gray `#645D57` (5.2:1 on the canvas, 4.8:1 on bands). Bulls red
+  (4.4:1) is for large numbers and words that mean "the Bulls", not for small labels such as page
+  numbers. The red `chicago_bulls` handle is a wordmark and keeps its color.
 - **Whole sets.** Show every qualifying row when it fits. Never cut inside a tie: show tied rows with
   `T-n` ranks, or rescope the list.
 - **The account mark.** [`assets/brand/chicagobullsdata-mark.svg`](assets/brand/chicagobullsdata-mark.svg)

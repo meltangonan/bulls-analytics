@@ -746,7 +746,7 @@ def _zone_label(ax, x, y, z):
                     color="#1F1D1A", zorder=10, fontproperties=helvetica("bold"))
     pill_w = max(house.rendered_width(ax, label) + 46, 118)
     ax.add_patch(FancyBboxPatch((x - pill_w / 2, y + 30), pill_w, 36,
-                 boxstyle="round,pad=0,rounding_size=18", facecolor=CREAM,
+                 boxstyle="square,pad=0", facecolor=CREAM,
                  edgecolor="none", zorder=9))
 
     # Shooting on the left, volume on the right. Side by side keeps the block
@@ -771,7 +771,7 @@ def _muted_pill(ax, x, y, name):
                     fontproperties=helvetica("bold"))
     w = max(house.rendered_width(ax, label) + 40, 108)
     ax.add_patch(FancyBboxPatch((x - w / 2, y + 31), w, 33,
-                 boxstyle="round,pad=0,rounding_size=16", facecolor=CREAM,
+                 boxstyle="square,pad=0", facecolor=CREAM,
                  edgecolor="none", alpha=0.55, zorder=9))
 
 
@@ -1990,18 +1990,19 @@ ZONE12_THIN_PILL_ALPHA = 0.72
 # Two looks for the same chart. "tagged" is the house style from LaVine
 # (2026-09-22) on: printed-label zone tags on the page colour with a hairline
 # rule, "vs NBA" instead of the ambiguous "vs LA", a black legend heading, flat
-# Bulls-red summary pills, and the summary lifted toward the legend. "classic"
+# Bulls-red summary pills, and the summary lifted toward the legend; since
+# 2026-10-10 every pill and card is square, the house corner. "classic"
 # is how every post through Hinrich was published; pass "style": "classic" to
 # reproduce one of those exactly. Presentation only -- never a figure or colour.
 ZONE12_STYLES = {
     "classic": {
         "pill_face": CREAM, "pill_edge": "none", "pill_lw": 0.0,
-        "pill_round": ZONE12_PILL_ROUND, "reference": "LA",
+        "pill_round": ZONE12_PILL_ROUND, "card_round": 14, "reference": "LA",
         "legend_title": None, "card_fill": None, "summary_lift": 0,
     },
     "tagged": {
         "pill_face": "#FAF8F5", "pill_edge": house.BLACK, "pill_lw": 1.1,
-        "pill_round": 3.0, "reference": "NBA",
+        "pill_round": 0.0, "card_round": 0.0, "reference": "NBA",
         "legend_title": house.BLACK, "card_fill": house.RED, "summary_lift": 40,
     },
 }
@@ -2347,7 +2348,7 @@ def _zone12_summary_cards(ax, player, _league, theme, ppg=None, gp=None,
         x = left + index * (card_w + gap)
         clip = FancyBboxPatch(
             (x, y - ZONE12_SUMMARY_CARD_H / 2), card_w, ZONE12_SUMMARY_CARD_H,
-            boxstyle="round,pad=0,rounding_size=14",
+            boxstyle=f"round,pad=0,rounding_size={ZONE12_STYLES[style]['card_round']}",
             facecolor=fill or "none", edgecolor="none", zorder=10)
         ax.add_patch(clip)
         if fill is None:

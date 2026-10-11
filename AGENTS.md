@@ -30,6 +30,8 @@ a chart adjustment doesn't need the full post history.
   units, scope, and qualifications. Missing/unavailable data is not zero. Preserve source snapshots
   and the trail from raw rows to the published figure.
 - Save each render before showing it with `scripts/save_visual_version.py --project <slug> <files>`.
+  When an edit touches part of a multi-page set (a recap carousel, a multi-slide post), show the
+  whole current set and say which pages changed; for recaps, rebuild and show `mockup.html`.
   Before committing, prune superseded cosmetic adjustments; retain decision-bearing versions and
   approved publish-resolution assets. Post-specific data belongs in that post's tracked `data/`.
 - Automated output gets an agent's review before it ships: scripts check only what someone predicted, so

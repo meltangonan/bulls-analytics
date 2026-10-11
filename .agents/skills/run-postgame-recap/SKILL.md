@@ -1,16 +1,27 @@
 ---
 name: run-postgame-recap
-description: Build, check and deliver tonight's Bulls postgame recap carousel ("run postgame recap"); waits for NBA.com, never posts.
+description: Build, check and deliver tonight's Bulls postgame recap carousel ("run postgame recap"); waits for NBA.com, reviews every slide before it ships, never posts.
 ---
 
 # Run Postgame Recap
 
 The user starts this with a message, from the desktop app or from the phone through Remote Control, in a
-session opened on the `bulls-analytics` folder. Run every command from the repo root. The run ends when
-checked slides are in the Photos album and iCloud Drive, and the user has a notification (your push is the
-only alert) and the caption. Never post, schedule or draft on Instagram or X; never commit or push: the game's new folder in
-`postgame-recaps/seasons/` stays uncommitted until the user approves a batch commit. Method and failure
-reasons: `postgame-recaps/README.md`, "Running a recap".
+session opened on the `bulls-analytics` folder, usually as the game is about to end. Run every command from
+the repo root. The script waits, checks and draws; **you are the reviewer**: nothing reaches the phone until
+you have looked at every slide and are satisfied (the user's choice, Oct 10: judgment before anything ships,
+not only the script's checks). The run ends when reviewed slides are in the Photos album and iCloud Drive, and
+the user has a notification (your push is the only alert), the caption and what you checked. Never post,
+schedule or draft on Instagram or X; never commit or push: the game's new folder in `postgame-recaps/seasons/`
+stays uncommitted until the user approves a batch commit. Method and failure reasons:
+`postgame-recaps/README.md`, "Running a recap".
+
+Your review is the most important part of this run, in the user's words the reason an agent is in the
+workflow. On the first dry run (MIN at MIA, Oct 10) every check passed while NBA.com's shot feed held 72 of 87
+attempts and the shot chart showed a partial game; only the review caught it. Be ready for anything: look at
+every number with fresh eyes, cross-check it against the box score, fix or hold it, and say what you found.
+
+The user wants to hear from the run often and wants each update to say something new: what landed, what you
+checked, what you found. "Still waiting" with nothing else is the update to avoid.
 
 1. **Recheck the previous game.** If a `postgame-recaps/seasons/*/*/as-posted/` folder exists for an earlier
    game, run `postgame-recaps/pipeline/recheck.py` on the most recent one. Exit 1 lists numbers NBA.com
@@ -19,60 +30,132 @@ reasons: `postgame-recaps/README.md`, "Running a recap".
    ```
    PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/recheck.py <game_id>
    ```
-2. **Build.** Start the script with Bash `run_in_background` (use the game ID instead of `--today` if the user
-   gave one). You are re-invoked when it exits; don't poll. It waits for Final, then pulls again every 90 s
-   until every check passes (12 to 35 minutes after Final so far), exports the slides, copies them to iCloud
-   Drive › Bulls recaps, writes `output/postgame-recap/<id>/caption.txt`, keeps an `as-posted/` copy of the
-   feeds and adds the slides to the Photos album (it sends no text message). "no Bulls game today" ends the
-   run.
+2. **Build, and watch it.** Start the script with Bash `run_in_background` (use the game ID instead of
+   `--today` if the user gave one). You are re-invoked when it exits; don't poll. It waits for Final, then
+   pulls again every 90 s until every check passes (12 to 35 minutes after Final so far), exports and
+   measures the slides and writes `output/postgame-recap/<id>/caption.txt`. It does not deliver. "no Bulls
+   game today" ends the run.
    ```
    PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/postgame_recap.py --today
    ```
-   **Watch it.** Right after starting each build (the first one and every restart), start a Monitor on that
-   build's output file with the maximum timeout; if it expires while the build runs, re-arm it with `--resume`
-   added, which skips the lines already reported:
+   Right after starting each build (the first one and every restart), start a Monitor on that build's output
+   file with the maximum timeout; if it expires while the build runs, re-arm it with `--resume` added, which
+   skips the lines already reported:
    ```
    python3 postgame-recaps/pipeline/watch_build.py <the build's output file>
    ```
    It prints a line when the period changes, at Final, when the list of unpublished feeds changes, when a
-   check fails, at each build step and at done, plus a heartbeat every 5 minutes after Final without one.
-   Post each line to chat as a one-line update in plain words, and send each one as a PushNotification
-   too (the user's choice, Oct 9: a buzz every 5 minutes is wanted while the series is new). It exits
-   when its build exits or restarts; if one is still running when the build has exited, stop it with
-   TaskStop.
-   The script exits in three ways:
+   check fails, at each build step and at the end, a heartbeat every 3 minutes after Final without one, and
+   a warning when the build has logged nothing for 10 minutes. It exits when its build exits or restarts; if
+   one is still running when the build has exited, stop it with TaskStop.
+
+   **Turn each watcher line into a real update.** Post it to chat as one or two plain lines and send it as a
+   PushNotification too (the user's choice, Oct 9: a buzz on every update while the series is new):
+   - **Box score in.** At the first "waiting on" or "every slide feed is published" line after Final (the
+     build has pulled by then; on a restarted build, at once), run the early look and report the result, that the box score adds up (or
+     that it does not: the build will hold on it too), the Bulls leaders and anything that changes the
+     layout: overtime, more players than usual, a long name. Example: "Final 110-102. Box score in and adds
+     up. Buzelis 24, Giddey 11 ast. Waiting on four factors and shots (normal, 12 to 35 min so far)."
+     ```
+     PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/early_look.py <game_id>
+     ```
+   - **Heartbeats and feed changes.** Say what has landed since the last update, what is still missing and
+     whether the wait is normal: minutes after Final against the 12 to 35 seen so far. When the watcher
+     line alone is thin, read the last 15 lines of the build output for more.
+   - **Stall warning.** Read the last 15 lines of the build output and check that the background task is
+     still running. A build stuck in a step (no new line, still running) is stopped with TaskStop and
+     started again with the last `restart:` command it printed, or with the game ID alone if it printed
+     none (its timing line then counts from the restart); every feed is on disk, so nothing is lost. Tell
+     the user what you saw and did.
+
+   The script exits in four ways:
    - A `FINAL SEEN` or `STILL WAITING` line followed by `restart: ...` (exit 76) is a notice, not a failure.
-     Post the notice in one chat line and send it as a PushNotification (every notice: the user wants to
-     hear from the run, and the post should be out within 30 minutes of the buzzer), then start the printed
-     restart command in the background at once (it carries the game ID and the time Final was first seen;
-     every feed is on disk, so nothing is lost). Pushes read like "Bulls game final, 110-102; waiting for
-     NBA.com to publish (12 to 35 min so far)" and "Bulls recap still waiting, 21 min after Final: NBA.com has
-     not published: four factors, misc". Notices come at Final, then 20, 30, 45, 60, 90 and 120 minutes
-     after it (from 10 minutes when a check is failing).
-     When a check is failing, quote the reason line (it names the feed and the row). A feed NBA.com never
-     corrects (DEN at UTA, Oct 6) looks the same as a wrong check, so say which it looks like and that the
-     user can reply "stop". If the user says stop, end the background task with TaskStop and report what
-     it was waiting on; do not restart it.
+     Post the notice and push it (every notice: the post should be out within 30 minutes of the buzzer),
+     then start the printed restart command in the background at once (it carries the game ID and the time
+     Final was first seen; every feed is on disk, so nothing is lost). Pushes read like "Bulls recap still
+     waiting, 21 min after Final: NBA.com has not published: four factors, misc". Notices come at Final,
+     then 20, 30, 45, 60, 90 and 120 minutes after it (from 10 minutes when a check is failing).
+     When a check is failing, quote the reason line (it names the feed and the row), look at that feed on
+     disk yourself and say which it looks like: a feed NBA.com never corrects (DEN at UTA, Oct 6) or our
+     own check. The user can reply "stop": end the background task with TaskStop, report what it was
+     waiting on, and do not restart it.
    - A "stopped" or "gave up" line means no slides: report it in one sentence, keep all data, and stop.
-   - A "done:" line: continue with step 3.
-   If the user asks how the run is going between updates, read the last 15 lines of the background task's output and answer
-   in one line: the phase, minutes since Final, and either "waiting for NBA.com to publish X (normal)" or
-   "a check is failing: <reason>".
-3. **Check every slide** (`output/postgame-recap/<id>/slides/`, Read each PNG):
-   - the export's `serif:` line names Georgia Pro Condensed Bold (otherwise say so, and continue);
-   - the `delivery:` lines say the slides hold image data only and Photos stored them unchanged; report
-     anything else;
-   - the score, line score and slide 2's four tiles match `output/postgame-recap/<id>/recap.json`,
-     which the script has checked against NBA.com;
-   - no long flat stretch in the step margin line (minutes with no score logged), no red play-by-play warning;
-   - no text overlaps or runs off a page; headshots and logos present;
-   - awards and leaders hold no surprise; if a pick looks wrong, check its Game Score in that recap.json.
-4. **Deliver.** Send a PushNotification ("Bulls recap ready: <score>. <n> slides in Photos, Bulls recaps"),
-   then the slides with SendUserFile (proactive) and a short message: the caption from
-   `output/postgame-recap/<id>/caption.txt` in full (add any line the user asked for; no em dashes),
-   anything that looked off or "all checks passed", corrections from step 1, and the reminders: slide 1
-   (cover) is optional; choose the 3:4 "Original" crop.
+   - A `review:` line: the slides are exported and nothing is on the phone yet. Continue with step 3.
+
+   If the user asks how the run is going between updates, read the last 15 lines of the build output and
+   answer in one line: the phase, minutes since Final, and either "waiting for NBA.com to publish X
+   (normal)" or "a check is failing: <reason>".
+3. **Review every slide before it ships.** Tell the user in one line that the slides are built and you are
+   reviewing them. Then:
+   - **Read the build log's checks.** The `serif:` line names Georgia Pro Condensed Bold (otherwise say so,
+     and continue). Each `repaired:` line (45 minutes after Final, the build replaces what NBA.com left
+     incomplete or leaves the page out; README, "Running a recap") goes into the delivery message. Each `layout:` line (also in `output/postgame-recap/<id>/layout.json`) is "ok", "LOOK"
+     (unusual for the format: an empty band taller than any saved game's, or a page crowding its footer;
+     judge it by eye) or "FIX" (text overlapping text, or past the margins: never ship it).
+   - **Check the numbers.** The score, line score and slide 2's four tiles match
+     `output/postgame-recap/<id>/recap.json`, which the script has checked against NBA.com. Awards, leaders
+     and notables hold no surprise; if a pick looks wrong, check its Game Score in that recap.json. No long
+     flat stretch in the step margin line (minutes with no score logged), no red play-by-play warning.
+     Every count a page draws from a feed other than the box score, play-by-play and summary must match the
+     box score (MIN at MIA, Oct 10: NBA.com's shot feed held 72 of 87 attempts and the shot chart printed a
+     partial game; the checks now catch that one, the review is there for the next). Anything that will look surprising to a fan (a big minus with a big scoring night, a quiet star),
+     verify yourself against the feeds on disk (players.csv and teams.csv in the game's folder) and keep a
+     one-line explanation for the delivery message: the user should not have to wonder whether a number is
+     right.
+   - **Look at every page beside its reference.** Read each PNG in `output/postgame-recap/<id>/slides/` and
+     the reference page with the same name in `postgame-recaps/assets/` (`2026-10-10-v19-gsw-<page>.png`;
+     for the final-score page, the reference with the same number of notables: `-det-` none, `-mia-` one,
+     `-gsw-` three). Judge it as a designer would: spacing even and consistent with the reference, nothing
+     touching, clipped or crowding the footer, no empty hole the reference does not have, labels clear of
+     lines and dots, headshots and logos present, and the page reading as the same series.
+   - **Decide:** ship as is, fix the layout (below), or hold a number (below).
+
+   **Fixing the layout.** You may fix it yourself; you need no approval. Make the smallest change in
+   `postgame-recaps/pipeline/recap_template.html` that makes this page right and stays right for other
+   games: a rule ("when there are notables, ...") rather than a nudge for tonight's numbers. Then rebuild
+   without pulling again:
+   ```
+   PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/build_mockup.py <game_id>
+   PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/export_slides.py <game_id>
+   ```
+   and review the changed pages again (their `layout:` lines and by eye). Leave the template change
+   uncommitted: it is checked against the saved test games the next day and then kept as the template or
+   reverted, so the series does not drift one game at a time. If a fix is not working within about ten
+   minutes, ship without it only when the problem is cosmetic, and say so in the delivery message; never
+   ship text that hides a number.
+
+   **Holding a number.** Never type or edit a number in the template or on a slide: every published figure
+   comes from `postgame-recaps/pipeline/recap_data.py`, traceable to NBA.com. Push the user at once
+   ("Bulls recap held: <what looks wrong>; investigating"), then find the cause:
+   - NBA.com is still revising the feed: start the build again with the game ID (step 2's command with
+     `<game_id>` for `--today`; it pulls, checks and draws everything again in a few minutes), then review
+     again;
+   - NBA.com published something wrong and has not corrected it: keep holding and tell the user what is
+     wrong and where; they decide whether to post without the page or wait;
+   - our own code is wrong: fix it in `postgame-recaps/pipeline/recap_data.py`, run
+     `./run_tests.sh tests/test_postgame_recap.py -q`, start the build again with the game ID, check the
+     number against the feed by hand, and tell the user what was wrong. The code change stays uncommitted
+     for review, like a template fix.
+4. **Deliver**, once you are satisfied:
+   ```
+   PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/deliver.py <game_id>
+   ```
+   The `delivery:` lines say the slides went to iCloud Drive, hold image data only, and that Photos stored
+   them unchanged, and that `as-posted/` was written; report anything else. Send a PushNotification ("Bulls
+   recap ready: <score>. <n> slides in Photos, Bulls recaps"), then the slides with SendUserFile (proactive)
+   and a short message:
+   - the caption from `output/postgame-recap/<id>/caption.txt` in full (add any line the user asked for; no
+     em dashes);
+   - **what you checked**, in three or four short lines: the box score adds up and the score and line score
+     match NBA.com; the game-flow check; the layout ("all pages ok" or what you fixed and why); any number
+     that looks surprising, with its explanation;
+   - corrections from step 1, and the reminders: slide 1 (cover) is optional; choose the 3:4 "Original" crop.
+
+   If you must deliver again after a fix, iCloud Drive's copy is replaced, but the Photos album keeps the
+   earlier slides too: tell the user which to delete.
 5. **Log it** as one row in the Game log on the Notion page "Game recaps"
    (https://app.notion.com/p/3a7e1c13abe680629bb0df2d6f77f623): result, minutes from Final to ready data
    (the script's `timing:` line, counted from when NBA.com first showed Final), delivery, Posted left blank,
-   and anything that went wrong. Edit only that page.
+   and the review: what you fixed or held, or "review clean". A template or code fix made tonight also goes
+   under the page's open work as a follow-up: check it against the saved test games, then keep or revert.
+   Edit only that page.

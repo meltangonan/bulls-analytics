@@ -41,7 +41,10 @@ def block(ax, to_px, z, fill, theme, pill="full", style=msc.ZONE12_DEFAULT_STYLE
         top -= GAP
 
 msc._zone12_block = block
-g = pd.read_csv(GAME / "shots_chi.csv"); lg = shot_data.league_shots("2025-26")
+# recap_data.py writes shots_chi_pbp.csv only when NBA.com's shot feed is incomplete past the deadline: the
+# play-by-play's shots, without NBA.com's zone labels, so the chart places them by coordinates.
+pbp_shots = GAME / "shots_chi_pbp.csv"
+g = pd.read_csv(pbp_shots if pbp_shots.exists() else GAME / "shots_chi.csv"); lg = shot_data.league_shots("2025-26")
 ctx = {"player": g, "league": lg, "name": "Chicago Bulls", "subtitle": "", "season": "2025-26",
        "min_fga": 5, "palette": None, "pill": "full", "merge_mid": True, "summary_metrics": True}
 OUT.parent.mkdir(parents=True, exist_ok=True)

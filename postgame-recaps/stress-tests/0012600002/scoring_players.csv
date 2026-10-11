@@ -1,0 +1,43 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1641740,Jaylen,Clark,J. Clark,jaylen-clark,F,,,15:57,0.75,0.25,0.5,0.0,0.0,0.5,0.5,1.0,0.5,1.0,0.0,0.0,0.0,1.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1626168,Trey,Lyles,T. Lyles,trey-lyles,F,,,21:19,0.375,0.625,0.0,0.0,0.75,0.0,0.25,0.75,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642866,Joan,Beringer,J. Beringer,joan-beringer,C,,,22:01,1.0,0.0,1.0,0.0,0.0,0.2,0.0,0.4,1.0,0.8,0.2,0.0,0.0,0.8,0.2
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630545,Terrence,Shannon Jr,T. Shannon Jr,terrence-shannon-jr,G,,,19:39,0.636,0.364,0.4,0.133,0.6,0.0,0.0,0.0,0.267,0.333,0.667,0.667,0.333,0.5,0.5
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630538,Bones,Hyland,B. Hyland,bones-hyland,G,,,20:39,0.333,0.667,0.087,0.087,0.652,0.391,0.261,0.13,0.0,1.0,0.0,0.8,0.2,0.833,0.167
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642262,Cody,Williams,C. Williams,cody-williams,,,,15:34,0.5,0.5,0.5,0.0,0.0,0.5,0.5,0.0,0.5,1.0,0.0,0.0,0.0,1.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642912,Isaiah,Evans,I. Evans,isaiah-evans,,,,17:12,0.333,0.667,0.0,0.0,1.0,0.0,0.0,0.333,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642389,Zyon,Pullin,Z. Pullin,zyon-pullin,,,,20:47,1.0,0.0,0.667,0.0,0.0,0.0,0.333,0.0,0.667,0.167,0.833,0.0,0.0,0.167,0.833
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630231,KJ,Martin,K. Martin,kj-martin,,,,9:38,1.0,0.0,0.75,0.5,0.0,0.375,0.25,0.125,0.25,1.0,0.0,0.0,0.0,1.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642911,Rocco,Zikarsky,R. Zikarsky,rocco-zikarsky,,,,11:29,1.0,0.0,0.5,0.0,0.0,0.0,0.5,0.0,0.5,1.0,0.0,0.0,0.0,1.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642402,Enrique,Freeman,E. Freeman,enrique-freeman,,,,2:47,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1641810,Antonio,Reeves,A. Reeves,antonio-reeves,,,,12:00,0.5,0.5,0.4,0.0,0.6,0.6,0.0,0.6,0.4,0.0,1.0,1.0,0.0,0.5,0.5
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1631166,Drew,Timme,D. Timme,drew-timme,,,,4:17,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1641807,Norchad,Omier,N. Omier,norchad-omier,,,,9:41,0.667,0.333,0.0,0.0,0.429,0.0,0.571,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630163,LaMelo,Ball,L. Ball,lamelo-ball,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1628978,Donte,DiVincenzo,D. DiVincenzo,donte-divincenzo,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630245,Ayo,Dosunmu,A. Dosunmu,ayo-dosunmu,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630162,Anthony,Edwards,A. Edwards,anthony-edwards,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,203497,Rudy,Gobert,R. Gobert,rudy-gobert,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630228,Jonathan,Kuminga,J. Kuminga,jonathan-kuminga,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630183,Jaden,McDaniels,J. McDaniels,jaden-mcdaniels,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1631323,Simone,Fontecchio,S. Fontecchio,simone-fontecchio,F,,,19:12,0.4,0.6,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1631107,Nikola,Jović,N. Jović,nikola-jović,F,,,20:54,0.778,0.222,0.571,0.0,0.429,0.143,0.0,0.143,0.571,0.75,0.25,0.5,0.5,0.667,0.333
+0012600002,1610612748,Miami,Heat,MIA,heat,1630208,Nick,Richards,N. Richards,nick-richards,C,,,20:13,1.0,0.0,0.667,0.0,0.0,0.0,0.333,0.0,0.667,0.0,1.0,0.0,0.0,0.0,1.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1641796,Pelle,Larsson,P. Larsson,pelle-larsson,G,,,22:41,0.867,0.133,0.571,0.0,0.0,0.071,0.429,0.286,0.571,0.25,0.75,0.0,0.0,0.25,0.75
+0012600002,1610612748,Miami,Heat,MIA,heat,1643621,Tre,Donaldson,T. Donaldson,tre-donaldson,G,,,15:13,0.75,0.25,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1643553,Ryan,Conwell,R. Conwell,ryan-conwell,,,,24:54,0.5,0.5,0.471,0.0,0.176,0.118,0.353,0.353,0.471,0.25,0.75,1.0,0.0,0.4,0.6
+0012600002,1610612748,Miami,Heat,MIA,heat,1642066,Myron,Gardner,M. Gardner,myron-gardner,,,,22:09,0.444,0.556,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1643867,Ian,Schieffelin,I. Schieffelin,ian-schieffelin,,,,19:42,0.4,0.6,0.4,0.0,0.6,0.0,0.0,0.2,0.4,1.0,0.0,1.0,0.0,1.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1642884,Vladislav,Goldin,V. Goldin,vladislav-goldin,,,,20:23,0.889,0.111,0.667,0.0,0.167,0.111,0.167,0.0,0.667,0.667,0.333,1.0,0.0,0.714,0.286
+0012600002,1610612748,Miami,Heat,MIA,heat,1643016,Bez,Mbeng,B. Mbeng,bez-mbeng,,,,17:39,0.6,0.4,0.222,0.0,0.667,0.222,0.111,0.111,0.222,1.0,0.0,1.0,0.0,1.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1628389,Bam,Adebayo,B. Adebayo,bam-adebayo,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,203507,Giannis,Antetokounmpo,G. Antetokounmpo,giannis-antetokounmpo,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,203501,Tim,Hardaway Jr.,T. Hardaway Jr.,tim-hardaway-jr,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1642352,Keshad,Johnson,K. Johnson,keshad-johnson,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1630283,Kylor,Kelley,K. Kelley,kylor-kelley,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1643019,Gabe,Madsen,G. Madsen,gabe-madsen,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1630558,Davion,Mitchell,D. Mitchell,davion-mitchell,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1626171,Bobby,Portis Jr.,B. Portis Jr.,bobby-portis-jr,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,1630696,Dru,Smith,D. Smith,dru-smith,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,202691,Klay,Thompson,K. Thompson,klay-thompson,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600002,1610612748,Miami,Heat,MIA,heat,203952,Andrew,Wiggins,A. Wiggins,andrew-wiggins,,Inactive - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

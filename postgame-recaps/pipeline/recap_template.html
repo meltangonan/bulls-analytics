@@ -225,14 +225,15 @@ if(strong)TP.forEach((v,j)=>{if(v)fg+=t(cc[j],c+28,19,v,{a:'middle',it:true});})
 B.starters.forEach(prow);trow('Starters',TS,false);k=0;y+=8;B.bench.forEach(prow);trow('Bench',TB,false);y+=8;trow('Team',TT,true);
 return page(`${D.chi.team} box score`,s+bg+fg,B.dnp.length?[`Did not play: ${B.dnp.join(', ')}`]:[]);}
 
-function shotChart(){const S=D.shooting;let s='';const zs=A.zsize[D.game_id],zw=W,zh=zw*zs[1]/zs[0];
+function shotChart(){if(D.shots_complete===false)return '';const S=D.shooting;let s='';const zs=A.zsize[D.game_id],zw=W,zh=zw*zs[1]/zs[0];
 s+=`<image href="${A.zones[D.game_id]}" x="${L}" y="186" width="${zw}" height="${zh}"/>`;
 if(D.shot_types.length){const y4=Math.min(186+zh+62,1196),ST=D.shot_types,rows=ST.length;s+=sec(L,y4,'Shot types',{onRule:1});s+=ln(L,y4+16,RX,y4+16,K,3);
 const rh=Math.min(40,(1388-(y4+30))/rows),ux0=L+250,ux1=RX-170,maxA=Math.max(...ST.map(r=>r[2])),u=Math.min(16,(ux1-ux0)/maxA),sq=u-3;
 ST.forEach(([lab,m,a],i)=>{const y=y4+30+i*rh,c=y+rh/2;s+=t(L,c+7,20,lab,{w:600});
 for(let k=0;k<a;k++)s+=rect(ux0+k*u,c-sq/2,sq,sq,k<m?R:LR);
 s+=t(RX-80,c+8,22,`${m}-${a}`,{a:'end',w:600})+t(RX,c+8,20,`${Math.round(m/a*100)}%`,{a:'end',f:FT,w:600});});}
-return page(`${D.chi.team} shot chart`,s);}
+// Shots from the play-by-play (NBA.com's shot feed incomplete past the deadline): the page says so.
+return page(`${D.chi.team} shot chart`,s,[],D.shots_source==='pbp'?"Shots from NBA.com's play-by-play, its shot feed was incomplete; zones placed by shot location":'');}
 
 function seasonPage(){const S=D.season,G=S.games,n=G.length,slots=S.slots,O=S.over,E=S.east,now=O[n-1],pre=D.kind==='Preseason';let s='';
 s+=sec(L,212,'Record')+t(L,330,124,`${S.wins}-${S.losses}`,{w:900,ff:SERIF,f:R});
@@ -285,8 +286,8 @@ const colW=[300,152,152,151];
 [[D.chi.team,1,R,0,D.chi.tri],[D.opp.team,2,K,1,D.opp.tri]].forEach(([nm,vi,c0,j,tri])=>{const y=ry+j*bh,v=TV[tri],c=color?K:c0;if(j==0&&!color)s+=rect(L,y,W,bh,BAND);
 if(color)[v.shoot,v.tov,v.reb,v.ft].forEach((pt,i)=>s+=rect(cxs[i]-colW[i]/2+5,y+5,colW[i]-10,bh-10,scale(pt),8));
 s+=logo(tri,L+8,y+12,48)+t(L+66,y+46,30,nm,{w:600,f:c0})+t(L+66,y+98,18,'Points above average',{w:600});
-FF.rows.forEach((r,i)=>{const val=r[vi],o=r[vi==1?2:1],better=val!=o&&(val>o)==r[3],sp=i==0?FF.efg_split[j]:null;
-const main=pc(val),sub=sp?`(${sp[0]==null?'-':sp[0].toFixed(1)+'%'} | ${sp[1]==null?'-':sp[1].toFixed(1)+'%'})`:'';
+FF.rows.forEach((r,i)=>{const val=r[vi],o=r[vi==1?2:1],better=val!=null&&o!=null&&val!=o&&(val>o)==r[3],sp=i==0?FF.efg_split[j]:null;
+const main=val==null?'-':pc(val),sub=sp?`(${sp[0]==null?'-':sp[0].toFixed(1)+'%'} | ${sp[1]==null?'-':sp[1].toFixed(1)+'%'})`:'';
 if(better&&!color){const w1=tw(main,32,600),w2=sub?tw(sub,19.2,400)+20:0;s+=rect(cxs[i]-(w1+w2)/2-10,y+11,w1+20,48,'none',0,`stroke="${c}" stroke-width="3"`);}
 s+=pair(cxs[i],y+46,main,sub,32,{w:better&&!color?600:400,f:c});
 const pts=[v.shoot,v.tov,v.reb,v.ft][i];s+=pair(cxs[i],y+98,f1(pts),i==0?`(${f1(v.shoot2)} | ${f1(v.shoot3)})`:'',28,{w:600,f:c});});});
@@ -316,7 +317,8 @@ const why='Why four factors?';paras.unshift(`${why} A possession ends in one of 
 // 21px unless the last line would reach the footer (a game with both Other and an extra possession runs longest): then a pixel smaller at a time.
 let fs=21,lines;for(;fs>18;fs--){lines=paras.map(pp=>wrapText(pp,fs,W-8));if(ey+(lines.flat().length-1)*fs*1.38+(lines.length-1)*fs*0.48<=1386)break;}lines=paras.map(pp=>wrapText(pp,fs,W-8));
 lines.forEach(ls=>{ls.forEach(line=>{s+=line.startsWith(why)?t(L,ey,fs,why,{w:600})+t(L+tw(why,fs,600)+fs*0.29,ey,fs,line.slice(why.length+1)):t(L,ey,fs,line);ey+=fs*1.38;});ey+=fs*0.48;});
-return page(`${D.chi.team} game breakdown`,s);}
+// NBA.com's four factors left incomplete past the deadline: two are computed from the box score, two left out.
+return page(`${D.chi.team} game breakdown`,s,[],FF.source=='box'?"EFG% and FT rate from the box score; TOV% and OREB% not shown: NBA.com's four factors were incomplete":'');}
 
 // Season leaders as one grid: every qualified player's per-game line, sorted by points. Each stat's leader (every
 // player tied for it) sits in a solid red cell; the other cells shade lighter the further behind the leader they are.
@@ -357,7 +359,11 @@ s+=t(L+4,y1+fs*0.74,fs*0.42,D.home?'vs.':'@',{w:900,ff:SERIF,it:true});
 s+=t(L,y1+fs*1.68,fs,l2,{w:900,ff:SERIF})+logo(D.opp.tri,L+tw(l2,fs,900,SERIF)+26,y1+fs*1.68-fs*0.8,fs*0.9)+rec(D.opp.record,L+tw(l2,fs,900,SERIF)+fs*0.9+48,y1+fs*1.68-fs*0.25);
 const ot=F.periods>4?` (${F.periods==5?'OT':`${F.periods-4}OT`})`:'';
 s+=t(L,y1+fs*1.68+104,50,D.date_short+ot,{w:900,ff:SERIF,it:true,f:R});
-s+=sec(L,78,`${D.chi.city} ${D.chi.team} ${D.kind==='Preseason'?'preseason':'game'} recap #${D.season.games.length}`)+swipeCue(78);
+// The series label keeps the city unless it would run into the swipe cue (MIN at MIA, 2026-10-10: "Minnesota
+// Timberwolves preseason recap #3" did); then the team name alone.
+const kindLab=`${D.kind==='Preseason'?'preseason':'game'} recap #${D.season.games.length}`,cueW=14+tw('Swipe for the full breakdown',28,600)+14+30+14,
+  fits=x=>L+tw(x,28,600)+24+20<=RX-cueW,seriesLab=[`${D.chi.city} ${D.chi.team} ${kindLab}`,`${D.chi.team} ${kindLab}`].find(fits)||`${D.chi.team} ${kindLab}`;
+s+=sec(L,78,seriesLab)+swipeCue(78);
 // Contents: every page after the cover with its carousel number, in a canvas box with a solid offset shadow.
 if(TOC.length){const fs=20,rh=27,pad=16,rows=Math.ceil(TOC.length/2),num=p=>`[${String(p).padStart(2,'0')}]`,nw=tw('[00]',fs,600)+10,
 cols=[TOC.slice(0,rows),TOC.slice(rows)],cw=cols.map(c=>c.length?nw+Math.max(...c.map(([,c2])=>tw(c2,fs,400))):0),bw=pad*2+cw[0]+(cw[1]?28+cw[1]:0),bh=pad*2+rows*rh-6,bx=L,by=108;

@@ -1,0 +1,3 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,minutes,effectiveFieldGoalPercentage,freeThrowAttemptRate,teamTurnoverPercentage,offensiveReboundPercentage,oppEffectiveFieldGoalPercentage,oppFreeThrowAttemptRate,oppTeamTurnoverPercentage,oppOffensiveReboundPercentage
+0012600002,1610612748,Miami,Heat,MIA,heat,203:00,0.543,0.259,0.115,0.34,0.597,0.403,0.116,0.263
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,203:00,0.597,0.403,0.116,0.263,0.543,0.259,0.115,0.34

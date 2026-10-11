@@ -1,0 +1,3 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,minutes,pointsOffTurnovers,pointsSecondChance,pointsFastBreak,pointsPaint,oppPointsOffTurnovers,oppPointsSecondChance,oppPointsFastBreak,oppPointsPaint,blocks,blocksAgainst,foulsPersonal,foulsDrawn
+0012600002,1610612748,Miami,Heat,MIA,heat,203:00,15,22,9,46,21,10,21,36,1,6,19,18
+0012600002,1610612750,Minnesota,Timberwolves,MIN,timberwolves,203:00,21,10,21,36,15,22,9,46,6,1,18,19

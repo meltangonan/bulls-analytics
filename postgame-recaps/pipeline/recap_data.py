@@ -27,6 +27,9 @@ from bulls.analysis.shot_families import classify_series  # noqa: E402
 
 # The featured team: the Bulls, unless FOCUS_TEAM_ID names another (used to dry-run on other games).
 BULLS = int(os.environ.get("FOCUS_TEAM_ID", 1610612741))
+# Set by postgame_recap.py 45 minutes after Final: a feed NBA.com has left incomplete may then be replaced by
+# what can be computed exactly elsewhere (four_factors), so the post goes out (user, 2026-10-10).
+FALLBACK = os.environ.get("RECAP_FALLBACK") == "1"
 TRI = "CHI"  # set from the box score in build()
 from paths import OUTPUT, game_dir  # noqa: E402
 BASELINE_SEASON = "2025-26"
@@ -143,6 +146,25 @@ def bulls_games(league_games: pd.DataFrame) -> pd.DataFrame:
     return me.dropna(subset=["PLUS_MINUS"]).drop(columns="gid")
 
 
+def repair_scores(pbp: pd.DataFrame) -> tuple[pd.DataFrame, int]:
+    """The play-by-play with each scoring row's running score recomputed from the plays themselves (shotValue
+    for a made shot, 1 for a made free throw, added in feed order), and how many rows changed.
+
+    Used only when the plays reach NBA.com's quarter scores but a running score printed on a row is wrong
+    (MIN at MIA, 2026-10-10: a re-entered and-one printed 84-87 on the shot and 82-87 on its free throw, and
+    NBA.com had not corrected it 50 minutes after Final). The repair is then held to the same tests as any
+    feed: the score steps, and the game-flow counts against NBA.com's own (build() raises NotReady otherwise).
+    """
+    made_ft = (pbp.actionType == "Free Throw") & pbp.scoreHome.notna() & ~pbp.description.fillna("").str.startswith("MISS")
+    rows = pbp.index[(pbp.actionType == "Made Shot") | made_ft]
+    pts = pbp.loc[rows].apply(lambda r: int(r.shotValue) if r.actionType == "Made Shot" else 1, axis=1)
+    home, away = (pts * (pbp.loc[rows, "location"] == "h")).cumsum(), (pts * (pbp.loc[rows, "location"] == "v")).cumsum()
+    fixed = pbp.copy()
+    changed = int(((fixed.loc[rows, "scoreHome"] != home) | (fixed.loc[rows, "scoreAway"] != away)).sum())
+    fixed.loc[rows, "scoreHome"], fixed.loc[rows, "scoreAway"] = home, away
+    return fixed, changed
+
+
 def logs_match(game_id: str, players: pd.DataFrame, teams: pd.DataFrame, player_games: pd.DataFrame,
                league_games: pd.DataFrame) -> list:
     """Where NBA.com's game logs disagree with tonight's final box score.
@@ -252,20 +274,55 @@ def flow(pbp: pd.DataFrame, chi_home: bool, opp_tri: str) -> dict:
 # --- team stats --------------------------------------------------------------------------------
 
 
-def four_factors(ff: pd.DataFrame, teams: pd.DataFrame, opp_tri: str) -> dict:
-    """NBA.com's official four factors (turnover % counts team turnovers), plus eFG%'s two parts."""
+def four_factors(ff: pd.DataFrame, teams: pd.DataFrame, opp_tri: str, from_box: bool = False) -> dict:
+    """NBA.com's official four factors (turnover % counts team turnovers), plus eFG%'s two parts.
+
+    from_box (NBA.com's four factors cover only part of the game, past the deadline): eFG% and FT rate from the
+    box score, which reproduces NBA.com's values to rounding (36 complete team-games, largest gap 0.05 points),
+    and no TOV% or OREB%, which NBA.com computes from team turnovers, team rebounds and its own possessions
+    (box-score versions were 2 to 4 points off typically, up to 11). The page prints a hyphen and says why."""
     cols = [("EFG%", "effectiveFieldGoalPercentage", True), ("TOV%", "teamTurnoverPercentage", False),
             ("OREB%", "offensiveReboundPercentage", True), ("FT RATE", "freeThrowAttemptRate", True)]
-    rows = [[label, *[round(float(ff.loc[ff.teamTricode == tri, col].iloc[0]) * 100, 1) for tri in (TRI, opp_tri)], higher]
-            for label, col, higher in cols]
     t = teams.set_index("teamTricode")
+    if from_box:
+        box = {"effectiveFieldGoalPercentage": lambda r: (r.fieldGoalsMade + 0.5 * r.threePointersMade) / r.fieldGoalsAttempted,
+               "freeThrowAttemptRate": lambda r: r.freeThrowsAttempted / r.fieldGoalsAttempted}
+        rows = [[label, *[round(float(box[col](t.loc[tri])) * 100, 1) if col in box else None for tri in (TRI, opp_tri)], higher]
+                for label, col, higher in cols]
+    else:
+        rows = [[label, *[round(float(ff.loc[ff.teamTricode == tri, col].iloc[0]) * 100, 1) for tri in (TRI, opp_tri)], higher]
+                for label, col, higher in cols]
     split = []
     for tri in (TRI, opp_tri):
         r = t.loc[tri]
         two_a = r.fieldGoalsAttempted - r.threePointersAttempted
         split.append([round(100 * (r.fieldGoalsMade - r.threePointersMade) / two_a, 1) if two_a else None,
                       round(100 * r.threePointersMade / r.threePointersAttempted, 1) if r.threePointersAttempted else None])
-    return {"rows": rows, "efg_split": split}
+    return {"rows": rows, "efg_split": split, "source": "box" if from_box else "nba"}
+
+
+def shots_from_pbp(pbp: pd.DataFrame, team_id: int) -> pd.DataFrame:
+    """The team's field goal attempts from the play-by-play, in the shot feed's columns (ShotChartDetail names).
+
+    On the 13 saved games every attempt is in the play-by-play, and the 1,220 matched to the shot feed have the
+    same location, result, 2 or 3 points and shot type (subType is ShotChartDetail's ACTION_TYPE). What the
+    play-by-play lacks is NBA.com's zone label, so the zones chart places these shots by their coordinates,
+    which put 1,217 of the 1,220 in the same zone (the other three sit on a zone boundary)."""
+    fg = pbp[(pbp.isFieldGoal == 1) & (pbp.teamId == team_id)]
+    return pd.DataFrame({
+        "GAME_ID": fg.gameId, "GAME_EVENT_ID": fg.actionNumber, "PLAYER_ID": fg.personId, "PLAYER_NAME": fg.playerName,
+        "TEAM_ID": fg.teamId, "PERIOD": fg.period, "ACTION_TYPE": fg.subType,
+        "SHOT_TYPE": fg.shotValue.map(lambda v: "3PT Field Goal" if v == 3 else "2PT Field Goal"),
+        "SHOT_DISTANCE": fg.shotDistance, "LOC_X": fg.xLegacy, "LOC_Y": fg.yLegacy,
+        "SHOT_MADE_FLAG": (fg.shotResult == "Made").astype(int)}).reset_index(drop=True)
+
+
+def ff_minutes_short(ff: pd.DataFrame, teams: pd.DataFrame) -> str:
+    """When NBA.com's four factors cover fewer minutes than the box score, say how many ("" when complete):
+    MIN at MIA, 2026-10-10, published four factors for 203 of 240 team-minutes and kept them past 50 minutes."""
+    have = ff.minutes.map(minutes).min() if not ff.empty else 0
+    game = teams.minutes.map(minutes).max()
+    return f"{have:.0f} of {game:.0f} minutes" if have < game - 0.5 else ""
 
 
 def head_to_head(teams: pd.DataFrame, misc: pd.DataFrame, stats: pd.DataFrame, opp_tri: str) -> list:
@@ -287,12 +344,14 @@ def head_to_head(teams: pd.DataFrame, misc: pd.DataFrame, stats: pd.DataFrame, o
         s = {r.teamTricode: r for r in stats.itertuples()}
         rows.append(["Turnovers", str(int(s[TRI].turnoversTotal)), str(int(s[opp_tri].turnoversTotal)),
                      int(s[TRI].turnoversTotal), int(s[opp_tri].turnoversTotal), 0])
-    if not misc.empty:
-        m = {r.teamTricode: r for r in misc.itertuples()}
-        for label, col in (("Points in the paint", "pointsPaint"), ("Fast break points", "pointsFastBreak"),
-                           ("Second chance points", "pointsSecondChance"), ("Points off turnovers", "pointsOffTurnovers")):
-            rows.append([label, str(int(getattr(m[TRI], col))), str(int(getattr(m[opp_tri], col))),
-                         int(getattr(m[TRI], col)), int(getattr(m[opp_tri], col)), 1])
+    # From the game summary, which NBA.com publishes for the whole game with the box score; the misc feed holds
+    # the same four counts (144 of 144 equal on the saved complete games) but can stop early (MIN at MIA,
+    # 2026-10-10: 203 of 240 minutes, still so 55 minutes after Final).
+    if not stats.empty:
+        for label, col in (("Points in the paint", "pointsInThePaint"), ("Fast break points", "pointsFastBreak"),
+                           ("Second chance points", "pointsSecondChance"), ("Points off turnovers", "pointsFromTurnovers")):
+            rows.append([label, str(int(getattr(s[TRI], col))), str(int(getattr(s[opp_tri], col))),
+                         int(getattr(s[TRI], col)), int(getattr(s[opp_tri], col)), 1])
     return rows
 
 
@@ -789,6 +848,7 @@ def as_of(g: Path, date: pd.Timestamp) -> str:
 
 def build(game_id: str) -> dict:
     g = game_dir(game_id)
+    (g / "shots_chi_pbp.csv").unlink(missing_ok=True)  # only this build's fallback may feed the zones chart
     teams, players, pbp = read(g, "teams.csv"), read(g, "players.csv"), read(g, "pbp.csv")
     lines, info, arena = read(g, "summary_linescore.csv"), read(g, "summary_info.csv"), read(g, "summary_arena.csv")
     game = read(g, "summary_game.csv")
@@ -811,7 +871,15 @@ def build(game_id: str) -> dict:
     official_q = {int(r.teamId): [int(getattr(r, f"period{i}Score")) for i in range(1, 5)] for r in lines.itertuples()}
     pbp_ok = ([int(q.chi.get(i, 0)) for i in range(1, 5)] == official_q.get(BULLS)
               and [int(q.opp.get(i, 0)) for i in range(1, 5)] == official_q.get(int(opp.teamId)))
-    steps = score_steps(pbp)
+    steps, repairs = score_steps(pbp), []
+    if pbp_ok and steps:
+        # The plays reach every official quarter score but a printed running score is wrong: recompute the
+        # running scores from the plays (user, 2026-10-10: the post has to go out). It must pass the score
+        # steps here and NBA.com's own flow counts below, or the build waits as before.
+        pbp, changed = repair_scores(pbp)
+        steps = score_steps(pbp)
+        repairs.append(f"play-by-play: running score recomputed from the plays on {changed} rows NBA.com printed "
+                       "wrong; the final, the quarter scores and NBA.com's game-flow counts match")
     if not pbp_ok or steps:
         # Credibility first: a scrambled or mis-scored play-by-play is not drawn with a warning; the build
         # waits for NBA.com to correct the feed (seen 2026-10-06, DEN at UTA, and 2026-10-07, bug 1).
@@ -820,9 +888,14 @@ def build(game_id: str) -> dict:
     stale = logs_match(game_id, players, teams, read(g, "player_games.csv"), read(g, "league_games.csv"))
     if stale:
         raise NotReady("game logs do not yet match the final box score: " + "; ".join(stale))
-    split = feeds_agree(players, teams, read(g, "ff_team.csv"))
-    if split:
-        raise NotReady("box-score feeds disagree: " + "; ".join(split))
+    ff = read(g, "ff_team.csv")
+    split, short = feeds_agree(players, teams, ff), ff_minutes_short(ff, teams)
+    from_box = bool(split) and bool(short) and all("four factors" in m for m in split) and FALLBACK
+    if from_box:  # past the deadline (postgame_recap.py sets RECAP_FALLBACK 45 minutes after Final)
+        repairs.append(f"four factors: NBA.com's cover {short}; EFG% and FT rate computed from the box score, "
+                       "TOV% and OREB% left out")
+    elif split:
+        raise NotReady("box-score feeds disagree: " + "; ".join(split) + (f" (NBA.com's four factors cover {short})" if short else ""))
     date = pd.Timestamp(info.gameDate.iloc[0])
     result = "W" if chi.points > opp.points else "L"
     kind = SEASON_TYPES[game_id[:3]]
@@ -831,6 +904,26 @@ def build(game_id: str) -> dict:
               if game_id[:3] == "002" and rec is not None else kind)
     raw = read(g, "shots_raw_chi.csv")
     available = read(g, "summary_availability.csv")
+    # The shot feed must hold every field goal attempt in the box score (MIN at MIA, 2026-10-10: 72 of 87, and
+    # the shot chart printed a partial game's eFG% before Claude's review caught it). Past the deadline the
+    # play-by-play's shots replace it (shots_from_pbp: they must number exactly the box score's attempts), written
+    # to shots_chi_pbp.csv for the zones chart; otherwise the shot chart is left out and no award reads the feed.
+    fga, fallback_file = int(chi.fieldGoalsAttempted), g / "shots_chi_pbp.csv"
+    shots_complete, shots_source = len(raw) == fga, "nba"
+    if not shots_complete and not FALLBACK:
+        raise NotReady(f"Bulls shots feed has {len(raw)} of {fga} field goal attempts")
+    if not shots_complete:
+        from_pbp = shots_from_pbp(pbp, BULLS)
+        if len(from_pbp) == fga:
+            raw, shots_complete, shots_source = from_pbp, True, "pbp"
+            pd.DataFrame({"loc_x": raw.LOC_X, "loc_y": raw.LOC_Y, "shot_made": raw.SHOT_MADE_FLAG == 1,
+                          "shot_type": raw.SHOT_TYPE.str[:3], "shot_distance": raw.SHOT_DISTANCE, "game_id": raw.GAME_ID,
+                          "player_id": raw.PLAYER_ID, "player_name": raw.PLAYER_NAME}).to_csv(fallback_file, index=False)
+            repairs.append(f"shot chart from the play-by-play: NBA.com's shot feed has {len(read(g, 'shots_raw_chi.csv'))} "
+                           f"of {fga} attempts, the play-by-play all {fga}; zones placed by shot location")
+        else:
+            repairs.append(f"shot chart left out: NBA.com's shot feed has {len(raw)} of {fga} attempts, the play-by-play {len(from_pbp)}")
+            raw = raw.iloc[0:0]
 
     data = {
         "game_id": game_id, "kind": kind, "season_label": f"{2000 + int(game_id[3:5])}-{int(game_id[3:5]) + 1:02d}", "result": result, "home": chi_home,
@@ -849,7 +942,7 @@ def build(game_id: str) -> dict:
                      "opp": [int(q.opp.get(i, 0)) for i in range(1, periods + 1)]},
         "pbp_ok": bool(pbp_ok),
         "flow": flow(pbp, chi_home, opp_tri),
-        "four_factors": four_factors(read(g, "ff_team.csv"), teams, opp_tri),
+        "four_factors": four_factors(ff, teams, opp_tri, from_box),
         "h2h": head_to_head(teams, read(g, "misc_teams.csv"), read(g, "summary_stats.csv"), opp_tri),
         "box": box(players, read(g, "roster.csv", dtype={"NUM": str}), str(chi.minutes)),
         "shooting": {"fgm": int(chi.fieldGoalsMade), "fga": int(chi.fieldGoalsAttempted),
@@ -867,6 +960,8 @@ def build(game_id: str) -> dict:
         "season_leaders": season_leaders(read(g, "player_games.csv"), game_id),
         "notables": notables(game_id, read(g, "player_games.csv"), bulls_games(read(g, "league_games.csv")), read(g, "league_games.csv"), opp_tri),
         "missing": [line for line in (g / "missing.txt").read_text().splitlines() if line] if (g / "missing.txt").exists() else [],
+        "shots_complete": shots_complete, "shots_source": shots_source,
+        "repairs": repairs,  # what the build corrected in NBA.com's feeds, and how it was checked
     }
     stats = read(g, "summary_stats.csv")
     if not stats.empty:

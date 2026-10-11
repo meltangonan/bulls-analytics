@@ -21,15 +21,15 @@ first showed Final, printed by a notice (below); a restart passes it so the timi
    and restarts the command; nothing is lost, because every feed is on disk. Each mark is raised once: a
    restarted process begins after the mark it reported. It gives up three hours after Final.
 4. It draws the shot chart (linking the shared cache, then removing only the link), builds the pages, exports
-   the PNGs, copies them to iCloud Drive, writes caption.txt and keeps an as-posted/ copy of the feeds and
-   recap.json, written once per game. One build runs at a time (a lock), because the cache link and the page
-   file are shared.
-5. It delivers the slides (deliver.py): image data only, added to the Photos album iCloud Photos syncs.
+   and measures the PNGs and writes caption.txt. One build runs at a time (a lock), because the cache link and
+   the page file are shared.
+5. It stops there: nothing reaches the phone until Claude has reviewed every page (the run-postgame-recap
+   skill), fixed what needed fixing, and run deliver.py, which the last line prints; delivery also keeps the
+   as-posted/ copy of the feeds, so it holds what was actually posted, not a build the review rejected.
 """
 import fcntl
 import json
 import os
-import shutil
 import subprocess
 import sys
 import time
@@ -43,7 +43,6 @@ from bulls.data.fetch import _NBA_HEADERS
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from deliver import deliver  # noqa: E402
 from paths import OUTPUT, REPO, game_dir, shared_cache  # noqa: E402
 
 PY = sys.executable
@@ -53,6 +52,7 @@ SLOW_POLL = 300  # after that: NBA.com is late anyway, and stats.nba.com throttl
 NOT_READY = 75
 STILL_WAITING = 76  # not a failure: the skill posts the notice and restarts the printed command
 STRIKES = 3  # consecutive failures other than NOT_READY before the run stops
+FALLBACK = 45  # minutes after Final before an incomplete NBA.com feed is replaced (the user's deadline, Oct 10)
 # Minutes after Final at which a notice is due: at Final itself (so the user knows the wait has begun), then
 # often, because the post should be out within 30 minutes of the buzzer (user, 2026-10-09); sooner still when
 # every feed is in but a check keeps failing (a scrambled feed, as DEN at UTA on 2026-10-06, or our own check).
@@ -60,10 +60,6 @@ MARKS = {"publishing": (0, 20, 30, 45, 60, 90, 120), "check": (0, 10, 20, 30, 45
 HASHTAGS = "#chicagobulls #bullsnation #nbadata #nbastats #basketballanalytics"
 # NBA.com revises official stats after games (fast break points changed overnight in three of the first five).
 REVISION_NOTE = "Stats via NBA.com as of game night. The NBA can revise official stats after a game."
-# What recheck.py compares the next day, plus the play-by-play (margin line, runs, breakdown, Closer award)
-# and the capture record; recap.json, the numbers the slides drew, is copied from output/.
-SNAPSHOT = ["teams.csv", "players.csv", "ff_team.csv", "misc_teams.csv", "summary_stats.csv", "summary_linescore.csv",
-            "shots_raw_chi.csv", "pbp.csv", "sources.json"]
 
 
 def log(msg: str) -> None:
@@ -123,10 +119,12 @@ def final(game_id: str) -> tuple[bool, str, bool]:
     return True, f"final: {int(pbp.scoreAway.iloc[-1])}-{int(pbp.scoreHome.iloc[-1])} (away-home)", True
 
 
-def run(*args: str) -> tuple[int, str]:
+def run(*args: str, fallback: bool = False) -> tuple[int, str]:
     """Run one pipeline step: its output goes to the log; returns the exit code and the line that says why it
-    stopped (the last line it printed, or the error when it crashed)."""
-    done = subprocess.run(args, env={**os.environ, "PYTHONPATH": "."}, capture_output=True, text=True)
+    stopped (the last line it printed, or the error when it crashed). fallback lets recap_data.py replace an
+    incomplete NBA.com feed with what it can compute exactly (FALLBACK minutes after Final)."""
+    env = {**os.environ, "PYTHONPATH": ".", **({"RECAP_FALLBACK": "1"} if fallback else {})}
+    done = subprocess.run(args, env=env, capture_output=True, text=True)
     for text in (done.stdout, done.stderr):
         if text.strip():
             print(text.rstrip(), flush=True)
@@ -157,7 +155,7 @@ def caption(r: dict) -> str:
     hi, lo = max(us["score"], them["score"]), min(us["score"], them["score"])
     verb = "beat" if us["score"] > them["score"] else "fell to"
     where = "the United Center" if r.get("arena") == "United Center" else r.get("arena") or them["city"]
-    return (f"The Chicago Bulls {verb} the {them['city']} {them['team']} {hi}-{lo} at {where}.\n\n"
+    return (f"The {us['city']} {us['team']} {verb} the {them['city']} {them['team']} {hi}-{lo} at {where}.\n\n"
             f"{REVISION_NOTE}\n\n{HASHTAGS}\n")
 
 
@@ -179,23 +177,9 @@ def draw(game_id: str, data: Path, out: Path) -> int:
     finally:
         if made and link.is_symlink():
             link.unlink()  # the link only, never the shared cache
-    for step in ([] if code else [[str(HERE / "build_mockup.py"), game_id], [str(HERE / "export_slides.py"), game_id, "--icloud"]]):
+    for step in ([] if code else [[str(HERE / "build_mockup.py"), game_id], [str(HERE / "export_slides.py"), game_id]]):
         code = code or run(PY, *step)[0]
     return code
-
-
-def snapshot(data: Path, out: Path) -> str:
-    """Keep the feeds these slides were built from, and the numbers they drew, in <game>/as-posted/, once:
-    recheck.py compares them with NBA.com later, so a rebuild must not move them. Returns the log line."""
-    posted = data / "as-posted"
-    if posted.exists():
-        return f"as-posted/ kept from the first build; this build's feeds are in {data.name}/ only"
-    posted.mkdir()
-    kept = [name for name in SNAPSHOT if (data / name).exists()]
-    for name in kept:
-        shutil.copy2(data / name, posted / name)
-    shutil.copy2(out / "recap.json", posted / "recap.json")
-    return f"as-posted/ written: {', '.join(kept)}, recap.json"
 
 
 def main(arg: str, check: bool = False, since: float | None = None) -> None:
@@ -239,7 +223,7 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
         code, why = run(PY, str(HERE / "pull_game.py"), game_id)
         stage = "publishing"  # what the wait is: NBA.com publishing, or a check on published feeds
         if code == 0:
-            code, why = run(PY, str(HERE / "recap_data.py"), game_id)
+            code, why = run(PY, str(HERE / "recap_data.py"), game_id, fallback=time.time() - final_at >= FALLBACK * 60)
             stage = "check"
         if code == 0:
             break
@@ -271,7 +255,6 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
         sys.exit(f"stopped: drawing or export failed (exit {code})")
     recap = json.loads((out / "recap.json").read_text())
     (out / "caption.txt").write_text(caption(recap))
-    log(snapshot(data, out))
     slides = sorted((out / "slides").glob("*.png"))
     log(f"done: {recap['chi']['tri']} {recap['chi']['score']}, {recap['opp']['tri']} {recap['opp']['score']}; "
         f"{len(slides)} slides; game flow vs NBA.com: {recap['flow'].get('nba_check')}")
@@ -279,9 +262,11 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
         f"{(ready_at - final_at) / 60:.1f} min later, slides {(time.time() - final_at) / 60:.1f} min later "
         "(up to 1.5 min more, the polling interval)")
     log("optional feeds missing (back-pocket pages only): " + ("; ".join(recap["missing"]) or "none"))
+    for line in recap.get("repairs", []):
+        log(f"repaired: {line}")
     log(f"caption: {out / 'caption.txt'}")
-    for line in deliver(slides):  # 4. onto the phone
-        log(f"delivery: {line}")
+    # 4. Not onto the phone yet: Claude reviews the slides first, then delivers them.
+    log(f"review: slides await Claude's review; deliver with PYTHONPATH=. {PY} postgame-recaps/pipeline/deliver.py {game_id}")
 
 
 if __name__ == "__main__":

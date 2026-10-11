@@ -142,7 +142,7 @@ def test_notice_marks_fire_once_across_restarts():
 
 
 def test_as_posted_is_written_once(tmp_path):
-    from postgame_recap import SNAPSHOT, snapshot
+    from deliver import SNAPSHOT, snapshot
     data, out = tmp_path / "game", tmp_path / "out"
     data.mkdir(), out.mkdir()
     for name in SNAPSHOT:
@@ -234,5 +234,136 @@ def test_watcher_prints_changes_and_a_heartbeat_not_every_poll():
                    "14 min after Final; waiting on: not published yet: four factors, misc (head-to-head)",
                    "done: CHI 100, MEM 104; 8 slides; game flow vs NBA.com: match"]
     assert not w.ended and w.tick(now + 60) == []
-    assert w.tick(now + 300) == ["52 min after Final; still waiting on: not published yet: four factors, misc (head-to-head)"]
+    assert w.tick(now + 180) == ["50 min after Final; still waiting on: not published yet: four factors, misc (head-to-head)"]
     assert w.feed("21:59:09 restart: python postgame_recap.py 0012600037 1791600198\n", now) == [] and w.ended
+
+
+def test_watcher_warns_once_when_the_build_goes_silent():
+    from datetime import datetime
+    now = datetime(2026, 10, 9, 22, 0).timestamp()
+    w = Watcher()
+    w.feed("21:59:30 not final yet (Q4 2:10)\n", now)
+    assert w.tick(now + 9 * 60) == []
+    assert w.tick(now + 10 * 60) == ["the build has logged nothing for 10 min; it may be stuck"]
+    assert w.tick(now + 11 * 60) == []  # once per silence, not every second
+    w.feed("22:11:00 not final yet (Q4 0:40)\n", now + 11 * 60)
+    assert w.tick(now + 21 * 60) == ["the build has logged nothing for 10 min; it may be stuck"]
+
+
+def test_the_build_stops_for_review_before_anything_reaches_the_phone():
+    w = Watcher()
+    line = "22:30:00 review: slides await Claude's review; deliver with python deliver.py 0012600037\n"
+    assert w.feed(line, 0) == ["slides exported and measured; Claude's review is next (nothing is on the phone yet)"]
+    assert w.ended
+    source = (Path(__file__).resolve().parents[1] / "postgame-recaps/pipeline/postgame_recap.py").read_text()
+    assert "deliver(" not in source and "--icloud" not in source
+
+
+def test_layout_flags_collisions_and_holes_not_the_normal_page():
+    from export_slides import layout, verdict
+    t = lambda text, x0, y0, x1, y1: {"t": text, "x0": x0, "y0": y0, "x1": x1, "y1": y1}
+    page = {"texts": [t("Title", 25, 60, 600, 110), t("Josh", 40, 300, 100, 320), t("Giddey", 40, 326, 120, 346),
+                      t("Data via NBA.com", 25, 1408, 600, 1428)],
+            "shapes": [t("", 25, 360, 1055, 1300)]}
+    l = layout(page)
+    assert l["overlaps"] == [] and l["off_margin"] == [] and l["hole"] == 190 and l["above_footer"] == 108
+    assert verdict("02-final-score", l).startswith("layout: 02-final-score: ok")
+    page["texts"][2] = t("Giddey", 40, 315, 1070, 335)  # runs into the line above and past the right margin
+    assert verdict("02-final-score", layout(page)).startswith('layout: 02-final-score: FIX: overlap "Josh" / "Giddey"; off the margin "Giddey"')
+    page["texts"][2] = t("Giddey", 40, 326, 120, 346)
+    page["shapes"][0] = t("", 25, 600, 1055, 1405)  # a hole above the chart, which now crowds the footer
+    assert verdict("x", layout(page)) == "layout: x: LOOK: empty band 254 px from y=346; only 3 px above the footer"
+
+
+def test_early_look_names_overtime_and_checks_the_sums():
+    from early_look import look
+    lines = look("0022500240")
+    assert lines[0] == "L CHI 147, UTA 150 (2OT)"
+    assert lines[1] == "box score: player rows add up to the team totals, four factors match"
+    assert lines[2].startswith("CHI leaders: White 27 pts")
+
+
+def test_delivery_replaces_an_earlier_copy_in_icloud_drive(tmp_path, monkeypatch):
+    import deliver
+    out = tmp_path / "output" / "0022500943"
+    (out / "slides").mkdir(parents=True)
+    (out / "recap.json").write_text('{"date_short": "Mar 10", "home": false, "chi": {"tri": "CHI"}, "opp": {"tri": "GSW"}}')
+    monkeypatch.setattr(deliver, "OUTPUT", tmp_path / "output")
+    monkeypatch.setattr(deliver, "ICLOUD", tmp_path / "icloud")
+    folder = tmp_path / "icloud" / "Mar 10 CHI at GSW"
+    folder.mkdir(parents=True)
+    (folder / "09-old-page.png").write_bytes(b"rejected build")
+    slide = out / "slides" / "02-final-score.png"
+    slide.write_bytes(b"reviewed")
+    assert deliver.to_icloud("0022500943", [slide]) == f"copied to {folder}"
+    assert [p.name for p in folder.iterdir()] == ["02-final-score.png"]
+
+
+def test_watcher_says_a_failing_check_once_not_every_poll():
+    w = Watcher()
+    w.feed("22:04:26 final: 125-124 (away-home)\n", 0)
+    poll = ["pulled 0012600002", "0012600002: not ready: play-by-play score steps are off at 3 rows",
+            "22:07:13 not ready, pulling again in 90 s"]
+    first = [u for line in poll for u in w.feed(line + "\n", 0)]
+    again = [u for line in poll for u in w.feed(line + "\n", 0)]
+    assert first[:2] == ["every slide feed is published; running the checks",
+                         "0012600002: not ready: play-by-play score steps are off at 3 rows"]
+    assert again == []
+
+
+def test_a_misprinted_running_score_is_recomputed_but_a_scrambled_feed_still_waits(monkeypatch):
+    # MIN at MIA, 2026-10-10: a re-entered and-one printed 84-87 on the shot and 82-87 on its free throw.
+    pbp = rd.read(game_dir("0012600002"), "pbp.csv")
+    assert len(rd.score_steps(pbp)) == 3
+    fixed, changed = rd.repair_scores(pbp)
+    assert changed == 2 and rd.score_steps(fixed) == []
+    assert fixed.dropna(subset=["scoreHome"]).iloc[-1][["scoreAway", "scoreHome"]].tolist() == [125, 124]
+    # DEN at UTA, 2026-10-06: the plays do not reach NBA.com's quarter scores, so nothing is recomputed.
+    monkeypatch.setattr(rd, "BULLS", 1610612743)
+    with pytest.raises(rd.NotReady, match="does not match NBA.com's line score"):
+        rd.build("0012600027")
+
+
+def test_incomplete_four_factors_hold_until_the_deadline_then_use_the_box_score(monkeypatch):
+    # MIN at MIA, 2026-10-10: NBA.com's four factors stopped at 203 of 240 team-minutes.
+    monkeypatch.setattr(rd, "BULLS", 1610612750)
+    g = game_dir("0012600002")
+    assert rd.ff_minutes_short(rd.read(g, "ff_team.csv"), rd.read(g, "teams.csv")) == "203 of 240 minutes"
+    with pytest.raises(rd.NotReady, match="cover 203 of 240 minutes"):
+        rd.build("0012600002")
+    monkeypatch.setattr(rd, "FALLBACK", True)
+    d = rd.build("0012600002")
+    assert d["four_factors"]["source"] == "box" and d["flow"]["nba_check"] == "match"
+    assert d["four_factors"]["rows"][0][1:3] == [55.2, 54.3] and d["four_factors"]["rows"][1][1:3] == [None, None]
+    # A complete feed never falls back, deadline or not.
+    g = game_dir("0012600030")
+    assert rd.ff_minutes_short(rd.read(g, "ff_team.csv"), rd.read(g, "teams.csv")) == ""
+
+
+def test_play_by_play_shots_match_the_shot_feed_on_every_saved_game():
+    # The shot chart's fallback: same attempts, locations, results, 2 or 3 points and shot types (1,220 shots).
+    games = [p for p in sorted((game_dir("0022500084").parent).iterdir()) if p.name.startswith("002")]
+    games += [game_dir("0012600030"), game_dir("0012600037")]
+    matched = 0
+    for g in games:
+        raw, teams = rd.read(g, "shots_raw_chi.csv"), rd.read(g, "teams.csv")
+        ours = rd.shots_from_pbp(rd.read(g, "pbp.csv"), int(raw.TEAM_ID.iloc[0]))
+        assert len(ours) == int(teams.loc[teams.teamId == raw.TEAM_ID.iloc[0], "fieldGoalsAttempted"].iloc[0]), g.name
+        m = ours.merge(raw, on="GAME_EVENT_ID", suffixes=("", "_nba"))
+        for col in ("LOC_X", "LOC_Y", "SHOT_MADE_FLAG", "SHOT_TYPE", "ACTION_TYPE", "PLAYER_ID"):
+            assert (m[col] == m[f"{col}_nba"]).all(), (g.name, col)
+        matched += len(m)
+    assert matched == 1220
+
+
+def test_an_incomplete_shot_feed_waits_then_draws_from_the_play_by_play(monkeypatch):
+    monkeypatch.setattr(rd, "BULLS", 1610612750)
+    monkeypatch.setattr(rd, "FALLBACK", True)
+    d = rd.build("0012600002")  # MIN at MIA: NBA.com's shot feed held 72 of the box score's 87 attempts
+    assert d["shots_source"] == "pbp" and d["shots_complete"]
+    assert sum(r[2] for r in d["shot_types"]) == 87 and sum(r[1] for r in d["shot_types"]) == 41
+    assert (game_dir("0012600002") / "shots_chi_pbp.csv").exists()
+    monkeypatch.setattr(rd, "FALLBACK", False)
+    with pytest.raises(rd.NotReady):
+        rd.build("0012600002")
+    assert not (game_dir("0012600002") / "shots_chi_pbp.csv").exists()  # a complete or waiting build leaves none

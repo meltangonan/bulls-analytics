@@ -32,6 +32,11 @@ a chart adjustment doesn't need the full post history.
 - Save each render before showing it with `scripts/save_visual_version.py --project <slug> <files>`.
   Before committing, prune superseded cosmetic adjustments; retain decision-bearing versions and
   approved publish-resolution assets. Post-specific data belongs in that post's tracked `data/`.
+- Automated output gets an agent's review before it ships: scripts check only what someone predicted, so
+  look at the result itself with judgment, cross-check it against an independent source, and fix or hold it
+  before it reaches the user or the public. The user values this review as the most important part of an
+  automated workflow (Oct 10, 2026: a review caught a partial NBA.com shot feed that every check passed).
+  Turn each catch into a check, and keep reviewing.
 - Run checks matched to the change using `DEVELOPMENT.md`. Repeat or broaden only after relevant
   changes, failures, or unresolved concerns. Finish requested adjustments; stop proposing polish
   once the brief is satisfied.

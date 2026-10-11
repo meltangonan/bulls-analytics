@@ -4,8 +4,10 @@
 
 Claude's Monitor tool runs this beside the build: each line it prints wakes Claude to post an update. It
 prints when the run's state changes (the period, Final, which feeds NBA.com has still not published, a
-failing check, each build step, done or stopped) and, after Final, a heartbeat whenever five minutes pass
-without an update. Repeated "still waiting" polls print nothing. It exits when the build exits or prints
+failing check, each build step, done or stopped), after Final a heartbeat whenever three minutes pass
+without an update (the user wants to hear often during the wait, Oct 10), and a stall warning when the build
+itself has logged nothing for ten minutes: it logs every poll, so silence that long means it is stuck.
+Repeated "still waiting" polls print nothing. It exits when the build exits or prints
 its restart command, so a restarted build needs a new watcher on its new output file. --resume (a watcher
 re-armed on the same build) reads what is already logged without printing it, then prints what follows.
 """
@@ -14,7 +16,8 @@ import sys
 import time
 from datetime import datetime, timedelta
 
-HEARTBEAT = 5 * 60  # seconds after Final without an update before a heartbeat
+HEARTBEAT = 3 * 60  # seconds after Final without an update before a heartbeat
+STALL = 10 * 60  # seconds without any log line before a stall warning (polls are 90 s, 5 min at the slowest)
 STAMP = re.compile(r"^(\d\d:\d\d):\d\d (.*)$")
 STATUS = re.compile(r"^(not final yet|final|summary not published)")  # final() in postgame_recap.py
 FIRST_SEEN = re.compile(r"Final first seen (\d\d:\d\d)")
@@ -25,18 +28,20 @@ STEPS = [  # build lines worth an update: (pattern, plain text, or None to pass 
     (re.compile(r"^\d{10}: "), None),  # recap_data.py's summary: score, flow check, awards, skipped pages
     (re.compile(r"^Saved .*zones\.png"), "checks passed; shot chart drawn"),
     (re.compile(r"^wrote .*mockup\.html"), "slides laid out; exporting"),
-    (re.compile(r"^copied to "), "slides exported and copied to iCloud Drive"),
-    (re.compile(r"^(done|timing|delivery|a step failed|gave up|stopped|no Bulls game today)"), None),
+    (re.compile(r"^(done|timing|a step failed|gave up|stopped|no Bulls game today)"), None),
+    (re.compile(r"^review: "), "slides exported and measured; Claude's review is next (nothing is on the phone yet)"),
     (re.compile(r"Traceback"), "a step crashed (Traceback in the log)"),
 ]
-END = re.compile(r"^(restart: |gave up|stopped|no Bulls game today)|^\[exited with code")
+END = re.compile(r"^(restart: |review: |gave up|stopped|no Bulls game today)|^\[exited with code")
 
 
 class Watcher:
     def __init__(self):
         self.status = self.waiting = self.previous = None
         self.final_at = None  # wall-clock time Final was first seen, for "N min after Final"
-        self.last_update = time.time()
+        self.last_update = self.last_line = time.time()
+        self.stalled = False
+        self.said = set()  # step lines already printed: every 90 s poll repeats them while a check fails
         self.ended = False
 
     def minutes(self, now: float) -> int:
@@ -45,6 +50,7 @@ class Watcher:
     def feed(self, raw: str, now: float) -> list[str]:
         """The updates one log line earns."""
         line = raw.rstrip()
+        self.last_line, self.stalled = now, False
         stamp, text = (STAMP.match(line).groups() if STAMP.match(line) else (None, line))
         at = self.clock(stamp, now) if stamp else now  # the log's own time, so a replay reads the same
         out = []
@@ -64,7 +70,9 @@ class Watcher:
         else:
             for pattern, plain in STEPS:
                 if pattern.search(text):
-                    out.append(plain or text)
+                    if (plain or text) not in self.said:
+                        out.append(plain or text)
+                        self.said.add(plain or text)
                     break
         if text and not text.startswith("missing or empty"):
             self.previous = text
@@ -75,7 +83,11 @@ class Watcher:
         return out
 
     def tick(self, now: float) -> list[str]:
-        """A heartbeat when Final has passed and five minutes went by without an update."""
+        """A stall warning once when the build has logged nothing for ten minutes; otherwise a heartbeat when
+        Final has passed and three minutes went by without an update."""
+        if not self.stalled and now - self.last_line >= STALL:
+            self.stalled, self.last_update = True, now
+            return [f"the build has logged nothing for {round((now - self.last_line) / 60)} min; it may be stuck"]
         if self.final_at is None or now - self.last_update < HEARTBEAT:
             return []
         self.last_update = now
@@ -95,7 +107,7 @@ def main(path: str, resume: bool = False) -> None:
         if resume:
             for line in log.readlines():
                 w.feed(line, time.time())
-            w.last_update = time.time()
+            w.last_update = w.last_line = time.time()
         while not w.ended:
             partial += log.readline()
             line, complete = partial, partial.endswith("\n")  # a line still being written waits for its end

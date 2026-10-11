@@ -12,21 +12,25 @@ postgame-recaps/
   stress-tests/<id>/        saved test games: 2025-26 Bulls games and dry runs featuring other teams
   logos/, portraits/        NBA.com images (portraits are downloaded again when missing or 12 hours old, never committed)
   assets/                   decision-bearing slide versions from the format's design (Oct 3 to 10, 2026; v14 is the Oct 9 template; v19 is the Oct 10 template, with v15 and v17 its rejected options)
-output/postgame-recap/<id>/ recap.json, zones.png, slides/, caption.txt (scratch, not committed)
+output/postgame-recap/<id>/ recap.json, zones.png, slides/, layout.json, caption.txt (scratch, not committed)
 ```
 
 ## Running a recap
 
 One command, from the repo root (a worktree uses the primary checkout's venv); the `run-postgame-recap` skill
-wraps it with Claude's slide check and the Notion log:
+wraps it with Claude's updates, Claude's review of every slide, the delivery and the Notion log:
 
 ```bash
 PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/postgame_recap.py --today
 ```
 
 Beside it, the skill runs `pipeline/watch_build.py <build output file>` under Claude's Monitor tool: it turns
-the log into one line per change (period, Final, the feeds still unpublished, a failing check, each build step)
-plus a heartbeat every 5 minutes after Final, so Claude can update the user without reading every poll.
+the log into one line per change (period, Final, the feeds still unpublished, a failing check, each build step),
+a heartbeat every 3 minutes after Final and a warning if the build logs nothing for 10 minutes (it logs every
+poll, so that means stuck), so Claude can update the user without reading every poll. Once the box score is on
+disk, `pipeline/early_look.py <game_id>` gives Claude the result, whether the player rows add up to the team
+totals, the leaders and what changes the layout (overtime, players used, longest name), so the updates during
+the wait say something.
 
 `--today` finds tonight's Bulls game in NBA.com's schedule (or pass a game ID) and exits quietly on days
 without one (before 6 am, last night's game). It checks every 90 seconds until the game is Final, the box
@@ -35,18 +39,28 @@ then it pulls every feed and computes every number, and while either step exits 
 reason, waits 90 seconds (5 minutes from an hour after Final, so a long wait does not hammer stats.nba.com)
 and pulls again. Any other failure three times in a row stops the run; once or twice, it pulls again, because
 a half-published feed can crash a step. Then, one build at a time (a lock), it draws the shot chart (linking the shared cache when run from a
-worktree, removing only the link), builds the pages, exports the PNGs, copies them to iCloud Drive › Bulls
-recaps, writes `caption.txt`, keeps an `as-posted/` copy of the feeds, play-by-play, `sources.json` and `recap.json`
-(written once per game, so a rebuild cannot move the baseline `recheck.py` compares against), and delivers
-(`pipeline/deliver.py`):
+worktree, removing only the link), builds the pages, exports and measures the PNGs, writes `caption.txt` and
+stops: its last line, `review:`, prints the delivery command. Nothing reaches the phone until Claude has
+looked at every page beside its reference and fixed what needed fixing (Oct 10: the user wants judgment before
+anything ships, not only the script's checks). The measurement (`layout.json` and one `layout:` line per page)
+reports text overlapping text or past the margins (FIX) and an unusually tall empty band or a page crowding
+its footer (LOOK); the thresholds are set so all 16 saved test games read "ok". The references are the v19
+pages in `assets/` (`2026-10-10-v19-gsw-*`, with three notables and overtime, plus the final-score page with
+none, `-det-`, and one, `-mia-`).
+
+Then Claude delivers (`PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/deliver.py <game_id>`):
+- the slides are copied to iCloud Drive › Bulls recaps › `<date> <matchup>` (replacing an earlier copy);
 - every slide keeps image data only, so Instagram has nothing to read as AI-made (the user's rule: its AI
   label must never appear); anything else is removed and logged;
 - the slides go into the Photos album "Bulls recaps", which iCloud Photos syncs to the phone, where
   Instagram picks images; the stored originals are exported back and compared byte for byte;
 - Claude's push notification is the alert (the `run-postgame-recap` skill). An iMessage to the user's own number
   with the slides was tried and dropped on 2026-10-08: a text to oneself never alerts on the iPhone, and the
-  attachments would pile up in Messages.
-A failed delivery is logged and never fails the run: the slides are already in iCloud Drive. It gives up
+  attachments would pile up in Messages;
+- the feeds, play-by-play, `sources.json` and `recap.json` are kept in the game's `as-posted/` (written once
+  per game, at the first delivery, so it holds what was posted and a later rebuild cannot move the baseline
+  `recheck.py` compares against).
+A failed Photos import is logged and delivery carries on: the slides are already in iCloud Drive. The build gives up
 five hours after tip-off (three hours after Final once a notice has restarted it). `--check` only reports
 whether the game is final. `FOCUS_TEAM_ID` dry-runs another
 team's game (saved under `stress-tests/`); `RECAP_ALBUM` sends a test run's slides to another album.
@@ -70,11 +84,27 @@ PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/pull_game.py <game_id>
 PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/recap_data.py <game_id>
 PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/zones_share.py postgame-recaps/seasons/<season>/<game_id> output/postgame-recap/<game_id>/zones.png 13 11 33
 venv/bin/python postgame-recaps/pipeline/build_mockup.py <game_id> [more ids]
-venv/bin/python postgame-recaps/pipeline/export_slides.py <game_id> --icloud
+venv/bin/python postgame-recaps/pipeline/export_slides.py <game_id>
 ```
 
 `build_mockup.py` writes `output/postgame-recap/mockup.html`, all the given games with a switcher (the phone
 preview is built from it); `export_slides.py` saves each page through headless Chromium (Playwright).
+
+The deadline (user, 2026-10-10: "we have to post"): 45 minutes after Final (`FALLBACK`), `postgame_recap.py`
+sets `RECAP_FALLBACK`, and a feed NBA.com has left incomplete is replaced by what can be computed exactly or its
+page is left out; each change is a `repaired:` line in the log and in `recap.json` (`repairs`), and the delivery
+message names it. MIN at MIA showed why: NBA.com published the box score, play-by-play and summary for the full
+game, but four factors, misc and shots stopped at 203 of 240 team-minutes and stayed so. Past the deadline:
+- four factors covering fewer minutes than the game: eFG% and FT rate from the box score (within 0.05 points of
+  NBA.com on 36 complete team-games), TOV% and OREB% a hyphen (box-score versions were 2 to 4 points off
+  typically, up to 11: NBA.com uses team turnovers, team rebounds and its own possessions), with a page note;
+- an incomplete shot feed: the shots come from the play-by-play (`shots_from_pbp`), which held every attempt
+  on all 13 saved games and matched the shot feed's location, result, 2 or 3 points and shot type on all 1,220
+  matched shots; it lacks NBA.com's zone labels, so the zones chart places those shots by coordinates (1,217 of
+  1,220 in the same zone), and the page says so. Only if the play-by-play's count also differs from the box
+  score is the shot chart left out (the contents renumber).
+Paint, fast-break, second-chance and points-off-turnover counts always come from the game summary (full game,
+144 of 144 equal to the misc feed on the saved complete games), so a partial misc feed no longer reaches a slide.
 
 What makes a build "not ready" (`pull_game.py` and `recap_data.py`, exit 75):
 - a feed a published slide uses is not published yet (`pull_game.REQUIRED`, logged by plain name, for example
@@ -83,12 +113,17 @@ What makes a build "not ready" (`pull_game.py` and `recap_data.py`, exit 75):
 - the play-by-play does not yet reach the box score's final score (the two are separately cached requests);
 - the play-by-play does not match NBA.com's quarter scores, or any made shot or free throw does not add exactly
   its points to the scoring team's total (`score_steps`; every saved game passes except the scrambled DEN at UTA
-  feed);
+  feed). When the plays do reach every quarter score and only a printed running score is wrong, the running
+  score is recomputed from the plays (`repair_scores`, 2026-10-10, MIN at MIA: a re-entered and-one), and the
+  result must still pass the score steps and NBA.com's game-flow counts below;
+- the Bulls shot feed holds fewer attempts than the box score (MIN at MIA: 72 of 87; every saved Bulls game
+  matches);
 - the game logs (LeagueGameLog players and teams), which carry a game while it is live, do not yet show tonight
   exactly as the final box score does (`logs_match`: PTS, REB, AST, STL, BLK and 3PM for both team rows and every
   Bulls player who played);
 - the box-score tables disagree with each other (`feeds_agree`): player rows must add up to the team totals, and
-  NBA.com's eFG% and FT rate must match the box score's makes and attempts (all 15 saved games agree);
+  NBA.com's eFG% and FT rate must match the box score's makes and attempts (all 15 saved games agree); the hold
+  names how many minutes NBA.com's four factors cover when they stopped early;
 - lead changes, ties, biggest leads or longest runs differ from NBA.com's own Summary V3 counts. One exception
   (`compare_flow`, 2026-10-09): a winner led by at least its final margin, so an NBA.com biggest lead below it is
   impossible and is skipped, provided ours passes that test (HOU 135-117 at DAL, Oct 9: NBA.com listed both teams'

@@ -1,8 +1,15 @@
-"""Get the slides onto the user's phone: a Photos album, which iCloud Photos syncs, where Instagram picks images.
+"""Get the slides onto the user's phone, after Claude's review: iCloud Drive and a Photos album, which iCloud Photos
+syncs, where Instagram picks images.
+
+    venv/bin/python postgame-recaps/pipeline/deliver.py <game_id>
+
+postgame_recap.py stops once the slides are exported, so nothing reaches the phone until the run-postgame-recap
+skill has looked at every page (and fixed what needed fixing); then the skill runs this. The slides are copied to
+iCloud Drive/Bulls recaps/<date> <matchup>/ (the Files app) and added to the album.
 
 The album is "Bulls recaps", or photos_album in ~/.config/bulls-recap/notify.json; RECAP_ALBUM overrides it, so
-test runs stay out of the real one. Delivery never fails a run: the slides are already in iCloud Drive, so
-problems are logged and the run continues. (An iMessage with the slides was tried on 2026-10-08 and dropped: a
+test runs stay out of the real one. A Photos failure is logged and delivery carries on: the slides are
+already in iCloud Drive. (An iMessage with the slides was tried on 2026-10-08 and dropped: a
 text to oneself never alerts, and the attachments would pile up in Messages; the alert is Claude's push.)
 
 Instagram must never label a post as AI-made (user, 2026-10-08), so every slide must carry image data and
@@ -15,10 +22,20 @@ import json
 import os
 import struct
 import subprocess
+import shutil
+import sys
 import tempfile
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from paths import OUTPUT, game_dir  # noqa: E402
+
 CONFIG = Path.home() / ".config" / "bulls-recap" / "notify.json"
+ICLOUD = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/Bulls recaps"
+# What recheck.py compares the next day, plus the play-by-play (margin line, runs, breakdown, Closer award)
+# and the capture record; recap.json, the numbers the slides drew, is copied from output/.
+SNAPSHOT = ["teams.csv", "players.csv", "ff_team.csv", "misc_teams.csv", "summary_stats.csv", "summary_linescore.csv",
+            "shots_raw_chi.csv", "pbp.csv", "sources.json"]
 IMAGE_ONLY = {b"IHDR", b"PLTE", b"tRNS", b"IDAT", b"IEND"}  # what a picture needs; anything else is metadata
 
 
@@ -92,6 +109,45 @@ def deliver(slides: list) -> list:
     album = os.environ.get("RECAP_ALBUM", config.get("photos_album", "Bulls recaps"))
     try:
         lines.append(to_photos(slides, album))
-    except Exception as e:  # never fail the run: the slides are already in iCloud Drive
+    except Exception as e:  # never fail delivery: the slides are already in iCloud Drive
         lines.append(f"Photos failed: {type(e).__name__}: {e}")
     return lines
+
+
+def to_icloud(game_id: str, slides: list) -> str:
+    """Copy the slides to iCloud Drive/Bulls recaps/<date> <matchup>/, replacing an earlier delivery's copies."""
+    r = json.loads((OUTPUT / game_id / "recap.json").read_text())
+    folder = ICLOUD / f"{r['date_short']} {r['chi']['tri']} {'vs' if r['home'] else 'at'} {r['opp']['tri']}"
+    folder.mkdir(parents=True, exist_ok=True)
+    for old in folder.glob("*.png"):
+        old.unlink()  # a redelivery after a fix must not leave the earlier version beside the new one
+    for s in slides:
+        shutil.copy(s, folder / s.name)
+    return f"copied to {folder}"
+
+
+def snapshot(data: Path, out: Path) -> str:
+    """Keep the feeds these slides were built from, and the numbers they drew, in <game>/as-posted/, once:
+    recheck.py compares them with NBA.com later, so a redelivery must not move them. Returns the log line."""
+    posted = data / "as-posted"
+    if posted.exists():
+        return f"as-posted/ kept from the first delivery; this build's feeds are in {data.name}/ only"
+    posted.mkdir()
+    kept = [name for name in SNAPSHOT if (data / name).exists()]
+    for name in kept:
+        shutil.copy2(data / name, posted / name)
+    shutil.copy2(out / "recap.json", posted / "recap.json")
+    return f"as-posted/ written: {', '.join(kept)}, recap.json"
+
+
+def main(game_id: str) -> None:
+    slides = sorted((OUTPUT / game_id / "slides").glob("*.png"))
+    if not slides:
+        sys.exit(f"no slides in {OUTPUT / game_id / 'slides'}")
+    # iCloud Drive first, so a Photos failure still leaves the slides on the phone (export already cleaned them).
+    for line in [to_icloud(game_id, slides)] + deliver(slides) + [snapshot(game_dir(game_id), OUTPUT / game_id)]:
+        print("delivery:", line)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1])

@@ -1,0 +1,160 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zone FGM leaders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,900;1,8..60,900&display=swap" rel="stylesheet">
+<style>
+/* Licensed faces from this Mac by local name only; Google Fonts is the fallback. Font files never enter the repo. */
+@font-face{font-family:ZSans;font-weight:400;src:local('Geist-Regular'),local('Geist Regular')}
+@font-face{font-family:ZSans;font-weight:600;src:local('Geist-SemiBold'),local('Geist SemiBold')}
+@font-face{font-family:ZSans;font-weight:700;src:local('Geist-Bold'),local('Geist Bold')}
+@font-face{font-family:ZSerif;font-weight:900;font-style:normal;src:local('GeorgiaProCondensed-Bold'),local('Georgia Pro Condensed Bold')}
+@font-face{font-family:ZSerif;font-weight:900;font-style:italic;src:local('GeorgiaProCondensed-BoldItalic'),local('Georgia Pro Condensed Bold Italic')}
+:root{--bg:#E9E5E1;--k:#242424;--r:#CE1141;--mute:#645D57;--foot:#7A736C;--tag:#FAF8F5;
+  --sans:ZSans,Geist,Arial,sans-serif;--serif:ZSerif,'Source Serif 4',Georgia,serif}
+body{margin:0;background:#2b2b2b;font-family:var(--sans);color:var(--k)}
+body.preview{display:flex;flex-wrap:wrap;gap:16px;padding:16px;justify-content:center}
+.page{position:relative;width:1080px;height:1440px;background:var(--bg);overflow:hidden;font-variant-numeric:tabular-nums;flex:none}
+body.preview .page{zoom:var(--z,.33)}
+/* Asset mode keeps only the charts (and the cover's court and heads), on transparent pages. */
+body.asset{background:transparent}body.asset .page{background:transparent}
+body.asset .trim,body.asset .ttl,body.asset .sub,body.asset .foot,body.asset .hand,body.asset .fade{visibility:hidden}
+.abs{position:absolute}
+.trim{left:0;top:0;width:1080px;height:13px;background:linear-gradient(#C12744 0 4px,#EFEEF1 4px 8px,#151F1B 8px 13px)}
+/* Text boxes at the Canva draft's positions and sizes (October 12). */
+.ttl{left:25px;top:55.36px;width:1030px;margin:0;font-family:var(--serif);font-weight:900;font-size:74.667px;line-height:1.07;letter-spacing:-.03em}
+.sub{left:25px;top:223.06px;width:1030px;font-family:var(--serif);font-weight:900;font-style:italic;font-size:40px;line-height:1.08;letter-spacing:-.03em;color:var(--r)}
+.foot{left:25px;top:1411.59px;font-size:14.667px;line-height:1.5;color:var(--foot);white-space:nowrap}
+.foot b{font-weight:700}
+.hand{right:25px;top:1409.39px;font-size:16px;line-height:1.4;letter-spacing:.02em;font-weight:600;white-space:nowrap}
+.cover .ttl{left:25.84px;top:902.44px;width:1028.33px;font-size:114.667px;line-height:1;letter-spacing:-.02em;color:var(--bg)}
+.cover .sub{left:25.84px;top:1267.37px;width:1028.33px;font-size:64px;line-height:1;letter-spacing:-.02em}
+.cover .hand{font-weight:700}
+/* The cover's fade: the canvas at the top deepening to black behind the question. */
+.fade{left:0;top:13px;width:1080px;height:1427px;background:linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,.3) 36%,rgba(0,0,0,.78) 46%,#000 53%)}
+.chart{left:0;width:1080px}
+/* Cover heads are silhouettes: the reader sees who led each zone only after swiping. */
+.peek img.hd{position:absolute;transform:translate(-50%,-50%);filter:brightness(0)}
+/* A tag: the name on a black block, the figures on a light card below; square corners throughout. */
+.tag{transform:translate(-50%,-50%);text-align:center;white-space:nowrap;z-index:2}
+.tag .nm{background:var(--k);color:var(--bg);font-weight:600;font-size:20px;line-height:1;padding:5px 9px}
+.tag .card{background:var(--tag);border:2px solid var(--k);border-top:none;padding:3px 9px 5px}
+.tag .ssn{font-size:17px;color:var(--mute);line-height:1.1}
+.tag .fg{font-weight:600;font-size:22px;line-height:1.1}
+.tag .gap{font-weight:600;font-size:18px;line-height:1.1}
+.tag img{position:absolute;left:50%;bottom:calc(100% - 3px);transform:translateX(-50%);width:112px;z-index:-1}
+.legend{left:0;width:1080px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.legend .lt{font-weight:600;font-size:20px}
+.legend .row{display:flex;align-items:center;gap:12px;font-weight:600;font-size:18px;color:var(--mute)}
+.legend .sw{display:flex;gap:4px}.legend .sw i{display:block;width:34px;height:24px}
+</style></head><body>
+<script>
+const A=__ASSETS__;
+const EXPORT=location.search.includes('export');
+// Asset mode: the charts alone on a transparent background, for placing in Canva.
+const ASSET=location.search.includes('asset');
+document.body.className=ASSET?'asset':EXPORT?'':'preview';
+const COURT_W=900,COURT_X=(1080-COURT_W)/2,HEADROOM=72;
+const CHART_TOP=355.86;   // where the Canva draft places the chart asset's top edge
+const PEEK_HEAD=150;      // cover heads stand alone, a little larger than on the tags
+const PEEK_TOP=60;        // the cover's court sits near the top, clear of the fade
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const ink=d=>A.pages[0].ink[d];
+const handle=(dataInk)=>`<div class="abs hand"><span style="color:var(--r)">chicago_bulls</span><span style="color:${dataInk}">[data]</span></div>`;
+
+// Tag centres are fractions of the court image; the chart box puts the court HEADROOM below its top, so the
+// top-of-key head has room above the court.
+function tag(t,P){
+  const x=COURT_X+t.x*COURT_W,y=HEADROOM+t.y*COURT_W*P.aspect;
+  return `<div class="abs tag" data-zone="${esc(t.zone)}" style="left:${x}px;top:${y}px">
+    <img src="${P.heads[t.id]}" alt="">
+    <div class="nm">${esc(t.name)}</div>
+    <div class="card">${t.season?`<div class="ssn">${t.season}</div>`:''}
+      <div class="fg">${t.made} (${t.pct})</div>
+      <div class="gap" style="color:${ink(t.dir)}">${t.gap}</div></div></div>`;
+}
+
+function page(P){
+  const H=COURT_W*P.aspect,legY=HEADROOM+H+48;
+  return `<div class="page" data-scope="${P.scope}">
+    <div class="abs trim"></div>
+    <h1 class="abs ttl">${esc(P.title)}</h1>
+    <div class="abs sub">${esc(P.subtitle)}</div>
+    <div class="abs chart" style="height:${legY+62}px">
+      <img class="abs" src="${P.court}" style="left:${COURT_X}px;top:${HEADROOM}px;width:${COURT_W}px" alt="">
+      ${P.tags.map(t=>tag(t,P)).join('')}
+      <div class="abs legend" style="top:${legY}px"><div class="lt">FG% vs. NBA avg</div>
+        <div class="row">Below<div class="sw">${P.bands.map(c=>`<i style="background:${c}"></i>`).join('')}</div>Above</div></div>
+    </div>
+    <div class="abs foot">Data via NBA.com | <b>${esc(P.foot)}</b></div>
+    ${handle('var(--k)')}
+  </div>`;
+}
+
+// The cover: a sneak peek of the single-season court near the top of the page, stripped to its zone
+// colours and the twelve heads as silhouettes (no tags, figures or legend), fading to black under the question.
+function cover(C,P){
+  const heads=P.tags.map(t=>`<img class="hd" src="${P.heads[t.id]}" style="left:${COURT_X+t.x*COURT_W}px;top:${HEADROOM+t.y*COURT_W*P.aspect}px;width:${PEEK_HEAD}px" alt="">`).join('');
+  return `<div class="page cover" data-scope="cover">
+    <div class="abs chart peek" style="height:${HEADROOM+COURT_W*P.aspect}px">
+      <img class="abs" src="${P.court}" style="left:${COURT_X}px;top:${HEADROOM}px;width:${COURT_W}px" alt="">${heads}</div>
+    <div class="abs fade"></div>
+    <div class="abs trim"></div>
+    <h1 class="abs ttl">${esc(C.title)}</h1>
+    <div class="abs sub">${esc(C.subtitle)}</div>
+    ${handle('var(--bg)')}
+  </div>`;
+}
+
+document.body.insertAdjacentHTML('beforeend',cover(A.cover,A.pages[0])+A.pages.map(page).join(''));
+if(!EXPORT){const fit=()=>document.body.style.setProperty('--z',Math.min(.4,(innerWidth-32)/1080));fit();addEventListener('resize',fit);}
+
+// Report any tag or head that touches another zone's, leaves the page margins, rises into the subtitle or
+// reaches the legend. A head's box includes its transparent margins, so a reported head may still be clear.
+function crowding(){
+  const out=[];
+  document.querySelectorAll('.page:not(.cover)').forEach(pg=>{
+    const o=pg.getBoundingClientRect(),z=EXPORT?1:parseFloat(getComputedStyle(pg).zoom)||1;
+    const box=e=>{const r=e.getBoundingClientRect();return{l:(r.left-o.left)/z,r:(r.right-o.left)/z,t:(r.top-o.top)/z,b:(r.bottom-o.top)/z};};
+    const sub=box(pg.querySelector('.sub')).b,leg=box(pg.querySelector('.legend .lt')).t;
+    const items=[];pg.querySelectorAll('.tag').forEach(t=>{const zn=t.dataset.zone;
+      const card={...box(t.querySelector('.nm')),b:box(t.querySelector('.card')).b};
+      items.push([zn,'tag',card],[zn,'head',box(t.querySelector('img'))]);});
+    items.forEach(([zn,k,b],i)=>{const w=`${pg.dataset.scope}: ${zn} ${k}`;
+      if(b.l<0||b.r>1080)out.push(`${w} past the page edge`);
+      if(b.t<sub+6)out.push(`${w} reaches the subtitle`);
+      if(b.b>leg-6)out.push(`${w} reaches the legend`);
+      items.slice(i+1).forEach(([z2,k2,c])=>{if(z2!==zn&&b.l<c.r&&c.l<b.r&&b.t<c.b&&c.t<b.b)out.push(`${w} touches ${z2} ${k2}`);});});
+    // Wing tags sit just above the three-point arc: report the gap from the tag's nearest point to the line.
+    const P=A.pages.find(p=>p.scope===pg.dataset.scope),ci=box(pg.querySelector('.chart > img'));
+    const cw=ci.r-ci.l,hx=ci.l+P.hoop.x*cw,hy=ci.t+P.hoop.y*(ci.b-ci.t),r=P.arc_r*cw;
+    items.filter(([zn,k])=>k==='tag'&&/Wing 3/.test(zn)).forEach(([zn,,b])=>{
+      const dx=Math.max(b.l-hx,0,hx-b.r),dy=Math.max(b.t-hy,0,hy-b.b),gap=Math.hypot(dx,dy)-r-1.5;
+      out.push(`${pg.dataset.scope}: ${zn} tag ${gap<4?'TOUCHES':'clears'} the three-point line (${gap.toFixed(0)} px)`);});
+  });
+  return out;
+}
+const loaded=f=>[...document.fonts].some(x=>x.family===f.fam&&x.weight==f.w&&x.status==='loaded');
+Promise.all([document.fonts.ready,...[...document.images].map(i=>i.decode().catch(()=>{}))]).then(()=>{
+  // One crop for both stat charts, measured from each court image, so both courts place at the same size:
+  // the union of the content (court, tags, heads, legend) plus a few pixels of air.
+  const charts=[...document.querySelectorAll('.page:not(.cover) .chart')];
+  const ext=charts.map(c=>{const o=c.querySelector('img').getBoundingClientRect();
+    let l=1e9,t=1e9,r=-1e9,b=-1e9;c.querySelectorAll('img,.nm,.card,.legend .lt,.legend .row').forEach(e=>{const q=e.getBoundingClientRect();
+      l=Math.min(l,q.left-o.left);t=Math.min(t,q.top-o.top);r=Math.max(r,q.right-o.left);b=Math.max(b,q.bottom-o.top);});
+    return {l,t,r,b};});
+  const pad=4,u={l:Math.min(...ext.map(e=>e.l))-pad,t:Math.min(...ext.map(e=>e.t))-pad,r:Math.max(...ext.map(e=>e.r))+pad,b:Math.max(...ext.map(e=>e.b))+pad};
+  const half=Math.max(COURT_W/2-u.l,u.r-COURT_W/2);  // symmetric about the court's centre line
+  // Every chart, the cover's included, sits where Canva places the asset: its crop's top edge at CHART_TOP.
+  charts.forEach(c=>{c.style.top=(CHART_TOP-HEADROOM-u.t)+'px';});
+  document.querySelectorAll('.peek').forEach(c=>{c.style.top=(PEEK_TOP-HEADROOM)+'px';});
+  window.CLIPS=charts.map(c=>{const o=c.querySelector('img').getBoundingClientRect();
+    return {x:o.left+scrollX+COURT_W/2-half,y:o.top+scrollY+u.t,width:2*half,height:u.b-u.t};});
+  window.SERIF_FACE=loaded({fam:'ZSerif',w:'900'})?'Georgia Pro Condensed (this Mac)':'Source Serif 4 fallback';
+  window.SANS_FACE=loaded({fam:'ZSans',w:'600'})?'Geist (this Mac)':'Geist from Google Fonts';
+  window.CROWDING=crowding();
+  window.READY=true;
+  if(!EXPORT&&window.CROWDING.length)console.warn(window.CROWDING.join('\n'));
+});
+</script>
+</body></html>

@@ -196,6 +196,38 @@ def test_game_one_jerseys_and_leaders_grid():
     assert len(steals) == 4  # a four-way tie for the lead, every one shown
 
 
+def test_a_sixth_marked_starter_moves_to_the_bench(monkeypatch):
+    # NBA.com's preseason box gives MEM six positions; Quinten Post (C, 17:09) entered at 5:52 of the 1st.
+    # ESPN's starters for this game are the five below.
+    monkeypatch.setattr(rd, "BULLS", 1610612763)
+    g = game_dir("0012600037")
+    players = rd.read(g, "players.csv")
+    assert players.position[players.teamId == rd.BULLS].notna().sum() == 6
+    ids = rd.starters(players, pbp("0012600037"))
+    b = rd.box(players, rd.read(g, "roster.csv", dtype={"NUM": str}), ids)
+    assert {r[1] for r in b["starters"]} == {"Cedric Coward", "Cameron Boozer", "Jaylen Wells", "Zach Edey", "Ty Jerome"}
+    assert "Quinten Post" in [r[1] for r in b["bench"]]
+    assert b["minutes"] == [69, 171, 240]
+
+
+def test_an_unsettled_starting_five_stops_the_build(monkeypatch):
+    monkeypatch.setattr(rd, "BULLS", 1610612763)
+    frame = pbp("0012600037")
+    frame = frame[frame.description != "SUB: Post FOR Boozer"]  # Post now looks on the floor at the tip
+    with pytest.raises(ValueError, match="starting five"):
+        rd.starters(rd.read(game_dir("0012600037"), "players.csv"), frame)
+
+
+def test_every_saved_game_settles_five_starters_per_team():
+    folders = [p.parent for p in game_dir("0012600037").parent.glob("*/players.csv")]
+    folders += [p.parent for p in game_dir("0022500248").parent.glob("*/players.csv")]
+    assert len(folders) >= 19
+    for g in folders:
+        players, frame = rd.read(g, "players.csv"), rd.read(g, "pbp.csv")
+        for team_id in players.teamId.unique():
+            assert len(rd.starters(players, frame, team_id)) == 5, g.name
+
+
 def test_an_impossible_nba_biggest_lead_is_skipped_but_nothing_else_is():
     # HOU won 135-117 at DAL (2026-10-09, never trailed); NBA.com listed both biggest leads as 0.
     ours = {"lead_changes": 0, "ties": 0, "chi_lead": 28, "opp_lead": 0, "run_chi": 10, "run_opp": 9}
@@ -387,14 +419,16 @@ def test_espn_check_agrees_on_a_clean_game_and_reads_both_sites_conventions():
     assert any("Pickett (missed 3) is a heave" in n for n in notes)
 
 
-def test_espn_check_flags_the_partial_shot_feed_and_six_starters():
+def test_espn_check_flags_the_partial_shot_feed_and_agrees_on_starters():
     # MIN at MIA (Oct 10): NBA.com's game-night shot feeds stopped at 203 of 240 team-minutes and a re-entered
-    # and-one broke its running score; ESPN had every shot. MEM at CHI (Oct 9): NBA.com marked six Memphis starters.
+    # and-one broke its running score; ESPN had every shot. NBA.com marked six Memphis starters (Oct 9) and six
+    # Cleveland and seven Orlando ones; the five on the floor at the tip match ESPN's.
     _, diffs, _ = espn_check("0012600002")
     assert sum("is on ESPN but not in NBA.com's shot feed" in d for d in diffs) >= 20
     assert "MIA running score parts at scoring play 41: NBA.com reaches 83 (Q3 1:13), ESPN 82 (Q3 1:13)" in diffs
-    _, diffs, _ = espn_check("0012600037")
-    assert diffs == ["MEM Post started: NBA.com yes, ESPN no"]
+    assert not any("started" in d for d in diffs)
+    assert espn_check("0012600037")[1] == []
+    assert espn_check("0012600041")[1] == []
 
 
 def test_espn_check_names_a_changed_number(tmp_path):

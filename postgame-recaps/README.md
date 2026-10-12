@@ -144,8 +144,10 @@ source (user, 2026-10-11): each `espn differs:` line is flagged for Claude's rev
 call; the build never waits or stops on it, and an unreachable ESPN reads "could not run", never "agree". ESPN's
 summary is saved as `espn_summary.json` in the game folder. Two conventions differ by design and are handled:
 ESPN files points off turnovers under the team that turned the ball over, and leaves some counts blank (a note,
-not a zero). In preseason NBA.com sometimes marks six starters for a team (5 of 7 saved preseason games, no
-regular-season game); ESPN lists five.
+not a zero). In preseason NBA.com's box score often marks one or two bench centers as extra starters (6 of 8
+saved 2026-27 preseason games, no regular-season game); `recap_data.starters()` keeps the five on the floor at the
+opening tip (the play-by-play), which ESPN's five match, and stops the build when it cannot settle five. The
+ESPN check compares that five.
 
 `recap_data.py` computes every number into `output/postgame-recap/<id>/recap.json`; the template only draws,
 plus the arithmetic on rows it prints: TS% and the box-score subtotals and team row (which sums the players'

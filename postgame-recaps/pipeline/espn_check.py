@@ -12,7 +12,7 @@ and never waits or stops on it.
 Compared for both teams, against the files the slides are built from:
 - the final score and the four quarter scores (summary_linescore.csv);
 - every player's minutes (ESPN rounds to the minute), points, makes and attempts, rebounds, assists, steals,
-  blocks, turnovers, fouls and +/-, and who started and who played (players.csv);
+  blocks, turnovers, fouls and +/-, who played (players.csv) and who started (recap_data.starters);
 - the team box and fouls (teams.csv); paint, fast-break and off-turnover points, team and total turnovers,
   biggest lead and lead changes (summary_stats.csv, where the slides take them from);
 - every field-goal attempt in NBA.com's shot feeds (shots_raw_chi.csv, shots_raw_opp.csv), matched to ESPN's
@@ -43,7 +43,7 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from paths import game_dir  # noqa: E402
-from recap_data import minutes, read  # noqa: E402
+from recap_data import minutes, read, starters  # noqa: E402
 
 API = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba"
 SUFFIXES = {"jr", "sr", "ii", "iii", "iv"}
@@ -266,6 +266,11 @@ def check(g: Path, summary: dict) -> tuple[int, list]:
 
         # Players: everyone either site lists as having played.
         mine = players[players.teamId == t.teamId]
+        try:  # the five the slides print (NBA.com's preseason box also marks bench centers)
+            started = starters(players, pbp, t.teamId)
+        except ValueError as e:  # the build stops on this too
+            out.append(f"{tri} {e}")
+            started = set(mine.personId[mine.position.notna()])
         ids, nba_only, espn_only = match_players(mine, espn_people.get(eid, []))
         for r in nba_only:
             if minutes(r.minutes) > 0:
@@ -279,7 +284,7 @@ def check(g: Path, summary: dict) -> tuple[int, list]:
                 continue
             who, played = f"{tri} {r.familyName}", minutes(r.minutes) > 0
             same(who, "played", "yes" if played else "no", "yes" if e["played"] else "no")
-            same(who, "started", "yes" if isinstance(r.position, str) and r.position else "no", "yes" if e["starter"] else "no")
+            same(who, "started", "yes" if r.personId in started else "no", "yes" if e["starter"] else "no")
             if not (played and e["played"]):
                 continue
             compared += 1

@@ -16,6 +16,7 @@ import os
 import math
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 import numpy as np
@@ -363,7 +364,44 @@ def head_to_head(teams: pd.DataFrame, misc: pd.DataFrame, stats: pd.DataFrame, o
 JERSEY_FIX = {1627741: "7"}
 
 
-def box(players: pd.DataFrame, roster: pd.DataFrame, team_minutes: str | None = None) -> dict:
+def fold(name) -> str:
+    """'Jović' and 'Jovic' compare equal: the play-by-play spells some names without accents."""
+    return unicodedata.normalize("NFKD", str(name)).encode("ascii", "ignore").decode().lower().strip()
+
+
+def starters(players: pd.DataFrame, pbp: pd.DataFrame, team_id: int | None = None) -> set:
+    """personIds of a team's starting five (the Bulls by default).
+
+    The box score marks starters with a position (F, F, C, G, G). NBA.com's preseason box also marks one or two
+    more, always centers who came off the bench (6 of 8 saved 2026-27 preseason games; MEM's Quinten Post in
+    0012600037, ORL's Bitadze and Vucevic in 0012600041). With more than five marked, keep those on the floor
+    at the opening tip: their first first-period play comes before any "SUB: <name> FOR" bringing them in
+    (ESPN's starters agree on every saved game it covers). Anything but five stops the build for review rather
+    than print a guess.
+    """
+    team_id = BULLS if team_id is None else team_id
+    t = players[players.teamId == team_id]
+    marked = t[t.position.notna() & (t.position.astype(str).str.strip() != "")]
+    if len(marked) > 5:
+        q1 = pbp[(pbp.period == 1) & (pbp.teamId == team_id)].sort_values("actionNumber")
+        subs = q1[q1.actionType == "Substitution"]
+        incoming = subs.description.str.extract(r"^SUB: (.+?) FOR ", expand=False).map(fold)
+
+        def at_tip(r) -> bool:
+            plays = q1.actionNumber[q1.personId == r.personId]
+            if plays.empty:  # no first-period play: unproven, so the count check below stops the build
+                return False
+            names = {fold(r.familyName), fold(f"{str(r.firstName)[:1]}. {r.familyName}")}  # "B. Brown" when two share one
+            return not incoming[subs.actionNumber < plays.min()].isin(names).any()
+
+        marked = marked[marked.apply(at_tip, axis=1)]
+    if len(marked) != 5:
+        raise ValueError(f"cannot settle {t.teamTricode.iloc[0]}'s starting five: NBA.com marks "
+                         f"{', '.join(t.familyName[t.position.notna()])}; the play-by-play keeps {len(marked)}")
+    return set(marked.personId.astype(int))
+
+
+def box(players: pd.DataFrame, roster: pd.DataFrame, starter_ids: set, team_minutes: str | None = None) -> dict:
     """Bulls rows. Jersey numbers come from the roster pulled with the game (the box score's jerseyNum is
     blank, current games included; rechecked 2026-10-07); no number rather than a guess."""
     p = players[players.teamId == BULLS].copy()
@@ -391,7 +429,7 @@ def box(players: pd.DataFrame, roster: pd.DataFrame, team_minutes: str | None = 
                 int(r.threePointersAttempted), int(r.freeThrowsMade), int(r.freeThrowsAttempted), int(r.steals),
                 int(r.blocks), int(r.turnovers), int(r.plusMinusPoints), num.get(r.personId, "")]
 
-    starters = played[played.position.notna() & (played.position.astype(str).str.strip() != "")]
+    starters = played[played.personId.isin(starter_ids)]
     bench = played.drop(starters.index)
     order = lambda frame: frame.sort_values(["points", "min"], ascending=False)
     # Minutes totals add the exact minutes and round once; rounding each player first drifts (238 of 240).
@@ -524,7 +562,7 @@ def breakdown(pbp: pd.DataFrame, teams: pd.DataFrame, opp_tri: str) -> dict:
             "possessions": [poss[TRI], poss[opp_tri]], "ppp": round(acc.V, 2), "example": example}
 
 
-def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home: bool) -> list:
+def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home: bool, starter_ids: set) -> list:
     """#mvp (the top performer) first, then every other award the night earned, biggest feat first.
 
     Each award has a floor; only the leader can win it, and a player wins at most two. The rest are
@@ -535,7 +573,7 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
         return []
     p["name"] = p.firstName + " " + p.familyName
     p["gmsc"] = game_score(p)  # Game Score picks the top performers; it is not printed
-    p["starter"] = p.position.notna() & (p.position.astype(str).str.strip() != "")
+    p["starter"] = p.personId.isin(starter_ids)
     p = p.set_index("personId", drop=False)
     fg = lambda i: f"{p.fieldGoalsMade[i]}-{p.fieldGoalsAttempted[i]} FG"
     cands = []  # (title, series, floor, line)
@@ -925,6 +963,7 @@ def build(game_id: str) -> dict:
             repairs.append(f"shot chart left out: NBA.com's shot feed has {len(raw)} of {fga} attempts, the play-by-play {len(from_pbp)}")
             raw = raw.iloc[0:0]
 
+    starter_ids = starters(players, pbp)
     data = {
         "game_id": game_id, "kind": kind, "season_label": f"{2000 + int(game_id[3:5])}-{int(game_id[3:5]) + 1:02d}", "result": result, "home": chi_home,
         "date_label": date.strftime("%a, %b %-d, %Y").upper(),
@@ -944,13 +983,13 @@ def build(game_id: str) -> dict:
         "flow": flow(pbp, chi_home, opp_tri),
         "four_factors": four_factors(ff, teams, opp_tri, from_box),
         "h2h": head_to_head(teams, read(g, "misc_teams.csv"), read(g, "summary_stats.csv"), opp_tri),
-        "box": box(players, read(g, "roster.csv", dtype={"NUM": str}), str(chi.minutes)),
+        "box": box(players, read(g, "roster.csv", dtype={"NUM": str}), starter_ids, str(chi.minutes)),
         "shooting": {"fgm": int(chi.fieldGoalsMade), "fga": int(chi.fieldGoalsAttempted),
                      "tpm": int(chi.threePointersMade), "tpa": int(chi.threePointersAttempted)},
         "shot_types": shot_types(raw),
         "season": season(bulls_games(read(g, "league_games.csv")), read(g, "schedule.csv"), read(g, "league_games.csv"), game_id),
         "breakdown": breakdown(pbp, teams, opp_tri),
-        "awards": awards(players, raw, pbp, chi_home),
+        "awards": awards(players, raw, pbp, chi_home, starter_ids),
         "scatter": scatter(read(g, "advanced_players.csv"), opp_tri),
         "league_rating": round(acc.V * 100, 1),
         "matchups": matchups(read(g, "matchups.csv"), players, opp_tri),

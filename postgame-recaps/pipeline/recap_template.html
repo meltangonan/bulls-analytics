@@ -97,6 +97,13 @@ const svg=(inner,cap)=>`<div><svg viewBox="0 0 1080 1440" font-family='${SANS}'>
 // The margin line through every scoring event, unsmoothed: STEP holds the margin flat until the next score and
 // then jumps (how a score really moves); otherwise straight segments join the scores.
 const STEP=true;
+// Place a label near (ax, ay): try spots around it, nearest first, and take the first that touches no
+// obstacle (bars, lines, edges). A thin leader joins it to the point when it had to move away. When given,
+// taken collects each placed label's box (with a berth), so the next label keeps clear of it.
+const place=(ax,ay,txt,size,obst,bounds,taken)=>{const w=tw(txt,size,600),h=size*0.9,pad=6,hit=b=>b.x<bounds[0]||b.x+b.w>bounds[2]||b.y<bounds[1]||b.y+b.h>bounds[3]||obst.some(o=>b.x<o.x+o.w+pad&&b.x+b.w+pad>o.x&&b.y<o.y+o.h+pad&&b.y+b.h+pad>o.y);
+const c=[];for(let r=0;r<=260;r+=12)for(const [dx,dy] of [[1,0],[-1,0],[0,-1],[0,1],[1,-1],[-1,-1],[1,1],[-1,1]]){const x=dx>0?ax+12+r*Math.abs(dx):dx<0?ax-12-w-r*Math.abs(dx):ax-w/2,y=dy<0?ay-14-h-r:dy>0?ay+14+r:ay-h/2;c.push({x,y,w,h,d:Math.hypot(x+w/2-ax,y+h/2-ay)});}
+c.sort((a,b)=>a.d-b.d);const b=c.find(q=>!hit(q))||c[0];if(taken)taken.push({x:b.x-10,y:b.y-10,w:b.w+20,h:b.h+20});const near=Math.max(b.x,Math.min(ax,b.x+b.w)),nearY=Math.max(b.y,Math.min(ay,b.y+b.h));
+return (Math.hypot(near-ax,nearY-ay)>22?ln(ax,ay,near,nearY,K,1.2):'')+t(b.x,b.y+h*0.85,size,txt,{w:600,halo:1});};
 const marginPath=P=>{const f=v=>v.toFixed(1);return `M${f(P[0][0])},${f(P[0][1])}`+P.slice(1).map(([x,y])=>STEP?` H${f(x)} V${f(y)}`:` L${f(x)},${f(y)}`).join('');};
 // Red above the zero line, gray below (or the opponent's tint, passed as lo, when below zero means the opponent
 // led), from one path clipped twice.
@@ -141,7 +148,7 @@ for(let p=1;p<=F.periods;p++){const a=12*Math.min(p-1,4)+5*Math.max(p-5,0),b=a+(
 const pts=[[0,0]];F.series.forEach(([a,b])=>{const prev=pts[pts.length-1][0];pts.push([Math.max(a,prev+0.033),b]);});
 const at=nt=>pts.findIndex(p=>Math.abs(p[0]-nt.t)<0.2&&p[1]==nt.m);
 s+=splitArea(marginPath(pts.map(([a,b])=>[sx(a),sy(b)])),sx(0),sx(pts[pts.length-1][0]),z,'cm',OPP());
-F.notes.forEach(nt=>{const i=at(nt),x=sx(i>0?pts[i][0]:nt.t),y=sy(nt.m),right=x<X1-240;s+=`<circle cx="${x}" cy="${y}" r="7" fill="${nt.m>0?R:K}" stroke="${BG}" stroke-width="2.5"/>`;
+const boxes=[];F.notes.filter(nt=>nt.kind!=='moment').forEach(nt=>{const i=at(nt),x=sx(i>0?pts[i][0]:nt.t),y=sy(nt.m),right=x<X1-240;boxes.push({x:x-9,y:y-9,w:18,h:18});s+=`<circle cx="${x}" cy="${y}" r="7" fill="${nt.m>0?R:K}" stroke="${BG}" stroke-width="2.5"/>`;
 if(nt.kind==='decider'){
 // The label goes above or below the chart, whichever box the margin line does not pass through (bug 7, Oct 7);
 // a halo in the page colour keeps it legible if the line comes close.
@@ -150,7 +157,14 @@ P=pts.map(([a,b])=>[sx(a),sy(b)]),clear=ly=>!P.some(([px,py])=>px>lx0-8&&px<lx0+
 tops=nt.m>0?[sy(maxUp)+30,sy(-maxDn)-46]:[sy(-maxDn)-46,sy(maxUp)+30],ly=tops.find(clear)??tops[0];
 s+=ln(x,y+(ly<y?-10:10),x,ly+(ly<y?14:-30),K,1.5)+t(right?x+10:x-10,ly,22,txt,{a:right?'start':'end',w:600,halo:1})+t(right?x+10:x-10,ly+25,19,nt.sub,{a:right?'start':'end',halo:1});}
 // Above a high and below a low, unless that would cross the chart's edge: then beside the dot.
-else{const edge=nt.kind==='high'?y-40<top:y+40>bot,ly=edge?y+8:nt.kind==='high'?y-16:y+34,dx=edge?18:14;s+=t(right?x+dx:x-dx,ly,22,nt.label,{a:right?'start':'end',w:600,halo:1});}});
+else{const edge=nt.kind==='high'?y-40<top:y+40>bot,ly=edge?y+8:nt.kind==='high'?y-16:y+34,dx=edge?18:14,lw=tw(nt.label,22,600);
+boxes.push({x:(right?x+dx:x-dx-lw)-10,y:ly-30,w:lw+20,h:42});/* a wide berth, so no picked label stacks on it */s+=t(right?x+dx:x-dx,ly,22,nt.label,{a:right?'start':'end',w:600,halo:1});}});
+// Moments the user picked (picks.json): each label takes the nearest spot around its dot that touches neither the
+// margin line (each step's horizontal and vertical run) nor another label or dot, with a leader if it had to move;
+// it stays on its own team's side of the zero line, so a Bulls moment never reads as a Nuggets one.
+const runs=[];for(let i=1;i<pts.length;i++){const xa=sx(pts[i-1][0]),xb=sx(pts[i][0]),ya=sy(pts[i-1][1]),yb=sy(pts[i][1]);runs.push({x:xa,y:ya-2,w:xb-xa,h:4},{x:xb-2,y:Math.min(ya,yb),w:4,h:Math.abs(yb-ya)});}
+F.notes.filter(nt=>nt.kind==='moment').forEach(nt=>{const i=at(nt),x=sx(i>0?pts[i][0]:nt.t),y=sy(nt.m);
+s+=`<circle cx="${x}" cy="${y}" r="7" fill="${nt.m>0?R:K}" stroke="${BG}" stroke-width="2.5"/>`+place(x,y,nt.label,22,runs.concat(boxes),nt.m>0?[X0,top,X1,z-4]:[X0,z+4,X1,bot],boxes);boxes.push({x:x-9,y:y-9,w:18,h:18});});
 s+=pbpWarn(top+40);
 // Game flow strip
 const run=F.run_chi==F.run_opp?[`${F.run_chi}-0`,'Both teams']:F.run_chi>F.run_opp?[`${F.run_chi}-0`,D.chi.tri]:[`${F.run_opp}-0`,D.opp.tri];
@@ -241,12 +255,6 @@ if(E){const pl=(E[1]?'T-':'')+ord(E[0]),EP=S.east_prev;s+=sec(RX,212,`In the ${S
 // Places moved tonight, as on the season leaders page: up is better (a smaller place number).
 if(EP&&EP[0]!=E[0]){const up=EP[0]>E[0],c2=up?R:K,n=String(Math.abs(EP[0]-E[0])),px=RX-tw(pl,124,900,SERIF)-24-tw(n,26,600);s+=tri(px-14,284,up,c2)+t(px,292,26,n,{w:600,f:c2});}}
 const wide=slots<=20,x0=82,x1=RX,sw=(x1-x0)/slots,gx=i=>x0+i*sw+sw/2;
-// Place a label near (ax, ay): try spots around it, nearest first, and take the first that touches no
-// obstacle (bars, lines, edges). A thin leader joins it to the point when it had to move away.
-const place=(ax,ay,txt,size,obst,bounds)=>{const w=tw(txt,size,600),h=size*0.9,pad=6,hit=b=>b.x<bounds[0]||b.x+b.w>bounds[2]||b.y<bounds[1]||b.y+b.h>bounds[3]||obst.some(o=>b.x<o.x+o.w+pad&&b.x+b.w+pad>o.x&&b.y<o.y+o.h+pad&&b.y+b.h+pad>o.y);
-const c=[];for(let r=0;r<=260;r+=12)for(const [dx,dy] of [[1,0],[-1,0],[0,-1],[0,1],[1,-1],[-1,-1],[1,1],[-1,1]]){const x=dx>0?ax+12+r*Math.abs(dx):dx<0?ax-12-w-r*Math.abs(dx):ax-w/2,y=dy<0?ay-14-h-r:dy>0?ay+14+r:ay-h/2;c.push({x,y,w,h,d:Math.hypot(x+w/2-ax,y+h/2-ay)});}
-c.sort((a,b)=>a.d-b.d);const b=c.find(q=>!hit(q))||c[0];const near=Math.max(b.x,Math.min(ax,b.x+b.w)),nearY=Math.max(b.y,Math.min(ay,b.y+b.h));
-return (Math.hypot(near-ax,nearY-ay)>22?ln(ax,ay,near,nearY,K,1.2):'')+t(b.x,b.y+h*0.85,size,txt,{w:600,halo:1});};
 // Game margins
 const lim=Math.max(wide?20:30,Math.ceil(Math.max(...G.map(g=>Math.abs(g[3])))/10)*10),zy=652,sc=(wide?175:200)/lim;
 s+=sec(L,410,'Game margins')+legend(410,[['Win',R,R],['Loss',GR]]);
@@ -338,7 +346,7 @@ return page(`${D.chi.team} ${pre?'preseason':'season'} leaders`,bg+s+fg,[`Qualif
 const swipeCue=y=>{const sz=28,px=14,txt='Swipe for the full breakdown',tw1=tw(txt,sz,600),aw=30,w=px+tw1+14+aw+px,bx=RX-w,top=y-sz*0.78-9,bot=y+10,cy=(top+bot)/2,ax=bx+px+tw1+14;
 return rect(bx,top,w,bot-top,R)+label(bx+px,y,txt,{size:sz,f:BG})+`<path d="M${ax},${cy} L${ax+aw},${cy} M${ax+aw-12},${cy-11} L${ax+aw},${cy} L${ax+aw-12},${cy+11}" fill="none" stroke="${BG}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>`;};
 
-// Optional carousel cover on the page background: the game's own scoring-margin line as art, the score in the
+// Carousel cover (always posted since 2026-10-12) on the page background: the game's own scoring-margin line as art, the score in the
 // serif (Bulls line red), "@" or "vs." between the teams, the date (and any overtime) in red italic.
 // Graph paper behind the cover: a 36 px grid with a heavier line every 180 px, the account's data look.
 const GRAPH=`<defs><pattern id="gp" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36,0 L0,0 L0,36" fill="none" stroke="#DCD6CE" stroke-width="1"/></pattern><pattern id="gP" width="180" height="180" patternUnits="userSpaceOnUse"><path d="M180,0 L0,0 L0,180" fill="none" stroke="#D2CBC2" stroke-width="2"/></pattern></defs><rect width="1080" height="1440" fill="url(#gp)"/><rect width="1080" height="1440" fill="url(#gP)"/>`;
@@ -399,8 +407,9 @@ const rankPages=()=>A.ranks?[[ranksStrips,'Team ranks (mockup)']]:[];
 function render(i){D=A.games[i];clipN=0;document.querySelectorAll('nav button').forEach((b,j)=>b.className=j==i?'on':'');
 const pages=[[cover,'Final score'],[teamStats,'Team stats'],[shotChart,'Shot chart'],[()=>breakdownRawPage(false),'Game breakdown'],[boxScore,'Box score'],[seasonPage,'Season so far'],[leadersPage,'Season leaders'],...rankPages()];
 // The pages after the cover are drawn first, so each knows its number and the cover lists only pages that exist.
-let n=1;const drawn=[];TOC=[];pages.forEach(([f,c])=>{PGN=n+1;const s=f();if(!s)return;n++;TOC.push([n,c.replace(/ \(mockup\)$/,'')]);drawn.push([s,c]);});
-PGN=null;let k=0;const html=[[recapCover(),'Cover (optional)'],...drawn].map(([s,c])=>svg(s,`${++k} · ${c}`)).join('');
+// Early pages: a page still waiting on NBA.com keeps its number and its line in the contents, but is not drawn.
+let n=1;const drawn=[];TOC=[];pages.forEach(([f,c])=>{if((D.pending||[]).includes(c)){n++;TOC.push([n,c]);return;}PGN=n+1;const s=f();if(!s)return;n++;TOC.push([n,c.replace(/ \(mockup\)$/,'')]);drawn.push([s,c,n]);});
+PGN=null;let k=0;const html=[[recapCover(),'Cover',1],...drawn].map(([s,c,num])=>svg(s,`${num} · ${c}`)).join('');
 document.getElementById('g').innerHTML=html+(D.missing.length?`<div class="cap" style="grid-column:1/-1">Skipped or empty feeds: ${D.missing.join('; ')}</div>`:'');window.scrollTo(0,0);}
 document.getElementById('nav').innerHTML=A.games.map((g,i)=>`<button onclick="render(${i})">${g.result} ${g.chi.score}-${g.opp.score} ${g.home?'vs':'at'} ${g.opp.tri} · ${g.date_short}${g.kind==='Preseason'?' (pre)':''}</button>`).join('');
 // Measure only after the serif has loaded, so titles fit their width.

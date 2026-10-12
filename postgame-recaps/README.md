@@ -48,6 +48,28 @@ its footer (LOOK); the thresholds are set so all 16 saved test games read "ok". 
 pages in `assets/` (`2026-10-10-v19-gsw-*`, with three notables and overtime, plus the final-score page with
 none, `-det-`, and one, `-mia-`).
 
+Early pages (since 2026-10-12): NBA.com publishes in two waves. The box score, play-by-play, line score and summary
+come first; four factors, misc and the Bulls shot feed can follow minutes or half an hour later. Once only that
+second wave is missing, `postgame_recap.py` runs the build once with `RECAP_EARLY=1`: every first-wave check
+(score, play-by-play, game logs, game flow against NBA.com) and the pages they complete (cover, final score, box
+score, season pages), drawn in `output/postgame-recap/early/<id>/` with their final carousel numbers, and logs
+an `early:` line. Team stats, shot chart and game breakdown stay pending; the cover's contents still list them.
+Claude reviews the early pages and sends them to the user while the rest publish. They are never delivered: the
+final build draws every page again, and only it reaches the phone.
+
+The user's calls while watching go in `seasons/<season>/<id>/picks.json` (optional; added 2026-10-11), which
+`recap_data.py` reads on every build:
+
+```json
+{"mvp": 1631159, "drop_awards": ["#closer"],
+ "moments": [{"action": 376, "label": "Wilson buzzer-beater"}, {"action": 466, "label": "DEN: Johnson go-ahead 3"}]}
+```
+
+`mvp` is a personId and replaces the Game Score pick; `drop_awards` leaves out awards that qualified (a weak one,
+or a player showing up too often); each moment names a scoring play by its play-by-play `actionNumber`, so the dot's
+time and margin come from NBA.com and only the label is typed. The template places a moment's label on its own
+team's side of zero, clear of the margin line and the other labels. These are calls, not numbers.
+
 Then Claude delivers (`PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/deliver.py <game_id>`):
 - the slides are copied to iCloud Drive › Bulls recaps › `<date> <matchup>` (replacing an earlier copy);
 - every slide keeps image data only, so Instagram has nothing to read as AI-made (the user's rule: its AI
@@ -186,7 +208,7 @@ on 2026-10-07) when present on the Mac that exports; otherwise Source Serif 4 Bl
 and Regular, from `~/Library/Fonts` or else Google Fonts. `export_slides.py` prints which faces it used. Font files never enter the repo (it is
 public), and the phone preview cannot load them, so it shows Source Serif 4. Section titles are light text on a solid black block. The account mark
 (`assets/brand/chicagobullsdata-mark.svg`) sits top right of every page but the cover. Labels are sentence case; column headers keep
-capitals. Optional cover first, on the same
+capitals. The cover comes first (always posted since 2026-10-12), on the same
 background with graph paper (36 px grid): the game's margin line as art, the score in the serif (Bulls line red), "@" or "vs.", the date, and across the top the series label in a black block and the swipe call to action as a red block with an arrow.
 Under the series label, a contents box lists every page that follows with its carousel number ("[03] Team stats"),
 on a solid offset shadow; every page's footer ends with the same number. Numbers are counted from the pages actually
@@ -323,10 +345,10 @@ each player one line.
 Awards (2026-10-07; shown as hashtags since 2026-10-09, the mapping is drafted on the Notion "Game recaps"
 page): Top Performer (#mvp; highest Game Score, not printed; a triple-double shows as its three stats, unlabeled)
 is always first. The rest are leader-only, at most two per player, and ranked by how far the winner cleared
-the floor (value / floor): Triple-double (by anyone else), Hot Hand (70%+ FG on 10+ shots), Sharpshooter
-(6+ threes), Pickpocket (4+ steals), Block Party (4+), Glass Cleaner (15+ rebounds), Board Crasher (5+
-offensive), Facilitator (10+ assists, lowered from 12 by the user on 2026-10-09), Spark Plug (bench Game Score 15+, raised from 10 on 2026-10-09; not the Top Performer),
-Closer (5+ clutch points), Slam Dunk (5+ dunks, raised from 4 on 2026-10-09). Workhorse (40+ minutes) and Soft Touch
+the floor (value / floor): Triple-double (by anyone else), Hot Hand (#efficient; 70%+ FG on 10+ shots), Sharpshooter
+(5+ threes since 2026-10-12, was 6), Pickpocket (4+ steals), Block Party (4+), Glass Cleaner (15+ rebounds), Board Crasher (5+
+offensive), Facilitator (8+ assists; 12 until 2026-10-09, 10 until 2026-10-12), Spark Plug (bench Game Score 15+, raised from 10 on 2026-10-09; not the Top Performer),
+Closer (5+ clutch points), Slam Dunk (#highflyer; 5+ dunks, raised from 4 on 2026-10-09). Workhorse (40+ minutes) and Soft Touch
 (3+ floaters) were dropped on 2026-10-09; the hashtag for each award is in the Notion "Game recaps" table.
 Floors tightened 2026-10-07 so each box-score award fires in about 5-20% of 2025-26 Bulls games (Hot Hand had
 fired in 82%, Facilitator 63%). Team stats shows the first four. The hustle awards (Charge Taker, Loose Ball,

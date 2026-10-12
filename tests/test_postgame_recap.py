@@ -458,3 +458,34 @@ def test_watcher_passes_the_espn_summary_not_each_difference():
     assert w.feed("espn differs: MEM Post started: NBA.com yes, ESPN no\n", 0) == []
     line = "espn check: 1161 values compared with ESPN event 401908940, 1 differ (NBA.com stays the source; Claude reviews each)"
     assert w.feed(line + "\n", 0) == [line]
+
+
+def test_no_picks_file_means_the_standard_recap():
+    # Most nights the user sends no picks: no picks.json, and the build picks #mvp by Game Score as always.
+    assert rd.picks(game_dir("0022500943")) == {}
+    assert rd.build("0022500943")["awards"][0][2] == "Matas Buzelis"
+
+
+def test_picks_set_the_mvp_drop_an_award_and_label_a_scoring_play(monkeypatch):
+    gid = "0022500943"
+    giddey = next(a[1] for a in rd.build(gid)["awards"] if a[0] == "#tripledouble")
+    play = pbp(gid).query("actionType == 'Made Shot'").iloc[10]
+    monkeypatch.setattr(rd, "picks", lambda g: {"mvp": giddey, "drop_awards": ["#closer"],
+                                                "moments": [{"action": int(play.actionNumber), "label": "A picked play"}]})
+    d = rd.build(gid)
+    assert d["awards"][0][:2] == ["#mvp", giddey]
+    assert "#closer" not in [a[0] for a in d["awards"]]
+    note = next(n for n in d["flow"]["notes"] if n["kind"] == "moment")
+    assert note["label"] == "A picked play" and [round(note["t"], 2), note["m"]] in d["flow"]["series"]
+
+
+def test_early_pages_need_only_the_first_wave_of_feeds(monkeypatch):
+    # Four factors, misc and the Bulls shot feed publish last; early pages are drawn without them.
+    late = {"ff_team.csv", "misc_teams.csv", "shots_raw_chi.csv"}
+    read = rd.read
+    monkeypatch.setattr(rd, "read", lambda g, name, **kw: pd.DataFrame() if name in late else read(g, name, **kw))
+    monkeypatch.setattr(rd, "EARLY", True)
+    d = rd.build("0022500943")
+    assert d["pending"] == ["Team stats", "Shot chart", "Game breakdown"]
+    assert d["four_factors"] is None and d["h2h"] is None and d["awards"] == []
+    assert d["flow"]["nba_check"] == "match"  # the first-wave checks still run

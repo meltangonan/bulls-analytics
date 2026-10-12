@@ -28,7 +28,8 @@ STEPS = [  # build lines worth an update: (pattern, plain text, or None to pass 
     (re.compile(r"^\d{10}: "), None),  # recap_data.py's summary: score, flow check, awards, skipped pages
     (re.compile(r"^espn check: "), None),  # espn_check.py's summary; its "espn differs:" lines stay in the log
     (re.compile(r"^Saved .*zones\.png"), "checks passed; shot chart drawn"),
-    (re.compile(r"^wrote .*mockup\.html"), "slides laid out; exporting"),
+    (re.compile(r"^early: "), None),  # postgame_recap.py's early pages, ready for Claude's review
+    (re.compile(r"^wrote (?!.*/early/).*mockup\.html"), "slides laid out; exporting"),
     (re.compile(r"^(done|timing|a step failed|gave up|stopped|no Bulls game today)"), None),
     (re.compile(r"^review: "), "slides exported and measured; Claude's review is next (nothing is on the phone yet)"),
     (re.compile(r"Traceback"), "a step crashed (Traceback in the log)"),

@@ -57,7 +57,8 @@ def main(game_ids: list[str], ranks: Path | None = None) -> None:
     for game_id in game_ids:
         game = json.loads((OUTPUT / game_id / "recap.json").read_text())
         games.append(game)
-        zones[game_id], sizes[game_id] = png(OUTPUT / game_id / "zones.png")
+        if (OUTPUT / game_id / "zones.png").exists():  # early pages have no shot chart yet
+            zones[game_id], sizes[game_id] = png(OUTPUT / game_id / "zones.png")
         ids |= player_ids(game)
     heads = {}
     for pid in sorted(ids):

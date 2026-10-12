@@ -19,6 +19,11 @@ LOGOS = ROOT / "logos"
 PORTRAITS = ROOT / "portraits"
 STRESS = ROOT / "stress-tests"
 OUTPUT = REPO / "output" / "postgame-recap"
+# Early pages (RECAP_EARLY=1): what the first wave of feeds completes, drawn for review while the rest of NBA.com's
+# feeds publish. They live apart from the final slides, so an early page can never be delivered.
+EARLY = os.environ.get("RECAP_EARLY") == "1"
+if EARLY:
+    OUTPUT = OUTPUT / "early"
 BULLS = 1610612741
 
 

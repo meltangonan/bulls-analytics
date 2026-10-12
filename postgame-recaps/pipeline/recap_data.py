@@ -31,8 +31,11 @@ BULLS = int(os.environ.get("FOCUS_TEAM_ID", 1610612741))
 # Set by postgame_recap.py 45 minutes after Final: a feed NBA.com has left incomplete may then be replaced by
 # what can be computed exactly elsewhere (four_factors), so the post goes out (user, 2026-10-10).
 FALLBACK = os.environ.get("RECAP_FALLBACK") == "1"
+# Pages drawn from the second wave of NBA.com feeds (four factors, misc, the Bulls shot feed). With RECAP_EARLY=1
+# the build leaves them pending and checks and draws the rest; postgame_recap.py renders that once for review.
+LATE_PAGES = ["Team stats", "Shot chart", "Game breakdown"]
 TRI = "CHI"  # set from the box score in build()
-from paths import OUTPUT, game_dir  # noqa: E402
+from paths import EARLY, OUTPUT, game_dir  # noqa: E402
 BASELINE_SEASON = "2025-26"
 SEASON_TYPES = {"001": "Preseason", "002": "Regular season", "004": "Playoffs", "005": "Play-in"}
 PERIOD_NAMES = ["1ST", "2ND", "3RD", "4TH"]
@@ -223,7 +226,15 @@ def compare_flow(ours: dict, nba: dict, margin: int) -> tuple[str, str]:
     return ("match" if ours == nba else f"differs: ours {ours}, NBA {nba}"), note
 
 
-def flow(pbp: pd.DataFrame, chi_home: bool, opp_tri: str) -> dict:
+def picks(g: Path) -> dict:
+    """The user's editorial calls for one game, from picks.json in its folder (optional): "mvp" (a personId),
+    "drop_awards" (titles such as "#closer") and "moments" ([{"action": actionNumber, "label": ...}], scoring
+    plays to label on the margin line). Calls, not numbers: every figure still comes from NBA.com's feeds."""
+    f = g / "picks.json"
+    return json.loads(f.read_text()) if f.exists() else {}
+
+
+def flow(pbp: pd.DataFrame, chi_home: bool, opp_tri: str, moments: list = ()) -> dict:
     ev = scoring_events(pbp, chi_home)
     periods = int(pbp.period.max())
     total = period_start(periods) + period_length(periods)
@@ -266,6 +277,13 @@ def flow(pbp: pd.DataFrame, chi_home: bool, opp_tri: str) -> dict:
                 notes.append({"t": float(ev.t[i]), "m": int(ev.margin[i]), "kind": "decider",
                               "label": f"{r.playerName} {what}",
                               "sub": f"{int(left // 60)}:{int(left % 60):02d} left" + ("" if ev.period[i] == 4 else f", {period_label(int(ev.period[i]))}")})
+    # Moments the user picked: the dot sits on the scoring play itself, so its time and margin come from the feed.
+    for m in moments:
+        row = ev[ev.actionNumber == m["action"]]
+        if row.empty:
+            raise ValueError(f"picks.json moment {m} is not a scoring play in the play-by-play")
+        r = row.iloc[-1]
+        notes.append({"t": float(r.t), "m": int(r.margin), "label": m["label"], "kind": "moment"})
     return {"series": series, "periods": periods, "total": total,
             "chi_lead": max(0, int(ev.margin.max())), "opp_lead": max(0, -int(ev.margin.min())),
             "lead_changes": lead_changes, "ties": ties, "run_chi": best[TRI], "run_opp": best[opp_tri],
@@ -562,7 +580,8 @@ def breakdown(pbp: pd.DataFrame, teams: pd.DataFrame, opp_tri: str) -> dict:
             "possessions": [poss[TRI], poss[opp_tri]], "ppp": round(acc.V, 2), "example": example}
 
 
-def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home: bool, starter_ids: set) -> list:
+def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home: bool, starter_ids: set,
+           pick: dict | None = None) -> list:
     """#mvp (the top performer) first, then every other award the night earned, biggest feat first.
 
     Each award has a floor; only the leader can win it, and a player wins at most two. The rest are
@@ -583,7 +602,10 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
         if len(series) and series.max() >= floor:
             cands.append((title, series, floor, line))
 
-    tp = p.gmsc.idxmax()
+    pick = pick or {}
+    tp = int(pick["mvp"]) if "mvp" in pick else p.gmsc.idxmax()  # the user's call overrides Game Score
+    if tp not in p.index:
+        raise ValueError(f"picks.json mvp {tp} did not play for the Bulls")
     tens = {"points": "PTS", "reboundsTotal": "REB", "assists": "AST", "steals": "STL", "blocks": "BLK"}
     cats = p[list(tens)].ge(10).sum(axis=1)
     hit =[f"{int(p.loc[tp, c])} {label}" for c, label in tens.items() if p.loc[tp, c] >= 10]
@@ -602,17 +624,18 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
     td = cats.drop(tp)
     add("#tripledouble", td.where(td >= 3), 1, lambda i: f"{p.points[i]} PTS, {p.reboundsTotal[i]} REB, {p.assists[i]} AST")
     # Floors set 2026-10-07 so each award fires in roughly one game in ten to five (2025-26 Bulls games);
-    # the user moved assists to 10 (fires in 40% of those games, 20% at 12) and dunks to 5 on 2026-10-09, set the
-    # bench award at Game Score 15, and dropped the minutes and floater awards (the Notion "Game recaps" table).
+    # the user moved assists to 10 and dunks to 5 on 2026-10-09, set the bench award at Game Score 15, dropped the
+    # minutes and floater awards, and on 2026-10-12 lowered threes to 5 and assists to 8 and renamed #hothand and
+    # #dunkeverything (the Notion "Game recaps" table).
     shooters = p[p.fieldGoalsAttempted >= 10]
-    add("#hothand", (shooters.fieldGoalsMade / shooters.fieldGoalsAttempted), 0.70,
+    add("#efficient", (shooters.fieldGoalsMade / shooters.fieldGoalsAttempted), 0.70,
         lambda i: f"{fg(i)} ({100 * p.fieldGoalsMade[i] / p.fieldGoalsAttempted[i]:.0f}%)")
-    add("#sniper", p.threePointersMade - p.threePointersAttempted / 1000, 6, lambda i: f"{p.threePointersMade[i]}-{p.threePointersAttempted[i]} from three")
+    add("#sniper", p.threePointersMade - p.threePointersAttempted / 1000, 5, lambda i: f"{p.threePointersMade[i]}-{p.threePointersAttempted[i]} from three")
     add("#cookiemonster", p.steals, 4, lambda i: f"{p.steals[i]} steals")
     add("#blockparty", p.blocks, 4, lambda i: f"{p.blocks[i]} blocks")
     add("#windex", p.reboundsTotal, 15, lambda i: f"{p.reboundsTotal[i]} rebounds")
     add("#boardman", p.reboundsOffensive, 5, lambda i: f"{p.reboundsOffensive[i]} offensive rebounds")
-    add("#dimer", p.assists, 10, lambda i: f"{p.assists[i]} assists")
+    add("#dimer", p.assists, 8, lambda i: f"{p.assists[i]} assists")
     add("#sparkplug", p.gmsc[~p.starter].drop(tp, errors="ignore"), 15, lambda i: f"{p.points[i]} PTS on {fg(i)} off the bench")
 
     ev = scoring_events(pbp, chi_home)
@@ -626,8 +649,9 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
     if not raw.empty:
         raw = raw.assign(fam=classify_series(raw.ACTION_TYPE), made=raw.SHOT_MADE_FLAG == 1)
         dunks = raw[(raw.fam == "Dunks") & raw.made].groupby("PLAYER_ID").size()
-        add("#dunkeverything", dunks, 5, lambda i: f"{dunks[i]} dunks")
+        add("#highflyer", dunks, 5, lambda i: f"{dunks[i]} dunks")
 
+    cands = [c for c in cands if c[0] not in pick.get("drop_awards", [])]
     # Leader only; rank by how far past the floor; at most two awards per player.
     wins = {int(tp): 1}
     ranked = []
@@ -927,7 +951,7 @@ def build(game_id: str) -> dict:
     if stale:
         raise NotReady("game logs do not yet match the final box score: " + "; ".join(stale))
     ff = read(g, "ff_team.csv")
-    split, short = feeds_agree(players, teams, ff), ff_minutes_short(ff, teams)
+    split, short = ([], "") if EARLY else (feeds_agree(players, teams, ff), ff_minutes_short(ff, teams))
     from_box = bool(split) and bool(short) and all("four factors" in m for m in split) and FALLBACK
     if from_box:  # past the deadline (postgame_recap.py sets RECAP_FALLBACK 45 minutes after Final)
         repairs.append(f"four factors: NBA.com's cover {short}; EFG% and FT rate computed from the box score, "
@@ -948,9 +972,9 @@ def build(game_id: str) -> dict:
     # to shots_chi_pbp.csv for the zones chart; otherwise the shot chart is left out and no award reads the feed.
     fga, fallback_file = int(chi.fieldGoalsAttempted), g / "shots_chi_pbp.csv"
     shots_complete, shots_source = len(raw) == fga, "nba"
-    if not shots_complete and not FALLBACK:
+    if not shots_complete and not FALLBACK and not EARLY:
         raise NotReady(f"Bulls shots feed has {len(raw)} of {fga} field goal attempts")
-    if not shots_complete:
+    if not shots_complete and not EARLY:
         from_pbp = shots_from_pbp(pbp, BULLS)
         if len(from_pbp) == fga:
             raw, shots_complete, shots_source = from_pbp, True, "pbp"
@@ -964,6 +988,7 @@ def build(game_id: str) -> dict:
             raw = raw.iloc[0:0]
 
     starter_ids = starters(players, pbp)
+    pick = picks(g)
     data = {
         "game_id": game_id, "kind": kind, "season_label": f"{2000 + int(game_id[3:5])}-{int(game_id[3:5]) + 1:02d}", "result": result, "home": chi_home,
         "date_label": date.strftime("%a, %b %-d, %Y").upper(),
@@ -980,16 +1005,17 @@ def build(game_id: str) -> dict:
                      "chi": [int(q.chi.get(i, 0)) for i in range(1, periods + 1)],
                      "opp": [int(q.opp.get(i, 0)) for i in range(1, periods + 1)]},
         "pbp_ok": bool(pbp_ok),
-        "flow": flow(pbp, chi_home, opp_tri),
-        "four_factors": four_factors(ff, teams, opp_tri, from_box),
-        "h2h": head_to_head(teams, read(g, "misc_teams.csv"), read(g, "summary_stats.csv"), opp_tri),
+        "flow": flow(pbp, chi_home, opp_tri, pick.get("moments", [])),
+        "four_factors": None if EARLY else four_factors(ff, teams, opp_tri, from_box),
+        "h2h": None if EARLY else head_to_head(teams, read(g, "misc_teams.csv"), read(g, "summary_stats.csv"), opp_tri),
         "box": box(players, read(g, "roster.csv", dtype={"NUM": str}), starter_ids, str(chi.minutes)),
         "shooting": {"fgm": int(chi.fieldGoalsMade), "fga": int(chi.fieldGoalsAttempted),
                      "tpm": int(chi.threePointersMade), "tpa": int(chi.threePointersAttempted)},
         "shot_types": shot_types(raw),
         "season": season(bulls_games(read(g, "league_games.csv")), read(g, "schedule.csv"), read(g, "league_games.csv"), game_id),
         "breakdown": breakdown(pbp, teams, opp_tri),
-        "awards": awards(players, raw, pbp, chi_home, starter_ids),
+        "awards": [] if EARLY else awards(players, raw, pbp, chi_home, starter_ids, pick),
+        "pending": LATE_PAGES if EARLY else [],
         "scatter": scatter(read(g, "advanced_players.csv"), opp_tri),
         "league_rating": round(acc.V * 100, 1),
         "matchups": matchups(read(g, "matchups.csv"), players, opp_tri),
@@ -1028,8 +1054,8 @@ def main(game_ids: list[str]) -> None:
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(data, ensure_ascii=False, default=lambda x: x.item() if hasattr(x, "item") else str(x)))
         skipped = [k for k in ("matchups", "tracking", "scoring") if data[k] is None]
-        print(f"{game_id}: {data['chi']['score']}-{data['opp']['score']} vs {data['opp']['tri']}, "
-              f"flow check {data['flow'].get('nba_check')}, awards {len(data['awards'])}, "
+        print(f"{game_id}{' (early pages)' if EARLY else ''}: {data['chi']['score']}-{data['opp']['score']} vs {data['opp']['tri']}, "
+              f"flow check {data['flow'].get('nba_check')}, awards {len(data['awards'] or [])}, "
               f"skipped pages {skipped or 'none'}, missing feeds {data['missing'] or 'none'}")
 
 

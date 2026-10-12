@@ -54,6 +54,8 @@ SLOW_POLL = 300  # after that: NBA.com is late anyway, and stats.nba.com throttl
 NOT_READY = 75
 STILL_WAITING = 76  # not a failure: the skill posts the notice and restarts the printed command
 STRIKES = 3  # consecutive failures other than NOT_READY before the run stops
+# The second wave of slide feeds (pull_game.py's names): while only these are missing, the early pages can be drawn.
+LATE_FEEDS = {"four factors", "misc (head-to-head)", "Bulls shots"}
 FALLBACK = 45  # minutes after Final before an incomplete NBA.com feed is replaced (the user's deadline, Oct 10)
 # Minutes after Final at which a notice is due: at Final itself (so the user knows the wait has begun), then
 # often, because the post should be out within 30 minutes of the buzzer (user, 2026-10-09); sooner still when
@@ -121,11 +123,11 @@ def final(game_id: str) -> tuple[bool, str, bool]:
     return True, f"final: {int(pbp.scoreAway.iloc[-1])}-{int(pbp.scoreHome.iloc[-1])} (away-home)", True
 
 
-def run(*args: str, fallback: bool = False) -> tuple[int, str]:
+def run(*args: str, fallback: bool = False, early: bool = False) -> tuple[int, str]:
     """Run one pipeline step: its output goes to the log; returns the exit code and the line that says why it
     stopped (the last line it printed, or the error when it crashed). fallback lets recap_data.py replace an
     incomplete NBA.com feed with what it can compute exactly (FALLBACK minutes after Final)."""
-    env = {**os.environ, "PYTHONPATH": ".", **({"RECAP_FALLBACK": "1"} if fallback else {})}
+    env = {**os.environ, "PYTHONPATH": ".", **({"RECAP_FALLBACK": "1"} if fallback else {}), **({"RECAP_EARLY": "1"} if early else {})}
     done = subprocess.run(args, env=env, capture_output=True, text=True)
     for text in (done.stdout, done.stderr):
         if text.strip():
@@ -149,6 +151,18 @@ def notice(text: str, game_id: str, final_at: float) -> None:
     log(text)
     log(f"restart: PYTHONPATH=. {PY} postgame-recaps/pipeline/postgame_recap.py {game_id} {int(final_at)}")
     sys.exit(STILL_WAITING)
+
+
+def early_pages(game_id: str, waiting: str) -> bool:
+    """Once only the second wave of feeds is missing, check and draw the pages the first wave completes, into
+    output/postgame-recap/early/ (never delivered), so the review starts while NBA.com publishes the rest.
+    Returns whether they were drawn; a check that is not ready yet (game logs lagging) tries on the next poll."""
+    code, _ = run(PY, str(HERE / "recap_data.py"), game_id, early=True)
+    for step in ([] if code else ["build_mockup.py", "export_slides.py"]):
+        code = code or run(PY, str(HERE / step), game_id, early=True)[0]
+    if code == 0:
+        log(f"early: pages ready for review in {OUTPUT / 'early' / game_id / 'slides'}; still waiting on: {waiting}")
+    return code == 0
 
 
 def caption(r: dict) -> str:
@@ -220,7 +234,7 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
         notice(f"FINAL SEEN: {why}; waiting for NBA.com to publish every feed (12 to 35 minutes so far this season)",
                game_id, final_at)
 
-    strikes = 0
+    strikes, early_done = 0, False
     while True:  # 2. pull and compute until every feed is published and every check passes
         code, why = run(PY, str(HERE / "pull_game.py"), game_id)
         stage = "publishing"  # what the wait is: NBA.com publishing, or a check on published feeds
@@ -245,6 +259,8 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
             notice(f"STILL WAITING: {minutes:.0f} min after Final; {what}: {why}", game_id, final_at)
         wait = POLL if minutes < 60 else SLOW_POLL
         log(f"not ready, pulling again in {wait} s")
+        if not early_done and why.startswith("not published yet:") and set(why.split(": ", 1)[1].split(", ")) <= LATE_FEEDS:
+            early_done = early_pages(game_id, why.split(": ", 1)[1])
         time.sleep(wait)
     ready_at = time.time()
     # A second opinion for Claude's review: ESPN's copy of the game. It never waits or stops the build (the

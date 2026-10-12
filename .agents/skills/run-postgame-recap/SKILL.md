@@ -23,6 +23,12 @@ every number with fresh eyes, cross-check it against the box score, fix or hold 
 The user wants to hear from the run often and wants each update to say something new: what landed, what you
 checked, what you found. "Still waiting" with nothing else is the update to avoid.
 
+**The user's picks.** Notes sent while watching ("Miller should be MVP", "no closer award tonight", "label the
+buzzer-beater") go into `postgame-recaps/seasons/<season>/<id>/picks.json` (format: `postgame-recaps/README.md`, "Running a recap"). Write
+it once NBA.com's play-by-play is on disk: find each moment's own row and use its `actionNumber`, confirm the
+description matches what the user saw (scorer, period, clock, score), and keep labels short. The build reads it on
+every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `postgame-recaps/pipeline/build_mockup.py` and `postgame-recaps/pipeline/export_slides.py` to apply a late pick.
+
 1. **Recheck the previous game.** If a `postgame-recaps/seasons/*/*/as-posted/` folder exists for an earlier
    game, run `postgame-recaps/pipeline/recheck.py` on the most recent one. Exit 1 lists numbers NBA.com
    corrected since posting: report them; do not rebuild or change the post. A traceback (a network error)
@@ -59,6 +65,15 @@ checked, what you found. "Still waiting" with nothing else is the update to avoi
      ```
      PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/early_look.py <game_id>
      ```
+   - **Early pages.** An `early:` line means the first wave of feeds is in and the pages it completes (cover,
+     final score, box score, season pages; numbered as in the final set) are drawn in
+     `output/postgame-recap/early/<id>/slides/`, while team stats, shot chart and game breakdown wait on the
+     second wave. Review them now exactly as in step 3 (numbers, references, by eye), fix what needs fixing
+     (a template fix: rerun the three scripts named under "The user.s picks" with `RECAP_EARLY=1`), then
+     send them with SendUserFile and a push ("Bulls recap: early pages ready, still waiting on <feeds>") so the
+     user reviews them too and can add picks. Early pages are never delivered; the final build draws every page
+     again. In step 3, the early pages need only a check that they match what was reviewed; give the rest the
+     full review.
    - **Heartbeats and feed changes.** Say what has landed since the last update, what is still missing and
      whether the wait is normal: minutes after Final against the 12 to 35 seen so far. When the watcher
      line alone is thin, read the last 15 lines of the build output for more.
@@ -156,7 +171,7 @@ checked, what you found. "Still waiting" with nothing else is the update to avoi
    - **what you checked**, in three or four short lines: the box score adds up and the score and line score
      match NBA.com; the ESPN check (all agree, or each difference and what you decided); the game-flow check; the layout ("all pages ok" or what you fixed and why); any number
      that looks surprising, with its explanation;
-   - corrections from step 1, and the reminders: slide 1 (cover) is optional; choose the 3:4 "Original" crop.
+   - corrections from step 1, and the reminder: choose the 3:4 "Original" crop.
 
    If you must deliver again after a fix, iCloud Drive's copy is replaced, but the Photos album keeps the
    earlier slides too: tell the user which to delete.

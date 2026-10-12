@@ -119,7 +119,7 @@ def main(game_ids: list[str]) -> None:
                     d.forEach((e, i) => {{ e.style.display = i === {k} ? 'block' : 'none'; }});
                     const s = d[{k}].querySelector('svg'); s.style.width = '1080px'; s.style.height = '1440px';
                     d[{k}].querySelector('.cap').style.display = 'none'; return d[{k}].querySelector('.cap').textContent; }}""")
-                path = out / f"{k + 1:02d}-{slug(caption)}.png"
+                path = out / f"{int(caption.split('·')[0]):02d}-{slug(caption)}.png"  # the page's carousel number
                 svg = page.locator("#g > div svg").nth(k)
                 svg.screenshot(path=str(path))
                 removed = clean_png(path)  # Instagram must never see anything but the picture

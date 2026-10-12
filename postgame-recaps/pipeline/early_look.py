@@ -25,7 +25,9 @@ def look(game_id: str) -> list[str]:
     ot = max(0, (round(rd.minutes(chi.minutes)) - 240) // 25)  # team minutes: 5 players x 48, plus 25 per overtime
     result = "W" if chi.points > opp.points else "L"
     out = [f"{result} {chi.teamTricode} {int(chi.points)}, {opp.teamTricode} {int(opp.points)}" + (f" ({ot}OT)" if ot > 1 else " (OT)" if ot else "")]
-    wrong = [w for w in rd.feeds_agree(players, teams, ff) if "four factors" not in w or not ff.empty]
+    # NBA.com publishes four factors minutes after the box score; until then the file has no columns at all
+    wrong = [w for w in rd.feeds_agree(players, teams, ff.reindex(columns=["teamId"]) if ff.empty else ff)
+             if "four factors" not in w or not ff.empty]
     out.append("box score: " + ("; ".join(wrong) if wrong else "player rows add up to the team totals"
                                 + ("" if ff.empty else ", four factors match")))
     played = players[players.minutes.map(rd.minutes).gt(0)]

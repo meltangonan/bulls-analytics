@@ -315,6 +315,17 @@ def test_early_look_names_overtime_and_checks_the_sums():
     assert lines[2].startswith("CHI leaders: White 27 pts")
 
 
+
+def test_early_look_waits_on_unpublished_four_factors(tmp_path, monkeypatch):
+    import early_look, shutil
+    for f in game_dir("0022500240").glob("*.csv"):
+        shutil.copy(f, tmp_path / f.name)
+    (tmp_path / "ff_team.csv").write_text("\n")  # as pulled ten minutes after Final (0012600065, Oct 11)
+    monkeypatch.setattr(early_look, "game_dir", lambda _: tmp_path)
+    lines = early_look.look("0022500240")
+    assert lines[1] == "box score: player rows add up to the team totals"
+    assert lines[2].startswith("CHI leaders: White 27 pts")
+
 def test_delivery_replaces_an_earlier_copy_in_icloud_drive(tmp_path, monkeypatch):
     import deliver
     out = tmp_path / "output" / "0022500943"

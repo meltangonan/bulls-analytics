@@ -219,7 +219,8 @@ red, green, black and silver teams staying gray (`DESIGN.md`, "The opponent in a
 1. Final score: big scoreboard (Final, any overtime, then W in green or L in red), line score, step-line scoring margin (every score, unsmoothed), then biggest lead, lead
    changes, tied, longest run (four band tiles, each label in a black block), and up to three notables.
 2. Team stats: game leaders for both teams with headshots, 13 head-to-head rows (offensive rebounds after
-   rebounds, steals and blocks after assists), up to four Bulls game awards.
+   rebounds, steals and blocks after assists; the shooting rows' bars and bold side follow makes, not percentage,
+   since 2026-10-12), up to four Bulls game awards.
 3. Shot chart (real Python render): mid-range pooled and painted as one shape, 5-attempt color floor, square pills show
    makes/attempts and share of FGA, square summary cards; shot-type strip below.
 4. Game breakdown: four factors table and points above average, the margin bars (each factor keeps one color chip on its column and its bar), "How to read it" (below).
@@ -227,8 +228,8 @@ red, green, black and silver teams staying gray (`DESIGN.md`, "The opponent in a
    BLK TO +/-; one fixed gap between every column.
 6. Season so far: record and tonight's place in the conference, then game margins (empty slots for games
    to play) and games over .500 after each game, on one game axis.
-7. Season leaders: one grid of every qualified Bulls player's per-game points, rebounds, assists, steals and
-   blocks (and games played), sorted by points; each stat's leader, every tied player included, in a solid red
+7. Season leaders: one grid of every qualified Bulls player's per-game points, rebounds, assists, steals,
+   blocks and 3PM, then FG% (and games played), sorted by points; each stat's leader, every tied player included, in a solid red
    cell, the rest shaded by how close they are to the leader (from game 5; preseason from game 1, since
    2026-10-09, when the top-three cards were replaced so ties are never cut).
 
@@ -285,6 +286,8 @@ guarded whom, player tracking, how they scored (`pipeline/backpocket_pages.js`; 
   "tied". Regular season only; `player_games.csv` keeps Bulls players' games on every team for this.
 - Season leaders qualify at half of the Bulls' games so far, shown in the footer. The NBA's 70% rule
   was tried first and left out Giddey (34 of 50) and White (28 of 50) at the midseason test game.
+- Season leaders' FG% comes from summed makes and attempts and needs 5 field-goal attempts per game played;
+  below that it is a hyphen (user, 2026-10-12: plain FG%, chosen over eFG% and TS% after comparing all three).
 - Season leader values are rounded to the one decimal printed, so players tied on the page share the red cell.
   The saved games qualify 9 to 16 players; the grid fits 16 at full row height.
 

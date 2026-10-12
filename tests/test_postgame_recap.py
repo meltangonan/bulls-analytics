@@ -196,6 +196,15 @@ def test_game_one_jerseys_and_leaders_grid():
     assert len(steals) == 4  # a four-way tie for the lead, every one shown
 
 
+def test_leaders_shooting_column_needs_five_shots_a_game():
+    sl = rd.build("0012600065")["season_leaders"]
+    assert sl["columns"][-2:] == ["3PM", "FG%"]
+    row = {r[1]: r for r in sl["rows"]}
+    assert row["Norman Powell"][-2] == 60.0  # 6-10 over two games, summed, not averaged by game
+    assert row["Dailyn Swain"][-2] is None  # 13 FGA in 3 games, under 5 a game: a hyphen
+    assert row["Tobe Awaka"][-2] == 60.0  # 10 FGA in 2 games: exactly 5 a game qualifies
+
+
 def test_a_sixth_marked_starter_moves_to_the_bench(monkeypatch):
     # NBA.com's preseason box gives MEM six positions; Quinten Post (C, 17:09) entered at 5:52 of the 1st.
     # ESPN's starters for this game are the five below.

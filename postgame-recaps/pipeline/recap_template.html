@@ -331,16 +331,16 @@ return page(`${D.chi.team} game breakdown`,s,[],FF.source=='box'?"EFG% and FT ra
 // Season leaders as one grid: every qualified player's per-game line, sorted by points. Each stat's leader (every
 // player tied for it) sits in a solid red cell; the other cells shade lighter the further behind the leader they are.
 function leadersPage(){const SL=D.season_leaders;if(!SL||!SL.rows.length)return null;
-const P=SL.rows,n=P.length,C=SL.columns,mx=C.map((c,j)=>Math.max(...P.map(r=>r[2+j])));
+const P=SL.rows,n=P.length,C=SL.columns,mx=C.map((c,j)=>Math.max(...P.map(r=>r[2+j]??0)));
 const rowH=Math.min(76,(1352-244)/n),HS=Math.min(84,rowH+8),NX=L+HS+12,GX=490,c0=545,cw=(RX-c0)/C.length,cx=j=>c0+cw*j+cw/2,NF=Math.min(32,rowH*0.44);
 const split=nm=>{const i=nm.indexOf(' ');return i<0?['',nm]:[nm.slice(0,i),nm.slice(i+1)];};
 let s=sec(L,224,'Per game')+t(GX,226,21,'GP',{a:'middle',w:600,f:FT});C.forEach((c,j)=>s+=t(cx(j),226,21,c,{a:'middle',w:600}));s+=ln(L,242,RX,242,K,3);
 let bg='',fg='';P.forEach((r,i)=>{const y=244+i*rowH,c=y+rowH/2,[fn,lnm]=split(r[1]);if(i%2==0)bg+=rect(L,y,W,rowH,BAND);
-fg+=head(r[0],L+2,y+rowH-HS,HS,[L,y-8,W,rowH+8])+t(NX,c-NF*0.22,NF*0.6,fn)+t(NX,c+NF*0.74,fit(lnm,NF,GX-40-NX,600),lnm,{w:600})+t(GX,c+8,22,r[7],{a:'middle',f:FT});
-C.forEach((col,j)=>{const v=r[2+j],lead=v>0&&v===mx[j],k=mx[j]?v/mx[j]:0;
-fg+=rect(cx(j)-cw/2+3,y+4,cw-6,rowH-8,lead?R:`rgba(206,17,65,${(0.04+0.3*k).toFixed(3)})`)+t(cx(j),c+10,28,v.toFixed(1),{a:'middle',w:lead?600:400,f:lead?BG:v?K:FT});});});
+fg+=head(r[0],L+2,y+rowH-HS,HS,[L,y-8,W,rowH+8])+t(NX,c-NF*0.22,NF*0.6,fn)+t(NX,c+NF*0.74,fit(lnm,NF,GX-40-NX,600),lnm,{w:600})+t(GX,c+8,22,r[r.length-1],{a:'middle',f:FT});
+C.forEach((col,j)=>{const v=r[2+j],lead=v>0&&v===mx[j],k=mx[j]?(v??0)/mx[j]:0;
+fg+=rect(cx(j)-cw/2+3,y+4,cw-6,rowH-8,lead?R:`rgba(206,17,65,${(0.04+0.3*k).toFixed(3)})`)+t(cx(j),c+10,28,v==null?'-':v.toFixed(1),{a:'middle',w:lead?600:400,f:lead?BG:v?K:FT});});});
 const pre=D.kind==='Preseason',g=SL.games;
-return page(`${D.chi.team} ${pre?'preseason':'season'} leaders`,bg+s+fg,[`Qualified: played ${SL.qualify} of ${g} ${g==1?'game':'games'} (half)`]);}
+return page(`${D.chi.team} ${pre?'preseason':'season'} leaders`,bg+s+fg,[`Qualified: played ${SL.qualify} of ${g} ${g==1?'game':'games'} (half); ${C[C.length-1]}: ${SL.min_fga}+ shots a game`]);}
 
 // "Swipe" call to action at the top right: a red block like the section titles, the text, then one arrow.
 const swipeCue=y=>{const sz=28,px=14,txt='Swipe for the full breakdown',tw1=tw(txt,sz,600),aw=30,w=px+tw1+14+aw+px,bx=RX-w,top=y-sz*0.78-9,bot=y+10,cy=(top+bot)/2,ax=bx+px+tw1+14;

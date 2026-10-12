@@ -348,10 +348,12 @@ def head_to_head(teams: pd.DataFrame, misc: pd.DataFrame, stats: pd.DataFrame, o
     t = {r.teamTricode: r for r in teams.itertuples()}
     c, o = t[TRI], t[opp_tri]
 
+    # The bar and the bold side follow makes, not percentage (user, 2026-10-12): 13-18 and 32-46 free throws are
+    # both about 70% but 19 points apart, and a percentage bar drew them even. The text keeps the percentage.
     def shoot(label, m, a):
         cm, ca, om, oa = getattr(c, m), getattr(c, a), getattr(o, m), getattr(o, a)
         cp, op = (100 * cm / ca if ca else 0), (100 * om / oa if oa else 0)
-        return [label, f"{cm}-{ca} ({cp:.1f}%)", f"({op:.1f}%) {om}-{oa}", round(cp, 1), round(op, 1), 1]
+        return [label, f"{cm}-{ca} ({cp:.1f}%)", f"({op:.1f}%) {om}-{oa}", cm, om, 1]
 
     rows = [shoot("Field goals", "fieldGoalsMade", "fieldGoalsAttempted"),
             shoot("3-pointers", "threePointersMade", "threePointersAttempted"),
@@ -766,7 +768,13 @@ def leaders(players: pd.DataFrame, opp_tri: str) -> list:
     return rows
 
 
-SEASON_STATS = (("Points", "PTS"), ("Rebounds", "REB"), ("Assists", "AST"), ("Steals", "STL"), ("Blocks", "BLK"))
+SEASON_STATS = (("Points", "PTS"), ("Rebounds", "REB"), ("Assists", "AST"), ("Steals", "STL"), ("Blocks", "BLK"),
+                ("3-pointers made", "FG3M"))
+# The leaders grid's shooting column, from summed makes and attempts, never an average of game percentages.
+# Below MIN_FGA field-goal attempts per game played it is a hyphen: 1-for-1 is not a leader. The user chose
+# plain FG% (2026-10-12) over eFG% and TS%: familiar, and every shot counts as one; centers leading is accepted.
+EFFICIENCY = "FG%"
+MIN_FGA = 5
 
 
 def season_leaders(player_games: pd.DataFrame, game_id: str) -> dict | None:
@@ -789,12 +797,19 @@ def season_leaders(player_games: pd.DataFrame, game_id: str) -> dict | None:
     games = int(b.gid.nunique())
     need = math.ceil(0.5 * games)
     cols = [c for _, c in SEASON_STATS]
-    x = b.groupby(["PLAYER_ID", "PLAYER_NAME"])[cols].mean().round(1)
-    x["gp"] = b.groupby(["PLAYER_ID", "PLAYER_NAME"]).size()
+    keys = ["PLAYER_ID", "PLAYER_NAME"]
+    x = b.groupby(keys)[cols].mean().round(1)
+    x["gp"] = b.groupby(keys).size()
+    t = b.groupby(keys)[["PTS", "FGM", "FG3M", "FGA", "FTA"]].sum()
+    pct = {"TS%": t.PTS / (2 * (t.FGA + 0.44 * t.FTA)), "eFG%": (t.FGM + 0.5 * t.FG3M) / t.FGA,
+           "FG%": t.FGM / t.FGA}[EFFICIENCY]
+    x["eff"] = (100 * pct).round(1).where(t.FGA >= MIN_FGA * x.gp)
     x = x[x.gp >= need].reset_index()
     x = x.assign(last=x.PLAYER_NAME.str.split(" ", n=1).str[-1]).sort_values(["PTS", "last"], ascending=[False, True])
-    rows = [[int(r.PLAYER_ID), r.PLAYER_NAME, *[float(getattr(r, c)) for c in cols], int(r.gp)] for r in x.itertuples()]
-    return {"columns": cols, "rows": rows, "qualify": need, "games": games}
+    rows = [[int(r.PLAYER_ID), r.PLAYER_NAME, *[float(getattr(r, c)) for c in cols],
+             None if pd.isna(r.eff) else float(r.eff), int(r.gp)] for r in x.itertuples()]
+    heads = ["3PM" if c == "FG3M" else c for c in cols] + [EFFICIENCY]
+    return {"columns": heads, "rows": rows, "qualify": need, "games": games, "min_fga": MIN_FGA}
 
 
 # --- notables -------------------------------------------------------------------------------------

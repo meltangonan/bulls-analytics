@@ -19,8 +19,9 @@ short line as raw material. Longer drafts or variants require a request. Include
 hashtag block, the search wording and per-page alt text specified in Notion, and check them
 against the final content. Story copy is optional when useful or requested.
 
-Before posting, export the final Canva pages to the scratchpad, name them in carousel order, and
-run `scripts/strip_image_metadata.py --photos` on them. Canva tags every page as AI-generated once
+Before posting, export the final Canva pages to the scratchpad at 2x (2160 px wide, pro quality;
+Canva's 1080 export blurs small text), name them in carousel order, and run
+`scripts/strip_image_metadata.py --photos` on them; it halves each page to 1080 px with Lanczos. Canva tags every page as AI-generated once
 any AI feature touched the design; the script removes that metadata from every page and imports the
 clean copies into iCloud Photos, keeping nothing in the repo. The user then posts from the phone.
 Re-export and repeat after any later Canva edit, and remind the user to delete superseded copies

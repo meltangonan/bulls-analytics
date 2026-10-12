@@ -8,6 +8,9 @@ Brand Template.
 - Title: `MASTER — Bulls Data — Cover + Chart — 1080×1440`
 - Source: approved points-created game post, `DAHW5wCi63M`, preserving its current page styling.
 - Both pages: 1080×1440.
+- Fonts: titles and subtitles in Georgia Pro Condensed, footer and handle in Geist (`DESIGN.md`).
+  The template once lagged a house font change (found 2026-10-12), so check a new design's fonts
+  against a recent post before filling it.
 
 Create each standard cover-and-chart post as a new design from this Brand Template (Canva MCP
 `create-design-from-brand-template`, or the template's "Use template" link), then edit the new

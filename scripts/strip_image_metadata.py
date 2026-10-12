@@ -8,19 +8,27 @@ into Apple Photos, which syncs them to iCloud, and deletes the temporary folder.
 
 Name the files in carousel order: Photos can't sort them by date once metadata is gone.
 
+Export pages from Canva at 2x (2160 px wide). Canva's own 1080 export blurs small text (edge
+variance less than half that of a clean resize, measured 2026-10-12), so ``--photos`` halves a
+2x page with Lanczos before cleaning it, and warns about a page exported at 1080.
+
     venv/bin/python scripts/strip_image_metadata.py --check page1.png page2.png
     venv/bin/python scripts/strip_image_metadata.py --photos <slug>-1.png <slug>-2.png
 """
 
 import argparse
+import io
 import re
 import struct
 import subprocess
 import tempfile
 from pathlib import Path
 
+from PIL import Image
+
 PNG_SIGNATURE = b'\x89PNG\r\n\x1a\n'
 # Chunks that affect how the image looks; everything else is metadata.
+FEED_WIDTH = 1080
 RENDER_CHUNKS = {b'IHDR', b'PLTE', b'IDAT', b'IEND', b'tRNS', b'sRGB', b'gAMA', b'iCCP', b'cHRM', b'pHYs'}
 AI_MARKERS = re.compile(rb'c2pa|TrainedAlgorithmicMedia|ContainsAiGeneratedContent', re.I)
 
@@ -44,6 +52,20 @@ def clean_png(data, name):
     assert pixels(clean) == pixels(data), f'{name}: pixel data changed'
     assert not ai_tags(clean), f'{name}: AI tags remain'
     return clean
+
+
+def feed_size(data, name):
+    """Halve a 2x page to the feed width with Lanczos; warn about a 1x Canva export."""
+    image = Image.open(io.BytesIO(data))
+    if image.width == FEED_WIDTH:
+        print(f'{name}: warning, 1080 px export; Canva blurs text at this size, so export at 2x')
+        return data
+    assert image.size == (2 * FEED_WIDTH, image.height) and image.height % 2 == 0, (
+        f'{name}: expected a 2x page {2 * FEED_WIDTH} px wide, got {image.width}x{image.height}')
+    out = io.BytesIO()
+    image.convert('RGB').resize((FEED_WIDTH, image.height // 2), Image.LANCZOS).save(out, 'PNG')
+    print(f'{name}: halved {image.width}x{image.height} to {FEED_WIDTH}x{image.height // 2}')
+    return out.getvalue()
 
 
 def import_to_photos(paths):
@@ -70,11 +92,12 @@ def main():
     with tempfile.TemporaryDirectory() as tmp:
         written = []
         for path in args.files:
-            data = path.read_bytes()
+            original = path.read_bytes()
+            data = feed_size(original, path.name)
             dest = Path(tmp) / path.name
             dest.write_bytes(clean_png(data, path.name))
             written.append(dest)
-            dropped = sorted({t.decode() for t, _ in chunks(data) if t not in RENDER_CHUNKS})
+            dropped = sorted({t.decode() for t, _ in chunks(original) if t not in RENDER_CHUNKS})
             print(f'{path.name}: removed {", ".join(dropped) or "nothing"}; pixels identical')
         import_to_photos(written)
 

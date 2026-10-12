@@ -131,7 +131,8 @@ only, `local('GeorgiaProCondensed-Bold')` and `local('GeorgiaProCondensed-BoldIt
 Serif 4 from Google Fonts as the fallback, and have the export report which face rendered. Never
 commit, upload or embed the font files (base64 in a published artifact counts). Phone previews and
 cloud runs therefore show the fallback, so export final PNGs on the Mac. Georgia Pro Condensed is also
-in Canva's library; Canva posts still use the Brand Kit's Clarendon Narrow unless the user changes it.
+in Canva's library, and Canva posts use it for titles and subtitles (since 2026-10-07), with Geist for
+footers and the handle.
 
 Judge the **downloaded Canva export at feed size** (1080×1440 or 1080×1350). Check readable type, unclipped
 marks, spacing, contrast, and visible source/coverage/qualification/authorship on each data-bearing

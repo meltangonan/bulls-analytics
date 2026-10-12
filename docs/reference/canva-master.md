@@ -32,6 +32,8 @@ Chart placeholder: x=25, y=186.064643, width=1030, height=1191.562857. Its sourc
 7000×8098. For other chart ratios, calculate height from the chart's actual pixel dimensions and
 check subtitle/footer clearance. Delete only the non-root chart element and insert the new image
 at its exact aspect ratio; replacing an existing fill can retain a crop and clip header lines.
+If you do replace a fill (`update_fill`), follow it with `crop_media` set to the full frame, or
+Canva zooms and crops the new image.
 Find current element IDs from a new editing transaction, because copies may regenerate them.
 
 Both downloaded 450×600 Canva previews were inspected before saving. Placeholders are intentional

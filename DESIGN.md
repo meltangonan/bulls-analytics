@@ -120,10 +120,18 @@ palette and chart typeface. Any larger departure should be deliberate.
 While a new format is still taking shape, a quick mockup of the composed page can settle the design
 before renderer code is written. Use whatever is fastest; a self-contained HTML page often helps,
 since it can show whole pages or a carousel with real data at phone width. Keep the numbers coming
-from Python. The usual next step ports the settled design to Python chart assets and Canva. HTML pages
-exported as 1080×1440 PNGs are also an option for final assets: the postgame recap uses them (see its
-package README), and other formats may follow. This path is still being evaluated, so choose it per
-format with the user rather than by default.
+from Python. The settled design then becomes final assets one of three ways:
+
+- **Python chart assets in Canva**, the long-standing default.
+- **HTML chart assets in Canva** (the user likes this path, October 2026): render the approved HTML
+  in Chromium with Playwright and screenshot only the chart on a transparent background
+  (`omit_background=True`, 2x or more), so Canva keeps the title, subtitle and footer. Python still
+  supplies every figure and the HTML reports its own collisions. Examples:
+  `scripts/prototypes/bulls_miles_marathons_chart.py` and `zone_fgm_leaders_pages.py --asset`.
+- **Whole HTML pages** exported as 1080×1440 PNGs, as the postgame recap does (see its package
+  README).
+
+Choose per format with the user.
 
 HTML pages get the house serif from licensed desktop fonts on the user's Mac: Georgia Pro Condensed
 Bold and Bold Italic, installed in `~/Library/Fonts` (bought 2026-10-07). Reference them by local name

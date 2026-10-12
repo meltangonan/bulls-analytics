@@ -92,6 +92,13 @@ checked, what you found. "Still waiting" with nothing else is the update to avoi
      incomplete or leaves the page out; README, "Running a recap") goes into the delivery message. Each `layout:` line (also in `output/postgame-recap/<id>/layout.json`) is "ok", "LOOK"
      (unusual for the format: an empty band taller than any saved game's, or a page crowding its footer;
      judge it by eye) or "FIX" (text overlapping text, or past the margins: never ship it).
+   - **Weigh the ESPN check.** The `espn check:` line says how many values matched ESPN's copy of the game;
+     each `espn differs:` line above it is one disagreement. NBA.com stays the source (the user's rule, Oct 11),
+     so a difference is a flag for your judgment, not an automatic fix. For each one that reaches a slide, look
+     at both sides and the feeds on disk: NBA.com incomplete or behind (missing shots, a broken running score)
+     is a hold, as below; a convention or a scorer's call ESPN reads differently ships with NBA.com's number and
+     a line in the delivery message. "could not run" means ESPN had nothing usable: say so, and run
+     `postgame-recaps/pipeline/espn_check.py <game_id>` again before delivering if there is time.
    - **Check the numbers.** The score, line score and slide 2's four tiles match
      `output/postgame-recap/<id>/recap.json`, which the script has checked against NBA.com. Awards, leaders
      and notables hold no surprise; if a pick looks wrong, check its Game Score in that recap.json. No long
@@ -147,7 +154,7 @@ checked, what you found. "Still waiting" with nothing else is the update to avoi
    - the caption from `output/postgame-recap/<id>/caption.txt` in full (add any line the user asked for; no
      em dashes);
    - **what you checked**, in three or four short lines: the box score adds up and the score and line score
-     match NBA.com; the game-flow check; the layout ("all pages ok" or what you fixed and why); any number
+     match NBA.com; the ESPN check (all agree, or each difference and what you decided); the game-flow check; the layout ("all pages ok" or what you fixed and why); any number
      that looks surprising, with its explanation;
    - corrections from step 1, and the reminders: slide 1 (cover) is optional; choose the 3:4 "Original" crop.
 

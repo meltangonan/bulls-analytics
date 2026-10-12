@@ -20,10 +20,12 @@ first showed Final, printed by a notice (below); a restart passes it so the timi
    exits STILL_WAITING (76). The run-postgame-recap skill posts the notice, pushes it to the phone when it matters,
    and restarts the command; nothing is lost, because every feed is on disk. Each mark is raised once: a
    restarted process begins after the mark it reported. It gives up three hours after Final.
-4. It draws the shot chart (linking the shared cache, then removing only the link), builds the pages, exports
+4. It compares the feeds with ESPN's copy of the game (espn_check.py) and logs each difference for Claude's
+   review; this never waits or stops the build.
+5. It draws the shot chart (linking the shared cache, then removing only the link), builds the pages, exports
    and measures the PNGs and writes caption.txt. One build runs at a time (a lock), because the cache link and
    the page file are shared.
-5. It stops there: nothing reaches the phone until Claude has reviewed every page (the run-postgame-recap
+6. It stops there: nothing reaches the phone until Claude has reviewed every page (the run-postgame-recap
    skill), fixed what needed fixing, and run deliver.py, which the last line prints; delivery also keeps the
    as-posted/ copy of the feeds, so it holds what was actually posted, not a build the review rejected.
 """
@@ -245,6 +247,11 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
         log(f"not ready, pulling again in {wait} s")
         time.sleep(wait)
     ready_at = time.time()
+    # A second opinion for Claude's review: ESPN's copy of the game. It never waits or stops the build (the
+    # user's rule, Oct 11: NBA.com stays the source; a difference is flagged and judged in the review).
+    code, why = run(PY, str(HERE / "espn_check.py"), game_id)
+    if not why.startswith("espn check:"):
+        log("espn check: crashed (see above); the build carries on, compare with ESPN by hand")
 
     data = game_dir(game_id)  # 3. draw, build, export
     out = OUTPUT / game_id

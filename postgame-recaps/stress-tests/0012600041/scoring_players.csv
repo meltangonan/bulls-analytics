@@ -1,0 +1,42 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0012600041,1610612753,Orlando,Magic,ORL,magic,1630532,Franz,Wagner,F. Wagner,franz-wagner,F,,,14:46,0.714,0.286,0.6,0.2,0.3,0.0,0.1,0.0,0.4,0.667,0.333,1.0,0.0,0.75,0.25
+0012600041,1610612753,Orlando,Magic,ORL,magic,1631094,Paolo,Banchero,P. Banchero,paolo-banchero,F,,,17:40,0.7,0.3,0.0,0.0,0.3,0.0,0.7,0.1,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1628976,Wendell,Carter Jr.,W. Carter Jr.,wendell-carter-jr,C,,,19:07,1.0,0.0,1.0,0.5,0.0,0.0,0.0,0.0,0.5,1.0,0.0,0.0,0.0,1.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1641783,Tristan,da Silva,T. da Silva,tristan-da-silva,G,,,23:30,0.214,0.786,0.235,0.0,0.706,0.0,0.059,0.353,0.235,0.5,0.5,1.0,0.0,0.833,0.167
+0012600041,1610612753,Orlando,Magic,ORL,magic,1642859,Jase,Richardson,J. Richardson,jase-richardson,G,,,25:32,0.889,0.111,0.833,0.0,0.0,0.167,0.167,0.167,0.833,0.2,0.8,0.0,0.0,0.2,0.8
+0012600041,1610612753,Orlando,Magic,ORL,magic,1631288,Jamal,Cain,J. Cain,jamal-cain,,,,18:33,0.857,0.143,0.545,0.0,0.273,0.364,0.182,0.364,0.545,0.667,0.333,1.0,0.0,0.75,0.25
+0012600041,1610612753,Orlando,Magic,ORL,magic,1628975,Jevon,Carter,J. Carter,jevon-carter,,,,18:48,0.4,0.6,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1629048,Goga,Bitadze,G. Bitadze,goga-bitadze,,,,12:24,1.0,0.0,0.857,0.0,0.0,0.0,0.143,0.0,0.857,1.0,0.0,0.0,0.0,1.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1642869,Noah,Penda,N. Penda,noah-penda,,,,22:10,0.5,0.5,0.25,0.0,0.75,0.25,0.0,0.25,0.25,1.0,0.0,1.0,0.0,1.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1631457,Alex,Morales,A. Morales,alex-morales,,,,15:30,0.333,0.667,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,202696,Nikola,Vučević,N. Vučević,nikola-vučević,,,,10:35,0.667,0.333,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1631103,Malaki,Branham,M. Branham,malaki-branham,,,,11:15,0.25,0.75,0.286,0.0,0.429,0.0,0.286,0.714,0.286,0.0,1.0,1.0,0.0,0.5,0.5
+0012600041,1610612753,Orlando,Magic,ORL,magic,1628995,Kevin,Knox II,K. Knox II,kevin-knox-ii,,,,12:16,0.5,0.5,0.286,0.0,0.429,0.0,0.286,0.0,0.286,1.0,0.0,1.0,0.0,1.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1631120,JD,Davison,J. Davison,jd-davison,,,,12:00,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1630658,Colin,Castleton,C. Castleton,colin-castleton,,,,5:54,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1630217,Desmond,Bane,D. Bane,desmond-bane,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1641710,Anthony,Black,A. Black,anthony-black,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1628371,Jonathan,Isaac,J. Isaac,jonathan-isaac,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1643593,Izaiyah,Nelson,I. Nelson,izaiyah-nelson,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,1630591,Jalen,Suggs,J. Suggs,jalen-suggs,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1631212,Peyton,Watson,P. Watson,peyton-watson,F,,,21:50,0.7,0.3,1.0,0.333,0.0,0.0,0.0,0.0,0.667,0.667,0.333,0.0,0.0,0.667,0.333
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1630596,Evan,Mobley,E. Mobley,evan-mobley,F,,,26:39,0.9,0.1,0.429,0.0,0.0,0.143,0.571,0.143,0.429,0.333,0.667,0.0,0.0,0.333,0.667
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1628386,Jarrett,Allen,J. Allen,jarrett-allen,C,,,25:08,0.75,0.25,0.571,0.0,0.429,0.0,0.0,0.0,0.571,1.0,0.0,1.0,0.0,1.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1628378,Donovan,Mitchell,D. Mitchell,donovan-mitchell,G,,,25:40,0.444,0.556,0.364,0.364,0.273,0.0,0.364,0.091,0.0,0.5,0.5,1.0,0.0,0.667,0.333
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,201935,James,Harden,J. Harden,james-harden,G,,,26:07,0.5,0.5,0.333,0.167,0.375,0.0,0.292,0.125,0.167,0.0,1.0,0.667,0.333,0.286,0.714
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1630241,Sam,Merrill,S. Merrill,sam-merrill,,,,18:20,0.0,1.0,0.0,0.0,0.6,0.0,0.4,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1642281,Jaylon,Tyson,J. Tyson,jaylon-tyson,,,,20:56,0.375,0.625,0.154,0.0,0.692,0.0,0.154,0.231,0.154,0.0,1.0,1.0,0.0,0.75,0.25
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1626209,Mario,Hezonja,M. Hezonja,mario-hezonja,,,,16:39,0.556,0.444,0.462,0.0,0.462,0.308,0.077,0.0,0.462,0.667,0.333,1.0,0.0,0.8,0.2
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1643509,Meleek,Thomas,M. Thomas,meleek-thomas,,,,18:08,0.571,0.429,1.0,0.0,0.0,0.5,0.0,0.5,1.0,0.5,0.5,0.0,0.0,0.5,0.5
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1641854,Craig,Porter Jr.,C. Porter Jr.,craig-porter-jr,,,,13:03,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1628418,Thomas,Bryant,T. Bryant,thomas-bryant,,,,6:48,0.5,0.5,0.5,0.0,0.5,0.333,0.0,0.167,0.5,0.0,1.0,1.0,0.0,0.4,0.6
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1642400,Tristan,Enaruna,T. Enaruna,tristan-enaruna,,,,7:45,0.0,1.0,0.0,0.0,0.6,0.0,0.4,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1642878,Tyrese,Proctor,T. Proctor,tyrese-proctor,,,,7:45,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1643640,Ernest,"Udeh, Jr.","E. Udeh, Jr.","ernest-udeh,-jr",,,,5:12,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1643772,Rashaun,Agee,R. Agee,rashaun-agee,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1643113,Zack,Austin,Z. Austin,zack-austin,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1631215,Khalifa,Diop,K. Diop,khalifa-diop,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1642434,Riley,Minix,R. Minix,riley-minix,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1642283,Jaxson,Robinson,J. Robinson,jaxson-robinson,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1641772,Nae'Qwan,Tomlin,N. Tomlin,naeqwan-tomlin,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,1643037,Noam,Yaacov,N. Yaacov,noam-yaacov,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

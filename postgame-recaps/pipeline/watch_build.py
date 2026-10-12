@@ -26,6 +26,7 @@ STEPS = [  # build lines worth an update: (pattern, plain text, or None to pass 
     (re.compile(r"^(FINAL SEEN|STILL WAITING)"), None),
     (re.compile(r"^pulled \d+"), "every slide feed is published; running the checks"),
     (re.compile(r"^\d{10}: "), None),  # recap_data.py's summary: score, flow check, awards, skipped pages
+    (re.compile(r"^espn check: "), None),  # espn_check.py's summary; its "espn differs:" lines stay in the log
     (re.compile(r"^Saved .*zones\.png"), "checks passed; shot chart drawn"),
     (re.compile(r"^wrote .*mockup\.html"), "slides laid out; exporting"),
     (re.compile(r"^(done|timing|a step failed|gave up|stopped|no Bulls game today)"), None),

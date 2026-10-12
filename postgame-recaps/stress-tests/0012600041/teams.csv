@@ -1,0 +1,3 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,minutes,fieldGoalsMade,fieldGoalsAttempted,fieldGoalsPercentage,threePointersMade,threePointersAttempted,threePointersPercentage,freeThrowsMade,freeThrowsAttempted,freeThrowsPercentage,reboundsOffensive,reboundsDefensive,reboundsTotal,assists,steals,blocks,turnovers,foulsPersonal,points,plusMinusPoints
+0012600041,1610612739,Cleveland,Cavaliers,CLE,cavaliers,240:00,39,86,0.453,15,37,0.405,26,30,0.867,11,38,49,24,10,7,20,22,119,14.0
+0012600041,1610612753,Orlando,Magic,ORL,magic,240:00,37,91,0.407,13,38,0.342,18,25,0.72,14,31,45,28,13,3,18,23,105,-14.0

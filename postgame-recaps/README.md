@@ -82,6 +82,7 @@ The steps it runs, for debugging (from the primary checkout, where `cache/` is t
 ```bash
 PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/pull_game.py <game_id>
 PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/recap_data.py <game_id>
+PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/espn_check.py <game_id>
 PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/zones_share.py postgame-recaps/seasons/<season>/<game_id> output/postgame-recap/<game_id>/zones.png 13 11 33
 venv/bin/python postgame-recaps/pipeline/build_mockup.py <game_id> [more ids]
 venv/bin/python postgame-recaps/pipeline/export_slides.py <game_id>
@@ -132,6 +133,19 @@ Box-score feeds are requested first exactly as NBA.com's game page requests them
 RangeType=0, which makes NBA.com ignore the range, so overtime is kept: checked on an OT and a 2OT game), then
 with `nba_api`'s defaults: stats.nba.com caches each exact request, and on 2026-10-07 the website's request
 had four factors, advanced and misc filled two to five minutes sooner.
+
+Once every check passes, `pipeline/espn_check.py <game_id>` compares the saved feeds with ESPN's copy of the
+game (its unofficial site API, `site.api.espn.com`, no key): the final and quarter scores, every player's box line
+(minutes to the minute, who started and who played), the team box, the summary counts the slides use, every
+shot in NBA.com's shot feeds matched to ESPN's play-by-play, and each team's running score. ESPN gets the same
+official scorekeeping through its own pipeline, so it catches a feed NBA.com served incomplete (MIN at MIA: every
+missing shot and the broken running score) and our own bugs, never a scorekeeper's error. NBA.com stays the
+source (user, 2026-10-11): each `espn differs:` line is flagged for Claude's review, which makes the judgment
+call; the build never waits or stops on it, and an unreachable ESPN reads "could not run", never "agree". ESPN's
+summary is saved as `espn_summary.json` in the game folder. Two conventions differ by design and are handled:
+ESPN files points off turnovers under the team that turned the ball over, and leaves some counts blank (a note,
+not a zero). In preseason NBA.com sometimes marks six starters for a team (5 of 7 saved preseason games, no
+regular-season game); ESPN lists five.
 
 `recap_data.py` computes every number into `output/postgame-recap/<id>/recap.json`; the template only draws,
 plus the arithmetic on rows it prints: TS% and the box-score subtotals and team row (which sums the players'

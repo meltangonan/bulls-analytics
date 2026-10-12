@@ -367,3 +367,60 @@ def test_an_incomplete_shot_feed_waits_then_draws_from_the_play_by_play(monkeypa
     with pytest.raises(rd.NotReady):
         rd.build("0012600002")
     assert not (game_dir("0012600002") / "shots_chi_pbp.csv").exists()  # a complete or waiting build leaves none
+
+
+def espn_check(game_id):
+    """espn_check.check on the game's saved ESPN snapshot, offline: (values compared, differences, notes)."""
+    import json
+    import espn_check as ec
+    g = game_dir(game_id)
+    compared, found = ec.check(g, json.loads((g / "espn_summary.json").read_text()))
+    return compared, [f for f in found if not f.startswith("note: ")], [f for f in found if f.startswith("note: ")]
+
+
+def test_espn_check_agrees_on_a_clean_game_and_reads_both_sites_conventions():
+    # CHI at DEN (2025-26): ESPN files points off turnovers under the team that turned it over and left lead
+    # changes blank; neither is a difference. The heave on ESPN's play-by-play only is a note.
+    compared, diffs, notes = espn_check("0022500248")
+    assert compared > 1000 and diffs == []
+    assert "note: ESPN does not publish CHI lead changes for this game; not compared" in notes
+    assert any("Pickett (missed 3) is a heave" in n for n in notes)
+
+
+def test_espn_check_flags_the_partial_shot_feed_and_six_starters():
+    # MIN at MIA (Oct 10): NBA.com's game-night shot feeds stopped at 203 of 240 team-minutes and a re-entered
+    # and-one broke its running score; ESPN had every shot. MEM at CHI (Oct 9): NBA.com marked six Memphis starters.
+    _, diffs, _ = espn_check("0012600002")
+    assert sum("is on ESPN but not in NBA.com's shot feed" in d for d in diffs) >= 20
+    assert "MIA running score parts at scoring play 41: NBA.com reaches 83 (Q3 1:13), ESPN 82 (Q3 1:13)" in diffs
+    _, diffs, _ = espn_check("0012600037")
+    assert diffs == ["MEM Post started: NBA.com yes, ESPN no"]
+
+
+def test_espn_check_names_a_changed_number(tmp_path):
+    import json
+    import shutil
+    import espn_check as ec
+    for f in game_dir("0012600037").iterdir():
+        if f.is_file():
+            shutil.copy(f, tmp_path / f.name)
+    players = pd.read_csv(tmp_path / "players.csv")
+    players.loc[players.familyName == "Wilson", "assists"] += 1
+    players.to_csv(tmp_path / "players.csv", index=False)
+    _, found = ec.check(tmp_path, json.loads((tmp_path / "espn_summary.json").read_text()))
+    assert "CHI Wilson AST: NBA.com 1, ESPN 0" in found
+
+
+def test_espn_names_match_across_suffixes_and_accents():
+    import espn_check as ec
+    assert ec.name_key("Brandon Boston") == ec.name_key("Brandon Boston Jr.")
+    assert ec.name_key("Nikola Jović") == ec.name_key("Nikola Jovic")
+    assert ec.name_key("PJ Washington") == ec.name_key("P.J. Washington")
+    assert ec.clock_seconds("10:35") == 635 and ec.clock_seconds("45.2") == 45
+
+
+def test_watcher_passes_the_espn_summary_not_each_difference():
+    w = Watcher()
+    assert w.feed("espn differs: MEM Post started: NBA.com yes, ESPN no\n", 0) == []
+    line = "espn check: 1161 values compared with ESPN event 401908940, 1 differ (NBA.com stays the source; Claude reviews each)"
+    assert w.feed(line + "\n", 0) == [line]

@@ -1,0 +1,3 @@
+gameId,teamId,teamCity,teamName,teamTricode,points,reboundsTotal,assists,steals,blocks,turnovers,fieldGoalsPercentage,threePointersPercentage,freeThrowsPercentage,pointsInThePaint,pointsSecondChance,pointsFastBreak,biggestLead,leadChanges,timesTied,biggestScoringRun,turnoversTeam,turnoversTotal,reboundsTeam,pointsFromTurnovers,benchPoints
+0012600041,1610612739,Cleveland,Cavaliers,CLE,119.0,49.0,24.0,10.0,7.0,20.0,0.453,0.405,0.867,38.0,24.0,12.0,18.0,2.0,5.0,10.0,1.0,21.0,8.0,15.0,57.0
+0012600041,1610612753,Orlando,Magic,ORL,105.0,45.0,28.0,13.0,3.0,18.0,0.407,0.342,0.72,42.0,21.0,8.0,1.0,2.0,5.0,14.0,1.0,19.0,12.0,22.0,52.0

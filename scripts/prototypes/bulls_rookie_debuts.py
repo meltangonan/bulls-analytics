@@ -2,7 +2,9 @@
 
 Cohort: every player whose first NBA regular-season game was for Chicago, drafted or not.
 The top fifteen by points are shown, plus everyone tied with fifteenth, in the game table with points
-in the red card column.
+in the red card column. The table is HTML in the house type (Geist), styled after the postgame recap
+(first name over last name, draft chips, square W/L chips, red points tiles), rendered by Chromium at 3x
+into a transparent PNG for the Canva page, which carries the title, subtitle, mark, notes and footer.
 
 ``top_game_performances`` owns NBA.com collection and reconciliation. NBA.com has a Bulls
 player row with points for every game from 1976-77; before 1983-84 some steals, blocks and
@@ -13,19 +15,21 @@ that box score has the value; otherwise it stays empty, never zero.
 from __future__ import annotations
 
 import argparse
+import html
 import sys
-from dataclasses import replace
 from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
 from nba_api.stats.endpoints import commonallplayers, drafthistory
+from PIL import Image
+from playwright.sync_api import sync_playwright
 
 _REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_REPO))
 
 from bulls.data.fetch import _NBA_HEADERS
-from bulls.graphics.house import cut_out_flat_background
+from bulls.graphics.house import HEADSHOT_CACHE, cut_out_flat_background
 from scripts.prototypes import top_game_performances as base
 
 
@@ -53,14 +57,15 @@ PORTRAIT_SOURCES = {
 }
 SHOWN_STATS = ["reb", "ast", "fgm", "fga", "fg3m", "fg3a", "stl", "blk", "tov"]
 FIRST_THREE_POINT_SEASON_END = 1980  # the NBA added the 3-point line in 1979-80
-# Rows grow to fill the space between this page's one-line subtitle and its footer (asset
-# width / height 0.855, as placed in the 2026-09-25 debut post: 108-unit rows for 15); the
-# extra height goes to portraits, names and game lines, not to the stat columns.
-PAGE_FRAME = 0.855
-HEADER_RULE_FROM_TOP = 88
-TABLE_LAYOUT = replace(base.DECADE_LAYOUT, rank_x=40, headshot_x=136, headshot_half_size=66,
-                       headshot_rise=10, bottom_pad=42, name_font_size=23, context_font_size=15,
-                       name_rise=20, context_drop=27, gmsc_font_size=21, value_font_size=21)
+OUT = _REPO / "output" / PROJECT
+FONTS = Path.home() / "Library" / "Fonts"
+# The table is laid out in Canva page pixels: 1030 wide, placed at x=25, y=204 on the 1080x1440
+# page under the serif title and subtitle (approved page: v26, 2026-10-13), exported at 3x.
+WIDTH = 1030
+SCALE = 3
+ROW = 72
+FACE = 96  # portrait square, px; taller than the row so it rises into the row above only
+COLS = "44px 92px 214px 150px 92px 56px 56px 78px 72px 56px 56px 56px"
 
 
 def _snapshot(path: Path, factory, source: str, refresh: bool) -> pd.DataFrame:
@@ -218,26 +223,137 @@ def post_portraits() -> dict[int, Path]:
     return {**FRAMED_PORTRAITS, **cut}
 
 
-def render_table(ranked: pd.DataFrame, final: bool) -> Path:
-    """The settled game table with points in the red card column and a tie-aware # column."""
-    row_height = (base.CHART_WIDTH / PAGE_FRAME - HEADER_RULE_FROM_TOP - TABLE_LAYOUT.bottom_pad) / len(ranked)
-    # Each portrait stands on its own row line and rises into the row above, so an overlap
-    # covers the upper row's jersey, never a face (later rows draw on top).
-    layout = replace(TABLE_LAYOUT, row_height=row_height,
-                     headshot_rise=TABLE_LAYOUT.headshot_half_size - row_height / 2,
-                     first_row_from_top=HEADER_RULE_FROM_TOP + row_height / 2,
-                     name_x=TABLE_LAYOUT.headshot_x + TABLE_LAYOUT.headshot_half_size + 6)
-    height = base.slide_height(len(ranked), layout)
-    if abs(base.CHART_WIDTH / height - PAGE_FRAME) > 0.01:
-        raise ValueError(f"Table aspect {base.CHART_WIDTH / height:.3f} misses the page frame {PAGE_FRAME}.")
-    return base.render_chart(
-        ranked, "", decade="", show_free_throws=False, show_turnovers=True, top_n=len(ranked),
-        layout=layout, final=final, shooting_after_assists=True,
-        show_plus_minus=False,  # NBA.com has no plus/minus before 1996-97
-        portraits=post_portraits(), hero_points=True, made_attempted_dash="-",
-        missing_cell="-",  # user, 2026-09-28: a hyphen marks a stat not recorded, never zero
-        striped_rows=True,  # user, 2026-09-29: alternating rows as in earlier posts
-        output_name=f"{PROJECT}-table")
+def _stat(value) -> str:
+    """A stat that was not recorded shows a plain hyphen, never zero (user, 2026-09-28)."""
+    return "-" if pd.isna(value) else str(int(value))
+
+
+def _made_attempted(made, attempted) -> str:
+    return "-" if pd.isna(made) or pd.isna(attempted) else f"{int(made)}-{int(attempted)}"
+
+
+def draft_label(row: pd.Series) -> str:
+    """RD1 PK23 for a drafted player, UNDRAFTED otherwise (NBA.com draft history)."""
+    if pd.isna(row["draft_year"]):
+        return "UNDRAFTED"
+    return f"RD{int(row['draft_round'])} PK{int(row['draft_pick'])}"
+
+
+CSS = f"""
+@font-face{{font-family:House;font-weight:400;src:local('Geist-Regular'),url('file://{FONTS}/Geist-Regular.otf')}}
+@font-face{{font-family:House;font-weight:600;src:local('Geist-SemiBold'),url('file://{FONTS}/Geist-SemiBold.otf')}}
+*{{box-sizing:border-box;margin:0}}
+body{{width:{WIDTH}px;background:transparent;font-family:House;color:#242424;font-variant-numeric:tabular-nums}}
+.row,.hd{{display:grid;grid-template-columns:{COLS};align-items:center}}
+.hd{{height:40px;font-weight:600;font-size:19px;border-bottom:3px solid #242424}}
+.hd div{{text-align:center}} .hd .l{{text-align:left}} .hd .p{{color:#CE1141}} .hd .nmh{{padding-left:8px}}
+.row{{height:{ROW}px;position:relative}}
+.band{{background:#E2DED9}}
+.rk{{font-weight:600;font-size:24px;text-align:center}}
+.pf{{height:{ROW}px;position:relative}}
+.face{{position:absolute;left:-8px;bottom:0;width:{FACE}px;height:{FACE}px;overflow:hidden}}
+.face img{{position:absolute;top:0}}
+.nm{{display:flex;flex-direction:column;line-height:1;padding-left:8px}}
+.nm small{{font-size:18px;margin-bottom:3px;display:flex;align-items:center;gap:8px}}
+.nm b{{font-weight:600;font-size:29px;white-space:nowrap}}
+.chip{{background:#242424;color:#E9E5E1;font-weight:600;font-size:12px;letter-spacing:.5px;padding:3px 5px}}
+.dt{{display:flex;flex-direction:column;font-size:19px;line-height:1.15;color:#645D57}}
+.opp{{display:flex;align-items:center;gap:6px}}
+.wl{{font-style:normal;font-weight:600;color:#fff;font-size:15px;width:22px;height:22px;display:inline-flex;
+  align-items:center;justify-content:center}}
+.W{{background:#2E8540}} .L{{background:#CE1141}}
+.pts{{display:flex;justify-content:center}}
+.tile{{width:76px;height:60px;background:#CE1141;color:#fff;font-weight:600;font-size:34px;display:flex;
+  align-items:center;justify-content:center;box-shadow:2px 2px 4px rgba(72,8,24,.25)}}
+.v{{text-align:center;font-size:26px}}
+"""
+
+
+def _face(path: Path, z: int) -> str:
+    """Square face crop (the top 74% of the portrait), its bottom on the row's lower edge."""
+    if not path.exists():
+        raise FileNotFoundError(f"No portrait at {path}.")
+    width, height = Image.open(path).size
+    side = min(int(height * 0.74), width)
+    scale = FACE / side
+    left = (width - side) // 2
+    return (
+        f'<div class="face" style="z-index:{z}"><img src="{path.as_uri()}" '
+        f'style="width:{width * scale:.1f}px;height:{height * scale:.1f}px;left:{-left * scale:.1f}px"></div>'
+    )
+
+
+def _stat(value) -> str:
+    """A stat that was not recorded shows a plain hyphen, never zero (user, 2026-09-28)."""
+    return "-" if pd.isna(value) else str(int(value))
+
+
+def _made_attempted(made, attempted) -> str:
+    return "-" if pd.isna(made) or pd.isna(attempted) else f"{int(made)}-{int(attempted)}"
+
+
+def table_html(ranked: pd.DataFrame) -> str:
+    """Rank, portrait, first name and draft chip over last name, debut, the red points tile, box score."""
+    portraits = post_portraits()
+    rows = []
+    for index, (_, row) in enumerate(ranked.iterrows()):
+        first, last = base._display_name(str(row["player"])).split(" ", 1)
+        date, matchup, result = base._game_context_parts(row)
+        player_id = int(row["player_id"])
+        portrait = portraits.get(player_id, HEADSHOT_CACHE / f"{player_id}.png")
+        stats = [_stat(row["reb"]), _stat(row["ast"]), _made_attempted(row["fgm"], row["fga"]),
+                 _made_attempted(row["fg3m"], row["fg3a"]), _stat(row["stl"]), _stat(row["blk"]), _stat(row["tov"])]
+        rows.append(
+            f'<div class="row{" band" if index % 2 == 0 else ""}">'
+            f'<div class="rk">{row["rank_label"]}</div>'
+            # Later rows draw on top, so a portrait rising into the row above covers jersey, not a face.
+            f'<div class="pf">{_face(portrait, 10 + index)}</div>'
+            f'<div class="nm"><small>{html.escape(first)}<span class="chip">{draft_label(row)}</span></small>'
+            f'<b>{html.escape(last)}</b></div>'
+            f'<div class="dt"><span>{date}</span><span class="opp">{html.escape(matchup)} '
+            f'<i class="wl {result}">{result}</i></span></div>'
+            f'<div class="pts"><div class="tile">{int(row["points"])}</div></div>'
+            + "".join(f'<div class="v">{value}</div>' for value in stats) + "</div>")
+    head = ('<div class="hd"><div>#</div><div></div><div class="l nmh">PLAYER</div><div class="l">NBA DEBUT</div>'
+            '<div class="p">PTS</div><div>REB</div><div>AST</div><div>FG</div><div>3PT</div><div>STL</div>'
+            '<div>BLK</div><div>TOV</div></div>')
+    return f'<!doctype html><meta charset="utf-8"><style>{CSS}</style>{head}{"".join(rows)}'
+
+
+CHECK_JS = """() => {
+  const fonts = [...document.fonts].filter(f => f.family === 'House');
+  if (fonts.length < 2 || fonts.some(f => f.status !== 'loaded')) return {error: 'Geist did not load'};
+  const overflow = [...document.querySelectorAll('.row > div:not(.pf), .hd > div')]
+    .filter(c => c.scrollWidth > c.clientWidth + 1).map(c => c.textContent.trim());
+  const below = Math.max(0, ...[...document.querySelectorAll('.face')].map(f =>
+    f.getBoundingClientRect().bottom - f.parentElement.getBoundingClientRect().bottom));
+  return {overflow, below, height: Math.ceil(document.body.getBoundingClientRect().height)};
+}"""
+
+
+def render_table(ranked: pd.DataFrame) -> Path:
+    """The house table as a transparent PNG; Canva carries the title, subtitle, notes and footer."""
+    OUT.mkdir(parents=True, exist_ok=True)
+    source = OUT / f"{PROJECT}-table.html"
+    source.write_text(table_html(ranked))
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page(viewport={"width": WIDTH, "height": 1400}, device_scale_factor=SCALE)
+        page.goto(source.as_uri())
+        page.evaluate("document.fonts.ready.then(() => true)")
+        report = page.evaluate(CHECK_JS)
+        if "error" in report:
+            raise RuntimeError(report["error"])
+        if report["overflow"]:
+            raise ValueError(f"Cells overflow: {report['overflow']}.")
+        if report["below"] > 0.5:
+            raise ValueError(f"A portrait reaches {report['below']:.1f}px below its row.")
+        path = OUT / f"{PROJECT}-table.png"
+        page.screenshot(path=str(path), clip={"x": 0, "y": 0, "width": WIDTH, "height": report["height"]},
+                        omit_background=True)
+        browser.close()
+    print(f"{path.name}: {len(ranked)} rows, {WIDTH}x{report['height']} page px at {SCALE}x")
+    return path
 
 
 def canva_copy(report: dict[str, object]) -> str:
@@ -246,8 +362,7 @@ def canva_copy(report: dict[str, object]) -> str:
         "TITLE: BULLS’ BEST NBA DEBUTS",
         "SUBTITLE: Most points in an NBA debut by a Bulls rookie, since 1976-77",
         "FOOTER: Data via NBA.com, Basketball-Reference | 1976-77 to 2025-26 regular season",
-        "NOTE: FG and 3PT show makes-attempts. No 3-point line before 1979-80; "
-        "turnovers weren't tracked in 1976-77.",
+        "NOTE: - = not recorded: no 3-point line until 1979-80, and turnovers weren't tracked until 1977-78.",
         f"AUDIT: {report['eligible_debuts']} Bulls rookie debuts; top {TOP_N} plus ties = "
         f"{report['rows']} rows at {report['cutoff_points']}+ points; first out {report['first_out']}.",
     ])
@@ -256,7 +371,6 @@ def canva_copy(report: dict[str, object]) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build the Bulls rookie-debut table.")
     parser.add_argument("--refresh", action="store_true", help="Refetch NBA.com snapshots.")
-    parser.add_argument("--final", action="store_true", help="Render at final resolution.")
     args = parser.parse_args()
 
     players, teams = base.fetch_bulls_history(season_type="Regular Season",
@@ -278,7 +392,7 @@ def main() -> None:
 
     base.ensure_headshots(ranked["player_id"].tolist())
     base.ensure_historical_headshot_fallbacks(ranked["player_id"].tolist())
-    print(f"Table: {render_table(ranked, args.final)}")
+    print(f"Table: {render_table(ranked)}")
     copy = canva_copy(report)
     (DATA_DIR / "canva-copy.txt").write_text(copy + "\n")
     print(copy)

@@ -38,4 +38,4 @@ Find current element IDs from a new editing transaction, because copies may rege
 
 Both downloaded 450×600 Canva previews were inspected before saving. Placeholders are intentional
 in this master and must all be replaced in a completed post. Full-size composed-page QA remains a
-separate publication check; chart values, portraits and typography remain owned by Python.
+separate publication check; chart values come from Python, and portraits and typography belong to the chart renderer.

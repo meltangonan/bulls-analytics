@@ -127,7 +127,8 @@ from Python. The settled design then becomes final assets one of three ways:
   in Chromium with Playwright and screenshot only the chart on a transparent background
   (`omit_background=True`, 2x or more), so Canva keeps the title, subtitle and footer. Python still
   supplies every figure and the HTML reports its own collisions. Examples:
-  `scripts/prototypes/bulls_miles_marathons_chart.py` and `zone_fgm_leaders_pages.py --asset`.
+  `scripts/prototypes/bulls_miles_marathons_chart.py`, `zone_fgm_leaders_pages.py --asset` and the
+  transparent tables in `lakers_top_game_performances.py`.
 - **Whole HTML pages** exported as 1080×1440 PNGs, as the postgame recap does (see its package
   README).
 

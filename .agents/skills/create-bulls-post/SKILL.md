@@ -14,7 +14,8 @@ materially change the first draft. For a new editorial choice, consult Notion ed
 (linked in `STRATEGY.md`). Loose ideation stays conversational until a concept is chosen.
 
 Reuse the established chart family and shared table/card/portrait elements. Python owns calculations,
-selection, labels and chart assets; Canva owns the composed page. Keep substantial preparation
+selection, labels and chart assets (drawn in Python or rendered from HTML; `DESIGN.md` lists the
+paths); Canva owns the composed page. Keep substantial preparation
 separate from rendering so visual iterations reuse verified data. Verify printed claims and source
 coverage, and save the source/reconciliation/selection tables with the post.
 

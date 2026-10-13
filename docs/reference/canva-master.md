@@ -26,7 +26,7 @@ retain the overlays and avoid deleting the root page fill, which deletes the pag
 Page 2 preserves the serif title, red italic subtitle, source footer, warm background, trim and
 handle. Replace “Chart title goes here”, “Ranking, scope and coverage go here”, and the footer's
 `[source]`, `[coverage]` and `[qualification]`. The neutral chart placeholder contains no example
-players or data. Replace it with the verified Python chart at publish resolution.
+players or data. Replace it with the verified chart asset at publish resolution.
 
 Chart placeholder: x=25, y=186.064643, width=1030, height=1191.562857. Its source aspect ratio is
 7000×8098. For other chart ratios, calculate height from the chart's actual pixel dimensions and

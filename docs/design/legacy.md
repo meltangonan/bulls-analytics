@@ -1,7 +1,7 @@
 # Maintaining legacy Python pages
 
 Read only when maintaining a renderer that composes an entire page in Python. New posts follow
-[DESIGN.md](../../DESIGN.md): transparent Python chart, Canva page.
+[DESIGN.md](../../DESIGN.md): transparent chart asset (drawn in Python or rendered from HTML), Canva page.
 
 [`house.py`](../../bulls/graphics/house.py) still provides `new_canvas`, `draw_header`,
 `draw_fitted_title`, `draw_subtitle`, `draw_jersey_stripe`, `draw_footer`, and `save_post`. Their theme

@@ -23,6 +23,11 @@ italic qualifier and handle. Replace “Your cover question goes here” and “
 within their existing styled regions. A cover image may replace the page background when suitable;
 retain the overlays and avoid deleting the root page fill, which deletes the page.
 
+The template's jersey trim is three rectangles filled with photos of trim, not colored shapes, so
+recoloring them in Canva tints the photo. Replace it with three solid shapes in the brand colors
+(user, 2026-10-13): Bulls red `#CE1141` 4 px, white `#FFFFFF` 4 px, black `#000000` 5 px, full width
+from the top, on every page (first done on the rookie-debut post, `DAHWlTbn0SQ`).
+
 Page 2 preserves the serif title, red italic subtitle, source footer, warm background, trim and
 handle. Replace “Chart title goes here”, “Ranking, scope and coverage go here”, and the footer's
 `[source]`, `[coverage]` and `[qualification]`. The neutral chart placeholder contains no example

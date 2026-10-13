@@ -200,8 +200,8 @@ line with no long flat stretch (minutes with no score logged); the box-score lin
 
 ## Pages in the mockup
 
-Drawn in the Canva Brand Template's page style (`EAHW6UQqJFQ`, page 2): warm `#E9E5E1` canvas, red and
-black trim, heavy serif title, no subtitle, black text, 25 px side margins, and a "Data via NBA.com |
+Drawn in the Canva Brand Template's page style (`EAHW6UQqJFQ`, page 2): warm `#E9E5E1` canvas, red, white and
+black trim (brand `#CE1141`, `#FFFFFF`, `#000000`), heavy serif title, no subtitle, black text, 25 px side margins, and a "Data via NBA.com |
 CHI @DEN, Nov 17, 2025" footer with the handle. The serif (titles, scores, big
 numbers) is Georgia Pro Condensed Bold and Bold Italic (licensed desktop fonts, installed in ~/Library/Fonts
 on 2026-10-07) when present on the Mac that exports; otherwise Source Serif 4 Black. All other text is Geist SemiBold

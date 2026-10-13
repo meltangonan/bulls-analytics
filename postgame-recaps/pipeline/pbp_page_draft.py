@@ -66,7 +66,7 @@ def page(game_id: str) -> str:
            for k, pid in enumerate(order)}
     heads = {pid: portrait(PORTRAITS / f"{pid}.png") for pid in order if (PORTRAITS / f"{pid}.png").exists()}
     s = [f'<rect width="1080" height="1440" fill="{BG}"/>',
-         '<rect y="0" width="1080" height="4" fill="#C12744"/><rect y="4" width="1080" height="4" fill="#EFEEF1"/><rect y="8" width="1080" height="5" fill="#151F1B"/>',
+         '<rect y="0" width="1080" height="4" fill="#CE1141"/><rect y="4" width="1080" height="4" fill="#FFFFFF"/><rect y="8" width="1080" height="5" fill="#000000"/>',
          t(25, 104, 86, "Bulls assist network", w=900, ff="RecapSerif, 'Source Serif 4', Georgia, serif")]
     # Section title in the page's boxed style.
     s.append(f'<rect x="25" y="150" width="{len("Who set up whom") * 15.5 + 24:.0f}" height="41" fill="none" stroke="{K}" stroke-width="2.5"/>'

@@ -73,7 +73,7 @@ const legend=(y,items)=>{let x=RX,o='';[...items].reverse().forEach(([lab,fill,c
 let D;
 const season=()=>`${D.season_label} ${D.kind==='Preseason'?'preseason':'regular season'}`;
 const gameTag=()=>`${D.chi.tri} ${D.home?'vs. ':'@'}${D.opp.tri}, ${D.date_short}`;
-const trim=()=>rect(0,0,1080,4,'#C12744')+rect(0,4,1080,4,'#EFEEF1')+rect(0,8,1080,5,'#151F1B');
+const trim=()=>rect(0,0,1080,4,'#CE1141')+rect(0,4,1080,4,'#FFFFFF')+rect(0,8,1080,5,'#000000');
 // Footer as on the Canva page: "Data via NBA.com as of <capture time> | game | qualification", later parts bold,
 // handle at right. The capture time says which moment the numbers show: NBA.com revises official stats after games.
 // PGN is the page's place in the carousel (the cover is 01), set by render(); the cover's contents box uses the same numbers.

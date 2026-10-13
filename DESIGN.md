@@ -32,7 +32,8 @@ Read only the reference for the chart being changed:
 - The house sans is **Geist** (adopted 2026-10-09), in two weights: **SemiBold** for labels, values,
   and short callouts; **Regular** for subtitles, notes, sources, and footers. Supporting text recedes
   through `#5F5B57`, not a lighter weight. Do not set SemiBold beside Bold as two levels; emphasize
-  with red or size. Titles, scores, and big numbers stay in Georgia Pro Condensed.
+  with red or size. Titles, scores, and big numbers stay in Georgia Pro Condensed, except in tables:
+  a table is all Geist, including its highlighted card column (user, 2026-10-13).
 - In new charts use `house.geist()` with `regular` or `semibold`. It loads the face file from
   `~/Library/Fonts`, because requesting a weight by family name can silently return regular.
   Elsewhere it falls back to Nimbus Sans, Arial, or DejaVu Sans, which are wider than Geist, so
@@ -56,6 +57,8 @@ other accounts do; when a reference shapes a new format, name what was taken and
 - **Square corners.** Bars, chips, legend swatches, highlight boxes, banners and buttons have no
   corner radius. Circles stay for data points only. A portrait that needs a background sits in a
   square `#242424` frame, 3 px, with no fill, the whole headshot inside and resting on the bottom edge.
+  A table's highlighted value column (red points tiles or card) keeps a soft shadow,
+  `2px 2px 4px` at 25% of a dark red (user, 2026-10-13).
 - **Exact lines.** Draw a data line through every real value and never smooth it: no splines, no
   dropped points. A quantity that changes only at events, such as a score, is a step line that holds
   flat until the next event; a value measured between events uses straight segments.

@@ -15,7 +15,8 @@ idea gets one working post; loose brainstorming does not trigger fetching, artif
 
 ## Data and chart
 
-Python owns calculations, selection, labels, and chart assets. Canva owns the page and its framing.
+Python owns calculations, selection, labels, and chart assets (drawn in Python or rendered from
+HTML; `DESIGN.md` lists the paths). Canva owns the page and its framing.
 Keep the coverage window, qualification and source visible on each data-bearing composed page.
 Use era, opportunity, pace or league context when the comparison needs it. Financial comparisons
 need same-season/cap-share context; composite metrics need honest component definitions.
@@ -30,7 +31,7 @@ changes. Run only the checks appropriate to the change (`DEVELOPMENT.md`).
 
 Complete requested visual changes. If further self-directed polish has no clear benefit, present
 the result instead of inventing another round. Spacing, cropping and label readability inside a
-chart remain Python's responsibility; page layout belongs in Canva.
+chart remain the chart renderer's responsibility; page layout belongs in Canva.
 
 ## Canva and approval
 

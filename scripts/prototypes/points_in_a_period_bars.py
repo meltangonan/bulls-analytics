@@ -38,16 +38,14 @@ ROW_RATIO = 0.536  # portrait half-size and bar height as a share of row height
 WIDTH = 2300
 HEADER = 150
 BOTTOM = 20
-RANK_X = 98  # centre; wide enough for "T-10" at the stat-column size
-# Portraits use a square frame (no width-preserving crop): Coby White's hair is 1.36x
-# the standard width and would otherwise collide with the rank column.
+RANK_X = 98
 PORTRAIT_X = 310
 NAME_X = 465
 BAR_LEFT = 1205
 TEXT_GAP = 30  # minimum space between the name block and the bar
-BAR_RIGHT = 1760  # bars get the width; they stay zero-based so length is proportional to points
+BAR_RIGHT = 1760
 SUPPORT_X = (1920, 2170)
-NAME_DY, SUB_DY = 32, -44  # name/game-line offsets; the pair is optically centred on the row
+NAME_DY, SUB_DY = 32, -44
 SUB_SIZE = 26
 WORD_GAP = 16
 INK = house.BLACK
@@ -80,8 +78,6 @@ def game_segments(row: pd.Series) -> list[tuple[str, str, str]]:
     context = f"{date:%b} {date.day}, {date.year} {where} {row.opponent}"
     segments = [(row.split_label, INK, "bold")]
     segments.append((context, SUB_GREY, "oblique"))
-    # A playoff or play-in game gets an asterisk, explained in the caption: the full
-    # "(RD n GMm)" tag does not fit beside the game line or the name.
     expected_prefix = {"Regular Season": "002", "Playoffs": "004", "PlayIn": "005"}[row.season_type]
     if not str(int(row.game_id)).zfill(10).startswith(expected_prefix):
         raise ValueError(f"{row.player_name}: season type and game id disagree")

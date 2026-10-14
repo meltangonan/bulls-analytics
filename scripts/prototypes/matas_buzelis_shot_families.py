@@ -102,9 +102,6 @@ def build_tables(data_dir: Path, refresh: bool) -> tuple[pd.DataFrame, pd.DataFr
                                  MIN_FAMILY_FGA)
         table.insert(0, "season", season)
         shares.append(table)
-        # The raw label counts travel with the post: "Standard jumpers" is a
-        # bucket of many strings, and a reader checking the claim needs to see
-        # which ones landed in it.
         counts = (shots.groupby(["ACTION_TYPE", "family"]).size()
                   .reset_index(name="fga"))
         counts.insert(0, "season", season)
@@ -203,14 +200,6 @@ def creation_counts(unassisted: pd.DataFrame, data_dir: Path) -> pd.DataFrame:
 
 
 def corroborate(shares: pd.DataFrame, data_dir: Path) -> pd.DataFrame:
-    """Check the label-derived self-created share against tracked pull-up rate.
-
-    The two measure the same idea by different means: our grouping counts three
-    scorer-typed families, tracking counts any shot taken off the dribble. They
-    are not required to match exactly and their boundaries differ. What matters
-    is whether they move together, because only one of them can be a labelling
-    artefact.
-    """
     from nba_api.stats.endpoints import leaguedashplayerptshot
 
     rows, lines = [], []
@@ -267,17 +256,6 @@ def corroborate(shares: pd.DataFrame, data_dir: Path) -> pd.DataFrame:
     return out
 
 
-# ---------------------------------------------------------------- shared type
-# The dumbbell grammar is the shot-diet post's, promoted to bulls/graphics/dumbbell.py
-# so both posts draw one form rather than two that merely resemble each other. Only the
-# comparison differs: there Chicago against the NBA, here a player against himself. The
-# subject is the later season, so it takes the filled mark; the earlier season is the
-# reference and takes the ring.
-# The canvas is wider than the published shot-diet chart by exactly one column,
-# and every other x below is that chart's, untouched. Widening rather than
-# compressing is what lets the legend sit right of the value columns without
-# retuning a single matched position -- and placed to the same page width, the
-# wider asset scales down, so it costs less page height rather than more.
 WIDTH = 1860
 LEGEND_COL_X = 1620
 LEGEND_LINE_STEP = 52.0
@@ -382,15 +360,6 @@ def _text_width(fig, ax, text: str, size: float) -> float:
 
 
 def _legend_column(fig, ax, entries, row_count: int) -> float:
-    """Legend as a column right of the values, centred against the rows.
-
-    Stacked rather than laid out in a line because a line of entries needs a band
-    of its own, and two of these charts share one page. As a column it occupies
-    space the chart was not using at all, and the page keeps the height.
-
-    Entries read top to bottom in the order the reader meets them in the data:
-    the subject season first, then what it is measured against.
-    """
     top = ROW_TOP
     bottom = ROW_TOP + (row_count - 1) * ROW_STEP
     first = (top + bottom) / 2 - LEGEND_LINE_STEP * (len(entries) - 1) / 2
@@ -432,15 +401,9 @@ def render_families(shares: pd.DataFrame, out: Path, final: bool) -> Path:
     return _save(fig, out, final)
 
 
-# ------------------------------------------- slide 5: who created the makes
-# Counts, not a rate. The rate alone (19.4% to 30.3%) hides that the whole pie
-# grew underneath it: his makes nearly doubled in the same window, so the
-# unassisted slice nearly tripled. Width carries volume, colour carries creation.
 CREATION_AXIS_MAX = 470.0
 CREATION_TICKS = (0, 100, 200, 300, 400)
 CREATION_BAR_H = 86.0
-# Ink is chosen per fill rather than per chart: DESIGN.md computes contrast where
-# the text actually sits. White holds on the red; on the pale grey it does not.
 ASSISTED_FILL = db.LEADER_GREY
 ASSISTED_INK = db.INK
 UNASSISTED_INK = "#FFFFFF"

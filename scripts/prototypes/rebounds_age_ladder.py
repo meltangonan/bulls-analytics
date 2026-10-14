@@ -64,8 +64,6 @@ NBA_TEAM_REBOUNDS_URL = (
     f"&TeamID={BULLS_TEAM_ID}"
 )
 
-# Keep the same table dimensions, portrait treatment, and ratio-to-season-
-# median color logic as the published Stocks asset.
 REBOUNDS_TRAILING_COLUMNS = (
     TrailingColumn("DREB", "defensive_rebounds_per_game", decimals=1),
     TrailingColumn("ORB", "offensive_rebounds_per_game", decimals=1),
@@ -92,8 +90,6 @@ REBOUNDS_LAYOUT = TableLayout(
     season_rise=10.5,
 )
 
-# The second version is the height-post table's visual footprint and row
-# spacing, with the age occupying the left red block instead of a height.
 HEIGHT_TABLE_WIDTH = 1500
 HEIGHT_TABLE_ROW_H = 116
 HEIGHT_TABLE_TOP = 104

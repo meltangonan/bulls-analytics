@@ -76,11 +76,7 @@ TRAILING_COLUMNS = (
     TrailingColumn("MIN", "clutch_minutes"),
     TrailingColumn("PTS/5MIN", "clutch_points_per_5_minutes", decimals=1),
 )
-# The longer rate label needs more air than the stock ladder's compact GP/STL
-# headers. Equal slots keep MIN and PTS/5MIN visually balanced.
 CLUTCH_TRAILING_SLOT_WIDTH = 160
-# DESIGN.md's structural separator gray stays visible on Canva's warm canvas;
-# the inherited jersey-theme rule is too pale and reads as white after export.
 CLUTCH_ROW_RULE_COLOR = "#B8B0A8"
 
 
@@ -312,8 +308,6 @@ def install_post_portrait_fallbacks() -> None:
 
 
 def render(winners: pd.DataFrame, date: str, *, final: bool = False) -> Path:
-    # The printed total stays familiar; its fill grades the season against the
-    # average NBA player who met the same 10-clutch-game qualification.
     return render_chart(
         apply_display_names(winners), date, slug="one-slide", layout=STOCKS_LAYOUT,
         scale_min=LEAGUE_AVERAGE_RATIO_FLOOR,

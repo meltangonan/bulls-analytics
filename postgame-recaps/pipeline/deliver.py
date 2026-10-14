@@ -48,7 +48,6 @@ def chunks(data: bytes):
 
 
 def clean_png(path: Path) -> list:
-    """Remove every non-image section of a PNG in place; return the names of the sections removed."""
     data = path.read_bytes()
     if data[:8] != b"\x89PNG\r\n\x1a\n":
         raise ValueError(f"{path.name} is not a PNG")
@@ -118,7 +117,7 @@ def to_icloud(game_id: str, slides: list) -> str:
     folder = ICLOUD / f"{r['date_short']} {r['chi']['tri']} {'vs' if r['home'] else 'at'} {r['opp']['tri']}"
     folder.mkdir(parents=True, exist_ok=True)
     for old in folder.glob("*.png"):
-        old.unlink()  # a redelivery after a fix must not leave the earlier version beside the new one
+        old.unlink()
     for s in slides:
         shutil.copy(s, folder / s.name)
     return f"copied to {folder}"
@@ -142,7 +141,6 @@ def main(game_id: str) -> None:
     slides = sorted((OUTPUT / game_id / "slides").glob("*.png"))
     if not slides:
         sys.exit(f"no slides in {OUTPUT / game_id / 'slides'}")
-    # iCloud Drive first, so a Photos failure still leaves the slides on the phone (export already cleaned them).
     for line in [to_icloud(game_id, slides)] + deliver(slides) + [snapshot(game_dir(game_id), OUTPUT / game_id)]:
         print("delivery:", line)
 

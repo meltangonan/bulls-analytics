@@ -1,4 +1,3 @@
-"""Scope and reconciliation checks for Jimmy Butler's Bulls charts."""
 from pathlib import Path
 
 import pandas as pd

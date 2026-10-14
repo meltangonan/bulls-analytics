@@ -1,5 +1,3 @@
-"""Eligibility checks for the last distance-band slide."""
-
 import pandas as pd
 
 from scripts.prototypes.distance_band_fgm import HALFCOURT_Y, build_30_to_halfcourt

@@ -1,5 +1,3 @@
-"""Reconciliation guards for the national-TV schedule-release snapshot."""
-
 import csv
 import sys
 from pathlib import Path

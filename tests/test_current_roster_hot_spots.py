@@ -1,11 +1,3 @@
-"""Post-specific tests for the current-roster hot-spot shot-chart workflow.
-
-Covers the F5-derived density math (normalization, the player-minus-league
-signed difference, off-court masking) and the shot-distance filter — the
-analytical behavior the graphic depends on. The NBA fetch path is not exercised
-here, and the contour rendering is judged visually rather than in tests.
-"""
-
 from __future__ import annotations
 
 import numpy as np

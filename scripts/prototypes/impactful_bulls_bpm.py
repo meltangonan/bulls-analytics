@@ -73,8 +73,6 @@ SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 
 PROJECT = "impactful-bulls-bpm"
 OUT = _REPO / "output" / "feed"
-# Basketball Reference is rate-limited and the published numbers rest on it, so
-# the parsed table is tracked with the post rather than left in ignored cache/.
 DATA_DIR = visual_dir(_REPO / "docs" / "visuals", PROJECT, create=False) / DATA
 ADVANCED_CSV = DATA_DIR / "bulls-advanced-by-season.csv"
 LEADERS_CSV = DATA_DIR / "most-impactful-bull-by-season.csv"
@@ -88,10 +86,6 @@ DECADES = (
     ("2020s", 2021, 2026),
 )
 
-# The canvas is wider than the 1080 Canva page. The page scales it to fit, so
-# the extra width buys air between columns rather than pixels on the page: at
-# 1080 the five stat columns could only be made equal by shrinking the faces
-# and the names, which are the two things worth protecting.
 CHART_WIDTH = 1200
 SIDE_MARGIN = 39
 
@@ -111,10 +105,6 @@ STAT_HEADERS = {
     "games": "GP",
     "minutes_per_game": "MPG",
 }
-# The heat scale covers the three BPM columns; GP and MPG stay plain. Those
-# two are the numbers the qualification rests on, so both are shown: 39 games
-# (Rose 2011-12) or 48 (Miller 2001-02) reads as an error until the
-# minutes-per-game beside it says "starter".
 HEAT_COLUMNS = ("bpm", "obpm", "dbpm")
 PLAIN_COLUMNS = ("games", "minutes_per_game")
 
@@ -217,18 +207,12 @@ class TableLayout:
     bpm_font_size: float
 
 
-# Row and type sizing follow top_game_performances.DECADE_LAYOUT, the most
-# recent table the account shipped. Its headline stat is the same size as
-# every other value and carries its weight through bold alone; BPM does the
-# same here rather than being set larger.
 DECADE_LAYOUT = TableLayout(
     header_from_top=59,
     header_rule_from_top=88,
     first_row_from_top=150,
     bottom_pad=56,
     row_height=112,
-    # "2000-01" runs ~138 px at 17 pt and ends at 177, so a 116 px face
-    # centred at 243 still clears it and stays taller than the row.
     season_x=39,
     headshot_x=243,
     name_x=317,
@@ -437,13 +421,6 @@ def _mix(base: str, target: str, strength: float) -> tuple[float, float, float]:
 def heat_fill(
     value: float, minimum: float, maximum: float
 ) -> tuple[float, float, float]:
-    """Map a value onto the red-yellow-green scale from the age ladder.
-
-    Red is the low end of the column's range and green the high end, so the
-    scale reads as rank rather than as the house red/black semantics. Every
-    cell prints its own number, which is what keeps a red-to-green ramp usable
-    for colourblind readers (DESIGN.md (Color and hierarchy)).
-    """
     span = maximum - minimum
     fraction = 1.0 if span <= 0 else (float(value) - minimum) / span
     fraction = min(max(fraction, 0.0), 1.0)
@@ -536,12 +513,6 @@ def decade_groups(leaders: pd.DataFrame) -> list[tuple[str, pd.DataFrame]]:
 
 
 def half_groups(leaders: pd.DataFrame) -> list[tuple[str, pd.DataFrame]]:
-    """Two even slides, newest half first.
-
-    A decade split leaves the 2020s six rows short, and against two full
-    slides that gap reads as a mistake rather than a choice. 26 seasons halve
-    exactly, so neither slide carries dead space.
-    """
     ordered = leaders.sort_values("season", ascending=False).reset_index(drop=True)
     midpoint = len(ordered) // 2
     groups = []
@@ -554,11 +525,6 @@ def half_groups(leaders: pd.DataFrame) -> list[tuple[str, pd.DataFrame]]:
 
 
 def uniform_row_count(groups) -> int:
-    """Rows the largest slide needs; every slide is sized to this.
-
-    A short slide cropped to its own content would land at a different height,
-    so the same paste position in Canva would put its rows somewhere else.
-    """
     return max(len(rows) for _, rows in groups)
 
 
@@ -572,11 +538,6 @@ def slide_height(row_count: int, layout: TableLayout) -> float:
 
 
 def row_rule_segments() -> tuple[tuple[float, float], ...]:
-    """Rule the identity and plain columns, leaving each heat cell whole.
-
-    The left segment also stops short of the headshot column so the faces,
-    which are taller than the row, overlap a clean gap rather than a line.
-    """
     return ((ROW_RULE_LEFT, BPM_LEFT), (PLAIN_LEFT, TABLE_RIGHT))
 
 

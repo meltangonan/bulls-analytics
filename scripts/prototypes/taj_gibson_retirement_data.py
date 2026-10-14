@@ -50,9 +50,6 @@ DEFAULT_OUT = _REPO / "docs/visuals/2026-09-15-taj-gibson-retirement/data"
 TAJ_ID = 201959
 TAJ = "Taj Gibson"
 
-# Conventional box-score reading order, with points promoted to the top and
-# games played moved to the bottom: the post leads on the headline counting
-# stat and closes on the durability that explains every other row.
 RANK_CATEGORIES = (
     ("PTS", "Points"),
     ("FGM", "Field goals made"),
@@ -72,7 +69,6 @@ RANK_CATEGORIES = (
 # against a smaller pool, and the page must say so.
 PARTIAL_COVERAGE = {"OREB", "DREB", "STL", "BLK"}
 
-# Eight, which fills the four-wide grid exactly rather than leaving a hole.
 CAREER_HIGH_CATEGORIES = (
     ("points", "Points"),
     ("reb", "Rebounds"),
@@ -84,13 +80,6 @@ CAREER_HIGH_CATEGORIES = (
     ("plus_minus", "Plus-minus"),
 )
 
-# "How often did he do it", as distinct from "what was his best night". Each
-# entry is a label and a predicate over his regular-season player-game rows.
-# Thresholds are basketball-conventional, not tuned to flatter the totals.
-# Every threshold here is an achievement, not a rate in disguise. "Games with
-# a block" and "games with an offensive rebound" were cut for that reason:
-# at 67% and 87% they restate his per-game averages rather than marking
-# anything he had to reach for, and the season tables already carry those.
 MILESTONES = (
     ("Double-doubles", lambda g: (g.points >= 10) & (g.reb >= 10)),
     ("Games in double figures", lambda g: g.points >= 10),
@@ -181,9 +170,6 @@ def _season_table(per_game: pd.DataFrame, totals: pd.DataFrame, label: str) -> p
         return float(tot[column].sum()) / games
 
     rows.append({
-        # Named for the team, not just "Career": he also played for Oklahoma
-        # City, Minnesota, New York, Washington and Charlotte, and this row is
-        # only the Chicago stint.
         "season": "Bulls career",
         "games": games,
         "starts": starts,
@@ -214,11 +200,6 @@ def playoff_label(game_id: str) -> str:
 
 
 def _top_games(regular: pd.DataFrame, playoffs: pd.DataFrame, count: int = 5) -> pd.DataFrame:
-    """Best games by Game Score across both season types.
-
-    Playoffs are included because his single best game is one, and because
-    ranking only the regular season leaves a tie straddling the fifth slot.
-    """
     combined = pd.concat([
         regular.assign(season_type="Regular season"),
         playoffs.assign(season_type="Playoffs"),
@@ -230,8 +211,6 @@ def _top_games(regular: pd.DataFrame, playoffs: pd.DataFrame, count: int = 5) ->
         .str.replace("CHI @ ", "at ", regex=False)
     )
     best["playoff_label"] = best["game_id"].map(playoff_label)
-    # The whole box-score line travels with the row: the boxed leaderboard
-    # format shows made-attempted splits, not just the derived percentages.
     return best[[
         "rank", "game_id", "game_date", "opponent", "playoff_label", "result",
         "season_type", "minutes",
@@ -241,17 +220,6 @@ def _top_games(regular: pd.DataFrame, playoffs: pd.DataFrame, count: int = 5) ->
 
 
 def _career_highs(regular: pd.DataFrame, playoffs: pd.DataFrame) -> pd.DataFrame:
-    """Single-game best in each category across his whole Bulls career.
-
-    Playoffs are included because they are part of the career: his best
-    scoring night as a Bull was 32 points at Washington in the 2014 first
-    round, and a "career high" slide that reported the regular-season 26 would
-    simply be wrong. ``in_playoffs`` marks the rows where that matters.
-
-    Several of these are ties, and the tie count is reported on every row
-    rather than only where it flatters him. The named game is the highest
-    Game Score among the tied nights.
-    """
     combined = pd.concat([
         regular.assign(season_type="Regular season"),
         playoffs.assign(season_type="Playoffs"),
@@ -275,11 +243,6 @@ def _career_highs(regular: pd.DataFrame, playoffs: pd.DataFrame) -> pd.DataFrame
 
 
 def _milestones(regular: pd.DataFrame) -> pd.DataFrame:
-    """How often he cleared each threshold, with the share of games it took.
-
-    The share is what makes a count mean anything: 375 games with a block is
-    only impressive once you know it was two thirds of the games he played.
-    """
     games = len(regular)
     if not games:
         raise ValueError("No regular-season games to count milestones over.")

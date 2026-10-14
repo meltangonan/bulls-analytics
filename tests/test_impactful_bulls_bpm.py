@@ -1,5 +1,3 @@
-"""Post-specific tests for the most-impactful-Bull BPM carousel."""
-
 from __future__ import annotations
 
 import pandas as pd

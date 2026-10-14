@@ -104,7 +104,6 @@ def test_the_cover_greys_the_same_zones_the_season_slides_grey():
 
 
 def test_lavine_renders_in_the_default_tagged_style_and_five_pills_fit():
-    """LaVine was the first post in the tagged look, now the house default."""
     assert shot_chart.ZONE12_DEFAULT_STYLE == "tagged"
     classic = shot_chart.ZONE12_STYLES["classic"]
     assert classic["reference"] == "LA" and classic["card_fill"] is None

@@ -70,8 +70,6 @@ FRANCHISE_NAMES = {
     "SAC": "Kings", "SAS": "Spurs", "TOR": "Raptors", "UTA": "Jazz", "WAS": "Wizards",
 }
 
-# Reuse the conference colors settled for the 30+ points-vs-opponent chart.
-# They distinguish opponents without changing what the height encodes.
 WEST_FILL = "#FF003E"
 EAST_FILL = "#2A54C0"
 FRANCHISE_CONFERENCES = {
@@ -193,8 +191,6 @@ def render_continuous_chart(summary: pd.DataFrame, *, final: bool = False) -> Pa
         rows = summary.iloc[first_rank - 1:last_rank]
         x = np.arange(1, len(rows) + 1)
         colors = [WEST_FILL if conference == "West" else EAST_FILL for conference in rows["conference"]]
-        # A deliberately zoomed, labeled baseline makes the small differences
-        # in this compact ranking legible. Bars still expose their exact value.
         ax.bar(
             x, rows["win_pct"] - SCALE_MIN, bottom=SCALE_MIN,
             width=0.70, color=colors, zorder=3,
@@ -209,8 +205,6 @@ def render_continuous_chart(summary: pd.DataFrame, *, final: bool = False) -> Pa
             ax.text(slot, value_y - 1.84, f"{row.wins}–{row.losses}",
                     ha="center", va="top", color="white",
                     fontsize=8.1, fontproperties=helvetica("oblique"), zorder=4)
-            # The reference's diamond-and-stem annotation becomes an NBA logo,
-            # team label, and record. It leaves the baseline unburdened.
             label_y = min(SCALE_MAX + 1.5, value_y + 6.0)
             ax.plot([slot, slot], [value_y + 0.35, label_y - 0.85], color=theme.ink,
                     linewidth=1.35, zorder=2)

@@ -58,7 +58,7 @@ those hues. Preserve lightness differences between its ends. Compute ink contras
 where text actually sits on a fill. Figures sit on an opaque zone tag rather than on the fill, so
 text colors keep one meaning across regions and a tag centred on a narrow corner strip still reads as
 belonging to it. The house tag (`tagged` style, the default since 2026-09-22) is the page colour
-`#FAF8F5` with near-square corners (3-unit radius) and a 1.1-weight `#242424` rule. Text set straight
+`#FAF8F5` with square corners and a 1.1-weight `#242424` rule. Text set straight
 on the fills with a white outline was tried and rejected: it reads as stickers and loses attribution.
 
 Separate neighboring fills with cream geometry-derived seams only where the floor has no black
@@ -109,7 +109,7 @@ comparisons. PPG may precede them and must come from official box-score points a
 shot log contains no free throws. GP may lead (`summary_gp`, official games for the scoped team) so a
 short or injury-shortened sample reads as short; print plain `N GP`, never `N of 82`, since a trade or
 shortened season makes any denominator a claim about missed games. Below 20 total 3PA, print the
-attempt count instead of 3PT%. The cards are rounded (14-unit radius) flat Bulls red `#CE1141` with
+attempt count instead of 3PT%. The cards are square, flat Bulls red `#CE1141` with
 white type, sitting 40 units closer to the legend than the classic layout. Four cards keep their
 210-unit width; five shrink to 172 so the row spans the court's own 920 units.
 
@@ -131,9 +131,11 @@ Distinguish decorative previews from data-bearing colors:
 | Season grid | One actual data-color court per season, compared with that season's league; label the season only (per-season counts belong on the season slides) |
 
 Bare courts crop to the court baseline, rather than retaining the detail chart's empty legend space.
-For a tenure grid on a portrait page, choose the column count from the number of seasons (three is
-the usual choice; Hinrich's ten used four as 4-3-3), level the rows so none is an orphan, fit scale
-to available rows and labels, and scale court-line weights down with the court. Gray must remain
+For a tenure grid on a portrait page, choose the column count from the number of seasons, usually
+three: three courts a row come out 335 px against 248 at four (Rose's six ran 2-2-2, LaVine's eight
+3-3-2, Hinrich's ten 3-3-3-1). Pass the post's `row_plan` and left-align a short last row so the
+columns stay true and it reads as the next season. Fit scale to available rows and labels, and
+scale court-line weights down with the court. Gray must remain
 explainable by the visible attempts and qualification. Actual data-color covers and grids still
 need source, coverage, and qualification on the Canva page.
 

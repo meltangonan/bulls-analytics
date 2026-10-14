@@ -43,8 +43,6 @@ from matplotlib.patches import Rectangle
 
 from bulls.graphics.house import DEFAULT_THEME, export_dpi, helvetica
 
-# One slug names both the post's tracked folder and its scratch folder, so the two
-# mirror each other and a render never has to be hunted for (DEVELOPMENT.md).
 SLUG = "2026-08-08-payroll-vs-wins"
 PROJECT = _REPO / "docs" / "visuals" / SLUG
 SNAPSHOT = PROJECT / "data" / "2026-08-08-bulls-payroll-vs-wins.csv"
@@ -65,9 +63,6 @@ CALLOUTS = {
     "2025-26": "below",
 }
 
-# Top-to-bottom colour ramps, matching the assist-duos board so the two posts read
-# as the same hand. Lighter at the top, deeper at the base. No drop shadow here:
-# these columns sit on a gridline rather than floating on a card.
 BAR_WIDTH = 0.68
 RED_BAR_GRADIENT = ("#E12C52", "#A80E35")
 DARK_BAR_GRADIENT = ("#333333", "#0C0C0C")
@@ -151,7 +146,6 @@ def render_chart(seasons: list[Season], *, final: bool = False) -> Path:
     bold_font = helvetica("bold")
 
     fig = plt.figure(figsize=(CHART_WIDTH / DRAFT_DPI, CHART_HEIGHT / DRAFT_DPI))
-    # Top panel taller: the columns carry the argument, the line supplies the verdict.
     top, bottom = fig.subplots(
         2, 1, sharex=True, gridspec_kw={"height_ratios": [1.45, 1], "hspace": 0.045}
     )
@@ -167,9 +161,6 @@ def render_chart(seasons: list[Season], *, final: bool = False) -> Path:
             top, x, 0, season.dead_share * 100, DARK_BAR_GRADIENT, 4
         )
 
-    # The cap itself is the reference the columns are measured against. The line
-    # stops at the last column so its label can sit in the right margin; nearly
-    # every column clears 100%, so there is no gap over the data to label into.
     top.plot(
         [-0.7, len(seasons) - 0.4],
         [100, 100],
@@ -238,8 +229,6 @@ def render_chart(seasons: list[Season], *, final: bool = False) -> Path:
         va="center",
     )
 
-    # Label the bends only. A value on every point is trivia and collides with
-    # the line through the steep stretches (DESIGN.md section 4).
     for season_name, placement in CALLOUTS.items():
         index = next(i for i, s in enumerate(seasons) if s.season == season_name)
         season = seasons[index]
@@ -288,10 +277,6 @@ def render_chart(seasons: list[Season], *, final: bool = False) -> Path:
 
 
 def canva_copy_block(seasons: list[Season]) -> str:
-    """Exact strings for the Canva page, from the same run as the chart.
-
-    Never retype a number from the chart by eye (DESIGN.md section 3).
-    """
     recent = [s for s in seasons if s.season >= "2020-21"]
     share_lo = min(s.cap_share for s in recent) * 100
     share_hi = max(s.cap_share for s in recent) * 100

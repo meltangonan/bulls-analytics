@@ -1,4 +1,3 @@
-"""Selection, rookie-definition and portrait checks for the rookie Game Score post."""
 import pandas as pd
 import pytest
 from PIL import Image

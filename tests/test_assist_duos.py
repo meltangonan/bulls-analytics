@@ -1,5 +1,3 @@
-"""Post-specific tests for the Bulls assist-connections tables."""
-
 from __future__ import annotations
 
 import pandas as pd
@@ -516,7 +514,6 @@ class TestDataIsTracked:
         assert "visuals" in parts and "data" in parts, CACHE
 
     def test_analysis_tables_are_not_written_to_scratch(self):
-        """output/ is gitignored; the numbers behind a chart must outlive it."""
         from scripts.prototypes.assist_duos import ALL_TIME_PROJECT, data_dir
 
         folder = data_dir(ALL_TIME_PROJECT)

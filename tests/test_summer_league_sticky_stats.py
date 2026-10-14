@@ -1,5 +1,3 @@
-"""Tests for the Sticky Stats analysis, Canva copy, and chart export."""
-
 import argparse
 import importlib.util
 from pathlib import Path

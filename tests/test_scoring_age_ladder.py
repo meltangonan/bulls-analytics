@@ -1,5 +1,3 @@
-"""Tests for the Bulls scoring age ladder prototype."""
-
 from __future__ import annotations
 
 import numpy as np

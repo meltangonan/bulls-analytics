@@ -45,8 +45,6 @@ from bulls.data.fetch import get_current_roster
 from scripts import make_shot_chart as shot_chart
 
 
-# The same floor the hex carousel used, so the two posts cover the same ten
-# players and a reader meeting both sees one roster rather than two.
 MIN_PLAYER_FGA = 250
 PROJECT = "bulls-zone-charts"
 SLUG = "2026-08-10-bulls-zone-charts"
@@ -105,9 +103,6 @@ def build(args: argparse.Namespace) -> list[Path]:
         table.insert(0, "subject", subject)
         table.insert(1, "scope", scope)
         zone_tables.append(table)
-        # The fetched rows behind the table travel with it. cache/shot_charts is
-        # ignored, and a published number whose inputs live only there is one
-        # worktree cleanup away from being unauditable.
         shots.to_csv(args.data_dir / f"{slug}-shots-{args.season}.csv", index=False)
 
     render("Chicago Bulls", "bulls",

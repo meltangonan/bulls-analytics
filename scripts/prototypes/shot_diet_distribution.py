@@ -8,17 +8,17 @@ and the distance between them is the finding, with every family's league rank al
 Shot families come from ``ACTION_TYPE`` in NBA.com play-by-play, which a human scorer
 types. That has two consequences the code encodes rather than assumes:
 
-* ``Jump Shot`` is the scorer's *unlabelled default*, not a technique. It is kept in the
-  chart because dropping a third of the season would misstate every other share, but it
-  is drawn oblique and footnoted, and it is deliberately excluded from rank annotation
-  (``RANK_EXCLUDED``) -- a league rank on an artefact of labelling habits would claim
-  more than the data supports.
+* ``Jump Shot`` is the scorer's *unlabelled default*, not a technique. It becomes the
+  ``Standard jumpers`` family (``UNLABELLED``) and stays in the chart, because dropping
+  a third of the season would misstate every other share.
 * Scorers vary by arena, so a low Chicago rate could be a United Center habit rather
   than basketball. ``--audit-venue`` runs that test; see ``venue_audit``.
 
     --prepare        snapshot 30 teams, reconcile to official totals, write tables
     --audit-venue    home/road and arena-effect check on the labelling
+    --corroborate    check the label-derived claims against optical tracking
     --render         chart asset from the saved tables
+    --render-table   slide two: the full shot-label vocabulary
 """
 from __future__ import annotations
 
@@ -94,7 +94,6 @@ def post_data() -> Path:
 
 
 def raw_dir() -> Path:
-    """Source snapshots the published shares rest on; tracked with the post."""
     return post_data() / "raw"
 
 
@@ -189,12 +188,6 @@ def build_tables(shots: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
 
 
 def build_vocabulary(shots: pd.DataFrame, chart: pd.DataFrame) -> pd.DataFrame:
-    """Every distinct NBA shot label the Bulls recorded, under the family it maps to.
-
-    This is the second slide's whole point: the family rows on slide one are a grouping
-    *we* chose, and a reader cannot check a grouping they cannot see. Families keep the
-    share order of slide one; labels run by attempts within each family.
-    """
     bulls = shots[shots.TEAM_ID == BULLS]
     rows = (bulls.groupby(["FAMILY", "ACTION_TYPE"])
             .agg(FGA=("SHOT_MADE_FLAG", "size"), FGM=("SHOT_MADE_FLAG", "sum"))
@@ -290,13 +283,6 @@ def venue_audit() -> None:
 
 
 def corroborate() -> None:
-    """Check the label-derived claims against optical tracking, which no scorer types.
-
-    Tracking classifies shots from player and ball position, so it shares no failure mode
-    with ``ACTION_TYPE``. Where the two agree, the scorer-bias question is closed. It is a
-    check only: its categories overlap and leave gaps, so they can never replace the
-    families on the chart.
-    """
     from nba_api.stats.endpoints import leaguedashptstats
 
     totals = official_totals()[["TEAM_ID", "FGA"]].rename(columns={"FGA": "TEAM_FGA"})
@@ -332,31 +318,20 @@ def corroborate() -> None:
     (data / "tracking-corroboration.txt").write_text("\n".join(lines) + "\n")
 
 
-# Sized for a 4:5 Instagram page: near-portrait, so the chart fills the page rather than
-# sitting as a landscape band across the middle. The extra height goes into ROW_STEP --
-# rows that breathe -- not into blank margin.
 CHART_WIDTH = 1600
 CHART_HEIGHT = 1790
 
-# Four columns: family name, track, value, rank. The value sits in its own column
-# rather than beside its dot because the Chicago mark is sometimes left of the league
-# mark -- a label hung off the dot then lands on the connector, and on the five rows
-# where Chicago is under the league average it covered the very gap being measured.
 LABEL_RIGHT = 452       # right-aligned; "Turnarounds/fades" is the longest name
 TRACK_LEFT = 504
 TRACK_RIGHT = 1210
-AXIS_MAX = 36.0         # a little past the widest share, so the last dot clears the axis
-VALUE_RIGHT = 1390      # right-aligned so the decimal points line up down the column
-RANK_X = 1500           # ranks share one column so they read as a set, not as callouts
+AXIS_MAX = 36.0
+VALUE_RIGHT = 1390
+RANK_X = 1500
 LEADER_GAP = 30
 LEADER_END = 1262       # stops short of the widest value, "34.5%", set at VALUE_RIGHT
-# The "Share" header centres over the block the values occupy rather than hanging off
-# their shared right edge, which left it looking pushed away from its own column.
 SHARE_HEADER_X = (LEADER_END + VALUE_RIGHT) / 2
 TOP_RANK_HIGHLIGHT = 5
 
-# The two legend entries were colliding as one phrase; 400px between the marks reads as
-# two separate keys, with room for the longer "Chicago Bulls" wordmark.
 LEGEND_CHI_DOT = TRACK_LEFT + 8
 LEGEND_LEAGUE_DOT = TRACK_LEFT + 400
 LEGEND_TEXT_GAP = 26
@@ -366,9 +341,6 @@ HEADER_Y = 80
 AXIS_RULE_Y = 112
 ROW_TOP = 200
 ROW_STEP = 150
-# The percentage scale reads along the bottom, the conventional place for it: at the top
-# it competed with the column headers for the same band of the eye's first pass. Its y is
-# derived from the last row rather than fixed, so it cannot drift if a family is added.
 AXIS_LABEL_DROP = 42
 
 # Marker diameters in points, drawn through ``plot`` rather than ``scatter`` so the
@@ -385,20 +357,14 @@ LEAGUE_RING_RADIUS = (LEAGUE_DOT + LEAGUE_RING_WIDTH) / 2 * DRAFT_DPI / 72
 
 INK = house.BLACK
 CHI = house.RED
-# A tone ladder rather than a set of independent choices: each step down is scaffolding
-# to the one above it, and every value is dark enough to hold on #E9E5E1, the darker end
-# of the range Canva's canvas covers. The first pass was tuned on the pale #FAF8F5 end and
-# the leaders and gridlines all but vanished once the page was exported.
-LEAGUE_GREY = "#6E6862"      # the league mark: data, so darkest of the greys
-CONNECTOR_GREY = "#8A837B"   # the bar between the two marks: also data
-LEADER_GREY = "#A8A199"      # dotted leader; a dash reads lighter than a solid rule
-GRIDLINE = "#B8B0A8"         # DESIGN.md's structural separator for this background
+LEAGUE_GREY = "#6E6862"
+CONNECTOR_GREY = "#8A837B"
+LEADER_GREY = "#A8A199"
+GRIDLINE = "#B8B0A8"
 FOOTNOTE_GREY = "#7A736C"
-# Table rows: hierarchy comes from weight, not pale text (DESIGN.md). Family rows are
-# bold house black; label rows drop to the accepted subtitle tone at regular weight.
 LABEL_GREY = "#5F5B57"
 
-TYPE_FAMILY = 19.0      # family names sat larger than the value they introduce
+TYPE_FAMILY = 19.0
 TYPE_VALUE = 21.0
 TYPE_AXIS = 17.0
 TYPE_LEGEND = 18.0
@@ -411,12 +377,6 @@ def x_for(share: float) -> float:
 
 def dot(ax, x: float, y: float, size: float, color: str, zorder: int = 4,
         hollow: bool = False) -> None:
-    """A filled mark, or a ring when ``hollow``.
-
-    The league mark is a ring so it survives being overlapped. On rows where the two
-    shares nearly match (Tip-ins, 1.9 against 2.1) a filled grey dot sat entirely behind
-    the Bulls dot and the row read as though the league had no value at all.
-    """
     ax.plot([x], [y], marker="o", markersize=size, linestyle="none", zorder=zorder,
             markerfacecolor="none" if hollow else color, markeredgecolor=color,
             markeredgewidth=LEAGUE_RING_WIDTH if hollow else 0)
@@ -430,9 +390,6 @@ TABLE_BOTTOM_PAD = 90
 TABLE_COL_X = (40, 820)
 TABLE_COL_WIDTH = 740
 TABLE_INDENT = 16
-# Right edges of the number columns, measured from a block's left edge. Made and attempts
-# share one cell as "made-att": three separate numeric columns plus a 34-character label
-# does not fit 740px at a readable size, and made-att is the familiar box-score form.
 TABLE_COUNT_RIGHT = 558
 TABLE_FG_RIGHT = 642
 TABLE_SHARE_RIGHT = 740
@@ -444,9 +401,6 @@ MIN_ATTEMPTS_FOR_PCT = 10
 
 TYPE_TABLE_FAMILY = 19.0
 TYPE_TABLE_FAMILY_NUM = 17.0
-# 14.5 rather than 15: the longest label, "Turnaround Fadeaway Bank Jump", was touching
-# its FG figure. The alternative was moving the number columns right, which would have
-# closed the gap between FG and FG% instead.
 TYPE_TABLE_LABEL = 14.5
 TYPE_TABLE_HEADER = 15.0
 
@@ -489,9 +443,6 @@ def render(chart: pd.DataFrame, final: bool = False) -> Path:
         ax.text(x, gridline_foot + AXIS_LABEL_DROP, f"{tick}%", ha="center", va="center",
                 fontsize=TYPE_AXIS, color=FOOTNOTE_GREY, fontproperties=helvetica())
 
-    # Legend names both marks, so the reader can tell direction without relying on hue.
-    # It sits under the scale: at the top it took a whole band before any data, and the
-    # reader needs the key once they reach a row, not before they have seen one.
     legend_y = gridline_foot + AXIS_LABEL_DROP + LEGEND_DROP
     dot(ax, LEGEND_CHI_DOT, legend_y, CHI_DOT, CHI)
     ax.text(LEGEND_CHI_DOT + LEGEND_TEXT_GAP, legend_y, "Chicago Bulls", ha="left",
@@ -507,16 +458,10 @@ def render(chart: pd.DataFrame, final: bool = False) -> Path:
 
     for index, row in enumerate(rows):
         y = ROW_TOP + index * ROW_STEP
-        # The unlabelled default was first drawn oblique as a weaker qualification
-        # (DESIGN.md). Tracking corroborates both its size and its rank, so it now reads
-        # at full weight like every other row; Canva carries what the name means.
         ax.text(LABEL_RIGHT, y, row.FAMILY, ha="right", va="center",
                 fontsize=TYPE_FAMILY, color=INK, fontproperties=helvetica("bold"))
 
         chi_x, league_x = x_for(row.SHARE), x_for(row.LEAGUE_SHARE)
-        # A dotted leader carries the eye from the marks across to the value. Without it
-        # the eight short rows left a wide blank band between the dots and the numbers,
-        # and its length reads as the inverse of the share, which reinforces the bar.
         ax.plot([max(chi_x, league_x) + LEADER_GAP, LEADER_END], [y, y],
                 color=LEADER_GREY, linewidth=1.8, linestyle=(0, (2, 4)), zorder=1)
         bar_start, bar_end = min(chi_x, league_x), max(chi_x, league_x)
@@ -532,8 +477,6 @@ def render(chart: pd.DataFrame, final: bool = False) -> Path:
         ax.text(VALUE_RIGHT, y, f"{row.SHARE:.1f}%", ha="right", va="center",
                 fontsize=TYPE_VALUE, color=INK, fontproperties=helvetica("bold"))
 
-        # Every rank reads at full weight; red marks a top-five finish. Direction is
-        # never carried by the colour alone, since the ordinal itself says which end.
         ax.text(RANK_X, y, ordinal(row.RANK), ha="center", va="center",
                 fontsize=TYPE_RANK, fontproperties=helvetica("bold"),
                 color=CHI if row.RANK <= TOP_RANK_HIGHLIGHT else INK)

@@ -260,9 +260,6 @@ def render_merger_table(winners: pd.DataFrame, date: str, *, final: bool = False
         metric_width=REBOUNDS_METRIC_WIDTH,
         trailing_slot_width=REBOUNDS_TRAILING_SLOT_WIDTH,
         face_crop_fraction=REBOUNDS_FACE_CROP_FRACTION,
-        # The supplied/archived Artis portrait is a wide source image. Keep
-        # more of its vertical frame so his neck remains visible and the afro
-        # does not dominate the row.
         portrait_crop_overrides={600014: 0.90},
         clip_portraits_to_row=True, final=final,
     )

@@ -30,7 +30,7 @@ from bulls.data.fetch import _NBA_HEADERS
 DATA = ROOT / "docs/visuals/2026-09-16-most-points-in-a-half/data"
 BULLS = 1610612741
 TOP_N = 10
-MAX_ROWS = 15  # a tie that would push a slide past this stops the slide above the tie
+MAX_ROWS = 15
 # Split filters work from 1996-97, the first season with period-level data.
 SEASONS = [f"{year}-{str(year + 1)[-2:]}" for year in range(1996, 2026)]
 SEASON_TYPES = {"Regular Season": "rs", "Playoffs": "po", "PlayIn": "pi"}
@@ -45,8 +45,6 @@ SPLITS = {
     "q4": {"period_nullable": 4},
 }
 STATS = ["PTS", "FGM", "FGA", "FG3M", "FG3A", "FTM", "FTA", "MIN"]
-# One single-slide post each: any regulation quarter, any half. Each board names the
-# season types it ranks; the quarter post was published without play-in (none qualified).
 BOARDS = {
     "quarter": (["q1", "q2", "q3", "q4"], ["Regular Season", "Playoffs"]),
     "half": (["h1", "h2"], ["Regular Season", "Playoffs", "PlayIn"]),
@@ -122,12 +120,6 @@ def reconcile(wide: pd.DataFrame) -> pd.DataFrame:
 
 
 def leaderboard(wide: pd.DataFrame, splits: list[str], label: dict[str, str]) -> pd.DataFrame:
-    """Top TOP_N by points plus every row tied with TOP_N-th place, unless that tie
-    would exceed MAX_ROWS; then the board stops above the tied group (fewer than TOP_N rows).
-
-    Tied rows share a rank (shown as T-n). Within a tie, rows are ordered by fewer
-    field-goal attempts, then the earlier game; that order is display only.
-    """
     frames = []
     for split in splits:
         part = wide[wide[f"{split}_played"]].copy()

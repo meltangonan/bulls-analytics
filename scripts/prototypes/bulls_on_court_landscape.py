@@ -43,8 +43,6 @@ PANEL = (190, 175, 1015, 950)  # x0, y0, x1, y1
 OFF_LIMITS = (102.8, 117.5)
 DEF_LIMITS = (121.6, 111.8)  # lower defensive rating maps upward
 
-# Small display offsets keep equal-size portraits legible. The true point and a
-# fine connector remain anchored to each player's data coordinates.
 DISPLAY_OFFSETS = {
     "Tre Jones": (-28, 16),
     "Ayo Dosunmu": (28, -16),

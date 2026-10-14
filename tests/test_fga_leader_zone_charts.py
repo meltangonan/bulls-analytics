@@ -1,4 +1,3 @@
-"""Selection and reconciliation checks for the 2020s FGA-leader carousel."""
 from __future__ import annotations
 
 from pathlib import Path

@@ -33,9 +33,6 @@ from scripts import make_shot_chart as shot_chart
 SEASON = "2021-22"
 MIN_PLAYER_FGA = 250
 MAX_PLAYER_PAGES = 9
-# Post-specific team treatment: every 2010-11 Bulls zone has at least 188 FGA.
-# Colour all observed team zones against the same-season NBA instead of carrying
-# the 400-attempt current-season floor backward into a lower-volume era.
 TEAM_ZONE_MIN_FGA = 1
 COVER_COLOR_SEED = 201011
 PROJECT = "2021-22-bulls-season-zone-charts"

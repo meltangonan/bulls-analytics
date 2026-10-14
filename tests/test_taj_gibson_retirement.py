@@ -1,4 +1,3 @@
-"""Formatting, layout-guard and reconciliation checks for the Taj Gibson post."""
 from pathlib import Path
 
 import pandas as pd
@@ -245,11 +244,6 @@ def test_reconcile_rejects_a_franchise_total_that_moved():
 
 
 def test_reconcile_rejects_game_logs_that_disagree_with_the_franchise_totals():
-    """Two independent sources must reproduce the same career line.
-
-    The cached logs and FranchisePlayers are fetched separately, so a silent
-    change in either one has to fail loudly rather than reach a published page.
-    """
     ranks = _ranks([("Points", "PTS", 5280, 26, 439, False),
                     ("Games played", "GP", 562, 10, 439, False),
                     ("Total rebounds", "REB", 3586, 12, 439, False),
@@ -273,7 +267,6 @@ def test_published_data_matches_the_verified_figures():
     assert ranks.loc["GP", "rank"] == 10
     ordered = pd.read_csv(data_dir / "franchise-ranks.csv")["stat"].tolist()
     assert ordered[0] == "PTS" and ordered[-1] == "GP"
-    # Fouls and turnovers were deliberately cut.
     assert "PF" not in ordered and "TOV" not in ordered
     # Partial-coverage rows are exactly the four the NBA began tracking in 1973-74.
     partial = set(pd.read_csv(data_dir / "franchise-ranks.csv")
@@ -299,8 +292,6 @@ def test_published_data_matches_the_verified_figures():
     assert highs.loc["Blocks", "times"] == 4
     assert highs.loc["Defensive rebounds", "value"] == 13
     assert list(highs.loc[highs["in_playoffs"]].index) == ["Points"]
-    # Fouls were cut: a high reached 21 times is a ceiling, not a highlight.
-    # Minutes were cut too: it describes a rotation, not a performance.
     assert "Personal fouls" not in highs.index
     assert "Minutes" not in highs.index
     assert set(highs.index) <= set(tables.HIGH_CODES)
@@ -315,8 +306,6 @@ def test_published_data_matches_the_verified_figures():
     # Team record in his games, not the Win Shares metric.
     assert milestones.loc["Games won", "games"] == 337
     assert milestones.loc["Games won", "share"] == pytest.approx(337 / 562)
-    # Rates dressed as milestones were cut: at 67% and 87% these restated his
-    # per-game averages, which the season tables already carry.
     assert "Games with a block" not in milestones.index
     assert "Games with an offensive rebound" not in milestones.index
     assert (milestones["of_games"] == 562).all()
@@ -350,10 +339,6 @@ def test_the_hero_value_carries_no_colour_scale():
 
 
 def test_his_best_games_all_sit_in_one_interpretation_band():
-    """Between 20 and 30: very good nights, not star-level ones.
-
-    Worth pinning because it is the reason the hero box needs no scale.
-    """
     data = data_post.DEFAULT_OUT / "top-games.csv"
     if not data.exists():
         pytest.skip("Run taj_gibson_retirement_data.py first.")
@@ -361,12 +346,6 @@ def test_his_best_games_all_sit_in_one_interpretation_band():
 
 
 def test_the_table_treatment_uses_the_shared_accent_card(tmp_path, monkeypatch):
-    """The hero column reuses house.draw_accent_card, not a local rectangle.
-
-    The card's geometry, rounding and shadow are the settled house format the
-    2025-26 best-games post uses; redrawing it here by hand would drift away
-    from that the first time either side changed.
-    """
     data = data_post.DEFAULT_OUT / "top-games.csv"
     if not data.exists():
         pytest.skip("Run taj_gibson_retirement_data.py first.")
@@ -511,11 +490,6 @@ def test_only_the_shipped_slides_remain():
 
 
 def test_career_high_values_carry_no_colour():
-    """Every figure on the number-and-stat slides is house black.
-
-    The playoff-set high was red for a while; it is now stated in the note
-    instead, so no reader has to work out what a colour meant.
-    """
     source = Path(tables.__file__).read_text()
     grid = source[source.index("def render_career_high_grid("):]
     grid = grid[:grid.index("# ---")] if "# ---" in grid else grid

@@ -116,7 +116,6 @@ def main(refresh: bool = False) -> None:
     top.insert(0, 'rank', range(1, 16))
     all_rows.to_csv(DATA / 'all_player_seasons.csv', index=False)
     top.to_csv(DATA / 'top15.csv', index=False)
-    # Keep the earlier ten-row extract available for audit/test comparisons.
     top.head(10).to_csv(DATA / 'top10.csv', index=False)
     pd.DataFrame(audits).to_csv(DATA / 'season_audit.csv', index=False)
     copy = dict(title='Bulls pull-up scoring leaders',

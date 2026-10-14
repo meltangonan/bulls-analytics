@@ -53,9 +53,6 @@ SEASONS = (
     "2013-14", "2014-15", "2015-16", "2016-17",
 )
 SEASON_MIN_ZONE_FGA = sm.MIN_ZONE12_FGA_PLAYER
-# The floor scales with the pooled window for the same reason it does elsewhere
-# in this family: a zone that clears the season threshold once should not read
-# as equally well established when eight seasons were pooled to reach it.
 TENURE_MIN_ZONE_FGA = SEASON_MIN_ZONE_FGA * len(SEASONS)
 
 PROJECT = "taj-gibson-retirement"
@@ -173,12 +170,6 @@ def load_labelled_shots(season: str, totals: pd.Series, data_dir: Path,
 
 
 def shot_diet(shots: pd.DataFrame) -> pd.DataFrame:
-    """Career family split, ordered by attempts, zeros kept.
-
-    ``family_shares`` returns every family including ones he never used, which
-    for a shot diet is itself the finding: a big man with no step-backs is a
-    fact about him, not a row to drop.
-    """
     diet = sf.family_shares(shots.ACTION_TYPE, shots.SHOT_MADE_FLAG)
     return diet.sort_values("fga", ascending=False).reset_index(drop=True)
 

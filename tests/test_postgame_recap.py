@@ -39,7 +39,7 @@ def test_game_one_matches_nba_after_correction():
     assert d["quarters"]["chi"] == [29, 33, 31, 31] and d["quarters"]["opp"] == [40, 24, 26, 27]
     f = d["flow"]
     assert (f["chi_lead"], f["opp_lead"], f["lead_changes"], f["ties"]) == (10, 15, 4, 3)
-    assert (f["run_chi"], f["run_opp"]) == (11, 14)  # the posted slide said 18-0
+    assert (f["run_chi"], f["run_opp"]) == (11, 14)
     assert d["awards"][0][2:] == ["Leonard Miller", "14 PTS on 5-7 FG, 2 STL"]
     assert caption(d) == ("The Chicago Bulls beat the Phoenix Suns 124-117 at the United Center.\n\n"
                           "Stats via NBA.com as of game night. The NBA can revise official stats after a game.\n\n"

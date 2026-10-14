@@ -52,7 +52,9 @@ three-point line; classification and drawing use the same coordinates and shot t
 
 Zone fill compares FG% against the league; shot share compares zone FGA / all subject FGA against
 the same league fraction. Raw makes/attempts remain visible. Each season in `render_zonegrid` uses
-its own season's league baseline, not one pooled comparison for every year.
+its own season's league baseline, not one pooled comparison for every year. A tenure post draws a
+season's own chart only at 300+ Chicago FGA (`CHART_MIN_SEASON_FGA`); thinner seasons still pool into
+the tenure chart and every audit file.
 
 The existing colour floors are display contracts:
 

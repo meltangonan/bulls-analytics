@@ -1,5 +1,3 @@
-"""Post-specific tests for the current-roster assisted-buckets chart."""
-
 from __future__ import annotations
 
 from datetime import datetime

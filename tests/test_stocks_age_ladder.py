@@ -1,5 +1,3 @@
-"""Tests for the Bulls stocks (steals + blocks) age ladder prototype."""
-
 from __future__ import annotations
 
 from pathlib import Path
@@ -304,7 +302,6 @@ def test_the_other_ladders_still_default_to_a_single_games_column():
 
 
 def test_a_long_name_no_longer_runs_under_the_metric_column():
-    """The overlap bug: "Wendell Carter Jr." pushed its season into the STK cell."""
     import matplotlib.pyplot as plt
     from scripts.prototypes.scoring_age_ladder import name_block_width
 
@@ -373,7 +370,6 @@ def test_auto_name_column_refuses_a_table_that_would_overflow_the_asset(tmp_path
 
 
 def test_the_conditional_fill_stops_short_of_the_header_rule():
-    """The top cell used to bleed into the black ruler above it."""
     import matplotlib.pyplot as plt
     from matplotlib.patches import Rectangle
     from scripts.prototypes.scoring_age_ladder import HEADER_RULE_CLEARANCE, _ppg_cells
@@ -421,7 +417,6 @@ def test_a_gap_separates_the_season_marker_from_the_metric_column():
 
 
 def test_row_rules_do_not_paint_over_the_fill_corners(tmp_path, monkeypatch):
-    """Projecting line caps left a pale notch at every row boundary."""
     from PIL import Image
     import scripts.prototypes.scoring_age_ladder as ladder
 
@@ -460,7 +455,6 @@ def test_rows_are_taller_than_the_first_cleanup_pass():
 
 
 def test_the_crop_keeps_the_whole_head():
-    """Too tight cut jaws; this sits between the old ladders and the first pass."""
     from scripts.prototypes.scoring_age_ladder import FACE_CROP_HEIGHT_FRACTION
 
     assert 0.62 < STOCKS_FACE_CROP_FRACTION < FACE_CROP_HEIGHT_FRACTION

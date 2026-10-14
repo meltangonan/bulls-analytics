@@ -88,11 +88,6 @@ def test_no_new_cache_locations_without_a_documented_reason():
 
 
 def _uses_bare_cache_root(code: str) -> bool:
-    """True when `/ "cache"` is not followed by a subfolder.
-
-    Written as a scan rather than a lookahead regex: an earlier lookahead version
-    backtracked over the whitespace and flagged every subfolder use as a bare one.
-    """
     for match in CACHE_TOKEN.finditer(code):
         if not code[match.end():].lstrip().startswith("/"):
             return True
@@ -114,7 +109,6 @@ def test_cache_root_is_not_written_to_directly():
 
 
 def test_the_assist_duos_season_data_is_tracked():
-    """The specific regression this whole rule came from."""
     data = ROOT / "docs" / "visuals" / "2026-08-08-assist-duos" / "data" / "seasons"
     assert data.is_dir(), f"season data missing from the tracked tree: {data}"
     seasons = list(data.glob("assisted-baskets-*.csv"))

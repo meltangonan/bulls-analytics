@@ -1,4 +1,3 @@
-"""Selection, sophomore-definition, coverage-gap and render checks for the sophomore post."""
 import pandas as pd
 import pytest
 

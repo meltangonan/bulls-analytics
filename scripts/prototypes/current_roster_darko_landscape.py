@@ -107,9 +107,6 @@ SHORT_NAMES = {
     "Patrick Williams": "P. WILLIAMS",
 }
 
-# When two exact-coordinate portraits overlap vertically, the lower player is
-# painted last (on top). Put the upper player's name above their portrait so
-# that the lower portrait does not have to cover the label or face.
 NAME_ABOVE = {"Nic Claxton", "Matas Buzelis", "Patrick Williams"}
 
 _DARKO_NUMBER = r"[+\-\d.eE]+"

@@ -1,5 +1,3 @@
-"""Check the shot boundary and the saved leaderboard's source accounting."""
-
 from pathlib import Path
 
 import pandas as pd

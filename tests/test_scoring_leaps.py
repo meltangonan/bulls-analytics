@@ -1,5 +1,3 @@
-"""Tests for the Bulls year-over-year scoring leaps prototype."""
-
 from __future__ import annotations
 
 import matplotlib

@@ -57,8 +57,6 @@ ROW_RULE_LEFT = 100
 AGE_X = 155
 HEADSHOT_X = 245
 NAME_X = 300
-# Compact columns follow the Basketball University reference rather than
-# stretching two short values across the full chart width.
 PPG_LEFT = 690
 PPG_RIGHT = 810
 GP_LEFT = PPG_RIGHT
@@ -70,8 +68,6 @@ METRIC_FILL_SQUARE_CELLS = "square-cells"
 HEAT_RED = "#D64545"
 HEAT_YELLOW = "#F2D46B"
 HEAT_GREEN = "#3FAE63"
-# The header ruler is drawn at 2pt; keeping the conditional fill this far
-# below its centre stops the top cell bleeding into the black line.
 HEADER_RULE_CLEARANCE = 3.0
 MIN_USABLE_HEADSHOT_BYTES = 50_000
 FACE_CROP_HEIGHT_FRACTION = 0.72
@@ -103,14 +99,6 @@ class TableLayout:
 
 @dataclass(frozen=True)
 class TrailingColumn:
-    """One narrow numeric column to the right of the heat cell.
-
-    The ladder family shows games played here by default.  A composite metric
-    such as stocks replaces it with its own components, so a reader can see
-    that a 2.4 came from steals rather than blocks (`POSTING_WORKFLOW.md`
-    fairness guardrails: expose important metric components).
-    """
-
     header: str
     column: str
     decimals: int = 0
@@ -533,9 +521,6 @@ def row_rule_segments(
     headshot_x: float = HEADSHOT_X,
     headshot_half_size: float = ONE_SLIDE_LAYOUT.headshot_half_size,
 ) -> tuple[tuple[float, float], ...]:
-    # Faces draw later at zorder 4, above this zorder-3 rule. Keeping the ruler
-    # continuous matches the assist-duo and Game Score tables: the line remains
-    # legible as a table separator while the portrait naturally interrupts it.
     return ((row_rule_left, metric_left), (games_left, games_right))
 
 
@@ -550,14 +535,6 @@ def face_headshot_label(
     crop_fraction=FACE_CROP_HEIGHT_FRACTION,
     clip_bottom=None,
 ):
-    """Place the face-focused crop used by the account's recent tables.
-
-    ``crop_fraction`` is the share of the source portrait's height kept from the
-    top.  Lower values cut shoulders and neck and leave more face, which is what
-    a larger portrait needs to stay a portrait rather than a torso.
-    ``clip_bottom`` trims the drawn image at a row separator so a bigger
-    portrait cannot bleed into the row beneath it (the rookie-table treatment).
-    """
     try:
         image = plt.imread(image_path)
     except (FileNotFoundError, OSError, ValueError):
@@ -595,13 +572,6 @@ def face_headshot_label(
 
 
 def name_block_width(ax, players, layout) -> float:
-    """Width of the widest name plus its season marker, measured not guessed.
-
-    Hardcoded column positions are what let a long name such as "Wendell Carter
-    Jr." run its season marker underneath the metric column.  Measuring the
-    real pool and starting the numbers after it removes the collision by
-    construction rather than by nudging a constant.
-    """
     season_font = helvetica()
     season_font.set_style("italic")
     widest = 0.0
@@ -665,9 +635,6 @@ def render_chart(
         raise ValueError("Cannot render an empty age ladder.")
     if metric_column not in winners.columns:
         raise ValueError(f"Age ladder rows are missing metric column {metric_column!r}.")
-    # The printed number and the colour behind it need not be the same quantity:
-    # a raw rate reads plainly, while its standing against a league baseline is
-    # what makes the colour mean anything.
     fill_source = metric_column if fill_column is None else fill_column
     if fill_source not in winners.columns:
         raise ValueError(f"Age ladder rows are missing fill column {fill_source!r}.")

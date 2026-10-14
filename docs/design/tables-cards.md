@@ -44,7 +44,9 @@ result, at the game line's own size. Place the hero column a fixed gap after the
 or game line (`top_game_performances.identity_width`), not at a fixed x, and let the stat columns share
 what remains.
 Render every slide of a multi-slide table on one canvas sized to the fullest slide, with one name
-size and one set of column positions measured across all slides, so nothing jumps between swipes.
+size and one set of column positions measured across all slides, so nothing jumps between swipes. A
+multi-slide bar table scales every slide's bars to the set-wide maximum, so bar lengths compare
+across swipes.
 
 Size row height from the Canva page, not the previous post: measure the table's placed height in a
 page export and grow rows until it fills the space between subtitle and footer. At the 1500-wide

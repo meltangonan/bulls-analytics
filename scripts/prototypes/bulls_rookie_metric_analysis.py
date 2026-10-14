@@ -545,11 +545,6 @@ def build_composite_ranking(table: pd.DataFrame, threshold: int = 1000) -> pd.Da
 def build_ts_era_sensitivity(
     ranking: pd.DataFrame, league_baselines: pd.DataFrame
 ) -> pd.DataFrame:
-    """Re-rank only the TS category relative to each season's NBA baseline.
-
-    This is a private fairness check, not the reader-facing formula. It reveals
-    whether raw TS% materially favors rookies from a more efficient scoring era.
-    """
     required = {"season", "league_ts_pct"}
     missing = required - set(league_baselines.columns)
     if missing:
@@ -850,13 +845,6 @@ LEAGUE_ROOKIE_CSV = DATA_DIR / "nba-league-rookies-since-2000.csv"
 
 
 def fetch_league_rookie_season(end_year: int) -> pd.DataFrame:
-    """Fetch one season of every NBA rookie, not only Chicago's.
-
-    This is the same endpoint and Rookie filter as `fetch_rookie_season` with
-    the team filter dropped. It exists to give the table's colour scale a real
-    reference population: "good for a rookie" has to be measured against other
-    rookies, not against this table's own best and worst rows.
-    """
     season = season_label(end_year)
     kwargs = {
         "season": season,

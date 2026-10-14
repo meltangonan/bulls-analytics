@@ -1,5 +1,3 @@
-"""Tests for the Bulls rookie production-versus-quality scatter."""
-
 from __future__ import annotations
 
 import numpy as np

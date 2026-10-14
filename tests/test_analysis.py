@@ -1,4 +1,3 @@
-"""Tests for bulls.analysis module."""
 import pytest
 import pandas as pd
 from bulls.analysis import (

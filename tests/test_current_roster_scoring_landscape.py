@@ -1,5 +1,3 @@
-"""Post-specific tests for the current-roster scoring landscape."""
-
 from __future__ import annotations
 
 from datetime import datetime

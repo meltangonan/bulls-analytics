@@ -54,13 +54,6 @@ SEASONS = (
     "2012-13", "2013-14", "2014-15", "2015-16",
 )
 AWAY_SEASONS = ("2010-11", "2011-12")
-# A season earns its own shot chart at 300 Chicago attempts. Below that the
-# chart is mostly grey -- a picture of a sample, not of a shooter -- and it sits
-# beside full seasons as though the two were comparable. The line falls in a
-# real gap in his career rather than between neighbours: 2015-16's Chicago half
-# is 118 attempts and the next thinnest season is 381, so nothing is cut close.
-# Every season still feeds the pooled tenure chart and every audit file; the
-# floor decides which seasons are DRAWN, not which are counted.
 CHART_MIN_SEASON_FGA = 300
 GRID_ROW_PLAN = (3, 3, 3, 1)
 SEASON_MIN_ZONE_FGA = sm.MIN_ZONE12_FGA_PLAYER
@@ -108,12 +101,6 @@ def load_bulls_totals(season: str, data_dir: Path,
 
 def reconcile_shots(season: str, totals: pd.Series,
                     shots: pd.DataFrame) -> None:
-    """The raw pull must equal the official Chicago line, before any filtering.
-
-    Checked on the raw frame on purpose. Reconciling after dropping unlocated
-    rows would compare a number to itself and pass for a pull scoped to the
-    wrong team, which is the one mistake this whole post is exposed to.
-    """
     if len(shots) != int(totals.FGA):
         raise ValueError(
             f"{season}: shot rows {len(shots)} != Bulls FGA {int(totals.FGA)}"
@@ -164,21 +151,6 @@ def load_bulls_shots(season: str, totals: pd.Series, data_dir: Path,
 
 
 def load_league_shots(season: str, refresh: bool = False) -> pd.DataFrame:
-    """The season's league baseline, read from the shared cache and left there.
-
-    This is the one place this post departs from its three siblings, which each
-    copy every season's ~10 MB league pull into their own ``data/`` folder. Over
-    eleven seasons that is ~115 MB, and it duplicates the single dataset the repo
-    names as shared: ``tests/test_data_locations.py`` justifies ``cache/shot_charts``
-    as "league shot baseline behind the whole shot-chart family", and AGENTS.md
-    lists it among the things that stay in the ignored cache precisely because no
-    one post owns it.
-
-    What must ship with the post is what the post alone can produce -- his shots,
-    his totals, and the zone splits the slides print. Those are all written to
-    ``data/``. The league baseline is refetchable by any of the family's scripts
-    and belongs to none of them.
-    """
     league = shot_data.league_shots(season, refresh)
     if league.empty:
         raise ValueError(f"NBA.com returned no league shots for {season}")
@@ -279,18 +251,6 @@ def render(label: str, shots: pd.DataFrame, league: pd.DataFrame,
 def render_tenure_cover(shots: pd.DataFrame, league: pd.DataFrame,
                         min_zone_fga: int, output_dir: Path,
                         final: bool) -> Path:
-    """The pooled tenure chart with every overlay suppressed -- the cover.
-
-    A data-colour cover in DESIGN.md's sense: the fills are still an analytical
-    claim, so it uses the same window, baseline, palette and floor as the tenure
-    slide it opens for. A cover built to a looser floor would show a different
-    chart from the one carrying the numbers eleven slides later, which is the
-    kind of contradiction nobody catches until it is printed.
-
-    Only the tenure chart gets one. Bare twins of all eleven seasons were built
-    and dropped: the season slides exist to carry their numbers, and a pill-free
-    copy of each is a second set of assets with no page to live on.
-    """
     label = TENURE_LABEL
     suffix = label.lower().replace("\u2013", "-").replace(" ", "-")
     out = output_dir / f"{date.today().isoformat()}-zone-kirk-hinrich-{suffix}-cover.png"
@@ -317,12 +277,6 @@ def render_cover(by_season: dict[str, dict[str, pd.DataFrame]],
         {
             "by_season": by_season,
             "min_fga": SEASON_MIN_ZONE_FGA,
-            # Three to a row, with the tenth hanging left under the stack. Three
-            # wide is what buys the size: the courts come out 335 px against the
-            # 248 a four-wide row allows, because four of them squeeze the page
-            # width while three leave room to grow into. The odd court is left
-            # aligned rather than centred so the columns stay true and it reads
-            # as the next season in sequence.
             "row_plan": GRID_ROW_PLAN,
             "align": "left",
         },
@@ -371,13 +325,6 @@ def build(args: argparse.Namespace) -> list[Path]:
         all_totals.append(totals)
 
     tenure_shots = pd.concat(all_shots, ignore_index=True)
-    # The pooled league is the same eleven seasons stacked, so the tenure chart
-    # compares him with the era he actually played in rather than with a single
-    # borrowed year. Weighting each season's league contribution by HIS attempts
-    # that season was tested as the more careful alternative and moved no zone's
-    # league FG% by more than 0.21 points -- well inside the chart's +/-2.5 band,
-    # so no zone changes colour. Plain pooling is kept because it is the version
-    # a reader can reproduce from the saved files.
     tenure_league = pd.concat(all_league, ignore_index=True)
     tenure_zones = sm.zone12_split(
         tenure_shots, tenure_league, min_fga=TENURE_MIN_ZONE_FGA

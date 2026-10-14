@@ -28,8 +28,6 @@ from bulls.analysis.shot_families import classify_series  # noqa: E402
 
 # The featured team: the Bulls, unless FOCUS_TEAM_ID names another (used to dry-run on other games).
 BULLS = int(os.environ.get("FOCUS_TEAM_ID", 1610612741))
-# Set by postgame_recap.py 45 minutes after Final: a feed NBA.com has left incomplete may then be replaced by
-# what can be computed exactly elsewhere (four_factors), so the post goes out (user, 2026-10-10).
 FALLBACK = os.environ.get("RECAP_FALLBACK") == "1"
 # Pages drawn from the second wave of NBA.com feeds (four factors, misc, the Bulls shot feed). With RECAP_EARLY=1
 # the build leaves them pending and checks and draws the rest; postgame_recap.py renders that once for review.
@@ -177,7 +175,6 @@ def logs_match(game_id: str, players: pd.DataFrame, teams: pd.DataFrame, player_
     off = lambda log, key, row: key not in log.index or any(int(log.loc[key, k]) != int(getattr(row, v)) for k, v in cols.items())
     out = []
     lg = league_games[gid(league_games)].set_index("TEAM_ID") if not league_games.empty else pd.DataFrame()
-    # Team notables read rebounds, assists, threes, steals and blocks too, not only points (review, Oct 8).
     if lg.empty or any(off(lg, r.teamId, r) for r in teams.itertuples()):
         out.append("league game log (LeagueGameLog, teams)")
     pg = player_games[gid(player_games) & (player_games.TEAM_ID == BULLS)].set_index("PLAYER_ID") if not player_games.empty else pd.DataFrame()
@@ -264,8 +261,6 @@ def flow(pbp: pd.DataFrame, chi_home: bool, opp_tri: str, moments: list = ()) ->
             i = flips[-1]
             late = ev.period[i] >= 5 or (ev.period[i] == 4 and clock_left(ev.clock[i]) <= 360)
             if late and abs(final) <= 10:
-                # The scoring row itself: looking the play up again by clock could pick a missed and-1
-                # free throw or the other team's play at the same second (review, Oct 8).
                 r = ev.iloc[i]
                 what = "3" if r.actionType == "Made Shot" and int(r.shotValue) == 3 else ("free throw" if r.actionType == "Free Throw" else "basket")
                 left = clock_left(ev.clock[i])
@@ -463,11 +458,6 @@ EAST = {"ATL", "BOS", "BKN", "CHA", "CHI", "CLE", "DET", "IND", "MIA", "MIL", "N
 
 
 def east_place(league_games: pd.DataFrame, dates: list) -> list:
-    """The Bulls' place in the East by winning percentage after each date, counting every game that day.
-
-    Teams level on winning percentage share a place ([place, tied]); the NBA's tiebreakers are not
-    applied. Teams yet to play are left out until they have a game.
-    """
     conf = EAST if TRI in EAST else set(league_games.TEAM_ABBREVIATION) - EAST
     # A game still in progress is in the log with no result (Game 1's log held GSW at POR at half-time); it must
     # count for no one, not as a loss. The featured team's own rows stay (its game tonight is final).
@@ -520,7 +510,7 @@ def breakdown(pbp: pd.DataFrame, teams: pd.DataFrame, opp_tri: str) -> dict:
     split = {}
     cats, poss, pts = acc.account(pbp, ids, split)
     official = {r.teamTricode: int(r.points) for r in teams.itertuples()}
-    if pts != official:  # one feed lags the other: wait for both to settle
+    if pts != official:
         raise NotReady(f"play-by-play points {pts} do not match the box score {official}")
     c = acc.centred(cats, poss)
     edge = {k: c[TRI][k] - c[opp_tri][k] for k in c[TRI]}
@@ -558,11 +548,6 @@ def breakdown(pbp: pd.DataFrame, teams: pd.DataFrame, opp_tri: str) -> dict:
 
 def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home: bool, starter_ids: set,
            pick: dict | None = None) -> list:
-    """#mvp (the top performer) first, then every other award the night earned, biggest feat first.
-
-    Each award has a floor; only the leader can win it, and a player wins at most two. The rest are
-    ranked by how far the winner cleared the floor (value / floor), so a 6-steal night outranks 12 rebounds.
-    """
     p = players[(players.teamId == BULLS) & players.minutes.map(minutes).gt(0)].copy()
     if p.empty:
         return []
@@ -586,10 +571,8 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
     cats = p[list(tens)].ge(10).sum(axis=1)
     hit =[f"{int(p.loc[tp, c])} {label}" for c, label in tens.items() if p.loc[tp, c] >= 10]
     if len(hit) >= 3:
-        line = ", ".join(hit)  # the stats show the triple-double; no label, so the line stays short (user, Oct 9)
+        line = ", ".join(hit)
     else:
-        # Points and shooting, then up to two other stats that stand out, so the line shows why Game Score
-        # picked this player (Oct 7: Miller's "14 PTS, 1 REB, 2 AST" hid his shooting and steals).
         scale = {"reboundsTotal": ("REB", 10, 5), "assists": ("AST", 10, 5), "steals": ("STL", 3, 2),
                  "blocks": ("BLK", 3, 2), "threePointersMade": ("3PM", 4, 3)}
         extra = sorted(((p.loc[tp, c] / unit, c) for c, (_, unit, floor) in scale.items() if p.loc[tp, c] >= floor), reverse=True)[:2]
@@ -598,10 +581,6 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
 
     td = cats.drop(tp)
     add("#tripledouble", td.where(td >= 3), 1, lambda i: f"{p.points[i]} PTS, {p.reboundsTotal[i]} REB, {p.assists[i]} AST")
-    # Floors set 2026-10-07 so each award fires in roughly one game in ten to five (2025-26 Bulls games);
-    # the user moved assists to 10 and dunks to 5 on 2026-10-09, set the bench award at Game Score 15, dropped the
-    # minutes and floater awards, and on 2026-10-12 lowered threes to 5 and assists to 8 and renamed #hothand and
-    # #dunkeverything (the Notion "Game recaps" table).
     shooters = p[p.fieldGoalsAttempted >= 10]
     add("#efficient", (shooters.fieldGoalsMade / shooters.fieldGoalsAttempted), 0.70,
         lambda i: f"{fg(i)} ({100 * p.fieldGoalsMade[i] / p.fieldGoalsAttempted[i]:.0f}%)")
@@ -627,7 +606,6 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
         add("#highflyer", dunks, 5, lambda i: f"{dunks[i]} dunks")
 
     cands = [c for c in cands if c[0] not in pick.get("drop_awards", [])]
-    # Leader only; rank by how far past the floor; at most two awards per player.
     wins = {int(tp): 1}
     ranked = []
     for order, (title, series, floor, line) in enumerate(cands):
@@ -745,12 +723,6 @@ MIN_FGA = 5
 
 
 def season_leaders(player_games: pd.DataFrame, game_id: str) -> dict | None:
-    """Every qualified Bulls player's per-game averages through tonight, for the leaders grid.
-
-    Qualifying: a player needs half of the Bulls' games so far. (The NBA's 70% rule left out Giddey,
-    34 of 50 games, and White, 28 of 50, at the midseason test game.) Values are rounded to the one
-    decimal printed, so tied leaders tie on the page too.
-    """
     if player_games.empty:
         return None
     player_games = player_games[player_games.TEAM_ID == BULLS]
@@ -758,7 +730,7 @@ def season_leaders(player_games: pd.DataFrame, game_id: str) -> dict | None:
     # game 1 (user, 2026-10-09: the slide can be left out of a post when one game says too little).
     tonight = player_games.loc[player_games.GAME_ID.astype(str).str.zfill(10) == game_id, "GAME_DATE"].max()
     if game_id[:3] == "002" and player_games[player_games.GAME_DATE <= tonight].GAME_ID.nunique() < 5:
-        return None  # the logs also hold their games for other teams
+        return None
     g = player_games.assign(gid=player_games.GAME_ID.astype(str).str.zfill(10))
     b = g[g.GAME_DATE <= g.loc[g.gid == game_id, "GAME_DATE"].iloc[0]]
     games = int(b.gid.nunique())
@@ -908,16 +880,11 @@ def build(game_id: str) -> dict:
               and [int(q.opp.get(i, 0)) for i in range(1, 5)] == official_q.get(int(opp.teamId)))
     steps, repairs = score_steps(pbp), []
     if pbp_ok and steps:
-        # The plays reach every official quarter score but a printed running score is wrong: recompute the
-        # running scores from the plays (user, 2026-10-10: the post has to go out). It must pass the score
-        # steps here and NBA.com's own flow counts below, or the build waits as before.
         pbp, changed = repair_scores(pbp)
         steps = score_steps(pbp)
         repairs.append(f"play-by-play: running score recomputed from the plays on {changed} rows NBA.com printed "
                        "wrong; the final, the quarter scores and NBA.com's game-flow counts match")
     if not pbp_ok or steps:
-        # Credibility first: a scrambled or mis-scored play-by-play is not drawn with a warning; the build
-        # waits for NBA.com to correct the feed (seen 2026-10-06, DEN at UTA, and 2026-10-07, bug 1).
         raise NotReady("play-by-play does not match NBA.com's line score" if not pbp_ok
                        else f"play-by-play score steps are off at {len(steps)} rows, first {steps[0]}")
     stale = logs_match(game_id, players, teams, read(g, "player_games.csv"), read(g, "league_games.csv"))
@@ -926,7 +893,7 @@ def build(game_id: str) -> dict:
     ff = read(g, "ff_team.csv")
     split, short = ([], "") if EARLY else (feeds_agree(players, teams, ff), ff_minutes_short(ff, teams))
     from_box = bool(split) and bool(short) and all("four factors" in m for m in split) and FALLBACK
-    if from_box:  # past the deadline (postgame_recap.py sets RECAP_FALLBACK 45 minutes after Final)
+    if from_box:
         repairs.append(f"four factors: NBA.com's cover {short}; EFG% and FT rate computed from the box score, "
                        "TOV% and OREB% left out")
     elif split:
@@ -999,7 +966,7 @@ def build(game_id: str) -> dict:
         "notables": notables(game_id, read(g, "player_games.csv"), bulls_games(read(g, "league_games.csv")), read(g, "league_games.csv"), opp_tri),
         "missing": [line for line in (g / "missing.txt").read_text().splitlines() if line] if (g / "missing.txt").exists() else [],
         "shots_complete": shots_complete, "shots_source": shots_source,
-        "repairs": repairs,  # what the build corrected in NBA.com's feeds, and how it was checked
+        "repairs": repairs,
     }
     stats = read(g, "summary_stats.csv")
     if not stats.empty:

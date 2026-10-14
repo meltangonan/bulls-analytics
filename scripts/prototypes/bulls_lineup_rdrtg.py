@@ -68,9 +68,6 @@ HISTORICAL_HEADSHOT_URLS = {
     203107: "https://a.espncdn.com/i/headshots/nba/players/full/6621.png",
 }
 
-# These are the ten functional orders in the defensive result. The source
-# exposes identities, but not PG-to-C role slots, so this map is explicit and
-# checked against both the source names and entity IDs before rendering.
 POSITION_ORDER = {
     ("2004-05", "213-2201-2550-2736-2768"): (
         "Kirk Hinrich",

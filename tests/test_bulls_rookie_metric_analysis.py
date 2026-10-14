@@ -1,5 +1,3 @@
-"""Tests for the analysis-first Bulls rookie metric comparison."""
-
 from __future__ import annotations
 
 import pandas as pd

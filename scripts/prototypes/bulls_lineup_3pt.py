@@ -99,9 +99,6 @@ KEEP_FIELDS = (*IDENTITY_FIELDS, *COUNT_FIELDS)
 
 LINEUP_REQUIRED = {"Season", *KEEP_FIELDS}
 
-# The ten functional orders in the three-point result. pbpstats exposes lineup
-# identities but not PG-to-C role slots, so this map is explicit and checked
-# against both the source names and entity IDs before rendering.
 POSITION_ORDER = {
     ("2005-06", "2199-2550-2732-2736-970"): (
         "Kirk Hinrich",
@@ -573,9 +570,6 @@ def render_chart(rows: pd.DataFrame, *, final: bool = False) -> Path:
                 fontproperties=helvetica("bold"),
                 zorder=5,
             )
-        # Makes/attempts and possessions sit on their own lines: the single-line
-        # form overflowed the pill on the widest row (52/103 · 314 POSS) and was
-        # clipped at the chart edge.
         ax.add_patch(
             FancyBboxPatch(
                 (x_metric - 57, y - 42),

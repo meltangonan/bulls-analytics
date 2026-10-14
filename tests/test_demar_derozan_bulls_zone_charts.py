@@ -1,4 +1,3 @@
-"""Coverage, pooling, and saved-data checks for DeRozan's Bulls tenure."""
 from pathlib import Path
 
 import numpy as np
@@ -77,7 +76,6 @@ def test_saved_zone_and_baseline_tables_are_complete():
 
 
 def test_2021_22_corner_counts_follow_nba_labels_and_basket_bottom_display():
-    """The published reversal that prompted the global orientation repair."""
     splits = pd.read_csv(DATA / "zone-splits.csv")
     corners = splits[
         splits.window.eq("2021-22")

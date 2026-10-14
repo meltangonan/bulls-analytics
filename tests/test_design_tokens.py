@@ -1,4 +1,3 @@
-"""Keep the active chart palette and legacy config colors consistent."""
 import re
 from pathlib import Path
 

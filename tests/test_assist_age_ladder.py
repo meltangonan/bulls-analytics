@@ -1,5 +1,3 @@
-"""Tests for the Bulls assist age ladder prototype."""
-
 from __future__ import annotations
 
 import pandas as pd

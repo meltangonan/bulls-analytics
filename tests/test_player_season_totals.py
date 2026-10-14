@@ -1,4 +1,3 @@
-"""The shared box-total fetch must preserve a traded player's requested stint."""
 from types import SimpleNamespace
 
 import pandas as pd

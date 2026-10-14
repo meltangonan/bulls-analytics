@@ -261,8 +261,6 @@ def main() -> None:
         final=args.final,
         emphasize_points=True,
         shooting_after_assists=True,
-        # Every row sits in the 20+ band, so the default red card replaces the band colors.
-        # Matches the season-opener table this post pairs with.
         show_plus_minus=False,
         portraits=PORTRAITS,
         made_attempted_dash="-",

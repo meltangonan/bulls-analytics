@@ -67,9 +67,6 @@ def court(ax, active_start: int):
 
 
 def distance_pill(ax, start: int):
-    # The zone-chart tag grammar: opaque page color, near-square corners,
-    # and a thin dark rule. Keeping it above the court leaves the small rim
-    # band visible instead of covering its entire highlight.
     width, height = 190, 53
     x, y = (WIDTH - width) / 2, 1226
     ax.add_patch(FancyBboxPatch(

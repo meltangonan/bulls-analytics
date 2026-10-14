@@ -1,4 +1,3 @@
-"""Check file references, prototype indexing, and canonical skill links."""
 from __future__ import annotations
 
 import ast
@@ -96,11 +95,6 @@ def test_indexed_prototypes_still_exist():
 
 
 def test_skill_symlinks_are_links_not_copies():
-    """AGENTS.md requires `.claude/skills/` to symlink `.agents/skills/`.
-
-    A copy drifts silently: an agent reading one path gets a rule that another
-    path has already replaced.
-    """
     problems = []
     for canonical in SKILLS:
         mirror = ROOT / ".claude/skills" / canonical.parent.name / "SKILL.md"

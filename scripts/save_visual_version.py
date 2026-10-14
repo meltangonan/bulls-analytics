@@ -28,8 +28,6 @@ from bulls.visuals import ASSETS, DATA, visual_dir, slugify  # noqa: E402
 
 VISUALS = ROOT / "docs" / "visuals"
 VERSION_RE = re.compile(r"^\d{4}-\d{2}-\d{2}-v(\d+)-")
-# Dated first so the directory sorts chronologically, version zero-padded so
-# v10 sorts after v9 rather than between v1 and v2.
 STAMP = "{date}-v{version:02d}-{name}"
 
 
@@ -70,10 +68,6 @@ def save(project: str, files: list[Path], when: str | None = None,
 
     saved = []
     if data:
-        # Unversioned, and the name is kept verbatim. Data answers "what are the
-        # numbers now" rather than "what did a given draft show" -- the version
-        # history of what was *shown* lives in assets/. Keeping the source filename
-        # means a rebuild overwrites its own file instead of piling up near-copies.
         for src in files:
             dest = target / src.name
             shutil.copy2(src, dest)

@@ -84,8 +84,6 @@ SHORT_NAMES = {
     "Patrick Williams": "P. WILLIAMS",
 }
 
-# Tre Jones and Leonard Miller remain on their true, naturally overlapping
-# coordinates. Separate text anchors keep both identities readable.
 CUSTOM_LABELS = {
     "Tre Jones": {
         "dx": 48,

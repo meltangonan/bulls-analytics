@@ -1,5 +1,3 @@
-"""Post-specific tests for the rim-vs-three points-per-shot landscape."""
-
 from __future__ import annotations
 
 from datetime import datetime

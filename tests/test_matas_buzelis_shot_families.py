@@ -1,4 +1,3 @@
-"""Classifier, reconciliation and self-creation checks for the Buzelis slides."""
 from pathlib import Path
 
 import pandas as pd
@@ -157,11 +156,6 @@ def test_tracking_corroborates_the_self_created_claim_in_both_seasons():
 
 
 def test_tracking_cannot_replace_the_families_because_it_leaves_gaps():
-    """Guards against a future pass swapping the chart onto tracked categories.
-
-    Catch-and-shoot plus pull-up cover only about half his attempts. A slide
-    built on them alone would silently drop the other half.
-    """
     table = pd.read_csv(DATA / "tracking-corroboration.csv")
     assert table.tracked_covered_share_pct.max() < 60.0
     assert table.tracked_covered_share_pct.min() > 40.0
@@ -314,7 +308,6 @@ def test_the_legend_is_a_right_hand_column_not_a_band_of_its_own():
         bottom = slides.ROW_TOP + (rows - 1) * slides.ROW_STEP
         foot = bottom + slides.ROW_STEP * slides.db.GRIDLINE_FOOT_FACTOR
         assert slides._canvas_height(rows) == foot + slides.db.AXIS_LABEL_DROP + 46
-        # Strictly less than the old layout, which added a legend band below.
         assert slides._canvas_height(rows) < (
             foot + slides.db.AXIS_LABEL_DROP + slides.db.LEGEND_DROP + 70)
 

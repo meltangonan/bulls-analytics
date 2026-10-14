@@ -1,5 +1,3 @@
-"""Tests for the Bulls opponent win-percentage carousel analysis."""
-
 import pandas as pd
 
 from scripts.prototypes import bulls_opponent_win_percentage as post

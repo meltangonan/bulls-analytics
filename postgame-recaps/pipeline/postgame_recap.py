@@ -17,7 +17,7 @@ first showed Final, printed by a notice (below); a restart passes it so the timi
    Final) and pulls again. Any other failure three times in a row stops the run; once or twice, it pulls again
    (a half-published feed can crash a step).
 3. Notices: at fixed minutes after Final (MARKS) it prints what it is waiting on and a restart command, then
-   exits STILL_WAITING (76). The run-postgame-recap skill posts the notice, pushes it to the phone when it matters,
+   exits STILL_WAITING (76). The run-postgame-recap skill posts the notice, pushes it to the phone (every notice),
    and restarts the command; nothing is lost, because every feed is on disk. Each mark is raised once: a
    restarted process begins after the mark it reported. It gives up five hours after tip-off, or three hours
    after Final when restarted with the time Final was first seen.
@@ -58,9 +58,6 @@ STRIKES = 3  # consecutive failures other than NOT_READY before the run stops
 # The second wave of slide feeds (pull_game.py's names): while only these are missing, the early pages can be drawn.
 LATE_FEEDS = {"four factors", "misc (head-to-head)", "Bulls shots"}
 FALLBACK = 45  # minutes after Final before an incomplete NBA.com feed is replaced (the user's deadline, Oct 10)
-# Minutes after Final at which a notice is due: at Final itself (so the user knows the wait has begun), then
-# often, because the post should be out within 30 minutes of the buzzer (user, 2026-10-09); sooner still when
-# every feed is in but a check keeps failing (a scrambled feed, as DEN at UTA on 2026-10-06, or our own check).
 MARKS = {"publishing": (0, 20, 30, 45, 60, 90, 120), "check": (0, 10, 20, 30, 45, 60, 90, 120)}
 HASHTAGS = "#chicagobulls #bullsnation #nbadata #nbastats #basketballanalytics"
 # NBA.com revises official stats after games (fast break points changed overnight in three of the first five).
@@ -72,8 +69,6 @@ def log(msg: str) -> None:
 
 
 def game_day(now: datetime):
-    """The dates to look for a Bulls game on, nearest first: before 6 am, last night's game comes first
-    (a 9 pm CT tip-off ends after midnight)."""
     today = now.date()
     return [today - timedelta(days=1), today] if now.hour < 6 else [today]
 
@@ -154,9 +149,6 @@ def notice(text: str, game_id: str, final_at: float) -> None:
 
 
 def early_pages(game_id: str, waiting: str) -> bool:
-    """Once only the second wave of feeds is missing, check and draw the pages the first wave completes, into
-    output/postgame-recap/early/ (never delivered), so the review starts while NBA.com publishes the rest.
-    Returns whether they were drawn; a check that is not ready yet (game logs lagging) tries on the next poll."""
     code, _ = run(PY, str(HERE / "recap_data.py"), game_id, early=True)
     for step in ([] if code else ["build_mockup.py", "export_slides.py"]):
         code = code or run(PY, str(HERE / step), game_id, early=True)[0]
@@ -261,8 +253,6 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
             early_done = early_pages(game_id, why.split(": ", 1)[1])
         time.sleep(wait)
     ready_at = time.time()
-    # A second opinion for Claude's review: ESPN's copy of the game. It never waits or stops the build (the
-    # user's rule, Oct 11: NBA.com stays the source; a difference is flagged and judged in the review).
     code, why = run(PY, str(HERE / "espn_check.py"), game_id)
     if not why.startswith("espn check:"):
         log("espn check: crashed (see above); the build carries on, compare with ESPN by hand")
@@ -270,7 +260,7 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
     data = game_dir(game_id)
     out = OUTPUT / game_id
     with open(out.parent / ".build.lock", "w") as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX)  # one build at a time: the cache link and the page file are shared
+        fcntl.flock(lock, fcntl.LOCK_EX)
         code = draw(game_id, data, out)
     if code:
         sys.exit(f"stopped: drawing or export failed (exit {code})")

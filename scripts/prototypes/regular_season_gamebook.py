@@ -255,8 +255,6 @@ def prepare_contributions(
 def _base_slide(title_segments: list[tuple[str, str]], kicker: str):
     fig, ax = new_canvas()
     draw_jersey_stripe(ax)
-    # Concept titles are intentionally narrower than the standard fitted
-    # masthead so wide Academic M54 glyphs cannot collide with the subtitle.
     draw_fitted_title(ax, title_segments, max_width=850)
     draw_subtitle(
         ax,

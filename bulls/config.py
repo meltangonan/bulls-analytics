@@ -40,7 +40,7 @@ NBA_TEAMS = {
 
 # Colors (RGB tuples) — legacy consumers only; the hex tokens in
 # bulls/graphics/house.py are the canonical palette for graphics.
-BULLS_RED = (206, 17, 65)      # house.RED #CE1141
-BULLS_BLACK = (20, 20, 20)     # house.BULLS_BLACK #141414 (never pure black)
+BULLS_RED = (206, 17, 65)
+BULLS_BLACK = (20, 20, 20)
 
 API_DELAY = 0.6  # Seconds between API calls (rate limiting)

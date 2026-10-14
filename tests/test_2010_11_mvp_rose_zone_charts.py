@@ -1,4 +1,3 @@
-"""Population and source reconciliation for the 2010-11 MVP Rose carousel."""
 from __future__ import annotations
 
 from pathlib import Path

@@ -91,8 +91,6 @@ def summarize(bulls: dict[str, pd.DataFrame], league: dict[str, pd.DataFrame],
     league_avg = 100 * nba.c_fgm.sum() / nba.c_fga.sum()
     nba['nba_rank'] = nba.c_fgm.rank(ascending=False, method='min').astype(int)
 
-    # The team dashboard is an independent total of the same Chicago shots. Small provider
-    # differences are recorded, never forced away; a large one means a broken pull.
     checks = {}
     for kind, labels in (('c', CONTESTED), ('u', ('open', 'wide_open'))):
         rows = team[team.CLOSE_DEF_DIST_RANGE.isin([BUCKETS[b] for b in labels])]

@@ -55,14 +55,9 @@ CHART_HEIGHT = 1080
 PLOT_LEFT, PLOT_RIGHT = 92, 1046
 PLOT_BOTTOM, PLOT_TOP = 86, 1024
 
-# Mark radius in canvas pixels for the fewest and the most minutes in the pool.
-# Faces and plain dots share one scale, so size always means playing time and
-# never means "this player is the interesting one".
 MIN_MARK_RADIUS = 13.0
 MAX_MARK_RADIUS = 46.0
 MIN_FACE_RADIUS = 19.0
-# Keep the top of the portrait only. A centre crop of an NBA headshot is mostly
-# jersey, which is unreadable at the size these marks run.
 FACE_CROP_FRACTION = 0.74
 
 Y_AXES = {
@@ -87,11 +82,6 @@ def load_pool(min_minutes: int = MIN_MINUTES) -> pd.DataFrame:
 
 
 def mark_radii(minutes: pd.Series) -> np.ndarray:
-    """Scale mark *area* with minutes, so the mark reads as playing time.
-
-    Area rather than radius, because a circle twice as wide looks four times
-    as big. Returns the radius each area implies, in canvas pixels.
-    """
     low, high = float(minutes.min()), float(minutes.max())
     span = high - low
     fraction = np.zeros(len(minutes)) if span <= 0 else np.asarray((minutes - low) / span)
@@ -104,11 +94,6 @@ def quadrant_split(values: pd.Series) -> float:
 
 
 def label_choices(pool: pd.DataFrame, x: str, y: str, count: int = 14) -> list[int]:
-    """Name the rookies a reader would look for: the extremes on either axis.
-
-    Labelling all 46 is unreadable, so this picks the corners and the biggest
-    roles rather than a hand-kept list that would rot as seasons are added.
-    """
     per_axis = count // 3 + 1
     candidates: list[int] = []
     for column, largest in ((x, True), (y, True), (y, False), ("minutes", True)):

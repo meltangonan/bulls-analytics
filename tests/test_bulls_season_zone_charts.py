@@ -1,4 +1,3 @@
-"""Selection, coverage, and reconciliation checks for the 2021-22 season carousel."""
 from __future__ import annotations
 
 from pathlib import Path

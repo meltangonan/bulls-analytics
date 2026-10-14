@@ -1,4 +1,3 @@
-"""Meaningful metric, completeness and tie-preservation checks for game post."""
 import json
 
 import pandas as pd

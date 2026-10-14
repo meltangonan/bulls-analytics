@@ -1,5 +1,3 @@
-"""Post-specific tests for the Bulls two-player lineup table."""
-
 from __future__ import annotations
 
 import pandas as pd

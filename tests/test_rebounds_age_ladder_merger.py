@@ -1,5 +1,3 @@
-"""Tests for the merger-era rebound ladder scope and card treatment."""
-
 from __future__ import annotations
 
 import pandas as pd

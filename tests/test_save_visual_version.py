@@ -1,9 +1,3 @@
-"""Tests for the project-image versioning helper.
-
-The behaviour worth pinning is the numbering: versions are the record of how a
-project was made, so they must never renumber or collide when a project is rebuilt.
-"""
-
 from __future__ import annotations
 
 import importlib.util

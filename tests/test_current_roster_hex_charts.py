@@ -1,5 +1,3 @@
-"""Contracts for the current-roster player hex batch."""
-
 from __future__ import annotations
 
 import importlib.util

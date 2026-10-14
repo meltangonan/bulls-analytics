@@ -1,4 +1,3 @@
-"""Exact rank certification must stay conservative until unresolved assists are read."""
 import pandas as pd
 import pytest
 from scripts.prototypes.points_created_nba_ranks import intervals, compare

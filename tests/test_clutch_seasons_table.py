@@ -1,11 +1,3 @@
-"""Post-specific tests for the most-clutch-Bulls-seasons leaderboard.
-
-The behaviour worth pinning here is the team filter's stint semantics, which
-is the trap that produces silently wrong Bulls totals, and the era-relative
-colour scale, which is what keeps a 2000s season and a 2020s season on the
-same terms.
-"""
-
 from __future__ import annotations
 
 import pandas as pd
@@ -311,11 +303,6 @@ def test_the_shooting_line_prints_the_sample_not_a_percentage():
 
 
 def test_relative_true_shooting_is_signed_and_never_a_signed_zero():
-    """The cell prints the comparison itself, not the raw percentage.
-
-    A raw 62.5% meant two different things in 2004-05 and 2023-24; this column
-    prints the difference so the reader does not have to know the era.
-    """
     assert cell_label(pd.Series({"ts_pct_relative": 12.04}), "ts_pct_relative") == "+12.0"
     assert cell_label(pd.Series({"ts_pct_relative": -6.26}), "ts_pct_relative") == "\N{MINUS SIGN}6.3"
     # Python rounds exact halves to even, so -6.25 gives -6.2 rather than -6.3.

@@ -1,5 +1,3 @@
-"""Post-specific tests for the current-roster NBA Jam cards."""
-
 from __future__ import annotations
 
 import pandas as pd

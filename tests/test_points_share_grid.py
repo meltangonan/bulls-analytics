@@ -1,4 +1,3 @@
-"""2025-26 Bulls share-of-points headshot grid."""
 import pandas as pd
 
 from scripts.prototypes import points_share_grid as grid

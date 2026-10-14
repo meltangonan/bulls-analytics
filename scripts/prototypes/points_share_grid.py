@@ -50,9 +50,6 @@ INSET, RADIUS, STROKE = 5.0, 16.0, 4.0  # px: half the gap between blocks, corne
 # the hair, so the top outline never touches a head.
 FACE_BOX = (270, -5, 770, 495)
 MUTED = "#5F5B57"
-# Pale cool tints behind each block, rotated so touching blocks never share one.
-# They only separate neighbors and carry no meaning. Cool hues stay clear of skin
-# tones and of the warm #E9E5E1 Canva page (neutral and red options: v08 assets).
 TINTS = ["#CAD3D9", "#D0D7CB", "#D4D0DC", "#C9D5D6"]
 
 

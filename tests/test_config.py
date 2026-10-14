@@ -1,4 +1,3 @@
-"""Tests for bulls.config module."""
 import pytest
 from bulls.config import (
     BULLS_TEAM_ID,

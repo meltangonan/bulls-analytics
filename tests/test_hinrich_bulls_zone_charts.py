@@ -202,11 +202,6 @@ def test_the_scale_solver_takes_the_binding_constraint():
 
 
 def test_rows_are_levelled_so_no_row_is_left_an_orphan():
-    """4-3-3, never 4-4-2. The remainder is spread, not dumped on the last row.
-
-    Checked across counts rather than only Hinrich's ten, because the rule lives
-    in the renderer and the next tenure will bring a different number.
-    """
     plan = shot_chart.zonegrid_row_plan
     assert plan(10) == [4, 3, 3]
     assert plan(11) == [4, 4, 3]

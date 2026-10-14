@@ -87,8 +87,6 @@ MAX_DIST_FT = 35    # drop half-court heaves, matching the F5 filter
 
 DEFAULT_ROWS = [2, 3, 3, 2]
 
-# Warm, faint court lines (from the Summer League report) so the geometry
-# anchors the heat without competing with it.
 
 HOT_BANDS = ["#F6CDD7", "#E67C96", "#CE1141", "#7E0C2B"]
 HOT_LINE = "#5E0820"

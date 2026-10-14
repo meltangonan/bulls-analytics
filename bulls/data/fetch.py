@@ -309,7 +309,6 @@ def get_player_shots(
             'game_date': shots['GAME_DATE'] if 'GAME_DATE' in shots.columns else None,
         })
 
-        # Needed to split the six basic zones into the 12 detailed ones.
         if 'SHOT_ZONE_AREA' in shots.columns:
             result['shot_zone_area'] = shots['SHOT_ZONE_AREA']
 

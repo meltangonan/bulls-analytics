@@ -1,4 +1,3 @@
-"""Tests for the pure story-metric helpers in the Summer League prototype."""
 from datetime import date
 from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
@@ -91,8 +90,8 @@ def test_team_zone_map_reassigns_a_mislabeled_three_by_location():
 def test_league_is_derived_from_the_game_id_prefix():
     from bulls.data import league_for_game
 
-    assert league_for_game("1522500033") == "15"  # Summer League
-    assert league_for_game("0022500123") == "00"  # regular NBA
+    assert league_for_game("1522500033") == "15"
+    assert league_for_game("0022500123") == "00"
 
 
 def test_team_nickname_strips_the_city_including_two_word_nicknames():

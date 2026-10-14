@@ -1,5 +1,3 @@
-"""Checks for attribution mistakes that can leave the overall assist sum intact."""
-
 import json
 from pathlib import Path
 

@@ -269,7 +269,6 @@ def test_missing_portrait_becomes_a_placeholder_not_a_crash(tmp_path):
 
 
 def test_chart_uses_the_account_black_not_pure_black():
-    """DESIGN.md (Color and hierarchy): nothing in a graphic is pure or near-pure black."""
     assert INK == "#242424"
 
 

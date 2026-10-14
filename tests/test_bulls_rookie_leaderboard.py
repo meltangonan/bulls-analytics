@@ -1,5 +1,3 @@
-"""Tests for the ranked Bulls rookie production leaderboard."""
-
 from __future__ import annotations
 
 import pandas as pd

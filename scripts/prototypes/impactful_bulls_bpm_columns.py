@@ -93,7 +93,6 @@ LEGEND_Y = 880
 @dataclass(frozen=True)
 class ColumnLayout:
     season_font_size: float = 15.0
-    # 17 totals across a 57 px pitch: 14 pt keeps adjacent labels apart.
     total_font_size: float = 14.0
     segment_font_size: float = 11.5
     axis_font_size: float = 14.0
@@ -124,12 +123,6 @@ def _rounded(x0, x1, y0, y1, **kwargs) -> FancyBboxPatch:
 
 
 def _across_gradient(ax, x0, x1, y0, y1, colors, clip, zorder):
-    """Paint a left-to-right colour ramp across one span, clipped to a shape.
-
-    ``assist_duos.py`` ramps top-to-bottom because its bars are horizontal;
-    the ramp runs across the bar's thickness. These bars are vertical, so the
-    same cylindrical read comes from ramping left to right.
-    """
     left, right = (np.array(to_rgb(c)) for c in colors)
     ramp = np.linspace(left, right, 256).reshape(1, 256, 3)
     image = ax.imshow(
@@ -169,12 +162,6 @@ def _gradient_span(ax, center, low, high, colors, *, shadow: bool):
 
 
 def draw_column(ax, center: float, row: pd.Series) -> None:
-    """Draw one season: offense up from zero, defense stacked or hung below.
-
-    The positive part is drawn as a single rounded outline containing both
-    gradients, so a season where defense also helped reads as one column
-    broken by colour rather than two pills pushed together.
-    """
     offense = float(row["obpm"])
     defense = float(row["dbpm"])
     x0, x1 = center - BAR_WIDTH / 2, center + BAR_WIDTH / 2

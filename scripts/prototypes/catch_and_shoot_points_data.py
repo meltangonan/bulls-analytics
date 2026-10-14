@@ -66,7 +66,6 @@ def summarize(players: pd.DataFrame, official: pd.DataFrame, league: pd.DataFram
     checks = {}
     for col in ['CATCH_SHOOT_FGM', 'CATCH_SHOOT_FGA', 'CATCH_SHOOT_PTS']:
         checks[col + '_difference'] = int(players[col].sum() - bull_team[col])
-        # Preserve provider discrepancies, never alter player counts to force agreement.
     known = players.CATCH_SHOOT_FG3M.notna()
     if not (players.loc[known, 'CATCH_SHOOT_PTS'] ==
             2 * players.loc[known, 'CATCH_SHOOT_FGM'] + players.loc[known, 'CATCH_SHOOT_FG3M']).all():

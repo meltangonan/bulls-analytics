@@ -1,4 +1,3 @@
-"""Coverage, pooling, and saved-data checks for Buzelis's Bulls tenure."""
 from pathlib import Path
 
 import pandas as pd
@@ -140,7 +139,6 @@ def test_custom_sectors_never_cross_the_centre_line_nba_drew():
 
 
 def test_corner_zones_draw_on_the_basket_bottom_side_they_are_named_for():
-    """The orientation repair that followed the published mirrored hot-spot post."""
     def display_x(zone):
         x, y = shot_chart.ZONE12_ANCHORS[zone]
         return nba_to_basket_bottom_px(0.0, 0.0, 1.0, x, y)[0]
@@ -149,10 +147,6 @@ def test_corner_zones_draw_on_the_basket_bottom_side_they_are_named_for():
     assert display_x("Right Corner 3") < 250.0
 
 
-# --- Merged mid-range variant ----------------------------------------------
-# Buzelis's five mid-range sectors hold 17, 19 and 36 attempts, so all five sit
-# under the colour floor in every window. Merging them buys one readable figure
-# instead of five unreadable ones; it does not buy a colour.
 MID = list(charts.sm.MID_ZONES)
 
 

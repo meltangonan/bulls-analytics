@@ -347,7 +347,7 @@ at POR (long name), a -35 loss vs MIN with 13 Bulls used, and a 1-point loss at 
 All twelve reconcile and match NBA's flow counts. An in-browser check of every text element on all 95 pages
 (off the 25 px margins, or overlapping another text) finds none. Fixes it forced: chart labels at the edge go
 beside their dot, season-chart labels are placed by trying spots around their bar or point, nearest first, and taking the first that touches no bar, line or edge (a short leader joins any label that had to move), season leaders wait until game 5
-(game 3 in preseason, game 2 since 2026-10-09), the cover lines leave room for the record, and notables rank players by size and give
+(game 3 in preseason, game 1 since 2026-10-09), the cover lines leave room for the record, and notables rank players by size and give
 each player one line.
 
 Awards (2026-10-07; shown as hashtags since 2026-10-09, the mapping is drafted on the Notion "Game recaps"

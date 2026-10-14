@@ -74,10 +74,6 @@ ROSTER = [
 # stands in, so every zone always has a leader.
 MIN_ZONE_SHARE = 0.15
 
-# Two slides off one court. EFFICIENCY crowns the best points per shot among a
-# zone's real users; VOLUME crowns whoever simply shoots it most. Volume needs no
-# qualification at all — the attempts leader is, by definition, the best-sampled
-# player in the zone — which is why the share gate applies only to efficiency.
 MODES = ("efficiency", "volume")
 # Below this, the zone leader is drawn muted — shown, but not asserted.
 MIN_FGA_CONFIDENT = 10
@@ -119,12 +115,6 @@ SHORT_LABEL = {
     "Right Corner 3": "RIGHT CORNER",
 }
 
-# Where each chip sits, in court coordinates (hoop at the origin); the renderer
-# flips y so the hoop is at the top. On-court anchors sit in the zone they report.
-# Three zones cannot hold a chip: the rim, and the two corner-3 strips, which are
-# only 3 ft wide. All three sit hard against their own zone instead, close enough
-# that no leader line is needed — the corners just outside their sideline, the rim
-# directly above the basket with its figures between the backboard and the baseline.
 CHIP_LAYOUT = {
     "Restricted Area":       ((0, -55), None),
     "Left Corner 3":         ((-254, 16), None),
@@ -148,8 +138,6 @@ CORNER_TEXT_HALF = 30.0
 OFF_COURT_ZONES = {"Restricted Area", "Left Corner 3", "Right Corner 3"}
 
 
-# The mid-range band is shallow between the paint and the arc, so its three chips
-# are drawn smaller rather than sitting on top of the borders either side.
 COMPACT_ZONES = {"Left Mid-Range", "Right Mid-Range", "Center Mid-Range"}
 COMPACT_SCALE = 0.76
 
@@ -158,8 +146,6 @@ CHIP_RISE = 21.0
 VIEW_X = (-306, 306)
 VIEW_Y = (-356, 142)
 
-# A red floor with black lines, following the reference graphic. The two deeper
-# tints give the paint and the rim their own presence, the way a painted key does.
 COURT_FILL = "#F6DCE1"
 PAINT_FILL = "#EFC6D0"
 RIM_FILL = "#E5A9B8"
@@ -258,12 +244,6 @@ def zone_table(shots: pd.DataFrame) -> pd.DataFrame:
 
 
 def select_leaders(table: pd.DataFrame, mode: str = "efficiency") -> list[ZoneLeader]:
-    """Crown one player per zone: best points per shot among that zone's real users.
-
-    Gating on a share of attempts *within the zone* rather than on season totals is
-    what keeps the claim honest — the metric is zone-specific, so the sample that
-    earns a place on the graphic has to be too.
-    """
     leaders: list[ZoneLeader] = []
     for zone in ZONE_ORDER:
         z = table[table["shot_zone"] == zone]
@@ -321,13 +301,6 @@ def draw_floor(ax):
 
 
 def draw_zone_outlines(ax):
-    """Trace each zone boundary from the classifier so the lines match the labels.
-
-    Contouring a 0/1 mask straight off the grid leaves the radial dividers visibly
-    stair-stepped, because a diagonal boundary can only follow cell edges. Sampling
-    finer and softening the mask first turns each step into a sub-pixel wobble, and
-    at half a unit of blur the traced line stays within an inch of true.
-    """
     step = ZONE_TRACE_STEP
     xs = np.arange(-250.0, 250.0 + step, step)
     ys = np.arange(BASELINE_Y, COURT_DEPTH + step, step)
@@ -353,10 +326,6 @@ def draw_court(ax):
     ax.plot([-250, 250], [flip(BASELINE_Y)] * 2, **line)
     ax.plot([-250, 250], [flip(COURT_DEPTH)] * 2, **line)
     for side in (-250, 250):
-        # Drawn unbroken even where the corner chips straddle it. Glyphs are opaque
-        # and sit above (zorder 10), so the line disappears under the strokes and
-        # shows through the gaps between them — the label reads as sitting on the
-        # boundary, which is what a court line should do.
         ax.plot([side, side], [flip(BASELINE_Y), flip(COURT_DEPTH)], **line)
 
     ax.add_patch(FancyBboxPatch(
@@ -381,15 +350,10 @@ def draw_court(ax):
 
 
 def draw_chip(ax, leader: ZoneLeader, anchor, target, mode="efficiency"):
-    """A face over two lines: the points-per-shot figure and the attempts behind it.
-
-    No name and no zone caption — the face and the position on the court carry both,
-    and twelve of each was more label than the graphic could hold.
-    """
     cx = anchor[0]
     k = COMPACT_SCALE if leader.zone in COMPACT_ZONES else 1.0
     head = HEAD_HALF * k
-    cy = flip(anchor[1]) - CHIP_RISE * k   # centres the face-over-figures stack on the anchor
+    cy = flip(anchor[1]) - CHIP_RISE * k
     strong = leader.confident
     ink = house.BULLS_BLACK if strong else "#8A8A8A"
     sub = "#5C5C5C" if strong else "#9A9A9A"

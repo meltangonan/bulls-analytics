@@ -66,7 +66,7 @@ def main(game_ids: list[str], ranks: Path | None = None, name: str = "mockup.htm
     for game_id in game_ids:
         game = json.loads((OUTPUT / game_id / "recap.json").read_text())
         games.append(game)
-        if (OUTPUT / game_id / "zones.png").exists():  # early pages have no shot chart yet
+        if (OUTPUT / game_id / "zones.png").exists():
             zones[game_id], sizes[game_id] = png(OUTPUT / game_id / "zones.png")
         ids |= player_ids(game)
     heads = {}

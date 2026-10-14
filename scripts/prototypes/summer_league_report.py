@@ -66,9 +66,9 @@ from bulls.graphics.house import (
 )
 
 PALE_RED = "#F7E8ED"
-PANEL_RED = "#FAF1F4"  # lighter wash for large court panels
-CHIP_GRAY = "#F1ECE8"  # warm neutral for cards outside a tinted panel
-CHIP_BLUSH = "#F3E1E7"  # stronger tonal-red card surface inside pale panels
+PANEL_RED = "#FAF1F4"
+CHIP_GRAY = "#F1ECE8"
+CHIP_BLUSH = "#F3E1E7"
 OUTPUT_DIR = _REPO / "output"
 LENSES = ("shot_diet", "role", "impact")
 SUMMER_LEAGUE_LEAGUE_ID = "15"
@@ -304,12 +304,6 @@ def corrected_zone(shot: pd.Series) -> str:
 
 
 def shot_diet(shots: pd.DataFrame, player_id: int | None) -> Counter:
-    """Group field-goal attempts by the NBA's own shot zones.
-
-    These are the zones a shot chart draws, so a 14-ft baseline fadeaway lands in
-    Mid-Range where the NBA puts it, not in the paint it never entered. Pass
-    ``player_id=None`` for the whole team's attempts.
-    """
     buckets = Counter({"rim": 0, "paint": 0, "mid": 0, "three": 0})
     rows = shots if player_id is None else shots[shots["player_id"] == player_id]
     for _, shot in rows.iterrows():
@@ -608,12 +602,6 @@ def _display_name(player: pd.Series) -> str:
 
 
 def _headshot_path(player: pd.Series):
-    """Committed local crop if one exists, else the cached NBA CDN headshot.
-
-    Local overrides live in assets/img/players/<personId>.png — used when the
-    CDN only has the gray rookie silhouette (docs/design/tables-cards.md (Portraits)). Warns when falling
-    back to a file that looks like the silhouette.
-    """
     person_id = int(_number(player["personId"]))
     local = _REPO / "assets" / "img" / "players" / f"{person_id}.png"
     if local.exists():
@@ -773,8 +761,6 @@ def _draw_header(ax, header: HeaderData):
         cursor += rendered_width(ax, artist)
     if opponent_logo.exists():
         ax.imshow(mpimg.imread(opponent_logo), extent=[cursor + 18, cursor + 118, logo_bottom, logo_top], zorder=6)
-    # Keep every subtitle segment on one visual centerline; the date remains
-    # secondary through weight and color rather than a mismatched size.
     subtitle_y = H - 194
     cursor = 60
     for index, (text, color) in enumerate(header.subtitle_parts):
@@ -815,13 +801,7 @@ def render_report(
 
 
 def _player_table_image(players: tuple[PlayerTableRow, ...], out_path: Path) -> Path:
-    """Render the featured-player comparison as a tightly cropped PNG.
-
-    Uses Great Tables for this legacy page renderer so the table engine owns
-    row rhythm, baselines, and image sizing.
-    The slide composites the PNG below the team snapshot.
-    """
-    from great_tables import GT  # Used only by this legacy table export.
+    from great_tables import GT
 
     compact = len(players) >= MAX_CAROUSEL_PLAYERS
     headshot_height = 46 if compact else 52
@@ -1023,13 +1003,9 @@ def render_team_slide(
     )
     section_y = y_top - 25
     ax.text(84, section_y, "TEAM SNAPSHOT", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
-    # The shot diet carries more visual information, so it owns roughly 65%
-    # of the panel while the compact comparison uses the remaining 35%.
     divider_x = 420
     ax.plot([divider_x, divider_x], [y_bottom + 22, y_top - 58], color="#E6C4CF", lw=1)
 
-    # Left: every row is normalized within itself, so bar length answers only
-    # "which team had more of this stat?" Exact labels carry the actual values.
     left_end, right_start, max_bar = 210, 270, 64
     opponent_code = data.header.title_segments[-1][0]
     ax.text(left_end, 1028, "CHI", ha="right", va="center", fontsize=10, color=RED, fontproperties=body_font("bold"))
@@ -1045,8 +1021,6 @@ def render_team_slide(
         ax.text(240, y, stat.label, ha="center", va="center", fontsize=9.5, color=DEFAULT_THEME.muted, fontproperties=body_font("bold"))
         ax.text(right_start + opponent_w + 7, y, stat.opponent_display, ha="left", va="center", fontsize=10, color=DEFAULT_THEME.ink, fontproperties=body_font("bold"))
 
-    # Right: compact zone labels preserve the court geography while replacing
-    # dozens of overlapping shot dots with makes/attempts, FG%, and diet share.
     ax.text(444, section_y, "BULLS SHOT DIET", ha="left", va="top", fontsize=11, color=RED, fontproperties=body_font("bold"))
     t, _, _, _ = _draw_half_court(ax, right=996, y_center=866, s=0.94)
     zone_positions = {
@@ -1073,8 +1047,6 @@ def render_team_slide(
     for index, line in enumerate(data.shooting_splits):
         ax.text(761, 680 - index * 23, line, ha="center", va="center", fontsize=10.5, color=DEFAULT_THEME.ink, fontproperties=body_font("bold"))
 
-    # The featured players render as one Great Tables comparison so the table
-    # engine, not per-card coordinates, owns row rhythm and alignment.
     table_png = _player_table_image(data.players, OUTPUT_DIR / "_player_table.png")
     table_img = mpimg.imread(table_png)
     img_h, img_w = table_img.shape[:2]
@@ -1094,14 +1066,9 @@ def render_team_slide(
 def render_player_slide(
     data: PlayerSlideData,
 ):
-    """One full slide per player, in the C2 anatomy-study structure: identity
-    header, a large exact-location FGA chart on the left as the evidence
-    layer, and a compact supporting stat rail on the right."""
     fig, ax = new_canvas()
     draw_jersey_stripe(ax)
 
-    # The player is the slide title; the headshot and outlined name form one
-    # identity block, while the date stays quiet underneath.
     headshot_label(ax, data.headshot, 122, 1218, radius=58)
     title = _fitted_text(ax, 206, 1274, data.display_name, display_font(), 48, 814, DEFAULT_THEME.ink)
     title.set_path_effects([
@@ -1115,8 +1082,6 @@ def render_player_slide(
     _chip_row(ax, identity_chips, 60, 1098, w=145, h=62, gap=18, value_size=16, facecolor=CHIP_GRAY)
     ax.plot([60, 1020], [1004, 1004], color=DEFAULT_THEME.rule, lw=1)
 
-    # A borderless blush field groups the evidence while the darker tonal-red
-    # cards create hierarchy without looking like form inputs.
     ax.add_patch(
         FancyBboxPatch(
             (40, 222),

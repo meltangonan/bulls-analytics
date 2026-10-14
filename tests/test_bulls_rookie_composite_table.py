@@ -1,5 +1,3 @@
-"""Tests for the fan-facing Bulls rookie composite table."""
-
 from __future__ import annotations
 
 import pandas as pd

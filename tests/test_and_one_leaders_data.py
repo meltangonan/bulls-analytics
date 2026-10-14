@@ -1,4 +1,3 @@
-"""The and-1 counting rule, and the published rows it produced."""
 import pandas as pd
 import pytest
 from scripts.prototypes import and_one_leaders_data as post

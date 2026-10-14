@@ -1,4 +1,3 @@
-"""Tests for bulls.data module."""
 import pytest
 import pandas as pd
 import requests

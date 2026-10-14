@@ -128,8 +128,6 @@ def build():
     final_v = g[metric].iloc[i_final]
     callout(f"Finished: {final_v:+.0f}", i_final, (X(i_final + 1) - 150, Y(final_v) + 42), ha="right")
 
-    # The payoff — Caleb Wilson's face, unlabeled, tucked in the white space below
-    # the crash (inside the plot so it no longer covers the month axis).
     circ = _make_circular_headshot(CALEB_IMG, border_color=(206, 17, 65), border_frac=0.045)
     r = 50
     cx, cy = X(i_final + 1) - r, 312  # right edge aligned to the final point; low enough to clear the line

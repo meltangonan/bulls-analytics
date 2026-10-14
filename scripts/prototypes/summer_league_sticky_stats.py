@@ -53,9 +53,6 @@ SUMMER_LEAGUES = {
 }
 MIN_MINUTES = 50.0
 REQUEST_RETRIES = 5
-# Tracked with the post, not in the ignored cache. This tournament's box scores and
-# shot charts have exactly one consumer — this script, for this post — so they ship with
-# the graphic they produced. See bulls/visuals.py for why single-owner data lives here.
 CACHE_DIR = (
     visual_dir(_REPO / "docs" / "visuals", "summer-league-sticky-stats", create=False)
     / DATA
@@ -63,8 +60,6 @@ CACHE_DIR = (
 OUTPUT_DIR = _REPO / "output"
 OUTPUT_STEM = "2026-07-21-sl-sticky-stats"
 
-# Essengue dropped from the featured set 2026-07-21 (user edit); he remains in
-# the plotted pool as an unlabeled context dot.
 FEATURED_PLAYERS = (
     "Caleb Wilson",
     "Dailyn Swain",
@@ -104,12 +99,6 @@ def prepare_shot_profiles(
     shots: pd.DataFrame,
     min_minutes: float = MIN_MINUTES,
 ) -> pd.DataFrame:
-    """Aggregate volume and calculate shot-diet rates for each qualifier.
-
-    The plotted metrics are ``3PA / total FGA`` and ``rim FGA / total FGA``
-    (restricted-area attempts). Shot-detail FGA must reconcile to the finalized
-    traditional box score before a shot-derived rate is assigned.
-    """
     box = box_scores.copy()
     box["minutes_decimal"] = box["minutes"].map(parse_minutes)
     box["name"] = (
@@ -421,12 +410,6 @@ def format_canva_copy(content: StickyChartContent) -> str:
 
 
 def render_chart_only(content: StickyChartContent, final: bool = False) -> Path:
-    """Render the approved transparent scatter asset for Canva assembly.
-
-    Canva owns the page title, subtitle, closing line, footer, and watermark.
-    Data-bound copy is generated separately by ``format_canva_copy`` so it can
-    be tested and checked against the downloaded final.
-    """
     theme = DEFAULT_THEME
     width, height = 1080, 1030
     fig = plt.figure(figsize=(width / DRAFT_DPI, height / DRAFT_DPI))
@@ -443,14 +426,8 @@ def render_chart_only(content: StickyChartContent, final: bool = False) -> Path:
     rankable = content.rankable
     featured = content.featured
 
-    # Margins are deliberately generous: the axis titles and fine print sit
-    # well inside the edge so a Canva frame that crops slightly cannot clip
-    # them off the graphic.
     x0, x1 = 190, 1015
     y0, y1 = 175, 950
-    # The plotted range runs past 0–100% so a portrait centered on an extreme
-    # value (Atwell at 2.8% rim) still sits fully inside the panel instead of
-    # being clipped by the axis.
     x_min, x_max = -6.0, 106.0
     y_min, y_max = -14.0, 104.0
 
@@ -462,20 +439,11 @@ def render_chart_only(content: StickyChartContent, final: bool = False) -> Path:
 
     panel_fill = "#F5F1EC"
     halo = [pe.withStroke(linewidth=3.2, foreground=panel_fill)]
-    # Borderless panel: the Canva page supplies any framing, so the export
-    # carries fill only and never doubles up on an outline.
     panel = FancyBboxPatch((x0 - 16, y0 - 14), x1 - x0 + 30, y1 - y0 + 26,
                            boxstyle="round,pad=0,rounding_size=12", facecolor=panel_fill,
                            edgecolor="none", zorder=0)
     ax.add_patch(panel)
 
-    # The panel stays one flat off-white. A tinted quadrant wash was tried and
-    # removed: it made the dots and portraits harder to read, and any
-    # corner-to-corner ramp risks implying that one shot diet is better than
-    # another.
-    #
-    # Axes drawn in ink with outward tick marks so the frame of reference stays
-    # legible once the chart is scaled down inside a Canva page.
     for value in range(0, 101, 25):
         x = chart_x(float(value))
         ax.plot([x, x], [y0, y1], color=theme.grid, lw=1.1, zorder=1)
@@ -526,18 +494,8 @@ def render_chart_only(content: StickyChartContent, final: bool = False) -> Path:
         ax.text(left + 16, bottom + 20, detail, ha="left", va="center", fontsize=9.5,
                 color=theme.muted, fontproperties=helvetica(), zorder=7)
 
-    # Quadrant keys name the shot diet and then say plainly what it means.
-    # Details stay short so the pills fit the corners without crowding the
-    # portraits. The bottom-right key is anchored just right of the median
-    # rather than in its corner, which Atwell's portrait occupies.
-    # Keys are pinned to the 0–100% data area, not the padded panel edge, so
-    # they sit inside the chart rather than floating in the margin.
     key_top = chart_y(100.0) - 12
-    # The bottom keys tuck just under the 0% line: it keeps them clear of
-    # Wilson's stat label without pushing them into the panel margin.
     key_bottom = chart_y(0.0) - 12
-    # Each key's second line restates both axes in the same parallel form, so a
-    # reader can decode any quadrant without re-reading the axis titles.
     quadrant_pill(chart_x(0.0) + 14, key_top, "left", "top",
                   "PAINT-FIRST", "higher rim, lower 3PT")
     quadrant_pill(chart_x(100.0) - 14, key_top, "right", "top",
@@ -555,10 +513,6 @@ def render_chart_only(content: StickyChartContent, final: bool = False) -> Path:
         ax.add_patch(Circle((x, y), radius=4.6, facecolor=theme.muted, edgecolor=theme.canvas,
                             linewidth=0.7, alpha=0.32, zorder=3))
 
-    # The portrait *is* the data point: each headshot is centered on the
-    # player's exact coordinates with no connector line, so position alone
-    # carries the reading. Portraits sit above the pool dots and may cover a
-    # few of them.
     radius = 46
     for _, player in featured.iterrows():
         point_x = chart_x(float(player["three_pt_attempt_rate"]))
@@ -576,9 +530,6 @@ def render_chart_only(content: StickyChartContent, final: bool = False) -> Path:
         ax.text(label_x, name_y, name.split()[-1].upper(), ha="center", va=align,
                 fontsize=9.5, color=theme.ink,
                 fontproperties=helvetica("bold"), zorder=10)
-        # Bulls red on every featured player's rates: the stat pair is the
-        # payoff of the chart, and red is the one accent in the house palette.
-        # Applied uniformly so it stays emphasis, not a ranking.
         ax.text(label_x, value_y, values,
                 ha="center", va=align, fontsize=7.8,
                 color=theme.accent,

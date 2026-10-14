@@ -1,5 +1,3 @@
-"""Small contracts for shot-chart visual encodings."""
-
 from __future__ import annotations
 
 import importlib.util
@@ -198,7 +196,6 @@ def test_polar_cell_labels_sit_inside_their_own_wedge():
 
 
 def test_nba_left_corner_lands_on_the_viewer_right_in_the_cells_chart():
-    """The concrete case the audit turned up, pinned by name."""
     from bulls.analysis import shot_maps as sm
 
     left_corner = next(c for c in sm.polar_cells() if c["name"] == "LEFT CORNER 3")

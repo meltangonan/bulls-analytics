@@ -32,8 +32,6 @@ SEASONS = (
     "2013-14", "2014-15", "2015-16",
 )
 OMITTED_NO_FGA_SEASON = "2012-13"
-# A season earns its own chart at 300 Chicago attempts, as on Hinrich and
-# LaVine. Every season still feeds the pooled tenure chart and the audit files.
 CHART_MIN_SEASON_FGA = 300
 GRID_ROW_PLAN = (2, 2, 2)
 SEASON_MIN_ZONE_FGA = sm.MIN_ZONE12_FGA_PLAYER

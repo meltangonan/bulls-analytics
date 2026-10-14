@@ -1,4 +1,3 @@
-"""Pytest fixtures for Bulls Analytics tests."""
 import pytest
 import pandas as pd
 from unittest.mock import MagicMock, patch
@@ -6,9 +5,6 @@ from unittest.mock import MagicMock, patch
 from bulls.config import BULLS_TEAM_ID
 from bulls.graphics.house import _HELVETICA_TTC
 
-# Layout measurements that pin glyph widths assume the extracted Helvetica
-# faces. On non-macOS the documented fallback is a different family, so those
-# tests would fail on font metrics rather than on the layout they encode.
 requires_helvetica = pytest.mark.skipif(
     not _HELVETICA_TTC.exists(),
     reason="layout measurements assume macOS Helvetica; fallback fonts differ in width",

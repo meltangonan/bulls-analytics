@@ -36,8 +36,6 @@ SEASONS = range(1984, 2027)
 FILTER_SEASONS = range(1997, 2027)  # LeagueDashPlayerStats has no season data before 1996–97
 LABEL = 'Sophomores since 1983–84'
 TOP_N = 15
-# Taller rows than the 2025–26 table: the Canva page has room below the table at its width.
-# Name, game line and cells run one point larger than the rookie table (user request, 2026-09-26).
 TABLE_LAYOUT = replace(games.DECADE_LAYOUT, row_height=108, headshot_x=60, name_x=128,
                        headshot_half_size=66, headshot_rise=8, first_row_from_top=145,
                        bottom_pad=42, name_font_size=22, context_font_size=13.5,

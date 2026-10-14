@@ -1,5 +1,3 @@
-"""Post-specific tests for the current-roster DARKO landscape workflow."""
-
 from __future__ import annotations
 
 from datetime import datetime

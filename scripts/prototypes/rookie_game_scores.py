@@ -42,7 +42,6 @@ FIRST_SEASONS = DATA / 'nba-common-all-players-first-seasons.csv'
 SEASONS = range(2001, 2027)
 LABEL = 'Rookies since 2000–01'
 TOP_N = 15
-# Taller rows than the 2025–26 table: the Canva page has room below the table at its width.
 TABLE_LAYOUT = replace(games.DECADE_LAYOUT, row_height=108, headshot_x=60, name_x=128,
                        headshot_half_size=66, headshot_rise=8, first_row_from_top=145,
                        bottom_pad=42, name_font_size=21, context_font_size=12.5,

@@ -42,9 +42,6 @@ UNLABELLED = "Standard jumpers"
 
 FAMILIES: tuple[str, ...] = tuple(name for name, _ in FAMILY_RULES) + (UNLABELLED,)
 
-# A shot the player made for himself off the dribble, as the labels describe it.
-# This is the shot-diet post's definition, unchanged, so the two posts cannot
-# quietly disagree about what "self-created" counts.
 SELF_CREATED: tuple[str, ...] = ("Pull-ups", "Step-backs", "Turnarounds/fades")
 
 

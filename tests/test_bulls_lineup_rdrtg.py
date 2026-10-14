@@ -1,5 +1,3 @@
-"""Post-specific tests for the Bulls five-man rDRTG ranking."""
-
 from __future__ import annotations
 
 import pandas as pd

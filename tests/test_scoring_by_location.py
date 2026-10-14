@@ -90,7 +90,6 @@ def test_the_share_scales_with_how_much_the_zone_is_used():
 
 
 def test_a_rank_gate_would_have_admitted_what_the_share_rejects():
-    """Guards the reason we moved off top-N: rank ignores how busy a zone is."""
     zone = ZONE_ORDER[0]
     table = _table([
         _row(zone, 1, "First", 26, 0.90),
@@ -276,7 +275,6 @@ def test_off_court_chips_are_the_zones_too_narrow_to_hold_one():
 
 
 def test_no_chip_carries_a_leader_line():
-    """Every chip now sits in or hard against its own zone, so none needs one."""
     for zone, (_anchor, target) in CHIP_LAYOUT.items():
         assert target is None, zone
 

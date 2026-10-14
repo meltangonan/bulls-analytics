@@ -203,7 +203,6 @@ def pull_game(game_id: str) -> list:
     save(lambda: box(boxscorescoringv3.BoxScoreScoringV3, game_id, 1), out / "scoring_teams.csv", missing)
 
     opponent = int(teams.loc[teams.teamId != BULLS, "teamId"].iloc[0])
-    # Raw rows keep ACTION_TYPE, which the shot-type strip classifies with bulls.analysis.shot_families.
     for team, name in ((BULLS, "chi"), (opponent, "opp")):
         save(lambda team=team: shotchartdetail.ShotChartDetail(
             team_id=team, player_id=0, game_id_nullable=game_id, season_nullable=season,

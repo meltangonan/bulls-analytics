@@ -209,8 +209,6 @@ def main() -> None:
         show_plus_minus=False,
         portraits=PORTRAITS,
         made_attempted_dash="-",
-        # Most of these openers have few or no three-point attempts; TS% also reflects the
-        # free throws the table no longer shows.
         true_shooting=True,
     )
     print(f"Chart: {chart}")

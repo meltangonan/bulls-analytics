@@ -1,4 +1,3 @@
-"""Selection, tie-handling and overtime checks for the scoring-duo games post."""
 import pandas as pd
 import pytest
 

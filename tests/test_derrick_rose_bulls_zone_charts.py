@@ -1,4 +1,3 @@
-"""Scope, reconciliation, and orientation checks for Rose's Bulls charts."""
 from pathlib import Path
 
 import pandas as pd

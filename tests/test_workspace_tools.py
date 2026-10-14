@@ -1,4 +1,3 @@
-"""Exercise runner selection and worktree reporting in disposable repositories."""
 from pathlib import Path
 import shutil
 import shlex

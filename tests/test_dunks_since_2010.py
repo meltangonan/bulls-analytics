@@ -1,9 +1,3 @@
-"""Tests for the since-2010 dunk-type leaderboards.
-
-These guards protect the classification and ranking decisions that a PNG cannot
-show: which ACTION_TYPE labels count on which slide, that a two-label dunk
-lands on both matching boards, and that display ties never rewrite the total.
-"""
 from __future__ import annotations
 
 import pandas as pd

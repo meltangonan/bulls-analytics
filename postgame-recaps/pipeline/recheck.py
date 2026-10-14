@@ -83,7 +83,6 @@ def main(game_id: str) -> None:
              + changes(read("misc_teams.csv"), box(boxscoremiscv3.BoxScoreMiscV3, game_id, 1), "teamId", MISC, team)
              + changes(read("summary_linescore.csv"), summary[4], "teamId", LINE, team)
              + changes(read("summary_stats.csv"), stats_new, "teamId", FLOW, team))
-    # Shots joined the as-posted copy on Oct 9; for games posted before that, the game folder's own pull.
     shots = read("shots_raw_chi.csv")
     if shots.empty and (g / "shots_raw_chi.csv").exists():
         shots = pd.read_csv(g / "shots_raw_chi.csv")

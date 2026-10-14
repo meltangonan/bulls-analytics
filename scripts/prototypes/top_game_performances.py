@@ -81,8 +81,6 @@ STL_LEFT, STL_RIGHT = 1230, 1307
 BLK_LEFT, BLK_RIGHT = 1307, 1384
 PLUS_MINUS_LEFT, PLUS_MINUS_RIGHT = 1384, 1461
 
-# Alternate shooting-context layout used when FT replaces TS%. These positions
-# match the settled playoff-performance table exactly.
 FT_TABLE_PTS_LEFT, FT_TABLE_PTS_RIGHT = 696, 766
 FT_TABLE_FG_LEFT, FT_TABLE_FG_RIGHT = 766, 871
 FT_TABLE_THREE_PT_LEFT, FT_TABLE_THREE_PT_RIGHT = 871, 976
@@ -137,9 +135,6 @@ DECADE_LAYOUT = TableLayout(
     gmsc_font_size=16,
 )
 
-# House standard for a fifteen-row player-game table on a 1080x1440 Canva page: the game line
-# at 14, and stat values and the Game Score number at 19 (settled on the 2026-09-25 season-opener
-# post). New fifteen-row tables start here; override a field only for a real layout difference.
 FIFTEEN_ROW_LAYOUT = replace(
     DECADE_LAYOUT, row_height=108, headshot_x=60, name_x=128, headshot_half_size=66,
     headshot_rise=8, first_row_from_top=145, bottom_pad=42, name_font_size=21,
@@ -790,7 +785,6 @@ def _game_context_parts(row: pd.Series) -> tuple[str, str, str]:
 
 
 def face_headshot_label(ax, image_path, x, y, half_size, *, zorder=4):
-    """Crop the upper portrait so current-team uniforms do not become the mark."""
     try:
         image = plt.imread(image_path)
     except (FileNotFoundError, OSError, ValueError):
@@ -846,11 +840,6 @@ def game_score_card(
     first_row_y: float,
     layout: TableLayout = DECADE_LAYOUT,
 ) -> None:
-    """Draw one continuous, solid Bulls-red Game Score card.
-
-    The shape now lives in `bulls.graphics.house` so the rookie leaderboard
-    draws the identical card behind its own ranking column (DESIGN.md).
-    """
     draw_accent_card(
         ax, GMSC_LEFT, GMSC_RIGHT, first_row_y, row_count, layout.row_height
     )
@@ -877,11 +866,6 @@ def _turnover_values(
     row: pd.Series, show_free_throws: bool, shooting_after_assists: bool = False, dash: str = "–",
     missing: str = "", true_shooting: bool = False,
 ) -> tuple[str, ...]:
-    """Return one row's cells for the turnover table, optionally including FT.
-
-    ``true_shooting`` puts single-game TS% (one decimal, the header carries the unit) in the
-    3PT cell.
-    """
     cells = (
         (
             str(int(row["points"])),
@@ -1022,9 +1006,6 @@ def render_chart(
     ax.axis("off")
     theme = DEFAULT_THEME
 
-    # The 15-row season table uses the full width more efficiently: portraits
-    # reach the left edge, Game Score moves toward the identity block, the
-    # three shooting columns share one width, and TOV fits beside BLK.
     if show_turnovers:
         gmsc_left, gmsc_right = 510, 618
         stat_bounds = (

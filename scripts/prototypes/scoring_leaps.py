@@ -163,11 +163,6 @@ def _required_columns(frame: pd.DataFrame, columns: set[str], source: str) -> No
 
 
 def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
-    """Load a Chicago-only NBA.com season from cache or the live endpoint.
-
-    Player totals are reconciled against the team's own totals so a silently
-    incomplete or mis-scoped response fails here rather than on the chart.
-    """
     cache_path = RAW_CACHE / f"CHI-{end_year}.csv"
     if cache_path.exists() and not refresh:
         return pd.read_csv(cache_path)
@@ -511,9 +506,6 @@ def render_chart(
         start_x = _x_position(leap["points_per_36_prev"])
         end_x = _x_position(leap["points_per_36_cur"])
 
-        # A bare square crop, not the red-ringed circle: every row on a ranked
-        # list is the same kind of thing, so a ring would read as an emphasis
-        # this layer does not intend (docs/design/tables-cards.md (Portraits)).
         top_anchored_headshot_label(
             ax,
             HEADSHOT_CACHE / f"{int(leap['player_id'])}.png",
@@ -576,8 +568,6 @@ def render_chart(
             raise ValueError(
                 f"The label for {display_name(leap)} runs into the plot area."
             )
-        # A dotted guide carries the eye from the name to a short arrow, the
-        # same job the reference chart's row guides do.
         ax.plot(
             [PLOT_LEFT, start_x],
             [y, y],

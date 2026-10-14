@@ -79,13 +79,7 @@ SEASON_TOP_N = 10
 HISTORY_TOP_N = 10
 ALL_TIME_TOP_N = 15
 
-# Two visual projects off one analysis, so the yearly post and the decade board keep
-# separate folders under output/ and docs/visuals/ rather than sharing a version history.
 YEARLY_PROJECT = "assist-duos"
-# The 2025-26 slide began as a current-team cut inside the yearly post and is now a post
-# of its own, so it takes its own folder like the decade and all-time boards. The season
-# *cache* stays under assist-duos: assist_duos_fetch owns that path and 26 seasons of
-# rate-limited requests should not be re-filed to follow an editorial split.
 SEASON_PROJECT = "assist-duos-last-season"
 DECADE_PROJECT = "assist-duos-by-decade"
 ALL_TIME_PROJECT = "assist-duos-all-time"
@@ -117,13 +111,6 @@ CHART_WIDTH = 1500
 ROW_RULE_LEFT = 24
 DUO_HEADER_X = 46
 
-# Faces are anchored so their cropped bottom edge sits on the row's bottom rule, which
-# reads as the pair resting on it. At the earlier 116px row height the crop was taller
-# than the row and heads ran up into the row above, the way the denser ladder tables
-# stack; the 142px row contains the portrait instead, and with the separators now at a
-# visible weight that is the calmer of the two. They still overlap each other
-# horizontally — the left player is drawn last, over the right — by less than the
-# portrait's empty margin, so neither face is covered.
 FACE_A_X, FACE_B_X = 80, 182
 NAME_X = 262
 
@@ -134,14 +121,6 @@ BAR_LEFT_NO_SEASON = 570
 
 @dataclass(frozen=True)
 class RightColumns:
-    """Where the bar stops and the value columns sit, for one slide's column set.
-
-    The rate column is carried only by a slide that has no SEASON column. Both
-    layouts spend the same band of canvas on their fourth column, so the bar keeps
-    almost exactly the same width either way (422px against 450px) instead of the
-    history boards being squeezed to make room for a column they do not print.
-    """
-
     bar_right: float
     ast_left: float
     ast_right: float
@@ -165,11 +144,6 @@ COLUMNS_WITH_RATE = RightColumns(
 
 BAR_RADIUS = 10
 
-# Vertical sheen on each bar segment and on the total card, clipped to a rounded patch —
-# the same layering clutch_table.py uses for its points card. Top colour first.
-# Structural table separators. The jersey theme's rule colour (#E6E2DB) is named in
-# DESIGN.md as a value that disappears against a Canva background; #B8B0A8 is the
-# structural weight the approved layup and floater tables use.
 SEPARATOR = "#B8B0A8"
 DECORATIVE_RULE = "#D8D2CA"
 
@@ -180,11 +154,6 @@ MIN_INSIDE_LABEL_WIDTH = 40
 
 AST_CARD_OUTSET_X = 8
 AST_CARD_OUTSET_Y = 9
-# The card's top rises past the header rule rather than stopping on it, the way the
-# clutch table's points card does — the rule is 2px and centred, so this covers it
-# outright and leaves a little showing above, which reads as the card sitting in front
-# of the table rather than being butted up against it. Kept small so the gap down from
-# the column header stays comfortable.
 AST_CARD_OVERLAP_Y = 13
 
 
@@ -205,8 +174,6 @@ class TableLayout:
     direction_font_size: float
 
 
-# The season-labelled carousels. Their dimensions are documented in that post's brief and
-# its Canva frame is built around them, so they keep the denser row they were approved at.
 DUO_LAYOUT = TableLayout(
     header_from_top=56,
     header_rule_from_top=88,
@@ -223,16 +190,7 @@ DUO_LAYOUT = TableLayout(
     direction_font_size=16,
 )
 
-# The single-season slide. Ten rows on one page rather than a carousel, so the row opens
-# up: taller rows put the export closer to the 4:5 page it sits on and give the type room
-# to grow for feed-size reading. At this height the portrait no longer overruns the row.
 SEASON_LAYOUT = TableLayout(
-    # The column headers sit clear of the TOTAL card. The card's top rises past the
-    # header rule by design, so the header band has to be measured from the card's top
-    # edge and not from the rule: at the shared 56/88/162 the headers cleared the rule
-    # but ran into the card, and TOTAL, sitting directly above it, touched it. The
-    # headers move up together and the table moves down, so they stay top-aligned with
-    # each other and the canvas grows 13px.
     header_from_top=46,
     header_rule_from_top=101,
     first_row_from_top=175,
@@ -327,14 +285,6 @@ def build_pairs(events: pd.DataFrame, names: dict[int, str]) -> pd.DataFrame:
 
 
 def attach_games_together(pairs: pd.DataFrame, logs: pd.DataFrame) -> pd.DataFrame:
-    """Add the count of games both players appeared in, and the per-game assist rate.
-
-    Replaces points as the second column. Points were nearly a restatement of the assist
-    total — the two run together at roughly 2.3 points per assist for every duo — where
-    shared games explain *why* a total is what it is. The 2025-26 Giddey-Vučević number
-    is low because they were available together far less, not because the connection
-    changed, and no column on the old board could tell you that.
-    """
     appeared = logs[logs.MIN.fillna(0) > 0]
     by_player = {
         (int(end_year), int(player_id)): set(block.GAME_ID)
@@ -359,12 +309,6 @@ def attach_games_together(pairs: pd.DataFrame, logs: pd.DataFrame) -> pd.DataFra
 
 
 def top_overall(pairs: pd.DataFrame, top_n: int = ALL_TIME_TOP_N) -> pd.DataFrame:
-    """The best single-season connections since 2000-01, ignoring decade boundaries.
-
-    One board rather than a carousel, so the eras compete directly. Rose-Deng's 233 in
-    2010-11 clears the field by 49 assists, which the decade split hides by giving the
-    2000s and 2020s leaders a slide of their own to top.
-    """
     return pairs.head(top_n).reset_index(drop=True)
 
 
@@ -387,15 +331,6 @@ def top_by_decade(pairs: pd.DataFrame, top_n: int = HISTORY_TOP_N) -> dict[str, 
 def best_per_season(
     pairs: pd.DataFrame, *, descending: bool = False
 ) -> dict[str, pd.DataFrame]:
-    """Each season's single best connection, grouped into decade slides.
-
-    The alternative to a straight decade leaderboard. One board can be dominated by one
-    era's roster — Hinrich appears in three of the 2000s top five — where this guarantees
-    every season a row and reads as a timeline instead of a ranking.
-
-    ``descending`` runs newest season first, so a slide opens on the season a reader just
-    watched rather than closing on it.
-    """
     best = (
         pairs.sort_values(["combined_ast", "combined_pts"], ascending=False)
         .groupby("season_end_year", as_index=False)
@@ -451,11 +386,6 @@ def is_silhouette(path: Path) -> bool:
 
 
 def missing_headshots(player_ids) -> list[int]:
-    """Ids with no usable portrait.
-
-    A silhouette is not a failure the eye catches in review — it reads as a design choice
-    — so it is reported rather than quietly drawn.
-    """
     return sorted(
         player_id
         for player_id in {int(p) for p in player_ids}
@@ -507,17 +437,6 @@ def slide_height(row_count: int, layout: TableLayout = DUO_LAYOUT) -> float:
 
 def _draw_ast_card(ax, columns: RightColumns, row_count: int, first_row_y: float,
                    layout: TableLayout):
-    """The red total column, drawn by the shared house helper. Returns its bounds.
-
-    This was a locally drawn card with a vertical red ramp. ``house.draw_accent_card``
-    now owns that component for every ranking table, and it settled on a **flat** accent
-    fill whose depth comes from an offset deeper-red shadow rather than a second colour
-    (DESIGN.md, "Cards and boxes"). Using the helper also means this table picks up any
-    later change to the card once, in one place.
-
-    ``overlap_y`` keeps this post's settled 13px rise past the header rule rather than
-    the helper's default 7, so the card sits where it was approved.
-    """
     return draw_accent_card(
         ax, columns.ast_left, columns.ast_right, first_row_y, row_count,
         layout.row_height,
@@ -539,12 +458,6 @@ FACE_CROP_HEIGHT = 0.74
 
 
 def duo_face_label(ax, image_path, x, y, half, *, zorder=4):
-    """Place a portrait cropped to the head, with margin at the sides.
-
-    Keeps the same top-74% crop as the rest of the table family, which frames the head
-    and leaves shoulders — and therefore whichever team's jersey a player last wore —
-    out of the picture. Only the drawn square is larger here.
-    """
     try:
         image = plt.imread(image_path)
     except (FileNotFoundError, OSError, ValueError):
@@ -563,13 +476,6 @@ def duo_face_label(ax, image_path, x, y, half, *, zorder=4):
 
 
 def _draw_face(ax, player_id: int, name: str, x: float, y: float, half: float, zorder):
-    """Draw a portrait, or a monogram tile when no usable portrait exists.
-
-    Some players simply have no portrait anywhere licensable — Greg Anthony and Jay
-    Williams are on neither the NBA CDN nor ESPN. The CDN's grey silhouette reads as a
-    broken image; initials in the house palette read as a deliberate choice, and stay
-    honest about who the row is describing.
-    """
     path = HEADSHOT_CACHE / f"{player_id}.png"
     if path.exists():
         # Including the CDN's grey silhouette: it is a portrait-shaped placeholder that
@@ -622,13 +528,6 @@ def _vertical_gradient(ax, x0, x1, y, height, colors, clip, zorder):
 
 
 def _draw_split_bar(ax, bar_left, split, bar_end, y, height) -> None:
-    """Draw the two-direction bar as one shadowed, gradient-filled shape.
-
-    Clipping both gradients to a single rounded outline is what makes this read as one
-    continuous bar broken by colour rather than two pills pushed together: only the outer
-    ends round off, and the split stays a hard vertical edge. It also replaces the old
-    square-off patches, which could not have carried a gradient.
-    """
     shadow = _rounded(
         bar_left, bar_end, y, height,
         facecolor=DARK_BAR_GRADIENT[1], edgecolor="none", zorder=4,
@@ -686,19 +585,6 @@ def render_table(
     layout: TableLayout = DUO_LAYOUT,
     final: bool = False,
 ) -> Path:
-    """Render one transparent duo table in the settled ladder grammar.
-
-    ``canvas_rows`` fixes the exported height to that many rows regardless of how many
-    are drawn, so every slide in a carousel is the same size. A 2020s slide holding six
-    seasons otherwise exports shorter than a ten-row 2000s slide, and dropping the two
-    into the same Canva frame scales them differently.
-
-    ``scale_max`` sets the assist total that fills the bar column. Pass the carousel-wide
-    maximum when rendering a set of slides: readers flip between slides and compare bar
-    lengths directly, so per-slide scaling would draw the 2020s leader the same width as
-    the 2000s leader and quietly erase the gap between the eras. Defaults to this slide's
-    own maximum, which is right for a standalone table.
-    """
     rows = rows.reset_index(drop=True)
     player_ids = list(rows.high_id) + list(rows.low_id)
     ensure_headshots(player_ids)
@@ -767,9 +653,6 @@ def render_table(
     scale = (columns.bar_right - bar_left) / ceiling
     bar_height = layout.row_height - 2 * layout.bar_inset
 
-    # One name size for the whole slide. Shrinking only the rows that overflow left the
-    # column looking ragged, with "Tomas Satoransky" visibly smaller than "Tre Jones"
-    # two rows below it. Measure every name once, then fit them all to the longest.
     name_budget = ((SEASON_LEFT if show_season else bar_left) - NAME_GUTTER) - (NAME_X + SWATCH + 10)
     probe = ax.text(0, -999, "", fontproperties=helvetica("bold"),
                     fontsize=layout.name_font_size)
@@ -797,9 +680,6 @@ def render_table(
                     color=SEPARATOR, linewidth=1.0, zorder=3,
                 )
 
-        # Anchor the crop's bottom edge on the row's bottom rule; the head then rises
-        # past the row top into the row above. Later rows draw over earlier ones, so a
-        # lower player's head overlaps the neck of the one above, like stacked cards.
         face_y = y - layout.row_height / 2 + layout.face_half
         face_zorder = 4 + index * 0.01
         for face_x, player_id, name in (
@@ -857,9 +737,6 @@ def render_table(
             color=BLACK, fontproperties=helvetica("bold"), zorder=5,
         )
         if columns.rate_left is not None:
-            # A pair can hold a row and share no games — a midseason trade where one
-            # arrived as the other left — and the rate is undefined there, not zero.
-            # An undefined cell is left empty rather than printing a placeholder.
             rate = row.ast_per_game
             ax.text(
                 (columns.rate_left + columns.rate_right) / 2, y,

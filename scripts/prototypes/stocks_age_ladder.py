@@ -65,45 +65,19 @@ NBA_TEAM_STOCKS_URL = (
     f"&TeamID={BULLS_TEAM_ID}"
 )
 
-# The steal and block components sit where games played sits on the other
-# ladders; the qualification rule stays in the footer instead.
 STOCKS_TRAILING_COLUMNS = (
     TrailingColumn("STL", "steals_per_game", decimals=1),
     TrailingColumn("BLK", "blocks_per_game", decimals=1),
-    # Games played is supplemental, not part of the claim: it tells the reader
-    # how much season is behind a rate without letting availability pick the
-    # winner. Kris Dunn's 52 games and Pau Gasol's 78 are different evidence.
     TrailingColumn("GP", "games"),
 )
-# The asset's height is not free real estate: Canva scales the whole chart to
-# fit the space under the title, so a taller asset is a *smaller* one on the
-# page. Height stays close to the other ladders and the portraits instead take
-# a larger share of each row — that is what makes a face bigger in the feed.
 STOCKS_CHART_WIDTH = 1280
 STOCKS_CHART_HEIGHT = 1200
 STOCKS_METRIC_WIDTH = 120
-# All three trailing columns share one width — games played is presented as an
-# equal citizen of the row, not a squeezed afterthought. Three columns at the
-# original width no longer fit 1080px, so the asset itself widens; Canva scales
-# it to the page either way.
 STOCKS_TRAILING_SLOT_WIDTH = 112
 STOCKS_NAME_COLUMN_GAP = 26
 
-# The colour behind each row is that season's league percentile, not the row's
-# place within this chart. Min-max shading against the chart's own range made
-# Ben Wallace's 3.47 stretch the scale until Jimmy Butler's 89th-percentile
-# season rendered dead centre — "average" — which it plainly was not.
-#
-# The comparison pool is rotation regulars: half their season's games at 20+
-# minutes a night. Bench players at four minutes a game would drag the
-# distribution down and flatter every row on this ladder.
 LEAGUE_MIN_MINUTES_PER_GAME = 20.0
 LEAGUE_MIN_GAMES_SHARE = 0.50
-# Shading reads the ratio to that season's league median, not the percentile.
-# Percentile is externally anchored but compresses the tail: 3rd of 220 and 13th
-# of 220 differ by four points on a hundred-point scale, so every elite season
-# came out the same green. The ratio keeps the anchor — 1.00x is exactly league
-# average — while preserving how far clear of it a season actually was.
 LEAGUE_RATIO_FLOOR = 0.85
 LEAGUE_RATIO_AVERAGE = 1.00
 LEAGUE_RATIO_CEILING = 2.50
@@ -112,12 +86,6 @@ LEAGUE_RATIO_CEILING = 2.50
 # chin with a little room under it; tighter than this starts cutting jaws.
 STOCKS_FACE_CROP_FRACTION = 0.67
 
-# Portrait diameter is 1.32x the row height, so it rises into the row above and
-# is clipped at its own separator — the rookie-leaderboard treatment, and the
-# only way to enlarge a face when the row count is fixed at twenty. The top row
-# has no row above it, so its portrait crosses the header rule instead; the
-# rule draws underneath (zorder 2 against the portrait's 4), which is what makes
-# the row read as a card rather than a head cropped flat against a line.
 STOCKS_LAYOUT = TableLayout(
     header_y=1155,
     header_rule_y=1130,
@@ -404,8 +372,6 @@ def validate_working_table(table: pd.DataFrame) -> dict[str, object]:
             raise ValueError("A league percentile falls outside 0–100.")
         if (pd.to_numeric(table["league_sample"], errors="raise") < 50).any():
             raise ValueError("A league baseline season has too small a comparison pool.")
-        if (pd.to_numeric(table["league_median"], errors="raise") <= 0).all() is None:
-            raise ValueError("A league median is not positive.")
         if not (pd.to_numeric(table["league_median"], errors="raise") > 0).all():
             raise ValueError("A league median is not positive.")
 

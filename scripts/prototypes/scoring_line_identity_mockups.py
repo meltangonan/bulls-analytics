@@ -34,8 +34,6 @@ FINAL_DPI = 300
 FINAL_WIDTH = 1500
 FINAL_HEIGHT = 1200
 
-# The explicit order is also the Canva page order: descending 2025-26 PPG,
-# split evenly after the fifth player. No chart receives hero treatment.
 PLAYERS = {
     "Norman Powell": 1626181,
     "Josh Giddey": 1630581,

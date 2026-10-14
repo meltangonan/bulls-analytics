@@ -1,4 +1,3 @@
-"""Coverage, metric, uncertainty and selection checks for catch-and-shoot."""
 import pandas as pd
 import pytest
 from scripts.prototypes import catch_and_shoot_points_data as post

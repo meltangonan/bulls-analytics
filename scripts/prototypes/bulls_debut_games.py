@@ -82,12 +82,6 @@ def needs_career_check(audit: pd.DataFrame) -> pd.Series:
 
 
 def classify_debuts(audit: pd.DataFrame, career: pd.DataFrame) -> pd.DataFrame:
-    """Mark each first logged Bulls game as a true Bulls debut or a pre-window stint.
-
-    The Bulls game logs are complete from 1983-84, so for anyone whose NBA career began
-    then or later the first logged Bulls game is the first Bulls game. Earlier entrants
-    are checked against NBA.com's career team history.
-    """
     audit = audit.copy()
     seasons = career[["PLAYER_ID", "SEASON_ID", "TEAM_ID"]].copy()
     seasons["end_year"] = seasons["SEASON_ID"].map(season_end_year)
@@ -222,7 +216,6 @@ def main() -> None:
     early = first.loc[needs_career_check(first), "player_id"].tolist()
     audit = classify_debuts(first, base.fetch_career_seasons(early, CAREER_PATH, refresh=args.refresh))
     debuts = audit[audit["is_debut"]].copy()
-    # Box scores with blanks can't be scored; validate() proves none could reach the list.
     ranked = rank_debuts(debuts.dropna(subset=GAME_SCORE_INPUTS))
     report = validate(audit, debuts, ranked, working)
 

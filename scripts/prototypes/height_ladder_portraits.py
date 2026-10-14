@@ -49,12 +49,6 @@ CUT_OUT_THRESHOLD = 0.15
 
 
 def pre_cropped(path: Path, box) -> Path:
-    """Write a head-and-shoulders crop of a wide source to scratch.
-
-    Deliberately not written beside the source: ``portraits_source/`` is
-    tracked and holds the irreplaceable originals, and a regenerable
-    intermediate landing there dirties the worktree on every re-run.
-    """
     image = Image.open(path)
     w, h = image.size
     left, top, right, bottom = box

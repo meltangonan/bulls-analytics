@@ -53,14 +53,7 @@ from bulls.visuals import DATA, visual_dir
 FIRST_SEASON_END_YEAR = 2001
 LAST_SEASON_END_YEAR = 2026
 
-# Tracked, not cached. These 26 CSVs are 2,132 rate-limited requests and about fifty
-# minutes of fetching; an ignored cache/ folder let a routine worktree cleanup destroy
-# them after the graphic had already shipped. Writing them into the post's tracked data/
-# folder from the start means nobody has to remember to preserve them. See bulls/visuals.py.
 SEASON_DATA_PROJECT = "assist-duos"
-# Resolved by slug, so the folder's own date is whatever the post started with — the
-# same reuse rule every other visuals lookup follows, rather than a hardcoded date that
-# silently forks a second folder next year.
 CACHE = (
     visual_dir(_REPO / "docs" / "visuals", SEASON_DATA_PROJECT, create=False)
     / DATA / "seasons"
@@ -120,11 +113,6 @@ def _request(factory, label: str):
 
 
 def bulls_game_log(end_year: int) -> pd.DataFrame:
-    """Bulls regular-season team-game rows for one season, cached.
-
-    Carries the official ``AST`` per game, which is what every extracted assisted basket
-    is reconciled against.
-    """
     path = CACHE / f"game-log-{season_label(end_year)}.csv"
     if path.exists():
         return pd.read_csv(path, dtype={"GAME_ID": str})
@@ -187,13 +175,6 @@ def load_player_game_logs(
 
 
 def reconcile_season(end_year: int) -> dict[str, object]:
-    """Compare extracted assisted baskets with the official box-score assist total.
-
-    Play-by-play is the official scorer's record, so these should agree almost exactly.
-    A gap is reported rather than forced away — the realistic causes are an assister
-    surname that could not be resolved to one player, or an NBA.com scoring correction
-    applied to the box score but not to the event feed.
-    """
     events = fetch_season(end_year)
     official = int(bulls_game_log(end_year).AST.sum())
     extracted = len(events)
@@ -208,20 +189,6 @@ def reconcile_season(end_year: int) -> dict[str, object]:
 
 @lru_cache(maxsize=1)
 def check_passer_attribution(first: int, last: int) -> pd.DataFrame:
-    """Verify every passer's attributed assists equal his official season total.
-
-    Reconciling the season *total* proves no assist was lost or double-counted. It says
-    nothing about whether each one reached the right pair — swapping two teammates leaves
-    the total untouched. This does prove it, and it is the stronger check of the two.
-
-    The scorer end is already measured, not inferred: ``personId`` on the made-shot event
-    is the scorer, no parsing involved. The passer end is the only guess. So if every
-    passer's count matches the box score, both ends of every pair are right — a
-    misattribution would have to push one player over and another under.
-
-    Unlike the tracking cross-check this needs no extra endpoint and covers all 26
-    seasons, including the seven before player tracking existed.
-    """
     events = load_history(first, last)
     logs = load_player_game_logs(first, last)
 
@@ -419,9 +386,6 @@ def fetch_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
         flush=True,
     )
     if unresolved:
-        # Report by surname with counts. The first-five-rows view hid the Butler bug for
-        # a full run: five identical lines look like a rounding error, "BUTLER x417"
-        # does not.
         counts: dict[str, int] = {}
         for _, surname, _ids in unresolved:
             counts[surname] = counts.get(surname, 0) + 1

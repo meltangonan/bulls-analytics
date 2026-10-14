@@ -1,4 +1,3 @@
-"""Metric and source-coverage checks for the pull-up leaderboard."""
 import json
 
 import pandas as pd

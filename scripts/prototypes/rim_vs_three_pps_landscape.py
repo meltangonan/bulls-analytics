@@ -409,10 +409,6 @@ def chart_y(three_pps: float) -> float:
     ) * (y1 - y0)
 
 
-# The league layer is context, not a second encoded variable: one uniform dot
-# size keeps position the only thing a reader has to decode, matching the
-# roster landscapes where every face is the same size. Per-player attempt
-# volume stays in the printed Canva copy block.
 LEAGUE_MARKER_AREA = 116.0
 HEADSHOT_HALF_SIZE = 36.0
 

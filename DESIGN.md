@@ -116,6 +116,11 @@ Use one clear payoff. Reference lines need short labels; dashed lines and weight
 without relying on color. Callouts should explain the pattern, with a usual budget of three or four.
 Quadrant labels describe roles, not unsupported judgments; leave enough axis headroom that a label
 cannot hide an outlier. A whole oblique row can signal a weaker qualification, explained on the page.
+Bars start at zero so length stays proportional to value; a zoomed baseline is a deliberate exception
+that is labeled and prints every bar's value. When mark size encodes a quantity, scale area rather
+than radius, and give portraits and plain dots one scale so a face never signals importance. A
+scatter may nudge a portrait off its point for legibility only when the true point stays drawn and a
+fine connector ties the face to it.
 
 When the user supplies a visual reference, retain its structure and proportions while adapting the
 palette and chart typeface. Any larger departure should be deliberate.

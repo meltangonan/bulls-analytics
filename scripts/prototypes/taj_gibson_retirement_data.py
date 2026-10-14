@@ -204,8 +204,11 @@ def _top_games(regular: pd.DataFrame, playoffs: pd.DataFrame, count: int = 5) ->
         regular.assign(season_type="Regular season"),
         playoffs.assign(season_type="Playoffs"),
     ], ignore_index=True)
-    best = combined.sort_values("game_score", ascending=False).head(count).copy()
-    best["rank"] = best["game_score"].rank(ascending=False, method="min").astype(int)
+    # Game Score inputs are whole stats times one-decimal weights, so rounding to 0.1 is exact and
+    # stops float noise from splitting a displayed tie or overriding the points tiebreak.
+    combined["score_key"] = combined["game_score"].round(1)
+    best = combined.sort_values(["score_key", "points"], ascending=False, kind="stable").head(count).copy()
+    best["rank"] = best["score_key"].rank(ascending=False, method="min").astype(int)
     best["opponent"] = (
         best["matchup"].str.replace("CHI vs. ", "vs ", regex=False)
         .str.replace("CHI @ ", "at ", regex=False)

@@ -697,14 +697,18 @@ def validate_working_table(
 
 
 def top_games_by_decade(table: pd.DataFrame, *, top_n: int = TOP_N) -> pd.DataFrame:
+    # Game Score inputs are whole stats times one-decimal weights, so rounding to 0.1 is exact and
+    # stops float noise (23.800000000000004 vs 23.8) from overriding the points tiebreak.
     ranked = (
-        table.sort_values(
-            ["decade", "game_score", "points", "ts_pct", "game_date", "player", "player_id"],
+        table.assign(score_key=table["game_score"].round(1))
+        .sort_values(
+            ["decade", "score_key", "points", "ts_pct", "game_date", "player", "player_id"],
             ascending=[True, False, False, False, True, True, True],
             kind="stable",
         )
         .groupby("decade", sort=False, group_keys=False)
         .head(top_n)
+        .drop(columns="score_key")
         .copy()
     )
     ranked["rank"] = ranked.groupby("decade", sort=False).cumcount() + 1

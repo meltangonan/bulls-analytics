@@ -145,6 +145,20 @@ def test_top_games_keeps_only_ten_rows_and_breaks_ties_deterministically():
     assert result.loc[result["decade"].eq("2000s"), "rank"].tolist() == list(range(1, 11))
 
 
+def test_top_games_breaks_equal_game_scores_by_points_despite_float_noise():
+    rows = pd.DataFrame(
+        [
+            {"decade": "2000s", "game_score": 23.800000000000004, "points": 20, "ts_pct": 62.7,
+             "game_date": "2009-10-13", "player": "Joakim Noah", "player_id": 1},
+            {"decade": "2000s", "game_score": 23.8, "points": 24, "ts_pct": 61.1,
+             "game_date": "2012-10-19", "player": "Carlos Boozer", "player_id": 2},
+        ]
+    )
+    ranked = top_games_by_decade(rows, top_n=2)
+    assert ranked["player"].tolist() == ["Carlos Boozer", "Joakim Noah"]
+    assert "score_key" not in ranked.columns
+
+
 @pytest.mark.parametrize("stored_id", ["0028300012", "28300012"])
 def test_cached_seasons_keep_live_game_id_format(tmp_path, monkeypatch, stored_id):
     """A cached side must join a live side, whose IDs are 10-character strings."""

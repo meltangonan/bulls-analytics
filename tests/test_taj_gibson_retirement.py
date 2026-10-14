@@ -549,3 +549,16 @@ def test_published_season_tables_mark_his_peak_year():
     # The two known ties are both marked, four cells across two columns.
     assert sum(1 for _, column in marked if column == 6) == 2
     assert sum(1 for _, column in marked if column == 7) == 2
+
+
+def test_top_games_breaks_equal_game_scores_by_points_despite_float_noise():
+    def game(game_id, points, game_score):
+        return {"game_id": game_id, "game_date": "2014-01-01", "matchup": "CHI vs. NYK",
+                "result": "W", "minutes": 30, "points": points, "fgm": 0, "fga": 0, "fg3m": 0,
+                "fg3a": 0, "ftm": 0, "fta": 0, "reb": 0, "ast": 0, "stl": 0, "blk": 0, "tov": 0,
+                "plus_minus": 0, "ts_pct": 0.0, "game_score": game_score}
+
+    regular = pd.DataFrame([game("0021300001", 20, 23.800000000000004), game("0021300002", 24, 23.8)])
+    top = data_post._top_games(regular, regular.iloc[0:0], count=2)
+    assert top["points"].tolist() == [24, 20]
+    assert top["rank"].tolist() == [1, 1]

@@ -88,11 +88,15 @@ def select_height_winners(games: pd.DataFrame, heights: pd.DataFrame) -> pd.Data
         raise ValueError(f"Missing listed heights for: {missing}")
     joined["height_in"] = joined["HEIGHT"].map(height_inches)
     joined["game_score"] = joined.apply(game_score, axis=1)
+    # Game Score inputs are whole stats times one-decimal weights, so rounding to 0.1 is exact and
+    # stops float noise from overriding the minutes tiebreak.
     return (
-        joined.sort_values(
-            ["height_in", "game_score", "minutes", "game_date"],
+        joined.assign(score_key=joined["game_score"].round(1))
+        .sort_values(
+            ["height_in", "score_key", "minutes", "game_date"],
             ascending=[True, False, False, True],
         )
+        .drop(columns="score_key")
         .drop_duplicates("height_in")
         .sort_values("height_in")
         .reset_index(drop=True)

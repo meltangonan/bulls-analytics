@@ -80,11 +80,13 @@ def season_opener_player_games(
 
 
 def rank_season_openers(rows: pd.DataFrame, top_n: int = TOP_N) -> pd.DataFrame:
-    ranked = rows.sort_values(
-        ["game_score", "points", "ts_pct", "game_date", "player", "player_id"],
+    # Game Score inputs are whole stats times one-decimal weights, so rounding to 0.1 is exact and
+    # stops float noise (23.800000000000004 vs 23.8) from overriding the points tiebreak.
+    ranked = rows.assign(score_key=rows["game_score"].round(1)).sort_values(
+        ["score_key", "points", "ts_pct", "game_date", "player", "player_id"],
         ascending=[False, False, False, True, True, True],
         kind="stable",
-    ).head(top_n).copy()
+    ).head(top_n).drop(columns="score_key").copy()
     if len(ranked) != top_n:
         raise ValueError(f"Expected {top_n} ranked opener performances; got {len(ranked)}.")
     ranked["rank"] = range(1, len(ranked) + 1)

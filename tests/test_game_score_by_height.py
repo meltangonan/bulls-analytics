@@ -51,3 +51,13 @@ def test_one_winner_per_height_combines_regular_season_and_playoffs():
     heights = pd.DataFrame({"PLAYER_ID": [1, 2, 3], "HEIGHT": ["6-3", "6-3", "7-0"]})
     result = select_height_winners(games, heights)
     assert result[["HEIGHT", "player"]].values.tolist() == [["6-3", "Playoff"], ["7-0", "Tall"]]
+
+
+def test_height_winner_breaks_equal_game_scores_by_minutes_despite_float_noise():
+    games = pd.DataFrame([
+        _game(1, "Noisy", {"fgm": 3}, "2020-01-01", minutes=20),
+        _game(2, "Clean", {"dreb": 4}, "2020-01-02", minutes=40),
+    ])
+    heights = pd.DataFrame({"PLAYER_ID": [1, 2], "HEIGHT": ["6-3", "6-3"]})
+    result = select_height_winners(games, heights)
+    assert result["player"].tolist() == ["Clean"]

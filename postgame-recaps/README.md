@@ -113,6 +113,11 @@ venv/bin/python postgame-recaps/pipeline/export_slides.py <game_id>
 `build_mockup.py` writes `output/postgame-recap/mockup.html`, all the given games with a switcher (the phone
 preview is built from it); `export_slides.py` saves each page through headless Chromium (Playwright).
 
+To review the whole format, including pages not yet in the live carousel, build the full mockup:
+`venv/bin/python postgame-recaps/pipeline/build_mockup.py --full` recomputes one saved test game where every
+page qualifies (`FULL_GAME`) and writes `output/postgame-recap/mockup-full.html` with every page and the team ranks mock.
+When a new page or option is added behind a condition, make sure the full mockup still shows it.
+
 The deadline (user, 2026-10-10: "we have to post"): 45 minutes after Final (`FALLBACK`), `postgame_recap.py`
 sets `RECAP_FALLBACK`, and a feed NBA.com has left incomplete is replaced by what can be computed exactly or its
 page is left out; each change is a `repaired:` line in the log and in `recap.json` (`repairs`), and the delivery
@@ -235,8 +240,8 @@ red, green, black and silver teams staying gray (`DESIGN.md`, "The opponent in a
 
 Team ranks (designed 2026-10-10, regular season only, not yet in the live carousel): "Where the Bulls rank", twelve
 NBA.com team stats with league ranks in three groups (overall; style; the four factors with their color chips), each
-a strip of all 30 teams by value with the Bulls as a red square. Only a mockup exists: `build_mockup.py <game_id> --ranks-mock
-postgame-recaps/team-ranks-mock/ranks.json` draws it from the 2025-26 NBA.com snapshot in that folder (its
+a strip of all 30 teams by value with the Bulls as a red square. Only a mockup exists: `build_mockup.py --full` (or `<game_id> --ranks-mock
+postgame-recaps/team-ranks-mock/ranks.json`) draws it from the 2025-26 NBA.com snapshot in that folder (its
 `pull_team_ranks.py` rebuilds ranks.json; ranks are NBA.com's own, 1 being the best or the most,
 except 3-point attempt share, which NBA.com does not list: the script ranks 3PA/FGA, ties sharing the best rank). The live page still needs season-to-date team stats pulled with each
 game and a start rule (around game 5 to 10).

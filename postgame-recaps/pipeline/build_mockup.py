@@ -1,14 +1,21 @@
 """Build the self-contained postgame recap mockup for one or more games.
 
     venv/bin/python postgame-recaps/pipeline/build_mockup.py 0022500248 [more ids]
+    venv/bin/python postgame-recaps/pipeline/build_mockup.py --full
 
 For each game, reads output/postgame-recap/<id>/recap.json (recap_data.py) and zones.png
 (zones_share.py), embeds them with the house-crop portraits from portraits/, and writes
 output/postgame-recap/mockup.html with a switcher between the games. The page only draws.
+
+--full writes mockup-full.html instead: every page the format has, including ones not yet in the
+live carousel, from FULL_GAME (a saved test game where every conditional page qualifies) and the ranks
+mock. It recomputes FULL_GAME first, so the pages always match the current code.
 """
 import base64
 import io
 import json
+import os
+import subprocess
 import sys
 from pathlib import Path
 
@@ -16,8 +23,10 @@ from PIL import Image
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from paths import LOGOS, OUTPUT, PORTRAITS, REPO  # noqa: E402
+from paths import LOGOS, OUTPUT, PORTRAITS, REPO, game_dir  # noqa: E402
 
+FULL_GAME = "0022500167"  # Nov 4, 2025: shot chart, season leaders, matchups, notables, no missing feeds
+RANKS_MOCK = REPO / "postgame-recaps" / "team-ranks-mock" / "ranks.json"
 BRAND = REPO / "assets" / "brand" / "chicagobullsdata-mark.svg"  # the account's mark, top right of each page
 
 
@@ -52,7 +61,7 @@ def player_ids(game: dict) -> set[int]:
     return ids
 
 
-def main(game_ids: list[str], ranks: Path | None = None) -> None:
+def main(game_ids: list[str], ranks: Path | None = None, name: str = "mockup.html") -> None:
     games, zones, sizes, ids = [], {}, {}, set()
     for game_id in game_ids:
         game = json.loads((OUTPUT / game_id / "recap.json").read_text())
@@ -75,12 +84,20 @@ def main(game_ids: list[str], ranks: Path | None = None) -> None:
     assets = {"games": games, "zones": zones, "zsize": sizes, "heads": heads, "logos": logos, "brand": brand}
     if ranks:  # team ranks mockup pages, for design review only; a live recap never passes it
         assets["ranks"] = json.loads(ranks.read_text())
-    out = OUTPUT / "mockup.html"
+    out = OUTPUT / name
     out.write_text((HERE / "recap_template.html").read_text().replace("__ASSETS__", json.dumps(assets, ensure_ascii=False)))
     print(f"wrote {out} ({out.stat().st_size // 1024} KB), {len(games)} games, {len(heads)} portraits")
 
 
 if __name__ == "__main__":
     args = sys.argv[1:]
+    if args == ["--full"]:
+        env = {**os.environ, "PYTHONPATH": "."}
+        out = OUTPUT / FULL_GAME
+        for step in (["recap_data.py", FULL_GAME],
+                     ["zones_share.py", str(game_dir(FULL_GAME)), str(out / "zones.png"), "13", "11", "33"]):
+            subprocess.run([sys.executable, str(HERE / step[0]), *step[1:]], cwd=REPO, env=env, check=True)
+        main([FULL_GAME], RANKS_MOCK, "mockup-full.html")
+        sys.exit()
     ranks = Path(args.pop(args.index("--ranks-mock") + 1)) if "--ranks-mock" in args else None
     main([a for a in args if a != "--ranks-mock"], ranks)

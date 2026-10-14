@@ -121,6 +121,20 @@ def test_count_summary_validation_reconciles_each_metric():
         assert audit["qualifying_player_game_count"] == expected
 
 
+def test_game_score_float_noise_at_the_threshold_still_qualifies():
+    # Markkanen 2019-03-20 and DeRozan 2022-02-24 both compute to this, not 30.0.
+    table = _table()
+    table.loc[table["opponent"].eq("ATL"), "game_score"] = 29.999999999999996
+
+    elite = build_opponent_summary(table, min_meetings=2)
+    assert elite.set_index("franchise").loc["ATL", "elite_player_games"] == 2
+    assert validate_summary(elite, table, min_meetings=2)["elite_player_game_count"] == 4
+
+    counts = build_count_summary(table, metric="game_score", min_meetings=2)
+    assert counts.set_index("franchise").loc["ATL", "qualifying_player_games"] == 2
+    assert validate_count_summary(counts, table, metric="game_score")["qualifying_player_game_count"] == 4
+
+
 def test_count_summary_supports_a_lower_points_threshold():
     table = _table().assign(points=lambda frame: frame["game_score"])
     summary = build_count_summary(table, metric="points", threshold=25, min_meetings=2)

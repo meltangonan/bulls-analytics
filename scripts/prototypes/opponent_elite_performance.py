@@ -141,6 +141,10 @@ def current_opponent(raw: str) -> str:
     return HISTORICAL_TO_CURRENT.get(str(raw), str(raw))
 
 
+def meets_threshold(values: pd.Series, threshold: float) -> pd.Series:
+    return values.round(1) >= threshold
+
+
 def build_opponent_summary(
     table: pd.DataFrame,
     *,
@@ -156,7 +160,7 @@ def build_opponent_summary(
     rows["franchise"] = rows["opponent"].map(current_opponent)
     meetings = rows.groupby("franchise", as_index=False).agg(meetings=("game_id", "nunique"))
 
-    elite = table.loc[table["game_score"] >= threshold, ["game_id", "opponent"]].copy()
+    elite = table.loc[meets_threshold(table["game_score"], threshold), ["game_id", "opponent"]].copy()
     elite["franchise"] = elite["opponent"].map(current_opponent)
     elite_counts = elite.groupby("franchise").size().rename("elite_player_games")
 
@@ -223,7 +227,7 @@ def validate_summary(
     expected_games = table[["game_id", "opponent"]].drop_duplicates()["game_id"].nunique()
     if int(summary["meetings"].sum()) != expected_games:
         raise ValueError("Opponent meetings do not reconcile to distinct Bulls team games.")
-    expected_elite = int((table["game_score"] >= threshold).sum())
+    expected_elite = int(meets_threshold(table["game_score"], threshold).sum())
     if int(summary["elite_player_games"].sum()) != expected_elite:
         raise ValueError("Elite player-game counts do not reconcile to the working table.")
     if not np.isfinite(summary["rate_per_100"]).all():
@@ -233,7 +237,7 @@ def validate_summary(
         "meeting_count": int(summary["meetings"].sum()),
         "elite_player_game_count": expected_elite,
         "elite_team_game_count": int(
-            table.loc[table["game_score"] >= threshold, "game_id"].nunique()
+            table.loc[meets_threshold(table["game_score"], threshold), "game_id"].nunique()
         ),
         "overall_rate_per_100": expected_elite / expected_games * 100,
     }
@@ -356,7 +360,7 @@ def build_count_summary(
         excluded = summary.loc[summary["meetings"] < min_meetings, "franchise"].tolist()
         raise ValueError(f"Opponent sample is below the minimum for {excluded}")
 
-    qualifying = table.loc[table[fields[metric]] >= threshold, ["game_id", "opponent"]].copy()
+    qualifying = table.loc[meets_threshold(table[fields[metric]], threshold), ["game_id", "opponent"]].copy()
     qualifying["franchise"] = qualifying["opponent"].map(current_opponent)
     counts = qualifying.groupby("franchise").size().rename("qualifying_player_games")
     summary = summary.join(counts, on="franchise")
@@ -413,14 +417,14 @@ def validate_count_summary(
     field = {"points": "points", "game_score": "game_score"}.get(metric)
     if field is None:
         raise ValueError(f"Unknown count metric: {metric}")
-    expected_count = int((table[field] >= threshold).sum())
+    expected_count = int(meets_threshold(table[field], threshold).sum())
     if int(summary["qualifying_player_games"].sum()) != expected_count:
         raise ValueError("Qualifying player-game counts do not reconcile to the working table.")
     return {
         "opponent_count": len(summary),
         "meeting_count": int(summary["meetings"].sum()),
         "qualifying_player_game_count": expected_count,
-        "qualifying_team_game_count": int(table.loc[table[field] >= threshold, "game_id"].nunique()),
+        "qualifying_team_game_count": int(table.loc[meets_threshold(table[field], threshold), "game_id"].nunique()),
     }
 
 

@@ -55,7 +55,9 @@ red/green scales must never carry direction alone.
 
 Conditional fills have a **neutral band**, not a single midpoint. `heat_fill` blends red `#D64545`
 and green `#3FAE63` toward cream `#FAF8F5`; values inside the band stay neutral. That cream is a cell
-fill, not a requirement for the Canva background. Use `heat_text_color` for readable text.
+fill, not a requirement for the Canva background. Use `heat_text_color` for readable text. Green text, such as a
+win or a top-ten rank, uses `house.GREEN_TEXT` (`#218347`, 4.5:1 on cream); `HEAT_GREEN` is a fill and
+reads at only 2.7:1 as text.
 
 Calibrate from the eligible population or a meaningful basketball reference, never just the displayed
 rows' minimum and maximum. For counting stats, a low value may describe a role rather than failure;

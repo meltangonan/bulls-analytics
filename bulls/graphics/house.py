@@ -646,6 +646,7 @@ def ensure_headshots(nba_ids) -> None:
 HEAT_RED = "#D64545"
 HEAT_MID = DEFAULT_THEME.canvas
 HEAT_GREEN = "#3FAE63"
+GREEN_TEXT = "#218347"
 
 
 def _heat_mix(base: str, target: str, strength: float) -> tuple[float, float, float]:

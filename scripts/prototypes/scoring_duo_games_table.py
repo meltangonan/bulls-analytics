@@ -86,7 +86,7 @@ RULE = "#B8B0A8"
 BAND = "#B8B0A8"
 # Same pair the pull-up table uses for signed text: darkened for small-type
 # contrast on the warm Canva background rather than the brighter heat scale.
-WIN = "#218347"
+WIN = house.GREEN_TEXT
 LOSS = "#B53939"
 
 

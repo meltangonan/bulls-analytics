@@ -40,6 +40,7 @@ from nba_api.stats.endpoints import leaguegamefinder, playercareerstats, playerg
 from bulls.config import BULLS_TEAM_ID
 from bulls.data.fetch import _NBA_HEADERS
 from bulls.graphics.house import (
+    PORTRAIT_CROP_FRACTION,
     DEFAULT_THEME,
     accent_card_bounds,
     draw_accent_card,
@@ -805,7 +806,7 @@ def face_headshot_label(ax, image_path, x, y, half_size, *, zorder=4):
         )
 
     height, width = image.shape[:2]
-    side = min(int(height * 0.74), width)
+    side = min(int(height * PORTRAIT_CROP_FRACTION), width)
     left = max(0, (width - side) // 2)
     square = image[:side, left:left + side]
     return ax.imshow(

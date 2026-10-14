@@ -27,7 +27,7 @@ from PIL import Image
 from playwright.sync_api import sync_playwright
 
 import top_game_performances as base
-from bulls.graphics.house import HEADSHOT_CACHE, ensure_headshots
+from bulls.graphics.house import PORTRAIT_CROP_FRACTION, HEADSHOT_CACHE, ensure_headshots
 
 LAKERS_TEAM_ID = 1610612747
 LAKERS_PURPLE = "#552583"
@@ -181,7 +181,7 @@ def _face(player_id: int, z: int) -> str:
     if not path.exists():
         return ""
     width, height = Image.open(path).size
-    side = min(int(height * 0.74), width)
+    side = min(int(height * PORTRAIT_CROP_FRACTION), width)
     scale = FACE / side
     left = (width - side) // 2
     return (

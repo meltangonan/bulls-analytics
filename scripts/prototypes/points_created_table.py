@@ -23,7 +23,7 @@ TOTAL_LEFT, TOTAL_RIGHT = 2225, 2475
 SUPPORT = (2680, 3010, 3340)
 INK, RED = house.BLACK, house.RED
 ASSIST = '#77716B'
-TOP_TEN_GREEN = '#218347'  # Existing dark conditional green for readable table text.
+TOP_TEN_GREEN = house.GREEN_TEXT
 QUIET, RULE = '#625D58', '#B8B0A8'
 PRIMARY_HEADSHOTS = Path('/Users/meltangonan/projects/bulls-analytics/cache/headshots')
 

@@ -35,6 +35,7 @@ from PIL import Image
 from bulls.data import fetch
 from bulls.graphics.craft import draw_table_cell
 from bulls.graphics.house import (
+    PORTRAIT_CROP_FRACTION,
     DEFAULT_THEME,
     HEAT_GREEN,
     HEAT_MID,
@@ -562,7 +563,7 @@ def _face_headshot(ax, player_id: int, row_y: float) -> None:
         )
         return
     height, width = image.shape[:2]
-    side = min(int(height * 0.74), width)
+    side = min(int(height * PORTRAIT_CROP_FRACTION), width)
     left = max(0, (width - side) // 2)
     crop = image[:side, left:left + side]
     artist = ax.imshow(

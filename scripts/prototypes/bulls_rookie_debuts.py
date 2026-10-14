@@ -29,7 +29,7 @@ _REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_REPO))
 
 from bulls.data.fetch import _NBA_HEADERS
-from bulls.graphics.house import HEADSHOT_CACHE, cut_out_flat_background
+from bulls.graphics.house import PORTRAIT_CROP_FRACTION, HEADSHOT_CACHE, cut_out_flat_background
 from scripts.prototypes import top_game_performances as base
 
 
@@ -268,7 +268,7 @@ def _face(path: Path, z: int) -> str:
     if not path.exists():
         raise FileNotFoundError(f"No portrait at {path}.")
     width, height = Image.open(path).size
-    side = min(int(height * 0.74), width)
+    side = min(int(height * PORTRAIT_CROP_FRACTION), width)
     scale = FACE / side
     left = (width - side) // 2
     return (

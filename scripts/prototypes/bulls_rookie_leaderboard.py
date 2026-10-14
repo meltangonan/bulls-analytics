@@ -33,6 +33,7 @@ from matplotlib.patches import Rectangle
 
 from bulls.graphics.craft import draw_table_cell
 from bulls.graphics.house import (
+    PORTRAIT_CROP_FRACTION,
     DEFAULT_THEME,
     draw_accent_card,
     ensure_headshots,
@@ -244,7 +245,7 @@ def _portrait(ax, player_id: int, row_y: float, rh: float) -> None:
     except (FileNotFoundError, OSError, ValueError):
         return
     h, w = image.shape[:2]
-    side = min(int(h * 0.74), w)
+    side = min(int(h * PORTRAIT_CROP_FRACTION), w)
     left = max(0, (w - side) // 2)
     artist = ax.imshow(
         image[:side, left:left + side],

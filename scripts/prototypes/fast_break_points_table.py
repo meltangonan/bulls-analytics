@@ -49,7 +49,7 @@ SEASON_GREY = "#6E6963"
 RULE = "#B8B0A8"
 # NBA.com lists the suffix; the account uses the familiar name.
 DISPLAY_NAMES = {202710: "Jimmy Butler"}
-TOP_TEN_GREEN = "#218347"
+TOP_TEN_GREEN = house.GREEN_TEXT
 NAME_SIZE = 41.5
 SEASON_SIZE = 28.5
 STAT_SIZE = 39

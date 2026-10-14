@@ -28,6 +28,7 @@ import pandas as pd
 from matplotlib.patches import FancyBboxPatch
 
 from bulls.graphics.house import (
+    PORTRAIT_CROP_FRACTION,
     DEFAULT_THEME,
     HEADSHOT_CACHE,
     ensure_headshots,
@@ -92,7 +93,7 @@ def _table_headshot(ax, image_path: Path, x: float, y: float, half: float) -> No
         )
         return
     height, width = image.shape[:2]
-    side = min(int(height * 0.74), width)
+    side = min(int(height * PORTRAIT_CROP_FRACTION), width)
     left = max(0, (width - side) // 2)
     crop = image[:side, left:left + side]
     ax.imshow(

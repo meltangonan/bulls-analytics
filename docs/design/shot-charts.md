@@ -33,7 +33,10 @@ including behind the board. Merge rim into the paint mask before tracing a paint
 classification circle does not become an extra court line. The production source's zone family owns
 restricted area, paint, mid-range, corner three, above-the-break three, and backcourt; custom angles
 only subdivide mid-range into five and above-the-break into three. Backcourt is excluded from the
-twelve half-court fills and reported as coverage.
+twelve half-court fills and reported as coverage. The baseline/mid-range divider is the ray through the
+corner break (220, 89.5); the three central mid-range sectors split the remaining span evenly, and
+the above-the-break dividers continue those rays past the arc. NBA's 36/72/108° cuts and rays through
+the paint corners measured worse.
 
 Court figures sit on text-measured cream cards, with restrained padding and a warm hairline when
 needed. Size from rendered extents, not a guessed character count. Keep each zone label's anchor
@@ -63,7 +66,8 @@ marking: mid-range rays, above-the-arc rays, and corner break. Never trace seam 
 classified grid; that creates stray contour closures and doubled borders. Filled masks can be
 smoothed before contouring. Extend sidelines through the drawn depth and close the cropped top;
 that top edge is a chart boundary, not the half-court line. Draw only as deep as the labels require,
-roughly 33.5–34 feet.
+roughly 33.5–34 feet. Trace fills from the classifier's own mask so the drawn region is the counted region;
+only seams are solved from geometry.
 
 Zone blocks omit zone names; position supplies the attribution. Use four lines in one column:
 
@@ -80,6 +84,11 @@ Sentence case applies to labels (`11.6% of FGA`, `Below`, `Above`, `Under 400 FG
 Under-floor zones are gray, with all descriptive figures retained in muted, faded tags. Zero attempts
 print only `0 FGA`; unavailable data must not become zero. The legend prints the actual qualification
 as `Under N FGA`, under a `FG% vs. NBA avg` heading in `#242424`. Use the post's floor rather than silently inheriting another post's number.
+The floors are solved from the bands: a team zone needs 400 FGA (worst-case standard error inside one
+2.5-point band) and a player zone 20 FGA (one shot moves FG% at most the 5-point neutral span). The
+player floor protects only the colour, which is why every tag prints makes and attempts. The legend
+shows the gray `Under N FGA` swatch even when no zone is gray, so the key keeps one shape across a
+carousel.
 
 `--merge-mid` pools the five mid-range regions into one zone, leaving eight. Use it only when the
 subject barely shoots there and the band would otherwise spend most of the court's type on figures
@@ -122,8 +131,9 @@ Distinguish decorative previews from data-bearing colors:
 | Season grid | One actual data-color court per season, compared with that season's league; label the season only (per-season counts belong on the season slides) |
 
 Bare courts crop to the court baseline, rather than retaining the detail chart's empty legend space.
-For a tenure grid on a portrait page, use three columns, fit scale to available rows and labels,
-center a short last row, and scale court-line weights down with the court. Gray must remain
+For a tenure grid on a portrait page, choose the column count from the number of seasons (three is
+the usual choice; Hinrich's ten used four as 4-3-3), level the rows so none is an orphan, fit scale
+to available rows and labels, and scale court-line weights down with the court. Gray must remain
 explainable by the visible attempts and qualification. Actual data-color covers and grids still
 need source, coverage, and qualification on the Canva page.
 
@@ -137,7 +147,8 @@ multiply the three-point comparison by 1.5; use plain relative FG% for this spat
 Maximum hex radius is 96% of nominal bin radius, minimum 25% of that maximum. Area grows with
 attempts and caps at the 97.5th percentile. Draw high-volume marks first and small marks above them,
 with a restrained subpixel shadow and 0.30-point white seam. Clip marks to baseline and sidelines
-without moving edge-bin centers.
+without moving edge-bin centers. The size cap comes from qualified (3+ attempt) cells only, so `--show-thin-gray`
+reveals 1–2-attempt cells without resizing the rest.
 
 Use a compact two-column key: **Volume** with small/large hexes labeled **Less/More**, and
 **FG% vs. NBA Avg** with five chips labeled **Below/Above**. Place it close below the baseline and
@@ -149,3 +160,20 @@ headshots, headline totals, and qualification copy belong in Canva, not inside t
 Concentric bands use thin tinted sub-annuli to distinguish adjoining bands; ladder charts add a
 soft stepped shadow outside each ring. Do not flatten an established many-band chart into one
 indistinct mass. Court markings over saturated bands use thin, opaque black lines.
+
+Rings and polar cells bin FG% vs. NBA into four fixed buckets (cuts at −5, 0, +5), not a ramp, so
+near-equal zones get nameable colours. Rings set type straight on the bands, shooting and volume side
+by side at one size, with the rim block under the backboard. Polar cells change sector count only at
+the arc and keep NBA's angles (three 60° sectors inside, five 36° beyond); NBA's own step at 16 feet
+has no floor line and reads as a rendering fault.
+
+Two-point bands and cells stop at the corner line (|x| = 22 feet). The corner pocket belongs to the
+three-point mark, and the ladder paints it as its own cell, because a corner three is not a long two.
+Corner-pocket figures sit inside the 3-foot strip and read up the sideline.
+
+Ladder bands are 2 feet wide to a 30-foot edge; colour needs 40 FGA for a team or the league and 15
+for a player, because 1-foot bands are mostly noise. Attempts past the last edge are excluded and
+reported, never absorbed into an open band. Ladder scales are fixed, round, and symmetric, clamped so
+the rim cannot set the range; the points-per-shot ramp turns at 1.00, never the league mean, and its
+key is a continuous bar with a heavier midpoint tick. Unrated rings and cells take a light warm gray
+that recedes but survives a pale Canva page, and an unrated ring prints no number.

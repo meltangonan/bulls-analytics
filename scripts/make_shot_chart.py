@@ -77,9 +77,6 @@ REL_CMAP = LinearSegmentedColormap.from_list("rel", [
 
 DARK_BG, DARK_TEXT, DARK_DIM, DARK_LINE = "#14110F", "#F4EFE9", "#A79E95", "#6C645C"
 
-# The account's black (DESIGN.md section 2), not the theme ink. A filled court
-# carries its markings over twelve saturated fills, so the lines have to be the
-# one neutral that reads on all of them rather than a colour chosen per theme.
 ZONE12_COURT_INK = CHART_COURT_INK
 
 
@@ -148,11 +145,6 @@ HEX_MIN_RADIUS_FRACTION = 0.25
 HEX_EDGE_WIDTH = 0.30
 HEX_SHADOW_OFFSET = 0.6
 HEX_SHADOW_ALPHA = 0.055
-# The hex chart is a Canva asset, not a full post page. Keep the complete court
-# width but trim the unused transparent space above the longest shots and below
-# the legend. Values are in the 1080 x 1350 draft-coordinate system.
-# The legend sits 20 px below the earlier near-tangent placement. Extend the
-# crop by the same amount so the bottom method label keeps its breathing room.
 HEX_CROP_BOTTOM = 325
 HEX_CROP_TOP = 1220
 HEX_LEGEND_DY = 110
@@ -166,21 +158,12 @@ def _hex_color(diff: float) -> str:
 
 
 def _hex_radius_fraction(attempts: float, cap: float) -> float:
-    """Radius fraction with a readable low-volume floor and outlier cap.
-
-    Hex area, not diameter, is what the eye reads. Since area grows with radius
-    squared, ``sqrt(attempts / cap)`` makes a cell with four times the attempts
-    occupy four times the area through the middle of the scale. The 25% floor
-    keeps qualified three- to seven-attempt cells visible; the cap prevents rim
-    outliers from shrinking everything else.
-    """
     if attempts <= 0 or cap <= 0:
         return 0.0
     return min(max((attempts / cap) ** 0.5, HEX_MIN_RADIUS_FRACTION), 1.0)
 
 
 def _hex_base_radius() -> float:
-    """Full-volume radius from the original, deliberately overlapping scale."""
     return ((sm.GRID_X[1] - sm.GRID_X[0]) / GRIDSIZE / np.sqrt(3)
             * HEX_RADIUS_SCALE)
 
@@ -265,11 +248,6 @@ def render_hex(ctx, out: Path, final: bool):
     df = table[table.displayed].copy()
 
     hex_r = _hex_base_radius()
-    # A very small number of exact rim-coordinate cells are extreme outliers.
-    # Capping at the 97.5th percentile keeps those from shrinking the entire
-    # map while allowing more of the high-volume tail to remain distinct.
-    # Keep the established-cell scale unchanged when the gray 1-2 shot cells
-    # are added; otherwise merely revealing them would resize every other mark.
     cap = float(table.size_cap_fga.iloc[0])
     court_clip = Rectangle((x0, y0), 500 * s, 1000 * s, transform=ax.transData)
     ordered = df.sort_values("exact_fga", ascending=False)
@@ -336,19 +314,6 @@ def _draw_zone_court(ax, center_x: float, center_y: float, s: float,
                      fills: dict[str, str], fill_alpha: float,
                      seam_alpha: float = 1.0,
                      lw: float = 1.2, merge_mid: bool = False):
-    """Paint one twelve-zone half court onto a supplied axes, and nothing else.
-
-    Everything the zone family draws below its type lives here: the court, the
-    twelve fills, the rim disc, the white seams and the two edges the crop needs.
-    It takes a position and a scale rather than owning the figure, which is what
-    lets one court fill a page and eleven of them tile a cover from identical
-    geometry. Returns the coordinate mapper so a caller can place its own marks.
-
-    ``lw`` scales every line together. The rim disc and the closing edges were
-    hand-set at 1.4 and 1.2 against a full-page court; expressed as ratios of
-    ``lw`` they hold their relationship when the court shrinks, instead of a
-    mini court drowning under lines sized for one four times its width.
-    """
     x0, y0 = draw_chart_court(ax, center_x, center_y, s, lw=lw)
 
     def to_px(cx, cy):
@@ -417,8 +382,6 @@ def render_blank_zones(out: Path, final: bool):
 
 def render_preview_zones(out: Path, final: bool):
     colors = ZONE12_PALETTES[ZONE12_DEFAULT_PALETTE]
-    # Fixed placement makes the teaser reproducible. These bands are purely
-    # illustrative and do not encode DeRozan's actual results.
     band_by_zone = (4, 3, 1, 0, 4, 2, 1, 0, 1, 3, 0, 3)
     fills = {
         zone: colors[band]
@@ -547,18 +510,8 @@ def _pooled(tree, made, centres, radius=SMOOTH_R):
         return np.where(att > 0, hit / att, np.nan), att
 
 
-# ---------------------------------------------------------------------------
-# rings — concentric zones, volume and efficiency both vs league
-# ---------------------------------------------------------------------------
-# Chart-only asset: transparent, no title or footer, so page framing belongs to
-# the layout tool. Type sits directly on the bands -- no cards -- with hierarchy
-# carried by size, colour and spacing instead of containers.
 OUTER = 355.0
 
-# Four buckets rather than a continuous ramp. A smooth scale rendered three of a
-# player's four zones in nearly the same green, because they genuinely sat within
-# a point of each other; binning states the size of the gap honestly and gives
-# each zone a colour a reader can name. The legend on the chart is the same four.
 ZONE_BINS = [
     (-1e9, -5.0, "#8C3227", "-5% or worse", "WORSE"),
     (-5.0, 0.0, "#B04A3C", "-5 to 0", "SLIGHTLY WORSE"),
@@ -579,9 +532,6 @@ FOCUS_ALIASES = {"rim": "RIM", "short": "SHORT MID", "short mid": "SHORT MID",
                  "lmr": "LONG MID", "3pt": "THREE", "three": "THREE"}
 
 ZONE_LABEL = {"THREE": "3PT"}
-# Two columns rather than one stack makes each block short enough to sit inside
-# its own band. The rim is the exception: its block drops to the basket, pill
-# tucked under the backboard, where there is room the 3 ft band cannot offer.
 LABEL_R = {"RIM": -28.0, "SHORT MID": 68.0, "LONG MID": 186.0, "THREE": 268.0}
 
 
@@ -620,9 +570,6 @@ def render_rings(ctx, out: Path, final: bool):
     # Trim at the sidelines and the baseline only. Capping the top as well would
     # square the outer band into a filled rectangle instead of an arc.
     clip = Rectangle((hx - 250 * s, base), 500 * s, 900 * s, transform=ax.transData)
-    # The two-point area is bounded by the corner-three lines, not by radius
-    # alone: past |x| = 220 a shot is a corner three however close to the hoop it
-    # is, so the inner bands stop there and the outer band owns the corners.
     two_pt = Rectangle((hx - 220 * s, base), 440 * s, 900 * s, transform=ax.transData)
     focus = ctx.get("focus")
     for z in sorted(zones.itertuples(), key=lambda r: -bounds[r.zone][1]):
@@ -706,12 +653,6 @@ def _ring_court(ax, hx, hy, s, clip):
 
 
 def _zone_label(ax, x, y, z):
-    """Pill, then two equally weighted figures each with its league delta.
-
-    Shooting and volume carry the same type size deliberately: sizing FG% larger
-    would rank it above how often he goes there, and the whole point of the chart
-    is that the two are read together.
-    """
     name = ZONE_LABEL.get(z.zone, z.zone)
     label = ax.text(x, y + 45, name, ha="center", va="center", fontsize=14,
                     color="#1F1D1A", zorder=10, fontproperties=helvetica("bold"))
@@ -720,8 +661,6 @@ def _zone_label(ax, x, y, z):
                  boxstyle="square,pad=0", facecolor=CREAM,
                  edgecolor="none", zorder=9))
 
-    # Shooting on the left, volume on the right. Side by side keeps the block
-    # short enough to sit inside its band, and neither figure outranks the other.
     val = dict(ha="center", va="center", fontsize=13, color=CREAM, zorder=10,
                fontproperties=helvetica("bold"))
     delta = dict(ha="center", va="center", fontsize=10.5, zorder=10,
@@ -764,18 +703,6 @@ def _scale_legend(ax):
                 fontproperties=helvetica("bold"))
 
 
-# ---------------------------------------------------------------------------
-# cells — the fine polar grid
-# ---------------------------------------------------------------------------
-# Same chart-only contract as rings: transparent, no title or footer, page
-# framing belongs to Canva. Colour is FG% vs league from the same cell, binned
-# into the family's four buckets rather than a continuous ramp. A ramp would
-# imply a precision the sample does not have -- several cells hold 20-40 shots,
-# where FG% swings on chance alone -- and it would break with the rings chart,
-# which a reader may meet in the same carousel.
-# Light enough that a wall of unrated cells recedes. Matas takes 12% of his
-# shots between 4 ft and the arc, so more than half the grid greys out; at the
-# rings chart's muted tone that emptiness read louder than the findings.
 CELL_GREY = "#D2CDC5"
 CELL_SEAM = "#F5EFE2"
 
@@ -802,8 +729,6 @@ def render_cells(ctx, out: Path, final: bool):
 
     s, hx, hy = 2.0, house.CANVAS_WIDTH / 2, 470
     base = hy + sm.BASELINE_Y * s
-    # Two clips, exactly as in rings: threes may run to the sidelines, twos stop
-    # at the corner line so the corner pocket belongs to the three-point cells.
     clip = Rectangle((hx - 250 * s, base), 500 * s, 900 * s, transform=ax.transData)
     two_pt = Rectangle((hx - 220 * s, base), 440 * s, 900 * s, transform=ax.transData)
 
@@ -874,20 +799,6 @@ def _is_corner(cell) -> bool:
 
 
 def _label_anchor(cell, hx, hy, s) -> tuple[float, float]:
-    """Where a cell's number sits, in pixels.
-
-    The angular midline at the radial midpoint lands near enough to a wedge's
-    visual centre for every cell but two. Corner threes are the exception: the
-    pocket is a strip 3 ft wide running up the sideline, so the sector's
-    geometric centroid falls off the canvas entirely. Those get a fixed anchor
-    inside the pocket instead. Angles come from the *unextended* sector span --
-    the below-hoop extension is drawn area, not where a reader looks.
-
-    Anchors carry the same basket-at-the-bottom mirror as ``_cell_angles``, and
-    for the same reason: a number printed on the opposite side from its own
-    wedge is worse than no number at all. Sector 0 is NBA Left, so it anchors on
-    the viewer's right.
-    """
     if _is_corner(cell):
         return hx + (1 if cell.sector == 0 else -1) * CORNER_X * s, hy + CORNER_Y * s
     if cell.n_sectors == 1:
@@ -899,18 +810,10 @@ def _label_anchor(cell, hx, hy, s) -> tuple[float, float]:
 
 
 def _cell_label(ax, hx, hy, cell, s):
-    """FG% at the cell's anchor, with its league delta alongside.
-
-    Corner labels are turned to read up the sideline. Horizontal type cannot fit
-    a 3 ft pocket at any size worth reading, and those two cells carry 170 of
-    his attempts -- too many to leave unlabelled or to shrink into illegibility.
-    """
     if not cell.fga or (not cell.rated and cell.fga < MIN_LABELLED_FGA):
         return
     x, y = _label_anchor(cell, hx, hy, s)
     corner = _is_corner(cell)
-    # Which sideline the pocket is drawn against, not which NBA label it carries:
-    # sector 0 is NBA Left and the mirrored court puts it on the viewer's right.
     on_viewer_right = cell.sector == 0
     rot = 0 if not corner else (-90 if on_viewer_right else 90)
     if not corner:
@@ -934,46 +837,14 @@ def _cell_label(ax, hx, hy, cell, s):
                 fontproperties=helvetica("bold"))
 
 
-# ---------------------------------------------------------------------------
-# ladder — concentric distance bands, the "Midrange Is Dead" form
-# ---------------------------------------------------------------------------
-# Distance and nothing else. Two metrics, and they are not interchangeable:
-#
-#   pps     points per shot, the absolute value of a shot from that far out
-#   fg-rel  FG% minus the league's FG% from the same ring
-#
-# PPS is the one that carries the argument, because it is the only scale on
-# which a two and a three can be compared -- and it is the reason the floor of
-# the chart sits just INSIDE the arc rather than at the top of the key.
 LADDER_CMAP = LinearSegmentedColormap.from_list("ladder", [
     "#5E1119", "#8C1D22", "#C0392B", "#E2614A", "#F0A05F", "#EFD07A",
     "#BFD16C", "#7FBF5E", "#4C9B4A", "#2E7D3A", "#1B5E2A"])
 LADDER_SEAM = "#00000022"
 LADDER_INK, LADDER_INK_DARK = "#FFFFFF", "#2A2118"
-# Light, so the run of unrated rings recedes into "nothing happens here" rather
-# than reading as a rendering fault. Those rings are a finding in their own
-# right: the Bulls take 79 shots all season from 16-21 ft, which is why the
-# band is empty at all.
-# Warm neutral rather than near-white: the asset exports transparent and may
-# land on a pale Canva page, where a lighter grey would vanish into it.
 LADDER_THIN = "#C2BAAE"
 PLAYER_LADDER_MIN_FGA = 15
 
-# Fixed, round, symmetric scales -- never fitted to the data.
-#
-# Two separate ideas, and getting either wrong misreads the chart:
-#
-# 1. CLAMPED range. The rim ring is a huge outlier at 1.51, and letting it set
-#    the range squashes every other ring into two shades of red. The reference
-#    card clamps the same way: its key stops at 1.20 while its rim reads 1.51.
-# 2. MEANINGFUL midpoint. The colour turn must sit on a number a reader can
-#    name. For points per shot that is 1.00 -- a shot worth exactly one point --
-#    which is where the reference turns from orange to green. Centring on the
-#    league mean instead (1.09) was wrong: it pushed the turn up so that 1.00
-#    rendered orange and nothing went green until about 1.15, quietly flattering
-#    every ring between the two.
-#
-# Steps are round in each metric's own units so the key reads as a ruler.
 LADDER_SCALES = {
     "pps": {"lo": 0.80, "hi": 1.20, "step": 0.05},
     "pps-rel": {"lo": -0.20, "hi": 0.20, "step": 0.05},
@@ -1020,8 +891,6 @@ LADDER_METRICS = {
                 "tick_fmt": lambda v: _signed2(v)},
 }
 
-# 30 rings share ~580 px of column, so the type has to clear its own line
-# height with room left over or the stack reads as a solid block.
 LADDER_LABEL_PT = 7.5
 # Slightly INSIDE each ring's midpoint. Matplotlib centres a text *box*, not the
 # digits inside it, and that box carries descender space no digit uses -- so a
@@ -1052,9 +921,6 @@ def render_ladder(ctx, out: Path, final: bool):
     rings = sm.distance_ladder(ctx["player"], ctx["league"], step=step,
                                min_fga=min_fga)
     col = metric["column"]
-    # Coverage is told the ladder's REAL outer edge, not the nominal maximum:
-    # at 2 ft wide the last band stops at 30, so 30-31 ft becomes excluded and
-    # the "% shown" line has to say so.
     cover = sm.ladder_coverage(ctx["player"], max_ft=float(edges[-1]))
     corner = sm.corner_split(ctx["player"], ctx["league"], min_fga=min_fga)
     for r in rings.itertuples():
@@ -1098,8 +964,6 @@ def render_ladder(ctx, out: Path, final: bool):
     s, hx, hy = 2.0, house.CANVAS_WIDTH / 2, 470
     base = hy + sm.BASELINE_Y * s
     clip = Rectangle((hx - 250 * s, base), 500 * s, 1000 * s, transform=ax.transData)
-    # Two-point rings stop at the corner line; the pocket beyond it is drawn
-    # separately with its own value, because a corner three is not a long two.
     cx = sm.CORNER_LINE_X
     inner_clip = Rectangle((hx - cx * s, base), 2 * cx * s, 1000 * s,
                            transform=ax.transData)
@@ -1115,10 +979,6 @@ def render_ladder(ctx, out: Path, final: bool):
     for r in rings.itertuples():
         _ladder_label(ax, hx, hy, s, r, col, metric, norm)
     _ladder_legend(ax, norm, metric, ticks)
-    # Required by the working guide: the coverage window stays on the graphic.
-    # The grey key is not optional either -- on a team season a third of the
-    # ladder can grey out, and unexplained grey reads as "average" rather than
-    # "unknown", which is the opposite of what it means.
     _fit_note(ax, 112,
               f"INSIDE {sm.LADDER_TWO_MAX_FT:.0f} FT COUNTS 2-POINTERS  ·  "
               f"OUTSIDE COUNTS 3-POINTERS  ·  CORNER POCKET SHOWN SEPARATELY")
@@ -1181,14 +1041,6 @@ SHADOW_PX, SHADOW_ALPHA, SHADOW_STEPS = 7.0, 0.20, 7
 
 
 def _corner_pocket(ax, hx, hy, s, base, corner, col, norm, metric):
-    """The corner-three pocket, painted with its own value and labelled.
-
-    Drawn as a disc out to the split radius, clipped to the strip beyond each
-    corner line -- so it fills exactly the ground the two-point rings vacated,
-    with no seam and no overlap. The label reads up the sideline for the same
-    reason the ``cells`` chart's does: the pocket is 3 ft wide and horizontal
-    type cannot fit at any size worth reading.
-    """
     value = corner.get(col)
     drawable = corner["rated"] and value is not None and not np.isnan(value)
     color = LADDER_CMAP(norm(value)) if drawable else LADDER_THIN
@@ -1214,15 +1066,6 @@ def _corner_pocket(ax, hx, hy, s, base, corner, col, norm, metric):
 
 
 def _corner_centroid() -> tuple[float, float]:
-    """Area centroid of the corner pocket, in NBA units from the hoop.
-
-    The pocket is not a rectangle, so no fixed offset can sit in the middle of
-    it. Its outer edge is the split-radius circle, which means it is tallest
-    against the corner line and tapers to nothing where that circle crosses the
-    sideline -- so its true centre sits low and inward of where eyeballing puts
-    it. Computed rather than tuned, so it follows if the split radius or the
-    corner line ever moves.
-    """
     r = sm.LADDER_TWO_MAX_FT * 10.0
     xs = np.linspace(sm.CORNER_LINE_X, min(250.0, r), 512)
     tops = np.sqrt(np.maximum(r ** 2 - xs ** 2, 0.0))
@@ -1269,18 +1112,9 @@ def _ladder_ring(ax, centre, ring, s, color, clip, shadow: bool):
 
 
 def _ladder_label(ax, hx, hy, s, ring, col, metric, norm):
-    """One number per ring, stacked up the middle of the court.
-
-    Ink flips with the ring beneath it. The ramp runs from near-black reds to
-    pale yellow-greens, so a single ink colour is unreadable somewhere on the
-    scale whichever one is chosen; luminance decides it per ring instead.
-    """
     if not ring.fga:
         return
     value = getattr(ring, col)
-    # An unrated ring is left blank. The grey band already says "nothing
-    # happens here"; printing its attempt count invited the number to be read
-    # on the same scale as the rated rings, which it is not.
     if not ring.rated or np.isnan(value):
         return
     y = hy + (ring.lo + ring.hi) / 2 * 10 * s + LABEL_NUDGE_PX
@@ -1343,13 +1177,6 @@ def _ladder_court(ax, hx, hy, s, clip):
 
 
 def _ladder_legend(ax, norm, metric, ticks):
-    """A continuous bar, because the encoding is continuous.
-
-    The binned legend the zone charts use would misdescribe this one: here every
-    ring gets its own value off a ramp, and rounding that into four buckets on
-    the key while the art shows a gradient is the kind of mismatch a reader
-    notices without being able to name.
-    """
     w, h, y = 760.0, 22.0, 176.0
     x0 = (house.CANVAS_WIDTH - w) / 2
     grad = np.linspace(0, 1, 512).reshape(1, -1)
@@ -1362,8 +1189,6 @@ def _ladder_legend(ax, norm, metric, ticks):
     mid = (lo + hi) / 2
     for tick in ticks:
         tx = x0 + (tick - lo) / (hi - lo) * w
-        # The midpoint tick is the one that carries meaning -- it is where the
-        # ramp turns -- so it is drawn heavier than the rest of the ruler.
         turn = abs(tick - mid) < scale_eps(hi - lo)
         ax.plot([tx, tx], [y - (3 if turn else 0), y + h + (3 if turn else 0)],
                 color="#FFFFFF" if not turn else "#3A342C",
@@ -1400,39 +1225,14 @@ def _footer(ax, theme, ctx):
             fontsize=9, color=theme.faint, fontproperties=helvetica())
 
 
-# ---------------------------------------------------------------------------
-# zones — the twelve named regions, volume and accuracy both vs league
-# ---------------------------------------------------------------------------
-# The rings chart's two questions asked of twelve regions instead of four, in the
-# hex chart's colours so the two posts read as one system. Fill answers "does he
-# score better here than the league"; the printed pair answers that and "does he
-# come here more often", weighted equally.
-#
-# The zone chart keeps the hex chart's five-band grammar but uses tighter outer
-# cuts. A five-point gap inside one named region is already material: about 10
-# points per 100 attempts for a two and 15 for a three. The hex chart stays at
-# +/-7.5 because its smoothed local cells are a different, noisier mark.
 ZONE12_CUTS = (-0.05, -0.025, 0.025, 0.05)
 ZONE12_GREY = "#D8D2CA"
 ZONE12_SEAM = "#FAF8F5"
 ZONE12_BULLS_RED = house.RED
 ZONE12_BULLS_RED_LIGHT = "#E67C96"
-# Every figure sits on a cream pill, so there is one ink and one green-red pair
-# rather than one per fill. That is the real win of the pill: an earlier draft
-# recoloured type per zone to survive the band underneath it, and the same
-# figure changing colour from zone to zone read as though the colour meant
-# something. Here colour means direction, and nothing else.
 ZONE12_UP_ON_LIGHT, ZONE12_DOWN_ON_LIGHT = "#12693A", "#93150B"
 ZONE12_NEUTRAL_GAP = "#6E6963"
 
-# Two fill palettes, using the zone chart's five bands and cuts.
-#
-#   hex     blue -> yellow -> red, inherited from the hex carousel. Red is the
-#           high end because red is the Bulls' colour, so "more red" reads as
-#           "more Bulls", and nothing on the scale claims good or bad.
-#   rdylgn  red -> yellow -> green. Instantly legible, because green-is-good
-#           needs no legend at all -- at the cost of passing judgement in the
-#           colour, and of clashing with a Bulls-red page.
 ZONE12_PALETTES = {
     "hex": HEX_COLORS,
     "rdylgn": ("#A8322A", "#DC7B62", "#F1CC5B", "#8CBF63", "#357C41"),
@@ -1454,18 +1254,8 @@ def _zone12_band_color(rel: float, palette: str) -> str:
     return colors[4]
 ZONE12_TRACE_STEP = 1.0
 ZONE12_TRACE_BLUR = 0.8
-# How deep the court is drawn: 33.5 ft from the hoop, a few feet past the
-# deepest shots anyone takes on purpose. Drawing the whole half court to the
-# centre line was tried and pulled back -- it is honest, and it spent the top
-# third of the image on empty floor no shot ever reaches. This is the compromise
-# the pills actually need: enough room above the arc for a label with air around
-# it, and no more. Nothing is rescaled to make it fit; the court stays true.
 ZONE12_TOP = 335.0
 
-# Short names, kept for the printed table and the data exports. They are no
-# longer drawn: a court is a diagram a reader already knows, so "TOP OF KEY" over
-# the top of the key spends a line of type restating the picture. Dropping them
-# is what let every block shrink to two lines.
 ZONE12_SHORT = {
     "Restricted Area": "RIM",
     "In The Paint (Non-RA)": "PAINT",
@@ -1482,27 +1272,9 @@ ZONE12_SHORT = {
     "Mid-Range": "MID-RANGE",
 }
 
-# Where each zone's block sits, in court coordinates with the hoop at the origin
-# and y running away from the baseline. EVERY block now sits inside the zone it
-# reports. It used to be that three did not -- the rim and the two corner strips
-# dropped below the baseline -- and that was only legible because each block was
-# captioned with its zone name. Removing the names removed the attribution, so a
-# figure parked off-court became a figure belonging to nothing. Position is now
-# the only thing saying which zone a number describes, which means position has
-# to be right.
 ZONE12_ANCHORS = {
-    # Dead centre of the restricted area. The pill fits inside the 8 ft disc
-    # only because its corners are rounded, which pulls its farthest point in
-    # well short of the rectangle's diagonal; _zone12_rim_fit checks that on
-    # every render and shrinks the type if a longer figure would burst it.
     "Restricted Area":       (0, 0),
     "In The Paint (Non-RA)": (0, 80),
-    # Twelve pills on one court is a packing problem, not a placement one, and
-    # the binding constraints are the arc and the paint rather than the zone
-    # centres. A pill centred in the mid-range wing overhangs the arc, because
-    # the zone narrows toward the top while the pill does not; these sit low and
-    # inboard of centre so all four corners stay inside their own region.
-    # Change one and check its neighbours, the arc, and the paint.
     "Left Corner 3":         (-235, 46),
     "Right Corner 3":        (235, 46),
     "Left Baseline":         (-140, -8),
@@ -1510,16 +1282,9 @@ ZONE12_ANCHORS = {
     "Left Mid-Range":        (-133, 120),
     "Right Mid-Range":       (133, 120),
     "Center Mid-Range":      (0, 196),
-    # Clear of the arc by about 2 ft at the pill's INNER bottom corner, which is
-    # the point that reaches the line first -- measuring from the pill's centre
-    # put the corner on the arc while the centre looked fine.
     "Left Wing 3":           (-169, 245),
     "Right Wing 3":          (169, 245),
     "Top of Key 3":          (0, 285),
-    # The merged mid-range is a horseshoe around the paint, and a horseshoe has
-    # no centre to sit in. This reuses the centre-mid position: above the paint,
-    # inside the arc, and the one part of the band wide enough for a pill that
-    # is not already crowded by a corner or wing card.
     "Mid-Range":             (0, 196),
 }
 
@@ -1535,15 +1300,6 @@ def _zone12_grid():
 
 
 def _zone12_fill(ax, gx_px, gy_px, mask, color, zorder):
-    """Fill one zone by tracing its mask.
-
-    The regions are intersections of discs, rays, half-planes and the arc, and
-    assembling twelve exact paths by hand is where a chart starts counting one
-    set of regions while drawing another. Tracing the classifier itself makes
-    that impossible by construction: the drawn boundary IS the counted boundary.
-    The cost is a softened edge -- at this grid step and blur the traced line
-    stays within about an inch of true, well under a pixel at export size.
-    """
     from scipy.ndimage import gaussian_filter
 
     field = mask.astype(float)
@@ -1555,11 +1311,6 @@ def _zone12_fill(ax, gx_px, gy_px, mask, color, zorder):
                          zorder=zorder, antialiased=True)
 
 
-# --- zonegrid: one tenure, one page ----------------------------------------
-# Ten courts, two to a row. Two columns is a HEIGHT-bound layout, which is the
-# opposite of what the column count suggests: the court is 1.29 times wider than
-# deep, so five of them stacked is the tall arrangement, and five rows plus their
-# labels have to fit 1350 px down long before two courts trouble 1080 px across.
 ZONEGRID_COLS = 4
 ZONEGRID_MARGIN = 24.0
 ZONEGRID_BOTTOM_MIN = 40.0
@@ -1579,22 +1330,6 @@ ZONEGRID_CENTRE_OFFSET = (280.0 - sm.BASELINE_Y) / 2.0
 
 
 def zonegrid_scale(plan: list[int]) -> float:
-    """The largest courts a given arrangement can carry on one page.
-
-    Scale is derived, not chosen, because which constraint binds CHANGES with the
-    arrangement and getting it backwards is silent. A court is 1.29 times wider
-    than deep, so a wide arrangement runs out of page width while a tall one runs
-    out of height, and the same hand-solved constant cannot serve both:
-
-        4-3-3      width binds    courts 248 px, a band 727 units tall
-        3-3-3-1    width binds    courts 335 px, filling 1246 units
-        five 2s    height binds   courts 259 px in a 533-wide column
-
-    Both limits are computed and the smaller wins, so re-arranging the grid is a
-    change to the plan alone. `tests/test_hinrich_bulls_zone_charts.py` checks
-    that the loser is genuinely slack, which is what catches a solver that has
-    quietly stopped binding on anything.
-    """
     widest, rows = max(plan), len(plan)
     by_width = ((house.CANVAS_WIDTH - 2 * ZONEGRID_MARGIN
                  - (widest - 1) * ZONEGRID_COL_GAP)
@@ -1627,22 +1362,6 @@ def zonegrid_row_plan(count: int, cols: int = ZONEGRID_COLS) -> list[int]:
 
 
 def render_zonegrid(ctx, out: Path, final: bool):
-    """Every season of a tenure as one page of bare, comparable courts.
-
-    The season charts answer "how did he shoot in 2006-07". This answers a
-    question none of them can: what changed. Stripping the overlays is what
-    makes that possible -- ten courts carrying twelve figures each is 120
-    numbers, which is a table pretending to be a picture. The attempt count went
-    with the pills for the same reason: it is a per-court figure, the grid is
-    for reading colour across courts, and the seasons on it are already filtered
-    to a comparable volume, so the count had nothing left to qualify. With only
-    the fills left, the reader tracks one region down the page and sees its
-    colour move.
-
-    Each court is rated against its OWN season's league, so a zone going from
-    yellow to green means he improved relative to the players he was actually
-    playing against, not relative to a league average borrowed from another era.
-    """
     by_season = ctx["by_season"]
     palette = ctx.get("palette") or ZONE12_DEFAULT_PALETTE
     min_fga = int(ctx.get("min_fga") or sm.MIN_ZONE12_FGA_PLAYER)
@@ -1674,10 +1393,6 @@ def render_zonegrid(ctx, out: Path, final: bool):
 
     i = 0
     for row, in_row in enumerate(plan):
-        # A row narrower than the widest either centres under it or hangs from
-        # its left edge. Centring reads as a deliberate tapering block; left
-        # alignment keeps the columns lined up, so a lone court reads as the next
-        # one in sequence rather than as a caption under the row above.
         span = ((in_row - 1) * col_pitch if align == "center" else widest_span)
         baseline_y = ZONEGRID_TOP - row * cell_h - court_h
         for col in range(in_row):
@@ -1713,13 +1428,6 @@ def render_zonegrid(ctx, out: Path, final: bool):
 
 
 def _zone12_fills(zones, palette: str) -> dict[str, str]:
-    """Zone -> fill colour, greying every zone too thin to make a claim.
-
-    The floor does not decide whether a zone is drawn, only whether it earns an
-    efficiency colour. A zone the sample cannot stand behind is still part of the
-    court and still gets painted -- in neutral grey, which says "no claim" rather
-    than the false "league average" a mid-band colour would say.
-    """
     return {
         z.zone: (_zone12_band_color(z.fg_rel / 100, palette)
                  if z.rated else ZONE12_GREY)
@@ -1735,8 +1443,6 @@ def render_zones(ctx, out: Path, final: bool):
     show_details = bool(ctx.get("show_details", True))
     style = str(ctx.get("style") or ZONE12_DEFAULT_STYLE)
     look = ZONE12_STYLES[style]
-    # The floor still applies. It no longer decides whether a zone is drawn at
-    # all -- it decides whether the zone earns an efficiency colour.
     merge_mid = bool(ctx.get("merge_mid"))
     zones = sm.zone12_split(ctx["player"], ctx["league"], min_fga=min_fga,
                             merge_mid=merge_mid)
@@ -1757,8 +1463,6 @@ def render_zones(ctx, out: Path, final: bool):
     for sp in ax.spines.values():
         sp.set_visible(False)
 
-    # Colour is the claim, so only a rated zone earns it. A thin zone stays
-    # fully legible through its four-line pill but uses neutral grey ground.
     fills = _zone12_fills(zones, palette)
     to_px = _draw_zone_court(ax, house.CANVAS_WIDTH / 2, ZONE12_COURT_Y,
                              ZONE12_SCALE, fills, 1.0,
@@ -1834,11 +1538,6 @@ ZONE12_SCALE = 1.84
 ZONE12_COURT_Y = 771
 ZONE12_CROP_BOTTOM = 205
 ZONE12_CROP_TOP = 1180
-# A chart with its pills, legend and summary cards suppressed stops using the
-# space they occupied, and the crop has to follow or the asset ships with a
-# quarter of its height empty. The floor of a detail chart is its legend; the
-# floor of a bare one is the baseline of the court itself, plus a hairline so
-# the boundary is not the outermost pixel.
 ZONE12_BARE_CROP_BOTTOM = 450
 
 
@@ -1847,20 +1546,6 @@ ZONE12_SEAM_WIDTH = 1.2
 
 def _zone12_seam_segments(include_mid_cuts: bool = True
                           ) -> list[tuple[tuple[float, float], tuple[float, float]]]:
-    """Every zone divider that the court's own black lines do not already draw.
-
-    Solved from geometry rather than traced from the classified grid. Tracing
-    ran each zone's mask through a blur and a contour, which is fine for a fill
-    and wrong for a line: the blur pulled boundaries off true by a pixel or two,
-    left white stubs hanging in the middle of a zone where a contour closed on
-    itself, and drew a second faint edge alongside every black court line it ran
-    beside. Every divider here is a straight segment with exact endpoints.
-
-    Most boundaries need nothing. The arc, the corner lines, the paint edges and
-    the free-throw line are all painted on a real court and already drawn in
-    black, so a white seam beside them is a duplicate. What is left is the set of
-    rays the floor does not paint, plus the corner break.
-    """
     segments = []
 
     for degrees in (sm.MID_SECTOR_CUTS if include_mid_cuts else ()):
@@ -1896,10 +1581,6 @@ def _zone12_seams(ax, to_px, color=ZONE12_SEAM, lw: float | None = None,
                 zorder=3, solid_capstyle="butt")
 
 
-# Rings-chart typography, unchanged: figure at 13, its gap to league average at
-# 10.5 underneath. Both figures take the same size there and here, because sizing
-# one larger would rank it above the other and the pair is meant to be read
-# together.
 ZONE12_FIGURE_SIZE = 8.0
 ZONE12_DELTA_SIZE = 6.5
 ZONE12_LARGE_FIGURE_SIZE = 10.0
@@ -1917,18 +1598,7 @@ ZONE12_PILL_PAD_X = 7.0
 ZONE12_PILL_PAD_Y = 5.0
 ZONE12_PILL_INK = "#1F1D1A"
 ZONE12_PILL_ROUND = 10.0
-# A pill on a zone the chart cannot rate keeps every figure but loses its
-# weight: muted type on a faded card. The reader still gets the numbers and the
-# comparison, and the pill still says at a glance that this one is not evidence
-# the way its neighbours are.
 ZONE12_THIN_PILL_ALPHA = 0.72
-# Two looks for the same chart. "tagged" is the house style from LaVine
-# (2026-09-22) on: printed-label zone tags on the page colour with a hairline
-# rule, "vs NBA" instead of the ambiguous "vs LA", a black legend heading, flat
-# Bulls-red summary pills, and the summary lifted toward the legend; since
-# 2026-10-10 every pill and card is square, the house corner. "classic"
-# is how every post through Hinrich was published; pass "style": "classic" to
-# reproduce one of those exactly. Presentation only -- never a figure or colour.
 ZONE12_STYLES = {
     "classic": {
         "pill_face": CREAM, "pill_edge": "none", "pill_lw": 0.0,
@@ -1944,10 +1614,6 @@ ZONE12_STYLES = {
 ZONE12_DEFAULT_STYLE = "tagged"
 ZONE12_THIN_INK = "#6B6660"
 
-# A shooting gap only earns a colour when it clears the fill scale's own +/-2.5
-# point neutral band. If the zone is painted "about average", its gap is grey
-# too, and colour never contradicts colour. The league shot share is a neutral
-# reference value is converted to the same signed comparison grammar as FG%.
 ZONE12_FG_NEUTRAL_POINTS = 2.5
 
 
@@ -2007,13 +1673,6 @@ def _signed(value: float, decimals: int) -> str:
 
 
 def _zone12_delta_ink(value, meaningful: bool = True) -> str:
-    """Green above, red below, grey when the gap is inside its own noise.
-
-    A gap of +0.2 points printed in green claims a direction the number cannot
-    support, and the reader has no way to know which greens to believe. Grey is
-    the chart declining to make the claim, and it is the most common colour on a
-    league-average team, which is itself the finding.
-    """
     if not meaningful:
         return ZONE12_NEUTRAL_GAP
     return ZONE12_UP_ON_LIGHT if value >= 0 else ZONE12_DOWN_ON_LIGHT
@@ -2021,21 +1680,6 @@ def _zone12_delta_ink(value, meaningful: bool = True) -> str:
 
 def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full",
                   style: str = ZONE12_DEFAULT_STYLE):
-    """One cream pill of figures, floating over the zone it describes.
-
-    A pill rather than type straight on the fill, for two reasons that both came
-    out of the draft before this one. Type on the fill had to be recoloured per
-    zone -- cream on dark bands, ink on pale ones -- and the same figure changing
-    colour zone to zone read as if the colour meant something. And an opaque card
-    can overhang a 3 ft corner strip and still be attributed to it, because it is
-    centred on it.
-
-    Every zone gets the same pill. A zone below the colour floor keeps all four
-    figures and loses its weight instead: muted type on a faded card. The grey
-    fill is what says the shooting percentage here is not evidence -- worth
-    knowing, since a 40-attempt zone carries roughly +/-15 points of swing on its
-    own, and the pill does not restate that.
-    """
     px, py = to_px(*ZONE12_ANCHORS[z.zone])
     if not z.fga:
         # Zero attempts shares the grey ground but has its own explicit pill,
@@ -2050,10 +1694,6 @@ def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full",
     ink = ZONE12_PILL_INK if z.rated else ZONE12_THIN_INK
     alpha = 1.0 if z.rated else ZONE12_THIN_PILL_ALPHA
 
-    # Measure before drawing so each card fits its own longest line. Type never
-    # scales by zone: the rim card may cross the restricted-area boundary a
-    # little, just as the corner cards overhang their narrow strips. Readability
-    # is more important than trapping the whole card inside the region.
     strings = [t for row in rows for t in row[:2]]
     figure_size = ZONE12_LARGE_FIGURE_SIZE if large else ZONE12_FIGURE_SIZE
     delta_size = ZONE12_LARGE_DELTA_SIZE if large else ZONE12_DELTA_SIZE
@@ -2071,14 +1711,6 @@ def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full",
         facecolor=look["pill_face"], edgecolor=look["pill_edge"],
         linewidth=look["pill_lw"], alpha=alpha, zorder=10))
 
-    # One column, not the rings chart's two. Side by side, a pill runs about
-    # 330 px wide: the three above-the-arc zones alone would need 990 px of an
-    # 860 px court, and a corner pill would hang off the canvas. Stacked it is
-    # half that, every pill fits its own region, and it matches the reference
-    # cards this chart is modelled on.
-    # The larger top figure has more visible height than the smaller bottom
-    # comparison line. A slight downward optical correction balances the cream
-    # above line one with the cream below line four.
     top = py + span / 2 - (1.5 if large else 0.0)
     for fig_text, reference, directional, value in rows:
         ax.text(px, top, fig_text, fontsize=figure_size, zorder=11,
@@ -2121,12 +1753,6 @@ def _zone12_widest(
     ax, strings, figure_size: float = ZONE12_FIGURE_SIZE,
     delta_size: float = ZONE12_DELTA_SIZE,
 ) -> float:
-    """Width of the longest of these strings, at the size each is drawn.
-
-    Measured off the renderer rather than estimated from character counts: a
-    pill sized by guesswork is either padded unevenly or clipping its own type,
-    and the strings vary from "LA: 1.0%" to "11/32 FG (34.4%)".
-    """
     probes = []
     for index, text in enumerate(strings):
         size = figure_size if index % 2 == 0 else delta_size
@@ -2139,42 +1765,11 @@ def _zone12_widest(
 
 
 def _zone12_thin_key(min_fga: int) -> str:
-    """What the grey swatch means, as a number rather than as a verdict.
-
-    "TOO FEW TO RATE" states a conclusion and hides the rule behind it; the
-    reader has to take the chart's word for what counts as too few. The
-    threshold is checkable against the figures in the grey pills themselves,
-    which is the whole point of printing their attempt counts.
-
-    It is set in the same muted grey as Below and Above, deliberately not in the
-    accent red. The threshold is a footnote, and red on this chart already means
-    "below league average" -- a red figure in the key would read as the bad end
-    of the scale rather than as a caveat.
-    """
     return f"Under {min_fga} FGA"
 
 
 def _zone12_legend(ax, theme, palette: str, min_fga: int,
                    show_thin: bool = True, style: str = ZONE12_DEFAULT_STYLE):
-    """One row: the colour scale, then the grey that sits outside it.
-
-    Grey is a sixth state of the same encoding rather than a separate idea, so
-    it reads as the tail of the scale instead of its own keyed block with its
-    own heading. It prints on every chart whether or not a zone is currently
-    grey -- this is a carousel, and a key that changes shape from slide to slide
-    costs more than one redundant swatch. Its threshold does change between the
-    team slide and the player slides, at 400 and 20, and that is correct rather
-    than sloppy: the two are different subjects with different samples, and the
-    floor is solved from each.
-
-    What is NOT here: the lines explaining "vs LA" and the neutral grey gaps.
-    Those belong on the page rather than on the asset, and they print in the
-    Canva copy block instead, where they can be set once in the caption style.
-
-    Laid out from measured text widths so the whole row centres on the canvas.
-    The heading centres over the colour swatches alone, because those are what
-    it names.
-    """
     y = ZONE12_LEGEND_Y
     colors = ZONE12_PALETTES[palette]
     swatch, gap, pad, group = 28, 4, 12, 34
@@ -2260,9 +1855,6 @@ def _zone12_summary_cards(ax, player, _league, theme, ppg=None, gp=None,
     ]
     if ppg is not None:
         cards.insert(0, f"{float(ppg):.1f} PPG")
-    # Games played says how much of a season the chart is. A 24-game season and
-    # an 82-game one otherwise look alike. Plain GP, never "of 82": a traded or
-    # shortened season makes any denominator a claim about missed games.
     if gp is not None:
         cards.insert(0, f"{int(gp)} GP")
     # Five cards at the four-card width run to 1,138 px on a 1,080 canvas, so
@@ -2335,10 +1927,6 @@ def _output_path(args, slug: str) -> Path:
     if args.chart == "ladder" and args.band != sm.LADDER_STEP_FT:
         parts.append(f"{args.band:g}ft")
     parts.append(slug)
-    # The season belongs in the name for the same reason the date does. Eleven
-    # seasons of one player rendered into one folder produced eleven files called
-    # `...-zones-kirk-hinrich.png`, each overwriting the last, and the only sign
-    # anything was wrong was a carousel with one slide in it.
     if season := getattr(args, "season", ""):
         parts.append(season)
     folder = ROOT / "output"

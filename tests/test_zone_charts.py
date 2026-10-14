@@ -34,11 +34,6 @@ def _shots(rows) -> pd.DataFrame:
 
 
 def test_every_point_on_the_drawn_court_belongs_to_exactly_one_zone():
-    """No gaps and no overlaps, or a fill would leave bare court or paint twice.
-
-    The fills are traced from this same classification, so an unclassified point
-    is a hole in the chart rather than a rounding detail.
-    """
     xs = np.arange(-249.0, 250.0, 3.0)
     ys = np.arange(-47.0, 310.0, 3.0)
     gx, gy = np.meshgrid(xs, ys)
@@ -55,7 +50,7 @@ def test_every_point_on_the_drawn_court_belongs_to_exactly_one_zone():
     (0, sm.FT_Y + 0.5, "Center Mid-Range"),
     (-230, 0, "Left Corner 3"),
     (230, 0, "Right Corner 3"),
-    (-210, 0, "Left Baseline"),           # inside the corner line is still a two
+    (-210, 0, "Left Baseline"),
     (0, 240, "Top of Key 3"),
 ])
 def test_named_landmarks_land_in_the_zone_a_fan_would_name(x, y, expected):
@@ -327,12 +322,6 @@ def test_a_thin_pill_is_set_apart_from_a_rated_one():
 
 
 def test_a_shooting_gap_inside_the_average_band_is_grey_not_green():
-    """+0.2 points is not a direction, and printing it in green claims one.
-
-    The threshold is the fill scale's own neutral band, so a zone painted "about
-    average" never carries a coloured gap underneath it. Colour cannot
-    contradict colour.
-    """
     import scripts.make_shot_chart as shot_chart
 
     assert shot_chart._zone12_delta_ink(0.2, False) == shot_chart.ZONE12_NEUTRAL_GAP
@@ -343,11 +332,6 @@ def test_a_shooting_gap_inside_the_average_band_is_grey_not_green():
 
 
 def test_a_zone_with_no_attempts_says_so():
-    """Grey now means one thing only — he never shot here — so it can say it.
-
-    A silent gap left the reader to work out whether the zone was unmeasured or
-    simply unused; "0 FGA" settles it in three characters.
-    """
     empty = sm.zone12_split(_shots([(0, 0, 1)] * 60),
                             _shots([(0, 0, 1), (0, 240, 0)] * 60))
     _, texts, _, pills = _rendered("Top of Key 3", empty)
@@ -458,9 +442,6 @@ def test_the_rim_uses_the_same_type_scale_as_every_other_zone():
 
 
 def test_gap_colour_carries_direction_and_nothing_else():
-    """One ink and one green-red-grey set, because every pill is cream. An
-    earlier draft recoloured type per fill, and the same figure changing colour
-    zone to zone read as though the colour meant something it did not."""
     import scripts.make_shot_chart as shot_chart
 
     assert shot_chart._zone12_delta_ink(4.0, True) == shot_chart.ZONE12_UP_ON_LIGHT
@@ -480,11 +461,6 @@ def test_every_zone_has_an_anchor_and_a_short_label():
 
 
 def test_a_gap_that_rounds_to_zero_carries_no_sign():
-    """"-0%" claims a direction the printed number contradicts.
-
-    The sign has to follow the value the reader can see, so it is decided after
-    rounding rather than before. A gap of -0.4 prints as "0%", not "-0%".
-    """
     import scripts.make_shot_chart as shot_chart
 
     assert shot_chart._signed(-0.4, 0) == "0"
@@ -513,12 +489,6 @@ def test_the_rendered_gaps_use_the_same_signs():
 
 
 def test_the_legend_is_one_row_of_swatches_and_no_prose():
-    """The scale, plus the grey that sits outside it, and nothing else.
-
-    Asserted on what the legend actually draws rather than on its source text —
-    an earlier version of this test searched the source for a literal string,
-    and went on passing after the string moved into a constant.
-    """
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -709,11 +679,6 @@ def test_solid_cover_variants_use_canonical_reusable_red_tokens(tmp_path):
 
 
 def test_the_above_the_break_dividers_are_the_mid_range_rays_continued():
-    """One unbroken ray from the paint to the top of the chart.
-
-    Written out twice as literals they drift apart, and the kink lands exactly
-    where the line crosses the most recognisable arc on the floor.
-    """
     assert sm.ATB_CUTS == sm.MID_SECTOR_CUTS[1:3]
 
     just_inside = sm.zone_of(np.array([0.0]), np.array([sm.ARC_R - 6]))[0]
@@ -861,12 +826,6 @@ def test_overall_cards_put_supplied_ppg_immediately_before_fga():
 
 
 def test_the_filled_zone_court_has_a_closed_horizontal_top_edge():
-    """The cropped court is closed across the top, or the fills read as a bleed.
-
-    Driven through the real drawing function rather than an isolated helper. The
-    edge used to be its own one-line function, which made this test pass while
-    proving only that the helper worked -- not that anything called it.
-    """
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt

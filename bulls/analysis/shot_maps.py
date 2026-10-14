@@ -51,15 +51,6 @@ SHORT_MID_MAX_FT = 13.0
 ZONE_ORDER = ("RIM", "SHORT MID", "LONG MID", "THREE")
 
 
-# --- Polar cell grid, the fine spatial partition ---------------------------
-# Distance bands every 4 ft, each cut into angular sectors from the hoop. The
-# sector count changes at the three-point line and nowhere else, which is the
-# whole reason this grid is drawable. NBA's own SHOT_ZONE_AREA steps from three
-# sectors to five at 16 ft, and DEVELOPMENT.md records that drawing that real
-# geometry reads as a rendering fault, because the floor has no line at 16 ft
-# for the step to sit on. Moving the step to the arc keeps NBA's angular cuts --
-# 60/120 inside, 36/72/108/144 outside -- while putting the change where the
-# court already has a painted line to justify it.
 POLAR_BANDS = (0.0, 4.0, 8.0, 12.0, 16.0, 23.75)
 INNER_SECTORS = 3          # 60 degrees each, matching NBA's 8-16 ft scheme
 THREE_SECTORS = 5          # 36 degrees each, matching NBA's beyond-16 ft scheme
@@ -166,33 +157,7 @@ def polar_split(player: pd.DataFrame, league: pd.DataFrame,
     return pd.DataFrame(rows)
 
 
-# --- Distance ladder, the "Midrange Is Dead" partition ---------------------
-# Concentric distance bands and nothing else -- no angle, no zone taxonomy. The
-# point of this one is that shot value is very nearly a pure function of
-# distance, and the discontinuity at the arc is the only place that breaks.
-# Reading it outward, points per shot falls from ~1.5 at the rim to its floor
-# just INSIDE the three-point line, then jumps a third of a point the moment a
-# shot crosses it. That cliff is the whole argument, and only a fine, uniform
-# ladder shows it; a four-zone chart averages straight across it.
-# 2 ft bands, not 1 ft. Two independent reasons point the same way.
-#
-# Statistically, 1 ft oversamples: across the league's own ladder, 21 of 29
-# neighbouring 1 ft bands are statistically indistinguishable from each other,
-# so most of that resolution is rendering noise as detail. Pooling pairs turns
-# the league's mid-range from a jittery walk into a clean monotonic decline.
-#
-# Physically, a foot is finer than the thing being measured. A shooter and his
-# defender occupy roughly two feet of floor, so a 14 ft shot and a 15 ft shot
-# are not different basketball situations -- they are the same shot measured
-# twice. Bands should be no finer than the resolution at which the phenomenon
-# actually varies.
-#
-# It also halves the number of bands too thin to rate on a single team season,
-# from 12 to 2, which is what makes a team chart readable at all.
 LADDER_STEP_FT = 2.0
-# Divides evenly by both 1 and 2 ft, so the outer edge is the same wherever the
-# band width lands. Attempts past it are excluded and reported, not absorbed
-# into a catch-all band -- a band with no outer edge is not a distance band.
 LADDER_MAX_FT = 30.0
 # Inside this radius a ring counts TWO-point attempts only; outside it, THREES
 # only. This is the load-bearing choice, and it is what the reference card does.
@@ -211,12 +176,6 @@ LADDER_MAX_FT = 30.0
 # the break, so the corner reads as a merely-good area when it is a great one.
 # ``corner_mask`` carves the pocket out and gives it its own value instead.
 LADDER_TWO_MAX_FT = 24.0
-# Below this a ring's rate is not worth colouring. 40 rather than 25: a 1 ft
-# band holding 30 attempts carries a points-per-shot swing of roughly +/-0.2,
-# which is the entire width of the relative charts' colour scale -- it would
-# render as confident dark green or dark red on nothing but chance. Costs the
-# season) and costs the league chart nothing: every league band clears 40 with
-# room to spare. Paired with 2 ft bands it leaves the Bulls chart 2 bands grey.
 MIN_RING_FGA = 40
 
 
@@ -238,12 +197,6 @@ def corner_mask(df: pd.DataFrame, two_max: float = LADDER_TWO_MAX_FT) -> pd.Seri
 
 def _ladder_ring_mask(df: pd.DataFrame, lo: float, hi: float,
                       two_max: float) -> pd.Series:
-    """Which attempts belong to the ring spanning ``lo``-``hi`` feet.
-
-    Inside the split radius a ring holds two-pointers and stops at the corner
-    line, so the pocket beyond it belongs to ``corner_mask`` instead. Outside
-    the split radius a ring holds threes and runs the full width.
-    """
     band = (df["shot_distance"] >= lo) & (df["shot_distance"] < hi)
     is_three = df["shot_type"] == "3PT"
     if lo >= two_max:
@@ -440,14 +393,6 @@ def zone_split(player: pd.DataFrame, league: pd.DataFrame, player_poss: float,
                                           ignore_index=True)
 
 
-# --- The twelve named zones ------------------------------------------------
-# NBA.com owns the physical families: restricted area, paint, mid-range, both
-# corner threes, above-the-break three, and backcourt. The constants below draw
-# their regulation-sized shapes and provide a coordinate fallback. Our only
-# custom geometry is angular: five continuous sectors subdivide NBA Mid-Range,
-# and three subdivide NBA Above the Break 3. Keeping those responsibilities
-# separate preserves the readable straight rays without moving a shot across a
-# load-bearing NBA boundary such as paint versus mid-range.
 RA_R = 40.0                 # restricted area, 4 ft
 PAINT_HALF = 80.0           # key half-width, 8 ft
 FT_Y = 137.5                # free-throw line, 15 ft from backboard at y=-12.5
@@ -466,13 +411,6 @@ ZONE12_ORDER = (
 THREE_ZONES = frozenset({"Left Corner 3", "Left Wing 3", "Top of Key 3",
                          "Right Wing 3", "Right Corner 3"})
 
-# The five two-point regions outside the paint, and the eight-zone order that
-# replaces them with a single "Mid-Range". Merging is opt-in and exists for one
-# reason: a subject who barely shoots there. Five sectors each holding a handful
-# of attempts is five grey pills reporting 0/1 and 2/4, which spends most of the
-# court's type on figures too thin to mean anything. Pooled, the same shots make
-# one readable number. The five regions are exactly NBA's own Mid-Range family,
-# so merging removes our angular subdivision and invents nothing.
 MID_ZONES = ("Left Baseline", "Left Mid-Range", "Center Mid-Range",
              "Right Mid-Range", "Right Baseline")
 
@@ -483,31 +421,6 @@ ZONE8_ORDER = (
 )
 
 
-# --- What it takes to earn a colour ----------------------------------------
-# The floor is derived from the colour scale rather than chosen, because the
-# scale is the thing making the claim. Zone bands are cut at +/-2.5 and +/-5 FG
-# percentage points, so the question "how many attempts does a zone need" is
-# really "how precise must this estimate be before those cuts mean anything".
-#
-# A shooting percentage is a binomial proportion, so its standard error is
-# sqrt(p(1-p)/n). Fix the precision you need, solve for n:
-#
-#     n = p(1-p) / sigma^2
-#
-# p is unknown before the fact and p(1-p) peaks at p = 0.5, so 0.25 is the
-# assumption-free worst case -- it never under-counts the sample a zone needs.
-# That leaves one parameter, sigma, and it is a stated editorial choice rather
-# than a hidden constant: how far can this estimate wander before its colour is
-# a lie? Two answers are defensible, and which is reachable depends entirely on
-# how many shots the subject took.
-#
-#   sigma = 2.5 points -- one band half-width. One standard error cannot move a
-#           zone out of the band it was drawn in. n = 400.
-# 400 is the honest bar and a team clears it in every zone it actually uses. A
-# player does not: a rotation player takes ~950 shots across twelve zones, so
-# requiring 400 would grey out everything except the rim. The looser bar is what
-# a player-season can support, and saying so is more useful than pretending a
-# single floor fits both. This is the whole reason the two charts differ.
 SIGMA_TEAM_POINTS = 2.5
 NEUTRAL_WIDTH_POINTS = 5.0
 # Compatibility name: the player floor remains based on the full neutral span,
@@ -535,63 +448,17 @@ def single_shot_floor(band_points: float = BAND_WIDTH_POINTS) -> int:
     return int(np.ceil(100.0 / band_points))
 
 
-# Both floors answer the same question -- what must NOT be able to change this
-# zone's colour -- at the strength each subject's sample can actually support.
-#
-#   team    one standard error must not move it a band. A team shoots ~7,400
-#           times, so it can afford the strict reading. 400 attempts.
-#   player  one SHOT must not move it farther than the full neutral span. A
-#           rotation player takes ~500 over twelve zones and cannot reach 400
-#           anywhere but the rim, so the reachable display-grade bar is 20.
-#
-# 45 was used first, from a standard-error reading at 7.5 points, and it was too
-# strict for what this chart is: it left 71% of the carousel grey, including
-# every mid-range zone for every player. What made 20 defensible is that the
-# pill now prints makes over attempts, so the sample is disclosed inline and the
-# floor only has to protect the COLOUR, not the number.
-MIN_ZONE12_FGA_TEAM = colour_floor(SIGMA_TEAM_POINTS)        # 400
-MIN_ZONE12_FGA_PLAYER = single_shot_floor()                  # 20
-# The pill preserves every measured figure below the floor, but the zone loses
-# its efficiency colour. The sample count stays visible so the reader can judge
-# the printed shooting percentage without mistaking it for a rated result.
+MIN_ZONE12_FGA_TEAM = colour_floor(SIGMA_TEAM_POINTS)
+MIN_ZONE12_FGA_PLAYER = single_shot_floor()
 MIN_ZONE12_FGA = MIN_ZONE12_FGA_PLAYER
 
 
-# --- Where the baseline zone ends ------------------------------------------
-# The divider between a baseline shot and a mid-range one is the ray from the
-# hoop through the corner break -- the point where the three-point arc meets the
-# straight corner line, at (220, 89.5). Three lines then meet at one point: the
-# corner line, the arc, and this divider. The reader sees a boundary that
-# continues a mark already painted on the floor instead of a ray at an angle
-# nobody can name.
-#
-# It replaces a 36 degree cut, which was NBA's own and had nothing on the court
-# to sit on. The cost is measured on every run of the zone chart, the same way
-# the five-sector departure is.
 CORNER_BREAK_DEG = float(np.degrees(np.arctan2(CORNER_Y, ZONE12_CORNER_X)))
 
-# The three central sectors split the span between the baseline cuts evenly.
-#
-# NBA's own 72/108 was tried first and measured worse on both tests that matter.
-# A ray is a poor proxy for size here: the paint pushes the middle sector's inner
-# edge out to the free-throw line, so at 36 degrees it held 17.5% of the
-# mid-range area while each wing held 27.9%. Even thirds give the flattest
-# result available -- area spread 12.4% against 14.5%, shot spread 13.1% against
-# 14.9% -- and above the arc the improvement is dramatic: 31/33/36% of league
-# threes against 35/26/39%.
-#
-# Rays through the paint's own top corners (60.7 degrees) look like the
-# principled choice and overshoot badly, handing the middle 46.9% of
-# above-the-break threes. Measured, not assumed.
 MID_SECTOR_CUTS = tuple(
     CORNER_BREAK_DEG + i * (180.0 - 2 * CORNER_BREAK_DEG) / 3.0
     for i in range(4))
 
-# The above-the-break dividers ARE the two central mid-range dividers, continued
-# past the arc. Deriving them rather than repeating the numbers is what keeps
-# each one a single unbroken ray from the paint to the top of the chart; written
-# out twice they drift apart and put a kink in the line exactly where it crosses
-# the most-drawn arc on the floor.
 ATB_CUTS = MID_SECTOR_CUTS[1:3]
 
 

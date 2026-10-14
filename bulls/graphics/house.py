@@ -792,12 +792,17 @@ def cut_out_flat_background(
     source: str | Path,
     destination: str | Path,
     tolerance: int = 18,
+    seed_fraction: float = 1.0,
 ) -> Path:
     """Make a portrait's flat surround transparent and frame it like an NBA one.
 
     The background is found by flooding inward from the edges rather than by
     erasing every pale pixel, so teeth, eyes and jersey highlights survive — a
     plain "white becomes transparent" rule punches holes through the player.
+
+    ``seed_fraction`` limits where the flood may start to the top part of the
+    side edges (and skips the bottom edge): a white jersey cut off by the
+    frame's bottom would otherwise be flooded away with the background.
 
     The result is pasted into a canvas with NBA headshot proportions so the same
     face crop that works on CDN portraits frames this one the same way.
@@ -812,12 +817,13 @@ def cut_out_flat_background(
     pale = (rgb.min(axis=2) >= 255 - tolerance) & (np.ptp(rgb, axis=2) <= tolerance)
     background = np.zeros((height, width), dtype=bool)
     queue = deque()
+    seed_rows = int(height * seed_fraction)
     for x in range(width):
-        for y in (0, height - 1):
+        for y in (0, height - 1) if seed_fraction >= 1 else (0,):
             if pale[y, x] and not background[y, x]:
                 background[y, x] = True
                 queue.append((y, x))
-    for y in range(height):
+    for y in range(min(height, seed_rows)):
         for x in (0, width - 1):
             if pale[y, x] and not background[y, x]:
                 background[y, x] = True

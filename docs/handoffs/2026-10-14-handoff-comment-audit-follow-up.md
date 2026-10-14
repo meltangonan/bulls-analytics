@@ -85,11 +85,11 @@ when the related post or file is next touched. Also open: whether box-score awar
 
 ### Housekeeping
 
-- The `comment-audit` worktree (`/Users/meltangonan/projects/bulls-analytics-worktrees/comment-audit`) and
-  branch are merged and safe to remove; run `scripts/check_worktrees.sh` and follow `docs/reference/worktrees.md`.
+- The `comment-audit` and `knicks-top-game-scores` worktrees and branches were removed on 2026-10-14 after
+  merging; their unique ignored files were copied into the primary checkout's `output/` and `cache/`.
+  `b7d6206` renamed `lakers_top_game_performances.py` to `team_top_game_performances.py`.
 - `bulls-scorigami` and `claxton-splitter-draft` predate the audit; expect comment-only conflicts when
-  they sync with `main`. `knicks-top-game-scores` is merged (`b7d6206`, which also renamed
-  `lakers_top_game_performances.py` to `team_top_game_performances.py`) and can be removed.
+  they sync with `main`.
 
 ## Lessons from this session
 

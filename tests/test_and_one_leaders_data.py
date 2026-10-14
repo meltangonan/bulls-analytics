@@ -97,13 +97,19 @@ def test_published_rows_match_the_saved_selection():
     assert float(rose["per_100"].iloc[0]) < float(tail["per_100"])
 
 
-def test_every_published_row_is_bounded_by_both_providers():
-    """Neither provider may disagree with a published count by more than one."""
+PBPSTATS_KNOWN_SHORTFALLS = {("Michael Jordan", "1996-97"): 5}
+
+
+def test_every_published_row_is_within_one_of_both_providers_except_known_pbpstats_gaps():
     top = pd.read_csv(post.DATA / "selection_audit.csv")
-    for column in ("bbr_and1s", "pbpstats_and1s"):
-        gap = (top["and1s"] - top[column]).abs()
-        assert gap.max() <= 5  # pbpstats misses five of Jordan's 1996-97 and-1s
     assert (top["and1s"] - top["bbr_and1s"]).abs().max() <= 1
+    pbpstats_short = top["and1s"] - top["pbpstats_and1s"]
+    for row, short in zip(top.itertuples(), pbpstats_short):
+        expected = PBPSTATS_KNOWN_SHORTFALLS.get((row.player_name, row.season))
+        if expected is None:
+            assert abs(short) <= 1, (row.player_name, row.season)
+        else:
+            assert short == expected
 
 
 def test_counted_seasons_and_games_are_complete():

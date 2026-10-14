@@ -417,8 +417,9 @@ def zone_split(player: pd.DataFrame, league: pd.DataFrame, player_poss: float,
                short_mid_max: float = SHORT_MID_MAX_FT) -> pd.DataFrame:
     """Per-zone volume and efficiency, each measured against the league.
 
-    Returns one row per zone with attempts, FG%, the league's FG% from the same
-    band, per-75 rates for both, and the two relative figures the charts encode.
+    Returns one row per zone where both the player and the league shot, with attempts,
+    FG%, the league's FG% from the same band, per-75 rates for both, and the two
+    relative figures the charts encode.
     """
     lz = zone_masks(league, rim_max, short_mid_max)
     rows = []

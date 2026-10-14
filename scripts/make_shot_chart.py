@@ -3,12 +3,14 @@
 
     venv/bin/python scripts/make_shot_chart.py --player "Matas Buzelis" --chart rings
 
-Four charts, three questions:
+Six charts:
 
     hotspot   WHERE he shoots, vs the league          (frequency only)
     hex       where AND how well, at full resolution  (size = volume, color = efficiency)
     rings     how often AND how well, by zone         (both, vs the league)
     cells     how well, spot by spot                  (18 polar cells, vs the league)
+    ladder    how well, by distance alone             (concentric distance bands)
+    zones     how often AND how well, by named region (12 regions, vs the league)
 
 ``rings`` and ``cells`` are the same question at two resolutions, and the choice
 between them is a sample-size trade. Four zones give every band a large enough
@@ -20,7 +22,7 @@ A density-blob variant coloured by efficiency was tried and removed: thresholdin
 over-indexed volume drew only 27% of a player's shots and hid 100% of his rim and
 corner attempts -- structurally hiding the spots he is best at.
 
-All four share the court geometry, the cached NBA data, and the league baseline
+All six share the court geometry, the cached NBA data, and the league baseline
 in ``bulls.graphics.court`` / ``bulls.data.shots`` / ``bulls.analysis.shot_maps``.
 Add a chart by writing one render function here; the data layer is already done.
 """

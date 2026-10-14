@@ -8,6 +8,7 @@ from bulls.data import (
     get_box_score,
     get_player_games,
     get_player_shots,
+    get_league_shots,
     get_roster_efficiency,
     get_lineup_stats,
     get_team_player_advanced_stats,
@@ -212,6 +213,31 @@ class TestGetPlayerShots:
         assert 'shot_zone_area' not in shots.columns
 
 
+class TestGetLeagueShots:
+    def test_combines_every_requested_team(self):
+        def team_shots(team_id, season):
+            return pd.DataFrame({'loc_x': [0, 10], 'loc_y': [5, 5]})
+
+        with patch('bulls.data.fetch.get_team_shots', side_effect=team_shots):
+            result = get_league_shots(season='2024-25', teams=['CHI', 'BOS'])
+        assert len(result) == 4
+        assert sorted(result['team_abbr'].unique()) == ['BOS', 'CHI']
+
+    def test_refuses_a_partial_league_when_a_team_returns_nothing(self):
+        def team_shots(team_id, season):
+            return pd.DataFrame() if team_id == 1610612738 else pd.DataFrame({'loc_x': [0]})
+
+        with patch('bulls.data.fetch.get_team_shots', side_effect=team_shots):
+            with pytest.raises(RuntimeError, match='BOS'):
+                get_league_shots(season='2024-25', teams=['CHI', 'BOS'])
+
+    def test_rejects_an_unknown_team_before_fetching(self):
+        with patch('bulls.data.fetch.get_team_shots') as fetch_team:
+            with pytest.raises(ValueError, match='XYZ'):
+                get_league_shots(season='2024-25', teams=['CHI', 'XYZ'])
+        fetch_team.assert_not_called()
+
+
 class TestGetRosterEfficiency:
     """Tests for get_roster_efficiency function."""
 
@@ -231,11 +257,10 @@ class TestGetRosterEfficiency:
                     assert key in player, f"Missing key: {key}"
 
     def test_filters_by_min_fga(self, mock_roster_efficiency_api):
-        """get_roster_efficiency should filter players by min_fga."""
-        # With high min_fga threshold, should filter out low-volume players
-        result = get_roster_efficiency(last_n_games=5, min_fga=100.0)
-        assert isinstance(result, list)
-        # May be empty if no players meet threshold
+        everyone = get_roster_efficiency(last_n_games=5, min_fga=0)
+        high_volume = get_roster_efficiency(last_n_games=5, min_fga=18.0)
+        assert [p['fga_per_game'] for p in everyone] == [20.0, 16.0]
+        assert [p['fga_per_game'] for p in high_volume] == [20.0]
 
     def test_handles_empty_shots(self, mock_empty_shot_chart_api):
         """get_roster_efficiency should handle empty shot data gracefully."""

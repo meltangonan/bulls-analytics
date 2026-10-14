@@ -3,8 +3,8 @@
 Run from the repo root with the primary venv:
     PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/validate_accounting_season.py
 Play-by-play is cached in output/postgame-recap/pbp/ (ignored by git). Writes
-data/accounting-season-2025-26.csv. Every game must show play-by-play points equal to the official
-score and a reconciliation error of zero; the script exits non-zero otherwise.
+postgame-recaps/stress-tests/accounting-season-2025-26.csv. Every game must show play-by-play points
+equal to the official score and a reconciliation error of zero; the script exits non-zero otherwise.
 """
 import sys
 import time

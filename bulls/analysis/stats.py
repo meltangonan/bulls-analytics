@@ -73,7 +73,7 @@ def scoring_trend(
         metric: Which stat to analyze ('points', 'assists', etc.)
     
     Returns:
-        Dict with trend info (direction, streak, high, low)
+        Dict with direction, average, recent_avg, high, low, last_game
     
     Example:
         >>> coby = get_player_games("Coby White", last_n=10)

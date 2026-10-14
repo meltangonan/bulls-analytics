@@ -482,45 +482,45 @@ def get_league_shots(
         - team_id: Team ID
         - team_abbr: Team abbreviation
 
+    Raises:
+        ValueError: an unknown team abbreviation was requested.
+        RuntimeError: any requested team returned no shots.
+
     Example:
         >>> league_shots = get_league_shots(season="2024-25")
         >>> print(f"Total shots: {len(league_shots):,}")
     """
     if teams is None:
         teams = list(NBA_TEAMS.keys())
+    unknown = [abbr for abbr in teams if abbr not in NBA_TEAMS]
+    if unknown:
+        raise ValueError(f"Unknown team abbreviations: {unknown}")
 
     all_shots = []
+    missing = []
     total_teams = len(teams)
 
     for i, abbr in enumerate(teams, 1):
-        if abbr not in NBA_TEAMS:
-            print(f"Warning: Unknown team abbreviation '{abbr}', skipping")
-            continue
-
         team_info = NBA_TEAMS[abbr]
         team_id = team_info["id"]
         team_name = team_info["name"]
 
         print(f"[{i}/{total_teams}] Fetching {team_name}...")
-
-        try:
-            shots = get_team_shots(team_id=team_id, season=season)
-
-            if not shots.empty:
-                shots["team_id"] = team_id
-                shots["team_abbr"] = abbr
-                shots["team_name"] = team_name
-                all_shots.append(shots)
-                print(f"    -> {len(shots):,} shots")
-            else:
-                print(f"    -> No shots found")
-
-        except Exception as e:
-            print(f"    -> Error: {e}")
+        shots = get_team_shots(team_id=team_id, season=season)
+        if shots.empty:
+            missing.append(abbr)
             continue
 
-    if not all_shots:
-        return pd.DataFrame()
+        shots["team_id"] = team_id
+        shots["team_abbr"] = abbr
+        shots["team_name"] = team_name
+        all_shots.append(shots)
+        print(f"    -> {len(shots):,} shots")
+
+    if missing:
+        raise RuntimeError(
+            f"No {season} shots returned for {missing}; refusing a partial league baseline"
+        )
 
     result = pd.concat(all_shots, ignore_index=True)
     print(f"\nTotal: {len(result):,} shots from {len(all_shots)} teams")

@@ -283,15 +283,6 @@ def _face(path: Path, z: int) -> str:
     )
 
 
-def _stat(value) -> str:
-    """A stat that was not recorded shows a plain hyphen, never zero (user, 2026-09-28)."""
-    return "-" if pd.isna(value) else str(int(value))
-
-
-def _made_attempted(made, attempted) -> str:
-    return "-" if pd.isna(made) or pd.isna(attempted) else f"{int(made)}-{int(attempted)}"
-
-
 def table_html(ranked: pd.DataFrame) -> str:
     """Rank, portrait, first name and draft chip over last name, debut, the red points tile, box score."""
     portraits = post_portraits()

@@ -19,7 +19,8 @@ first showed Final, printed by a notice (below); a restart passes it so the timi
 3. Notices: at fixed minutes after Final (MARKS) it prints what it is waiting on and a restart command, then
    exits STILL_WAITING (76). The run-postgame-recap skill posts the notice, pushes it to the phone when it matters,
    and restarts the command; nothing is lost, because every feed is on disk. Each mark is raised once: a
-   restarted process begins after the mark it reported. It gives up three hours after Final.
+   restarted process begins after the mark it reported. It gives up five hours after tip-off, or three hours
+   after Final when restarted with the time Final was first seen.
 4. It compares the feeds with ESPN's copy of the game (espn_check.py) and logs each difference for Claude's
    review; this never waits or stops the build.
 5. It draws the shot chart (linking the shared cache, then removing only the link), builds the pages, exports
@@ -251,7 +252,7 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
                 sys.exit(f"stopped: a pipeline step failed {STRIKES} times in a row (exit {code}); see the log above")
             log(f"a step failed (exit {code}), {strikes} of {STRIKES} strikes; pulling again")
         if time.time() > deadline:
-            sys.exit("gave up: data still not complete and consistent three hours after Final")
+            sys.exit("gave up: data still not complete and consistent by the deadline")
         minutes = (time.time() - final_at) / 60
         if due(started, final_at, time.time(), stage) is not None:
             what = ("NBA.com has not published every slide feed" if stage == "publishing"

@@ -45,7 +45,6 @@ import argparse
 import math
 import re
 import sys
-import time
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -61,11 +60,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import requests
 from matplotlib.patches import FancyBboxPatch
 
-from bulls.config import API_DELAY, BULLS_TEAM_ID
-from bulls.data.fetch import _NBA_HEADERS
+from bulls.config import BULLS_TEAM_ID
+from bulls.data.fetch import nba_frame
 from bulls.graphics import house
 from bulls.graphics.house import DRAFT_DPI, export_dpi, helvetica, rendered_width
 from bulls.visuals import visual_dir
@@ -80,8 +78,6 @@ DEFAULT_TOP_N = 10
 # claim "his margin beats the rest of the board" would read as false -- but the
 # claim the caption makes is about the top ten, and it stays true there.
 CLAIM_DEPTH = 10
-RETRY_ATTEMPTS = 4
-RETRY_BACKOFF = 4
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 PROJECT = "bench-points-season"
 
@@ -311,18 +307,6 @@ def portrait_path(player_id: int) -> Path:
     return local if local.is_file() else house.HEADSHOT_CACHE / f"{player_id}.png"
 
 
-def _fetch_frame(endpoint, **kwargs) -> pd.DataFrame:
-    last_error: Exception | None = None
-    for attempt in range(RETRY_ATTEMPTS):
-        time.sleep(API_DELAY * (1 + attempt * RETRY_BACKOFF))
-        try:
-            return endpoint(timeout=60, headers=_NBA_HEADERS, **kwargs).get_data_frames()[0]
-        except (requests.Timeout, requests.ConnectionError) as error:
-            last_error = error
-            print(f"  NBA.com timed out; retry {attempt + 1} of {RETRY_ATTEMPTS - 1}")
-    raise RuntimeError(f"NBA.com did not respond after {RETRY_ATTEMPTS} attempts.") from last_error
-
-
 def _cached_frame(path: Path, fetch) -> pd.DataFrame:
     if path.exists():
         return pd.read_csv(path)
@@ -345,7 +329,7 @@ def fetch_split(end_year: int, split: str, *, refresh: bool = False) -> pd.DataF
         path.unlink(missing_ok=True)
     return _cached_frame(
         path,
-        lambda: _fetch_frame(
+        lambda: nba_frame(
             leaguedashplayerstats.LeagueDashPlayerStats,
             season=season_label(end_year),
             season_type_all_star="Regular Season",

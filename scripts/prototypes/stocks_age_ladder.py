@@ -22,20 +22,17 @@ from __future__ import annotations
 import argparse
 import math
 import sys
-import time
 from datetime import datetime
 from pathlib import Path
-from typing import Callable
 
 _REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_REPO))
 
 import pandas as pd
-import requests
 from nba_api.stats.endpoints import leaguedashplayerstats, leaguedashteamstats
 
 from bulls.config import BULLS_TEAM_ID
-from bulls.data.fetch import _NBA_HEADERS
+from bulls.data.fetch import nba_frame
 from bulls.graphics.house import ensure_headshots
 from scripts.prototypes.assist_age_ladder import ensure_blank_headshot
 from scripts.prototypes.assist_duos import display_name
@@ -67,8 +64,6 @@ NBA_TEAM_STOCKS_URL = (
     "?PerMode=Totals&Season={season}&SeasonType=Regular%20Season"
     f"&TeamID={BULLS_TEAM_ID}"
 )
-NBA_REQUEST_ATTEMPTS = 3
-LIVE_REQUEST_DELAY_SECONDS = 1.0
 
 # The steal and block components sit where games played sits on the other
 # ladders; the qualification rule stays in the footer instead.
@@ -173,49 +168,25 @@ def _required_columns(frame: pd.DataFrame, columns: set[str], source: str) -> No
         raise ValueError(f"NBA.com {source} response is missing {sorted(missing)}.")
 
 
-def _request_frame(factory: Callable[[], object], source: str) -> pd.DataFrame:
-    for attempt in range(1, NBA_REQUEST_ATTEMPTS + 1):
-        try:
-            endpoint = factory()
-            frame = endpoint.get_data_frames()[0]
-            time.sleep(LIVE_REQUEST_DELAY_SECONDS)
-            return frame
-        except requests.RequestException:
-            if attempt == NBA_REQUEST_ATTEMPTS:
-                raise
-            wait_seconds = 2**attempt
-            print(f"NBA.com {source} request failed; retrying in {wait_seconds}s")
-            time.sleep(wait_seconds)
-    raise AssertionError("NBA.com retry loop ended unexpectedly.")
-
-
 def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
     cache_path = RAW_CACHE / f"CHI-{end_year}.csv"
     if cache_path.exists() and not refresh:
         return pd.read_csv(cache_path)
 
     season = season_label(end_year)
-    players = _request_frame(
-        lambda: leaguedashplayerstats.LeagueDashPlayerStats(
-            season=season,
-            season_type_all_star="Regular Season",
-            per_mode_detailed="Totals",
-            team_id_nullable=BULLS_TEAM_ID,
-            timeout=60,
-            headers=_NBA_HEADERS,
-        ),
-        f"player totals for {season}",
+    players = nba_frame(
+        leaguedashplayerstats.LeagueDashPlayerStats,
+        season=season,
+        season_type_all_star="Regular Season",
+        per_mode_detailed="Totals",
+        team_id_nullable=BULLS_TEAM_ID,
     )
-    teams = _request_frame(
-        lambda: leaguedashteamstats.LeagueDashTeamStats(
-            season=season,
-            season_type_all_star="Regular Season",
-            per_mode_detailed="Totals",
-            team_id_nullable=BULLS_TEAM_ID,
-            timeout=60,
-            headers=_NBA_HEADERS,
-        ),
-        f"team totals for {season}",
+    teams = nba_frame(
+        leaguedashteamstats.LeagueDashTeamStats,
+        season=season,
+        season_type_all_star="Regular Season",
+        per_mode_detailed="Totals",
+        team_id_nullable=BULLS_TEAM_ID,
     )
     _required_columns(
         players,
@@ -282,15 +253,11 @@ def fetch_league_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame
         return pd.read_csv(cache_path)
 
     season = season_label(end_year)
-    players = _request_frame(
-        lambda: leaguedashplayerstats.LeagueDashPlayerStats(
-            season=season,
-            season_type_all_star="Regular Season",
-            per_mode_detailed="Totals",
-            timeout=60,
-            headers=_NBA_HEADERS,
-        ),
-        f"league totals for {season}",
+    players = nba_frame(
+        leaguedashplayerstats.LeagueDashPlayerStats,
+        season=season,
+        season_type_all_star="Regular Season",
+        per_mode_detailed="Totals",
     )
     _required_columns(
         players, {"PLAYER_ID", "PLAYER_NAME", "GP", "MIN", "STL", "BLK"}, "league totals"

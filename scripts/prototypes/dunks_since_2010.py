@@ -17,7 +17,6 @@ from __future__ import annotations
 
 import argparse
 import sys
-import time
 from dataclasses import dataclass
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
@@ -28,15 +27,14 @@ matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import pandas as pd
-import requests
 from matplotlib.patches import Rectangle
 from nba_api.stats.endpoints import leaguedashplayerstats, shotchartdetail
 
 _REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_REPO))
 
-from bulls.config import API_DELAY, BULLS_TEAM_ID
-from bulls.data.fetch import _NBA_HEADERS
+from bulls.config import BULLS_TEAM_ID
+from bulls.data.fetch import nba_frame
 from bulls.graphics import house
 from bulls.graphics.house import FINAL_DPI, HEADSHOT_CACHE, helvetica
 from bulls.visuals import visual_dir
@@ -46,7 +44,6 @@ PROJECT = "most-dunks-since-2010"
 FIRST_SEASON_END_YEAR = 2011
 LAST_SEASON_END_YEAR = 2026
 TOP_N = 10
-RETRY_ATTEMPTS = 4
 
 OUT = _REPO / "output" / PROJECT
 POST_DATA = visual_dir(_REPO / "docs" / "visuals", PROJECT) / "data"
@@ -160,18 +157,6 @@ def seasons() -> list[str]:
     return [season_label(end_year) for end_year in range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1)]
 
 
-def _request_frame(endpoint, **kwargs) -> pd.DataFrame:
-    last_error = None
-    for attempt in range(RETRY_ATTEMPTS):
-        time.sleep(API_DELAY * (1 + attempt * 4))
-        try:
-            return endpoint(timeout=60, headers=_NBA_HEADERS, **kwargs).get_data_frames()[0]
-        except (requests.Timeout, requests.ConnectionError, ValueError) as error:
-            last_error = error
-            print(f"  retry {attempt + 1}/{RETRY_ATTEMPTS - 1}: {error}", flush=True)
-    raise RuntimeError("NBA.com did not respond") from last_error
-
-
 def _cached_csv(path: Path, fetch) -> pd.DataFrame:
     if path.exists():
         return pd.read_csv(path)
@@ -184,7 +169,7 @@ def _cached_csv(path: Path, fetch) -> pd.DataFrame:
 def fetch_season_shots(season: str) -> pd.DataFrame:
     def pull() -> pd.DataFrame:
         print(f"fetching shots {season}", flush=True)
-        frame = _request_frame(
+        frame = nba_frame(
             shotchartdetail.ShotChartDetail,
             team_id=BULLS_TEAM_ID,
             player_id=0,
@@ -205,7 +190,7 @@ def fetch_season_shots(season: str) -> pd.DataFrame:
 def fetch_season_players(season: str) -> pd.DataFrame:
     def pull() -> pd.DataFrame:
         print(f"fetching players {season}", flush=True)
-        frame = _request_frame(
+        frame = nba_frame(
             leaguedashplayerstats.LeagueDashPlayerStats,
             season=season,
             season_type_all_star="Regular Season",

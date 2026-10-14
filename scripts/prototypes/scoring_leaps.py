@@ -20,7 +20,6 @@ from __future__ import annotations
 
 import argparse
 import sys
-import time
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -35,12 +34,11 @@ matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import pandas as pd
-import requests
 from matplotlib.patches import FancyArrowPatch
 from nba_api.stats.endpoints import leaguedashplayerstats, leaguedashteamstats
 
-from bulls.config import API_DELAY, BULLS_TEAM_ID
-from bulls.data.fetch import _NBA_HEADERS
+from bulls.config import BULLS_TEAM_ID
+from bulls.data.fetch import nba_frame
 from bulls.graphics.house import (
     DEFAULT_THEME,
     DRAFT_DPI,
@@ -62,8 +60,6 @@ MIN_MINUTES_PER_GAME = 15.0
 MIN_ENDING_POINTS_PER_36 = 10.0
 TOP_N = 15
 PAGE_SIZES = (15,)
-RETRY_ATTEMPTS = 4
-RETRY_BACKOFF = 4
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 
 CHART_WIDTH = 1800
@@ -166,23 +162,6 @@ def _required_columns(frame: pd.DataFrame, columns: set[str], source: str) -> No
         raise ValueError(f"NBA.com {source} response is missing {sorted(missing)}.")
 
 
-def _fetch_frame(endpoint, **kwargs) -> pd.DataFrame:
-    """Call one NBA.com endpoint, pacing requests and retrying a timeout.
-
-    Fetching 27 seasons back to back reliably trips stats.nba.com's rate limit,
-    which surfaces as a read timeout rather than an HTTP error.
-    """
-    last_error: Exception | None = None
-    for attempt in range(RETRY_ATTEMPTS):
-        time.sleep(API_DELAY * (1 + attempt * RETRY_BACKOFF))
-        try:
-            return endpoint(timeout=60, headers=_NBA_HEADERS, **kwargs).get_data_frames()[0]
-        except (requests.Timeout, requests.ConnectionError) as error:
-            last_error = error
-            print(f"  NBA.com timed out; retry {attempt + 1} of {RETRY_ATTEMPTS - 1}")
-    raise RuntimeError(f"NBA.com did not respond after {RETRY_ATTEMPTS} attempts.") from last_error
-
-
 def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
     """Load a Chicago-only NBA.com season from cache or the live endpoint.
 
@@ -194,14 +173,14 @@ def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
         return pd.read_csv(cache_path)
 
     season = season_label(end_year)
-    players = _fetch_frame(
+    players = nba_frame(
         leaguedashplayerstats.LeagueDashPlayerStats,
         season=season,
         season_type_all_star="Regular Season",
         per_mode_detailed="Totals",
         team_id_nullable=BULLS_TEAM_ID,
     )
-    teams = _fetch_frame(
+    teams = nba_frame(
         leaguedashteamstats.LeagueDashTeamStats,
         season=season,
         season_type_all_star="Regular Season",

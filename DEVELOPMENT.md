@@ -26,6 +26,8 @@ can reuse the same verified inputs. Simple one-off analyses need no extra layer.
 Cache successful requests and use saved data for visual iteration. Refresh when requested, when the
 brief requires current facts, or when source/schema changes warrant it. Avoid concurrent NBA
 play-by-play requests. Inspect endpoint parameters and response shapes before scaling a fetch.
+Call stats.nba.com endpoints through `bulls.data.nba_frame`, which paces and retries NBA.com stalls
+only; do not write another retry loop or catch every exception.
 Unavailable data stays unavailable; reconcile against independent official totals where possible.
 
 ## Verification by change

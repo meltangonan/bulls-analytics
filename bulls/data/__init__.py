@@ -8,6 +8,7 @@ from bulls.data.fetch import (
     get_team_shots,
     get_game_shots,
     get_league_shots,
+    nba_frame,
     league_for_game,
     get_roster_efficiency,
     get_roster,

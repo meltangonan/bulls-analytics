@@ -41,7 +41,6 @@ import argparse
 import math
 import re
 import sys
-import time
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -56,11 +55,10 @@ matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import pandas as pd
-import requests
 from nba_api.stats.endpoints import leaguedashplayerstats, leaguedashteamstats
 
-from bulls.config import API_DELAY, BULLS_TEAM_ID
-from bulls.data.fetch import _NBA_HEADERS
+from bulls.config import BULLS_TEAM_ID
+from bulls.data.fetch import nba_frame
 from bulls.graphics import house
 from bulls.graphics.house import (
     DRAFT_DPI,
@@ -76,8 +74,6 @@ FIRST_SEASON_END_YEAR = 2011
 LAST_SEASON_END_YEAR = 2026
 MIN_THREE_POINT_ATTEMPTS = 150
 BENCHMARK_PERCENTILE = 90  # "top 10% of qualified NBA three-point shooters"
-RETRY_ATTEMPTS = 4
-RETRY_BACKOFF = 4
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 PROJECT = "three-point-leaders"
 
@@ -249,19 +245,6 @@ def last_name(full_name: str) -> str:
     return parts[-1] if parts else full_name
 
 
-def _fetch_frame(endpoint, **kwargs) -> pd.DataFrame:
-    """Call one NBA.com endpoint, retrying the timeouts it hands out freely."""
-    last_error: Exception | None = None
-    for attempt in range(RETRY_ATTEMPTS):
-        time.sleep(API_DELAY * (1 + attempt * RETRY_BACKOFF))
-        try:
-            return endpoint(timeout=60, headers=_NBA_HEADERS, **kwargs).get_data_frames()[0]
-        except (requests.Timeout, requests.ConnectionError) as error:
-            last_error = error
-            print(f"  NBA.com timed out; retry {attempt + 1} of {RETRY_ATTEMPTS - 1}")
-    raise RuntimeError(f"NBA.com did not respond after {RETRY_ATTEMPTS} attempts.") from last_error
-
-
 def _cached_frame(path: Path, fetch) -> pd.DataFrame:
     if path.exists():
         return pd.read_csv(path)
@@ -293,7 +276,7 @@ def fetch_season(
 
     players = _cached_frame(
         player_path,
-        lambda: _fetch_frame(
+        lambda: nba_frame(
             leaguedashplayerstats.LeagueDashPlayerStats,
             season=season,
             season_type_all_star="Regular Season",
@@ -303,7 +286,7 @@ def fetch_season(
     )
     teams = _cached_frame(
         team_path,
-        lambda: _fetch_frame(
+        lambda: nba_frame(
             leaguedashteamstats.LeagueDashTeamStats,
             season=season,
             season_type_all_star="Regular Season",
@@ -312,7 +295,7 @@ def fetch_season(
     )
     league_players = _cached_frame(
         league_player_path,
-        lambda: _fetch_frame(
+        lambda: nba_frame(
             leaguedashplayerstats.LeagueDashPlayerStats,
             season=season,
             season_type_all_star="Regular Season",

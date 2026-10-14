@@ -1,6 +1,7 @@
 """Tests for bulls.data module."""
 import pytest
 import pandas as pd
+import requests
 from unittest.mock import MagicMock, patch
 from bulls.data import (
     get_games,
@@ -9,6 +10,7 @@ from bulls.data import (
     get_player_games,
     get_player_shots,
     get_league_shots,
+    nba_frame,
     get_roster_efficiency,
     get_lineup_stats,
     get_team_player_advanced_stats,
@@ -177,6 +179,46 @@ class TestGetPlayerShots:
 
         assert not shots.empty
         assert 'shot_zone_area' not in shots.columns
+
+
+class TestNbaFrame:
+    @staticmethod
+    def _endpoint(*outcomes):
+        calls = []
+
+        def endpoint(**params):
+            calls.append(params)
+            outcome = outcomes[len(calls) - 1]
+            if isinstance(outcome, Exception):
+                raise outcome
+            response = MagicMock()
+            response.get_data_frames.return_value = [outcome]
+            return response
+
+        endpoint.calls = calls
+        return endpoint
+
+    def test_retries_a_timeout_then_returns_the_first_table(self):
+        table = pd.DataFrame({'PTS': [9537]})
+        endpoint = self._endpoint(requests.Timeout('slow'), table)
+        with patch('bulls.data.fetch.time.sleep'):
+            result = nba_frame(endpoint, season='2025-26')
+        assert result.equals(table)
+        assert len(endpoint.calls) == 2
+        assert endpoint.calls[0]['season'] == '2025-26' and endpoint.calls[0]['timeout'] == 60
+
+    def test_raises_after_every_attempt_fails(self):
+        endpoint = self._endpoint(*[requests.ConnectionError('down')] * 2)
+        with patch('bulls.data.fetch.time.sleep'):
+            with pytest.raises(RuntimeError, match='after 2 attempts'):
+                nba_frame(endpoint, attempts=2)
+
+    def test_does_not_retry_our_own_bugs(self):
+        endpoint = self._endpoint(KeyError('resultSets'), pd.DataFrame())
+        with patch('bulls.data.fetch.time.sleep'):
+            with pytest.raises(KeyError):
+                nba_frame(endpoint)
+        assert len(endpoint.calls) == 1
 
 
 class TestGetLeagueShots:

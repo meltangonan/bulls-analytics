@@ -31,6 +31,30 @@ _NBA_HEADERS = {
     'Accept': 'application/json',
 }
 
+NBA_ATTEMPTS = 4
+
+
+def nba_frame(endpoint, *, attempts: int = NBA_ATTEMPTS, **params) -> pd.DataFrame:
+    """First result table of one stats.nba.com call, retried when NBA.com stalls.
+
+    stats.nba.com answers bursts of requests with timeouts, dropped connections or a
+    non-JSON page, so each attempt waits longer than the last. Any other error is ours
+    and raises at once.
+
+    Raises:
+        RuntimeError: every attempt failed.
+    """
+    last_error = None
+    for attempt in range(attempts):
+        time.sleep(API_DELAY * (1 + 4 * attempt))
+        try:
+            return endpoint(timeout=60, headers=_NBA_HEADERS, **params).get_data_frames()[0]
+        except (requests.RequestException, json.JSONDecodeError) as error:
+            last_error = error
+            print(f"  NBA.com {endpoint.__name__}: attempt {attempt + 1} of {attempts} failed ({error})",
+                  flush=True)
+    raise RuntimeError(f"NBA.com {endpoint.__name__} failed after {attempts} attempts") from last_error
+
 
 def get_games(
     last_n: Optional[int] = None,

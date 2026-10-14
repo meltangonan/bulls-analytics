@@ -28,7 +28,6 @@ from bulls.graphics.house import DRAFT_DPI, export_dpi, helvetica
 DEFAULT_DATA = ROOT / "docs/visuals/2026-09-29-points-off-turnovers/data/top15.csv"
 DEFAULT_OUTPUT = ROOT / "output/points-off-turnovers/table.png"
 POST_PORTRAITS = ROOT / "docs/visuals/2026-09-29-points-off-turnovers/data/portraits"
-# Hand-supplied originals for players NBA.com serves a silhouette for (see SOURCES.md).
 PORTRAIT_SOURCES: dict[int, Path] = {}
 PRIMARY = Path("/Users/meltangonan/projects/bulls-analytics")
 PRIMARY_HEADSHOTS = PRIMARY / "cache/headshots"

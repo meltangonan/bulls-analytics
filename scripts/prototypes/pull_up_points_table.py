@@ -48,8 +48,6 @@ def render(data_path: Path, output_path: Path) -> None:
     table["player_id"] = table["player_id"].astype(int)
     ensure_headshots(table["player_id"].unique())
 
-    # This follows the regular layup table: a single red hero column, quiet row
-    # rules, and no individual boxes. The hero number is the story metric here.
     width, row_h = 2200, 145
     height = 150 + row_h * len(table)
     fig = plt.figure(figsize=(width / 150, height / 150), dpi=300)

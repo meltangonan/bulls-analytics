@@ -52,12 +52,6 @@ PROJECT = "most-clutch-seasons"
 PROJECT_DATE = "2026-08-21"
 
 BULLS_TEAM_ID = 1610612741
-# 2000-01 is an editorial choice, not the source's limit. The endpoint reaches
-# back to 1996-97 and no further — see the clutch-split floor in
-# DEVELOPMENT.md — so a wider window was built, looked at, and rejected on
-# 2026-08-21: it adds two Michael Jordan seasons to the leaderboard while
-# still being unable to reach the first threepeat, which buys a worse headline
-# rather than a better one. A round "since 2000" says what it covers.
 FIRST_SEASON = 2000
 LAST_SEASON = 2025
 SEASON_TYPE = "Regular Season"
@@ -166,15 +160,6 @@ def add_rates(frame: pd.DataFrame) -> pd.DataFrame:
     # where Taj Gibson carries a 17-6 clutch record on a clutch plus-minus of
     # -4 — impossible if the W meant he had won those five minutes.
     out["win_pct"] = np.where(out["GP"] > 0, out["W"] / out["GP"], np.nan)
-    # Scoring rate per 36 clutch minutes. NOT a column: the table was kept to
-    # the metrics it already carried rather than gaining another. It stays in
-    # the working CSV because it is the honest counterweight to a totals
-    # ranking — clutch minutes run from 105 to 203 across the fifteen rows —
-    # and because reconciling it costs nothing.
-    #
-    # Points per true-shooting attempt was the other rate considered, and is
-    # ruled out for good: it is exactly two times TS%, verified at zero
-    # difference on all fifteen rows, so it can only print TS% twice.
     out["pts_per_36"] = np.where(out["MIN"] > 0, out["PTS"] / out["MIN"] * 36, np.nan)
     return out
 
@@ -319,15 +304,6 @@ def reconcile_team_filter(bulls: pd.DataFrame, league: pd.DataFrame) -> pd.DataF
 
 
 def assert_whole_season_bulls(table: pd.DataFrame) -> None:
-    """Every displayed row must be a season spent entirely in Chicago.
-
-    The stint-versus-season distinction above is what makes this checkable, and
-    it currently costs the table nothing: all fifteen rows are players who were
-    Bulls from opening night to game 82, so each printed total is both the
-    Bulls figure and the player's whole clutch season. If a future refresh
-    promotes a half-season into the table, this fails rather than quietly
-    printing a partial season beside fourteen complete ones.
-    """
     partial = table.loc[
         table["GP"].ne(table["season_gp"]) | table["PTS"].ne(table["season_pts"])
     ]
@@ -404,12 +380,6 @@ def validate(table: pd.DataFrame, population: pd.DataFrame) -> dict:
     }
 
 
-# --- Layout ------------------------------------------------------------------
-#
-# Fifteen rows on one 1080x1350 feed page is the constraint everything else
-# bends to. The rookie table's 66px rows carried two lines of type under each
-# portrait; this one carries a name and nothing else, so the row loses the
-# caption's height without losing any of its air.
 CHART_WIDTH = 1080
 TABLE_LEFT = 18
 TABLE_RIGHT = 1036
@@ -424,34 +394,14 @@ BOTTOM_PAD = 26
 HEADSHOT_X = 64
 HEADSHOT_HALF_SIZE = 40
 HEADSHOT_RISE = 6
-# Fraction of the source portrait's height kept, as a square centred on the
-# face. The rest of the table family keeps 0.74, which frames head and
-# shoulders; this one crops closer, because that is what makes a face read
-# BIGGER without giving it a bigger box. Enlarging the box instead pushed each
-# portrait out of its own row and left the name beside a chin.
 HEADSHOT_CROP_FRACTION = 0.72
 NAME_X = 116
 NAME_FONT_SIZE = 15.5
-# Larger than the rookie table's 9.6pt marker. There the season was context
-# beside a unique name; here four Ben Gordon seasons and three DeMar DeRozan
-# seasons share the column, so the year is half the row's identity.
 SEASON_FONT_SIZE = 11.5
 VALUE_FONT_SIZE = 14.0
 HEADER_FONT_SIZE = 13.0
 NAME_GAP = 24
 
-# PTS leads, immediately beside the name, because it is what the table is
-# ranked by and it wears the accent card. The rest run from opportunity (G,
-# MIN) through the shooting line to the result.
-# The third value is a width weight. Equal columns gave PTS a 130px box for a
-# three-digit number, and the accent card inherited that width as a red slab
-# wider than anything it contained. Widths follow the widest string a column
-# actually holds — "55-113" needs the room, "40" does not.
-# WIN% was here and was cut. It was the only column whose window disagreed
-# with the rest of the table: the sample was clutch, but the win or loss was
-# the whole game's, so it credited a player for a result decided long after
-# the last five minutes. Clutch plus-minus answers the same question — did it
-# work — inside the same window everything else is measured in.
 STAT_COLUMNS = (
     ("PTS", "PTS", 0.84),
     ("GP", "G", 0.58),
@@ -463,12 +413,6 @@ STAT_COLUMNS = (
 )
 SHADED_METRICS = ("ts_pct_relative", "PLUS_MINUS")
 HERO_METRIC = "PTS"
-# The rookie leaderboard's values, and its whole treatment: the card reaches
-# past the header rule and is drawn ABOVE it, so it reads as an object resting
-# on the table. Two things have to be true together for that to work, and
-# getting only one gives a defect rather than depth — the card must win the
-# stacking order, AND the rule must break around it, or the line shows through
-# the rounded corners the overlap exists to display.
 CARD_OUTSET_Y = 7.0
 CARD_OVERLAP_Y = 3.0
 CARD_OUTSET_X = float(ACCENT_CARD_OUTSET_X)
@@ -480,12 +424,6 @@ def table_height(row_count: int) -> float:
 
 
 def column_bounds(stats_left: float) -> dict[str, tuple[float, float, str]]:
-    """Divide the space right of the name block by each column's width weight.
-
-    ``HERO_GAP`` is taken out before the weights are applied, so widening the
-    pill's margin narrows the ordinary columns rather than pushing the last one
-    off the canvas.
-    """
     available = TABLE_RIGHT - stats_left - HERO_GAP
     total_weight = sum(weight for _, _, weight in STAT_COLUMNS)
     bounds = {}
@@ -572,14 +510,6 @@ def measure_stats_left(table: pd.DataFrame) -> float:
 
 
 def _face_headshot(ax, player_id: int, row_y: float) -> None:
-    """Draw the face-focused square crop, clipped at this row's separator.
-
-    A portrait is deliberately much taller than its row and rises into the row
-    above it. The top row has no row above it, only the header rule, and the
-    leader's head is meant to break that line — it is drawn above the rule and
-    stops at nothing but the canvas. The clip only ever applies downward: a
-    face may reach up, never spill onto the row beneath it.
-    """
     y = row_y + HEADSHOT_RISE
     clip_left = HEADSHOT_X - HEADSHOT_HALF_SIZE
     clip_bottom = row_y - ROW_HEIGHT / 2
@@ -672,11 +602,6 @@ def render_table(table: pd.DataFrame, output_path: Path, final: bool = False) ->
     for row_index, row in table.iterrows():
         y = first_row_y - row_index * ROW_HEIGHT
         if row_index < len(table) - 1:
-            # One unbroken rule, drawn UNDER the card rather than stopped at
-            # its edges. The card still reads as a single object, because it
-            # hides the segment it covers — but the two stubs no longer die a
-            # few pixels short of a rounded corner, which is what made the
-            # gap either side of the pill look like a rendering fault.
             rule_y = y - ROW_HEIGHT / 2
             ax.plot([TABLE_LEFT, TABLE_RIGHT], [rule_y, rule_y],
                     color=theme.rule, linewidth=0.9, zorder=1.5)

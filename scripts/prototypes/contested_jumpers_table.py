@@ -25,7 +25,6 @@ DEFAULT_DATA = _REPO / "docs/visuals/2026-09-19-contested-jumpers/data/top15.csv
 DEFAULT_OUTPUT = _REPO / "output/contested-jumpers/table.png"
 PRIMARY_HEADSHOTS = Path("/Users/meltangonan/projects/bulls-analytics/cache/headshots")
 
-# Geometry follows pull_up_points_bars.py: bar plus three support columns.
 WIDTH = 2600
 ROW_HEIGHT = 190
 TOP_BOTTOM = 175

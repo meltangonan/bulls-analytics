@@ -83,8 +83,6 @@ ROW_HEIGHT = 66
 FIRST_ROW_FROM_TOP = HEADER_RULE_FROM_TOP + ROW_HEIGHT / 2 + HEADER_RULE_CLEARANCE
 BOTTOM_PAD = 34
 
-# The portrait is deliberately taller than the row, so neighbouring faces
-# overlap slightly. This is the game-score and BPM performance table treatment.
 HEADSHOT_X = 62
 HEADSHOT_HALF_SIZE = 42
 HEADSHOT_RISE = 4
@@ -98,20 +96,9 @@ NAME_RISE = 10
 CAPTION_DROP = 15
 NAME_GAP = 18
 
-# Three slides, newest first, as even as the season boundaries allow: the only
-# alternatives that keep a rookie class whole are 18/15/13 and 18/18/10, both
-# of which strand more empty rows. Sixteen and seventeen read as the same slide
-# length; the short one is last, where a reader notices it least.
-#
-# Note that 46 rookies across three slides does not fit a 1080x1350 page at
-# full size. The 17-row canvas is 1246px tall against roughly 875px of usable
-# page height, so the asset is placed smaller than page width in Canva. Four
-# slides of twelve would have rendered at 96%; three is the editorial choice.
 PAGE_SEASON_RANGES = ((2016, 2026), (2005, 2015), (2001, 2004))
 PAGE_ROW_COUNTS = (16, 17, 13)
 
-# Steals and blocks are separate columns, and every statistic gets one identical
-# width so no category reads as more important because of its box size.
 STAT_COLUMNS = (
     ("games", "GP"),
     ("mpg", "MPG"),
@@ -178,10 +165,6 @@ COLUMN_SCALES = {
     # the rookie 5th / 25th / 75th / 95th percentile. The middle half of all
     # rookies is blank; red is the bottom quarter, green the top quarter.
     "ts_pct": (-11.92, -6.38, 0.55, 5.67),
-    # Zero stays the mid mark, because zero is the one value each impact measure
-    # genuinely means something at: the team broke even with him on the floor,
-    # or was no different with him than without him. The band is +/-2 per 100
-    # possessions, which at these sample sizes is not a real difference.
     "impact": (-10.0, -2.0, 2.0, 10.0),
 }
 # Below this many minutes an on-off number is mostly noise, so the cell is left
@@ -193,13 +176,6 @@ SCALE_SAMPLE_SIZE = 1147
 
 
 def slide_height(row_count: int = 0) -> float:
-    """Give every slide one identical canvas, sized to the fullest one.
-
-    A carousel is read by swiping, so slides that differ in height would jump
-    under the reader's thumb and would each need their own Canva crop. The
-    canvas is therefore fixed to the longest slide; shorter slides simply end
-    early. ``row_count`` is accepted for callers that measure a single slide.
-    """
     rows = max(row_count, max(PAGE_ROW_COUNTS))
     return (
         FIRST_ROW_FROM_TOP
@@ -316,13 +292,6 @@ def attach_impact(table: pd.DataFrame) -> pd.DataFrame:
 
 
 def era_relative_ts(frame: pd.DataFrame) -> pd.Series:
-    """Express each TS% as points above or below that season's league average.
-
-    The cell prints the raw percentage, because that is the number a reader
-    recognises, but the colour is judged on this. A 52% true-shooting season
-    was strong in 2001 and poor in 2025; colouring the raw value would rank
-    eras rather than rookies.
-    """
     league = pd.read_csv(LEAGUE_TS_CSV)[["season", "league_ts_pct"]]
     league = league.rename(columns={"season": "season_label"})
     merged = frame[["season_label", "ts_pct"]].merge(
@@ -338,12 +307,6 @@ def era_relative_ts(frame: pd.DataFrame) -> pd.Series:
 
 
 def era_relative_tov(frame: pd.DataFrame) -> pd.Series:
-    """Express each turnover rate against that season's rookie median.
-
-    The cell prints the raw rate, but the colour is judged on this. Rookies
-    turned the ball over on 14.6% of their possessions in the early 2000s and
-    12.7% today, so a fixed bar would grade eras rather than rookies.
-    """
     league = pd.read_csv(LEAGUE_TOV_CSV)[["season", "league_rookie_tov_pct"]]
     merged = frame[["season", "tov_pct"]].merge(
         league, on="season", how="left", validate="many_to_one"
@@ -532,12 +495,6 @@ def shaded_value(row: pd.Series, metric: str) -> float:
 
 
 def headshot_clip_bounds(row_y: float) -> tuple[float, float, float, float]:
-    """Give the portrait room above its row but a hard floor at its separator.
-
-    A face may rise into the row above it, which is the overlap the game-score
-    table uses. It may never spill downward: the shoulders stop at this row's
-    own separator, so no portrait intrudes on the row beneath it.
-    """
     left = HEADSHOT_X - HEADSHOT_HALF_SIZE
     bottom = row_y - ROW_HEIGHT / 2
     top = row_y + HEADSHOT_RISE + HEADSHOT_HALF_SIZE
@@ -610,12 +567,6 @@ def display_name(value: object) -> str:
 
 
 def measure_stats_left(table: pd.DataFrame) -> float:
-    """Start the statistics right after the widest name in the whole pool.
-
-    The columns must line up across all three slides, so this measures every
-    qualified rookie once rather than each slide independently. It is what
-    keeps the gap between the name and GP as small as the longest name allows.
-    """
     fig = plt.figure(figsize=(CHART_WIDTH / 100, slide_height(1) / 100), facecolor="none")
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, CHART_WIDTH)
@@ -689,9 +640,6 @@ def render_page(
     for row_index, row in page.iterrows():
         y = first_row_y - row_index * ROW_HEIGHT
         if row_index < len(page) - 1:
-            # One unbroken rule across the whole row, drawn above the fills.
-            # Ruling only the plain cells left no separator wherever two blank
-            # cells met, which is now most of the table.
             rule_y = y - ROW_HEIGHT / 2
             ax.plot([TABLE_LEFT, TABLE_RIGHT], [rule_y, rule_y], color=theme.rule,
                     linewidth=0.9, zorder=3)

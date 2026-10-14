@@ -205,9 +205,6 @@ def leader_tags(leaders: pd.DataFrame, located: pd.DataFrame, cache: Path,
             if season not in leagues:
                 leagues[season], info = league_for(season, cache)
                 manifest.append(info)
-        # Share of FGA uses every Chicago attempt in the window, backcourt included,
-        # matching the denominator on the regular zone charts. A tenure pools the
-        # league from the same seasons, attempt-weighted, as on the tenure charts.
         subject = mine.loc[mine.season.isin(seasons)]
         league = pd.concat([leagues[season] for season in seasons], ignore_index=True)
         split = sm.zone12_split(subject, league, min_fga=sm.MIN_ZONE12_FGA_PLAYER)

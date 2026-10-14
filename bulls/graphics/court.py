@@ -13,7 +13,6 @@ from matplotlib.path import Path
 from matplotlib.patches import Arc, Circle, FancyBboxPatch, PathPatch, Rectangle
 
 
-# Court constants, tenths of a foot.
 ARC = 237.5              # three-point radius
 CORNER_X = 220.0         # where the arc meets the corner lines
 BASELINE_Y = -52.5

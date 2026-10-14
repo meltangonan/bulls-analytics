@@ -1,27 +1,4 @@
-"""The dumbbell row: two marks on a track, the distance between them the finding.
-
-Settled on the 2025-26 shot-diet post and promoted here so a second post reuses
-the form rather than re-deriving it. The same picture should mean the same thing
-across the account, so the palette, type scale and mark grammar are fixed here
-and only the *comparison* changes per post: there Chicago against the NBA, here
-one player against his own earlier season.
-
-Mark grammar, which carries meaning and is not decoration:
-
-* The **subject** is a filled mark. The **reference** is a ring. The ring is what
-  survives being overlapped: where the two values nearly match, a filled grey dot
-  sits entirely behind the subject's and the row reads as though the reference
-  had no value at all.
-* The connector stops at the ring's outer edge. Drawn to the ring's centre it
-  shows straight through the hollow middle.
-* A dotted leader carries the eye from the marks across to the value column.
-  Its length reads as the inverse of the value, which reinforces the bar.
-
-The greys are a tone ladder, not independent choices: each step down is
-scaffolding to the one above. All of them are dark enough to hold on ``#E9E5E1``,
-the darker end of the range Canva's canvas covers. A first pass tuned on the pale
-``#FAF8F5`` end lost the leaders and gridlines entirely once the page exported.
-"""
+"""The dumbbell row: a subject mark and a reference ring on one track (docs/design/tables-cards.md)."""
 from __future__ import annotations
 
 from bulls.graphics import house
@@ -32,7 +9,7 @@ SUBJECT = house.RED
 REFERENCE_GREY = "#6E6862"    # the reference mark: data, so darkest of the greys
 CONNECTOR_GREY = "#8A837B"    # the bar between the marks: also data
 LEADER_GREY = "#A8A199"       # dotted leader; a dash reads lighter than a solid rule
-GRIDLINE = "#B8B0A8"          # DESIGN.md's structural separator for this background
+GRIDLINE = "#B8B0A8"
 FOOTNOTE_GREY = "#7A736C"
 
 # Marker diameters in points, drawn through ``plot`` rather than ``scatter`` so the
@@ -42,7 +19,7 @@ REFERENCE_DOT = 10.5
 REFERENCE_RING_WIDTH = 2.6
 REFERENCE_RING_RADIUS = (REFERENCE_DOT + REFERENCE_RING_WIDTH) / 2 * DRAFT_DPI / 72
 
-TYPE_LABEL = 19.0             # row names sat larger than the value they introduce
+TYPE_LABEL = 19.0
 TYPE_VALUE = 21.0
 TYPE_AXIS = 17.0
 TYPE_LEGEND = 18.0

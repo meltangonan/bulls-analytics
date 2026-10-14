@@ -78,8 +78,6 @@ SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 PROJECT = "three-point-leaders"
 
 OUT = _REPO / "output" / "feed"
-# Single-consumer data lives with its post from the first run, not in the ignored
-# cache -- see AGENTS.md and tests/test_data_locations.py.
 POST_DATA = visual_dir(_REPO / "docs" / "visuals", PROJECT) / "data"
 RAW = POST_DATA / "raw"
 # NBA's CDN serves no portrait for Nate Robinson, only the grey silhouette. This
@@ -101,22 +99,12 @@ NBA_LEAGUE_PLAYER_URL = (
     "?PerMode=Totals&Season={season}&SeasonType=Regular%20Season"
 )
 
-# The timeline runs down the page: seasons are rows, accuracy is the x axis.
-# Sixteen surnames cannot be made legible on a horizontal time axis at the width
-# a 1080 px page gives them, and a vertical layout has a whole row for each.
 CHART_WIDTH = 1800
 CHART_HEIGHT = 2200
 
 SEASON_LABEL_X = 185
-# The plot is deliberately wide relative to the canvas: a two-percentage-point
-# gridline gap is 11% of the chart width, up from 7.7%. Like the portrait size,
-# only the ratio survives Canva scaling the asset onto the page -- widening the
-# plot in pixels alone would change nothing a reader ever sees.
 PLOT_LEFT = 250
 PLOT_RIGHT = 1438
-# The axis is fitted to the series actually drawn, snapped out to even
-# percentages. A fixed 34% floor spent a fifth of the width on a band no Bulls
-# leader ever entered; adding the league-average line widens it on demand.
 AXIS_PAD = 0.6
 AXIS_STEP = 2.0
 
@@ -126,12 +114,6 @@ AXIS_LABEL_Y = 2170
 GRID_TOP = 2145
 GRID_BOTTOM = 120
 
-# The portraits are the series -- no line connects them -- so they are sized as a
-# share of the chart width rather than in pixels. A chart drawn wider and a
-# portrait drawn bigger cancel out once Canva scales the asset onto the page;
-# only the ratio survives. With sixteen rows the asset is taller than a 4:5 page,
-# so it lands height-constrained and the ratio that matters is portrait to chart
-# *height*, not width -- which is why the rows are packed to a 4 px gap.
 HEADSHOT_HALF = 62
 HEADSHOT_CROP_FRACTION = 0.68
 # NBA portraits are not framed identically. Mike Dunleavy sits low enough in his
@@ -143,48 +125,21 @@ CROP_FRACTIONS = {2399: 0.74}  # Mike Dunleavy
 LABEL_GAP = 18
 VALUE_GAP = 11
 
-# Both series labels hang the same distance below the last row so they read as a
-# pair rather than a stack. The drop is derived from the portrait rather than
-# fixed: either label can land at nearly the same x as the last portrait, and
-# with the newest season on top the bottom row is 2010-11, whose leader sits
-# within 0.2 points of the benchmark. A literal value here collided the moment
-# the row order flipped.
 SERIES_LABEL_DROP = HEADSHOT_HALF + 28
 NAME_RISE = 18
 LINE_DROP = 24
 
-# Every vertical rule is a light grey: the gridlines quietest, the two reference
-# series a step darker so they still read as data. Grey is the right register for
-# all three -- they are scaffolding, not the subject (DESIGN.md (Color and hierarchy)).
-# This chart takes no theme. The page canvas changes from post to post, the asset
-# is always transparent, and the only meaningful colours are Bulls red and the
-# house near-black -- so the palette is stated here rather than resolved through
-# a canvas-dependent theme (DESIGN.md (Color and hierarchy)).
-#
-# #242424 is the account's black: nothing in a graphic is pure or near-pure black.
 INK = "#242424"
 SUPPORT_GREY = "#5F5B57"   # the made-attempted line, subordinate to the name
-# Chart greys must read on the page canvas, which Canva owns and which varies:
-# #FAF8F5 through at least #E9E5E1. A gridline tuned to the lightest canvas is
-# invisible on the darker one -- #E6E2DB vanished on #E9E5E1, a 5-value
-# difference. These are chosen to hold across that whole range.
 GRIDLINE = "#D8D2CA"
-# Labels all read at one weight -- season, accuracy axis, and both series names.
-# The rules they annotate stay grey; the words naming them do not, so the reader
-# can find the axis without the axis competing with the portraits.
 BENCHMARK_GREY = "#A8A199"
 LEAGUE_GREY = "#BEB7AD"
-# Hierarchy comes from weight and dash length as much as tone: the benchmark is
-# heavier with long dashes, the league average lighter with short ones, so the
-# league line reads without competing.
 BENCHMARK_WIDTH = 2.0
 LEAGUE_WIDTH = 1.5
 
 
 @dataclass(frozen=True)
 class ChartType:
-    """Type sizing for the leader timeline at 1400 x 1520."""
-
     value: float = 15.5
     season: float = 14.0
     name: float = 15.5
@@ -555,8 +510,6 @@ def render_chart(
     leader_x = [_x(float(v), low, high) for v in leaders["three_pct"]]
     benchmark_x = [_x(float(v), low, high) for v in leaders["benchmark_three_pct"]]
 
-    # The benchmark is context, so it takes the muted dashed reference grammar
-    # from docs/design/tables-cards.md rather than a second bright colour.
     ax.plot(
         benchmark_x, ys, color=BENCHMARK_GREY, linewidth=BENCHMARK_WIDTH,
         linestyle=(0, (5, 3)), zorder=2,
@@ -633,9 +586,6 @@ def render_chart(
             if outer > CHART_WIDTH - 20:
                 raise ValueError(f"The label for {row['player_name']} runs off the chart.")
 
-        # Made-attempted, quieter and italic: it qualifies the percentage above it
-        # rather than competing with it, and it is what stops 45.1% being read
-        # without knowing it rests on 193 attempts.
         ax.text(
             edge, y - LINE_DROP, made, ha=align, va="center",
             fontsize=CHART_TYPE.line, color=SUPPORT_GREY,

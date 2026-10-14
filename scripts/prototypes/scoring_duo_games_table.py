@@ -102,15 +102,6 @@ def _height(rows: int) -> int:
 
 
 def _game_lines(row: pd.Series) -> tuple[str, list[tuple[str, str]]]:
-    """The date, and the second line as coloured segments.
-
-    Date and matchup formatting come from the game-score post's helpers so both
-    tables spell a game the same way. The only change is a space after "@",
-    which matches the "vs " the same helper already emits.
-
-    W and L carry colour, but the letter already states the result, so the
-    colour reinforces rather than carries it (DESIGN.md, "Color and hierarchy").
-    """
     date_label, matchup, result = _game_context_parts(row)
     matchup = matchup.replace("@", "@ ") if matchup.startswith("@") else matchup
     segments = [(matchup, INK, RESULT_GAP)]

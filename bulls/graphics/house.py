@@ -33,8 +33,6 @@ SIDE_MARGIN = 60
 FOOTER_Y = 40
 STRIPE_HEIGHT = 16
 
-# Jersey-lettering title: ink fill, white gap, red outer stroke. Flip to False
-# (or pass outlined=False per post) to return to the plain fitted title.
 OUTLINED_TITLE = True
 
 WHITE = "#FFFFFF"
@@ -52,15 +50,6 @@ GRIDLINE = "#F0F0F0"
 
 @dataclass(frozen=True)
 class Theme:
-    """A coordinated canvas palette for rendered posts.
-
-    A background is a contract with every other color on the page, so a theme
-    carries the full token set, not just the canvas fill. ``jersey`` (warm
-    off-white) is the default; ``white`` matches the loose module constants
-    above. The palettes retain the earlier full-layout themes,
-    promoted to real render options (DESIGN.md (Color and hierarchy)).
-    """
-
     name: str
     canvas: str
     ink: str  # primary text, data lines
@@ -638,11 +627,6 @@ def ensure_headshots(nba_ids) -> None:
             get_player_headshot(nba_id)
 
 
-# --- Conditional-fill scale for table posts (DESIGN.md) ------------------------
-#
-# The red-white-green cell scale shared by the Assist Leaders, Most Impactful and
-# rookie tables. The midpoint is the canvas colour rather than a yellow, so a
-# cell that says nothing remarkable disappears into the page.
 HEAT_RED = "#D64545"
 HEAT_MID = DEFAULT_THEME.canvas
 HEAT_GREEN = "#3FAE63"
@@ -715,11 +699,6 @@ def heat_text_color(fill: tuple[float, float, float]) -> str:
     return "#FFFFFF" if luminance < 0.47 else DEFAULT_THEME.ink
 
 
-# --- Accent card behind a table's hero column (DESIGN.md) ---------------------
-#
-# The continuous rounded block the game-score table runs behind Game Score, and
-# the rookie leaderboard runs behind PRA/75. It marks the one column the table
-# is sorted by, so a reader knows what the ranking means before reading a label.
 ACCENT_CARD_OUTSET_X = 8
 ACCENT_CARD_OUTSET_Y = 9
 ACCENT_CARD_OVERLAP_Y = 7
@@ -803,12 +782,6 @@ def draw_accent_card(
     return bounds
 
 
-# --- Turning a flat portrait into a usable cut-out ----------------------------
-#
-# A portrait only earns a place beside NBA CDN cut-outs if its background is
-# genuinely gone (see `background_removed`). Some good historical photographs
-# arrive as a clean subject on flat white instead, which reads as pasted-in.
-# This converts one into the shape the renderer expects.
 NBA_PORTRAIT_SIZE = (1040, 760)
 # The face crop takes the top 74% of an NBA headshot, so a supplied portrait is
 # scaled into that square and the rest of the canvas left empty.
@@ -909,8 +882,6 @@ def top_anchored_headshot_label(ax, image_path, x, y, half_size, *, crop_fractio
     left = max(0, (width - side) // 2)
     window = side
     if preserve_width and image.ndim == 3 and image.shape[2] == 4:
-        # Same width-preserving crop used by the bench-points portrait renderer:
-        # keep wide hair inside the crop without changing the face's scale.
         columns = np.where(image[:side, :, 3].max(axis=0) > 0.04)[0]
         if columns.size:
             centre = (int(columns.min()) + int(columns.max())) / 2

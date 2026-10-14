@@ -25,7 +25,6 @@ DEFAULT_DATA = _REPO / "docs/visuals/2026-09-16-and-one-leaders/data/top15.csv"
 DEFAULT_OUTPUT = _REPO / "output/and-one-leaders/table.png"
 PRIMARY_HEADSHOTS = Path("/Users/meltangonan/projects/bulls-analytics/cache/headshots")
 
-# Geometry follows pull_up_points_bars.py; two wider support columns replace three.
 WIDTH = 2600
 ROW_HEIGHT = 190
 TOP_BOTTOM = 175

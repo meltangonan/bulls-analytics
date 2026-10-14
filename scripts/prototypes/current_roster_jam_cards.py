@@ -57,9 +57,6 @@ from scripts.prototypes.current_roster_darko_landscape import (
 SEASON = "2025-26"
 SEASON_TYPE = "Regular Season"
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
-# Qualification is a playing-time gate, not a shooting gate. An attempt
-# threshold would decide who ranks in PASS by how much a player shot, and it
-# is measured in the same unit as the per-75 rates it screens.
 MIN_POSSESSIONS = 1500.0
 PER_POSSESSIONS = 75.0
 OUT = _REPO / "output"
@@ -73,10 +70,6 @@ NBA_PLAYER_STATS_URL = (
     "?Season=2025-26&SeasonType=Regular%20Season&PerMode=Totals"
 )
 
-# Bar order is the shot chart read outward from the basket, then playmaking.
-# Label, working-table key, and the definition that has to appear on the Canva
-# page. Every bar is an offensive dimension: steals and blocks were tested as a
-# defence bar and cut, because they rank good defenders badly.
 CATEGORIES = [
     ("RIM", "rim", "Restricted-area points"),
     ("PAINT NON-RA", "paint", "Paint points outside the restricted area"),

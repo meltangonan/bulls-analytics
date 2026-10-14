@@ -54,16 +54,8 @@ from bulls.graphics.house import BLACK, DRAFT_DPI, RED, export_dpi, helvetica
 DEFAULT_DATA = _REPO / "docs/visuals/2026-09-15-taj-gibson-retirement/data"
 DEFAULT_OUTPUT = _REPO / "output/taj-gibson-retirement"
 
-# Pale red from the low end of the magnitude scale. Readable against both the
-# cream and the darker warm Canva grounds, and quiet enough that the shaded
-# rows do not outshout the numbers.
 HIGHLIGHT_FILL = "#F6E3E8"
 ROW_RULE = "#B8B0A8"
-# The alternating band, matching the catch-and-shoot leaderboard: the neutral
-# separator grey painted at low alpha rather than a solid tint. A translucent
-# band darkens whichever Canva ground it lands on by the same relative amount,
-# so one value works on both the cream and the darker warm page. A solid fill
-# cannot: tuned for cream it turns into a *lighter* band on the warm ground.
 STRIPE_FILL = "#B8B0A8"
 STRIPE_ALPHA = 0.22
 
@@ -82,8 +74,6 @@ BODY_SIZE = 24
 FOOTNOTE_SIZE = 15
 FOOTNOTE_LINE = 30
 
-# Quieter than the table ink but still near 4.5:1 on the cream ground, per the
-# accepted treatment in DESIGN.md.
 FOOTNOTE_INK = "#5F5B57"
 
 CELL_PAD = 14
@@ -300,7 +290,6 @@ def _draw_table(
                 color=BLACK, linewidth=2.4, solid_capstyle="butt", zorder=3,
             )
         elif not striped and row_index < len(rows) - 1:
-            # Stripes and hairlines do the same job; running both is noise.
             bottom = y - ROW_HEIGHT / 2
             ax.plot(
                 [SIDE_PAD, width - SIDE_PAD], [bottom, bottom],
@@ -404,29 +393,15 @@ def render_season(data_path: Path, output_path: Path, *, final: bool = False) ->
     )
 
 
-# The 2025-26 best-games grammar: one continuous accent card down the hero
-# column with the values reversed out of it, and the header rule broken either
-# side of the card so it reads as sitting on the table rather than as another
-# cell in it. Three-point and free-throw splits are left out; he attempted no
-# threes in any of these games and the free-throw line adds width without
-# telling the reader anything the points column has not already.
 TABLE_ROW_H = 176
 TABLE_GAME_W = 940
 TABLE_CARD_W = 210
 TABLE_DATE_SIZE = 28
 TABLE_SUB_SIZE = 20
-# Close to the hero size on purpose: at only five rows the table can be set
-# large, and a hero that towers over its own box score makes the supporting
-# numbers look like a footnote to it rather than the evidence behind it.
 TABLE_STAT_SIZE = 32
 TABLE_HERO_SIZE = 34
 TABLE_CARD_GUTTER = 44
-# The accent card reaches above its column to overlap the header rule, so the
-# header LABEL needs clearance a plain table does not: at the standard gap,
-# "GMSC" lands on the card and renders red on red.
 TABLE_HEADER_GAP = 40
-# Headers scale with the table: left at the plain-table size they read as a
-# caption under a much larger body rather than as column labels.
 TABLE_HEADER_SIZE = 24
 
 TABLE_STATS = (
@@ -521,8 +496,6 @@ def render_top_games(data_path: Path, output_path: Path, *, final: bool = False)
                 zorder=3,
             ), stat_width))
 
-    # The stat columns had no width guard while the plain tables did, so a
-    # font bump could have collided them silently.
     overflows = [
         f"{artist.get_text()!r} renders {rendered:.0f}px against {allowed}px"
         for (artist, allowed), rendered in zip(
@@ -557,11 +530,6 @@ def render_franchise_ranks(data_path: Path, output_path: Path, *,
     if len(pools) != 1:
         raise ValueError(f"Expected one partial-coverage pool size, saw {pools}.")
 
-    # Stripes and the top-10 highlight can coexist now that the stripe is a
-    # translucent grey and the highlight a solid pale red: they read as two
-    # different marks rather than two strengths of the same one. That was not
-    # true when both were pink.
-    # Wrapped by hand so each line is measured and no line is silently clipped.
     footnote = (
         "Rows in red are top-10 finishes in franchise history.",
         f"Blocks, steals and rebound splits rank among the {pools[0]} Bulls with those",
@@ -597,8 +565,6 @@ def _ordinal(value: int) -> str:
     return f"{value}{suffix}"
 
 
-# Three-letter box-score codes, in reading order. Minutes was cut: a career
-# high in minutes describes a coach's rotation, not a performance.
 HIGH_CODES = {
     "Points": "PTS",
     "Rebounds": "TRB",
@@ -681,27 +647,14 @@ GRID_PER_ROW = 4
 
 
 def render_career_high_grid(data_path: Path, output_path: Path, *, final: bool = False) -> Path:
-    """Career highs as a ruled grid, with no card behind each number.
-
-    The pill-shaped cards read as decoration rather than structure. Here the
-    hairlines do the separating and the number does the talking, which is the
-    same grammar as the season tables: rules and type, no containers.
-    """
     frame = pd.read_csv(data_path)
     lines = -(-len(frame) // GRID_PER_ROW)
     width = SIDE_PAD * 2 + GRID_PER_ROW * GRID_COL_W
-    # A high set in the postseason is still a career high, but a reader seeing
-    # 32 beside a set of regular-season figures deserves to know which night it
-    # came from. Every value is house black, so the note carries that on its
-    # own rather than asking a colour to mean something.
     from_playoffs = bool(frame["in_playoffs"].any()) if "in_playoffs" in frame else False
     note_block = FOOTNOTE_LINE + FOOTNOTE_GAP if from_playoffs else 0
     height = TOP_PAD + lines * GRID_ROW_H + BOTTOM_PAD + note_block
     fig, ax = _new_asset(width, height)
 
-    # Horizontal rules span the whole block, not just the occupied cells: a
-    # rule that stops short on the last, partly filled line reads as a broken
-    # table rather than a deliberate edge.
     for line in range(lines + 1):
         y = height - TOP_PAD - line * GRID_ROW_H
         first = line == 0
@@ -758,21 +711,12 @@ DIET_BAR_SPAN = 620
 DIET_SHARE_W = 180
 DIET_FG_W = 180
 DIET_BAR_H = 44
-# Air between the longest bar and the share column, which otherwise touched.
 DIET_BAR_GUTTER = 70
 DIET_LABEL_SIZE = 26
 DIET_VALUE_SIZE = 26
 
 
 def render_shot_diet(data_path: Path, output_path: Path, *, final: bool = False) -> Path:
-    """Career shot diet: how often each family, and how well.
-
-    Share is a proportion with a true zero, so the bar is drawn from zero and
-    its length means what it looks like. FG% is printed rather than encoded,
-    and only where the family holds enough attempts to stand behind a rate:
-    ``shot_families`` marks that with ``rated``, and a 50% on ten attempts is
-    not a shooting percentage.
-    """
     frame = pd.read_csv(data_path)
     width = (
         SIDE_PAD * 2 + DIET_LABEL_W + DIET_BAR_SPAN + DIET_BAR_GUTTER
@@ -876,7 +820,7 @@ SLIDES = {
     "top-games-table": ("top-games.csv", render_top_games),
     "career-high-strip": ("career-highs.csv", render_career_high_strip),
     "career-high-grid": ("career-highs.csv", render_career_high_grid),
-    "franchise-ranks": ("franchise-ranks.csv", render_franchise_ranks),  # hairlines
+    "franchise-ranks": ("franchise-ranks.csv", render_franchise_ranks),
     "milestones": ("milestones.csv", render_milestones),
     "shot-diet": ("shot-diet.csv", render_shot_diet),
 }

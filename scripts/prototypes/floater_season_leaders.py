@@ -250,9 +250,6 @@ def prepare() -> None:
         raise ValueError('Team reconciliation mismatch; inspect saved audit')
     everything = pd.concat(results)
     everything.to_csv(DATA / 'all_player_seasons.csv', index=False)
-    # The driving-floater labels only exist from RANK_FROM. Earlier seasons stay
-    # in the audit as coverage evidence, but ranking them would compare a
-    # one-label era against a three-label era.
     ranked = everything.loc[everything.SEASON.str.slice(0, 4).astype(int).ge(RANK_FROM)]
     ranked = ranked.sort_values(['FGM','FGA','SEASON','PLAYER_ID'], ascending=[False,True,False,True])
     ranked['RANK'] = ranked.FGM.rank(method='min', ascending=False).astype(int)

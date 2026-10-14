@@ -59,9 +59,6 @@ SEASON_GREY = "#6E6963"
 RULE = "#B8B0A8"
 GREY = "#5F5B57"
 GREEN = "#218347"
-# Colours follow pull_up_points_bars.py but invert: at the rim a negative
-# comparison is good defence. Seasons inside +/- NEUTRAL_PP of league average
-# stay grey rather than claiming a defensive effect the gap cannot support.
 NEUTRAL_PP = 3.0
 OUTSIDE_LABEL_BELOW = 30.0
 

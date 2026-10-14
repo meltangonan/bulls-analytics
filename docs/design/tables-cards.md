@@ -15,6 +15,7 @@ small helpers below; the post still chooses its columns, thresholds, dimensions,
 | Square portrait | `house.square_headshot_label` | [Lineup rORTG](../../scripts/prototypes/bulls_lineup_rortg.py) |
 | Top-anchored portrait | `house.top_anchored_headshot_label` | [Scoring leaps](../../scripts/prototypes/scoring_leaps.py), [three-point leaders](../../scripts/prototypes/three_point_leaders.py) |
 | One emphasized portrait | `craft.headshot_label` | Circular red-ringed crop; at most one payoff |
+| Dumbbell row | `dumbbell.dot`, `connector`, `leader` in [dumbbell.py](../../bulls/graphics/dumbbell.py) | The subject is a filled red mark and the reference a gray ring, so a near-match never hides the reference; the connector stops at the ring's outer edge, and a dotted leader runs to the value column |
 | Player-game Game Score table | `top_game_performances.render_chart`; new tables pass `show_turnovers=True, show_free_throws=False, emphasize_points=True`; add `shooting_after_assists=True` for PTS, REB, AST before FG and 3PT | [Rookie games](../../scripts/prototypes/rookie_game_scores.py); [sophomore games](../../scripts/prototypes/sophomore_game_scores.py) (shooting after assists); [2025–26 top 15](../../scripts/prototypes/season_game_performances.py) keeps its earlier FT layout; `show_plus_minus=False` drops +/- for windows before 1996–97, and `portraits={id: path}` swaps in a post-local portrait where the CDN serves a silhouette. [Rookie debuts](../../scripts/prototypes/bulls_rookie_debuts.py) adds `hero_points=True` (PTS in the red card), `striped_rows=True` (every other row shaded, as in the quarter/half and block-leader tables), `made_attempted_dash="-"`, `missing_cell="-"` for a stat that was not recorded, and a tie-aware `#` column via `layout.rank_x` with `rank_label` |
 
 Call signatures and geometry defaults live in the helpers. Choose the closest example and reuse its
@@ -31,12 +32,19 @@ column to its widest header or value and give every column the **same visible ga
 against a wide made-attempted one such as FG. Large portraits may overlap neighboring rows with
 explicit draw order and unclipped hair; prefer a larger overlapping face to a small contained one,
 then check that the longest name and context line (including a playoff note) still clear the hero column.
+An overlapping portrait rises only into the row above: it rests on or is clipped at its own row's
+bottom separator, and lower rows draw in front so each face covers the shoulders above it. Fit one
+name size to the longest name and use it on every row; never shrink only the names that overflow.
+In a player-season row, the season is a smaller, raised, italic marker in muted gray right after the
+name, and the name column is measured from the longest name plus its marker.
 
 In a player-game table, bold the PTS values: points is the supporting stat readers check first.
 Mark playoff rows in a mixed regular-season/playoff table with a muted `(RD 1 GM1)` note before the
 result, at the game line's own size. Place the hero column a fixed gap after the widest measured name
 or game line (`top_game_performances.identity_width`), not at a fixed x, and let the stat columns share
 what remains.
+Render every slide of a multi-slide table on one canvas sized to the fullest slide, with one name
+size and one set of column positions measured across all slides, so nothing jumps between swipes.
 
 Size row height from the Canva page, not the previous post: measure the table's placed height in a
 page export and grow rows until it fills the space between subtitle and footer. At the 1500-wide
@@ -48,16 +56,20 @@ check that the widest row still clears every column before going larger. Made-at
 hyphen (`made_attempted_dash="-"`). When most rows have few three-point attempts, `true_shooting=True`
 shows TS% in the 3PT column's place; define TS% in the page note.
 
-Dense stat tables use clean alternating rows, sorted by the story metric. Do not color every column
+Dense stat tables use clean alternating rows, sorted by the story metric. Shade alternating rows with the
+`#B8B0A8` separator gray at low alpha (about 0.1), not a solid tint: a translucent band darkens cream
+and the warmer `#E9E5E1` page alike, while a solid tint tuned on cream turns lighter than the warm
+page. Body row rules run across the full table width and above any cell fill, so blank, shaded, and
+partly filled rows keep one unbroken separator. Do not color every column
 by magnitude. `craft.MAGNITUDE_CMAP` (`#F2EAE8` → `#CE1141` → `#7E0C2B`) remains available for a mark
 whose magnitude genuinely is the point. Print signs where color expresses a difference; the existing
 red/green scales must never carry direction alone.
 
 Conditional fills have a **neutral band**, not a single midpoint. `heat_fill` blends red `#D64545`
 and green `#3FAE63` toward cream `#FAF8F5`; values inside the band stay neutral. That cream is a cell
-fill, not a requirement for the Canva background. Use `heat_text_color` for readable text. Green text, such as a
-win or a top-ten rank, uses `house.GREEN_TEXT` (`#218347`, 4.5:1 on cream); `HEAT_GREEN` is a fill and
-reads at only 2.7:1 as text.
+fill, not a requirement for the Canva background. Use `heat_text_color` for readable text. Green
+text, such as a win or a top-ten rank, uses `house.GREEN_TEXT` (`#218347`, 4.5:1 on cream);
+`HEAT_GREEN` is a fill and reads at only 2.7:1 as text.
 
 Calibrate from the eligible population or a meaningful basketball reference, never just the displayed
 rows' minimum and maximum. For counting stats, a low value may describe a role rather than failure;

@@ -82,8 +82,6 @@ SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 PROJECT = "bench-points-season"
 
 OUT = _REPO / "output" / "feed"
-# Single-consumer data lives with its post from the first run, not in the ignored
-# cache -- see AGENTS.md and tests/test_data_locations.py.
 POST_DATA = visual_dir(_REPO / "docs" / "visuals", PROJECT) / "data"
 RAW = POST_DATA / "raw"
 # NBA's CDN serves no portrait for Nate Robinson, only the grey silhouette
@@ -98,9 +96,6 @@ NBA_SPLIT_URL = (
     f"&TeamID={BULLS_TEAM_ID}&StarterBench={{split}}"
 )
 
-# Horizontal bars: the finding is a length comparison, and a 294-point gap is
-# read instantly as length and slowly as a number. Ten rows at 1800 px wide give
-# every surname a full row, so nothing is abbreviated or angled.
 CHART_WIDTH = 2550
 # The height is derived from the row count so the ten- and fifteen-row versions
 # share one layout instead of two sets of hand-tuned constants. `chart_height`
@@ -108,20 +103,7 @@ CHART_WIDTH = 2550
 # inches and a height that does not divide cleanly exports a pixel short.
 MIN_VERTICAL_MARGIN = 60
 
-# Row anatomy follows the ranked player-season grammar the account already uses
-# on the scoring-leaps chart and the rookie leaderboard: portrait, then the name
-# with the season raised beside it, then a quieter support line, then the mark.
-# A reader who has seen either post can read this one without learning anything.
-#
-# No rank column. On a bar chart the ordering is already the longest thing on the
-# page, so a numeral restates it -- and the rookie table's numbers earn their
-# place only because a table has no length to read.
 HEADSHOT_X = 158
-# Portraits are drawn taller than the row pitch, so consecutive faces overlap
-# slightly. NBA portraits carry a transparent background, so the overlap reads as
-# a stack of players rather than as clipping -- and the size is the point: the
-# face is the highest-stopping-power object on the chart (docs/design/tables-cards.md (Portraits)). Upper
-# rows take the higher z-order so no face is cut off by the one below it.
 HEADSHOT_HALF = 112
 # Top-anchored, not centred: the NBA CDN serves each player's *current* portrait,
 # so a chart spanning 1996 to 2026 arrives with Gibson and White in Hornets teal
@@ -142,9 +124,6 @@ BAR_MAX_RIGHT = 2280
 VALUE_GAP = 26
 
 ROW_HEIGHT = 195
-# The bar is nearly the full row pitch, so the bars themselves become the page's
-# banding and the reader gets weight as well as length. The remaining gutter is
-# what keeps ten stacked bars from reading as one block.
 BAR_HEIGHT = 108
 BAR_RADIUS = 8
 
@@ -154,22 +133,9 @@ NAME_RISE = 26
 SEASON_RISE = 42
 SUPPORT_DROP = 46
 
-# This chart takes no theme. The page canvas changes from post to post, the asset
-# is always transparent, and the only meaningful colours are Bulls red and the
-# house near-black (DESIGN.md (Color and hierarchy)).
-#
-# #242424 is the account's black: nothing in a graphic is pure or near-pure black.
 INK = "#242424"
-# Every bar is Bulls red. The leader needs no second encoding: at 1,209 against
-# 915 his bar is a third longer than anything else on the page, so colouring one
-# bar differently would restate the ranking the length already states.
 SUPPORT_GREY = "#5F5B57"
 SEASON_GREY = "#6E6963"
-# Chart greys must read across the canvas range Canva owns (#FAF8F5 through at
-# least #E9E5E1), so the row rule is set well above the lightest of them. It is
-# the table grammar's one structural line: it groups a portrait, a name and a bar
-# into a row without drawing a box around each, which at ten rows would read as a
-# grid competing with the bars.
 ROW_RULE = "#DCD6CE"
 ROW_RULE_WIDTH = 1.1
 
@@ -373,15 +339,6 @@ def build_table(refresh: bool = False) -> pd.DataFrame:
 def _reconcile(
     end_year: int, bench: pd.DataFrame, starter: pd.DataFrame, total: pd.DataFrame
 ) -> None:
-    """Fail when a season's splits do not add back up to its unsplit totals.
-
-    Two different failures are caught here. An empty bench frame means the season
-    predates the play-by-play archive the split is derived from -- NBA.com returns
-    no rows rather than an error, so nothing else would notice. A split that does
-    not sum to the season total means the response was scoped differently from
-    what the parameters claim, which is the failure mode that ships wrong numbers
-    quietly. Neither is checkable from the bench response alone.
-    """
     season = season_label(end_year)
     if bench.empty:
         raise ValueError(
@@ -531,29 +488,18 @@ def render_chart(leaders: pd.DataFrame, date: str, *, final: bool = False) -> Pa
     ax.set_ylim(0, height)
     ax.axis("off")
 
-    # No value axis. Every bar carries its own figure, so an axis would be a
-    # second reading of the same numbers -- and the comparison the post makes is
-    # between bars, not against a scale.
     longest = float(leaders["bench_points"].max())
     scale = (BAR_MAX_RIGHT - BAR_LEFT) / longest
 
     for index, row in leaders.iterrows():
         y = _row_y(index, first_row_y)
 
-        # One rule above each row after the first. A rule under the last row
-        # would close the list like a table footer, which is a claim the chart
-        # does not make: this is the top ten of a longer field.
         if index:
             ax.plot(
                 [0, CHART_WIDTH], [y + ROW_HEIGHT / 2, y + ROW_HEIGHT / 2],
                 color=ROW_RULE, linewidth=ROW_RULE_WIDTH, zorder=0,
             )
 
-        # The portrait's *bottom* sits on the row's bottom edge, so it can only
-        # ever grow upward into the row above -- never down into the row below.
-        # Anchoring on the row centre instead let a tall portrait break out of
-        # both ends of its row, which reads as a misaligned image rather than a
-        # deliberate overlap.
         crop = CROP_FRACTIONS.get(int(row["player_id"]), HEADSHOT_CROP_FRACTION)
         half = HEADSHOT_HALF * crop / HEADSHOT_CROP_FRACTION
         portrait_label(
@@ -563,37 +509,20 @@ def render_chart(leaders: pd.DataFrame, date: str, *, final: bool = False) -> Pa
             y - ROW_HEIGHT / 2 + half,
             half,
             crop=crop,
-            # Lower rows draw in front, so each face covers the shoulders of the
-            # one above it. All of them sit *under* the text, so a portrait wide
-            # enough to reach the name column runs behind the name.
             zorder=2.4 + index * 0.01,
         )
 
-        # Full name rather than surname: with a portrait beside it the row has
-        # the width for it, and "Coby White 2019-20" beside "Coby White 2022-23"
-        # is the pair a reader most needs to tell apart.
         name = ax.text(
             NAME_X, y + NAME_RISE, row["display_name"], ha="left", va="center",
             fontsize=CHART_TYPE.name, color=INK,
             fontproperties=helvetica("bold"), zorder=3,
         )
-        # The season rides high and italic beside the name, as it does on the
-        # scoring-leaps chart and the rookie leaderboard: it identifies the row
-        # without competing with the player for the reader's first glance.
-        # It is also what sets the name column's width -- the longest name plus a
-        # season is wider than any stat line -- so the bars start where this
-        # label ends, not where the stat line ends.
         season = ax.text(
             NAME_X + rendered_width(ax, name) + SEASON_GAP, y + SEASON_RISE,
             display_season(int(row["season_end_year"])), ha="left", va="center",
             fontsize=CHART_TYPE.season, color=SEASON_GREY,
             fontproperties=helvetica("oblique"), zorder=3,
         )
-        # Games and per-game: they stop 1,209 being read without knowing how many
-        # bench appearances it took, and they make a short bar with a high
-        # per-game figure legible as fewer chances rather than a worse season --
-        # Augustin's 749 in 52 games against McDermott's 718 in 77. "Off the
-        # bench" is not repeated; every row on the chart is a bench row.
         support = ax.text(
             NAME_X, y - SUPPORT_DROP,
             f"{int(row['bench_games'])} G, {row['bench_points_per_game']:.1f} PTS/G",
@@ -611,8 +540,6 @@ def render_chart(leaders: pd.DataFrame, date: str, *, final: bool = False) -> Pa
                 )
 
         width = float(row["bench_points"]) * scale
-        # Rounded ends rather than square: at 150 px tall a square bar reads as a
-        # slab, and the radius is small enough not to distort length.
         ax.add_patch(
             FancyBboxPatch(
                 (BAR_LEFT, y - BAR_HEIGHT / 2),
@@ -625,8 +552,6 @@ def render_chart(leaders: pd.DataFrame, date: str, *, final: bool = False) -> Pa
             )
         )
 
-        # The totals stay near-black against the red bars: a red numeral beside a
-        # red bar loses the contrast the figure needs to be read at feed size.
         value = ax.text(
             BAR_LEFT + width + VALUE_GAP, y,
             f"{int(row['bench_points']):,}", ha="left", va="center",

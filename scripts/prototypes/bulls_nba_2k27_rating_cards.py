@@ -59,8 +59,6 @@ BAR_GAP = 6
 TRACK_FILL = "#EDE7E0"
 TRACK_EDGE = "#DCD4CB"
 
-# A fixed rating scale, not one fitted to these four players. That keeps the
-# same number the same color when the rest of the roster is added later.
 _RATING_ANCHORS = [40, 60, 70, 80, 90, 99]
 _RATING_COLORS = [
     "#A90F2A",

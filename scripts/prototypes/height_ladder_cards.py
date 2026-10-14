@@ -39,17 +39,12 @@ DATA = Path("docs/visuals/2026-08-20-most-ppg-at-each-height/data")
 POST_PORTRAITS = DATA / "portraits"
 OUT = Path("output")
 
-# The age ladder's red-yellow-green ramp, reused so the two posts read as one
-# family. Red is the weakest scorer at that height, green the strongest.
 HEAT_RED = "#D64545"
 HEAT_YELLOW = "#F2D46B"
 HEAT_GREEN = "#3FAE63"
 
 BULLS_RED = "#CE1141"
 
-# Wider than tall per row, and near full-bleed: the asset is placed on a Canva
-# page by width, so a narrow canvas leaves a gap at the right margin that no
-# amount of scaling closes.
 FIG_W = 9.2
 ROW_H_IN = 1.02
 PAD_TOP_IN = 0.62
@@ -97,10 +92,6 @@ def _mix(base: str, target: str, strength: float) -> tuple[float, float, float]:
     )
 
 
-# Fixed anchors, calibrated to what a scoring average means in the NBA rather
-# than to this ladder's own spread (house.heat_fill makes the same argument).
-# A min-max scale anchored on Jordan describes Jordan: it drags every honest
-# starter toward red and makes 27 a mid-tone, because one outlier owns the top.
 RED_AT = 8.0      # deep bench scoring
 YELLOW_AT = 18.0  # a solid NBA starter
 GREEN_AT = 28.0   # a first option; anything above simply stays green
@@ -160,8 +151,6 @@ def draw_row(ax, row, y, row_h, name_size, fig_h, theme, zorder) -> None:
     stripe_y = STRIPE * FIG_W / fig_h
     bottom = y - box_h / 2
 
-    # Every row is Bulls red: the page is one team, so the row colour is not
-    # carrying a variable. Only the PPG cell does.
     striped_box(ax, X_ROW_L, bottom, X_ROW_R - X_ROW_L, box_h,
                 BULLS_RED, _mix("#FFFFFF", BULLS_RED, 0.07), fig_h, zorder=2)
 
@@ -184,8 +173,6 @@ def draw_row(ax, row, y, row_h, name_size, fig_h, theme, zorder) -> None:
         row_h * PORTRAIT_SCALE, fig_h, zorder,
     )
 
-    # A fallback row is set in oblique instead of carrying an asterisk: the
-    # slant marks the whole row at once, and the footnote is added in Canva.
     italic = not row.QUALIFIED
     face_bold = house.helvetica("bold_oblique" if italic else "bold")
     face_regular = house.helvetica("oblique" if italic else "regular")
@@ -223,11 +210,6 @@ def draw_row(ax, row, y, row_h, name_size, fig_h, theme, zorder) -> None:
 
 
 def fit_name_size(ladder: pd.DataFrame, fig_h: float) -> float:
-    """One name size for the whole post, set by the longest name.
-
-    Shrinking only the names that overflow makes the page look inconsistent,
-    so the longest name sets the size and every row uses it.
-    """
     available = X_PPG_L - X_NAME - 0.115
     fig, ax = plt.subplots(figsize=(FIG_W, fig_h))
     # ⚠️ The axes must reach its final size before anything is measured. At
@@ -251,12 +233,6 @@ def fit_name_size(ladder: pd.DataFrame, fig_h: float) -> float:
 
 
 def draw_slide(ladder: pd.DataFrame, rows_tall: int, name_size, path: Path, theme):
-    """Draw one slide on a canvas sized for `rows_tall` rows.
-
-    Both slides of a carousel share one canvas even when the split is uneven,
-    so the second reads as a continuation of the first: same row height, same
-    column positions, same page size. A shorter slide simply ends early.
-    """
     fig_h = figure_height(rows_tall)
     fig, ax = plt.subplots(figsize=(FIG_W, fig_h))
     fig.patch.set_alpha(0)

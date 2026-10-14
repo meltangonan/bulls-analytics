@@ -67,11 +67,6 @@ OUTPUT_DIR = _REPO / "output" / "2026-08-14-bulls-rookie-landscape"
 # On/off is blanked below this, exactly as on the chronological table.
 MIN_IMPACT_MINUTES = 750
 
-# Narrower and taller than the page, on purpose. Placed on a 1080x1350 Canva
-# page the asset has roughly 960x875 to live in, and whichever dimension binds
-# first sets the scale. At 1080x875 the width bound first, so the chart shrank
-# to 89% and left vertical space empty. At 1000x960 the height binds instead:
-# the asset scales to 91% and every row lands about 14% larger on the page.
 CHART_WIDTH = 1000
 TABLE_LEFT = 16
 TABLE_RIGHT = 984
@@ -94,14 +89,6 @@ CAPTION_FONT_SIZE = 11.0
 CARD_OUTSET_Y = 7.0
 CARD_OVERLAP_Y = 3.0
 
-# The hero column carries the ranking, styled like the game-score table's GMSC.
-#
-# Rate and total answer different questions, and the headline has to match the
-# one chosen. "Did the most" is a total: Derrick Rose out-produced Nikola
-# Mirotic 2,190 to 1,334, because he played 3,000 minutes to Mirotic's 1,654.
-# PRA/75 instead asks who produced fastest per possession, which flatters a
-# bench role — production per possession usually falls as minutes grow, so a
-# 20-minute player is not being asked to sustain what a 37-minute player is.
 HERO_MODES = {
     "total": ("pra_total", "PRA", "{:.0f}"),
     "per-75": ("pra_per_75", "PRA/75", "{:.1f}"),
@@ -145,12 +132,6 @@ COLUMN_SCALES = {
 
 
 def row_height(row_count: int) -> float:
-    """Fill the shared canvas whatever this slide's row count is.
-
-    The top ten gets taller rows than the remaining thirteen. That is the
-    editorial hierarchy made visible rather than an inconsistency: the ranked
-    slide is the post, the second slide is the rest of the field.
-    """
     return (CANVAS_HEIGHT - HEADER_RULE_FROM_TOP - 21.5 - BOTTOM_PAD) / row_count
 
 
@@ -299,10 +280,6 @@ def render_page(
         ax.plot([a, b], [rule_y, rule_y], color=theme.ink, linewidth=1.5,
                 zorder=3, solid_capstyle="butt")
 
-    # One continuous card behind the ranking column, drawn before the rows so
-    # the values sit on top of it.
-    # A shorter reach than the game-score default: this canvas is tighter, and
-    # the full outset crowded the PRA/75 header.
     card = draw_accent_card(ax, hero_bounds[0], hero_bounds[1], first_row_y,
                             len(page), rh, outset_y=CARD_OUTSET_Y,
                             overlap_y=CARD_OVERLAP_Y)

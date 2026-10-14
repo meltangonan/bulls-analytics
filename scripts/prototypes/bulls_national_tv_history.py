@@ -70,7 +70,6 @@ class Season:
 
 
 def load_seasons(path: Path = SNAPSHOT) -> list[Season]:
-    """Load and validate the committed schedule-release snapshot."""
     with path.open(encoding="utf-8") as handle:
         rows = csv.DictReader(line for line in handle if not line.startswith("#"))
         seasons = [
@@ -93,14 +92,12 @@ def load_seasons(path: Path = SNAPSHOT) -> list[Season]:
 
 
 def load_current_comparison(path: Path = CURRENT_COMPARISON) -> dict[str, int]:
-    """Load the two-team current-season context used in the Canva copy."""
     with path.open(encoding="utf-8") as handle:
         rows = csv.DictReader(line for line in handle if not line.startswith("#"))
         return {row["team"]: int(row["national_games"]) for row in rows}
 
 
 def order_seasons(seasons: list[Season], *, descending: bool = False) -> list[Season]:
-    """Return seasons in the requested chronological display order."""
     return sorted(seasons, key=lambda season: season.season, reverse=descending)
 
 
@@ -111,7 +108,6 @@ def _short_label(season: Season) -> str:
 
 
 def render_chart(seasons: list[Season], *, final: bool = False) -> Path:
-    """Render one transparent bar-chart asset for placement in Canva."""
     theme = DEFAULT_THEME
     label_font = helvetica()
     bold_font = helvetica("bold")
@@ -181,7 +177,6 @@ def render_chart(seasons: list[Season], *, final: bool = False) -> Path:
 
 
 def render_horizontal_chart(seasons: list[Season], *, final: bool = False) -> Path:
-    """Render a transparent horizontal bar chart for placement in Canva."""
     theme = DEFAULT_THEME
     label_font = helvetica()
     bold_font = helvetica("bold")
@@ -220,8 +215,6 @@ def render_horizontal_chart(seasons: list[Season], *, final: bool = False) -> Pa
 
     ax.set_xlim(-0.35, 29)
     ax.set_yticks(y, [_short_label(season) for season in seasons])
-    # Leave enough room above the newest bar for its rounded edge, cast shadow,
-    # and value label to survive the transparent tight crop.
     ax.set_ylim(len(seasons) - 0.45, -0.78)
     ax.tick_params(axis="y", length=0, pad=10, colors=theme.muted, labelsize=13)
     for label in ax.get_yticklabels():
@@ -240,8 +233,6 @@ def render_horizontal_chart(seasons: list[Season], *, final: bool = False) -> Pa
     )
 
     ax.xaxis.grid(True, color=theme.grid, linewidth=1.2, zorder=0)
-    # Keep the numeric zero tick without drawing a vertical rule through the
-    # rounded bar starts. The first visible gridline is five games.
     ax.get_xgridlines()[0].set_visible(False)
     ax.yaxis.grid(False)
     for side in ("top", "right", "bottom", "left"):
@@ -260,7 +251,6 @@ def render_horizontal_chart(seasons: list[Season], *, final: bool = False) -> Pa
 
 
 def _draw_gradient_bar(ax, x0, x1, y, height, colors, shadow_color) -> None:
-    """Draw one assist-duos-style rounded red bar with a soft cast shadow."""
     rounding = height * 0.28
     shape = dict(
         boxstyle=f"round,pad=0,rounding_size={rounding}",

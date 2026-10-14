@@ -70,7 +70,6 @@ def fetch_frame(season: str, *, team_id: int | None, refresh: bool = False) -> p
 
 
 def nba_rank(blocks: int, league_blocks: pd.Series) -> int:
-    """Competition rank of a block total; tied totals share a rank."""
     values = pd.to_numeric(league_blocks, errors="raise")
     return int((values > blocks).sum() + 1)
 

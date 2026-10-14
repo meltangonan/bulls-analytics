@@ -98,7 +98,6 @@ def to_photos(slides: list, album: str) -> str:
 
 
 def deliver(slides: list) -> list:
-    """Clean every slide and add them to the Photos album. Returns one log line per step."""
     lines = []
     for s in slides:
         removed = clean_png(s)
@@ -115,7 +114,6 @@ def deliver(slides: list) -> list:
 
 
 def to_icloud(game_id: str, slides: list) -> str:
-    """Copy the slides to iCloud Drive/Bulls recaps/<date> <matchup>/, replacing an earlier delivery's copies."""
     r = json.loads((OUTPUT / game_id / "recap.json").read_text())
     folder = ICLOUD / f"{r['date_short']} {r['chi']['tri']} {'vs' if r['home'] else 'at'} {r['opp']['tri']}"
     folder.mkdir(parents=True, exist_ok=True)

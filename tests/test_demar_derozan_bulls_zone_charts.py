@@ -109,7 +109,6 @@ def test_2021_22_physical_paint_matches_nba_labels_before_custom_angle_split():
 
 @pytest.mark.parametrize("season", charts.SEASONS)
 def test_custom_zones_reconcile_to_every_nba_basic_physical_family(season):
-    """Custom rays may subdivide a family; they may never move a shot between families."""
     shots = pd.read_csv(DATA / f"{season}-demar-derozan-bulls-shots.csv")
     custom = pd.Series(charts.sm.zone12_of_shots(shots), index=shots.index)
     family = custom.replace({
@@ -166,6 +165,5 @@ def test_custom_sectors_never_cross_the_centre_line_nba_drew(season):
 
     assert int((nba_left & ours_right).sum()) == 0
     assert int((nba_right & ours_left).sum()) == 0
-    # And the check is not vacuous: both sides carry real volume.
     assert int((nba_left & ours_left).sum()) > 100
     assert int((nba_right & ours_right).sum()) > 100

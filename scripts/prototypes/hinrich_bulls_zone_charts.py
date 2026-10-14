@@ -81,7 +81,6 @@ LOCATION_COLUMNS = ["loc_x", "loc_y", "shot_distance", "shot_zone",
 
 
 def fetch_bulls_totals(season: str) -> pd.Series:
-    """Fetch the independent Chicago totals used to reconcile this post's shots."""
     return fetch.get_player_season_totals(
         PLAYER_ID, season, team_id=BULLS_TEAM_ID,
         columns=TOTAL_COLUMNS, player_name=PLAYER_NAME,

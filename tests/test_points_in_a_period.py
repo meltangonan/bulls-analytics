@@ -8,7 +8,6 @@ LABELS = {"h1": "1H", "h2": "2H", "q1": "1Q", "q2": "2Q", "q3": "3Q", "q4": "4Q"
 
 
 def wide(points: list[int], season_type: str = "Regular Season") -> pd.DataFrame:
-    """Player-games whose whole game is one 4th quarter of the given points."""
     rows = []
     for i, pts in enumerate(points):
         row = {"season": "2020-21", "season_type": season_type, "GAME_ID": 22000001 + i,

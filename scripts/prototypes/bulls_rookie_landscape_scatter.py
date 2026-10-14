@@ -60,8 +60,6 @@ PLOT_BOTTOM, PLOT_TOP = 86, 1024
 # never means "this player is the interesting one".
 MIN_MARK_RADIUS = 13.0
 MAX_MARK_RADIUS = 46.0
-# Below this radius a face is no longer recognisable, so the rookie keeps a dot
-# even when he was selected for a portrait.
 MIN_FACE_RADIUS = 19.0
 # Keep the top of the portrait only. A centre crop of an NBA headshot is mostly
 # jersey, which is unreadable at the size these marks run.
@@ -75,7 +73,6 @@ Y_AXES = {
 
 
 def load_pool(min_minutes: int = MIN_MINUTES) -> pd.DataFrame:
-    """Join the rookie working table to the season league-efficiency baseline."""
     rookies = pd.read_csv(COMPARISON_CSV)
     league = pd.read_csv(LEAGUE_TS_CSV).rename(columns={"season": "season_label"})
     joined = rookies.merge(
@@ -103,7 +100,6 @@ def mark_radii(minutes: pd.Series) -> np.ndarray:
 
 
 def quadrant_split(values: pd.Series) -> float:
-    """Divide on the pool median, the honest 'typical Bulls rookie' line."""
     return float(values.median())
 
 
@@ -118,8 +114,6 @@ def label_choices(pool: pd.DataFrame, x: str, y: str, count: int = 14) -> list[i
     for column, largest in ((x, True), (y, True), (y, False), ("minutes", True)):
         ordered = pool.nlargest(count, column) if largest else pool.nsmallest(count, column)
         candidates.extend(ordered.index.tolist()[:per_axis])
-    # The four lists overlap heavily, so top up by minutes to always return
-    # `count` names rather than however many survived the de-duplication.
     candidates.extend(pool.sort_values("minutes", ascending=False).index.tolist())
     chosen: list[int] = []
     for index in candidates:
@@ -141,7 +135,6 @@ def face_choices(pool: pd.DataFrame, x: str, y: str, count: int) -> list[int]:
 
 
 def _axis_mapper(lo: float, hi: float, pixel_lo: float, pixel_hi: float):
-    """Map a data value onto the canvas, the way the landscape family does."""
     span = hi - lo
 
     def to_pixels(value):
@@ -158,7 +151,6 @@ def render(
     faces: int = 0,
     final: bool = False,
 ) -> Path:
-    """Render one transparent, Canva-ready scatter asset."""
     theme = DEFAULT_THEME
     y_column, y_label, _ = Y_AXES[y_key]
     x_column = "pra_per_75"
@@ -207,7 +199,6 @@ def render(
     ax.plot([PLOT_LEFT, PLOT_RIGHT], [PLOT_BOTTOM, PLOT_BOTTOM], color=theme.rule,
             linewidth=1.2, zorder=1)
 
-    # Biggest first, so the smallest roles end up on top and stay visible.
     order = np.argsort(-radii)
     name_font = helvetica("bold")
     for position in order:

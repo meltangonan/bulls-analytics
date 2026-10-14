@@ -104,7 +104,6 @@ def estimates_html() -> str:
     lanes = []
     for _, r in top.iterrows():
         measured_only = r.measured_share >= 0.999
-        # The bib shows the range; the face's position marks the single estimate.
         bib = f'{r.marathons:.1f}' if measured_only else f'{r.marathons_lo:.0f}-{r.marathons_hi:.0f}'
         lanes.append(_lane(
             r['rank'], _last(r.player), years(r),
@@ -123,8 +122,6 @@ def render(page, html: str, name: str) -> None:
     html_path.write_text(html)
     page.goto(html_path.as_uri())
     page.wait_for_load_state('networkidle')
-    # The face's center marks the value. Reserve just enough axis space after the leader for the
-    # widest bib, so no bib crosses the finish line.
     page.evaluate('''(() => {
         const need = Math.max(...[...document.querySelectorAll('.runner')].map(r => {
             const f = r.querySelector('.face').getBoundingClientRect();

@@ -12,7 +12,6 @@ ROOT_DOCS = ["AGENTS.md", "DEVELOPMENT.md", "DESIGN.md", "POSTING_WORKFLOW.md",
              "STRATEGY.md", "README.md"]
 SKILLS = sorted((ROOT / ".agents/skills").rglob("SKILL.md"))
 
-# Search relevant source/docs once, excluding ignored caches and environments.
 SOURCE_BASENAMES = {p.name for directory in ("bulls", "scripts", "tests", "docs")
                     for p in (ROOT / directory).rglob("*") if p.is_file()}
 
@@ -42,7 +41,6 @@ def _reference_resolves(doc: Path, ref: str, *, clickable: bool) -> bool:
 
 @pytest.mark.parametrize("doc", _docs(), ids=lambda p: str(p.relative_to(ROOT)))
 def test_file_references_resolve(doc: Path):
-    """A doc that points at a file which no longer exists answers nothing."""
     missing = []
     for i, line in enumerate(doc.read_text().splitlines(), 1):
         refs = [(m.group(1), False) for m in FILE_REF.finditer(line)]
@@ -66,7 +64,6 @@ def test_file_references_resolve(doc: Path):
     ("https://example.com/README.md", True, True),
 ])
 def test_reference_resolution(tmp_path, monkeypatch, ref, clickable, expected):
-    """A filename elsewhere must not hide a broken link in a nested document."""
     (tmp_path / "docs").mkdir()
     (tmp_path / "scripts").mkdir()
     (tmp_path / "README.md").touch()
@@ -78,7 +75,6 @@ def test_reference_resolution(tmp_path, monkeypatch, ref, clickable, expected):
 
 
 def test_every_prototype_is_indexed():
-    """Every entry point should be discoverable without reading all scripts."""
     index = (ROOT / "scripts/prototypes/README.md").read_text()
     scripts = sorted(p.stem for p in (ROOT / "scripts/prototypes").glob("*.py")
                      if not p.name.startswith("_"))
@@ -91,7 +87,6 @@ def test_every_prototype_is_indexed():
 
 
 def test_indexed_prototypes_still_exist():
-    """The reverse: an index row for a deleted script sends a reader nowhere."""
     index = (ROOT / "scripts/prototypes/README.md").read_text()
     listed = set(re.findall(r'`([a-z0-9_]+)\.py`', index))
     on_disk = {p.stem for p in (ROOT / "scripts/prototypes").glob("*.py")}
@@ -119,7 +114,6 @@ def test_skill_symlinks_are_links_not_copies():
 
 
 def test_prototypes_have_a_module_docstring():
-    """The docstring is what a future reader reads first; an unnamed script is a dead end."""
     bare = []
     for p in sorted((ROOT / "scripts/prototypes").glob("*.py")):
         if p.name.startswith("_"):

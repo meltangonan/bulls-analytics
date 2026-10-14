@@ -95,7 +95,6 @@ def test_every_window_rates_the_same_seven_high_volume_zones():
 
 
 def test_custom_zones_never_move_a_shot_between_nba_physical_families():
-    """Custom rays may subdivide a family; they may never move a shot across one."""
     collapse = {
         "Left Baseline": "Mid-Range",
         "Left Mid-Range": "Mid-Range",
@@ -136,7 +135,6 @@ def test_custom_sectors_never_cross_the_centre_line_nba_drew():
 
         assert int((nba_left & ours_right).sum()) == 0, season
         assert int((nba_right & ours_left).sum()) == 0, season
-        # And the check is not vacuous: both sides carry real volume.
         assert int((nba_left & ours_left).sum()) > 100, season
         assert int((nba_right & ours_right).sum()) > 100, season
 
@@ -182,7 +180,6 @@ def test_merged_mid_range_is_the_pooled_sum_of_the_five_sectors():
 
 
 def test_merging_leaves_every_other_zone_untouched():
-    """The merge must not disturb a zone it does not touch."""
     twelve, merged = _splits(), _splits("merged-mid-")
     keys = ["fga", "fgm", "fg", "lg_fg", "fg_rel", "fga_share_pct",
             "lg_fga_share_pct", "rated"]
@@ -219,7 +216,6 @@ def test_merged_windows_still_reconcile_to_official_fga():
 
 
 def test_merged_mode_keeps_a_short_name_and_an_anchor_inside_the_band():
-    """Position is the only thing attributing a pill to a zone, so it must exist."""
     assert shot_chart.ZONE12_SHORT["Mid-Range"] == "MID-RANGE"
     x, y = shot_chart.ZONE12_ANCHORS["Mid-Range"]
     assert charts.sm.zone_of(x, y) in MID
@@ -229,11 +225,9 @@ def test_merged_court_drops_only_the_internal_mid_range_seams():
     full = shot_chart._zone12_seam_segments(include_mid_cuts=True)
     merged = shot_chart._zone12_seam_segments(include_mid_cuts=False)
     assert len(merged) < len(full)
-    # Every seam the merged court still draws is one the full court drew.
     assert set(map(tuple, merged)) < set(map(tuple, full))
 
 
-# --- Summary cards ----------------------------------------------------------
 def test_ppg_leads_the_summary_cards_and_comes_from_the_box_score():
     """PPG is the settled lead card on a player-tenure zone post.
 
@@ -245,7 +239,6 @@ def test_ppg_leads_the_summary_cards_and_comes_from_the_box_score():
     assert {"points", "ppg"} <= set(summary.columns)
     for row in summary.itertuples(index=False):
         assert row.ppg == pytest.approx(row.points / row.games, abs=0.05)
-        # Free throws are why this exceeds anything the shot log could produce.
         assert row.points > 2 * row.fgm
 
 
@@ -262,7 +255,6 @@ def test_tenure_ppg_is_games_weighted_not_a_mean_of_seasons():
 
 
 def test_the_scoring_leap_between_the_two_seasons_is_real():
-    """The post's headline pairs a near-doubled scoring rate with a flat diet."""
     summary = pd.read_csv(DATA / "zone-chart-summary.csv").set_index("window")
     assert summary.loc["2024-25", "ppg"] == pytest.approx(8.6, abs=0.05)
     assert summary.loc["2025-26", "ppg"] == pytest.approx(16.3, abs=0.05)

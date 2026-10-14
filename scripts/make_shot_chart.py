@@ -67,7 +67,6 @@ from bulls.graphics.court import (
 from bulls.graphics.house import helvetica
 from bulls.visuals import visual_dir
 
-# --- Palettes ---------------------------------------------------------------
 HOT_BANDS = ["#F6CDD7", "#E67C96", "#CE1141", "#7E0C2B"]
 HOT_LINE = "#5E0820"
 
@@ -100,9 +99,6 @@ def resolve_player(name: str) -> tuple[int, str]:
     return matches[0]["id"], matches[0]["full_name"]
 
 
-# ---------------------------------------------------------------------------
-# hotspot — the F5 density method
-# ---------------------------------------------------------------------------
 def render_hotspot(ctx, out: Path, final: bool):
     theme = house.get_theme("jersey")
     fig, ax = house.new_canvas(theme)
@@ -145,9 +141,6 @@ def _contour_field(ax, x0, y0, s, field, fill_colors, line_color, alpha):
                alpha=min(1.0, alpha + 0.08), zorder=3)
 
 
-# ---------------------------------------------------------------------------
-# hex — size = volume, color = FG% vs league
-# ---------------------------------------------------------------------------
 GRIDSIZE, MIN_ATT, SMOOTH_R, MIN_SMOOTH = 18, 3, 45.0, 20
 HEX_SIZE_CAP_PERCENTILE = 97.5
 HEX_RADIUS_SCALE = 0.96
@@ -169,7 +162,6 @@ HEX_BAND_NAMES = ("well below", "below", "approximately average", "above", "well
 
 
 def _hex_color(diff: float) -> str:
-    """One of five discrete Kirk-style bands around league-average FG%."""
     return HEX_COLORS[int(np.digitize(diff, HEX_CUTS))]
 
 
@@ -194,7 +186,6 @@ def _hex_base_radius() -> float:
 
 
 def _within_hex_extent(shots: pd.DataFrame) -> pd.DataFrame:
-    """Attempts whose coordinates fit the plotted 30-foot court window."""
     return shots[
         shots.loc_x.between(*sm.GRID_X)
         & shots.loc_y.between(*sm.GRID_Y)
@@ -202,12 +193,10 @@ def _within_hex_extent(shots: pd.DataFrame) -> pd.DataFrame:
 
 
 def _hex_display_mask(attempts: pd.Series, show_thin_gray: bool) -> pd.Series:
-    """Cells to draw: established locations, plus 1-2 shot gray cells on request."""
     return attempts.gt(0) if show_thin_gray else attempts.ge(MIN_ATT)
 
 
 def prepare_hex_table(ctx) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Build the auditable cell table used by both rendering and data exports."""
     from scipy.spatial import cKDTree
 
     p = _within_hex_extent(ctx["player"])
@@ -282,9 +271,6 @@ def render_hex(ctx, out: Path, final: bool):
     # Keep the established-cell scale unchanged when the gray 1-2 shot cells
     # are added; otherwise merely revealing them would resize every other mark.
     cap = float(table.size_cap_fga.iloc[0])
-    # Boundary bins are centred on the sideline; only the part of the mark that
-    # lies on the court should be visible. Larger cells go down first, then
-    # smaller cells sit above them like the raised plates in the value ladder.
     court_clip = Rectangle((x0, y0), 500 * s, 1000 * s, transform=ax.transData)
     ordered = df.sort_values("exact_fga", ascending=False)
     total = max(len(ordered), 1)
@@ -401,7 +387,6 @@ def _draw_zone_court(ax, center_x: float, center_y: float, s: float,
 
 def _render_cover_zones(out: Path, final: bool, fills: dict[str, str],
                         fill_alpha: float):
-    """Render a data-free twelve-zone cover treatment from supplied fills."""
     fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
                               house.CANVAS_HEIGHT / house.DRAFT_DPI))
     ax = fig.add_axes([0, 0, 1, 1])
@@ -425,14 +410,12 @@ def _render_cover_zones(out: Path, final: bool, fills: dict[str, str],
 
 
 def render_blank_zones(out: Path, final: bool):
-    """Render the twelve-zone court as a quiet, data-free cover silhouette."""
     _render_cover_zones(
         out, final, {zone: ZONE12_GREY for zone in sm.ZONE12_ORDER}, 0.58
     )
 
 
 def render_preview_zones(out: Path, final: bool):
-    """Render a solid illustrative palette preview with no analytical data."""
     colors = ZONE12_PALETTES[ZONE12_DEFAULT_PALETTE]
     # Fixed placement makes the teaser reproducible. These bands are purely
     # illustrative and do not encode DeRozan's actual results.
@@ -444,9 +427,6 @@ def render_preview_zones(out: Path, final: bool):
     _render_cover_zones(out, final, fills, 1.0)
 
 
-# Physical neighbors in the twelve-zone half court. Cover colors are decorative,
-# but equal neighboring fills merge visually into one region, so the cover
-# generator treats this as a small graph-coloring problem.
 ZONE12_COVER_ADJACENCY = (
     ("Restricted Area", "In The Paint (Non-RA)"),
     ("In The Paint (Non-RA)", "Left Baseline"),
@@ -471,11 +451,8 @@ ZONE12_COVER_ADJACENCY = (
 
 
 def randomized_cover_fills(seed: int) -> dict[str, str]:
-    """Shuffle a green-forward cover while separating neighboring shades."""
     rng = random.Random(seed)
     colors = list(ZONE12_PALETTES[ZONE12_DEFAULT_PALETTE])
-    # Twelve zones cannot split evenly across five colors. Give the two green
-    # bands one extra region apiece, then use each warm band twice.
     target_counts = dict(zip(colors, (2, 2, 2, 3, 3), strict=True))
     neighbors = {zone: set() for zone in sm.ZONE12_ORDER}
     for left, right in ZONE12_COVER_ADJACENCY:
@@ -514,19 +491,16 @@ def randomized_cover_fills(seed: int) -> dict[str, str]:
 
 
 def render_randomized_cover_zones(out: Path, final: bool, seed: int):
-    """Render a reproducible decorative cover with separated zone colors."""
     _render_cover_zones(out, final, randomized_cover_fills(seed), 1.0)
 
 
 def render_solid_cover_zones(out: Path, final: bool, fill: str):
-    """Render a reusable player-neutral cover court in one opaque color."""
     _render_cover_zones(
         out, final, {zone: fill for zone in sm.ZONE12_ORDER}, 1.0
     )
 
 
 def _hex_legend(ax, theme):
-    """One horizontal band: volume on the left, efficiency on the right."""
     dy = HEX_LEGEND_DY
     ax.text(260, 380 + dy, "VOLUME", ha="center", va="center",
             fontsize=10, color=theme.accent, fontproperties=helvetica("bold"))
@@ -600,12 +574,11 @@ UP, DOWN = "#8FE8A8", "#FFA79B"
 LEGEND_INK = "#808080"       # mid grey, legible on a light or a dark page
 MUTED_BAND = "#B0ABA3"       # a zone that is not the subject of this slide
 
-# --focus accepts the short forms a person would actually type.
 FOCUS_ALIASES = {"rim": "RIM", "short": "SHORT MID", "short mid": "SHORT MID",
                  "smr": "SHORT MID", "long": "LONG MID", "long mid": "LONG MID",
                  "lmr": "LONG MID", "3pt": "THREE", "three": "THREE"}
 
-ZONE_LABEL = {"THREE": "3PT"}                    # 3PT reads better than THREE
+ZONE_LABEL = {"THREE": "3PT"}
 # Two columns rather than one stack makes each block short enough to sit inside
 # its own band. The rim is the exception: its block drops to the basket, pill
 # tucked under the backboard, where there is room the 3 ft band cannot offer.
@@ -664,8 +637,6 @@ def render_rings(ctx, out: Path, final: bool):
         seam.set_clip_path(two_pt)
     _ring_court(ax, hx, hy, s, clip)
 
-    # The rim band is only a few feet across, so its block sits above the hoop
-    # inside the paint; the pill names the zone so nothing is ambiguous.
     for z in zones.itertuples():
         y = hy + LABEL_R[z.zone] * s
         if focus is None or z.zone == focus:
@@ -682,7 +653,6 @@ def render_rings(ctx, out: Path, final: bool):
 
 
 def _band(ax, centre, r_in, r_out, s, color, clip):
-    """One zone as stacked sub-rings, tinted light at the inner edge for depth."""
     edges = np.linspace(r_in, r_out, BAND_STEPS + 1)
     for i in range(BAND_STEPS):
         lo, hi = edges[i], edges[i + 1]
@@ -697,7 +667,6 @@ BAND_STEPS = 14
 
 
 def _ring_court(ax, hx, hy, s, clip):
-    """Court markings in black, including the restricted-area arc."""
     from matplotlib.patches import Arc as _Arc, Circle as _Circle
     line = dict(color=COURT_INK, lw=2.0, zorder=6)
     base = hy + sm.BASELINE_Y * s
@@ -767,7 +736,6 @@ def _zone_label(ax, x, y, z):
 
 
 def _muted_pill(ax, x, y, name):
-    """Name only, for a zone this slide is not about."""
     label = ax.text(x, y + 45, name, ha="center", va="center", fontsize=13,
                     color="#5E5A55", alpha=0.9, zorder=10,
                     fontproperties=helvetica("bold"))
@@ -778,7 +746,6 @@ def _muted_pill(ax, x, y, name):
 
 
 def _scale_legend(ax):
-    """The four buckets, printed on the chart so the colours are self-explaining."""
     n = len(ZONE_BINS)
     w, gap = 214, 16
     total = n * w + (n - 1) * gap
@@ -898,7 +865,7 @@ def _cell_wedge(ax, centre, cell, s, color, clip):
     w.set_clip_path(clip)
 
 
-MIN_LABELLED_FGA = 5     # a grey cell holding fewer is left blank, not annotated
+MIN_LABELLED_FGA = 5
 CORNER_X, CORNER_Y = 235.0, 62.0     # label anchor inside the corner pocket
 
 
@@ -946,8 +913,6 @@ def _cell_label(ax, hx, hy, cell, s):
     # sector 0 is NBA Left and the mirrored court puts it on the viewer's right.
     on_viewer_right = cell.sector == 0
     rot = 0 if not corner else (-90 if on_viewer_right else 90)
-    # Rotated, the stacking axis turns with the text: "above" and "below" become
-    # sideways on the page, so the two lines stay stacked as the reader sees them.
     if not corner:
         top, under = (0.0, 9.0), (0.0, -13.0)
     elif on_viewer_right:
@@ -983,7 +948,7 @@ def _cell_label(ax, hx, hy, cell, s):
 LADDER_CMAP = LinearSegmentedColormap.from_list("ladder", [
     "#5E1119", "#8C1D22", "#C0392B", "#E2614A", "#F0A05F", "#EFD07A",
     "#BFD16C", "#7FBF5E", "#4C9B4A", "#2E7D3A", "#1B5E2A"])
-LADDER_SEAM = "#00000022"     # a hairline between rings, dark and nearly invisible
+LADDER_SEAM = "#00000022"
 LADDER_INK, LADDER_INK_DARK = "#FFFFFF", "#2A2118"
 # Light, so the run of unrated rings recedes into "nothing happens here" rather
 # than reading as a rendering fault. Those rings are a finding in their own
@@ -1022,7 +987,6 @@ def _ladder_ticks(scale: dict) -> list[float]:
 
 
 def scale_eps(span: float) -> float:
-    """Tolerance for 'is this the midpoint tick', robust to float drift."""
     return span * 1e-6
 
 
@@ -1069,12 +1033,10 @@ LABEL_NUDGE_PX = -1.0
 
 
 def _signed(v: float) -> str:
-    """Signed whole number, with no "-0". A ring level with the league reads 0."""
     return "0" if round(v) == 0 else f"{v:+.0f}"
 
 
 def _signed2(v: float) -> str:
-    """Signed to two places, with no "-0.00"."""
     return "0" if abs(round(v, 2)) < 0.005 else f"{v:+.2f}"
 
 
@@ -1135,8 +1097,6 @@ def render_ladder(ctx, out: Path, final: bool):
 
     s, hx, hy = 2.0, house.CANVAS_WIDTH / 2, 470
     base = hy + sm.BASELINE_Y * s
-    # Rings run past the sidelines and are cut there, exactly as the reference
-    # does: the court, not the data, decides how wide the fan gets.
     clip = Rectangle((hx - 250 * s, base), 500 * s, 1000 * s, transform=ax.transData)
     # Two-point rings stop at the corner line; the pocket beyond it is drawn
     # separately with its own value, because a corner three is not a long two.
@@ -1144,8 +1104,6 @@ def render_ladder(ctx, out: Path, final: bool):
     inner_clip = Rectangle((hx - cx * s, base), 2 * cx * s, 1000 * s,
                            transform=ax.transData)
 
-    # Outermost first, so each ring paints over its larger neighbour and can
-    # drop a shadow onto it -- the stacked-plate look the reference has.
     for i, r in enumerate(reversed(list(rings.itertuples()))):
         drawable = r.rated and not np.isnan(getattr(r, col))
         color = LADDER_CMAP(norm(getattr(r, col))) if drawable else LADDER_THIN
@@ -1178,7 +1136,6 @@ def render_ladder(ctx, out: Path, final: bool):
 
 
 def _render_blank_ladder(out: Path, final: bool, step: float):
-    """Render the ladder geometry as a neutral, data-free cover image."""
     from types import SimpleNamespace
 
     fig = plt.figure(figsize=(house.CANVAS_WIDTH / house.DRAFT_DPI,
@@ -1203,7 +1160,6 @@ def _render_blank_ladder(out: Path, final: bool, step: float):
         _ladder_ring(ax, (hx, hy), ring, s, LADDER_THIN,
                      clip if ring.three else inner_clip, shadow=i > 0)
 
-    # The corner pocket is part of the ladder's geometry even without data.
     for side in (-1, 1):
         strip = Rectangle((hx + side * cx * s if side > 0 else hx - 250 * s, base),
                           (250 - cx) * s, 1000 * s, transform=ax.transData)
@@ -1219,8 +1175,8 @@ def _render_blank_ladder(out: Path, final: bool, step: float):
     print(f"Saved {out}")
 
 
-RING_STEPS = 6          # sub-bands per ring, for the inner-edge lift
-RING_LIFT = 0.13        # how far the inner edge tints toward white
+RING_STEPS = 6
+RING_LIFT = 0.13
 SHADOW_PX, SHADOW_ALPHA, SHADOW_STEPS = 7.0, 0.20, 7
 
 
@@ -1327,9 +1283,6 @@ def _ladder_label(ax, hx, hy, s, ring, col, metric, norm):
     # on the same scale as the rated rings, which it is not.
     if not ring.rated or np.isnan(value):
         return
-    # Ring midpoint, nudged out by a few pixels. Dead-centre puts the innermost
-    # label inside the rim circle, where the hoop draws straight through it; the
-    # nudge is small enough that every number still sits within its own band.
     y = hy + (ring.lo + ring.hi) / 2 * 10 * s + LABEL_NUDGE_PX
     rgb = LADDER_CMAP(norm(value))[:3]
     lum = 0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]
@@ -1342,7 +1295,6 @@ def _ladder_label(ax, hx, hy, s, ring, col, metric, norm):
 LADDER_COURT_INK = CHART_COURT_INK
 LADDER_COURT_ALPHA, LADDER_COURT_LW = 1.0, 1.3
 def _ladder_court(ax, hx, hy, s, clip):
-    """Shared black court markings over the distance bands."""
     from matplotlib.patches import Arc as _Arc, Circle as _Circle
     ink = LADDER_COURT_INK
     line = dict(color=ink, lw=LADDER_COURT_LW, zorder=6, alpha=LADDER_COURT_ALPHA)
@@ -1367,7 +1319,6 @@ def _ladder_court(ax, hx, hy, s, clip):
     restricted_area_patch(ax, hx, hy, s, ink, LADDER_COURT_LW, 6,
                           LADDER_COURT_ALPHA)
 
-    # Backboard, rim, and connector use the same ink as the rest of the court.
     bb_y = hy + BACKBOARD_Y * s
     ax.plot([hx - BACKBOARD_HALF_WIDTH * s, hx + BACKBOARD_HALF_WIDTH * s],
             [bb_y] * 2, color=ink, lw=4.2,
@@ -1424,15 +1375,11 @@ def _ladder_legend(ax, norm, metric, ticks):
 
 
 def _blend(color, other, amount):
-    """Mix ``color`` toward ``other`` by ``amount`` (0 = unchanged, 1 = other)."""
     import matplotlib.colors as mc
     a, b = np.array(mc.to_rgb(color)), np.array(mc.to_rgb(other))
     return tuple(a + (b - a) * amount)
 
 
-# ---------------------------------------------------------------------------
-# Shared chrome
-# ---------------------------------------------------------------------------
 def _header(ax, theme, ctx, rule: str):
     title = ax.text(house.SIDE_MARGIN, house.CANVAS_HEIGHT - 66, ctx["name"].upper(),
                     ha="left", va="top", fontsize=42, color=theme.ink,
@@ -1466,8 +1413,8 @@ def _footer(ax, theme, ctx):
 # points per 100 attempts for a two and 15 for a three. The hex chart stays at
 # +/-7.5 because its smoothed local cells are a different, noisier mark.
 ZONE12_CUTS = (-0.05, -0.025, 0.025, 0.05)
-ZONE12_GREY = "#D8D2CA"          # below the colour floor, including zero attempts
-ZONE12_SEAM = "#FAF8F5"          # divider between neighbouring fills
+ZONE12_GREY = "#D8D2CA"
+ZONE12_SEAM = "#FAF8F5"
 ZONE12_BULLS_RED = house.RED
 ZONE12_BULLS_RED_LIGHT = "#E67C96"
 # Every figure sits on a cream pill, so there is one ink and one green-red pair
@@ -1476,7 +1423,7 @@ ZONE12_BULLS_RED_LIGHT = "#E67C96"
 # figure changing colour from zone to zone read as though the colour meant
 # something. Here colour means direction, and nothing else.
 ZONE12_UP_ON_LIGHT, ZONE12_DOWN_ON_LIGHT = "#12693A", "#93150B"
-ZONE12_NEUTRAL_GAP = "#6E6963"   # a gap too small to call a direction
+ZONE12_NEUTRAL_GAP = "#6E6963"
 
 # Two fill palettes, using the zone chart's five bands and cuts.
 #
@@ -1495,7 +1442,6 @@ ZONE12_DEFAULT_PALETTE = "rdylgn"
 
 
 def _zone12_band_color(rel: float, palette: str) -> str:
-    """One of five discrete bands around league-average FG%, in either scale."""
     colors = ZONE12_PALETTES[palette]
     if rel <= ZONE12_CUTS[0]:
         return colors[0]
@@ -1506,8 +1452,8 @@ def _zone12_band_color(rel: float, palette: str) -> str:
     if rel < ZONE12_CUTS[3]:
         return colors[3]
     return colors[4]
-ZONE12_TRACE_STEP = 1.0          # court units per grid sample when tracing fills
-ZONE12_TRACE_BLUR = 0.8          # softens the stair-stepping on radial dividers
+ZONE12_TRACE_STEP = 1.0
+ZONE12_TRACE_BLUR = 0.8
 # How deep the court is drawn: 33.5 ft from the hoop, a few feet past the
 # deepest shots anyone takes on purpose. Drawing the whole half court to the
 # centre line was tried and pulled back -- it is honest, and it spent the top
@@ -1559,8 +1505,6 @@ ZONE12_ANCHORS = {
     # Change one and check its neighbours, the arc, and the paint.
     "Left Corner 3":         (-235, 46),
     "Right Corner 3":        (235, 46),
-    # Pulled slightly inward so the optional large four-line card keeps a real
-    # gap from the adjacent corner card on every carousel slide.
     "Left Baseline":         (-140, -8),
     "Right Baseline":        (140, -8),
     "Left Mid-Range":        (-133, 120),
@@ -1583,7 +1527,6 @@ ZONE12_ANCHORS = {
 
 
 def _zone12_grid():
-    """Sample grid over the drawn court, plus its zone classification."""
     step = ZONE12_TRACE_STEP
     xs = np.arange(-250.0, 250.0 + step, step)
     ys = np.arange(sm.BASELINE_Y, ZONE12_TOP + step, step)
@@ -1617,13 +1560,13 @@ def _zone12_fill(ax, gx_px, gy_px, mask, color, zorder):
 # opposite of what the column count suggests: the court is 1.29 times wider than
 # deep, so five of them stacked is the tall arrangement, and five rows plus their
 # labels have to fit 1350 px down long before two courts trouble 1080 px across.
-ZONEGRID_COLS = 4                # widest row the default plan will build
-ZONEGRID_MARGIN = 24.0           # page edge to the outermost court
-ZONEGRID_BOTTOM_MIN = 40.0       # lowest the last row's label may sit
+ZONEGRID_COLS = 4
+ZONEGRID_MARGIN = 24.0
+ZONEGRID_BOTTOM_MIN = 40.0
 ZONEGRID_COL_GAP = 14.0
-ZONEGRID_TOP = 1310.0            # top edge of the first row's court
-ZONEGRID_ROW_GAP = 20.0          # between one row's season label and the next court
-ZONEGRID_LABEL_GAP = 10.0        # between a court's baseline and its season label
+ZONEGRID_TOP = 1310.0
+ZONEGRID_ROW_GAP = 20.0
+ZONEGRID_LABEL_GAP = 10.0
 ZONEGRID_LABEL_SIZE = 13.0
 # At 150 dpi one point is 2.08 canvas units, so a 13 pt season name stands about
 # 27 units tall under its court.
@@ -1853,8 +1796,6 @@ def render_zones(ctx, out: Path, final: bool):
     thin = zones[~zones.rated]
     total = len(ctx["player"])
     made = int(ctx["player"].shot_made.sum())
-    # The chart carries the colour scale and nothing else, so everything the
-    # legend used to explain has to be typed in Canva. It is all here.
     scale_words = ("Red below, yellow average, green above" if palette == "rdylgn"
                    else "Blue below, yellow average, orange/red above")
     print("\nCANVA COPY")
@@ -1901,7 +1842,7 @@ ZONE12_CROP_TOP = 1180
 ZONE12_BARE_CROP_BOTTOM = 450
 
 
-ZONE12_SEAM_WIDTH = 1.2          # the same weight as the court markings
+ZONE12_SEAM_WIDTH = 1.2
 
 
 def _zone12_seam_segments(include_mid_cuts: bool = True
@@ -1922,9 +1863,6 @@ def _zone12_seam_segments(include_mid_cuts: bool = True
     """
     segments = []
 
-    # Mid-range dividers: from where the ray leaves the paint out to the arc.
-    # The baseline cuts end exactly on the corner break, because that is the
-    # point the angle was derived from -- corner line, arc and divider meet.
     for degrees in (sm.MID_SECTOR_CUTS if include_mid_cuts else ()):
         theta = np.radians(degrees)
         cos, sin = np.cos(theta), np.sin(theta)
@@ -1936,8 +1874,6 @@ def _zone12_seam_segments(include_mid_cuts: bool = True
             segments.append(((leaves_paint * cos, leaves_paint * sin),
                              (meets_edge * cos, meets_edge * sin)))
 
-    # Above-the-break dividers: literally the same two rays continuing past the
-    # arc, taken from the same constant so they cannot drift apart.
     for degrees in sm.ATB_CUTS:
         theta = np.radians(degrees)
         cos, sin = np.cos(theta), np.sin(theta)
@@ -1945,8 +1881,6 @@ def _zone12_seam_segments(include_mid_cuts: bool = True
                   COURT_HALF_WIDTH / abs(cos) if abs(cos) > 1e-9 else np.inf)
         segments.append(((sm.ARC_R * cos, sm.ARC_R * sin), (far * cos, far * sin)))
 
-    # The corner break itself: where a corner three becomes a wing three, along
-    # the strip between the corner line and the sideline.
     for side in (-1.0, 1.0):
         segments.append(((side * sm.ZONE12_CORNER_X, sm.CORNER_Y),
                          (side * COURT_HALF_WIDTH, sm.CORNER_Y)))
@@ -1955,7 +1889,6 @@ def _zone12_seam_segments(include_mid_cuts: bool = True
 
 def _zone12_seams(ax, to_px, color=ZONE12_SEAM, lw: float | None = None,
                   include_mid_cuts: bool = True):
-    """Draw the dividers, over the fills and under the court's black lines."""
     for (x1, y1), (x2, y2) in _zone12_seam_segments(include_mid_cuts):
         p1, p2 = to_px(x1, y1), to_px(x2, y2)
         ax.plot([p1[0], p2[0]], [p1[1], p2[1]], color=color,
@@ -1978,11 +1911,11 @@ ZONE12_LARGE_DELTA_SIZE = 7.5
 # was always less than one line. These are measured against the line height, not
 # guessed, and the two are deliberately unequal -- a gap belongs to the figure
 # above it, so it sits nearer that figure than the next pair does.
-ZONE12_PAIR_GAP = 15.0           # figure to its comparison/reference line
-ZONE12_BLOCK_GAP = 23.0          # gap to the next figure
+ZONE12_PAIR_GAP = 15.0
+ZONE12_BLOCK_GAP = 23.0
 ZONE12_PILL_PAD_X = 7.0
 ZONE12_PILL_PAD_Y = 5.0
-ZONE12_PILL_INK = "#1F1D1A"      # the rings chart's pill text
+ZONE12_PILL_INK = "#1F1D1A"
 ZONE12_PILL_ROUND = 10.0
 # A pill on a zone the chart cannot rate keeps every figure but loses its
 # weight: muted type on a faded card. The reader still gets the numbers and the
@@ -2159,7 +2092,6 @@ def _zone12_block(ax, to_px, z, fill: str, theme, pill: str = "full",
 
 
 def _zone12_empty_pill(ax, px, py, theme, style: str = ZONE12_DEFAULT_STYLE):
-    """One muted line for a zone with no attempts at all."""
     look = ZONE12_STYLES[style]
     label = ax.text(px, py, "0 FGA", ha="center", va="center",
                     fontsize=ZONE12_FIGURE_SIZE, zorder=11,
@@ -2174,11 +2106,10 @@ def _zone12_empty_pill(ax, px, py, theme, style: str = ZONE12_DEFAULT_STYLE):
         linewidth=look["pill_lw"], alpha=ZONE12_THIN_PILL_ALPHA, zorder=10))
 
 
-ZONE12_TAIL_GAP = 6.0            # between the shot-share figure and its reference
+ZONE12_TAIL_GAP = 6.0
 
 
 def _zone12_measure(ax, text: str, size: float) -> float:
-    """Rendered width of one string at one size."""
     probe = ax.text(0, 0, text, fontsize=size, alpha=0.0,
                     fontproperties=helvetica("bold"))
     width = house.rendered_width(ax, probe)
@@ -2290,7 +2221,6 @@ ZONE12_SUMMARY_CARD_H = 76
 
 
 def _zone12_overall_metrics(shots) -> dict[str, float | int]:
-    """Overall volume, eFG%, and 3PT% from one shot-attempt table."""
     fga = len(shots)
     if not fga:
         raise ValueError("zone summary needs at least one field-goal attempt")
@@ -2473,7 +2403,6 @@ def main():
         if args.team and args.league:
             raise SystemExit("Pass one of --team or --league, not both")
     if args.league:
-        # The league is its own baseline, so any "vs league" metric is all zeros.
         if args.metric.endswith("-rel"):
             raise SystemExit("--league has no league to compare against; "
                              "use --metric pps")

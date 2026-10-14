@@ -31,7 +31,6 @@ MARGIN, FOOTER = 25, 1370  # the page's side margins; the footer and its note si
 # "LOOK" is unusual for the format and deserves a closer look, not a fix by default.
 OVERHANG, HOLE, TIGHT = 6, 200, 4
 
-# One page's layout in page pixels (the page is drawn at its native 1080x1440, so screen pixels are page pixels).
 MEASURE = """svg => {
   const o = svg.getBoundingClientRect(), box = e => { const r = e.getBoundingClientRect();
     return {x0: r.left - o.left, y0: r.top - o.top, x1: r.right - o.left, y1: r.bottom - o.top}; };
@@ -69,7 +68,6 @@ def layout(m: dict) -> dict:
 
 
 def verdict(page: str, l: dict) -> str:
-    """One line for the review: fix (overlap, off a margin), look (an unusual hole or a tight footer) or ok."""
     fix = [f"overlap {x}" for x in l["overlaps"]] + [f"off the margin {x}" for x in l["off_margin"]]
     look = ([f"empty band {l['hole']} px from y={l['hole_at']}"] if l["hole"] > HOLE else []) \
         + ([f"only {l['above_footer']} px above the footer"] if l["above_footer"] < TIGHT else [])
@@ -119,7 +117,7 @@ def main(game_ids: list[str]) -> None:
                     d.forEach((e, i) => {{ e.style.display = i === {k} ? 'block' : 'none'; }});
                     const s = d[{k}].querySelector('svg'); s.style.width = '1080px'; s.style.height = '1440px';
                     d[{k}].querySelector('.cap').style.display = 'none'; return d[{k}].querySelector('.cap').textContent; }}""")
-                path = out / f"{int(caption.split('·')[0]):02d}-{slug(caption)}.png"  # the page's carousel number
+                path = out / f"{int(caption.split('·')[0]):02d}-{slug(caption)}.png"
                 svg = page.locator("#g > div svg").nth(k)
                 svg.screenshot(path=str(path))
                 removed = clean_png(path)  # Instagram must never see anything but the picture

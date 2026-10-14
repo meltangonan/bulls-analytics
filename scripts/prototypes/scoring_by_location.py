@@ -90,7 +90,7 @@ PAINT_HALF = sm.PAINT_HALF
 FT_Y = sm.FT_Y
 ARC_R = sm.ARC_R
 CORNER_X = sm.ZONE12_CORNER_X
-CORNER_Y = float(np.sqrt(ARC_R ** 2 - CORNER_X ** 2))   # arc/corner break, ~89.5
+CORNER_Y = float(np.sqrt(ARC_R ** 2 - CORNER_X ** 2))
 BAND_R = 160.0          # 16 ft, where NBA's own scheme changes sector count.
                         # Ours does not; kept as the landmark the tests probe around.
 COURT_DEPTH = 344.0     # how much of the half court is drawn; past this is empty floor
@@ -145,7 +145,6 @@ CHIP_LAYOUT = {
 # this is what keeps them from creeping onto the corner-3 line itself.
 CORNER_TEXT_HALF = 30.0
 
-# Chips that cannot stand in their own zone, so a positional test must skip them.
 OFF_COURT_ZONES = {"Restricted Area", "Left Corner 3", "Right Corner 3"}
 
 
@@ -154,10 +153,8 @@ OFF_COURT_ZONES = {"Restricted Area", "Left Corner 3", "Right Corner 3"}
 COMPACT_ZONES = {"Left Mid-Range", "Right Mid-Range", "Center Mid-Range"}
 COMPACT_SCALE = 0.76
 
-# A chip is a face over two lines; this recentres that stack on its anchor.
 CHIP_RISE = 21.0
 
-# Screen-space window (y already flipped): baseline at the top, half court below.
 VIEW_X = (-306, 306)
 VIEW_Y = (-356, 142)
 
@@ -169,12 +166,10 @@ RIM_FILL = "#E5A9B8"
 COURT_LINE = CHART_COURT_INK
 ZONE_LINE = "#1A1A1A"
 
-# Centre-to-centre between a chip's two figures, in court units.
 LINE_GAP = 12.0
 
 HEAD_HALF = 23.0
 
-# Zone-outline tracing: sample step and blur radius, both in court units.
 ZONE_TRACE_STEP = 0.5
 ZONE_TRACE_BLUR = 1.0
 
@@ -196,13 +191,8 @@ ZONE_TRACE_BLUR = 1.0
 zone_of = sm.zone_of
 
 
-# ---------------------------------------------------------------------------
-# Data
-# ---------------------------------------------------------------------------
 def load_shots(pid: int, refresh: bool) -> pd.DataFrame:
     path = CACHE / f"player_{pid}_{CURRENT_SEASON}.csv"
-    # Coordinates drive the zone; NBA's own labels ride along so every run can
-    # report how far our geometry diverges from theirs.
     cols = ["loc_x", "loc_y", "shot_made", "shot_type", "shot_zone", "shot_zone_area"]
     if path.exists() and not refresh:
         return pd.read_csv(path)
@@ -222,12 +212,11 @@ class ZoneLeader:
     fga: int
     pps: float
     confident: bool
-    team_fga: int          # every roster attempt in the zone, for the copy block
+    team_fga: int
     qualified: int         # how many players cleared the top-N gate
 
 
 def roster_shots(refresh: bool) -> pd.DataFrame:
-    """Every roster shot with source-faithful families and custom angular sectors."""
     frames = []
     for pid, name, short in ROSTER:
         df = load_shots(pid, refresh)
@@ -238,7 +227,7 @@ def roster_shots(refresh: bool) -> pd.DataFrame:
         if missing:
             raise SystemExit(f"{name}: cached shots are missing {sorted(missing)}; rerun --refresh")
         df["custom_zone"] = sm.zone12_of_shots(df)
-        df = detailed_zones(df)                      # NBA's own 12-zone label
+        df = detailed_zones(df)
         df = df.rename(columns={"shot_zone": "nba_zone"})
         df["nba_id"], df["name"], df["short"] = pid, name, short
         frames.append(df)
@@ -246,7 +235,6 @@ def roster_shots(refresh: bool) -> pd.DataFrame:
     shots = pd.concat(frames, ignore_index=True)
     shots = shots[shots["custom_zone"] != "Backcourt"].copy()
     shots["shot_zone"] = shots.pop("custom_zone")
-    # Points per shot: a made three is 3, a made two is 2, a miss is 0.
     shots["points"] = np.where(
         shots["shot_made"] & (shots["shot_type"] == "3PT"), 3,
         np.where(shots["shot_made"], 2, 0),
@@ -255,13 +243,11 @@ def roster_shots(refresh: bool) -> pd.DataFrame:
 
 
 def zone_agreement(shots: pd.DataFrame) -> tuple[int, int]:
-    """How often our custom angular sector matches NBA's detailed area label."""
     same = int((shots["shot_zone"] == shots["nba_zone"]).sum())
     return same, len(shots)
 
 
 def zone_table(shots: pd.DataFrame) -> pd.DataFrame:
-    """Every roster player's attempts and points per shot in each of the 12 zones."""
     table = (
         shots.groupby(["shot_zone", "nba_id", "name", "short"])
         .agg(fga=("shot_made", "size"), points=("points", "sum"))
@@ -284,13 +270,11 @@ def select_leaders(table: pd.DataFrame, mode: str = "efficiency") -> list[ZoneLe
         if z.empty:
             raise SystemExit(f"no shots at all in {zone}")
         if mode == "volume":
-            # No gate: "took the most shots here" is a fact, not an estimate.
             pool = z
             best = pool.sort_values(["fga", "pps"], ascending=[False, False]).iloc[0]
         else:
             pool = z[z["fga"] >= MIN_ZONE_SHARE * z["fga"].sum()]
             if pool.empty:
-                # Nobody owns this zone; the man who shoots it most speaks for it.
                 pool = z.nlargest(1, "fga", keep="all")
             best = pool.sort_values(["pps", "fga"], ascending=[False, False]).iloc[0]
         leaders.append(ZoneLeader(
@@ -308,11 +292,7 @@ def select_leaders(table: pd.DataFrame, mode: str = "efficiency") -> list[ZoneLe
 
 
 
-# ---------------------------------------------------------------------------
-# Render
-# ---------------------------------------------------------------------------
 def flip(y):
-    """Court y -> screen y. Negating puts the hoop at the top, as in the reference."""
     return -np.asarray(y, dtype=float) if isinstance(y, np.ndarray) else -float(y)
 
 
@@ -323,7 +303,6 @@ def _arc(ax, cx, cy, diameter, theta1, theta2, **kw):
 
 
 def draw_floor(ax):
-    """Fill the half court, then the paint and the rim, before anything is drawn on top."""
     ax.add_patch(FancyBboxPatch(
         (-250, flip(COURT_DEPTH)), 500, COURT_DEPTH - BASELINE_Y,
         boxstyle="square,pad=0", facecolor=COURT_FILL, edgecolor="none", zorder=0))
@@ -357,13 +336,9 @@ def draw_zone_outlines(ax):
 
     for zone in ZONE_ORDER:
         if zone == "Restricted Area":
-            # Its painted D already bounds it; a traced circle would double the line.
             continue
         mask = zones == zone
         if zone == "In The Paint (Non-RA)":
-            # The paint is a ring around the restricted area, so tracing it alone
-            # would draw the rim's full 4 ft circle as an inner edge — the very
-            # shape the painted D replaces. Fill that hole before tracing.
             mask = mask | (zones == "Restricted Area")
         mask = mask.astype(float)
         if mask.max() == 0:
@@ -374,7 +349,6 @@ def draw_zone_outlines(ax):
 
 
 def draw_court(ax):
-    """The painted geometry a fan recognises, over the zone dividers."""
     line = dict(color=COURT_LINE, lw=1.9, zorder=4, solid_capstyle="butt")
     ax.plot([-250, 250], [flip(BASELINE_Y)] * 2, **line)
     ax.plot([-250, 250], [flip(COURT_DEPTH)] * 2, **line)
@@ -391,10 +365,10 @@ def draw_court(ax):
     for start, end in chart_court_segments():
         ax.plot([start[0], end[0]], [flip(start[1]), flip(end[1])], **line)
     ax.add_patch(Circle((0, 0), 7.5, facecolor="none", edgecolor=COURT_LINE, lw=1.9, zorder=5))
-    ax.plot([-30, 30], [flip(BACKBOARD_Y)] * 2, **line)             # backboard
+    ax.plot([-30, 30], [flip(BACKBOARD_Y)] * 2, **line)
     ax.plot([0, 0], [flip(BACKBOARD_Y), flip(-7.5)], **line)        # rim connector
     _arc(ax, 0, 0, 2 * RA_R, 0, 180, color=COURT_LINE, lw=1.9, zorder=5)
-    for side in (-RA_R, RA_R):                                      # close the D
+    for side in (-RA_R, RA_R):
         ax.plot([side, side], [0, flip(BACKBOARD_Y)], **line)
     _arc(ax, 0, FT_Y, 120, 0, 180, color=COURT_LINE, lw=1.9, zorder=4)
     _arc(ax, 0, FT_Y, 120, 180, 360, color=COURT_LINE, lw=1.6,
@@ -472,7 +446,6 @@ def render(leaders: list[ZoneLeader], out_path: Path, final: bool,
 
 
 def canva_block(leaders: list[ZoneLeader], mode: str = "efficiency") -> str:
-    """Exact strings for the Canva page, so page and chart come from one run."""
     thin = [lead for lead in leaders if not lead.confident]
     if mode == "volume":
         slide = ["SUBTITLE:  Who takes the shots from each zone,",

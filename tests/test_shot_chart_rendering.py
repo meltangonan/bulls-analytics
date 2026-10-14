@@ -106,7 +106,6 @@ def test_hex_color_qualification_is_subject_specific():
 
 
 def test_hex_requires_three_attempts_in_the_exact_cell():
-    """One- and two-shot locations are visual dust, not a repeated shot area."""
     assert msc.MIN_ATT == 3
 
 
@@ -137,7 +136,6 @@ def test_specialized_courts_reuse_the_shared_smooth_restricted_area(draw):
 
 
 def _Cell(cell: dict):
-    """``polar_cells`` returns dicts; the renderers take itertuples rows."""
     from types import SimpleNamespace
 
     return SimpleNamespace(**cell)
@@ -174,7 +172,6 @@ def test_every_polar_cell_is_drawn_on_the_side_its_own_shots_map_to():
 
     for cell in (c for c in sm.polar_cells() if c["n_sectors"] > 1):
         step = 180.0 / cell["n_sectors"]
-        # A point on the sector's own midline, at a radius inside the cell.
         source_angle = np.radians(180.0 - (cell["sector"] + 0.5) * step)
         radius = (cell["r_in"] + cell["r_out"]) / 2 * 10
         loc_x, loc_y = radius * np.cos(source_angle), radius * np.sin(source_angle)
@@ -188,7 +185,6 @@ def test_every_polar_cell_is_drawn_on_the_side_its_own_shots_map_to():
 
 
 def test_polar_cell_labels_sit_inside_their_own_wedge():
-    """A number printed opposite its wedge is worse than no number at all."""
     from bulls.graphics.court import nba_to_basket_bottom_px
     from bulls.analysis import shot_maps as sm
 

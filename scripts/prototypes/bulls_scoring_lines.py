@@ -38,12 +38,10 @@ def rolling_points(
     window: int = ROLLING_GAMES,
     min_periods: int = ROLLING_MIN_PERIODS,
 ) -> pd.Series:
-    """Return a trailing scoring average that preserves chronological order."""
     return featured["points"].rolling(window=window, min_periods=min_periods).mean()
 
 
 def fetch_inputs() -> pd.DataFrame:
-    """Fetch every Chicago player-game row from the 2025-26 regular season."""
     logs = playergamelogs.PlayerGameLogs(
         season_nullable=STATS_SEASON,
         season_type_nullable=SEASON_TYPE,
@@ -69,7 +67,6 @@ def fetch_inputs() -> pd.DataFrame:
 
 
 def prepare_data(logs: pd.DataFrame, min_games: int = MIN_GAMES) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Normalize Bulls games and select players meeting the appearance floor."""
     games = logs.rename(
         columns={
             "PLAYER_ID": "player_id",
@@ -139,7 +136,6 @@ def render_player(
     pixel_width: int = 1200,
     pixel_height: int = 1200,
 ) -> None:
-    """Render one transparent, fixed-size player chart for placement in Canva."""
     qualified = audit[audit["qualifies"]]
     match = qualified[qualified["player_name"] == player_name]
     if match.empty:
@@ -236,7 +232,6 @@ def render_player(
 
 
 def save_data(games: pd.DataFrame, audit: pd.DataFrame, data_dir: Path) -> None:
-    """Save the exact chart population, source rows, and audit metadata."""
     data_dir.mkdir(parents=True, exist_ok=True)
     games_out = games.copy()
     games_out["stats_season"] = STATS_SEASON

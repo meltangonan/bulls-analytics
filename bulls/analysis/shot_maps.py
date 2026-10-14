@@ -32,7 +32,6 @@ import numpy as np
 import pandas as pd
 from scipy.ndimage import gaussian_filter
 
-# --- Density grid, in raw NBA coordinates (tenths of a foot) ----------------
 GRID_X = (-250.0, 250.0)
 GRID_Y = (-55.0, 300.0)     # include the -52.5 regulation baseline, out to ~30 ft
 CELL = 5.0                  # half-foot cells
@@ -67,7 +66,7 @@ THREE_SECTORS = 5          # 36 degrees each, matching NBA's beyond-16 ft scheme
 # The innermost band is one cell, not three. At 0-4 ft the sectors would be a
 # couple of feet of arc wide, and angle stops describing anything a defence
 # actually defends.
-MIN_CELL_FGA = 15          # below this a cell's FG% is not worth colouring
+MIN_CELL_FGA = 15
 # The outer edge is a counting rule and a drawing rule at once, deliberately:
 # the drawn region and the counted region must be the same object or the chart
 # can show one set of cells while totalling another. 30 ft drops only heaves.
@@ -356,7 +355,6 @@ def distance_ladder(shots: pd.DataFrame, league: pd.DataFrame | None = None,
 
 
 def _points(df: pd.DataFrame) -> pd.Series:
-    """Points scored by each attempt, honouring the extra point beyond the arc."""
     return df["shot_made"].astype(float) * np.where(df["shot_type"] == "3PT", 3, 2)
 
 
@@ -455,7 +453,7 @@ PAINT_HALF = 80.0           # key half-width, 8 ft
 FT_Y = 137.5                # free-throw line, 15 ft from backboard at y=-12.5
 ARC_R = 237.5               # three-point arc, 23.75 ft
 ZONE12_CORNER_X = 220.0     # corner-3 sideline, 22 ft
-CORNER_Y = float(np.sqrt(ARC_R ** 2 - ZONE12_CORNER_X ** 2))   # arc break, ~89.5
+CORNER_Y = float(np.sqrt(ARC_R ** 2 - ZONE12_CORNER_X ** 2))
 
 ZONE12_ORDER = (
     "Restricted Area", "In The Paint (Non-RA)",
@@ -511,7 +509,7 @@ ZONE8_ORDER = (
 # a player-season can support, and saying so is more useful than pretending a
 # single floor fits both. This is the whole reason the two charts differ.
 SIGMA_TEAM_POINTS = 2.5
-NEUTRAL_WIDTH_POINTS = 5.0  # full neutral span, from -2.5 to +2.5
+NEUTRAL_WIDTH_POINTS = 5.0
 # Compatibility name: the player floor remains based on the full neutral span,
 # not the narrower 2.5-point light band introduced by the +/-5 outer cuts.
 BAND_WIDTH_POINTS = NEUTRAL_WIDTH_POINTS

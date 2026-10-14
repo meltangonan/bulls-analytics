@@ -27,7 +27,6 @@ from scripts.prototypes.bulls_rookie_leaderboard import (
 
 
 def test_the_qualified_pool_is_stated_not_implied():
-    """A top ten of an unstated field invites 'why isn't X here?'."""
     assert MIN_MINUTES == 1000
     assert TOP_N == 10
 
@@ -42,7 +41,6 @@ def test_split_puts_the_top_ten_first_and_the_rest_behind_it():
 
 
 def test_both_slides_fill_one_shared_canvas():
-    """Rows stretch to fit, so neither slide carries an empty tail."""
     for count in (TOP_N, 13):
         used = row_height(count) * count
         assert used == pytest.approx(
@@ -72,7 +70,6 @@ def test_games_played_sits_before_minutes():
 
 
 def test_opportunity_columns_are_never_shaded():
-    """GP and MPG describe the chance he got, not how he took it."""
     assert "games" not in SHADED_METRICS
     assert "mpg" not in SHADED_METRICS
     assert set(SHADED_METRICS) <= set(COLUMN_SCALES)
@@ -99,7 +96,6 @@ def test_the_default_ranking_is_the_rate_that_shipped():
 
 
 def test_the_caption_claims_production_and_never_claims_best():
-    """PRA/75 is production. Claiming 'best' is the composite's rejected error."""
     for mode in HERO_MODES:
         copy = canva_copy(pd.DataFrame({"x": range(23)}), mode).lower()
         assert "production" in copy
@@ -109,7 +105,6 @@ def test_the_caption_claims_production_and_never_claims_best():
 
 
 def test_the_hero_card_matches_the_game_score_table_exactly():
-    """Same shape, same shadow, one implementation — see DESIGN.md."""
     from bulls.graphics.house import accent_card_bounds
     from scripts.prototypes.top_game_performances import (
         DECADE_LAYOUT,
@@ -131,22 +126,18 @@ def test_the_card_overlaps_the_header_rule_rather_than_butting_into_it():
 
 
 def test_scales_are_calibrated_on_the_thousand_minute_peer_group():
-    """Everyone here cleared 1,000 minutes, so grade them against that pool."""
     from bulls.graphics.house import HEAT_MID, heat_fill
     from matplotlib.colors import to_rgb
 
     assert SCALE_SAMPLE_SIZE == 558
-    # Ordinary starter production for this pool takes no colour.
     for metric, ordinary in (("ppg", 10.2), ("rpg", 4.9), ("apg", 2.0)):
         assert heat_fill(ordinary, *COLUMN_SCALES[metric]) == pytest.approx(
             to_rgb(HEAT_MID)
         ), f"{metric} still colours {ordinary}"
-    # A genuine standout still does.
     assert heat_fill(16.8, *COLUMN_SCALES["ppg"]) != pytest.approx(to_rgb(HEAT_MID))
 
 
 def test_the_card_reaches_less_far_than_the_game_score_default():
-    """This canvas is tighter, so the card must not crowd its own header."""
     from bulls.graphics.house import ACCENT_CARD_OUTSET_Y, ACCENT_CARD_OVERLAP_Y
 
     assert CARD_OUTSET_Y + CARD_OVERLAP_Y < ACCENT_CARD_OUTSET_Y + ACCENT_CARD_OVERLAP_Y

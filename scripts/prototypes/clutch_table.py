@@ -79,7 +79,6 @@ POINTS_CARD_OUTSET_Y = 9
 
 
 def fetch_clutch_frame() -> pd.DataFrame:
-    """Fetch league-wide player clutch totals from NBA.com."""
     return leaguedashplayerclutch.LeagueDashPlayerClutch(
         season=SEASON,
         season_type_all_star=SEASON_TYPE,
@@ -97,7 +96,6 @@ def build_working_table(
     clutch: pd.DataFrame,
     snapshot_time: datetime,
 ) -> pd.DataFrame:
-    """Join the current roster to full-season clutch totals and metrics."""
     roster_required = {"nba_id", "official_roster_name"}
     clutch_required = {
         "PLAYER_ID",
@@ -251,7 +249,6 @@ def build_working_table(
 
 
 def qualified_players(table: pd.DataFrame) -> pd.DataFrame:
-    """Return qualifying current Bulls ordered by clutch points."""
     return (
         table.loc[table["qualified"]]
         .copy()
@@ -265,7 +262,6 @@ def qualified_players(table: pd.DataFrame) -> pd.DataFrame:
 
 
 def validate_working_table(table: pd.DataFrame) -> dict:
-    """Validate identities, formulas, qualifier scope, and ranking."""
     if table["nba_id"].duplicated().any():
         raise ValueError("Working table contains duplicate NBA player IDs.")
     if table["official_roster_name"].duplicated().any():
@@ -347,7 +343,6 @@ def validate_working_table(table: pd.DataFrame) -> dict:
 
 
 def write_working_table(table: pd.DataFrame, date: str) -> Path:
-    """Write the complete roster audit table, including excluded players."""
     path = OUT / f"{date}-current-bulls-clutch-table-working.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False)
@@ -355,7 +350,6 @@ def write_working_table(table: pd.DataFrame, date: str) -> Path:
 
 
 def _mix(base: str, target: str, strength: float) -> tuple[float, float, float]:
-    """Blend two colors for restrained table-cell fills."""
     amount = min(max(float(strength), 0.0), 1.0)
     base_rgb = np.array(to_rgb(base))
     target_rgb = np.array(to_rgb(target))
@@ -367,7 +361,6 @@ def fg_fill(
     baseline: float,
     limit: float = 0.25,
 ) -> tuple[float, float, float]:
-    """Map FG% around the weighted NBA clutch average."""
     delta = float(value) - float(baseline)
     fraction = min(abs(delta) / limit, 1.0)
     if delta >= 0:
@@ -376,7 +369,6 @@ def fg_fill(
 
 
 def win_fill(value: float) -> tuple[float, float, float]:
-    """Map team clutch-game win rate around .500 with red/green context."""
     delta = float(value) - 0.5
     fraction = min(abs(delta) / 0.25, 1.0)
     if delta >= 0:
@@ -385,20 +377,17 @@ def win_fill(value: float) -> tuple[float, float, float]:
 
 
 def minutes_fill(value: float, maximum: float) -> tuple[float, float, float]:
-    """Keep opportunity context on one uniform warm off-white fill."""
     del value, maximum
     return to_rgb(DEFAULT_THEME.canvas)
 
 
 def points_fill(value: float, minimum: float, maximum: float) -> tuple[float, float, float]:
-    """Reserve the Bulls-red scale for the table's ranking statistic."""
     span = maximum - minimum
     fraction = 1.0 if span <= 0 else (float(value) - minimum) / span
     return _mix("#F6DCE3", DEFAULT_THEME.accent, 0.35 + 0.65 * fraction)
 
 
 def text_color(fill: tuple[float, float, float]) -> str:
-    """Choose black or white text from a cell's luminance."""
     r, g, b = fill
     luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b
     return "#FFFFFF" if luminance < 0.47 else DEFAULT_THEME.ink
@@ -414,7 +403,6 @@ def _cell(
     *,
     bold: bool = False,
 ) -> None:
-    """Draw one edge-to-edge Basketball University-style heatmap cell."""
     height = ROW_HEIGHT
     ax.add_patch(
         Rectangle(
@@ -441,7 +429,6 @@ def _cell(
 
 
 def points_card_bounds(row_count: int) -> tuple[float, float, float, float]:
-    """Return an oversized PTS card footprint layered above the stat grid."""
     column_left, column_right = COLUMNS["PTS"]
     left = column_left - POINTS_CARD_OUTSET_X
     right = column_right + POINTS_CARD_OUTSET_X
@@ -456,7 +443,6 @@ def points_card_bounds(row_count: int) -> tuple[float, float, float, float]:
 
 
 def _points_card(ax, players: pd.DataFrame) -> None:
-    """Draw PTS as one rounded, continuous red card behind every value."""
     left, right, bottom, top = points_card_bounds(len(players))
     width = right - left
     height = top - bottom
@@ -487,7 +473,6 @@ def _points_card(ax, players: pd.DataFrame) -> None:
 
 
 def _player_name(ax, name: str, y: float) -> None:
-    """Draw a bold name, shrinking only when it would touch the PTS card."""
     base_size = 17.5
     card_left, _, _, _ = points_card_bounds(1)
     max_width = card_left - NAME_X - 12
@@ -519,7 +504,6 @@ def _player_name(ax, name: str, y: float) -> None:
 
 
 def render_chart(players: pd.DataFrame, date: str, final: bool = False) -> Path:
-    """Render the transparent clutch table chart asset for Canva."""
     theme = DEFAULT_THEME
     fig = plt.figure(figsize=(CHART_WIDTH / DRAFT_DPI, CHART_HEIGHT / DRAFT_DPI))
     ax = fig.add_axes([0, 0, 1, 1])
@@ -639,7 +623,6 @@ def render_chart(players: pd.DataFrame, date: str, final: bool = False) -> Path:
 
 
 def canva_copy_block(report: dict, date: str) -> str:
-    """Return exact framing copy from the same validated run."""
     league_fg = report["league_clutch_fg_pct"]
     below = ", ".join(report["below_threshold_names"]) or "None"
     no_data = ", ".join(report["no_2025_26_clutch_data_names"]) or "None"

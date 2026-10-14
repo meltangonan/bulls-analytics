@@ -58,7 +58,6 @@ DEFAULT_OUTPUT = _REPO / "output/taj-gibson-retirement"
 # cream and the darker warm Canva grounds, and quiet enough that the shaded
 # rows do not outshout the numbers.
 HIGHLIGHT_FILL = "#F6E3E8"
-# Body separators stay quieter than the header and total rules.
 ROW_RULE = "#B8B0A8"
 # The alternating band, matching the catch-and-shoot leaderboard: the neutral
 # separator grey painted at low alpha rather than a solid tint. A translucent
@@ -87,7 +86,6 @@ FOOTNOTE_LINE = 30
 # accepted treatment in DESIGN.md.
 FOOTNOTE_INK = "#5F5B57"
 
-# Breathing room each cell keeps inside its column before it counts as an overflow.
 CELL_PAD = 14
 
 MONTHS = ("Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -96,8 +94,6 @@ MONTHS = ("Jan", "Feb", "Mar", "Apr", "May", "Jun",
 
 @dataclass(frozen=True)
 class Column:
-    """One table column: its header, its width, and how its cells sit."""
-
     header: str
     width: int
     align: str = "right"
@@ -109,7 +105,6 @@ def _month_year(date_text: str) -> str:
 
 
 def _long_date(date_text: str) -> str:
-    """Readable date for the boxed rows, e.g. "Apr 27, 2014"."""
     stamp = pd.Timestamp(date_text)
     return f"{MONTHS[stamp.month - 1]} {stamp.day}, {stamp.year}"
 
@@ -119,12 +114,10 @@ def _iso(date_text: str) -> str:
 
 
 def _pct(value: float) -> str:
-    """Basketball Reference's leading-dot percentage, e.g. .495."""
     return f"{value:.3f}".lstrip("0")
 
 
 def _column_edges(columns: list[Column]) -> list[tuple[int, int]]:
-    """Left and right x of each column, laid out from the left padding."""
     edges = []
     cursor = SIDE_PAD
     for column in columns:
@@ -206,7 +199,6 @@ def _check_widths(ax, measured: list[tuple[object, str, int]], columns: list[Col
         f"{columns[index].header!r} column is {columns[index].width}px but "
         f"{value!r} renders {rendered:.0f}px"
         for (_, value, index), rendered in zip(measured, widths)
-        # Both sides are inset by CELL_PAD, so that is the budget a cell loses.
         if rendered > columns[index].width - CELL_PAD * 2
     ]
     if overflows:
@@ -216,7 +208,6 @@ def _check_widths(ax, measured: list[tuple[object, str, int]], columns: list[Col
 
 
 def _check_footnote(ax, artists, allowed: float) -> None:
-    """Fail if a pre-wrapped footnote line runs past the table's content width."""
     overflows = [
         f"{artist.get_text()!r} renders {rendered:.0f}px against {allowed:.0f}px"
         for artist, rendered in zip(artists, _data_widths(ax, artists))
@@ -268,8 +259,6 @@ def _draw_table(
 
     measured: list[tuple[object, str, int]] = []
 
-    # Footnote space is reserved at the bottom by `height`, so the header sits
-    # against the top padding regardless of whether there is a footnote.
     header_baseline = height - TOP_PAD - HEADER_SIZE
     for index, column in enumerate(columns):
         x, align = cell_x(index)
@@ -431,9 +420,6 @@ TABLE_SUB_SIZE = 20
 # numbers look like a footnote to it rather than the evidence behind it.
 TABLE_STAT_SIZE = 32
 TABLE_HERO_SIZE = 34
-# The accent card's bounds reach ACCENT_CARD_OUTSET_X past its column on each
-# side, so a stat column starting at the column edge actually starts inside
-# the card's visible edge. This gutter is measured from the card's real bounds.
 TABLE_CARD_GUTTER = 44
 # The accent card reaches above its column to overlap the header rule, so the
 # header LABEL needs clearance a plain table does not: at the standard gap,
@@ -456,7 +442,6 @@ TABLE_STATS = (
 
 
 def render_top_games(data_path: Path, output_path: Path, *, final: bool = False) -> Path:
-    """Best five by Game Score, as the accent-card table."""
     frame = pd.read_csv(data_path)
     stat_total = sum(w for _, w, _ in TABLE_STATS)
     width = (
@@ -488,7 +473,6 @@ def render_top_games(data_path: Path, output_path: Path, *, final: bool = False)
             fontsize=TABLE_HEADER_SIZE, color=RED, fontproperties=helvetica("bold"),
             zorder=6)
 
-    # Measured from the card's drawn edge, not its column edge.
     cursor = box_right + TABLE_CARD_GUTTER
     centres = []
     for label, stat_width, _ in TABLE_STATS:
@@ -590,7 +574,6 @@ def render_franchise_ranks(data_path: Path, output_path: Path, *,
 
 
 def _new_asset(width: int, height: int):
-    """A transparent, pixel-coordinate canvas for the non-table assets."""
     fig = plt.figure(figsize=(width / DRAFT_DPI, height / DRAFT_DPI), facecolor="none")
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, width)
@@ -614,8 +597,6 @@ def _ordinal(value: int) -> str:
     return f"{value}{suffix}"
 
 
-# ------------------------------------------------- career highs, two treatments
-
 # Three-letter box-score codes, in reading order. Minutes was cut: a career
 # high in minutes describes a coach's rotation, not a performance.
 HIGH_CODES = {
@@ -631,11 +612,9 @@ HIGH_CODES = {
 
 
 def _high_value(row) -> str:
-    """A career-high value, signed where the category is a differential."""
     value = int(row.value)
     return f"{value:+d}" if row.category == "Plus-minus" else f"{value}"
 
-# Shared type scale for the two number-and-stat treatments.
 HERO_SIZE = 76
 CARD_LABEL_SIZE = 21
 
@@ -644,11 +623,8 @@ STRIP_H = 250
 
 
 def render_career_high_strip(data_path: Path, output_path: Path, *, final: bool = False) -> Path:
-    """Career highs as a single box-score line, ruled top and bottom."""
     frame = pd.read_csv(data_path)
     width = SIDE_PAD * 2 + len(frame) * STRIP_CELL_W
-    # Same reasoning as the grid: a postseason high needs saying so. Reserved
-    # at the bottom only; the strip itself still starts against the top pad.
     from_playoffs = bool(frame["in_playoffs"].any()) if "in_playoffs" in frame else False
     note_block = FOOTNOTE_LINE + FOOTNOTE_GAP if from_playoffs else 0
     height = TOP_PAD + STRIP_H + BOTTOM_PAD + note_block
@@ -689,8 +665,6 @@ def render_career_high_strip(data_path: Path, output_path: Path, *, final: bool 
             fontproperties=helvetica(),
         )
 
-    # A two-digit number at hero size very nearly fills a cell; keep it off the
-    # dividers rather than discovering the collision on the rendered page.
     overflows = [
         f"{artist.get_text()!r} renders {rendered:.0f}px against a {STRIP_CELL_W}px cell"
         for artist, rendered in zip(cells, _data_widths(ax, cells))
@@ -777,8 +751,6 @@ def render_career_high_grid(data_path: Path, output_path: Path, *, final: bool =
         raise ValueError("Grid labels do not fit:\n  " + "\n  ".join(overflows))
     return _save(fig, output_path, final=final)
 
-
-# ------------------------------------------------------------------ shot diet
 
 DIET_ROW_H = 96
 DIET_LABEL_W = 510
@@ -879,10 +851,7 @@ def render_shot_diet(data_path: Path, output_path: Path, *, final: bool = False)
     return _save(fig, output_path, final=final)
 
 
-# ------------------------------------------------------------------- milestones
-
 def render_milestones(data_path: Path, output_path: Path, *, final: bool = False) -> Path:
-    """How often he cleared each threshold, count leading and share trailing."""
     frame = pd.read_csv(data_path)
     columns = [
         Column("", 190),

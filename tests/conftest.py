@@ -15,7 +15,6 @@ requires_helvetica = pytest.mark.skipif(
 )
 
 
-# Sample game data matching NBA API response format
 MOCK_GAMES_DATA = pd.DataFrame([
     {
         'GAME_ID': '0022500503',
@@ -58,7 +57,6 @@ MOCK_GAMES_DATA = pd.DataFrame([
 
 @pytest.fixture
 def mock_nba_api():
-    """Mock the NBA API LeagueGameFinder to return sample data."""
     with patch('bulls.data.fetch.leaguegamefinder.LeagueGameFinder') as mock_finder:
         mock_instance = MagicMock()
         mock_instance.get_data_frames.return_value = [MOCK_GAMES_DATA.copy()]
@@ -68,7 +66,6 @@ def mock_nba_api():
 
 @pytest.fixture
 def mock_empty_api():
-    """Mock the NBA API to return empty data."""
     with patch('bulls.data.fetch.leaguegamefinder.LeagueGameFinder') as mock_finder:
         mock_instance = MagicMock()
         mock_instance.get_data_frames.return_value = [pd.DataFrame()]
@@ -76,7 +73,6 @@ def mock_empty_api():
         yield mock_finder
 
 
-# Sample box score data matching NBA API response format
 MOCK_BOX_SCORE_DATA = pd.DataFrame([
     {
         'teamId': BULLS_TEAM_ID,
@@ -117,7 +113,6 @@ MOCK_BOX_SCORE_DATA = pd.DataFrame([
 ])
 
 
-# Sample shot chart data
 MOCK_SHOT_CHART_DATA = pd.DataFrame([
     {
         'LOC_X': 0,
@@ -160,7 +155,6 @@ MOCK_SHOT_CHART_DATA = pd.DataFrame([
 
 @pytest.fixture
 def mock_box_score_api():
-    """Mock the NBA API BoxScoreTraditionalV3 to return sample data."""
     with patch('bulls.data.fetch.boxscoretraditionalv3.BoxScoreTraditionalV3') as mock_box:
         mock_instance = MagicMock()
         mock_df = MOCK_BOX_SCORE_DATA.copy()
@@ -171,7 +165,6 @@ def mock_box_score_api():
 
 @pytest.fixture
 def mock_empty_box_score_api():
-    """Mock the NBA API BoxScoreTraditionalV3 to return empty data."""
     with patch('bulls.data.fetch.boxscoretraditionalv3.BoxScoreTraditionalV3') as mock_box:
         mock_instance = MagicMock()
         mock_instance.player_stats.get_data_frame.return_value = pd.DataFrame()
@@ -181,7 +174,6 @@ def mock_empty_box_score_api():
 
 @pytest.fixture
 def mock_shot_chart_api():
-    """Mock the NBA API ShotChartDetail to return sample data."""
     with patch('bulls.data.fetch.shotchartdetail.ShotChartDetail') as mock_shot:
         mock_instance = MagicMock()
         mock_instance.get_data_frames.return_value = [MOCK_SHOT_CHART_DATA.copy()]
@@ -191,7 +183,6 @@ def mock_shot_chart_api():
 
 @pytest.fixture
 def mock_empty_shot_chart_api():
-    """Mock the NBA API ShotChartDetail to return empty data."""
     with patch('bulls.data.fetch.shotchartdetail.ShotChartDetail') as mock_shot:
         mock_instance = MagicMock()
         mock_instance.get_data_frames.return_value = [pd.DataFrame()]
@@ -201,7 +192,6 @@ def mock_empty_shot_chart_api():
 
 @pytest.fixture
 def sample_player_games():
-    """Sample player games DataFrame for analysis tests."""
     return pd.DataFrame({
         'game_id': ['001', '002', '003', '004', '005'],
         'date': ['2026-01-10', '2026-01-08', '2026-01-06', '2026-01-04', '2026-01-02'],
@@ -227,7 +217,6 @@ def sample_player_games():
 
 @pytest.fixture
 def mock_roster_efficiency_data():
-    """Sample roster efficiency data for efficiency_matrix tests."""
     return [
         {'player_id': 1629632, 'name': 'Coby White', 'ts_pct': 58.5, 'fga_per_game': 14.2, 'games': 10},
         {'player_id': 1631094, 'name': 'Josh Giddey', 'ts_pct': 48.5, 'fga_per_game': 11.0, 'games': 10},
@@ -237,7 +226,6 @@ def mock_roster_efficiency_data():
     ]
 
 
-# Extended mock box score data with player IDs for roster efficiency
 MOCK_BOX_SCORE_WITH_IDS = pd.DataFrame([
     {
         'teamId': BULLS_TEAM_ID,
@@ -282,7 +270,6 @@ MOCK_BOX_SCORE_WITH_IDS = pd.DataFrame([
 ])
 
 
-# Extended team shot data with player info
 MOCK_TEAM_SHOTS_DATA = pd.DataFrame([
     {
         'LOC_X': 0,
@@ -322,15 +309,12 @@ MOCK_TEAM_SHOTS_DATA = pd.DataFrame([
 
 @pytest.fixture
 def mock_roster_efficiency_api():
-    """Mock APIs for get_roster_efficiency function."""
     with patch('bulls.data.fetch.shotchartdetail.ShotChartDetail') as mock_shot, \
          patch('bulls.data.fetch.boxscoretraditionalv3.BoxScoreTraditionalV3') as mock_box:
-        # Setup shot chart mock
         mock_shot_instance = MagicMock()
         mock_shot_instance.get_data_frames.return_value = [MOCK_TEAM_SHOTS_DATA.copy()]
         mock_shot.return_value = mock_shot_instance
 
-        # Setup box score mock
         mock_box_instance = MagicMock()
         mock_df = MOCK_BOX_SCORE_WITH_IDS.copy()
         mock_df['name'] = mock_df['firstName'] + ' ' + mock_df['familyName']

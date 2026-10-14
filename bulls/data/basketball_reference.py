@@ -57,7 +57,7 @@ def parse_advanced_table(page: str, year: int) -> list[dict]:
 
     rows = []
     for row_html in re.findall(r"<tr[^>]*>(.*?)</tr>", block.group(1), re.S):
-        if 'scope="col"' in row_html:  # the table's own header row
+        if 'scope="col"' in row_html:
             continue
         cells = dict(
             re.findall(r'data-stat="([a-z_0-9]+)"[^>]*>(.*?)</t[dh]>', row_html, re.S)

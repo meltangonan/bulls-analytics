@@ -74,12 +74,10 @@ NAME_KEY_ALIASES = {
 
 
 def season_label(end_year: int) -> str:
-    """Convert 2009 to the display/storage label ``2008-09``."""
     return f"{end_year - 1}-{str(end_year)[2:]}"
 
 
 def normalize_name(name: str) -> str:
-    """Normalize source-specific punctuation and suffixes for a safe join."""
     # Unicode's dotless i has no ASCII decomposition, so normalize it before
     # stripping diacritics (Basketball Reference: Ömer Aşık; NBA: Omer Asik).
     source = str(name).replace("ı", "i").replace("İ", "I")
@@ -93,7 +91,6 @@ def normalize_name(name: str) -> str:
 
 
 def fetch_rookie_season(end_year: int) -> pd.DataFrame:
-    """Fetch one season of Bulls rookies from NBA.com's explicit Rookie filter."""
     season = season_label(end_year)
     kwargs = {
         "team_id_nullable": BULLS_TEAM_ID,
@@ -185,13 +182,9 @@ def fetch_rookie_season(end_year: int) -> pd.DataFrame:
 
 
 def load_or_fetch_rookies(path: Path, refresh: bool = False) -> pd.DataFrame:
-    """Load the complete NBA rookie input or fetch every season into one CSV."""
     expected = set(range(FIRST_SEASON_END, LAST_SEASON_END + 1))
     if path.exists() and not refresh:
         cached = pd.read_csv(path)
-        # Seasons with no Bulls rookie still need a fetch audit. The separate
-        # ``season_coverage`` column stores the requested season on every real
-        # row; validation below reports truly empty seasons from the final set.
         required = {"steals", "blocks", "turnovers"}
         if required.issubset(cached.columns) and set(cached["season"].astype(int)).issubset(expected):
             return cached
@@ -207,7 +200,6 @@ def load_or_fetch_rookies(path: Path, refresh: bool = False) -> pd.DataFrame:
 
 
 def fetch_rookie_shot_season(end_year: int) -> pd.DataFrame:
-    """Fetch rookie shooting by NBA.com's mutually exclusive basic zones."""
     season = season_label(end_year)
     frame = leaguedashplayershotlocations.LeagueDashPlayerShotLocations(
         season=season,
@@ -237,7 +229,6 @@ def fetch_rookie_shot_season(end_year: int) -> pd.DataFrame:
 
 
 def load_or_fetch_shot_profiles(path: Path, refresh: bool = False) -> pd.DataFrame:
-    """Return every available Bulls rookie basic-zone shooting row."""
     if path.exists() and not refresh:
         return pd.read_csv(path)
     frames = []
@@ -253,7 +244,6 @@ def load_or_fetch_shot_profiles(path: Path, refresh: bool = False) -> pd.DataFra
 
 
 def fetch_team_record(end_year: int) -> dict:
-    """Fetch one Bulls regular-season record for team context."""
     season = season_label(end_year)
     frame = leaguedashteamstats.LeagueDashTeamStats(
         team_id_nullable=BULLS_TEAM_ID,
@@ -278,7 +268,6 @@ def fetch_team_record(end_year: int) -> dict:
 
 
 def load_or_fetch_team_records(path: Path, refresh: bool = False) -> pd.DataFrame:
-    """Return Bulls records plus the preceding season needed for win change."""
     if path.exists() and not refresh:
         return pd.read_csv(path)
     records = []
@@ -294,7 +283,6 @@ def load_or_fetch_team_records(path: Path, refresh: bool = False) -> pd.DataFram
 def add_playstyle_and_win_context(
     table: pd.DataFrame, shots: pd.DataFrame, team_records: pd.DataFrame
 ) -> pd.DataFrame:
-    """Add shot-diet shares, Win Share ranks, and non-causal team context."""
     table = table.copy()
     shots = shots.copy()
     shot_columns = {
@@ -377,7 +365,6 @@ def add_playstyle_and_win_context(
 
 
 def build_working_table(nba: pd.DataFrame, bref: pd.DataFrame) -> pd.DataFrame:
-    """Join the two sources and derive the candidate measures and ranks."""
     nba = nba.copy()
     bref = bref.copy()
     nba["name_key"] = nba["player_name"].map(normalize_name)
@@ -604,7 +591,6 @@ def build_ts_era_sensitivity(
 
 
 def validate(table: pd.DataFrame) -> dict:
-    """Fail before reporting if population, joins, or derived rates are suspect."""
     if table.empty:
         raise ValueError("Rookie table is empty")
     if table.duplicated(["season", "player_id"]).any():
@@ -703,7 +689,6 @@ def _composite_top_table(table: pd.DataFrame) -> str:
 
 
 def build_report(table: pd.DataFrame, audit: dict) -> str:
-    """Create the review document the owner uses to select a metric."""
     qualified = table[table["qualified_500"]]
     correlation = qualified[["bpm", "vorp", "ws", "ppg", "pra_per_75"]].corr(
         method="spearman"
@@ -938,7 +923,6 @@ def fetch_league_rookie_season(end_year: int) -> pd.DataFrame:
 def load_or_fetch_league_rookies(
     path: Path = LEAGUE_ROOKIE_CSV, refresh: bool = False
 ) -> pd.DataFrame:
-    """Cache every NBA rookie season in the window in the post's data folder."""
     if path.exists() and not refresh:
         return pd.read_csv(path)
     frames = [

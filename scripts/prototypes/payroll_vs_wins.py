@@ -58,8 +58,6 @@ DRAFT_DPI = 150
 # the note exists so the Canva page can say so rather than inviting the question.
 SHORT_SEASONS = {"2011-12": 66, "2019-20": 65, "2020-21": 72}
 
-# Win-percentage points worth a number on the chart, and which side of the line
-# the label clears. Peaks take the label above, troughs below.
 CALLOUTS = {
     "2011-12": "above",
     "2018-19": "below",
@@ -90,7 +88,6 @@ class Season:
 
     @property
     def dead_share(self) -> float:
-        """Dead money as a share of the cap -- the darker foot of the column."""
         return self.dead_cap / self.salary_cap
 
     @property
@@ -103,7 +100,6 @@ class Season:
 
 
 def load_seasons(path: Path = SNAPSHOT) -> list[Season]:
-    """Read the snapshot, skipping its ``#`` provenance header."""
     with path.open() as handle:
         rows = csv.DictReader(line for line in handle if not line.startswith("#"))
         seasons = [
@@ -150,7 +146,6 @@ def _gradient_column(ax, x: float, low: float, high: float, colors, zorder: int)
 
 
 def render_chart(seasons: list[Season], *, final: bool = False) -> Path:
-    """Render the transparent two-panel asset for Canva."""
     theme = DEFAULT_THEME
     label_font = helvetica()
     bold_font = helvetica("bold")
@@ -164,10 +159,7 @@ def render_chart(seasons: list[Season], *, final: bool = False) -> Path:
     positions = range(len(seasons))
     labels = [s.season for s in seasons]
 
-    # --- top panel: payroll as a share of the cap ---------------------------
     for x, season in zip(positions, seasons):
-        # Red from the dead-money line up to full payroll, dark below it. Drawing
-        # the foot second means the split stays a hard edge inside one column.
         _gradient_column(
             top, x, season.dead_share * 100, season.cap_share * 100, RED_BAR_GRADIENT, 3
         )
@@ -216,7 +208,6 @@ def render_chart(seasons: list[Season], *, final: bool = False) -> Path:
     )
     top.yaxis.set_major_formatter(lambda value, _: f"{value:.0f}%")
 
-    # --- bottom panel: win percentage ---------------------------------------
     bottom.plot(
         positions,
         [s.win_pct for s in seasons],
@@ -268,7 +259,6 @@ def render_chart(seasons: list[Season], *, final: bool = False) -> Path:
     bottom.set_ylim(0.13, 0.87)
     bottom.set_ylabel("WIN PCT", fontproperties=bold_font, fontsize=10, color=theme.muted)
 
-    # --- shared season axis --------------------------------------------------
     bottom.set_xticks(list(positions))
     bottom.set_xticklabels(labels, rotation=45, ha="right")
     for tick in bottom.get_xticklabels():

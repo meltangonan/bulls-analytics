@@ -148,7 +148,6 @@ def due(started: float, final_at: float, now: float, stage: str) -> int | None:
 
 
 def notice(text: str, game_id: str, final_at: float) -> None:
-    """Print what the run is waiting on and the command that resumes it, then exit STILL_WAITING."""
     log(text)
     log(f"restart: PYTHONPATH=. {PY} postgame-recaps/pipeline/postgame_recap.py {game_id} {int(final_at)}")
     sys.exit(STILL_WAITING)
@@ -167,7 +166,6 @@ def early_pages(game_id: str, waiting: str) -> bool:
 
 
 def caption(r: dict) -> str:
-    """The post caption from the verified numbers: the result line, then the standing hashtags."""
     us, them = r["chi"], r["opp"]
     hi, lo = max(us["score"], them["score"]), min(us["score"], them["score"])
     verb = "beat" if us["score"] > them["score"] else "fell to"
@@ -177,7 +175,6 @@ def caption(r: dict) -> str:
 
 
 def draw(game_id: str, data: Path, out: Path) -> int:
-    """Shot chart, pages and PNG export for one game; returns the first failing exit code, or 0."""
     # The shot chart reads league shots from <repo>/cache/shot_charts/. In the primary checkout that is the shared
     # cache itself; in a worktree, link the shared cache, or only its shot_charts when tests have already made a
     # real cache/ there (seen 2026-10-08), and remove only the link afterwards.
@@ -185,7 +182,7 @@ def draw(game_id: str, data: Path, out: Path) -> int:
     link = local if not local.is_dir() or local.is_symlink() else local / "shot_charts"
     target = shared if link.name == "cache" else shared / "shot_charts"
     if link.is_symlink() and not link.exists():
-        link.unlink()  # a dangling link left by an interrupted run
+        link.unlink()
     made = not link.exists() and target != link  # in the primary checkout the link would point at itself
     if made:
         link.symlink_to(target)
@@ -193,7 +190,7 @@ def draw(game_id: str, data: Path, out: Path) -> int:
         code, _ = run(PY, str(HERE / "zones_share.py"), str(data), str(out / "zones.png"), "13", "11", "33")
     finally:
         if made and link.is_symlink():
-            link.unlink()  # the link only, never the shared cache
+            link.unlink()
     for step in ([] if code else [[str(HERE / "build_mockup.py"), game_id], [str(HERE / "export_slides.py"), game_id]]):
         code = code or run(PY, *step)[0]
     return code
@@ -218,7 +215,7 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
         + (f"; restarted, Final first seen {time.strftime('%H:%M', time.localtime(since))}" if since else ""))
 
     final_at = since  # the first poll on which NBA.com showed Final, which the timing line counts from
-    while True:  # 1. wait for the final
+    while True:
         ok, why, shown_final = final(game_id)
         log(why)
         if check:
@@ -236,7 +233,7 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
                game_id, final_at)
 
     strikes, early_done = 0, False
-    while True:  # 2. pull and compute until every feed is published and every check passes
+    while True:
         code, why = run(PY, str(HERE / "pull_game.py"), game_id)
         stage = "publishing"  # what the wait is: NBA.com publishing, or a check on published feeds
         if code == 0:
@@ -270,7 +267,7 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
     if not why.startswith("espn check:"):
         log("espn check: crashed (see above); the build carries on, compare with ESPN by hand")
 
-    data = game_dir(game_id)  # 3. draw, build, export
+    data = game_dir(game_id)
     out = OUTPUT / game_id
     with open(out.parent / ".build.lock", "w") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)  # one build at a time: the cache link and the page file are shared
@@ -289,7 +286,6 @@ def main(arg: str, check: bool = False, since: float | None = None) -> None:
     for line in recap.get("repairs", []):
         log(f"repaired: {line}")
     log(f"caption: {out / 'caption.txt'}")
-    # 4. Not onto the phone yet: Claude reviews the slides first, then delivers them.
     log(f"review: slides await Claude's review; deliver with PYTHONPATH=. {PY} postgame-recaps/pipeline/deliver.py {game_id}")
 
 

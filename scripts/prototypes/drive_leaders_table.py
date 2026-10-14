@@ -68,8 +68,6 @@ def render(mode: str, output: Path) -> None:
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set(xlim=(0, width), ylim=(0, height)); ax.axis("off")
     first_y, header_y = height - 190, height - 48
-    # Four identical 285 px columns with identical 30 px gutters. Equal centers
-    # matter visually as much as the literal gaps, especially for short values.
     bounds = [(790, 1075), (1105, 1390), (1420, 1705), (1735, 2020)]
     card_left, card_right, _, _ = draw_accent_card(
         ax, *bounds[0], first_y, len(table), row_h, overlap_y=15

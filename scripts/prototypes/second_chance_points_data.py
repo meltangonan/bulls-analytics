@@ -71,7 +71,6 @@ def fetch_frame(season: str, measure: str, *, team_id: int | None,
 
 
 def nba_rank(points: int, league_points: pd.Series) -> int:
-    """Competition rank of a total; tied totals share a rank."""
     return int((pd.to_numeric(league_points, errors="raise") > points).sum() + 1)
 
 

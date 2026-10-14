@@ -65,12 +65,10 @@ DEFAULT_OUTPUT = ASSET_DIR / "2026-08-15-v01-bulls-rookie-composite-table.png"
 
 
 def _format_rank(value: float) -> str:
-    """Print tied average ranks without a meaningless trailing decimal."""
     return f"#{value:.0f}" if float(value).is_integer() else f"#{value:.1f}"
 
 
 def _context(row: pd.Series) -> str:
-    """Season, team record, and honest year-over-year team change."""
     if pd.notna(row["team_win_change"]):
         change = int(row["team_win_change"])
         change_text = f"{change:+d} wins"
@@ -83,7 +81,6 @@ def _context(row: pd.Series) -> str:
 
 
 def _table_headshot(ax, image_path: Path, x: float, y: float, half: float) -> None:
-    """Crop to the head and shoulders so a later team's jersey is not prominent."""
     try:
         image = plt.imread(image_path)
     except (FileNotFoundError, OSError, ValueError):
@@ -107,7 +104,6 @@ def _table_headshot(ax, image_path: Path, x: float, y: float, half: float) -> No
 
 
 def _draw_average_card(ax, row_count: int, first_y: float) -> None:
-    """Draw the continuous Bulls-red result column used by recent table posts."""
     top = first_y + ROW_HEIGHT / 2 + 10
     bottom = first_y - (row_count - 1) * ROW_HEIGHT - ROW_HEIGHT / 2 - 10
     shape = dict(boxstyle="round,pad=0,rounding_size=14", edgecolor="none")
@@ -149,7 +145,6 @@ def _draw_average_card(ax, row_count: int, first_y: float) -> None:
 
 
 def validate_ranking(ranking: pd.DataFrame) -> None:
-    """Fail before rendering if the published ranking cannot be audited."""
     required = {
         "composite_rank",
         "average_category_rank",
@@ -193,7 +188,6 @@ def validate_ranking(ranking: pd.DataFrame) -> None:
 
 
 def render_table(ranking: pd.DataFrame, output_path: Path = DEFAULT_OUTPUT) -> Path:
-    """Render one transparent top-10 table asset for Canva."""
     validate_ranking(ranking)
     leaders = ranking.head(TOP_N).copy()
     ensure_headshots(leaders["player_id"])
@@ -285,7 +279,6 @@ def render_table(ranking: pd.DataFrame, output_path: Path = DEFAULT_OUTPUT) -> P
 
 
 def canva_copy() -> str:
-    """Exact framing copy generated alongside the analytical asset."""
     return "\n".join(
         [
             "TOP BULLS ROOKIE SEASONS SINCE 2000",

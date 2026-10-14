@@ -89,13 +89,11 @@ def get(path: str, **params) -> dict:
 
 
 def name_key(name: str) -> str:
-    """A name as both sites can agree on it: no accents, punctuation, spaces or Jr./Sr./II-IV suffix."""
     plain = unicodedata.normalize("NFKD", str(name)).encode("ascii", "ignore").decode().lower()
     return "".join(w for w in re.sub(r"[^a-z ]", " ", plain).split() if w not in SUFFIXES)
 
 
 def value(v) -> str:
-    """One number as both sites print it: 100.0 and "100" read 100, "+5" reads 5, a blank reads blank."""
     if v is None or (isinstance(v, float) and pd.isna(v)) or str(v).strip() in ("", "--"):
         return ""
     s = str(v).strip().lstrip("+")
@@ -140,8 +138,6 @@ def espn_players(summary: dict) -> dict:
 
 
 def match_players(nba: pd.DataFrame, espn: list) -> tuple[dict, list, list]:
-    """{NBA personId: ESPN row} by name key, then by family name when it is unique on both rosters; and the
-    players left unmatched on each side."""
     by_key = {name_key(e["name"]): e for e in espn}
     found, left = {}, []
     for r in nba.itertuples():
@@ -200,7 +196,6 @@ def compare_shots(nba: pd.DataFrame, espn: list, ids: dict, who: str) -> tuple[i
 
 
 def nba_scoring(pbp: pd.DataFrame, team_id: int) -> list:
-    """The team's running score after each of its scoring plays, from the plays as the slides count them."""
     made_ft = (pbp.actionType == "Free Throw") & pbp.scoreHome.notna() & ~pbp.description.fillna("").str.startswith("MISS")
     rows = pbp[((pbp.actionType == "Made Shot") | made_ft) & (pbp.teamId == team_id)]
     pts = [int(r.shotValue) if r.actionType == "Made Shot" else 1 for r in rows.itertuples()]
@@ -214,7 +209,6 @@ def nba_clock(text: str) -> str:
 
 
 def compare_scoring(nba: list, espn: list, who: str) -> tuple[int, list]:
-    """The first point where the two running scores part, if they do."""
     for i, (a, b) in enumerate(zip(nba, espn)):
         if a[2] != b[2]:
             return i + 1, [f"{who} running score parts at scoring play {i + 1}: NBA.com reaches {a[2]} "
@@ -264,11 +258,10 @@ def check(g: Path, summary: dict) -> tuple[int, list]:
         same(tri, LABEL[OFF_TURNOVERS[0]], srow[OFF_TURNOVERS[0]].iloc[0] if not srow.empty else None,
              espn_box[opponent].get(OFF_TURNOVERS[1]))
 
-        # Players: everyone either site lists as having played.
         mine = players[players.teamId == t.teamId]
         try:  # the five the slides print (NBA.com's preseason box also marks bench centers)
             started = starters(players, pbp, t.teamId)
-        except ValueError as e:  # the build stops on this too
+        except ValueError as e:
             out.append(f"{tri} {e}")
             started = set(mine.personId[mine.position.notna()])
         ids, nba_only, espn_only = match_players(mine, espn_people.get(eid, []))
@@ -294,7 +287,6 @@ def check(g: Path, summary: dict) -> tuple[int, list]:
             for col, key in PLAYER.items():
                 same(who, LABEL[col], pair(prow, col), e.get(key))
 
-        # Shots and the running score, matched through the player IDs above.
         shooter = lambda p: p["participants"][0]["athlete"]["id"] if p.get("participants") else None  # then the blocker
         espn_shots = [{"period": p["period"]["number"], "left": clock_seconds(p["clock"]["displayValue"]),
                        "player": shooter(p), "name": names.get(shooter(p), "?"), "made": bool(p.get("scoringPlay")),

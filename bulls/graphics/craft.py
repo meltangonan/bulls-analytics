@@ -21,7 +21,6 @@ from matplotlib.patches import FancyBboxPatch, Rectangle
 
 from bulls.graphics.house import BLACK, FAINT, INK, MUTED, RED, RULE, body_font, helvetica
 
-# Light neutral at vmin -> Bulls red -> deep Bulls red at vmax.
 MAGNITUDE_CMAP = LinearSegmentedColormap.from_list(
     "bulls_magnitude", ["#F2EAE8", "#CE1141", "#7E0C2B"]
 )
@@ -169,7 +168,6 @@ def _make_circular_headshot(
     border_color: Optional[tuple] = None,
     border_frac: float = 0.035,
 ) -> Optional[np.ndarray]:
-    """Load an image, crop to circle, optionally add a colored border ring."""
     try:
         img = mpimg.imread(str(img_path))
     except Exception:
@@ -185,7 +183,6 @@ def _make_circular_headshot(
     center = h // 2
     outer_mask = ((X - center) ** 2 + (Y - center) ** 2) <= center ** 2
 
-    # Ensure RGBA
     if img.shape[2] == 3:
         if img.dtype == np.uint8:
             alpha = np.full((h, w, 1), 255, dtype=np.uint8)
@@ -193,7 +190,6 @@ def _make_circular_headshot(
             alpha = np.ones((h, w, 1), dtype=img.dtype)
         img = np.concatenate([img, alpha], axis=2)
 
-    # Paint border ring
     if border_color is not None:
         border_px = max(int(center * border_frac), 2)
         inner_radius = center - border_px
@@ -204,7 +200,6 @@ def _make_circular_headshot(
         else:
             img[ring] = [c / 255 for c in border_color[:3]] + [1.0]
 
-    # Transparency outside circle
     if img.dtype == np.uint8:
         img[~outer_mask, 3] = 0
     else:
@@ -214,7 +209,6 @@ def _make_circular_headshot(
 
 
 def _placeholder_disc(size: int = _PLACEHOLDER_PX) -> np.ndarray:
-    """RGBA disc (light gray fill, muted ring) for missing headshots."""
     Y, X = np.ogrid[:size, :size]
     center = size // 2
     dist_sq = (X - center) ** 2 + (Y - center) ** 2

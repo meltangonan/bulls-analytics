@@ -27,7 +27,7 @@ from paths import LOGOS, OUTPUT, PORTRAITS, REPO, game_dir  # noqa: E402
 
 FULL_GAME = "0022500167"  # Nov 4, 2025: shot chart, season leaders, matchups, notables, no missing feeds
 RANKS_MOCK = REPO / "postgame-recaps" / "team-ranks-mock" / "ranks.json"
-BRAND = REPO / "assets" / "brand" / "chicagobullsdata-mark.svg"  # the account's mark, top right of each page
+BRAND = REPO / "assets" / "brand" / "chicagobullsdata-mark.svg"
 
 
 def portrait(path: Path) -> str:

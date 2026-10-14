@@ -68,7 +68,6 @@ def clock_left(clock: str) -> float:
 
 
 def period_start(period: int) -> float:
-    """Elapsed game minutes at the start of a period; overtime periods last five minutes."""
     return 12 * min(period - 1, 4) + 5 * max(period - 5, 0)
 
 
@@ -89,9 +88,6 @@ def game_score(r) -> float:
 
 def short(name: str) -> str:
     return name.split(" ", 1)[1] if " " in name else name
-
-
-# --- cover: scores, margin series, flow stats ------------------------------------------------
 
 
 def scoring_events(pbp: pd.DataFrame, chi_home: bool) -> pd.DataFrame:
@@ -260,7 +256,6 @@ def flow(pbp: pd.DataFrame, chi_home: bool, opp_tri: str, moments: list = ()) ->
         notes.append({"t": float(ev.t[hi_i]), "m": int(ev.margin[hi_i]), "label": f"Up {int(ev.margin[hi_i])}", "kind": "high"})
     if ev.margin[lo_i] <= -5:
         notes.append({"t": float(ev.t[lo_i]), "m": int(ev.margin[lo_i]), "label": f"Down {-int(ev.margin[lo_i])}", "kind": "low"})
-    # The basket that decided it: the last change of leader, if it came late in a close game.
     final = int(ev.margin.iloc[-1])
     if final != 0:
         winner_side = np.sign(final)
@@ -277,7 +272,6 @@ def flow(pbp: pd.DataFrame, chi_home: bool, opp_tri: str, moments: list = ()) ->
                 notes.append({"t": float(ev.t[i]), "m": int(ev.margin[i]), "kind": "decider",
                               "label": f"{r.playerName} {what}",
                               "sub": f"{int(left // 60)}:{int(left % 60):02d} left" + ("" if ev.period[i] == 4 else f", {period_label(int(ev.period[i]))}")})
-    # Moments the user picked: the dot sits on the scoring play itself, so its time and margin come from the feed.
     for m in moments:
         row = ev[ev.actionNumber == m["action"]]
         if row.empty:
@@ -288,9 +282,6 @@ def flow(pbp: pd.DataFrame, chi_home: bool, opp_tri: str, moments: list = ()) ->
             "chi_lead": max(0, int(ev.margin.max())), "opp_lead": max(0, -int(ev.margin.min())),
             "lead_changes": lead_changes, "ties": ties, "run_chi": best[TRI], "run_opp": best[opp_tri],
             "notes": notes}
-
-
-# --- team stats --------------------------------------------------------------------------------
 
 
 def four_factors(ff: pd.DataFrame, teams: pd.DataFrame, opp_tri: str, from_box: bool = False) -> dict:
@@ -376,9 +367,6 @@ def head_to_head(teams: pd.DataFrame, misc: pd.DataFrame, stats: pd.DataFrame, o
     return rows
 
 
-# --- box score -----------------------------------------------------------------------------------
-
-
 # Numbers the user confirmed where NBA.com's roster is wrong (2026-10-09: it listed Buddy Hield as #8, Caleb
 # Wilson's number; Hield wears 7).
 JERSEY_FIX = {1627741: "7"}
@@ -460,9 +448,6 @@ def box(players: pd.DataFrame, roster: pd.DataFrame, starter_ids: set, team_minu
             "dnp": [f"{r.firstName} {r.familyName}" for r in dnp.itertuples()]}
 
 
-# --- shots ----------------------------------------------------------------------------------------
-
-
 def shot_types(raw: pd.DataFrame) -> list:
     if raw.empty:
         return []
@@ -472,9 +457,6 @@ def shot_types(raw: pd.DataFrame) -> list:
               ("Pull-ups", ["Pull-ups", "Step-backs"]), ("Standard jump shots", ["Standard jumpers"]),
               ("Other", ["Turnarounds/fades", "Running jumpers", "Tip-ins", "Hooks"])]
     return [[label, int(made[fam.isin(f)].sum()), int(fam.isin(f).sum())] for label, f in groups if fam.isin(f).sum()]
-
-
-# --- season so far ------------------------------------------------------------------------------
 
 
 EAST = {"ATL", "BOS", "BKN", "CHA", "CHI", "CLE", "DET", "IND", "MIA", "MIL", "NYK", "ORL", "PHI", "TOR", "WAS"}
@@ -500,7 +482,6 @@ def east_place(league_games: pd.DataFrame, dates: list) -> list:
 
 
 def season(team_games: pd.DataFrame, schedule: pd.DataFrame, league_games: pd.DataFrame, game_id: str) -> dict:
-    """Preseason and regular season are separate records; each starts at 0-0."""
     g = team_games.copy()
     g["GAME_ID"] = g.GAME_ID.astype(str).str.zfill(10)
     g = g.sort_values("GAME_DATE")
@@ -521,7 +502,6 @@ def season(team_games: pd.DataFrame, schedule: pd.DataFrame, league_games: pd.Da
         if d[:7] != seen:
             seen = d[:7]
             months.append([i, pd.Timestamp(d).strftime("%b")])
-    # Games still to play this season type, in order: [opponent, home]. Needs the schedule's team codes.
     upcoming = []
     if not sched.empty and "homeTeam_teamTricode" in sched:
         rest = sched[(sched.gid.str[:3] == kind) & (pd.to_datetime(sched.gameDate) > pd.Timestamp(date[:10]))]
@@ -530,13 +510,9 @@ def season(team_games: pd.DataFrame, schedule: pd.DataFrame, league_games: pd.Da
             upcoming.append([r.awayTeam_teamTricode if home else r.homeTeam_teamTricode, int(home)])
     # Games over .500 after each game (wins minus losses), and tonight's place in the East.
     over = np.cumsum([1 if x[3] > 0 else -1 for x in games]).tolist()
-    # Tonight's place in the East, and the place after the previous Bulls game (for the arrow).
     east = east_place(league_games, [x[0] for x in games[-2:]]) if not league_games.empty else None
     return {"games": games, "slots": slots, "wins": wins, "losses": len(games) - wins, "over": over,
             "conf": "East" if TRI in EAST else "West", "east": east[-1] if east else None, "east_prev": east[0] if east and len(games) > 1 else None, "months": months, "upcoming": upcoming}
-
-
-# --- game breakdown and awards ------------------------------------------------------------------
 
 
 def breakdown(pbp: pd.DataFrame, teams: pd.DataFrame, opp_tri: str) -> dict:
@@ -565,8 +541,6 @@ def breakdown(pbp: pd.DataFrame, teams: pd.DataFrame, opp_tri: str) -> dict:
     teams_vs = {t: {"shoot": c[t]["shoot"], "shoot3": split[t][3] - acc.base_shot[3] * poss[t],
                     "shoot2": split[t][2] - acc.base_shot[2] * poss[t], "tov": c[t]["tov"], "reb": c[t]["reb"], "ft": c[t]["ft"]}
                 for t in (TRI, opp_tri)}
-    # The shooting math for the page's explainer: makes and misses at their values add up to the raw
-    # shooting value (every shot starts from a fresh possession's V), checked against the ledger.
     shots = {}
     for t in (TRI, opp_tri):
         sh = pbp[(pbp.teamTricode == t) & pbp.actionType.isin(["Made Shot", "Missed Shot"])]
@@ -605,7 +579,7 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
             cands.append((title, series, floor, line))
 
     pick = pick or {}
-    tp = int(pick["mvp"]) if "mvp" in pick else p.gmsc.idxmax()  # the user's call overrides Game Score
+    tp = int(pick["mvp"]) if "mvp" in pick else p.gmsc.idxmax()
     if tp not in p.index:
         raise ValueError(f"picks.json mvp {tp} did not play for the Bulls")
     tens = {"points": "PTS", "reboundsTotal": "REB", "assists": "AST", "steals": "STL", "blocks": "BLK"}
@@ -622,7 +596,6 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
         line = ", ".join([f"{p.points[tp]} PTS on {fg(tp)}"] + [f"{int(p.loc[tp, c])} {scale[c][0]}" for _, c in extra])
     out = [["#mvp", int(tp), p.loc[tp, "name"], line]]
 
-    # A triple-double by anyone but the Top Performer gets its own card (value 3 against a floor of 1).
     td = cats.drop(tp)
     add("#tripledouble", td.where(td >= 3), 1, lambda i: f"{p.points[i]} PTS, {p.reboundsTotal[i]} REB, {p.assists[i]} AST")
     # Floors set 2026-10-07 so each award fires in roughly one game in ten to five (2025-26 Bulls games);
@@ -665,9 +638,6 @@ def awards(players: pd.DataFrame, raw: pd.DataFrame, pbp: pd.DataFrame, chi_home
             wins[int(i)] = wins.get(int(i), 0) + 1
             out.append([title, int(i), p.loc[i, "name"], line(i)])
     return out
-
-
-# --- scatter, matchups, tracking, scoring --------------------------------------------------------
 
 
 def scatter(adv: pd.DataFrame, opp_tri: str) -> list:
@@ -749,9 +719,6 @@ def scoring(teams: pd.DataFrame, players: pd.DataFrame, box_players: pd.DataFram
             "unassisted": [[r.familyName, int(r.fieldGoalsMade), int(r.unassisted)] for r in sp.itertuples()]}
 
 
-# --- leaders ---------------------------------------------------------------------------------------
-
-
 def leaders(players: pd.DataFrame, opp_tri: str) -> list:
     p = players[players.minutes.map(minutes).gt(0)]
     rows = []
@@ -812,8 +779,6 @@ def season_leaders(player_games: pd.DataFrame, game_id: str) -> dict | None:
     return {"columns": heads, "rows": rows, "qualify": need, "games": games, "min_fga": MIN_FGA}
 
 
-# --- notables -------------------------------------------------------------------------------------
-
 # Player stats worth a callout, with the floor below which a season high is not news.
 PLAYER_NOTABLE = (("PTS", "points", 15), ("REB", "rebounds", 8), ("AST", "assists", 6), ("FG3M", "3-pointers", 3),
                   ("STL", "steals", 3), ("BLK", "blocks", 3))
@@ -843,7 +808,6 @@ def notables(game_id: str, player_games: pd.DataFrame, team_games: pd.DataFrame,
     def place(n):
         return "most" if n == 1 else f"{ord_(n)}-most"
 
-    # Team: league rank first, then the Bulls' own season high.
     for col, word in TEAM_NOTABLE:
         v = int(me[col])
         if len(lg) >= 150:
@@ -878,7 +842,6 @@ def notables(game_id: str, player_games: pd.DataFrame, team_games: pd.DataFrame,
                 hits.append((k, v, f"{v} {word}", v == best))
         if not hits:
             continue
-        # One line per player: a second high joins the first ("both his most this season").
         if len(hits) == 1:
             k, v, what, tied = hits[0]
             out.append((2 + k / 10, -v, f"{name}: {what}, {'tying his season high' if tied else 'his most this season'}"))
@@ -890,7 +853,6 @@ def notables(game_id: str, player_games: pd.DataFrame, team_games: pd.DataFrame,
             k, v = hits[0][0], hits[0][1]
             parts = [f"{what}, {'tying his season high' if tied else 'his most this season'}" for _, _, what, tied in hits[:2]]
             out.append((2 + k / 10, -v, f"{name}: {parts[0]}, and {parts[1]}"))
-    # Most notable first: league ranks, then Bulls highs, then players by stat and by size.
     out = [(o[0], o[1], o[2]) if len(o) == 3 else (o[0], 0, o[1]) for o in out]
     out.sort(key=lambda x: (x[0], x[1]))
     return [text for _, _, text in out[:limit]]
@@ -904,11 +866,7 @@ def sgn_(v: int) -> str:
     return f"+{v}" if v > 0 else str(v)
 
 
-# --- assemble --------------------------------------------------------------------------------------
-
-
 def record_of(row) -> str | None:
-    """A team's record after tonight (preseason or regular season, matching the game)."""
     return f"{int(row.teamWins)}-{int(row.teamLosses)}" if row is not None else None
 
 

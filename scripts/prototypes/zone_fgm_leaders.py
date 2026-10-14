@@ -57,7 +57,6 @@ def load_bulls() -> pd.DataFrame:
 
 
 def reconcile_bulls(shots: pd.DataFrame) -> pd.DataFrame:
-    """Every season's shot rows must equal official Chicago FGA, FGM, 3PA and 3PM."""
     official = pd.read_csv(BULLS_SOURCE / "official-team-totals.csv")
     three = shots.shot_type.eq("3PT")
     observed = shots.assign(three=three, three_made=three & shots.shot_made).groupby(
@@ -75,7 +74,6 @@ def reconcile_bulls(shots: pd.DataFrame) -> pd.DataFrame:
 
 
 def classify(shots: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Assign twelve zones; count rows that cannot enter one, by season."""
     unlocated = shots[["loc_x", "loc_y", "shot_zone"]].isna().any(axis=1)
     located = shots.loc[~unlocated].copy()
     located["zone"] = sm.zone12_of_shots(located)
@@ -96,7 +94,6 @@ def classify(shots: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
 
 
 def assert_family_and_side(zoned: pd.DataFrame) -> None:
-    """Custom subdivisions stay inside NBA's broad family and on NBA's side label."""
     family = zoned.zone.replace({
         **{z: "Mid-Range" for z in sm.MID_ZONES},
         "Left Wing 3": "Above the Break 3", "Top of Key 3": "Above the Break 3",
@@ -137,7 +134,6 @@ def rank(zoned: pd.DataFrame, tenure: bool = False
 
 
 def league_for(season: str, cache: Path) -> tuple[pd.DataFrame, dict]:
-    """Saved post copy first; otherwise copy the local league cache into the post."""
     saved = DATA / "league-shots" / f"{season}.csv.gz"
     if not saved.exists():
         source = cache / f"league_{season}.csv"
@@ -185,7 +181,6 @@ def official_league_totals(seasons: list[str]) -> pd.DataFrame:
 
 
 def reconcile_league(manifest: pd.DataFrame) -> pd.DataFrame:
-    """Every saved league season's shot rows equal official league FGA and FGM."""
     official = official_league_totals(manifest.season.tolist())
     out = []
     for season in manifest.season:

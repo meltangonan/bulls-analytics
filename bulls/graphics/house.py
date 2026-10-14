@@ -31,7 +31,7 @@ DRAFT_DPI = 150
 FINAL_DPI = 300
 SIDE_MARGIN = 60
 FOOTER_Y = 40
-STRIPE_HEIGHT = 16  # full-bleed jersey-trim band at the very top of the canvas
+STRIPE_HEIGHT = 16
 
 # Jersey-lettering title: ink fill, white gap, red outer stroke. Flip to False
 # (or pass outlined=False per post) to return to the plain fitted title.
@@ -39,7 +39,7 @@ OUTLINED_TITLE = True
 
 WHITE = "#FFFFFF"
 RED = "#CE1141"
-BLACK = "#242424"  # Current chart black.
+BLACK = "#242424"
 # Compatibility palette for historical renderers; new charts use BLACK/RED.
 BULLS_BLACK = "#141414"
 INK = "#1A1A1A"
@@ -62,7 +62,7 @@ class Theme:
     """
 
     name: str
-    canvas: str  # canvas background
+    canvas: str
     ink: str  # primary text, data lines
     muted: str  # secondary text, axis labels, watermark
     faint: str  # footer/source credit, quietest tier
@@ -206,7 +206,6 @@ _FONT_CACHE_DIR = REPO_ROOT / "cache" / "fonts"
 
 
 def _helvetica_fallback(weight: str) -> fm.FontProperties:
-    """Prefer the Helvetica-compatible Nimbus Sans on non-macOS systems."""
     return fm.FontProperties(
         family=["Helvetica", "Nimbus Sans", "Arial", "DejaVu Sans"],
         weight="bold" if weight.startswith("bold") else "normal",
@@ -650,7 +649,6 @@ HEAT_GREEN = "#3FAE63"
 
 
 def _heat_mix(base: str, target: str, strength: float) -> tuple[float, float, float]:
-    """Blend two scale colours by a 0-1 strength."""
     amount = min(max(float(strength), 0.0), 1.0)
     base_rgb = np.array(to_rgb(base))
     target_rgb = np.array(to_rgb(target))
@@ -858,10 +856,8 @@ def cut_out_flat_background(
                 background[ny, nx] = True
                 queue.append((ny, nx))
 
-    # Keep any transparency the source already has (a pre-lifted cut-out stays cut out).
     pixels[:, :, 3] = np.where(background, 0, pixels[:, :, 3])
     cut_out = Image.fromarray(pixels)
-    # Feather the boundary so the edge does not read as cut with scissors.
     alpha = cut_out.getchannel("A").filter(ImageFilter.GaussianBlur(0.8))
     cut_out.putalpha(alpha)
 

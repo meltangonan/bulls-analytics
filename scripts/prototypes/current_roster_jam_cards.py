@@ -108,7 +108,6 @@ SHORT_NAMES = {
     "Isaac Okoro": "OKORO",
 }
 
-# Canvas geometry. Coordinate units export at 2x when --final doubles the DPI.
 CHART_WIDTH = 1080
 MARGIN_X = 30
 MARGIN_Y = 24
@@ -120,20 +119,19 @@ GUTTER_Y = 14
 
 PORTRAIT_HALF = 46
 LEFT_BLOCK_W = 150
-LEFT_BLOCK_H = 142  # portrait, name plate, and the games/minutes line
+LEFT_BLOCK_H = 142
 BAR_H = 19
 BAR_GAP = 9
-LABEL_W = 100  # wide enough for the longest label, "PAINT NON-RA"
-VALUE_INSIDE_MIN = 26.0  # percentile below which the value sits outside the bar
+LABEL_W = 100
+VALUE_INSIDE_MIN = 26.0
 
-BAR_EDGE = "#900C2E"  # theme.accent darkened, matching the tutorial's edge rule
+BAR_EDGE = "#900C2E"
 TRACK_FILL = "#EDE7E0"
 TRACK_EDGE = "#DCD4CB"
 CARD_FILL = "#F5F1EC"
 
 
 def fetch_league_frames() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Fetch league-wide zone splits, traditional totals, and possessions."""
     common = {
         "season": SEASON,
         "season_type_all_star": SEASON_TYPE,
@@ -256,7 +254,6 @@ def validate_league_table(
     roster: pd.DataFrame,
     cards: pd.DataFrame,
 ) -> dict:
-    """Check identities, NBA.com reconciliation, and percentile integrity."""
     if table["nba_id"].duplicated().any():
         raise ValueError("League table contains duplicate NBA player IDs.")
 
@@ -323,7 +320,6 @@ def validate_league_table(
 
 
 def write_table(table: pd.DataFrame, roster: pd.DataFrame, date: str) -> Path:
-    """Write every roster player, including those the qualification excludes."""
     columns = (
         ["nba_id", "player_name", "TEAM_ABBREVIATION", "GP", "MIN", "POSS",
          "true_shooting_attempts", "qualified"]
@@ -349,7 +345,6 @@ def write_table(table: pd.DataFrame, roster: pd.DataFrame, date: str) -> Path:
 
 
 def _card_origin(index: int) -> tuple[float, float, float]:
-    """Return the lower-left corner and top edge of the card at grid index."""
     column = index % COLUMNS
     row = index // COLUMNS
     x = MARGIN_X + column * (CARD_W + GUTTER_X)
@@ -366,7 +361,6 @@ CHART_HEIGHT = MARGIN_Y * 2 + _rows() * CARD_H + (_rows() - 1) * GUTTER_Y
 
 def _draw_bar(ax, theme, x: float, y: float, width: float,
               label: str, percentile: float) -> None:
-    """Draw one labelled percentile bar over its full-length track."""
     track_x = x + LABEL_W
     track_w = width - LABEL_W
 
@@ -408,7 +402,6 @@ def _draw_bar(ax, theme, x: float, y: float, width: float,
 
 
 def _draw_card(ax, theme, index: int, player: pd.Series) -> None:
-    """Draw one player card: portrait and name at left, six bars at right."""
     x0, y0, y1 = _card_origin(index)
 
     ax.add_patch(
@@ -419,8 +412,6 @@ def _draw_card(ax, theme, index: int, player: pd.Series) -> None:
         )
     )
 
-    # The two halves differ in height, so each is centred in the card on its
-    # own rather than sharing one top edge.
     bar_block_h = len(CATEGORIES) * BAR_H + (len(CATEGORIES) - 1) * BAR_GAP
     bar_top = y0 + (CARD_H + bar_block_h) / 2
     left_top = y0 + (CARD_H + LEFT_BLOCK_H) / 2
@@ -469,7 +460,6 @@ def _draw_card(ax, theme, index: int, player: pd.Series) -> None:
 
 
 def render_chart_only(cards: pd.DataFrame, date: str, final: bool) -> Path:
-    """Render the transparent card wall for Canva framing."""
     theme = DEFAULT_THEME
     fig = plt.figure(
         figsize=(CHART_WIDTH / DRAFT_DPI, CHART_HEIGHT / DRAFT_DPI)
@@ -497,7 +487,6 @@ def render_chart_only(cards: pd.DataFrame, date: str, final: bool) -> Path:
 
 
 def canva_copy_block(cards: pd.DataFrame, report: dict, date: str) -> str:
-    """Exact strings for the Canva page, so no number is retyped by eye."""
     definitions = " · ".join(
         f"{label} {definition}" for label, _, definition in CATEGORIES
     )

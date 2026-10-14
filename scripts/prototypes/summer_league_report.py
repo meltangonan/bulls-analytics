@@ -96,8 +96,6 @@ STORIES_TOP = 795
 
 @dataclass(frozen=True)
 class HeaderData:
-    """Display-ready content shared by one report slide header."""
-
     title_segments: tuple[tuple[str, str], ...]
     subtitle_parts: tuple[tuple[str, str], ...]
     kicker: str | None = None
@@ -105,8 +103,6 @@ class HeaderData:
 
 @dataclass(frozen=True)
 class ShotMark:
-    """One prepared shot-chart mark; no NBA/Pandas fields reach the renderer."""
-
     x: float
     y: float
     made: bool
@@ -122,8 +118,6 @@ class StatItem:
 
 @dataclass(frozen=True)
 class ComparisonItem:
-    """One Bulls/opponent row in the compact game comparison."""
-
     label: str
     bulls_value: float
     opponent_value: float
@@ -133,8 +127,6 @@ class ComparisonItem:
 
 @dataclass(frozen=True)
 class ZoneItem:
-    """One Bulls shooting zone, including accuracy and shot-diet share."""
-
     key: str
     makes: int
     attempts: int
@@ -183,7 +175,6 @@ class PlayerSlideData:
 
 
 def _number(value) -> float:
-    """Return an NBA response value as a safe number for display math."""
     if value is None or pd.isna(value):
         return 0.0
     return float(value)
@@ -207,7 +198,6 @@ def minutes_played(player: pd.Series) -> int:
 
 
 def find_latest_bulls_game(season: str) -> tuple[str, str]:
-    """Resolve the most recent completed Bulls Summer League game for a season."""
     games = leaguegamefinder.LeagueGameFinder(
         league_id_nullable=SUMMER_LEAGUE_LEAGUE_ID,
         season_nullable=season,
@@ -225,7 +215,6 @@ def find_latest_bulls_game(season: str) -> tuple[str, str]:
 
 
 def fetch_game_summary(game_id: str) -> dict:
-    """Fetch the game header, which carries the final/in-progress status."""
     return boxscoresummaryv3.BoxScoreSummaryV3(
         game_id=game_id,
         timeout=30,
@@ -234,14 +223,12 @@ def fetch_game_summary(game_id: str) -> dict:
 
 
 def require_final(summary: dict, game_id: str) -> None:
-    """Refuse to render a game still in progress, which would publish partial numbers."""
     if summary.get("gameStatus") != 3:
         status = str(summary.get("gameStatusText", "unknown")).strip()
         raise SystemExit(f"Game {game_id} is not final (status: {status}). Wait for the buzzer.")
 
 
 def game_day(summary: dict) -> date:
-    """The day the game was played, so a post rendered after midnight still dates it right."""
     stamp = str(summary.get("gameEt") or summary.get("gameTimeUTC") or "")
     if len(stamp) >= 10:
         return date.fromisoformat(stamp[:10])
@@ -249,7 +236,6 @@ def game_day(summary: dict) -> date:
 
 
 def fetch_game_data(game_id: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Fetch player totals, team totals, and zoned Bulls shots for one completed game."""
     box = boxscoretraditionalv3.BoxScoreTraditionalV3(
         game_id=game_id,
         timeout=30,
@@ -289,7 +275,6 @@ def fetch_game_data(game_id: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFr
 
 
 def team_nickname(tricode: str) -> str:
-    """Return 'Grizzlies' for 'MEM' so the subtitle reads 'Bulls 98 · Grizzlies 91'."""
     full_name = NBA_TEAMS.get(tricode, {}).get("name", tricode)
     for nickname in TWO_WORD_NICKNAMES:
         if full_name.endswith(nickname):
@@ -341,7 +326,6 @@ def shot_diet_line(shots: pd.DataFrame, player_id: int | None) -> str:
 
 
 def zone_splits(shots: pd.DataFrame, player_id: int | None) -> dict[str, tuple[int, int]]:
-    """Makes and attempts per shot-zone group, from the NBA's own zone labels."""
     rows = shots if player_id is None else shots[shots["player_id"] == player_id]
     splits = {"rim_paint": [0, 0], "mid": [0, 0], "three": [0, 0]}
     for _, shot in rows.iterrows():
@@ -409,7 +393,6 @@ def lens_copy(lens: str, player: pd.Series, team: pd.Series, shots: pd.DataFrame
 
 
 def player_candidates(players: pd.DataFrame, team: pd.Series) -> pd.DataFrame:
-    """Create the game-night review table without choosing the editorial stories."""
     candidates = players.copy()
     candidates["name"] = candidates.apply(_player_name, axis=1)
     candidates["FG"] = candidates.apply(
@@ -457,7 +440,6 @@ def prepare_header(
     *,
     show_score: bool = True,
 ) -> HeaderData:
-    """Turn raw box-score rows into the exact header copy the renderer needs."""
     title = (
         (str(team["teamTricode"]), RED),
         (" VS ", DEFAULT_THEME.ink),
@@ -480,7 +462,6 @@ def _shooting_percentage(team: pd.Series, made_key: str, attempts_key: str) -> f
 
 
 def prepare_comparison_stats(team: pd.Series, opponent: pd.Series) -> tuple[ComparisonItem, ...]:
-    """Prepare the eight non-scoring rows shown in the game snapshot."""
     rows: list[ComparisonItem] = []
     for label, key in (
         ("REB", "reboundsTotal"),
@@ -520,7 +501,6 @@ def prepare_comparison_stats(team: pd.Series, opponent: pd.Series) -> tuple[Comp
 
 
 def prepare_team_zones(shots: pd.DataFrame) -> tuple[ZoneItem, ...]:
-    """Summarize the Bulls' six useful half-court zones for the cover slide."""
     zone_keys = (
         ("restricted", "Restricted Area"),
         ("paint", "In The Paint (Non-RA)"),
@@ -553,7 +533,6 @@ def _shooting_split_line(team: pd.Series, label: str, made_key: str, attempts_ke
 
 
 def prepare_shot_marks(shots: pd.DataFrame, player_id: int | None) -> tuple[ShotMark, ...]:
-    """Remove dataframe/API vocabulary before shot attempts reach drawing code."""
     rows = shots if player_id is None else shots[shots["player_id"] == player_id]
     return tuple(
         ShotMark(float(shot["loc_x"]), float(shot["loc_y"]), bool(shot["shot_made"]))
@@ -562,7 +541,6 @@ def prepare_shot_marks(shots: pd.DataFrame, player_id: int | None) -> tuple[Shot
 
 
 def _fitted_text(ax, x, y, text, fp, base_size, max_width, color, ha="left", va="top"):
-    """Draw text at base_size, shrinking only if it would overflow max_width."""
     probe = ax.text(x, y, text, ha=ha, va=va, fontsize=base_size, fontproperties=fp, alpha=0)
     width = rendered_width(ax, probe)
     probe.remove()
@@ -582,7 +560,6 @@ def _stat_chip(
     value_color=INK,
     facecolor=CHIP_GRAY,
 ):
-    """One stat in its own small container: bold value over a muted label."""
     ax.add_patch(
         FancyBboxPatch(
             (x, y_top - h),
@@ -724,7 +701,6 @@ def _draw_shot_map(
 
 
 def _draw_half_court(ax, right: float, y_center: float, s: float):
-    """Draw court geometry; return the basket-bottom NBA data transform."""
     top_y = 280
     center_x = right - 250 * s
     x0, y0 = draw_chart_court(ax, center_x, y_center, s)
@@ -954,7 +930,6 @@ def prepare_team_slide(
     game_date: str,
     kicker: str | None,
 ) -> TeamSlideData:
-    """Prepare the complete front-page content before any drawing occurs."""
     table_rows = tuple(
         sorted(
             (_prepare_player_table_row(player) for player in players),
@@ -984,7 +959,6 @@ def prepare_player_slide(
     kicker: str | None,
     highlighted_stats: frozenset[str] = frozenset(),
 ) -> PlayerSlideData:
-    """Prepare one player's display copy, metrics, image, and shot marks."""
     person_id = int(_number(player["personId"]))
     splits = zone_splits(shots, person_id)
     return PlayerSlideData(
@@ -1033,7 +1007,6 @@ def prepare_player_slide(
 def render_team_slide(
     data: TeamSlideData,
 ):
-    """Slide 1: matchup, compact game comparison, shot diet, and player table."""
     fig, ax = new_canvas()
     _draw_header(ax, data.header)
 
@@ -1107,7 +1080,6 @@ def render_team_slide(
     img_h, img_w = table_img.shape[:2]
     disp_w = W - 120
     disp_h = disp_w * img_h / img_w
-    # Keep the table close under the snapshot; extra space breathes at the bottom.
     table_top = y_bottom - min(70, max(40, (y_bottom - 90 - disp_h) / 2))
     ax.imshow(
         table_img,
@@ -1280,7 +1252,6 @@ def main():
         if not any(_player_name(player).casefold() == player_name.casefold() for player in selected):
             raise SystemExit(f"Highlighted player '{player_name}' must also be passed with --player.")
         highlights.setdefault(player_name.casefold(), set()).add(stat)
-    # Slide 1 carries no kicker by default; --kicker adds an approved editorial line.
     kicker = args.kicker
     played_on = game_day(summary)
     graphic_date = args.date or played_on.strftime("%b %d, %Y").upper()

@@ -64,7 +64,6 @@ NBA_BLANK_HEADSHOT_URL = (
 
 
 def ensure_blank_headshot() -> Path:
-    """Cache NBA's neutral silhouette for retired-player placeholder rows."""
     path = HEADSHOT_CACHE / "blank-headshot.png"
     if path.exists():
         return path
@@ -91,12 +90,10 @@ SEASON_LEADERS_LAYOUT = TableLayout(
 
 
 def player_source_url(end_year: int) -> str:
-    """Return the NBA.com player-totals source for one season."""
     return NBA_PLAYER_ASSIST_URL.format(season=season_label(end_year))
 
 
 def team_source_url(end_year: int) -> str:
-    """Return the NBA.com team-totals source for one season."""
     return NBA_TEAM_ASSIST_URL.format(season=season_label(end_year))
 
 
@@ -107,7 +104,6 @@ def _required_columns(frame: pd.DataFrame, columns: set[str], source: str) -> No
 
 
 def _request_frame(factory: Callable[[], object], source: str) -> pd.DataFrame:
-    """Make a paced NBA.com request with small retries for transient failures."""
     for attempt in range(1, NBA_REQUEST_ATTEMPTS + 1):
         try:
             endpoint = factory()
@@ -124,7 +120,6 @@ def _request_frame(factory: Callable[[], object], source: str) -> pd.DataFrame:
 
 
 def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
-    """Load one Chicago-only regular season from cache or NBA.com."""
     cache_path = RAW_CACHE / f"CHI-{end_year}.csv"
     if cache_path.exists() and not refresh:
         return pd.read_csv(cache_path)
@@ -208,7 +203,6 @@ def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
 
 
 def fetch_bulls_history(*, refresh: bool = False) -> pd.DataFrame:
-    """Load every Bulls regular season from 2000-01 through 2025-26."""
     frames: list[pd.DataFrame] = []
     for end_year in range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1):
         print(f"Loading {display_season_label(end_year)}")
@@ -217,7 +211,6 @@ def fetch_bulls_history(*, refresh: bool = False) -> pd.DataFrame:
 
 
 def build_working_table(rows: pd.DataFrame) -> pd.DataFrame:
-    """Apply the minimum-games rule and select one APG winner at each age."""
     required = {
         "season_end_year",
         "season",
@@ -274,12 +267,10 @@ def build_working_table(rows: pd.DataFrame) -> pd.DataFrame:
 
 
 def age_winners(table: pd.DataFrame) -> pd.DataFrame:
-    """Return the selected Bulls season in ascending age order."""
     return table.loc[table["selected"]].sort_values("age", kind="stable").reset_index(drop=True)
 
 
 def season_winners(table: pd.DataFrame) -> pd.DataFrame:
-    """Return one qualifying APG leader per season, sorted from high to low."""
     return (
         table.loc[table["qualified"]]
         .sort_values(
@@ -298,14 +289,12 @@ def season_winners(table: pd.DataFrame) -> pd.DataFrame:
 
 
 def season_winners_by_year(table: pd.DataFrame) -> pd.DataFrame:
-    """Return the same season leaders from newest season to oldest."""
     return season_winners(table).sort_values(
         "season_end_year", ascending=False, kind="stable"
     ).reset_index(drop=True)
 
 
 def validate_working_table(table: pd.DataFrame) -> dict[str, object]:
-    """Validate coverage, team reconciliation, qualification, and winners."""
     expected_years = set(range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1))
     present_years = set(table["season_end_year"].astype(int))
     if present_years != expected_years:
@@ -352,7 +341,6 @@ def validate_working_table(table: pd.DataFrame) -> dict[str, object]:
 
 
 def validate_season_winners(table: pd.DataFrame) -> dict[str, object]:
-    """Validate that every season contributes its correct qualified APG leader."""
     winners = season_winners(table)
     expected_years = set(range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1))
     if set(winners["season_end_year"].astype(int)) != expected_years:
@@ -384,7 +372,6 @@ def validate_season_winners(table: pd.DataFrame) -> dict[str, object]:
 
 
 def write_working_table(table: pd.DataFrame, date: str) -> Path:
-    """Write all player-seasons so exclusions and runners-up remain auditable."""
     path = OUT / f"{date}-bulls-assist-age-ladder-working.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False)
@@ -392,7 +379,6 @@ def write_working_table(table: pd.DataFrame, date: str) -> Path:
 
 
 def canva_copy_block(report: dict[str, object]) -> str:
-    """Return the exact data-bound framing to paste into the cloned Canva page."""
     return "\n".join(
         [
             "CANVA COPY",
@@ -408,7 +394,6 @@ def canva_copy_block(report: dict[str, object]) -> str:
 
 
 def season_canva_copy_block(report: dict[str, object]) -> str:
-    """Return the data-bound framing for the season-leader comparison page."""
     return "\n".join(
         [
             "CANVA COPY — SEASON LEADERS",
@@ -423,7 +408,6 @@ def season_canva_copy_block(report: dict[str, object]) -> str:
 
 
 def season_chronological_canva_copy_block(report: dict[str, object]) -> str:
-    """Return the framing for the reverse-chronological comparison page."""
     return "\n".join(
         [
             "CANVA COPY — SEASON LEADERS, NEWEST TO OLDEST",

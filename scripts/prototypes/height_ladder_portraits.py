@@ -79,8 +79,8 @@ def reframe_cut_out(source: Path, destination: Path) -> Path:
     cut-out lands under the same face crop as a CDN portrait.
     """
     image = Image.open(source).convert("RGBA")
-    bbox = image.getbbox()          # drop the transparent margin first, or the
-    if bbox:                        # player is scaled to fit his own padding
+    bbox = image.getbbox()
+    if bbox:
         image = image.crop(bbox)
 
     canvas_w, canvas_h = house.NBA_PORTRAIT_SIZE

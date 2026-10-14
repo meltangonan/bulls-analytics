@@ -4,7 +4,7 @@
 
 NBA.com corrects box scores after games. Game 1 (Oct 7) was corrected overnight: a missed shot, a block and an
 offensive rebound were added, an assist moved and a dunk was relabelled a layup, which changed numbers on the posted
-slides. On Oct 9, three of four dry-run games from the night before had changed fast break points and nothing else.
+slides. On Oct 9, two of four dry-run games from the night before had changed fast break points and nothing else.
 This compares the feeds saved when the slides were built (the game folder's as-posted/ if present, else the game
 folder) with what NBA.com serves now: the box score (minutes included), line score, four factors, misc points,
 game-flow counts, and the featured team's shots by zone and by shot type. It reads only; nothing saved is
@@ -56,7 +56,6 @@ def changes(old: pd.DataFrame, new: pd.DataFrame, key: str, cols: dict, who) -> 
 
 
 def shot_changes(old: pd.DataFrame, new: pd.DataFrame) -> list:
-    """The featured team's shots as the slide counts them: made-attempted in all, by zone and by shot type."""
     if old.empty or new.empty:
         return [] if old.empty and new.empty else ["shots: a feed is missing on one side; compare by hand"]
     count = lambda f, by: {k: (int(v.sum()), len(v)) for k, v in f.groupby(by).SHOT_MADE_FLAG}

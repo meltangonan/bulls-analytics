@@ -96,7 +96,6 @@ VISUALS_ROOT = _REPO / "docs" / "visuals"
 
 
 def project_dir(project: str):
-    """Scratch folder for one project, mirroring docs/visuals/<date>-<slug>/."""
     folder = visual_dir(OUTPUT_ROOT, project, create=False)
     folder.mkdir(parents=True, exist_ok=True)
     return folder
@@ -116,7 +115,7 @@ def data_dir(project: str):
 
 CHART_WIDTH = 1500
 ROW_RULE_LEFT = 24
-DUO_HEADER_X = 46      # inset so the label does not hug the canvas edge
+DUO_HEADER_X = 46
 
 # Faces are anchored so their cropped bottom edge sits on the row's bottom rule, which
 # reads as the pair resting on it. At the earlier 116px row height the crop was taller
@@ -153,15 +152,12 @@ class RightColumns:
 
     @property
     def outer_right(self) -> float:
-        """Right edge of the last printed column, where the row rules stop."""
         return self.rate_right if self.rate_right is not None else self.games_right
 
 
-# Season-labelled boards: SEASON column, no rate column. Unchanged geometry.
 COLUMNS_WITH_SEASON = RightColumns(
     bar_right=1150, ast_left=1180, ast_right=1312, games_left=1336, games_right=1476,
 )
-# The single-season slide: no SEASON column, so the freed band carries AST/G.
 COLUMNS_WITH_RATE = RightColumns(
     bar_right=974, ast_left=1006, ast_right=1170, games_left=1202, games_right=1330,
     rate_left=1354, rate_right=1476,
@@ -179,7 +175,7 @@ DECORATIVE_RULE = "#D8D2CA"
 
 RED_BAR_GRADIENT = ("#E12C52", "#A80E35")
 DARK_BAR_GRADIENT = ("#333333", "#0C0C0C")
-SWATCH = 11              # colored square linking a name line to its bar segment
+SWATCH = 11
 MIN_INSIDE_LABEL_WIDTH = 40
 
 AST_CARD_OUTSET_X = 8
@@ -194,15 +190,13 @@ AST_CARD_OVERLAP_Y = 13
 
 @dataclass(frozen=True)
 class TableLayout:
-    """Row and type sizing, matching the BPM/game-score/scoring-ladder table family."""
-
     header_from_top: float
     header_rule_from_top: float
     first_row_from_top: float
     bottom_pad: float
     row_height: float
-    face_half: float        # portrait crop half-size
-    bar_inset: float        # bar height is the row height less this, top and bottom
+    face_half: float
+    bar_inset: float
     headshot_rise: float
     header_font_size: float
     name_font_size: float
@@ -216,7 +210,7 @@ class TableLayout:
 DUO_LAYOUT = TableLayout(
     header_from_top=56,
     header_rule_from_top=88,
-    first_row_from_top=162,   # clears the header rule now that faces rise past the row
+    first_row_from_top=162,
     bottom_pad=56,
     row_height=116,
     face_half=62,
@@ -255,9 +249,6 @@ SEASON_LAYOUT = TableLayout(
 )
 
 
-# ---------------------------------------------------------------- analysis
-
-
 def player_names() -> dict[int, str]:
     """Player id -> full name, from nba_api's offline static roster.
 
@@ -294,9 +285,6 @@ def build_pairs(events: pd.DataFrame, names: dict[int, str]) -> pd.DataFrame:
         pairs: dict[tuple[int, int], dict[int, tuple[int, int]]] = {}
         for (assister, scorer), totals in lookup.items():
             if assister == scorer:
-                # No scorer assists his own basket. If one appeared, the unordered key
-                # would collapse onto a single direction and the combined total would
-                # double with nothing downstream noticing.
                 raise ValueError(f"Player {assister} credited with assisting himself")
             pairs.setdefault(tuple(sorted((assister, scorer))), {})[assister] = totals
 
@@ -441,7 +429,6 @@ DISPLAY_NAME_FIXES = {"Jimmy Butler III": "Jimmy Butler"}
 
 
 def display_name(full_name: str, player_id: int, season_end_year: int) -> str:
-    """The name this player went by during the season being displayed."""
     override = ERA_NAMES.get(int(player_id))
     if override and season_end_year < override["before"]:
         return override["name"]
@@ -456,7 +443,6 @@ CDN_SILHOUETTE_MD5 = "e7f284977a49"
 
 
 def is_silhouette(path: Path) -> bool:
-    """True when a cached portrait is the CDN's placeholder rather than a real face."""
     if not path.exists():
         return True
     if path.stat().st_size < MIN_USABLE_HEADSHOT_BYTES:
@@ -510,11 +496,7 @@ def ensure_fallback_headshots(player_ids) -> None:
         image.save(path, format="PNG")
 
 
-# ---------------------------------------------------------------- render
-
-
 def slide_height(row_count: int, layout: TableLayout = DUO_LAYOUT) -> float:
-    """Fit exactly the header and requested rows without transparent dead space."""
     return (
         layout.first_row_from_top
         + (row_count - 1) * layout.row_height
@@ -552,8 +534,8 @@ def _initials(full_name: str) -> str:
     return (parts[0][0] + parts[-1][0]).upper()
 
 
-NAME_GUTTER = 40         # clear space between the longest name and the next column
-FACE_CROP_HEIGHT = 0.74  # share of the portrait's height kept, as a square
+NAME_GUTTER = 40
+FACE_CROP_HEIGHT = 0.74
 
 
 def duo_face_label(ax, image_path, x, y, half, *, zorder=4):
@@ -615,7 +597,6 @@ def _draw_face(ax, player_id: int, name: str, x: float, y: float, half: float, z
 
 
 def _rounded(x0: float, x1: float, y: float, height: float, **kwargs) -> FancyBboxPatch:
-    """A rounded box whose outer bounds are exactly (x0, x1) and height."""
     return FancyBboxPatch(
         (x0 + BAR_RADIUS, y - height / 2 + BAR_RADIUS),
         max(x1 - x0 - 2 * BAR_RADIUS, 0.1),
@@ -626,7 +607,6 @@ def _rounded(x0: float, x1: float, y: float, height: float, **kwargs) -> FancyBb
 
 
 def _vertical_gradient(ax, x0, x1, y, height, colors, clip, zorder):
-    """Paint a top-to-bottom colour ramp across one span, clipped to a shape."""
     top, bottom = (np.array(to_rgb(c)) for c in colors)
     ramp = np.linspace(bottom, top, 256).reshape(256, 1, 3)
     image = ax.imshow(
@@ -752,8 +732,6 @@ def render_table(
     ax.axis("off")
 
     headers = [
-        # "DUO" sits over the portraits, not over the names, now that the faces are the
-        # widest thing in the column.
         (DUO_HEADER_X, "DUO", "left", BLACK),
         ((bar_left + columns.bar_right) / 2, "ASSISTS TO EACH OTHER", "center", BLACK),
         ((columns.ast_left + columns.ast_right) / 2, "TOTAL", "center", RED),
@@ -824,8 +802,6 @@ def render_table(
         # lower player's head overlaps the neck of the one above, like stacked cards.
         face_y = y - layout.row_height / 2 + layout.face_half
         face_zorder = 4 + index * 0.01
-        # Right player first so the left one overlaps him, reading as a pairing rather
-        # than two unrelated portraits.
         for face_x, player_id, name in (
             (FACE_B_X, int(row.low_id), row.low_name),
             (FACE_A_X, int(row.high_id), row.high_name),
@@ -833,8 +809,6 @@ def render_table(
             _draw_face(ax, player_id, name, face_x, face_y, layout.face_half,
                        face_zorder)
 
-        # A swatch ties each name line to its own bar segment, so "first name = red =
-        # left segment" does not have to be inferred.
         for line_y, name, player_id, color in (
             (y + 15, row.high_name, row.high_id, RED),
             (y - 15, row.low_name, row.low_id, BLACK),
@@ -900,9 +874,6 @@ def render_table(
     return output
 
 
-# ---------------------------------------------------------------- cli
-
-
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--mode", choices=("season", "history", "both"), default="both")
@@ -938,7 +909,6 @@ def main() -> None:
             build_pairs(events, names),
             load_player_game_logs(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR),
         )
-        # Every pair-season since 2000-01, the table all three boards select from.
         pairs.to_csv(
             data_dir(YEARLY_PROJECT) / "assist-duos-all-pair-seasons.csv", index=False
         )
@@ -946,7 +916,6 @@ def main() -> None:
         columns = ["season", "high_name", "high_ast", "low_name", "low_ast",
                    "combined_ast", "games_together", "ast_per_game"]
 
-        # One board, no decade split: the outright best connections since 2000-01.
         all_time = top_overall(pairs)
         all_time.to_csv(
             data_dir(ALL_TIME_PROJECT) / "assist-duos-all-time-top15.csv", index=False
@@ -961,8 +930,6 @@ def main() -> None:
         print(f"\nall-time ({len(all_time)} rows) -> {path.name}")
         print(all_time[columns].to_string(index=False))
 
-        # Newest season first: the slide opens on the season a reader just watched.
-        # Ascending stays available through best_per_season(descending=False).
         variants = {
             "decade": top_by_decade(pairs),
             "yearly-desc": best_per_season(pairs, descending=True),
@@ -973,7 +940,6 @@ def main() -> None:
             populated = [rows for rows in slides.values() if len(rows)]
             ceiling = max(int(rows.combined_ast.max()) for rows in populated)
             canvas_rows = max(len(rows) for rows in populated)
-            # The decade board is its own post idea, so it keeps its own folder.
             project = DECADE_PROJECT if variant == "decade" else YEARLY_PROJECT
             out = project_dir(project)
             pd.concat(populated).to_csv(

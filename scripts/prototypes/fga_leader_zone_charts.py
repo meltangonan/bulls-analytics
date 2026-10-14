@@ -115,7 +115,6 @@ def select_bonus_runner_up(table: pd.DataFrame) -> tuple[pd.Series, pd.Series]:
 
 
 def fetch_leaderboard(season: str) -> pd.DataFrame:
-    """Official Bulls player totals for one regular season."""
     table = leaguedashplayerstats.LeagueDashPlayerStats(
         season=season,
         season_type_all_star="Regular Season",
@@ -134,7 +133,6 @@ def fetch_leaderboard(season: str) -> pd.DataFrame:
 
 def load_leaderboard(season: str, data_dir: Path,
                      refresh: bool = False) -> pd.DataFrame:
-    """Read the post-owned audit table, fetching only when it is absent."""
     path = data_dir / f"bulls-fga-leaderboard-{season}.csv"
     if path.exists() and not refresh:
         return pd.read_csv(path)
@@ -146,7 +144,6 @@ def load_leaderboard(season: str, data_dir: Path,
 
 def load_leader_shots(season: str, leader: pd.Series, data_dir: Path,
                       refresh: bool = False) -> pd.DataFrame:
-    """Every regular-season attempt the selected player took for Chicago."""
     slug = player_slug(str(leader.PLAYER_NAME))
     path = data_dir / f"{season}-{slug}-bulls-shots.csv"
     if path.exists() and not refresh:
@@ -166,7 +163,6 @@ def load_leader_shots(season: str, leader: pd.Series, data_dir: Path,
 
 def reconcile_shot_count(season: str, leader: pd.Series,
                          shots: pd.DataFrame) -> None:
-    """Prove that the raw shot log reconstructs the selecting FGA total."""
     expected = int(leader.FGA)
     actual = len(shots)
     if actual != expected:
@@ -176,7 +172,6 @@ def reconcile_shot_count(season: str, leader: pd.Series,
 
 
 def league_zone_baseline(season: str, league: pd.DataFrame) -> pd.DataFrame:
-    """The twelve same-season NBA reference values that drive the chart."""
     working = league.copy()
     working["zone"] = sm.zone12_of_shots(working)
     grouped = (
@@ -238,7 +233,6 @@ def print_canva_copy(summary: pd.DataFrame) -> None:
 
 
 def build_bonus(args: argparse.Namespace) -> list[Path]:
-    """Build only the tightly qualified runner-up exception chart."""
     args.output_dir.mkdir(parents=True, exist_ok=True)
     args.data_dir.mkdir(parents=True, exist_ok=True)
     stamp = date.today().isoformat()

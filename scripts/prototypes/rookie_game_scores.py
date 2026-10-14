@@ -54,7 +54,6 @@ KNOWN_FIRST_SEASON_DISAGREEMENTS = {(2006, 2450)}
 
 
 def fetch_first_seasons(refresh=False):
-    """Load NBA.com's CommonAllPlayers first-season field, fetching once when absent."""
     if FIRST_SEASONS.exists() and not refresh:
         return pd.read_csv(FIRST_SEASONS)
     frame = commonallplayers.CommonAllPlayers(
@@ -77,7 +76,6 @@ def frame_like_cdn_headshot(portrait, *, height_fraction=0.76, top_fraction=0.02
 
 
 def use_post_portraits(player_ids):
-    """Replace a missing or silhouette cached headshot with this post's hand-sourced portrait."""
     for player_id in {int(value) for value in player_ids}:
         portrait = PORTRAITS / f'{player_id}.png'
         cached = games.HEADSHOT_CACHE / f'{player_id}.png'
@@ -97,7 +95,6 @@ def playoff_context(game_id):
 
 
 def validated_pool(players, teams, pool, seasons):
-    """Build one season type's working table and prove complete, reconciled coverage."""
     players, teams = players.copy(), teams.copy()
     for frame in (players, teams):
         frame['game_id'] = frame['game_id'].astype(str).str.zfill(10)
@@ -151,7 +148,6 @@ def prepare(players, teams, playoff_players, playoff_teams, rookie_filter, first
 
 
 def select_top(rookies, top_n=TOP_N):
-    """Rank rookie games by Game Score, then points, refusing a tie across the cutoff."""
     rookies = rookies.copy()
     # Every Game Score term is a multiple of 0.1; rounding strips float noise so an exact tie
     # falls through to the shared points tiebreak instead of an arbitrary 1e-15 difference.
@@ -179,7 +175,6 @@ def load_sources(refresh=False):
 
 
 def render_boxed(ranked, final=True):
-    """Draw the ranked games as bordered cards, reusing the Game Score by height grammar."""
     rows = len(ranked)
     fig_h = cards.figure_height(rows)
     fig, ax = plt.subplots(figsize=(cards.FIG_W, fig_h))

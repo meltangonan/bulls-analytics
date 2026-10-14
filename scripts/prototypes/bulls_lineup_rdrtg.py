@@ -197,7 +197,6 @@ def _league_params(season: str) -> dict[str, str]:
 
 
 def fetch_source_tables() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Fetch and save lineup rows, season league baselines and completeness audit."""
     DATA.mkdir(parents=True, exist_ok=True)
     SEASON_SNAPSHOTS.mkdir(parents=True, exist_ok=True)
     lineup_rows: list[dict] = []
@@ -281,7 +280,6 @@ def _surname(value: str) -> str:
 
 
 def ensure_historical_headshots(player_ids: list[int]) -> None:
-    """Replace old NBA CDN silhouettes with stable external portraits."""
     for player_id in {int(value) for value in player_ids}:
         if PROJECT_HEADSHOT_OVERRIDES.get(player_id, Path()).is_file():
             continue
@@ -301,7 +299,6 @@ def ensure_historical_headshots(player_ids: list[int]) -> None:
 
 
 def headshot_path(player_id: int) -> Path:
-    """Return a project-specific portrait when one is part of this post."""
     return PROJECT_HEADSHOT_OVERRIDES.get(int(player_id), HEADSHOT_CACHE / f"{int(player_id)}.png")
 
 

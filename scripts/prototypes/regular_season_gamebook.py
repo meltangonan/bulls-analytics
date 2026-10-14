@@ -178,7 +178,6 @@ def _tov_rate(team: dict[str, float]) -> float:
 
 
 def prepare_factors(team: dict[str, float], opponent: dict[str, float]) -> tuple[Factor, ...]:
-    """Four Factors, with ORB% using each opponent's defensive rebounds."""
     return (
         Factor("SHOT MAKING", "eFG%", _efg(team), _efg(opponent)),
         Factor("BALL SECURITY", "TOV% · LOWER IS BETTER", _tov_rate(team), _tov_rate(opponent), True),

@@ -68,7 +68,6 @@ def _split_pair(value: str, separator: str) -> tuple[str, str]:
 
 
 def _player_label(value: str) -> str:
-    """Use the surname in compact horizontal pair cells."""
     return str(value).split()[-1].upper()
 
 
@@ -78,7 +77,6 @@ def prepare_lineup_rows(
     ranking: str = "minutes",
     min_minutes: float = 0,
 ) -> pd.DataFrame:
-    """Validate and select Bulls two-player combinations for one ranking."""
     if ranking not in {"minutes", "net-rating"}:
         raise ValueError(f"Unsupported lineup ranking: {ranking}")
 
@@ -157,7 +155,6 @@ def prepare_lineup_rows(
 
 
 def cache_selected_headshots(rows: pd.DataFrame) -> None:
-    """Ensure every selected player has a cached NBA CDN portrait."""
     player_ids = pd.unique(
         pd.concat(
             [rows["PLAYER_1_ID"], rows["PLAYER_2_ID"]],
@@ -173,7 +170,6 @@ def write_analytical_table(
     ranking: str = "minutes",
     min_minutes: float = 0,
 ) -> Path:
-    """Write the exact values rendered in the chart."""
     table = rows[
         [
             "GROUP_ID",
@@ -206,7 +202,6 @@ def render_chart(
     ranking: str = "minutes",
     min_minutes: float = 0,
 ) -> Path:
-    """Render the transparent F5-style table for Canva assembly."""
     theme = DEFAULT_THEME
     chart_height = 110 + ROW_HEIGHT * len(rows)
     fig = plt.figure(
@@ -395,7 +390,6 @@ def canva_copy_block(
     ranking: str = "minutes",
     min_minutes: float = 0,
 ) -> str:
-    """Return the exact copy surrounding this chart on the Canva page."""
     if ranking == "net-rating":
         return "\n".join(
             [

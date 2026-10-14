@@ -89,7 +89,6 @@ def season_labels() -> list[str]:
 
 
 def fetch_season(season: str) -> pd.DataFrame:
-    """Fetch one team-filtered clutch season and retain claim-bearing fields."""
     frame = leaguedashplayerclutch.LeagueDashPlayerClutch(
         season=season,
         season_type_all_star="Regular Season",
@@ -121,7 +120,6 @@ def fetch_season(season: str) -> pd.DataFrame:
 
 
 def fetch_league_season(season: str) -> pd.DataFrame:
-    """Fetch the league population used to grade that season's Bulls rows."""
     frame = leaguedashplayerclutch.LeagueDashPlayerClutch(
         season=season,
         season_type_all_star="Regular Season",
@@ -199,7 +197,6 @@ def fetch_league_history(*, refresh: bool = False) -> pd.DataFrame:
 
 
 def league_averages(league: pd.DataFrame) -> pd.DataFrame:
-    """Arithmetic mean clutch points among players meeting the post's floor."""
     qualified = league.loc[league["clutch_games"] >= MIN_CLUTCH_GAMES].copy()
     if set(qualified["season"]) != set(season_labels()):
         raise ValueError("League clutch baseline does not cover every season since 2000.")
@@ -308,7 +305,6 @@ def apply_display_names(winners: pd.DataFrame) -> pd.DataFrame:
 
 
 def install_post_portrait_fallbacks() -> None:
-    """Install approved, post-local portraits after the shared CDN fallback."""
     if not ANTONIO_DAVIS_PORTRAIT.exists():
         raise FileNotFoundError(f"Missing Antonio Davis portrait: {ANTONIO_DAVIS_PORTRAIT}")
     HEADSHOT_CACHE.mkdir(parents=True, exist_ok=True)

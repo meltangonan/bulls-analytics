@@ -79,7 +79,6 @@ def raw_game(season,gid,fetch=True):
     return f,str(path.relative_to(ROOT)),captured
 
 def game_assist_bounds(game_logs):
-    """A passer cannot assist more threes/twos than his teammates made."""
     f=game_logs.copy()
     teammates=f.groupby(['GAME_ID','TEAM_ID'])[['FGM','FG3M']].transform('sum')-f[['FGM','FG3M']]
     maximum_threes=pd.concat([f.AST,teammates.FG3M],axis=1).min(axis=1)
@@ -154,7 +153,6 @@ def run_season(season,selected):
         pd.concat(event_frames,ignore_index=True).to_csv(OUT/f'assisted-baskets-{season}.csv.gz',index=False)
         (OUT/f'issues-{season}.json').write_text(json.dumps(issues_all,indent=2))
         (OUT/f'sources-{season}.json').write_text(json.dumps({'generated_at':stamp(),'season':season,'games':sources},indent=2))
-    # Full Chicago games are already cached, and must reproduce the graphic totals.
     bulls_games=set(game_logs[game_logs.TEAM_ID==CHI].GAME_ID)
     for gid in sorted(bulls_games-processed):process(gid,True)
     all_events=pd.concat(event_frames,ignore_index=True)
@@ -175,7 +173,6 @@ def run_season(season,selected):
             save(f,proof)
             print(f'{season}: {len(processed)}/{len(by_game)} games; {len(uncertain)} uncertain players; {int((proof.relation=="unresolved").sum())} unresolved comparisons',flush=True)
         if not uncertain:break
-        # Favor games containing the most still-relevant official assists.
         pending=game_logs[game_logs.PLAYER_ID.isin(uncertain)&~game_logs.GAME_ID.isin(processed)]
         weights=pending.groupby('GAME_ID').AST.sum().sort_values(ascending=False,kind='stable')
         if weights.empty or weights.iloc[0]==0:
@@ -191,7 +188,6 @@ def run_season(season,selected):
     return ranks
 
 def finalize(selected):
-    """Publish a canonical render input only when every opponent is classified."""
     paths=[OUT/f'verified-ranks-{s}.csv' for s in selected.season.unique()]
     if not all(p.exists() for p in paths):return False
     result=pd.concat([pd.read_csv(p) for p in paths],ignore_index=True)

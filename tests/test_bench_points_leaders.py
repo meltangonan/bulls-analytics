@@ -41,7 +41,6 @@ from scripts.prototypes.bench_points_leaders import (
 
 
 def _split(rows: list[tuple[int, str, int, int]]) -> pd.DataFrame:
-    """Build a minimal LeagueDashPlayerStats-shaped frame."""
     return pd.DataFrame(rows, columns=["PLAYER_ID", "PLAYER_NAME", "GP", "PTS"])
 
 
@@ -78,7 +77,6 @@ def _table(rows: list[dict]) -> pd.DataFrame:
 # margin check compares first-to-second against second-to-tenth, and the games
 # line has to fit inside the tenth bar.
 REAL_POINTS = [1209, 915, 906, 839, 807, 749, 734, 718, 683, 681]
-# The next five qualified seasons, for the fifteen-row version.
 REAL_POINTS_15 = REAL_POINTS + [673, 662, 658, 567, 550]
 
 
@@ -138,7 +136,6 @@ class TestReconciliation:
             )
 
     def test_a_player_absent_from_one_split_still_reconciles(self):
-        """A pure reserve has no starter row at all; that is not a mismatch."""
         _reconcile(
             2005,
             _split([(1, "A", 82, 800)]),
@@ -156,7 +153,6 @@ class TestReconciliation:
 
 class TestQualification:
     def test_below_the_bar_is_excluded(self):
-        """A half-season of bench work does not make a sixth-man season."""
         rows = _leader_rows(REAL_POINTS)
         rows.append(
             {
@@ -186,7 +182,6 @@ class TestQualification:
 
 class TestHeadlineClaim:
     def test_the_margin_is_judged_against_the_top_ten_at_any_depth(self):
-        """A deeper board widens the tail; the caption's claim is about the ten."""
         ten = _table(_leader_rows(REAL_POINTS))
         fifteen = _table(_leader_rows(REAL_POINTS_15))
         assert (
@@ -200,7 +195,6 @@ class TestHeadlineClaim:
             build_leaders(table, CLAIM_DEPTH - 1)
 
     def test_a_shrinking_margin_fails_rather_than_shipping(self):
-        """The caption claims the leader's gap beats the rest of the board's spread."""
         table = _table(_leader_rows([900, 880, 860, 840, 820, 800, 780, 760, 740, 720]))
         with pytest.raises(ValueError, match="no longer exceeds"):
             validate(table, build_leaders(table))
@@ -275,7 +269,6 @@ class TestRender:
         assert chart_height(15) > chart_height(DEFAULT_TOP_N)
 
     def test_a_name_column_that_reaches_the_bars_fails(self, tmp_path, monkeypatch):
-        """The name column is set from the data, so its width has to be checked."""
         import scripts.prototypes.bench_points_leaders as module
 
         monkeypatch.setattr(module, "OUT", tmp_path)
@@ -285,7 +278,6 @@ class TestRender:
             render_chart(build_leaders(_table(rows)), "2026-09-03")
 
     def test_a_missing_portrait_does_not_break_the_build(self, tmp_path, monkeypatch):
-        """Fixture players have no cached portrait; they draw as placeholders."""
         import scripts.prototypes.bench_points_leaders as module
 
         monkeypatch.setattr(module, "OUT", tmp_path)
@@ -306,7 +298,6 @@ class TestRender:
         )
 
     def test_a_wide_portrait_is_not_clipped_to_a_square(self, tmp_path):
-        """Wide opaque content survives the crop with its aspect ratio intact."""
         import scripts.prototypes.bench_points_leaders as module
 
         image = np.zeros((100, 180, 4), dtype=np.uint8)

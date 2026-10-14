@@ -170,7 +170,6 @@ def get_json(
     attempts: int = 4,
     timeout: int = 45,
 ) -> dict:
-    """Fetch one public pbpstats response with bounded sequential retries."""
     last_error: Exception | None = None
     for attempt in range(1, attempts + 1):
         try:
@@ -236,7 +235,6 @@ def _validated_lineup_response(
 
 
 def fetch_source_tables() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Fetch and save the post's lineup rows, league baselines and audit."""
     DATA.mkdir(parents=True, exist_ok=True)
     SEASON_SNAPSHOTS.mkdir(parents=True, exist_ok=True)
     lineup_rows: list[dict] = []
@@ -364,7 +362,6 @@ def prepare_ranking(
     min_possessions: int = MIN_POSSESSIONS,
     top_n: int = TOP_N,
 ) -> pd.DataFrame:
-    """Validate sources, compute same-season rORTG and attach position order."""
     missing = LINEUP_REQUIRED - set(lineups)
     if missing:
         raise ValueError(f"Lineup source is missing columns: {sorted(missing)}")
@@ -457,7 +454,6 @@ def _rating_label(value: float) -> str:
 
 
 def ensure_historical_headshots(player_ids: list[int]) -> None:
-    """Replace NBA CDN silhouettes with stable ESPN studio portraits."""
     for player_id in {int(value) for value in player_ids}:
         url = HISTORICAL_HEADSHOT_URLS.get(player_id)
         if url is None:
@@ -474,7 +470,6 @@ def ensure_historical_headshots(player_ids: list[int]) -> None:
 
 
 def render_chart(rows: pd.DataFrame, *, final: bool = False) -> Path:
-    """Render the reference-inspired lineup shelf as a transparent Canva asset."""
     theme = DEFAULT_THEME
     player_ids = [
         int(row[f"{position}_ID"])

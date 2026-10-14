@@ -34,12 +34,10 @@ def player_slug(name: str) -> str:
 
 
 def qualifies_player(fga: int, minimum: int = MIN_PLAYER_FGA) -> bool:
-    """A player needs enough season volume for the spatial map to be readable."""
     return fga >= minimum
 
 
 def canva_stats_row(subject: str, scope: str, shots: pd.DataFrame) -> dict[str, object]:
-    """The four fields the user will recreate manually in Canva."""
     fga = len(shots)
     made = int(shots.shot_made.sum())
     threes = shots.shot_type.eq("3PT")

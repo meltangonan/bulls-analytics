@@ -41,7 +41,6 @@ def render(start: int | None, *, final: bool = False) -> Path:
 
     clip = Rectangle((left, baseline), right - left, halfcourt - baseline,
                      transform=ax.transData)
-    # The outer region is the 30-ft-to-midcourt zone on the last page.
     ax.add_patch(Rectangle((left, baseline), right - left, halfcourt - baseline,
                            facecolor=RED if start is None else GRAY_A,
                            edgecolor="none", zorder=1))
@@ -52,7 +51,6 @@ def render(start: int | None, *, final: bool = False) -> Path:
         _ladder_ring(ax, (HOOP_X, HOOP_Y), band, SCALE, color, clip,
                      shadow=index > 0)
 
-    # Same selected lane marks as the reviewed sample, with no text or portraits.
     court_center_y = HOOP_Y + ((280.0 - BASELINE_Y) / 2.0 + BASELINE_Y) * SCALE
     draw_chart_court(ax, HOOP_X, court_center_y, SCALE, lw=1.15, zorder=7)
     for side in (left, right):

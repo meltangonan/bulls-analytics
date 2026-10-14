@@ -94,7 +94,6 @@ def test_winner_is_ppg_then_total_points_then_games():
     challenger[["age", "points_per_game", "points", "games"]] = [30, 25.0, 1001, 50]
     challenger["team_points"] += 1001
     rows = pd.concat([rows, challenger], ignore_index=True)
-    # Keep the mocked team total reconciled after adding the synthetic row.
     season = FIRST_SEASON_END_YEAR
     rows.loc[rows["season_end_year"] == season, "team_points"] = rows.loc[rows["season_end_year"] == season, "points"].sum()
 

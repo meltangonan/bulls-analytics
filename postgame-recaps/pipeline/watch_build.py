@@ -50,11 +50,10 @@ class Watcher:
         return round((now - self.final_at) / 60)
 
     def feed(self, raw: str, now: float) -> list[str]:
-        """The updates one log line earns."""
         line = raw.rstrip()
         self.last_line, self.stalled = now, False
         stamp, text = (STAMP.match(line).groups() if STAMP.match(line) else (None, line))
-        at = self.clock(stamp, now) if stamp else now  # the log's own time, so a replay reads the same
+        at = self.clock(stamp, now) if stamp else now
         out = []
         if FIRST_SEEN.search(text):
             self.final_at = self.clock(FIRST_SEEN.search(text).group(1), now)
@@ -65,7 +64,7 @@ class Watcher:
                 out.append(text)
             self.status = text
         elif text.startswith("not ready, pulling again"):
-            reason = self.previous or "unknown"  # the line before names what is missing or failing
+            reason = self.previous or "unknown"
             if reason != self.waiting:
                 out.append(f"{self.minutes(at)} min after Final; waiting on: {reason}")
             self.waiting = reason
@@ -85,8 +84,6 @@ class Watcher:
         return out
 
     def tick(self, now: float) -> list[str]:
-        """A stall warning once when the build has logged nothing for ten minutes; otherwise a heartbeat when
-        Final has passed and three minutes went by without an update."""
         if not self.stalled and now - self.last_line >= STALL:
             self.stalled, self.last_update = True, now
             return [f"the build has logged nothing for {round((now - self.last_line) / 60)} min; it may be stuck"]
@@ -97,7 +94,6 @@ class Watcher:
 
     @staticmethod
     def clock(hhmm: str, now: float) -> float:
-        """Today's (or, past midnight, yesterday's) time for an HH:MM log stamp."""
         today = datetime.fromtimestamp(now)
         at = datetime.combine(today.date(), datetime.strptime(hhmm, "%H:%M").time())
         return (at - timedelta(days=1) if at > today + timedelta(minutes=1) else at).timestamp()
@@ -112,7 +108,7 @@ def main(path: str, resume: bool = False) -> None:
             w.last_update = w.last_line = time.time()
         while not w.ended:
             partial += log.readline()
-            line, complete = partial, partial.endswith("\n")  # a line still being written waits for its end
+            line, complete = partial, partial.endswith("\n")
             if complete:
                 partial = ""
             for update in (w.feed(line, time.time()) if complete else w.tick(time.time())):

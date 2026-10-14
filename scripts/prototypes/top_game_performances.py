@@ -100,8 +100,6 @@ GAME_SCORE_FILL = DEFAULT_THEME.accent
 
 @dataclass(frozen=True)
 class TableLayout:
-    """Row and type sizing shared with the BPM/scoring ladder table family."""
-
     header_from_top: float
     header_rule_from_top: float
     first_row_from_top: float
@@ -118,7 +116,7 @@ class TableLayout:
     gmsc_font_size: float
     name_rise: float = 12
     context_drop: float = 17
-    rank_x: float | None = None  # centre of an optional rank column left of the headshot
+    rank_x: float | None = None
 
 
 DECADE_LAYOUT = TableLayout(
@@ -187,17 +185,14 @@ PLAYER_COLUMNS = {
 
 
 def season_label(end_year: int) -> str:
-    """Return an NBA end-year as an NBA season string."""
     return f"{end_year - 1}-{str(end_year)[-2:]}"
 
 
 def display_season_label(end_year: int) -> str:
-    """Return a season with an en dash for display."""
     return season_label(end_year).replace("-", "–", 1)
 
 
 def season_type_slug(season_type: str) -> str:
-    """Return the stable filename slug for an NBA.com season type."""
     try:
         return SEASON_TYPE_SLUGS[season_type]
     except KeyError as exc:
@@ -205,7 +200,6 @@ def season_type_slug(season_type: str) -> str:
 
 
 def _source_season_type(season_type: str) -> str:
-    """Encode the season type in the query string used by nba.com/stats."""
     season_type_slug(season_type)
     return season_type.replace(" ", "%20")
 
@@ -227,7 +221,6 @@ def team_source_url(end_year: int, season_type: str = "Regular Season") -> str:
 
 
 def game_score(row: pd.Series) -> float:
-    """Calculate Hollinger Game Score from one traditional box score."""
     return float(
         row["points"]
         + 0.4 * row["fgm"]
@@ -244,7 +237,6 @@ def game_score(row: pd.Series) -> float:
 
 
 def true_shooting_pct(row: pd.Series) -> float:
-    """Calculate estimated true shooting percentage for one game."""
     attempts = row["fga"] + 0.44 * row["fta"]
     if attempts <= 0:
         return 0.0
@@ -252,7 +244,6 @@ def true_shooting_pct(row: pd.Series) -> float:
 
 
 def _request_frame(factory: Callable[[], object], source: str) -> pd.DataFrame:
-    """Make a paced NBA.com request with small transient-failure retries."""
     for attempt in range(1, NBA_REQUEST_ATTEMPTS + 1):
         try:
             frame = factory().get_data_frames()[0]
@@ -303,7 +294,6 @@ def fetch_bulls_team_games(
     season_type: str = "Regular Season",
     refresh: bool = False,
 ) -> pd.DataFrame:
-    """Load Bulls game scores used to reconcile player totals per game."""
     cache_path = RAW_CACHE / f"CHI-team-{season_type_slug(season_type)}-{end_year}.csv"
     if cache_path.exists() and not refresh:
         return _read_cached_games(cache_path)
@@ -366,7 +356,6 @@ def fetch_bulls_season(
     season_type: str = "Regular Season",
     refresh: bool = False,
 ) -> pd.DataFrame:
-    """Load and calculate one Chicago player-game table for a season type."""
     cache_path = RAW_CACHE / f"CHI-players-{season_type_slug(season_type)}-{end_year}.csv"
     if cache_path.exists() and not refresh:
         cached = _read_cached_games(cache_path)
@@ -461,7 +450,6 @@ def fetch_bulls_history(
     refresh: bool = False,
     first_end_year: int = FIRST_SEASON_END_YEAR,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Load every Bulls season of the requested type since 2000–01 (or ``first_end_year``)."""
     player_frames: list[pd.DataFrame] = []
     team_frames: list[pd.DataFrame] = []
     for end_year in range(first_end_year, LAST_SEASON_END_YEAR + 1):
@@ -487,7 +475,6 @@ def _career_request(player_id: int):
 def fetch_career_seasons(
     player_ids: list[int], path: Path, refresh: bool = False
 ) -> pd.DataFrame:
-    """Load each player's regular-season team history into ``path``, fetching only missing players."""
     cached = pd.read_csv(path) if path.exists() and not refresh else pd.DataFrame()
     wanted = set(int(p) for p in player_ids)
     if len(cached):
@@ -505,7 +492,6 @@ def fetch_career_seasons(
             raise ValueError(f"NBA.com returned no career rows for player {player_id}.")
         frame["captured_at"] = datetime.now(SNAPSHOT_TZ).isoformat(timespec="seconds")
         frames.append(frame)
-        # Save as we go so an interrupted run resumes instead of refetching.
         path.parent.mkdir(parents=True, exist_ok=True)
         pd.concat(frames, ignore_index=True).to_csv(path, index=False)
     result = pd.concat(frames, ignore_index=True)
@@ -514,7 +500,6 @@ def fetch_career_seasons(
 
 
 def first_bulls_games(working: pd.DataFrame) -> pd.DataFrame:
-    """Each player's earliest logged Bulls regular-season game with minutes played."""
     played = working[working["minutes"] > 0].copy()
     played["game_date_parsed"] = pd.to_datetime(played["game_date"], errors="raise")
     first = played.sort_values(["game_date_parsed", "game_id"], kind="stable")
@@ -523,7 +508,6 @@ def first_bulls_games(working: pd.DataFrame) -> pd.DataFrame:
 
 
 def decade_for_end_year(end_year: int) -> str:
-    """Map an NBA ending year to the decade label used by the carousel."""
     if 1971 <= end_year <= 1980:
         return "1970s"
     if 1981 <= end_year <= 1990:
@@ -540,7 +524,6 @@ def decade_for_end_year(end_year: int) -> str:
 
 
 def build_working_table(players: pd.DataFrame, teams: pd.DataFrame) -> pd.DataFrame:
-    """Validate raw rows and attach team-score reconciliation fields."""
     required_players = {
         "season_end_year",
         "season",
@@ -678,7 +661,6 @@ def validate_working_table(
     *,
     require_all_seasons: bool = True,
 ) -> dict[str, object]:
-    """Validate coverage, score reconciliation, and exactly ten rows per decade."""
     expected_years = set(range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1))
     present_years = set(table["season_end_year"].astype(int))
     if require_all_seasons and present_years != expected_years:
@@ -719,7 +701,6 @@ def validate_working_table(
 
 
 def top_games_by_decade(table: pd.DataFrame, *, top_n: int = TOP_N) -> pd.DataFrame:
-    """Return the requested top player-games in each decade with deterministic ties."""
     ranked = (
         table.sort_values(
             ["decade", "game_score", "points", "ts_pct", "game_date", "player", "player_id"],
@@ -747,7 +728,6 @@ def write_working_table(
 
 
 def ensure_historical_headshot_fallbacks(player_ids: list[int]) -> None:
-    """Replace known NBA CDN silhouettes with usable historical portraits."""
     for player_id in {int(value) for value in player_ids}:
         url = HISTORICAL_HEADSHOT_URLS.get(player_id)
         cache_path = HEADSHOT_CACHE / f"{player_id}.png"
@@ -782,12 +762,10 @@ def ensure_historical_headshot_fallbacks(player_ids: list[int]) -> None:
 
 
 def _display_name(name: str) -> str:
-    """Use the natural display name while preserving NBA.com's source data."""
     return {"Jimmy Butler III": "Jimmy Butler"}.get(str(name), str(name))
 
 
 def _signed_box_score_value(value: float | int) -> str:
-    """Show positive plus/minus values with an explicit leading plus sign."""
     if pd.isna(value):
         return ""
     integer = int(value)
@@ -795,7 +773,6 @@ def _signed_box_score_value(value: float | int) -> str:
 
 
 def _display_date(value: str) -> str:
-    """Format an ISO source date compactly for the table context line."""
     return pd.Timestamp(value).strftime("%b %d, %Y").replace(" 0", " ")
 
 
@@ -840,7 +817,6 @@ def face_headshot_label(ax, image_path, x, y, half_size, *, zorder=4):
 
 
 def slide_height(row_count: int, layout: TableLayout = DECADE_LAYOUT) -> float:
-    """Fit exactly the header and requested rows without transparent dead space."""
     return (
         layout.first_row_from_top
         + (row_count - 1) * layout.row_height
@@ -850,7 +826,6 @@ def slide_height(row_count: int, layout: TableLayout = DECADE_LAYOUT) -> float:
 
 
 def row_rule_segments() -> tuple[tuple[float, float], ...]:
-    """Leave the Game Score cell edge-to-edge, as in the BPM table."""
     return ((ROW_RULE_LEFT, GMSC_LEFT), (GMSC_RIGHT, PLUS_MINUS_RIGHT))
 
 
@@ -859,7 +834,6 @@ def game_score_card_bounds(
     first_row_y: float,
     layout: TableLayout = DECADE_LAYOUT,
 ) -> tuple[float, float, float, float]:
-    """Return the rounded card footprint behind the Game Score values."""
     return accent_card_bounds(
         GMSC_LEFT, GMSC_RIGHT, first_row_y, row_count, layout.row_height
     )
@@ -886,7 +860,6 @@ SHOOTING_AFTER_ASSISTS = (0, 3, 4, 1, 2, 5, 6, 7, 8)
 
 
 def _shooting_order(cells: tuple, shooting_after_assists: bool) -> tuple:
-    """Reorder the nine no-FT turnover cells when shooting follows assists."""
     return tuple(cells[i] for i in SHOOTING_AFTER_ASSISTS) if shooting_after_assists else cells
 
 
@@ -929,7 +902,6 @@ def _turnover_values(
 
 
 def identity_width(ax, rows: pd.DataFrame, layout: TableLayout) -> float:
-    """Measure the widest player name or game-context line, as the row loop draws them."""
     def measure(text, size, weight=None):
         artist = ax.text(0, 0, text, fontsize=size,
                          fontproperties=helvetica(weight) if weight else helvetica())
@@ -1067,9 +1039,6 @@ def render_chart(
             (1383, 1465), # +/-
         )
         if not show_free_throws:
-            # Without FT, Game Score sits a fixed gap after the widest name or game line, and
-            # each stat column takes its widest header or value plus one shared visible gap,
-            # so neither long identities nor wide made-attempted cells crowd a neighbour.
             gmsc_left = round(layout.name_x + identity_width(ax, rows, layout) + 22)
             gmsc_right = gmsc_left + 108
             stat_bounds = equal_gap_bounds(
@@ -1273,7 +1242,6 @@ def render_chart(
             zorder=5,
         )
         result_x = matchup_x + rendered_width(ax, matchup_artist) + 9
-        # Mixed regular-season/playoff tables mark playoff rows, e.g. "(RD 1 GM1)".
         context_note = str(row.get("context_note", "") or "")
         if context_note and context_note != "nan":
             note_artist = ax.text(
@@ -1369,7 +1337,6 @@ def render_chart(
 
 
 def canva_copy_block(report: dict[str, object], season_type: str = "Regular Season") -> str:
-    """Return the exact data-bound framing for Canva."""
     playoff = season_type == "Playoffs"
     period = "playoff" if playoff else "regular-season"
     title = "THE BULLS' BEST PLAYOFF GAMES BY DECADE" if playoff else "THE BULLS' BEST GAMES BY DECADE"

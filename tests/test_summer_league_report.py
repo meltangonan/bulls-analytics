@@ -14,7 +14,6 @@ SPEC.loader.exec_module(report)
 
 
 def shots(*rows):
-    """Build the two get_game_shots columns that shot_diet reads."""
     return pd.DataFrame(list(rows), columns=["player_id", "shot_zone"])
 
 
@@ -54,7 +53,6 @@ def test_shot_diet_line_reports_a_player_who_never_shot():
 
 
 def typed_shots(*rows):
-    """Shot rows carrying the NBA's own 2PT/3PT type and location."""
     return pd.DataFrame(
         list(rows),
         columns=["player_id", "shot_zone", "shot_type", "shot_made", "loc_x", "loc_y"],

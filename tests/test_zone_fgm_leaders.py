@@ -24,7 +24,6 @@ def shots(rows):
 
 
 def all_zones_once():
-    """One make per zone by a filler player, so every zone has a leader."""
     return [(zone, 99, "Filler", "1997-98", True) for zone in sm.ZONE12_ORDER]
 
 
@@ -36,7 +35,6 @@ def test_most_makes_wins_and_a_tie_goes_to_fewer_attempts():
     ]
     table, top, ties = leaders.rank(shots(rows))
     zone = top.set_index("zone").loc["Top of Key 3"]
-    # Both made two; the higher FG% (two of three) takes the tie.
     assert zone.player_name == "Efficient"
     assert set(ties.loc[ties.zone.eq("Top of Key 3"), "player_name"]) == {
         "Volume", "Efficient"}
@@ -152,7 +150,6 @@ def test_every_saved_league_season_reconciles_with_official_totals():
 
 
 def test_tenure_league_baseline_covers_every_leader_season():
-    """A pooled comparison needs the league from each season the player is pooled over."""
     values = pd.read_csv(DATA / "tenure-carousel-values.csv")
     full = pd.read_csv(DATA / "tenure-all-player-tenures.csv")
     saved = set(pd.read_csv(DATA / "league-source-manifest.csv").season)

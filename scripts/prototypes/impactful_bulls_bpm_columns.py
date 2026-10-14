@@ -92,8 +92,6 @@ LEGEND_Y = 880
 
 @dataclass(frozen=True)
 class ColumnLayout:
-    """Type sizing for the column chart."""
-
     season_font_size: float = 15.0
     # 17 totals across a 57 px pitch: 14 pt keeps adjacent labels apart.
     total_font_size: float = 14.0
@@ -105,25 +103,17 @@ class ColumnLayout:
 LAYOUT = ColumnLayout()
 
 
-# --------------------------------------------------------------------------
-# Geometry
-# --------------------------------------------------------------------------
-
-
 def y_px(value: float) -> float:
-    """Data value to canvas y."""
     span = Y_MAX - Y_MIN
     return PLOT_BOTTOM + (value - Y_MIN) * (PLOT_TOP - PLOT_BOTTOM) / span
 
 
 def column_centers(count: int) -> list[float]:
-    """Evenly spaced column centres across the plot area."""
     pitch = (PLOT_RIGHT - PLOT_LEFT) / count
     return [PLOT_LEFT + pitch * (index + 0.5) for index in range(count)]
 
 
 def _rounded(x0, x1, y0, y1, **kwargs) -> FancyBboxPatch:
-    """A rounded rectangle sized in data space, inset for the corner radius."""
     return FancyBboxPatch(
         (x0 + BAR_RADIUS, min(y0, y1) + BAR_RADIUS),
         (x1 - x0) - 2 * BAR_RADIUS,
@@ -155,7 +145,6 @@ def _across_gradient(ax, x0, x1, y0, y1, colors, clip, zorder):
 
 
 def _gradient_span(ax, center, low, high, colors, *, shadow: bool):
-    """Draw one gradient-filled span of a column between two data values."""
     if abs(high - low) < 0.02:  # nothing meaningful to draw
         return
     x0, x1 = center - BAR_WIDTH / 2, center + BAR_WIDTH / 2
@@ -218,7 +207,6 @@ def draw_column(ax, center: float, row: pd.Series) -> None:
 
 
 def segment_label(ax, center, low, high, value, color):
-    """Print a segment's value inside it when the segment is tall enough."""
     height = abs(y_px(high) - y_px(low))
     if height < 36:  # a shorter segment crowds the text against its own edges
         return
@@ -235,13 +223,7 @@ def segment_label(ax, center, low, high, value, color):
     )
 
 
-# --------------------------------------------------------------------------
-# Render
-# --------------------------------------------------------------------------
-
-
 def draw_legend(ax, theme) -> None:
-    """Two swatches naming the halves, in the colours the columns use."""
     entries = (
         (PLOT_LEFT, "OFFENSE (OBPM)", OFFENSE_GRADIENT),
         (PLOT_LEFT + 360, "DEFENSE (DBPM)", DEFENSE_GRADIENT),
@@ -262,7 +244,6 @@ def draw_legend(ax, theme) -> None:
 
 
 def render_chart(leaders: pd.DataFrame, date: str, final: bool = False) -> Path:
-    """Render the transparent stacked-column asset for Canva."""
     theme = DEFAULT_THEME
     rows = leaders.sort_values("season").reset_index(drop=True)
     centers = column_centers(len(rows))
@@ -357,7 +338,6 @@ def render_chart(leaders: pd.DataFrame, date: str, final: bool = False) -> Path:
 
 
 def canva_copy_block(leaders: pd.DataFrame, date: str) -> str:
-    """Framing copy from the same validated run."""
     peak = leaders.loc[leaders["bpm"].idxmax()]
     most_defensive = leaders.loc[leaders["dbpm"].idxmax()]
     most_offensive = leaders.loc[leaders["obpm"].idxmax()]

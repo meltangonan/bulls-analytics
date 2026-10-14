@@ -64,13 +64,10 @@ PAGE = """
 
 
 def _table() -> pd.DataFrame:
-    """Two seasons: one with a clear leader, one with a genuine BPM tie."""
     rows = [
-        # 2014 -- clear leader, plus an unqualified higher-BPM reserve.
         ("Joakim Noah", 2014, 80, 2820.0, 1.7, 3.6, 5.3, 5.2),
         ("Taj Gibson", 2014, 82, 1500.0, 0.4, 1.2, 1.6, 1.4),
         ("Bench Guy", 2014, 20, 300.0, 0.1, 0.1, 9.9, 0.2),
-        # 2009 -- Gordon and Noah both at +1.1; VORP breaks it.
         ("Ben Gordon", 2009, 82, 2999.0, 2.4, -1.3, 1.1, 2.3),
         ("Joakim Noah", 2009, 80, 1938.0, 0.1, 1.1, 1.1, 1.5),
     ]
@@ -134,7 +131,6 @@ class TestSelectLeaders:
         assert pick["player_name"] == "Joakim Noah"
 
     def test_minutes_gate_excludes_high_bpm_reserve(self):
-        """The +9.9 bench guy has the best BPM but only 300 minutes."""
         leaders = select_leaders(_table())
         assert "Bench Guy" not in set(leaders["player_name"])
 
@@ -159,7 +155,6 @@ class TestValidation:
     def test_flags_seasons_absent_from_the_selection(self):
         table = _table()
         report = validate_working_table(table, attach_player_ids(select_leaders(table)))
-        # The fixture only covers two of the 17 expected seasons.
         assert 2011 in report["missing_seasons"]
         assert 2014 not in report["missing_seasons"]
 
@@ -255,20 +250,17 @@ class TestCanvaCopyBlock:
 
 class TestSeasonLabels:
     def test_graphic_spells_the_first_year_in_full_with_an_en_dash(self):
-        """Matches top_game_performances.display_season_label: "2025-26"."""
         table = build_working_table()
         row = table[table["season"] == 2026].iloc[0]
         assert row["season_short"] == "2025\u201326"
         assert "\u2013" in row["season_short"], "graphic label uses an en dash"
 
     def test_working_table_keeps_the_plain_hyphenated_label(self):
-        """Filenames and other surfaces stay ASCII."""
         table = build_working_table()
         row = table[table["season"] == 2026].iloc[0]
         assert row["season_label"] == "2025-26"
 
     def test_the_first_season_in_range_is_2000_01(self):
-        """"Since 2000" is the 2000-01 season, not 1999-00."""
         table = build_working_table()
         assert table["season"].min() == FIRST_SEASON_END == 2001
         row = table[table["season"] == 2001].iloc[0]
@@ -282,7 +274,6 @@ class TestDecadeSlideLayout:
         assert slide_height(uniform_row_count(groups), DECADE_LAYOUT) <= 1350
 
     def test_every_slide_renders_at_the_same_canvas_height(self):
-        """A 6-row slide must paste at the same size as a 10-row one."""
         groups = decade_groups(_leaders_fixture())
         capacity = uniform_row_count(groups)
         heights = {slide_height(capacity, DECADE_LAYOUT) for _ in groups}
@@ -314,11 +305,9 @@ class TestDecadeSlideLayout:
             assert capacity == max(len(rows) for _, rows in groups)
 
     def test_the_headline_stat_is_body_size_and_carries_weight_by_bold(self):
-        """Matches top_game_performances: gmsc_font_size == value_font_size."""
         assert DECADE_LAYOUT.bpm_font_size == DECADE_LAYOUT.value_font_size == 16
 
     def test_faces_are_taller_than_their_row_in_both_layouts(self):
-        """The overlap is deliberate -- it buys a bigger face."""
         for layout in (ONE_SLIDE_LAYOUT, DECADE_LAYOUT):
             assert 2 * layout.headshot_half_size > layout.row_height
 
@@ -332,8 +321,6 @@ class TestHeaderRule:
 
 
 class TestPercentileCalibratedScales:
-    """Scales come from the league distribution, not from tier labels."""
-
     # Percentiles measured over 3,036 qualified player-seasons, 2009-10 to
     # 2025-26. Used here to assert the scale ends match what was measured.
     P05 = {"bpm": -3.0, "obpm": -2.5, "dbpm": -1.7}
@@ -380,7 +367,6 @@ class TestPercentileCalibratedScales:
 
 
 def _leaders_fixture() -> pd.DataFrame:
-    """One synthetic leader per season across the full window."""
     seasons = list(range(FIRST_SEASON_END, LAST_SEASON_END + 1))
     frame = pd.DataFrame({"season": seasons})
     frame["season_label"] = frame["season"].map(
@@ -390,14 +376,11 @@ def _leaders_fixture() -> pd.DataFrame:
 
 
 class TestQualificationGate:
-    """A rotation-sized role, held for most of the season."""
-
     def test_the_gate_has_both_a_rate_and_an_availability_condition(self):
         assert MIN_MINUTES_PER_GAME == 20.0
         assert MIN_TEAM_GAMES_SHARE == 0.50
 
     def test_a_flat_minutes_floor_would_tighten_in_a_shortened_season(self):
-        """1,500 minutes asks 18.3 mpg over 82 games but 23.1 over 65."""
         assert 1500 / 82 == pytest.approx(18.3, abs=0.1)
         assert 1500 / 65 == pytest.approx(23.1, abs=0.1)
 

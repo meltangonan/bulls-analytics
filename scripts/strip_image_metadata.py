@@ -55,7 +55,6 @@ def clean_png(data, name):
 
 
 def feed_size(data, name):
-    """Halve a 2x page to the feed width with Lanczos; warn about a 1x Canva export."""
     image = Image.open(io.BytesIO(data))
     if image.width == FEED_WIDTH:
         print(f'{name}: warning, 1080 px export; Canva blurs text at this size, so export at 2x')

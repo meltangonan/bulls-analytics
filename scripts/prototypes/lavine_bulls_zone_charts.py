@@ -48,8 +48,6 @@ SEASONS = (
 CHART_MIN_SEASON_FGA = 300
 GRID_ROW_PLAN = (3, 3, 2)
 SEASON_MIN_ZONE_FGA = sm.MIN_ZONE12_FGA_PLAYER
-# Twenty attempts per pooled season, so the tenure grey means what a season
-# grey means.
 TENURE_MIN_ZONE_FGA = SEASON_MIN_ZONE_FGA * len(SEASONS)
 PROJECT = "lavine-bulls-zone-charts"
 START_DATE = "2026-09-22"
@@ -64,7 +62,6 @@ LOCATION_COLUMNS = ["loc_x", "loc_y", "shot_distance", "shot_zone",
 
 
 def fetch_bulls_totals(season: str) -> pd.Series:
-    """Fetch the independent Chicago totals used to reconcile this post's shots."""
     return fetch.get_player_season_totals(
         PLAYER_ID, season, team_id=BULLS_TEAM_ID,
         columns=TOTAL_COLUMNS, player_name=PLAYER_NAME,

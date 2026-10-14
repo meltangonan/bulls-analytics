@@ -5,9 +5,9 @@ Hollinger Game Score, reconciliation, and the settled table renderer. This
 prototype adds one rule: select the Bulls' first regular-season team game in
 each season, then rank every Chicago player-game from those openers together.
 
-The window starts in 1983-84: before it, NBA.com has no Bulls team game log and
-most opener box scores lack steals, blocks, turnovers or the rebound split that
-Game Score needs. Missing is not zero, so earlier seasons are excluded.
+The window starts in 1983-84: before it, NBA.com's opener box scores lack steals,
+turnovers or the rebound split that Game Score needs for most players (1981-82 and
+1982-83 checked 2026-10-14). Missing is not zero, so earlier seasons are excluded.
 """
 
 from __future__ import annotations
@@ -39,7 +39,6 @@ PORTRAITS = {78615: DATA_DIR / "portraits" / "78615.png"}  # Orlando Woolridge
 
 
 def select_season_openers(team_games: pd.DataFrame) -> pd.DataFrame:
-    """Return exactly the first Bulls regular-season team game per season."""
     required = {"season_end_year", "game_id", "game_date", "matchup", "result"}
     missing = required - set(team_games.columns)
     if missing:
@@ -63,7 +62,6 @@ def season_opener_player_games(
     working: pd.DataFrame,
     openers: pd.DataFrame,
 ) -> pd.DataFrame:
-    """Keep all Bulls player-games belonging to the selected team openers."""
     keys = openers[["season_end_year", "game_id"]].copy()
     keys["game_id"] = keys["game_id"].astype(str)
     rows = working.copy()
@@ -82,7 +80,6 @@ def season_opener_player_games(
 
 
 def rank_season_openers(rows: pd.DataFrame, top_n: int = TOP_N) -> pd.DataFrame:
-    """Rank opener player-games using the settled deterministic tie-breaks."""
     ranked = rows.sort_values(
         ["game_score", "points", "ts_pct", "game_date", "player", "player_id"],
         ascending=[False, False, False, True, True, True],
@@ -99,7 +96,6 @@ def validate_opener_analysis(
     selected: pd.DataFrame,
     ranked: pd.DataFrame,
 ) -> dict[str, object]:
-    """Check coverage and preserve the factual claims used in the mock."""
     expected_years = set(range(FIRST_END_YEAR, base.LAST_SEASON_END_YEAR + 1))
     if set(openers["season_end_year"].astype(int)) != expected_years:
         raise ValueError("Season opener source does not cover every season since 1983-84.")
@@ -139,7 +135,6 @@ def write_data(
     selected: pd.DataFrame,
     ranked: pd.DataFrame,
 ) -> None:
-    """Ship the display table and fetched inputs beside the visual."""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     openers.to_csv(DATA_DIR / "season_openers.csv", index=False)
     selected.to_csv(DATA_DIR / "season_opener_player_games.csv", index=False)
@@ -149,14 +144,11 @@ def write_data(
     for source in sorted(base.RAW_CACHE.glob("CHI-*-regular-season-*.csv")):
         shutil.copy2(source, RAW_DATA_DIR / source.name)
 
-    # These combined snapshots make the raw grain easy to inspect without
-    # changing the one-file-per-endpoint-per-season audit trail above.
     players.to_csv(DATA_DIR / "all_regular_season_player_games.csv", index=False)
     teams.to_csv(DATA_DIR / "all_regular_season_team_games.csv", index=False)
 
 
 def canva_copy(report: dict[str, object]) -> str:
-    """Print the exact framing tied to this analysis run."""
     return "\n".join(
         [
             "CANVA COPY",

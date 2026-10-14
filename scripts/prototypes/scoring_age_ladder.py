@@ -87,8 +87,6 @@ HISTORICAL_HEADSHOT_URLS = {
 
 @dataclass(frozen=True)
 class TableLayout:
-    """Row and type sizing for one age-table page."""
-
     header_y: float
     header_rule_y: float
     first_row_y: float
@@ -165,22 +163,18 @@ NBA_TEAM_SCORING_URL = (
 
 
 def season_label(end_year: int) -> str:
-    """Return an NBA end year as an NBA.com season string."""
     return f"{end_year - 1}-{str(end_year)[-2:]}"
 
 
 def display_season_label(end_year: int) -> str:
-    """Return the same season with an en dash for chart labels."""
     return season_label(end_year).replace("-", "\u2013", 1)
 
 
 def player_source_url(end_year: int) -> str:
-    """Return the NBA.com player-totals source for one season."""
     return NBA_PLAYER_SCORING_URL.format(season=season_label(end_year))
 
 
 def team_source_url(end_year: int) -> str:
-    """Return the NBA.com team-totals source for one season."""
     return NBA_TEAM_SCORING_URL.format(season=season_label(end_year))
 
 
@@ -191,7 +185,6 @@ def _required_columns(frame: pd.DataFrame, columns: set[str], source: str) -> No
 
 
 def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
-    """Load a Chicago-only NBA.com season from cache or the live endpoint."""
     cache_path = RAW_CACHE / f"CHI-{end_year}.csv"
     if cache_path.exists() and not refresh:
         return pd.read_csv(cache_path)
@@ -269,7 +262,6 @@ def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
 
 
 def fetch_bulls_history(*, refresh: bool = False) -> pd.DataFrame:
-    """Load every Bulls regular season since 2000-01."""
     frames: list[pd.DataFrame] = []
     for end_year in range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1):
         print(f"Loading {display_season_label(end_year)}")
@@ -278,7 +270,6 @@ def fetch_bulls_history(*, refresh: bool = False) -> pd.DataFrame:
 
 
 def build_working_table(rows: pd.DataFrame) -> pd.DataFrame:
-    """Apply the minimum-games rule and select one PPG winner at each age."""
     required = {
         "season_end_year",
         "season",
@@ -325,12 +316,10 @@ def build_working_table(rows: pd.DataFrame) -> pd.DataFrame:
 
 
 def age_winners(table: pd.DataFrame) -> pd.DataFrame:
-    """Return the selected Bulls season in chronological age order."""
     return table.loc[table["selected"]].sort_values("age", kind="stable").reset_index(drop=True)
 
 
 def split_carousel_pages(winners: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Split the age ladder into two consecutive carousel pages."""
     players = winners.sort_values("age", kind="stable").reset_index(drop=True)
     midpoint = math.ceil(len(players) / 2)
     return (
@@ -340,7 +329,6 @@ def split_carousel_pages(winners: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFr
 
 
 def validate_working_table(table: pd.DataFrame) -> dict[str, object]:
-    """Validate NBA.com coverage, team reconciliation, and each age winner."""
     expected_years = set(range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1))
     present_years = set(table["season_end_year"].astype(int))
     if present_years != expected_years:
@@ -387,7 +375,6 @@ def validate_working_table(table: pd.DataFrame) -> dict[str, object]:
 
 
 def write_working_table(table: pd.DataFrame, date: str) -> Path:
-    """Write every Bulls player-season so exclusions and runners-up stay auditable."""
     path = OUT / f"{date}-bulls-scoring-age-ladder-working.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False)
@@ -395,17 +382,14 @@ def write_working_table(table: pd.DataFrame, date: str) -> Path:
 
 
 def season_marker(season: str) -> str:
-    """Return the compact unstarred season label displayed beside a name."""
     return season[2:]
 
 
 def historical_headshot_url(player_id: int) -> str | None:
-    """Return a known usable portrait when NBA's retired-player CDN has none."""
     return HISTORICAL_HEADSHOT_URLS.get(int(player_id))
 
 
 def ensure_historical_headshot_fallbacks(player_ids: list[int]) -> None:
-    """Replace only known NBA-CDN silhouette files with their real portraits."""
     for player_id in {int(player_id) for player_id in player_ids}:
         url = historical_headshot_url(player_id)
         cache_path = HEADSHOT_CACHE / f"{player_id}.png"
@@ -420,7 +404,6 @@ def ensure_historical_headshot_fallbacks(player_ids: list[int]) -> None:
 
 
 def _mix(base: str, target: str, strength: float) -> tuple[float, float, float]:
-    """Blend two colors using the exact clutch-table calculation."""
     amount = min(max(float(strength), 0.0), 1.0)
     base_rgb = np.array(to_rgb(base))
     target_rgb = np.array(to_rgb(target))
@@ -463,7 +446,6 @@ def ppg_fill(
 
 
 def ppg_text_color(fill: tuple[float, float, float]) -> str:
-    """Use the clutch points column's exact black-or-white contrast rule."""
     red, green, blue = fill
     luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue
     return "#FFFFFF" if luminance < 0.47 else DEFAULT_THEME.ink
@@ -482,7 +464,6 @@ def _ppg_cells(
     top_limit: float | None = None,
     midpoint: float | None = None,
 ) -> None:
-    """Draw a gapless conditional-format column with optional outer rounding."""
     if fill_style not in {METRIC_FILL_ROUNDED_BAND, METRIC_FILL_SQUARE_CELLS}:
         raise ValueError(f"Unknown metric fill style: {fill_style}")
 
@@ -505,9 +486,6 @@ def _ppg_cells(
             transform=ax.transData,
         )
     elif top_limit is not None:
-        # Square outer corners, but still a clip: it lets every cell overlap its
-        # neighbour — which is what closes the hairline seams between rows —
-        # without the first cell growing up into the header rule.
         clip_path = Rectangle(
             (metric_left, bottom),
             metric_right - metric_left,
@@ -544,7 +522,6 @@ def _ppg_cells(
 
 
 def header_rule_segments(rule_right: float = GP_RIGHT) -> tuple[tuple[float, float], ...]:
-    """Draw the full-width ruler directly beneath the column headers."""
     return ((ROW_RULE_LEFT, rule_right),)
 
 
@@ -556,7 +533,6 @@ def row_rule_segments(
     headshot_x: float = HEADSHOT_X,
     headshot_half_size: float = ONE_SLIDE_LAYOUT.headshot_half_size,
 ) -> tuple[tuple[float, float], ...]:
-    """Run the ruler behind portraits; leave only the heat column uninterrupted."""
     # Faces draw later at zorder 4, above this zorder-3 rule. Keeping the ruler
     # continuous matches the assist-duo and Game Score tables: the line remains
     # legible as a table separator while the portrait naturally interrupts it.
@@ -685,7 +661,6 @@ def render_chart(
     clip_portraits_to_row: bool = False,
     final: bool = False,
 ) -> Path:
-    """Render one transparent player-metric table for Canva."""
     if winners.empty:
         raise ValueError("Cannot render an empty age ladder.")
     if metric_column not in winners.columns:
@@ -929,7 +904,6 @@ def render_chart(
 
 
 def canva_copy_block(report: dict[str, object]) -> str:
-    """Return the exact data-bound framing to paste around the chart asset."""
     return "\n".join(
         [
             "CANVA COPY",

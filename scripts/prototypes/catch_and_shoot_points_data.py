@@ -101,7 +101,6 @@ def summarize(players: pd.DataFrame, official: pd.DataFrame, league: pd.DataFram
 
 
 def three_bounds(players: pd.DataFrame, official: pd.DataFrame) -> pd.DataFrame:
-    """Retain unknown 3PA as an interval, bounded by official total 3PA."""
     merged = players.merge(official[['PLAYER_ID', 'FG3M', 'FG3A']], on='PLAYER_ID',
                            how='left', validate='one_to_one')
     if merged[['FG3M', 'FG3A']].isna().any().any():
@@ -187,7 +186,6 @@ def main(refresh: bool = False) -> None:
     top, top_three = ranked(all_rows), ranked(all_threes)
     if top_three[['fga', 'efg_pct']].isna().any().any():
         raise ValueError('Selected three-point row has unresolved attempts')
-    # All plausible missing-attempt assignments must produce the same printed value.
     for left, right in [('relative_efg_pp', 'relative_3p_pp_high'),
                         ('relative_fga_per_game', 'relative_3pa_per_game_low')]:
         if not (top_three[left].round(1) == top_three[right].round(1)).all():

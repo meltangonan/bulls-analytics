@@ -168,7 +168,6 @@ def run_season(season,targets):
     pending=f[unresolved()]
     cached=sum((OLD/'raw'/f'{season}_{gid}.json.gz').exists() for gid in pending.GAME_ID.unique())
     print(f'{season}: population={len(f)} games={f.GAME_ID.nunique()} candidates={len(pending)} candidate-games={pending.GAME_ID.nunique()} cached={cached}',flush=True)
-    # Reconcile own target games even if their original bounds happen to be exact.
     order=list(dict.fromkeys(list(targets.GAME_ID)+list(pending.sort_values('maximum_created',ascending=False).GAME_ID)))
     for gid in order:
         rows=f[f.GAME_ID==gid]

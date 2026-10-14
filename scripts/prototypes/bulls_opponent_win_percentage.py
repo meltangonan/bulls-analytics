@@ -51,8 +51,6 @@ CHART_HEIGHT = 1600
 DRAFT_DPI = 150
 LOGO_ZOOM = 0.115  # approximately the visual width of a 0.70-unit bar
 
-# These are franchise-continuity mappings: they preserve the original source
-# rows while grouping an old NBA.com abbreviation with its current franchise.
 HISTORICAL_TO_CURRENT = {
     "NJN": "BKN",
     "NOH": "NOP",
@@ -87,12 +85,10 @@ FRANCHISE_CONFERENCES = {
 
 
 def current_opponent(code: str) -> str:
-    """Return the current franchise code for one NBA.com opponent abbreviation."""
     return HISTORICAL_TO_CURRENT.get(str(code), str(code))
 
 
 def opponent_from_matchup(matchup: str) -> str:
-    """Extract the opponent abbreviation from a Bulls home or road matchup."""
     text = str(matchup)
     if "vs." in text:
         return text.split("vs.", 1)[1].strip()
@@ -102,7 +98,6 @@ def opponent_from_matchup(matchup: str) -> str:
 
 
 def fetch_team_history(*, refresh: bool = False) -> pd.DataFrame:
-    """Load one regular-season Bulls team-game row for every season since 2000."""
     frames = [
         fetch_bulls_team_games(end_year, refresh=refresh)
         for end_year in range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1)
@@ -111,7 +106,6 @@ def fetch_team_history(*, refresh: bool = False) -> pd.DataFrame:
 
 
 def build_summary(games: pd.DataFrame, *, min_meetings: int = MIN_MEETINGS) -> pd.DataFrame:
-    """Calculate one current-franchise row per opponent from distinct Bulls games."""
     required = {"game_id", "matchup", "result", "season_end_year"}
     missing = required - set(games.columns)
     if missing:
@@ -162,7 +156,6 @@ def build_summary(games: pd.DataFrame, *, min_meetings: int = MIN_MEETINGS) -> p
 
 
 def validate_summary(summary: pd.DataFrame, games: pd.DataFrame) -> dict[str, int | float]:
-    """Fail loudly if the ranked output no longer reconstructs the source games."""
     if len(summary) != 29 or summary["franchise"].duplicated().any():
         raise ValueError("The ranking must contain each of the 29 current opponent franchises once.")
     if summary["meetings"].min() < MIN_MEETINGS:
@@ -183,7 +176,6 @@ def validate_summary(summary: pd.DataFrame, games: pd.DataFrame) -> dict[str, in
 
 
 def render_continuous_chart(summary: pd.DataFrame, *, final: bool = False) -> Path:
-    """Render all 29 ranks on one canvas that can be cut into seamless tiles."""
     if len(summary) != 29:
         raise ValueError("The continuous chart requires all 29 ranked opponents.")
     theme = DEFAULT_THEME
@@ -191,9 +183,6 @@ def render_continuous_chart(summary: pd.DataFrame, *, final: bool = False) -> Pa
     fig, ax = plt.subplots(figsize=(full_width / DRAFT_DPI, CHART_HEIGHT / DRAFT_DPI))
     fig.patch.set_alpha(0)
     ax.set_facecolor("none")
-    # The left crop carries 14 ranks and the right carries 15.  Giving each
-    # half its own equal-width plotting area keeps MIN wholly on slide two
-    # while retaining the exact central crop and the shared vertical frame.
     ax.remove()
     axes = [
         fig.add_axes((0.0225, 0.08, 0.4775, 0.83)),
@@ -214,8 +203,6 @@ def render_continuous_chart(summary: pd.DataFrame, *, final: bool = False) -> Pa
 
         for slot, row in enumerate(rows.itertuples(index=False), start=1):
             value_y = float(row.win_pct)
-            # Keep both data labels inside the fill. The compact type treatment
-            # prevents a five-character percentage from reaching past a narrow bar.
             ax.text(slot, value_y - 0.78, f"{value_y:.1f}%",
                     ha="center", va="top", color="white",
                     fontsize=11.5, fontproperties=helvetica("bold"), zorder=4)
@@ -234,16 +221,12 @@ def render_continuous_chart(summary: pd.DataFrame, *, final: bool = False) -> Pa
             ax.add_artist(AnnotationBbox(
                 logo, (slot, label_y), frameon=False, pad=0, annotation_clip=False, zorder=5
             ))
-            # The first label on the right crop begins at the literal swipe
-            # edge. Anchor it inward so a long name (Timberwolves) cannot be
-            # cut by the crop while its logo remains centered on the bar.
             label_x = 0.70 if first_rank > 1 and slot == 1 else slot
             label_ha = "left" if first_rank > 1 and slot == 1 else "center"
             ax.text(label_x, label_y + 1.35, row.team, ha=label_ha, va="bottom", color=theme.ink,
                     fontsize=9.6 if len(row.team) < 12 else 8.5, fontproperties=helvetica("bold"), zorder=6)
 
         ax.set_xlim(0.5, len(rows) + 0.5)
-        # The unlabelled headroom is only for logo callouts, never for a value.
         ax.set_ylim(SCALE_MIN, SCALE_MAX + 5)
         ax.set_xticks([])
         y_ticks = np.arange(SCALE_MIN, SCALE_MAX + 0.1, 2.5)
@@ -266,7 +249,6 @@ def render_continuous_chart(summary: pd.DataFrame, *, final: bool = False) -> Pa
 
 
 def crop_continuous_chart(source: Path, *, final: bool = False) -> tuple[Path, Path]:
-    """Cut a continuous chart exactly in half for a swipe-through carousel."""
     with Image.open(source) as image:
         if image.width != CHART_WIDTH * 2 or image.height != CHART_HEIGHT:
             raise ValueError(f"Unexpected continuous-chart size {image.size}.")
@@ -280,7 +262,6 @@ def crop_continuous_chart(source: Path, *, final: bool = False) -> tuple[Path, P
 
 
 def write_data(games: pd.DataFrame, summary: pd.DataFrame) -> None:
-    """Store this post's own source rows and calculated ranking for audit."""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     saved = games.copy()
     saved["source_opponent"] = saved["matchup"].map(opponent_from_matchup)
@@ -290,7 +271,6 @@ def write_data(games: pd.DataFrame, summary: pd.DataFrame) -> None:
 
 
 def copy_block(summary: pd.DataFrame, audit: dict[str, int | float]) -> str:
-    """Return exact title, subtitle, and footnote strings for the Canva page."""
     first, last = summary.iloc[0], summary.iloc[-1]
     return "\n".join([
         "CANVA COPY",

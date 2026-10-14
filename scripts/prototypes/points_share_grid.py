@@ -57,7 +57,6 @@ TINTS = ["#CAD3D9", "#D0D7CB", "#D4D0DC", "#C9D5D6"]
 
 
 def prepare(path: Path = DATA) -> pd.DataFrame:
-    """Points per player as a Bull, share of team points, and whole squares."""
     logs = pd.read_csv(path)
     pts = logs.groupby(["PLAYER_ID", "PLAYER_NAME"], as_index=False).PTS.sum()
     if pts.PTS.sum() != TEAM_TOTAL:
@@ -119,7 +118,6 @@ def outline(cells: set[tuple[int, int]]) -> list[tuple[int, int]]:
 
 
 def rounded_inset(corners, size: float, x0: float, y0: float) -> MplPath:
-    """Shrink a right-angled outline by INSET px and round every corner."""
     n = len(corners)
     pts = []
     for i in range(n):
@@ -146,7 +144,6 @@ def rounded_inset(corners, size: float, x0: float, y0: float) -> MplPath:
 
 
 def assign_tints(blocks: dict[int, set[tuple[int, int]]], palette: list[str]) -> dict[int, str]:
-    """Rotate through the palette in rank order, skipping colors a touching block holds."""
     owner = {cell: pid for pid, cells in blocks.items() for cell in cells}
     tints: dict[int, str] = {}
     for rank, (pid, cells) in enumerate(blocks.items()):
@@ -199,7 +196,6 @@ def render(
                 over.set_clip_path(Rectangle((x, y), size, INSET + STROKE, transform=ax.transData))
         ax.add_patch(PathPatch(path, fill=False, edgecolor=BLACK, linewidth=STROKE * px, zorder=3))
 
-    # The key spans the grid's outline edges, with a gutter between columns.
     key_left, key_right, gutter = x0 + INSET, x0 + GRID - INSET, 22
     col_w = (key_right - key_left + gutter) / KEY_COLS
     renderer = fig.canvas.get_renderer()
@@ -209,7 +205,6 @@ def render(
         left = key_left + c * col_w
         name = ax.text(left, y, short_name(row.PLAYER_NAME), va="center", ha="left",
                        color=BLACK, fontproperties=helvetica("bold"), fontsize=20 * px)
-        # The share follows its name a word space later, measured from the drawn text.
         box = name.get_window_extent(renderer).transformed(ax.transData.inverted())
         ax.text(box.x1 + 7, y, f"{row.SHARE:.1f}%", va="center", ha="left",
                 color=MUTED, fontproperties=helvetica("regular"), fontsize=20 * px)

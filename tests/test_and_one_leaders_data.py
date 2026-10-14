@@ -60,7 +60,6 @@ def test_technical_free_throw_after_a_basket_is_not_an_and_one():
 
 
 def test_away_from_play_foul_shot_by_a_team_mate_is_not_an_and_one():
-    """The shooter keeps his basket; a different player takes the free throw."""
     rows = [made_shot(), event(teamId=OTHER, personId=99, actionType="Foul",
                                subType="Away From Play"),
             free_throw(personId=2, playerName="Team-mate")]

@@ -47,7 +47,6 @@ GAME_SCORE_INPUTS = ["minutes", "points", "fgm", "fga", "ftm", "fta", "oreb", "d
 
 
 def season_end_year(season_id: str) -> int:
-    """Map NBA.com's '2001-02' season id to its ending year."""
     return int(str(season_id)[:4]) + 1
 
 
@@ -68,7 +67,6 @@ def fetch_first_seasons(refresh: bool = False) -> pd.DataFrame:
 
 
 def attach_first_nba_season(first: pd.DataFrame, first_seasons: pd.DataFrame) -> pd.DataFrame:
-    """Add each player's first NBA season (ending year) from CommonAllPlayers."""
     seasons = first_seasons[["PERSON_ID", "FROM_YEAR"]].rename(columns={"PERSON_ID": "player_id"})
     audit = first.merge(seasons, on="player_id", how="left", validate="one_to_one")
     if audit["FROM_YEAR"].isna().any():
@@ -135,7 +133,6 @@ def game_score_upper_bound(row: pd.Series) -> float:
 
 
 def post_portraits() -> dict[int, Path]:
-    """Cut the supplied portraits out of their white surround, framed like NBA headshots."""
     portraits = {}
     for player_id, name in PORTRAIT_SOURCES.items():
         portraits[player_id] = cut_out_flat_background(
@@ -163,7 +160,6 @@ def rank_debuts(debuts: pd.DataFrame, top_n: int = TOP_N) -> pd.DataFrame:
 
 def validate(audit: pd.DataFrame, debuts: pd.DataFrame, ranked: pd.DataFrame,
              working: pd.DataFrame) -> dict[str, object]:
-    """Check coverage and keep the numbers the Notion record and caption cite."""
     if audit["player_id"].duplicated().any():
         raise ValueError("A player has more than one first Bulls game.")
     incomplete = debuts[debuts[GAME_SCORE_INPUTS].isna().any(axis=1)]

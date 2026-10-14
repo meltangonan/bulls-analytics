@@ -64,7 +64,7 @@ FONTS = Path.home() / "Library" / "Fonts"
 WIDTH = 1030
 SCALE = 3
 ROW = 72
-FACE = 96  # portrait square, px; taller than the row so it rises into the row above only
+FACE = 96
 COLS = "44px 92px 214px 150px 92px 56px 56px 78px 72px 56px 56px 56px"
 
 
@@ -90,7 +90,6 @@ def fetch_draft_history(refresh: bool = False) -> pd.DataFrame:
 
 def attach_draft_and_entry(first: pd.DataFrame, first_seasons: pd.DataFrame,
                            draft: pd.DataFrame) -> pd.DataFrame:
-    """Add each player's first NBA season and draft record (blank when undrafted)."""
     seasons = first_seasons[["PERSON_ID", "FROM_YEAR"]].rename(columns={"PERSON_ID": "player_id"})
     picks = draft[["PERSON_ID", "SEASON", "ROUND_NUMBER", "OVERALL_PICK", "TEAM_ID",
                    "TEAM_ABBREVIATION"]].rename(columns={
@@ -141,14 +140,12 @@ def classify(audit: pd.DataFrame, career: pd.DataFrame) -> pd.DataFrame:
 
 
 def competition_ranks(points: pd.Series) -> list[str]:
-    """1, T2, T2, 4 ... from points already sorted high to low."""
     rank = points.rank(method="min", ascending=False).astype(int)
     tied = points.duplicated(keep=False)
     return [f"T{r}" if t else str(r) for r, t in zip(rank, tied)]
 
 
 def rank_debuts(eligible: pd.DataFrame, top_n: int = TOP_N) -> pd.DataFrame:
-    """Top ``top_n`` by points plus everyone tied with the last place; ties in date order."""
     ordered = eligible.sort_values(["points", "game_date", "player_id"],
                                    ascending=[False, True, True], kind="stable")
     cutoff = ordered["points"].iloc[top_n - 1]
@@ -175,7 +172,6 @@ def apply_bbr_fills(ranked: pd.DataFrame, fills: pd.DataFrame) -> pd.DataFrame:
 
 
 def blank_cells(ranked: pd.DataFrame) -> list[str]:
-    """Displayed cells still blank, excluding 3PT before the 3-point line existed."""
     blanks = []
     for row in ranked.itertuples():
         for stat in SHOWN_STATS:
@@ -233,7 +229,6 @@ def _made_attempted(made, attempted) -> str:
 
 
 def draft_label(row: pd.Series) -> str:
-    """RD1 PK23 for a drafted player, UNDRAFTED otherwise (NBA.com draft history)."""
     if pd.isna(row["draft_year"]):
         return "UNDRAFTED"
     return f"RD{int(row['draft_round'])} PK{int(row['draft_pick'])}"
@@ -270,7 +265,6 @@ body{{width:{WIDTH}px;background:transparent;font-family:House;color:#242424;fon
 
 
 def _face(path: Path, z: int) -> str:
-    """Square face crop (the top 74% of the portrait), its bottom on the row's lower edge."""
     if not path.exists():
         raise FileNotFoundError(f"No portrait at {path}.")
     width, height = Image.open(path).size
@@ -284,7 +278,6 @@ def _face(path: Path, z: int) -> str:
 
 
 def table_html(ranked: pd.DataFrame) -> str:
-    """Rank, portrait, first name and draft chip over last name, debut, the red points tile, box score."""
     portraits = post_portraits()
     rows = []
     for index, (_, row) in enumerate(ranked.iterrows()):
@@ -297,7 +290,6 @@ def table_html(ranked: pd.DataFrame) -> str:
         rows.append(
             f'<div class="row{" band" if index % 2 == 0 else ""}">'
             f'<div class="rk">{row["rank_label"]}</div>'
-            # Later rows draw on top, so a portrait rising into the row above covers jersey, not a face.
             f'<div class="pf">{_face(portrait, 10 + index)}</div>'
             f'<div class="nm"><small>{html.escape(first)}<span class="chip">{draft_label(row)}</span></small>'
             f'<b>{html.escape(last)}</b></div>'
@@ -323,7 +315,6 @@ CHECK_JS = """() => {
 
 
 def render_table(ranked: pd.DataFrame) -> Path:
-    """The house table as a transparent PNG; Canva carries the title, subtitle, notes and footer."""
     OUT.mkdir(parents=True, exist_ok=True)
     source = OUT / f"{PROJECT}-table.html"
     source.write_text(table_html(ranked))

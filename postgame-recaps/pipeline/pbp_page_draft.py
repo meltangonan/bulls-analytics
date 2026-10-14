@@ -68,16 +68,13 @@ def page(game_id: str) -> str:
     s = [f'<rect width="1080" height="1440" fill="{BG}"/>',
          '<rect y="0" width="1080" height="4" fill="#CE1141"/><rect y="4" width="1080" height="4" fill="#FFFFFF"/><rect y="8" width="1080" height="5" fill="#000000"/>',
          t(25, 104, 86, "Bulls assist network", w=900, ff="RecapSerif, 'Source Serif 4', Georgia, serif")]
-    # Section title in the page's boxed style.
     s.append(f'<rect x="25" y="150" width="{len("Who set up whom") * 15.5 + 24:.0f}" height="41" fill="none" stroke="{K}" stroke-width="2.5"/>'
              + t(37, 181, 28, "Who set up whom", w=600))
     s.append(t(1055, 181, 20, f"Arrow from passer to scorer · {int(pairs.n.sum())} assists", f=FT, a="end"))
-    # Edges first, so the portraits sit on top. Each curve bends toward the centre; width grows with assists.
     for r in pairs.sort_values("n").itertuples():
         (x1, y1), (x2, y2) = pos[r.passer], pos[r.scorer]
         mx, my = (x1 + x2) / 2, (y1 + y2) / 2
         qx, qy = mx + (cx - mx) * 0.35, my + (cy - my) * 0.35
-        # Stop short of the scorer's circle for the arrowhead.
         d = math.hypot(x2 - qx, y2 - qy); ex, ey = x2 - (x2 - qx) / d * (nr + 8), y2 - (y2 - qy) / d * (nr + 8)
         sw = 2 + 3 * (r.n - 1)
         ang = math.atan2(ey - qy, ex - qx); ah = 10 + sw
@@ -98,7 +95,6 @@ def page(game_id: str) -> str:
         ly += 30 if out[1] > 40 else (-26 if out[1] < -40 else 8)
         s.append(t(lx, ly, 21, name[pid], w=600, a=anchor)
                  + t(lx, ly + 22, 17, f"{int(given.get(pid, 0))} ast · {int(got.get(pid, 0))} assisted", f=FT, a=anchor))
-    # Top connections: the three duos with the most assists, ties broken by points.
     s.append(f'<rect x="25" y="1052" width="{len("Top connections") * 15.5 + 24:.0f}" height="41" fill="none" stroke="{K}" stroke-width="2.5"/>'
              + t(37, 1083, 28, "Top connections", w=600) + f'<line x1="25" y1="1093" x2="1055" y2="1093" stroke="{K}" stroke-width="2.5"/>')
     top = pairs.sort_values(["n", "pts"], ascending=False).head(3)

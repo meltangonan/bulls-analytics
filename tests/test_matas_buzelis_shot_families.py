@@ -12,7 +12,6 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "docs" / "visuals" / slides.SLUG / "data"
 
 
-# --- The classifier ---------------------------------------------------------
 def test_floaters_are_matched_before_layups_and_jumpers():
     """NBA writes "Driving Floating Bank Jump Shot"; rule order is what saves it."""
     assert sf.classify("Driving Floating Bank Jump Shot") == "Floaters"
@@ -36,20 +35,17 @@ def test_representative_action_types_land_in_their_family(action, family):
 
 
 def test_the_bare_jump_shot_is_the_unlabelled_default_not_a_technique():
-    """Naming this one wrongly is the post's biggest available error."""
     assert sf.classify("Jump Shot") == sf.UNLABELLED
     assert sf.UNLABELLED == "Standard jumpers"
     assert "catch" not in sf.UNLABELLED.lower()
 
 
 def test_self_created_is_the_shot_diet_posts_definition():
-    """Two posts must not quietly disagree about what self-created counts."""
     assert sf.SELF_CREATED == ("Pull-ups", "Step-backs", "Turnarounds/fades")
     assert set(sf.SELF_CREATED) < set(sf.FAMILIES)
 
 
 def test_every_family_appears_even_when_the_subject_never_used_it():
-    """A dropped row silently redraws the chart with a hole in it."""
     table = sf.family_shares(pd.Series(["Jump Shot", "Cutting Layup Shot"]),
                              pd.Series([1, 0]))
     assert list(table.family) == list(sf.FAMILIES)
@@ -66,9 +62,7 @@ def test_a_thin_family_keeps_its_share_and_loses_only_its_rate():
     assert table[table.family.eq(sf.UNLABELLED)].iloc[0].rated
 
 
-# --- The post's saved data --------------------------------------------------
 def test_labelled_logs_reconcile_to_the_same_totals_as_the_zone_slides():
-    """Both halves of the post must describe identically sized seasons."""
     assert slides.OFFICIAL_FGA == {"2024-25": 555, "2025-26": 963}
     for season, expected in slides.OFFICIAL_FGA.items():
         shots = pd.read_csv(
@@ -91,7 +85,6 @@ def test_saved_shares_cover_every_family_and_sum_to_one_hundred():
 
 
 def test_the_self_created_share_doubled_between_the_two_seasons():
-    """The slide 5 claim, pinned to the saved data."""
     shares = pd.read_csv(DATA / "shot-family-shares.csv")
     totals = {}
     for season, group in shares.groupby("season"):
@@ -103,7 +96,6 @@ def test_the_self_created_share_doubled_between_the_two_seasons():
 
 
 def test_the_unlabelled_default_is_the_largest_family_in_both_seasons():
-    """It is why the slide cannot be captioned as a breakdown of technique."""
     shares = pd.read_csv(DATA / "shot-family-shares.csv")
     for season, group in shares.groupby("season"):
         top = group.sort_values("fga", ascending=False).iloc[0]
@@ -112,18 +104,14 @@ def test_the_unlabelled_default_is_the_largest_family_in_both_seasons():
 
 
 def test_action_type_audit_lets_a_reader_see_inside_each_bucket():
-    """"Standard jumpers" is many raw strings; the post ships which ones."""
     actions = pd.read_csv(DATA / "shot-family-action-types.csv")
     for season, group in actions.groupby("season"):
         assert int(group.fga.sum()) == slides.OFFICIAL_FGA[season], season
-    # Every saved row re-derives its own family, so the audit table and the
-    # chart cannot drift apart if the rules are ever edited.
     rebuilt = actions.assign(check=actions.ACTION_TYPE.map(sf.classify))
     assert (rebuilt.check == rebuilt.family).all()
     assert actions.ACTION_TYPE.nunique() > 20
 
 
-# --- The shared rules and the published post that also uses them -------------
 def test_the_shared_rules_match_the_published_shot_diet_posts_copy():
     """Two posts classifying the same labels must not drift apart.
 
@@ -145,13 +133,11 @@ def test_the_shared_rules_match_the_published_shot_diet_posts_copy():
 
 
 def test_a_turnaround_hook_is_a_hook_not_a_self_created_jumper():
-    """The exact regression the published post's rule order was fixed for."""
     assert sf.classify("Turnaround Hook Shot") == "Hooks"
     assert sf.classify("Driving Hook Shot") == "Hooks"
     assert "Hooks" not in sf.SELF_CREATED
 
 
-# --- Tracking corroboration -------------------------------------------------
 def test_tracking_corroborates_the_self_created_claim_in_both_seasons():
     """Two systems sharing no failure mode, moving together.
 
@@ -164,7 +150,6 @@ def test_tracking_corroborates_the_self_created_claim_in_both_seasons():
         row = table.loc[season]
         assert abs(row.gap_points) < 1.0, season
         assert row.total_fga == slides.OFFICIAL_FGA[season]
-    # Both measures roughly double, which is the claim the slide makes.
     assert table.loc["2025-26", "tracked_pullup_share_pct"] > \
         1.8 * table.loc["2024-25", "tracked_pullup_share_pct"]
     assert table.loc["2025-26", "label_self_created_share_pct"] > \
@@ -182,7 +167,6 @@ def test_tracking_cannot_replace_the_families_because_it_leaves_gaps():
     assert table.tracked_covered_share_pct.min() > 40.0
 
 
-# --- The shared dumbbell grammar --------------------------------------------
 def test_the_dumbbell_helper_matches_the_published_shot_diet_chart():
     """One form across the account, not two that merely resemble each other.
 
@@ -224,7 +208,6 @@ def test_these_slides_share_the_published_charts_row_geometry():
 
 
 def test_the_connector_stops_at_the_ring_and_vanishes_when_marks_overlap():
-    """A stub of bar poking out of a ring reads as a drawing error."""
     from bulls.graphics import dumbbell as db
 
     drawn = []
@@ -234,24 +217,22 @@ def test_the_connector_stops_at_the_ring_and_vanishes_when_marks_overlap():
             drawn.append(xs)
 
     ax = FakeAx()
-    db.connector(ax, 100.0, 400.0, 0.0)          # reference well to the right
+    db.connector(ax, 100.0, 400.0, 0.0)
     assert len(drawn) == 1
     assert drawn[0][1] == pytest.approx(400.0 - db.REFERENCE_RING_RADIUS)
 
     drawn.clear()
     db.connector(ax, 100.0, 100.0 + db.REFERENCE_RING_RADIUS / 2, 0.0)
-    assert drawn == []                            # ring already spans the gap
+    assert drawn == []
 
 
 def test_the_axis_clears_the_widest_mark_on_both_slides():
-    """A dot sitting on the axis end reads as clipped."""
     shares = pd.read_csv(DATA / "shot-family-shares.csv")
     assert shares.share_pct.max() < slides.FAMILY_AXIS_MAX
     counts = pd.read_csv(DATA / "creation-counts.csv")
     assert counts.fgm.max() < slides.CREATION_AXIS_MAX
 
 
-# --- Assisted vs unassisted -------------------------------------------------
 def test_assisted_and_unassisted_are_a_partition_that_closes():
     table = pd.read_csv(DATA / "assisted-unassisted.csv")
     assert sorted(table.season) == sorted(slides.SEASONS)
@@ -260,7 +241,6 @@ def test_assisted_and_unassisted_are_a_partition_that_closes():
 
 
 def test_the_unassisted_share_rose_on_every_shot_type():
-    """Slide 5's claim: he created more of his own scoring, twos and threes alike."""
     table = pd.read_csv(DATA / "assisted-unassisted.csv").set_index("season")
     for column in ("pct_unast_fgm", "pct_unast_2pm", "pct_unast_3pm"):
         assert table.loc["2025-26", column] > table.loc["2024-25", column], column
@@ -269,16 +249,14 @@ def test_the_unassisted_share_rose_on_every_shot_type():
 
 
 def test_a_broken_partition_raises_rather_than_publishing():
-    """Guards the endpoint changing shape under us."""
     slides.assert_partition("2025-26", 30.3, 69.7)
-    slides.assert_partition("2025-26", 30.3, 69.8)          # inside tolerance
+    slides.assert_partition("2025-26", 30.3, 69.8)
     with pytest.raises(ValueError, match="not 100"):
         slides.assert_partition("2025-26", 40.0, 30.0)
 
 
-# --- Recovering the count NBA does not publish ------------------------------
 def test_the_unassisted_count_is_recovered_not_estimated():
-    """The published share pins exactly one integer, and that is checked."""
+    """NBA publishes only the share, not the count; the published share pins exactly one integer."""
     assert slides.recover_unassisted_count(252, 0.194) == 49
     assert slides.recover_unassisted_count(446, 0.303) == 135
 
@@ -306,7 +284,6 @@ def test_saved_creation_counts_partition_the_made_field_goals():
 
 
 def test_creation_counts_agree_with_the_official_shares_and_the_zone_slides():
-    """Slide 5 must describe the same seasons as slides 1 to 4."""
     counts = pd.read_csv(DATA / "creation-counts.csv").set_index("season")
     shares = pd.read_csv(DATA / "assisted-unassisted.csv").set_index("season")
     zones = pd.read_csv(DATA / "zone-chart-summary.csv").set_index("window")
@@ -317,7 +294,6 @@ def test_creation_counts_agree_with_the_official_shares_and_the_zone_slides():
 
 
 def test_the_unassisted_slice_grew_faster_than_the_whole():
-    """Slide 5's reason to exist: the rate rose while the pie also grew."""
     counts = pd.read_csv(DATA / "creation-counts.csv").set_index("season")
     early, late = counts.loc["2024-25"], counts.loc["2025-26"]
     made_growth = late.fgm / early.fgm
@@ -328,15 +304,12 @@ def test_the_unassisted_slice_grew_faster_than_the_whole():
 
 
 def test_bar_ink_is_chosen_for_the_fill_it_sits_on():
-    """White holds on the red; on the pale grey it does not."""
     assert slides.UNASSISTED_INK == "#FFFFFF"
     assert slides.ASSISTED_INK == slides.db.INK
     assert slides.ASSISTED_FILL == slides.db.LEADER_GREY
 
 
-# --- The legend column ------------------------------------------------------
 def test_the_legend_is_a_right_hand_column_not_a_band_of_its_own():
-    """Two of these charts stack on one page, so a legend row costs real height."""
     for rows in (2, 10):
         bottom = slides.ROW_TOP + (rows - 1) * slides.ROW_STEP
         foot = bottom + slides.ROW_STEP * slides.db.GRIDLINE_FOOT_FACTOR
@@ -370,7 +343,6 @@ def test_the_extra_width_is_the_legend_column_and_nothing_else():
 
 
 def test_the_legend_is_centred_against_the_rows():
-    """It reads as belonging to the chart rather than floating beside it."""
     for rows in (2, 10):
         entries = [("A", lambda a, x, y: None, 22.0),
                    ("B", lambda a, x, y: None, 22.0)]
@@ -384,7 +356,6 @@ def test_the_legend_is_centred_against_the_rows():
 
 
 def test_a_legend_label_that_overflows_the_canvas_fails_the_render():
-    """The column is last on the canvas, so overflow clips silently otherwise."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -393,7 +364,6 @@ def test_a_legend_label_that_overflows_the_canvas_fails_the_render():
     long_label = "Unassisted" * 6
     with pytest.raises(ValueError, match="past the"):
         slides._legend_column(fig, ax, [(long_label, lambda a, x, y: None, 22.0)], 2)
-    # The real labels fit.
     slides._legend_column(fig, ax, [("Unassisted", lambda a, x, y: None, 22.0),
                                     ("Assisted", lambda a, x, y: None, 22.0)], 2)
     plt.close(fig)

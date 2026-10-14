@@ -40,7 +40,6 @@ FOOTNOTE_GREY = "#7A736C"
 SUBJECT_DOT = 13.5
 REFERENCE_DOT = 10.5
 REFERENCE_RING_WIDTH = 2.6
-# Half the marker plus half the stroke, converted from points to pixel units.
 REFERENCE_RING_RADIUS = (REFERENCE_DOT + REFERENCE_RING_WIDTH) / 2 * DRAFT_DPI / 72
 
 TYPE_LABEL = 19.0             # row names sat larger than the value they introduce
@@ -52,11 +51,11 @@ GRIDLINE_WIDTH = 1.2
 CONNECTOR_WIDTH = 4.0
 LEADER_WIDTH = 1.8
 LEADER_DASH = (0, (2, 4))
-LEADER_GAP = 30               # clear air between the rightmost mark and the leader
+LEADER_GAP = 30
 LEGEND_TEXT_GAP = 26
 LEGEND_DROP = 66              # below the scale, so the top of the chart is headers only
 AXIS_LABEL_DROP = 42
-GRIDLINE_FOOT_FACTOR = 0.42   # how far past the last row the gridlines run
+GRIDLINE_FOOT_FACTOR = 0.42
 
 
 def dot(ax, x: float, y: float, size: float, color: str, zorder: int = 4,

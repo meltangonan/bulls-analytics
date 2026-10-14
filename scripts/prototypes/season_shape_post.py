@@ -73,7 +73,6 @@ def build():
     def Y(v):
         return py0 + (v - lo) / (hi - lo) * (py1 - py0)
 
-    # Month gridlines
     g["month"] = g["GAME_DATE"].str[:7]
     for m, idx in g.groupby("month").apply(lambda d: d.index.min()).items():
         lab = pd.Timestamp(m + "-01").strftime("%b").upper()
@@ -81,7 +80,6 @@ def build():
                 fontproperties=body_font("bold"))
         ax.plot([X(idx), X(idx)], [py0, py1], color=GRIDLINE, lw=1.0, zorder=1)
 
-    # Horizontal ticks
     tick_start = int(np.ceil(lo / 5) * 5)
     tick_end = int(np.floor(hi / 5) * 5)
     for v in [v for v in range(tick_start, tick_end + 1, 5) if v != 0 and lo < v < hi]:
@@ -92,7 +90,6 @@ def build():
     ax.text(px0 - 12, Y(0), ".500", ha="right", va="center", fontsize=10, color=MUTED,
             fontproperties=body_font())
 
-    # Area fill + line
     x_path = np.array([X(i) for i in range(n + 1)])
     y_path = np.concatenate(([0], g[metric].to_numpy()))
     ax.fill_between(x_path, Y(0), Y(np.clip(y_path, 0, None)), color=RED, alpha=0.92, zorder=3)
@@ -105,7 +102,6 @@ def build():
                     color=INK, fontproperties=body_font("bold"),
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=1.0), zorder=6)
 
-    # --- Annotations (fan-in-the-stands voice) ---
     i_best = int(g[metric].idxmax())
     callout("5-0 start,\nwe were so back.", i_best, (X(i_best + 1) + 28, Y(g[metric].iloc[i_best]) + 96))
 
@@ -118,7 +114,6 @@ def build():
     callout(f"Jan {ts.day} —\nlast night above .500.", i_last_over,
             (X(i_last_over + 1) + 84, Y(3) + 24))
 
-    # --- Trade-deadline event line (Feb 5) ---
     i_dl = int(g[g["GAME_DATE"] >= "2026-02-05"].index.min())
     x_dl = X(i_dl + 1)
     ax.plot([x_dl, x_dl], [py0, py1], color=MUTED, lw=1.2, ls=(0, (4, 3)), zorder=2)
@@ -129,7 +124,6 @@ def build():
     callout("Tank for Caleb begins.\n11 losses in a row.", i_dl,
             (x_dl - 30, Y(-16)), ha="right")
 
-    # --- Endpoint + the payoff: Caleb Wilson ---
     i_final = n - 1
     final_v = g[metric].iloc[i_final]
     callout(f"Finished: {final_v:+.0f}", i_final, (X(i_final + 1) - 150, Y(final_v) + 42), ha="right")

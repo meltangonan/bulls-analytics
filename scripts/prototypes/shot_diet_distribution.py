@@ -106,8 +106,6 @@ def classify(action: str) -> str:
     return UNLABELLED
 
 
-# ---------------------------------------------------------------- preparation
-
 def fetch_team(team_id: int) -> pd.DataFrame:
     raw = raw_dir()
     path = raw / f"{team_id}_{SEASON}.csv.gz"
@@ -159,7 +157,6 @@ def official_totals() -> pd.DataFrame:
 
 
 def reconcile(shots: pd.DataFrame) -> pd.DataFrame:
-    """Every team's shot rows must equal its official FGA/FGM, or a share is wrong."""
     counted = shots.groupby("TEAM_ID").agg(
         SHOT_FGA=("SHOT_MADE_FLAG", "size"),
         SHOT_FGM=("SHOT_MADE_FLAG", "sum")).reset_index()
@@ -173,7 +170,6 @@ def reconcile(shots: pd.DataFrame) -> pd.DataFrame:
 
 
 def build_tables(shots: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Per-team family shares, and the Bulls row set the chart draws."""
     by_team = (shots.groupby(["TEAM_ID", "TEAM_NAME", "FAMILY"])
                .agg(FGA=("SHOT_MADE_FLAG", "size"), FGM=("SHOT_MADE_FLAG", "sum"))
                .reset_index())
@@ -236,8 +232,6 @@ def prepare() -> None:
     print(f"\nvocabulary: {len(vocabulary)} distinct labels covering "
           f"{vocabulary.FGA.sum()} attempts across {vocabulary.FAMILY.nunique()} families")
 
-
-# ---------------------------------------------------------------- venue audit
 
 def venue_audit() -> None:
     """Separate a real shooting pattern from a United Center scoring habit.
@@ -338,8 +332,6 @@ def corroborate() -> None:
     (data / "tracking-corroboration.txt").write_text("\n".join(lines) + "\n")
 
 
-# -------------------------------------------------------------------- drawing
-
 # Sized for a 4:5 Instagram page: near-portrait, so the chart fills the page rather than
 # sitting as a landscape band across the middle. The extra height goes into ROW_STEP --
 # rows that breathe -- not into blank margin.
@@ -356,22 +348,22 @@ TRACK_RIGHT = 1210
 AXIS_MAX = 36.0         # a little past the widest share, so the last dot clears the axis
 VALUE_RIGHT = 1390      # right-aligned so the decimal points line up down the column
 RANK_X = 1500           # ranks share one column so they read as a set, not as callouts
-LEADER_GAP = 30         # clear air between the rightmost mark and the leader
+LEADER_GAP = 30
 LEADER_END = 1262       # stops short of the widest value, "34.5%", set at VALUE_RIGHT
 # The "Share" header centres over the block the values occupy rather than hanging off
 # their shared right edge, which left it looking pushed away from its own column.
 SHARE_HEADER_X = (LEADER_END + VALUE_RIGHT) / 2
-TOP_RANK_HIGHLIGHT = 5  # a top-five finish is where the Bulls stand out; drawn in red
+TOP_RANK_HIGHLIGHT = 5
 
 # The two legend entries were colliding as one phrase; 400px between the marks reads as
 # two separate keys, with room for the longer "Chicago Bulls" wordmark.
 LEGEND_CHI_DOT = TRACK_LEFT + 8
 LEGEND_LEAGUE_DOT = TRACK_LEFT + 400
 LEGEND_TEXT_GAP = 26
-LEGEND_DROP = 66        # below the scale, so the top of the chart is headers only
+LEGEND_DROP = 66
 
-HEADER_Y = 80           # "Share" and "NBA rank" sit above their columns
-AXIS_RULE_Y = 112       # gridlines start here, just under the headers
+HEADER_Y = 80
+AXIS_RULE_Y = 112
 ROW_TOP = 200
 ROW_STEP = 150
 # The percentage scale reads along the bottom, the conventional place for it: at the top
@@ -430,14 +422,14 @@ def dot(ax, x: float, y: float, size: float, color: str, zorder: int = 4,
             markeredgewidth=LEAGUE_RING_WIDTH if hollow else 0)
 
 
-TABLE_WIDTH = 1600      # slide two: the full label vocabulary
-TABLE_TOP = 232         # first row baseline, below the column headers
-TABLE_LINE = 46         # one label row
-TABLE_FAMILY_GAP = 30   # extra air above each family header, so groups read as groups
+TABLE_WIDTH = 1600
+TABLE_TOP = 232
+TABLE_LINE = 46
+TABLE_FAMILY_GAP = 30
 TABLE_BOTTOM_PAD = 90
-TABLE_COL_X = (40, 820)     # left edge of each of the two column blocks
+TABLE_COL_X = (40, 820)
 TABLE_COL_WIDTH = 740
-TABLE_INDENT = 16       # labels sit inside their family header
+TABLE_INDENT = 16
 # Right edges of the number columns, measured from a block's left edge. Made and attempts
 # share one cell as "made-att": three separate numeric columns plus a 34-character label
 # does not fit 740px at a readable size, and made-att is the familiar box-score form.
@@ -473,14 +465,12 @@ def display_label(action_type: str) -> str:
 
 
 def ordinal(rank: int) -> str:
-    """1st, 2nd, 3rd, 4th -- and 11th/12th/13th, which break the last-digit rule."""
     if 10 <= rank % 100 <= 20:
         return f"{rank}th"
     return f"{rank}{ {1: 'st', 2: 'nd', 3: 'rd'}.get(rank % 10, 'th')}"
 
 
 def render(chart: pd.DataFrame, final: bool = False) -> Path:
-    """Draw the transparent dumbbell asset. Canva owns title, source and framing."""
     fig = plt.figure(figsize=(CHART_WIDTH / DRAFT_DPI, CHART_HEIGHT / DRAFT_DPI),
                      facecolor="none")
     ax = fig.add_axes([0, 0, 1, 1])
@@ -529,8 +519,6 @@ def render(chart: pd.DataFrame, final: bool = False) -> Path:
         # and its length reads as the inverse of the share, which reinforces the bar.
         ax.plot([max(chi_x, league_x) + LEADER_GAP, LEADER_END], [y, y],
                 color=LEADER_GREY, linewidth=1.8, linestyle=(0, (2, 4)), zorder=1)
-        # Stop the bar at the ring's edge, and drop it entirely when the two shares are
-        # so close that the ring already spans the gap (Tip-ins, 1.9 against 2.1).
         bar_start, bar_end = min(chi_x, league_x), max(chi_x, league_x)
         if league_x > chi_x:
             bar_end -= LEAGUE_RING_RADIUS
@@ -567,7 +555,7 @@ def split_families(vocabulary: pd.DataFrame) -> tuple[list, list]:
     column twice the height of the other.
     """
     groups = [(family, group) for family, group in vocabulary.groupby("FAMILY", sort=False)]
-    lines = [len(group) + 1 for _, group in groups]          # labels plus the family row
+    lines = [len(group) + 1 for _, group in groups]
     total = sum(lines)
     cuts = [(abs(sum(lines[:i]) - (total - sum(lines[:i]))), i)
             for i in range(1, len(groups))]
@@ -576,7 +564,6 @@ def split_families(vocabulary: pd.DataFrame) -> tuple[list, list]:
 
 
 def draw_column(ax, groups, left: float, top: float) -> float:
-    """Draw one column of family groups; returns the y it finished at."""
     y = top
     for family, group in groups:
         y += TABLE_FAMILY_GAP
@@ -609,7 +596,6 @@ def draw_column(ax, groups, left: float, top: float) -> float:
 
 
 def render_vocabulary(vocabulary: pd.DataFrame, final: bool = False) -> Path:
-    """Slide two: all 48 NBA shot labels, grouped under the families slide one uses."""
     left_groups, right_groups = split_families(vocabulary)
     tallest = max(sum(len(g) + 1 for _, g in side) for side in (left_groups, right_groups))
     families = max(len(left_groups), len(right_groups))

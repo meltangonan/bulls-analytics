@@ -71,7 +71,7 @@ from bulls.graphics.house import DRAFT_DPI, export_dpi, helvetica, rendered_widt
 from bulls.visuals import visual_dir
 from nba_api.stats.endpoints import leaguedashplayerstats
 
-FIRST_SEASON_END_YEAR = 1997  # NBA.com's starter/bench split starts here. See module docstring.
+FIRST_SEASON_END_YEAR = 1997
 LAST_SEASON_END_YEAR = 2026
 MIN_BENCH_GAME_SHARE = 0.70
 DEFAULT_TOP_N = 10
@@ -140,10 +140,10 @@ HEADSHOT_HALF = 112
 # that -- a soft alpha fade removes it but was rejected (2026-09-03).
 HEADSHOT_CROP_FRACTION = 0.64
 
-NAME_X = 330            # left edge of the name / support column
+NAME_X = 330
 BAR_LEFT = 1100
-BAR_MAX_RIGHT = 2280    # the longest bar; the total sits to the right of it
-VALUE_GAP = 26          # bar end to the points figure
+BAR_MAX_RIGHT = 2280
+VALUE_GAP = 26
 
 ROW_HEIGHT = 195
 # The bar is nearly the full row pitch, so the bars themselves become the page's
@@ -152,10 +152,10 @@ ROW_HEIGHT = 195
 BAR_HEIGHT = 108
 BAR_RADIUS = 8
 
-NAME_COLUMN_GAP = 30    # clearance the name column keeps off the bars
-SEASON_GAP = 14         # name to the raised season label
-NAME_RISE = 26          # name above the row centre, support line below it
-SEASON_RISE = 42        # the season rides high beside the name, not under it
+NAME_COLUMN_GAP = 30
+SEASON_GAP = 14
+NAME_RISE = 26
+SEASON_RISE = 42
 SUPPORT_DROP = 46
 
 # This chart takes no theme. The page canvas changes from post to post, the asset
@@ -167,7 +167,7 @@ INK = "#242424"
 # Every bar is Bulls red. The leader needs no second encoding: at 1,209 against
 # 915 his bar is a third longer than anything else on the page, so colouring one
 # bar differently would restate the ranking the length already states.
-SUPPORT_GREY = "#5F5B57"   # games and per-game, subordinate to the name
+SUPPORT_GREY = "#5F5B57"
 SEASON_GREY = "#6E6963"
 # Chart greys must read across the canvas range Canva owns (#FAF8F5 through at
 # least #E9E5E1), so the row rule is set well above the lightest of them. It is
@@ -192,7 +192,6 @@ NAME_OVERRIDES = {202703: "Nikola Mirotić", 389: "Toni Kukoč"}
 # other face -- a tighter crop at a fixed drawn size would magnify him instead.
 CROP_FRACTIONS = {101126: 0.56}  # Nate Robinson
 
-# Clear space kept either side of a portrait's content, in source pixels.
 PORTRAIT_SIDE_PADDING = 18
 
 SPLITS = {"bench": "Bench", "starter": "Starters", "total": None}
@@ -216,8 +215,6 @@ SEASON_COLUMNS = [
 
 @dataclass(frozen=True)
 class ChartType:
-    """Type sizing for the bench-points leaderboard at 2550 wide."""
-
     name: float = 34.0
     season: float = 20.0
     value: float = 36.0
@@ -228,12 +225,10 @@ CHART_TYPE = ChartType()
 
 
 def season_label(end_year: int) -> str:
-    """Return an NBA end year as an NBA.com season string."""
     return f"{end_year - 1}-{str(end_year)[-2:]}"
 
 
 def display_season(end_year: int) -> str:
-    """Return the season as it is printed on the chart."""
     return season_label(end_year)
 
 
@@ -287,7 +282,7 @@ def portrait_label(ax, image_path, x, y, half_size, *, crop, zorder=5):
 
     if band.shape[2] == 4:
         columns = np.where(band[..., 3].max(axis=0) > 0.04)[0]
-    else:  # no alpha to measure; fall back to the plain square window
+    else:
         columns = np.array([], dtype=int)
 
     if columns.size:
@@ -312,13 +307,11 @@ def portrait_label(ax, image_path, x, y, half_size, *, crop, zorder=5):
 
 
 def portrait_path(player_id: int) -> Path:
-    """Return the portrait to draw, preferring this post's own hand-sourced copy."""
     local = PORTRAITS / f"{player_id}.png"
     return local if local.is_file() else house.HEADSHOT_CACHE / f"{player_id}.png"
 
 
 def _fetch_frame(endpoint, **kwargs) -> pd.DataFrame:
-    """Call one NBA.com endpoint, retrying the timeouts it hands out freely."""
     last_error: Exception | None = None
     for attempt in range(RETRY_ATTEMPTS):
         time.sleep(API_DELAY * (1 + attempt * RETRY_BACKOFF))
@@ -364,7 +357,6 @@ def fetch_split(end_year: int, split: str, *, refresh: bool = False) -> pd.DataF
 
 
 def build_table(refresh: bool = False) -> pd.DataFrame:
-    """Return every Bulls bench player-season in the covered window."""
     rows = []
     for end_year in range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1):
         bench = fetch_split(end_year, "bench", refresh=refresh)
@@ -447,7 +439,6 @@ def _reconcile(
 
 
 def build_leaders(table: pd.DataFrame, top_n: int = DEFAULT_TOP_N) -> pd.DataFrame:
-    """Return the top qualified bench-scoring seasons, ranked."""
     if top_n < CLAIM_DEPTH:
         raise ValueError(f"The chart needs at least {CLAIM_DEPTH} rows, not {top_n}.")
     leaders = (
@@ -466,7 +457,6 @@ def build_leaders(table: pd.DataFrame, top_n: int = DEFAULT_TOP_N) -> pd.DataFra
 
 
 def validate(table: pd.DataFrame, leaders: pd.DataFrame) -> dict[str, object]:
-    """Check the window, the qualification, and the claim the chart will make."""
     expected = LAST_SEASON_END_YEAR - FIRST_SEASON_END_YEAR + 1
     seasons = table["season_end_year"].nunique()
     if seasons != expected:
@@ -486,9 +476,6 @@ def validate(table: pd.DataFrame, leaders: pd.DataFrame) -> dict[str, object]:
     top, second = leaders.iloc[0], leaders.iloc[1]
     gap = int(top["bench_points"] - second["bench_points"])
     tail_gap = int(second["bench_points"] - leaders.iloc[CLAIM_DEPTH - 1]["bench_points"])
-    # The post's claim, asserted rather than eyeballed: the leader's margin is
-    # bigger than the whole rest of the board's spread. If a future season breaks
-    # that, the chart is still correct but the caption is not.
     if gap <= tail_gap:
         raise ValueError(
             f"The leader's margin ({gap}) no longer exceeds the second-to-last "
@@ -530,19 +517,16 @@ def validate(table: pd.DataFrame, leaders: pd.DataFrame) -> dict[str, object]:
 
 
 def _content_above() -> float:
-    """How far the tallest object in a row reaches above the row centre."""
     return 2 * HEADSHOT_HALF - ROW_HEIGHT / 2
 
 
 def chart_height(rows: int) -> int:
-    """Return the export height for a chart of this many rows."""
     span = (rows - 1) * ROW_HEIGHT
     needed = span + _content_above() + ROW_HEIGHT / 2 + 2 * MIN_VERTICAL_MARGIN
     return int(math.ceil(needed / DRAFT_DPI) * DRAFT_DPI)
 
 
 def _first_row_y(rows: int, height: int) -> float:
-    """Centre the rows in the export, absorbing the rounding into the margins."""
     content = (rows - 1) * ROW_HEIGHT + _content_above() + ROW_HEIGHT / 2
     return height - (height - content) / 2 - _content_above()
 
@@ -552,7 +536,6 @@ def _row_y(index: int, first_row_y: float) -> float:
 
 
 def render_chart(leaders: pd.DataFrame, date: str, *, final: bool = False) -> Path:
-    """Render the transparent bench-points leaderboard for Canva."""
     rows = len(leaders)
     height = chart_height(rows)
     first_row_y = _first_row_y(rows, height)
@@ -634,9 +617,6 @@ def render_chart(leaders: pd.DataFrame, date: str, *, final: bool = False) -> Pa
             fontsize=CHART_TYPE.support, color=SUPPORT_GREY,
             fontproperties=helvetica("bold"), zorder=3,
         )
-        # The name column is set from the data, so it has to be checked against
-        # the bar rather than eyeballed once: a longer name next season silently
-        # runs a label under a bar instead of failing.
         for artist, label in (
             (name, "name"), (season, "season label"), (support, "stat line"),
         ):
@@ -682,7 +662,6 @@ def render_chart(leaders: pd.DataFrame, date: str, *, final: bool = False) -> Pa
 
 
 def write_working_tables(table: pd.DataFrame, leaders: pd.DataFrame) -> tuple[Path, Path]:
-    """Write every bench player-season and the ranked leaderboard."""
     POST_DATA.mkdir(parents=True, exist_ok=True)
     table_path = POST_DATA / "bulls-bench-player-seasons.csv"
     leaders_path = POST_DATA / "bench-points-leaders.csv"
@@ -692,7 +671,6 @@ def write_working_tables(table: pd.DataFrame, leaders: pd.DataFrame) -> tuple[Pa
 
 
 def canva_copy_block(report: dict[str, object]) -> str:
-    """Return the exact data-bound framing to paste around the chart asset."""
     audit = (
         f"AUDIT: {report['qualified']} of {report['player_seasons']} Bulls bench "
         f"player-seasons across {report['seasons']} seasons clear the "

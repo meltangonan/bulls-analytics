@@ -132,9 +132,9 @@ def test_baseline_rebound_rate_is_joined_on_game_and_team():
 def test_notice_marks_fire_once_across_restarts():
     from postgame_recap import due
     final_at = 1000.0
-    assert due(0, final_at, final_at + 1, "publishing") == 0  # the process that saw Final
-    restarted = final_at + 90  # the restart begins after the mark it reported
-    assert due(restarted, final_at, final_at + 19 * 60, "publishing") is None  # 19 min in: nothing yet
+    assert due(0, final_at, final_at + 1, "publishing") == 0
+    restarted = final_at + 90
+    assert due(restarted, final_at, final_at + 19 * 60, "publishing") is None
     assert due(restarted, final_at, final_at + 20 * 60, "publishing") == 20  # the post should be out by 30
     assert due(restarted, final_at, final_at + 12 * 60, "check") == 10  # sooner when a check is failing
     assert due(final_at + 21 * 60, final_at, final_at + 31 * 60, "check") == 30
@@ -222,7 +222,7 @@ def test_a_sixth_marked_starter_moves_to_the_bench(monkeypatch):
 def test_an_unsettled_starting_five_stops_the_build(monkeypatch):
     monkeypatch.setattr(rd, "BULLS", 1610612763)
     frame = pbp("0012600037")
-    frame = frame[frame.description != "SUB: Post FOR Boozer"]  # Post now looks on the floor at the tip
+    frame = frame[frame.description != "SUB: Post FOR Boozer"]
     with pytest.raises(ValueError, match="starting five"):
         rd.starters(rd.read(game_dir("0012600037"), "players.csv"), frame)
 
@@ -286,7 +286,7 @@ def test_watcher_warns_once_when_the_build_goes_silent():
     w.feed("21:59:30 not final yet (Q4 2:10)\n", now)
     assert w.tick(now + 9 * 60) == []
     assert w.tick(now + 10 * 60) == ["the build has logged nothing for 10 min; it may be stuck"]
-    assert w.tick(now + 11 * 60) == []  # once per silence, not every second
+    assert w.tick(now + 11 * 60) == []
     w.feed("22:11:00 not final yet (Q4 0:40)\n", now + 11 * 60)
     assert w.tick(now + 21 * 60) == ["the build has logged nothing for 10 min; it may be stuck"]
 
@@ -309,10 +309,10 @@ def test_layout_flags_collisions_and_holes_not_the_normal_page():
     l = layout(page)
     assert l["overlaps"] == [] and l["off_margin"] == [] and l["hole"] == 190 and l["above_footer"] == 108
     assert verdict("02-final-score", l).startswith("layout: 02-final-score: ok")
-    page["texts"][2] = t("Giddey", 40, 315, 1070, 335)  # runs into the line above and past the right margin
+    page["texts"][2] = t("Giddey", 40, 315, 1070, 335)
     assert verdict("02-final-score", layout(page)).startswith('layout: 02-final-score: FIX: overlap "Josh" / "Giddey"; off the margin "Giddey"')
     page["texts"][2] = t("Giddey", 40, 326, 120, 346)
-    page["shapes"][0] = t("", 25, 600, 1055, 1405)  # a hole above the chart, which now crowds the footer
+    page["shapes"][0] = t("", 25, 600, 1055, 1405)
     assert verdict("x", layout(page)) == "layout: x: LOOK: empty band 254 px from y=346; only 3 px above the footer"
 
 
@@ -387,7 +387,6 @@ def test_incomplete_four_factors_hold_until_the_deadline_then_use_the_box_score(
     d = rd.build("0012600002")
     assert d["four_factors"]["source"] == "box" and d["flow"]["nba_check"] == "match"
     assert d["four_factors"]["rows"][0][1:3] == [55.2, 54.3] and d["four_factors"]["rows"][1][1:3] == [None, None]
-    # A complete feed never falls back, deadline or not.
     g = game_dir("0012600030")
     assert rd.ff_minutes_short(rd.read(g, "ff_team.csv"), rd.read(g, "teams.csv")) == ""
 
@@ -418,11 +417,10 @@ def test_an_incomplete_shot_feed_waits_then_draws_from_the_play_by_play(monkeypa
     monkeypatch.setattr(rd, "FALLBACK", False)
     with pytest.raises(rd.NotReady):
         rd.build("0012600002")
-    assert not (game_dir("0012600002") / "shots_chi_pbp.csv").exists()  # a complete or waiting build leaves none
+    assert not (game_dir("0012600002") / "shots_chi_pbp.csv").exists()
 
 
 def espn_check(game_id):
-    """espn_check.check on the game's saved ESPN snapshot, offline: (values compared, differences, notes)."""
     import json
     import espn_check as ec
     g = game_dir(game_id)
@@ -508,4 +506,4 @@ def test_early_pages_need_only_the_first_wave_of_feeds(monkeypatch):
     d = rd.build("0022500943")
     assert d["pending"] == ["Team stats", "Shot chart", "Game breakdown"]
     assert d["four_factors"] is None and d["h2h"] is None and d["awards"] == []
-    assert d["flow"]["nba_check"] == "match"  # the first-wave checks still run
+    assert d["flow"]["nba_check"] == "match"

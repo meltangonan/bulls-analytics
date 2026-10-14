@@ -25,7 +25,6 @@ def _shots(rows):
                                        "shot_made", "shot_type"])
 
 
-# --- density ---------------------------------------------------------------
 def test_density_is_a_normalized_distribution():
     df = pd.DataFrame({"loc_x": [0, 10, -20, 40], "loc_y": [0, 50, 100, 20]})
     grid = sm.density(df)
@@ -85,7 +84,6 @@ def test_grid_reaches_past_the_three_point_line():
     assert sm.GRID_Y[1] >= 260  # arc tops out at 237.5 (23.75 ft)
 
 
-# --- zones -----------------------------------------------------------------
 def test_zone_masks_partition_every_shot_exactly_once():
     df = _shots([
         (0, 5, 1.0, 1, "2PT"), (0, 60, 6.0, 0, "2PT"),
@@ -105,10 +103,10 @@ def test_zone_split_reports_both_dimensions_against_the_league():
 
     assert row.fga == 10 and row.fgm == 8
     assert row.fg == pytest.approx(0.8)
-    assert row.fg_rel == pytest.approx(30.0)      # 80% vs a 50% league
+    assert row.fg_rel == pytest.approx(30.0)
     assert row.per75 == pytest.approx(7.5)        # 10 shots / 100 poss * 75
     assert row.lg_per75 == pytest.approx(0.75)
-    assert row.vol_rel == pytest.approx(900.0)    # ten times the league rate
+    assert row.vol_rel == pytest.approx(900.0)
 
 
 def test_zone_split_keeps_zone_order():
@@ -125,7 +123,6 @@ def test_three_pointers_are_zoned_by_type_not_distance():
     assert not sm.zone_masks(corner_three)["LONG MID"].any()
 
 
-# --- noise guard -----------------------------------------------------------
 def test_separable_rejects_a_hot_looking_small_sample():
     # 16/29 = 55.2% against a 38.6% league looks huge, but 29 attempts cannot
     # carry it -- this is the real right-corner case from a live chart.
@@ -141,9 +138,7 @@ def test_separable_needs_attempts():
     assert not sm.separable(0, 0, 0.4)
 
 
-# --- polar cells -----------------------------------------------------------
 def test_sector_index_counts_from_the_viewers_left():
-    # Straight out to the left, straight ahead, straight out to the right.
     idx = sm.sector_index([-200, 0, 200], [1, 200, 1], 3)
     assert list(idx) == [0, 1, 2]
 
@@ -169,7 +164,6 @@ def test_polar_cells_change_sector_count_only_at_the_arc():
 
 
 def test_polar_cells_tile_the_court_without_overlap():
-    """Every shot lands in exactly one cell -- the property the chart rests on."""
     rng = np.random.default_rng(7)
     x = rng.uniform(-249, 249, 400)
     y = rng.uniform(-40, 280, 400)
@@ -198,7 +192,7 @@ def test_polar_split_rates_a_cell_that_clears_the_floor():
     row = sm.polar_split(player, league).set_index("key").loc["1-1"]
     assert row.rated
     assert row.fg == pytest.approx(1.0)
-    assert row.fg_rel == pytest.approx(50.0)      # 100% against a 50% league
+    assert row.fg_rel == pytest.approx(50.0)
 
 
 def test_polar_split_files_a_corner_three_by_shot_type_not_radius():
@@ -210,13 +204,11 @@ def test_polar_split_files_a_corner_three_by_shot_type_not_radius():
     assert split.loc["3-2", "fga"] == 0            # not the 12-16 ft right cell
 
 
-# --- distance ladder -------------------------------------------------------
 def _ring(dist, made, kind="2PT", n=1, x=0):
     return [(x, dist * 10, dist, made, kind)] * n
 
 
 def _corner(dist, made, n=1):
-    """Attempts out beyond the corner line, where only threes exist."""
     return [(230, 40, dist, made, "3PT")] * n
 
 
@@ -257,13 +249,12 @@ def test_distance_ladder_rates_a_ring_that_clears_the_floor():
 
 
 def test_distance_ladder_measures_each_ring_against_the_same_ring():
-    """The league baseline must be distance-matched, not a single global number."""
     team = _shots(_ring(5.0, 1, "2PT", 50) + _ring(5.0, 0, "2PT", 50))
     league = _shots(_ring(5.0, 1, "2PT", 40) + _ring(5.0, 0, "2PT", 60)
                     + _ring(25.0, 1, "3PT", 90))
     row = sm.distance_ladder(team, league).set_index("lo").loc[4.0]
     assert row.fg == pytest.approx(0.50)
-    assert row.lg_fg == pytest.approx(0.40)       # the 5 ft ring, not all shots
+    assert row.lg_fg == pytest.approx(0.40)
     assert row.fg_rel == pytest.approx(10.0)
 
 
@@ -277,8 +268,8 @@ def test_distance_ladder_counts_twos_inside_the_split_and_threes_outside():
     """
     mixed = _shots(_ring(22.4, 1, "3PT", 90) + _ring(22.4, 0, "2PT", 30))
     lad = sm.distance_ladder(mixed).set_index("lo")
-    assert lad.loc[22.0, "fga"] == 30            # the long twos only
-    assert lad.loc[22.0, "pps"] == 0.0           # every one of which missed
+    assert lad.loc[22.0, "fga"] == 30
+    assert lad.loc[22.0, "pps"] == 0.0
     assert not lad.loc[22.0, "three"]
 
 
@@ -311,10 +302,9 @@ def test_ladder_coverage_flags_shots_past_the_outer_edge():
 
 
 def test_corner_pocket_is_carved_out_of_the_two_point_rings():
-    """A corner three must never be counted as a long two at the same radius."""
     shots = _shots(_corner(22.4, 1, 40) + _ring(22.4, 0, "2PT", 10, x=100))
     lad = sm.distance_ladder(shots).set_index("lo")
-    assert lad.loc[22.0, "fga"] == 10          # only the true long twos
+    assert lad.loc[22.0, "fga"] == 10
     corner = sm.corner_split(shots)
     assert corner["fga"] == 40
     assert corner["pps"] == pytest.approx(3.0)
@@ -331,13 +321,11 @@ def test_corner_split_measures_against_the_leagues_own_corner():
 
 
 def test_corner_mask_ignores_threes_inside_the_corner_line():
-    """An above-the-break three is not a corner three however short it reads."""
     above = _shots(_ring(23.8, 1, "3PT", 5, x=100))
     assert not sm.corner_mask(above).any()
 
 
 def test_distance_ladder_leaves_an_empty_ring_blank_not_zero():
-    """An unshot ring must not read as 0.00 points per shot."""
     row = sm.distance_ladder(_shots(_ring(5.0, 1))).set_index("lo").loc[18.0]
     assert row.fga == 0
     assert np.isnan(row.pps) and np.isnan(row.fg)
@@ -372,4 +360,4 @@ def test_default_bands_are_two_feet_and_split_cleanly_at_the_arc():
     assert sm.LADDER_MAX_FT % sm.LADDER_STEP_FT == 0
     assert sm.LADDER_TWO_MAX_FT % sm.LADDER_STEP_FT == 0
     lad = sm.distance_ladder(_shots(_ring(5.0, 1, "2PT", 50)))
-    assert sm.LADDER_TWO_MAX_FT in set(lad.lo)      # a band starts exactly at the split
+    assert sm.LADDER_TWO_MAX_FT in set(lad.lo)

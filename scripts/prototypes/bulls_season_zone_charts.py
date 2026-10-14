@@ -59,7 +59,6 @@ def player_slug(name: str) -> str:
 
 
 def fetch_leaderboard(season: str = SEASON) -> pd.DataFrame:
-    """Fetch the official Bulls player-total table for one regular season."""
     table = leaguedashplayerstats.LeagueDashPlayerStats(
         season=season,
         season_type_all_star="Regular Season",
@@ -84,7 +83,6 @@ def fetch_leaderboard(season: str = SEASON) -> pd.DataFrame:
 
 
 def fetch_team_totals(season: str = SEASON) -> pd.DataFrame:
-    """Fetch Chicago's official regular-season scoring and FGA totals."""
     table = leaguedashteamstats.LeagueDashTeamStats(
         season=season,
         season_type_all_star="Regular Season",
@@ -104,7 +102,6 @@ def fetch_team_totals(season: str = SEASON) -> pd.DataFrame:
 
 def load_leaderboard(season: str, data_dir: Path,
                      refresh: bool = False) -> pd.DataFrame:
-    """Load the post-owned table, fetching it only when needed."""
     path = data_dir / f"bulls-season-fga-leaderboard-{season}.csv"
     if path.exists() and not refresh:
         table = pd.read_csv(path)
@@ -117,13 +114,11 @@ def load_leaderboard(season: str, data_dir: Path,
 
 
 def qualify_player(fga: int, minimum: int = MIN_PLAYER_FGA) -> bool:
-    """Return whether a player's season sample clears the visible qualifier."""
     return int(fga) >= minimum
 
 
 def select_players(table: pd.DataFrame, minimum: int = MIN_PLAYER_FGA,
                    limit: int = MAX_PLAYER_PAGES) -> pd.DataFrame:
-    """Return the highest-volume qualified Bulls players in stable order."""
     required = {"PLAYER_ID", "PLAYER_NAME", "FGA", "MIN"}
     missing = required - set(table.columns)
     if missing:
@@ -145,7 +140,6 @@ def select_players(table: pd.DataFrame, minimum: int = MIN_PLAYER_FGA,
 
 def load_player_shots(season: str, player: pd.Series, data_dir: Path,
                       refresh: bool = False) -> pd.DataFrame:
-    """Load every regular-season attempt the player took for Chicago."""
     slug = player_slug(str(player.PLAYER_NAME))
     path = data_dir / f"{season}-{slug}-bulls-shots.csv"
     if path.exists() and not refresh:
@@ -166,7 +160,6 @@ def load_player_shots(season: str, player: pd.Series, data_dir: Path,
 
 def reconcile_shot_count(season: str, player: pd.Series,
                          shots: pd.DataFrame) -> None:
-    """Prove that raw shot rows reconstruct the selecting Bulls FGA total."""
     expected = int(player.FGA)
     actual = len(shots)
     if actual != expected:
@@ -176,7 +169,6 @@ def reconcile_shot_count(season: str, player: pd.Series,
 
 
 def league_zone_baseline(season: str, league: pd.DataFrame) -> pd.DataFrame:
-    """Derive the twelve same-season NBA reference values used for colour."""
     working = league.copy()
     working["zone"] = sm.zone12_of_shots(working)
     grouped = (
@@ -217,7 +209,6 @@ def separate_unclassifiable_league_shots(
 def summary_row(rank: int, player: pd.Series, shots: pd.DataFrame,
                 zones: pd.DataFrame, season: str = SEASON,
                 minimum: int = MIN_PLAYER_FGA) -> dict[str, object]:
-    """Return display-ready audit values for one chart page."""
     fga = len(shots)
     made = int(shots.shot_made.sum())
     threes = shots.shot_type.eq("3PT")

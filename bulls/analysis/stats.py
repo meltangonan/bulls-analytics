@@ -86,7 +86,6 @@ def scoring_trend(
     values = player_games[metric].tolist()
     avg = sum(values) / len(values)
     
-    # Recent trend (last 5 vs previous 5)
     recent = values[:5] if len(values) >= 5 else values
     previous = values[5:10] if len(values) >= 10 else values[len(recent):]
     
@@ -145,7 +144,6 @@ def top_performers(box_score: pd.DataFrame) -> list:
             'fg_attempted': int(row.get('fieldGoalsAttempted', 0) or 0),
         })
     
-    # Sort by points, then assists, then rebounds
     performers.sort(key=lambda x: (x['points'], x['assists'], x['rebounds']), reverse=True)
 
     return performers
@@ -178,11 +176,9 @@ def efficiency_metrics(player_games: pd.DataFrame) -> dict:
     total_fgm = player_games['fg_made'].sum()
     total_fg3m = player_games['fg3_made'].sum()
 
-    # True Shooting %: pts / (2 * (fga + 0.44 * fta)) * 100
     tsa = total_fga + 0.44 * total_fta
     ts_pct = (total_pts / (2 * tsa) * 100) if tsa > 0 else 0.0
 
-    # Effective FG %: (fgm + 0.5 * fg3m) / fga * 100
     efg_pct = ((total_fgm + 0.5 * total_fg3m) / total_fga * 100) if total_fga > 0 else 0.0
 
     return {
@@ -214,14 +210,11 @@ def game_efficiency(player_games: pd.DataFrame) -> pd.DataFrame:
 
     df = player_games.copy()
 
-    # Get FT attempted, default to 0 if column doesn't exist
     fta = df['ft_attempted'] if 'ft_attempted' in df.columns else 0
 
-    # True Shooting %: pts / (2 * (fga + 0.44 * fta)) * 100
     tsa = df['fg_attempted'] + 0.44 * fta
     df['ts_pct'] = (df['points'] / (2 * tsa.replace(0, 1)) * 100).round(1)
 
-    # Effective FG %: (fgm + 0.5 * fg3m) / fga * 100
     df['efg_pct'] = ((df['fg_made'] + 0.5 * df['fg3_made']) / df['fg_attempted'].replace(0, 1) * 100).round(1)
 
     return df
@@ -271,7 +264,6 @@ def rolling_averages(
             col_name = f'{metric}_roll_{window}'
             df_reversed[col_name] = df_reversed[metric].rolling(window=window, min_periods=1).mean().round(1)
 
-    # Reverse back to original order (most recent first)
     result = df_reversed.iloc[::-1].reset_index(drop=True)
 
     return result
@@ -373,10 +365,8 @@ def consistency_score(
         mean_val = values.mean()
         std_val = values.std()
 
-        # Coefficient of variation (as percentage)
         cv = (std_val / mean_val * 100) if mean_val > 0 else 0.0
 
-        # Categorize consistency
         if cv < 20:
             category = 'very_consistent'
         elif cv < 35:
@@ -477,7 +467,6 @@ def points_per_shot(
     if team_shots.empty:
         return {}
 
-    # Check required columns
     required_cols = ['shot_made', 'shot_type']
     if by_zone:
         required_cols.append('shot_zone')
@@ -485,7 +474,6 @@ def points_per_shot(
     if missing_cols:
         return {}
 
-    # Filter out Backcourt shots if requested
     shots_data = team_shots.copy()
     if exclude_backcourt and 'shot_zone' in shots_data.columns:
         shots_data = shots_data[shots_data['shot_zone'] != 'Backcourt']
@@ -496,7 +484,6 @@ def points_per_shot(
         if total_shots == 0:
             return {'pps': 0.0, 'total_points': 0, 'total_shots': 0, 'fg_pct': 0.0}
 
-        # Calculate points: 3 for made 3PT, 2 for made 2PT, 0 for misses
         points = shots_df.apply(
             lambda row: 3 if row['shot_made'] and row['shot_type'] == '3PT'
                        else 2 if row['shot_made'] else 0,
@@ -513,13 +500,11 @@ def points_per_shot(
             'fg_pct': round(fg_pct, 1)
         }
 
-    # Calculate overall stats
     overall = calc_stats(shots_data)
 
     if not by_zone:
         return overall
 
-    # Calculate per-zone stats
     zone_stats = {}
     for zone in shots_data['shot_zone'].dropna().unique():
         zone_shots = shots_data[shots_data['shot_zone'] == zone]
@@ -565,18 +550,15 @@ def zone_leaders(
     if team_shots.empty:
         return {}
 
-    # Check required columns
     required_cols = ['player_id', 'player_name', 'shot_zone', 'shot_made', 'shot_type', 'game_id']
     missing_cols = [col for col in required_cols if col not in team_shots.columns]
     if missing_cols:
         print(f"Warning: Missing required columns: {missing_cols}")
         return {}
 
-    # Filter out Backcourt shots if requested
     if exclude_backcourt:
         team_shots = team_shots[team_shots['shot_zone'] != 'Backcourt']
     
-    # Calculate points per shot (2 for 2PT made, 3 for 3PT made, 0 for misses)
     def calculate_points(row):
         if row['shot_made']:
             return 3 if row['shot_type'] == '3PT' else 2
@@ -585,7 +567,6 @@ def zone_leaders(
     team_shots = team_shots.copy()
     team_shots['points'] = team_shots.apply(calculate_points, axis=1)
     
-    # Collect stats for every player in every zone (no filtering yet)
     player_zone_stats = []
 
     for (player_id, player_name, zone), group in team_shots.groupby(['player_id', 'player_name', 'shot_zone']):
@@ -846,7 +827,6 @@ def league_pps_by_zone(
     if missing_cols:
         return {}
 
-    # Filter out Backcourt shots if requested
     if exclude_backcourt:
         league_shots = league_shots[league_shots['shot_zone'] != 'Backcourt']
 
@@ -872,10 +852,8 @@ def league_pps_by_zone(
             'fg_pct': round(fg_pct, 1)
         }
 
-    # Calculate league-wide overall stats
     league_overall = calc_stats(league_shots)
 
-    # Calculate league-wide by zone
     zone_stats = {}
     total_league_shots = len(league_shots)
 
@@ -885,12 +863,10 @@ def league_pps_by_zone(
         stats['pct_of_shots'] = round(len(zone_shots) / total_league_shots * 100, 1)
         zone_stats[zone] = stats
 
-    # Rank zones by PPS
     sorted_zones = sorted(zone_stats.items(), key=lambda x: x[1]['pps'], reverse=True)
     for rank, (zone, _) in enumerate(sorted_zones, 1):
         zone_stats[zone]['rank'] = rank
 
-    # Calculate per-team stats
     team_stats = {}
     if 'team_abbr' in league_shots.columns:
         for team_abbr in league_shots['team_abbr'].dropna().unique():
@@ -958,12 +934,10 @@ def high_value_zone_usage(
     if missing_cols:
         return pd.DataFrame()
 
-    # Filter out Backcourt shots if requested
     shots_data = league_shots.copy()
     if exclude_backcourt:
         shots_data = shots_data[shots_data['shot_zone'] != 'Backcourt']
 
-    # Default high-value zones: Restricted Area + all 3-point zones
     if high_value_zones is None:
         high_value_zones = [
             'Restricted Area',
@@ -972,10 +946,8 @@ def high_value_zone_usage(
             'Above the Break 3',
         ]
 
-    # Define 3-point zones for separate tracking
     three_point_zones = ['Right Corner 3', 'Left Corner 3', 'Above the Break 3']
 
-    # Calculate per-team stats
     team_stats = []
     for team_abbr in shots_data['team_abbr'].dropna().unique():
         team_shots = shots_data[shots_data['team_abbr'] == team_abbr]
@@ -984,12 +956,10 @@ def high_value_zone_usage(
         if total_shots == 0:
             continue
 
-        # Calculate zone usage percentages
         high_value_shots = team_shots[team_shots['shot_zone'].isin(high_value_zones)]
         restricted_area_shots = team_shots[team_shots['shot_zone'] == 'Restricted Area']
         three_point_shots = team_shots[team_shots['shot_zone'].isin(three_point_zones)]
 
-        # Low-value zones: everything not high-value (Mid-Range, In The Paint Non-RA)
         low_value_shots = team_shots[~team_shots['shot_zone'].isin(high_value_zones)]
 
         team_stats.append({
@@ -1004,7 +974,6 @@ def high_value_zone_usage(
     if not team_stats:
         return pd.DataFrame()
 
-    # Create DataFrame and rank by high-value usage
     df = pd.DataFrame(team_stats)
     df = df.sort_values('high_value_pct', ascending=False).reset_index(drop=True)
     df['rank'] = range(1, len(df) + 1)

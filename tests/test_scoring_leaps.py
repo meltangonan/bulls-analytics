@@ -55,7 +55,6 @@ def _row(
     minutes_per_game: float,
     points_per_game: float,
 ) -> dict:
-    """Build one synthetic Bulls player-season from display-level rates."""
     return {
         "season_end_year": end_year,
         "season": display_season_label(end_year),
@@ -210,7 +209,6 @@ def test_pair_must_finish_at_the_scoring_rate_floor():
 def test_ties_break_on_the_higher_finishing_rate_so_order_is_stable():
     rows = pd.DataFrame(
         [
-            # Both gain exactly 4.0 per 36; the higher finishing rate ranks first.
             _row(2014, 11, "Lower Finish", 70, 36.0, 8.0),
             _row(2015, 11, "Lower Finish", 70, 36.0, 12.0),
             _row(2014, 22, "Higher Finish", 70, 36.0, 15.0),
@@ -235,7 +233,6 @@ def test_validation_reports_coverage_and_the_leader():
     report = validate_tables(season_table, leap_table)
     assert report["season_count"] == LAST_SEASON_END_YEAR - FIRST_SEASON_END_YEAR + 1
     assert report["leap_count"] == len(leap_table)
-    # "Bench Guy" clears neither gate in any season, so he never pairs.
     assert report["leap_player_count"] == 2
     assert report["leader"] == leap_table.iloc[0]["player_cur"]
 
@@ -274,8 +271,6 @@ def test_validation_rejects_a_gate_flag_that_stopped_matching_its_rule():
 def test_validation_rejects_a_metric_that_stopped_controlling_for_role():
     season_table, leap_table = _tables()
     broken = leap_table.copy()
-    # Make the ranked metric track minutes perfectly and the per-game metric not
-    # at all -- the exact inversion the guard exists to catch.
     broken["gain_per_36"] = broken["gain_minutes_per_game"]
     broken["gain_per_game"] = -broken["gain_minutes_per_game"]
     broken = broken.sort_values("gain_per_36", ascending=False).reset_index(drop=True)
@@ -369,8 +364,6 @@ def test_render_rejects_an_empty_field(tmp_path, monkeypatch):
 
 
 def test_headshot_crop_is_anchored_to_the_top_of_the_frame(tmp_path):
-    # A tall portrait: white above, black below. A top-anchored square keeps
-    # mostly the white half; a centred one would land near an even split.
     source = np.zeros((100, 60, 3), dtype=float)
     source[:50] = 1.0
     path = tmp_path / "portrait.png"

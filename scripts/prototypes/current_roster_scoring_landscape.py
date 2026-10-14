@@ -103,7 +103,6 @@ CUSTOM_LABELS = {
 
 
 def fetch_season_frames() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Fetch full-season player totals and league team totals from NBA.com."""
     common = {
         "season": SEASON,
         "season_type_all_star": SEASON_TYPE,
@@ -133,7 +132,6 @@ def build_working_table(
     teams: pd.DataFrame,
     snapshot_time: datetime,
 ) -> pd.DataFrame:
-    """Join the current roster to full-season NBA totals and calculate axes."""
     player_columns = [
         "PLAYER_ID",
         "PLAYER_NAME",
@@ -258,7 +256,6 @@ def build_working_table(
 
 
 def qualified_players(table: pd.DataFrame) -> pd.DataFrame:
-    """Return qualifiers in portrait-layer order, with lower rTS drawn last."""
     return (
         table.loc[table["qualified"]]
         .copy()
@@ -270,7 +267,6 @@ def qualified_players(table: pd.DataFrame) -> pd.DataFrame:
 
 
 def validate_working_table(table: pd.DataFrame) -> dict:
-    """Validate identities, formulas, threshold behavior, and chart coverage."""
     if table["nba_id"].duplicated().any():
         raise ValueError("Working table contains duplicate NBA player IDs.")
     if table["official_roster_name"].duplicated().any():
@@ -348,7 +344,6 @@ def validate_working_table(table: pd.DataFrame) -> dict:
 
 
 def write_table(table: pd.DataFrame, snapshot_date: str) -> Path:
-    """Write the complete roster table, including excluded players."""
     path = OUT / f"{snapshot_date}-current-bulls-scoring-landscape-working.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False)
@@ -356,7 +351,6 @@ def write_table(table: pd.DataFrame, snapshot_date: str) -> Path:
 
 
 def chart_x(shots_per_100: float) -> float:
-    """Map DataBallr SHOTS into chart pixels."""
     x0, _, x1, _ = PANEL
     return x0 + (shots_per_100 - SHOTS_LIMITS[0]) / (
         SHOTS_LIMITS[1] - SHOTS_LIMITS[0]
@@ -364,7 +358,6 @@ def chart_x(shots_per_100: float) -> float:
 
 
 def chart_y(relative_ts_pp: float) -> float:
-    """Map relative TS percentage points into chart pixels."""
     _, y0, _, y1 = PANEL
     return y0 + (relative_ts_pp - RTS_LIMITS[0]) / (
         RTS_LIMITS[1] - RTS_LIMITS[0]
@@ -379,7 +372,6 @@ def _quadrant_pill(
     vertical: str,
     title: str,
 ) -> None:
-    """Draw one DARKO-style descriptive quadrant key."""
     theme = DEFAULT_THEME
     line_count = title.count("\n") + 1
     title_probe = ax.text(
@@ -430,7 +422,6 @@ def render_chart_only(
     snapshot_date: str,
     final: bool,
 ) -> Path:
-    """Render the transparent DARKO-style chart asset for Canva framing."""
     theme = DEFAULT_THEME
     panel_fill = "#F5F1EC"
     qualifiers = qualified_players(table)
@@ -749,7 +740,6 @@ def _explainer_card(
     kicker: str,
     title_size: float = 18,
 ) -> None:
-    """Draw one warm-neutral explainer card."""
     theme = DEFAULT_THEME
     ax.add_patch(
         FancyBboxPatch(
@@ -792,7 +782,6 @@ def render_explainer_page(
     snapshot_date: str,
     final: bool,
 ) -> Path:
-    """Render the full-page formulas and scope explainer for Canva slide two."""
     theme = DEFAULT_THEME
     matas = table.loc[
         table["official_roster_name"].eq("Matas Buzelis")

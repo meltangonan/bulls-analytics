@@ -61,7 +61,7 @@ BAR_SPAN = 960
 BAR_HEIGHT = 124
 BAR_RADIUS = 9
 CARD_OVERLAP_Y = 30   # how far the total card rises past the header rule
-HEADER_GAP = 50       # clear space each column header keeps from its neighbour
+HEADER_GAP = 50
 MIN_SEGMENT_LABEL = 62
 NAME_1_DY = 36
 NAME_2_DY = -28
@@ -72,7 +72,7 @@ RESULT_SIZE = 26
 RESULT_GAP = 14
 OT_GAP = 16
 NAME_SIZE = 35
-NAME_GUTTER = 36  # clear space between the longest name and the bar column
+NAME_GUTTER = 36
 
 TOTAL_LEFT = 2190
 TOTAL_RIGHT = 2400
@@ -144,7 +144,6 @@ def _centered_segments(ax, centre: float, y: float, segments) -> None:
 
 
 def _rounded(x0: float, x1: float, y: float, height: float, **kwargs) -> FancyBboxPatch:
-    """A rounded box whose outer bounds are exactly (x0, x1) and height."""
     return FancyBboxPatch(
         (x0 + BAR_RADIUS, y - height / 2 + BAR_RADIUS),
         max(x1 - x0 - 2 * BAR_RADIUS, 0.1),
@@ -174,7 +173,6 @@ def _draw_split_bar(ax, left: float, split: float, end: float, y: float) -> None
 
 
 def _segment_label(ax, x0: float, x1: float, y: float, value: int) -> None:
-    """Print a segment's points inside it, or just outside when it is too narrow."""
     width = x1 - x0
     if width >= MIN_SEGMENT_LABEL:
         ax.text((x0 + x1) / 2, y, f"{value}", ha="center", va="center", fontsize=34,
@@ -217,7 +215,6 @@ def render(data_path: Path, output_path: Path, *, final: bool = False) -> Path:
     first_y = height - TOP_BOTTOM - ROW_HEIGHT / 2
     scale = BAR_SPAN / float(frame["combined_points"].max())
 
-    # Header, then the card, then the header rule broken at the card's bounds.
     header_y = height - TOP_BOTTOM + 92
     ax.text(NAME_X, header_y, "DUO", ha="left", va="center", fontsize=30,
             color=INK, fontproperties=helvetica("bold"), zorder=3)

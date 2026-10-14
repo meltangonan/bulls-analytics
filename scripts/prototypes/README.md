@@ -110,7 +110,7 @@ inspect its arguments first. `--final` on supported renderers means publish DPI.
 | `scoring_age_ladder.py` | Highest PPG by NBA-listed season age since 2000-01; Chicago regular-season stints, minimum half the team's games | `tests/test_stocks_age_ladder.py`, `tests/test_scoring_age_ladder.py`, `tests/test_assist_age_ladder.py` |
 | `scoring_by_location.py` | Scoring by location | `tests/test_scoring_by_location.py` |
 | `scoring_leaps.py` | Bulls' biggest year-over-year scoring leaps since 2000 | `tests/test_scoring_leaps.py` |
-| `season_opener_performances.py` | Top fifteen Bulls season-opener performances since 1983–84 (first season with complete opener box scores and a team game log); Game Score cells use the band colors, TS% in place of 3PT, no +/-; uses `FIFTEEN_ROW_LAYOUT` | `tests/test_season_opener_performances.py` |
+| `season_opener_performances.py` | Top fifteen Bulls season-opener performances since 1983–84 (first season with complete opener box scores); Game Score cells use the band colors, TS% in place of 3PT, no +/-; uses `FIFTEEN_ROW_LAYOUT` | `tests/test_season_opener_performances.py` |
 | `preseason_performances.py` | Top fifteen Bulls preseason performances since 2005–06 (first complete NBA.com preseason); sourced from `LeagueGameLog`, red Game Score card, TS% in place of 3PT, MIN column, no +/-; uses `FIFTEEN_ROW_LAYOUT` | `tests/test_preseason_performances.py` |
 | `season_shape_post.py` | The Shape of the Season | Shared record calculation: `tests/test_analysis.py`; no dedicated renderer tests |
 | `stocks_age_ladder.py` | Defensive counterpart | `tests/test_stocks_age_ladder.py` |

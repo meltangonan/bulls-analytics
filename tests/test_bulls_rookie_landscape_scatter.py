@@ -19,7 +19,6 @@ from scripts.prototypes.bulls_rookie_landscape_scatter import (
 
 
 def test_mark_area_not_radius_scales_with_minutes():
-    """A circle twice as wide reads four times as big, so area carries minutes."""
     radii = mark_radii(pd.Series([300.0, 1650.0, 3000.0]))
     assert radii[0] == pytest.approx(MIN_MARK_RADIUS)
     assert radii[-1] == pytest.approx(MAX_MARK_RADIUS)

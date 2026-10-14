@@ -34,7 +34,6 @@ STAMP = "{date}-v{version:02d}-{name}"
 
 
 def next_version(folder: Path) -> int:
-    """One past the highest version already saved, so history never renumbers."""
     highest = 0
     for path in folder.glob("*.png"):
         match = VERSION_RE.match(path.name)

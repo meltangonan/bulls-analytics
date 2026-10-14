@@ -40,7 +40,6 @@ from scripts.prototypes.scoring_age_ladder import (
 
 
 def _source_rows() -> pd.DataFrame:
-    """Two Bulls per season: a shot-blocking big and a ball-hawking guard."""
     records = []
     for end_year in range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1):
         team_games = {2012: 66, 2020: 65, 2021: 72}.get(end_year, 82)
@@ -73,7 +72,6 @@ def _source_rows() -> pd.DataFrame:
 
 
 def _baseline() -> dict:
-    """A flat league pool per season: 200 players spread from 0.5 to 2.5 stocks."""
     rates = pd.Series([0.5 + 2.0 * i / 199 for i in range(200)])
     return {
         end_year: rates
@@ -155,7 +153,6 @@ def test_validation_rejects_a_team_steal_mismatch():
 
 
 def test_validation_rejects_a_team_block_mismatch():
-    """Blocks reconcile on their own; a steal surplus must not mask a block gap."""
     table = build_working_table(_source_rows())
     table.loc[table["season_end_year"] == FIRST_SEASON_END_YEAR, "team_blocks"] += 1
 
@@ -188,7 +185,6 @@ def test_canva_copy_states_the_composite_and_its_limits():
     assert "Min. 50% of team games" in copy
     assert "2000–01 to 2025–26" in copy
     assert "Chicago-only" in copy
-    # The reader must be told what the colour is measured against.
     assert "NBA median for rotation regulars" in copy
     assert "Yellow is exactly league average" in copy
     assert "2.5x" in copy
@@ -231,24 +227,19 @@ def test_every_trailing_column_shares_one_width():
     """
     assert STOCKS_TRAILING_SLOT_WIDTH == 112
     assert STOCKS_CHART_WIDTH > CHART_WIDTH
-    # One slot width serves all three, so the columns cannot drift apart.
     slots = [STOCKS_TRAILING_SLOT_WIDTH] * len(STOCKS_TRAILING_COLUMNS)
     assert len(set(slots)) == 1
 
 
 def test_the_components_lead_and_games_played_trails_as_context():
-    """STL and BLK explain the composite; GP is supplemental, so it sits last."""
     headers = [entry.header for entry in STOCKS_TRAILING_COLUMNS]
     assert headers == ["STL", "BLK", "GP"]
-    # Components are rates to one decimal; games played is a whole count.
     assert [entry.decimals for entry in STOCKS_TRAILING_COLUMNS] == [1, 1, 0]
 
 
 def test_games_played_does_not_decide_the_winner():
-    """The claim is a rate. GP is context beside it, never a tie-break above it."""
     rows = _source_rows()
     season = FIRST_SEASON_END_YEAR
-    # A durable but weaker season must not displace a stronger, shorter one.
     iron_man = rows.loc[rows["player_id"] == 2000 + season].copy()
     iron_man["player_id"] = 999999
     iron_man["player"] = "Iron Man"
@@ -262,7 +253,7 @@ def test_games_played_does_not_decide_the_winner():
     winner = age_winners(build_working_table(rows))
     age_22 = winner.loc[winner["age"] == 22].iloc[0]
 
-    assert age_22["player"] == "Ball Hawk"          # 2.0/g in fewer games still wins
+    assert age_22["player"] == "Ball Hawk"
     assert age_22["stocks_per_game"] >= age_22["stocks_per_game"]
 
 
@@ -308,12 +299,8 @@ def test_renderer_draws_the_stocks_table_at_the_family_asset_size(tmp_path, monk
 
 
 def test_the_other_ladders_still_default_to_a_single_games_column():
-    """The shared renderer change must not alter the four published ladders."""
     assert GAMES_COLUMN == (TrailingColumn("GP", "games"),)
     assert GAMES_COLUMN[0].decimals == 0
-
-
-# --- the newer table treatment ---------------------------------------------
 
 
 def test_a_long_name_no_longer_runs_under_the_metric_column():
@@ -338,7 +325,6 @@ def test_a_long_name_no_longer_runs_under_the_metric_column():
 
     metric_left = NAME_X + widest
     assert widest > 0
-    # Every column still lands inside the fixed 1080px asset width.
     assert (
         metric_left
         + STOCKS_METRIC_WIDTH
@@ -384,9 +370,6 @@ def test_auto_name_column_refuses_a_table_that_would_overflow_the_asset(tmp_path
             trailing_columns=STOCKS_TRAILING_COLUMNS,
             auto_name_column=True,
         )
-
-
-# --- the fixes the conditional fill needed ---------------------------------
 
 
 def test_the_conditional_fill_stops_short_of_the_header_rule():
@@ -489,9 +472,6 @@ def test_the_post_ships_the_table_only():
     assert not hasattr(stocks, "render_stocks_bars")
 
 
-# --- shading against the league, not against this chart --------------------
-
-
 def test_the_league_pool_is_rotation_regulars_only():
     rows = pd.DataFrame(
         {
@@ -506,12 +486,10 @@ def test_the_league_pool_is_rotation_regulars_only():
 
     rates = league_rotation_rates(rows)
 
-    # The eight-minute bench player and the ten-game player are both excluded.
     assert len(rates) == 2
 
 
 def test_a_shortened_season_is_not_held_to_an_82_game_bar():
-    """41 games is 62% of a lockout season — the bar has to move with the year."""
     rows = pd.DataFrame(
         {
             "PLAYER_ID": range(1, 5),
@@ -534,7 +512,6 @@ def test_percentile_places_a_row_against_its_own_season():
 
     assert "league_percentile" in table.columns
     assert table["league_percentile"].between(0, 100).all()
-    # The fixture's rim protector sits at 3.0 stocks, above every league rate.
     protector = table.loc[table["player"] == "Rim Protector"].iloc[0]
     assert protector["league_percentile"] == 100.0
 
@@ -575,7 +552,6 @@ def test_the_ratio_column_is_the_rate_over_that_season_league_median():
 
 
 def test_yellow_lands_on_league_average_not_the_middle_of_the_chart():
-    """The whole point of the midpoint: 1.00x is average wherever the extremes sit."""
     from scripts.prototypes.scoring_age_ladder import HEAT_YELLOW, ppg_fill
     from matplotlib.colors import to_rgb
     from scripts.prototypes.stocks_age_ladder import (
@@ -597,7 +573,6 @@ def test_yellow_lands_on_league_average_not_the_middle_of_the_chart():
 
 
 def test_the_scale_separates_seasons_that_percentile_flattened():
-    """Ben Wallace and Jimmy Butler must not read as the same green."""
     from scripts.prototypes.scoring_age_ladder import ppg_fill
     from scripts.prototypes.stocks_age_ladder import (
         LEAGUE_RATIO_AVERAGE,
@@ -612,7 +587,6 @@ def test_the_scale_separates_seasons_that_percentile_flattened():
         )
 
     butler, wallace = fill(1.72), fill(2.68)          # 89.7th and 98.2nd percentile
-    # Greener means a lower red channel on this ramp.
     assert wallace[0] < butler[0]
     assert butler[0] - wallace[0] > 0.05
 
@@ -641,7 +615,6 @@ def test_the_renderer_rejects_a_fill_column_the_rows_do_not_carry(tmp_path, monk
 
 
 def test_final_export_is_the_same_layout_at_twice_the_pixels(tmp_path, monkeypatch):
-    """--final must raise resolution, not resize the type."""
     from PIL import Image
     import scripts.prototypes.scoring_age_ladder as ladder
 

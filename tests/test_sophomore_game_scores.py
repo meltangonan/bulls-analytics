@@ -115,7 +115,7 @@ def test_overtime_games_in_the_top_fifteen_are_recorded():
 
 
 def test_shooting_columns_follow_assists_and_default_order_is_unchanged():
-    row = saved('top-fifteen').iloc[2]  # Rose: 39 pts, 15-22 FG, 0-0 3PT, 5 reb, 7 ast
+    row = saved('top-fifteen').iloc[2]
     assert post.games._turnover_values(row, False)[:5] == ('39', '15–22', '0–0', '5', '7')
     assert post.games._turnover_values(row, False, True)[:5] == ('39', '5', '7', '15–22', '0–0')
     with pytest.raises(ValueError, match='without FT'):

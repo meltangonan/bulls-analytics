@@ -107,7 +107,6 @@ def fetch_half(kind: str, season: str, half: str, refresh: bool = False) -> pd.D
 
 
 def season_rows(kind: str, season: str, refresh: bool = False) -> pd.DataFrame:
-    """Season totals per player (or team), game-level where the aggregate is broken."""
     if season not in SPLIT_SEASONS:
         return fetch(kind, season, refresh)
     key = "TEAM_ID" if kind == "teams" else "PLAYER_ID"
@@ -134,8 +133,6 @@ def add_measures(frame: pd.DataFrame, season: str, league_pct: float) -> pd.Data
     out["rim_fg_pct"] = 100 * out.rim_fgm / out.rim_fga
     out["league_rim_fg_pct"] = 100 * league_pct
     out["pct_vs_league"] = out.rim_fg_pct - out.league_rim_fg_pct
-    # Makes a league-average rim defender would have allowed on the same
-    # attempts, minus the makes this player actually allowed.
     out["rim_makes_saved"] = out.rim_fga * league_pct - out.rim_fgm
     return out
 

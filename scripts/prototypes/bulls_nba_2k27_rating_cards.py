@@ -63,22 +63,20 @@ TRACK_EDGE = "#DCD4CB"
 # same number the same color when the rest of the roster is added later.
 _RATING_ANCHORS = [40, 60, 70, 80, 90, 99]
 _RATING_COLORS = [
-    "#A90F2A",  # deep red
-    "#E0582A",  # orange-red
-    "#F2C14E",  # yellow
-    "#75B84A",  # light green
-    "#1F8A4C",  # dark green
-    "#0E6337",  # deep green
+    "#A90F2A",
+    "#E0582A",
+    "#F2C14E",
+    "#75B84A",
+    "#1F8A4C",
+    "#0E6337",
 ]
 def load_cards(path: Path = DATA_PATH) -> pd.DataFrame:
-    """Read and validate the tracked ratings snapshot."""
     cards = pd.read_csv(path, comment="#")
     validate_cards(cards)
     return cards
 
 
 def validate_cards(cards: pd.DataFrame) -> None:
-    """Reject incomplete or internally inconsistent rating rows."""
     required = {
         "player_name",
         "slug",
@@ -124,7 +122,6 @@ def validate_cards(cards: pd.DataFrame) -> None:
 
 
 def change_label(player: pd.Series) -> str:
-    """Return the compact year-over-year label shown below OVR."""
     if pd.isna(player["nba_2k26_ovr"]):
         return "2K DEBUT"
     change = int(player["ovr_change"])
@@ -134,14 +131,12 @@ def change_label(player: pd.Series) -> str:
 
 
 def change_color(player: pd.Series, theme=DEFAULT_THEME) -> str:
-    """Use green for gains, red for drops, and muted ink otherwise."""
     if pd.isna(player["nba_2k26_ovr"]) or int(player["ovr_change"]) == 0:
         return theme.muted
     return "#1F8A4C" if int(player["ovr_change"]) > 0 else "#A90F2A"
 
 
 def rating_fill(value: float) -> str:
-    """Map a 2K rating to the fixed red-yellow-green visual scale."""
     clipped = min(max(float(value), _RATING_ANCHORS[0]), _RATING_ANCHORS[-1])
     for index in range(len(_RATING_ANCHORS) - 1):
         low_value = _RATING_ANCHORS[index]
@@ -159,7 +154,6 @@ def rating_fill(value: float) -> str:
 
 
 def text_color_for_fill(fill: str) -> str:
-    """Choose readable type over both dark green/red and bright yellow bars."""
     red, green, blue = to_rgb(fill)
     luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue
     return "#141414" if luminance >= 0.56 else "#FFFFFF"
@@ -255,7 +249,6 @@ def _draw_bar(
 
 
 def _draw_player_bars(ax: plt.Axes, theme, player: pd.Series) -> None:
-    """Draw the six data-owned bars and no Canva-owned card furniture."""
     bar_top = ASSET_HEIGHT - ASSET_MARGIN
     for slot, (label, key) in enumerate(CATEGORIES):
         value = player[key] if bool(player["detailed_ratings_available"]) else None
@@ -275,7 +268,6 @@ def render_player_bars(
     *,
     final: bool = False,
 ) -> list[Path]:
-    """Render one transparent six-bar asset per player for Canva."""
     theme = DEFAULT_THEME
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     suffix = "-final" if final else ""

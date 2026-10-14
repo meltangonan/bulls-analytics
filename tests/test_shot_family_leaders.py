@@ -92,7 +92,6 @@ def test_three_point_policy_reject_raises_and_heaves_are_quarantined():
     row = result.iloc[0]
     assert row.FGA == 1 and row.FGM == 0
     assert row.EXCLUDED_HEAVES == 1
-    # The heave still belongs to total attempts; only the floater count drops it.
     assert row.OTHER_FGA == 2
     assert row.FGA + row.OTHER_FGA == row.TOTAL_FGA
     assert audit[['fga_delta','fgm_delta','partition_delta']].eq(0).all().all()
@@ -123,8 +122,6 @@ def test_league_reconciliation_exposes_missing_or_truncated_team():
         mod.reconcile_league(pd.concat([shots, shots.iloc[:1]]), official)
 
 
-# --- snapshot naming -------------------------------------------------------
-
 def test_snapshot_names_are_family_scoped_and_sidecars_cannot_collide():
     data, meta = mod.snapshot_paths(DUNKS, 'shots', '2015-16')
     other, other_meta = mod.snapshot_paths(HOOKS, 'shots', '2015-16')
@@ -146,10 +143,7 @@ def test_family_data_never_touches_the_published_post_directories():
     assert len({mod.data_dir(f) for f in mod.FAMILIES.values()}) == len(mod.FAMILIES)
 
 
-# --- label stability -------------------------------------------------------
-
 def audit_frame(rows):
-    """rows: (season, label, fga) — FGM is irrelevant to stability."""
     return pd.DataFrame([dict(SEASON=s, ACTION_TYPE=l, FGA=n, FGM=0) for s, l, n in rows])
 
 
@@ -190,7 +184,7 @@ def test_a_label_with_gaps_is_sampling_not_an_era_change():
     for year in range(2010, 2019):
         rows += [(mod.season_label(year), 'Hook Shot', 50),
                  (mod.season_label(year), 'Jump Shot', 950)]
-    for year in [2012, 2017, 2018]:   # a rare shot, not taken every season
+    for year in [2012, 2017, 2018]:
         rows.append((mod.season_label(year), 'Driving Bank Hook Shot', 20))
     stability = mod.label_stability(audit_frame(rows), HOOKS)
     assert stability.boundary == '2010-11'
@@ -247,14 +241,12 @@ def test_from_season_can_narrow_to_a_single_recent_season():
 
 
 def test_published_windows_are_reproduced_from_the_real_label_audit():
-    """The rule must land on both shipped posts' published windows."""
     path = mod.ROOT / 'docs/visuals/2026-09-05-layup-season-leaders/data/action_label_audit.csv'
     if not path.exists():
         pytest.skip('published layup label audit unavailable')
     audit = pd.read_csv(path)
     assert mod.label_stability(audit, LAYUPS).boundary == '2000-01'
     assert mod.label_stability(audit, FLOATERS).boundary == '2015-16'
-    # New families, from the same evidence.
     assert mod.label_stability(audit, DUNKS).boundary == '2000-01'
     assert mod.label_stability(audit, HOOKS).boundary == '2000-01'
 

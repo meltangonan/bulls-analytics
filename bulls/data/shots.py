@@ -26,7 +26,6 @@ SHOT_COLUMNS = [
 
 
 def _usable_cache(path: Path) -> pd.DataFrame | None:
-    """Read a cache only when it carries the NBA labels zone charts require."""
     if not path.exists():
         return None
     cached = pd.read_csv(path)

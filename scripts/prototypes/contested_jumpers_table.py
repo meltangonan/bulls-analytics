@@ -36,7 +36,7 @@ BAR_LEFT = 900
 BAR_RIGHT = 1480
 BAR_HEIGHT = 104
 VALUE_GAP = 22
-OUTSIDE_BELOW = 100  # Shorter bars carry their value outside, in ink.
+OUTSIDE_BELOW = 100
 SUPPORT_X = (1640, 1980, 2380)
 INK = house.BLACK
 RED = house.RED
@@ -63,7 +63,6 @@ def _ordinal(value: int) -> str:
 
 
 def _signed(value: float) -> str:
-    """Percentage-point difference with a true minus sign; a rounded zero carries no sign."""
     if abs(value) < 0.05:
         return "0.0"
     return f"{value:+.1f}".replace("-", "−")

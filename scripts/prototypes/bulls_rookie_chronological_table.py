@@ -77,12 +77,7 @@ TABLE_RIGHT = 1062
 
 HEADER_FROM_TOP = 66
 HEADER_RULE_FROM_TOP = 88
-# Clear the rule's own thickness, so the first colored cell starts at the black
-# line's lower edge rather than underneath it. Small enough to still read as
-# flush, large enough that the fill never eats into the separator.
 HEADER_RULE_CLEARANCE = 1.5
-# The first row sits flush under the rule: half a row below it, so the top edge
-# of the first colored cell meets the separator with no gap and no overlap.
 ROW_HEIGHT = 66
 FIRST_ROW_FROM_TOP = HEADER_RULE_FROM_TOP + ROW_HEIGHT / 2 + HEADER_RULE_CLEARANCE
 BOTTOM_PAD = 34
@@ -100,7 +95,6 @@ VALUE_FONT_SIZE = 14.5
 HEADER_FONT_SIZE = 13.0
 NAME_RISE = 10
 CAPTION_DROP = 15
-# Breathing room between the longest name in the pool and the first statistic.
 NAME_GAP = 18
 
 # Three slides, newest first, as even as the season boundaries allow: the only
@@ -192,7 +186,6 @@ COLUMN_SCALES = {
 # Below this many minutes an on-off number is mostly noise, so the cell is left
 # blank rather than shaded. It applies to the on/off variant only.
 MIN_IMPACT_MINUTES = 750
-# TS% is judged against the season it happened in, not its raw value.
 ERA_RELATIVE_METRICS = ("ts_pct",)
 SCALE_POPULATION = "NBA rookies with 300+ minutes, 2000-01 to 2025-26"
 SCALE_SAMPLE_SIZE = 1147
@@ -216,7 +209,6 @@ def slide_height(row_count: int = 0) -> float:
 
 
 def column_bounds(stats_left: float) -> dict[str, tuple[float, float, str]]:
-    """Divide the space right of the name block into equal statistic columns."""
     width = (TABLE_RIGHT - stats_left) / len(STAT_COLUMNS)
     return {
         metric: (stats_left + index * width, stats_left + (index + 1) * width, label)
@@ -242,7 +234,6 @@ HISTORICAL_HEADSHOT_URLS = {
 
 
 def fetch_draft_info(player_ids: list[int]) -> pd.DataFrame:
-    """Fetch official career draft metadata, one row per NBA player ID."""
     rows = []
     for index, player_id in enumerate(player_ids):
         frame = commonplayerinfo.CommonPlayerInfo(
@@ -270,7 +261,6 @@ def fetch_draft_info(player_ids: list[int]) -> pd.DataFrame:
 def load_or_fetch_draft_info(
     player_ids: list[int], path: Path = DRAFT_CSV, refresh: bool = False
 ) -> pd.DataFrame:
-    """Use the tracked NBA.com snapshot when it covers the qualified pool."""
     expected = {int(value) for value in player_ids}
     if path.exists() and not refresh:
         cached = pd.read_csv(path, dtype={"draft_number": str, "draft_round": str})
@@ -283,7 +273,6 @@ def load_or_fetch_draft_info(
 
 
 def draft_label(value: object) -> str:
-    """Format an overall draft slot compactly, preserving undrafted status."""
     text = str(value).strip()
     if not text or text.lower() in {"nan", "none", "undrafted"}:
         return "UDFA"
@@ -384,12 +373,10 @@ def draft_caption(draft_year: object, draft_number: object) -> str:
 
 
 def season_marker(season: object) -> str:
-    """Compact a season label for the small superscript beside a name."""
     return str(season)[2:].replace("-", "–", 1)
 
 
 def ensure_historical_headshot_fallbacks(player_ids) -> None:
-    """Replace exact NBA-CDN silhouettes with verified historical portraits."""
     for player_id in {int(value) for value in player_ids}:
         url = HISTORICAL_HEADSHOT_URLS.get(player_id)
         if url is None:
@@ -413,7 +400,6 @@ def ensure_historical_headshot_fallbacks(player_ids) -> None:
 
 
 def prepare_table(rookies: pd.DataFrame, draft: pd.DataFrame) -> pd.DataFrame:
-    """Create the display-ready, chronologically ordered 300-minute table."""
     required = {
         "season",
         "season_label",
@@ -517,7 +503,6 @@ def prepare_table(rookies: pd.DataFrame, draft: pd.DataFrame) -> pd.DataFrame:
 
 
 def split_pages(table: pd.DataFrame) -> list[pd.DataFrame]:
-    """Split on fixed season boundaries so no rookie class crosses a page."""
     pages = []
     for lower, upper in PAGE_SEASON_RANGES:
         page = table.loc[table["season"].ge(lower) & table["season"].le(upper)].copy()
@@ -540,7 +525,6 @@ def heat_scales(table: pd.DataFrame | None = None) -> dict[str, tuple[float, flo
 
 
 def shaded_value(row: pd.Series, metric: str) -> float:
-    """Give a column the number its colour scale is actually calibrated on."""
     if metric in ERA_RELATIVE_METRICS:
         return float(row[f"{metric}_relative"])
     return float(row[metric])
@@ -560,7 +544,6 @@ def headshot_clip_bounds(row_y: float) -> tuple[float, float, float, float]:
 
 
 def _face_headshot(ax, player_id: int, row_y: float) -> None:
-    """Draw the face-focused square crop, clipped at this row's separator."""
     y = row_y + HEADSHOT_RISE
     clip_left, clip_bottom, clip_width, clip_height = headshot_clip_bounds(row_y)
     path = portrait_path(player_id)
@@ -604,7 +587,6 @@ def _face_headshot(ax, player_id: int, row_y: float) -> None:
 
 
 def _name_block_width(ax, name: str, season: str) -> float:
-    """Measure one fitted name plus its superscript season marker."""
     season_font = helvetica("regular")
     season_font.set_style("italic")
     season_probe = ax.text(
@@ -623,7 +605,6 @@ def _name_block_width(ax, name: str, season: str) -> float:
 
 
 def display_name(value: object) -> str:
-    """Drop generational suffixes, as the recent table family does."""
     return str(value).removesuffix(" III").removesuffix(" Jr.")
 
 
@@ -648,7 +629,6 @@ def measure_stats_left(table: pd.DataFrame) -> float:
 
 
 def _draw_player(ax, row: pd.Series, y: float) -> None:
-    """Draw the portrait, the fitted name, its season, and the draft caption."""
     _face_headshot(ax, int(row["player_id"]), y)
     name = display_name(row["player_name"])
     name_artist = ax.text(
@@ -680,7 +660,6 @@ def render_page(
     stats_left: float,
     final: bool = False,
 ) -> Path:
-    """Render one transparent, Canva-ready chronological table asset."""
     theme = DEFAULT_THEME
     header_font = helvetica("bold")
     body_font = helvetica("regular")
@@ -720,7 +699,6 @@ def render_page(
             fill = None
             text_color = theme.ink
             if pd.isna(row[metric]):
-                # Too small a sample to say anything. Say nothing.
                 draw_table_cell(
                     ax, "—", left, right, y, ROW_HEIGHT, color=theme.faint,
                     fontsize=VALUE_FONT_SIZE, fontproperties=body_font,
@@ -744,7 +722,6 @@ def render_page(
                 fontsize=VALUE_FONT_SIZE, fontproperties=body_font,
             )
 
-        # Draw the player last so the overlapping portraits sit above the rules.
         _draw_player(ax, row, y)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)

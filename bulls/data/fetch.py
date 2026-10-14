@@ -58,7 +58,7 @@ def get_games(
     data_frames = finder.get_data_frames()
     
     if not data_frames or len(data_frames) == 0:
-        return pd.DataFrame()  # Return empty DataFrame if no data
+        return pd.DataFrame()
     
     games = data_frames[0]
     
@@ -139,13 +139,11 @@ def get_box_score(game_id: str) -> pd.DataFrame:
         if players.empty:
             return pd.DataFrame()
         
-        # Filter to Bulls players only
         bulls_players = players[players['teamId'] == BULLS_TEAM_ID].copy()
         
         if bulls_players.empty:
             return pd.DataFrame()
         
-        # Add full name column for convenience
         bulls_players['name'] = bulls_players['firstName'] + ' ' + bulls_players['familyName']
         
         return bulls_players
@@ -185,7 +183,6 @@ def get_player_games(
             if box.empty:
                 continue
             
-            # Find player in box score (case-insensitive match)
             player_row = box[box['name'].str.lower() == player_name.lower()]
             
             if not player_row.empty:
@@ -219,7 +216,6 @@ def get_player_games(
     
     df = pd.DataFrame(player_stats)
     
-    # Calculate percentages
     if not df.empty:
         df['fg_pct'] = (df['fg_made'] / df['fg_attempted'].replace(0, 1) * 100).round(1)
         df['fg3_pct'] = (df['fg3_made'] / df['fg3_attempted'].replace(0, 1) * 100).round(1)
@@ -278,7 +274,6 @@ def get_player_shots(
         if shots.empty:
             return pd.DataFrame()
 
-        # Create clean DataFrame with relevant columns
         result = pd.DataFrame({
             'loc_x': shots['LOC_X'],
             'loc_y': shots['LOC_Y'],
@@ -334,7 +329,6 @@ def get_team_shots(
     try:
         last_n = str(last_n_games) if last_n_games else '0'
 
-        # Use player_id=0 to get all team shots
         shot_chart = shotchartdetail.ShotChartDetail(
             team_id=team_id,
             player_id=0,  # 0 means all players on the team
@@ -351,7 +345,6 @@ def get_team_shots(
         if shots.empty:
             return pd.DataFrame()
 
-        # Create clean DataFrame with relevant columns
         result = pd.DataFrame({
             'loc_x': shots['LOC_X'],
             'loc_y': shots['LOC_Y'],
@@ -363,11 +356,9 @@ def get_team_shots(
             'game_date': shots['GAME_DATE'] if 'GAME_DATE' in shots.columns else None,
         })
 
-        # Add zone area for granular zone breakdowns
         if 'SHOT_ZONE_AREA' in shots.columns:
             result['shot_zone_area'] = shots['SHOT_ZONE_AREA']
 
-        # Add player info if available
         if 'PLAYER_ID' in shots.columns:
             result['player_id'] = shots['PLAYER_ID']
         if 'PLAYER_NAME' in shots.columns:
@@ -548,7 +539,6 @@ def get_roster_efficiency(
         >>> for p in roster:
         ...     print(f"{p['name']}: {p['ts_pct']:.1f}% TS on {p['fga_per_game']:.1f} FGA/G")
     """
-    # Get team shots to identify players and their shot attempts
     team_shots = get_team_shots(
         team_id=BULLS_TEAM_ID,
         season=season,
@@ -558,10 +548,8 @@ def get_roster_efficiency(
     if team_shots.empty or 'player_id' not in team_shots.columns:
         return []
 
-    # Get unique game IDs to fetch box scores
     game_ids = team_shots['game_id'].unique().tolist()
 
-    # Aggregate player stats from box scores
     player_stats = {}
 
     for game_id in game_ids:
@@ -592,7 +580,6 @@ def get_roster_efficiency(
             player_stats[player_id]['fga'] += int(row.get('fieldGoalsAttempted', 0) or 0)
             player_stats[player_id]['fta'] += int(row.get('freeThrowsAttempted', 0) or 0)
 
-    # Calculate efficiency metrics and filter
     result = []
     for pid, stats in player_stats.items():
         if stats['games'] == 0:
@@ -600,12 +587,9 @@ def get_roster_efficiency(
 
         fga_per_game = stats['fga'] / stats['games']
 
-        # Skip players below minimum FGA threshold
         if fga_per_game < min_fga:
             continue
 
-        # Calculate True Shooting %
-        # TS% = PTS / (2 * (FGA + 0.44 * FTA))
         tsa = stats['fga'] + 0.44 * stats['fta']
         ts_pct = (stats['points'] / (2 * tsa) * 100) if tsa > 0 else 0
 
@@ -617,7 +601,6 @@ def get_roster_efficiency(
             'games': stats['games'],
         })
 
-    # Sort by volume (FGA per game) descending
     result.sort(key=lambda x: x['fga_per_game'], reverse=True)
 
     return result
@@ -665,7 +648,6 @@ def get_roster(
         return pd.DataFrame(columns=['player_id', 'player_name'])
 
 
-# Columns consumed from the lineup response (Advanced measure type)
 _LINEUP_COLUMNS = ['GROUP_ID', 'GROUP_NAME', 'GP', 'MIN',
                    'OFF_RATING', 'DEF_RATING', 'NET_RATING']
 

@@ -159,7 +159,6 @@ def build_working_table(
     roster: pd.DataFrame,
     snapshot_time: datetime,
 ) -> pd.DataFrame:
-    """Join zone shooting to possessions and calculate both axes plus volume."""
     location_columns = [
         "PLAYER_ID",
         "PLAYER_NAME",
@@ -220,8 +219,6 @@ def build_working_table(
     table["three_fgm"] = table["Corner 3|FGM"] + table["Above the Break 3|FGM"]
     table["three_fga"] = table["Corner 3|FGA"] + table["Above the Break 3|FGA"]
 
-    # Points per attempt inside one zone. The zone's own point value is the
-    # multiplier, which is what puts rim and three on a comparable scale.
     table["rim_pps"] = 2 * table["rim_fgm"] / table["rim_fga"]
     table["three_pps"] = 3 * table["three_fgm"] / table["three_fga"]
     table["zone_fga_per_75"] = (
@@ -242,7 +239,6 @@ def build_working_table(
         zip(roster["nba_id"].astype(int), roster["official_roster_name"])
     )
     table["is_bulls"] = table["nba_id"].isin(roster_names)
-    # Label off NBA.com's roster spelling, falling back to the stats spelling.
     table["official_roster_name"] = (
         table["nba_id"].map(roster_names).fillna(table["player_name"])
     )
@@ -295,7 +291,6 @@ def build_working_table(
 
 
 def qualified_players(table: pd.DataFrame) -> pd.DataFrame:
-    """Return qualifiers with Bulls last so their markers draw on top."""
     return (
         table.loc[table["qualified"]]
         .copy()
@@ -304,7 +299,6 @@ def qualified_players(table: pd.DataFrame) -> pd.DataFrame:
 
 
 def bulls_players(table: pd.DataFrame) -> pd.DataFrame:
-    """Return qualified Bulls in descending zone volume."""
     qualifiers = qualified_players(table)
     return qualifiers.loc[qualifiers["is_bulls"]].sort_values(
         "zone_fga_per_75", ascending=False
@@ -312,7 +306,6 @@ def bulls_players(table: pd.DataFrame) -> pd.DataFrame:
 
 
 def validate_working_table(table: pd.DataFrame) -> dict:
-    """Validate identities, formulas, thresholds, and chart coverage."""
     if table["nba_id"].duplicated().any():
         raise ValueError("Working table contains duplicate NBA player IDs.")
 
@@ -339,7 +332,6 @@ def validate_working_table(table: pd.DataFrame) -> dict:
     if not qualifiers["three_fga"].ge(MIN_ZONE_ATTEMPTS).all():
         raise ValueError("A plotted player fell below the three-attempt bar.")
 
-    # Points per shot must reconstruct the zone's points from its attempts.
     rim_points_residual = float(
         (qualifiers["rim_pps"] * qualifiers["rim_fga"] - 2 * qualifiers["rim_fgm"])
         .abs()
@@ -399,7 +391,6 @@ def validate_working_table(table: pd.DataFrame) -> dict:
 
 
 def write_table(table: pd.DataFrame, snapshot_date: str) -> Path:
-    """Write the complete league table, including non-qualifiers."""
     path = OUT / f"{snapshot_date}-rim-vs-three-pps-working.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False)
@@ -407,13 +398,11 @@ def write_table(table: pd.DataFrame, snapshot_date: str) -> Path:
 
 
 def chart_x(rim_pps: float) -> float:
-    """Map rim points per shot into chart pixels."""
     x0, _, x1, _ = PANEL
     return x0 + (rim_pps - RIM_LIMITS[0]) / (RIM_LIMITS[1] - RIM_LIMITS[0]) * (x1 - x0)
 
 
 def chart_y(three_pps: float) -> float:
-    """Map three-point points per shot into chart pixels."""
     _, y0, _, y1 = PANEL
     return y0 + (three_pps - THREE_LIMITS[0]) / (
         THREE_LIMITS[1] - THREE_LIMITS[0]
@@ -436,7 +425,6 @@ def _quadrant_pill(
     vertical: str,
     title: str,
 ) -> None:
-    """Draw one descriptive quadrant key."""
     theme = DEFAULT_THEME
     line_count = title.count("\n") + 1
     probe = ax.text(
@@ -492,7 +480,6 @@ def _axis_label(
     name_offset: float,
     direction_offset: float,
 ) -> None:
-    """Draw one axis name plus its direction-of-good arrow."""
     theme = DEFAULT_THEME
     rotation = 90 if vertical else 0
     if vertical:
@@ -586,7 +573,6 @@ def render_chart_only(
     snapshot_date: str,
     final: bool,
 ) -> Path:
-    """Render the transparent scatter asset for Canva framing."""
     theme = DEFAULT_THEME
     panel_fill = "#F5F1EC"
     qualifiers = qualified_players(table)
@@ -714,8 +700,6 @@ def render_chart_only(
         alpha=0.26,
         zorder=6,
     )
-    # Bulls draw as headshots in descending volume, so the largest portraits
-    # land underneath and a smaller neighbour is never hidden behind them.
     for layer_index, row in enumerate(bulls.itertuples(index=False)):
         point_x = chart_x(float(row.rim_pps))
         point_y = chart_y(float(row.three_pps))
@@ -783,7 +767,6 @@ def render_chart_only(
 
 
 def canva_copy_block(table: pd.DataFrame, summary: dict) -> str:
-    """Print the exact strings for the Canva page so numbers come from one run."""
     bulls = bulls_players(table)
     lines = [
         "TITLE:  WHERE THE POINTS COME FROM",

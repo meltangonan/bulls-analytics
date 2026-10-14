@@ -34,8 +34,6 @@ def season_of(game_id: str) -> str:
 
 
 def game_dir(game_id: str) -> Path:
-    """A saved test game stays in stress-tests/; a dry run featuring another team goes there too;
-    every Bulls game goes to its season folder."""
     test = STRESS / game_id
     other_team = int(os.environ.get("FOCUS_TEAM_ID", BULLS)) != BULLS
     return test if test.exists() or other_team else ROOT / "seasons" / season_of(game_id) / game_id

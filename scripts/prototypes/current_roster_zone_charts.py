@@ -57,13 +57,11 @@ def player_slug(name: str) -> str:
 
 
 def qualifies_player(fga: int, minimum: int = MIN_PLAYER_FGA) -> bool:
-    """Twelve zones split a season thin; below this too many go unrated to read."""
     return fga >= minimum
 
 
 def summarise(subject: str, scope: str, shots: pd.DataFrame,
               zones: pd.DataFrame, min_fga: int) -> dict[str, object]:
-    """One row per chart: what it claims, and how much of it is standing on air."""
     fga = len(shots)
     made = int(shots.shot_made.sum())
     threes = shots.shot_type.eq("3PT")
@@ -77,8 +75,6 @@ def summarise(subject: str, scope: str, shots: pd.DataFrame,
                          / fga * 100, 1) if fga else float("nan"),
         "zones_rated": int(len(rated)),
         "zones_grey": int(len(zones) - len(rated)),
-        # The share of his attempts that sit in a coloured zone. A chart where
-        # this is high is mostly assertion; where it is low, mostly grey.
         "rated_fga_share_pct": round(rated.fga.sum() / fga * 100, 1) if fga else 0.0,
         "min_zone_fga": min_fga,
     }
@@ -114,8 +110,6 @@ def build(args: argparse.Namespace) -> list[Path]:
         # worktree cleanup away from being unauditable.
         shots.to_csv(args.data_dir / f"{slug}-shots-{args.season}.csv", index=False)
 
-    # The team first because it is the carousel's opener; team and player shot
-    # shares now use the same all-attempts denominator logic.
     render("Chicago Bulls", "bulls",
            shot_data.team_shots(BULLS_TEAM_ID, args.season, args.refresh),
            "Chicago attempts", sm.MIN_ZONE12_FGA_TEAM)

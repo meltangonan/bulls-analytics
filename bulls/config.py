@@ -1,12 +1,10 @@
 """Configuration constants for Bulls Analytics."""
 
-# Chicago Bulls
 BULLS_TEAM_ID = 1610612741
 BULLS_ABBR = "CHI"
 CURRENT_SEASON = "2025-26"
 LAST_SEASON = "2024-25"
 
-# All NBA Team IDs
 NBA_TEAMS = {
     "ATL": {"id": 1610612737, "name": "Atlanta Hawks"},
     "BOS": {"id": 1610612738, "name": "Boston Celtics"},
@@ -45,5 +43,4 @@ NBA_TEAMS = {
 BULLS_RED = (206, 17, 65)      # house.RED #CE1141
 BULLS_BLACK = (20, 20, 20)     # house.BULLS_BLACK #141414 (never pure black)
 
-# NBA API
 API_DELAY = 0.6  # Seconds between API calls (rate limiting)

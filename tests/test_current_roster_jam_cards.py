@@ -17,7 +17,6 @@ from scripts.prototypes.current_roster_jam_cards import (
 
 
 def _zones(rows: list[dict]) -> pd.DataFrame:
-    """Build a shot-locations frame with the flattened two-level columns."""
     records = []
     for row in rows:
         record = {"PLAYER_ID": row["PLAYER_ID"]}
@@ -37,7 +36,6 @@ def _base(rows: list[dict]) -> pd.DataFrame:
 
 
 def _frames():
-    """Two qualified scorers and one player below the attempt threshold."""
     zones = _zones([
         {"PLAYER_ID": 1, "Restricted Area|FGM": 100, "Restricted Area|FGA": 150,
          "Above the Break 3|FGM": 60, "Above the Break 3|FGA": 150},
@@ -84,20 +82,17 @@ def test_three_point_makes_count_three_points():
 
 
 def test_percentiles_rank_only_qualified_players():
-    """The unqualified player must not dilute or enter the percentile pool."""
     table = build_league_table(*_frames()).set_index("nba_id")
     assert not table.loc[3, "qualified"]
     assert pd.isna(table.loc[3, "pct_rim"])
-    # Two qualifiers: the higher rate is the 100th percentile, the other 50th.
     assert table.loc[1, "pct_rim"] == pytest.approx(100.0)
     assert table.loc[2, "pct_rim"] == pytest.approx(50.0)
 
 
 def test_qualification_is_playing_time_not_shot_volume():
-    """A high-volume shooter below the possession gate must stay unranked."""
     zones, base, advanced = _frames()
     advanced.loc[advanced["PLAYER_ID"] == 3, "POSS"] = MIN_POSSESSIONS - 1
-    base.loc[base["PLAYER_ID"] == 3, "FGA"] = 2000  # shooting cannot qualify him
+    base.loc[base["PLAYER_ID"] == 3, "FGA"] = 2000
     table = build_league_table(zones, base, advanced).set_index("nba_id")
     assert not table.loc[3, "qualified"]
 
@@ -107,10 +102,8 @@ def test_qualification_is_playing_time_not_shot_volume():
 
 
 def test_cards_are_ordered_by_minutes_not_by_production():
-    """Minutes order reads as the rotation; it must not rank the roster."""
     table = build_league_table(*_frames())
     cards = roster_cards(table, _roster())
-    # Giddey out-produces Claxton in every category but plays fewer minutes.
     assert cards["player_name"].tolist() == ["Nic Claxton", "Josh Giddey"]
     assert cards["MIN"].is_monotonic_decreasing
 
@@ -155,7 +148,6 @@ def test_validation_rejects_more_cards_than_the_grid_holds():
 
 
 def test_chart_export_is_transparent(tmp_path, monkeypatch):
-    """The Canva page supplies the background, so the asset must not."""
     from PIL import Image
 
     import scripts.prototypes.current_roster_jam_cards as jam

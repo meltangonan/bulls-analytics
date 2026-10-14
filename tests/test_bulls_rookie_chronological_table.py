@@ -158,7 +158,6 @@ def test_red_white_green_scale_leaves_the_whole_neutral_band_unhighlighted():
     scale = (0, 4, 6, 10)
     assert heat_fill(0, *scale) == pytest.approx(to_rgb(HEAT_RED))
     assert heat_fill(10, *scale) == pytest.approx(to_rgb(HEAT_GREEN))
-    # Every value inside the band is blank, not just the exact midpoint.
     for value in (4, 4.5, 5, 5.5, 6):
         assert heat_fill(value, *scale) == pytest.approx(to_rgb(HEAT_MID))
     # An average cell shows nothing, because the midpoint is the page itself.
@@ -170,7 +169,6 @@ def test_true_shooting_leaves_the_middle_half_of_rookies_blank():
     red_at, n_low, n_high, green_at = scale
     assert red_at < n_low < 0 < n_high < green_at
     assert "ts_pct" in ERA_RELATIVE_METRICS
-    # Slightly below league average is ordinary for a rookie, so it is blank.
     for relative in (-6.0, -3.0, 0.0, 0.5):
         assert heat_fill(relative, *scale) == pytest.approx(to_rgb(HEAT_MID))
     assert heat_fill(-12.0, *scale) == pytest.approx(to_rgb(HEAT_RED))
@@ -206,7 +204,6 @@ def test_counting_columns_only_colour_a_standout_rookie_season():
 
 
 def test_a_low_counting_stat_is_uncolored_rather_than_red():
-    """A guard with 0.1 blocks has a role, not a failure. Do not paint it red."""
     for metric in ("ppg", "rpg", "apg", "spg", "bpg"):
         red_at, n_low, n_high, green_at = COLUMN_SCALES[metric]
         assert red_at == n_low == n_high, f"{metric} should be sequential"

@@ -81,7 +81,6 @@ def fetch(season: str, season_type: str, split: str, refresh: bool = False) -> p
 
 
 def player_games(season: str, season_type: str) -> pd.DataFrame:
-    """One row per Bulls player-game with full, half, overtime and quarter stats."""
     full = fetch(season, season_type, "full")
     if full.empty:
         return full
@@ -104,7 +103,6 @@ def player_games(season: str, season_type: str) -> pd.DataFrame:
 
 
 def reconcile(wide: pd.DataFrame) -> pd.DataFrame:
-    """Raise on any counting-stat mismatch; return a per-season audit."""
     for stat in ["PTS", "FGM", "FGA", "FG3M", "FG3A", "FTM", "FTA"]:
         checks = {
             "q1+q2=h1": wide[f"q1_{stat}"] + wide[f"q2_{stat}"] - wide[f"h1_{stat}"],

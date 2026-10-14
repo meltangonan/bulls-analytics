@@ -77,7 +77,7 @@ LAST_SEASON_END_YEAR = 2026
 MIN_THREE_POINT_ATTEMPTS = 150
 BENCHMARK_PERCENTILE = 90  # "top 10% of qualified NBA three-point shooters"
 RETRY_ATTEMPTS = 4
-RETRY_BACKOFF = 4  # Each retry waits proportionally longer than API_DELAY.
+RETRY_BACKOFF = 4
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 PROJECT = "three-point-leaders"
 
@@ -144,8 +144,8 @@ HEADSHOT_CROP_FRACTION = 0.68
 # one. The drawn size grows with it, which keeps his head the same size as every
 # other face -- a wider crop at a fixed drawn size would shrink him instead.
 CROP_FRACTIONS = {2399: 0.74}  # Mike Dunleavy
-LABEL_GAP = 18          # portrait edge to the name
-VALUE_GAP = 11          # name to the percentage
+LABEL_GAP = 18
+VALUE_GAP = 11
 
 # Both series labels hang the same distance below the last row so they read as a
 # pair rather than a stack. The drop is derived from the portrait rather than
@@ -154,8 +154,8 @@ VALUE_GAP = 11          # name to the percentage
 # within 0.2 points of the benchmark. A literal value here collided the moment
 # the row order flipped.
 SERIES_LABEL_DROP = HEADSHOT_HALF + 28
-NAME_RISE = 18          # name and percentage sit above the row centre
-LINE_DROP = 24          # the made-attempted line sits below it
+NAME_RISE = 18
+LINE_DROP = 24
 
 # Every vertical rule is a light grey: the gridlines quietest, the two reference
 # series a step darker so they still read as data. Grey is the right register for
@@ -230,12 +230,10 @@ NAME_SUFFIXES = {"jr.", "jr", "sr.", "sr", "ii", "iii", "iv", "v"}
 
 
 def season_label(end_year: int) -> str:
-    """Return an NBA end year as an NBA.com season string."""
     return f"{end_year - 1}-{str(end_year)[-2:]}"
 
 
 def display_season(end_year: int) -> str:
-    """Return the row label for one season. A row has width for the full form."""
     return season_label(end_year)
 
 
@@ -424,7 +422,6 @@ def build_tables(refresh: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:
 
 
 def build_leaders(season_table: pd.DataFrame, league_table: pd.DataFrame) -> pd.DataFrame:
-    """Return one qualifying accuracy leader per season, with league context."""
     leaders: list[dict] = []
     for end_year, group in season_table.groupby("season_end_year", sort=True):
         qualified = group[group["qualified"]].sort_values(
@@ -436,8 +433,6 @@ def build_leaders(season_table: pd.DataFrame, league_table: pd.DataFrame) -> pd.
                 f"{MIN_THREE_POINT_ATTEMPTS} three-point attempts."
             )
         top = qualified.iloc[0]
-        # A genuine tie would make "the leader" a coin flip; say so rather than
-        # letting sort order pick silently.
         ties = qualified[qualified["three_pct"].round(4) == round(float(top["three_pct"]), 4)]
         if len(ties) > 1:
             raise ValueError(
@@ -469,7 +464,6 @@ def build_leaders(season_table: pd.DataFrame, league_table: pd.DataFrame) -> pd.
 
 
 def validate(leaders: pd.DataFrame) -> dict[str, object]:
-    """Fail on anything that would render off the chart, and report the headline."""
     expected = LAST_SEASON_END_YEAR - FIRST_SEASON_END_YEAR + 1
     if len(leaders) != expected:
         raise ValueError(f"Expected {expected} seasons, built {len(leaders)}.")
@@ -508,7 +502,6 @@ def validate(leaders: pd.DataFrame) -> dict[str, object]:
 
 
 def axis_bounds(values: list[float]) -> tuple[float, float, list[float]]:
-    """Return the axis floor, ceiling and gridline ticks fitted to the data."""
     low = math.floor((min(values) - AXIS_PAD) / AXIS_STEP) * AXIS_STEP
     high = math.ceil((max(values) + AXIS_PAD) / AXIS_STEP) * AXIS_STEP
     ticks = []
@@ -520,23 +513,19 @@ def axis_bounds(values: list[float]) -> tuple[float, float, list[float]]:
 
 
 def _x(percent: float, low: float, high: float) -> float:
-    """Map a three-point percentage onto the horizontal accuracy axis."""
     return PLOT_LEFT + (percent - low) / (high - low) * (PLOT_RIGHT - PLOT_LEFT)
 
 
 def _row_y(index: int) -> float:
-    """Map a season's position onto its row. The timeline runs down the page."""
     return FIRST_ROW_Y - index * ROW_HEIGHT
 
 
 def portrait_path(player_id: int) -> Path:
-    """Return the portrait to draw, preferring this post's own hand-sourced copy."""
     local = PORTRAITS / f"{player_id}.png"
     return local if local.is_file() else HEADSHOT_CACHE / f"{player_id}.png"
 
 
 def top_anchored_headshot(ax, image_path, x, y, half_size, *, crop=HEADSHOT_CROP_FRACTION, zorder=5):
-    """Keep face scale constant when an individual portrait needs a wider crop."""
     return house.top_anchored_headshot_label(
         ax, image_path, x, y, half_size, crop_fraction=crop,
         scale=crop / HEADSHOT_CROP_FRACTION, zorder=zorder,
@@ -546,7 +535,6 @@ def top_anchored_headshot(ax, image_path, x, y, half_size, *, crop=HEADSHOT_CROP
 def render_chart(
     leaders: pd.DataFrame, date: str, *, final: bool = False, show_league: bool = True
 ) -> Path:
-    """Render the transparent vertical leader timeline for Canva."""
     # Newest season on top. The tables stay chronological -- only the drawing
     # order flips -- so the reader meets the current roster first and reads back
     # into history rather than scrolling through a decade to reach today.
@@ -695,7 +683,6 @@ def render_chart(
 def write_working_tables(
     season_table: pd.DataFrame, league_table: pd.DataFrame, leaders: pd.DataFrame
 ) -> tuple[Path, Path, Path]:
-    """Write every player-season, every league season, and the ranked leaders."""
     POST_DATA.mkdir(parents=True, exist_ok=True)
     seasons_path = POST_DATA / "bulls-player-seasons.csv"
     league_path = POST_DATA / "league-seasons.csv"
@@ -707,7 +694,6 @@ def write_working_tables(
 
 
 def canva_copy_block(report: dict[str, object], leaders: pd.DataFrame) -> str:
-    """Return the exact data-bound framing to paste around the chart asset."""
     return "\n".join(
         [
             "CANVA COPY",

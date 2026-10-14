@@ -63,7 +63,7 @@ MIN_ENDING_POINTS_PER_36 = 10.0
 TOP_N = 15
 PAGE_SIZES = (15,)
 RETRY_ATTEMPTS = 4
-RETRY_BACKOFF = 4  # Each retry waits proportionally longer than API_DELAY.
+RETRY_BACKOFF = 4
 SNAPSHOT_TZ = ZoneInfo("America/Chicago")
 
 CHART_WIDTH = 1800
@@ -133,8 +133,6 @@ SEASON_COLUMNS = [
 
 @dataclass(frozen=True)
 class ChartType:
-    """Type sizing for the leap chart."""
-
     name: float = 20.0
     season: float = 11.0
     rate: float = 12.0
@@ -147,22 +145,18 @@ CHART_TYPE = ChartType()
 
 
 def season_label(end_year: int) -> str:
-    """Return an NBA end year as an NBA.com season string."""
     return f"{end_year - 1}-{str(end_year)[-2:]}"
 
 
 def display_season_label(end_year: int) -> str:
-    """Return the same season with an en dash for chart labels."""
     return season_label(end_year).replace("-", "–", 1)
 
 
 def player_source_url(end_year: int) -> str:
-    """Return the NBA.com player-totals source for one season."""
     return NBA_PLAYER_URL.format(season=season_label(end_year))
 
 
 def team_source_url(end_year: int) -> str:
-    """Return the NBA.com team-totals source for one season."""
     return NBA_TEAM_URL.format(season=season_label(end_year))
 
 
@@ -255,7 +249,6 @@ def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
 
 
 def fetch_bulls_history(*, refresh: bool = False) -> pd.DataFrame:
-    """Load every Bulls regular season from 1999-00 onward."""
     frames: list[pd.DataFrame] = []
     for end_year in range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1):
         print(f"Loading {display_season_label(end_year)}")
@@ -264,7 +257,6 @@ def fetch_bulls_history(*, refresh: bool = False) -> pd.DataFrame:
 
 
 def build_season_table(rows: pd.DataFrame) -> pd.DataFrame:
-    """Add per-minute rates and the full-time-Bull qualification to each season."""
     missing = set(SEASON_COLUMNS) - set(rows.columns)
     if missing:
         raise ValueError(f"Bulls season rows are missing {sorted(missing)}.")
@@ -278,8 +270,6 @@ def build_season_table(rows: pd.DataFrame) -> pd.DataFrame:
 
     table["minutes_per_game"] = table["minutes"] / table["games"]
     table["points_per_game"] = table["points"] / table["games"]
-    # A scoreless player with zero minutes would divide by zero; NBA.com has no
-    # such row, but the guard keeps the rate honest rather than infinite.
     table["points_per_36"] = table["points"] / table["minutes"].where(table["minutes"] > 0) * 36
     table["qualified"] = (table["games"] >= table["team_games"] * MIN_TEAM_GAME_SHARE) & (
         table["minutes_per_game"] >= MIN_MINUTES_PER_GAME
@@ -290,7 +280,6 @@ def build_season_table(rows: pd.DataFrame) -> pd.DataFrame:
 
 
 def build_leap_table(season_table: pd.DataFrame) -> pd.DataFrame:
-    """Pair each qualifying season with the player's qualifying season before it."""
     qualified = season_table.loc[season_table["qualified"]].copy()
     previous = qualified.copy()
     previous["join_year"] = previous["season_end_year"] + 1
@@ -321,8 +310,6 @@ def build_leap_table(season_table: pd.DataFrame) -> pd.DataFrame:
     if pairs.empty:
         raise ValueError("No qualifying leap reaches the ending scoring floor.")
 
-    # Deterministic order: the largest leap first, then the higher finishing
-    # rate, then the season and name so a tie can never reshuffle between runs.
     ranked = pairs.sort_values(
         ["gain_per_36", "points_per_36_cur", "season_end_year_cur", "player_prev"],
         ascending=[False, False, True, True],
@@ -333,7 +320,6 @@ def build_leap_table(season_table: pd.DataFrame) -> pd.DataFrame:
 
 
 def top_leaps(leap_table: pd.DataFrame, count: int = TOP_N) -> pd.DataFrame:
-    """Return the highest-ranked leaps in display order."""
     if len(leap_table) < count:
         raise ValueError(
             f"Only {len(leap_table)} qualifying leaps exist; {count} were requested."
@@ -342,7 +328,6 @@ def top_leaps(leap_table: pd.DataFrame, count: int = TOP_N) -> pd.DataFrame:
 
 
 def chart_pages(leaders: pd.DataFrame) -> list[pd.DataFrame]:
-    """Split the top 15 into two readable chart pages of eight and seven rows."""
     if len(leaders) != sum(PAGE_SIZES):
         raise ValueError(
             f"The chart needs exactly {sum(PAGE_SIZES)} leaders; received {len(leaders)}."
@@ -356,7 +341,6 @@ def chart_pages(leaders: pd.DataFrame) -> list[pd.DataFrame]:
 
 
 def minutes_correlations(leap_table: pd.DataFrame) -> dict[str, float]:
-    """Return how strongly each metric's gain tracks the player's minutes gain."""
     return {
         "per_36": float(leap_table["gain_per_36"].corr(leap_table["gain_minutes_per_game"])),
         "per_game": float(
@@ -366,7 +350,6 @@ def minutes_correlations(leap_table: pd.DataFrame) -> dict[str, float]:
 
 
 def validate_tables(season_table: pd.DataFrame, leap_table: pd.DataFrame) -> dict[str, object]:
-    """Validate coverage, reconciliation, the gate, and the ranked pairs."""
     expected_years = set(range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1))
     present_years = set(season_table["season_end_year"].astype(int))
     if present_years != expected_years:
@@ -434,7 +417,6 @@ def validate_tables(season_table: pd.DataFrame, leap_table: pd.DataFrame) -> dic
         "last_leap_season": display_season_label(LAST_SEASON_END_YEAR),
         "correlation_per_36": correlations["per_36"],
         "correlation_per_game": correlations["per_game"],
-        # Display names, so the Canva page can never disagree with the chart.
         "leader": display_name(leaders.iloc[0]),
         "leader_season": leaders.iloc[0]["season_cur"],
         "leader_gain": float(leaders.iloc[0]["gain_per_36"]),
@@ -445,7 +427,6 @@ def validate_tables(season_table: pd.DataFrame, leap_table: pd.DataFrame) -> dic
 def write_working_tables(
     season_table: pd.DataFrame, leap_table: pd.DataFrame, date: str
 ) -> tuple[Path, Path]:
-    """Write every player-season and every ranked leap so exclusions stay auditable."""
     OUT.mkdir(parents=True, exist_ok=True)
     season_path = OUT / f"{date}-bulls-scoring-leaps-seasons.csv"
     leap_path = OUT / f"{date}-bulls-scoring-leaps-pairs.csv"
@@ -455,17 +436,14 @@ def write_working_tables(
 
 
 def display_name(leap: pd.Series) -> str:
-    """Return the player name as it should read on the graphic."""
     return DISPLAY_NAMES.get(int(leap["player_id"]), str(leap["player_cur"]))
 
 
 def season_marker(previous: str, current: str) -> str:
-    """Return the complete compact span: 2013–14 and 2014–15 becomes 13–14 to 14–15."""
     return f"{str(previous)[2:]} to {str(current)[2:]}"
 
 
 def gain_label(leap: pd.Series) -> str:
-    """Return the signed per-36 gain printed at the arrow tip."""
     return (
         f"+{leap['gain_per_36']:.1f} "
         f"(+{leap['percentage_increase']:.1f}%)"
@@ -473,7 +451,6 @@ def gain_label(leap: pd.Series) -> str:
 
 
 def rate_label(leap: pd.Series) -> str:
-    """Return the exact per-36 transition printed under the player name."""
     return (
         f"{leap['points_per_36_prev']:.1f} to "
         f"{leap['points_per_36_cur']:.1f} PTS/36"
@@ -481,7 +458,6 @@ def rate_label(leap: pd.Series) -> str:
 
 
 def minutes_label(leap: pd.Series) -> str:
-    """Return the exact minutes-per-game transition for the third text line."""
     return (
         f"{leap['minutes_per_game_prev']:.1f} to "
         f"{leap['minutes_per_game_cur']:.1f} MPG"
@@ -497,7 +473,6 @@ def top_anchored_headshot_label(ax, image_path, x, y, half_size, *, zorder=5):
 
 
 def _x_position(value: float) -> float:
-    """Map a points-per-36 value onto the chart's plot area."""
     span = AXIS_MAX - AXIS_MIN
     return PLOT_LEFT + (float(value) - AXIS_MIN) / span * (PLOT_RIGHT - PLOT_LEFT)
 
@@ -505,7 +480,6 @@ def _x_position(value: float) -> float:
 def render_chart(
     leaders: pd.DataFrame, date: str, *, page_number: int = 1, final: bool = False
 ) -> Path:
-    """Render the transparent top-15 scoring-leaps chart for Canva."""
     if leaders.empty:
         raise ValueError("Cannot render an empty leap chart.")
     if len(leaders) > max(PAGE_SIZES):
@@ -591,8 +565,6 @@ def render_chart(
             fontproperties=helvetica("oblique"),
             zorder=4,
         )
-        # A longer label than today's field would push into the plot; fail
-        # rather than draw text over the arrows.
         rate_artist = ax.text(
             LABEL_LEFT,
             y - RATE_DROP,
@@ -670,7 +642,6 @@ def render_chart(
 
 
 def canva_copy_block(report: dict[str, object]) -> str:
-    """Return the exact data-bound framing to paste around the chart asset."""
     return "\n".join(
         [
             "CANVA COPY",

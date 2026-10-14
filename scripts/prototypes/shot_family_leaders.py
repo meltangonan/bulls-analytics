@@ -54,9 +54,9 @@ class Family:
     def __init__(self, slug, noun, include, exclude='', three_point='reject',
                  declared_rank_from=None, definition=''):
         self.slug = slug
-        self.noun = noun                 # singular, used in column names and copy
+        self.noun = noun
         self.include = include           # ACTION_TYPE regex, matched lower-case
-        self.exclude = exclude           # labels the include pattern over-catches
+        self.exclude = exclude
         self.three_point = three_point   # 'reject' (impossible) | 'heaves' (expected)
         self.declared_rank_from = declared_rank_from  # documentation; evidence wins
         self.definition = definition
@@ -71,9 +71,6 @@ FAMILIES: dict[str, Family] = {
         slug='hooks', noun='hook', include='hook',
         three_point='reject',
         definition='All NBA hook-shot labels, including bank, jump and turnaround hooks.'),
-    # The two shipped posts, expressed as registry entries so the derived ranking
-    # window can be checked against a published result. Their data lives here, not
-    # in the published posts' directories.
     'layups': Family(
         slug='layups', noun='layup', include='layup|finger roll', exclude='tip|dunk|floating',
         three_point='reject', declared_rank_from=2000,
@@ -240,12 +237,11 @@ class Stability:
         self.boundary = boundary          # earliest season the family may be ranked from
         self.audited_from = audited_from
         self.markers = markers            # label -> first season, for labels still in use
-        self.introductions = introductions  # per-season evidence rows
-        self.sporadic = sporadic          # labels with gaps: sampling, not era changes
+        self.introductions = introductions
+        self.sporadic = sporadic
 
 
 def label_stability(audit: pd.DataFrame, fam: Family) -> Stability:
-    """Earliest season this family's label set is stable, from action_label_audit.csv."""
     if audit.empty:
         raise ValueError('Empty action label audit; cannot establish label stability')
     seasons = sorted(audit.SEASON.unique())
@@ -288,7 +284,6 @@ def label_stability(audit: pd.DataFrame, fam: Family) -> Stability:
 
 def resolve_rank_from(audit: pd.DataFrame, fam: Family, requested: str | None = None,
                       allow_unstable: bool = False) -> tuple[str, Stability, list[str]]:
-    """Ranking window start, refusing seasons before the evidenced boundary."""
     stability = label_stability(audit, fam)
     notes = []
     if fam.declared_rank_from and season_year(stability.boundary) != fam.declared_rank_from:
@@ -514,7 +509,6 @@ def render(fam: Family) -> None:
 
 
 def family_copy(fam: Family, rank_from: str) -> dict:
-    """Page copy, with the window taken from the data rather than restated by hand."""
     span = f'{rank_from.replace("-", "–")} to {season_label(LAST_SEASON).replace("-", "–")}'
     definition = fam.definition
     if season_year(rank_from) > AUDIT_FROM:

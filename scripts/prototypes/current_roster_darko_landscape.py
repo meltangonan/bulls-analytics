@@ -153,7 +153,6 @@ def _parse_darko_number(value: str) -> float:
 
 
 def parse_darko_roster(html: str, roster_ids: set[int]) -> pd.DataFrame:
-    """Extract full-precision DARKO records for the roster IDs only."""
     rows = []
     for match in _DARKO_RECORD.finditer(html):
         nba_id = int(match.group("nba_id"))
@@ -181,7 +180,6 @@ def build_working_table(
     darko: pd.DataFrame,
     snapshot_time: datetime,
 ) -> pd.DataFrame:
-    """Join official roster membership to DARKO without inventing missing values."""
     table = roster.merge(darko, on="nba_id", how="left", validate="one_to_one")
     for column in ["darko_team_id", "darko_season", "darko_career_game_num"]:
         table[column] = table[column].astype("Int64")
@@ -213,7 +211,6 @@ def build_working_table(
 
 
 def validate_working_table(table: pd.DataFrame) -> dict:
-    """Validate coverage, identity, missingness, and component arithmetic."""
     if table["nba_id"].duplicated().any():
         raise ValueError("Working table contains duplicate NBA player IDs.")
     if table["official_roster_name"].duplicated().any():
@@ -282,7 +279,6 @@ def validate_working_table(table: pd.DataFrame) -> dict:
 
 
 def order_available_for_portrait_layers(table: pd.DataFrame) -> pd.DataFrame:
-    """Draw lower-DDPM portraits last so lower faces remain fully visible."""
     return (
         table.loc[table["data_available"]]
         .copy()
@@ -315,7 +311,6 @@ def chart_y(value: float) -> float:
 
 
 def ensure_headshots(available: pd.DataFrame) -> None:
-    """Populate the shared NBA CDN cache for every plotted player."""
     house_ensure_headshots(available["nba_id"])
 
 
@@ -324,7 +319,6 @@ def render_chart_only(
     snapshot_date: str,
     final: bool,
 ) -> Path:
-    """Render the flat chart-only asset for external Canva framing."""
     theme = DEFAULT_THEME
     panel_fill = "#F5F1EC"
     available = order_available_for_portrait_layers(table)
@@ -412,7 +406,6 @@ def render_chart_only(
         title: str,
         detail: str,
     ) -> None:
-        """Draw one descriptive sign-based quadrant key."""
         detail_font = body_font("regular")
         title_probe = ax.text(
             0,

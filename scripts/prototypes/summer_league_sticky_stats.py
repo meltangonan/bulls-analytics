@@ -74,7 +74,6 @@ FEATURED_PLAYERS = (
 
 
 def parse_minutes(value: object) -> float:
-    """Convert NBA clock or ISO duration text into decimal minutes."""
     raw = str(value or "").strip()
     if not raw or raw.lower() == "nan":
         return 0.0
@@ -316,7 +315,6 @@ def _fetch_shots(game_id: str, refresh: bool) -> pd.DataFrame:
 
 
 def fetch_league_data(refresh: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Fetch or load every completed 2026 Summer League game."""
     game_ids = _fetch_game_ids(refresh=refresh)
     boxes: list[pd.DataFrame] = []
     shots: list[pd.DataFrame] = []
@@ -352,7 +350,6 @@ def _headshot_path(player_id: int, name: str | None = None) -> Path | None:
 
 
 def _featured_profiles(profiles: pd.DataFrame) -> pd.DataFrame:
-    """Return available featured Bulls in the approved display order."""
     featured = profiles[profiles["name"].isin(FEATURED_PLAYERS)].copy()
     featured["order"] = featured["name"].map({name: index for index, name in enumerate(FEATURED_PLAYERS)})
     return featured.sort_values("order")
@@ -360,8 +357,6 @@ def _featured_profiles(profiles: pd.DataFrame) -> pd.DataFrame:
 
 @dataclass(frozen=True)
 class StickyChartContent:
-    """Display-ready values for the chart and its data-bound Canva copy."""
-
     rankable: pd.DataFrame
     featured: pd.DataFrame
     median_three_pt_rate: float
@@ -381,7 +376,6 @@ class StickyChartContent:
 
 
 def prepare_chart_content(profiles: pd.DataFrame) -> StickyChartContent:
-    """Prepare the one approved chart and every data-bound Canva string."""
     qualified_mask = profiles["qualified"]
     rankable = profiles[
         qualified_mask
@@ -420,7 +414,6 @@ def prepare_chart_content(profiles: pd.DataFrame) -> StickyChartContent:
 
 
 def format_canva_copy(content: StickyChartContent) -> str:
-    """Return a clearly delimited block for manual Canva verification."""
     lines = ["=== CANVA COPY (DATA-BOUND) ==="]
     lines.extend(f"{label}: {value}" for label, value in content.canva_copy_items)
     lines.append("=== END CANVA COPY ===")
@@ -514,7 +507,6 @@ def render_chart_only(content: StickyChartContent, final: bool = False) -> Path:
             path_effects=halo)
 
     def quadrant_pill(anchor_x, anchor_y, ha, va, title, detail):
-        """Draw one corner key: a style name and what it means, in plain words."""
         probe = ax.text(0, 0, title, fontsize=10.5, fontproperties=helvetica("bold"), alpha=0)
         title_width = rendered_width(ax, probe)
         probe.remove()
@@ -576,11 +568,7 @@ def render_chart_only(content: StickyChartContent, final: bool = False) -> Path:
                                point_x, point_y, radius=radius, border_color=None)
         image.set_zorder(9)
         values = f"{player['three_pt_attempt_rate']:.1f}% 3PT  ×  {player['rim_rate']:.1f}% RIM"
-        # Keep the centered label inside the panel even when the portrait sits
-        # hard against an edge.
         label_x = min(max(point_x, x0 + 105), x1 - 105)
-        # Flip the label above the portrait only when there is no room beneath
-        # it, so edge players never print their stats outside the panel.
         if point_y - radius - 31 < y0 + 12:
             align, name_y, value_y = "bottom", point_y + radius + 34, point_y + radius + 11
         else:

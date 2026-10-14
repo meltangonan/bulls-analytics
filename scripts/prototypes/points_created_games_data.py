@@ -32,7 +32,6 @@ def sha(path):
 
 
 def load_population():
-    """Check complete season game populations and official team scoring totals."""
     players, teams, sources = [], [], []
     for end in range(1997, 2027):
         for kind, target in [('players', players), ('team', teams)]:
@@ -81,13 +80,11 @@ def load_population():
 
 
 def assisted_game(season, gid, logs):
-    """Prefer original NBA actions; otherwise reuse saved NBA basket extraction."""
     raw = SEASON / 'raw' / f'{season}_{gid}.json.gz'
     if raw.exists():
         with gzip.open(raw,'rt') as h:
             data = json.load(h)
         frame = pd.DataFrame(data['records'])
-        # Only Chicago is in this population; restrict opponent events before audit.
         events, issues = parse_game(frame[frame.teamId == CHI], logs)
         saved = DATA / 'raw' / raw.name
         shutil.copyfile(raw, saved)
@@ -141,7 +138,6 @@ def assisted_game(season, gid, logs):
 
 
 def certify(population, limit=15):
-    """Resolve a game only while it can meet or exceed the current cutoff."""
     p = population.copy()
     p['assist_pts'] = pd.NA
     p['created'] = pd.NA

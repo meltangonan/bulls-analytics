@@ -50,8 +50,8 @@ from bulls.graphics.house import (
 )
 from bulls.visuals import DATA, visual_dir
 
-FIRST_SEASON_END = 2001  # 2000-01
-LAST_SEASON_END = 2026  # 2025-26
+FIRST_SEASON_END = 2001
+LAST_SEASON_END = 2026
 
 # Qualification: a rotation-sized role, held for most of the season.
 #
@@ -190,9 +190,6 @@ MIN_USABLE_HEADSHOT_BYTES = 50_000
 HISTORICAL_HEADSHOT_URLS = {
     2239: "https://a.espncdn.com/i/headshots/nba/players/full/998.png",  # Hassell
 }
-# Silhouettes with no NBA or ESPN portrait at all. Rendering continues with a
-# neutral placeholder and prints a warning, rather than blocking the build on
-# a picture that has to be sourced and licence-checked by hand.
 ACCEPTED_MISSING_HEADSHOTS = {
     923: "Donyell Marshall (2002-03): no NBA or ESPN portrait exists",
 }
@@ -203,8 +200,6 @@ FACE_CROP_HEIGHT_FRACTION = 0.74
 
 @dataclass(frozen=True)
 class TableLayout:
-    """Row and type sizing for one table page."""
-
     header_from_top: float
     header_rule_from_top: float
     first_row_from_top: float
@@ -284,13 +279,7 @@ ONE_SLIDE_LAYOUT = TableLayout(
 )
 
 
-# --------------------------------------------------------------------------
-# Data
-# --------------------------------------------------------------------------
-
-
 def _norm(name: str) -> str:
-    """Normalize a player name for cross-source joins."""
     text = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
     text = "".join(c for c in text.lower() if c.isalnum() or c == " ")
     for suffix in (" jr", " iii", " ii", " sr"):
@@ -300,7 +289,6 @@ def _norm(name: str) -> str:
 
 
 def build_working_table(refresh: bool = False) -> pd.DataFrame:
-    """Return every Bulls player-season with BPM components in the window."""
     frame = load_or_fetch_advanced(
         ADVANCED_CSV,
         range(FIRST_SEASON_END, LAST_SEASON_END + 1),
@@ -349,7 +337,6 @@ def select_leaders(table: pd.DataFrame) -> pd.DataFrame:
 
 
 def attach_player_ids(leaders: pd.DataFrame) -> pd.DataFrame:
-    """Attach NBA player ids so the working table stays joinable downstream."""
     from nba_api.stats.static import players as static_players
 
     index: dict[str, list[dict]] = {}
@@ -366,7 +353,6 @@ def attach_player_ids(leaders: pd.DataFrame) -> pd.DataFrame:
 
 
 def validate_working_table(table: pd.DataFrame, leaders: pd.DataFrame) -> dict:
-    """Check every claim the graphic will make before it is drawn."""
     expected = list(range(FIRST_SEASON_END, LAST_SEASON_END + 1))
     missing_seasons = sorted(set(expected) - set(leaders["season"]))
     seasons_without_qualifier = sorted(
@@ -432,7 +418,6 @@ def validate_working_table(table: pd.DataFrame, leaders: pd.DataFrame) -> dict:
 def write_working_table(
     table: pd.DataFrame, leaders: pd.DataFrame, date: str
 ) -> Path:
-    """Persist the analysis table beside the fetched inputs it came from."""
     LEADERS_CSV.parent.mkdir(parents=True, exist_ok=True)
     columns = [
         "season", "season_label", "player_name", "nba_id",
@@ -443,13 +428,7 @@ def write_working_table(
     return LEADERS_CSV
 
 
-# --------------------------------------------------------------------------
-# Colour and headshots
-# --------------------------------------------------------------------------
-
-
 def _mix(base: str, target: str, strength: float) -> tuple[float, float, float]:
-    """Blend two colors using the shared table calculation."""
     amount = min(max(float(strength), 0.0), 1.0)
     base_rgb, target_rgb = to_rgb(base), to_rgb(target)
     return tuple(b + (t - b) * amount for b, t in zip(base_rgb, target_rgb))
@@ -474,7 +453,6 @@ def heat_fill(
 
 
 def heat_text_color(fill: tuple[float, float, float]) -> str:
-    """Black-or-white contrast rule shared with the age ladder."""
     red, green, blue = fill
     luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue
     return "#FFFFFF" if luminance < 0.47 else DEFAULT_THEME.ink
@@ -518,7 +496,6 @@ def face_headshot_label(ax, image_path, x, y, half_size, *, zorder=4):
 
 
 def ensure_historical_headshot_fallbacks(player_ids) -> None:
-    """Replace known NBA-CDN silhouettes with a real portrait."""
     import requests
 
     for player_id in {int(pid) for pid in player_ids}:
@@ -550,13 +527,7 @@ def verify_headshots(player_ids) -> list[int]:
     return sorted(missing)
 
 
-# --------------------------------------------------------------------------
-# Slide grouping
-# --------------------------------------------------------------------------
-
-
 def decade_groups(leaders: pd.DataFrame) -> list[tuple[str, pd.DataFrame]]:
-    """One slide per season-decade: 10 / 10 / 6 rows."""
     groups = []
     for name, low, high in DECADES:
         rows = leaders[leaders["season"].between(low, high)]
@@ -592,18 +563,12 @@ def uniform_row_count(groups) -> int:
 
 
 def slide_height(row_count: int, layout: TableLayout) -> float:
-    """Canvas height that fits exactly ``row_count`` rows plus the header."""
     return (
         layout.first_row_from_top
         + (row_count - 1) * layout.row_height
         + layout.row_height / 2
         + layout.bottom_pad
     )
-
-
-# --------------------------------------------------------------------------
-# Render
-# --------------------------------------------------------------------------
 
 
 def row_rule_segments() -> tuple[tuple[float, float], ...]:
@@ -616,7 +581,6 @@ def row_rule_segments() -> tuple[tuple[float, float], ...]:
 
 
 def _heat_cell(ax, left, right, y, layout, fill, value, *, bold=False):
-    """Draw one edge-to-edge heat cell with its value."""
     ax.add_patch(
         Rectangle(
             (left, y - layout.row_height / 2),
@@ -747,8 +711,6 @@ def render_slide(
             fontproperties=helvetica("bold"),
             zorder=4,
         )
-        # "Donyell Marshall" overruns into the stat block at the base size;
-        # shrink only the names that need it rather than the whole column.
         name_budget = BPM_LEFT - layout.name_x - 16
         width = rendered_width(ax, name)
         if width > name_budget:
@@ -791,13 +753,7 @@ def render_slide(
     return path
 
 
-# --------------------------------------------------------------------------
-# Copy
-# --------------------------------------------------------------------------
-
-
 def canva_copy_block(leaders: pd.DataFrame, report: dict, date: str) -> str:
-    """Return exact framing copy from the same validated run."""
     peak = leaders.loc[leaders["bpm"].idxmax()]
     worst = leaders.loc[leaders["bpm"].idxmin()]
     negatives = ", ".join(report["negative_bpm_seasons"]) or "None"

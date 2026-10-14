@@ -16,7 +16,7 @@ from nba_api.stats.endpoints import leaguedashteamstats, playergamelogs, leagued
 from bulls.data.fetch import _NBA_HEADERS
 
 BULLS = 1610612741
-S = ROOT / "cache/misc_leaders_audit"  # ignored response cache
+S = ROOT / "cache/misc_leaders_audit"
 S.mkdir(parents=True, exist_ok=True)
 POSTS = {  # slug: (stat column, points column name in top15.csv)
     "fast-break-points": ("PTS_FB", "fast_break_points"),
@@ -54,7 +54,6 @@ def saved(kind, season):
     return pd.DataFrame(r["rowSet"], columns=r["headers"])
 
 
-# 1. Team reconciliation ---------------------------------------------------------------
 team_rows = []
 for s in SEASONS:
     t = frame(cached(f"team-misc-{s}", lambda: leaguedashteamstats.LeagueDashTeamStats(
@@ -71,7 +70,6 @@ for c in STATS:
     team[f"{c}_diff"] = team[f"{c}_players"] - team[f"{c}_team"]
 print("TEAM: max abs diff per stat:", {c: int(team[f"{c}_diff"].abs().max()) for c in STATS})
 
-# 2 + 3. Displayed rows: game logs and fresh season totals -----------------------------
 fresh_cache = {}
 def fresh(kind, s):
     if (kind, s) not in fresh_cache:

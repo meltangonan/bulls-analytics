@@ -15,7 +15,6 @@ def seasons(r):
 def pace(mph):
     m = 60 / mph; return f"{int(m)}:{round((m % 1) * 60):02d}"
 
-# ---------- A: track lanes, runner bibs, finish line ----------
 lanes = []
 for i, r in top.iterrows():
     pct = r.marathons / MAX * 100
@@ -39,7 +38,6 @@ page_a = f'''
   <p class="foot">Marathons on the bib. MPH is average speed while on the court. Includes playoffs and play-in.<br>Source: NBA.com player tracking &middot; @chicagobullsdata</p>
 </div>'''
 
-# ---------- B: race results board with finish banner ----------
 rows = ''.join(f'''
   <div class="res{' gold' if r['rank']==1 else ''}"><span class="pl">{r['rank']}</span>
     <span class="nm"><b>{name(r)}</b>{'<span class="tag">On roster</span>' if r.player in ON_ROSTER else ''}<small>{seasons(r)} &middot; {r.games} games &middot; {r.minutes:,.0f} min</small></span>

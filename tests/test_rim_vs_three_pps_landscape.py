@@ -60,7 +60,6 @@ def _location_row(
 def _locations() -> pd.DataFrame:
     return pd.DataFrame(
         [
-            # Qualified Bull: 200/400 rim, 100/300 three.
             _location_row(
                 1,
                 "Matas Buzelis",
@@ -72,7 +71,6 @@ def _locations() -> pd.DataFrame:
                 break_fgm=60,
                 break_fga=200,
             ),
-            # Qualified Bull with a different profile.
             _location_row(
                 2,
                 "Tre Jones",
@@ -84,7 +82,6 @@ def _locations() -> pd.DataFrame:
                 break_fgm=40,
                 break_fga=150,
             ),
-            # Qualified non-Bull, supplies league-median context.
             _location_row(
                 3,
                 "Nikola Jokic",
@@ -96,7 +93,6 @@ def _locations() -> pd.DataFrame:
                 break_fgm=70,
                 break_fga=180,
             ),
-            # Bull below the three-attempt bar only.
             _location_row(
                 4,
                 "Nic Claxton",
@@ -108,7 +104,6 @@ def _locations() -> pd.DataFrame:
                 break_fgm=10,
                 break_fga=40,
             ),
-            # Bull below the possession bar only.
             _location_row(
                 5,
                 "Noa Essengue",
@@ -137,7 +132,6 @@ def _advanced() -> pd.DataFrame:
 
 
 def _roster() -> pd.DataFrame:
-    """Current roster: two qualifiers, two below a bar, one with no NBA data."""
     return pd.DataFrame(
         [
             {"nba_id": 1, "official_roster_name": "Matas Buzelis"},
@@ -172,7 +166,6 @@ def test_flatten_locations_collapses_the_shot_category_header():
         "Restricted Area|FGM",
         "Restricted Area|FGA",
     ]
-    # Already-flat frames pass through unchanged.
     assert list(flatten_locations(flat).columns) == list(flat.columns)
 
 
@@ -187,7 +180,6 @@ def test_points_per_shot_uses_each_zone_own_point_value():
 
 
 def test_a_fifty_percent_two_and_a_thirty_four_percent_three_are_comparable():
-    """The axes only mean anything if equal value lands on equal numbers."""
     table = _table().set_index("player_name")
     jokic = table.loc["Nikola Jokic"]
     # 150/250 rim = 60% -> 1.20; 100/260 three = 38.5% -> 1.154.
@@ -206,9 +198,7 @@ def test_qualification_applies_both_bars_independently():
     assert table.loc["Matas Buzelis", "qualified"]
     assert table.loc["Tre Jones", "qualified"]
     assert table.loc["Nikola Jokic", "qualified"]
-    # Enough possessions and rim volume, but only 52 three-point attempts.
     assert not table.loc["Nic Claxton", "qualified"]
-    # Enough attempts in both zones, but only 400 possessions.
     assert not table.loc["Noa Essengue", "qualified"]
 
 
@@ -228,7 +218,6 @@ def test_validate_reports_thresholds_and_excluded_bulls():
     assert summary["bulls_qualified_count"] == 2
     assert summary["bulls_excluded_names"] == ["Nic Claxton", "Noa Essengue"]
     assert summary["roster_size"] == 5
-    # Caleb Wilson never reaches the stats frames at all.
     assert summary["roster_without_2025_26_data"] == 1
     assert summary["max_rim_points_residual"] < 1e-6
     assert summary["max_three_points_residual"] < 1e-6
@@ -275,7 +264,6 @@ def test_axis_mapping_spans_the_panel():
 
 
 def test_headshots_match_the_roster_landscape_size():
-    """Same square face size as the DARKO and scoring landscapes."""
     assert HEADSHOT_HALF_SIZE == 36.0
     assert LEAGUE_MARKER_AREA > 0
 

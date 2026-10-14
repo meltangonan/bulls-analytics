@@ -116,7 +116,6 @@ EXPECTED_PLAYOFF_GAMES = 56
 
 
 def _load_game_logs(kind: str) -> pd.DataFrame:
-    """Read Taj's cached Chicago player-game rows for one season type."""
     pattern = f"CHI-players-{kind}-*.csv"
     paths = sorted(PRIMARY_GAME_LOGS.glob(pattern))
     if not paths:
@@ -134,7 +133,6 @@ def _load_game_logs(kind: str) -> pd.DataFrame:
 
 
 def _career_stats_frames() -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Per-game and total season splits for Taj's Bulls stints only."""
     from nba_api.stats.endpoints import playercareerstats
 
     def fetch(per_mode: str) -> dict[str, pd.DataFrame]:
@@ -194,7 +192,6 @@ def _season_table(per_game: pd.DataFrame, totals: pd.DataFrame, label: str) -> p
         "rebounds": per("REB"),
         "offensive_rebounds": per("OREB"),
         "blocks": per("BLK"),
-        # Recomputed from made and attempted, never averaged from season rates.
         "fg_pct": float(tot["FGM"].sum()) / float(tot["FGA"].sum()),
         "is_career": True,
     })
@@ -272,8 +269,6 @@ def _career_highs(regular: pd.DataFrame, playoffs: pd.DataFrame) -> pd.DataFrame
             "game_date": best.game_date,
             "opponent": best.matchup.replace("CHI vs. ", "vs ").replace("CHI @ ", "at "),
             "in_playoffs": bool(best.season_type == "Playoffs"),
-            # What the same category peaked at in the regular season alone, so
-            # a reader can see which highs the postseason actually moved.
             "regular_season_value": float(regular[column].max()),
         })
     return pd.DataFrame(rows)
@@ -300,7 +295,6 @@ def _milestones(regular: pd.DataFrame) -> pd.DataFrame:
 
 
 def _franchise_ranks() -> pd.DataFrame:
-    """Taj's all-time Bulls rank in each category, with its measured pool."""
     from nba_api.stats.endpoints import franchiseplayers
 
     frame = franchiseplayers.FranchisePlayers(
@@ -311,7 +305,6 @@ def _franchise_ranks() -> pd.DataFrame:
     rows = []
     for column, label in RANK_CATEGORIES:
         regular[column] = pd.to_numeric(regular[column], errors="coerce")
-        # Players with no recorded value are dropped, not treated as zero.
         pool = regular.dropna(subset=[column]).sort_values(column, ascending=False)
         pool = pool.reset_index(drop=True)
         pool["rank"] = pool[column].rank(ascending=False, method="min").astype(int)
@@ -335,7 +328,6 @@ def _reconcile(
     playoff_games: pd.DataFrame,
     season_regular: pd.DataFrame,
 ) -> None:
-    """Cross-check three independent sources before anything is written."""
     by_stat = ranks.set_index("stat")["total"].to_dict()
     for stat, expected in EXPECTED_CAREER.items():
         if by_stat[stat] != expected:
@@ -343,7 +335,6 @@ def _reconcile(
                 f"FranchisePlayers {stat} is {by_stat[stat]}, expected {expected}."
             )
 
-    # The cached game logs must reproduce the franchise totals independently.
     log_totals = {
         "GP": len(regular_games),
         "PTS": int(regular_games["points"].sum()),
@@ -356,7 +347,6 @@ def _reconcile(
                 f"Cached game logs give {stat} = {log_totals[stat]}, expected {expected}."
             )
 
-    # And the per-game season splits must sum to the same games played.
     season_games = int(season_regular.loc[~season_regular["is_career"], "games"].sum())
     if season_games != EXPECTED_CAREER["GP"]:
         raise ValueError(

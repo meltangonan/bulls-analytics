@@ -81,19 +81,15 @@ ROSTER = [
     (1642855, "Noa Essengue", "ESSENGUE"),     # essentially no 2025-26 shots
 ]
 
-MIN_FGA = 150       # field-goal attempts needed for a stable location map
+MIN_FGA = 150
 MAX_DIST_FT = 35    # drop half-court heaves, matching the F5 filter
 
 
-# Row layout for the small-multiples grid (players per row, top to bottom).
-# Symmetric so the grid never looks top- or bottom-heavy.
 DEFAULT_ROWS = [2, 3, 3, 2]
 
 # Warm, faint court lines (from the Summer League report) so the geometry
 # anchors the heat without competing with it.
 
-# F5 layers: filled contour bands + outline color, hot (Bulls red) and cold
-# (gray). Low band is faint; the ramp climbs through Bulls red to a deep red.
 HOT_BANDS = ["#F6CDD7", "#E67C96", "#CE1141", "#7E0C2B"]
 HOT_LINE = "#5E0820"
 COLD_BANDS = ["#E7E7E7", "#C7C7C7", "#A2A2A2"]
@@ -101,11 +97,8 @@ COLD_LINE = "#8A8A8A"
 HOT_ALPHA = 0.92
 COLD_ALPHA = 0.55
 
-HEADSHOT_HALF = 30.0  # half the square headshot side, left of each name
+HEADSHOT_HALF = 30.0
 
-# ---------------------------------------------------------------------------
-# Fetch (cached so the visual can iterate without re-hitting the API)
-# ---------------------------------------------------------------------------
 def _player_cache(pid: int) -> Path:
     return CACHE / f"player_{pid}_{CURRENT_SEASON}.csv"
 
@@ -138,7 +131,6 @@ def load_league_shots(refresh: bool) -> pd.DataFrame:
 
 
 def load_games_played(refresh: bool) -> dict[int, int]:
-    """Official season games played per player (team-agnostic, one call)."""
     path = CACHE / f"games_played_{CURRENT_SEASON}.csv"
     if path.exists() and not refresh:
         df = pd.read_csv(path)
@@ -153,19 +145,14 @@ def load_games_played(refresh: bool) -> dict[int, int]:
     return {int(pid): int(gp) for pid, gp in zip(df["PLAYER_ID"], df["GP"])}
 
 
-# ---------------------------------------------------------------------------
-# Prepare: shot locations -> normalized density difference (the F5 method)
-# ---------------------------------------------------------------------------
-
-
 @dataclass
 class PlayerMap:
     name: str
     short: str
     fga: int
     gp: int
-    headshot: object  # Path to the cached headshot, or None
-    diff: np.ndarray  # player_pdf - league_pdf, (nx, ny)
+    headshot: object
+    diff: np.ndarray
 
 
 def prepare(refresh: bool) -> list[PlayerMap]:
@@ -191,11 +178,6 @@ def prepare(refresh: bool) -> list[PlayerMap]:
 
 
 
-# ---------------------------------------------------------------------------
-# Render
-# ---------------------------------------------------------------------------
-
-
 def _draw_field(ax, x0, y0, s, field, fill_colors, line_color, alpha):
     """One F5 density layer: filled contour bands + contour-line outlines.
 
@@ -214,9 +196,9 @@ def _draw_field(ax, x0, y0, s, field, fill_colors, line_color, alpha):
     xe, ye = _edges()
     xc = (xe[:-1] + xe[1:]) / 2.0
     yc = (ye[:-1] + ye[1:]) / 2.0
-    cx, cy = np.meshgrid(xc, yc)          # (ny, nx)
+    cx, cy = np.meshgrid(xc, yc)
     px, py = nba_to_basket_bottom_px(x0, y0, s, cx, cy)
-    z = np.sqrt(field.T)                  # (ny, nx), sqrt transform
+    z = np.sqrt(field.T)
 
     edges = np.sqrt(np.linspace(thr, fmax, len(fill_colors) + 1))
     edges[-1] += 1e-9                     # keep the peak cell inside the top band
@@ -226,7 +208,6 @@ def _draw_field(ax, x0, y0, s, field, fill_colors, line_color, alpha):
 
 
 def square_headshot_label(ax, image_path, cx: float, cy: float, half: float):
-    """Square center-crop headshot centered at (cx, cy); placeholder if missing."""
     extent = [cx - half, cx + half, cy - half, cy + half]
     image = None
     if image_path is not None:
@@ -252,9 +233,6 @@ def draw_player(ax, pm: PlayerMap, center_x: float, court_y: float, s: float,
         _draw_field(ax, x0, y0, s, np.clip(-pm.diff, 0, None), COLD_BANDS, COLD_LINE, COLD_ALPHA)
     _draw_field(ax, x0, y0, s, np.clip(pm.diff, 0, None), HOT_BANDS, HOT_LINE, HOT_ALPHA)
 
-    # Square headshot to the left of the name (top) over the metrics (bottom).
-    # The whole group hugs the court baseline (y0) and is centered under the court.
-    # Helvetica bold, matching the landscape chart family.
     half = HEADSHOT_HALF
     name_fs, stat_fs = 16, 12
     line_gap = 10.0
@@ -269,10 +247,10 @@ def draw_player(ax, pm: PlayerMap, center_x: float, court_y: float, s: float,
 
     pad = 14.0
     left = center_x - (2 * half + pad + block_w) / 2.0
-    hs_cy = y0 - 12.0 - half                       # headshot top sits 12 px below the baseline
+    hs_cy = y0 - 12.0 - half
     square_headshot_label(ax, pm.headshot, left + half, hs_cy, half)
     text_x = left + 2 * half + pad
-    text_top = hs_cy + text_h / 2.0                # text block centered against the headshot
+    text_top = hs_cy + text_h / 2.0
     name_art.set_position((text_x, text_top))
     stat_art.set_position((text_x, text_top - name_h - line_gap))
 
@@ -298,8 +276,6 @@ def render(maps, rows, theme_name, out, *, final, chart_only, show_cold):
                 fontproperties=house.body_font())
         top, bottom = house.CANVAS_HEIGHT - 244, 92
 
-    # Each row reserves a strip below the court for the label group (square
-    # headshot + name + metrics), which draw_player hangs off the court baseline.
     label_h, gap = 76.0, 20.0
     col_w = (house.CANVAS_WIDTH - 2 * house.SIDE_MARGIN) / 3.0
     row_h = (top - bottom) / len(rows)

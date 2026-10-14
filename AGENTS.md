@@ -25,6 +25,10 @@ a chart adjustment doesn't need the full post history.
 - Reuse settled chart formats and shared table, card, and portrait helpers. Keep calculations and
   qualification in Python; never recompute them in Canva. Extract repeated operations after real
   consumers exist, without inventing a universal post framework.
+- Agents copy the comments they read, so comment only what code cannot say: quirks of outside
+  systems (NBA.com, matplotlib, Canva), data provenance, and a script's run instructions. Make our
+  own logic obvious through names, constants, functions, and tests rather than narrating it; design
+  decisions belong in `DESIGN.md` or Notion. A comment that disagrees with its code is deleted.
 - Credibility comes first: one wrong published number costs the account's credibility, so an
   unverified figure waits or is left out, whatever the deadline or design. Verify source coverage,
   units, scope, and qualifications. Missing/unavailable data is not zero. Preserve source snapshots

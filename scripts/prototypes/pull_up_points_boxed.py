@@ -80,7 +80,6 @@ def blend(a: str, b: str, amount: float) -> tuple[float, float, float]:
 
 
 def relative_fill(value: float):
-    """Color relative eFG% around zero; +/-2pp is deliberately neutral."""
     value = float(value)
     if -2 <= value <= 2:
         return NEUTRAL

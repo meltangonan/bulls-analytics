@@ -117,7 +117,6 @@ def save(frame_fn, path: Path, missing: list) -> None:
 
 
 def shot_rows(raw: pd.DataFrame) -> pd.DataFrame:
-    """The columns the zones chart expects, from raw ShotChartDetail rows."""
     if raw.empty:
         return pd.DataFrame()
     return pd.DataFrame({
@@ -133,7 +132,6 @@ SUMMARY_TABLES = {0: "summary_game", 1: "summary_info", 2: "summary_arena", 4: "
 
 
 def pull_summary(game_id: str, out: Path, missing: list) -> None:
-    """Date, arena, records, quarter scores, NBA's own lead/run counts, and feed-availability flags."""
     frames = boxscoresummaryv3.BoxScoreSummaryV3(game_id=game_id, headers=_NBA_HEADERS, timeout=60).get_data_frames()
     for index, name in SUMMARY_TABLES.items():
         save(lambda index=index: frames[index], out / f"{name}.csv", missing)
@@ -151,14 +149,12 @@ def pull_player_games(season: str, season_type: str, out: Path, missing: list) -
 
 
 def pull_league_games(season: str, season_type: str, out: Path, missing: list) -> None:
-    """Every team's games of this season type, for the Bulls' place in the East after each game."""
     save(lambda: leaguegamelog.LeagueGameLog(season=season, season_type_all_star=season_type,
                                              player_or_team_abbreviation="T", headers=_NBA_HEADERS, timeout=90
                                              ).get_data_frames()[0], out / "league_games.csv", missing)
 
 
 def pull_schedule(season: str, out: Path, missing: list) -> None:
-    """The Bulls' scheduled games, so a season page can show the games still to play."""
     def frame():
         f = scheduleleaguev2.ScheduleLeagueV2(season=season, headers=_NBA_HEADERS, timeout=60).get_data_frames()[0]
         return f[(f.homeTeam_teamId == BULLS) | (f.awayTeam_teamId == BULLS)][["gameId", "gameDate", "homeTeam_teamTricode", "awayTeam_teamTricode"]]
@@ -166,7 +162,6 @@ def pull_schedule(season: str, out: Path, missing: list) -> None:
 
 
 def pull_logos(teams: pd.DataFrame, missing: list) -> None:
-    """Both teams' primary logos (SVG) from NBA.com's CDN, cached by tricode in logos/."""
     folder = LOGOS
     folder.mkdir(exist_ok=True)
     for r in teams.itertuples():
@@ -188,7 +183,7 @@ def pull_game(game_id: str) -> list:
     season, season_type, missing = season_of(game_id), SEASON_TYPES[game_id[:3]], []
     players, teams = box(boxscoretraditionalv3.BoxScoreTraditionalV3, game_id, 0), box(boxscoretraditionalv3.BoxScoreTraditionalV3, game_id, 2)
     pause()
-    if teams.empty or players.empty:  # nothing else can be pulled without the box score
+    if teams.empty or players.empty:
         (out / "missing.txt").write_text("teams.csv: not published\nplayers.csv: not published\n")
         return ["box score"]
     pull_summary(game_id, out, missing)
@@ -238,7 +233,6 @@ def pull_game(game_id: str) -> list:
         "files": dict(sorted(CAPTURED.items()))}, indent=1) + "\n")
     if missing:
         print("missing or empty:", "; ".join(missing))
-    # The required feeds still missing, by plain name, for postgame_recap.py's log.
     return sorted({REQUIRED[m.split(":")[0]] for m in missing if m.split(":")[0] in REQUIRED})
 
 
@@ -260,7 +254,7 @@ if __name__ == "__main__":
         print("wrote", pull_league())
     try:
         waiting = pull_game(sys.argv[1])
-    except (requests.exceptions.RequestException, json.JSONDecodeError) as e:  # a timeout or reset is not a failure
+    except (requests.exceptions.RequestException, json.JSONDecodeError) as e:
         waiting = [f"NBA.com did not answer ({type(e).__name__})"]
     if waiting:
         print("not published yet:", ", ".join(waiting), flush=True)

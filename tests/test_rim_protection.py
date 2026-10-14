@@ -70,7 +70,6 @@ def test_table_rows_refuse_a_tie_at_the_cut(monkeypatch):
 def test_comparison_colour_reads_negative_as_good_defence():
     assert table._comparison_color(-8.8) == table.GREEN
     assert table._comparison_color(8.8) == table.RED
-    # Inside the neutral band a small gap claims nothing.
     assert table._comparison_color(-2.6) == table.GREY
 
 

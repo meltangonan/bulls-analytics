@@ -60,8 +60,6 @@ def build(outlined: bool, theme_name: str | None = None) -> Path:
         theme=theme,
     )
 
-    # Leaderboard: headshot disc + stacked name label + gradient PPG bar.
-    # Bar length leaves ~90 px for the value label inside the right margin.
     top_y, row_gap = 980, 185
     bar_x0 = 480
     bar_len = W - 60 - bar_x0 - 90
@@ -86,7 +84,6 @@ def build(outlined: bool, theme_name: str | None = None) -> Path:
         fontproperties=body_font("medium"),
     )
 
-    # Stat-board footer variant: one line joining threshold + coverage + source.
     draw_footer(
         ax, source="Min. 25 games | fictional demo data | not a real post", theme=theme
     )

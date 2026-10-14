@@ -154,7 +154,6 @@ def row_height(row_count: int) -> float:
 
 
 def column_bounds(stats_left: float, hero_right: float) -> dict:
-    """Equal-width statistic columns to the right of the hero column."""
     width = (TABLE_RIGHT - stats_left) / len(STAT_COLUMNS)
     return {
         metric: (stats_left + i * width, stats_left + (i + 1) * width, label)
@@ -163,7 +162,6 @@ def column_bounds(stats_left: float, hero_right: float) -> dict:
 
 
 def prepare_table(working: pd.DataFrame, hero_metric: str = "pra_total") -> pd.DataFrame:
-    """Qualify at 1,000 minutes, attach on/off, and rank by PRA/75."""
     q = working[working["minutes"].ge(MIN_MINUTES)].copy()
     q["rpg"] = q["rebounds"] / q["games"]
     q["apg"] = q["assists"] / q["games"]
@@ -205,7 +203,6 @@ def prepare_table(working: pd.DataFrame, hero_metric: str = "pra_total") -> pd.D
 
 
 def split_pages(table: pd.DataFrame) -> list[pd.DataFrame]:
-    """Slide one is the top ten; slide two is everyone else who qualified."""
     return [
         table.iloc[:TOP_N].reset_index(drop=True),
         table.iloc[TOP_N:].reset_index(drop=True),
@@ -213,14 +210,12 @@ def split_pages(table: pd.DataFrame) -> list[pd.DataFrame]:
 
 
 def shaded_value(row: pd.Series, metric: str) -> float:
-    """Give a column the number its scale is calibrated on."""
     if metric in ERA_RELATIVE_METRICS:
         return float(row[f"{metric}_relative"])
     return float(row[metric])
 
 
 def measure_stats_left(table: pd.DataFrame, hero_right: float) -> float:
-    """Start the statistics after the widest name in the qualified pool."""
     fig = plt.figure(figsize=(CHART_WIDTH / 100, CANVAS_HEIGHT / 100), facecolor="none")
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, CHART_WIDTH)
@@ -242,7 +237,6 @@ def measure_stats_left(table: pd.DataFrame, hero_right: float) -> float:
 
 
 def _portrait(ax, player_id: int, row_y: float, rh: float) -> None:
-    """Face crop, clipped at this row's own separator like the other tables."""
     half = rh * 0.62
     y = row_y + rh * 0.05
     try:
@@ -275,7 +269,6 @@ def render_page(
     hero: tuple[str, str, str],
     final: bool = False,
 ) -> Path:
-    """Render one transparent, Canva-ready leaderboard slide."""
     theme = DEFAULT_THEME
     rh = row_height(len(page))
     columns = column_bounds(stats_left, hero_bounds[1])
@@ -317,20 +310,15 @@ def render_page(
     for i, row in page.iterrows():
         y = first_row_y - i * rh
         if i < len(page) - 1:
-            # Leave the card edge-to-edge: a rule crossing it would cut the
-            # block into cells and undo the point of drawing it as one shape.
             sep = y - rh / 2
             for a, b in ((TABLE_LEFT, card_left), (card_right, TABLE_RIGHT)):
                 ax.plot([a, b], [sep, sep], color=theme.rule, linewidth=0.9, zorder=3)
 
-        # Bulls red, matching the hero card the ranking comes from.
         ax.text(RANK_X, y, str(int(row["rank"])), ha="center", va="center",
                 fontsize=RANK_FONT_SIZE, color=theme.accent, fontproperties=bold,
                 zorder=5)
         _portrait(ax, row["player_id"], y, rh)
 
-        # Name and draft slot share the row, offset from its centre in
-        # proportion to the row so both slides read the same way.
         name_rise = rh * 0.13
         caption_drop = rh * 0.20
         name = display_name(row["player_name"])

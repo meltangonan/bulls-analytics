@@ -52,7 +52,7 @@ RIGHT_MARGIN = 90
 COLUMN_MIN_GAP = 40
 BAR_LEFT = 1120
 BAR_RIGHT = 1770
-SUPPORT_X = (1880, 2273, 2667, 3060)  # evenly spaced centres
+SUPPORT_X = (1880, 2273, 2667, 3060)
 INK = house.BLACK
 RED = house.RED
 SEASON_GREY = "#6E6963"
@@ -63,7 +63,6 @@ GREEN = "#218347"
 # comparison is good defence. Seasons inside +/- NEUTRAL_PP of league average
 # stay grey rather than claiming a defensive effect the gap cannot support.
 NEUTRAL_PP = 3.0
-# Bars shorter than this cannot hold a legible white label inside them.
 OUTSIDE_LABEL_BELOW = 30.0
 
 
@@ -73,7 +72,6 @@ def _portrait_path(player_id: int) -> Path:
 
 
 def _row_height(rows: int, aspect: float) -> int:
-    """Row height that makes the asset fill its Canva frame exactly."""
     return round((WIDTH / aspect - 2 * TOP_BOTTOM) / rows)
 
 
@@ -90,7 +88,6 @@ def _signed(value: float) -> str:
 
 
 def _comparison_color(value: float) -> str:
-    """Green when opponents shot well below average, red when above."""
     if value <= -NEUTRAL_PP:
         return GREEN
     if value >= NEUTRAL_PP:
@@ -144,7 +141,6 @@ def render(data_path: Path, output_path: Path, *, final: bool = False,
         for header, values in columns
     ]
 
-    # The bar header wraps to two lines; its widest line bounds the columns.
     bar_header_right = BAR_LEFT + max(width_of(line, 31) for line in ("RIM POINTS", "SAVED"))
     span_start = max(bar_header_right, BAR_RIGHT)
     gap = (WIDTH - RIGHT_MARGIN - span_start - sum(widths)) / len(widths)

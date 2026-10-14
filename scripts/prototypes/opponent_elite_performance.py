@@ -64,12 +64,12 @@ EAST_SHADOW = "#1D2A62"
 # public name.  These are franchise-continuity mappings, not attempts to
 # rewrite the original source rows.
 HISTORICAL_TO_CURRENT = {
-    "NJN": "BKN",  # New Jersey Nets -> Brooklyn Nets
-    "NOH": "NOP",  # New Orleans Hornets -> New Orleans Pelicans
-    "NOK": "NOP",  # New Orleans/Oklahoma City -> New Orleans Pelicans
-    "SEA": "OKC",  # Seattle SuperSonics -> Oklahoma City Thunder
-    "VAN": "MEM",  # Vancouver Grizzlies -> Memphis Grizzlies
-    "CHH": "CHA",  # Charlotte Bobcats/Hornets naming in older logs
+    "NJN": "BKN",
+    "NOH": "NOP",
+    "NOK": "NOP",
+    "SEA": "OKC",
+    "VAN": "MEM",
+    "CHH": "CHA",
 }
 
 FRANCHISE_NAMES = {
@@ -138,7 +138,6 @@ FRANCHISE_CONFERENCES = {
 
 
 def current_opponent(raw: str) -> str:
-    """Map one NBA.com opponent abbreviation to its current franchise code."""
     return HISTORICAL_TO_CURRENT.get(str(raw), str(raw))
 
 
@@ -148,7 +147,6 @@ def build_opponent_summary(
     threshold: float = ELITE_GAME_SCORE,
     min_meetings: int = MIN_MEETINGS,
 ) -> pd.DataFrame:
-    """Return one row per current opponent, ranked by elite rate."""
     required = {"game_id", "opponent", "game_score"}
     missing = required - set(table.columns)
     if missing:
@@ -216,7 +214,6 @@ def validate_summary(
     threshold: float = ELITE_GAME_SCORE,
     min_meetings: int = MIN_MEETINGS,
 ) -> dict[str, object]:
-    """Validate the full current-franchise field and count reconciliations."""
     if len(summary) != len(FRANCHISE_NAMES):
         raise ValueError(f"Expected 29 current opponents, got {len(summary)}")
     if summary["franchise"].duplicated().any():
@@ -248,7 +245,6 @@ def build_points_threshold_summary(
     thresholds: tuple[int, ...] = POINT_THRESHOLDS,
     min_meetings: int = MIN_MEETINGS,
 ) -> pd.DataFrame:
-    """Return one ranked opponent table for each points threshold."""
     required = {"game_id", "opponent", "points"}
     missing = required - set(table.columns)
     if missing:
@@ -313,7 +309,6 @@ def validate_points_threshold_summary(
     *,
     thresholds: tuple[int, ...] = POINT_THRESHOLDS,
 ) -> dict[int, int]:
-    """Reconcile each threshold's player-game count and meeting denominator."""
     expected_games = table[["game_id", "opponent"]].drop_duplicates()["game_id"].nunique()
     expected_thresholds = tuple(sorted({int(value) for value in thresholds}))
     if tuple(sorted(summary["threshold"].unique())) != expected_thresholds:
@@ -339,7 +334,6 @@ def build_count_summary(
     threshold: float = ELITE_GAME_SCORE,
     min_meetings: int = MIN_MEETINGS,
 ) -> pd.DataFrame:
-    """Rank current opponents by the total number of qualifying player-games."""
     fields = {"points": "points", "game_score": "game_score"}
     if metric not in fields:
         raise ValueError(f"Unknown count metric: {metric}")
@@ -409,7 +403,6 @@ def validate_count_summary(
     metric: str,
     threshold: float = ELITE_GAME_SCORE,
 ) -> dict[str, object]:
-    """Reconcile the 29-opponent count ranking to the working table."""
     if len(summary) != len(FRANCHISE_NAMES):
         raise ValueError(f"Expected 29 current opponents, got {len(summary)}")
     if summary["franchise"].duplicated().any():
@@ -432,7 +425,6 @@ def validate_count_summary(
 
 
 def rank_percentage_summary(summary: pd.DataFrame) -> pd.DataFrame:
-    """Return a count summary sorted by qualifying performances per meeting."""
     required = {"rate_per_100", "qualifying_player_games", "meetings", "team"}
     missing = required - set(summary.columns)
     if missing:
@@ -447,7 +439,6 @@ def rank_percentage_summary(summary: pd.DataFrame) -> pd.DataFrame:
 
 
 def _draw_gradient_bar(ax, x0: float, x1: float, y: float, height: float, colors, shadow_color) -> None:
-    """Draw the rounded gradient bar used by the national-TV chart."""
     if x1 <= x0:
         return
     rounding = height * 0.28
@@ -485,7 +476,6 @@ def _draw_gradient_bar(ax, x0: float, x1: float, y: float, height: float, colors
 
 
 def render_chart(summary: pd.DataFrame, *, final: bool = False) -> Path:
-    """Render a national-TV-style ranked horizontal bar chart."""
     theme = DEFAULT_THEME
     label_font = helvetica()
     bold_font = helvetica("bold")
@@ -551,7 +541,6 @@ def render_chart(summary: pd.DataFrame, *, final: bool = False) -> Path:
 
 
 def render_points_threshold_chart(summary: pd.DataFrame, *, final: bool = False) -> Path:
-    """Render three national-TV-style panels for 30+, 40+, and 50+ points."""
     theme = DEFAULT_THEME
     label_font = helvetica()
     bold_font = helvetica("bold")
@@ -701,8 +690,6 @@ def render_count_chart(
                 zorder=5,
             )
 
-        # Team names and marks are drawn explicitly so the logos stay aligned
-        # even when a name wraps or a count is zero.
         if not clean or axisless:
             ax.text(
                 -0.02,
@@ -733,8 +720,6 @@ def render_count_chart(
             ax.add_artist(logo_box)
 
     if clean or axisless:
-        # Keep the logo margin inside the saved transparent canvas while
-        # removing every axis decoration from the Canva handoff asset.
         if clean:
             ax.set_xlim(-0.55, max_value * 1.04)
             ax.set_ylim(len(summary) - 0.45, -0.45)
@@ -811,7 +796,6 @@ def render_count_chart(
 
 
 def write_data(table: pd.DataFrame, teams: pd.DataFrame, summary: pd.DataFrame) -> None:
-    """Write the post-owned audit tables beside the chart."""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     player_columns = [
         "season_end_year",
@@ -913,7 +897,6 @@ def points_copy_block(summary: pd.DataFrame, counts: dict[int, int]) -> str:
 
 
 def count_copy_block(summary: pd.DataFrame, audit: dict[str, object], *, metric: str) -> str:
-    """Print the exact copy block for one count-based mockup."""
     leader = summary.iloc[0]
     threshold = int(summary["threshold"].iloc[0])
     if metric == "points":
@@ -951,7 +934,6 @@ def count_copy_block(summary: pd.DataFrame, audit: dict[str, object], *, metric:
 
 
 def write_count_data(summary: pd.DataFrame, *, metric: str) -> Path:
-    """Write one tracked summary table for a count-based mockup."""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     threshold = int(summary["threshold"].iloc[0])
     name = f"{threshold}plus-points" if metric == "points" else "game-score"
@@ -961,7 +943,6 @@ def write_count_data(summary: pd.DataFrame, *, metric: str) -> Path:
 
 
 def percentage_copy_block(summary: pd.DataFrame, audit: dict[str, object], *, metric: str) -> str:
-    """Print the exact copy block for a percentage-ranked mockup."""
     ranked = rank_percentage_summary(summary)
     leader = ranked.iloc[0]
     threshold = int(leader["threshold"])
@@ -996,7 +977,6 @@ def percentage_copy_block(summary: pd.DataFrame, audit: dict[str, object], *, me
 
 
 def write_percentage_data(summary: pd.DataFrame, *, metric: str) -> Path:
-    """Write the percentage-ranked view used by the chart."""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     ranked = rank_percentage_summary(summary)
     threshold = int(ranked["threshold"].iloc[0])

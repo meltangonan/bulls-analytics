@@ -92,7 +92,6 @@ STOCKS_METRIC_WIDTH = 120
 # original width no longer fit 1080px, so the asset itself widens; Canva scales
 # it to the page either way.
 STOCKS_TRAILING_SLOT_WIDTH = 112
-# Clear air between the longest season marker and the STK fill.
 STOCKS_NAME_COLUMN_GAP = 26
 
 # The colour behind each row is that season's league percentile, not the row's
@@ -161,12 +160,10 @@ COLUMNS = [
 
 
 def player_source_url(end_year: int) -> str:
-    """Return the NBA.com player-totals source for one season."""
     return NBA_PLAYER_STOCKS_URL.format(season=season_label(end_year))
 
 
 def team_source_url(end_year: int) -> str:
-    """Return the NBA.com team-totals source for one season."""
     return NBA_TEAM_STOCKS_URL.format(season=season_label(end_year))
 
 
@@ -177,7 +174,6 @@ def _required_columns(frame: pd.DataFrame, columns: set[str], source: str) -> No
 
 
 def _request_frame(factory: Callable[[], object], source: str) -> pd.DataFrame:
-    """Make a paced NBA.com request with small retries for transient failures."""
     for attempt in range(1, NBA_REQUEST_ATTEMPTS + 1):
         try:
             endpoint = factory()
@@ -194,7 +190,6 @@ def _request_frame(factory: Callable[[], object], source: str) -> pd.DataFrame:
 
 
 def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
-    """Load one Chicago-only regular season from cache or NBA.com."""
     cache_path = RAW_CACHE / f"CHI-{end_year}.csv"
     if cache_path.exists() and not refresh:
         return pd.read_csv(cache_path)
@@ -282,7 +277,6 @@ def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
 
 
 def fetch_league_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
-    """Load every NBA player's totals for one season, for the baseline pool."""
     cache_path = LEAGUE_CACHE / f"league-{end_year}.csv"
     if cache_path.exists() and not refresh:
         return pd.read_csv(cache_path)
@@ -329,7 +323,6 @@ def league_rotation_rates(rows: pd.DataFrame) -> pd.Series:
 
 
 def fetch_league_baseline(*, refresh: bool = False) -> dict[int, pd.Series]:
-    """Build the season-by-season comparison pool the shading reads from."""
     baseline: dict[int, pd.Series] = {}
     for end_year in range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1):
         print(f"Loading league baseline {display_season_label(end_year)}")
@@ -342,7 +335,6 @@ def fetch_league_baseline(*, refresh: bool = False) -> dict[int, pd.Series]:
 def attach_league_percentile(
     table: pd.DataFrame, baseline: dict[int, pd.Series]
 ) -> pd.DataFrame:
-    """Rate every player-season against its own league year, not this chart."""
     missing = sorted(set(table["season_end_year"].astype(int)) - set(baseline))
     if missing:
         raise ValueError(f"No league baseline for seasons {missing}.")
@@ -362,7 +354,6 @@ def attach_league_percentile(
 
 
 def fetch_bulls_history(*, refresh: bool = False) -> pd.DataFrame:
-    """Load every Bulls regular season from 2000-01 through 2025-26."""
     frames: list[pd.DataFrame] = []
     for end_year in range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1):
         print(f"Loading {display_season_label(end_year)}")
@@ -371,7 +362,6 @@ def fetch_bulls_history(*, refresh: bool = False) -> pd.DataFrame:
 
 
 def build_working_table(rows: pd.DataFrame) -> pd.DataFrame:
-    """Apply the minimum-games rule and select one stocks winner at each age."""
     missing = set(COLUMNS) - set(rows.columns)
     if missing:
         raise ValueError(f"Historical stocks rows are missing {sorted(missing)}.")
@@ -415,12 +405,10 @@ def build_working_table(rows: pd.DataFrame) -> pd.DataFrame:
 
 
 def age_winners(table: pd.DataFrame) -> pd.DataFrame:
-    """Return the selected Bulls season in ascending age order."""
     return table.loc[table["selected"]].sort_values("age", kind="stable").reset_index(drop=True)
 
 
 def validate_working_table(table: pd.DataFrame) -> dict[str, object]:
-    """Validate coverage, team reconciliation, qualification, and winners."""
     expected_years = set(range(FIRST_SEASON_END_YEAR, LAST_SEASON_END_YEAR + 1))
     present_years = set(table["season_end_year"].astype(int))
     if present_years != expected_years:
@@ -515,7 +503,6 @@ def apply_display_names(winners: pd.DataFrame) -> pd.DataFrame:
 
 
 def write_working_table(table: pd.DataFrame, date: str) -> Path:
-    """Write all player-seasons so exclusions and runners-up remain auditable."""
     path = OUT / f"{date}-bulls-stocks-age-ladder-working.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False)
@@ -523,7 +510,6 @@ def write_working_table(table: pd.DataFrame, date: str) -> Path:
 
 
 def canva_copy_block(report: dict[str, object]) -> str:
-    """Return the exact data-bound framing to paste around the chart asset."""
     return "\n".join(
         [
             "CANVA COPY",
@@ -550,7 +536,6 @@ def canva_copy_block(report: dict[str, object]) -> str:
 
 
 def render_stocks_table(winners: pd.DataFrame, date: str, *, final: bool = False) -> Path:
-    """Render the ladder as a table, in the current house table treatment."""
     return render_chart(
         apply_display_names(winners),
         date,

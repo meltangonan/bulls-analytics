@@ -80,7 +80,6 @@ def season_tag(season: str) -> str:
     return f"{season[:4]}-{season[5:]}"
 
 
-# Which side of its face each name sits on; default below.
 LABEL_SIDES = {
     ("Pau Gasol", "2015-16"): "above",
     ("Robin Lopez", "2018-19"): "left",
@@ -155,7 +154,6 @@ def render(final: bool) -> Path:
                s=44, facecolor=GREY, edgecolor="none", alpha=0.3, zorder=2)
 
     anchors = np.array([[px(r.rim_fga_per_100), py(r.rim_points_saved_per_100)] for r in top.itertuples()])
-    # Lower-saving seasons first, so the stronger season's face sits on top.
     for i, row in enumerate(top.sort_values("rim_points_saved_per_100").itertuples()):
         fx, fy = px(row.rim_fga_per_100), py(row.rim_points_saved_per_100)
         z = 7 + i * 0.2

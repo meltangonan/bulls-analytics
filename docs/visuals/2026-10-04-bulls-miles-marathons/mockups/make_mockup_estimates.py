@@ -12,7 +12,7 @@ HERE = Path(__file__).parent
 POST = HERE.parent
 top = pd.read_csv(POST / 'data/estimates-top15.csv')
 NAMES = {'Toni Kukoc': 'Toni Kukoč'}
-MAX = top.marathons.max()  # the leader's estimate reaches the finish line, as on slide 2
+MAX = top.marathons.max()
 CHECKER = 'repeating-conic-gradient(#242424 0 25%,#fff 0 50%) 0 0/20px 20px'
 STRIPES = 'repeating-linear-gradient(135deg,#CE1141 0 7px,#DD5A78 7px 12px)'
 ERA_RATE = 0.0703
@@ -34,7 +34,6 @@ SCALE = ''.join(f'<span style="--p:{m / MAX}">{m}</span>' for m in (25, 50, 75, 
 def row(r):
     measured = r.measured_miles / 26.2
     est_only = r.measured_share < 0.999
-    # The bib shows the range; the face's position marks the single estimate.
     bib = f'{r.marathons_lo:.0f}-{r.marathons_hi:.0f}' if est_only else f'{r.marathons:.1f}'
     stat3 = f'{r.measured_mph:.2f} MPH' if not est_only else '- MPH'
     tilde = '~' if est_only else ''

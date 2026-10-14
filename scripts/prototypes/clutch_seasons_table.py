@@ -34,6 +34,7 @@ from nba_api.stats.endpoints import leaguedashplayerclutch
 
 from bulls.data.fetch import _NBA_HEADERS
 from bulls.graphics.house import (
+    ACCENT_CARD_OUTSET_X,
     DEFAULT_THEME,
     draw_accent_card,
     ensure_headshots,
@@ -103,7 +104,6 @@ KEEP = [
 
 
 def season_labels() -> list[str]:
-    """Every season label from 2000-01 through the last completed season."""
     return [f"{year}-{str(year + 1)[-2:]}" for year in range(FIRST_SEASON, LAST_SEASON + 1)]
 
 
@@ -132,7 +132,6 @@ def fetch_clutch(season: str, team_id: int | None) -> pd.DataFrame:
 
 
 def fetch_all(team_id: int | None, pause: float = 0.8) -> pd.DataFrame:
-    """Walk every season, retrying the transient NBA.com timeouts."""
     frames = []
     for season in season_labels():
         for attempt in range(3):
@@ -148,7 +147,6 @@ def fetch_all(team_id: int | None, pause: float = 0.8) -> pd.DataFrame:
 
 
 def load_or_fetch(path: Path, team_id: int | None, refresh: bool) -> pd.DataFrame:
-    """Use the tracked snapshot unless it is missing or explicitly refreshed."""
     if path.exists() and not refresh:
         return pd.read_csv(path)
     frame = fetch_all(team_id)
@@ -158,7 +156,6 @@ def load_or_fetch(path: Path, team_id: int | None, refresh: bool) -> pd.DataFram
 
 
 def add_rates(frame: pd.DataFrame) -> pd.DataFrame:
-    """Attach the three rates every downstream step needs."""
     out = frame.copy()
     out["tsa"] = out["FGA"] + 0.44 * out["FTA"]
     out["ts_pct"] = np.where(out["tsa"] > 0, out["PTS"] / (2 * out["tsa"]), np.nan)
@@ -248,7 +245,6 @@ def prepare_table(
     baselines: pd.DataFrame,
     league: pd.DataFrame,
 ) -> pd.DataFrame:
-    """Rank Bulls clutch player-seasons and attach every displayed figure."""
     if bulls["SEASON"].nunique() != LAST_SEASON - FIRST_SEASON + 1:
         raise ValueError(
             f"The Bulls snapshot does not cover every season from "
@@ -271,9 +267,6 @@ def prepare_table(
         raise ValueError("A Bulls season has no league clutch baseline.")
     table["ts_pct_relative"] = (table["ts_pct"] - table["league_ts_pct"]) * 100
 
-    # Points first. Ties break toward the season that needed fewer clutch
-    # minutes to score them, then toward the more recent season, so the order
-    # is fully determined rather than left to the source's own row order.
     ranked = table.sort_values(
         ["PTS", "MIN", "SEASON"],
         ascending=[False, True, False],
@@ -349,14 +342,12 @@ def assert_whole_season_bulls(table: pd.DataFrame) -> None:
 
 
 def calibration_population(league: pd.DataFrame, baselines: pd.DataFrame) -> pd.DataFrame:
-    """The volume-matched clutch seasons the colour scale is anchored on."""
     rated = add_rates(league).merge(baselines, on="SEASON", how="left", validate="many_to_one")
     rated["ts_pct_relative"] = (rated["ts_pct"] - rated["league_ts_pct"]) * 100
     return rated.loc[rated["tsa"].ge(CALIBRATION_MIN_TSA)].copy()
 
 
 def validate(table: pd.DataFrame, population: pd.DataFrame) -> dict:
-    """Re-derive every printed figure from the raw totals beside it."""
     if len(table) != TABLE_ROWS:
         raise ValueError(f"Expected {TABLE_ROWS} rows, built {len(table)}.")
     if not table["PTS"].is_monotonic_decreasing:
@@ -480,15 +471,11 @@ HERO_METRIC = "PTS"
 # the rounded corners the overlap exists to display.
 CARD_OUTSET_Y = 7.0
 CARD_OVERLAP_Y = 3.0
-# Matches ACCENT_CARD_OUTSET_X, so the rule stops exactly at the card's edge.
-CARD_OUTSET_X = 8.0
-# Clear air between the ranking card and the first ordinary column, so the
-# pill has a margin rather than a column pressed against it.
+CARD_OUTSET_X = float(ACCENT_CARD_OUTSET_X)
 HERO_GAP = 22.0
 
 
 def table_height(row_count: int) -> float:
-    """Size the canvas to the rows it holds, with no trailing transparency."""
     return FIRST_ROW_FROM_TOP + (row_count - 1) * ROW_HEIGHT + ROW_HEIGHT / 2 + BOTTOM_PAD
 
 
@@ -513,17 +500,14 @@ def column_bounds(stats_left: float) -> dict[str, tuple[float, float, str]]:
 
 
 def display_name(value: object) -> str:
-    """Drop generational suffixes, as the recent table family does."""
     return str(value).removesuffix(" III").removesuffix(" Jr.")
 
 
 def season_marker(season: object) -> str:
-    """Compact a season label for the superscript beside a name."""
     return str(season)[2:].replace("-", "\N{EN DASH}", 1)
 
 
 def cell_label(row: pd.Series, metric: str) -> str:
-    """Format one cell, keeping the shooting sample visible as makes-attempts."""
     if metric == "fg_line":
         return f"{int(row['FGM'])}\N{EN DASH}{int(row['FGA'])}"
     if metric == "ft_line":
@@ -549,14 +533,12 @@ def cell_label(row: pd.Series, metric: str) -> str:
 
 
 def shaded_value(row: pd.Series, metric: str) -> float:
-    """Give a column the number its colour scale is actually calibrated on."""
     if metric in ERA_RELATIVE_METRICS:
         return float(row[f"{metric}_relative"])
     return float(row[metric])
 
 
 def _name_block_width(ax, name: str, season: str) -> float:
-    """Measure one name plus its superscript season marker."""
     season_font = helvetica("regular")
     season_font.set_style("italic")
     probe = ax.text(
@@ -575,7 +557,6 @@ def _name_block_width(ax, name: str, season: str) -> float:
 
 
 def measure_stats_left(table: pd.DataFrame) -> float:
-    """Start the statistics just past the widest name in the table."""
     height = table_height(len(table))
     fig = plt.figure(figsize=(CHART_WIDTH / 100, height / 100), facecolor="none")
     ax = fig.add_axes([0, 0, 1, 1])
@@ -633,7 +614,6 @@ def _face_headshot(ax, player_id: int, row_y: float) -> None:
 
 
 def _draw_player(ax, row: pd.Series, y: float) -> None:
-    """Draw the portrait, the name, and the season it belongs to."""
     _face_headshot(ax, int(row["PLAYER_ID"]), y)
     name = display_name(row["PLAYER_NAME"])
     name_artist = ax.text(
@@ -652,7 +632,6 @@ def _draw_player(ax, row: pd.Series, y: float) -> None:
 
 
 def render_table(table: pd.DataFrame, output_path: Path, final: bool = False) -> Path:
-    """Render the transparent, Canva-ready leaderboard asset."""
     theme = DEFAULT_THEME
     body_font = helvetica("regular")
     header_font = helvetica("bold")
@@ -678,7 +657,6 @@ def render_table(table: pd.DataFrame, output_path: Path, final: bool = False) ->
                 color=theme.accent if metric == HERO_METRIC else theme.ink,
                 fontproperties=header_font)
     hero_left, hero_right, _ = columns[HERO_METRIC]
-    # The header rule breaks around the card rather than running behind it.
     for start, end in (
         (TABLE_LEFT, hero_left - CARD_OUTSET_X),
         (hero_right + CARD_OUTSET_X, TABLE_RIGHT),
@@ -686,8 +664,6 @@ def render_table(table: pd.DataFrame, output_path: Path, final: bool = False) ->
         ax.plot([start, end], [header_rule_y, header_rule_y],
                 color=theme.ink, linewidth=1.5, zorder=3, solid_capstyle="butt")
 
-    # Drawn above the rule and before the rows, so the values sit on the card
-    # and the card sits on the table.
     draw_accent_card(
         ax, hero_left, hero_right, first_row_y, len(table), ROW_HEIGHT,
         zorder=4, outset_y=CARD_OUTSET_Y, overlap_y=CARD_OVERLAP_Y,
@@ -732,7 +708,6 @@ def render_table(table: pd.DataFrame, output_path: Path, final: bool = False) ->
 
 
 def canva_copy_block(table: pd.DataFrame, report: dict) -> str:
-    """Exact framing copy from the same validated run."""
     leader = table.iloc[0]
     return "\n".join(
         [

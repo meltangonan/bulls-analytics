@@ -36,7 +36,6 @@ def label(ax, x, y, value, size, *, bold=False, color=INK, ha="left", z=12):
 
 
 def headshot(ax, player_id: int):
-    """Place a large full-color NBA cutout without a colored frame."""
     image = Image.open(PORTRAITS / f"{player_id}.png").convert("RGBA")
     width, height = image.size
     side = int(height * 0.83)
@@ -49,7 +48,6 @@ def headshot(ax, player_id: int):
 
 
 def court(ax, active_start: int):
-    """Show every two-foot ring and the shared zone-chart court landmarks."""
     left, right = HOOP_X - 250 * SCALE, HOOP_X + 250 * SCALE
     baseline = HOOP_Y + BASELINE_Y * SCALE
     top = HOOP_Y + 300 * SCALE
@@ -61,7 +59,6 @@ def court(ax, active_start: int):
         _ladder_ring(ax, (HOOP_X, HOOP_Y), band, SCALE, color, clip,
                      shadow=index > 0)
 
-    # Use the exact shared court geometry drawn by the zone shot charts.
     court_center_y = HOOP_Y + ((280.0 - BASELINE_Y) / 2.0 + BASELINE_Y) * SCALE
     draw_chart_court(ax, HOOP_X, court_center_y, SCALE, lw=1.15, zorder=7)
     for side in (left, right):

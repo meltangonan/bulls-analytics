@@ -118,7 +118,6 @@ def test_saved_post_data_reconstructs_every_selection_and_chart_input():
 
 @requires_helvetica
 def test_large_four_line_pills_stay_separate_and_inside_the_asset():
-    """Measure the actual rendered cards for all six saved season layouts."""
     from itertools import combinations
     import matplotlib
     matplotlib.use("Agg")

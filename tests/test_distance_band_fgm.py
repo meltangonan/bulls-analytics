@@ -8,7 +8,6 @@ from scripts.prototypes.distance_band_fgm import HALFCOURT_Y, build_30_to_halfco
 def test_30_plus_slide_stops_at_the_straight_halfcourt_line():
     assert HALFCOURT_Y == 417.5
     shots = pd.DataFrame([
-        # Two equal-FGM seasons: higher PPS wins after the midcourt exclusion.
         (1, "Player A", "2024-25", 30, 1, "3PT Field Goal", 0, 417),
         (1, "Player A", "2024-25", 31, 0, "3PT Field Goal", 0, 300),
         (2, "Player B", "2024-25", 30, 1, "3PT Field Goal", 0, 416),

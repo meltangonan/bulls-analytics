@@ -122,15 +122,10 @@ def test_the_2015_16_slide_holds_only_his_chicago_half():
     assert totals.TEAM_ABBREVIATION == "ATL"
     summary = pd.read_csv(DATA / "zone-chart-summary.csv").set_index("window")
     assert int(summary.loc["2015-16", "bulls_fga"]) == 118
-    # Almost every zone is under the floor at 118 attempts, which is the point:
-    # the slide shows an end-of-career sample too thin to rate, rather than
-    # rating it anyway.
     assert int(summary.loc["2015-16", "zones_grey"]) == 10
 
 
-# --- the cover -------------------------------------------------------------
 def _grid_geometry(count: int):
-    """Where render_zonegrid would place `count` courts, without drawing them."""
     plan = list(charts.GRID_ROW_PLAN) if count == sum(charts.GRID_ROW_PLAN) \
         else shot_chart.zonegrid_row_plan(count)
     s = shot_chart.zonegrid_scale(plan)
@@ -244,7 +239,6 @@ def test_only_three_hundred_attempt_seasons_are_charted():
     below = seasons[~seasons.charted].bulls_fga.max()
     assert below < charts.CHART_MIN_SEASON_FGA
     assert charted.bulls_fga.min() - below > 200, "the 300 line is no longer a gap"
-    # Dropped from the slides, still inside the pooled tenure chart.
     assert int(summary.loc["Bulls tenure", "bulls_fga"]) == int(
         seasons.bulls_fga.sum()
     )
@@ -274,16 +268,13 @@ def test_the_lone_tenth_court_hangs_under_the_left_column():
     lone = centres(1, "left")
     assert lone[0] == pytest.approx(full[0]), "the tenth court must share a column"
     assert lone[0] == pytest.approx(left_edge)
-    # The full rows are unaffected by the alignment choice -- they are the widest.
     assert centres(3, "center") == pytest.approx(full)
-    # And centring the lone court would have moved it a full column to the right.
     assert centres(1, "center")[0] > lone[0] + pitch * 0.9
     assert min(full) - court_w / 2 > 0
     assert max(full) + court_w / 2 < house.CANVAS_WIDTH
 
 
 def test_the_cover_greys_the_same_zones_the_season_slides_grey():
-    """One rule, two renderers. The cover is a summary, never a second opinion."""
     splits = pd.read_csv(DATA / "zone-splits.csv")
     season_rows = splits[splits.window.ne(charts.TENURE_LABEL)]
     fills = {

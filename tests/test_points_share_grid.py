@@ -13,7 +13,6 @@ def test_player_points_reconcile_to_team_total():
 def test_largest_remainder_fills_exactly_100_squares():
     players = grid.prepare()
     assert players.SQUARES.sum() == 100
-    # Every player's squares stay within one of their exact share.
     assert ((players.SQUARES - players.SHARE).abs() < 1).all()
     top = players.iloc[0]
     assert (top.PLAYER_NAME, top.SQUARES) == ("Matas Buzelis", 13)
@@ -32,7 +31,7 @@ def test_snake_fill_keeps_every_block_one_shape():
     cells = grid.snake_cells(players[players.SQUARES > 0])
     assert sum(len(c) for c in cells.values()) == 100
     for block in cells.values():
-        grid.outline(block)  # raises if a block is split
+        grid.outline(block)
 
 
 def test_outline_rejects_a_block_touching_only_at_a_corner():

@@ -63,7 +63,6 @@ ROW_STEP = 94
 
 
 def fetch_scoring_frame() -> pd.DataFrame:
-    """Fetch full-season NBA.com player scoring totals and assist shares."""
     return leaguedashplayerstats.LeagueDashPlayerStats(
         season=SEASON,
         season_type_all_star=SEASON_TYPE,
@@ -79,7 +78,6 @@ def build_working_table(
     scoring: pd.DataFrame,
     snapshot_time: datetime,
 ) -> pd.DataFrame:
-    """Join the current roster to last season's full-season scoring profile."""
     roster_required = {"nba_id", "official_roster_name"}
     scoring_required = {
         "PLAYER_ID",
@@ -206,7 +204,6 @@ def build_working_table(
 
 
 def qualified_players(table: pd.DataFrame) -> pd.DataFrame:
-    """Return qualifying current Bulls from most to least unassisted."""
     return (
         table.loc[table["qualified"]]
         .copy()
@@ -219,7 +216,6 @@ def qualified_players(table: pd.DataFrame) -> pd.DataFrame:
 
 
 def validate_working_table(table: pd.DataFrame) -> dict:
-    """Validate identities, qualification, and the 100% composition."""
     if table["nba_id"].duplicated().any():
         raise ValueError("Working table contains duplicate NBA player IDs.")
     if table["official_roster_name"].duplicated().any():
@@ -287,7 +283,6 @@ def validate_working_table(table: pd.DataFrame) -> dict:
 
 
 def write_working_table(table: pd.DataFrame, date: str) -> Path:
-    """Write the complete roster audit table, including excluded players."""
     path = OUT / f"{date}-current-bulls-assisted-buckets-working.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False)
@@ -295,12 +290,10 @@ def write_working_table(table: pd.DataFrame, date: str) -> Path:
 
 
 def segment_label(percentage: float, made: int) -> str:
-    """Pair the composition percentage with its inferred made-basket count."""
     return f"{percentage:.0f}%\n({made} FGM)"
 
 
 def segment_colors(theme=DEFAULT_THEME) -> tuple[str, str]:
-    """Return unassisted red first and assisted near-black second."""
     return theme.accent, theme.ink
 
 
@@ -314,7 +307,6 @@ def portrait_headshot_label(
     *,
     zorder: float = 8,
 ):
-    """Place a centered portrait crop without stretching the source image."""
     try:
         image = plt.imread(image_path)
     except (FileNotFoundError, OSError, ValueError):
@@ -359,7 +351,6 @@ def render_chart(
     date: str,
     final: bool = False,
 ) -> Path:
-    """Render the transparent 100% stacked bars for Canva."""
     theme = DEFAULT_THEME
     unassisted_color, assisted_color = segment_colors(theme)
     fig = plt.figure(
@@ -477,7 +468,6 @@ def render_chart(
 
 
 def canva_copy_block(report: dict, date: str) -> str:
-    """Return exact page copy produced from the same validated run."""
     below = ", ".join(report["below_threshold_names"]) or "None"
     no_data = ", ".join(report["no_data_names"]) or "None"
     return "\n".join(

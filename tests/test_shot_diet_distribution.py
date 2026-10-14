@@ -15,7 +15,6 @@ BULLS_FGA = 7417  # official 2025-26 regular-season team total
 
 
 def test_classification_priority_keeps_compound_labels_with_the_right_family():
-    """The order of FAMILY_RULES is the claim; a flat sweep miscounts these."""
     assert mod.classify('Turnaround Hook Shot') == 'Hooks'
     assert mod.classify('Turnaround Fadeaway shot') == 'Turnarounds/fades'
     assert mod.classify('Driving Floating Bank Jump Shot') == 'Floaters'
@@ -35,7 +34,6 @@ def test_unlabelled_default_is_its_own_family_not_a_technique():
 
 
 def test_every_action_type_lands_in_exactly_one_family():
-    """Coverage: an unmatched label must fall to the default, never disappear."""
     families = {name for name, _ in mod.FAMILY_RULES} | {mod.UNLABELLED}
     labels = ['Jump Shot', 'Driving Layup Shot', 'Cutting Dunk Shot', 'Hook Shot',
               'No Shot', 'Running Alley Oop Layup Shot', '']
@@ -78,16 +76,14 @@ def test_published_table_covers_the_whole_season_and_sums_to_one_hundred():
     assert chart.FGA.sum() == BULLS_FGA
     assert chart.SHARE.sum() == pytest.approx(100.0, abs=0.05)
     assert chart.LEAGUE_SHARE.sum() == pytest.approx(100.0, abs=0.05)
-    # Sorted by share, so the chart's row order comes from the data, not a literal list.
     assert chart.SHARE.is_monotonic_decreasing
     assert chart.RANK.between(1, 30).all()
 
 
 def test_display_label_trims_only_the_shared_shot_suffix():
     assert mod.display_label('Driving Finger Roll Layup Shot') == 'Driving Finger Roll Layup'
-    assert mod.display_label('Floating Jump shot') == 'Floating Jump'   # lower-case variant
+    assert mod.display_label('Floating Jump shot') == 'Floating Jump'
     assert mod.display_label('Jump Shot') == 'Jump'
-    # "Shot" inside a label, not at the end, must survive.
     assert mod.display_label('Shot Clock Jump Shot') == 'Shot Clock Jump'
 
 
@@ -99,7 +95,6 @@ def test_split_families_balances_on_rendered_lines_and_keeps_families_whole():
     assert [name for name, _ in left] + [name for name, _ in right] == [
         'Big', 'Mid', 'Small', 'Tiny']
     lines = lambda side: sum(len(g) + 1 for _, g in side)
-    # Balanced on lines: Big alone is 15 lines against the other three families' 9.
     assert lines(left) == 15 and lines(right) == 9
     assert all(len(g.FAMILY.unique()) == 1 for _, g in left + right)
 
@@ -111,10 +106,8 @@ def test_vocabulary_accounts_for_every_attempt_and_every_label():
     assert vocab.FGA.sum() == BULLS_FGA
     assert vocab.FGM.sum() == chart.FGM.sum()
     assert len(vocab) == vocab.ACTION_TYPE.nunique() == 48
-    # Every family total on slide one is reproduced by its labels on slide two.
     rolled = vocab.groupby('FAMILY').FGA.sum()
     assert (rolled[chart.FAMILY].values == chart.FGA.values).all()
-    # Families keep slide one's share order so the two slides can be read together.
     assert list(dict.fromkeys(vocab.FAMILY)) == list(chart.FAMILY)
     assert vocab.SHARE.sum() == pytest.approx(100.0, abs=0.05)
 
@@ -129,7 +122,6 @@ def test_format_share_never_prints_a_rounded_zero():
 
 @pytest.mark.skipif(not PUBLISHED.exists(), reason='post data not prepared')
 def test_low_attempt_labels_exist_and_would_have_their_percentage_suppressed():
-    """The suppression rule only matters if the season actually contains such labels."""
     vocab = pd.read_csv(PUBLISHED / 'bulls-shot-vocabulary.csv')
     thin = vocab[vocab.FGA < mod.MIN_ATTEMPTS_FOR_PCT]
     assert len(thin) > 0

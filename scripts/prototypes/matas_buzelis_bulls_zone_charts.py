@@ -53,7 +53,6 @@ LEADERBOARD_COLUMNS = (
 
 
 def fetch_bulls_totals(season: str) -> pd.Series:
-    """Return Buzelis's official Chicago regular-season totals."""
     table = leaguedashplayerstats.LeagueDashPlayerStats(
         season=season,
         season_type_all_star="Regular Season",
@@ -155,7 +154,6 @@ def summary_row(label: str, totals: pd.Series, shots: pd.DataFrame,
 
 
 def tenure_totals(season_totals: list[pd.Series]) -> pd.Series:
-    """Add counting fields; each game belongs to exactly one Bulls season."""
     return pd.Series({
         "GP": sum(int(row.GP) for row in season_totals),
         "MIN": sum(float(row.MIN) for row in season_totals),
@@ -191,8 +189,6 @@ def render(label: str, shots: pd.DataFrame, league: pd.DataFrame,
 
 
 def print_canva_copy(summary: pd.DataFrame, merge_mid: bool = False) -> None:
-    # The cover states the zone count, so it has to follow the variant actually
-    # rendered rather than the family's usual twelve.
     zone_count = "eight" if merge_mid else "twelve"
     print("\nCANVA COPY / 4-SLIDE CAROUSEL")
     print("PAGE 1 / COVER")

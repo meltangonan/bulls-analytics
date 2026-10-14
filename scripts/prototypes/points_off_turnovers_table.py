@@ -32,7 +32,6 @@ POST_PORTRAITS = ROOT / "docs/visuals/2026-09-29-points-off-turnovers/data/portr
 PORTRAIT_SOURCES: dict[int, Path] = {}
 PRIMARY = Path("/Users/meltangonan/projects/bulls-analytics")
 PRIMARY_HEADSHOTS = PRIMARY / "cache/headshots"
-# Hand-framed cut-outs saved by earlier posts, reused before NBA.com.
 EARLIER_PORTRAITS = [ROOT / "docs/visuals", PRIMARY / "docs/visuals"]
 WIDTH = 3240
 TOP_BOTTOM = 175
@@ -61,13 +60,11 @@ ALLOW_SILHOUETTE = False
 
 
 def build_post_portraits() -> None:
-    """Rebuild post-local cut-outs from the supplied originals."""
     for player_id, source in PORTRAIT_SOURCES.items():
         house.cut_out_flat_background(source, POST_PORTRAITS / f"{player_id}.png")
 
 
 def _portrait_path(player_id: int) -> Path:
-    """Post-local cut-out first (hand-sourced where NBA.com serves a silhouette)."""
     local = POST_PORTRAITS / f"{player_id}.png"
     if local.exists():
         return local
@@ -98,7 +95,6 @@ def _ordinal(value: int) -> str:
 
 
 def _center_identity(ax, name, season, y: float) -> None:
-    """Shift the name/season pair so its rendered block is centred on the row."""
     ax.figure.canvas.draw()
     inverse = ax.transData.inverted()
     boxes = [artist.get_window_extent() for artist in (name, season)]

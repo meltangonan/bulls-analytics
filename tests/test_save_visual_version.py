@@ -43,15 +43,12 @@ def test_version_increments_and_never_renumbers_history(visuals, tmp_path):
     for expected in ("v01", "v02", "v03"):
         saved = svp.save("shot-value-ladder", [src], when="2026-08-07")
         assert expected in saved[0].name
-    # A later day continues the sequence, and stays in the ORIGINAL folder --
-    # a project spanning three days must not scatter across three folders.
     saved = svp.save("shot-value-ladder", [src], when="2026-09-01")
     assert saved[0].name == "2026-09-01-v04-ladder-pps.png"
     assert saved[0].parent.parent.name == "2026-08-07-shot-value-ladder"
 
 
 def test_every_file_in_one_save_shares_a_version(visuals, tmp_path):
-    """A version is a set of images shown together, not one image."""
     files = [_png(tmp_path, f"chart-{i}.png") for i in range(3)]
     saved = svp.save("shot-value-ladder", files, when="2026-08-07")
     assert {s.name.split("-v")[1][:2] for s in saved} == {"01"}
@@ -66,7 +63,6 @@ def test_version_is_zero_padded_so_ten_sorts_after_nine(visuals, tmp_path):
 
 
 def test_an_already_dated_render_is_not_double_stamped(visuals, tmp_path):
-    """The chart CLIs date their own output; saving must not stack stamps."""
     src = _png(tmp_path, "2026-08-07-ladder-pps-league.png")
     saved = svp.save("shot-value-ladder", [src], when="2026-08-07")
     assert saved[0].name == "2026-08-07-v01-ladder-pps-league.png"
@@ -94,7 +90,6 @@ def test_empty_slug_is_rejected(visuals, tmp_path):
         svp.save("---", [_png(tmp_path, "c.png")])
 
 
-# --- render target shape ---------------------------------------------------
 def test_render_and_archive_use_the_same_folder_shape():
     """``output/<slug>/`` mirrors ``docs/visuals/<slug>/``.
 
@@ -114,7 +109,6 @@ def test_render_and_archive_use_the_same_folder_shape():
     assert path.parent.name.endswith("-shot-value-ladder")
     assert svp.VERSION_RE.sub("", path.parent.name) == path.parent.name
     assert path.parent.parent.name == "output"
-    # Resolving a path must not create anything on disk.
     assert not path.parent.exists()
 
     args.project = ""
@@ -147,7 +141,6 @@ def test_blank_ladder_gets_a_distinct_output_name():
 
 
 def test_data_goes_to_data_and_is_not_versioned(visuals, tmp_path):
-    """The numbers behind a render are current truth, not a version history."""
     src = tmp_path / "pairs.csv"
     src.write_text("season,combined_ast\n2010-11,233\n")
     saved = svp.save("shot-value-ladder", [src], when="2026-08-12", data=True)
@@ -156,7 +149,6 @@ def test_data_goes_to_data_and_is_not_versioned(visuals, tmp_path):
 
 
 def test_data_keeps_the_source_filename_verbatim(visuals, tmp_path):
-    """A rebuild must overwrite its own file, not pile up dated near-copies."""
     src = tmp_path / "pairs.csv"
     src.write_text("a,b\n1,2\n")
     saved = svp.save("p", [src], when="2026-08-12", data=True)
@@ -172,7 +164,6 @@ def test_resaving_data_replaces_rather_than_accumulates(visuals, tmp_path):
 
 
 def test_data_shares_the_project_folder_with_its_assets(visuals, tmp_path):
-    """A graphic's data ships with the graphic, in one folder."""
     svp.save("shot-value-ladder", [_png(tmp_path, "chart.png")], when="2026-08-07")
     src = tmp_path / "pairs.csv"
     src.write_text("a,b\n1,2\n")

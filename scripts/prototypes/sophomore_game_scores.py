@@ -77,7 +77,6 @@ KNOWN_FIRST_SEASON_DISAGREEMENTS = {(1989, 77173), (2010, 201181), (2025, 163060
 
 
 def fetch_sophomore_filter(refresh=False):
-    """Load NBA.com's Sophomore experience filter for each Bulls season it covers."""
     if SOPHOMORE_FILTER.exists() and not refresh:
         return pd.read_csv(SOPHOMORE_FILTER)
     rows = []
@@ -97,7 +96,6 @@ def fetch_sophomore_filter(refresh=False):
 
 
 def fetch_first_seasons(refresh=False):
-    """Load NBA.com's CommonAllPlayers first-season field, fetching once when absent."""
     if FIRST_SEASONS.exists() and not refresh:
         return pd.read_csv(FIRST_SEASONS)
     frame = commonallplayers.CommonAllPlayers(
@@ -106,7 +104,6 @@ def fetch_first_seasons(refresh=False):
 
 
 def post_portraits():
-    """Cut the supplied portraits out of their white surround, framed like NBA headshots."""
     return {player_id: cut_out_flat_background(DATA / 'portraits_source' / name,
                                                 DATA / 'portraits' / f'{player_id}.png')
             for player_id, name in PORTRAIT_SOURCES.items()}
@@ -132,7 +129,6 @@ def playoff_context(game_id):
 
 
 def validated_pool(players, teams, pool, seasons):
-    """Build one season type's working table and prove complete, reconciled coverage."""
     players, teams = players.copy(), teams.copy()
     for frame in (players, teams):
         frame['game_id'] = frame['game_id'].astype(str).str.zfill(10)
@@ -172,7 +168,6 @@ def prepare(players, teams, playoff_players, playoff_teams, sophomore_filter, fi
     second = second_seasons_played(careers)
     pairs = {(y, p) for y, p in played if second.get(p) == y}
 
-    # NBA.com's own label must match the rule wherever NBA.com has one.
     nba_pairs = set(zip(sophomore_filter.season.astype(int), sophomore_filter.player_id.astype(int)))
     in_filter_years = {(y, p) for y, p in pairs if y in FILTER_SEASONS}
     if nba_pairs ^ in_filter_years != KNOWN_FILTER_DISAGREEMENTS:
@@ -220,7 +215,6 @@ def prepare(players, teams, playoff_players, playoff_teams, sophomore_filter, fi
 
 
 def select_top(sophomores, top_n=TOP_N):
-    """Rank sophomore games by Game Score, then points, refusing a tie across the cutoff."""
     sophomores = sophomores.copy()
     # Every Game Score term is a multiple of 0.1; rounding strips float noise so an exact tie
     # falls through to the shared points tiebreak instead of an arbitrary 1e-15 difference.

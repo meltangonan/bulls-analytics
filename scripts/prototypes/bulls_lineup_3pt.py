@@ -201,7 +201,6 @@ HARRINGTON_BACKGROUND_MAX = 95
 
 
 def build_harrington_cutout(destination: Path) -> Path:
-    """Derive the Harrington portrait from its Wikimedia source, reproducibly."""
     from collections import deque
     from io import BytesIO
 
@@ -292,12 +291,10 @@ def build_harrington_cutout(destination: Path) -> Path:
 
 
 def headshot_path(player_id: int) -> Path:
-    """Return a project-specific portrait when one is part of this post."""
     return PROJECT_HEADSHOT_OVERRIDES.get(int(player_id), HEADSHOT_CACHE / f"{int(player_id)}.png")
 
 
 def ensure_post_headshots(player_ids: list[int]) -> None:
-    """Cache NBA portraits and refuse to render a silhouette."""
     from bulls.graphics.house import ensure_headshots
 
     wanted = {int(value) for value in player_ids}
@@ -362,7 +359,6 @@ def _validated_lineup_response(payload: dict, season: str) -> tuple[list[dict], 
 
 
 def fetch_source_tables() -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Fetch and save lineup rows plus a per-season completeness audit."""
     DATA.mkdir(parents=True, exist_ok=True)
     SEASON_SNAPSHOTS.mkdir(parents=True, exist_ok=True)
     lineup_rows: list[dict] = []

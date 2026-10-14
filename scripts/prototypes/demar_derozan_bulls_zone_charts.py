@@ -46,7 +46,6 @@ LEADERBOARD_COLUMNS = (
 
 
 def fetch_bulls_totals(season: str) -> pd.Series:
-    """Return DeRozan's official Chicago regular-season totals."""
     table = leaguedashplayerstats.LeagueDashPlayerStats(
         season=season,
         season_type_all_star="Regular Season",
@@ -146,7 +145,6 @@ def summary_row(label: str, totals: pd.Series, shots: pd.DataFrame,
 
 
 def tenure_totals(season_totals: list[pd.Series]) -> pd.Series:
-    """Add counting fields; each game belongs to exactly one Bulls season."""
     return pd.Series({
         "GP": sum(int(row.GP) for row in season_totals),
         "MIN": sum(float(row.MIN) for row in season_totals),
@@ -267,7 +265,6 @@ def build(args: argparse.Namespace) -> list[Path]:
 
 
 def build_cover(args: argparse.Namespace) -> Path:
-    """Build the selected data-free zone treatment for the cover page."""
     args.output_dir.mkdir(parents=True, exist_ok=True)
     treatment = "preview" if args.cover_preview_only else "blank"
     out = args.output_dir / (
@@ -280,7 +277,6 @@ def build_cover(args: argparse.Namespace) -> Path:
 
 
 def build_red_cover_variants(args: argparse.Namespace) -> list[Path]:
-    """Build reusable Bulls-red cover courts without player-specific names."""
     args.output_dir.mkdir(parents=True, exist_ok=True)
     variants = (
         ("bulls-red", shot_chart.ZONE12_BULLS_RED),
@@ -295,7 +291,6 @@ def build_red_cover_variants(args: argparse.Namespace) -> list[Path]:
 
 
 def build_tenure_data_cover(args: argparse.Namespace) -> Path:
-    """Build DeRozan's real pooled-tenure colors without detail overlays."""
     args.output_dir.mkdir(parents=True, exist_ok=True)
     player = pd.concat([
         pd.read_csv(args.data_dir / f"{season}-demar-derozan-bulls-shots.csv")

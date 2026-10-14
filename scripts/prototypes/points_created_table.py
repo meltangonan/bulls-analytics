@@ -80,7 +80,6 @@ def render(output:Path, final=False):
         name=text(NAME_X,y+24,r.PLAYER_NAME,36,align='left')
         if NAME_X+house.rendered_width(ax,name)>BAR_LEFT-35:raise ValueError(f'Name too wide: {r.PLAYER_NAME}')
         season=str(r.season)
-        # Keep awards beside the season, on the identity line rather than a numeric column.
         season_text=text(NAME_X,y-47,season,23,color=QUIET,align='left',weight='bold_oblique')
         if pd.notna(r.mvp_rank):
             award=str(r.mvp_label)
@@ -101,7 +100,6 @@ def render(output:Path, final=False):
     output.parent.mkdir(parents=True,exist_ok=True)
     fig.savefig(output,dpi=house.export_dpi(final),transparent=True,pad_inches=0)
     plt.close(fig)
-    # Keep a small transparent breathing margin, not a page-sized empty footer.
     with Image.open(output) as image:
         bounds=image.getbbox()
         margin=round(20*house.export_dpi(final)/house.DRAFT_DPI)

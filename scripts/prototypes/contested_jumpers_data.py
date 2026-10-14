@@ -43,7 +43,6 @@ def _save(path: Path, endpoint: str, params: dict, response: dict) -> None:
 
 
 def fetch_players(scope: str, season: str, bucket: str, refresh: bool = False) -> pd.DataFrame:
-    """One bucket of 10+ ft shots for Chicago players ('bulls') or every player ('league')."""
     path = DATA / 'raw' / f'{scope}_{season}_{bucket}.json'
     if refresh or not path.exists():
         params = dict(season=season, season_type_all_star='Regular Season',
@@ -61,7 +60,6 @@ def fetch_players(scope: str, season: str, bucket: str, refresh: bool = False) -
 
 
 def fetch_team(season: str, refresh: bool = False) -> pd.DataFrame:
-    """Chicago's team total by defender distance on 10+ ft shots, for reconciliation."""
     path = DATA / 'raw' / f'team_{season}.json'
     if refresh or not path.exists():
         params = dict(team_id=BULLS, season=season, season_type_all_star='Regular Season',
@@ -74,7 +72,6 @@ def fetch_team(season: str, refresh: bool = False) -> pd.DataFrame:
 
 
 def split(buckets: dict[str, pd.DataFrame]) -> pd.DataFrame:
-    """Sum the four buckets into contested and uncontested makes and attempts per player."""
     parts = []
     for bucket, frame in buckets.items():
         if frame.PLAYER_ID.duplicated().any():
@@ -125,7 +122,6 @@ def summarize(bulls: dict[str, pd.DataFrame], league: dict[str, pd.DataFrame],
 
 
 def select(all_rows: pd.DataFrame, size: int = 15) -> pd.DataFrame:
-    """Most contested makes; ties go to the higher contested FG%, then the older season."""
     ranked = all_rows.sort_values(['c_fgm', 'c_fg_pct', 'season'],
                                   ascending=[False, False, True], kind='stable')
     top = ranked.head(size).copy()

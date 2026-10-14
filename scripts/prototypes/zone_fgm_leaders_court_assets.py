@@ -34,7 +34,7 @@ from scripts import make_shot_chart as zc
 SLUG = "2026-10-07-zone-fgm-leaders"
 DATA = ROOT / "docs/visuals" / SLUG / "data"
 OUT = ROOT / "output/zone-fgm-leaders"
-COURT_DPI = 300   # about 1850 px wide, placed near 1030 px on the page
+COURT_DPI = 300
 
 # Tag centres in NBA court units, hoop at the origin; the tag's head stands on
 # its top edge. Corner tags reach past the sidelines; baseline tags sit low and
@@ -68,7 +68,6 @@ def render_court(values: pd.DataFrame, folder: Path) -> Path:
     fills = {row.zone: band(row.FG_PCT_vs_NBA) for row in values.itertuples()}
     to_px = zc._draw_zone_court(ax, house.CANVAS_WIDTH / 2, zc.ZONE12_COURT_Y,
                                 zc.ZONE12_SCALE, fills, 1.0)
-    # The sidelines and baseline, a little past them so their line width is kept.
     pad = 3
     x0, y0 = to_px(COURT_HALF_WIDTH, BASELINE_Y)   # NBA left is the viewer's right
     x1, y1 = to_px(-COURT_HALF_WIDTH, zc.ZONE12_TOP)
@@ -87,7 +86,6 @@ def render_court(values: pd.DataFrame, folder: Path) -> Path:
                            "fill": fills[row.zone]}
     hx, hy = to_px(0, 0)
     layout = {"aspect": (y1 - y0) / (x1 - x0), "zones": zones,
-              # The hoop and three-point arc, so the page can keep the wing tags off the line.
               "hoop": {"x": (hx - x0) / (x1 - x0), "y": (y1 - hy) / (y1 - y0)},
               "arc_r": ARC * zc.ZONE12_SCALE / (x1 - x0),
               "bands": list(zc.ZONE12_PALETTES[zc.ZONE12_DEFAULT_PALETTE]),

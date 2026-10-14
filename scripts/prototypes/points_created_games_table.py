@@ -106,8 +106,6 @@ def render(data: Path, output: Path, final: bool = False) -> Path:
         portrait = house.HEADSHOT_CACHE / f"{int(r.PLAYER_ID)}.png"
         if not portrait.exists():
             house.ensure_headshots([int(r.PLAYER_ID)])
-        # Keep the existing face size, but place its bottom on its own row's
-        # lower boundary. The extra height overlaps only the preceding row.
         portrait_artist = house.top_anchored_headshot_label(
             ax, portrait, PORTRAIT_X, y - ROW / 2 + 155, 155,
             crop_fraction=.74, preserve_width=True, zorder=4)
@@ -120,8 +118,6 @@ def render(data: Path, output: Path, final: bool = False) -> Path:
             {"game_date": r.GAME_DATE, "matchup": r.MATCHUP, "result": r.WL}))
         periods = int(r.overtimes)
         ot = "OT" if periods == 1 else f"{periods}OT" if periods > 1 else ""
-        # Standard game table: one regular-weight date/matchup line, bold W/L
-        # in its established color, and overtime at the same baseline.
         runs = [(date, QUIET, "regular"), (matchup, QUIET, "regular"),
                 (result, "#3FAE63" if result == "W" else "#D64545", "bold")]
         if ot:
@@ -153,8 +149,6 @@ def render(data: Path, output: Path, final: bool = False) -> Path:
         text(NBA_X, y, r.nba_season_rank_label, 42,
              color="#218347" if int(r.nba_season_rank) <= 10 else INK)
         text(SHARE_X, y, f"{r.team_pct:.1f}%", 42)
-    # Center the actual rendered name/game block, including all colored runs,
-    # rather than averaging baselines of two differently sized text lines.
     fig.canvas.draw()
     inverse = ax.transData.inverted()
     for y, group in identity_groups:

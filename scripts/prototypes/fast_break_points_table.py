@@ -49,7 +49,7 @@ SEASON_GREY = "#6E6963"
 RULE = "#B8B0A8"
 # NBA.com lists the suffix; the account uses the familiar name.
 DISPLAY_NAMES = {202710: "Jimmy Butler"}
-TOP_TEN_GREEN = "#218347"  # Shared dark conditional green for readable table text.
+TOP_TEN_GREEN = "#218347"
 NAME_SIZE = 41.5
 SEASON_SIZE = 28.5
 STAT_SIZE = 39
@@ -57,13 +57,11 @@ NAME_SEASON_GAP = 70
 
 
 def build_post_portraits() -> None:
-    """Rebuild post-local cut-outs from the supplied originals."""
     for player_id, source in PORTRAIT_SOURCES.items():
         house.cut_out_flat_background(source, POST_PORTRAITS / f"{player_id}.png")
 
 
 def _portrait_path(player_id: int) -> Path:
-    """Post-local cut-out first (hand-sourced where NBA.com serves a silhouette)."""
     local = POST_PORTRAITS / f"{player_id}.png"
     if local.exists():
         return local
@@ -77,7 +75,6 @@ def _ordinal(value: int) -> str:
 
 
 def _center_identity(ax, name, season, y: float) -> None:
-    """Shift the name/season pair so its rendered block is centred on the row."""
     ax.figure.canvas.draw()
     inverse = ax.transData.inverted()
     boxes = [artist.get_window_extent() for artist in (name, season)]

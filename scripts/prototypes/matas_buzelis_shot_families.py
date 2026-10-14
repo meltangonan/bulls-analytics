@@ -62,7 +62,6 @@ MIN_FAMILY_FGA = 20
 TRACKING_RANGES = ("Catch and Shoot", "Pullups")
 
 
-# ---------------------------------------------------------------- preparation
 def fetch_labelled_shots(season: str) -> pd.DataFrame:
     frame = shotchartdetail.ShotChartDetail(
         team_id=BULLS_TEAM_ID, player_id=PLAYER_ID, season_nullable=season,
@@ -147,7 +146,6 @@ def fetch_unassisted(season: str) -> dict[str, float]:
 
 
 def assert_partition(season: str, unassisted: float, assisted: float) -> None:
-    """The two halves must close. Drift here means the endpoint changed shape."""
     total = unassisted + assisted
     if abs(total - 100.0) > 0.2:
         raise ValueError(f"{season}: assisted + unassisted = {total}, not 100")
@@ -188,7 +186,6 @@ def recover_unassisted_count(fgm: int, pct: float, places: int = 3) -> int:
 
 
 def creation_counts(unassisted: pd.DataFrame, data_dir: Path) -> pd.DataFrame:
-    """Made field goals split into unassisted and assisted, as counts."""
     shares = unassisted.set_index("season")
     rows = []
     for season in SEASONS:
@@ -373,11 +370,10 @@ def _dumbbell_rows(ax, rows, axis_max: float, ticks, value_header: str,
     ], len(rows))
 
 
-LEGEND_MARK_GAP = 16.0        # mark to its own label
+LEGEND_MARK_GAP = 16.0
 
 
 def _text_width(fig, ax, text: str, size: float) -> float:
-    """Measured, not estimated, so the column can be checked for overflow."""
     artist = ax.text(0, 0, text, fontsize=size, fontproperties=helvetica("bold"))
     fig.canvas.draw()
     width = artist.get_window_extent(fig.canvas.get_renderer()).width
@@ -406,8 +402,6 @@ def _legend_column(fig, ax, entries, row_count: int) -> float:
                 fontproperties=helvetica("bold"))
         right = (LEGEND_COL_X + mark_width + LEGEND_MARK_GAP
                  + _text_width(fig, ax, label, db.TYPE_LEGEND))
-        # The column is the last thing on the canvas, so overflow is silent
-        # clipping rather than a visible collision. Fail the render instead.
         if right > WIDTH:
             raise ValueError(f"legend entry {label!r} reaches {right:.0f}, "
                              f"past the {WIDTH}px canvas")
@@ -415,13 +409,11 @@ def _legend_column(fig, ax, entries, row_count: int) -> float:
 
 
 def _canvas_height(row_count: int) -> float:
-    """Content depth plus the legend's own breathing room, never padded beyond it."""
     bottom = ROW_TOP + (row_count - 1) * ROW_STEP
     foot = bottom + ROW_STEP * db.GRIDLINE_FOOT_FACTOR
     return foot + db.AXIS_LABEL_DROP + 46
 
 
-# ------------------------------------------------------- slide 4: the families
 FAMILY_AXIS_MAX = 44.0
 FAMILY_TICKS = (0, 10, 20, 30, 40)
 
@@ -455,7 +447,6 @@ UNASSISTED_INK = "#FFFFFF"
 
 
 def render_creation(counts: pd.DataFrame, out: Path, final: bool) -> Path:
-    """Two seasons of made field goals, split by who created them."""
     rows = list(counts.itertuples(index=False))
 
     def x_for(value: float) -> float:
@@ -509,7 +500,6 @@ def render_creation(counts: pd.DataFrame, out: Path, final: bool) -> Path:
     return _save(fig, out, final)
 
 
-# ----------------------------------------------------------------------- main
 def main() -> None:
     ap = argparse.ArgumentParser(description="Buzelis shot-family slides")
     ap.add_argument("--prepare", action="store_true", help="refetch the labelled logs")

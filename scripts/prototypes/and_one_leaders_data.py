@@ -75,7 +75,6 @@ def game_log(game_id: str, season: str) -> pd.DataFrame:
 
 
 def count_game(frame: pd.DataFrame) -> list[dict]:
-    """One row per Chicago player with at least one and-1 in this game."""
     bulls = frame[frame["teamId"] == BULLS]
     made = bulls[(bulls["isFieldGoal"] == 1) & (bulls["shotResult"] == "Made")]
     shots = {(row.personId, row.period, row.clock): row for row in made.itertuples()}
@@ -98,7 +97,6 @@ def count_game(frame: pd.DataFrame) -> list[dict]:
 
 
 def own_counts(refresh: bool) -> pd.DataFrame:
-    """Count every Chicago and-1 from the game logs, keeping the per-game table."""
     path = DATA / "and_ones_by_game.csv"
     if path.exists() and not refresh:
         saved = pd.read_csv(path)
@@ -142,7 +140,6 @@ def pbpstats_rows(scope: str, season: str, refresh: bool) -> list[dict]:
 
 
 def pbpstats_frame(refresh: bool) -> pd.DataFrame:
-    """Chicago on-court offensive possessions, plus pbpstats' own and-1 column."""
     records = []
     for season in SEASONS:
         rows = pbpstats_rows("chi", season, refresh)

@@ -41,7 +41,7 @@ from bulls.graphics.house import helvetica
 
 CACHE = ROOT / "cache" / "hot_spots"
 ARC = 237.5          # three-point radius, tenths of a foot
-LMR_INNER = 100.0    # 10 ft
+LMR_INNER = 100.0
 DIFF_CLAMP = 0.08
 
 CMAP = LinearSegmentedColormap.from_list(
@@ -72,7 +72,6 @@ def prep(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def split(zone: str, player: pd.DataFrame, league: pd.DataFrame) -> list[dict]:
-    """Sub-region rows: attempts, FG%, league FG%, and whether the gap holds up."""
     rows = []
 
     def add(label, pm, lm, geom):
@@ -150,7 +149,6 @@ def render(rows, zone_title, zone_rule, player_name, subtitle, out, final):
             lx, ly = t(side * 235, 30)
         _label(ax, lx, ly, r, theme)
 
-    # Header
     ax.text(house.SIDE_MARGIN, house.CANVAS_HEIGHT - 62, zone_title,
             ha="left", va="top", fontsize=40, color=theme.ink,
             fontproperties=helvetica("bold"))
@@ -161,7 +159,6 @@ def render(rows, zone_title, zone_rule, player_name, subtitle, out, final):
             ha="left", va="top", fontsize=13, color=theme.accent,
             fontproperties=helvetica("bold"))
 
-    # Totals + reliability note
     tot_fga = sum(r["fga"] for r in rows)
     tot_fgm = sum(r["fgm"] for r in rows)
     lg_n = sum(r["lg_n"] for r in rows)
@@ -193,7 +190,6 @@ def render(rows, zone_title, zone_rule, player_name, subtitle, out, final):
 
 
 def _label(ax, x, y, r, theme):
-    """Zone name, the headline FG%, then attempts + league benchmark beneath."""
     w, h = 168, 104
     ax.add_patch(FancyBboxPatch((x - w / 2, y - h / 2), w, h,
                  boxstyle="round,pad=0,rounding_size=10",

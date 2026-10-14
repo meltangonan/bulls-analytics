@@ -61,7 +61,6 @@ def test_adjacent_columns_keep_a_gap_between_their_text(tmp_path):
     right_x, right_align = tables._anchor_for(columns, 0)
     left_x, left_align = tables._anchor_for(columns, 1)
     assert (right_align, left_align) == ("right", "left")
-    # The right-aligned cell ends before the left-aligned one starts.
     assert right_x < left_x
     assert left_x - right_x == pytest.approx(tables.CELL_PAD * 2)
 
@@ -137,7 +136,6 @@ def test_career_row_weights_by_games_rather_than_averaging_seasons():
     career = table[table["is_career"]].iloc[0]
     assert career.games == 100
     assert career.points == pytest.approx(11.0)
-    # FG% is recomputed from made over attempted, never averaged from the rates.
     assert career.fg_pct == pytest.approx(440.0 / 1060.0)
 
 
@@ -212,10 +210,7 @@ def test_a_playoff_night_can_set_the_career_high():
     highs = data_post._career_highs(regular, playoffs).set_index("category")
     assert highs.loc["Points", "value"] == 32
     assert bool(highs.loc["Points", "in_playoffs"]) is True
-    # The regular-season figure is kept alongside so the page can say which
-    # highs the postseason actually moved.
     assert highs.loc["Points", "regular_season_value"] == 26
-    # Rebounds peaked in the regular season, so that row is unaffected.
     assert highs.loc["Rebounds", "value"] == 14
     assert bool(highs.loc["Rebounds", "in_playoffs"]) is False
 
@@ -267,7 +262,6 @@ def test_reconcile_rejects_game_logs_that_disagree_with_the_franchise_totals():
 
 
 def test_published_data_matches_the_verified_figures():
-    """Guards the five CSVs the renderer actually reads."""
     data_dir = data_post.DEFAULT_OUT
     if not (data_dir / "franchise-ranks.csv").exists():
         pytest.skip("Run taj_gibson_retirement_data.py to build the tables first.")
@@ -277,7 +271,6 @@ def test_published_data_matches_the_verified_figures():
     assert ranks.loc["BLK", "rank"] == 5
     assert ranks.loc["OREB", "rank"] == 6
     assert ranks.loc["GP", "rank"] == 10
-    # Points leads the table and games played closes it.
     ordered = pd.read_csv(data_dir / "franchise-ranks.csv")["stat"].tolist()
     assert ordered[0] == "PTS" and ordered[-1] == "GP"
     # Fouls and turnovers were deliberately cut.
@@ -294,7 +287,6 @@ def test_published_data_matches_the_verified_figures():
     playoffs = pd.read_csv(data_dir / "season-playoffs.csv")
     assert int(playoffs.loc[~playoffs["is_career"], "games"].sum()) == 56
 
-    # Made-versus-attempted is spelled out so no row is ambiguous.
     labels = pd.read_csv(data_dir / "franchise-ranks.csv")["category"].tolist()
     assert "Field goals made" in labels and "Free throws made" in labels
 
@@ -306,15 +298,12 @@ def test_published_data_matches_the_verified_figures():
     assert highs.loc["Rebounds", "value"] == 19
     assert highs.loc["Blocks", "times"] == 4
     assert highs.loc["Defensive rebounds", "value"] == 13
-    # Points is the only category the postseason moved.
     assert list(highs.loc[highs["in_playoffs"]].index) == ["Points"]
     # Fouls were cut: a high reached 21 times is a ceiling, not a highlight.
     # Minutes were cut too: it describes a rotation, not a performance.
     assert "Personal fouls" not in highs.index
     assert "Minutes" not in highs.index
-    # Every career-high category needs a box-score code for the strip layout.
     assert set(highs.index) <= set(tables.HIGH_CODES)
-    # Eight categories fills the four-wide grid exactly, with no empty cell.
     assert len(highs) == 8 and len(highs) % 4 == 0
     assert highs.loc["Plus-minus", "value"] == 35
 
@@ -330,7 +319,6 @@ def test_published_data_matches_the_verified_figures():
     # per-game averages, which the season tables already carry.
     assert "Games with a block" not in milestones.index
     assert "Games with an offensive rebound" not in milestones.index
-    # Shares are derived from the same denominator the footnote prints.
     assert (milestones["of_games"] == 562).all()
     assert milestones.loc["Double-doubles", "share"] == pytest.approx(74 / 562)
 
@@ -339,15 +327,12 @@ def test_published_data_matches_the_verified_figures():
     assert top.iloc[0].game_score == pytest.approx(27.5)
     assert top.iloc[0].season_type == "Playoffs"
     assert top["game_score"].is_monotonic_decreasing
-    # The boxed leaderboard prints the whole line, not just derived rates.
     assert {"fgm", "fga", "fg3m", "fg3a", "ftm", "fta", "tov", "plus_minus"} <= set(top.columns)
     assert top.iloc[0].fgm == 13 and top.iloc[0].fga == 16
-    # He attempted no threes in any of his five best games.
     assert (top["fg3a"] == 0).all()
 
 
 def test_a_differential_career_high_is_signed():
-    """+35 is a margin, not a count, and reads wrong without its sign."""
     row = pd.Series({"category": "Plus-minus", "value": 35.0})
     assert tables._high_value(row) == "+35"
     assert tables._high_value(pd.Series({"category": "Points", "value": 32.0})) == "32"
@@ -395,7 +380,6 @@ def test_the_table_treatment_uses_the_shared_accent_card(tmp_path, monkeypatch):
 
     monkeypatch.setattr(tables.house, "draw_accent_card", spy)
     assert tables.render_top_games(data, tmp_path / "table.png").exists()
-    # One card spanning all five rows, not one card per row.
     assert len(calls) == 1 and calls[0][4] == 5
 
 
@@ -415,8 +399,8 @@ def test_the_table_treatment_drops_the_three_point_and_free_throw_splits():
     # deriving it reproduces that exactly, which is what validates the parse.
     ("0041000203", "(RD 2 GM3)"),
     ("0041300134", "(RD 1 GM4)"),   # Taj's 32 at Washington, 2014 first round
-    ("0041000301", "(RD 3 GM1)"),   # the 2011 conference finals opener
-    ("0021300257", ""),             # regular season carries no marker
+    ("0041000301", "(RD 3 GM1)"),
+    ("0021300257", ""),
 ])
 def test_playoff_round_and_game_come_from_the_game_id(game_id, expected):
     assert data_post.playoff_label(game_id) == expected
@@ -433,8 +417,6 @@ def test_the_top_games_table_renders(tmp_path):
         pytest.skip("Run taj_gibson_retirement_data.py first.")
     assert tables.render_top_games(data, tmp_path / "top-games.png").exists()
 
-
-# ------------------------------------------------------------------ shot diet
 
 def test_unlabelled_league_rows_are_dropped_not_placed():
     """A zone NBA.com never assigned is unavailable, not derivable.
@@ -494,9 +476,7 @@ def test_published_shot_diet_reconciles_to_the_franchise_total():
     assert diet["share_pct"].sum() == pytest.approx(100.0, abs=0.01)
     by_family = diet.set_index("family")
     assert by_family.loc["Dunks", "fga"] == 547
-    # The unlabelled default is the largest family, which the slide has to say.
     assert by_family["fga"].idxmax() == "Standard jumpers"
-    # Thin families carry no rate.
     assert not bool(by_family.loc["Step-backs", "rated"])
 
 
@@ -542,8 +522,6 @@ def test_career_high_values_carry_no_colour():
     assert "RED if" not in grid
 
 
-# ------------------------------------------------------ season-best marking
-
 def _season_frame(rows):
     columns = ["season", "games", "starts", "minutes", "points", "rebounds",
                "offensive_rebounds", "blocks", "fg_pct", "is_career"]
@@ -570,7 +548,6 @@ def test_a_tied_season_best_marks_every_tied_row():
 
 
 def test_the_career_row_is_never_a_season_best():
-    """It is an average of the rows above it, not a season of its own."""
     frame = _season_frame([
         ("2009-10", 82, 70, 26.9, 9.0, 7.5, 2.8, 1.3, 0.494, False),
         ("Bulls career", 82, 70, 99.9, 99.9, 99.9, 99.9, 9.9, 0.999, True),
@@ -580,7 +557,6 @@ def test_the_career_row_is_never_a_season_best():
 
 
 def test_counts_are_not_eligible_for_the_season_best_mark():
-    """Games and games started are counts, not per-game rates."""
     eligible = {index for _, index, _ in tables.SEASON_BEST_COLUMNS}
     season_column, games_column, starts_column = 0, 1, 2
     assert not eligible & {season_column, games_column, starts_column}

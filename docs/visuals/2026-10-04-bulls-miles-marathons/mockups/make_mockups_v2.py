@@ -66,7 +66,6 @@ def page(title, css, body):
             f'<style>{BASE}{css}</style></head><body>{HEAD}{body}</body></html>')
 
 
-# 1. Painted lanes: rank painted at the start line, miles inside the bib, Miles column dropped.
 def painted():
     lanes = ''.join(f'''<div class="lane"><div class="who"><b>{name(r)}</b><small>{seasons(r)}{tag(r)}</small></div>
       <div class="track"><span class="paint">{r['rank']}</span><div class="trail" style="width:{pct(r)}%"></div>
@@ -91,12 +90,10 @@ def painted():
     body = f'''<div class="grid top"><div></div><div class="scale">{ticks}<b class="fin">FINISH</b></div>
       <div class="h" style="text-align:right">Games</div><div class="h" style="text-align:right">Min</div><div class="h" style="text-align:right">MPH</div></div>
       <div class="grid lanes">{lanes}</div>{FOOT.format(note="Lane = rank. Marathons on the bib.")}'''
-    # The finish strip sits on the right edge of the track column.
     body = body.replace('<div class="grid lanes">', '<div class="grid lanes" style="position:relative">')
     return page('Painted lanes', css + '.track:after{content:"";position:absolute;top:-3px;bottom:-3px;right:-22px;width:22px;background:' + CHECKER + '}', body)
 
 
-# 2. Runner faces: the player's portrait rides on top of the bib.
 def faces():
     lanes = ''.join(f'''<div class="who"><span class="rk">{r['rank']}</span><div><b>{name(r)}</b><small>{seasons(r)}{tag(r)}</small></div></div>
       <div class="track"><div class="trail" style="width:{pct(r)}%"></div>
@@ -121,7 +118,6 @@ def faces():
     return page('Runner faces', css, body)
 
 
-# 3. Vertical sprint: lanes run up the page to a finish banner.
 def vertical():
     cols = ''.join(f'''<div class="col"><div class="vtrack"><div class="vtrail" style="height:{pct(r, .92)}%"></div>
         <div class="bib" style="bottom:{pct(r, .92)}%"><em>{r.marathons:.1f}</em></div><span class="paint">{r['rank']}</span></div>
@@ -153,7 +149,6 @@ def vertical():
     return page('Vertical sprint', css, body)
 
 
-# 4. Finisher medals: one medal per marathon, a partial medal for the remainder.
 def medals():
     def row(r):
         full, part = int(r.marathons), r.marathons % 1

@@ -9,7 +9,6 @@ DATA = post.DEFAULT_DATA_DIR
 
 
 def frame(rows):
-    """A minimal player-game table with the columns select_duos reads."""
     return pd.DataFrame(rows, columns=[
         "game_id", "season_end_year", "season", "game_date", "matchup", "opponent",
         "result", "team_points", "player_id", "player", "points", "minutes",
@@ -38,8 +37,8 @@ def test_second_scorer_tie_is_resolved_on_minutes_and_counted():
         ("1", 2019, "2018–19", "2019-03-01", "CHI @ ATL", "ATL", "W", 168, 12, "Markkanen", 31, 53.8),
     ] + [("1", 2019, "2018–19", "2019-03-01", "CHI @ ATL", "ATL", "W", 168, 13, "Dunn", 14, 176.2)])
     duo = post.select_duos(table).iloc[0]
-    assert duo.player_2 == "Porter"       # more minutes than the equal scorer
-    assert duo.second_tied_with == 1      # and the graphic's audit records the other claim
+    assert duo.player_2 == "Porter"
+    assert duo.second_tied_with == 1
 
 
 def test_overtime_comes_from_the_team_minute_budget():
@@ -76,7 +75,6 @@ def test_saved_top15_matches_its_own_printed_numbers():
     assert (top.player_1_points >= top.player_2_points).all()
     assert top.iloc[0].combined_points == 88
     assert (top.iloc[0].player_1_points, top.iloc[0].player_2_points) == (49, 39)
-    # Share is the duo's points over the official team score, not a sum of players.
     assert top.team_share_pct.round(1).equals(
         (top.combined_points / top.team_points * 100).round(1)
     )
@@ -87,7 +85,6 @@ def test_saved_selection_covers_every_season_and_reports_overtime():
     assert int(audit["games_considered"]) == 2089
     assert int(audit["seasons_covered"]) == 26
     assert int(audit["overtime_games_in_top"]) == 8
-    # Overtime is rare overall, which is exactly why the graphic labels it.
     assert float(audit["overtime_share_all_games_pct"]) < 10
     # No balance qualifier is applied, so the audit has to show the worst case.
     assert int(audit["lowest_second_scorer_in_top"]) == 22

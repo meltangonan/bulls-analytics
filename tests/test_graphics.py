@@ -23,8 +23,6 @@ from bulls.graphics import (
 
 
 class TestHouseGraphics:
-    """Executable checks for the settled design-system frame."""
-
     def test_canvas_uses_feed_coordinates(self):
         fig, ax = new_canvas()
 
@@ -45,7 +43,6 @@ class TestHouseGraphics:
             for font in fonts:
                 assert "Helvetica" in font.get_file()
             return
-        # Documented non-macOS path: family fallback, no extracted Helvetica file.
         for font in fonts:
             families = font.get_family()
             assert any(name in families for name in ("Helvetica", "Arial", "DejaVu Sans"))
@@ -94,8 +91,6 @@ class TestHouseGraphics:
 
 
 class TestGradientBar:
-    """Tests for gradient_bar."""
-
     def test_min_maps_light_and_max_maps_dark(self):
         fig, ax = plt.subplots()
         low = gradient_bar(ax, y=1.0, value=0.0, vmin=0.0, vmax=10.0, length=100)
@@ -108,8 +103,6 @@ class TestGradientBar:
 
 
 class TestStackedLabel:
-    """Tests for stacked_label."""
-
     def test_renders_primary_above_secondary(self):
         fig, ax = plt.subplots()
         primary, secondary = stacked_label(ax, 0.5, 0.5, "Coby White", "22.4 PPG")
@@ -128,8 +121,6 @@ class TestStackedLabel:
 
 
 class TestThresholdFooter:
-    """Tests for threshold_footer."""
-
     def test_contains_threshold_and_coverage_window(self):
         fig, ax = plt.subplots()
         threshold_footer(fig, "Min. 20 games", "2025-26 season through Jul 4")
@@ -141,8 +132,6 @@ class TestThresholdFooter:
 
 
 class TestHeadshotLabel:
-    """Tests for headshot_label."""
-
     def test_none_path_draws_placeholder(self):
         fig, ax = plt.subplots()
         artist = headshot_label(ax, None, 0.5, 0.5, radius=0.1)

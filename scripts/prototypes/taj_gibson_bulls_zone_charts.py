@@ -68,7 +68,6 @@ EXPECTED_TENURE_FGA = 4408
 
 
 def fetch_bulls_totals(season: str) -> pd.Series:
-    """Taj's official Chicago regular-season totals for one season."""
     table = leaguedashplayerstats.LeagueDashPlayerStats(
         season=season,
         season_type_all_star="Regular Season",
@@ -109,7 +108,6 @@ def load_bulls_shots(season: str, totals: pd.Series, data_dir: Path,
 
 def reconcile_shot_count(season: str, totals: pd.Series,
                          shots: pd.DataFrame) -> None:
-    """Every shot row must be an attempt the official totals also counted."""
     expected, actual = int(totals.FGA), len(shots)
     if actual != expected:
         raise ValueError(f"{season}: shot rows {actual} != Bulls FGA {expected}")
@@ -140,7 +138,6 @@ def drop_unlabelled_league_rows(league: pd.DataFrame, season: str) -> pd.DataFra
 
 
 def tenure_totals(season_totals: list[pd.Series]) -> pd.Series:
-    """Add counting fields; each game belongs to exactly one Bulls season."""
     return pd.Series({
         "GP": sum(int(row.GP) for row in season_totals),
         "MIN": sum(float(row.MIN) for row in season_totals),

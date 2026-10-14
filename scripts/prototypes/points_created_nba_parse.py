@@ -93,8 +93,6 @@ def parse_game(frame: pd.DataFrame, logs: pd.DataFrame) -> tuple[pd.DataFrame, l
         ids = set() if index is None else set(
             index["exact"].get(raw) or index["loose"].get(surname_key(raw)) or []
         )
-        # A player cannot assist his own basket. For shared surnames, use the
-        # running ordinal only when it uniquely identifies one roster candidate.
         ids.discard(int(event.personId))
         if len(ids) > 1:
             ordinal_matches = {pid for pid in ids

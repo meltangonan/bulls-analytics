@@ -284,8 +284,6 @@ def render() -> None:
     ax.axis('off')
     first_y = height - 190
     header_y = height - 48
-    # Keep a consistent 35-unit gutter between columns. The FG% header gets
-    # extra width inside its column, rather than creating a larger outside gap.
     cols = [(850,1050,'FGM'), (1085,1285,'FGA'), (1320,1645,'FG% (rFG%)'),
             (1680,1880,'ATT/G'), (1915,2115,'% OF FGA')]
     card_left,card_right,_,_ = draw_accent_card(ax,850,1050,first_y,len(top),row_h,overlap_y=15)

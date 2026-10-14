@@ -30,7 +30,7 @@ DATA = _REPO / "docs/visuals/2026-09-16-most-points-in-a-half/data"
 PRIMARY_HEADSHOTS = Path("/Users/meltangonan/projects/bulls-analytics/cache/headshots")
 BOARDS = ["quarter", "half"]
 
-FULL_ROWS, MAX_ROWS = 10, 15  # boards of 10+ rows fill the page frame
+FULL_ROWS, MAX_ROWS = 10, 15
 # Canva content width / chart-to-footer height. 3:4 matches the block-leaders page
 # (compact two-line title, source line only below), which leaves the most body space.
 PAGE_FRAMES = {"3:4": 0.84, "4:5": 1029.32 / 1101.0}
@@ -91,7 +91,6 @@ def game_segments(row: pd.Series) -> list[tuple[str, str, str]]:
 
 
 def draw_segments(ax, x: float, y: float, segments) -> None:
-    """Lay differently styled runs left to right, one word gap apart; return the right edge."""
     for text, colour, style in segments:
         artist = ax.text(x, y, text, ha="left", va="center", fontsize=SUB_SIZE, color=colour,
                          fontproperties=helvetica(style), zorder=3)
@@ -104,7 +103,7 @@ def rank_label(row: pd.Series) -> str:
 
 
 def render(board: str, output_path: Path, *, page: str = "3:4", final: bool = False) -> Path:
-    frame = pd.read_csv(DATA / f"top_{board}.csv")  # already in display order
+    frame = pd.read_csv(DATA / f"top_{board}.csv")
     if not 1 <= len(frame) <= MAX_ROWS:
         raise ValueError(f"{board}: expected at most {MAX_ROWS} rows, found {len(frame)}")
     if not frame.pts.is_monotonic_decreasing or frame["rank"].max() > FULL_ROWS:
@@ -119,7 +118,6 @@ def render(board: str, output_path: Path, *, page: str = "3:4", final: bool = Fa
         raise ValueError("Missing W/L")
     house.ensure_headshots(frame.player_id.astype(int).unique())
 
-    # Short boards keep the ten-row height instead of stretching rows; the asset is shorter.
     frame_height = round(WIDTH / PAGE_FRAMES[page])
     row_h = (frame_height - HEADER - BOTTOM) / max(len(frame), FULL_ROWS)
     height = round(HEADER + BOTTOM + row_h * len(frame))

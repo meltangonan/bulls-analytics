@@ -46,7 +46,6 @@ SOURCE_URL = (
 
 
 def _fetch_league_log(end_year: int, kind: str, refresh: bool) -> pd.DataFrame:
-    """Load the Bulls rows of one season's preseason LeagueGameLog (kind P or T)."""
     path = RAW_DATA_DIR / f"CHI-{'players' if kind == 'P' else 'team'}-preseason-{end_year}.csv"
     if path.exists() and not refresh:
         return pd.read_csv(path, dtype={"GAME_ID": str})
@@ -61,7 +60,6 @@ def _fetch_league_log(end_year: int, kind: str, refresh: bool) -> pd.DataFrame:
         ),
         f"preseason {kind} log for {season}",
     )
-    # The response is league-wide; keep the Bulls rows, in NBA.com's own columns.
     frame = frame[frame["TEAM_ABBREVIATION"].eq("CHI")].copy()
     if frame.empty:
         raise ValueError(f"NBA.com returned no Bulls preseason games for {season}.")
@@ -71,7 +69,6 @@ def _fetch_league_log(end_year: int, kind: str, refresh: bool) -> pd.DataFrame:
 
 
 def player_games(raw: pd.DataFrame, end_year: int) -> pd.DataFrame:
-    """Shape LeagueGameLog player rows into the shared player-game schema."""
     base._require_columns(raw, set(base.PLAYER_COLUMNS), "preseason player games")
     result = raw[list(base.PLAYER_COLUMNS)].rename(columns=base.PLAYER_COLUMNS).copy()
     result["game_id"] = result["game_id"].astype(str).str.zfill(10)
@@ -91,7 +88,6 @@ def player_games(raw: pd.DataFrame, end_year: int) -> pd.DataFrame:
 
 
 def team_games(raw: pd.DataFrame, end_year: int) -> pd.DataFrame:
-    """Shape LeagueGameLog team rows into the shared team-game schema."""
     base._require_columns(raw, {"GAME_ID", "GAME_DATE", "MATCHUP", "WL", "PTS", "PLUS_MINUS"},
                           "preseason team games")
     result = raw[["GAME_ID", "GAME_DATE", "MATCHUP", "WL", "PTS", "PLUS_MINUS"]].rename(
@@ -160,7 +156,6 @@ def fetch_preseasons(refresh: bool) -> tuple[pd.DataFrame, pd.DataFrame]:
 
 
 def rank_preseason(rows: pd.DataFrame, top_n: int = TOP_N) -> pd.DataFrame:
-    """Rank preseason player-games using the settled deterministic tie-breaks."""
     # Game Score inputs are whole stats times one-decimal weights, so rounding to 0.1 is exact and
     # stops float noise (23.800000000000004 vs 23.8) from overriding the points tiebreak.
     ranked = rows.assign(score_key=rows["game_score"].round(1)).sort_values(
@@ -179,7 +174,6 @@ def validate_preseason(
     played: pd.DataFrame,
     ranked: pd.DataFrame,
 ) -> dict[str, object]:
-    """Check coverage and preserve the factual claims used in the mock."""
     expected_years = set(range(FIRST_END_YEAR, base.LAST_SEASON_END_YEAR + 1))
     if set(teams["season_end_year"].astype(int)) != expected_years:
         raise ValueError("Preseason source does not cover every season since 2005-06.")
@@ -213,7 +207,6 @@ def validate_preseason(
 
 
 def write_data(teams: pd.DataFrame, played: pd.DataFrame, ranked: pd.DataFrame) -> None:
-    """Ship the selection and display tables beside the raw NBA.com rows."""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     teams.to_csv(DATA_DIR / "preseason_team_games.csv", index=False)
     played.to_csv(DATA_DIR / "preseason_player_games.csv", index=False)
@@ -221,7 +214,6 @@ def write_data(teams: pd.DataFrame, played: pd.DataFrame, ranked: pd.DataFrame) 
 
 
 def canva_copy(report: dict[str, object]) -> str:
-    """Print the exact framing tied to this analysis run."""
     return "\n".join(
         [
             "CANVA COPY",
@@ -275,7 +267,6 @@ def main() -> None:
         portraits=PORTRAITS,
         made_attempted_dash="-",
         true_shooting=True,
-        # Preseason playing time varies widely, so minutes give each line its context.
         show_minutes=True,
     )
     print(f"Chart: {chart}")

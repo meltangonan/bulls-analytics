@@ -65,7 +65,6 @@ def display_height(value: str) -> str:
 
 
 def canonical_heights(rosters: pd.DataFrame) -> pd.DataFrame:
-    """Return one listed height per player, matching the original ladder."""
     heights = (
         rosters[["PLAYER_ID", "HEIGHT", "SEASON"]]
         .dropna(subset=["HEIGHT"])
@@ -81,7 +80,6 @@ def canonical_heights(rosters: pd.DataFrame) -> pd.DataFrame:
 
 
 def select_height_winners(games: pd.DataFrame, heights: pd.DataFrame) -> pd.DataFrame:
-    """Select the top player-game per height with deterministic tie-breaking."""
     joined = games.merge(
         heights, left_on="player_id", right_on="PLAYER_ID", how="left", validate="many_to_one"
     )
@@ -133,7 +131,6 @@ def _context(row: pd.Series) -> str:
 
 
 def _context_parts(row: pd.Series) -> tuple[str, str, str, str]:
-    """Return context pieces so result alone can carry semantic colour."""
     date = pd.Timestamp(row.game_date).strftime("%b %-d, %Y")
     site = "vs" if "vs." in row.matchup else "at"
     playoff = PLAYOFF_GAME_CONTEXT.get(str(row.game_id), "")
@@ -230,7 +227,6 @@ def render_ladder(rows: pd.DataFrame, page: int, final: bool) -> Path:
 
 
 def render_hybrid(rows: pd.DataFrame, page: int, final: bool) -> Path:
-    """Reuse the PPG ladder exactly, replacing its content rather than its grammar."""
     rows_tall = 10
     fig_h = height_cards.figure_height(rows_tall)
     fig, ax = plt.subplots(figsize=(height_cards.FIG_W, fig_h))
@@ -335,9 +331,6 @@ def render_hybrid(rows: pd.DataFrame, page: int, final: bool) -> Path:
             fontsize=12, color=result_color, ha="left", va="center", zorder=5,
         )
 
-        # Give every stat block the same visible gutter. FG needs a wider block
-        # for made-attempted strings, so equal centre points would make its
-        # neighbouring gaps look tighter than the others.
         stat_specs = (
             ("PTS", int(row.points), 0.040),
             ("FG", f"{int(row.fgm)}-{int(row.fga)}", 0.065),

@@ -62,7 +62,6 @@ def _font(size: int, *, weight: str = "bold") -> ImageFont.FreeTypeFont:
 
 
 def _team_season_label(teams: str) -> str:
-    """Put Chicago first when a current Bull played for multiple teams."""
     abbreviations = str(teams).split("/")
     if "CHI" in abbreviations:
         abbreviations = ["CHI", *[team for team in abbreviations if team != "CHI"]]
@@ -93,7 +92,6 @@ def _compose(
     *,
     dpi: int = FINAL_DPI,
 ) -> None:
-    """Place a square portrait in reserved space above every chart line."""
     base = Image.open(base_path).convert("RGBA")
     canvas = Image.new("RGBA", base.size, (255, 255, 255, 0))
     canvas.alpha_composite(base, (0, 0))
@@ -129,7 +127,6 @@ def _compose(
 
 
 def _current_roster_data() -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Load the saved all-team player seasons and apply the 20-game floor."""
     games = pd.read_csv(DATA_DIR / "player_game_points.csv", parse_dates=["game_date"])
     audit = pd.read_csv(DATA_DIR / "roster_scoring_audit.csv")
     audit["qualifies"] = audit["games_played"].fillna(0).ge(MIN_GAMES)

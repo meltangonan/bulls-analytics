@@ -37,7 +37,6 @@ NAMES = {
 
 
 def _events(rows, season_end_year: int = 2026) -> pd.DataFrame:
-    """Expand (assister, scorer, count, shot_value) tuples into one row per basket."""
     records = []
     for assister, scorer, count, value in rows:
         records.extend(
@@ -148,7 +147,6 @@ class TestBuildPairs:
         assert row.low_ast == 0 and row.low_pts == 0 and row.share_high == 1.0
 
     def test_pairs_never_merge_across_seasons(self):
-        # The post ranks single seasons; a duo's 2024-25 and 2025-26 work must stay apart.
         events = pd.concat(
             [
                 _events([(GIDDEY, BUZELIS, 10, 2)], season_end_year=2025),
@@ -214,11 +212,10 @@ class TestBuildPairs:
 
 
 def _multi_season_pairs() -> pd.DataFrame:
-    """One connection per season across all three decades, with a decoy in 2006-07."""
     blocks = [
         _events([(GIDDEY, BUZELIS, 12, 2)], season_end_year=2003),
         _events([(JONES, VUCEVIC, 18, 2)], season_end_year=2007),
-        _events([(GIDDEY, VUCEVIC, 9, 2)], season_end_year=2007),   # same season, lower
+        _events([(GIDDEY, VUCEVIC, 9, 2)], season_end_year=2007),
         _events([(GIDDEY, JONES, 15, 2)], season_end_year=2011),
         _events([(VUCEVIC, BUZELIS, 20, 2)], season_end_year=2020),
         _events([(JONES, BUZELIS, 7, 2)], season_end_year=2026),
@@ -268,7 +265,6 @@ class TestTopOverall:
         assert len(top_overall(pairs, top_n=999)) == len(pairs)
 
     def test_keeps_two_rows_from_one_season_when_both_qualify(self):
-        # Unlike best_per_season, an all-time board has no one-row-per-season rule.
         rows = top_overall(_multi_season_pairs(), top_n=6)
         assert list(rows.season).count("2006-07") == 2
 
@@ -302,7 +298,6 @@ class TestSlideHeight:
 
 
 def _logs(rows, season_end_year: int = 2026) -> pd.DataFrame:
-    """Build player game logs from (player_id, [game numbers]) pairs."""
     records = [
         {
             "PLAYER_ID": player_id,
@@ -334,7 +329,6 @@ class TestGamesTogether:
         assert attach_games_together(pairs, logs).iloc[0].games_together == 0
 
     def test_games_are_matched_within_a_season_not_across(self):
-        # Shared game *numbers* in different seasons are different games.
         events = pd.concat(
             [
                 _events([(GIDDEY, BUZELIS, 4, 2)], season_end_year=2025),
@@ -482,7 +476,6 @@ class TestAssistOrdinal:
         assert _resolve_assister({1, 2}, row, {("g", 1): 2, ("g", 2): 5}) == {1}
 
     def test_an_unbreakable_tie_is_left_ambiguous(self):
-        # Both on zero and it is the first assist: nothing to tell them apart.
         row = {"game_id": "g", "assist_ordinal": 1}
         assert _resolve_assister({1, 2}, row, {}) == {1, 2}
 
@@ -502,11 +495,9 @@ class TestExactBeforeLoose:
         assert fold("Jones") != fold("Jones Jr.")
 
     def test_suffix_stripping_would_collapse_them(self):
-        # Which is why the loose index alone cannot resolve a bare "(Jones 1 AST)".
         assert surname_key("Jones") == surname_key("Jones Jr.") == "JONES"
 
     def test_the_butler_case_still_needs_the_loose_form(self):
-        # The opposite direction: the description drops a suffix the column carries.
         assert fold("Butler") != fold("Butler III")
         assert surname_key("Butler") == surname_key("Butler III") == "BUTLER"
 

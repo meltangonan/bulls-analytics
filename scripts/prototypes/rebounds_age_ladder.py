@@ -159,7 +159,6 @@ def _request_frame(factory: Callable[[], object], source: str) -> pd.DataFrame:
 
 
 def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
-    """Load one Chicago-only regular season from cache or NBA.com."""
     cache_path = RAW_CACHE / f"CHI-{end_year}.csv"
     if cache_path.exists() and not refresh:
         return pd.read_csv(cache_path)
@@ -249,7 +248,6 @@ def fetch_bulls_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
 
 
 def fetch_league_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
-    """Load every NBA player's totals for the season's shading baseline."""
     cache_path = LEAGUE_CACHE / f"league-{end_year}.csv"
     if cache_path.exists() and not refresh:
         return pd.read_csv(cache_path)
@@ -273,7 +271,6 @@ def fetch_league_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame
 
 
 def league_rotation_rates(rows: pd.DataFrame) -> pd.Series:
-    """RPG for rotation regulars, using the observed season length."""
     frame = rows.copy()
     for column in ("GP", "MIN", "REB"):
         frame[column] = pd.to_numeric(frame[column], errors="raise")
@@ -306,7 +303,6 @@ def fetch_league_baseline(*, refresh: bool = False) -> dict[int, pd.Series]:
 
 
 def build_working_table(rows: pd.DataFrame) -> pd.DataFrame:
-    """Apply the half-team-games floor and choose one RPG winner per age."""
     missing = set(COLUMNS) - set(rows.columns)
     if missing:
         raise ValueError(f"Historical rebound rows are missing {sorted(missing)}.")
@@ -462,7 +458,6 @@ def canva_copy_block(report: dict[str, object]) -> str:
 
 
 def render_rebounds_table(winners: pd.DataFrame, date: str, *, final: bool = False) -> Path:
-    """Render the exact Stocks-style one-slide table with rebound columns."""
     return render_chart(
         apply_display_names(winners), date,
         slug="one-slide", layout=REBOUNDS_LAYOUT,
@@ -494,7 +489,6 @@ def _height_table_portrait(ax, row, x: float, y: float, size: float) -> None:
 
 
 def render_height_table(rows: pd.DataFrame, page: int, date: str, *, final: bool = False) -> Path:
-    """Render ten rows using the compact Game Score height-table geometry."""
     rows = apply_display_names(rows).reset_index(drop=True)
     height = HEIGHT_TABLE_TOP + len(rows) * HEIGHT_TABLE_ROW_H + HEIGHT_TABLE_BOTTOM
     fig, ax = plt.subplots(figsize=(HEIGHT_TABLE_WIDTH / 150, height / 150), dpi=150)

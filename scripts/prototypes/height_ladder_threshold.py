@@ -55,7 +55,6 @@ def main() -> None:
     pd.set_option("display.width", 400, "display.max_colwidth", 46)
     print(out.to_string())
 
-    # Depth per rung drives how fragile a rung is, independent of threshold.
     print("\nQualifying seasons per rung at 41 GP + 20 MPG:")
     q = df[(df["GP"] >= 41) & (df["MPG"] >= 20)]
     depth = q.groupby(["HEIGHT_IN", "HEIGHT"]).agg(

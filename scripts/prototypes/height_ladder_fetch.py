@@ -34,7 +34,6 @@ def season_str(start_year: int) -> str:
 
 
 def height_to_inches(height: str) -> float:
-    """'6-6' -> 78.0. Blank or malformed -> NaN."""
     if not isinstance(height, str) or "-" not in height:
         return float("nan")
     feet, _, inches = height.partition("-")
@@ -93,7 +92,6 @@ def player_heights(rosters: pd.DataFrame) -> pd.DataFrame:
 
 
 def tidy_from_raw(rosters: pd.DataFrame, careers: pd.DataFrame) -> pd.DataFrame:
-    """Join rosters to careers and keep the Bulls rows. Pure; no network."""
     heights = player_heights(rosters)
 
     bulls = careers[careers["TEAM_ID"] == BULLS_TEAM_ID].copy()
@@ -115,7 +113,6 @@ def tidy_from_raw(rosters: pd.DataFrame, careers: pd.DataFrame) -> pd.DataFrame:
 
 
 def rebuild() -> None:
-    """Regenerate the tidy CSV from saved raw responses, without refetching."""
     rosters = pd.read_csv(OUT / "raw_rosters.csv")
     careers = pd.read_csv(OUT / "raw_careers.csv")
     tidy = tidy_from_raw(rosters, careers)

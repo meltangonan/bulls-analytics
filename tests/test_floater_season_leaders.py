@@ -61,7 +61,6 @@ def test_three_point_heave_leaves_the_count_but_stays_in_the_partition():
     row = result.iloc[0]
     assert row.FGA == 1 and row.FGM == 0
     assert row.EXCLUDED_HEAVES == 1
-    # The heave still belongs to total attempts; only the floater count drops it.
     assert row.OTHER_FGA == 2
     assert row.FGA + row.OTHER_FGA == row.TOTAL_FGA
     assert audit[['fga_delta','fgm_delta','partition_delta']].eq(0).all().all()

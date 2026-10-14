@@ -93,7 +93,6 @@ def fetch_team_year_by_year(*, refresh: bool = False) -> pd.DataFrame:
 
 
 def build_merger_rows(team_year: pd.DataFrame) -> pd.DataFrame:
-    """Turn the height ladder's NBA.com career rows into rebound rows."""
     careers = pd.read_csv(MERGER_SOURCE_DATA / "merger-raw-careers.csv")
     rosters = pd.read_csv(MERGER_SOURCE_DATA / "merger-raw-rosters.csv")
     names = (
@@ -164,7 +163,6 @@ def _hybrid_portrait(ax, row, x: float, bottom: float, height_frac: float, fig_h
 
 
 def render_height_hybrid(rows: pd.DataFrame, page: int, date: str, *, final: bool = False) -> Path:
-    """Use the Game Score height-post's full bordered-card treatment exactly."""
     rows = apply_display_names(rows).reset_index(drop=True)
     fig_h = height_cards.figure_height(HYBRID_ROWS_TALL)
     fig, ax = plt.subplots(figsize=(height_cards.FIG_W, fig_h))
@@ -244,7 +242,6 @@ def render_height_hybrid(rows: pd.DataFrame, page: int, date: str, *, final: boo
 
 
 def render_merger_table(winners: pd.DataFrame, date: str, *, final: bool = False) -> Path:
-    """Render a since-merger one-slide Stocks-style table with fixed RPG colors."""
     merger_layout = TableLayout(
         header_y=1211, header_rule_y=1186, first_row_y=1154,
         row_height=56, headshot_half_size=37, headshot_rise=5,

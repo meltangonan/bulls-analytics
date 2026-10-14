@@ -116,7 +116,6 @@ def test_2015_16_sits_just_over_the_luxury_tax_line():
 
 
 def test_snapshot_documents_its_sources():
-    """The provenance header is the only record of how these numbers were made."""
     header = [
         line
         for line in (

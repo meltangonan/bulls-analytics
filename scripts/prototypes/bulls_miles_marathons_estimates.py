@@ -64,7 +64,6 @@ def _career_minutes(player_ids: list[int]) -> pd.DataFrame:
 
 
 def _league() -> pd.DataFrame:
-    """NBA-wide regular-season player tracking totals, every tracked season."""
     frames = []
     for year in range(FIRST_TRACKED, LAST_TRACKED + 1):
         season = f'{year}-{str(year + 1)[2:]}'

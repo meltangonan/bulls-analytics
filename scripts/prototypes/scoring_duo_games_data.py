@@ -36,7 +36,6 @@ TOP_N = 15
 PROJECT = "top-scoring-duo-games"
 DEFAULT_DATA_DIR = _REPO / "docs" / "visuals" / "2026-09-13-top-scoring-duo-games" / "data"
 
-# Names carried at their NBA.com spelling everywhere except the rendered label.
 DISPLAY_NAME_FIXES = {"Jimmy Butler III": "Jimmy Butler"}
 
 
@@ -124,7 +123,6 @@ def build_top(duos: pd.DataFrame, top_n: int = TOP_N) -> pd.DataFrame:
 
 
 def selection_audit(duos: pd.DataFrame, top: pd.DataFrame) -> dict[str, object]:
-    """Record the facts a reader could challenge about this selection."""
     cutoff = int(top["combined_points"].min())
     at_cutoff = duos[duos["combined_points"] == cutoff]
     return {
@@ -146,7 +144,6 @@ def selection_audit(duos: pd.DataFrame, top: pd.DataFrame) -> dict[str, object]:
 
 
 def season_audit(table: pd.DataFrame, duos: pd.DataFrame) -> pd.DataFrame:
-    """One row per season: games seen and the best duo total in it."""
     games = table.groupby("season_end_year")["game_id"].nunique().rename("games")
     best = duos.groupby("season_end_year")["combined_points"].max().rename("best_duo_points")
     audit = pd.concat([games, best], axis=1).reset_index()

@@ -45,7 +45,6 @@ ALLOWED = {
                           "leaderboard posts; its outputs and the published inputs are tracked",
 }
 
-# Modules that legitimately reference the cache root itself rather than a subfolder.
 ALLOWED_BARE_CACHE = {"scripts/prototypes/season_shape_post.py"}
 
 
@@ -123,7 +122,6 @@ def test_the_assist_duos_season_data_is_tracked():
 
 
 def test_single_owner_post_data_ships_with_its_post():
-    """Summer League sticky stats: one script, one post, so it lives with the post."""
     data = ROOT / "docs" / "visuals" / "2026-07-21-summer-league-sticky-stats" / "data"
     assert data.is_dir(), f"Summer League inputs missing from the tracked tree: {data}"
     assert list(data.glob("games*.csv")), "expected the tournament game index"

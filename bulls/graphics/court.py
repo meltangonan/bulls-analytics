@@ -191,8 +191,6 @@ def draw_half_court(ax, center_x: float, center_y: float, s: float,
     hoop_x, hoop_y = t(0, 0)
     ax.add_patch(Circle((hoop_x, hoop_y), HOOP_RADIUS * s, facecolor="none",
                         edgecolor=color, lw=lw, zorder=zorder))
-    # Backboard: a six-foot plate behind the rim, plus the short connector that
-    # makes it read as a basket assembly rather than another court tick.
     board_y = t(0, BACKBOARD_Y)[1]
     ax.plot([t(-BACKBOARD_HALF_WIDTH, BACKBOARD_Y)[0],
              t(BACKBOARD_HALF_WIDTH, BACKBOARD_Y)[0]], [board_y] * 2,
@@ -202,7 +200,6 @@ def draw_half_court(ax, center_x: float, center_y: float, s: float,
     ax.plot([hoop_x, hoop_x], [board_y, rim_back_y], color=color,
             lw=lw * 1.25, zorder=zorder + 1)
     restricted_area_patch(ax, hoop_x, hoop_y, s, color, lw, zorder)
-    # Free-throw circle: solid above the line, dashed below.
     ft_x, ft_y = t(0, FT_LINE_Y)
     ax.add_patch(Arc((ft_x, ft_y), 2 * FT_RADIUS * s, 2 * FT_RADIUS * s,
                      theta1=0, theta2=180,
@@ -210,7 +207,6 @@ def draw_half_court(ax, center_x: float, center_y: float, s: float,
     ax.add_patch(Arc((ft_x, ft_y), 2 * FT_RADIUS * s, 2 * FT_RADIUS * s,
                      theta1=180, theta2=360,
                      color=color, lw=lw, linestyle=(0, (4, 3)), zorder=zorder))
-    # Three-point line: straight corner runs, then the arc between them.
     corner_top = (ARC ** 2 - CORNER_X ** 2) ** 0.5
     for side in (-CORNER_X, CORNER_X):
         ax.plot([t(side, BASELINE_Y)[0]] * 2,

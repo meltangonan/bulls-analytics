@@ -75,7 +75,6 @@ ASSIST_RE = re.compile(r"\(([^()]+?)\s+(\d+)\s+AST\)")
 
 
 def season_label(end_year: int) -> str:
-    """2001 -> '2000-01', matching NBA.com's season parameter."""
     return f"{end_year - 1}-{str(end_year)[-2:]}"
 
 
@@ -83,7 +82,6 @@ GENERATIONAL_SUFFIXES = {"JR", "JR.", "SR", "SR.", "II", "III", "IV", "V"}
 
 
 def fold(name: str) -> str:
-    """Strip diacritics and upper-case, so 'Vučević' and 'Vucevic' compare equal."""
     return "".join(
         c for c in unicodedata.normalize("NFKD", str(name)) if not unicodedata.combining(c)
     ).upper()
@@ -108,7 +106,6 @@ def surname_key(name: str) -> str:
 
 
 def _request(factory, label: str):
-    """Run one NBA.com request with backoff. Raises if every attempt fails."""
     last_error: Exception | None = None
     for attempt in range(REQUEST_ATTEMPTS):
         try:
@@ -150,7 +147,6 @@ def bulls_game_log(end_year: int) -> pd.DataFrame:
 
 
 def bulls_game_ids(end_year: int) -> list[str]:
-    """Every Bulls regular-season game id for one season, oldest first."""
     return sorted(bulls_game_log(end_year).GAME_ID.astype(str).unique())
 
 
@@ -184,7 +180,6 @@ def bulls_player_game_logs(end_year: int) -> pd.DataFrame:
 def load_player_game_logs(
     first: int = FIRST_SEASON_END_YEAR, last: int = LAST_SEASON_END_YEAR
 ) -> pd.DataFrame:
-    """Player game logs for every season in the range."""
     return pd.concat(
         [bulls_player_game_logs(year) for year in range(first, last + 1)],
         ignore_index=True,
@@ -241,7 +236,6 @@ def check_passer_attribution(first: int, last: int) -> pd.DataFrame:
 
 
 def _static_full_names() -> dict[int, str]:
-    """Player id -> full name, from nba_api's offline table. No request."""
     return {int(p["id"]): p["full_name"] for p in static_players.get_players()}
 
 
@@ -304,7 +298,6 @@ def _index_names(bulls: pd.DataFrame) -> dict[str, dict[str, set[int]]]:
 
 
 def assisted_baskets_for_game(game_id: str) -> tuple[list[dict], dict[str, set[int]]]:
-    """Return this game's assisted baskets (assister unresolved) and its name index."""
     pbp = _request(
         lambda: playbyplayv3.PlayByPlayV3(game_id=game_id, timeout=60, headers=_NBA_HEADERS),
         f"play-by-play {game_id}",
@@ -353,7 +346,6 @@ def _resolve_assister(ids, row, tally):
 
 
 def fetch_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
-    """Fetch and cache one season. Returns the cached frame if it already exists."""
     path = CACHE / f"assisted-baskets-{season_label(end_year)}.csv"
     if path.exists() and not refresh:
         return pd.read_csv(path, dtype={"game_id": str})
@@ -393,8 +385,6 @@ def fetch_season(end_year: int, *, refresh: bool = False) -> pd.DataFrame:
     tally: dict[tuple[str, int], int] = {}
     for row in pending:
         game_index = game_indexes[row["game_id"]]
-        # Narrowest and most literal first: this game's exact spelling, then this
-        # game's loose form, then the same two season-wide.
         ids = (
             game_index["exact"].get(row["assister_raw"])
             or game_index["loose"].get(row["assister_key"])
@@ -449,7 +439,6 @@ def load_history(
     *,
     refresh: bool = False,
 ) -> pd.DataFrame:
-    """Every cached season, fetching any that are missing."""
     frames = [fetch_season(year, refresh=refresh) for year in range(first, last + 1)]
     return pd.concat(frames, ignore_index=True)
 

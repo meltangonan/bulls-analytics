@@ -112,7 +112,6 @@ def write_table(qualified, min_minutes: float) -> Path:
 
 
 def square_headshot_label(ax, image_path: Path, x: float, y: float, half_size: float):
-    """Place a top-anchored square crop without the shared circular mask."""
     try:
         image = plt.imread(image_path)
     except (FileNotFoundError, OSError, ValueError):
@@ -135,7 +134,6 @@ def square_headshot_label(ax, image_path: Path, x: float, y: float, half_size: f
 
 
 def render_chart_only(qualified, team, final: bool) -> Path:
-    """Render the transparent chart asset for external page assembly."""
     theme = DEFAULT_THEME
     panel_fill = "#F5F1EC"
     fig = plt.figure(figsize=(CHART_WIDTH / DRAFT_DPI, CHART_HEIGHT / DRAFT_DPI))

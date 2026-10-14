@@ -32,7 +32,6 @@ def seasons() -> list[str]:
 
 
 def eligible(shots: pd.DataFrame, *, league: bool = False) -> pd.DataFrame:
-    """Official threes, 27–39 whole feet, with the shot location before midcourt."""
     shot_type = "3PT" if league else "3PT Field Goal"
     type_col = "shot_type" if league else "SHOT_TYPE"
     distance_col = "shot_distance" if league else "SHOT_DISTANCE"

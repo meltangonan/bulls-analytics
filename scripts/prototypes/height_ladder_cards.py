@@ -52,10 +52,9 @@ BULLS_RED = "#CE1141"
 # amount of scaling closes.
 FIG_W = 9.2
 ROW_H_IN = 1.02
-PAD_TOP_IN = 0.62      # room for the first portrait to break out of its card
+PAD_TOP_IN = 0.62
 PAD_BOTTOM_IN = 0.20
 
-# Column edges as a fraction of figure width.
 X_ROW_L, X_ROW_R = 0.012, 0.988
 X_HEIGHT_R = 0.165
 X_PORTRAIT = 0.250
@@ -64,16 +63,16 @@ X_PPG_L = 0.845
 
 NAME_SIZE = 22.0
 SEASON_SIZE = 16.0
-SEASON_SUP_RATIO = 0.58   # season superscript, as a fraction of the name size
+SEASON_SUP_RATIO = 0.58
 HEIGHT_SIZE = 28.0
 PPG_SIZE = 25.0
 PORTRAIT_SCALE = 1.18
 # Measured from the card's outer bottom edge: the 2.2pt border is ~0.031in, so
 # this clears the line by a hair and no more.
 PORTRAIT_LIFT_IN = 0.042
-FACE_CROP_FRACTION = 0.72   # matches the age ladder and BPM tables
+FACE_CROP_FRACTION = 0.72
 
-STRIPE = 0.007   # border inset, in x units
+STRIPE = 0.007
 
 
 def figure_height(rows: int) -> float:
@@ -108,7 +107,6 @@ GREEN_AT = 28.0   # a first option; anything above simply stays green
 
 
 def ppg_fill(value: float):
-    """Map PPG onto red -> yellow -> green against fixed scoring anchors."""
     value = float(value)
     if value <= YELLOW_AT:
         span = YELLOW_AT - RED_AT
@@ -120,13 +118,11 @@ def ppg_fill(value: float):
 
 
 def portrait_for(player_id: int) -> Path:
-    """Prefer a hand-sourced portrait, fall back to the CDN or the silhouette."""
     local = POST_PORTRAITS / f"{int(player_id)}.png"
     return local if local.is_file() else house.portrait_path(int(player_id))
 
 
 def striped_box(ax, x, y, w, h, colour, fill, fig_h, zorder):
-    """A box with a colour border, a canvas-coloured stripe, then the fill."""
     stripe_y = STRIPE * FIG_W / fig_h
     ax.add_patch(Rectangle(
         (x, y), w, h, facecolor=house.DEFAULT_THEME.canvas,
@@ -139,7 +135,6 @@ def striped_box(ax, x, y, w, h, colour, fill, fig_h, zorder):
 
 
 def place_portrait(ax, path, x, bottom, height_frac, fig_h, zorder, face_crop_fraction=None):
-    """Draw a portrait sitting on `bottom`, tall enough to break its row."""
     try:
         image = plt.imread(path)
     except (FileNotFoundError, OSError, ValueError):
@@ -150,7 +145,7 @@ def place_portrait(ax, path, x, bottom, height_frac, fig_h, zorder, face_crop_fr
     left = max(0, (w - side) // 2)
     square = image[0:side, left:left + side]
 
-    half_x = (height_frac * fig_h / FIG_W) / 2  # keep it visually square
+    half_x = (height_frac * fig_h / FIG_W) / 2
     ax.imshow(
         square,
         extent=[x - half_x, x + half_x, bottom, bottom + height_frac],
@@ -160,7 +155,6 @@ def place_portrait(ax, path, x, bottom, height_frac, fig_h, zorder, face_crop_fr
 
 
 def draw_row(ax, row, y, row_h, name_size, fig_h, theme, zorder) -> None:
-    """Draw one bordered card row centred on y, in figure-fraction coords."""
     heat = ppg_fill(row.PPG)
     box_h = row_h * 0.86
     stripe_y = STRIPE * FIG_W / fig_h
@@ -184,7 +178,6 @@ def draw_row(ax, row, y, row_h, name_size, fig_h, theme, zorder) -> None:
         color="#FFFFFF", ha="center", va="center", zorder=4,
     )
 
-    # Lift the portrait clear of the border so it does not sit on the line.
     place_portrait(
         ax, portrait_for(row.PLAYER_ID), X_PORTRAIT,
         bottom + PORTRAIT_LIFT_IN / fig_h,
@@ -215,7 +208,6 @@ def draw_row(ax, row, y, row_h, name_size, fig_h, theme, zorder) -> None:
         color=theme.muted, ha="left", va="center", zorder=5,
     )
 
-    # The one box on the page whose colour is carrying a value.
     striped_box(ax, X_PPG_L, bottom, X_ROW_R - X_PPG_L, box_h,
                 heat, heat, fig_h, zorder=5)
     ax.text(
@@ -236,7 +228,7 @@ def fit_name_size(ladder: pd.DataFrame, fig_h: float) -> float:
     Shrinking only the names that overflow makes the page look inconsistent,
     so the longest name sets the size and every row uses it.
     """
-    available = X_PPG_L - X_NAME - 0.115   # leaves room for the season superscript
+    available = X_PPG_L - X_NAME - 0.115
     fig, ax = plt.subplots(figsize=(FIG_W, fig_h))
     # ⚠️ The axes must reach its final size before anything is measured. At
     # matplotlib's default margins it spans 77.5% of the figure, so a width
@@ -282,7 +274,6 @@ def draw_slide(ladder: pd.DataFrame, rows_tall: int, name_size, path: Path, them
     top = 1 - PAD_TOP_IN / fig_h
     for i, row in enumerate(ladder.itertuples()):
         y = top - (i + 0.5) * row_h
-        # Later rows draw on top, so each portrait overlaps the card above it.
         draw_row(ax, row, y, row_h, name_size, fig_h, theme, zorder=10 + i)
 
     path.parent.mkdir(parents=True, exist_ok=True)

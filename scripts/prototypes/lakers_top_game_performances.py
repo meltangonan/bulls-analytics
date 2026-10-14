@@ -34,7 +34,7 @@ LAKERS_PURPLE = "#552583"
 FIRST_SEASON_END_YEAR = 1984
 TOP_N = 15
 DECADES = ("1980s", "1990s", "2000s", "2010s", "2020s")
-ERA_TOP_N = 30  # an era list runs over two slides: 1-15 and 16-30
+ERA_TOP_N = 30
 ERAS = {"since-1983": 1984, "since-2000": 2001}  # label: first season end year
 SLUG = "2026-10-11-lakers-decade-game-scores"
 DATA_DIR = _REPO / "docs" / "visuals" / SLUG / "data"
@@ -43,7 +43,7 @@ FONTS = Path.home() / "Library" / "Fonts"
 WIDTH = 1500  # CSS px; rendered at 2x, the 3000 px width of the published Game Score tables
 FACE = 132  # portrait square, px; taller than the row so it overlaps the row above only
 MIN_GAP = 22  # px between ordinary stat columns
-SHOOTING_GAP_RATIO = 0.55  # made-attempted columns sit closer together
+SHOOTING_GAP_RATIO = 0.55
 CARD_PADDING = 24  # px from the widest Game Score number to each card edge
 
 base.BULLS_TEAM_ID = LAKERS_TEAM_ID
@@ -75,7 +75,6 @@ base._opponent = _opponent
 
 
 def top_with_ties(table: pd.DataFrame, top_n: int = TOP_N) -> pd.DataFrame:
-    """The top ``top_n`` games per decade plus any game tied with the last one."""
     ranked = base.top_games_by_decade(table, top_n=len(table))
     keep = []
     for _, games in ranked.groupby("decade", sort=False):
@@ -85,7 +84,6 @@ def top_with_ties(table: pd.DataFrame, top_n: int = TOP_N) -> pd.DataFrame:
 
 
 def rank_labels(scores: pd.Series) -> list[str]:
-    """1, T2, T2, 4 ... from Game Scores already sorted high to low (one decimal is exact)."""
     rounded = scores.round(1)
     rank = rounded.rank(method="min", ascending=False).astype(int)
     tied = rounded.duplicated(keep=False)
@@ -93,7 +91,6 @@ def rank_labels(scores: pd.Series) -> list[str]:
 
 
 def era_slides(table: pd.DataFrame, first_end_year: int) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Top 30 (plus ties at 30th) since a season, split into ranks 1-15 and 16 onward."""
     pool = table[table["season_end_year"] >= first_end_year].assign(decade="era")
     ranked = top_with_ties(pool, ERA_TOP_N)
     ranked["rank_label"] = rank_labels(ranked["game_score"])
@@ -103,7 +100,6 @@ def era_slides(table: pd.DataFrame, first_end_year: int) -> tuple[pd.DataFrame, 
 
 
 def validate(table: pd.DataFrame) -> dict[str, object]:
-    """Coverage and reconciliation checks; known NBA.com faults must stay out of the tables."""
     years = set(table["season_end_year"])
     if years != set(range(FIRST_SEASON_END_YEAR, base.LAST_SEASON_END_YEAR + 1)):
         raise ValueError("Coverage does not include every season since 1983-84.")
@@ -132,8 +128,6 @@ def validate(table: pd.DataFrame) -> dict[str, object]:
         "flagged_games": sorted(flagged),
     }
 
-
-# --- HTML table ---------------------------------------------------------------
 
 COLUMNS = (  # header, value, made-attempted?
     ("PTS", lambda r: str(int(r["points"])), False),

@@ -26,7 +26,6 @@ from bulls.analysis import shot_maps as sm
 
 
 def _shots(rows) -> pd.DataFrame:
-    """(x, y, made) triples as a shot frame, with shot_type derived from geometry."""
     df = pd.DataFrame(rows, columns=["loc_x", "loc_y", "shot_made"])
     zone = sm.zone_of(df.loc_x, df.loc_y)
     df["shot_type"] = np.where(pd.Series(zone).isin(sm.THREE_ZONES), "3PT", "2PT")
@@ -34,7 +33,6 @@ def _shots(rows) -> pd.DataFrame:
     return df
 
 
-# --- Geometry --------------------------------------------------------------
 def test_every_point_on_the_drawn_court_belongs_to_exactly_one_zone():
     """No gaps and no overlaps, or a fill would leave bare court or paint twice.
 
@@ -50,22 +48,21 @@ def test_every_point_on_the_drawn_court_belongs_to_exactly_one_zone():
 
 
 @pytest.mark.parametrize("x, y, expected", [
-    (0, 0, "Restricted Area"),            # the hoop itself
-    (0, 39, "Restricted Area"),           # just inside the 4 ft arc
-    (0, 41, "In The Paint (Non-RA)"),     # just outside it
-    (0, 137, "In The Paint (Non-RA)"),    # just inside the free-throw line
-    (0, 138, "Center Mid-Range"),         # just beyond its 137.5 coordinate
-    (-230, 0, "Left Corner 3"),           # past the corner line, level with hoop
+    (0, 0, "Restricted Area"),
+    (0, sm.RA_R - 1, "Restricted Area"),
+    (0, sm.RA_R + 1, "In The Paint (Non-RA)"),
+    (0, sm.FT_Y - 0.5, "In The Paint (Non-RA)"),
+    (0, sm.FT_Y + 0.5, "Center Mid-Range"),
+    (-230, 0, "Left Corner 3"),
     (230, 0, "Right Corner 3"),
     (-210, 0, "Left Baseline"),           # inside the corner line is still a two
-    (0, 240, "Top of Key 3"),             # straight on, past the arc
+    (0, 240, "Top of Key 3"),
 ])
 def test_named_landmarks_land_in_the_zone_a_fan_would_name(x, y, expected):
     assert sm.zone_of(np.array([x]), np.array([y]))[0] == expected
 
 
 def test_nba_basic_zone_owns_physical_region_while_custom_angles_own_sector():
-    """A source-labeled mid-range shot must not leak back into geometric paint."""
     shots = pd.DataFrame({
         "loc_x": [0, 0, -100, 100],
         "loc_y": [142, 142, 180, 180],
@@ -102,9 +99,7 @@ def test_a_shot_inside_the_arc_radius_but_past_the_corner_line_is_a_three():
     assert np.hypot(225.0, 20.0) < sm.ARC_R
 
 
-# --- The split -------------------------------------------------------------
 def test_every_zone_appears_even_when_the_subject_never_shot_there():
-    """A zone he avoids entirely is a finding; dropping the row hides it."""
     subject = _shots([(0, 0, 1), (0, 0, 1), (0, 0, 0)])
     league = _shots([(0, 0, 1), (0, 200, 1), (-230, 0, 0), (0, 100, 1)])
     table = sm.zone12_split(subject, league)
@@ -114,7 +109,6 @@ def test_every_zone_appears_even_when_the_subject_never_shot_there():
 
 
 def test_a_thin_zone_keeps_its_shot_share_and_loses_only_its_rating():
-    """Shot share is counted, so a small sample does not erase the shot diet."""
     subject = _shots([(-210, 0, 0), (-210, 0, 0)])
     league = _shots([(-210, 0, 1), (-210, 0, 0)] * 50)
     row = sm.zone12_split(subject, league)
@@ -125,7 +119,6 @@ def test_a_thin_zone_keeps_its_shot_share_and_loses_only_its_rating():
     assert baseline.lg_fga_share_pct == pytest.approx(100.0)
 
 
-# --- The colour floor ------------------------------------------------------
 def test_both_floors_are_solved_rather_than_chosen():
     """Each answers "what must not be able to recolour this zone", at the
     strength that subject's sample can support.
@@ -143,22 +136,18 @@ def test_both_floors_are_solved_rather_than_chosen():
 
 
 def test_a_wider_band_needs_fewer_shots_to_hold_its_colour():
-    """One shot moves a percentage by 100/n points, so the floor falls as the
-    band widens. Halving the band doubles the shots needed."""
     assert sm.single_shot_floor(10.0) == 10
     assert sm.single_shot_floor(2.5) == 40
     assert sm.single_shot_floor(sm.BAND_WIDTH_POINTS) == sm.MIN_ZONE12_FGA_PLAYER
 
 
 def test_at_the_player_floor_one_shot_moves_exactly_the_neutral_span():
-    """The rule stated as arithmetic the reader could check."""
     n = sm.MIN_ZONE12_FGA_PLAYER
     assert 100.0 / n == pytest.approx(sm.BAND_WIDTH_POINTS)
-    assert 100.0 / (n - 1) > sm.BAND_WIDTH_POINTS   # one fewer and it overshoots
+    assert 100.0 / (n - 1) > sm.BAND_WIDTH_POINTS
 
 
 def test_zone_outer_bands_begin_at_five_points_but_hex_stays_at_seven_and_a_half():
-    """Named zones and smoothed hex cells deliberately use different outer cuts."""
     from scripts import make_shot_chart as shot_chart
 
     assert shot_chart.ZONE12_CUTS == (-0.05, -0.025, 0.025, 0.05)
@@ -200,7 +189,6 @@ def test_a_zone_clears_the_floor_at_the_threshold_exactly():
 
 
 def test_points_per_shot_carries_the_right_point_value_per_zone():
-    """A three-point zone is worth 3 and a two-point zone 2, or PPS is nonsense."""
     subject = _shots([(0, 0, 1)] * 30 + [(0, 240, 1)] * 30)
     league = _shots([(0, 0, 1), (0, 240, 0)] * 50)
     table = sm.zone12_split(subject, league).set_index("zone")
@@ -239,7 +227,6 @@ def test_relative_fg_and_relative_pps_rank_identically_inside_one_zone():
 
 
 def test_shot_shares_sum_to_100_and_use_one_league_baseline():
-    """A shot diet tiles all attempts and needs no possession denominator."""
     subject = _shots([(0, 0, 1)] * 30)
     league = _shots([(0, 0, 1), (0, 0, 0)] * 50)
     table = sm.zone12_split(subject, league)
@@ -249,7 +236,6 @@ def test_shot_shares_sum_to_100_and_use_one_league_baseline():
 
 
 
-# --- The label layer -------------------------------------------------------
 def _rendered(zone: str, table: pd.DataFrame, fill: str = "#F1CC5B",
               pill: str = "full"):
     """Draw one zone's pill on a real axes and report what landed on it.
@@ -312,8 +298,6 @@ def test_a_zone_below_the_floor_keeps_every_figure():
 
 
 def test_a_thin_pill_is_set_apart_from_a_rated_one():
-    """Muted type on a faded card. It carries the figures without carrying the
-    weight, so the eye ranks it below the zones the chart can stand behind."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -342,7 +326,6 @@ def test_a_thin_pill_is_set_apart_from_a_rated_one():
     assert rated_alpha in (None, 1.0)
 
 
-# --- When a gap is worth a colour ------------------------------------------
 def test_a_shooting_gap_inside_the_average_band_is_grey_not_green():
     """+0.2 points is not a direction, and printing it in green claims one.
 
@@ -395,7 +378,6 @@ def test_a_rated_zone_prints_shooting_first_then_shot_share():
 
 
 def test_shooting_and_share_use_the_same_coloured_comparison_grammar():
-    """Both questions show the subject figure, then its signed gap to LA."""
     import scripts.make_shot_chart as shot_chart
 
     table = sm.zone12_split(_shots([(0, 240, 1)] * 60 + [(0, 240, 0)] * 40),
@@ -410,7 +392,6 @@ def test_shooting_and_share_use_the_same_coloured_comparison_grammar():
 
 
 def test_no_pill_prints_its_zone_name():
-    """The court already says which zone this is."""
     import scripts.make_shot_chart as shot_chart
 
     table = sm.zone12_split(_shots([(0, 0, 1)] * 60),
@@ -453,7 +434,6 @@ def test_left_and_right_zone_pills_follow_basket_bottom_orientation():
 
 
 def test_the_rim_uses_the_same_type_scale_as_every_other_zone():
-    """Readability wins over trapping the whole cream card inside the RA."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -489,7 +469,6 @@ def test_gap_colour_carries_direction_and_nothing_else():
 
 
 def test_every_zone_has_an_anchor_and_a_short_label():
-    """A zone with no anchor would silently vanish from the page."""
     import scripts.make_shot_chart as shot_chart
 
     # The twelve drawn zones, plus the merged mid-range that --merge-mid draws
@@ -500,7 +479,6 @@ def test_every_zone_has_an_anchor_and_a_short_label():
     assert set(sm.ZONE8_ORDER) <= expected
 
 
-# --- Signs -----------------------------------------------------------------
 def test_a_gap_that_rounds_to_zero_carries_no_sign():
     """"-0%" claims a direction the printed number contradicts.
 
@@ -517,8 +495,6 @@ def test_a_gap_that_rounds_to_zero_carries_no_sign():
 
 
 def test_a_negative_gap_uses_a_true_minus_not_a_hyphen():
-    """A hyphen sits too high and too short beside figures, and next to a
-    full-width plus the pair reads as misaligned."""
     import scripts.make_shot_chart as shot_chart
 
     assert shot_chart._signed(-4.2, 1) == "−4.2"
@@ -527,7 +503,6 @@ def test_a_negative_gap_uses_a_true_minus_not_a_hyphen():
 
 
 def test_the_rendered_gaps_use_the_same_signs():
-    """The rule has to survive the trip through the row builder."""
     import scripts.make_shot_chart as shot_chart
 
     worse = sm.zone12_split(_shots([(0, 240, 1)] * 20 + [(0, 240, 0)] * 80),
@@ -564,7 +539,6 @@ def test_the_legend_is_one_row_of_swatches_and_no_prose():
                      shot_chart._zone12_thin_key(sm.MIN_ZONE12_FGA_TEAM)]
     assert not any(len(text.split()) > 4 for text in texts), \
         f"the legend grew a sentence: {texts}"
-    # Five bands plus the grey, which is a sixth state of the same encoding.
     assert len(swatches) == len(shot_chart.ZONE12_PALETTES["rdylgn"]) + 1
 
 
@@ -592,7 +566,6 @@ def test_the_legend_can_omit_the_thin_key_when_every_zone_is_rated():
 
 
 def test_the_thin_key_is_a_plain_neutral_swatch():
-    """The key must match the plain grey used for every below-floor zone."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -612,8 +585,6 @@ def test_the_thin_key_is_a_plain_neutral_swatch():
 
 
 def test_the_grey_key_states_the_threshold_rather_than_a_verdict():
-    """"TOO FEW TO RATE" hides the rule; a number can be checked against the
-    attempt counts printed in the grey pills themselves."""
     import scripts.make_shot_chart as shot_chart
 
     assert shot_chart._zone12_thin_key(400) == "Under 400 FGA"
@@ -643,8 +614,6 @@ def test_the_threshold_in_the_key_matches_the_floor_the_chart_used():
 
 
 def test_the_threshold_is_muted_not_accent_red():
-    """Red on this chart means "below league average". A red figure in the key
-    would read as the bad end of the scale rather than as a caveat."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -661,9 +630,7 @@ def test_the_threshold_is_muted_not_accent_red():
     assert thin.get_color() != theme.accent
 
 
-# --- Below-floor fill ------------------------------------------------------
 def test_a_thin_zone_is_plain_grey():
-    """The full pill preserves the finding; the ground declines to rate it."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -683,7 +650,6 @@ def test_a_thin_zone_is_plain_grey():
 
 
 def test_a_rated_zone_keeps_its_solid_band_colour():
-    """Changing the caveat must not mute a zone that clears the floor."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -727,7 +693,6 @@ def test_randomized_cover_is_reproducible_and_separates_adjacent_shades(tmp_path
 
 
 def test_solid_cover_variants_use_canonical_reusable_red_tokens(tmp_path):
-    """Solid covers remain player-neutral and use settled Bulls-family reds."""
     from scripts import make_shot_chart as shot_chart
 
     assert shot_chart.ZONE12_BULLS_RED == "#CE1141"
@@ -830,7 +795,6 @@ def test_overall_cards_default_to_three_flat_bulls_red_pills_without_league_delt
 
 
 def test_classic_style_keeps_the_published_gradient_cards_and_vs_la():
-    """Posts through Hinrich were published in "classic"; it must still exist."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -955,7 +919,6 @@ def test_a_zone_named_left_holds_the_shots_nba_calls_left(loc_x, loc_y, shot_zon
 
 
 def test_each_zone_fill_is_painted_on_the_side_its_own_shots_map_to():
-    """The fills, not just the pills. A pill can be right while the fill is not."""
     import scripts.make_shot_chart as shot_chart
     from bulls.graphics.court import nba_to_basket_bottom_px
 
@@ -1010,8 +973,8 @@ def test_the_season_grid_paints_each_side_where_that_side_s_shots_map_to(tmp_pat
                                                else "Right Side(R)"})
         return pd.DataFrame(rows)
 
-    subject = corner_shots(left_made=40, right_made=0)   # left perfect, right winless
-    league = corner_shots(left_made=20, right_made=20)   # both exactly 50%
+    subject = corner_shots(left_made=40, right_made=0)
+    league = corner_shots(left_made=20, right_made=20)
     by_season = {s: {"subject": subject, "league": league}
                  for s in ("2003-04", "2004-05")}
 
@@ -1022,7 +985,6 @@ def test_the_season_grid_paints_each_side_where_that_side_s_shots_map_to(tmp_pat
     width, height = img.size
     scale_px = width / house.CANVAS_WIDTH
 
-    # Replay the layout for the first court, exactly as the renderer lays it out.
     s = shot_chart.zonegrid_scale(shot_chart.zonegrid_row_plan(len(by_season)))
     court_h = shot_chart.ZONEGRID_COURT_UNITS * s
     court_w = 2 * COURT_HALF_WIDTH * s
@@ -1047,15 +1009,14 @@ def test_the_season_grid_paints_each_side_where_that_side_s_shots_map_to(tmp_pat
     left_col, left_fill = fill_at(-235.0)    # the zone NBA names Left
     right_col, right_fill = fill_at(235.0)   # the zone NBA names Right
 
-    assert left_fill.upper() == palette[4].upper()   # 100% vs 50% -> best band
-    assert right_fill.upper() == palette[0].upper()  # 0% vs 50% -> worst band
+    assert left_fill.upper() == palette[4].upper()
+    assert right_fill.upper() == palette[0].upper()
     # The claim this test exists for: NBA Left is drawn on the viewer's RIGHT.
     assert left_col > centre * scale_px
     assert right_col < centre * scale_px
 
 
 def test_merged_mid_range_is_painted_as_one_shape(monkeypatch):
-    """Five sectors traced one by one leave hairline seams of page between them."""
     import matplotlib.pyplot as plt
     import scripts.make_shot_chart as shot_chart
 

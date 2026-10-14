@@ -130,7 +130,6 @@ def export(html: Path, asset: bool = False) -> None:
         for k, name in enumerate(("cover", "season", "tenure"), 1):
             path = folder / f"{k:02d}-{name}.png"
             if asset and name == "cover":
-                # The cover's court and heads at full page size, to sit under Canva's fade and type.
                 page.locator(".page").first.screenshot(path=str(path), omit_background=True)
             elif asset:
                 clip = page.evaluate(f"window.CLIPS[{k - 2}]")

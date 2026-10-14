@@ -79,8 +79,6 @@ SUPPORTING_STATS = (
 
 @dataclass(frozen=True)
 class DunkType:
-    """One carousel slide: a label-matcher over shot-chart ACTION_TYPE."""
-
     slug: str
     title: str
     subtitle: str
@@ -222,7 +220,6 @@ def fetch_season_players(season: str) -> pd.DataFrame:
 
 
 def load_dunks() -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Return every Chicago dunk attempt in the window, plus player-season GP."""
     dunk_rows = []
     player_rows = []
     for season in seasons():
@@ -250,7 +247,6 @@ def rank_board(
     dunk_type: DunkType,
     top_n: int = TOP_N,
 ) -> pd.DataFrame:
-    """Top player-seasons for one dunk type, Chicago-only regular-season stints."""
     matched = dunks.loc[dunks["ACTION_TYPE"].map(dunk_type.matches)].copy()
     if matched.empty:
         raise RuntimeError(f"no {dunk_type.slug} dunks in the window")

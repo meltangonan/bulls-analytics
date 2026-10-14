@@ -73,7 +73,6 @@ def _league() -> pd.DataFrame:
 
 
 def test_league_baselines_are_pooled_not_averaged():
-    """A season's baseline comes from its totals, not a mean of player rates."""
     league = pd.DataFrame(
         [
             _row("2000-01", 1, "Volume", "CHI", 40, 20, 200, 80, 200, 0, 150.0),
@@ -130,7 +129,6 @@ def test_a_bulls_stint_with_no_league_row_is_rejected():
 
 
 def test_a_partial_bulls_season_is_refused_a_place_in_the_table():
-    """A half-season beside fourteen whole ones has to be declared, not printed."""
     table = pd.DataFrame(
         [
             {
@@ -180,7 +178,6 @@ def test_true_shooting_colour_is_judged_against_its_own_season():
 
 
 def test_the_neutral_band_leaves_an_ordinary_season_uncoloured():
-    """A cell that says nothing remarkable disappears into the page."""
     from bulls.graphics.house import heat_fill
 
     red_at, low, high, green_at = COLUMN_SCALES["ts_pct_relative"]
@@ -226,7 +223,6 @@ def test_the_scoring_rate_is_kept_in_the_data_but_off_the_chart():
 
 
 def test_points_per_shooting_attempt_would_have_duplicated_true_shooting():
-    """Documents why PTS/TSA is not a column: it is exactly two times TS%."""
     frame = pd.DataFrame(
         [_row("2023-24", 1, "Leader", "CHI", 40, 24, 182, 55, 113, 74, 191.8)]
     )
@@ -248,7 +244,6 @@ def _every_season(extra: list[dict]) -> pd.DataFrame:
 
 
 def test_ranking_breaks_a_tie_toward_the_shorter_stint():
-    """Equal clutch points rank by who needed fewer clutch minutes."""
     bulls = _every_season(
         [
             _row("2020-21", 1, "Efficient", "CHI", 30, 15, 150, 50, 100, 20, 100.0),
@@ -275,14 +270,13 @@ def test_validate_catches_a_win_percentage_that_stopped_reconciling():
         league_baselines(league), on="SEASON", validate="many_to_one"
     )
     rated["ts_pct_relative"] = (rated["ts_pct"] - rated["league_ts_pct"]) * 100
-    rated["win_pct"] = 0.9  # No longer W / GP.
+    rated["win_pct"] = 0.9
     population = calibration_population(league, league_baselines(league))
     with pytest.raises(ValueError):
         validate(rated, population)
 
 
 def test_the_colour_scale_is_calibrated_above_the_volume_it_describes():
-    """No displayed row may sit below the population the scale was built on."""
     assert CALIBRATION_MIN_TSA > 0
     table = pd.DataFrame(
         {
@@ -293,7 +287,7 @@ def test_the_colour_scale_is_calibrated_above_the_volume_it_describes():
             "MIN": [150.0, 150.0],
             "FGM": [70, 35],
             "FGA": [140, 70],
-            "tsa": [140.0, 10.0],  # The second row is far below the floor.
+            "tsa": [140.0, 10.0],
             "ts_pct": [200 / 280, 100 / 20],
             "fg_pct": [0.5, 0.5],
             "win_pct": [0.5, 0.5],
@@ -306,7 +300,6 @@ def test_the_colour_scale_is_calibrated_above_the_volume_it_describes():
 
 
 def test_the_shooting_line_prints_the_sample_not_a_percentage():
-    """FG stays makes-attempts so the reader can see how thin the sample is."""
     row = pd.Series({"FGM": 55, "FGA": 113, "FTM": 65, "FTA": 74, "ts_pct": 0.625,
                      "win_pct": 0.6, "MIN": 191.8, "PTS": 182, "GP": 40,
                      "pts_per_36": 182 / 191.8 * 36})
@@ -329,12 +322,10 @@ def test_relative_true_shooting_is_signed_and_never_a_signed_zero():
     # Left alone deliberately: a tenth either way on a figure this noisy is not
     # worth a custom rounder, and pinning it here stops it reading as a bug.
     assert cell_label(pd.Series({"ts_pct_relative": -6.25}), "ts_pct_relative") == "\N{MINUS SIGN}6.2"
-    # Sign decided after rounding, so a -0.04 never prints as "-0.0".
     assert cell_label(pd.Series({"ts_pct_relative": -0.04}), "ts_pct_relative") == "0.0"
 
 
 def test_the_raw_percentage_stays_in_the_data_but_off_the_chart():
-    """`ts_pct` is still computed and reconciled; it is just not a column."""
     assert "ts_pct" not in [metric for metric, _, _ in STAT_COLUMNS]
     assert "ts_pct" not in COLUMN_SCALES
     frame = pd.DataFrame(
@@ -346,7 +337,6 @@ def test_the_raw_percentage_stays_in_the_data_but_off_the_chart():
 def test_plus_minus_prints_a_true_minus_and_never_a_signed_zero():
     assert cell_label(pd.Series({"PLUS_MINUS": 94}), "PLUS_MINUS") == "+94"
     assert cell_label(pd.Series({"PLUS_MINUS": -25}), "PLUS_MINUS") == "\N{MINUS SIGN}25"
-    # Decided after rounding, so a -0.4 never prints as a minus beside a zero.
     assert cell_label(pd.Series({"PLUS_MINUS": -0.4}), "PLUS_MINUS") == "0"
 
 
@@ -355,7 +345,6 @@ def test_season_marker_compacts_to_two_digit_years():
 
 
 def test_columns_are_ordered_and_sized_by_their_widest_string():
-    """FG holds "55-113" and G holds "40", so they cannot share a width."""
     bounds = column_bounds(400.0)
     assert list(bounds) == [metric for metric, _, _ in STAT_COLUMNS]
     fg_width = bounds["fg_line"][1] - bounds["fg_line"][0]

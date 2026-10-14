@@ -50,7 +50,6 @@ from scripts.prototypes.three_point_leaders import (
 
 
 def _season_rows(end_year: int, players: list[tuple[int, str, int, int]]) -> list[dict]:
-    """Build synthetic Bulls player-seasons from (id, name, 3PM, 3PA)."""
     return [
         {
             "season": season_label(end_year),
@@ -97,16 +96,13 @@ def _sixteen_seasons() -> pd.DataFrame:
     return build_leaders(seasons, league)
 
 
-# --- naming ------------------------------------------------------------------
-
-
 @pytest.mark.parametrize(
     "full,expected",
     [
-        ("Zach LaVine", "LaVine"),          # internal capital survives
+        ("Zach LaVine", "LaVine"),
         ("Doug McDermott", "McDermott"),
         ("D.J. Augustin", "Augustin"),
-        ("Jimmy Butler III", "Butler"),     # generational suffix dropped
+        ("Jimmy Butler III", "Butler"),
         ("Otto Porter Jr.", "Porter"),
         ("Nikola Vucevic", "Vucevic"),
     ],
@@ -120,17 +116,13 @@ def test_season_labels():
     assert display_season(2026) == "2025-26"
 
 
-# --- qualification and leader selection --------------------------------------
-
-
 def test_leader_is_the_most_accurate_qualifier_not_the_most_accurate_player():
-    """A 6-for-10 shooter must not outrank a qualified 40% season."""
     seasons = pd.DataFrame(
         _season_rows(
             2026,
             [
-                (1, "Hot Hand", 6, 10),        # 60% on 10 attempts
-                (2, "Real Shooter", 80, 200),  # 40% on 200
+                (1, "Hot Hand", 6, 10),
+                (2, "Real Shooter", 80, 200),
                 (3, "Cold Shooter", 50, 160),
             ],
         )
@@ -191,9 +183,6 @@ def test_validate_rejects_an_implausible_percentage():
         validate(leaders)
 
 
-# --- axis ---------------------------------------------------------------------
-
-
 def test_axis_snaps_outward_and_contains_every_value():
     low, high, ticks = axis_bounds([37.3, 45.1, 40.2])
     assert low <= 37.3 and high >= 45.1
@@ -214,9 +203,6 @@ def test_x_maps_the_axis_onto_the_plot():
     assert _x(high, low, high) == pytest.approx(PLOT_RIGHT)
 
 
-# --- row order ----------------------------------------------------------------
-
-
 def test_rows_run_down_the_page():
     assert _row_y(0) > _row_y(1) > _row_y(15)
 
@@ -229,9 +215,6 @@ def test_series_labels_clear_the_last_portrait():
     on top of Korver's face the moment the order flipped.
     """
     assert SERIES_LABEL_DROP > HEADSHOT_HALF
-
-
-# --- portraits ----------------------------------------------------------------
 
 
 def test_portrait_path_prefers_the_post_copy(tmp_path, monkeypatch):
@@ -285,15 +268,9 @@ def test_missing_portrait_becomes_a_placeholder_not_a_crash(tmp_path):
     plt.close(fig)
 
 
-# --- palette ------------------------------------------------------------------
-
-
 def test_chart_uses_the_account_black_not_pure_black():
     """DESIGN.md (Color and hierarchy): nothing in a graphic is pure or near-pure black."""
     assert INK == "#242424"
-
-
-# --- render -------------------------------------------------------------------
 
 
 def test_render_produces_a_transparent_asset_at_the_declared_size(tmp_path, monkeypatch):

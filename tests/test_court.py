@@ -59,9 +59,9 @@ def test_basket_bottom_mapping_puts_nba_left_on_viewer_right():
     )
 
     court_center = 100.0 + COURT_HALF_WIDTH * 2.0
-    assert px[0] > court_center  # NBA Left is viewer-right.
+    assert px[0] > court_center
     assert px[1] == pytest.approx(court_center)
-    assert px[2] < court_center  # NBA Right is viewer-left.
+    assert px[2] < court_center
     assert np.all(py == pytest.approx(200.0 - BASELINE_Y * 2.0))
 
 
@@ -72,7 +72,6 @@ def test_baseline_backboard_and_free_throw_line_match_nba_dimensions():
 
 
 def test_court_markers_and_zone_geometry_share_the_same_physical_constants():
-    """Black court lines and coloured-zone boundaries must never drift apart."""
     assert PAINT_HALF_WIDTH == sm.PAINT_HALF
     assert FT_LINE_Y == sm.FT_Y
     assert RESTRICTED_RADIUS == sm.RA_R

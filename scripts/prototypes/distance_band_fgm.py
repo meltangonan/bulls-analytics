@@ -109,7 +109,6 @@ def build_table(shots: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.Dat
 
 
 def build_30_plus(shots: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Keep the unbounded group separate from the two-foot court bands."""
     valid = shots.loc[
         shots.SHOT_DISTANCE.ge(30) & shots.LOC_X.notna() & shots.LOC_Y.notna()
     ].copy()
@@ -136,7 +135,6 @@ def build_30_plus(shots: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
 
 
 def build_30_to_halfcourt(shots: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """30+ ft radially, stopped at the straight midcourt line."""
     located = shots.loc[
         shots.SHOT_DISTANCE.ge(30) & shots.LOC_X.notna() & shots.LOC_Y.notna()
     ].copy()

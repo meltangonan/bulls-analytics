@@ -346,8 +346,8 @@ return page(`${D.chi.team} ${pre?'preseason':'season'} leaders`,bg+s+fg,[`Qualif
 const swipeCue=y=>{const sz=28,px=14,txt='Swipe for the full breakdown',tw1=tw(txt,sz,600),aw=30,w=px+tw1+14+aw+px,bx=RX-w,top=y-sz*0.78-9,bot=y+10,cy=(top+bot)/2,ax=bx+px+tw1+14;
 return rect(bx,top,w,bot-top,R)+label(bx+px,y,txt,{size:sz,f:BG})+`<path d="M${ax},${cy} L${ax+aw},${cy} M${ax+aw-12},${cy-11} L${ax+aw},${cy} L${ax+aw-12},${cy+11}" fill="none" stroke="${BG}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>`;};
 
-// Carousel cover (always posted since 2026-10-12) on the page background: the game's own scoring-margin line as art, the score in the
-// serif (Bulls line red), "@" or "vs." between the teams, the date (and any overtime) in red italic.
+// Carousel cover (always posted since 2026-10-12) on the page background: the game's own scoring-margin line as art, the score
+// card, the date in red italic.
 // Graph paper behind the cover: a 36 px grid with a heavier line every 180 px, the account's data look.
 const GRAPH=`<defs><pattern id="gp" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36,0 L0,0 L0,36" fill="none" stroke="#DCD6CE" stroke-width="1"/></pattern><pattern id="gP" width="180" height="180" patternUnits="userSpaceOnUse"><path d="M180,0 L0,0 L0,180" fill="none" stroke="#D2CBC2" stroke-width="2"/></pattern></defs><rect width="1080" height="1440" fill="url(#gp)"/><rect width="1080" height="1440" fill="url(#gP)"/>`;
 function recapCover(){const F=D.flow;let s=rect(0,0,1080,1440,BG)+GRAPH+trim();
@@ -360,13 +360,17 @@ s+=ln(0,z,1080,z,RU,2);
 s+=`<path d="${d} L1080,${z} L0,${z} Z" fill="${R}" opacity="0.16" clip-path="url(#clu)"/><path d="${d} L1080,${z} L0,${z} Z" fill="${OPP().bar}" opacity="0.22" clip-path="url(#cld)"/>`;
 s+=`<path d="${d}" fill="none" stroke="${R}" stroke-width="6" stroke-linejoin="round" clip-path="url(#clu)"/><path d="${d}" fill="none" stroke="${OPP().bar}" stroke-width="6" stroke-linejoin="round" clip-path="url(#cld)"/>`;
 s+=rect(0,740,1080,200,'url(#clf)');
-const l1=`${D.chi.team} ${D.chi.score}`,l2=`${D.opp.team} ${D.opp.score}`,fs=Math.min(160,...[[l1,D.chi.record],[l2,D.opp.record]].map(([l,r])=>(W-12)/((tw(l,160,900,SERIF)+tw(r?`(${r})`:'',48,600))/160+0.9+74/160))),y1=960;
-const rec=(r,x,y)=>r?t(x,y,fs*0.3,`(${r})`,{w:600}):'';
-s+=t(L,y1,fs,l1,{w:900,ff:SERIF,f:R})+logo(D.chi.tri,L+tw(l1,fs,900,SERIF)+26,y1-fs*0.8,fs*0.9)+rec(D.chi.record,L+tw(l1,fs,900,SERIF)+fs*0.9+48,y1-fs*0.25);
-s+=t(L+4,y1+fs*0.74,fs*0.42,D.home?'vs.':'@',{w:900,ff:SERIF,it:true});
-s+=t(L,y1+fs*1.68,fs,l2,{w:900,ff:SERIF})+logo(D.opp.tri,L+tw(l2,fs,900,SERIF)+26,y1+fs*1.68-fs*0.8,fs*0.9)+rec(D.opp.record,L+tw(l2,fs,900,SERIF)+fs*0.9+48,y1+fs*1.68-fs*0.25);
-const ot=F.periods>4?` (${F.periods==5?'OT':`${F.periods-4}OT`})`:'';
-s+=t(L,y1+fs*1.68+104,50,D.date_short+ot,{w:900,ff:SERIF,it:true,f:R});
+// Score card: header "Final (OT)" and Home or Away, then one row per team (logo, name, record, score), the
+// Bulls row banded and a pointer on the winning score.
+const cy0=850,hh=58,rh=156,ch=hh+2*rh,hy=cy0+hh/2+10,ot=F.periods>4?` (${F.periods==5?'OT':`${F.periods-4}OT`})`:'';
+s+=rect(L+6,cy0+6,W,ch,K)+rect(L,cy0,W,ch,BG,0,`stroke="${K}" stroke-width="3"`)+rect(L,cy0,W,hh,K);
+s+=t(L+22,hy,28,'Final'+ot,{w:600,f:BG})+t(RX-22,hy,28,D.home?'Home':'Away',{a:'end',w:600,f:BG});
+const nf=Math.min(...[D.chi,D.opp].map(tm=>fit(tm.team,80,W-506,900,SERIF)));
+[[D.chi,R],[D.opp,K]].forEach(([tm,c],i)=>{const ry=cy0+hh+i*rh,cy=ry+rh/2,won=(i==0)===(D.result==='W');
+s+=i?ln(L,ry,RX,ry,RU,2):rect(L+1.5,ry,W-3,rh,BAND);
+s+=logo(tm.tri,L+22,cy-60,120)+t(L+166,cy+10,nf,tm.team,{w:900,ff:SERIF,f:c})+(tm.record?t(L+168,cy+52,26,tm.record,{f:FT,w:600}):'');
+s+=t(RX-64,cy+50,140,tm.score,{a:'end',w:900,ff:SERIF,f:c})+(won?`<path d="M${RX-48},${cy} L${RX-26},${cy-16} L${RX-26},${cy+16} Z" fill="${K}"/>`:'');});
+s+=t(L,1306,50,D.date_short,{w:900,ff:SERIF,it:true,f:R});
 // The series label keeps the city unless it would run into the swipe cue (MIN at MIA, 2026-10-10: "Minnesota
 // Timberwolves preseason recap #3" did); then the team name alone.
 const kindLab=`${D.kind==='Preseason'?'preseason':'game'} recap #${D.season.games.length}`,cueW=14+tw('Swipe for the full breakdown',28,600)+14+30+14,

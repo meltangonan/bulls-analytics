@@ -65,9 +65,9 @@ other accounts do; when a reference shapes a new format, name what was taken and
 - **Labeled blocks.** A section title is SemiBold type in the canvas color `#E9E5E1` on a solid
   `#242424` block with 12 px side padding. A page's one call to action is the same block in Bulls red
   `#CE1141` with an arrow. Do not outline labels.
-- **Offset shadow.** A cover's contents box (the recap's page list) sits on a solid `#242424`
-  shadow offset 6 px right and down, with no blur, under a 3 px black frame on the canvas color.
-  Use it for that one navigational box per cover, not on stat pages.
+- **Offset shadow.** A cover's boxes (the recap's contents box and its score card) sit on a solid
+  `#242424` shadow offset 6 px right and down, with no blur, under a 3 px black frame on the canvas
+  color. Use it only for those cover boxes, not on stat pages.
 - **Background.** A cover may carry graph paper on the canvas: a 36 px grid in `#DCD6CE` at 1 px, with
   every fifth line (180 px) in `#D2CBC2` at 2 px. Stat pages stay plain. No noise, grain or photographic
   textures.

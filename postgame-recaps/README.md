@@ -11,7 +11,7 @@ postgame-recaps/
   seasons/<season>/<id>/    each Bulls game's NBA.com feeds, sources.json, and as-posted/ (what the slides used)
   stress-tests/<id>/        saved test games: 2025-26 Bulls games and dry runs featuring other teams
   logos/, portraits/        NBA.com images (portraits are downloaded again when missing or 12 hours old, never committed)
-  assets/                   decision-bearing slide versions from the format's design (Oct 3 to 10, 2026; v14 is the Oct 9 template; v19 is the Oct 10 template, with v15 and v17 its rejected options)
+  assets/                   decision-bearing slide versions from the format's design (Oct 3 to 14, 2026; v14 is the Oct 9 template; v19 is the Oct 10 template, with v15 and v17 its rejected options; v20 is the Oct 14 cover)
 output/postgame-recap/<id>/ recap.json, zones.png, slides/, layout.json, caption.txt (scratch, not committed)
 ```
 
@@ -45,7 +45,7 @@ looked at every page beside its reference and fixed what needed fixing (Oct 10: 
 anything ships, not only the script's checks). The measurement (`layout.json` and one `layout:` line per page)
 reports text overlapping text or past the margins (FIX) and an unusually tall empty band or a page crowding
 its footer (LOOK); the thresholds are set so all 16 saved test games read "ok". The references are the v19
-pages in `assets/` (`2026-10-10-v19-gsw-*`, with three notables and overtime, plus the final-score page with
+pages in `assets/` (`2026-10-10-v19-gsw-*`, the cover since 2026-10-14 `2026-10-14-v20-gsw-01-cover`, with three notables and overtime, plus the final-score page with
 none, `-det-`, and one, `-mia-`).
 
 Early pages (since 2026-10-12): NBA.com publishes in two waves. The box score, play-by-play, line score and summary
@@ -214,7 +214,7 @@ and Regular, from `~/Library/Fonts` or else Google Fonts. `export_slides.py` pri
 public), and the phone preview cannot load them, so it shows Source Serif 4. Section titles are light text on a solid black block. The account mark
 (`assets/brand/chicagobullsdata-mark.svg`) sits top right of every page but the cover. Labels are sentence case; column headers keep
 capitals. The cover comes first (always posted since 2026-10-12), on the same
-background with graph paper (36 px grid): the game's margin line as art, the score in the serif (Bulls line red), "@" or "vs.", the date, and across the top the series label in a black block and the swipe call to action as a red block with an arrow.
+background with graph paper (36 px grid): the game's margin line as art, a score card (black header with "Final", any overtime, and Home or Away; one row per team with logo, serif name, record and serif score, the Bulls row banded and red, a pointer on the winning score; no W or L, which waits for page 2), the date, and across the top the series label in a black block and the swipe call to action as a red block with an arrow.
 Under the series label, a contents box lists every page that follows with its carousel number ("[03] Team stats"),
 on a solid offset shadow; every page's footer ends with the same number. Numbers are counted from the pages actually
 drawn, so a skipped page (season leaders before game 5) drops out and the rest renumber. The opponent's side of

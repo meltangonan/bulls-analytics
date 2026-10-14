@@ -125,7 +125,7 @@ every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `pos
      one-line explanation for the delivery message: the user should not have to wonder whether a number is
      right.
    - **Look at every page beside its reference.** Read each PNG in `output/postgame-recap/<id>/slides/` and
-     the reference page with the same name in `postgame-recaps/assets/` (`2026-10-10-v19-gsw-<page>.png`;
+     the reference page with the same name in `postgame-recaps/assets/` (`2026-10-10-v19-gsw-<page>.png`, the cover `2026-10-14-v20-gsw-01-cover.png`;
      for the final-score page, the reference with the same number of notables: `-det-` none, `-mia-` one,
      `-gsw-` three). Judge it as a designer would: spacing even and consistent with the reference, nothing
      touching, clipped or crowding the footer, no empty hole the reference does not have, labels clear of

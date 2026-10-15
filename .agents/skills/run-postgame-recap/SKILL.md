@@ -40,6 +40,8 @@ every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `pos
    ```
    PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/recheck.py <game_id>
    ```
+   If that game's page in the posts database is not Posted yet, look for the post on the @chicagobullsdata
+   profile (read-only); when it is live, set Posted and add its link (step 6).
 2. **Build, and watch it.** Start the script with Bash `run_in_background` (use the game ID instead of
    `--today` if the user gave one). You are re-invoked when it exits; don't poll. It waits for Final, then
    pulls again every 90 s until every check passes (12 to 35 minutes after Final so far), exports and
@@ -204,10 +206,12 @@ every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `pos
    - Verify the live post: the profile grid (it lands after the pinned posts), the caption text, `?img_index=<n>`
      shows the last slide, the collaborator line. Push "Bulls recap posted: <score>, <link>", close your tab.
    If anything in the dialog looks off, stop before Share and tell the user; never retry a Share.
-6. **Log it** as one row in the Game log on the Notion page "Game recaps"
-   (https://app.notion.com/p/3a7e1c13abe680629bb0df2d6f77f623): result, minutes from Final to ready data
-   (the script's `timing:` line, counted from when NBA.com first showed Final), delivery, Posted (the link
-   when you posted it, otherwise blank),
-   and the review: what you fixed or held, or "review clean". A template or code fix made tonight also goes
-   under the page's open work as a follow-up: check it against the saved test games, then keep or revert.
-   Edit only that page.
+6. **Log it** on tonight's game page in the posts database (https://app.notion.com/p/3a6e1c13abe6809ab16bfe33edb233cf;
+   one pre-made page per game, Tags `recap`, found by its Date), in the same shape as the earlier game pages: game
+   and game ID, result, minutes from Final to ready data (the script's `timing:` line, counted from when NBA.com
+   first showed Final), slides and delivery, posted (the link when you posted it), then notes: what you fixed or
+   held, or "review clean". Set Status to Posted only when the post is live: at once when you posted it; when the
+   user posts it, once they say so or when step 1 of the next run finds it on the profile (read-only), adding the
+   link then. A template or code fix made tonight goes under open work on the Notion page "Game recaps"
+   (https://app.notion.com/p/3a7e1c13abe680629bb0df2d6f77f623) as a follow-up: check it against the saved test
+   games, then keep or revert. Edit only those two pages.

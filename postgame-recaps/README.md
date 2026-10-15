@@ -3,7 +3,9 @@
 A carousel of 1080x1440 pages after every Bulls game, built from NBA.com data, checked, and delivered to the
 phone for posting on @chicagobullsdata (or posted by Claude when the user says yes for that game; the
 `run-postgame-recap` skill, step 5). Live since the 2026-27 preseason opener (2026-10-07). Notion's "Game
-recaps" page owns the game log, open work and lessons; this file owns the method.
+recaps" page owns the format decisions, open work and lessons; each game's record (result, timing, post link,
+notes, Status) is its own pre-made page in the posts database, written by the skill's step 6 and listed on the
+"Game recaps" sub-page "Game log" (since 2026-10-15). This file owns the method.
 
 ```text
 postgame-recaps/

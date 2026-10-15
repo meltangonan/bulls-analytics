@@ -95,7 +95,8 @@ The [season-opener page](https://www.notion.so/3bbe1c13abe6815e8f07f011b843d20e)
 The live database currently supports `Backlog`, `Queue`, `In progress`, `Parked`, `Mocked`, and `Posted`.
 Use `Backlog` for unscheduled ideas; `Queue` for ideas the user wants to pick up next. Game recaps
 have one pre-created `Backlog` page per scheduled game, tagged `recap` and `recurring`; the Backlog
-and main views hide the `recap` tag, and the Recaps view lists them. Use `In progress` for an active build; `Parked` for a paused idea with a reason; `Mocked` after a
+and main views hide the `recap` tag, and the Recaps view lists them. Each game's page is that game's log:
+the `run-postgame-recap` skill writes it and sets `Posted` once the post is live. Use `In progress` for an active build; `Parked` for a paused idea with a reason; `Mocked` after a
 verified approved design and a Notion source trail that meets
 [provenance](docs/reference/provenance.md) for the final scope. On resuming a post, fetch its current
 state rather than treating this list as proof of that post's state. Keep the Canva edit URL in the

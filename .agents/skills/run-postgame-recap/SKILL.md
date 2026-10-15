@@ -196,7 +196,7 @@ every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `pos
      `output/postgame-recap/<id>/slides/` in one call, in page order (about 1.6 MB, under the 10 MB limit).
    - Crop: the bottom-left button › **Original** (3:4; the default 1:1 cuts the page). Next; filter
      **Original**. Next.
-   - Caption: the user's text exactly, or `caption.txt`. Before typing, check its numbers against
+   - Caption: the user's text exactly, or `output/postgame-recap/<game_id>/caption.txt`. Before typing, check its numbers against
      recap.json and that it has no em dashes. Read it back from the field and compare its length with yours.
    - Collaborator: search the exact handle and pick the row whose handle matches character for character
      (lookalikes such as `chicagobulls_central` sit just below), then Done.

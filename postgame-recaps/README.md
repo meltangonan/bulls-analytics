@@ -71,8 +71,8 @@ or a player showing up too often); each moment names a scoring play by its play-
 time and margin come from NBA.com and only the label is typed. The template places a moment's label on its own
 team's side of zero, clear of the margin line and the other labels. `notables` names callouts from
 `PICKED_NOTABLES` in `recap_data.py` (`"assist_rate"`: "Bulls: x assists on y field goals" from the Bulls box score); they
-lead the final-score page's notables, three at most, and work in preseason, where computed notables do not. These
-are calls, not numbers.
+lead the final-score page's notables, three at most; a pick that also qualifies (Notables, below) takes the qualifier's
+wording. These are calls, not numbers.
 
 Then Claude delivers (`PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/deliver.py <game_id>`):
 - the slides are copied to iCloud Drive › Bulls recaps › `<date> <matchup>` (replacing an earlier copy);
@@ -231,11 +231,12 @@ red, green, black and silver teams staying gray (`DESIGN.md`, "The opponent in a
    rebounds, steals and blocks after assists; the shooting rows' bars and bold side follow makes, not percentage,
    since 2026-10-12), up to four Bulls game awards.
 3. Shot chart (real Python render): mid-range pooled and painted as one shape, 5-attempt color floor, square pills show
-   makes/attempts and share of FGA, square summary cards; shot-type strip below.
+   makes/attempts and share of FGA, square summary cards; shot-type strip below, then "Assisted makes": one square
+   per made field goal, red when assisted (since 2026-10-15).
 4. Game breakdown: four factors table and points above average, the margin bars (each factor keeps one color chip on its column and its bar), "How to read it" (below).
 5. Box score: starters and bench by points, subtotals and team total; MIN PTS REB AST FG 3PT FT TS% STL
    BLK TO +/-; one fixed gap between every column.
-6. Season so far: record and tonight's place in the conference, then game margins (empty slots for games
+6. Season so far: record and tonight's place in the conference (places moved: a green up or black down arrow), then game margins (empty slots for games
    to play) and games over .500 after each game, on one game axis.
 7. Season leaders: one grid of every qualified Bulls player's per-game points, rebounds, assists, steals,
    blocks and 3PM, then FG% (and games played), sorted by points; each stat's leader, every tied player included, in a solid red
@@ -293,6 +294,14 @@ guarded whom, player tracking, how they scored (`pipeline/backpocket_pages.js`; 
   (after 10 games; biggest win, fewest points allowed included), then player season highs over a floor
   (15 PTS, 8 REB, 6 AST, 3 3PM, 3 STL, 3 BLK; after 5 games, counting his games for other teams). Ties say
   "tied". Regular season only; `player_games.csv` keeps Bulls players' games on every team for this.
+  Since 2026-10-15 two kinds also run in preseason. Qualifiers (`QUALIFIERS`; the user's table is Notion's "Notable
+  qualifiers"): a Bulls team stat in the top 5% of the 2,460 team games of 2025-26 (`baselines/`; bottom 5% for
+  turnovers and opponent FG%), worded "top 2% of NBA games last season", rarest first, one per family (assist rate,
+  threes), never a family a season notable already covers. Tonight's line comes from the game log, the baseline's own
+  table, and every count it reads must equal the box score (turnovers: the summary's total with team turnovers), or
+  no qualifier runs. Then the top assist connection ("Giddey to Vučević: 6 assists") when one passer-to-scorer pair
+  alone has 5 or more (3 of the 16 saved Bulls games). Assists come from the play-by-play's text, which must match
+  the box score's makes and assists, or the connection and the shot chart's assisted row are left out (a `repairs` line).
 - Season leaders qualify at half of the Bulls' games so far, shown in the footer. The NBA's 70% rule
   was tried first and left out Giddey (34 of 50) and White (28 of 50) at the midseason test game.
 - Season leaders' FG% comes from summed makes and attempts and needs 5 field-goal attempts per game played;

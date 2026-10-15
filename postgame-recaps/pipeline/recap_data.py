@@ -33,7 +33,7 @@ FALLBACK = os.environ.get("RECAP_FALLBACK") == "1"
 # the build leaves them pending and checks and draws the rest; postgame_recap.py renders that once for review.
 LATE_PAGES = ["Team stats", "Shot chart", "Game breakdown"]
 TRI = "CHI"  # set from the box score in build()
-from paths import EARLY, OUTPUT, game_dir  # noqa: E402
+from paths import BASELINES, EARLY, OUTPUT, game_dir  # noqa: E402
 BASELINE_SEASON = "2025-26"
 SEASON_TYPES = {"001": "Preseason", "002": "Regular season", "004": "Playoffs", "005": "Play-in"}
 PERIOD_NAMES = ["1ST", "2ND", "3RD", "4TH"]
@@ -758,9 +758,9 @@ TEAM_NOTABLE = (("PTS", "points"), ("AST", "assists"), ("FG3M", "3-pointers"), (
                 ("STL", "steals"), ("BLK", "blocks"))
 
 
-def notables(game_id: str, player_games: pd.DataFrame, team_games: pd.DataFrame, league_games: pd.DataFrame,
-             opp_tri: str, limit: int = 3) -> list:
-    """Up to three exact, positive callouts for tonight, most notable first.
+def season_notables(game_id: str, player_games: pd.DataFrame, team_games: pd.DataFrame, league_games: pd.DataFrame,
+                    opp_tri: str) -> list:
+    """Exact, positive callouts against this season so far, as (priority, order, family, text).
 
     League ranks compare tonight with every NBA team game this season so far (counted once 150
     team games exist). Bulls and player season highs need 10 earlier Bulls games, and 5 earlier
@@ -786,18 +786,18 @@ def notables(game_id: str, player_games: pd.DataFrame, team_games: pd.DataFrame,
             higher, equal = int((lg[col] > v).sum()), int((lg[col] == v).sum())
             if higher < 3:
                 tied = "tied for " if equal > 1 else ""
-                out.append((0, f"{v} {word}: {tied}{place(higher + 1)} by any NBA team this season"))
+                out.append((0, 0, col, f"{v} {word}: {tied}{place(higher + 1)} by any NBA team this season"))
                 continue
         if len(before) >= 10 and v >= before[col].max():
             tied = v == before[col].max()
-            out.append((1, f"{v} {word}: {'tied for ' if tied else ''}the {own} most this season"))
+            out.append((1, 0, col, f"{v} {word}: {'tied for ' if tied else ''}the {own} most this season"))
     margin = int(me.PLUS_MINUS)
     if margin > 0 and len(before) >= 10 and margin >= before.PLUS_MINUS.max():
-        out.append((1, f"{sgn_(margin)} win: {'tied for ' if margin == before.PLUS_MINUS.max() else ''}the {own} biggest this season"))
+        out.append((1, 0, "MARGIN", f"{sgn_(margin)} win: {'tied for ' if margin == before.PLUS_MINUS.max() else ''}the {own} biggest this season"))
     allowed = int(me.PTS - me.PLUS_MINUS)
     if len(before) >= 10 and allowed <= (before.PTS - before.PLUS_MINUS).min():
         low = (before.PTS - before.PLUS_MINUS).min()
-        out.append((1, f"Held {opp_tri} to {allowed}: {'tied for ' if allowed == low else ''}the fewest the {TEAM} have allowed this season"))
+        out.append((1, 0, "ALLOWED", f"Held {opp_tri} to {allowed}: {'tied for ' if allowed == low else ''}the fewest the {TEAM} have allowed this season"))
 
     # Players: season highs, counting every game this season on any team.
     pg = player_games.assign(gid=player_games.GAME_ID.astype(str).str.zfill(10))
@@ -816,18 +816,143 @@ def notables(game_id: str, player_games: pd.DataFrame, team_games: pd.DataFrame,
             continue
         if len(hits) == 1:
             k, v, what, tied = hits[0]
-            out.append((2 + k / 10, -v, f"{name}: {what}, {'tying his season high' if tied else 'his most this season'}"))
+            out.append((2 + k / 10, -v, "player", f"{name}: {what}, {'tying his season high' if tied else 'his most this season'}"))
         elif all(not h[3] for h in hits) or all(h[3] for h in hits):
             k, v = hits[0][0], hits[0][1]
             what = " and ".join(h[2] for h in hits[:2])
-            out.append((2 + k / 10, -v, f"{name}: {what}, both {'tying his season highs' if hits[0][3] else 'his most this season'}"))
+            out.append((2 + k / 10, -v, "player", f"{name}: {what}, both {'tying his season highs' if hits[0][3] else 'his most this season'}"))
         else:
             k, v = hits[0][0], hits[0][1]
             parts = [f"{what}, {'tying his season high' if tied else 'his most this season'}" for _, _, what, tied in hits[:2]]
-            out.append((2 + k / 10, -v, f"{name}: {parts[0]}, and {parts[1]}"))
-    out = [(o[0], o[1], o[2]) if len(o) == 3 else (o[0], 0, o[1]) for o in out]
-    out.sort(key=lambda x: (x[0], x[1]))
-    return [text for _, _, text in out[:limit]]
+            out.append((2 + k / 10, -v, "player", f"{name}: {parts[0]}, and {parts[1]}"))
+    return out
+
+
+def league_team_games() -> pd.DataFrame:
+    """Every 2025-26 regular-season team game, the qualifier tables' reference."""
+    return with_opponent(pd.read_csv(BASELINES / f"league-{BASELINE_SEASON}" / f"league_teamgames_{BASELINE_SEASON}.csv.gz"))
+
+
+def with_opponent(games: pd.DataFrame) -> pd.DataFrame:
+    """Each team-game row with its opponent's makes and attempts beside it (FGM_OPP, FGA_OPP)."""
+    both = games.merge(games[["GAME_ID", "TEAM_ID", "FGM", "FGA"]], on="GAME_ID", suffixes=("", "_OPP"))
+    return both[both.TEAM_ID != both.TEAM_ID_OPP]
+
+
+# Notable qualifiers (Notion "Game recaps", Notable qualifiers): a Bulls team stat in the top 5% of 2025-26 team
+# games. (key, family, value, higher is better, eligible, text); percentages compare at their printed 0.1%.
+QUALIFIERS = (
+    ("assist_rate", "AST", lambda r: r.AST / r.FGM, True, None, lambda r, team, opp: f"{team}: {r.AST} assists on {r.FGM} field goals"),
+    ("threes", "FG3M", lambda r: r.FG3M, True, None, lambda r, team, opp: f"{team}: {r.FG3M} threes"),
+    ("three_pct", "FG3M", lambda r: np.round(r.FG3M / r.FG3A, 3), True, lambda r: r.FG3A >= 30,
+     lambda r, team, opp: f"{team}: {r.FG3M}-{r.FG3A} from three ({100 * r.FG3M / r.FG3A:.1f}%)"),
+    ("fg_pct", "FG", lambda r: np.round(r.FGM / r.FGA, 3), True, None,
+     lambda r, team, opp: f"{team}: {100 * r.FGM / r.FGA:.1f}% shooting ({r.FGM}-{r.FGA})"),
+    ("points", "PTS", lambda r: r.PTS, True, None, lambda r, team, opp: f"{team}: {r.PTS} points"),
+    ("steals", "STL", lambda r: r.STL, True, None, lambda r, team, opp: f"{team}: {r.STL} steals"),
+    ("blocks", "BLK", lambda r: r.BLK, True, None, lambda r, team, opp: f"{team}: {r.BLK} blocks"),
+    ("offensive_rebounds", "OREB", lambda r: r.OREB, True, None, lambda r, team, opp: f"{team}: {r.OREB} offensive rebounds"),
+    ("turnovers", "TOV", lambda r: r.TOV, False, None, lambda r, team, opp: f"{team}: {r.TOV} turnovers"),
+    ("opp_fg_pct", "FG_OPP", lambda r: np.round(r.FGM_OPP / r.FGA_OPP, 3), False, None,
+     lambda r, team, opp: f"{team}: held {opp} to {100 * r.FGM_OPP / r.FGA_OPP:.1f}% shooting"),
+)
+
+
+def qualifier_floors(base: pd.DataFrame) -> dict:
+    """Each qualifier's printed floor: the least extreme value still in the top 5% of the reference games."""
+    floors = {}
+    for key, _, value, high, eligible, _ in QUALIFIERS:
+        v = value(base[eligible(base)] if eligible else base)
+        ok = sorted({x for x in v if ((v >= x) if high else (v <= x)).mean() <= 0.05})
+        floors[key] = ok[0] if high else ok[-1]
+    return floors
+
+
+def tonight_line(game_id: str, league_games: pd.DataFrame, teams: pd.DataFrame, stats: pd.DataFrame) -> pd.Series | None:
+    """Tonight's Bulls row from the game log, the same table as the reference games, or None unless every
+    count the qualifiers read equals the box score (turnovers: the summary's total, team turnovers included)."""
+    if league_games.empty or stats.empty:
+        return None
+    rows = with_opponent(league_games[league_games.GAME_ID.astype(str).str.zfill(10) == game_id])
+    me = rows[rows.TEAM_ID == BULLS]
+    if len(me) != 1:
+        return None
+    me = me.iloc[0]
+    box = teams.set_index("teamId")
+    tov = stats.set_index("teamId").turnoversTotal
+    opp = int(me.TEAM_ID_OPP)
+    pairs = {"FGM": "fieldGoalsMade", "FGA": "fieldGoalsAttempted", "FG3M": "threePointersMade",
+             "FG3A": "threePointersAttempted", "OREB": "reboundsOffensive", "AST": "assists", "STL": "steals",
+             "BLK": "blocks", "PTS": "points"}
+    same = all(int(me[c]) == int(box.loc[BULLS, b]) for c, b in pairs.items())
+    same &= int(me.TOV) == int(tov[BULLS])
+    same &= int(me.FGM_OPP) == int(box.loc[opp, "fieldGoalsMade"]) and int(me.FGA_OPP) == int(box.loc[opp, "fieldGoalsAttempted"])
+    return pd.Series({c: int(me[c]) for c in [*pairs, "TOV", "FGM_OPP", "FGA_OPP"]}) if same else None
+
+
+def team_qualifiers(me: pd.Series | None, base: pd.DataFrame, team: str, opp_tri: str) -> list:
+    """(share of reference games at or beyond tonight, key, family, text) for each stat in their top 5%."""
+    if me is None:
+        return []
+    out = []
+    for key, family, value, high, eligible, text in QUALIFIERS:
+        if eligible and not eligible(me):
+            continue
+        ref = value(base[eligible(base)] if eligible else base)
+        v = value(me)
+        share = float(((ref >= v) if high else (ref <= v)).mean())
+        if share <= 0.05:
+            pct = math.ceil(round(share * 100, 6))
+            rank = f"top {max(pct, 1)}% of NBA games last season" if share else "a mark no NBA team reached last season"
+            out.append((share, key, family, f"{text(me, team, opp_tri)}, {rank}"))
+    return out
+
+
+def assisted_makes(pbp: pd.DataFrame, players: pd.DataFrame) -> pd.DataFrame | None:
+    """The Bulls' made field goals with the passer's personId (NaN when unassisted), or None unless they
+    reconcile with the box score's makes and assists. PlayByPlayV3 names the passer only in the shot's text,
+    "(Giddey 3 AST)", by family name, sometimes without accents."""
+    chi = players[players.teamId == BULLS]
+    names = chi.familyName.map(fold)
+    if names.duplicated().any():
+        return None
+    by_name = dict(zip(names, chi.personId))
+    made = pbp[(pbp.teamId == BULLS) & (pbp.isFieldGoal == 1) & (pbp.shotResult == "Made")]
+    named = made.description.str.extract(r"\(([^()]+?) \d+ AST\)")[0]
+    passer = named.map(lambda n: by_name.get(fold(n), -1) if isinstance(n, str) else np.nan)
+    if (passer == -1).any() or len(made) != int(chi.fieldGoalsMade.sum()) or passer.notna().sum() != int(chi.assists.sum()):
+        return None
+    return made.assign(passer=passer)
+
+
+def top_connection(made: pd.DataFrame | None, players: pd.DataFrame, floor: int = 5) -> str | None:
+    """'Giddey to Buzelis: 6 assists' when one passer-to-scorer pair alone leads with at least `floor`."""
+    if made is None:
+        return None
+    pairs = made.dropna(subset=["passer"]).groupby(["passer", "personId"]).size().sort_values(ascending=False)
+    if pairs.empty or pairs.iloc[0] < floor or (len(pairs) > 1 and pairs.iloc[1] == pairs.iloc[0]):
+        return None
+    family = players.set_index("personId").familyName
+    (passer, scorer), n = pairs.index[0], int(pairs.iloc[0])
+    return f"{family[int(passer)]} to {family[int(scorer)]}: {n} assists"
+
+
+def notables(picked: dict, season: list, qualifiers: list, connection: str | None, limit: int = 3) -> list:
+    """Up to three callouts: the user's picks ({key: text}; a pick that also qualifies gets the qualifier's
+    wording), this season's ranks, then the qualifiers rarest first (one per family, none a season notable
+    already covers), then the top assist connection."""
+    found = {key: text for _, key, _, text in qualifiers}
+    picked = [found.get(key, text) for key, text in picked.items()]
+    used = {family for _, _, family, _ in season}
+    ranked = list(season)
+    for share, key, family, text in sorted(qualifiers):
+        if text not in picked and family not in used:
+            used.add(family)
+            ranked.append((1.5, share, family, text))
+    if connection:
+        ranked.append((3, 0, "connection", connection))
+    ranked.sort(key=lambda x: (x[0], x[1]))
+    return (picked + [text for *_, text in ranked])[:limit]
 
 
 PICKED_NOTABLES = {
@@ -835,11 +960,11 @@ PICKED_NOTABLES = {
 }
 
 
-def picked_notables(chi, names: list) -> list:
+def picked_notables(chi, names: list) -> dict:
     unknown = [n for n in names if n not in PICKED_NOTABLES]
     if unknown:
         raise ValueError(f"picks.json notables {unknown} are not in {sorted(PICKED_NOTABLES)}")
-    return [PICKED_NOTABLES[n](chi) for n in names]
+    return {n: PICKED_NOTABLES[n](chi) for n in names}
 
 
 def ord_(n: int) -> str:
@@ -941,6 +1066,9 @@ def build(game_id: str) -> dict:
 
     starter_ids = starters(players, pbp)
     pick = picks(g)
+    made = assisted_makes(pbp, players)
+    if made is None:
+        repairs.append("assist detail left out: the play-by-play's assists do not reconcile with the box score")
     data = {
         "game_id": game_id, "kind": kind, "season_label": f"{2000 + int(game_id[3:5])}-{int(game_id[3:5]) + 1:02d}", "result": result, "home": chi_home,
         "date_label": date.strftime("%a, %b %-d, %Y").upper(),
@@ -975,8 +1103,13 @@ def build(game_id: str) -> dict:
         "scoring": scoring(read(g, "scoring_teams.csv"), read(g, "scoring_players.csv"), players[players.teamId == BULLS], opp_tri),
         "leaders": leaders(players, opp_tri),
         "season_leaders": season_leaders(read(g, "player_games.csv"), game_id),
-        "notables": (picked_notables(chi, pick.get("notables", []))
-                     + notables(game_id, read(g, "player_games.csv"), bulls_games(read(g, "league_games.csv")), read(g, "league_games.csv"), opp_tri))[:3],
+        "notables": notables(
+            picked_notables(chi, pick.get("notables", [])),
+            season_notables(game_id, read(g, "player_games.csv"), bulls_games(read(g, "league_games.csv")), read(g, "league_games.csv"), opp_tri),
+            team_qualifiers(tonight_line(game_id, read(g, "league_games.csv"), teams, read(g, "summary_stats.csv")),
+                            league_team_games(), chi.teamName, opp_tri),
+            top_connection(made, players)),
+        "assisted": None if made is None else [int(made.passer.notna().sum()), len(made)],
         "missing": [line for line in (g / "missing.txt").read_text().splitlines() if line] if (g / "missing.txt").exists() else [],
         "shots_complete": shots_complete, "shots_source": shots_source,
         "repairs": repairs,

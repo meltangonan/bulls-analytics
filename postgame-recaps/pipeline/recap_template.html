@@ -176,7 +176,6 @@ s+=rect(x,ty,tw4,184,BAND)+rect(x,ty,tw4,42,K)+t(c,ty+29,fit(h,21,tw4-16),h,{a:'
 if(!v)s+=t(c-56,ty+120,58,F.chi_lead,{a:'middle',w:600,f:R})+t(c-56,ty+156,18,D.chi.tri,{a:'middle',w:600})+t(c+56,ty+120,58,F.opp_lead,{a:'middle',w:600})+t(c+56,ty+156,18,D.opp.tri,{a:'middle',w:600});
 else s+=t(c,ty+120,58,v[0],{a:'middle',w:600})+(v[1]?t(c,ty+156,fit(v[1],18,tw4-16),v[1],{a:'middle',w:600}):'');});
 // Notables: up to three exact callouts from recap_data.notables; the part before the colon is bold.
-// Notables: up to three exact callouts from recap_data.notables; the part before the colon is bold.
 if(NB.length){s+=sec(L,ty+236,'Notables');NB.forEach((n,i)=>{const y=ty+282+i*34,[a,...b]=n.split(': ');s+=rect(L,y-15,12,12,R);
 const w=tw(a+':',24,600),rest=b.join(': ');s+=t(L+24,y,24,a+':',{w:600})+t(L+24+w+8,y,fit(rest,24,RX-L-24-w-8),rest);});}
 return page(null,s);}
@@ -241,11 +240,15 @@ return page(`${D.chi.team} box score`,s+bg+fg,B.dnp.length?[`Did not play: ${B.d
 
 function shotChart(){if(D.shots_complete===false)return '';const S=D.shooting;let s='';const zs=A.zsize[D.game_id],zw=W,zh=zw*zs[1]/zs[0];
 s+=`<image href="${A.zones[D.game_id]}" x="${L}" y="186" width="${zw}" height="${zh}"/>`;
-if(D.shot_types.length){const y4=Math.min(186+zh+62,1196),ST=D.shot_types,rows=ST.length;s+=sec(L,y4,'Shot types',{onRule:1});s+=ln(L,y4+16,RX,y4+16,K,3);
-const rh=Math.min(40,(1388-(y4+30))/rows),ux0=L+250,ux1=RX-170,maxA=Math.max(...ST.map(r=>r[2])),u=Math.min(16,(ux1-ux0)/maxA),sq=u-3;
+if(D.shot_types.length){const y4=Math.min(186+zh+(D.assisted?50:62),1196),ST=D.shot_types,rows=ST.length;s+=sec(L,y4,'Shot types',{onRule:1});s+=ln(L,y4+16,RX,y4+16,K,3);
+const AS=D.assisted,gap=10,rh=Math.min(40,((AS?1400:1388)-(y4+30)-(AS?gap+24:0))/rows),ux0=L+250,ux1=RX-170,maxA=Math.max(...ST.map(r=>r[2]),AS?AS[1]:0),u=Math.min(16,(ux1-ux0)/maxA),sq=u-3;
 ST.forEach(([lab,m,a],i)=>{const y=y4+30+i*rh,c=y+rh/2;s+=t(L,c+7,20,lab,{w:600});
 for(let k=0;k<a;k++)s+=rect(ux0+k*u,c-sq/2,sq,sq,k<m?R:LR);
-s+=t(RX-80,c+8,22,`${m}-${a}`,{a:'end',w:600})+t(RX,c+8,20,`${Math.round(m/a*100)}%`,{a:'end',f:FT,w:600});});}
+s+=t(RX-80,c+8,22,`${m}-${a}`,{a:'end',w:600})+t(RX,c+8,20,`${Math.round(m/a*100)}%`,{a:'end',f:FT,w:600});});
+// Made field goals, one square each: red when assisted, dark gray when not.
+if(AS){const [n,m]=AS,y=y4+30+rows*rh+gap,c=y+rh/2;s+=ln(L,y-gap/2,RX,y-gap/2,RU,1.5)+t(L,c+7,20,'Assisted makes',{w:600});
+for(let k=0;k<m;k++)s+=rect(ux0+k*u,c-sq/2,sq,sq,k<n?R:GR);
+s+=t(RX-80,c+8,22,`${n} of ${m}`,{a:'end',w:600})+t(RX,c+8,20,`${Math.round(n/m*100)}%`,{a:'end',f:FT,w:600});}}
 // Shots from the play-by-play (NBA.com's shot feed incomplete past the deadline): the page says so.
 return page(`${D.chi.team} shot chart`,s,[],D.shots_source==='pbp'?"Shots from NBA.com's play-by-play, its shot feed was incomplete; zones placed by shot location":'');}
 
@@ -253,7 +256,7 @@ function seasonPage(){const S=D.season,G=S.games,n=G.length,slots=S.slots,O=S.ov
 s+=sec(L,212,'Record')+t(L,330,124,`${S.wins}-${S.losses}`,{w:900,ff:SERIF,f:R});
 if(E){const pl=(E[1]?'T-':'')+ord(E[0]),EP=S.east_prev;s+=sec(RX,212,`In the ${S.conf||'East'}`,{a:'end'})+t(RX,330,124,pl,{w:900,ff:SERIF,a:'end'});
 // Places moved tonight, as on the season leaders page: up is better (a smaller place number).
-if(EP&&EP[0]!=E[0]){const up=EP[0]>E[0],c2=up?R:K,n=String(Math.abs(EP[0]-E[0])),px=RX-tw(pl,124,900,SERIF)-24-tw(n,26,600);s+=tri(px-14,284,up,c2)+t(px,292,26,n,{w:600,f:c2});}}
+if(EP&&EP[0]!=E[0]){const up=EP[0]>E[0],c2=up?WIN:K,n=String(Math.abs(EP[0]-E[0])),px=RX-tw(pl,124,900,SERIF)-24-tw(n,26,600);s+=tri(px-14,284,up,c2)+t(px,292,26,n,{w:600,f:c2});}}
 const wide=slots<=20,x0=82,x1=RX,sw=(x1-x0)/slots,gx=i=>x0+i*sw+sw/2;
 // Game margins
 const lim=Math.max(wide?20:30,Math.ceil(Math.max(...G.map(g=>Math.abs(g[3])))/10)*10),zy=652,sc=(wide?175:200)/lim;

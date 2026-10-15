@@ -519,3 +519,34 @@ def test_early_pages_need_only_the_first_wave_of_feeds(monkeypatch):
     assert d["pending"] == ["Team stats", "Shot chart", "Game breakdown"]
     assert d["four_factors"] is None and d["h2h"] is None and d["awards"] == []
     assert d["flow"]["nba_check"] == "match"
+
+
+def test_qualifier_floors_are_the_top_five_percent_of_2025_26_team_games():
+    # The Notion "Notable qualifiers" table prints these floors.
+    assert rd.qualifier_floors(rd.league_team_games()) == {
+        "assist_rate": 0.78125, "threes": 21, "three_pct": 0.487, "fg_pct": 0.565, "points": 138, "steals": 15,
+        "blocks": 10, "offensive_rebounds": 20, "turnovers": 7, "opp_fg_pct": 0.384}
+
+
+def test_a_qualifying_pick_takes_the_qualifier_wording():
+    d = rd.build("0012600052")  # picks.json picks assist_rate
+    assert d["notables"] == ["Bulls: 35 assists on 42 field goals, top 2% of NBA games last season"]
+
+
+def test_qualifiers_keep_one_notable_per_family():
+    q = [(0.04, "threes", "FG3M", "21 threes"), (0.02, "three_pct", "FG3M", "18-34 from three"),
+         (0.03, "steals", "STL", "15 steals")]
+    assert rd.notables({}, [], q, None) == ["18-34 from three", "15 steals"]
+    season = [(0, 0, "STL", "15 steals: most by any NBA team this season")]
+    assert rd.notables({}, season, q, "Giddey to Buzelis: 6 assists") == [
+        "15 steals: most by any NBA team this season", "18-34 from three", "Giddey to Buzelis: 6 assists"]
+
+
+@pytest.mark.parametrize("game_id,assisted,top", [("0012600052", [35, 42], None), ("0022500084", [29, 39], 6)])
+def test_assists_reconcile_with_the_box_score(game_id, assisted, top):
+    g = game_dir(game_id)
+    players = rd.read(g, "players.csv")
+    made = rd.assisted_makes(rd.read(g, "pbp.csv"), players)
+    assert [int(made.passer.notna().sum()), len(made)] == assisted
+    connection = rd.top_connection(made, players)
+    assert (connection is None) if top is None else connection.endswith(f": {top} assists")

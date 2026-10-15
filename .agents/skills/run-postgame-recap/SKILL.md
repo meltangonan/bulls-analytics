@@ -1,6 +1,6 @@
 ---
 name: run-postgame-recap
-description: Build, check and deliver tonight's Bulls postgame recap carousel ("run postgame recap"); waits for NBA.com, reviews every slide before it ships, never posts.
+description: Build, check and deliver tonight's Bulls postgame recap carousel ("run postgame recap"); waits for NBA.com, reviews every slide before it ships; posts to Instagram only when the user says yes for that game.
 ---
 
 # Run Postgame Recap
@@ -10,8 +10,9 @@ session opened on the `bulls-analytics` folder, usually as the game is about to 
 the repo root. The script waits, checks and draws; **you are the reviewer**: nothing reaches the phone until
 you have looked at every slide and are satisfied (the user's choice, Oct 10: judgment before anything ships,
 not only the script's checks). The run ends when reviewed slides are in the Photos album and iCloud Drive, and
-the user has a notification (your push is the only alert), the caption and what you checked. Never post,
-schedule or draft on Instagram or X; never commit or push: the game's new folder in `postgame-recaps/seasons/`
+the user has a notification (your push is the only alert), the caption and what you checked. Post to
+Instagram only through step 5, when the user has said yes for this game; never schedule, draft or touch X;
+never commit or push: the game's new folder in `postgame-recaps/seasons/`
 stays uncommitted until the user approves a batch commit. Method and failure reasons:
 `postgame-recaps/README.md`, "Running a recap".
 
@@ -26,7 +27,10 @@ checked, what you found. "Still waiting" with nothing else is the update to avoi
 **The user's picks.** Notes sent while watching ("Miller should be MVP", "no closer award tonight", "label the
 buzzer-beater") go into `postgame-recaps/seasons/<season>/<id>/picks.json` (format: `postgame-recaps/README.md`, "Running a recap"). Write
 it once NBA.com's play-by-play is on disk: find each moment's own row and use its `actionNumber`, confirm the
-description matches what the user saw (scorer, period, clock, score), and keep labels short. The build reads it on
+description matches what the user saw (scorer, period, clock, score), and keep labels short. A note
+recalled from the couch can be off (Oct 14: "3 or 9 threes in a row" was 9 straight Bulls points, three
+threes): count it in the play-by-play, say what you found, and label what the data shows. A notable the user
+asks for goes in `notables` when `PICKED_NOTABLES` has it; otherwise say so rather than typing a figure. The build reads it on
 every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `postgame-recaps/pipeline/build_mockup.py` and `postgame-recaps/pipeline/export_slides.py` to apply a late pick.
 
 1. **Recheck the previous game.** If a `postgame-recaps/seasons/*/*/as-posted/` folder exists for an earlier
@@ -44,6 +48,10 @@ every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `pos
    ```
    PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/postgame_recap.py --today
    ```
+   In your first message after starting the build, ask once: "Want me to post it on Instagram when it's
+   reviewed? If so, send your caption (or I use the build's) and any collaborator." Asked early, the answer is
+   in before delivery even if the user leaves at the buzzer. No answer, or no, means deliver only.
+
    Right after starting each build (the first one and every restart), start a Monitor on that build's output
    file with the maximum timeout; if it expires while the build runs, re-arm it with `--resume` added, which
    skips the lines already reported:
@@ -120,7 +128,9 @@ every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `pos
      flat stretch in the step margin line (minutes with no score logged), no red play-by-play warning.
      Every count a page draws from a feed other than the box score, play-by-play and summary must match the
      box score (MIN at MIA, Oct 10: NBA.com's shot feed held 72 of 87 attempts and the shot chart printed a
-     partial game; the checks now catch that one, the review is there for the next). Anything that will look surprising to a fan (a big minus with a big scoring night, a quiet star),
+     partial game; the checks now catch that one, the review is there for the next). A stat printed on two
+     pages agrees, or you know why not (Oct 14: 22 turnovers on team stats, 21 on the box score; NBA.com's
+     total adds a team turnover). Anything that will look surprising to a fan (a big minus with a big scoring night, a quiet star),
      verify yourself against the feeds on disk (players.csv and teams.csv in the game's folder) and keep a
      one-line explanation for the delivery message: the user should not have to wonder whether a number is
      right.
@@ -171,13 +181,33 @@ every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `pos
    - **what you checked**, in three or four short lines: the box score adds up and the score and line score
      match NBA.com; the ESPN check (all agree, or each difference and what you decided); the game-flow check; the layout ("all pages ok" or what you fixed and why); any number
      that looks surprising, with its explanation;
-   - corrections from step 1, and the reminder: choose the 3:4 "Original" crop.
+   - corrections from step 1, and, when the user posts it themselves, the reminder: choose the 3:4
+     "Original" crop.
 
    If you must deliver again after a fix, iCloud Drive's copy is replaced, but the Photos album keeps the
    earlier slides too: tell the user which to delete.
-5. **Log it** as one row in the Game log on the Notion page "Game recaps"
+5. **Post, only if the user said yes for this game** (the user's choice, Oct 14: an option, never the
+   default). Their yes covers this one post, including the Share click; anything new after it (a changed
+   slide, a different caption, a held number) needs their yes again. Posting adds no review of its own:
+   step 3 is the gate, and you post the exact files you delivered. While NBA.com is still publishing, get
+   Claude in Chrome ready: open instagram.com in a new tab and confirm it is signed in as `chicagobullsdata`.
+   Then:
+   - Create › Post; `find` the hidden file input in the dialog and `file_upload` every PNG in
+     `output/postgame-recap/<id>/slides/` in one call, in page order (about 1.6 MB, under the 10 MB limit).
+   - Crop: the bottom-left button › **Original** (3:4; the default 1:1 cuts the page). Next; filter
+     **Original**. Next.
+   - Caption: the user's text exactly, or `caption.txt`. Before typing, check its numbers against
+     recap.json and that it has no em dashes. Read it back from the field and compare its length with yours.
+   - Collaborator: search the exact handle and pick the row whose handle matches character for character
+     (lookalikes such as `chicagobulls_central` sit just below), then Done.
+   - **Add AI label stays off** and Schedule stays off. Share, wait for "Your post has been shared".
+   - Verify the live post: the profile grid (it lands after the pinned posts), the caption text, `?img_index=<n>`
+     shows the last slide, the collaborator line. Push "Bulls recap posted: <score>, <link>", close your tab.
+   If anything in the dialog looks off, stop before Share and tell the user; never retry a Share.
+6. **Log it** as one row in the Game log on the Notion page "Game recaps"
    (https://app.notion.com/p/3a7e1c13abe680629bb0df2d6f77f623): result, minutes from Final to ready data
-   (the script's `timing:` line, counted from when NBA.com first showed Final), delivery, Posted left blank,
+   (the script's `timing:` line, counted from when NBA.com first showed Final), delivery, Posted (the link
+   when you posted it, otherwise blank),
    and the review: what you fixed or held, or "review clean". A template or code fix made tonight also goes
    under the page's open work as a follow-up: check it against the saved test games, then keep or revert.
    Edit only that page.

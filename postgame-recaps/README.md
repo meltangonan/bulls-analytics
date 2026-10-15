@@ -68,7 +68,10 @@ The user's calls while watching go in `seasons/<season>/<id>/picks.json` (option
 `mvp` is a personId and replaces the Game Score pick; `drop_awards` leaves out awards that qualified (a weak one,
 or a player showing up too often); each moment names a scoring play by its play-by-play `actionNumber`, so the dot's
 time and margin come from NBA.com and only the label is typed. The template places a moment's label on its own
-team's side of zero, clear of the margin line and the other labels. These are calls, not numbers.
+team's side of zero, clear of the margin line and the other labels. `notables` names callouts from
+`PICKED_NOTABLES` in `recap_data.py` (`"assist_rate"`: "Bulls: x assists on y field goals" from the Bulls box score); they
+lead the final-score page's notables, three at most, and work in preseason, where computed notables do not. These
+are calls, not numbers.
 
 Then Claude delivers (`PYTHONPATH=. venv/bin/python postgame-recaps/pipeline/deliver.py <game_id>`):
 - the slides are copied to iCloud Drive › Bulls recaps › `<date> <matchup>` (replacing an earlier copy);

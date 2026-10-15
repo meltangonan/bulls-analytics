@@ -497,6 +497,18 @@ def test_picks_set_the_mvp_drop_an_award_and_label_a_scoring_play(monkeypatch):
     assert note["label"] == "A picked play" and [round(note["t"], 2), note["m"]] in d["flow"]["series"]
 
 
+def test_a_picked_notable_leads_and_counts_from_the_box_score(monkeypatch):
+    gid = "0022500943"
+    chi = rd.read(game_dir(gid), "teams.csv").query(f"teamId == {rd.BULLS}").iloc[0]
+    monkeypatch.setattr(rd, "picks", lambda g: {"notables": ["assist_rate"]})
+    d = rd.build(gid)
+    assert d["notables"][0] == f"{chi.teamName}: {int(chi.assists)} assists on {int(chi.fieldGoalsMade)} field goals"
+    assert len(d["notables"]) <= 3
+    monkeypatch.setattr(rd, "picks", lambda g: {"notables": ["made_up"]})
+    with pytest.raises(ValueError):
+        rd.build(gid)
+
+
 def test_early_pages_need_only_the_first_wave_of_feeds(monkeypatch):
     # Four factors, misc and the Bulls shot feed publish last; early pages are drawn without them.
     late = {"ff_team.csv", "misc_teams.csv", "shots_raw_chi.csv"}

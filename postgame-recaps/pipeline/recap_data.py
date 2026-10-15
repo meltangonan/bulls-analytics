@@ -830,6 +830,18 @@ def notables(game_id: str, player_games: pd.DataFrame, team_games: pd.DataFrame,
     return [text for _, _, text in out[:limit]]
 
 
+PICKED_NOTABLES = {
+    "assist_rate": lambda chi: f"{chi.teamName}: {int(chi.assists)} assists on {int(chi.fieldGoalsMade)} field goals",
+}
+
+
+def picked_notables(chi, names: list) -> list:
+    unknown = [n for n in names if n not in PICKED_NOTABLES]
+    if unknown:
+        raise ValueError(f"picks.json notables {unknown} are not in {sorted(PICKED_NOTABLES)}")
+    return [PICKED_NOTABLES[n](chi) for n in names]
+
+
 def ord_(n: int) -> str:
     return f"{n}{'th' if 11 <= n % 100 <= 13 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
 
@@ -963,7 +975,8 @@ def build(game_id: str) -> dict:
         "scoring": scoring(read(g, "scoring_teams.csv"), read(g, "scoring_players.csv"), players[players.teamId == BULLS], opp_tri),
         "leaders": leaders(players, opp_tri),
         "season_leaders": season_leaders(read(g, "player_games.csv"), game_id),
-        "notables": notables(game_id, read(g, "player_games.csv"), bulls_games(read(g, "league_games.csv")), read(g, "league_games.csv"), opp_tri),
+        "notables": (picked_notables(chi, pick.get("notables", []))
+                     + notables(game_id, read(g, "player_games.csv"), bulls_games(read(g, "league_games.csv")), read(g, "league_games.csv"), opp_tri))[:3],
         "missing": [line for line in (g / "missing.txt").read_text().splitlines() if line] if (g / "missing.txt").exists() else [],
         "shots_complete": shots_complete, "shots_source": shots_source,
         "repairs": repairs,

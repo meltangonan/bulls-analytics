@@ -1,0 +1,43 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1641824,Matas,Buzelis,M. Buzelis,matas-buzelis,F,,,23:56,0.222,0.778,0.105,0.0,0.789,0.316,0.105,0.579,0.105,1.0,0.0,1.0,0.0,1.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1643410,Caleb,Wilson,C. Wilson,caleb-wilson,F,,,24:04,0.545,0.455,0.6,0.2,0.3,0.2,0.1,0.2,0.4,1.0,0.0,1.0,0.0,1.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1630188,Jalen,Smith,J. Smith,jalen-smith,C,,,20:46,0.5,0.5,0.133,0.0,0.6,0.0,0.267,0.667,0.133,1.0,0.0,1.0,0.0,1.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1626181,Norman,Powell,N. Powell,norman-powell,G,,,22:22,0.25,0.75,0.125,0.0,0.375,0.0,0.5,0.125,0.125,1.0,0.0,1.0,0.0,1.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1630581,Josh,Giddey,J. Giddey,josh-giddey,G,,,22:25,0.25,0.75,0.333,0.0,0.5,0.0,0.167,0.0,0.333,1.0,0.0,1.0,0.0,1.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1630200,Tre,Jones,T. Jones,tre-jones,,,,16:51,0.8,0.2,0.333,0.0,0.0,0.0,0.667,0.333,0.333,0.0,1.0,0.0,0.0,0.0,1.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1627741,Buddy,Hield,B. Hield,buddy-hield,,,,16:18,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1631159,Leonard,Miller,L. Miller,leonard-miller,,,,18:30,0.636,0.364,0.444,0.0,0.5,0.222,0.056,0.167,0.444,0.75,0.25,1.0,0.0,0.857,0.143
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1642855,Noa,Essengue,N. Essengue,noa-essengue,,,,15:21,0.4,0.6,0.571,0.0,0.429,0.571,0.0,0.571,0.571,0.5,0.5,1.0,0.0,0.667,0.333
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1643637,Jaylin,Sellers,J. Sellers,jaylin-sellers,,,,14:55,0.333,0.667,0.4,0.0,0.6,0.2,0.0,0.5,0.4,1.0,0.0,1.0,0.0,1.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1643517,Dailyn,Swain,D. Swain,dailyn-swain,,,,10:17,0.6,0.4,1.0,0.0,0.0,0.5,0.0,0.5,1.0,0.5,0.5,0.0,0.0,0.5,0.5
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,,,,9:59,0.429,0.571,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.333,0.667,0.0,0.0,0.333,0.667
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1631115,Orlando,Robinson,O. Robinson,orlando-robinson,,,,8:44,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1641779,Jalen,Bridges,J. Bridges,jalen-bridges,,,,8:35,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1630527,Brandon,Boston,B. Boston,brandon-boston,,,,6:57,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1643591,Tobe,Awaka,T. Awaka,tobe-awaka,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1629651,Nic,Claxton,N. Claxton,nic-claxton,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1628380,Zach,Collins,Z. Collins,zach-collins,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1641722,Jordan,Hawkins,J. Hawkins,jordan-hawkins,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1630171,Isaac,Okoro,I. Okoro,isaac-okoro,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612741,Chicago,Bulls,CHI,bulls,1641809,Drew,Peterson,D. Peterson,drew-peterson,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1631172,Ousmane,Dieng,O. Dieng,ousmane-dieng,F,,,27:12,0.5,0.5,0.4,0.2,0.6,0.0,0.0,0.2,0.2,0.5,0.5,1.0,0.0,0.75,0.25
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1631250,Pete,Nance,P. Nance,pete-nance,F,,,25:50,0.333,0.667,0.5,0.0,0.0,0.0,0.5,0.5,0.5,1.0,0.0,0.0,0.0,1.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1630579,Jericho,Sims,J. Sims,jericho-sims,C,,,22:08,0.75,0.25,0.667,0.0,0.0,0.0,0.333,0.667,0.667,1.0,0.0,0.0,0.0,1.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1643415,Brayden,Burries,B. Burries,brayden-burries,G,,,28:33,0.5,0.5,0.421,0.0,0.158,0.211,0.421,0.316,0.421,0.5,0.5,1.0,0.0,0.6,0.4
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1642857,Kasparas,Jakučionis,K. Jakučionis,kasparas-jakučionis,G,,,20:26,0.375,0.625,0.222,0.0,0.167,0.0,0.611,0.222,0.222,1.0,0.0,1.0,0.0,1.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1642504,Cormac,Ryan,C. Ryan,cormac-ryan,,,,26:07,0.222,0.778,0.143,0.0,0.643,0.0,0.214,0.0,0.143,0.0,1.0,1.0,0.0,0.75,0.25
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1642276,Kel'el,Ware,K. Ware,kelel-ware,,,,22:43,0.556,0.444,0.8,0.0,0.0,0.4,0.2,0.2,0.8,1.0,0.0,0.0,0.0,1.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1642880,Kam,Jones,K. Jones,kam-jones,,,,22:16,0.571,0.429,0.609,0.0,0.261,0.0,0.13,0.261,0.609,0.286,0.714,1.0,0.0,0.444,0.556
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1642881,Bogoljub,Marković,B. Marković,bogoljub-marković,,,,20:32,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1627747,Caris,LeVert,C. LeVert,caris-levert,,,,8:19,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1641780,Johni,Broome,J. Broome,johni-broome,,,,8:35,0.8,0.2,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1641868,Jake,Stephens,J. Stephens,jake-stephens,,,,7:19,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1643417,Nate,Ament,N. Ament,nate-ament,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1631260,AJ,Green,A. Green,aj-green,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1629639,Tyler,Herro,T. Herro,tyler-herro,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1631170,Jaime,Jaquez Jr.,J. Jaquez Jr.,jaime-jaquez-jr,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1628398,Kyle,Kuzma,K. Kuzma,kyle-kuzma,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1629645,Kevin,Porter Jr.,K. Porter Jr.,kevin-porter-jr,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1631157,Ryan,Rollins,R. Rollins,ryan-rollins,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1629018,Gary,Trent Jr.,G. Trent Jr.,gary-trent-jr,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600052,1610612749,Milwaukee,Bucks,MIL,bucks,1626167,Myles,Turner,M. Turner,myles-turner,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

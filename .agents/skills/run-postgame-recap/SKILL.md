@@ -42,6 +42,8 @@ every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `pos
    ```
    If that game's page in the posts database is not Posted yet, look for the post on the @chicagobullsdata
    profile (read-only); when it is live, set Posted and add its link (step 6).
+   Then read tonight's game page in the posts database (step 6 says how to find it): notes left there for this
+   run (things to watch, picks decided ahead) are part of tonight's job; act on them and report on each.
 2. **Build, and watch it.** Start the script with Bash `run_in_background` (use the game ID instead of
    `--today` if the user gave one). You are re-invoked when it exits; don't poll. It waits for Final, then
    pulls again every 90 s until every check passes (12 to 35 minutes after Final so far), exports and

@@ -9,8 +9,9 @@ Brand Template.
 - Source: approved points-created game post, `DAHW5wCi63M`, preserving its current page styling.
 - Both pages: 1080×1440.
 - Fonts: titles and subtitles in Georgia Pro Condensed, footer and handle in Geist (`DESIGN.md`).
-  The template once lagged a house font change (found 2026-10-12), so check a new design's fonts
-  against a recent post before filling it.
+  The template lags the house font change (found 2026-10-12, still true 2026-10-14): its text uses
+  the old font references, and the Canva MCP cannot change a font family. Until the template is
+  updated, copy a recent finished post (for example `DAHWlTbn0SQ`) and replace its content instead.
 
 Create each standard cover-and-chart post as a new design from this Brand Template (Canva MCP
 `create-design-from-brand-template`, or the template's "Use template" link), then edit the new

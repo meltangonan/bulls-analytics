@@ -215,11 +215,14 @@ def pull_game(game_id: str) -> list:
     pull_player_games(season, season_type, out, missing)
     pull_schedule(season, out, missing)
     pull_league_games(season, season_type, out, missing)
-    # Headshots for every Bulls player and for the opponent's players who played (game leaders), downloaded
+    # Headshots for every Bulls player, every player in the Bulls game logs (season leaders lists players since
+    # waived or traded) and the opponent's players who played (game leaders), downloaded
     # again once they are 12 hours old: NBA.com swaps in new season photos under the same URL (two were stale
     # on 2026-10-09), and the age limit keeps the 90-second readiness retries from downloading them each time.
     played = players[(players.teamId == BULLS) | players.minutes.fillna("").astype(str).str.contains(":")]
-    for pid in played.personId:
+    logs = out / "player_games.csv"
+    logged = pd.read_csv(logs) if logs.exists() and logs.stat().st_size > 1 else pd.DataFrame(columns=["TEAM_ID", "PLAYER_ID"])
+    for pid in sorted(set(played.personId) | set(logged.loc[logged.TEAM_ID == BULLS, "PLAYER_ID"])):
         path = PORTRAITS / f"{int(pid)}.png"
         old = path.exists() and time.time() - path.stat().st_mtime > 12 * 3600
         if get_player_headshot(int(pid), cache_dir=str(PORTRAITS), refresh=old) is None:

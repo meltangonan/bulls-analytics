@@ -1,0 +1,40 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,speed,distance,reboundChancesOffensive,reboundChancesDefensive,reboundChancesTotal,touches,secondaryAssists,freeThrowAssists,passes,assists,contestedFieldGoalsMade,contestedFieldGoalsAttempted,contestedFieldGoalPercentage,uncontestedFieldGoalsMade,uncontestedFieldGoalsAttempted,uncontestedFieldGoalsPercentage,fieldGoalPercentage,defendedAtRimFieldGoalsMade,defendedAtRimFieldGoalsAttempted,defendedAtRimFieldGoalPercentage
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,202695,Kawhi,Leonard,K. Leonard,kawhi-leonard,F,,2,22:34,4.51,1.69,0,2,2,14,0,0,12,1,0,0,0.0,0,0,0.0,0.4,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1630567,Scottie,Barnes,S. Barnes,scottie-barnes,F,,4,28:12,4.38,2.06,1,7,8,48,0,0,40,4,0,0,0.0,1,1,1.0,0.6,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1627751,Jakob,Poeltl,J. Poeltl,jakob-poeltl,C,,19,24:42,4.63,1.9,2,6,8,17,0,0,23,2,0,0,0.0,0,0,0.0,0.6,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1629628,RJ,Barrett,R. Barrett,rj-barrett,G,,9,30:31,4.49,2.28,3,10,13,37,0,0,38,4,1,1,1.0,0,0,0.0,0.5,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1630193,Immanuel,Quickley,I. Quickley,immanuel-quickley,G,,5,28:02,4.46,2.08,0,9,9,45,0,0,39,7,0,0,0.0,0,0,0.0,0.6,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1642867,Collin,Murray-Boyles,C. Murray-Boyles,collin-murray-boyles,,,30,21:39,4.66,1.68,4,3,7,22,0,0,22,2,0,0,0.0,0,0,0.0,0.5,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1642347,Jamal,Shead,J. Shead,jamal-shead,,,1,20:37,4.77,1.63,2,1,3,39,0,0,36,4,0,0,0.0,0,0,0.0,0.167,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1642266,Ja'Kobe,Walter,J. Walter,jakobe-walter,,,14,19:36,4.82,1.57,2,4,6,21,0,0,19,1,0,0,0.0,0,0,0.0,0.167,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1642419,Jamison,Battle,J. Battle,jamison-battle,,,77,14:08,4.85,1.14,1,5,6,11,0,0,12,0,0,0,0.0,0,0,0.0,0.6,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,203937,Kyle,Anderson,K. Anderson,kyle-anderson,,,13,12:02,4.59,0.92,1,3,4,11,0,0,17,0,0,0,0.0,0,0,0.0,1.0,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1643718,Nimari,Burnett,N. Burnett,nimari-burnett,,,,6:06,5.04,0.52,3,3,6,7,0,0,11,2,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1643558,Jaden,Bradley,J. Bradley,jaden-bradley,,,8,5:15,5.15,0.45,2,1,3,7,0,0,6,0,0,0,0.0,0,0,0.0,0.5,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1642481,Jamarion,Sharp,J. Sharp,jamarion-sharp,,,33,3:08,4.38,0.23,0,0,0,2,0,0,4,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1641869,Malachi,Smith,M. Smith,malachi-smith,,,18,3:18,4.37,0.24,0,0,0,5,0,0,1,0,0,0,0.0,0,0,0.0,0.75,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1642615,Tyreke,Key,T. Key,tyreke-key,,,,0:10,7.07,0.02,0,0,0,0,0,0,0,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1642927,Nate,Bittle,N. Bittle,nate-bittle,,DNP - Coach's Decision,,0:00,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1643091,Tyson,Degenhart,T. Degenhart,tyson-degenhart,,DNP - Coach's Decision,,0:00,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1643512,Allen,Graves,A. Graves,allen-graves,,DNP - Coach's Decision,22,0:00,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1631218,Trayce,Jackson-Davis,T. Jackson-Davis,trayce-jackson-davis,,DNP - Coach's Decision,32,0:00,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612761,Toronto,Raptors,TOR,raptors,1642918,Alijah,Martin,A. Martin,alijah-martin,,DNP - Coach's Decision,55,0:00,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1628384,OG,Anunoby,O. Anunoby,og-anunoby,F,,8,30:55,4.47,2.3,3,5,8,34,0,0,42,3,0,0,0.0,0,0,0.0,0.2,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1642885,Mohamed,Diawara,M. Diawara,mohamed-diawara,F,,51,19:56,4.82,1.6,2,7,9,23,0,0,17,1,0,0,0.0,0,0,0.0,0.2,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1626157,Karl-Anthony,Towns,K. Towns,karl-anthony-towns,C,,32,28:51,3.96,1.9,6,13,19,44,0,0,51,9,0,0,0.0,1,1,1.0,0.5,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1628969,Mikal,Bridges,M. Bridges,mikal-bridges,G,,25,29:35,4.77,2.35,1,3,4,46,0,0,43,1,0,0,0.0,0,0,0.0,0.667,1,1,1.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1628973,Jalen,Brunson,J. Brunson,jalen-brunson,G,,11,28:51,4.56,2.19,6,1,7,80,0,0,70,7,0,0,0.0,0,0,0.0,0.467,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1630540,Miles,McBride,M. McBride,miles-mcbride,,,2,13:28,4.79,1.08,1,2,3,17,0,0,15,2,0,0,0.0,0,0,0.0,0.5,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1629013,Landry,Shamet,L. Shamet,landry-shamet,,,44,24:10,4.99,2.01,2,2,4,23,0,0,24,3,0,0,0.0,0,0,0.0,0.375,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1642359,Pacôme,Dadiet,P. Dadiet,pacôme-dadiet,,,4,11:03,5.06,0.93,1,5,6,17,0,0,12,1,0,0,0.0,0,0,0.0,0.5,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1630631,Jose,Alvarado,J. Alvarado,jose-alvarado,,,5,13:54,4.84,1.12,0,0,0,30,0,0,27,3,0,0,0.0,0,0,0.0,0.75,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,203083,Andre,Drummond,A. Drummond,andre-drummond,,,0,15:02,4.16,1.05,4,8,12,23,0,0,21,4,0,0,0.0,0,0,0.0,0.857,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,203903,Jordan,Clarkson,J. Clarkson,jordan-clarkson,,,00,10:46,5.25,0.94,0,1,1,12,0,0,16,0,0,0,0.0,0,0,0.0,0.5,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1642278,Tyler,Kolek,T. Kolek,tyler-kolek,,,13,5:15,4.88,0.43,0,1,1,15,0,0,13,1,0,0,0.0,0,0,0.0,0.667,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1630164,James,Wiseman,J. Wiseman,james-wiseman,,,11,3:56,4.43,0.29,1,1,2,3,0,0,2,0,0,0,0.0,0,0,0.0,1.0,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1643589,Tyler,Nickel,T. Nickel,tyler-nickel,,,55,4:07,4.53,0.31,0,1,1,4,0,0,5,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1643022,Jaden,Akins,J. Akins,jaden-akins,,,,0:11,5.03,0.02,0,0,0,0,0,0,0,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1628971,Bruce,Brown,B. Brown,bruce-brown,,DNP - Coach's Decision,11,0:00,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1629234,Drew,Eubanks,D. Eubanks,drew-eubanks,,DNP - Coach's Decision,17,0:00,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1628404,Josh,Hart,J. Hart,josh-hart,,DNP - Coach's Decision,3,0:00,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0
+0012600055,1610612752,New York,Knicks,NYK,knicks,1641755,Kevin,McCullar Jr.,K. McCullar Jr.,kevin-mccullar-jr,,DNP - Coach's Decision,9,0:00,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0.0,0,0,0.0,0.0,0,0,0.0

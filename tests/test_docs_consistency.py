@@ -96,8 +96,8 @@ def test_indexed_prototypes_still_exist():
 
 def test_skill_symlinks_are_links_not_copies():
     problems = []
-    for canonical in SKILLS:
-        mirror = ROOT / ".claude/skills" / canonical.parent.name / "SKILL.md"
+    for canonical in (doc for skill in SKILLS for doc in sorted(skill.parent.glob("*.md"))):
+        mirror = ROOT / ".claude/skills" / canonical.parent.name / canonical.name
         if not mirror.exists():
             problems.append(f"{mirror.relative_to(ROOT)} missing")
         elif not mirror.is_symlink():
@@ -105,6 +105,13 @@ def test_skill_symlinks_are_links_not_copies():
         elif mirror.resolve() != canonical.resolve():
             problems.append(f"{mirror.relative_to(ROOT)} points at {mirror.resolve()}")
     assert not problems, "Skill mirror is out of sync:\n  " + "\n  ".join(problems)
+
+
+def test_the_recap_skill_reads_its_checklist_before_the_build_and_before_delivery():
+    text = (ROOT / ".agents/skills/run-postgame-recap/SKILL.md").read_text()
+    steps = dict(re.findall(r"^(\d)\. (.*?)(?=^\d\. |\Z)", text, flags=re.M | re.S))
+    assert steps["2"].startswith("**Build") and "REVIEW_CHECKLIST.md" in steps["2"]
+    assert steps["4"].startswith("**Deliver") and "REVIEW_CHECKLIST.md" in steps["4"]
 
 
 def test_prototypes_have_a_module_docstring():

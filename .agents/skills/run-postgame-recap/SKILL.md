@@ -44,7 +44,8 @@ every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `pos
    profile (read-only); when it is live, set Posted and add its link (step 6).
    Then read tonight's game page in the posts database (step 6 says how to find it): notes left there for this
    run (things to watch, picks decided ahead) are part of tonight's job; act on them and report on each.
-2. **Build, and watch it.** Start the script with Bash `run_in_background` (use the game ID instead of
+2. **Build, and watch it.** First read `REVIEW_CHECKLIST.md` (beside this file); it is what the review in
+   step 3 must prove. Start the script with Bash `run_in_background` (use the game ID instead of
    `--today` if the user gave one). You are re-invoked when it exits; don't poll. It waits for Final, then
    pulls again every 90 s until every check passes (12 to 35 minutes after Final so far), exports and
    measures the slides and writes `output/postgame-recap/<id>/caption.txt`. It does not deliver. "no Bulls
@@ -172,7 +173,7 @@ every pull; after delivery, rerun `postgame-recaps/pipeline/recap_data.py`, `pos
      `./run_tests.sh tests/test_postgame_recap.py -q`, start the build again with the game ID, check the
      number against the feed by hand, and tell the user what was wrong. The code change stays uncommitted
      for review, like a template fix.
-4. **Deliver**, once you are satisfied:
+4. **Deliver**, once you are satisfied and have gone through `REVIEW_CHECKLIST.md` again, item by item:
    ```
    PYTHONPATH=. /Users/meltangonan/projects/bulls-analytics/venv/bin/python postgame-recaps/pipeline/deliver.py <game_id>
    ```

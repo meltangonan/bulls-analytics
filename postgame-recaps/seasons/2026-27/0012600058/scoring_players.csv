@@ -1,0 +1,43 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,percentageFieldGoalsAttempted2pt,percentageFieldGoalsAttempted3pt,percentagePoints2pt,percentagePointsMidrange2pt,percentagePoints3pt,percentagePointsFastBreak,percentagePointsFreeThrow,percentagePointsOffTurnovers,percentagePointsPaint,percentageAssisted2pt,percentageUnassisted2pt,percentageAssisted3pt,percentageUnassisted3pt,percentageAssistedFGM,percentageUnassistedFGM
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1641740,Jaylen,Clark,J. Clark,jaylen-clark,F,,,29:29,0.333,0.667,0.333,0.0,0.5,0.111,0.167,0.111,0.333,0.333,0.667,1.0,0.0,0.667,0.333
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642262,Cody,Williams,C. Williams,cody-williams,F,,,27:24,0.455,0.545,0.667,0.0,0.2,0.133,0.133,0.333,0.667,0.4,0.6,1.0,0.0,0.5,0.5
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642866,Joan,Beringer,J. Beringer,joan-beringer,C,,,24:40,1.0,0.0,0.727,0.0,0.0,0.0,0.273,0.182,0.727,0.5,0.5,0.0,0.0,0.5,0.5
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630545,Terrence,Shannon Jr,T. Shannon Jr,terrence-shannon-jr,G,,,15:30,0.6,0.4,0.667,0.0,0.0,0.0,0.333,0.333,0.667,0.0,1.0,0.0,0.0,0.0,1.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642389,Zyon,Pullin,Z. Pullin,zyon-pullin,G,,,37:40,0.667,0.333,0.429,0.0,0.0,0.286,0.571,0.214,0.429,0.0,1.0,0.0,0.0,0.0,1.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630231,KJ,Martin,K. Martin,kj-martin,,,,21:52,1.0,0.0,0.667,0.0,0.0,0.0,0.333,0.111,0.667,1.0,0.0,0.0,0.0,1.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1641810,Antonio,Reeves,A. Reeves,antonio-reeves,,,,16:56,0.5,0.5,1.0,0.5,0.0,0.0,0.0,0.5,0.5,1.0,0.0,0.0,0.0,1.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1631166,Drew,Timme,D. Timme,drew-timme,,,,26:42,0.75,0.25,0.667,0.0,0.167,0.0,0.167,0.222,0.667,0.333,0.667,1.0,0.0,0.429,0.571
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642912,Isaiah,Evans,I. Evans,isaiah-evans,,,,30:13,0.231,0.769,0.095,0.0,0.714,0.0,0.19,0.048,0.095,1.0,0.0,1.0,0.0,1.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1641807,Norchad,Omier,N. Omier,norchad-omier,,,,9:34,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630163,LaMelo,Ball,L. Ball,lamelo-ball,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1628978,Donte,DiVincenzo,D. DiVincenzo,donte-divincenzo,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630245,Ayo,Dosunmu,A. Dosunmu,ayo-dosunmu,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630162,Anthony,Edwards,A. Edwards,anthony-edwards,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642402,Enrique,Freeman,E. Freeman,enrique-freeman,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,203497,Rudy,Gobert,R. Gobert,rudy-gobert,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630538,Bones,Hyland,B. Hyland,bones-hyland,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630228,Jonathan,Kuminga,J. Kuminga,jonathan-kuminga,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1626168,Trey,Lyles,T. Lyles,trey-lyles,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630183,Jaden,McDaniels,J. McDaniels,jaden-mcdaniels,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642911,Rocco,Zikarsky,R. Zikarsky,rocco-zikarsky,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1641824,Matas,Buzelis,M. Buzelis,matas-buzelis,F,,,19:15,0.667,0.333,0.714,0.0,0.0,0.286,0.286,0.0,0.714,1.0,0.0,0.0,0.0,1.0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1643410,Caleb,Wilson,C. Wilson,caleb-wilson,F,,,22:34,0.667,0.333,0.625,0.0,0.375,0.125,0.0,0.125,0.625,0.6,0.4,1.0,0.0,0.714,0.286
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630188,Jalen,Smith,J. Smith,jalen-smith,C,,,13:01,0.4,0.6,0.8,0.0,0.0,0.4,0.2,0.0,0.8,1.0,0.0,0.0,0.0,1.0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1626181,Norman,Powell,N. Powell,norman-powell,G,,,14:34,0.429,0.571,0.222,0.0,0.667,0.0,0.111,0.0,0.222,0.0,1.0,0.5,0.5,0.333,0.667
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630581,Josh,Giddey,J. Giddey,josh-giddey,G,,,19:29,0.5,0.5,0.5,0.0,0.25,0.0,0.25,0.417,0.5,0.333,0.667,1.0,0.0,0.5,0.5
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1642855,Noa,Essengue,N. Essengue,noa-essengue,,,,15:06,0.75,0.25,0.8,0.0,0.0,0.0,0.2,0.0,0.8,1.0,0.0,0.0,0.0,1.0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1631159,Leonard,Miller,L. Miller,leonard-miller,,,,20:58,0.571,0.429,0.333,0.0,0.25,0.0,0.417,0.0,0.333,0.5,0.5,1.0,0.0,0.667,0.333
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630200,Tre,Jones,T. Jones,tre-jones,,,,13:56,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.25,0.75,0.0,0.0,0.25,0.75
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1643517,Dailyn,Swain,D. Swain,dailyn-swain,,,,20:47,0.8,0.2,0.857,0.0,0.0,0.286,0.143,0.0,0.857,0.333,0.667,0.0,0.0,0.333,0.667
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1627741,Buddy,Hield,B. Hield,buddy-hield,,,,9:26,0.5,0.5,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1641722,Jordan,Hawkins,J. Hawkins,jordan-hawkins,,,,18:30,0.444,0.556,0.143,0.0,0.857,0.0,0.0,0.429,0.143,1.0,0.0,0.75,0.25,0.8,0.2
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,,,,13:12,0.5,0.5,0.286,0.0,0.429,0.286,0.286,0.429,0.286,0.0,1.0,1.0,0.0,0.5,0.5
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1643637,Jaylin,Sellers,J. Sellers,jaylin-sellers,,,,12:04,0.8,0.2,1.0,0.0,0.0,0.667,0.0,0.667,1.0,0.667,0.333,0.0,0.0,0.667,0.333
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1631115,Orlando,Robinson,O. Robinson,orlando-robinson,,,,14:01,1.0,0.0,0.667,0.0,0.0,0.0,0.333,0.333,0.667,1.0,0.0,0.0,0.0,1.0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1641809,Drew,Peterson,D. Peterson,drew-peterson,,,,7:49,0.667,0.333,0.571,0.0,0.429,0.0,0.0,0.0,0.571,0.5,0.5,1.0,0.0,0.667,0.333
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1641779,Jalen,Bridges,J. Bridges,jalen-bridges,,,,5:18,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1643591,Tobe,Awaka,T. Awaka,tobe-awaka,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630527,Brandon,Boston,B. Boston,brandon-boston,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1629651,Nic,Claxton,N. Claxton,nic-claxton,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1628380,Zach,Collins,Z. Collins,zach-collins,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630171,Isaac,Okoro,I. Okoro,isaac-okoro,,DNP - Coach's Decision,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

@@ -1,0 +1,3 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,minutes,pointsOffTurnovers,pointsSecondChance,pointsFastBreak,pointsPaint,oppPointsOffTurnovers,oppPointsSecondChance,oppPointsFastBreak,oppPointsPaint,blocks,blocksAgainst,foulsPersonal,foulsDrawn
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,240:00,23,25,16,76,22,10,8,56,10,2,30,22
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,240:00,22,10,8,56,23,25,16,76,2,10,22,30

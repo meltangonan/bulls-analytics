@@ -1,0 +1,43 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,personId,firstName,familyName,nameI,playerSlug,position,comment,jerseyNum,minutes,fieldGoalsMade,fieldGoalsAttempted,fieldGoalsPercentage,threePointersMade,threePointersAttempted,threePointersPercentage,freeThrowsMade,freeThrowsAttempted,freeThrowsPercentage,reboundsOffensive,reboundsDefensive,reboundsTotal,assists,steals,blocks,turnovers,foulsPersonal,points,plusMinusPoints
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1641824,Matas,Buzelis,M. Buzelis,matas-buzelis,F,,,19:15,5,9,0.556,0,3,0.0,4,5,0.8,1,5,6,1,0,1,2,4,14,14.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1643410,Caleb,Wilson,C. Wilson,caleb-wilson,F,,,22:34,7,15,0.467,2,5,0.4,0,0,0.0,2,5,7,4,0,2,2,1,16,12.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630188,Jalen,Smith,J. Smith,jalen-smith,C,,,13:01,2,5,0.4,0,3,0.0,1,1,1.0,2,3,5,3,1,0,1,3,5,8.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1626181,Norman,Powell,N. Powell,norman-powell,G,,,14:34,3,7,0.429,2,4,0.5,1,1,1.0,2,2,4,2,1,0,1,1,9,11.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630581,Josh,Giddey,J. Giddey,josh-giddey,G,,,19:29,4,10,0.4,1,5,0.2,3,3,1.0,3,1,4,4,0,1,1,1,12,8.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1642855,Noa,Essengue,N. Essengue,noa-essengue,,,,15:06,2,4,0.5,0,1,0.0,1,2,0.5,1,2,3,1,0,0,1,5,5,2.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1631159,Leonard,Miller,L. Miller,leonard-miller,,,,20:58,3,7,0.429,1,3,0.333,5,6,0.833,3,3,6,3,0,2,2,2,12,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630200,Tre,Jones,T. Jones,tre-jones,,,,13:56,4,6,0.667,0,0,0.0,0,0,0.0,0,2,2,5,0,0,0,2,8,2.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1643517,Dailyn,Swain,D. Swain,dailyn-swain,,,,20:47,3,5,0.6,0,1,0.0,1,1,1.0,0,4,4,0,0,0,1,2,7,-2.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1627741,Buddy,Hield,B. Hield,buddy-hield,,,,9:26,1,4,0.25,0,2,0.0,0,0,0.0,0,0,0,1,0,0,0,0,2,-4.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1641722,Jordan,Hawkins,J. Hawkins,jordan-hawkins,,,,18:30,5,9,0.556,4,5,0.8,0,0,0.0,1,2,3,3,2,1,0,2,14,8.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630172,Patrick,Williams,P. Williams,patrick-williams,,,,13:12,2,4,0.5,1,2,0.5,2,2,1.0,1,1,2,1,1,0,1,1,7,6.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1643637,Jaylin,Sellers,J. Sellers,jaylin-sellers,,,,12:04,3,5,0.6,0,1,0.0,0,0,0.0,0,2,2,2,1,1,0,2,6,10.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1631115,Orlando,Robinson,O. Robinson,orlando-robinson,,,,14:01,3,3,1.0,0,0,0.0,3,4,0.75,1,3,4,2,0,2,3,2,9,9.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1641809,Drew,Peterson,D. Peterson,drew-peterson,,,,7:49,3,3,1.0,1,1,1.0,0,0,0.0,0,1,1,2,2,0,0,2,7,-1.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1641779,Jalen,Bridges,J. Bridges,jalen-bridges,,,,5:18,0,1,0.0,0,0,0.0,0,0,0.0,0,1,1,0,0,0,0,0,0,2.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1643591,Tobe,Awaka,T. Awaka,tobe-awaka,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630527,Brandon,Boston,B. Boston,brandon-boston,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1629651,Nic,Claxton,N. Claxton,nic-claxton,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1628380,Zach,Collins,Z. Collins,zach-collins,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,1630171,Isaac,Okoro,I. Okoro,isaac-okoro,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1641740,Jaylen,Clark,J. Clark,jaylen-clark,F,,,29:29,6,12,0.5,3,8,0.375,3,6,0.5,0,7,7,0,3,1,0,1,18,-5.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642262,Cody,Williams,C. Williams,cody-williams,F,,,27:24,6,11,0.545,1,6,0.167,2,4,0.5,0,3,3,0,0,0,1,1,15,-7.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642866,Joan,Beringer,J. Beringer,joan-beringer,C,,,24:40,4,12,0.333,0,0,0.0,3,4,0.75,5,1,6,0,0,1,0,3,11,-5.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630545,Terrence,Shannon Jr,T. Shannon Jr,terrence-shannon-jr,G,,,15:30,2,5,0.4,0,2,0.0,2,2,1.0,0,0,0,4,0,0,2,1,6,-3.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642389,Zyon,Pullin,Z. Pullin,zyon-pullin,G,,,37:40,3,9,0.333,0,3,0.0,8,10,0.8,1,2,3,10,1,0,3,2,14,-9.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630231,KJ,Martin,K. Martin,kj-martin,,,,21:52,3,5,0.6,0,0,0.0,3,5,0.6,1,2,3,0,0,0,0,5,9,-21.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1641810,Antonio,Reeves,A. Reeves,antonio-reeves,,,,16:56,2,4,0.5,0,2,0.0,0,0,0.0,0,2,2,1,0,0,1,5,4,-13.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1631166,Drew,Timme,D. Timme,drew-timme,,,,26:42,7,12,0.583,1,3,0.333,3,5,0.6,4,3,7,3,1,0,2,2,18,-8.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1641807,Norchad,Omier,N. Omier,norchad-omier,,,,9:34,0,4,0.0,0,0,0.0,0,0,0.0,1,3,4,2,1,0,1,0,0,-4.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642912,Isaiah,Evans,I. Evans,isaiah-evans,,,,30:13,6,13,0.462,5,10,0.5,4,4,1.0,0,2,2,3,0,0,1,2,21,-10.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630163,LaMelo,Ball,L. Ball,lamelo-ball,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1628978,Donte,DiVincenzo,D. DiVincenzo,donte-divincenzo,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630245,Ayo,Dosunmu,A. Dosunmu,ayo-dosunmu,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630162,Anthony,Edwards,A. Edwards,anthony-edwards,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642402,Enrique,Freeman,E. Freeman,enrique-freeman,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,203497,Rudy,Gobert,R. Gobert,rudy-gobert,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630538,Bones,Hyland,B. Hyland,bones-hyland,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630228,Jonathan,Kuminga,J. Kuminga,jonathan-kuminga,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1626168,Trey,Lyles,T. Lyles,trey-lyles,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1630183,Jaden,McDaniels,J. McDaniels,jaden-mcdaniels,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,1642911,Rocco,Zikarsky,R. Zikarsky,rocco-zikarsky,,DNP - Coach's Decision,,,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0

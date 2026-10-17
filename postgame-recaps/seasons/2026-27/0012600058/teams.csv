@@ -1,0 +1,3 @@
+gameId,teamId,teamCity,teamName,teamTricode,teamSlug,minutes,fieldGoalsMade,fieldGoalsAttempted,fieldGoalsPercentage,threePointersMade,threePointersAttempted,threePointersPercentage,freeThrowsMade,freeThrowsAttempted,freeThrowsPercentage,reboundsOffensive,reboundsDefensive,reboundsTotal,assists,steals,blocks,turnovers,foulsPersonal,points,plusMinusPoints
+0012600058,1610612741,Chicago,Bulls,CHI,bulls,240:00,50,97,0.515,12,36,0.333,21,25,0.84,17,37,54,34,8,10,15,30,133,17.0
+0012600058,1610612750,Minnesota,Timberwolves,MIN,timberwolves,240:00,39,87,0.448,10,34,0.294,28,40,0.7,12,25,37,23,6,2,11,22,116,-17.0

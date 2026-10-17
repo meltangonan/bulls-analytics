@@ -539,6 +539,7 @@ def breakdown(pbp: pd.DataFrame, teams: pd.DataFrame, opp_tri: str) -> dict:
         miss = int((sh.actionType == "Missed Shot").sum())
         formula = m2 * (2 - acc.V) + m3 * (3 - acc.V) + miss * (acc.P * acc.V - acc.V)
         shots[t] = {"m2": m2, "m3": m3, "miss": miss, "raw": round(cats[t]["shoot"], 2),
+                    "shown": round(m2 * example["make2"] + m3 * example["make3"] + miss * example["miss"], 2),
                     "expected": round(acc.base["shoot"] * poss[t], 2), "vs": round(c[t]["shoot"], 2),
                     "formula_ok": abs(formula - cats[t]["shoot"]) < 0.05}
     return {"shots": shots, "teams": {t: {k: round(float(v), 1) for k, v in d.items()} for t, d in teams_vs.items()},
@@ -955,16 +956,27 @@ def notables(picked: dict, season: list, qualifiers: list, connection: str | Non
     return (picked + [text for *_, text in ranked])[:limit]
 
 
+def team_dunks(chi, pbp: pd.DataFrame, names: int = 3) -> str:
+    """'Bulls: 15 team dunks, led by Buzelis (4), Wilson (3), Sellers (3)': made dunks by the most prolific,
+    ties in the order of their first dunk."""
+    made = pbp[(pbp.teamId == BULLS) & (pbp.isFieldGoal == 1) & (pbp.shotResult == "Made")
+               & pbp.subType.str.contains("Dunk", na=False)]
+    by = made.groupby("playerName", sort=False).size().sort_values(ascending=False, kind="stable")
+    top = ", ".join(f"{name} ({n})" for name, n in by.head(names).items())
+    return f"{chi.teamName}: {len(made)} team dunks, led by {top}"
+
+
 PICKED_NOTABLES = {
-    "assist_rate": lambda chi: f"{chi.teamName}: {int(chi.assists)} assists on {int(chi.fieldGoalsMade)} field goals",
+    "assist_rate": lambda chi, pbp: f"{chi.teamName}: {int(chi.assists)} assists on {int(chi.fieldGoalsMade)} field goals",
+    "dunks": team_dunks,
 }
 
 
-def picked_notables(chi, names: list) -> dict:
+def picked_notables(chi, pbp: pd.DataFrame, names: list) -> dict:
     unknown = [n for n in names if n not in PICKED_NOTABLES]
     if unknown:
         raise ValueError(f"picks.json notables {unknown} are not in {sorted(PICKED_NOTABLES)}")
-    return {n: PICKED_NOTABLES[n](chi) for n in names}
+    return {n: PICKED_NOTABLES[n](chi, pbp) for n in names}
 
 
 def ord_(n: int) -> str:
@@ -1104,7 +1116,7 @@ def build(game_id: str) -> dict:
         "leaders": leaders(players, opp_tri),
         "season_leaders": season_leaders(read(g, "player_games.csv"), game_id),
         "notables": notables(
-            picked_notables(chi, pick.get("notables", [])),
+            picked_notables(chi, pbp, pick.get("notables", [])),
             season_notables(game_id, read(g, "player_games.csv"), bulls_games(read(g, "league_games.csv")), read(g, "league_games.csv"), opp_tri),
             team_qualifiers(tonight_line(game_id, read(g, "league_games.csv"), teams, read(g, "summary_stats.csv")),
                             league_team_games(), chi.teamName, opp_tri),

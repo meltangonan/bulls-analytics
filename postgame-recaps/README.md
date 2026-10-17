@@ -72,7 +72,8 @@ The user's calls while watching go in `seasons/<season>/<id>/picks.json` (option
 or a player showing up too often); each moment names a scoring play by its play-by-play `actionNumber`, so the dot's
 time and margin come from NBA.com and only the label is typed. The template places a moment's label on its own
 team's side of zero, clear of the margin line and the other labels. `notables` names callouts from
-`PICKED_NOTABLES` in `recap_data.py` (`"assist_rate"`: "Bulls: x assists on y field goals" from the Bulls box score); they
+`PICKED_NOTABLES` in `recap_data.py` (`"assist_rate"`: "Bulls: x assists on y field goals" from the Bulls box score;
+`"dunks"`: "Bulls: x team dunks, led by " and the top three dunkers, from the play-by-play's made dunks); they
 lead the final-score page's notables, three at most; a pick that also qualifies (Notables, below) takes the qualifier's
 wording. These are calls, not numbers.
 

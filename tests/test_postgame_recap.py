@@ -509,6 +509,26 @@ def test_a_picked_notable_leads_and_counts_from_the_box_score(monkeypatch):
         rd.build(gid)
 
 
+def test_a_picked_dunk_notable_counts_made_dunks_from_the_play_by_play():
+    pbp = pd.DataFrame({
+        "teamId": [rd.BULLS] * 5 + [0],
+        "isFieldGoal": [1, 1, 1, 1, 1, 1],
+        "shotResult": ["Made", "Made", "Made", "Missed", "Made", "Made"],
+        "subType": ["Driving Dunk Shot", "Alley Oop Dunk Shot", "Tip Dunk Shot", "Dunk Shot", "Jump Shot", "Dunk Shot"],
+        "playerName": ["Wilson", "Buzelis", "Buzelis", "Wilson", "Giddey", "Edwards"],
+    })
+    chi = pd.Series({"teamName": "Bulls"})
+    assert rd.team_dunks(chi, pbp) == "Bulls: 3 team dunks, led by Buzelis (2), Wilson (1)"
+
+
+def test_the_breakdown_shooting_sum_reproduces_from_its_printed_values():
+    d = rd.build("0022500943")
+    e = d["breakdown"]["example"]
+    for s in d["breakdown"]["shots"].values():
+        assert s["shown"] == round(s["m2"] * e["make2"] + s["m3"] * e["make3"] + s["miss"] * e["miss"], 2)
+        assert abs(s["shown"] - s["raw"]) <= 0.0005 * (s["m2"] + s["m3"] + s["miss"]) + 0.01
+
+
 def test_early_pages_need_only_the_first_wave_of_feeds(monkeypatch):
     # Four factors, misc and the Bulls shot feed publish last; early pages are drawn without them.
     late = {"ff_team.csv", "misc_teams.csv", "shots_raw_chi.csv"}

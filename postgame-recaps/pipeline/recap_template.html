@@ -319,9 +319,10 @@ const other=rows.find(r=>r[0]==='Other'),extra=rows.find(r=>r[0].includes('posse
 // could print 2.3 beside the table's 2.2 (Game 1, true value 2.2499). Separately rounded values may not subtract
 // exactly, so the equation then says ≈.
 const f2=v=>(v>0?'+':v<0?'-':'')+Math.abs(v).toFixed(2),ca=TV[D.chi.tri].shoot,oa=TV[D.opp.tri].shoot,sb=rows.find(r=>r[0]==='Shooting')[1],eq=Math.abs(ca-oa-sb)<0.05?'=':'≈';
-// The shooting sum is printed from the page's own three-decimal values, unless that total would lead to another
-// tenth than the table's; then the exact total, and ≈.
-const shownOk=cs.shown!=null&&f1(cs.shown-cs.expected)===f1(ca),shotSum=shownOk?`= ${f2(cs.shown)}`:`≈ ${f2(cs.raw)}`;
+// The shooting sum is printed to three decimals from the page's own three-decimal values, so it is exact, unless
+// that total would lead to another tenth than the table's; then the exact total, and ≈.
+const s3=v=>(v>0?'+':v<0?'-':'')+Math.abs(v).toFixed(3);
+const shownOk=cs.shown!=null&&f1(cs.shown-cs.expected)===f1(ca),shotSum=shownOk?`= ${s3(cs.shown)}`:`≈ ${f2(cs.raw)}`;
 const paras=[`Every possession starts worth ${f3(E.v)} points, the 2025-26 NBA average. Each play changes that value: a made 2 adds ${f3(E.make2)}, a made 3 adds ${f3(V3)}, a miss leaves ${E.miss_value.toFixed(3)} (offenses rebound ${E.oreb_pct}% of misses), and a turnover loses the full ${f3(E.v)}.`,
 `Points above average compares each team with an average team on the same number of possessions. ${D.chi.team} shooting: ${cs.m2} × ${f3(E.make2)} + ${cs.m3} × ${f3(V3)} - ${cs.miss} × ${f3(-E.miss)} ${shotSum}, against ${f2(cs.expected)} for an average team on ${pc_} possessions, so ${f1(ca)}.`,
 `Each bar is the ${D.chi.team} minus the ${D.opp.team}: shooting ${f1(ca)} - (${f1(oa)}) ${eq} ${f1(sb)}.`+(other?' Other covers possessions cut off when a quarter ended.':'')+(extra?` The ${D.chi.team} had ${pc_} possessions to ${po_}, and each possession is worth ${f3(E.v)}.`:'')+` The bars add up to the final margin, ${sgn(BD.margin)}.`];

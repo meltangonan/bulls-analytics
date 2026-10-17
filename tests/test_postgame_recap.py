@@ -6,6 +6,7 @@ Game 1 values were verified against NBA.com after its overnight correction (inde
 """
 
 import sys
+from decimal import Decimal
 from pathlib import Path
 
 import pandas as pd
@@ -509,24 +510,52 @@ def test_a_picked_notable_leads_and_counts_from_the_box_score(monkeypatch):
         rd.build(gid)
 
 
+def dunk_pbp(rows):
+    """(teamId, personId, playerNameI, subType, shotResult) rows as play-by-play field goals."""
+    pbp = pd.DataFrame(rows, columns=["teamId", "personId", "playerNameI", "subType", "shotResult"])
+    return pbp.assign(isFieldGoal=1, playerName=pbp.playerNameI.str.split(". ").str[1])
+
+
 def test_a_picked_dunk_notable_counts_made_dunks_from_the_play_by_play():
-    pbp = pd.DataFrame({
-        "teamId": [rd.BULLS] * 5 + [0],
-        "isFieldGoal": [1, 1, 1, 1, 1, 1],
-        "shotResult": ["Made", "Made", "Made", "Missed", "Made", "Made"],
-        "subType": ["Driving Dunk Shot", "Alley Oop Dunk Shot", "Tip Dunk Shot", "Dunk Shot", "Jump Shot", "Dunk Shot"],
-        "playerName": ["Wilson", "Buzelis", "Buzelis", "Wilson", "Giddey", "Edwards"],
-    })
+    pbp = dunk_pbp([
+        (rd.BULLS, 1, "C. Wilson", "Driving Dunk Shot", "Made"),
+        (rd.BULLS, 2, "M. Buzelis", "Alley Oop Dunk Shot", "Made"),
+        (rd.BULLS, 2, "M. Buzelis", "Tip Dunk Shot", "Made"),
+        (rd.BULLS, 1, "C. Wilson", "Dunk Shot", "Missed"),
+        (rd.BULLS, 3, "J. Giddey", "Jump Shot", "Made"),
+        (0, 4, "A. Edwards", "Dunk Shot", "Made"),
+    ])
     chi = pd.Series({"teamName": "Bulls"})
     assert rd.team_dunks(chi, pbp) == "Bulls: 3 team dunks, led by Buzelis (2), Wilson (1)"
 
 
-def test_the_breakdown_shooting_sum_reproduces_from_its_printed_values():
-    d = rd.build("0022500943")
-    e = d["breakdown"]["example"]
+def test_a_picked_dunk_notable_drops_out_without_a_dunk():
+    pbp = dunk_pbp([(rd.BULLS, 3, "J. Giddey", "Jump Shot", "Made"), (rd.BULLS, 1, "C. Wilson", "Dunk Shot", "Missed")])
+    chi = pd.Series({"teamName": "Bulls"})
+    assert rd.team_dunks(chi, pbp) is None
+    assert rd.picked_notables(chi, pbp, ["dunks"]) == {}
+
+
+def test_bulls_sharing_a_family_name_stay_apart_in_the_dunk_notable():
+    pbp = dunk_pbp([
+        (rd.BULLS, 1, "J. Smith", "Dunk Shot", "Made"),
+        (rd.BULLS, 1, "J. Smith", "Dunk Shot", "Made"),
+        (rd.BULLS, 5, "D. Smith", "Dunk Shot", "Made"),
+        (rd.BULLS, 2, "M. Buzelis", "Dunk Shot", "Made"),
+    ])
+    chi = pd.Series({"teamName": "Bulls"})
+    assert rd.team_dunks(chi, pbp) == "Bulls: 4 team dunks, led by J. Smith (2), D. Smith (1), Buzelis (1)"
+
+
+@pytest.mark.parametrize("gid", ["0022500943", "0012600058"])
+def test_the_breakdown_shooting_sum_is_exactly_its_printed_arithmetic(gid):
+    # Decimal does the reader's hand arithmetic on the printed three-decimal values; 0012600058 printed
+    # "= +16.95" where that arithmetic gives 16.953.
+    d = rd.build(gid)
+    e = {k: Decimal(str(v)) for k, v in d["breakdown"]["example"].items()}
     for s in d["breakdown"]["shots"].values():
-        assert s["shown"] == round(s["m2"] * e["make2"] + s["m3"] * e["make3"] + s["miss"] * e["miss"], 2)
-        assert abs(s["shown"] - s["raw"]) <= 0.0005 * (s["m2"] + s["m3"] + s["miss"]) + 0.01
+        assert Decimal(str(s["shown"])) == s["m2"] * e["make2"] + s["m3"] * e["make3"] + s["miss"] * e["miss"]
+        assert abs(s["shown"] - s["raw"]) <= 0.0005 * (s["m2"] + s["m3"] + s["miss"]) + 0.005
 
 
 def test_early_pages_need_only_the_first_wave_of_feeds(monkeypatch):

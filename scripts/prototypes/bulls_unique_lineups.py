@@ -8,7 +8,7 @@ NBA.com LeagueDashLineups has lineups only from 2007-08, so 2000-01 to 2006-07 c
 pbpstats /get-totals returns at most 500 rows, sorted by minutes, so a full-season request silently
 drops a team's rarest lineups; it is requested per calendar month, split further at the cap. Every
 season's lineup minutes must equal the team's minutes. League context (2024-25, 2025-26) is fetched
-team by team into the untracked cache/ folder.
+team by team (62 NBA.com stats calls) and kept in data/ beside the Bulls snapshots.
 """
 from __future__ import annotations
 
@@ -35,7 +35,7 @@ DATA = _REPO / "docs" / "visuals" / f"2026-10-14-{PROJECT}" / "data"
 PBPSTATS_SNAPSHOTS = DATA / "pbpstats-month-windows"
 NBA_SNAPSHOTS = DATA / "nba-leaguedashlineups"
 NBA_TEAM_MINUTES = DATA / "nba-bulls-team-minutes.csv"
-LEAGUE_CACHE = _REPO / "cache" / "nba_league_lineups"
+LEAGUE_SNAPSHOTS = DATA / "nba-league-lineups"
 LEAGUE_SEASONS = ["2024-25", "2025-26"]
 SEASON_RECORDS = DATA / "nba-bulls-season-records.csv"
 OUT = _REPO / "output" / PROJECT
@@ -204,7 +204,7 @@ def player_set(group_id: str) -> frozenset[str]:
 
 
 def fetch_league_season(season: str) -> None:
-    folder = LEAGUE_CACHE / season
+    folder = LEAGUE_SNAPSHOTS / season
     folder.mkdir(parents=True, exist_ok=True)
     teams = leaguedashteamstats.LeagueDashTeamStats(
         season=season, season_type_all_star="Regular Season", per_mode_detailed="Totals",
@@ -228,9 +228,9 @@ def league_table() -> pd.DataFrame:
     """Every team's counts; LeagueDashLineups caps a league-wide request at 2,000 rows, so teams are fetched one by one."""
     records = []
     for season in LEAGUE_SEASONS:
-        teams = pd.read_csv(LEAGUE_CACHE / season / "teams.csv")
+        teams = pd.read_csv(LEAGUE_SNAPSHOTS / season / "teams.csv")
         for team in teams.itertuples():
-            minutes = pd.read_csv(LEAGUE_CACHE / season / f"{team.TEAM_ID}.csv")["MIN"]
+            minutes = pd.read_csv(LEAGUE_SNAPSHOTS / season / f"{team.TEAM_ID}.csv")["MIN"]
             if abs(minutes.sum() - team.MIN) > TEAM_MINUTE_TOLERANCE:
                 raise ValueError(f"{season} {team.TEAM_NAME}: lineup minutes do not match team minutes")
             records.append({"Season": season, "Team": team.TEAM_NAME, **lineup_counts(minutes)})
